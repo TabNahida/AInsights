@@ -1,4 +1,4 @@
-{
+window.AINSIGHTS_MODELS_DATA = {
   "version": 1,
   "generatedAt": "2026-06-05T16:25:45+00:00",
   "source": {
@@ -20039,4 +20039,4 @@
     "modelRows": 523,
     "variantGroups": 398
   }
-}
+};

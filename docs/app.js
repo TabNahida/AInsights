@@ -25,9 +25,7 @@ init();
 
 async function init() {
   try {
-    const response = await fetch("./data/models.json", { cache: "no-store" });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    state.data = await response.json();
+    state.data = window.AINSIGHTS_MODELS_DATA || (await fetchJsonData());
     state.presetId = state.data.defaultPreset;
     state.dedupe = Boolean(state.data.defaultDedupe);
     state.customWeights = Object.fromEntries(state.data.metrics.map((metric) => [metric.key, metric.defaultWeight]));
@@ -37,6 +35,12 @@ async function init() {
   } catch (error) {
     els.rankingBody.innerHTML = `<tr><td class="empty" colspan="7">数据加载失败：${escapeHtml(error.message)}</td></tr>`;
   }
+}
+
+async function fetchJsonData() {
+  const response = await fetch("./data/models.json", { cache: "no-store" });
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  return response.json();
 }
 
 function renderStaticControls() {
@@ -96,7 +100,14 @@ function scoreModels(preset) {
   return state.data.models
     .map((model) => {
       const result = scoreModel(model, preset);
-      return { ...model, score: result.score, coverage: result.coverage, availableWeight: result.availableWeight };
+      return {
+        ...model,
+        score: result.score,
+        coverage: result.coverage,
+        coverageLabel: result.coverageLabel,
+        availableWeight: result.availableWeight,
+        scoreMeta: result.scoreMeta,
+      };
     })
     .filter((model) => Number.isFinite(model.score));
 }
@@ -107,27 +118,38 @@ function scoreModel(model, preset) {
     return {
       score,
       coverage: Number.isFinite(score) ? 1 : 0,
+      coverageLabel: Number.isFinite(score) ? "AA" : "—",
       availableWeight: Number.isFinite(score) ? 1 : 0,
+      scoreMeta: "AA",
     };
   }
 
   const weights = state.presetId === "custom" ? state.customWeights : preset.weights;
   let weightedScore = 0;
+  let denominator = 0;
   let availableWeight = 0;
   let coverage = 0;
+  const ignoreMissing = Boolean(preset.ignoreMissing);
+  const minCoverage = Number(preset.minCoverage || 0);
   for (const metric of state.data.metrics) {
     const weight = Number(weights[metric.key] || 0);
     const value = model.scores[metric.key];
-    if (weight > 0 && Number.isFinite(value)) {
+    if (weight <= 0) continue;
+    if (Number.isFinite(value)) {
       weightedScore += value * weight;
+      denominator += weight;
       availableWeight += weight;
       coverage += 1;
+    } else if (!ignoreMissing) {
+      denominator += weight;
     }
   }
+  const score = denominator > 0 && coverage >= minCoverage ? weightedScore / denominator : null;
   return {
-    score: availableWeight > 0 ? weightedScore / availableWeight : null,
+    score,
     coverage,
     availableWeight,
+    scoreMeta: `${formatNumber(availableWeight)}w`,
   };
 }
 
@@ -141,11 +163,20 @@ function dedupeByBestVariant(models) {
   const best = new Map();
   for (const model of models) {
     const current = best.get(model.variantGroup);
-    if (!current || model.score > current.score) {
+    if (!current || isPreferredVariant(model, current)) {
       best.set(model.variantGroup, model);
     }
   }
   return [...best.values()];
+}
+
+function isPreferredVariant(candidate, current) {
+  const candidatePriority = Number(candidate.variantPriority || 0);
+  const currentPriority = Number(current.variantPriority || 0);
+  if (candidatePriority !== currentPriority) {
+    return candidatePriority > currentPriority;
+  }
+  return candidate.score > current.score;
 }
 
 function rankRows(models) {
@@ -217,13 +248,13 @@ function renderRow(model) {
         </div>
       </td>
       <td class="score-cell">
-        <div class="score-value"><span>${formatNumber(model.score)}</span><span class="muted">${formatNumber(model.availableWeight)}w</span></div>
+        <div class="score-value"><span>${formatNumber(model.score)}</span><span class="muted">${escapeHtml(model.scoreMeta || "")}</span></div>
         <div class="score-bar" style="--value: ${scoreWidth}%"><span></span></div>
       </td>
       <td>${formatNumber(model.aa["aa-intelligence"])}</td>
       <td>${formatNumber(model.aa["aa-coding"])}</td>
       <td>${formatNumber(model.aa["aa-agentic"])}</td>
-      <td>${model.coverage}</td>
+      <td>${escapeHtml(model.coverageLabel || model.coverage)}</td>
     </tr>
   `;
 }

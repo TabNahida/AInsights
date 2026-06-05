@@ -77,6 +77,13 @@ main {
   padding: 18px clamp(12px, 3vw, 40px) 36px;
 }
 
+.site-footer {
+  padding: 0 clamp(12px, 3vw, 40px) 28px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 .controls,
 .custom-panel,
 .ranking-shell {
@@ -213,9 +220,6 @@ td {
 }
 
 th {
-  position: sticky;
-  top: 84px;
-  z-index: 5;
   color: var(--muted);
   background: #fafafa;
   font-size: 12px;
@@ -313,7 +317,4 @@ th {
     grid-template-columns: 1fr;
   }
 
-  th {
-    top: 0;
-  }
 }

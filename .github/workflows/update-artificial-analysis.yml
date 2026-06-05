@@ -40,6 +40,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ArtificialAnalysis/artificialanalysis_raw_scores_wide.csv docs/data/models.json
+          git add ArtificialAnalysis/artificialanalysis_raw_scores_wide.csv docs/data/models.json docs/data/models.js
           git commit -m "Update Artificial Analysis data"
           git push

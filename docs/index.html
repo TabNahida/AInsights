@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AInsights Model Rankings</title>
+    <title>AI Insights Analysis</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header class="topbar">
       <div>
         <p class="eyebrow">AInsights</p>
-        <h1>Artificial Analysis 模型排名</h1>
+        <h1>AI Insights Analysis</h1>
       </div>
       <div class="source-block">
         <span id="updatedAt">加载中</span>
@@ -62,6 +62,10 @@
       </section>
     </main>
 
+    <footer class="site-footer">
+      数据来源：<a href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" target="_blank" rel="noreferrer">Artificial Analysis</a>。AInsights Index 基于其公开评测数据重新计算。
+    </footer>
+
     <template id="metricTemplate">
       <label class="weight-control">
         <span></span>
@@ -70,6 +74,7 @@
       </label>
     </template>
 
+    <script src="./data/models.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>
