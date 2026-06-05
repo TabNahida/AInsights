@@ -14,7 +14,6 @@ import math
 import re
 import sys
 from dataclasses import dataclass
-from datetime import date
 from pathlib import Path
 from typing import Any, Callable, Iterable
 from urllib.request import Request, urlopen
@@ -134,10 +133,24 @@ def build_raw_scores_rows(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]
     for index, row in enumerate(source_rows):
         model = _model_name(row)
         is_reasoning = bool(row.get("reasoning_model"))
+        creator = _dict_or_empty(row.get("model_creators"))
+        cost = _dict_or_empty(row.get("intelligence_index_cost"))
+        timescale = _dict_or_empty(row.get("timescaleData"))
         output: dict[str, Any] = {
             "model_key": f"{model} [R]" if is_reasoning else model,
             "model": model,
             "is_reasoning": "true" if is_reasoning else "false",
+            "slug": row.get("slug") or "",
+            "creator": creator.get("name") or "",
+            "release_date": row.get("release_date") or "",
+            "model_url": row.get("model_url") or "",
+            "context_window_tokens": _format_number(row.get("context_window_tokens")),
+            "open_source_categorization": row.get("open_source_categorization") or "",
+            "median_output_speed": _format_number(timescale.get("median_output_speed")),
+            "AA Intelligence Index": _format_number(row.get("intelligence_index")),
+            "AA Coding Index": _format_number(row.get("coding_index")),
+            "AA Agentic Index": _format_number(row.get("agentic_index")),
+            "AA Intelligence Index Cost (USD)": _format_number(cost.get("total_cost")),
         }
 
         for spec in SCORE_SPECS:
@@ -151,54 +164,14 @@ def build_raw_scores_rows(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]
     return output_rows
 
 
-def build_models_metadata_rows(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
-    output: list[dict[str, Any]] = []
-    for row in rows:
-        creator = _dict_or_empty(row.get("model_creators"))
-        cost = _dict_or_empty(row.get("intelligence_index_cost"))
-        output.append(
-            {
-                "Model Name": _model_name(row),
-                "Model Slug": row.get("slug") or "",
-                "Release Date": row.get("release_date") or "",
-                "Model Creator Name": creator.get("name") or "",
-                "Artificial Analysis Intelligence Index": _format_number(row.get("intelligence_index")),
-                "Artificial Analysis Coding Index": _format_number(row.get("coding_index")),
-                "Artificial Analysis Agentic Index": _format_number(row.get("agentic_index")),
-                "Intelligence Index Cost (USD)": _format_number(cost.get("total_cost")),
-            }
-        )
-    return output
-
-
 def write_raw_scores_csv(rows: list[dict[str, Any]], path: Path) -> None:
     fieldnames = (
-        ["model_key", "model", "is_reasoning"]
+        RAW_METADATA_COLUMNS
+        + AA_PRESET_COLUMNS
         + [spec.column for spec in SCORE_SPECS]
         + [f"{spec.column}_rank" for spec in SCORE_SPECS]
     )
     _write_dict_rows(path, fieldnames, rows)
-
-
-def write_models_metadata_csv(rows: list[dict[str, Any]], path: Path) -> None:
-    fieldnames = [
-        "Model Name",
-        "Model Slug",
-        "Release Date",
-        "Model Creator Name",
-        "Artificial Analysis Intelligence Index",
-        "Artificial Analysis Coding Index",
-        "Artificial Analysis Agentic Index",
-        "Intelligence Index Cost (USD)",
-    ]
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", newline="", encoding="utf-8-sig") as handle:
-        writer = csv.writer(handle)
-        writer.writerow(["Artificial Analysis Model Benchmarks Data", *[""] * (len(fieldnames) - 1)])
-        writer.writerow([""] * len(fieldnames))
-        writer.writerow(fieldnames)
-        for row in rows:
-            writer.writerow([row.get(field, "") for field in fieldnames])
 
 
 def _write_dict_rows(path: Path, fieldnames: list[str], rows: list[dict[str, Any]]) -> None:
@@ -290,15 +263,34 @@ SCORE_SPECS = [
 ]
 
 
-def run(args: argparse.Namespace) -> tuple[Path, Path, int]:
+RAW_METADATA_COLUMNS = [
+    "model_key",
+    "model",
+    "is_reasoning",
+    "slug",
+    "creator",
+    "release_date",
+    "model_url",
+    "context_window_tokens",
+    "open_source_categorization",
+    "median_output_speed",
+]
+
+AA_PRESET_COLUMNS = [
+    "AA Intelligence Index",
+    "AA Coding Index",
+    "AA Agentic Index",
+    "AA Intelligence Index Cost (USD)",
+]
+
+
+def run(args: argparse.Namespace) -> tuple[Path, int]:
     html = fetch_html(args.url, timeout=args.timeout)
     model_rows = extract_default_data(html)
 
     output_dir = Path(args.output_dir)
-    metadata_path = output_dir / f"models-data_{args.date}.csv"
     raw_scores_path = output_dir / RAW_SCORES_FILENAME
 
-    write_models_metadata_csv(build_models_metadata_rows(model_rows), metadata_path)
     write_raw_scores_csv(build_raw_scores_rows(model_rows), raw_scores_path)
 
     if args.raw_json:
@@ -306,7 +298,7 @@ def run(args: argparse.Namespace) -> tuple[Path, Path, int]:
         raw_path.parent.mkdir(parents=True, exist_ok=True)
         raw_path.write_text(json.dumps(model_rows, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    return metadata_path, raw_scores_path, len(model_rows)
+    return raw_scores_path, len(model_rows)
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -315,7 +307,6 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     )
     parser.add_argument("--url", default=SOURCE_URL, help="Artificial Analysis page to scrape.")
     parser.add_argument("--output-dir", default=str(DEFAULT_OUTPUT_DIR), help="Directory for CSV outputs.")
-    parser.add_argument("--date", default=date.today().isoformat(), help="Date suffix for models-data CSV.")
     parser.add_argument("--timeout", type=float, default=30, help="HTTP timeout in seconds.")
     parser.add_argument("--raw-json", help="Optional path to write the extracted model payload as JSON.")
     return parser.parse_args(argv)
@@ -324,13 +315,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     try:
-        metadata_path, raw_scores_path, row_count = run(args)
+        raw_scores_path, row_count = run(args)
     except Exception as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
 
     print(f"Fetched {row_count} model rows from Artificial Analysis.")
-    print(f"Wrote {metadata_path}")
     print(f"Wrote {raw_scores_path}")
     return 0
 

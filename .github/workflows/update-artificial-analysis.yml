@@ -1,0 +1,45 @@
+name: Update Artificial Analysis data
+
+on:
+  schedule:
+    - cron: "23 20 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Run tests before update
+        run: python -m unittest discover -s tests
+
+      - name: Fetch latest Artificial Analysis data
+        run: python ArtificialAnalysis/scrape_artificial_analysis.py --output-dir ArtificialAnalysis
+
+      - name: Rebuild docs site data
+        run: python ArtificialAnalysis/build_docs_site.py
+
+      - name: Run tests after update
+        run: python -m unittest discover -s tests
+
+      - name: Commit changed data and site
+        run: |
+          if git diff --quiet; then
+            echo "No Artificial Analysis changes detected."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ArtificialAnalysis/artificialanalysis_raw_scores_wide.csv docs/data/models.json
+          git commit -m "Update Artificial Analysis data"
+          git push

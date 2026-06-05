@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AInsights Model Rankings</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">AInsights</p>
+        <h1>Artificial Analysis 模型排名</h1>
+      </div>
+      <div class="source-block">
+        <span id="updatedAt">加载中</span>
+        <a href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" target="_blank" rel="noreferrer">数据源</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="controls" aria-label="排名控制">
+        <div class="preset-row" id="presetButtons" role="tablist" aria-label="排名预设"></div>
+        <div class="filter-row">
+          <label class="search-label">
+            <span>搜索</span>
+            <input id="searchInput" type="search" placeholder="模型或机构" />
+          </label>
+          <label class="toggle-label">
+            <input id="dedupeToggle" type="checkbox" checked />
+            <span>去除重复档位</span>
+          </label>
+        </div>
+        <div class="summary-row" id="summaryRow"></div>
+      </section>
+
+      <section class="custom-panel" id="customPanel" hidden>
+        <div class="panel-head">
+          <h2>自定义占比</h2>
+          <button id="resetWeightsButton" type="button">重置</button>
+        </div>
+        <div class="weights-grid" id="weightsGrid"></div>
+      </section>
+
+      <section class="ranking-shell">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="rank-col">#</th>
+                <th>模型</th>
+                <th>综合分</th>
+                <th>AA Intelligence</th>
+                <th>AA Coding</th>
+                <th>AA Agentic</th>
+                <th>覆盖</th>
+              </tr>
+            </thead>
+            <tbody id="rankingBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <template id="metricTemplate">
+      <label class="weight-control">
+        <span></span>
+        <input type="range" min="0" max="5" step="0.5" />
+        <output></output>
+      </label>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

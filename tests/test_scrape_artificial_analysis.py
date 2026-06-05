@@ -1,7 +1,6 @@
 import unittest
 
 from ArtificialAnalysis.scrape_artificial_analysis import (
-    build_models_metadata_rows,
     build_raw_scores_rows,
     extract_default_data,
 )
@@ -25,6 +24,14 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
             {
                 "short_name": "Reasoning Model",
                 "reasoning_model": True,
+                "slug": "reasoning-model-high",
+                "release_date": "2026-01-01",
+                "model_url": "/models/reasoning-model",
+                "model_creators": {"name": "Lab A"},
+                "intelligence_index": 55.5,
+                "coding_index": 44.4,
+                "agentic_index": 33.3,
+                "intelligence_index_cost": {"total_cost": 123.45},
                 "gdpval": 1500,
                 "terminalbench_hard": 0.5,
                 "tau2": 0.25,
@@ -60,6 +67,13 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
         self.assertEqual(output[0]["model_key"], "Reasoning Model [R]")
         self.assertEqual(output[0]["model"], "Reasoning Model")
         self.assertEqual(output[0]["is_reasoning"], "true")
+        self.assertEqual(output[0]["slug"], "reasoning-model-high")
+        self.assertEqual(output[0]["creator"], "Lab A")
+        self.assertEqual(output[0]["release_date"], "2026-01-01")
+        self.assertEqual(output[0]["AA Intelligence Index"], 55.5)
+        self.assertEqual(output[0]["AA Coding Index"], 44.4)
+        self.assertEqual(output[0]["AA Agentic Index"], 33.3)
+        self.assertEqual(output[0]["AA Intelligence Index Cost (USD)"], 123.45)
         self.assertEqual(output[0]["GDPval-AA"], 50.0)
         self.assertEqual(output[0]["Terminal-Bench Hard"], 50.0)
         self.assertEqual(output[0]["AA-Omniscience Accuracy"], 80.0)
@@ -70,37 +84,7 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
         self.assertEqual(output[1]["GDPval-AA_rank"], 2)
         self.assertEqual(output[1]["GPQA Diamond_rank"], "")
 
-    def test_build_models_metadata_rows_matches_existing_csv_shape(self):
-        rows = [
-            {
-                "short_name": "Model A",
-                "slug": "model-a",
-                "release_date": "2026-01-02",
-                "model_creators": {"name": "Lab A"},
-                "intelligence_index": 42.5,
-                "coding_index": 30.25,
-                "agentic_index": 12.75,
-                "intelligence_index_cost": {"total_cost": 99.99},
-            }
-        ]
-
-        output = build_models_metadata_rows(rows)
-
-        self.assertEqual(
-            output[0],
-            {
-                "Model Name": "Model A",
-                "Model Slug": "model-a",
-                "Release Date": "2026-01-02",
-                "Model Creator Name": "Lab A",
-                "Artificial Analysis Intelligence Index": 42.5,
-                "Artificial Analysis Coding Index": 30.25,
-                "Artificial Analysis Agentic Index": 12.75,
-                "Intelligence Index Cost (USD)": 99.99,
-            },
-        )
-
-    def test_build_models_metadata_rows_treats_next_undefined_sentinel_as_blank(self):
+    def test_build_raw_scores_rows_treats_next_undefined_sentinel_as_blank(self):
         rows = [
             {
                 "short_name": "Model B",
@@ -110,9 +94,9 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
             }
         ]
 
-        output = build_models_metadata_rows(rows)
+        output = build_raw_scores_rows(rows)
 
-        self.assertEqual(output[0]["Intelligence Index Cost (USD)"], "")
+        self.assertEqual(output[0]["AA Intelligence Index Cost (USD)"], "")
 
 
 if __name__ == "__main__":
