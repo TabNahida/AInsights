@@ -1,6 +1,6 @@
 window.AINSIGHTS_MODELS_DATA = {
   "version": 1,
-  "generatedAt": "2026-06-05T16:25:45+00:00",
+  "generatedAt": "2026-06-05T21:48:35+00:00",
   "source": {
     "label": "Artificial Analysis Intelligence Evaluations",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -172,7 +172,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-oss-120b",
       "contextWindowTokens": 131072.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 334.4552,
+      "medianOutputSpeed": 333.7963,
       "aa": {
         "aa-intelligence": 33.2657,
         "aa-coding": 28.6195,
@@ -210,7 +210,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-oss-20b-low",
       "contextWindowTokens": 131072.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 240.8385,
+      "medianOutputSpeed": 241.9631,
       "aa": {
         "aa-intelligence": 20.7852,
         "aa-coding": 14.3729,
@@ -248,7 +248,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-oss-120b-low",
       "contextWindowTokens": 131072.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 350.55,
+      "medianOutputSpeed": 348.2887,
       "aa": {
         "aa-intelligence": 24.4666,
         "aa-coding": 15.5338,
@@ -286,7 +286,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-4-mini-medium",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 170.7624,
+      "medianOutputSpeed": 168.7221,
       "aa": {
         "aa-intelligence": 37.7279,
         "aa-coding": 37.4649,
@@ -324,7 +324,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-oss-20b",
       "contextWindowTokens": 131072.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 238.373,
+      "medianOutputSpeed": 239.7937,
       "aa": {
         "aa-intelligence": 24.4696,
         "aa-coding": 18.529,
@@ -400,7 +400,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-4-mini",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 158.7693,
+      "medianOutputSpeed": 154.6658,
       "aa": {
         "aa-intelligence": 48.9037,
         "aa-coding": 51.4766,
@@ -476,7 +476,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/o3",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 144.5401,
+      "medianOutputSpeed": 147.2389,
       "aa": {
         "aa-intelligence": 38.374,
         "aa-coding": 38.4049,
@@ -514,7 +514,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-5",
       "contextWindowTokens": 922000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 63.8985,
+      "medianOutputSpeed": 62.8565,
       "aa": {
         "aa-intelligence": 60.2376,
         "aa-coding": 59.1155,
@@ -590,7 +590,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-5-low",
       "contextWindowTokens": 922000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 57.3131,
+      "medianOutputSpeed": 54.1927,
       "aa": {
         "aa-intelligence": 50.7794,
         "aa-coding": 52.0553,
@@ -628,7 +628,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-4-nano-non-reasoning",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 145.2273,
+      "medianOutputSpeed": 143.9147,
       "aa": {
         "aa-intelligence": 24.3621,
         "aa-coding": 27.89,
@@ -666,7 +666,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-5-high",
       "contextWindowTokens": 922000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 62.702,
+      "medianOutputSpeed": 60.0446,
       "aa": {
         "aa-intelligence": 58.8681,
         "aa-coding": 58.5332,
@@ -704,7 +704,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-4-mini-non-reasoning",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 178.6633,
+      "medianOutputSpeed": 169.4333,
       "aa": {
         "aa-intelligence": 23.279,
         "aa-coding": 25.3157,
@@ -742,7 +742,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-4-nano-medium",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 151.934,
+      "medianOutputSpeed": 152.6722,
       "aa": {
         "aa-intelligence": 38.1081,
         "aa-coding": 35.0309,
@@ -780,7 +780,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-5-non-reasoning",
       "contextWindowTokens": 922000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 59.5115,
+      "medianOutputSpeed": 55.5791,
       "aa": {
         "aa-intelligence": 40.9367,
         "aa-coding": 48.6076,
@@ -818,7 +818,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-5-medium",
       "contextWindowTokens": 922000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 59.6372,
+      "medianOutputSpeed": 54.3345,
       "aa": {
         "aa-intelligence": 56.711,
         "aa-coding": 56.2079,
@@ -856,7 +856,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-3-codex",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 82.2515,
+      "medianOutputSpeed": 79.1605,
       "aa": {
         "aa-intelligence": 53.5605,
         "aa-coding": 53.1004,
@@ -894,7 +894,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/llama-3-3-instruct-70b",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 81.0571,
+      "medianOutputSpeed": 79.33,
       "aa": {
         "aa-intelligence": 14.4886,
         "aa-coding": 10.7008,
@@ -970,7 +970,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/llama-3-2-instruct-90b-vision",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 56.9064,
+      "medianOutputSpeed": 56.822,
       "aa": {
         "aa-intelligence": 11.9013,
         "aa-coding": null,
@@ -1008,7 +1008,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/llama-3-2-instruct-11b-vision",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 51.3646,
+      "medianOutputSpeed": 51.4739,
       "aa": {
         "aa-intelligence": 8.7268,
         "aa-coding": 4.2473,
@@ -1084,7 +1084,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/llama-4-scout",
       "contextWindowTokens": 10000000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 103.5042,
+      "medianOutputSpeed": 102.9068,
       "aa": {
         "aa-intelligence": 13.5176,
         "aa-coding": 6.6814,
@@ -1160,7 +1160,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gemma-4-31b",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 35.6946,
+      "medianOutputSpeed": 35.7155,
       "aa": {
         "aa-intelligence": 39.183,
         "aa-coding": 38.71,
@@ -1236,7 +1236,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gemma-4-26b-a4b-non-reasoning",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 68.5515,
+      "medianOutputSpeed": 77.4717,
       "aa": {
         "aa-intelligence": 27.0858,
         "aa-coding": 29.0895,
@@ -1274,7 +1274,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gemini-3-5-flash-minimal",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 183.4994,
+      "medianOutputSpeed": 184.1236,
       "aa": {
         "aa-intelligence": 43.3108,
         "aa-coding": 47.0889,
@@ -1312,7 +1312,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gemma-4-31b-non-reasoning",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 39.8596,
+      "medianOutputSpeed": 40.6622,
       "aa": {
         "aa-intelligence": 32.2911,
         "aa-coding": 33.898,
@@ -1350,7 +1350,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gemini-3-5-flash-medium",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 208.5316,
+      "medianOutputSpeed": 189.4484,
       "aa": {
         "aa-intelligence": 54.7833,
         "aa-coding": 43.9324,
@@ -1502,7 +1502,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gemini-3-1-flash-lite-preview",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 335.5394,
+      "medianOutputSpeed": 332.9963,
       "aa": {
         "aa-intelligence": 33.5181,
         "aa-coding": 30.1277,
@@ -1540,7 +1540,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gemini-3-1-pro-preview",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 139.8048,
+      "medianOutputSpeed": 139.8993,
       "aa": {
         "aa-intelligence": 57.1755,
         "aa-coding": 55.4959,
@@ -1578,7 +1578,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gemini-3-5-flash",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 186.9712,
+      "medianOutputSpeed": 182.5344,
       "aa": {
         "aa-intelligence": 55.329,
         "aa-coding": 44.9811,
@@ -1654,7 +1654,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gemini-2-5-pro",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 142.2285,
+      "medianOutputSpeed": 141.3357,
       "aa": {
         "aa-intelligence": 34.6276,
         "aa-coding": 31.9515,
@@ -1730,7 +1730,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-opus-4-7",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 49.6731,
+      "medianOutputSpeed": 48.166,
       "aa": {
         "aa-intelligence": 57.2775,
         "aa-coding": 52.5147,
@@ -1806,7 +1806,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-sonnet-4-6",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 43.864,
+      "medianOutputSpeed": 43.3279,
       "aa": {
         "aa-intelligence": 44.3845,
         "aa-coding": 46.4331,
@@ -1844,7 +1844,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-opus-4-7-non-reasoning",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 46.0795,
+      "medianOutputSpeed": 45.2245,
       "aa": {
         "aa-intelligence": 51.8214,
         "aa-coding": 53.0689,
@@ -1882,7 +1882,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-4-5-haiku-reasoning",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 92.3543,
+      "medianOutputSpeed": 89.4008,
       "aa": {
         "aa-intelligence": 37.0918,
         "aa-coding": 32.6108,
@@ -1920,7 +1920,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-4-5-haiku",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 91.4841,
+      "medianOutputSpeed": 90.1006,
       "aa": {
         "aa-intelligence": 31.0484,
         "aa-coding": 29.6402,
@@ -1996,7 +1996,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-sonnet-4-6-non-reasoning-low-effort",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 43.432,
+      "medianOutputSpeed": 42.4662,
       "aa": {
         "aa-intelligence": 42.6011,
         "aa-coding": 42.9819,
@@ -2034,7 +2034,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/magistral-small-2509",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 108.3208,
+      "medianOutputSpeed": 108.7772,
       "aa": {
         "aa-intelligence": 18.1585,
         "aa-coding": 14.7587,
@@ -2072,7 +2072,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/ministral-3-14b",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 76.313,
+      "medianOutputSpeed": 78.3607,
       "aa": {
         "aa-intelligence": 15.9834,
         "aa-coding": 10.9007,
@@ -2110,7 +2110,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/ministral-3-8b",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 105.4862,
+      "medianOutputSpeed": 101.7372,
       "aa": {
         "aa-intelligence": 14.841,
         "aa-coding": 9.9747,
@@ -2148,7 +2148,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mistral-large-3",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 50.6246,
+      "medianOutputSpeed": 50.349,
       "aa": {
         "aa-intelligence": 22.8048,
         "aa-coding": 22.6817,
@@ -2186,7 +2186,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mistral-small-4-non-reasoning",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 163.8988,
+      "medianOutputSpeed": 159.9144,
       "aa": {
         "aa-intelligence": 18.6243,
         "aa-coding": 16.4457,
@@ -2224,7 +2224,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mistral-medium-3-5",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 136.9126,
+      "medianOutputSpeed": 134.7192,
       "aa": {
         "aa-intelligence": 39.2258,
         "aa-coding": 35.4167,
@@ -2262,7 +2262,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/devstral-small-2",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 48.8763,
+      "medianOutputSpeed": 50.2312,
       "aa": {
         "aa-intelligence": 19.4672,
         "aa-coding": 20.7176,
@@ -2300,7 +2300,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/magistral-medium-2509",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 39.1164,
+      "medianOutputSpeed": 40.3985,
       "aa": {
         "aa-intelligence": 27.1041,
         "aa-coding": 21.6646,
@@ -2338,7 +2338,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mistral-small-4",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 176.9899,
+      "medianOutputSpeed": 173.4622,
       "aa": {
         "aa-intelligence": 27.8035,
         "aa-coding": 24.2705,
@@ -2452,7 +2452,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/deepseek-v4-pro-high",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 53.3087,
+      "medianOutputSpeed": 47.0463,
       "aa": {
         "aa-intelligence": 49.7899,
         "aa-coding": 43.2485,
@@ -2490,7 +2490,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/deepseek-v4-flash",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 137.2986,
+      "medianOutputSpeed": 128.3113,
       "aa": {
         "aa-intelligence": 46.5166,
         "aa-coding": 38.7065,
@@ -2566,7 +2566,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/deepseek-v4-pro",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 53.9297,
+      "medianOutputSpeed": 52.2578,
       "aa": {
         "aa-intelligence": 51.5094,
         "aa-coding": 47.4747,
@@ -2604,7 +2604,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/deepseek-v4-pro-non-reasoning",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 59.916,
+      "medianOutputSpeed": 56.1362,
       "aa": {
         "aa-intelligence": 39.2654,
         "aa-coding": 38.3628,
@@ -2642,7 +2642,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/deepseek-v4-flash-non-reasoning",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 148.248,
+      "medianOutputSpeed": 131.0429,
       "aa": {
         "aa-intelligence": 36.4592,
         "aa-coding": 35.1501,
@@ -2756,7 +2756,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/grok-4-3",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 186.9251,
+      "medianOutputSpeed": 186.0505,
       "aa": {
         "aa-intelligence": 53.1964,
         "aa-coding": 41.0318,
@@ -2794,7 +2794,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/grok-4-3-low",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 140.6179,
+      "medianOutputSpeed": 149.2057,
       "aa": {
         "aa-intelligence": 43.8861,
         "aa-coding": 31.6428,
@@ -2832,7 +2832,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/grok-4-3-medium",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 134.7942,
+      "medianOutputSpeed": 147.5889,
       "aa": {
         "aa-intelligence": 48.8032,
         "aa-coding": 35.0554,
@@ -2870,7 +2870,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/grok-4-3-non-reasoning",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 157.8675,
+      "medianOutputSpeed": 164.132,
       "aa": {
         "aa-intelligence": 31.0184,
         "aa-coding": 25.0877,
@@ -2908,7 +2908,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/nova-micro",
       "contextWindowTokens": 130000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 285.3746,
+      "medianOutputSpeed": 282.0562,
       "aa": {
         "aa-intelligence": 10.2683,
         "aa-coding": 4.1351,
@@ -2984,7 +2984,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/nova-2-0-lite-reasoning",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 84.3953,
+      "medianOutputSpeed": 88.0278,
       "aa": {
         "aa-intelligence": 34.5432,
         "aa-coding": 23.4182,
@@ -3174,7 +3174,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/nova-2-0-pro",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 114.7614,
+      "medianOutputSpeed": 111.7177,
       "aa": {
         "aa-intelligence": 23.0613,
         "aa-coding": 20.4861,
@@ -3250,7 +3250,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/nova-premier",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 33.4062,
+      "medianOutputSpeed": 33.6008,
       "aa": {
         "aa-intelligence": 19.0143,
         "aa-coding": 13.8433,
@@ -3288,7 +3288,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/nova-2-0-lite-reasoning-medium",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 121.7438,
+      "medianOutputSpeed": 119.6612,
       "aa": {
         "aa-intelligence": 29.7271,
         "aa-coding": 23.8847,
@@ -3326,7 +3326,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/nova-2-0-lite-reasoning-low",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 95.9588,
+      "medianOutputSpeed": 90.7589,
       "aa": {
         "aa-intelligence": 24.5866,
         "aa-coding": 13.6364,
@@ -3440,7 +3440,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/phi-4-multimodal",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 16.6176,
+      "medianOutputSpeed": 16.6739,
       "aa": {
         "aa-intelligence": 10.0404,
         "aa-coding": null,
@@ -3668,7 +3668,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/lfm2-24b-a2b",
       "contextWindowTokens": 32768.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 106.0197,
+      "medianOutputSpeed": 102.6868,
       "aa": {
         "aa-intelligence": 10.4928,
         "aa-coding": 3.6265,
@@ -3858,7 +3858,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/minimax-m3",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 38.771,
+      "medianOutputSpeed": 39.4134,
       "aa": {
         "aa-intelligence": 54.6748,
         "aa-coding": 43.4063,
@@ -3896,7 +3896,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/minimax-m2-7",
       "contextWindowTokens": 204800.0,
       "openSourceCategorization": "Open Weights (License Required for Commercial Use)",
-      "medianOutputSpeed": 62.8363,
+      "medianOutputSpeed": 61.3007,
       "aa": {
         "aa-intelligence": 49.6153,
         "aa-coding": 41.9262,
@@ -3934,7 +3934,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/llama-3-1-nemotron-instruct-70b",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 287.6374,
+      "medianOutputSpeed": 290.0433,
       "aa": {
         "aa-intelligence": 13.4388,
         "aa-coding": 10.7849,
@@ -3972,7 +3972,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/nemotron-3-nano-omni-30b-a3b",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 295.009,
+      "medianOutputSpeed": 297.571,
       "aa": {
         "aa-intelligence": 21.4254,
         "aa-coding": 14.8148,
@@ -4010,7 +4010,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/nvidia-nemotron-3-super-120b-a12b",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 157.7594,
+      "medianOutputSpeed": 154.2885,
       "aa": {
         "aa-intelligence": 35.9698,
         "aa-coding": 31.1904,
@@ -4086,7 +4086,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/nvidia-nemotron-3-nano-30b-a3b",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 91.8584,
+      "medianOutputSpeed": 94.8983,
       "aa": {
         "aa-intelligence": 13.1698,
         "aa-coding": 15.7583,
@@ -4124,7 +4124,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/nvidia-nemotron-nano-9b-v2",
       "contextWindowTokens": 131072.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 150.1663,
+      "medianOutputSpeed": 152.4618,
       "aa": {
         "aa-intelligence": 13.1593,
         "aa-coding": 7.4881,
@@ -4162,7 +4162,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/nvidia-nemotron-nano-12b-v2-vl",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 216.9321,
+      "medianOutputSpeed": 218.6286,
       "aa": {
         "aa-intelligence": 10.0894,
         "aa-coding": 5.8642,
@@ -4200,7 +4200,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/nvidia-nemotron-nano-12b-v2-vl-reasoning",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 281.9222,
+      "medianOutputSpeed": 276.86,
       "aa": {
         "aa-intelligence": 14.8876,
         "aa-coding": 11.7494,
@@ -4238,7 +4238,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/nvidia-nemotron-3-nano-30b-a3b-reasoning",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 105.8467,
+      "medianOutputSpeed": 107.5273,
       "aa": {
         "aa-intelligence": 24.2725,
         "aa-coding": 18.9675,
@@ -4276,7 +4276,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/llama-3-1-nemotron-ultra-253b-v1-reasoning",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 52.0453,
+      "medianOutputSpeed": 52.0411,
       "aa": {
         "aa-intelligence": 15.018,
         "aa-coding": 13.0892,
@@ -4314,7 +4314,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/nvidia-nemotron-nano-9b-v2-reasoning",
       "contextWindowTokens": 131072.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 117.5783,
+      "medianOutputSpeed": 120.4227,
       "aa": {
         "aa-intelligence": 14.7575,
         "aa-coding": 8.3403,
@@ -4352,7 +4352,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/llama-nemotron-super-49b-v1-5-reasoning",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 40.7469,
+      "medianOutputSpeed": 40.7054,
       "aa": {
         "aa-intelligence": 18.6806,
         "aa-coding": 15.148,
@@ -4466,7 +4466,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/llama-nemotron-super-49b-v1-5",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 42.5535,
+      "medianOutputSpeed": 44.0145,
       "aa": {
         "aa-intelligence": 14.5859,
         "aa-coding": 10.4728,
@@ -4504,7 +4504,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/kimi-k2-6",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 44.1513,
+      "medianOutputSpeed": 44.0357,
       "aa": {
         "aa-intelligence": 53.9045,
         "aa-coding": 47.117,
@@ -4694,7 +4694,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/step-3-5-flash",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 234.7741,
+      "medianOutputSpeed": 218.0373,
       "aa": {
         "aa-intelligence": 38.4677,
         "aa-coding": 34.5644,
@@ -4732,7 +4732,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/step-3-7-flash",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 406.6435,
+      "medianOutputSpeed": 394.6035,
       "aa": {
         "aa-intelligence": 42.5912,
         "aa-coding": 37.0861,
@@ -4998,7 +4998,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/granite-4-0-h-small",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 374.1149,
+      "medianOutputSpeed": 394.8621,
       "aa": {
         "aa-intelligence": 10.8109,
         "aa-coding": 8.4982,
@@ -5340,7 +5340,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mercury-2",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 995.5576,
+      "medianOutputSpeed": 846.0457,
       "aa": {
         "aa-intelligence": 32.8235,
         "aa-coding": 30.5626,
@@ -5416,7 +5416,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/hermes-4-llama-3-1-70b",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 87.2794,
+      "medianOutputSpeed": 85.954,
       "aa": {
         "aa-intelligence": 12.6298,
         "aa-coding": 9.2207,
@@ -5454,7 +5454,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/hermes-4-llama-3-1-405b",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 39.7672,
+      "medianOutputSpeed": 39.5883,
       "aa": {
         "aa-intelligence": 17.6291,
         "aa-coding": 18.1012,
@@ -5606,7 +5606,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/hermes-4-llama-3-1-405b-reasoning",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 39.299,
+      "medianOutputSpeed": 40.1748,
       "aa": {
         "aa-intelligence": 18.5583,
         "aa-coding": 15.9863,
@@ -5910,7 +5910,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mimo-v2-5-pro-non-reasoning",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 47.2141,
+      "medianOutputSpeed": 48.1737,
       "aa": {
         "aa-intelligence": 35.5859,
         "aa-coding": 36.7775,
@@ -5948,7 +5948,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mimo-v2-omni-0327",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 87.9316,
+      "medianOutputSpeed": 83.0217,
       "aa": {
         "aa-intelligence": 44.932,
         "aa-coding": 36.8932,
@@ -5986,7 +5986,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mimo-v2-5-pro",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 42.5427,
+      "medianOutputSpeed": 43.4089,
       "aa": {
         "aa-intelligence": 53.8287,
         "aa-coding": 45.5317,
@@ -6024,7 +6024,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mimo-v2-flash",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 127.3401,
+      "medianOutputSpeed": 123.545,
       "aa": {
         "aa-intelligence": 30.3481,
         "aa-coding": 25.8137,
@@ -6062,7 +6062,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mimo-v2-omni",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 89.0117,
+      "medianOutputSpeed": 86.3364,
       "aa": {
         "aa-intelligence": 43.3995,
         "aa-coding": 35.4623,
@@ -6100,7 +6100,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mimo-v2-5-0424",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 85.9175,
+      "medianOutputSpeed": 81.2265,
       "aa": {
         "aa-intelligence": 49.0344,
         "aa-coding": 42.1296,
@@ -6176,7 +6176,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mimo-v2-0206",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 120.5938,
+      "medianOutputSpeed": 117.1813,
       "aa": {
         "aa-intelligence": 41.4588,
         "aa-coding": 33.4771,
@@ -6290,7 +6290,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/sarvam-105b",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 94.3958,
+      "medianOutputSpeed": 95.7899,
       "aa": {
         "aa-intelligence": 18.1574,
         "aa-coding": 9.8064,
@@ -6328,7 +6328,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/sarvam-30b",
       "contextWindowTokens": 65536.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 171.073,
+      "medianOutputSpeed": 171.3132,
       "aa": {
         "aa-intelligence": 12.3446,
         "aa-coding": 7.9195,
@@ -6442,7 +6442,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/kat-coder-pro-v1",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 111.3731,
+      "medianOutputSpeed": 114.7545,
       "aa": {
         "aa-intelligence": 36.0287,
         "aa-coding": 18.252,
@@ -6480,7 +6480,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/kat-coder-pro-v2",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 114.0018,
+      "medianOutputSpeed": 115.4655,
       "aa": {
         "aa-intelligence": 43.8335,
         "aa-coding": 45.5983,
@@ -7278,7 +7278,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/glm-5-1",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 58.4274,
+      "medianOutputSpeed": 58.6279,
       "aa": {
         "aa-intelligence": 51.4081,
         "aa-coding": 43.3712,
@@ -7316,7 +7316,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/glm-5-1-non-reasoning",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 54.5547,
+      "medianOutputSpeed": 53.0429,
       "aa": {
         "aa-intelligence": 43.8161,
         "aa-coding": 35.7744,
@@ -7430,7 +7430,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/command-a",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (License Required for Commercial Use)",
-      "medianOutputSpeed": 69.6145,
+      "medianOutputSpeed": 69.4035,
       "aa": {
         "aa-intelligence": 13.4789,
         "aa-coding": 9.8801,
@@ -7658,7 +7658,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/jamba-1-7-large",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 57.5261,
+      "medianOutputSpeed": 58.3588,
       "aa": {
         "aa-intelligence": 10.8783,
         "aa-coding": 7.7652,
@@ -7734,7 +7734,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-6-35b-a3b-non-reasoning",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 193.9998,
+      "medianOutputSpeed": 191.8145,
       "aa": {
         "aa-intelligence": 31.5271,
         "aa-coding": 17.5961,
@@ -7772,7 +7772,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-next-80b-a3b-reasoning",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 144.7867,
+      "medianOutputSpeed": 142.2886,
       "aa": {
         "aa-intelligence": 26.7232,
         "aa-coding": 19.49,
@@ -7810,7 +7810,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-omni-30b-a3b-reasoning",
       "contextWindowTokens": 65536.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 73.4887,
+      "medianOutputSpeed": 76.8802,
       "aa": {
         "aa-intelligence": 15.6245,
         "aa-coding": 12.7104,
@@ -7848,7 +7848,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-7-plus",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 53.2474,
+      "medianOutputSpeed": 53.1423,
       "aa": {
         "aa-intelligence": 53.2528,
         "aa-coding": 46.4752,
@@ -7886,7 +7886,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-6-27b",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 58.8485,
+      "medianOutputSpeed": 59.7474,
       "aa": {
         "aa-intelligence": 45.8228,
         "aa-coding": 36.5039,
@@ -7924,7 +7924,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-6-35b-a3b",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 187.9401,
+      "medianOutputSpeed": 181.5541,
       "aa": {
         "aa-intelligence": 43.4942,
         "aa-coding": 35.1536,
@@ -8038,7 +8038,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-5-2b-non-reasoning",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 321.449,
+      "medianOutputSpeed": 322.9625,
       "aa": {
         "aa-intelligence": 14.6715,
         "aa-coding": 4.9161,
@@ -8076,7 +8076,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-5-9b",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 69.6353,
+      "medianOutputSpeed": 74.771,
       "aa": {
         "aa-intelligence": 32.4263,
         "aa-coding": 25.3437,
@@ -8152,7 +8152,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-5-397b-a17b",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 53.1498,
+      "medianOutputSpeed": 53.0913,
       "aa": {
         "aa-intelligence": 45.0466,
         "aa-coding": 41.2774,
@@ -8190,7 +8190,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-5-397b-a17b-non-reasoning",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 53.531,
+      "medianOutputSpeed": 53.6637,
       "aa": {
         "aa-intelligence": 40.0985,
         "aa-coding": 37.4334,
@@ -8228,7 +8228,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-5-omni-flash",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 274.5633,
+      "medianOutputSpeed": 257.2648,
       "aa": {
         "aa-intelligence": 25.8693,
         "aa-coding": 14.0432,
@@ -8304,7 +8304,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-next-80b-a3b-instruct",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 143.2136,
+      "medianOutputSpeed": 143.4291,
       "aa": {
         "aa-intelligence": 20.106,
         "aa-coding": 15.2743,
@@ -8342,7 +8342,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-6-27b-non-reasoning",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 58.3109,
+      "medianOutputSpeed": 59.5796,
       "aa": {
         "aa-intelligence": 37.1444,
         "aa-coding": 26.5643,
@@ -8380,7 +8380,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-coder-next",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 75.3888,
+      "medianOutputSpeed": 80.5218,
       "aa": {
         "aa-intelligence": 28.2771,
         "aa-coding": 22.8851,
@@ -8418,7 +8418,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-5-4b-non-reasoning",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 208.3025,
+      "medianOutputSpeed": 209.5709,
       "aa": {
         "aa-intelligence": 22.6013,
         "aa-coding": 13.6714,
@@ -8456,7 +8456,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-omni-30b-a3b-instruct",
       "contextWindowTokens": 65536.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 86.6955,
+      "medianOutputSpeed": 89.6611,
       "aa": {
         "aa-intelligence": 10.6765,
         "aa-coding": 7.2215,
@@ -8494,7 +8494,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-6-plus",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 53.3544,
+      "medianOutputSpeed": 53.3618,
       "aa": {
         "aa-intelligence": 49.9849,
         "aa-coding": 42.8732,
@@ -8532,7 +8532,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-5-4b",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 198.2938,
+      "medianOutputSpeed": 202.3668,
       "aa": {
         "aa-intelligence": 27.0756,
         "aa-coding": 17.4883,
@@ -8684,7 +8684,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-5-omni-plus",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 50.5453,
+      "medianOutputSpeed": 51.0302,
       "aa": {
         "aa-intelligence": 38.6333,
         "aa-coding": 27.6445,
@@ -8836,7 +8836,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/ring-2-6-1t",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 125.9913,
+      "medianOutputSpeed": 124.7248,
       "aa": {
         "aa-intelligence": 38.4564,
         "aa-coding": 33.3123,
@@ -8950,7 +8950,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/o1",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 111.2083,
+      "medianOutputSpeed": 110.9354,
       "aa": {
         "aa-intelligence": 30.7489,
         "aa-coding": 20.5072,
@@ -9064,7 +9064,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-4o-2024-08-06",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 85.8796,
+      "medianOutputSpeed": 85.9808,
       "aa": {
         "aa-intelligence": 18.6414,
         "aa-coding": 16.5895,
@@ -9140,7 +9140,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-4-turbo",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 23.3038,
+      "medianOutputSpeed": 24.0762,
       "aa": {
         "aa-intelligence": 13.7153,
         "aa-coding": 21.4873,
@@ -9292,7 +9292,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-4-1-nano",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 109.1695,
+      "medianOutputSpeed": 109.724,
       "aa": {
         "aa-intelligence": 13.0413,
         "aa-coding": 11.1672,
@@ -9330,7 +9330,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-4-non-reasoning",
       "contextWindowTokens": 1050000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 79.2952,
+      "medianOutputSpeed": 74.6631,
       "aa": {
         "aa-intelligence": 35.3898,
         "aa-coding": 40.9547,
@@ -9368,7 +9368,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-4-low",
       "contextWindowTokens": 1050000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 73.5902,
+      "medianOutputSpeed": 72.292,
       "aa": {
         "aa-intelligence": 47.9407,
         "aa-coding": 45.5703,
@@ -9406,7 +9406,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-4",
       "contextWindowTokens": 1050000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 80.8272,
+      "medianOutputSpeed": 79.3888,
       "aa": {
         "aa-intelligence": 56.7997,
         "aa-coding": 57.2496,
@@ -9482,7 +9482,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-1-codex",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 191.9817,
+      "medianOutputSpeed": 178.1956,
       "aa": {
         "aa-intelligence": 43.1145,
         "aa-coding": 36.6197,
@@ -9520,7 +9520,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-nano-minimal",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 157.661,
+      "medianOutputSpeed": 178.5082,
       "aa": {
         "aa-intelligence": 13.8399,
         "aa-coding": 14.2291,
@@ -9558,7 +9558,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/o3-mini-high",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 209.5641,
+      "medianOutputSpeed": 209.5251,
       "aa": {
         "aa-intelligence": 25.2105,
         "aa-coding": 17.3023,
@@ -9596,7 +9596,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-mini",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 96.4088,
+      "medianOutputSpeed": 95.8418,
       "aa": {
         "aa-intelligence": 41.1708,
         "aa-coding": 35.3009,
@@ -9634,7 +9634,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/o3-mini",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 214.869,
+      "medianOutputSpeed": 209.7624,
       "aa": {
         "aa-intelligence": 25.8632,
         "aa-coding": 17.8556,
@@ -9672,7 +9672,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-4-1",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 127.7144,
+      "medianOutputSpeed": 118.8007,
       "aa": {
         "aa-intelligence": 26.2763,
         "aa-coding": 21.7838,
@@ -9710,7 +9710,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 91.9408,
+      "medianOutputSpeed": 91.6855,
       "aa": {
         "aa-intelligence": 44.6256,
         "aa-coding": 36.0304,
@@ -9748,7 +9748,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-2",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 76.1397,
+      "medianOutputSpeed": 71.1275,
       "aa": {
         "aa-intelligence": 51.2766,
         "aa-coding": 48.6742,
@@ -9786,7 +9786,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-1",
       "contextWindowTokens": 272000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 122.3082,
+      "medianOutputSpeed": 120.2611,
       "aa": {
         "aa-intelligence": 47.6964,
         "aa-coding": 44.732,
@@ -9900,7 +9900,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-codex",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 188.6485,
+      "medianOutputSpeed": 181.722,
       "aa": {
         "aa-intelligence": 44.6313,
         "aa-coding": 38.8714,
@@ -9938,7 +9938,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-medium",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 100.5295,
+      "medianOutputSpeed": 97.347,
       "aa": {
         "aa-intelligence": 42.0293,
         "aa-coding": 38.9485,
@@ -10014,7 +10014,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-2-non-reasoning",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 70.3356,
+      "medianOutputSpeed": 60.3502,
       "aa": {
         "aa-intelligence": 33.5705,
         "aa-coding": 34.6766,
@@ -10052,7 +10052,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-low",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 87.6288,
+      "medianOutputSpeed": 83.4493,
       "aa": {
         "aa-intelligence": 39.1972,
         "aa-coding": 30.7169,
@@ -10166,7 +10166,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-nano-medium",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 161.6083,
+      "medianOutputSpeed": 165.8542,
       "aa": {
         "aa-intelligence": 25.8811,
         "aa-coding": 22.8816,
@@ -10204,7 +10204,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-4-1-mini",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 85.1223,
+      "medianOutputSpeed": 82.0863,
       "aa": {
         "aa-intelligence": 22.8989,
         "aa-coding": 18.515,
@@ -10318,7 +10318,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-mini-medium",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 93.1694,
+      "medianOutputSpeed": 94.7528,
       "aa": {
         "aa-intelligence": 38.9362,
         "aa-coding": 32.8493,
@@ -10356,7 +10356,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-minimal",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 87.2668,
+      "medianOutputSpeed": 76.9987,
       "aa": {
         "aa-intelligence": 23.8866,
         "aa-coding": 25.0456,
@@ -10432,7 +10432,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-1-non-reasoning",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 122.0789,
+      "medianOutputSpeed": 120.5587,
       "aa": {
         "aa-intelligence": 27.4189,
         "aa-coding": 27.3043,
@@ -10470,7 +10470,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-nano",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 150.2266,
+      "medianOutputSpeed": 153.4952,
       "aa": {
         "aa-intelligence": 26.8329,
         "aa-coding": 20.2722,
@@ -10546,7 +10546,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-chatgpt",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 191.61,
+      "medianOutputSpeed": 186.9032,
       "aa": {
         "aa-intelligence": 21.8346,
         "aa-coding": 21.2016,
@@ -10584,7 +10584,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gpt-5-1-codex-mini",
       "contextWindowTokens": 400000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 214.0472,
+      "medianOutputSpeed": 212.7311,
       "aa": {
         "aa-intelligence": 38.6251,
         "aa-coding": 36.4198,
@@ -10622,7 +10622,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/llama-3-1-instruct-70b",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 41.1229,
+      "medianOutputSpeed": 40.433,
       "aa": {
         "aa-intelligence": 12.4733,
         "aa-coding": 10.9322,
@@ -10660,7 +10660,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/llama-3-1-instruct-8b",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 152.7921,
+      "medianOutputSpeed": 154.0438,
       "aa": {
         "aa-intelligence": 11.7584,
         "aa-coding": 4.9032,
@@ -10812,7 +10812,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/llama-3-2-instruct-1b",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 88.266,
+      "medianOutputSpeed": 88.0311,
       "aa": {
         "aa-intelligence": 6.2771,
         "aa-coding": 0.5787,
@@ -11268,7 +11268,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gemini-3-flash-reasoning",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 179.9418,
+      "medianOutputSpeed": 174.4497,
       "aa": {
         "aa-intelligence": 46.429,
         "aa-coding": 42.6171,
@@ -11344,7 +11344,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gemini-3-flash",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 175.228,
+      "medianOutputSpeed": 172.5883,
       "aa": {
         "aa-intelligence": 35.0479,
         "aa-coding": 37.8402,
@@ -11496,7 +11496,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gemini-2-5-flash",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 210.1703,
+      "medianOutputSpeed": 208.3361,
       "aa": {
         "aa-intelligence": 20.5637,
         "aa-coding": 17.7645,
@@ -11610,7 +11610,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gemma-3n-e4b",
       "contextWindowTokens": 32000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 47.9058,
+      "medianOutputSpeed": 49.4206,
       "aa": {
         "aa-intelligence": 6.3793,
         "aa-coding": 4.2158,
@@ -11724,7 +11724,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gemini-2-5-flash-lite-reasoning",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 334.8447,
+      "medianOutputSpeed": 331.9297,
       "aa": {
         "aa-intelligence": 17.5744,
         "aa-coding": 9.4732,
@@ -12104,7 +12104,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/gemini-2-5-flash-reasoning",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 225.7169,
+      "medianOutputSpeed": 229.1671,
       "aa": {
         "aa-intelligence": 27.0414,
         "aa-coding": 22.2082,
@@ -12674,7 +12674,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-opus-4-5",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 49.9812,
+      "medianOutputSpeed": 46.4161,
       "aa": {
         "aa-intelligence": 43.0907,
         "aa-coding": 42.9363,
@@ -12712,7 +12712,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-opus-4-6-adaptive",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 42.0099,
+      "medianOutputSpeed": 40.25,
       "aa": {
         "aa-intelligence": 52.9492,
         "aa-coding": 48.092,
@@ -12750,7 +12750,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-4-5-sonnet-thinking",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 42.7285,
+      "medianOutputSpeed": 42.2454,
       "aa": {
         "aa-intelligence": 43.0288,
         "aa-coding": 38.6293,
@@ -12788,7 +12788,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-4-5-sonnet",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 43.7906,
+      "medianOutputSpeed": 41.841,
       "aa": {
         "aa-intelligence": 37.1427,
         "aa-coding": 33.4666,
@@ -12864,7 +12864,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-4-1-opus-thinking",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 30.1512,
+      "medianOutputSpeed": 29.4812,
       "aa": {
         "aa-intelligence": 42.0,
         "aa-coding": 36.5228,
@@ -12940,7 +12940,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-4-1-opus",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 31.8542,
+      "medianOutputSpeed": 31.1988,
       "aa": {
         "aa-intelligence": 36.0,
         "aa-coding": null,
@@ -12978,7 +12978,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-4-sonnet",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 41.8602,
+      "medianOutputSpeed": 41.0936,
       "aa": {
         "aa-intelligence": 32.9972,
         "aa-coding": 30.6047,
@@ -13016,7 +13016,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-4-sonnet-thinking",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 41.9929,
+      "medianOutputSpeed": 41.0836,
       "aa": {
         "aa-intelligence": 38.6639,
         "aa-coding": 34.0558,
@@ -13054,7 +13054,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-4-opus-thinking",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 30.6351,
+      "medianOutputSpeed": 29.5037,
       "aa": {
         "aa-intelligence": 39.0,
         "aa-coding": 33.9787,
@@ -13092,7 +13092,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-4-opus",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 31.8469,
+      "medianOutputSpeed": 31.3357,
       "aa": {
         "aa-intelligence": 33.0,
         "aa-coding": null,
@@ -13130,7 +13130,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-opus-4-6",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 42.7254,
+      "medianOutputSpeed": 41.1297,
       "aa": {
         "aa-intelligence": 46.4611,
         "aa-coding": 47.5624,
@@ -13168,7 +13168,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/claude-opus-4-5-thinking",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 47.1956,
+      "medianOutputSpeed": 45.8765,
       "aa": {
         "aa-intelligence": 49.7271,
         "aa-coding": 47.8255,
@@ -13282,7 +13282,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mistral-large-2",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (License Required for Commercial Use)",
-      "medianOutputSpeed": 53.6696,
+      "medianOutputSpeed": 49.3535,
       "aa": {
         "aa-intelligence": 15.0918,
         "aa-coding": 13.7626,
@@ -13358,7 +13358,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/pixtral-large-2411",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (License Required for Commercial Use)",
-      "medianOutputSpeed": 53.3445,
+      "medianOutputSpeed": 49.409,
       "aa": {
         "aa-intelligence": 14.0002,
         "aa-coding": null,
@@ -13396,7 +13396,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mistral-small-3",
       "contextWindowTokens": 32000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 171.4934,
+      "medianOutputSpeed": 168.05,
       "aa": {
         "aa-intelligence": 12.6671,
         "aa-coding": null,
@@ -13510,7 +13510,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mistral-small-2402",
       "contextWindowTokens": 32768.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 181.5048,
+      "medianOutputSpeed": 167.8449,
       "aa": {
         "aa-intelligence": 9.0395,
         "aa-coding": null,
@@ -13624,7 +13624,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mistral-7b-instruct",
       "contextWindowTokens": 8192.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 93.6863,
+      "medianOutputSpeed": 92.7911,
       "aa": {
         "aa-intelligence": 7.4139,
         "aa-coding": null,
@@ -13700,7 +13700,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mistral-medium-3-1",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 68.8924,
+      "medianOutputSpeed": 67.2557,
       "aa": {
         "aa-intelligence": 21.2549,
         "aa-coding": 18.3361,
@@ -13738,7 +13738,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mistral-small-3-2",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 129.2424,
+      "medianOutputSpeed": 132.1109,
       "aa": {
         "aa-intelligence": 15.0667,
         "aa-coding": 13.3418,
@@ -13814,7 +13814,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mistral-small-3-1",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 167.0367,
+      "medianOutputSpeed": 163.6256,
       "aa": {
         "aa-intelligence": 14.4822,
         "aa-coding": 13.8854,
@@ -13890,7 +13890,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/devstral-small",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 52.1147,
+      "medianOutputSpeed": 64.9747,
       "aa": {
         "aa-intelligence": 15.2141,
         "aa-coding": 12.1423,
@@ -13966,7 +13966,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mistral-medium",
       "contextWindowTokens": 32768.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 59.9979,
+      "medianOutputSpeed": 59.2272,
       "aa": {
         "aa-intelligence": 9.011,
         "aa-coding": null,
@@ -14004,7 +14004,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mistral-medium-3",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 40.9306,
+      "medianOutputSpeed": 42.9901,
       "aa": {
         "aa-intelligence": 18.7575,
         "aa-coding": 13.5592,
@@ -14042,7 +14042,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/devstral-medium",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 43.4578,
+      "medianOutputSpeed": 47.4506,
       "aa": {
         "aa-intelligence": 18.6607,
         "aa-coding": 15.86,
@@ -15524,7 +15524,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/grok-4-20-0309",
       "contextWindowTokens": 2000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 180.8034,
+      "medianOutputSpeed": 173.8193,
       "aa": {
         "aa-intelligence": 48.4813,
         "aa-coding": 42.1647,
@@ -15600,7 +15600,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/grok-4-20",
       "contextWindowTokens": 2000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 185.2274,
+      "medianOutputSpeed": 179.0904,
       "aa": {
         "aa-intelligence": 49.332,
         "aa-coding": 40.4531,
@@ -15638,7 +15638,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/grok-4-20-non-reasoning",
       "contextWindowTokens": 2000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 170.7679,
+      "medianOutputSpeed": 164.3397,
       "aa": {
         "aa-intelligence": 28.9933,
         "aa-coding": 22.0293,
@@ -16132,7 +16132,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/minimax-m2-5",
       "contextWindowTokens": 204800.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 164.4923,
+      "medianOutputSpeed": 174.1583,
       "aa": {
         "aa-intelligence": 41.933,
         "aa-coding": 37.4299,
@@ -16170,7 +16170,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/minimax-m2",
       "contextWindowTokens": 204800.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 122.3583,
+      "medianOutputSpeed": 116.1536,
       "aa": {
         "aa-intelligence": 36.0873,
         "aa-coding": 29.2088,
@@ -16208,7 +16208,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/minimax-m2-1",
       "contextWindowTokens": 204800.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 187.9326,
+      "medianOutputSpeed": 208.1731,
       "aa": {
         "aa-intelligence": 39.4197,
         "aa-coding": 32.7722,
@@ -16436,7 +16436,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/kimi-k2-thinking",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 119.9544,
+      "medianOutputSpeed": 120.5987,
       "aa": {
         "aa-intelligence": 40.8932,
         "aa-coding": 34.8274,
@@ -16474,7 +16474,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/kimi-k2-5",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 44.1698,
+      "medianOutputSpeed": 44.2728,
       "aa": {
         "aa-intelligence": 46.8125,
         "aa-coding": 39.5518,
@@ -16550,7 +16550,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/kimi-k2-0905",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 25.1374,
+      "medianOutputSpeed": 25.2632,
       "aa": {
         "aa-intelligence": 30.8543,
         "aa-coding": 25.8803,
@@ -16626,7 +16626,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/step-3-5-flash-0202",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 225.5188,
+      "medianOutputSpeed": 214.0879,
       "aa": {
         "aa-intelligence": 37.7975,
         "aa-coding": 31.6401,
@@ -16816,7 +16816,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/granite-3-3-8b-instruct",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 352.9533,
+      "medianOutputSpeed": 341.0153,
       "aa": {
         "aa-intelligence": 6.9972,
         "aa-coding": 3.3565,
@@ -16854,7 +16854,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/reka-flash",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 56.471,
+      "medianOutputSpeed": 57.453,
       "aa": {
         "aa-intelligence": 11.9673,
         "aa-coding": null,
@@ -16892,7 +16892,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/hermes-3-llama-3-1-70b",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 29.5905,
+      "medianOutputSpeed": 29.5485,
       "aa": {
         "aa-intelligence": 10.6474,
         "aa-coding": null,
@@ -16930,7 +16930,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mimo-v2-flash-reasoning",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 126.8052,
+      "medianOutputSpeed": 125.3663,
       "aa": {
         "aa-intelligence": 39.2421,
         "aa-coding": 31.8042,
@@ -16968,7 +16968,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/mimo-v2-pro",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 42.7069,
+      "medianOutputSpeed": 43.3489,
       "aa": {
         "aa-intelligence": 49.2015,
         "aa-coding": 41.4317,
@@ -17120,7 +17120,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/glm-4-7-non-reasoning",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 72.3038,
+      "medianOutputSpeed": 71.9484,
       "aa": {
         "aa-intelligence": 34.163,
         "aa-coding": 32.0076,
@@ -17158,7 +17158,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/glm-5-non-reasoning",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 66.5547,
+      "medianOutputSpeed": 64.9088,
       "aa": {
         "aa-intelligence": 40.5712,
         "aa-coding": 39.0327,
@@ -17196,7 +17196,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/glm-4-7",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 76.9485,
+      "medianOutputSpeed": 77.6824,
       "aa": {
         "aa-intelligence": 42.108,
         "aa-coding": 36.2584,
@@ -17234,7 +17234,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/glm-5",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 81.6805,
+      "medianOutputSpeed": 76.988,
       "aa": {
         "aa-intelligence": 49.7696,
         "aa-coding": 44.1814,
@@ -17272,7 +17272,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/glm-4.5",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 48.8754,
+      "medianOutputSpeed": 48.578,
       "aa": {
         "aa-intelligence": 26.419,
         "aa-coding": 26.2591,
@@ -17310,7 +17310,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/glm-4-6",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 41.9506,
+      "medianOutputSpeed": 43.8617,
       "aa": {
         "aa-intelligence": 30.2422,
         "aa-coding": 30.2259,
@@ -17424,7 +17424,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/glm-4-7-flash",
       "contextWindowTokens": 200000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 87.8801,
+      "medianOutputSpeed": 84.3052,
       "aa": {
         "aa-intelligence": 30.1452,
         "aa-coding": 25.8733,
@@ -17462,7 +17462,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/glm-4-5v-reasoning",
       "contextWindowTokens": 64000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 27.667,
+      "medianOutputSpeed": 29.1776,
       "aa": {
         "aa-intelligence": 15.0932,
         "aa-coding": 10.9042,
@@ -17500,7 +17500,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/glm-4-6v",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 90.2203,
+      "medianOutputSpeed": 90.6734,
       "aa": {
         "aa-intelligence": 17.1004,
         "aa-coding": 11.0866,
@@ -17766,7 +17766,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/jamba-1-6-mini",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 180.6881,
+      "medianOutputSpeed": 182.4708,
       "aa": {
         "aa-intelligence": 7.8708,
         "aa-coding": null,
@@ -17804,7 +17804,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/jamba-1-6-large",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 57.132,
+      "medianOutputSpeed": 58.1697,
       "aa": {
         "aa-intelligence": 10.5553,
         "aa-coding": null,
@@ -17994,7 +17994,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen-turbo",
       "contextWindowTokens": 1000000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 59.7264,
+      "medianOutputSpeed": 61.2498,
       "aa": {
         "aa-intelligence": 11.9736,
         "aa-coding": null,
@@ -18108,7 +18108,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-vl-235b-a22b-instruct",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 45.8549,
+      "medianOutputSpeed": 46.3236,
       "aa": {
         "aa-intelligence": 20.7505,
         "aa-coding": 16.5053,
@@ -18146,7 +18146,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-32b-instruct-reasoning",
       "contextWindowTokens": 32768.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 85.3584,
+      "medianOutputSpeed": 84.241,
       "aa": {
         "aa-intelligence": 16.5266,
         "aa-coding": 13.8258,
@@ -18184,7 +18184,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-32b-instruct",
       "contextWindowTokens": 32768.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 88.2933,
+      "medianOutputSpeed": 88.6602,
       "aa": {
         "aa-intelligence": 14.5323,
         "aa-coding": null,
@@ -18260,7 +18260,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-5-27b",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 77.4086,
+      "medianOutputSpeed": 77.3206,
       "aa": {
         "aa-intelligence": 42.069,
         "aa-coding": 34.873,
@@ -18298,7 +18298,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-vl-30b-a3b-reasoning",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 108.8066,
+      "medianOutputSpeed": 109.7445,
       "aa": {
         "aa-intelligence": 19.6815,
         "aa-coding": 13.1418,
@@ -18336,7 +18336,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-14b-instruct-reasoning",
       "contextWindowTokens": 32768.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 59.1242,
+      "medianOutputSpeed": 60.7146,
       "aa": {
         "aa-intelligence": 16.1876,
         "aa-coding": 13.0577,
@@ -18374,7 +18374,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-235b-a22b-instruct",
       "contextWindowTokens": 32768.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 61.3242,
+      "medianOutputSpeed": 59.3841,
       "aa": {
         "aa-intelligence": 16.965,
         "aa-coding": 13.9941,
@@ -18412,7 +18412,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-5-35b-a3b",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 149.458,
+      "medianOutputSpeed": 146.4552,
       "aa": {
         "aa-intelligence": 37.1222,
         "aa-coding": 30.2539,
@@ -18450,7 +18450,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-vl-32b-instruct",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 69.7438,
+      "medianOutputSpeed": 71.4177,
       "aa": {
         "aa-intelligence": 17.1906,
         "aa-coding": 15.5864,
@@ -18526,7 +18526,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-coder-480b-a35b-instruct",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 63.2297,
+      "medianOutputSpeed": 60.6143,
       "aa": {
         "aa-intelligence": 24.771,
         "aa-coding": 24.5861,
@@ -18564,7 +18564,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-coder-30b-a3b-instruct",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 87.2668,
+      "medianOutputSpeed": 87.9212,
       "aa": {
         "aa-intelligence": 19.9773,
         "aa-coding": 19.3603,
@@ -18602,7 +18602,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-235b-a22b-instruct-2507-reasoning",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 54.7422,
+      "medianOutputSpeed": 53.6167,
       "aa": {
         "aa-intelligence": 29.5444,
         "aa-coding": 23.2113,
@@ -18640,7 +18640,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-vl-30b-a3b-instruct",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 111.6629,
+      "medianOutputSpeed": 111.4121,
       "aa": {
         "aa-intelligence": 16.0469,
         "aa-coding": 14.3027,
@@ -18716,7 +18716,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-8b-instruct",
       "contextWindowTokens": 32768.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 38.3201,
+      "medianOutputSpeed": 38.7541,
       "aa": {
         "aa-intelligence": 10.6326,
         "aa-coding": 7.1093,
@@ -18830,7 +18830,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-max-thinking-preview",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 51.6298,
+      "medianOutputSpeed": 50.3663,
       "aa": {
         "aa-intelligence": 32.4841,
         "aa-coding": 24.502,
@@ -19020,7 +19020,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-vl-32b-reasoning",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 88.6759,
+      "medianOutputSpeed": 89.4872,
       "aa": {
         "aa-intelligence": 24.7151,
         "aa-coding": 14.5412,
@@ -19058,7 +19058,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-vl-235b-a22b-reasoning",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 32.4217,
+      "medianOutputSpeed": 32.9086,
       "aa": {
         "aa-intelligence": 27.6424,
         "aa-coding": 20.8859,
@@ -19096,7 +19096,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-8b-instruct-reasoning",
       "contextWindowTokens": 131072.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 37.1859,
+      "medianOutputSpeed": 37.3999,
       "aa": {
         "aa-intelligence": 13.1756,
         "aa-coding": 9.0383,
@@ -19172,7 +19172,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-vl-8b-reasoning",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 110.2677,
+      "medianOutputSpeed": 112.1914,
       "aa": {
         "aa-intelligence": 16.6631,
         "aa-coding": 9.8169,
@@ -19286,7 +19286,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-max",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 59.5053,
+      "medianOutputSpeed": 57.7143,
       "aa": {
         "aa-intelligence": 31.377,
         "aa-coding": 26.4064,
@@ -19324,7 +19324,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-14b-instruct",
       "contextWindowTokens": 32768.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 60.3826,
+      "medianOutputSpeed": 61.4139,
       "aa": {
         "aa-intelligence": 12.7584,
         "aa-coding": 12.3702,
@@ -19362,7 +19362,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-30b-a3b-2507-reasoning",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 136.6119,
+      "medianOutputSpeed": 129.1278,
       "aa": {
         "aa-intelligence": 22.4131,
         "aa-coding": 14.6465,
@@ -19552,7 +19552,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-vl-8b-instruct",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 118.9637,
+      "medianOutputSpeed": 119.7073,
       "aa": {
         "aa-intelligence": 14.3014,
         "aa-coding": 7.3022,
@@ -19704,7 +19704,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-30b-a3b-instruct",
       "contextWindowTokens": 32768.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 60.8432,
+      "medianOutputSpeed": 61.9586,
       "aa": {
         "aa-intelligence": 12.527,
         "aa-coding": 13.3418,
@@ -19742,7 +19742,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-5-27b-non-reasoning",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 87.0847,
+      "medianOutputSpeed": 87.9617,
       "aa": {
         "aa-intelligence": 37.1787,
         "aa-coding": 33.4421,
@@ -19780,7 +19780,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-max-preview",
       "contextWindowTokens": 262144.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 63.3449,
+      "medianOutputSpeed": 63.8191,
       "aa": {
         "aa-intelligence": 26.0841,
         "aa-coding": 25.477,
@@ -19856,7 +19856,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/qwen3-6-max",
       "contextWindowTokens": 256000.0,
       "openSourceCategorization": "Proprietary",
-      "medianOutputSpeed": 43.405,
+      "medianOutputSpeed": 42.9708,
       "aa": {
         "aa-intelligence": 51.814,
         "aa-coding": 44.9179,
@@ -19970,7 +19970,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelUrl": "/models/ling-flash-2-0",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "Open Weights (Permissive License)",
-      "medianOutputSpeed": 74.3144,
+      "medianOutputSpeed": 76.7365,
       "aa": {
         "aa-intelligence": 15.7441,
         "aa-coding": 16.7158,
