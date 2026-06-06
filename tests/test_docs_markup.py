@@ -52,6 +52,22 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertNotIn("ranked.slice(0, 250)", app_js)
         self.assertNotIn("models.slice(0, 120)", app_js)
 
+    def test_custom_weights_include_source_weights_and_scatter_leaders(self):
+        app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(encoding="utf-8")
+        css = (Path(__file__).resolve().parents[1] / "docs" / "styles.css").read_text(encoding="utf-8")
+
+        self.assertIn("source-weight-controls", app_js)
+        self.assertIn("combinedMetricWeightsFromSources", app_js)
+        self.assertIn("scatter-leader", app_js)
+        self.assertIn(".scatter-leader", css)
+        self.assertNotIn("Open AA page", app_js)
+
+    def test_model_icons_use_local_assets(self):
+        data = (Path(__file__).resolve().parents[1] / "docs" / "data" / "models.json").read_text(encoding="utf-8")
+
+        self.assertIn('"src": "assets/logos/', data)
+        self.assertNotIn('"src": "https://artificialanalysis.ai/img/logos/', data)
+
 
 if __name__ == "__main__":
     unittest.main()

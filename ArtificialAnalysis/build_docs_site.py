@@ -21,6 +21,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT_CSV = PROJECT_ROOT / "ArtificialAnalysis" / RAW_SCORES_FILENAME
 DEFAULT_OUTPUT_JSON = PROJECT_ROOT / "docs" / "data" / "models.json"
 DEFAULT_OUTPUT_JS = PROJECT_ROOT / "docs" / "data" / "models.js"
+LOCAL_LOGO_DIR = "assets/logos"
 
 ARTICLE_URL = "https://zhuanlan.zhihu.com/p/2032797597627311070?share_code=YgrFlZy1McBQ&utm_psn=2043622787617641823"
 SOURCE_URL = "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index"
@@ -99,61 +100,84 @@ PROVIDER_LOGO_SLUGS = {
     "xAI": "xai",
     "Z AI": "z-ai",
 }
-AA_LOGO_BASE_URL = "https://artificialanalysis.ai/img/logos"
 EXTERNAL_SOURCES = [
     {
         "id": "artificial-analysis",
         "label": "Artificial Analysis",
+        "icon": "AA",
         "url": SOURCE_URL,
         "category": "Composite benchmark",
         "coverage": "520+ model rows",
         "focus": "Composite intelligence, coding, agentic scores, token usage, cost, release date.",
         "note": "Primary source for AInsights Index scoring and operational metrics.",
+        "scoreStatus": "active",
+        "defaultWeight": 100,
+        "relatedMetrics": [spec.column for spec in SCORE_SPECS],
     },
     {
         "id": "arena",
         "label": "Arena / LMArena",
+        "icon": "AR",
         "url": "https://arena.ai/leaderboard/",
         "category": "Human preference",
         "coverage": "Text, code, vision, document, search, image and video arenas",
         "focus": "Blind side-by-side human preference rankings across real user prompts.",
         "note": "Useful as a general-experience cross-check, but not directly comparable to fixed benchmark scores.",
+        "scoreStatus": "mapped",
+        "defaultWeight": 0,
+        "relatedMetrics": ["IFBench", "CritPt"],
     },
     {
         "id": "livebench",
         "label": "LiveBench",
+        "icon": "LB",
         "url": "https://livebench.ai/",
         "category": "Contamination-resistant benchmark",
         "coverage": "Global, reasoning, coding, math, data analysis, language, IF",
         "focus": "Fresh benchmark releases intended to reduce training-data leakage.",
         "note": "Useful for checking whether static benchmark wins still hold on newer tasks.",
+        "scoreStatus": "mapped",
+        "defaultWeight": 0,
+        "relatedMetrics": ["LiveCodeBench", "AIME 2025", "GPQA Diamond", "IFBench"],
     },
     {
         "id": "swe-bench",
         "label": "SWE-bench",
+        "icon": "SWE",
         "url": "https://www.swebench.com/",
         "category": "Software engineering",
         "coverage": "Full, Verified, Lite, Multilingual, Multimodal",
         "focus": "Real GitHub issue resolution, commonly reported as percent resolved.",
         "note": "Best treated as an agent/tooling benchmark rather than a pure base-model leaderboard.",
+        "scoreStatus": "mapped",
+        "defaultWeight": 0,
+        "relatedMetrics": ["Terminal-Bench Hard", "SciCode", "LiveCodeBench", "APEX-Agents-AA", "ITBench-AA"],
     },
     {
         "id": "helm",
         "label": "Stanford HELM",
+        "icon": "HELM",
         "url": "https://crfm.stanford.edu/helm/index.html",
         "category": "Holistic evaluation",
         "coverage": "Capabilities, safety, transparency, domain leaderboards",
         "focus": "Transparent, scenario-based evaluation with reproducibility emphasis.",
         "note": "Useful as a methodology benchmark and source for caveats beyond headline rank.",
+        "scoreStatus": "mapped",
+        "defaultWeight": 0,
+        "relatedMetrics": ["Humanity's Last Exam", "GPQA Diamond", "MMMU-Pro", "IFBench", "CritPt"],
     },
     {
         "id": "huggingface-leaderboards",
         "label": "Hugging Face Leaderboards",
+        "icon": "HF",
         "url": "https://huggingface.co/docs/leaderboards/index",
         "category": "Community and reproducible evals",
         "coverage": "Eval Results, community Spaces, Open LLM Leaderboard archive",
         "focus": "Hub-hosted model eval results and community-maintained leaderboards.",
         "note": "Useful for open-model reproducibility checks and benchmark result discovery.",
+        "scoreStatus": "mapped",
+        "defaultWeight": 0,
+        "relatedMetrics": ["MMMU-Pro", "AIME 2025", "GPQA Diamond", "LiveCodeBench"],
     },
 ]
 
@@ -376,11 +400,12 @@ def open_source_type(category: str) -> str:
 def model_icon(creator: str, model: str = "") -> dict[str, str]:
     title = creator.strip() or model.strip() or "Unknown"
     label = PROVIDER_ICON_LABELS.get(title) or _initials(title)
+    slug = provider_logo_slug(title)
     return {
         "label": label,
         "fallbackLabel": label,
         "title": title,
-        "src": f"{AA_LOGO_BASE_URL}/{provider_logo_slug(title)}_small.svg",
+        "src": f"{LOCAL_LOGO_DIR}/{slug}_small.svg",
     }
 
 

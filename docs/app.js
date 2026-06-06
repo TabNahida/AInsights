@@ -14,12 +14,22 @@ const copy = {
       ranking: "完整排名",
     },
     backToRanking: "返回完整排名",
-    openOnAA: "打开 AA 页面",
     modelNotFound: "没有找到这个模型",
     search: "搜索",
     searchPlaceholder: "模型或机构",
     dedupe: "去除重复档位",
     customTitle: "自定义占比",
+    metricWeightsTitle: "AA 子项权重",
+    metricWeightsSubtitle: "直接参与当前自定义排名的逐项权重",
+    sourceWeightsTitle: "数据源权重",
+    sourceWeightsSubtitle: "外部测评源按相关 AA 子项映射，调整后会重新分配细粒度权重",
+    sourceWeightStatuses: {
+      active: "主数据源",
+      mapped: "映射到现有子项",
+      reference: "参考源",
+    },
+    relatedMetrics: "{count} 个相关子项",
+    detailSourceCoverage: "{available}/{total} 个相关子项有分数",
     reset: "重置",
     empty: "没有符合条件的模型",
     loadFailed: "数据加载失败：{message}",
@@ -140,12 +150,22 @@ const copy = {
       ranking: "Full ranking",
     },
     backToRanking: "Back to full ranking",
-    openOnAA: "Open AA page",
     modelNotFound: "Model not found",
     search: "Search",
     searchPlaceholder: "Model or lab",
     dedupe: "Remove duplicate tiers",
     customTitle: "Custom weights",
+    metricWeightsTitle: "AA benchmark weights",
+    metricWeightsSubtitle: "Fine-grained weights used directly by the custom ranking",
+    sourceWeightsTitle: "Source weights",
+    sourceWeightsSubtitle: "External sources map onto related AA metrics and redistribute fine-grained weights",
+    sourceWeightStatuses: {
+      active: "Primary source",
+      mapped: "Mapped to available metrics",
+      reference: "Reference source",
+    },
+    relatedMetrics: "{count} related metrics",
+    detailSourceCoverage: "{available}/{total} related metrics scored",
     reset: "Reset",
     empty: "No models match the current filters",
     loadFailed: "Failed to load data: {message}",
@@ -264,6 +284,7 @@ const state = {
   dedupe: true,
   query: "",
   customWeights: {},
+  sourceWeights: {},
   language: getInitialLanguage(),
   page: initialRoute.page,
   modelId: initialRoute.modelId,
@@ -354,7 +375,8 @@ async function init() {
     state.data = window.AINSIGHTS_MODELS_DATA || (await fetchJsonData());
     state.presetId = state.data.defaultPreset;
     state.dedupe = Boolean(state.data.defaultDedupe);
-    state.customWeights = Object.fromEntries(state.data.metrics.map((metric) => [metric.key, metric.defaultWeight]));
+    state.sourceWeights = defaultSourceWeights();
+    state.customWeights = combinedMetricWeightsFromSources();
     els.dedupeToggle.checked = state.dedupe;
     bindControlEvents();
     renderStaticControls();
@@ -381,7 +403,8 @@ function bindControlEvents() {
     render();
   });
   els.resetWeightsButton.addEventListener("click", () => {
-    state.customWeights = Object.fromEntries(state.data.metrics.map((metric) => [metric.key, metric.defaultWeight]));
+    state.sourceWeights = defaultSourceWeights();
+    state.customWeights = combinedMetricWeightsFromSources();
     state.presetId = "custom";
     render();
   });
@@ -690,14 +713,83 @@ function renderSummary(filteredCount, visibleCount, scoredCount, preset) {
   `;
 }
 
+function defaultMetricWeights() {
+  return Object.fromEntries(state.data.metrics.map((metric) => [metric.key, Number(metric.defaultWeight || 0)]));
+}
+
+function defaultSourceWeights() {
+  return Object.fromEntries((state.data.externalSources || []).map((source) => [source.id, Number(source.defaultWeight || 0)]));
+}
+
+function sourceMetricKeys(source) {
+  const knownMetrics = new Set(state.data.metrics.map((metric) => metric.key));
+  return (source.relatedMetrics || []).filter((key) => knownMetrics.has(key));
+}
+
+function combinedMetricWeightsFromSources() {
+  const sources = state.data.externalSources || [];
+  const weights = Object.fromEntries(state.data.metrics.map((metric) => [metric.key, 0]));
+  let hasMappedWeight = false;
+
+  for (const source of sources) {
+    const sourceWeight = Number(state.sourceWeights[source.id] || 0);
+    const relatedMetrics = sourceMetricKeys(source);
+    if (sourceWeight <= 0 || relatedMetrics.length === 0) continue;
+    hasMappedWeight = true;
+
+    const sourceDistribution = source.id === "artificial-analysis"
+      ? state.data.presets["zhihu-adjusted"]?.weights || {}
+      : null;
+    const distributionTotal = sourceDistribution
+      ? relatedMetrics.reduce((sum, key) => sum + Math.max(0, Number(sourceDistribution[key] || 0)), 0)
+      : relatedMetrics.length;
+
+    if (distributionTotal <= 0) continue;
+    for (const key of relatedMetrics) {
+      const share = sourceDistribution
+        ? Math.max(0, Number(sourceDistribution[key] || 0)) / distributionTotal
+        : 1 / relatedMetrics.length;
+      weights[key] += sourceWeight * share;
+    }
+  }
+
+  return hasMappedWeight ? weights : defaultMetricWeights();
+}
+
+function syncMetricControlValues() {
+  els.weightsGrid.querySelectorAll("[data-metric-key]").forEach((input) => {
+    const value = state.customWeights[input.dataset.metricKey] ?? 0;
+    input.value = value;
+    const output = input.closest(".weight-control")?.querySelector("output");
+    if (output) output.value = formatWeight(value);
+  });
+}
+
 function renderWeights() {
-  els.weightsGrid.innerHTML = "";
+  els.weightsGrid.innerHTML = `
+    <section class="weight-group">
+      <div class="weight-group-head">
+        <h3>${escapeHtml(tr("metricWeightsTitle"))}</h3>
+        <p>${escapeHtml(tr("metricWeightsSubtitle"))}</p>
+      </div>
+      <div class="metric-weight-controls" data-weight-controls="metrics"></div>
+    </section>
+    <section class="weight-group">
+      <div class="weight-group-head">
+        <h3>${escapeHtml(tr("sourceWeightsTitle"))}</h3>
+        <p>${escapeHtml(tr("sourceWeightsSubtitle"))}</p>
+      </div>
+      <div class="source-weight-controls" data-weight-controls="sources"></div>
+    </section>
+  `;
+  const metricTarget = els.weightsGrid.querySelector('[data-weight-controls="metrics"]');
   for (const metric of state.data.metrics) {
     const fragment = els.metricTemplate.content.cloneNode(true);
     const labelText = fragment.querySelector("span");
     const input = fragment.querySelector("input");
     const output = fragment.querySelector("output");
     labelText.textContent = metric.label;
+    input.dataset.metricKey = metric.key;
     input.value = state.customWeights[metric.key] ?? metric.defaultWeight;
     output.value = formatWeight(input.value);
     input.addEventListener("input", (event) => {
@@ -705,8 +797,40 @@ function renderWeights() {
       output.value = formatWeight(event.target.value);
       renderResults(state.data.presets.custom);
     });
-    els.weightsGrid.append(fragment);
+    metricTarget.append(fragment);
   }
+  renderSourceWeights(els.weightsGrid.querySelector('[data-weight-controls="sources"]'));
+}
+
+function renderSourceWeights(target) {
+  const sources = state.data.externalSources || [];
+  target.innerHTML = sources.map((source) => {
+    const relatedMetrics = sourceMetricKeys(source);
+    const canMap = relatedMetrics.length > 0;
+    const value = state.sourceWeights[source.id] ?? source.defaultWeight ?? 0;
+    const status = tr(`sourceWeightStatuses.${source.scoreStatus || (canMap ? "mapped" : "reference")}`);
+    return `
+      <label class="source-weight-card${canMap ? "" : " is-reference"}">
+        <span class="source-weight-icon">${escapeHtml(source.icon || initials(source.label))}</span>
+        <span class="source-weight-copy">
+          <strong>${escapeHtml(source.label)}</strong>
+          <em>${escapeHtml(status)} · ${escapeHtml(tr("relatedMetrics", { count: relatedMetrics.length }))}</em>
+        </span>
+        <input type="range" min="0" max="100" step="1" value="${escapeHtml(value)}" data-source-weight="${escapeHtml(source.id)}"${canMap ? "" : " disabled"} />
+        <output>${escapeHtml(formatWeight(value))}</output>
+      </label>
+    `;
+  }).join("");
+
+  target.querySelectorAll("[data-source-weight]").forEach((input) => {
+    input.addEventListener("input", (event) => {
+      state.sourceWeights[event.target.dataset.sourceWeight] = Number(event.target.value);
+      event.target.closest(".source-weight-card").querySelector("output").value = formatWeight(event.target.value);
+      state.customWeights = combinedMetricWeightsFromSources();
+      syncMetricControlValues();
+      renderResults(state.data.presets.custom);
+    });
+  });
 }
 
 function renderHome(models) {
@@ -809,9 +933,9 @@ function renderCostScatter(models) {
     return;
   }
 
-  const width = 980;
-  const height = 500;
-  const margin = { top: 42, right: 58, bottom: 76, left: 72 };
+  const width = 1180;
+  const height = 560;
+  const margin = { top: 42, right: 220, bottom: 76, left: 210 };
   const plotWidth = width - margin.left - margin.right;
   const plotHeight = height - margin.top - margin.bottom;
   const costs = models.map(modelCost);
@@ -833,7 +957,13 @@ function renderCostScatter(models) {
   const yTicks = linearTicks(yMin, yMax, 5);
   const quadrantX = xFor(costThreshold);
   const quadrantY = yFor(scoreThreshold);
-  const labelOrder = new Map(scatterLabelModels(models, costThreshold, scoreThreshold).map((model, index) => [model.modelKey, index]));
+  const points = models.map((model, index) => ({
+    model,
+    index,
+    x: xFor(modelCost(model)),
+    y: yFor(model.score),
+  }));
+  const labelPlacements = scatterLabelPlacements(points, margin, plotWidth, plotHeight, width);
   const providers = [...new Set(models.map((model) => model.creator || tr("unknownCreator")))].slice(0, 10);
 
   els.costScatter.innerHTML = `
@@ -859,17 +989,14 @@ function renderCostScatter(models) {
         <line class="scatter-axis" x1="${margin.left}" x2="${margin.left}" y1="${margin.top}" y2="${height - margin.bottom}"></line>
         <text class="scatter-axis-label" x="${margin.left + plotWidth / 2}" y="${height - 18}" text-anchor="middle">${escapeHtml(tr("scatterXAxis"))}</text>
         <text class="scatter-axis-label" transform="translate(22 ${margin.top + plotHeight / 2}) rotate(-90)" text-anchor="middle">${escapeHtml(tr("scatterYAxis"))}</text>
-        ${models.map((model, index) => {
-          const x = xFor(modelCost(model));
-          const y = yFor(model.score);
-          const labelIndex = labelOrder.get(model.modelKey);
-          const placement = scatterLabelPlacement(x, y, labelIndex ?? index, margin, plotWidth, plotHeight);
-          const labeled = labelOrder.has(model.modelKey);
+        ${points.map(({ model, index, x, y }) => {
+          const placement = labelPlacements.get(model.modelKey);
           return `
-            <g class="scatter-point${labeled ? " is-labeled" : ""}">
-              <circle cx="${x}" cy="${y}" r="${labeled ? 6.4 : 4.8}" fill="${providerColor(model, index)}"></circle>
+            <g class="scatter-point is-labeled">
+              ${placement ? `<path class="scatter-leader" d="${placement.path}"></path>` : ""}
+              <circle cx="${x}" cy="${y}" r="5.6" fill="${providerColor(model, index)}"></circle>
               <title>${escapeHtml(`${model.model} · ${formatNumber(model.score)} · ${formatMoney(modelCost(model))}`)}</title>
-              ${labeled ? `<text class="scatter-label" x="${placement.x}" y="${placement.y}" text-anchor="${placement.anchor}">${escapeHtml(model.model)}</text>` : ""}
+              ${placement ? `<text class="scatter-label" x="${placement.x}" y="${placement.y}" text-anchor="${placement.anchor}">${escapeHtml(scatterLabelText(model.model))}</text>` : ""}
             </g>
           `;
         }).join("")}
@@ -932,16 +1059,30 @@ function renderSourceExplorer(target, compact = false) {
   target.innerHTML = sourceCardsHtml(compact);
 }
 
-function sourceCardsHtml(compact = false) {
+function sourceCardsHtml(compact = false, model = null) {
   const sources = state.data.externalSources || [];
-  return sources.map((source) => `
+  return sources.map((source) => {
+    const relatedMetrics = sourceMetricKeys(source);
+    const coverage = currentSourceCoverage(source, model);
+    const status = tr(`sourceWeightStatuses.${source.scoreStatus || (relatedMetrics.length ? "mapped" : "reference")}`);
+    return `
     <a class="source-card${compact ? " compact" : ""}" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">
-      <span>${escapeHtml(source.category || tr("source"))}</span>
+      <span class="source-card-icon">${escapeHtml(source.icon || initials(source.label))}</span>
+      <span class="source-card-kicker">${escapeHtml(source.category || tr("source"))}</span>
       <strong>${escapeHtml(source.label)}</strong>
       <p>${escapeHtml(compact ? source.focus : `${source.focus} ${source.note || ""}`)}</p>
-      <em>${escapeHtml(source.coverage || "")}</em>
+      <em>${escapeHtml(coverage || `${status} · ${source.coverage || ""}`)}</em>
     </a>
-  `).join("");
+  `;
+  }).join("");
+}
+
+function currentSourceCoverage(source, model) {
+  if (!model) return "";
+  const relatedMetrics = sourceMetricKeys(source);
+  if (relatedMetrics.length === 0) return source.coverage || "";
+  const available = relatedMetrics.filter((key) => Number.isFinite(model.scores?.[key])).length;
+  return tr("detailSourceCoverage", { available, total: relatedMetrics.length });
 }
 
 function renderRankings(models) {
@@ -1069,12 +1210,11 @@ function renderModelDetail(ranked, preset) {
 
   document.title = `${model.model} · ${tr("pageTitle")}`;
   const color = providerColor(model);
-  const aaUrl = aaModelUrl(model);
   const siblingRows = ranked.filter((row) => row.variantGroup === model.variantGroup);
   const benchmarkRows = benchmarkProfileRows(model);
 
   els.modelDetail.innerHTML = `
-    <a class="back-link" href="#ranking">${escapeHtml(tr("backToRanking"))}</a>
+    <a class="back-link" href="#ranking">${renderIcon("arrowLeft")}${escapeHtml(tr("backToRanking"))}</a>
     <section class="detail-hero" style="--detail-color: ${color}">
       <div class="detail-hero-main">
         ${renderModelIcon(model)}
@@ -1088,7 +1228,7 @@ function renderModelDetail(ranked, preset) {
           </div>
         </div>
       </div>
-      <a class="detail-aa-link" href="${escapeHtml(aaUrl)}" target="_blank" rel="noreferrer">${escapeHtml(tr("openOnAA"))}</a>
+      <div class="detail-hero-facts">${renderDetailHeroFacts(model)}</div>
     </section>
 
     <section class="detail-section">
@@ -1105,12 +1245,12 @@ function renderModelDetail(ranked, preset) {
           <h2>${escapeHtml(tr("detailCostTitle"))}</h2>
         </div>
         <div class="stat-grid">
-          ${renderDetailStat(tr("headers.score"), formatNumber(model.score), `#${model.rank}`)}
-          ${renderDetailStat(tr("headers.speed"), formatSpeed(model.medianOutputSpeed), tr("table.tokensPerSecond"))}
-          ${renderDetailStat(tr("headers.context"), formatTokens(model.contextWindowTokens), "")}
-          ${renderDetailStat(tr("table.input"), formatMoney(model.pricing?.inputPerMillionTokensUsd), tr("table.perMillion"))}
-          ${renderDetailStat(tr("table.output"), formatMoney(model.pricing?.outputPerMillionTokensUsd), tr("table.perMillion"))}
-          ${renderDetailStat("AA run", formatMoney(modelCost(model)), "cost")}
+          ${renderDetailStat(tr("headers.score"), formatNumber(model.score), `#${model.rank}`, "trophy")}
+          ${renderDetailStat(tr("headers.speed"), formatSpeed(model.medianOutputSpeed), tr("table.tokensPerSecond"), "gauge")}
+          ${renderDetailStat(tr("headers.context"), formatTokens(model.contextWindowTokens), "", "database")}
+          ${renderDetailStat(tr("table.input"), formatMoney(model.pricing?.inputPerMillionTokensUsd), tr("table.perMillion"), "arrowDown")}
+          ${renderDetailStat(tr("table.output"), formatMoney(model.pricing?.outputPerMillionTokensUsd), tr("table.perMillion"), "arrowUp")}
+          ${renderDetailStat("AA run", formatMoney(modelCost(model)), "cost", "dollar")}
         </div>
       </section>
 
@@ -1136,13 +1276,20 @@ function renderModelDetail(ranked, preset) {
       <div class="detail-section-head">
         <h2>${escapeHtml(tr("detailSourcesTitle"))}</h2>
       </div>
-      <div class="source-grid compact">${sourceCardsHtml(true)}</div>
+      <div class="source-grid compact">${sourceCardsHtml(true, model)}</div>
     </section>
   `;
 }
 
 function renderRankCards(model) {
   const ids = ["zhihu-adjusted", "aa-intelligence", "aa-coding", "aa-agentic"];
+  const iconByPreset = {
+    "zhihu-adjusted": "trophy",
+    "aa-intelligence": "brain",
+    "aa-coding": "code",
+    "aa-agentic": "network",
+    custom: "sliders",
+  };
   if (state.presetId === "custom") ids.push("custom");
   return ids.map((id) => {
     const ranked = rankForPreset(model, id);
@@ -1150,6 +1297,7 @@ function renderRankCards(model) {
     const rank = ranked ? `#${ranked.rank}` : tr("notAvailable");
     return `
       <article class="rank-card">
+        ${renderIcon(iconByPreset[id] || "trophy")}
         <span>${escapeHtml(presetLabel(id))}</span>
         <strong>${escapeHtml(score)}</strong>
         <em>${escapeHtml(rank)}</em>
@@ -1158,9 +1306,19 @@ function renderRankCards(model) {
   }).join("");
 }
 
-function renderDetailStat(label, value, meta) {
+function renderDetailHeroFacts(model) {
+  const facts = [
+    ["calendar", `${tr("releaseDate")}: ${formatDate(model.releaseDate)}`],
+    ["database", sourceTypeLabel(sourceType(model))],
+    ["gauge", `${formatNumber(model.score)} ${tr("headers.score")}`],
+  ];
+  return facts.map(([icon, label]) => `<span>${renderIcon(icon)}${escapeHtml(label)}</span>`).join("");
+}
+
+function renderDetailStat(label, value, meta, icon = "trophy") {
   return `
     <article class="detail-stat">
+      ${renderIcon(icon)}
       <span>${escapeHtml(label)}</span>
       <strong>${escapeHtml(value || tr("notAvailable"))}</strong>
       <em>${escapeHtml(meta || "")}</em>
@@ -1210,11 +1368,29 @@ function renderBenchmarkRow(row) {
   `;
 }
 
+function renderIcon(name) {
+  const paths = {
+    arrowLeft: '<path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path>',
+    arrowDown: '<path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path>',
+    arrowUp: '<path d="M12 19V5"></path><path d="m5 12 7-7 7 7"></path>',
+    brain: '<path d="M8 13a4 4 0 0 1-2-7.5A4 4 0 0 1 13 4a4 4 0 0 1 7 2.5A4 4 0 0 1 18 14"></path><path d="M8 13v3a4 4 0 0 0 4 4h1"></path><path d="M16 13v7"></path>',
+    calendar: '<path d="M8 2v4"></path><path d="M16 2v4"></path><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M3 10h18"></path>',
+    code: '<path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path>',
+    database: '<ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"></path>',
+    dollar: '<path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"></path>',
+    gauge: '<path d="M12 14l4-4"></path><path d="M3.3 18a10 10 0 1 1 17.4 0"></path>',
+    network: '<rect x="16" y="16" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="9" y="2" width="6" height="6" rx="1"></rect><path d="M12 8v4"></path><path d="M6 16l6-4 6 4"></path>',
+    sliders: '<path d="M4 21v-7"></path><path d="M4 10V3"></path><path d="M12 21v-9"></path><path d="M12 8V3"></path><path d="M20 21v-5"></path><path d="M20 12V3"></path><path d="M2 14h4"></path><path d="M10 8h4"></path><path d="M18 16h4"></path>',
+    trophy: '<path d="M8 21h8"></path><path d="M12 17v4"></path><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"></path><path d="M5 6H3a3 3 0 0 0 3 3h1"></path><path d="M19 6h2a3 3 0 0 1-3 3h-1"></path>',
+  };
+  return `<span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${paths[name] || paths.trophy}</svg></span>`;
+}
+
 function renderModelIcon(model) {
   const icon = model.modelIcon || {};
   const label = icon.fallbackLabel || icon.label || initials(model.creator || model.model);
   const title = icon.title || model.creator || model.model;
-  const src = typeof icon.src === "string" && icon.src.startsWith("https://artificialanalysis.ai/")
+  const src = typeof icon.src === "string" && !/^https?:\/\//i.test(icon.src)
     ? icon.src
     : "";
   const image = src
@@ -1299,13 +1475,6 @@ function modelHref(model) {
 
 function modelRouteId(model) {
   return String(model.slug || model.modelKey || model.model || "").trim();
-}
-
-function aaModelUrl(model) {
-  const path = model.modelUrl || "";
-  if (path.startsWith("http")) return path;
-  if (path.startsWith("/")) return `https://artificialanalysis.ai${path}`;
-  return state.data.source.url;
 }
 
 function getInitialLanguage() {
@@ -1486,24 +1655,61 @@ function providerColor(model, index = 0) {
   return providerColors[model.creator] || fallbackColors[index % fallbackColors.length];
 }
 
-function scatterLabelModels(models, costThreshold, scoreThreshold) {
-  const byScore = models.slice(0, 5);
-  const attractive = models
-    .filter((model) => model.score >= scoreThreshold && modelCost(model) <= costThreshold)
-    .sort((a, b) => b.score - a.score || modelCost(a) - modelCost(b))
-    .slice(0, 2);
-  return [...new Map([...byScore, ...attractive].map((model) => [model.modelKey, model])).values()].slice(0, 7);
+function scatterLabelText(label) {
+  const value = String(label || "");
+  return value.length > 34 ? `${value.slice(0, 31)}...` : value;
 }
 
-function scatterLabelPlacement(x, y, index, margin, plotWidth, plotHeight) {
-  const anchor = x > margin.left + plotWidth * 0.58 ? "end" : "start";
-  const labelX = anchor === "end" ? x - 12 : x + 12;
-  const offset = [-10, 8, 24, -28, 38, -38, -16, 46][index % 8];
-  return {
-    anchor,
-    x: labelX,
-    y: clamp(y + 4 + offset, margin.top + 14, margin.top + plotHeight - 8),
+function scatterLabelPlacements(points, margin, plotWidth, plotHeight, width) {
+  const splitX = margin.left + plotWidth * 0.52;
+  const sides = {
+    left: [],
+    right: [],
   };
+  for (const point of points) {
+    sides[point.x >= splitX ? "right" : "left"].push(point);
+  }
+
+  const placements = new Map();
+  layoutScatterLabelSide(sides.left, "left", placements, margin, plotWidth, plotHeight, width);
+  layoutScatterLabelSide(sides.right, "right", placements, margin, plotWidth, plotHeight, width);
+  return placements;
+}
+
+function layoutScatterLabelSide(points, side, placements, margin, plotWidth, plotHeight, width) {
+  if (points.length === 0) return;
+  const minY = margin.top + 14;
+  const maxY = margin.top + plotHeight - 10;
+  const gap = 17;
+  const sorted = [...points].sort((a, b) => a.y - b.y || b.model.score - a.model.score);
+  const labelYs = sorted.map((point) => clamp(point.y, minY, maxY));
+
+  for (let index = 1; index < labelYs.length; index += 1) {
+    labelYs[index] = Math.max(labelYs[index], labelYs[index - 1] + gap);
+  }
+  const overflow = labelYs[labelYs.length - 1] - maxY;
+  if (overflow > 0) {
+    for (let index = 0; index < labelYs.length; index += 1) labelYs[index] -= overflow;
+  }
+  for (let index = labelYs.length - 2; index >= 0; index -= 1) {
+    labelYs[index] = Math.min(labelYs[index], labelYs[index + 1] - gap);
+  }
+
+  const plotRight = margin.left + plotWidth;
+  for (let index = 0; index < sorted.length; index += 1) {
+    const point = sorted[index];
+    const labelY = clamp(labelYs[index], minY, maxY);
+    const labelX = side === "right" ? plotRight + 34 : margin.left - 34;
+    const anchor = side === "right" ? "start" : "end";
+    const elbowX = side === "right" ? plotRight + 12 : margin.left - 12;
+    const endX = side === "right" ? labelX - 8 : labelX + 8;
+    placements.set(point.model.modelKey, {
+      anchor,
+      x: clamp(labelX, 18, width - 18),
+      y: labelY + 4,
+      path: `M${point.x.toFixed(1)},${point.y.toFixed(1)} L${elbowX.toFixed(1)},${labelY.toFixed(1)} L${endX.toFixed(1)},${labelY.toFixed(1)}`,
+    });
+  }
 }
 
 function escapeHtml(value) {

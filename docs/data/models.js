@@ -1,6 +1,6 @@
 window.AINSIGHTS_MODELS_DATA = {
   "version": 1,
-  "generatedAt": "2026-06-06T06:29:28+00:00",
+  "generatedAt": "2026-06-06T14:51:24+00:00",
   "source": {
     "label": "Artificial Analysis Intelligence Evaluations",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -163,56 +163,122 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "id": "artificial-analysis",
       "label": "Artificial Analysis",
+      "icon": "AA",
       "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
       "category": "Composite benchmark",
       "coverage": "520+ model rows",
       "focus": "Composite intelligence, coding, agentic scores, token usage, cost, release date.",
-      "note": "Primary source for AInsights Index scoring and operational metrics."
+      "note": "Primary source for AInsights Index scoring and operational metrics.",
+      "scoreStatus": "active",
+      "defaultWeight": 100,
+      "relatedMetrics": [
+        "GDPval-AA",
+        "Terminal-Bench Hard",
+        "τ²-Bench Telecom",
+        "AA-LCR",
+        "AA-Omniscience Accuracy",
+        "AA-Omniscience Non-Hallucination Rate",
+        "Humanity's Last Exam",
+        "GPQA Diamond",
+        "SciCode",
+        "IFBench",
+        "CritPt",
+        "APEX-Agents-AA",
+        "ITBench-AA",
+        "MMMU-Pro",
+        "LiveCodeBench",
+        "AIME 2025"
+      ]
     },
     {
       "id": "arena",
       "label": "Arena / LMArena",
+      "icon": "AR",
       "url": "https://arena.ai/leaderboard/",
       "category": "Human preference",
       "coverage": "Text, code, vision, document, search, image and video arenas",
       "focus": "Blind side-by-side human preference rankings across real user prompts.",
-      "note": "Useful as a general-experience cross-check, but not directly comparable to fixed benchmark scores."
+      "note": "Useful as a general-experience cross-check, but not directly comparable to fixed benchmark scores.",
+      "scoreStatus": "mapped",
+      "defaultWeight": 0,
+      "relatedMetrics": [
+        "IFBench",
+        "CritPt"
+      ]
     },
     {
       "id": "livebench",
       "label": "LiveBench",
+      "icon": "LB",
       "url": "https://livebench.ai/",
       "category": "Contamination-resistant benchmark",
       "coverage": "Global, reasoning, coding, math, data analysis, language, IF",
       "focus": "Fresh benchmark releases intended to reduce training-data leakage.",
-      "note": "Useful for checking whether static benchmark wins still hold on newer tasks."
+      "note": "Useful for checking whether static benchmark wins still hold on newer tasks.",
+      "scoreStatus": "mapped",
+      "defaultWeight": 0,
+      "relatedMetrics": [
+        "LiveCodeBench",
+        "AIME 2025",
+        "GPQA Diamond",
+        "IFBench"
+      ]
     },
     {
       "id": "swe-bench",
       "label": "SWE-bench",
+      "icon": "SWE",
       "url": "https://www.swebench.com/",
       "category": "Software engineering",
       "coverage": "Full, Verified, Lite, Multilingual, Multimodal",
       "focus": "Real GitHub issue resolution, commonly reported as percent resolved.",
-      "note": "Best treated as an agent/tooling benchmark rather than a pure base-model leaderboard."
+      "note": "Best treated as an agent/tooling benchmark rather than a pure base-model leaderboard.",
+      "scoreStatus": "mapped",
+      "defaultWeight": 0,
+      "relatedMetrics": [
+        "Terminal-Bench Hard",
+        "SciCode",
+        "LiveCodeBench",
+        "APEX-Agents-AA",
+        "ITBench-AA"
+      ]
     },
     {
       "id": "helm",
       "label": "Stanford HELM",
+      "icon": "HELM",
       "url": "https://crfm.stanford.edu/helm/index.html",
       "category": "Holistic evaluation",
       "coverage": "Capabilities, safety, transparency, domain leaderboards",
       "focus": "Transparent, scenario-based evaluation with reproducibility emphasis.",
-      "note": "Useful as a methodology benchmark and source for caveats beyond headline rank."
+      "note": "Useful as a methodology benchmark and source for caveats beyond headline rank.",
+      "scoreStatus": "mapped",
+      "defaultWeight": 0,
+      "relatedMetrics": [
+        "Humanity's Last Exam",
+        "GPQA Diamond",
+        "MMMU-Pro",
+        "IFBench",
+        "CritPt"
+      ]
     },
     {
       "id": "huggingface-leaderboards",
       "label": "Hugging Face Leaderboards",
+      "icon": "HF",
       "url": "https://huggingface.co/docs/leaderboards/index",
       "category": "Community and reproducible evals",
       "coverage": "Eval Results, community Spaces, Open LLM Leaderboard archive",
       "focus": "Hub-hosted model eval results and community-maintained leaderboards.",
-      "note": "Useful for open-model reproducibility checks and benchmark result discovery."
+      "note": "Useful for open-model reproducibility checks and benchmark result discovery.",
+      "scoreStatus": "mapped",
+      "defaultWeight": 0,
+      "relatedMetrics": [
+        "MMMU-Pro",
+        "AIME 2025",
+        "GPQA Diamond",
+        "LiveCodeBench"
+      ]
     }
   ],
   "models": [
@@ -233,7 +299,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 333.8705,
       "aa": {
@@ -288,7 +354,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 241.1016,
       "aa": {
@@ -343,7 +409,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 348.2887,
       "aa": {
@@ -398,7 +464,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 170.088,
       "aa": {
@@ -453,7 +519,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 239.9692,
       "aa": {
@@ -508,7 +574,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -563,7 +629,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 162.8727,
       "aa": {
@@ -618,7 +684,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 152.921,
       "aa": {
@@ -673,7 +739,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 148.7789,
       "aa": {
@@ -728,7 +794,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 62.8565,
       "aa": {
@@ -783,7 +849,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -838,7 +904,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 53.8988,
       "aa": {
@@ -893,7 +959,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 149.2015,
       "aa": {
@@ -948,7 +1014,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 60.254,
       "aa": {
@@ -1003,7 +1069,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 173.531,
       "aa": {
@@ -1058,7 +1124,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 152.0295,
       "aa": {
@@ -1113,7 +1179,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 58.9719,
       "aa": {
@@ -1168,7 +1234,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 55.0054,
       "aa": {
@@ -1223,7 +1289,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 81.448,
       "aa": {
@@ -1278,7 +1344,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "https://artificialanalysis.ai/img/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg"
       },
       "medianOutputSpeed": 78.5929,
       "aa": {
@@ -1333,7 +1399,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "https://artificialanalysis.ai/img/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg"
       },
       "medianOutputSpeed": 39.5825,
       "aa": {
@@ -1388,7 +1454,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "https://artificialanalysis.ai/img/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg"
       },
       "medianOutputSpeed": 56.4738,
       "aa": {
@@ -1443,7 +1509,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "https://artificialanalysis.ai/img/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg"
       },
       "medianOutputSpeed": 51.346,
       "aa": {
@@ -1498,7 +1564,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "https://artificialanalysis.ai/img/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg"
       },
       "medianOutputSpeed": 105.1914,
       "aa": {
@@ -1553,7 +1619,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "https://artificialanalysis.ai/img/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg"
       },
       "medianOutputSpeed": 102.9068,
       "aa": {
@@ -1608,7 +1674,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "https://artificialanalysis.ai/img/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -1663,7 +1729,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 35.7331,
       "aa": {
@@ -1718,7 +1784,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -1773,7 +1839,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 72.9545,
       "aa": {
@@ -1828,7 +1894,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 183.4994,
       "aa": {
@@ -1883,7 +1949,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 42.6112,
       "aa": {
@@ -1938,7 +2004,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 187.8706,
       "aa": {
@@ -1993,7 +2059,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -2048,7 +2114,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -2103,7 +2169,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -2158,7 +2224,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 332.9963,
       "aa": {
@@ -2213,7 +2279,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 139.8993,
       "aa": {
@@ -2268,7 +2334,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 182.5344,
       "aa": {
@@ -2323,7 +2389,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -2378,7 +2444,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 142.2285,
       "aa": {
@@ -2433,7 +2499,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -2488,7 +2554,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 48.166,
       "aa": {
@@ -2543,7 +2609,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 57.424,
       "aa": {
@@ -2598,7 +2664,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 42.9422,
       "aa": {
@@ -2653,7 +2719,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 45.0727,
       "aa": {
@@ -2708,7 +2774,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 88.1955,
       "aa": {
@@ -2763,7 +2829,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 90.5461,
       "aa": {
@@ -2818,7 +2884,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 54.6487,
       "aa": {
@@ -2873,7 +2939,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 42.4174,
       "aa": {
@@ -2928,7 +2994,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 108.345,
       "aa": {
@@ -2983,7 +3049,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 79.4191,
       "aa": {
@@ -3038,7 +3104,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 105.4862,
       "aa": {
@@ -3093,7 +3159,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 49.1552,
       "aa": {
@@ -3148,7 +3214,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 163.8988,
       "aa": {
@@ -3203,7 +3269,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 132.5258,
       "aa": {
@@ -3258,7 +3324,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 52.6419,
       "aa": {
@@ -3313,7 +3379,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 39.9244,
       "aa": {
@@ -3368,7 +3434,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 175.8886,
       "aa": {
@@ -3423,7 +3489,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 177.7279,
       "aa": {
@@ -3478,7 +3544,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 50.0401,
       "aa": {
@@ -3533,7 +3599,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 47.0463,
       "aa": {
@@ -3588,7 +3654,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 128.3113,
       "aa": {
@@ -3643,7 +3709,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -3698,7 +3764,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 52.4001,
       "aa": {
@@ -3753,7 +3819,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 56.1362,
       "aa": {
@@ -3808,7 +3874,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 130.3182,
       "aa": {
@@ -3863,7 +3929,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "PPLX",
         "fallbackLabel": "PPLX",
         "title": "Perplexity",
-        "src": "https://artificialanalysis.ai/img/logos/perplexity_small.svg"
+        "src": "assets/logos/perplexity_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -3918,7 +3984,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "TU",
         "fallbackLabel": "TU",
         "title": "TII UAE",
-        "src": "https://artificialanalysis.ai/img/logos/tii-uae_small.svg"
+        "src": "assets/logos/tii-uae_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -3973,7 +4039,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 187.7997,
       "aa": {
@@ -4028,7 +4094,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 149.2057,
       "aa": {
@@ -4083,7 +4149,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 161.4212,
       "aa": {
@@ -4138,7 +4204,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 169.6634,
       "aa": {
@@ -4193,7 +4259,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "https://artificialanalysis.ai/img/logos/amazon_small.svg"
+        "src": "assets/logos/amazon_small.svg"
       },
       "medianOutputSpeed": 272.9735,
       "aa": {
@@ -4248,7 +4314,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "https://artificialanalysis.ai/img/logos/amazon_small.svg"
+        "src": "assets/logos/amazon_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -4303,7 +4369,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "https://artificialanalysis.ai/img/logos/amazon_small.svg"
+        "src": "assets/logos/amazon_small.svg"
       },
       "medianOutputSpeed": 80.5153,
       "aa": {
@@ -4358,7 +4424,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "https://artificialanalysis.ai/img/logos/amazon_small.svg"
+        "src": "assets/logos/amazon_small.svg"
       },
       "medianOutputSpeed": 116.6023,
       "aa": {
@@ -4413,7 +4479,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "https://artificialanalysis.ai/img/logos/amazon_small.svg"
+        "src": "assets/logos/amazon_small.svg"
       },
       "medianOutputSpeed": 117.321,
       "aa": {
@@ -4468,7 +4534,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "https://artificialanalysis.ai/img/logos/amazon_small.svg"
+        "src": "assets/logos/amazon_small.svg"
       },
       "medianOutputSpeed": 116.4386,
       "aa": {
@@ -4523,7 +4589,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "https://artificialanalysis.ai/img/logos/amazon_small.svg"
+        "src": "assets/logos/amazon_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -4578,7 +4644,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "https://artificialanalysis.ai/img/logos/amazon_small.svg"
+        "src": "assets/logos/amazon_small.svg"
       },
       "medianOutputSpeed": 111.7177,
       "aa": {
@@ -4633,7 +4699,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "https://artificialanalysis.ai/img/logos/amazon_small.svg"
+        "src": "assets/logos/amazon_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -4688,7 +4754,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "https://artificialanalysis.ai/img/logos/amazon_small.svg"
+        "src": "assets/logos/amazon_small.svg"
       },
       "medianOutputSpeed": 33.5504,
       "aa": {
@@ -4743,7 +4809,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "https://artificialanalysis.ai/img/logos/amazon_small.svg"
+        "src": "assets/logos/amazon_small.svg"
       },
       "medianOutputSpeed": 118.8981,
       "aa": {
@@ -4798,7 +4864,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "https://artificialanalysis.ai/img/logos/amazon_small.svg"
+        "src": "assets/logos/amazon_small.svg"
       },
       "medianOutputSpeed": 90.7589,
       "aa": {
@@ -4853,7 +4919,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIC",
         "fallbackLabel": "MIC",
         "title": "Microsoft",
-        "src": "https://artificialanalysis.ai/img/logos/microsoft_small.svg"
+        "src": "assets/logos/microsoft_small.svg"
       },
       "medianOutputSpeed": 31.2763,
       "aa": {
@@ -4908,7 +4974,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIC",
         "fallbackLabel": "MIC",
         "title": "Microsoft",
-        "src": "https://artificialanalysis.ai/img/logos/microsoft_small.svg"
+        "src": "assets/logos/microsoft_small.svg"
       },
       "medianOutputSpeed": 22.5698,
       "aa": {
@@ -4963,7 +5029,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIC",
         "fallbackLabel": "MIC",
         "title": "Microsoft",
-        "src": "https://artificialanalysis.ai/img/logos/microsoft_small.svg"
+        "src": "assets/logos/microsoft_small.svg"
       },
       "medianOutputSpeed": 16.7071,
       "aa": {
@@ -5018,7 +5084,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LA",
         "fallbackLabel": "LA",
         "title": "Liquid AI",
-        "src": "https://artificialanalysis.ai/img/logos/liquid-ai_small.svg"
+        "src": "assets/logos/liquid-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5073,7 +5139,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LA",
         "fallbackLabel": "LA",
         "title": "Liquid AI",
-        "src": "https://artificialanalysis.ai/img/logos/liquid-ai_small.svg"
+        "src": "assets/logos/liquid-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5128,7 +5194,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LA",
         "fallbackLabel": "LA",
         "title": "Liquid AI",
-        "src": "https://artificialanalysis.ai/img/logos/liquid-ai_small.svg"
+        "src": "assets/logos/liquid-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5183,7 +5249,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LA",
         "fallbackLabel": "LA",
         "title": "Liquid AI",
-        "src": "https://artificialanalysis.ai/img/logos/liquid-ai_small.svg"
+        "src": "assets/logos/liquid-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5238,7 +5304,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LA",
         "fallbackLabel": "LA",
         "title": "Liquid AI",
-        "src": "https://artificialanalysis.ai/img/logos/liquid-ai_small.svg"
+        "src": "assets/logos/liquid-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5293,7 +5359,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LA",
         "fallbackLabel": "LA",
         "title": "Liquid AI",
-        "src": "https://artificialanalysis.ai/img/logos/liquid-ai_small.svg"
+        "src": "assets/logos/liquid-ai_small.svg"
       },
       "medianOutputSpeed": 102.6868,
       "aa": {
@@ -5348,7 +5414,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "UPS",
         "fallbackLabel": "UPS",
         "title": "Upstage",
-        "src": "https://artificialanalysis.ai/img/logos/upstage_small.svg"
+        "src": "assets/logos/upstage_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5403,7 +5469,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "UPS",
         "fallbackLabel": "UPS",
         "title": "Upstage",
-        "src": "https://artificialanalysis.ai/img/logos/upstage_small.svg"
+        "src": "assets/logos/upstage_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5458,7 +5524,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "UPS",
         "fallbackLabel": "UPS",
         "title": "Upstage",
-        "src": "https://artificialanalysis.ai/img/logos/upstage_small.svg"
+        "src": "assets/logos/upstage_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5513,7 +5579,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "UPS",
         "fallbackLabel": "UPS",
         "title": "Upstage",
-        "src": "https://artificialanalysis.ai/img/logos/upstage_small.svg"
+        "src": "assets/logos/upstage_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5568,7 +5634,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIN",
         "fallbackLabel": "MIN",
         "title": "MiniMax",
-        "src": "https://artificialanalysis.ai/img/logos/minimax_small.svg"
+        "src": "assets/logos/minimax_small.svg"
       },
       "medianOutputSpeed": 39.8998,
       "aa": {
@@ -5623,7 +5689,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIN",
         "fallbackLabel": "MIN",
         "title": "MiniMax",
-        "src": "https://artificialanalysis.ai/img/logos/minimax_small.svg"
+        "src": "assets/logos/minimax_small.svg"
       },
       "medianOutputSpeed": 72.2336,
       "aa": {
@@ -5678,7 +5744,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 290.0433,
       "aa": {
@@ -5733,7 +5799,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 301.1377,
       "aa": {
@@ -5788,7 +5854,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 154.886,
       "aa": {
@@ -5843,7 +5909,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 141.4073,
       "aa": {
@@ -5898,7 +5964,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 89.5908,
       "aa": {
@@ -5953,7 +6019,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 152.4618,
       "aa": {
@@ -6008,7 +6074,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 218.6286,
       "aa": {
@@ -6063,7 +6129,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 276.86,
       "aa": {
@@ -6118,7 +6184,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 117.5238,
       "aa": {
@@ -6173,7 +6239,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 51.8144,
       "aa": {
@@ -6228,7 +6294,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 119.1376,
       "aa": {
@@ -6283,7 +6349,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 40.7054,
       "aa": {
@@ -6338,7 +6404,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -6393,7 +6459,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -6448,7 +6514,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 42.8644,
       "aa": {
@@ -6503,7 +6569,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "KIM",
         "fallbackLabel": "KIM",
         "title": "Kimi",
-        "src": "https://artificialanalysis.ai/img/logos/kimi_small.svg"
+        "src": "assets/logos/kimi_small.svg"
       },
       "medianOutputSpeed": 41.8012,
       "aa": {
@@ -6558,7 +6624,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "https://artificialanalysis.ai/img/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -6613,7 +6679,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "KIM",
         "fallbackLabel": "KIM",
         "title": "Kimi",
-        "src": "https://artificialanalysis.ai/img/logos/kimi_small.svg"
+        "src": "assets/logos/kimi_small.svg"
       },
       "medianOutputSpeed": 34.5921,
       "aa": {
@@ -6668,7 +6734,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "KIM",
         "fallbackLabel": "KIM",
         "title": "Kimi",
-        "src": "https://artificialanalysis.ai/img/logos/kimi_small.svg"
+        "src": "assets/logos/kimi_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -6723,7 +6789,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "STE",
         "fallbackLabel": "STE",
         "title": "StepFun",
-        "src": "https://artificialanalysis.ai/img/logos/stepfun_small.svg"
+        "src": "assets/logos/stepfun_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -6778,7 +6844,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "STE",
         "fallbackLabel": "STE",
         "title": "StepFun",
-        "src": "https://artificialanalysis.ai/img/logos/stepfun_small.svg"
+        "src": "assets/logos/stepfun_small.svg"
       },
       "medianOutputSpeed": 217.0302,
       "aa": {
@@ -6833,7 +6899,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "STE",
         "fallbackLabel": "STE",
         "title": "StepFun",
-        "src": "https://artificialanalysis.ai/img/logos/stepfun_small.svg"
+        "src": "assets/logos/stepfun_small.svg"
       },
       "medianOutputSpeed": 392.1127,
       "aa": {
@@ -6888,7 +6954,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "https://artificialanalysis.ai/img/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/allen-institute-for-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -6943,7 +7009,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "https://artificialanalysis.ai/img/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/allen-institute-for-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -6998,7 +7064,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "https://artificialanalysis.ai/img/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/allen-institute-for-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7053,7 +7119,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "https://artificialanalysis.ai/img/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/allen-institute-for-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7108,7 +7174,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "https://artificialanalysis.ai/img/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/allen-institute-for-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7163,7 +7229,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "https://artificialanalysis.ai/img/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/allen-institute-for-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7218,7 +7284,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "https://artificialanalysis.ai/img/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg"
       },
       "medianOutputSpeed": 400.4059,
       "aa": {
@@ -7273,7 +7339,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "https://artificialanalysis.ai/img/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7328,7 +7394,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "https://artificialanalysis.ai/img/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7383,7 +7449,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "https://artificialanalysis.ai/img/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7438,7 +7504,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "https://artificialanalysis.ai/img/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7493,7 +7559,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "https://artificialanalysis.ai/img/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg"
       },
       "medianOutputSpeed": 114.0188,
       "aa": {
@@ -7548,7 +7614,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "https://artificialanalysis.ai/img/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7603,7 +7669,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "https://artificialanalysis.ai/img/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7658,7 +7724,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "https://artificialanalysis.ai/img/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7713,7 +7779,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "Inception",
-        "src": "https://artificialanalysis.ai/img/logos/inception_small.svg"
+        "src": "assets/logos/inception_small.svg"
       },
       "medianOutputSpeed": 899.4566,
       "aa": {
@@ -7768,7 +7834,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "RA",
         "fallbackLabel": "RA",
         "title": "Reka AI",
-        "src": "https://artificialanalysis.ai/img/logos/reka-ai_small.svg"
+        "src": "assets/logos/reka-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7823,7 +7889,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NR",
         "fallbackLabel": "NR",
         "title": "Nous Research",
-        "src": "https://artificialanalysis.ai/img/logos/nous-research_small.svg"
+        "src": "assets/logos/nous-research_small.svg"
       },
       "medianOutputSpeed": 85.6749,
       "aa": {
@@ -7878,7 +7944,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NR",
         "fallbackLabel": "NR",
         "title": "Nous Research",
-        "src": "https://artificialanalysis.ai/img/logos/nous-research_small.svg"
+        "src": "assets/logos/nous-research_small.svg"
       },
       "medianOutputSpeed": 38.6533,
       "aa": {
@@ -7933,7 +7999,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NR",
         "fallbackLabel": "NR",
         "title": "Nous Research",
-        "src": "https://artificialanalysis.ai/img/logos/nous-research_small.svg"
+        "src": "assets/logos/nous-research_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7988,7 +8054,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NR",
         "fallbackLabel": "NR",
         "title": "Nous Research",
-        "src": "https://artificialanalysis.ai/img/logos/nous-research_small.svg"
+        "src": "assets/logos/nous-research_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8043,7 +8109,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NR",
         "fallbackLabel": "NR",
         "title": "Nous Research",
-        "src": "https://artificialanalysis.ai/img/logos/nous-research_small.svg"
+        "src": "assets/logos/nous-research_small.svg"
       },
       "medianOutputSpeed": 81.7915,
       "aa": {
@@ -8098,7 +8164,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NR",
         "fallbackLabel": "NR",
         "title": "Nous Research",
-        "src": "https://artificialanalysis.ai/img/logos/nous-research_small.svg"
+        "src": "assets/logos/nous-research_small.svg"
       },
       "medianOutputSpeed": 38.9478,
       "aa": {
@@ -8153,7 +8219,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LAR",
         "fallbackLabel": "LAR",
         "title": "LG AI Research",
-        "src": "https://artificialanalysis.ai/img/logos/lg-ai-research_small.svg"
+        "src": "assets/logos/lg-ai-research_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8208,7 +8274,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LAR",
         "fallbackLabel": "LAR",
         "title": "LG AI Research",
-        "src": "https://artificialanalysis.ai/img/logos/lg-ai-research_small.svg"
+        "src": "assets/logos/lg-ai-research_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8263,7 +8329,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LAR",
         "fallbackLabel": "LAR",
         "title": "LG AI Research",
-        "src": "https://artificialanalysis.ai/img/logos/lg-ai-research_small.svg"
+        "src": "assets/logos/lg-ai-research_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8318,7 +8384,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LAR",
         "fallbackLabel": "LAR",
         "title": "LG AI Research",
-        "src": "https://artificialanalysis.ai/img/logos/lg-ai-research_small.svg"
+        "src": "assets/logos/lg-ai-research_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8373,7 +8439,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LAR",
         "fallbackLabel": "LAR",
         "title": "LG AI Research",
-        "src": "https://artificialanalysis.ai/img/logos/lg-ai-research_small.svg"
+        "src": "assets/logos/lg-ai-research_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8428,7 +8494,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LAR",
         "fallbackLabel": "LAR",
         "title": "LG AI Research",
-        "src": "https://artificialanalysis.ai/img/logos/lg-ai-research_small.svg"
+        "src": "assets/logos/lg-ai-research_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8483,7 +8549,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LAR",
         "fallbackLabel": "LAR",
         "title": "LG AI Research",
-        "src": "https://artificialanalysis.ai/img/logos/lg-ai-research_small.svg"
+        "src": "assets/logos/lg-ai-research_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8538,7 +8604,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "https://artificialanalysis.ai/img/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg"
       },
       "medianOutputSpeed": 49.0699,
       "aa": {
@@ -8593,7 +8659,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "https://artificialanalysis.ai/img/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg"
       },
       "medianOutputSpeed": 84.4368,
       "aa": {
@@ -8648,7 +8714,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "https://artificialanalysis.ai/img/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg"
       },
       "medianOutputSpeed": 44.275,
       "aa": {
@@ -8703,7 +8769,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "https://artificialanalysis.ai/img/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg"
       },
       "medianOutputSpeed": 115.8387,
       "aa": {
@@ -8758,7 +8824,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "https://artificialanalysis.ai/img/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg"
       },
       "medianOutputSpeed": 85.9683,
       "aa": {
@@ -8813,7 +8879,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "https://artificialanalysis.ai/img/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg"
       },
       "medianOutputSpeed": 79.4889,
       "aa": {
@@ -8868,7 +8934,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8923,7 +8989,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "https://artificialanalysis.ai/img/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg"
       },
       "medianOutputSpeed": 115.8205,
       "aa": {
@@ -8978,7 +9044,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "BAI",
         "fallbackLabel": "BAI",
         "title": "Baidu",
-        "src": "https://artificialanalysis.ai/img/logos/baidu_small.svg"
+        "src": "assets/logos/baidu_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9033,7 +9099,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "BAI",
         "fallbackLabel": "BAI",
         "title": "Baidu",
-        "src": "https://artificialanalysis.ai/img/logos/baidu_small.svg"
+        "src": "assets/logos/baidu_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9088,7 +9154,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SAR",
         "fallbackLabel": "SAR",
         "title": "Sarvam",
-        "src": "https://artificialanalysis.ai/img/logos/sarvam_small.svg"
+        "src": "assets/logos/sarvam_small.svg"
       },
       "medianOutputSpeed": 96.2252,
       "aa": {
@@ -9143,7 +9209,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SAR",
         "fallbackLabel": "SAR",
         "title": "Sarvam",
-        "src": "https://artificialanalysis.ai/img/logos/sarvam_small.svg"
+        "src": "assets/logos/sarvam_small.svg"
       },
       "medianOutputSpeed": 171.3132,
       "aa": {
@@ -9198,7 +9264,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "TEN",
         "fallbackLabel": "TEN",
         "title": "Tencent",
-        "src": "https://artificialanalysis.ai/img/logos/tencent_small.svg"
+        "src": "assets/logos/tencent_small.svg"
       },
       "medianOutputSpeed": 88.1335,
       "aa": {
@@ -9253,7 +9319,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "TEN",
         "fallbackLabel": "TEN",
         "title": "Tencent",
-        "src": "https://artificialanalysis.ai/img/logos/tencent_small.svg"
+        "src": "assets/logos/tencent_small.svg"
       },
       "medianOutputSpeed": 88.5433,
       "aa": {
@@ -9308,7 +9374,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "KWA",
         "fallbackLabel": "KWA",
         "title": "KwaiKAT",
-        "src": "https://artificialanalysis.ai/img/logos/kwaikat_small.svg"
+        "src": "assets/logos/kwaikat_small.svg"
       },
       "medianOutputSpeed": 115.3071,
       "aa": {
@@ -9363,7 +9429,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "KWA",
         "fallbackLabel": "KWA",
         "title": "KwaiKAT",
-        "src": "https://artificialanalysis.ai/img/logos/kwaikat_small.svg"
+        "src": "assets/logos/kwaikat_small.svg"
       },
       "medianOutputSpeed": 113.0327,
       "aa": {
@@ -9418,7 +9484,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "PI",
         "fallbackLabel": "PI",
         "title": "Prime Intellect",
-        "src": "https://artificialanalysis.ai/img/logos/prime-intellect_small.svg"
+        "src": "assets/logos/prime-intellect_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9473,7 +9539,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MT",
         "fallbackLabel": "MT",
         "title": "Motif Technologies",
-        "src": "https://artificialanalysis.ai/img/logos/motif-technologies_small.svg"
+        "src": "assets/logos/motif-technologies_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9528,7 +9594,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIO",
         "fallbackLabel": "MIO",
         "title": "MBZUAI Institute of Foundation Models",
-        "src": "https://artificialanalysis.ai/img/logos/mbzuai-institute-of-foundation-models_small.svg"
+        "src": "assets/logos/mbzuai-institute-of-foundation-models_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9583,7 +9649,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIO",
         "fallbackLabel": "MIO",
         "title": "MBZUAI Institute of Foundation Models",
-        "src": "https://artificialanalysis.ai/img/logos/mbzuai-institute-of-foundation-models_small.svg"
+        "src": "assets/logos/mbzuai-institute-of-foundation-models_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9638,7 +9704,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIO",
         "fallbackLabel": "MIO",
         "title": "MBZUAI Institute of Foundation Models",
-        "src": "https://artificialanalysis.ai/img/logos/mbzuai-institute-of-foundation-models_small.svg"
+        "src": "assets/logos/mbzuai-institute-of-foundation-models_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9693,7 +9759,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIO",
         "fallbackLabel": "MIO",
         "title": "MBZUAI Institute of Foundation Models",
-        "src": "https://artificialanalysis.ai/img/logos/mbzuai-institute-of-foundation-models_small.svg"
+        "src": "assets/logos/mbzuai-institute-of-foundation-models_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9748,7 +9814,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "KT",
         "fallbackLabel": "KT",
         "title": "Korea Telecom",
-        "src": "https://artificialanalysis.ai/img/logos/korea-telecom_small.svg"
+        "src": "assets/logos/korea-telecom_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9803,7 +9869,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NAV",
         "fallbackLabel": "NAV",
         "title": "Naver",
-        "src": "https://artificialanalysis.ai/img/logos/naver_small.svg"
+        "src": "assets/logos/naver_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9858,7 +9924,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LON",
         "fallbackLabel": "LON",
         "title": "LongCat",
-        "src": "https://artificialanalysis.ai/img/logos/longcat_small.svg"
+        "src": "assets/logos/longcat_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9913,7 +9979,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "TL",
         "fallbackLabel": "TL",
         "title": "Trillion Labs",
-        "src": "https://artificialanalysis.ai/img/logos/trillion-labs_small.svg"
+        "src": "assets/logos/trillion-labs_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9968,7 +10034,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "TL",
         "fallbackLabel": "TL",
         "title": "Trillion Labs",
-        "src": "https://artificialanalysis.ai/img/logos/trillion-labs_small.svg"
+        "src": "assets/logos/trillion-labs_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10023,7 +10089,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NAN",
         "fallbackLabel": "NAN",
         "title": "Nanbeige",
-        "src": "https://artificialanalysis.ai/img/logos/nanbeige_small.svg"
+        "src": "assets/logos/nanbeige_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10078,7 +10144,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SAI",
         "fallbackLabel": "SAI",
         "title": "Swiss AI Initiative",
-        "src": "https://artificialanalysis.ai/img/logos/swiss-ai-initiative_small.svg"
+        "src": "assets/logos/swiss-ai-initiative_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10133,7 +10199,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SAI",
         "fallbackLabel": "SAI",
         "title": "Swiss AI Initiative",
-        "src": "https://artificialanalysis.ai/img/logos/swiss-ai-initiative_small.svg"
+        "src": "assets/logos/swiss-ai-initiative_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10188,7 +10254,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OPE",
         "fallbackLabel": "OPE",
         "title": "OpenBMB",
-        "src": "https://artificialanalysis.ai/img/logos/openbmb_small.svg"
+        "src": "assets/logos/openbmb_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10243,7 +10309,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OPE",
         "fallbackLabel": "OPE",
         "title": "OpenBMB",
-        "src": "https://artificialanalysis.ai/img/logos/openbmb_small.svg"
+        "src": "assets/logos/openbmb_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10298,7 +10364,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OPE",
         "fallbackLabel": "OPE",
         "title": "OpenBMB",
-        "src": "https://artificialanalysis.ai/img/logos/openbmb_small.svg"
+        "src": "assets/logos/openbmb_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10353,7 +10419,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AA",
         "fallbackLabel": "AA",
         "title": "Arcee AI",
-        "src": "https://artificialanalysis.ai/img/logos/arcee-ai_small.svg"
+        "src": "assets/logos/arcee-ai_small.svg"
       },
       "medianOutputSpeed": 161.0365,
       "aa": {
@@ -10408,7 +10474,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "CM",
         "fallbackLabel": "CM",
         "title": "China Mobile",
-        "src": "https://artificialanalysis.ai/img/logos/china-mobile_small.svg"
+        "src": "assets/logos/china-mobile_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10463,7 +10529,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "CM",
         "fallbackLabel": "CM",
         "title": "China Mobile",
-        "src": "https://artificialanalysis.ai/img/logos/china-mobile_small.svg"
+        "src": "assets/logos/china-mobile_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10518,7 +10584,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 56.5236,
       "aa": {
@@ -10573,7 +10639,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 53.0429,
       "aa": {
@@ -10628,7 +10694,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10683,7 +10749,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10738,7 +10804,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "CO",
         "fallbackLabel": "CO",
         "title": "Cohere",
-        "src": "https://artificialanalysis.ai/img/logos/cohere_small.svg"
+        "src": "assets/logos/cohere_small.svg"
       },
       "medianOutputSpeed": 69.4035,
       "aa": {
@@ -10793,7 +10859,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "CO",
         "fallbackLabel": "CO",
         "title": "Cohere",
-        "src": "https://artificialanalysis.ai/img/logos/cohere_small.svg"
+        "src": "assets/logos/cohere_small.svg"
       },
       "medianOutputSpeed": 196.8912,
       "aa": {
@@ -10848,7 +10914,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "CO",
         "fallbackLabel": "CO",
         "title": "Cohere",
-        "src": "https://artificialanalysis.ai/img/logos/cohere_small.svg"
+        "src": "assets/logos/cohere_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10903,7 +10969,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SER",
         "fallbackLabel": "SER",
         "title": "ServiceNow",
-        "src": "https://artificialanalysis.ai/img/logos/servicenow_small.svg"
+        "src": "assets/logos/servicenow_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10958,7 +11024,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AI21",
         "fallbackLabel": "AI21",
         "title": "AI21 Labs",
-        "src": "https://artificialanalysis.ai/img/logos/ai21_small.svg"
+        "src": "assets/logos/ai21_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -11013,7 +11079,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AI21",
         "fallbackLabel": "AI21",
         "title": "AI21 Labs",
-        "src": "https://artificialanalysis.ai/img/logos/ai21_small.svg"
+        "src": "assets/logos/ai21_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -11068,7 +11134,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AI21",
         "fallbackLabel": "AI21",
         "title": "AI21 Labs",
-        "src": "https://artificialanalysis.ai/img/logos/ai21_small.svg"
+        "src": "assets/logos/ai21_small.svg"
       },
       "medianOutputSpeed": 58.3588,
       "aa": {
@@ -11123,7 +11189,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 103.9461,
       "aa": {
@@ -11178,7 +11244,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 192.9982,
       "aa": {
@@ -11233,7 +11299,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 143.5088,
       "aa": {
@@ -11288,7 +11354,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 73.4887,
       "aa": {
@@ -11343,7 +11409,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 53.434,
       "aa": {
@@ -11398,7 +11464,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 60.041,
       "aa": {
@@ -11453,7 +11519,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 183.3722,
       "aa": {
@@ -11508,7 +11574,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 140.3279,
       "aa": {
@@ -11563,7 +11629,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 158.2224,
       "aa": {
@@ -11618,7 +11684,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 327.7077,
       "aa": {
@@ -11673,7 +11739,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 75.5282,
       "aa": {
@@ -11728,7 +11794,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -11783,7 +11849,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 53.2383,
       "aa": {
@@ -11838,7 +11904,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 53.6012,
       "aa": {
@@ -11893,7 +11959,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 257.2648,
       "aa": {
@@ -11948,7 +12014,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -12003,7 +12069,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 140.8839,
       "aa": {
@@ -12058,7 +12124,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 59.6242,
       "aa": {
@@ -12113,7 +12179,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 75.3888,
       "aa": {
@@ -12168,7 +12234,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 209.6454,
       "aa": {
@@ -12223,7 +12289,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 88.1135,
       "aa": {
@@ -12278,7 +12344,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 53.6338,
       "aa": {
@@ -12333,7 +12399,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 202.3668,
       "aa": {
@@ -12388,7 +12454,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -12443,7 +12509,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 99.6323,
       "aa": {
@@ -12498,7 +12564,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 164.5828,
       "aa": {
@@ -12553,7 +12619,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 51.3887,
       "aa": {
@@ -12608,7 +12674,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "InclusionAI",
-        "src": "https://artificialanalysis.ai/img/logos/inclusionai_small.svg"
+        "src": "assets/logos/inclusionai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -12663,7 +12729,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "InclusionAI",
-        "src": "https://artificialanalysis.ai/img/logos/inclusionai_small.svg"
+        "src": "assets/logos/inclusionai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -12718,7 +12784,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "InclusionAI",
-        "src": "https://artificialanalysis.ai/img/logos/inclusionai_small.svg"
+        "src": "assets/logos/inclusionai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -12773,7 +12839,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "InclusionAI",
-        "src": "https://artificialanalysis.ai/img/logos/inclusionai_small.svg"
+        "src": "assets/logos/inclusionai_small.svg"
       },
       "medianOutputSpeed": 124.7248,
       "aa": {
@@ -12828,7 +12894,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "InclusionAI",
-        "src": "https://artificialanalysis.ai/img/logos/inclusionai_small.svg"
+        "src": "assets/logos/inclusionai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -12883,7 +12949,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SEED",
         "fallbackLabel": "SEED",
         "title": "ByteDance Seed",
-        "src": "https://artificialanalysis.ai/img/logos/bytedance-seed_small.svg"
+        "src": "assets/logos/bytedance-seed_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -12938,7 +13004,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 116.0491,
       "aa": {
@@ -12993,7 +13059,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -13048,7 +13114,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -13103,7 +13169,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 85.9808,
       "aa": {
@@ -13158,7 +13224,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 88.1217,
       "aa": {
@@ -13213,7 +13279,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 24.0762,
       "aa": {
@@ -13268,7 +13334,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 120.0942,
       "aa": {
@@ -13323,7 +13389,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 62.8787,
       "aa": {
@@ -13378,7 +13444,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -13433,7 +13499,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 111.6447,
       "aa": {
@@ -13488,7 +13554,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 75.9758,
       "aa": {
@@ -13543,7 +13609,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 73.1322,
       "aa": {
@@ -13598,7 +13664,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 80.108,
       "aa": {
@@ -13653,7 +13719,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 139.4828,
       "aa": {
@@ -13708,7 +13774,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 183.449,
       "aa": {
@@ -13763,7 +13829,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 179.8922,
       "aa": {
@@ -13818,7 +13884,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 209.1289,
       "aa": {
@@ -13873,7 +13939,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 96.574,
       "aa": {
@@ -13928,7 +13994,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 206.6699,
       "aa": {
@@ -13983,7 +14049,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 115.1985,
       "aa": {
@@ -14038,7 +14104,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 90.3576,
       "aa": {
@@ -14093,7 +14159,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 73.3479,
       "aa": {
@@ -14148,7 +14214,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 120.2611,
       "aa": {
@@ -14203,7 +14269,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -14258,7 +14324,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -14313,7 +14379,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 188.6485,
       "aa": {
@@ -14368,7 +14434,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 96.7931,
       "aa": {
@@ -14423,7 +14489,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -14478,7 +14544,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 65.2829,
       "aa": {
@@ -14533,7 +14599,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 83.9475,
       "aa": {
@@ -14588,7 +14654,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 162.0099,
       "aa": {
@@ -14643,7 +14709,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -14698,7 +14764,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 166.1826,
       "aa": {
@@ -14753,7 +14819,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 91.3901,
       "aa": {
@@ -14808,7 +14874,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -14863,7 +14929,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 101.9838,
       "aa": {
@@ -14918,7 +14984,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 98.965,
       "aa": {
@@ -14973,7 +15039,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 83.8064,
       "aa": {
@@ -15028,7 +15094,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 38.3054,
       "aa": {
@@ -15083,7 +15149,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 120.7893,
       "aa": {
@@ -15138,7 +15204,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 154.8265,
       "aa": {
@@ -15193,7 +15259,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -15248,7 +15314,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 186.9032,
       "aa": {
@@ -15303,7 +15369,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "https://artificialanalysis.ai/img/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg"
       },
       "medianOutputSpeed": 212.6907,
       "aa": {
@@ -15358,7 +15424,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "https://artificialanalysis.ai/img/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg"
       },
       "medianOutputSpeed": 39.9228,
       "aa": {
@@ -15413,7 +15479,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "https://artificialanalysis.ai/img/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg"
       },
       "medianOutputSpeed": 153.3827,
       "aa": {
@@ -15468,7 +15534,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "https://artificialanalysis.ai/img/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg"
       },
       "medianOutputSpeed": 50.7787,
       "aa": {
@@ -15523,7 +15589,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "https://artificialanalysis.ai/img/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -15578,7 +15644,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "https://artificialanalysis.ai/img/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -15633,7 +15699,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "https://artificialanalysis.ai/img/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg"
       },
       "medianOutputSpeed": 86.3098,
       "aa": {
@@ -15688,7 +15754,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "https://artificialanalysis.ai/img/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -15743,7 +15809,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "https://artificialanalysis.ai/img/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -15798,7 +15864,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "https://artificialanalysis.ai/img/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -15853,7 +15919,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -15908,7 +15974,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -15963,7 +16029,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16018,7 +16084,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16073,7 +16139,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16128,7 +16194,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16183,7 +16249,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16238,7 +16304,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16293,7 +16359,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 179.3041,
       "aa": {
@@ -16348,7 +16414,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16403,7 +16469,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 175.5997,
       "aa": {
@@ -16458,7 +16524,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16513,7 +16579,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16568,7 +16634,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16623,7 +16689,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 223.4018,
       "aa": {
@@ -16678,7 +16744,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16733,7 +16799,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16788,7 +16854,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 49.7284,
       "aa": {
@@ -16843,7 +16909,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16898,7 +16964,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16953,7 +17019,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 334.8447,
       "aa": {
@@ -17008,7 +17074,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17063,7 +17129,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17118,7 +17184,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17173,7 +17239,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17228,7 +17294,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17283,7 +17349,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17338,7 +17404,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17393,7 +17459,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17448,7 +17514,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 244.6344,
       "aa": {
@@ -17503,7 +17569,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 229.1671,
       "aa": {
@@ -17558,7 +17624,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17613,7 +17679,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17668,7 +17734,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17723,7 +17789,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17778,7 +17844,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17833,7 +17899,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17888,7 +17954,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "https://artificialanalysis.ai/img/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17943,7 +18009,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17998,7 +18064,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -18053,7 +18119,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -18108,7 +18174,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -18163,7 +18229,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -18218,7 +18284,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -18273,7 +18339,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -18328,7 +18394,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 45.9289,
       "aa": {
@@ -18383,7 +18449,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 40.25,
       "aa": {
@@ -18438,7 +18504,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 41.0577,
       "aa": {
@@ -18493,7 +18559,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 40.1885,
       "aa": {
@@ -18548,7 +18614,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -18603,7 +18669,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 29.2554,
       "aa": {
@@ -18658,7 +18724,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -18713,7 +18779,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 31.1213,
       "aa": {
@@ -18768,7 +18834,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 40.3379,
       "aa": {
@@ -18823,7 +18889,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 40.5056,
       "aa": {
@@ -18878,7 +18944,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 28.7861,
       "aa": {
@@ -18933,7 +18999,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 31.3357,
       "aa": {
@@ -18988,7 +19054,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 40.7081,
       "aa": {
@@ -19043,7 +19109,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 45.0647,
       "aa": {
@@ -19098,7 +19164,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -19153,7 +19219,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "https://artificialanalysis.ai/img/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -19208,7 +19274,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 47.4083,
       "aa": {
@@ -19263,7 +19329,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -19318,7 +19384,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 46.1487,
       "aa": {
@@ -19373,7 +19439,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 167.5133,
       "aa": {
@@ -19428,7 +19494,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 164.6926,
       "aa": {
@@ -19483,7 +19549,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -19538,7 +19604,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 161.4111,
       "aa": {
@@ -19593,7 +19659,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -19648,7 +19714,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -19703,7 +19769,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 92.7911,
       "aa": {
@@ -19758,7 +19824,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -19813,7 +19879,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 65.3044,
       "aa": {
@@ -19868,7 +19934,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 130.5512,
       "aa": {
@@ -19923,7 +19989,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -19978,7 +20044,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 162.1252,
       "aa": {
@@ -20033,7 +20099,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20088,7 +20154,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 55.0615,
       "aa": {
@@ -20143,7 +20209,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20198,7 +20264,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 56.9996,
       "aa": {
@@ -20253,7 +20319,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 43.3189,
       "aa": {
@@ -20308,7 +20374,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "https://artificialanalysis.ai/img/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.svg"
       },
       "medianOutputSpeed": 51.5467,
       "aa": {
@@ -20363,7 +20429,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 41.8054,
       "aa": {
@@ -20418,7 +20484,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20473,7 +20539,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20528,7 +20594,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20583,7 +20649,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20638,7 +20704,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20693,7 +20759,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20748,7 +20814,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20803,7 +20869,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20858,7 +20924,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20913,7 +20979,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20968,7 +21034,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21023,7 +21089,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21078,7 +21144,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21133,7 +21199,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21188,7 +21254,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21243,7 +21309,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21298,7 +21364,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21353,7 +21419,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21408,7 +21474,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21463,7 +21529,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21518,7 +21584,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21573,7 +21639,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21628,7 +21694,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21683,7 +21749,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "https://artificialanalysis.ai/img/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21738,7 +21804,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "PPLX",
         "fallbackLabel": "PPLX",
         "title": "Perplexity",
-        "src": "https://artificialanalysis.ai/img/logos/perplexity_small.svg"
+        "src": "assets/logos/perplexity_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21793,7 +21859,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "PPLX",
         "fallbackLabel": "PPLX",
         "title": "Perplexity",
-        "src": "https://artificialanalysis.ai/img/logos/perplexity_small.svg"
+        "src": "assets/logos/perplexity_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21848,7 +21914,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "PPLX",
         "fallbackLabel": "PPLX",
         "title": "Perplexity",
-        "src": "https://artificialanalysis.ai/img/logos/perplexity_small.svg"
+        "src": "assets/logos/perplexity_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21903,7 +21969,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "PPLX",
         "fallbackLabel": "PPLX",
         "title": "Perplexity",
-        "src": "https://artificialanalysis.ai/img/logos/perplexity_small.svg"
+        "src": "assets/logos/perplexity_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21958,7 +22024,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22013,7 +22079,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 114.5315,
       "aa": {
@@ -22068,7 +22134,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22123,7 +22189,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22178,7 +22244,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 174.9984,
       "aa": {
@@ -22233,7 +22299,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22288,7 +22354,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22343,7 +22409,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22398,7 +22464,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22453,7 +22519,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 164.7393,
       "aa": {
@@ -22508,7 +22574,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22563,7 +22629,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 176.9533,
       "aa": {
@@ -22618,7 +22684,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 167.3346,
       "aa": {
@@ -22673,7 +22739,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22728,7 +22794,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "https://artificialanalysis.ai/img/logos/xai_small.svg"
+        "src": "assets/logos/xai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22783,7 +22849,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OPE",
         "fallbackLabel": "OPE",
         "title": "OpenChat",
-        "src": "https://artificialanalysis.ai/img/logos/openchat_small.svg"
+        "src": "assets/logos/openchat_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22838,7 +22904,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "https://artificialanalysis.ai/img/logos/amazon_small.svg"
+        "src": "assets/logos/amazon_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22893,7 +22959,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "https://artificialanalysis.ai/img/logos/amazon_small.svg"
+        "src": "assets/logos/amazon_small.svg"
       },
       "medianOutputSpeed": 156.0833,
       "aa": {
@@ -22948,7 +23014,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIC",
         "fallbackLabel": "MIC",
         "title": "Microsoft",
-        "src": "https://artificialanalysis.ai/img/logos/microsoft_small.svg"
+        "src": "assets/logos/microsoft_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23003,7 +23069,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LA",
         "fallbackLabel": "LA",
         "title": "Liquid AI",
-        "src": "https://artificialanalysis.ai/img/logos/liquid-ai_small.svg"
+        "src": "assets/logos/liquid-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23058,7 +23124,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LA",
         "fallbackLabel": "LA",
         "title": "Liquid AI",
-        "src": "https://artificialanalysis.ai/img/logos/liquid-ai_small.svg"
+        "src": "assets/logos/liquid-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23113,7 +23179,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "UPS",
         "fallbackLabel": "UPS",
         "title": "Upstage",
-        "src": "https://artificialanalysis.ai/img/logos/upstage_small.svg"
+        "src": "assets/logos/upstage_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23168,7 +23234,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "UPS",
         "fallbackLabel": "UPS",
         "title": "Upstage",
-        "src": "https://artificialanalysis.ai/img/logos/upstage_small.svg"
+        "src": "assets/logos/upstage_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23223,7 +23289,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "UPS",
         "fallbackLabel": "UPS",
         "title": "Upstage",
-        "src": "https://artificialanalysis.ai/img/logos/upstage_small.svg"
+        "src": "assets/logos/upstage_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23278,7 +23344,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DAT",
         "fallbackLabel": "DAT",
         "title": "Databricks",
-        "src": "https://artificialanalysis.ai/img/logos/databricks_small.svg"
+        "src": "assets/logos/databricks_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23333,7 +23399,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIN",
         "fallbackLabel": "MIN",
         "title": "MiniMax",
-        "src": "https://artificialanalysis.ai/img/logos/minimax_small.svg"
+        "src": "assets/logos/minimax_small.svg"
       },
       "medianOutputSpeed": 188.0793,
       "aa": {
@@ -23388,7 +23454,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIN",
         "fallbackLabel": "MIN",
         "title": "MiniMax",
-        "src": "https://artificialanalysis.ai/img/logos/minimax_small.svg"
+        "src": "assets/logos/minimax_small.svg"
       },
       "medianOutputSpeed": 119.342,
       "aa": {
@@ -23443,7 +23509,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIN",
         "fallbackLabel": "MIN",
         "title": "MiniMax",
-        "src": "https://artificialanalysis.ai/img/logos/minimax_small.svg"
+        "src": "assets/logos/minimax_small.svg"
       },
       "medianOutputSpeed": 210.9023,
       "aa": {
@@ -23498,7 +23564,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIN",
         "fallbackLabel": "MIN",
         "title": "MiniMax",
-        "src": "https://artificialanalysis.ai/img/logos/minimax_small.svg"
+        "src": "assets/logos/minimax_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23553,7 +23619,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIN",
         "fallbackLabel": "MIN",
         "title": "MiniMax",
-        "src": "https://artificialanalysis.ai/img/logos/minimax_small.svg"
+        "src": "assets/logos/minimax_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23608,7 +23674,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23663,7 +23729,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23718,7 +23784,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "https://artificialanalysis.ai/img/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23773,7 +23839,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "KIM",
         "fallbackLabel": "KIM",
         "title": "Kimi",
-        "src": "https://artificialanalysis.ai/img/logos/kimi_small.svg"
+        "src": "assets/logos/kimi_small.svg"
       },
       "medianOutputSpeed": 122.0774,
       "aa": {
@@ -23828,7 +23894,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "KIM",
         "fallbackLabel": "KIM",
         "title": "Kimi",
-        "src": "https://artificialanalysis.ai/img/logos/kimi_small.svg"
+        "src": "assets/logos/kimi_small.svg"
       },
       "medianOutputSpeed": 45.1088,
       "aa": {
@@ -23883,7 +23949,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "KIM",
         "fallbackLabel": "KIM",
         "title": "Kimi",
-        "src": "https://artificialanalysis.ai/img/logos/kimi_small.svg"
+        "src": "assets/logos/kimi_small.svg"
       },
       "medianOutputSpeed": 41.5722,
       "aa": {
@@ -23938,7 +24004,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "KIM",
         "fallbackLabel": "KIM",
         "title": "Kimi",
-        "src": "https://artificialanalysis.ai/img/logos/kimi_small.svg"
+        "src": "assets/logos/kimi_small.svg"
       },
       "medianOutputSpeed": 25.0163,
       "aa": {
@@ -23993,7 +24059,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "KIM",
         "fallbackLabel": "KIM",
         "title": "Kimi",
-        "src": "https://artificialanalysis.ai/img/logos/kimi_small.svg"
+        "src": "assets/logos/kimi_small.svg"
       },
       "medianOutputSpeed": 24.5727,
       "aa": {
@@ -24048,7 +24114,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "STE",
         "fallbackLabel": "STE",
         "title": "StepFun",
-        "src": "https://artificialanalysis.ai/img/logos/stepfun_small.svg"
+        "src": "assets/logos/stepfun_small.svg"
       },
       "medianOutputSpeed": 231.4209,
       "aa": {
@@ -24103,7 +24169,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "https://artificialanalysis.ai/img/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/allen-institute-for-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -24158,7 +24224,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "https://artificialanalysis.ai/img/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/allen-institute-for-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -24213,7 +24279,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "https://artificialanalysis.ai/img/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/allen-institute-for-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -24268,7 +24334,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "https://artificialanalysis.ai/img/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/allen-institute-for-ai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -24323,7 +24389,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "https://artificialanalysis.ai/img/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg"
       },
       "medianOutputSpeed": 345.274,
       "aa": {
@@ -24378,7 +24444,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "RA",
         "fallbackLabel": "RA",
         "title": "Reka AI",
-        "src": "https://artificialanalysis.ai/img/logos/reka-ai_small.svg"
+        "src": "assets/logos/reka-ai_small.svg"
       },
       "medianOutputSpeed": 56.6378,
       "aa": {
@@ -24433,7 +24499,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NR",
         "fallbackLabel": "NR",
         "title": "Nous Research",
-        "src": "https://artificialanalysis.ai/img/logos/nous-research_small.svg"
+        "src": "assets/logos/nous-research_small.svg"
       },
       "medianOutputSpeed": 29.4586,
       "aa": {
@@ -24488,7 +24554,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "https://artificialanalysis.ai/img/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg"
       },
       "medianOutputSpeed": 122.2344,
       "aa": {
@@ -24543,7 +24609,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "https://artificialanalysis.ai/img/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg"
       },
       "medianOutputSpeed": 43.3489,
       "aa": {
@@ -24598,7 +24664,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SAR",
         "fallbackLabel": "SAR",
         "title": "Sarvam",
-        "src": "https://artificialanalysis.ai/img/logos/sarvam_small.svg"
+        "src": "assets/logos/sarvam_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -24653,7 +24719,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 45.9886,
       "aa": {
@@ -24708,7 +24774,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 84.3645,
       "aa": {
@@ -24763,7 +24829,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 71.9484,
       "aa": {
@@ -24818,7 +24884,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 64.2373,
       "aa": {
@@ -24873,7 +24939,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 79.0281,
       "aa": {
@@ -24928,7 +24994,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 76.791,
       "aa": {
@@ -24983,7 +25049,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 48.578,
       "aa": {
@@ -25038,7 +25104,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 42.4884,
       "aa": {
@@ -25093,7 +25159,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 32.2922,
       "aa": {
@@ -25148,7 +25214,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 85.8208,
       "aa": {
@@ -25203,7 +25269,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 83.2321,
       "aa": {
@@ -25258,7 +25324,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 26.7599,
       "aa": {
@@ -25313,7 +25379,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 90.6734,
       "aa": {
@@ -25368,7 +25434,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "https://artificialanalysis.ai/img/logos/z-ai_small.svg"
+        "src": "assets/logos/z-ai_small.svg"
       },
       "medianOutputSpeed": 120.1851,
       "aa": {
@@ -25423,7 +25489,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "CO",
         "fallbackLabel": "CO",
         "title": "Cohere",
-        "src": "https://artificialanalysis.ai/img/logos/cohere_small.svg"
+        "src": "assets/logos/cohere_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -25478,7 +25544,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "CO",
         "fallbackLabel": "CO",
         "title": "Cohere",
-        "src": "https://artificialanalysis.ai/img/logos/cohere_small.svg"
+        "src": "assets/logos/cohere_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -25533,7 +25599,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SER",
         "fallbackLabel": "SER",
         "title": "ServiceNow",
-        "src": "https://artificialanalysis.ai/img/logos/servicenow_small.svg"
+        "src": "assets/logos/servicenow_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -25588,7 +25654,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AI21",
         "fallbackLabel": "AI21",
         "title": "AI21 Labs",
-        "src": "https://artificialanalysis.ai/img/logos/ai21_small.svg"
+        "src": "assets/logos/ai21_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -25643,7 +25709,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AI21",
         "fallbackLabel": "AI21",
         "title": "AI21 Labs",
-        "src": "https://artificialanalysis.ai/img/logos/ai21_small.svg"
+        "src": "assets/logos/ai21_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -25698,7 +25764,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AI21",
         "fallbackLabel": "AI21",
         "title": "AI21 Labs",
-        "src": "https://artificialanalysis.ai/img/logos/ai21_small.svg"
+        "src": "assets/logos/ai21_small.svg"
       },
       "medianOutputSpeed": 183.8956,
       "aa": {
@@ -25753,7 +25819,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AI21",
         "fallbackLabel": "AI21",
         "title": "AI21 Labs",
-        "src": "https://artificialanalysis.ai/img/logos/ai21_small.svg"
+        "src": "assets/logos/ai21_small.svg"
       },
       "medianOutputSpeed": 58.1697,
       "aa": {
@@ -25808,7 +25874,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SNO",
         "fallbackLabel": "SNO",
         "title": "Snowflake",
-        "src": "https://artificialanalysis.ai/img/logos/snowflake_small.svg"
+        "src": "assets/logos/snowflake_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -25863,7 +25929,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -25918,7 +25984,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -25973,7 +26039,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -26028,7 +26094,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 63.25,
       "aa": {
@@ -26083,7 +26149,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -26138,7 +26204,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 28.6602,
       "aa": {
@@ -26193,7 +26259,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 45.8711,
       "aa": {
@@ -26248,7 +26314,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 82.9665,
       "aa": {
@@ -26303,7 +26369,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 87.865,
       "aa": {
@@ -26358,7 +26424,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 52.8523,
       "aa": {
@@ -26413,7 +26479,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 77.4882,
       "aa": {
@@ -26468,7 +26534,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 108.8066,
       "aa": {
@@ -26523,7 +26589,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 59.4777,
       "aa": {
@@ -26578,7 +26644,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 53.8519,
       "aa": {
@@ -26633,7 +26699,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 150.1358,
       "aa": {
@@ -26688,7 +26754,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 68.3592,
       "aa": {
@@ -26743,7 +26809,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 48.1811,
       "aa": {
@@ -26798,7 +26864,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 58.5879,
       "aa": {
@@ -26853,7 +26919,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 86.0937,
       "aa": {
@@ -26908,7 +26974,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 52.7222,
       "aa": {
@@ -26963,7 +27029,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 109.6339,
       "aa": {
@@ -27018,7 +27084,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27073,7 +27139,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 38.3201,
       "aa": {
@@ -27128,7 +27194,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 64.7947,
       "aa": {
@@ -27183,7 +27249,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27238,7 +27304,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 50.1017,
       "aa": {
@@ -27293,7 +27359,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27348,7 +27414,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27403,7 +27469,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27458,7 +27524,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27513,7 +27579,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 88.6827,
       "aa": {
@@ -27568,7 +27634,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 34.191,
       "aa": {
@@ -27623,7 +27689,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 37.0304,
       "aa": {
@@ -27678,7 +27744,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27733,7 +27799,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 111.7538,
       "aa": {
@@ -27788,7 +27854,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27843,7 +27909,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27898,7 +27964,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 57.8197,
       "aa": {
@@ -27953,7 +28019,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 60.9767,
       "aa": {
@@ -28008,7 +28074,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 125.4592,
       "aa": {
@@ -28063,7 +28129,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28118,7 +28184,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28173,7 +28239,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 111.5054,
       "aa": {
@@ -28228,7 +28294,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28283,7 +28349,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 118.8298,
       "aa": {
@@ -28338,7 +28404,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28393,7 +28459,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28448,7 +28514,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28503,7 +28569,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 61.1175,
       "aa": {
@@ -28558,7 +28624,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 88.1557,
       "aa": {
@@ -28613,7 +28679,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 63.4917,
       "aa": {
@@ -28668,7 +28734,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28723,7 +28789,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "https://artificialanalysis.ai/img/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg"
       },
       "medianOutputSpeed": 43.3307,
       "aa": {
@@ -28778,7 +28844,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "InclusionAI",
-        "src": "https://artificialanalysis.ai/img/logos/inclusionai_small.svg"
+        "src": "assets/logos/inclusionai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28833,7 +28899,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "InclusionAI",
-        "src": "https://artificialanalysis.ai/img/logos/inclusionai_small.svg"
+        "src": "assets/logos/inclusionai_small.svg"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28888,7 +28954,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "InclusionAI",
-        "src": "https://artificialanalysis.ai/img/logos/inclusionai_small.svg"
+        "src": "assets/logos/inclusionai_small.svg"
       },
       "medianOutputSpeed": 78.5645,
       "aa": {
@@ -28943,7 +29009,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SEED",
         "fallbackLabel": "SEED",
         "title": "ByteDance Seed",
-        "src": "https://artificialanalysis.ai/img/logos/bytedance-seed_small.svg"
+        "src": "assets/logos/bytedance-seed_small.svg"
       },
       "medianOutputSpeed": 35.0951,
       "aa": {
