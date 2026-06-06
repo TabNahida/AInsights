@@ -46,6 +46,38 @@
           </div>
           <div class="scatter-chart" id="costScatter"></div>
         </section>
+
+        <section class="insight-grid" aria-label="数据分布">
+          <section class="chart-shell" aria-labelledby="scoreBandsTitle">
+            <div class="chart-head">
+              <div>
+                <h2 id="scoreBandsTitle">分数带分布</h2>
+                <p id="scoreBandsSubtitle">去重模型在 AInsights Index 上的集中区间</p>
+              </div>
+            </div>
+            <div class="score-bands" id="scoreBands"></div>
+          </section>
+
+          <section class="chart-shell" aria-labelledby="providerChartTitle">
+            <div class="chart-head">
+              <div>
+                <h2 id="providerChartTitle">机构覆盖</h2>
+                <p id="providerChartSubtitle">按可评分去重模型数量和最高分展示</p>
+              </div>
+            </div>
+            <div class="provider-chart" id="providerChart"></div>
+          </section>
+        </section>
+
+        <section class="chart-shell source-explorer" aria-labelledby="sourceExplorerTitle">
+          <div class="chart-head">
+            <div>
+              <h2 id="sourceExplorerTitle">测评源地图</h2>
+              <p id="sourceExplorerSubtitle">AA 主数据之外的常用公开测评，用来交叉理解模型强弱项</p>
+            </div>
+          </div>
+          <div class="source-grid" id="sourceExplorer"></div>
+        </section>
       </section>
 
       <section class="ranking-view" id="rankingView" hidden>
@@ -97,6 +129,10 @@
           </div>
           <div class="text-ranking" id="textRanking" hidden></div>
         </section>
+      </section>
+
+      <section class="model-view" id="modelView" hidden>
+        <div class="model-detail" id="modelDetail"></div>
       </section>
     </main>
 

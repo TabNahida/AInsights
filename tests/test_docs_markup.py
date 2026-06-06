@@ -18,6 +18,8 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn('id="languageButtons"', html)
         self.assertIn('id="homeView"', html)
         self.assertIn('id="homeMetrics"', html)
+        self.assertIn('id="modelView"', html)
+        self.assertIn('id="modelDetail"', html)
         self.assertIn('id="rankingView"', html)
         self.assertIn('id="top20Chart"', html)
         self.assertIn('id="costScatter"', html)
@@ -43,6 +45,12 @@ class DocsMarkupTests(unittest.TestCase):
 
         self.assertIn('max="20"', html)
         self.assertIn('step="0.01"', html)
+
+    def test_full_ranking_views_are_not_hard_capped(self):
+        app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(encoding="utf-8")
+
+        self.assertNotIn("ranked.slice(0, 250)", app_js)
+        self.assertNotIn("models.slice(0, 120)", app_js)
 
 
 if __name__ == "__main__":

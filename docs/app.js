@@ -13,6 +13,9 @@ const copy = {
       home: "首页",
       ranking: "完整排名",
     },
+    backToRanking: "返回完整排名",
+    openOnAA: "打开 AA 页面",
+    modelNotFound: "没有找到这个模型",
     search: "搜索",
     searchPlaceholder: "模型或机构",
     dedupe: "去除重复档位",
@@ -40,6 +43,22 @@ const copy = {
     scatterYAxis: "AInsights Index",
     attractiveQuadrant: "高分低成本区域",
     noCostData: "没有足够的成本数据可绘制散点图",
+    scoreBandsTitle: "分数带分布",
+    scoreBandsSubtitle: "去重模型在 AInsights Index 上的集中区间",
+    providerChartTitle: "机构覆盖",
+    providerChartSubtitle: "按可评分去重模型数量和最高分展示",
+    sourceExplorerTitle: "测评源地图",
+    sourceExplorerSubtitle: "AA 主数据之外的常用公开测评，用来交叉理解模型强弱项",
+    detailRankTitle: "排名快照",
+    detailBenchmarkTitle: "Benchmark Profile",
+    detailBenchmarkSubtitle: "AA 原始子项得分和 AInsights 默认权重",
+    detailCostTitle: "成本与吞吐",
+    detailVariantsTitle: "同模型档位",
+    detailSourcesTitle: "外部测评参考",
+    releaseDate: "发布日期",
+    currentPreset: "当前预设",
+    noBenchmarks: "没有可展示的子项得分",
+    notAvailable: "暂无",
     homeStats: {
       leader: "领先模型",
       topOpen: "开源领先",
@@ -120,6 +139,9 @@ const copy = {
       home: "Home",
       ranking: "Full ranking",
     },
+    backToRanking: "Back to full ranking",
+    openOnAA: "Open AA page",
+    modelNotFound: "Model not found",
     search: "Search",
     searchPlaceholder: "Model or lab",
     dedupe: "Remove duplicate tiers",
@@ -147,6 +169,22 @@ const copy = {
     scatterYAxis: "AInsights Index",
     attractiveQuadrant: "High-score low-cost region",
     noCostData: "Not enough cost data to draw the scatter chart",
+    scoreBandsTitle: "Score band distribution",
+    scoreBandsSubtitle: "Where deduplicated models cluster on AInsights Index",
+    providerChartTitle: "Provider coverage",
+    providerChartSubtitle: "Scorable deduped model count and best score by lab",
+    sourceExplorerTitle: "Benchmark source map",
+    sourceExplorerSubtitle: "Public evaluation sources to cross-check model strengths beyond AA",
+    detailRankTitle: "Rank snapshot",
+    detailBenchmarkTitle: "Benchmark Profile",
+    detailBenchmarkSubtitle: "AA raw component scores and AInsights default weights",
+    detailCostTitle: "Cost and throughput",
+    detailVariantsTitle: "Same-model tiers",
+    detailSourcesTitle: "External evaluation references",
+    releaseDate: "Release date",
+    currentPreset: "Current preset",
+    noBenchmarks: "No component scores to display",
+    notAvailable: "N/A",
     homeStats: {
       leader: "Leader",
       topOpen: "Top open",
@@ -218,6 +256,8 @@ const copy = {
   },
 };
 
+const initialRoute = getInitialRoute();
+
 const state = {
   data: null,
   presetId: null,
@@ -225,7 +265,8 @@ const state = {
   query: "",
   customWeights: {},
   language: getInitialLanguage(),
-  page: getInitialPage(),
+  page: initialRoute.page,
+  modelId: initialRoute.modelId,
   viewMode: "histogram",
   sourceFilter: "all",
   topChartLimit: 20,
@@ -237,6 +278,8 @@ const els = {
   pageButtons: document.querySelector("#pageButtons"),
   homeView: document.querySelector("#homeView"),
   rankingView: document.querySelector("#rankingView"),
+  modelView: document.querySelector("#modelView"),
+  modelDetail: document.querySelector("#modelDetail"),
   languageButtons: document.querySelector("#languageButtons"),
   presetButtons: document.querySelector("#presetButtons"),
   viewButtons: document.querySelector("#viewButtons"),
@@ -257,6 +300,15 @@ const els = {
   costScatterSubtitle: document.querySelector("#costScatterSubtitle"),
   top20Chart: document.querySelector("#top20Chart"),
   costScatter: document.querySelector("#costScatter"),
+  scoreBandsTitle: document.querySelector("#scoreBandsTitle"),
+  scoreBandsSubtitle: document.querySelector("#scoreBandsSubtitle"),
+  scoreBands: document.querySelector("#scoreBands"),
+  providerChartTitle: document.querySelector("#providerChartTitle"),
+  providerChartSubtitle: document.querySelector("#providerChartSubtitle"),
+  providerChart: document.querySelector("#providerChart"),
+  sourceExplorerTitle: document.querySelector("#sourceExplorerTitle"),
+  sourceExplorerSubtitle: document.querySelector("#sourceExplorerSubtitle"),
+  sourceExplorer: document.querySelector("#sourceExplorer"),
   histogramList: document.querySelector("#histogramList"),
   tableRanking: document.querySelector("#tableRanking"),
   rankingBody: document.querySelector("#rankingBody"),
@@ -334,7 +386,9 @@ function bindControlEvents() {
     render();
   });
   window.addEventListener("hashchange", () => {
-    state.page = getInitialPage();
+    const route = getInitialRoute();
+    state.page = route.page;
+    state.modelId = route.modelId;
     renderStaticControls();
     render();
   });
@@ -373,6 +427,12 @@ function renderStaticControls() {
   els.viewFullRankingLink.textContent = tr("fullRanking");
   els.costScatterTitle.textContent = tr("costScatterTitle");
   els.costScatterSubtitle.textContent = tr("costScatterSubtitle");
+  els.scoreBandsTitle.textContent = tr("scoreBandsTitle");
+  els.scoreBandsSubtitle.textContent = tr("scoreBandsSubtitle");
+  els.providerChartTitle.textContent = tr("providerChartTitle");
+  els.providerChartSubtitle.textContent = tr("providerChartSubtitle");
+  els.sourceExplorerTitle.textContent = tr("sourceExplorerTitle");
+  els.sourceExplorerSubtitle.textContent = tr("sourceExplorerSubtitle");
   els.modelHeader.textContent = tr("headers.model");
   els.scoreHeader.textContent = tr("headers.score");
   els.speedHeader.textContent = tr("headers.speed");
@@ -400,6 +460,7 @@ function renderPageButtons() {
     button.setAttribute("aria-pressed", String(id === state.page));
     button.addEventListener("click", () => {
       state.page = id;
+      state.modelId = null;
       history.replaceState(null, "", id === "home" ? "#" : "#ranking");
       render();
     });
@@ -477,6 +538,7 @@ function render() {
   const preset = state.data.presets[state.presetId];
   els.homeView.hidden = state.page !== "home";
   els.rankingView.hidden = state.page !== "ranking";
+  els.modelView.hidden = state.page !== "model";
   document.querySelectorAll("#pageButtons button").forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.page === state.page));
   });
@@ -502,11 +564,14 @@ function renderResults(preset) {
   const filtered = scored.filter(matchesQuery).filter(matchesSourceFilter);
   const visible = state.dedupe ? dedupeByBestVariant(filtered) : filtered;
   const ranked = rankRows(visible);
-  const capped = ranked.slice(0, 250);
+  const allRanked = rankRows(scored);
 
-  renderHome(homeRanked);
-  renderSummary(filtered.length, visible.length, scored.length, preset);
-  renderRankings(capped);
+  if (!els.homeView.hidden) renderHome(homeRanked);
+  if (!els.rankingView.hidden) {
+    renderSummary(filtered.length, visible.length, scored.length, preset);
+    renderRankings(ranked);
+  }
+  if (!els.modelView.hidden) renderModelDetail(allRanked, preset);
 }
 
 function scoreModels(preset, presetId = state.presetId) {
@@ -648,6 +713,9 @@ function renderHome(models) {
   renderHomeMetrics(models);
   renderTop20Chart(models.slice(0, state.topChartLimit));
   renderCostScatter(models.filter((model) => Number.isFinite(modelCost(model)) && modelCost(model) > 0).slice(0, 28));
+  renderScoreBands(models);
+  renderProviderChart(models);
+  renderSourceExplorer(els.sourceExplorer);
 }
 
 function renderHomeMetrics(models) {
@@ -685,7 +753,7 @@ function renderHomeMetric(stat) {
     return `
       <article class="home-metric">
         <span class="home-metric-label">${escapeHtml(stat.label)}</span>
-        <a class="home-metric-model" href="https://artificialanalysis.ai${escapeHtml(stat.model.modelUrl)}" target="_blank" rel="noreferrer">
+        <a class="home-metric-model" href="${escapeHtml(modelHref(stat.model))}">
           ${renderModelIcon(stat.model)}
           <strong>${escapeHtml(stat.model.model)}</strong>
         </a>
@@ -717,7 +785,7 @@ function renderTop20Chart(models) {
         const width = clamp((model.score / maxScore) * 100, 8, 100);
         const color = providerColor(model, index);
         return `
-          <a class="top-bar-item" href="https://artificialanalysis.ai${escapeHtml(model.modelUrl)}" title="${escapeHtml(model.model)}" target="_blank" rel="noreferrer" style="--bar-width: ${width}%; --bar-color: ${color}">
+          <a class="top-bar-item" href="${escapeHtml(modelHref(model))}" title="${escapeHtml(model.model)}" style="--bar-width: ${width}%; --bar-color: ${color}">
             <span class="top-bar-rank">#${model.rank || index + 1}</span>
             <span class="top-bar-model">
               ${renderModelIcon(model)}
@@ -810,6 +878,72 @@ function renderCostScatter(models) {
   `;
 }
 
+function renderScoreBands(models) {
+  if (!els.scoreBands) return;
+  const bands = [
+    { label: "60+", min: 60, max: Infinity },
+    { label: "50-60", min: 50, max: 60 },
+    { label: "40-50", min: 40, max: 50 },
+    { label: "30-40", min: 30, max: 40 },
+    { label: "<30", min: -Infinity, max: 30 },
+  ].map((band) => ({
+    ...band,
+    count: models.filter((model) => model.score >= band.min && model.score < band.max).length,
+  }));
+  const maxCount = Math.max(...bands.map((band) => band.count), 1);
+  els.scoreBands.innerHTML = bands.map((band) => `
+    <div class="band-row">
+      <span>${escapeHtml(band.label)}</span>
+      <div class="band-track"><span style="--value: ${(band.count / maxCount) * 100}%"></span></div>
+      <strong>${band.count}</strong>
+    </div>
+  `).join("");
+}
+
+function renderProviderChart(models) {
+  if (!els.providerChart) return;
+  const grouped = new Map();
+  for (const model of models) {
+    const provider = model.creator || tr("unknownCreator");
+    const item = grouped.get(provider) || { provider, count: 0, bestScore: 0, bestModel: null };
+    item.count += 1;
+    if (!item.bestModel || model.score > item.bestScore) {
+      item.bestScore = model.score;
+      item.bestModel = model;
+    }
+    grouped.set(provider, item);
+  }
+  const rows = [...grouped.values()]
+    .sort((a, b) => b.count - a.count || b.bestScore - a.bestScore)
+    .slice(0, 10);
+  const maxCount = Math.max(...rows.map((row) => row.count), 1);
+  els.providerChart.innerHTML = rows.map((row, index) => `
+    <a class="provider-row" href="${escapeHtml(row.bestModel ? modelHref(row.bestModel) : "#ranking")}" style="--bar-color: ${providerColor({ creator: row.provider }, index)}; --value: ${(row.count / maxCount) * 100}%">
+      <span class="provider-row-name">${escapeHtml(row.provider)}</span>
+      <span class="provider-row-track"><span></span></span>
+      <strong>${row.count}</strong>
+      <em>${escapeHtml(formatNumber(row.bestScore))}</em>
+    </a>
+  `).join("");
+}
+
+function renderSourceExplorer(target, compact = false) {
+  if (!target) return;
+  target.innerHTML = sourceCardsHtml(compact);
+}
+
+function sourceCardsHtml(compact = false) {
+  const sources = state.data.externalSources || [];
+  return sources.map((source) => `
+    <a class="source-card${compact ? " compact" : ""}" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">
+      <span>${escapeHtml(source.category || tr("source"))}</span>
+      <strong>${escapeHtml(source.label)}</strong>
+      <p>${escapeHtml(compact ? source.focus : `${source.focus} ${source.note || ""}`)}</p>
+      <em>${escapeHtml(source.coverage || "")}</em>
+    </a>
+  `).join("");
+}
+
 function renderRankings(models) {
   const viewMode = state.viewMode;
   els.histogramList.hidden = viewMode !== "histogram";
@@ -826,7 +960,7 @@ function renderHistogram(models) {
     els.histogramList.innerHTML = `<div class="empty">${escapeHtml(tr("empty"))}</div>`;
     return;
   }
-  els.histogramList.innerHTML = models.slice(0, 120).map(renderHistogramRow).join("");
+  els.histogramList.innerHTML = models.map(renderHistogramRow).join("");
 }
 
 function renderHistogramRow(model) {
@@ -837,7 +971,7 @@ function renderHistogramRow(model) {
       <div class="histogram-model">
         ${renderModelIcon(model)}
         <div class="histogram-label">
-          <a href="https://artificialanalysis.ai${escapeHtml(model.modelUrl)}" target="_blank" rel="noreferrer">${escapeHtml(model.model)}</a>
+          <a href="${escapeHtml(modelHref(model))}">${escapeHtml(model.model)}</a>
           <span>${escapeHtml(model.creator || tr("unknownCreator"))} · ${escapeHtml(sourceTypeLabel(sourceType(model)))}</span>
         </div>
       </div>
@@ -867,7 +1001,7 @@ function renderRow(model) {
         <div class="model-main">
           <div class="model-heading">
             ${renderModelIcon(model)}
-            <a class="model-name" href="https://artificialanalysis.ai${escapeHtml(model.modelUrl)}" target="_blank" rel="noreferrer">${escapeHtml(model.model)}</a>
+            <a class="model-name" href="${escapeHtml(modelHref(model))}">${escapeHtml(model.model)}</a>
           </div>
           <div class="model-meta">
             <span>${escapeHtml(model.creator || tr("unknownCreator"))}</span>
@@ -914,12 +1048,166 @@ function renderTextRanking(models) {
     return `
       <div class="text-ranking-row">
         <span>#${model.rank}</span>
-        <span class="text-model">${escapeHtml(model.model)} — ${escapeHtml(creator)}</span>
+        <a class="text-model" href="${escapeHtml(modelHref(model))}">${escapeHtml(model.model)} — ${escapeHtml(creator)}</a>
         <strong>${formatNumber(model.score)}</strong>
         <span>${escapeHtml(source)}</span>
       </div>
     `;
   }).join("");
+}
+
+function renderModelDetail(ranked, preset) {
+  const model = findModelByRoute(ranked);
+  if (!model) {
+    document.title = `${tr("modelNotFound")} · ${tr("pageTitle")}`;
+    els.modelDetail.innerHTML = `
+      <a class="back-link" href="#ranking">${escapeHtml(tr("backToRanking"))}</a>
+      <section class="detail-empty">${escapeHtml(tr("modelNotFound"))}</section>
+    `;
+    return;
+  }
+
+  document.title = `${model.model} · ${tr("pageTitle")}`;
+  const color = providerColor(model);
+  const aaUrl = aaModelUrl(model);
+  const siblingRows = ranked.filter((row) => row.variantGroup === model.variantGroup);
+  const benchmarkRows = benchmarkProfileRows(model);
+
+  els.modelDetail.innerHTML = `
+    <a class="back-link" href="#ranking">${escapeHtml(tr("backToRanking"))}</a>
+    <section class="detail-hero" style="--detail-color: ${color}">
+      <div class="detail-hero-main">
+        ${renderModelIcon(model)}
+        <div>
+          <p>${escapeHtml(model.creator || tr("unknownCreator"))}</p>
+          <h2>${escapeHtml(model.model)}</h2>
+          <div class="model-meta detail-meta">
+            ${model.isReasoning ? `<span class="pill">${escapeHtml(tr("reasoning"))}</span>` : ""}
+            ${renderSourcePill(model)}
+            <span>${escapeHtml(tr("releaseDate"))}: ${escapeHtml(formatDate(model.releaseDate))}</span>
+          </div>
+        </div>
+      </div>
+      <a class="detail-aa-link" href="${escapeHtml(aaUrl)}" target="_blank" rel="noreferrer">${escapeHtml(tr("openOnAA"))}</a>
+    </section>
+
+    <section class="detail-section">
+      <div class="detail-section-head">
+        <h2>${escapeHtml(tr("detailRankTitle"))}</h2>
+        <p>${escapeHtml(tr("currentPreset"))}: ${escapeHtml(presetLabel(state.presetId))}</p>
+      </div>
+      <div class="rank-card-grid">${renderRankCards(model)}</div>
+    </section>
+
+    <section class="detail-grid">
+      <section class="detail-section">
+        <div class="detail-section-head">
+          <h2>${escapeHtml(tr("detailCostTitle"))}</h2>
+        </div>
+        <div class="stat-grid">
+          ${renderDetailStat(tr("headers.score"), formatNumber(model.score), `#${model.rank}`)}
+          ${renderDetailStat(tr("headers.speed"), formatSpeed(model.medianOutputSpeed), tr("table.tokensPerSecond"))}
+          ${renderDetailStat(tr("headers.context"), formatTokens(model.contextWindowTokens), "")}
+          ${renderDetailStat(tr("table.input"), formatMoney(model.pricing?.inputPerMillionTokensUsd), tr("table.perMillion"))}
+          ${renderDetailStat(tr("table.output"), formatMoney(model.pricing?.outputPerMillionTokensUsd), tr("table.perMillion"))}
+          ${renderDetailStat("AA run", formatMoney(modelCost(model)), "cost")}
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div class="detail-section-head">
+          <h2>${escapeHtml(tr("detailVariantsTitle"))}</h2>
+        </div>
+        <div class="variant-list">${renderSiblingVariants(siblingRows, model)}</div>
+      </section>
+    </section>
+
+    <section class="detail-section">
+      <div class="detail-section-head">
+        <h2>${escapeHtml(tr("detailBenchmarkTitle"))}</h2>
+        <p>${escapeHtml(tr("detailBenchmarkSubtitle"))}</p>
+      </div>
+      <div class="benchmark-profile">
+        ${benchmarkRows.length ? benchmarkRows.map(renderBenchmarkRow).join("") : `<div class="empty">${escapeHtml(tr("noBenchmarks"))}</div>`}
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <div class="detail-section-head">
+        <h2>${escapeHtml(tr("detailSourcesTitle"))}</h2>
+      </div>
+      <div class="source-grid compact">${sourceCardsHtml(true)}</div>
+    </section>
+  `;
+}
+
+function renderRankCards(model) {
+  const ids = ["zhihu-adjusted", "aa-intelligence", "aa-coding", "aa-agentic"];
+  if (state.presetId === "custom") ids.push("custom");
+  return ids.map((id) => {
+    const ranked = rankForPreset(model, id);
+    const score = ranked ? formatNumber(ranked.score) : tr("notAvailable");
+    const rank = ranked ? `#${ranked.rank}` : tr("notAvailable");
+    return `
+      <article class="rank-card">
+        <span>${escapeHtml(presetLabel(id))}</span>
+        <strong>${escapeHtml(score)}</strong>
+        <em>${escapeHtml(rank)}</em>
+      </article>
+    `;
+  }).join("");
+}
+
+function renderDetailStat(label, value, meta) {
+  return `
+    <article class="detail-stat">
+      <span>${escapeHtml(label)}</span>
+      <strong>${escapeHtml(value || tr("notAvailable"))}</strong>
+      <em>${escapeHtml(meta || "")}</em>
+    </article>
+  `;
+}
+
+function renderSiblingVariants(rows, currentModel) {
+  if (rows.length <= 1) return `<div class="empty">${escapeHtml(tr("notAvailable"))}</div>`;
+  return rows.map((row) => `
+    <a class="variant-row${sameModelIdentity(row, currentModel) ? " is-current" : ""}" href="${escapeHtml(modelHref(row))}">
+      <span>#${row.rank}</span>
+      <strong>${escapeHtml(row.model)}</strong>
+      <em>${escapeHtml(formatNumber(row.score))}</em>
+    </a>
+  `).join("");
+}
+
+function benchmarkProfileRows(model) {
+  const defaultWeights = state.data.presets["zhihu-adjusted"].weights || {};
+  return state.data.metrics
+    .map((metric) => {
+      const value = model.scores?.[metric.key];
+      return {
+        key: metric.key,
+        label: metric.label,
+        value,
+        weight: Number(defaultWeights[metric.key] || 0),
+        rank: metricRank(metric.key, model),
+      };
+    })
+    .filter((row) => Number.isFinite(row.value))
+    .sort((a, b) => b.weight - a.weight || b.value - a.value || a.label.localeCompare(b.label));
+}
+
+function renderBenchmarkRow(row) {
+  const valueWidth = clamp(row.value, 0, 100);
+  return `
+    <div class="benchmark-row">
+      <div>
+        <strong>${escapeHtml(row.label)}</strong>
+        <span>#${escapeHtml(row.rank || tr("notAvailable"))} · w ${escapeHtml(formatWeight(row.weight))}</span>
+      </div>
+      <div class="benchmark-track"><span style="--value: ${valueWidth}%"></span></div>
+      <em>${escapeHtml(formatNumber(row.value))}</em>
+    </div>
+  `;
 }
 
 function renderModelIcon(model) {
@@ -948,6 +1236,10 @@ function renderLoadError(error) {
   els.textRanking.innerHTML = `<div class="empty">${escapeHtml(message)}</div>`;
   els.top20Chart.innerHTML = `<div class="empty">${escapeHtml(message)}</div>`;
   els.costScatter.innerHTML = `<div class="empty">${escapeHtml(message)}</div>`;
+  els.scoreBands.innerHTML = `<div class="empty">${escapeHtml(message)}</div>`;
+  els.providerChart.innerHTML = `<div class="empty">${escapeHtml(message)}</div>`;
+  els.sourceExplorer.innerHTML = `<div class="empty">${escapeHtml(message)}</div>`;
+  els.modelDetail.innerHTML = `<div class="empty">${escapeHtml(message)}</div>`;
 }
 
 function presetLabel(id) {
@@ -967,6 +1259,55 @@ function sourceTypeLabel(type) {
   return tr(`sourceTypes.${type}`);
 }
 
+function rankForPreset(model, presetId) {
+  const preset = state.data.presets[presetId];
+  if (!preset) return null;
+  const ranked = rankRows(scoreModels(preset, presetId));
+  return ranked.find((row) => sameModelIdentity(row, model)) || null;
+}
+
+function metricRank(metricKey, model) {
+  const rows = state.data.models
+    .map((candidate) => ({ candidate, value: candidate.scores?.[metricKey] }))
+    .filter((row) => Number.isFinite(row.value))
+    .sort((a, b) => b.value - a.value || a.candidate.model.localeCompare(b.candidate.model));
+  let previousValue = null;
+  let currentRank = 0;
+  for (let index = 0; index < rows.length; index += 1) {
+    const row = rows[index];
+    if (previousValue === null || row.value !== previousValue) {
+      currentRank = index + 1;
+      previousValue = row.value;
+    }
+    if (sameModelIdentity(row.candidate, model)) return currentRank;
+  }
+  return null;
+}
+
+function findModelByRoute(models) {
+  const routeId = state.modelId || "";
+  return models.find((model) => modelRouteId(model) === routeId || model.slug === routeId || model.modelKey === routeId) || null;
+}
+
+function sameModelIdentity(a, b) {
+  return modelRouteId(a) === modelRouteId(b) || (a.modelKey && a.modelKey === b.modelKey);
+}
+
+function modelHref(model) {
+  return `#model/${encodeURIComponent(modelRouteId(model))}`;
+}
+
+function modelRouteId(model) {
+  return String(model.slug || model.modelKey || model.model || "").trim();
+}
+
+function aaModelUrl(model) {
+  const path = model.modelUrl || "";
+  if (path.startsWith("http")) return path;
+  if (path.startsWith("/")) return `https://artificialanalysis.ai${path}`;
+  return state.data.source.url;
+}
+
 function getInitialLanguage() {
   try {
     const stored = localStorage.getItem(LANGUAGE_STORAGE_KEY);
@@ -977,8 +1318,20 @@ function getInitialLanguage() {
   return navigator.language && navigator.language.toLowerCase().startsWith("zh") ? "zh-CN" : DEFAULT_LANGUAGE;
 }
 
-function getInitialPage() {
-  return location.hash.replace("#", "") === "ranking" ? "ranking" : "home";
+function getInitialRoute() {
+  const hash = location.hash.replace(/^#/, "");
+  if (hash.startsWith("model/")) {
+    return { page: "model", modelId: decodeRoutePart(hash.slice("model/".length)) };
+  }
+  return { page: hash === "ranking" ? "ranking" : "home", modelId: null };
+}
+
+function decodeRoutePart(value) {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
 }
 
 function saveLanguage(language) {
@@ -1063,6 +1416,15 @@ function formatDateTime(value) {
     dateStyle: "medium",
     timeStyle: "short",
   }).format(new Date(value));
+}
+
+function formatDate(value) {
+  if (!value) return tr("notAvailable");
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return String(value);
+  return new Intl.DateTimeFormat(state.language, {
+    dateStyle: "medium",
+  }).format(date);
 }
 
 function clamp(value, min, max) {

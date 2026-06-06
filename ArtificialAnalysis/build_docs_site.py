@@ -100,6 +100,62 @@ PROVIDER_LOGO_SLUGS = {
     "Z AI": "z-ai",
 }
 AA_LOGO_BASE_URL = "https://artificialanalysis.ai/img/logos"
+EXTERNAL_SOURCES = [
+    {
+        "id": "artificial-analysis",
+        "label": "Artificial Analysis",
+        "url": SOURCE_URL,
+        "category": "Composite benchmark",
+        "coverage": "520+ model rows",
+        "focus": "Composite intelligence, coding, agentic scores, token usage, cost, release date.",
+        "note": "Primary source for AInsights Index scoring and operational metrics.",
+    },
+    {
+        "id": "arena",
+        "label": "Arena / LMArena",
+        "url": "https://arena.ai/leaderboard/",
+        "category": "Human preference",
+        "coverage": "Text, code, vision, document, search, image and video arenas",
+        "focus": "Blind side-by-side human preference rankings across real user prompts.",
+        "note": "Useful as a general-experience cross-check, but not directly comparable to fixed benchmark scores.",
+    },
+    {
+        "id": "livebench",
+        "label": "LiveBench",
+        "url": "https://livebench.ai/",
+        "category": "Contamination-resistant benchmark",
+        "coverage": "Global, reasoning, coding, math, data analysis, language, IF",
+        "focus": "Fresh benchmark releases intended to reduce training-data leakage.",
+        "note": "Useful for checking whether static benchmark wins still hold on newer tasks.",
+    },
+    {
+        "id": "swe-bench",
+        "label": "SWE-bench",
+        "url": "https://www.swebench.com/",
+        "category": "Software engineering",
+        "coverage": "Full, Verified, Lite, Multilingual, Multimodal",
+        "focus": "Real GitHub issue resolution, commonly reported as percent resolved.",
+        "note": "Best treated as an agent/tooling benchmark rather than a pure base-model leaderboard.",
+    },
+    {
+        "id": "helm",
+        "label": "Stanford HELM",
+        "url": "https://crfm.stanford.edu/helm/index.html",
+        "category": "Holistic evaluation",
+        "coverage": "Capabilities, safety, transparency, domain leaderboards",
+        "focus": "Transparent, scenario-based evaluation with reproducibility emphasis.",
+        "note": "Useful as a methodology benchmark and source for caveats beyond headline rank.",
+    },
+    {
+        "id": "huggingface-leaderboards",
+        "label": "Hugging Face Leaderboards",
+        "url": "https://huggingface.co/docs/leaderboards/index",
+        "category": "Community and reproducible evals",
+        "coverage": "Eval Results, community Spaces, Open LLM Leaderboard archive",
+        "focus": "Hub-hosted model eval results and community-maintained leaderboards.",
+        "note": "Useful for open-model reproducibility checks and benchmark result discovery.",
+    },
+]
 
 STRENGTH_SUFFIX_RE = re.compile(
     r"\s*\((?:x?high|medium|low|max|min|minimal|default|fast|thinking|non[- ]reasoning|reasoning)\)\s*$",
@@ -147,6 +203,7 @@ def build_site_payload(rows: Iterable[dict[str, Any]]) -> dict[str, Any]:
             for key in metric_keys
         ],
         "presets": _presets(),
+        "externalSources": EXTERNAL_SOURCES,
         "models": models,
         "summary": {
             "modelRows": len(models),
