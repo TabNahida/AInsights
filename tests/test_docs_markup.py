@@ -16,18 +16,31 @@ class DocsMarkupTests(unittest.TestCase):
         html = (Path(__file__).resolve().parents[1] / "docs" / "index.html").read_text(encoding="utf-8")
 
         self.assertIn('id="languageButtons"', html)
+        self.assertIn('id="homeView"', html)
+        self.assertIn('id="homeMetrics"', html)
+        self.assertIn('id="rankingView"', html)
+        self.assertIn('id="top20Chart"', html)
+        self.assertIn('id="costScatter"', html)
         self.assertIn('id="viewButtons"', html)
         self.assertIn('id="sourceFilterButtons"', html)
         self.assertIn('id="histogramList"', html)
         self.assertIn('id="textRanking"', html)
 
-    def test_table_omits_raw_aa_columns_and_custom_weights_are_fine_grained(self):
+    def test_table_omits_raw_aa_columns_and_shows_operational_columns(self):
         html = (Path(__file__).resolve().parents[1] / "docs" / "index.html").read_text(encoding="utf-8")
 
         self.assertIn('id="sourceHeader"', html)
+        self.assertIn('id="speedHeader"', html)
+        self.assertIn('id="contextHeader"', html)
+        self.assertIn('id="priceHeader"', html)
+        self.assertNotIn('id="indexCostHeader"', html)
         self.assertNotIn("<th>AA Intelligence</th>", html)
         self.assertNotIn("<th>AA Coding</th>", html)
         self.assertNotIn("<th>AA Agentic</th>", html)
+
+    def test_custom_weights_are_fine_grained(self):
+        html = (Path(__file__).resolve().parents[1] / "docs" / "index.html").read_text(encoding="utf-8")
+
         self.assertIn('max="20"', html)
         self.assertIn('step="0.01"', html)
 

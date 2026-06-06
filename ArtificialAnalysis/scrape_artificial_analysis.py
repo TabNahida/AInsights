@@ -147,10 +147,17 @@ def build_raw_scores_rows(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]
             "context_window_tokens": _format_number(row.get("context_window_tokens")),
             "open_source_categorization": row.get("open_source_categorization") or "",
             "median_output_speed": _format_number(timescale.get("median_output_speed")),
+            "Cache Hit Price Per 1M Tokens (USD)": _format_number(row.get("cache_hit_price")),
+            "Input Price Per 1M Tokens (USD)": _format_number(row.get("price_1m_input_tokens")),
+            "Output Price Per 1M Tokens (USD)": _format_number(row.get("price_1m_output_tokens")),
             "AA Intelligence Index": _format_number(row.get("intelligence_index")),
             "AA Coding Index": _format_number(row.get("coding_index")),
             "AA Agentic Index": _format_number(row.get("agentic_index")),
             "AA Intelligence Index Cost (USD)": _format_number(cost.get("total_cost")),
+            "AA Intelligence Index Input Cost (USD)": _format_number(cost.get("input_cost")),
+            "AA Intelligence Index Output Cost (USD)": _format_number(cost.get("output_cost")),
+            "AA Intelligence Index Reasoning Cost (USD)": _format_number(cost.get("reasoning_cost")),
+            "AA Intelligence Index Answer Cost (USD)": _format_number(cost.get("answer_cost")),
         }
 
         for spec in SCORE_SPECS:
@@ -274,6 +281,9 @@ RAW_METADATA_COLUMNS = [
     "context_window_tokens",
     "open_source_categorization",
     "median_output_speed",
+    "Cache Hit Price Per 1M Tokens (USD)",
+    "Input Price Per 1M Tokens (USD)",
+    "Output Price Per 1M Tokens (USD)",
 ]
 
 AA_PRESET_COLUMNS = [
@@ -281,6 +291,10 @@ AA_PRESET_COLUMNS = [
     "AA Coding Index",
     "AA Agentic Index",
     "AA Intelligence Index Cost (USD)",
+    "AA Intelligence Index Input Cost (USD)",
+    "AA Intelligence Index Output Cost (USD)",
+    "AA Intelligence Index Reasoning Cost (USD)",
+    "AA Intelligence Index Answer Cost (USD)",
 ]
 
 

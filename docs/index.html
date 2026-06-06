@@ -13,6 +13,7 @@
         <h1>AI Insights Analysis</h1>
       </div>
       <div class="header-actions">
+        <nav class="segmented-control compact" id="pageButtons" aria-label="页面"></nav>
         <div class="segmented-control compact" id="languageButtons" role="group" aria-label="语言"></div>
         <div class="source-block">
           <span id="updatedAt">加载中</span>
@@ -22,50 +23,80 @@
     </header>
 
     <main>
-      <section class="controls" aria-label="排名控制">
-        <div class="preset-row" id="presetButtons" role="tablist" aria-label="排名预设"></div>
-        <div class="switch-row">
-          <div class="segmented-control" id="viewButtons" role="group" aria-label="展示方式"></div>
-          <div class="segmented-control" id="sourceFilterButtons" role="group" aria-label="模型来源"></div>
-        </div>
-        <div class="filter-row">
-          <label class="search-label">
-            <span id="searchLabel">搜索</span>
-            <input id="searchInput" type="search" placeholder="模型或机构" />
-          </label>
-          <label class="toggle-label">
-            <input id="dedupeToggle" type="checkbox" checked />
-            <span id="dedupeLabel">去除重复档位</span>
-          </label>
-        </div>
-        <div class="summary-row" id="summaryRow"></div>
+      <section class="home-view" id="homeView">
+        <section class="home-metrics" id="homeMetrics" aria-label="首页摘要"></section>
+
+        <section class="chart-shell" aria-labelledby="top20Title">
+          <div class="chart-head">
+            <div>
+              <h2 id="top20Title">AInsights Index Top</h2>
+              <p id="top20Subtitle">固定使用 AInsights Index，按宽度最多展示 30 个去重模型</p>
+            </div>
+            <a id="viewFullRankingLink" href="#ranking">完整排名</a>
+          </div>
+          <div class="bar-chart" id="top20Chart"></div>
+        </section>
+
+        <section class="chart-shell" aria-labelledby="costScatterTitle">
+          <div class="chart-head">
+            <div>
+              <h2 id="costScatterTitle">智能 vs 运行成本</h2>
+              <p id="costScatterSubtitle">分数与 AA Intelligence Index 运行成本</p>
+            </div>
+          </div>
+          <div class="scatter-chart" id="costScatter"></div>
+        </section>
       </section>
 
-      <section class="custom-panel" id="customPanel" hidden>
-        <div class="panel-head">
-          <h2 id="customTitle">自定义占比</h2>
-          <button id="resetWeightsButton" type="button">重置</button>
-        </div>
-        <div class="weights-grid" id="weightsGrid"></div>
-      </section>
+      <section class="ranking-view" id="rankingView" hidden>
+        <section class="controls" aria-label="排名控制">
+          <div class="preset-row" id="presetButtons" role="tablist" aria-label="排名预设"></div>
+          <div class="switch-row">
+            <div class="segmented-control" id="viewButtons" role="group" aria-label="展示方式"></div>
+            <div class="segmented-control" id="sourceFilterButtons" role="group" aria-label="模型来源"></div>
+          </div>
+          <div class="filter-row">
+            <label class="search-label">
+              <span id="searchLabel">搜索</span>
+              <input id="searchInput" type="search" placeholder="模型或机构" />
+            </label>
+            <label class="toggle-label">
+              <input id="dedupeToggle" type="checkbox" checked />
+              <span id="dedupeLabel">去除重复档位</span>
+            </label>
+          </div>
+          <div class="summary-row" id="summaryRow"></div>
+        </section>
 
-      <section class="ranking-shell">
-        <div class="histogram-list" id="histogramList"></div>
-        <div class="table-wrap" id="tableRanking">
-          <table>
-            <thead>
-              <tr>
-                <th class="rank-col">#</th>
-                <th id="modelHeader">模型</th>
-                <th id="scoreHeader">综合分</th>
-                <th id="sourceHeader">来源</th>
-                <th id="coverageHeader">覆盖</th>
-              </tr>
-            </thead>
-            <tbody id="rankingBody"></tbody>
-          </table>
-        </div>
-        <div class="text-ranking" id="textRanking" hidden></div>
+        <section class="custom-panel" id="customPanel" hidden>
+          <div class="panel-head">
+            <h2 id="customTitle">自定义占比</h2>
+            <button id="resetWeightsButton" type="button">重置</button>
+          </div>
+          <div class="weights-grid" id="weightsGrid"></div>
+        </section>
+
+        <section class="ranking-shell">
+          <div class="histogram-list" id="histogramList"></div>
+          <div class="table-wrap" id="tableRanking">
+            <table>
+              <thead>
+                <tr>
+                  <th class="rank-col">#</th>
+                  <th id="modelHeader">模型</th>
+                  <th id="scoreHeader">综合分</th>
+                  <th id="speedHeader">速度</th>
+                  <th id="contextHeader">上下文</th>
+                  <th id="priceHeader">价格</th>
+                  <th id="sourceHeader">来源</th>
+                  <th id="coverageHeader">覆盖</th>
+                </tr>
+              </thead>
+              <tbody id="rankingBody"></tbody>
+            </table>
+          </div>
+          <div class="text-ranking" id="textRanking" hidden></div>
+        </section>
       </section>
     </main>
 

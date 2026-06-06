@@ -31,7 +31,16 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
                 "intelligence_index": 55.5,
                 "coding_index": 44.4,
                 "agentic_index": 33.3,
-                "intelligence_index_cost": {"total_cost": 123.45},
+                "cache_hit_price": 0.25,
+                "price_1m_input_tokens": 1.5,
+                "price_1m_output_tokens": 10,
+                "intelligence_index_cost": {
+                    "total_cost": 123.45,
+                    "input_cost": 23.45,
+                    "output_cost": 100,
+                    "reasoning_cost": 75,
+                    "answer_cost": 25,
+                },
                 "gdpval": 1500,
                 "terminalbench_hard": 0.5,
                 "tau2": 0.25,
@@ -74,6 +83,13 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
         self.assertEqual(output[0]["AA Coding Index"], 44.4)
         self.assertEqual(output[0]["AA Agentic Index"], 33.3)
         self.assertEqual(output[0]["AA Intelligence Index Cost (USD)"], 123.45)
+        self.assertEqual(output[0]["AA Intelligence Index Input Cost (USD)"], 23.45)
+        self.assertEqual(output[0]["AA Intelligence Index Output Cost (USD)"], 100.0)
+        self.assertEqual(output[0]["AA Intelligence Index Reasoning Cost (USD)"], 75.0)
+        self.assertEqual(output[0]["AA Intelligence Index Answer Cost (USD)"], 25.0)
+        self.assertEqual(output[0]["Cache Hit Price Per 1M Tokens (USD)"], 0.25)
+        self.assertEqual(output[0]["Input Price Per 1M Tokens (USD)"], 1.5)
+        self.assertEqual(output[0]["Output Price Per 1M Tokens (USD)"], 10.0)
         self.assertEqual(output[0]["GDPval-AA"], 50.0)
         self.assertEqual(output[0]["Terminal-Bench Hard"], 50.0)
         self.assertEqual(output[0]["AA-Omniscience Accuracy"], 80.0)
@@ -97,6 +113,10 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
         output = build_raw_scores_rows(rows)
 
         self.assertEqual(output[0]["AA Intelligence Index Cost (USD)"], "")
+        self.assertEqual(output[0]["AA Intelligence Index Input Cost (USD)"], "")
+        self.assertEqual(output[0]["AA Intelligence Index Output Cost (USD)"], "")
+        self.assertEqual(output[0]["AA Intelligence Index Reasoning Cost (USD)"], "")
+        self.assertEqual(output[0]["AA Intelligence Index Answer Cost (USD)"], "")
 
 
 if __name__ == "__main__":

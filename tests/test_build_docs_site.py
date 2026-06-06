@@ -33,6 +33,14 @@ class BuildDocsSiteTests(unittest.TestCase):
                 "is_reasoning": "true",
                 "slug": "model-a-high",
                 "creator": "Lab A",
+                "context_window_tokens": "128000",
+                "median_output_speed": "123.4",
+                "Input Price Per 1M Tokens (USD)": "1.25",
+                "Output Price Per 1M Tokens (USD)": "5",
+                "Cache Hit Price Per 1M Tokens (USD)": "0.5",
+                "AA Intelligence Index Cost (USD)": "42.25",
+                "AA Intelligence Index Input Cost (USD)": "12.25",
+                "AA Intelligence Index Output Cost (USD)": "30",
                 "AA Intelligence Index": "50",
                 "AA Coding Index": "60",
                 "AA Agentic Index": "70",
@@ -66,6 +74,14 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["kind"], "weighted-metrics")
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["label"], "AInsights Index")
         self.assertGreater(payload["models"][0]["variantPriority"], payload["models"][1]["variantPriority"])
+        self.assertEqual(payload["models"][0]["contextWindowTokens"], 128000)
+        self.assertEqual(payload["models"][0]["medianOutputSpeed"], 123.4)
+        self.assertEqual(payload["models"][0]["pricing"]["inputPerMillionTokensUsd"], 1.25)
+        self.assertEqual(payload["models"][0]["pricing"]["outputPerMillionTokensUsd"], 5)
+        self.assertEqual(payload["models"][0]["pricing"]["cacheHitPerMillionTokensUsd"], 0.5)
+        self.assertEqual(payload["models"][0]["pricing"]["aaIndexCostUsd"], 42.25)
+        self.assertEqual(payload["models"][0]["pricing"]["aaIndexInputCostUsd"], 12.25)
+        self.assertEqual(payload["models"][0]["pricing"]["aaIndexOutputCostUsd"], 30)
 
     def test_build_site_payload_adds_aa_logo_icons_and_source_types(self):
         payload = build_site_payload(

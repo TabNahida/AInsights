@@ -268,6 +268,7 @@ def _model_payload(row: dict[str, Any], metric_keys: list[str]) -> dict[str, Any
     open_source_categorization = str(row.get("open_source_categorization") or "")
     scores = {key: _number_or_none(row.get(key)) for key in metric_keys}
     aa_scores = {key: _number_or_none(row.get(column)) for key, column in AA_PRESET_COLUMNS.items()}
+    pricing = pricing_payload(row)
 
     return {
         "modelKey": row.get("model_key") or model,
@@ -285,8 +286,22 @@ def _model_payload(row: dict[str, Any], metric_keys: list[str]) -> dict[str, Any
         "modelIcon": model_icon(creator, model),
         "medianOutputSpeed": _number_or_none(row.get("median_output_speed")),
         "aa": aa_scores,
-        "aaCostUsd": _number_or_none(row.get("AA Intelligence Index Cost (USD)")),
+        "aaCostUsd": pricing["aaIndexCostUsd"],
+        "pricing": pricing,
         "scores": scores,
+    }
+
+
+def pricing_payload(row: dict[str, Any]) -> dict[str, float | None]:
+    return {
+        "inputPerMillionTokensUsd": _number_or_none(row.get("Input Price Per 1M Tokens (USD)")),
+        "outputPerMillionTokensUsd": _number_or_none(row.get("Output Price Per 1M Tokens (USD)")),
+        "cacheHitPerMillionTokensUsd": _number_or_none(row.get("Cache Hit Price Per 1M Tokens (USD)")),
+        "aaIndexCostUsd": _number_or_none(row.get("AA Intelligence Index Cost (USD)")),
+        "aaIndexInputCostUsd": _number_or_none(row.get("AA Intelligence Index Input Cost (USD)")),
+        "aaIndexOutputCostUsd": _number_or_none(row.get("AA Intelligence Index Output Cost (USD)")),
+        "aaIndexReasoningCostUsd": _number_or_none(row.get("AA Intelligence Index Reasoning Cost (USD)")),
+        "aaIndexAnswerCostUsd": _number_or_none(row.get("AA Intelligence Index Answer Cost (USD)")),
     }
 
 
