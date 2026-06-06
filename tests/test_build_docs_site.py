@@ -67,6 +67,46 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["label"], "AInsights Index")
         self.assertGreater(payload["models"][0]["variantPriority"], payload["models"][1]["variantPriority"])
 
+    def test_build_site_payload_adds_model_icons_and_source_types(self):
+        payload = build_site_payload(
+            [
+                {
+                    "model_key": "Open Model",
+                    "model": "Open Model",
+                    "is_reasoning": "false",
+                    "slug": "open-model",
+                    "creator": "OpenAI",
+                    "open_source_categorization": "Open Weights (Permissive License)",
+                    "AA Intelligence Index": "50",
+                },
+                {
+                    "model_key": "Closed Model",
+                    "model": "Closed Model",
+                    "is_reasoning": "false",
+                    "slug": "closed-model",
+                    "creator": "Lab B",
+                    "open_source_categorization": "Proprietary",
+                    "AA Intelligence Index": "40",
+                },
+                {
+                    "model_key": "Unknown Model",
+                    "model": "Unknown Model",
+                    "is_reasoning": "false",
+                    "slug": "unknown-model",
+                    "creator": "",
+                    "AA Intelligence Index": "30",
+                },
+            ]
+        )
+
+        self.assertEqual(payload["models"][0]["openSourceType"], "open")
+        self.assertEqual(payload["models"][1]["openSourceType"], "closed")
+        self.assertEqual(payload["models"][2]["openSourceType"], "unknown")
+        self.assertEqual(payload["models"][0]["modelIcon"]["label"], "OAI")
+        self.assertEqual(payload["models"][0]["modelIcon"]["title"], "OpenAI")
+        self.assertEqual(payload["models"][1]["modelIcon"]["label"], "LB")
+        self.assertIn(payload["models"][1]["modelIcon"]["tone"], {"tone-1", "tone-2", "tone-3", "tone-4", "tone-5", "tone-6"})
+
     def test_build_docs_site_runs_when_invoked_by_path(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             tmp = Path(tmpdir)

@@ -62,6 +62,23 @@ VARIANT_PRIORITY_BY_SUFFIX = {
     "min": 30,
     "non-reasoning": 20,
 }
+PROVIDER_ICON_LABELS = {
+    "AI21 Labs": "AI21",
+    "Alibaba": "QW",
+    "Anthropic": "ANT",
+    "ByteDance Seed": "SEED",
+    "Cohere": "CO",
+    "DeepSeek": "DS",
+    "Google": "G",
+    "Meta": "META",
+    "Mistral": "M",
+    "Moonshot AI": "KIMI",
+    "OpenAI": "OAI",
+    "Perplexity": "PPLX",
+    "xAI": "xAI",
+    "Z AI": "ZAI",
+}
+ICON_TONES = ("tone-1", "tone-2", "tone-3", "tone-4", "tone-5", "tone-6")
 
 STRENGTH_SUFFIX_RE = re.compile(
     r"\s*\((?:x?high|medium|low|max|min|minimal|default|fast|thinking|non[- ]reasoning|reasoning)\)\s*$",
@@ -113,6 +130,7 @@ def build_site_payload(rows: Iterable[dict[str, Any]]) -> dict[str, Any]:
         "summary": {
             "modelRows": len(models),
             "variantGroups": len({model["variantGroup"] for model in models}),
+            "sourceTypes": _source_type_counts(models),
         },
     }
 
@@ -225,6 +243,8 @@ def main(argv: list[str] | None = None) -> int:
 def _model_payload(row: dict[str, Any], metric_keys: list[str]) -> dict[str, Any]:
     model = str(row.get("model") or "")
     slug = str(row.get("slug") or "")
+    creator = str(row.get("creator") or "")
+    open_source_categorization = str(row.get("open_source_categorization") or "")
     scores = {key: _number_or_none(row.get(key)) for key in metric_keys}
     aa_scores = {key: _number_or_none(row.get(column)) for key, column in AA_PRESET_COLUMNS.items()}
 
@@ -235,16 +255,60 @@ def _model_payload(row: dict[str, Any], metric_keys: list[str]) -> dict[str, Any
         "variantPriority": variant_priority(model, slug),
         "isReasoning": str(row.get("is_reasoning") or "").lower() == "true",
         "slug": slug,
-        "creator": row.get("creator") or "",
+        "creator": creator,
         "releaseDate": row.get("release_date") or "",
         "modelUrl": row.get("model_url") or "",
         "contextWindowTokens": _number_or_none(row.get("context_window_tokens")),
-        "openSourceCategorization": row.get("open_source_categorization") or "",
+        "openSourceCategorization": open_source_categorization,
+        "openSourceType": open_source_type(open_source_categorization),
+        "modelIcon": model_icon(creator, model),
         "medianOutputSpeed": _number_or_none(row.get("median_output_speed")),
         "aa": aa_scores,
         "aaCostUsd": _number_or_none(row.get("AA Intelligence Index Cost (USD)")),
         "scores": scores,
     }
+
+
+def open_source_type(category: str) -> str:
+    normalized = category.strip().lower()
+    if not normalized:
+        return "unknown"
+    if "open" in normalized:
+        return "open"
+    if "proprietary" in normalized or "closed" in normalized:
+        return "closed"
+    return "unknown"
+
+
+def model_icon(creator: str, model: str = "") -> dict[str, str]:
+    title = creator.strip() or model.strip() or "Unknown"
+    label = PROVIDER_ICON_LABELS.get(title) or _initials(title)
+    return {
+        "label": label,
+        "title": title,
+        "tone": _icon_tone(title),
+    }
+
+
+def _initials(value: str) -> str:
+    tokens = re.findall(r"[A-Za-z0-9]+", value)
+    if not tokens:
+        return "AI"
+    if len(tokens) == 1:
+        return tokens[0][:3].upper()
+    return "".join(token[0].upper() for token in tokens[:3])
+
+
+def _icon_tone(value: str) -> str:
+    return ICON_TONES[sum(ord(char) for char in value) % len(ICON_TONES)]
+
+
+def _source_type_counts(models: list[dict[str, Any]]) -> dict[str, int]:
+    counts = {"open": 0, "closed": 0, "unknown": 0}
+    for model in models:
+        source_type = str(model.get("openSourceType") or "unknown")
+        counts[source_type if source_type in counts else "unknown"] += 1
+    return counts
 
 
 def _presets() -> dict[str, dict[str, Any]]:

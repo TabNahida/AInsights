@@ -1,25 +1,196 @@
+const LANGUAGE_STORAGE_KEY = "ainsights-language";
+const DEFAULT_LANGUAGE = "zh-CN";
+
+const copy = {
+  "zh-CN": {
+    pageTitle: "AI Insights Analysis",
+    loading: "加载中",
+    source: "数据源",
+    updatedAt: "更新于 {date}",
+    unknownTime: "未知时间",
+    languageLabel: "语言",
+    search: "搜索",
+    searchPlaceholder: "模型或机构",
+    dedupe: "去除重复档位",
+    customTitle: "自定义占比",
+    reset: "重置",
+    empty: "没有符合条件的模型",
+    loadFailed: "数据加载失败：{message}",
+    unknownCreator: "Unknown",
+    reasoning: "Reasoning",
+    defaultCorrection: "默认修正参考",
+    footerPrefix: "数据来源：",
+    footerSuffix: "。AInsights Index 基于其公开评测数据重新计算。",
+    rankingItems: "个排名项",
+    scorableModels: "个可评分模型",
+    removedPrefix: "已去除",
+    removedSuffix: "个重复档位",
+    allTiers: "显示全部档位",
+    sourceFilter: "来源",
+    headers: {
+      model: "模型",
+      score: "综合分",
+      coverage: "覆盖",
+    },
+    languages: {
+      "zh-CN": "中",
+      "en-US": "EN",
+    },
+    views: {
+      histogram: "直方图",
+      table: "表格",
+      text: "纯文本",
+    },
+    sourceFilters: {
+      all: "全部",
+      open: "开源",
+      closed: "闭源",
+      unknown: "未知",
+    },
+    sourceTypes: {
+      open: "开源权重",
+      closed: "闭源",
+      unknown: "未知来源",
+    },
+    presets: {
+      "zhihu-adjusted": {
+        label: "AInsights Index",
+        description: "按 AA Intelligence Index evaluation suite 的四类 25% 权重计算；AA-Omniscience 按修正规则只计 Accuracy，非幻觉率权重为 0。",
+      },
+      "aa-intelligence": {
+        label: "AA Intelligence",
+        description: "Artificial Analysis 官方 Intelligence Index。",
+      },
+      "aa-coding": {
+        label: "AA Coding",
+        description: "Artificial Analysis 官方 Coding Index。",
+      },
+      "aa-agentic": {
+        label: "AA Agentic",
+        description: "Artificial Analysis 官方 Agentic Index。",
+      },
+      custom: {
+        label: "自定义占比",
+        description: "按用户设置的评测权重实时计算，缺失项按 0 计入分母。",
+      },
+    },
+  },
+  "en-US": {
+    pageTitle: "AI Insights Analysis",
+    loading: "Loading",
+    source: "Source",
+    updatedAt: "Updated {date}",
+    unknownTime: "unknown time",
+    languageLabel: "Language",
+    search: "Search",
+    searchPlaceholder: "Model or lab",
+    dedupe: "Remove duplicate tiers",
+    customTitle: "Custom weights",
+    reset: "Reset",
+    empty: "No models match the current filters",
+    loadFailed: "Failed to load data: {message}",
+    unknownCreator: "Unknown",
+    reasoning: "Reasoning",
+    defaultCorrection: "Default correction reference",
+    footerPrefix: "Source: ",
+    footerSuffix: ". AInsights Index recalculates the public benchmark data.",
+    rankingItems: "ranked items",
+    scorableModels: "scorable models",
+    removedPrefix: "Removed",
+    removedSuffix: "duplicate tiers",
+    allTiers: "Showing every tier",
+    sourceFilter: "Source",
+    headers: {
+      model: "Model",
+      score: "Score",
+      coverage: "Coverage",
+    },
+    languages: {
+      "zh-CN": "中",
+      "en-US": "EN",
+    },
+    views: {
+      histogram: "Histogram",
+      table: "Table",
+      text: "Text",
+    },
+    sourceFilters: {
+      all: "All",
+      open: "Open",
+      closed: "Closed",
+      unknown: "Unknown",
+    },
+    sourceTypes: {
+      open: "Open weights",
+      closed: "Proprietary",
+      unknown: "Unknown",
+    },
+    presets: {
+      "zhihu-adjusted": {
+        label: "AInsights Index",
+        description: "Uses the AA Intelligence Index evaluation suite at four 25% category weights; AA-Omniscience counts Accuracy only and assigns zero weight to non-hallucination rate.",
+      },
+      "aa-intelligence": {
+        label: "AA Intelligence",
+        description: "Artificial Analysis official Intelligence Index.",
+      },
+      "aa-coding": {
+        label: "AA Coding",
+        description: "Artificial Analysis official Coding Index.",
+      },
+      "aa-agentic": {
+        label: "AA Agentic",
+        description: "Artificial Analysis official Agentic Index.",
+      },
+      custom: {
+        label: "Custom weights",
+        description: "Recalculates live from user-selected benchmark weights, with missing values counted as zero in the denominator.",
+      },
+    },
+  },
+};
+
 const state = {
   data: null,
   presetId: null,
   dedupe: true,
   query: "",
   customWeights: {},
+  language: getInitialLanguage(),
+  viewMode: "histogram",
+  sourceFilter: "all",
 };
 
 const els = {
   updatedAt: document.querySelector("#updatedAt"),
+  sourceLink: document.querySelector("#sourceLink"),
+  languageButtons: document.querySelector("#languageButtons"),
   presetButtons: document.querySelector("#presetButtons"),
+  viewButtons: document.querySelector("#viewButtons"),
+  sourceFilterButtons: document.querySelector("#sourceFilterButtons"),
+  searchLabel: document.querySelector("#searchLabel"),
   searchInput: document.querySelector("#searchInput"),
   dedupeToggle: document.querySelector("#dedupeToggle"),
+  dedupeLabel: document.querySelector("#dedupeLabel"),
   summaryRow: document.querySelector("#summaryRow"),
   customPanel: document.querySelector("#customPanel"),
+  customTitle: document.querySelector("#customTitle"),
   weightsGrid: document.querySelector("#weightsGrid"),
+  histogramList: document.querySelector("#histogramList"),
+  tableRanking: document.querySelector("#tableRanking"),
   rankingBody: document.querySelector("#rankingBody"),
+  textRanking: document.querySelector("#textRanking"),
   resetWeightsButton: document.querySelector("#resetWeightsButton"),
+  modelHeader: document.querySelector("#modelHeader"),
+  scoreHeader: document.querySelector("#scoreHeader"),
+  coverageHeader: document.querySelector("#coverageHeader"),
+  siteFooter: document.querySelector("#siteFooter"),
   metricTemplate: document.querySelector("#metricTemplate"),
 };
 
 const presetOrder = ["zhihu-adjusted", "aa-intelligence", "aa-coding", "aa-agentic", "custom"];
+const viewOrder = ["histogram", "table", "text"];
+const sourceFilterOrder = ["all", "open", "closed", "unknown"];
 
 init();
 
@@ -30,10 +201,11 @@ async function init() {
     state.dedupe = Boolean(state.data.defaultDedupe);
     state.customWeights = Object.fromEntries(state.data.metrics.map((metric) => [metric.key, metric.defaultWeight]));
     els.dedupeToggle.checked = state.dedupe;
+    bindControlEvents();
     renderStaticControls();
     render();
   } catch (error) {
-    els.rankingBody.innerHTML = `<tr><td class="empty" colspan="7">数据加载失败：${escapeHtml(error.message)}</td></tr>`;
+    renderLoadError(error);
   }
 }
 
@@ -43,23 +215,7 @@ async function fetchJsonData() {
   return response.json();
 }
 
-function renderStaticControls() {
-  els.updatedAt.textContent = `更新于 ${formatDateTime(state.data.generatedAt)}`;
-  els.presetButtons.innerHTML = "";
-  for (const id of presetOrder) {
-    const preset = state.data.presets[id];
-    const button = document.createElement("button");
-    button.type = "button";
-    button.role = "tab";
-    button.dataset.preset = id;
-    button.textContent = preset.label;
-    button.addEventListener("click", () => {
-      state.presetId = id;
-      render();
-    });
-    els.presetButtons.append(button);
-  }
-
+function bindControlEvents() {
   els.searchInput.addEventListener("input", (event) => {
     state.query = event.target.value.trim().toLowerCase();
     render();
@@ -75,10 +231,105 @@ function renderStaticControls() {
   });
 }
 
+function renderStaticControls() {
+  document.documentElement.lang = state.language;
+  document.title = tr("pageTitle");
+  els.updatedAt.textContent = tr("updatedAt", { date: formatDateTime(state.data.generatedAt) });
+  els.sourceLink.textContent = tr("source");
+  els.sourceLink.href = state.data.source.url;
+  els.searchLabel.textContent = tr("search");
+  els.searchInput.placeholder = tr("searchPlaceholder");
+  els.dedupeLabel.textContent = tr("dedupe");
+  els.customTitle.textContent = tr("customTitle");
+  els.resetWeightsButton.textContent = tr("reset");
+  els.modelHeader.textContent = tr("headers.model");
+  els.scoreHeader.textContent = tr("headers.score");
+  els.coverageHeader.textContent = tr("headers.coverage");
+  els.languageButtons.setAttribute("aria-label", tr("languageLabel"));
+  els.siteFooter.innerHTML = `${escapeHtml(tr("footerPrefix"))}<a href="${escapeHtml(state.data.source.url)}" target="_blank" rel="noreferrer">Artificial Analysis</a>${escapeHtml(tr("footerSuffix"))}`;
+
+  renderLanguageButtons();
+  renderPresetButtons();
+  renderViewButtons();
+  renderSourceFilterButtons();
+}
+
+function renderLanguageButtons() {
+  els.languageButtons.innerHTML = "";
+  for (const language of Object.keys(copy)) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.language = language;
+    button.textContent = tr(`languages.${language}`);
+    button.setAttribute("aria-pressed", String(language === state.language));
+    button.addEventListener("click", () => {
+      state.language = language;
+      saveLanguage(language);
+      renderStaticControls();
+      render();
+    });
+    els.languageButtons.append(button);
+  }
+}
+
+function renderPresetButtons() {
+  els.presetButtons.innerHTML = "";
+  for (const id of presetOrder) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.role = "tab";
+    button.dataset.preset = id;
+    button.textContent = presetLabel(id);
+    button.addEventListener("click", () => {
+      state.presetId = id;
+      render();
+    });
+    els.presetButtons.append(button);
+  }
+}
+
+function renderViewButtons() {
+  els.viewButtons.innerHTML = "";
+  for (const id of viewOrder) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.view = id;
+    button.textContent = tr(`views.${id}`);
+    button.setAttribute("aria-pressed", String(id === state.viewMode));
+    button.addEventListener("click", () => {
+      state.viewMode = id;
+      render();
+    });
+    els.viewButtons.append(button);
+  }
+}
+
+function renderSourceFilterButtons() {
+  els.sourceFilterButtons.innerHTML = "";
+  for (const id of sourceFilterOrder) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.sourceFilter = id;
+    button.textContent = tr(`sourceFilters.${id}`);
+    button.setAttribute("aria-pressed", String(id === state.sourceFilter));
+    button.addEventListener("click", () => {
+      state.sourceFilter = id;
+      render();
+    });
+    els.sourceFilterButtons.append(button);
+  }
+}
+
 function render() {
   const preset = state.data.presets[state.presetId];
   document.querySelectorAll("#presetButtons button").forEach((button) => {
     button.setAttribute("aria-selected", String(button.dataset.preset === state.presetId));
+  });
+  document.querySelectorAll("#viewButtons button").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.view === state.viewMode));
+  });
+  document.querySelectorAll("#sourceFilterButtons button").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.sourceFilter === state.sourceFilter));
   });
   els.customPanel.hidden = state.presetId !== "custom";
   if (!els.customPanel.hidden) renderWeights();
@@ -88,12 +339,13 @@ function render() {
 
 function renderResults(preset) {
   const scored = scoreModels(preset);
-  const searched = scored.filter(matchesQuery);
-  const visible = state.dedupe ? dedupeByBestVariant(searched) : searched;
+  const filtered = scored.filter(matchesQuery).filter(matchesSourceFilter);
+  const visible = state.dedupe ? dedupeByBestVariant(filtered) : filtered;
   const ranked = rankRows(visible);
+  const capped = ranked.slice(0, 250);
 
-  renderSummary(searched.length, visible.length, scored.length, preset);
-  renderTable(ranked.slice(0, 250));
+  renderSummary(filtered.length, visible.length, scored.length, preset);
+  renderRankings(capped);
 }
 
 function scoreModels(preset) {
@@ -159,6 +411,11 @@ function matchesQuery(model) {
   return haystack.includes(state.query);
 }
 
+function matchesSourceFilter(model) {
+  if (state.sourceFilter === "all") return true;
+  return sourceType(model) === state.sourceFilter;
+}
+
 function dedupeByBestVariant(models) {
   const best = new Map();
   for (const model of models) {
@@ -192,14 +449,18 @@ function rankRows(models) {
   });
 }
 
-function renderSummary(searchedCount, visibleCount, scoredCount, preset) {
-  const removed = searchedCount - visibleCount;
+function renderSummary(filteredCount, visibleCount, scoredCount, preset) {
+  const removed = filteredCount - visibleCount;
+  const dedupeLabel = state.dedupe
+    ? `${escapeHtml(tr("removedPrefix"))} <strong>${removed}</strong> ${escapeHtml(tr("removedSuffix"))}`
+    : escapeHtml(tr("allTiers"));
   els.summaryRow.innerHTML = `
-    <span><strong>${visibleCount}</strong> 个排名项</span>
-    <span><strong>${scoredCount}</strong> 个可评分模型</span>
-    <span>${state.dedupe ? `已去除 <strong>${removed}</strong> 个重复档位` : "显示全部档位"}</span>
-    <span>${escapeHtml(preset.description)}</span>
-    <a href="${state.data.source.defaultCorrectionReference}" target="_blank" rel="noreferrer">默认修正参考</a>
+    <span><strong>${visibleCount}</strong> ${escapeHtml(tr("rankingItems"))}</span>
+    <span><strong>${scoredCount}</strong> ${escapeHtml(tr("scorableModels"))}</span>
+    <span>${dedupeLabel}</span>
+    <span>${escapeHtml(tr("sourceFilter"))}: <strong>${escapeHtml(tr(`sourceFilters.${state.sourceFilter}`))}</strong></span>
+    <span>${escapeHtml(presetDescription(state.presetId, preset))}</span>
+    <a href="${escapeHtml(state.data.source.defaultCorrectionReference)}" target="_blank" rel="noreferrer">${escapeHtml(tr("defaultCorrection"))}</a>
   `;
 }
 
@@ -222,9 +483,48 @@ function renderWeights() {
   }
 }
 
+function renderRankings(models) {
+  const viewMode = state.viewMode;
+  els.histogramList.hidden = viewMode !== "histogram";
+  els.tableRanking.hidden = viewMode !== "table";
+  els.textRanking.hidden = viewMode !== "text";
+
+  if (viewMode === "histogram") renderHistogram(models);
+  if (viewMode === "table") renderTable(models);
+  if (viewMode === "text") renderTextRanking(models);
+}
+
+function renderHistogram(models) {
+  if (models.length === 0) {
+    els.histogramList.innerHTML = `<div class="empty">${escapeHtml(tr("empty"))}</div>`;
+    return;
+  }
+  els.histogramList.innerHTML = models.slice(0, 120).map(renderHistogramRow).join("");
+}
+
+function renderHistogramRow(model) {
+  const scoreWidth = clamp(model.score, 0, 100);
+  return `
+    <div class="histogram-row">
+      <div class="histogram-rank">#${model.rank}</div>
+      <div class="histogram-model">
+        ${renderModelIcon(model)}
+        <div class="histogram-label">
+          <a href="https://artificialanalysis.ai${escapeHtml(model.modelUrl)}" target="_blank" rel="noreferrer">${escapeHtml(model.model)}</a>
+          <span>${escapeHtml(model.creator || tr("unknownCreator"))} · ${escapeHtml(sourceTypeLabel(sourceType(model)))}</span>
+        </div>
+      </div>
+      <div class="histogram-track" aria-label="${escapeHtml(tr("headers.score"))} ${formatNumber(model.score)}">
+        <span class="histogram-fill" style="--value: ${scoreWidth}%"></span>
+      </div>
+      <div class="histogram-score">${formatNumber(model.score)}</div>
+    </div>
+  `;
+}
+
 function renderTable(models) {
   if (models.length === 0) {
-    els.rankingBody.innerHTML = '<tr><td class="empty" colspan="7">没有符合条件的模型</td></tr>';
+    els.rankingBody.innerHTML = `<tr><td class="empty" colspan="7">${escapeHtml(tr("empty"))}</td></tr>`;
     return;
   }
   els.rankingBody.innerHTML = models.map(renderRow).join("");
@@ -232,18 +532,20 @@ function renderTable(models) {
 
 function renderRow(model) {
   const scoreWidth = clamp(model.score, 0, 100);
-  const reason = model.isReasoning ? '<span class="pill">Reasoning</span>' : "";
-  const source = model.openSourceCategorization ? `<span class="pill">${escapeHtml(model.openSourceCategorization)}</span>` : "";
+  const reason = model.isReasoning ? `<span class="pill">${escapeHtml(tr("reasoning"))}</span>` : "";
   return `
     <tr>
       <td class="rank-col">${model.rank}</td>
       <td>
         <div class="model-main">
-          <a class="model-name" href="https://artificialanalysis.ai${escapeHtml(model.modelUrl)}" target="_blank" rel="noreferrer">${escapeHtml(model.model)}</a>
+          <div class="model-heading">
+            ${renderModelIcon(model)}
+            <a class="model-name" href="https://artificialanalysis.ai${escapeHtml(model.modelUrl)}" target="_blank" rel="noreferrer">${escapeHtml(model.model)}</a>
+          </div>
           <div class="model-meta">
-            <span>${escapeHtml(model.creator || "Unknown")}</span>
+            <span>${escapeHtml(model.creator || tr("unknownCreator"))}</span>
             ${reason}
-            ${source}
+            ${renderSourcePill(model)}
           </div>
         </div>
       </td>
@@ -259,13 +561,110 @@ function renderRow(model) {
   `;
 }
 
+function renderTextRanking(models) {
+  if (models.length === 0) {
+    els.textRanking.innerHTML = `<div class="empty">${escapeHtml(tr("empty"))}</div>`;
+    return;
+  }
+  els.textRanking.innerHTML = models.map((model) => {
+    const source = sourceTypeLabel(sourceType(model));
+    const creator = model.creator || tr("unknownCreator");
+    return `
+      <div class="text-ranking-row">
+        <span>#${model.rank}</span>
+        <span class="text-model">${escapeHtml(model.model)} — ${escapeHtml(creator)}</span>
+        <strong>${formatNumber(model.score)}</strong>
+        <span>${escapeHtml(source)}</span>
+      </div>
+    `;
+  }).join("");
+}
+
+function renderModelIcon(model) {
+  const icon = model.modelIcon || {};
+  const label = icon.label || initials(model.creator || model.model);
+  const title = icon.title || model.creator || model.model;
+  const tone = /^tone-[1-6]$/.test(icon.tone || "") ? icon.tone : "tone-1";
+  return `<span class="provider-icon ${escapeHtml(tone)}" role="img" aria-label="${escapeHtml(title)}">${escapeHtml(label)}</span>`;
+}
+
+function renderSourcePill(model) {
+  const type = sourceType(model);
+  const detail = model.openSourceCategorization || sourceTypeLabel(type);
+  return `<span class="pill source-pill" data-source-type="${escapeHtml(type)}" title="${escapeHtml(detail)}">${escapeHtml(sourceTypeLabel(type))}</span>`;
+}
+
+function renderLoadError(error) {
+  const message = tr("loadFailed", { message: error.message });
+  els.rankingBody.innerHTML = `<tr><td class="empty" colspan="7">${escapeHtml(message)}</td></tr>`;
+  els.histogramList.innerHTML = `<div class="empty">${escapeHtml(message)}</div>`;
+  els.textRanking.innerHTML = `<div class="empty">${escapeHtml(message)}</div>`;
+}
+
+function presetLabel(id) {
+  return tr(`presets.${id}.label`) || state.data.presets[id]?.label || id;
+}
+
+function presetDescription(id, preset) {
+  return tr(`presets.${id}.description`) || preset.description || "";
+}
+
+function sourceType(model) {
+  const type = model.openSourceType || "unknown";
+  return ["open", "closed", "unknown"].includes(type) ? type : "unknown";
+}
+
+function sourceTypeLabel(type) {
+  return tr(`sourceTypes.${type}`);
+}
+
+function getInitialLanguage() {
+  try {
+    const stored = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    if (copy[stored]) return stored;
+  } catch {
+    // Ignore storage errors in privacy-restricted contexts.
+  }
+  return navigator.language && navigator.language.toLowerCase().startsWith("zh") ? "zh-CN" : DEFAULT_LANGUAGE;
+}
+
+function saveLanguage(language) {
+  try {
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+  } catch {
+    // Language selection still works for the current session.
+  }
+}
+
+function tr(path, variables = {}) {
+  const primary = lookup(copy[state.language], path);
+  const fallback = lookup(copy[DEFAULT_LANGUAGE], path);
+  const value = primary ?? fallback ?? path;
+  if (typeof value !== "string") return String(value);
+  return value.replace(/\{([a-zA-Z0-9_]+)\}/g, (_, key) => variables[key] ?? "");
+}
+
+function lookup(source, path) {
+  return path.split(".").reduce((current, part) => {
+    if (current && Object.prototype.hasOwnProperty.call(current, part)) return current[part];
+    return undefined;
+  }, source);
+}
+
+function initials(value) {
+  const tokens = String(value || "").match(/[a-z0-9]+/gi) || [];
+  if (tokens.length === 0) return "AI";
+  if (tokens.length === 1) return tokens[0].slice(0, 3).toUpperCase();
+  return tokens.slice(0, 3).map((token) => token[0].toUpperCase()).join("");
+}
+
 function formatNumber(value) {
   return Number.isFinite(value) ? value.toFixed(1) : "—";
 }
 
 function formatDateTime(value) {
-  if (!value) return "未知时间";
-  return new Intl.DateTimeFormat("zh-CN", {
+  if (!value) return tr("unknownTime");
+  return new Intl.DateTimeFormat(state.language, {
     dateStyle: "medium",
     timeStyle: "short",
   }).format(new Date(value));
