@@ -133,6 +133,64 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(payload["models"][1]["modelIcon"]["label"], "LB")
         self.assertEqual(payload["models"][1]["modelIcon"]["fallbackLabel"], "LB")
 
+    def test_build_site_payload_merges_external_benchmark_scores(self):
+        payload = build_site_payload(
+            [
+                {
+                    "model_key": "GPT-5.5 (xhigh) [R]",
+                    "model": "GPT-5.5 (xhigh)",
+                    "is_reasoning": "true",
+                    "slug": "gpt-5-5",
+                    "creator": "OpenAI",
+                    "creator_logo_small_url": "https://artificialanalysis.ai/img/logos/openai_small.svg",
+                    "creator_color": "#1f1f1f",
+                    "AA Intelligence Index": "60",
+                }
+            ],
+            {
+                "version": 1,
+                "sources": [
+                    {
+                        "id": "official-release",
+                        "label": "Official release evals",
+                        "url": "https://example.com/evals",
+                        "category": "Official",
+                    }
+                ],
+                "benchmarks": [
+                    {
+                        "id": "terminal-bench-2",
+                        "label": "Terminal-Bench 2.0",
+                        "category": "Agentic coding",
+                        "unit": "%",
+                        "icon": "TERM",
+                    }
+                ],
+                "results": [
+                    {
+                        "benchmarkId": "terminal-bench-2",
+                        "benchmarkLabel": "Terminal-Bench 2.0",
+                        "model": "GPT-5.5",
+                        "modelAliases": ["GPT-5.5 (xhigh)", "gpt-5-5"],
+                        "value": 82.7,
+                        "unit": "%",
+                        "sourceId": "official-release",
+                        "sourceUrl": "https://example.com/evals",
+                        "sourceLabel": "Official release evals",
+                    }
+                ],
+            },
+        )
+
+        model = payload["models"][0]
+        self.assertIn("ext:terminal-bench-2", [metric["key"] for metric in payload["metrics"]])
+        self.assertEqual(model["scores"]["ext:terminal-bench-2"], 82.7)
+        self.assertEqual(model["externalBenchmarks"][0]["label"], "Terminal-Bench 2.0")
+        self.assertEqual(model["modelIcon"]["src"], "assets/logos/openai_small.svg")
+        self.assertEqual(model["modelIcon"]["color"], "#1f1f1f")
+        self.assertEqual(payload["externalSources"][-1]["scoreStatus"], "external")
+        self.assertIn("ext:terminal-bench-2", payload["externalSources"][-1]["relatedMetrics"])
+
     def test_build_docs_site_runs_when_invoked_by_path(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             tmp = Path(tmpdir)

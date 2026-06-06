@@ -10,6 +10,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
+from urllib.parse import urlparse
 
 if __package__ is None or __package__ == "":
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -21,6 +22,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT_CSV = PROJECT_ROOT / "ArtificialAnalysis" / RAW_SCORES_FILENAME
 DEFAULT_OUTPUT_JSON = PROJECT_ROOT / "docs" / "data" / "models.json"
 DEFAULT_OUTPUT_JS = PROJECT_ROOT / "docs" / "data" / "models.js"
+DEFAULT_EXTERNAL_BENCHMARKS_JSON = PROJECT_ROOT / "ArtificialAnalysis" / "external_benchmark_scores.json"
 LOCAL_LOGO_DIR = "assets/logos"
 
 ARTICLE_URL = "https://zhuanlan.zhihu.com/p/2032797597627311070?share_code=YgrFlZy1McBQ&utm_psn=2043622787617641823"
@@ -71,6 +73,7 @@ PROVIDER_ICON_LABELS = {
     "Cohere": "CO",
     "DeepSeek": "DS",
     "Google": "G",
+    "Kimi": "KIMI",
     "Meta": "META",
     "Mistral": "M",
     "Moonshot AI": "KIMI",
@@ -93,12 +96,13 @@ PROVIDER_LOGO_SLUGS = {
     "Microsoft": "microsoft",
     "Mistral": "mistral",
     "Moonshot AI": "moonshot",
+    "Kimi": "kimi",
     "NVIDIA": "nvidia",
     "OpenAI": "openai",
     "Perplexity": "perplexity",
     "StepFun": "stepfun",
     "xAI": "xai",
-    "Z AI": "z-ai",
+    "Z AI": "zai",
 }
 EXTERNAL_SOURCES = [
     {
@@ -198,10 +202,28 @@ def read_csv_rows(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
-def build_site_payload(rows: Iterable[dict[str, Any]]) -> dict[str, Any]:
+def load_external_benchmarks(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {"version": 1, "sources": [], "benchmarks": [], "results": []}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def external_metric_key(benchmark_id: str) -> str:
+    return f"ext:{benchmark_id}"
+
+
+def build_site_payload(
+    rows: Iterable[dict[str, Any]],
+    external_benchmark_data: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     source_rows = list(rows)
-    metric_keys = [spec.column for spec in SCORE_SPECS]
+    external_benchmark_data = external_benchmark_data or load_external_benchmarks(DEFAULT_EXTERNAL_BENCHMARKS_JSON)
+    external_benchmarks = external_benchmark_data.get("benchmarks", [])
+    metric_keys = [spec.column for spec in SCORE_SPECS] + [
+        external_metric_key(benchmark["id"]) for benchmark in external_benchmarks
+    ]
     models = [_model_payload(row, metric_keys) for row in source_rows]
+    attach_external_benchmark_scores(models, external_benchmark_data)
 
     return {
         "version": 1,
@@ -224,10 +246,23 @@ def build_site_payload(rows: Iterable[dict[str, Any]]) -> dict[str, Any]:
                 "label": key,
                 "defaultWeight": DEFAULT_CORRECTED_WEIGHTS.get(key, 0),
             }
-            for key in metric_keys
+            for key in [spec.column for spec in SCORE_SPECS]
+        ]
+        + [
+            {
+                "key": external_metric_key(benchmark["id"]),
+                "label": benchmark.get("label") or benchmark["id"],
+                "defaultWeight": 0,
+                "source": "external",
+                "category": benchmark.get("category") or "External benchmark",
+                "unit": benchmark.get("unit") or "%",
+                "icon": benchmark.get("icon") or "",
+            }
+            for benchmark in external_benchmarks
         ],
         "presets": _presets(),
-        "externalSources": EXTERNAL_SOURCES,
+        "externalSources": external_sources_payload(external_benchmark_data),
+        "externalBenchmarks": external_benchmarks,
         "models": models,
         "summary": {
             "modelRows": len(models),
@@ -305,8 +340,18 @@ def weighted_metric_score(
     }
 
 
-def write_site_payload(input_csv: Path, output_json: Path, output_js: Path | None = None) -> dict[str, Any]:
-    payload = build_site_payload(read_csv_rows(input_csv))
+def write_site_payload(
+    input_csv: Path,
+    output_json: Path,
+    output_js: Path | None = None,
+    external_benchmarks_json: Path | None = DEFAULT_EXTERNAL_BENCHMARKS_JSON,
+) -> dict[str, Any]:
+    external_benchmarks = (
+        load_external_benchmarks(external_benchmarks_json)
+        if external_benchmarks_json is not None
+        else {"version": 1, "sources": [], "benchmarks": [], "results": []}
+    )
+    payload = build_site_payload(read_csv_rows(input_csv), external_benchmarks)
     output_json.parent.mkdir(parents=True, exist_ok=True)
     payload_text = json.dumps(payload, ensure_ascii=False, indent=2)
     output_json.write_text(payload_text, encoding="utf-8")
@@ -327,6 +372,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--output-js",
         help="JS payload to write for file:// loading. Defaults to output-json with a .js suffix.",
     )
+    parser.add_argument(
+        "--external-benchmarks-json",
+        default=str(DEFAULT_EXTERNAL_BENCHMARKS_JSON),
+        help="External benchmark scores JSON to merge into the site payload.",
+    )
     return parser.parse_args(argv)
 
 
@@ -334,12 +384,113 @@ def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     output_json = Path(args.output_json)
     output_js = Path(args.output_js) if args.output_js else output_json.with_suffix(".js")
-    payload = write_site_payload(Path(args.input_csv), output_json, output_js)
+    payload = write_site_payload(
+        Path(args.input_csv),
+        output_json,
+        output_js,
+        Path(args.external_benchmarks_json) if args.external_benchmarks_json else None,
+    )
     print(
         f"Wrote {output_json} with {payload['summary']['modelRows']} rows "
         f"across {payload['summary']['variantGroups']} dedupe groups."
     )
     return 0
+
+
+def external_sources_payload(external_benchmark_data: dict[str, Any]) -> list[dict[str, Any]]:
+    sources = [dict(source) for source in EXTERNAL_SOURCES]
+    benchmarks = {
+        benchmark["id"]: benchmark
+        for benchmark in external_benchmark_data.get("benchmarks", [])
+        if benchmark.get("id")
+    }
+    results_by_source: dict[str, list[dict[str, Any]]] = {}
+    for result in external_benchmark_data.get("results", []):
+        source_id = result.get("sourceId")
+        if source_id:
+            results_by_source.setdefault(source_id, []).append(result)
+
+    for source in external_benchmark_data.get("sources", []):
+        source_id = source.get("id")
+        if not source_id:
+            continue
+        results = results_by_source.get(source_id, [])
+        benchmark_ids = sorted({result.get("benchmarkId") for result in results if result.get("benchmarkId")})
+        related_metrics = [external_metric_key(benchmark_id) for benchmark_id in benchmark_ids]
+        benchmark_labels = [
+            benchmarks[benchmark_id].get("label", benchmark_id)
+            for benchmark_id in benchmark_ids
+            if benchmark_id in benchmarks
+        ]
+        focus = ", ".join(benchmark_labels[:6])
+        if len(benchmark_labels) > 6:
+            focus += f", +{len(benchmark_labels) - 6}"
+        sources.append(
+            {
+                "id": source_id,
+                "label": source.get("label") or source_id,
+                "icon": _initials(source.get("label") or source_id),
+                "url": source.get("url") or "",
+                "category": source.get("category") or "External benchmark",
+                "coverage": f"{len(results)} model-benchmark scores",
+                "focus": focus or source.get("note") or "External evaluation reference.",
+                "note": source.get("note") or source.get("collectionStatus") or "",
+                "scoreStatus": "external" if related_metrics else "reference",
+                "defaultWeight": 0,
+                "relatedMetrics": related_metrics,
+                "benchmarkIds": benchmark_ids,
+            }
+        )
+    return sources
+
+
+def attach_external_benchmark_scores(
+    models: list[dict[str, Any]],
+    external_benchmark_data: dict[str, Any],
+) -> None:
+    for model in models:
+        model["externalBenchmarks"] = []
+
+    for result in external_benchmark_data.get("results", []):
+        value = _number_or_none(result.get("value"))
+        benchmark_id = result.get("benchmarkId")
+        if value is None or not benchmark_id:
+            continue
+        model = find_external_benchmark_model(models, result.get("modelAliases") or [result.get("model")])
+        if model is None:
+            continue
+        key = external_metric_key(str(benchmark_id))
+        model["scores"][key] = value
+        model["externalBenchmarks"].append(
+            {
+                "benchmarkId": benchmark_id,
+                "metricKey": key,
+                "label": result.get("benchmarkLabel") or benchmark_id,
+                "value": value,
+                "unit": result.get("unit") or "%",
+                "sourceId": result.get("sourceId") or "",
+                "sourceLabel": result.get("sourceLabel") or "",
+                "sourceUrl": result.get("sourceUrl") or "",
+            }
+        )
+
+
+def find_external_benchmark_model(
+    models: list[dict[str, Any]],
+    aliases: Iterable[Any],
+) -> dict[str, Any] | None:
+    model_keys: dict[str, dict[str, Any]] = {}
+    for model in models:
+        for value in (model.get("slug"), model.get("modelKey"), model.get("model")):
+            key = _match_key(value)
+            if key and key not in model_keys:
+                model_keys[key] = model
+
+    for alias in aliases:
+        key = _match_key(alias)
+        if key in model_keys:
+            return model_keys[key]
+    return None
 
 
 def _model_payload(row: dict[str, Any], metric_keys: list[str]) -> dict[str, Any]:
@@ -364,12 +515,13 @@ def _model_payload(row: dict[str, Any], metric_keys: list[str]) -> dict[str, Any
         "contextWindowTokens": _number_or_none(row.get("context_window_tokens")),
         "openSourceCategorization": open_source_categorization,
         "openSourceType": open_source_type(open_source_categorization),
-        "modelIcon": model_icon(creator, model),
+        "modelIcon": model_icon(creator, model, row),
         "medianOutputSpeed": _number_or_none(row.get("median_output_speed")),
         "aa": aa_scores,
         "aaCostUsd": pricing["aaIndexCostUsd"],
         "pricing": pricing,
         "scores": scores,
+        "externalBenchmarks": [],
     }
 
 
@@ -397,16 +549,21 @@ def open_source_type(category: str) -> str:
     return "unknown"
 
 
-def model_icon(creator: str, model: str = "") -> dict[str, str]:
+def model_icon(creator: str, model: str = "", row: dict[str, Any] | None = None) -> dict[str, str]:
     title = creator.strip() or model.strip() or "Unknown"
     label = PROVIDER_ICON_LABELS.get(title) or _initials(title)
+    logo_filename = _logo_filename_from_row(row or {})
     slug = provider_logo_slug(title)
-    return {
+    icon = {
         "label": label,
         "fallbackLabel": label,
         "title": title,
-        "src": f"{LOCAL_LOGO_DIR}/{slug}_small.svg",
+        "src": f"{LOCAL_LOGO_DIR}/{logo_filename or f'{slug}_small.svg'}",
     }
+    color = str((row or {}).get("creator_color") or "").strip()
+    if color:
+        icon["color"] = color
+    return icon
 
 
 def provider_logo_slug(creator: str) -> str:
@@ -424,6 +581,21 @@ def _initials(value: str) -> str:
     if len(tokens) == 1:
         return tokens[0][:3].upper()
     return "".join(token[0].upper() for token in tokens[:3])
+
+
+def _logo_filename_from_row(row: dict[str, Any]) -> str:
+    for key in ("creator_logo_small_url", "creator_logo_url"):
+        value = str(row.get(key) or "").strip()
+        if not value:
+            continue
+        filename = Path(urlparse(value).path).name
+        if filename and "." in filename:
+            return filename
+    return ""
+
+
+def _match_key(value: Any) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", str(value or "").lower()).strip()
 
 
 def _source_type_counts(models: list[dict[str, Any]]) -> dict[str, int]:

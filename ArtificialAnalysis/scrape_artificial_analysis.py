@@ -16,11 +16,14 @@ import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable, Iterable
+from urllib.parse import urljoin, urlparse
 from urllib.request import Request, urlopen
 
 
 SOURCE_URL = "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index"
+AA_BASE_URL = "https://artificialanalysis.ai"
 DEFAULT_OUTPUT_DIR = Path(__file__).resolve().parent
+DEFAULT_LOGO_OUTPUT_DIR = Path(__file__).resolve().parents[1] / "docs" / "assets" / "logos"
 RAW_SCORES_FILENAME = "artificialanalysis_raw_scores_wide.csv"
 
 NEXT_FLIGHT_CHUNK_RE = re.compile(
@@ -136,12 +139,18 @@ def build_raw_scores_rows(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]
         creator = _dict_or_empty(row.get("model_creators"))
         cost = _dict_or_empty(row.get("intelligence_index_cost"))
         timescale = _dict_or_empty(row.get("timescaleData"))
+        creator_logo_url = _absolute_aa_url(creator.get("logo_url"))
+        creator_logo_small_url = _absolute_aa_url(creator.get("logo_small_url"))
         output: dict[str, Any] = {
             "model_key": f"{model} [R]" if is_reasoning else model,
             "model": model,
             "is_reasoning": "true" if is_reasoning else "false",
             "slug": row.get("slug") or "",
             "creator": creator.get("name") or "",
+            "creator_slug": creator.get("slug") or "",
+            "creator_color": creator.get("color") or "",
+            "creator_logo_url": creator_logo_url,
+            "creator_logo_small_url": creator_logo_small_url or creator_logo_url,
             "release_date": row.get("release_date") or "",
             "model_url": row.get("model_url") or "",
             "context_window_tokens": _format_number(row.get("context_window_tokens")),
@@ -179,6 +188,39 @@ def write_raw_scores_csv(rows: list[dict[str, Any]], path: Path) -> None:
         + [f"{spec.column}_rank" for spec in SCORE_SPECS]
     )
     _write_dict_rows(path, fieldnames, rows)
+
+
+def download_creator_logos(
+    rows: Iterable[dict[str, Any]],
+    output_dir: Path,
+    timeout: float = 30,
+    overwrite: bool = False,
+) -> int:
+    """Download provider logos referenced by the AA payload into docs assets."""
+
+    logo_urls: dict[str, str] = {}
+    for row in rows:
+        creator = _dict_or_empty(row.get("model_creators"))
+        for key in ("logo_small_url", "logo_url"):
+            url = _absolute_aa_url(creator.get(key))
+            if not url:
+                continue
+            filename = _logo_filename(url)
+            if filename:
+                logo_urls[filename] = url
+                break
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    downloaded = 0
+    for filename, url in sorted(logo_urls.items()):
+        path = output_dir / filename
+        if path.exists() and not overwrite:
+            continue
+        request = Request(url, headers=_http_headers())
+        with urlopen(request, timeout=timeout) as response:
+            path.write_bytes(response.read())
+        downloaded += 1
+    return downloaded
 
 
 def _write_dict_rows(path: Path, fieldnames: list[str], rows: list[dict[str, Any]]) -> None:
@@ -247,6 +289,31 @@ def _dict_or_empty(value: Any) -> dict[str, Any]:
     return value if isinstance(value, dict) else {}
 
 
+def _absolute_aa_url(value: Any) -> str:
+    if not isinstance(value, str) or not value.strip():
+        return ""
+    return urljoin(AA_BASE_URL, value.strip())
+
+
+def _logo_filename(url: str) -> str:
+    parsed = urlparse(url)
+    filename = Path(parsed.path).name
+    if not filename or "." not in filename:
+        return ""
+    return filename
+
+
+def _http_headers() -> dict[str, str]:
+    return {
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/125.0 Safari/537.36"
+        ),
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    }
+
+
 SCORE_SPECS = [
     ScoreSpec("GDPval-AA", _gdpval_score),
     ScoreSpec("Terminal-Bench Hard", lambda row: _percent(row, "terminalbench_hard")),
@@ -276,6 +343,10 @@ RAW_METADATA_COLUMNS = [
     "is_reasoning",
     "slug",
     "creator",
+    "creator_slug",
+    "creator_color",
+    "creator_logo_url",
+    "creator_logo_small_url",
     "release_date",
     "model_url",
     "context_window_tokens",
@@ -298,7 +369,7 @@ AA_PRESET_COLUMNS = [
 ]
 
 
-def run(args: argparse.Namespace) -> tuple[Path, int]:
+def run(args: argparse.Namespace) -> tuple[Path, int, int]:
     html = fetch_html(args.url, timeout=args.timeout)
     model_rows = extract_default_data(html)
 
@@ -307,12 +378,21 @@ def run(args: argparse.Namespace) -> tuple[Path, int]:
 
     write_raw_scores_csv(build_raw_scores_rows(model_rows), raw_scores_path)
 
+    logo_count = 0
+    if not args.skip_logos:
+        logo_count = download_creator_logos(
+            model_rows,
+            Path(args.logo_output_dir),
+            timeout=args.timeout,
+            overwrite=args.refresh_logos,
+        )
+
     if args.raw_json:
         raw_path = Path(args.raw_json)
         raw_path.parent.mkdir(parents=True, exist_ok=True)
         raw_path.write_text(json.dumps(model_rows, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    return raw_scores_path, len(model_rows)
+    return raw_scores_path, len(model_rows), logo_count
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -323,19 +403,28 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--output-dir", default=str(DEFAULT_OUTPUT_DIR), help="Directory for CSV outputs.")
     parser.add_argument("--timeout", type=float, default=30, help="HTTP timeout in seconds.")
     parser.add_argument("--raw-json", help="Optional path to write the extracted model payload as JSON.")
+    parser.add_argument(
+        "--logo-output-dir",
+        default=str(DEFAULT_LOGO_OUTPUT_DIR),
+        help="Directory where AA provider logo assets should be downloaded.",
+    )
+    parser.add_argument("--skip-logos", action="store_true", help="Do not download provider logo assets.")
+    parser.add_argument("--refresh-logos", action="store_true", help="Overwrite existing provider logo assets.")
     return parser.parse_args(argv)
 
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     try:
-        raw_scores_path, row_count = run(args)
+        raw_scores_path, row_count, logo_count = run(args)
     except Exception as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
 
     print(f"Fetched {row_count} model rows from Artificial Analysis.")
     print(f"Wrote {raw_scores_path}")
+    if not args.skip_logos:
+        print(f"Downloaded {logo_count} provider logo assets.")
     return 0
 
 

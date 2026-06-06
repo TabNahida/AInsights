@@ -3,6 +3,13 @@ from pathlib import Path
 
 
 class DocsMarkupTests(unittest.TestCase):
+    def test_static_site_has_separate_entry_pages(self):
+        docs_dir = Path(__file__).resolve().parents[1] / "docs"
+
+        self.assertIn('data-page="home"', (docs_dir / "index.html").read_text(encoding="utf-8"))
+        self.assertIn('data-page="ranking"', (docs_dir / "full-rank.html").read_text(encoding="utf-8"))
+        self.assertIn('data-page="model"', (docs_dir / "model.html").read_text(encoding="utf-8"))
+
     def test_page_title_and_footer_name_source(self):
         html = (Path(__file__).resolve().parents[1] / "docs" / "index.html").read_text(encoding="utf-8")
 
@@ -43,7 +50,7 @@ class DocsMarkupTests(unittest.TestCase):
     def test_custom_weights_are_fine_grained(self):
         html = (Path(__file__).resolve().parents[1] / "docs" / "index.html").read_text(encoding="utf-8")
 
-        self.assertIn('max="20"', html)
+        self.assertIn('max="100"', html)
         self.assertIn('step="0.01"', html)
 
     def test_full_ranking_views_are_not_hard_capped(self):
@@ -59,7 +66,10 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("source-weight-controls", app_js)
         self.assertIn("combinedMetricWeightsFromSources", app_js)
         self.assertIn("scatter-leader", app_js)
+        self.assertIn("externalBenchmarkRows", app_js)
+        self.assertIn("model.html?id=", app_js)
         self.assertIn(".scatter-leader", css)
+        self.assertIn(".external-benchmark-row", css)
         self.assertNotIn("Open AA page", app_js)
 
     def test_model_icons_use_local_assets(self):

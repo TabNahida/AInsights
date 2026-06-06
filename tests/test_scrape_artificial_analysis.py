@@ -1,7 +1,12 @@
 import unittest
+import tempfile
+from pathlib import Path
+from unittest.mock import patch
 
+from ArtificialAnalysis import scrape_artificial_analysis as scraper
 from ArtificialAnalysis.scrape_artificial_analysis import (
     build_raw_scores_rows,
+    download_creator_logos,
     extract_default_data,
 )
 
@@ -27,7 +32,13 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
                 "slug": "reasoning-model-high",
                 "release_date": "2026-01-01",
                 "model_url": "/models/reasoning-model",
-                "model_creators": {"name": "Lab A"},
+                "model_creators": {
+                    "name": "Lab A",
+                    "slug": "lab-a",
+                    "color": "#123456",
+                    "logo_small_url": "/img/logos/lab-a-small.svg",
+                    "logo_url": "/img/logos/lab-a.svg",
+                },
                 "intelligence_index": 55.5,
                 "coding_index": 44.4,
                 "agentic_index": 33.3,
@@ -78,6 +89,9 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
         self.assertEqual(output[0]["is_reasoning"], "true")
         self.assertEqual(output[0]["slug"], "reasoning-model-high")
         self.assertEqual(output[0]["creator"], "Lab A")
+        self.assertEqual(output[0]["creator_slug"], "lab-a")
+        self.assertEqual(output[0]["creator_color"], "#123456")
+        self.assertEqual(output[0]["creator_logo_small_url"], "https://artificialanalysis.ai/img/logos/lab-a-small.svg")
         self.assertEqual(output[0]["release_date"], "2026-01-01")
         self.assertEqual(output[0]["AA Intelligence Index"], 55.5)
         self.assertEqual(output[0]["AA Coding Index"], 44.4)
@@ -117,6 +131,30 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
         self.assertEqual(output[0]["AA Intelligence Index Output Cost (USD)"], "")
         self.assertEqual(output[0]["AA Intelligence Index Reasoning Cost (USD)"], "")
         self.assertEqual(output[0]["AA Intelligence Index Answer Cost (USD)"], "")
+
+    def test_download_creator_logos_writes_deduped_logo_assets(self):
+        class FakeResponse:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+            def read(self):
+                return b"<svg></svg>"
+
+        rows = [
+            {"model_creators": {"logo_small_url": "/img/logos/kimi_small.png"}},
+            {"model_creators": {"logo_small_url": "/img/logos/kimi_small.png"}},
+        ]
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            with patch.object(scraper, "urlopen", return_value=FakeResponse()) as mocked:
+                count = download_creator_logos(rows, Path(tmpdir), timeout=5)
+
+            self.assertEqual(count, 1)
+            self.assertEqual(mocked.call_count, 1)
+            self.assertTrue((Path(tmpdir) / "kimi_small.png").exists())
 
 
 if __name__ == "__main__":

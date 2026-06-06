@@ -6,7 +6,7 @@
     <title>AI Insights Analysis</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body data-page="home">
+  <body data-page="model">
     <header class="topbar">
       <div>
         <p class="eyebrow">AInsights</p>
@@ -23,7 +23,7 @@
     </header>
 
     <main>
-      <section class="home-view" id="homeView">
+      <section class="home-view" id="homeView" hidden>
         <section class="home-metrics" id="homeMetrics" aria-label="首页摘要"></section>
 
         <section class="chart-shell" aria-labelledby="top20Title">
@@ -131,7 +131,7 @@
         </section>
       </section>
 
-      <section class="model-view" id="modelView" hidden>
+      <section class="model-view" id="modelView">
         <div class="model-detail" id="modelDetail"></div>
       </section>
     </main>

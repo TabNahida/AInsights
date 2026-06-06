@@ -1,0 +1,775 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-06T15:49:32+00:00",
+  "sources": [
+    {
+      "id": "openai-gpt-5-5",
+      "label": "OpenAI GPT-5.5 launch evaluations",
+      "url": "https://openai.com/index/introducing-gpt-5-5/",
+      "category": "Official model release",
+      "collectionStatus": "seeded-official-values; refresh blocked: HTTPError",
+      "note": "Official OpenAI table covering GPT-5.5, GPT-5.4, GPT-5.5 Pro, GPT-5.4 Pro, Claude Opus 4.7, and Gemini 3.1 Pro."
+    },
+    {
+      "id": "google-gemini-3-1-pro-card",
+      "label": "Google DeepMind Gemini 3.1 Pro model card",
+      "url": "https://deepmind.google/models/model-cards/gemini-3-1-pro/",
+      "category": "Official model card",
+      "collectionStatus": "reference",
+      "note": "Official Google DeepMind model card with Gemini 3.1 Pro cross-model benchmark context."
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "swe-bench-pro",
+      "label": "SWE-Bench Pro",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "SWE"
+    },
+    {
+      "id": "terminal-bench-2",
+      "label": "Terminal-Bench 2.0",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "TERM"
+    },
+    {
+      "id": "expert-swe-internal",
+      "label": "Expert-SWE (Internal)",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "EXP"
+    },
+    {
+      "id": "gdpval-wins-ties",
+      "label": "GDPval (wins or ties)",
+      "category": "Professional work",
+      "unit": "%",
+      "icon": "GDP"
+    },
+    {
+      "id": "osworld-verified",
+      "label": "OSWorld-Verified",
+      "category": "Computer use",
+      "unit": "%",
+      "icon": "OS"
+    },
+    {
+      "id": "toolathlon",
+      "label": "Toolathlon",
+      "category": "Tool use",
+      "unit": "%",
+      "icon": "TOOL"
+    },
+    {
+      "id": "browsecomp",
+      "label": "BrowseComp",
+      "category": "Tool use",
+      "unit": "%",
+      "icon": "WEB"
+    },
+    {
+      "id": "frontiermath-tier-1-3",
+      "label": "FrontierMath Tier 1-3",
+      "category": "Academic reasoning",
+      "unit": "%",
+      "icon": "FM"
+    },
+    {
+      "id": "frontiermath-tier-4",
+      "label": "FrontierMath Tier 4",
+      "category": "Academic reasoning",
+      "unit": "%",
+      "icon": "FM4"
+    },
+    {
+      "id": "cybergym",
+      "label": "CyberGym",
+      "category": "Cybersecurity",
+      "unit": "%",
+      "icon": "CY"
+    }
+  ],
+  "results": [
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 58.6,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "GPT-5.4",
+      "modelAliases": [
+        "GPT-5.4",
+        "GPT-5.4 (xhigh)",
+        "gpt-5-4",
+        "gpt-5-4-xhigh"
+      ],
+      "value": 57.7,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Claude Opus 4.7",
+      "modelAliases": [
+        "Claude Opus 4.7",
+        "Claude Opus 4.7 (Adaptive Reasoning)",
+        "claude-opus-4-7"
+      ],
+      "value": 64.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 54.2,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 82.7,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "GPT-5.4",
+      "modelAliases": [
+        "GPT-5.4",
+        "GPT-5.4 (xhigh)",
+        "gpt-5-4",
+        "gpt-5-4-xhigh"
+      ],
+      "value": 75.1,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "Claude Opus 4.7",
+      "modelAliases": [
+        "Claude Opus 4.7",
+        "Claude Opus 4.7 (Adaptive Reasoning)",
+        "claude-opus-4-7"
+      ],
+      "value": 69.4,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 68.5,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "expert-swe-internal",
+      "benchmarkLabel": "Expert-SWE (Internal)",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 73.1,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "expert-swe-internal",
+      "benchmarkLabel": "Expert-SWE (Internal)",
+      "model": "GPT-5.4",
+      "modelAliases": [
+        "GPT-5.4",
+        "GPT-5.4 (xhigh)",
+        "gpt-5-4",
+        "gpt-5-4-xhigh"
+      ],
+      "value": 68.5,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "gdpval-wins-ties",
+      "benchmarkLabel": "GDPval (wins or ties)",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 84.9,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "gdpval-wins-ties",
+      "benchmarkLabel": "GDPval (wins or ties)",
+      "model": "GPT-5.4",
+      "modelAliases": [
+        "GPT-5.4",
+        "GPT-5.4 (xhigh)",
+        "gpt-5-4",
+        "gpt-5-4-xhigh"
+      ],
+      "value": 83.0,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "gdpval-wins-ties",
+      "benchmarkLabel": "GDPval (wins or ties)",
+      "model": "GPT-5.5 Pro",
+      "modelAliases": [
+        "GPT-5.5 Pro",
+        "GPT-5.5 Pro (xhigh)",
+        "gpt-5-5-pro"
+      ],
+      "value": 82.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "gdpval-wins-ties",
+      "benchmarkLabel": "GDPval (wins or ties)",
+      "model": "GPT-5.4 Pro",
+      "modelAliases": [
+        "GPT-5.4 Pro",
+        "GPT-5.4 Pro (xhigh)",
+        "gpt-5-4-pro"
+      ],
+      "value": 82.0,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "gdpval-wins-ties",
+      "benchmarkLabel": "GDPval (wins or ties)",
+      "model": "Claude Opus 4.7",
+      "modelAliases": [
+        "Claude Opus 4.7",
+        "Claude Opus 4.7 (Adaptive Reasoning)",
+        "claude-opus-4-7"
+      ],
+      "value": 80.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "gdpval-wins-ties",
+      "benchmarkLabel": "GDPval (wins or ties)",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 67.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "osworld-verified",
+      "benchmarkLabel": "OSWorld-Verified",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 78.7,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "osworld-verified",
+      "benchmarkLabel": "OSWorld-Verified",
+      "model": "GPT-5.4",
+      "modelAliases": [
+        "GPT-5.4",
+        "GPT-5.4 (xhigh)",
+        "gpt-5-4",
+        "gpt-5-4-xhigh"
+      ],
+      "value": 75.0,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "osworld-verified",
+      "benchmarkLabel": "OSWorld-Verified",
+      "model": "Claude Opus 4.7",
+      "modelAliases": [
+        "Claude Opus 4.7",
+        "Claude Opus 4.7 (Adaptive Reasoning)",
+        "claude-opus-4-7"
+      ],
+      "value": 78.0,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 55.6,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "GPT-5.4",
+      "modelAliases": [
+        "GPT-5.4",
+        "GPT-5.4 (xhigh)",
+        "gpt-5-4",
+        "gpt-5-4-xhigh"
+      ],
+      "value": 54.6,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 48.8,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 84.4,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "GPT-5.4",
+      "modelAliases": [
+        "GPT-5.4",
+        "GPT-5.4 (xhigh)",
+        "gpt-5-4",
+        "gpt-5-4-xhigh"
+      ],
+      "value": 82.7,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "GPT-5.5 Pro",
+      "modelAliases": [
+        "GPT-5.5 Pro",
+        "GPT-5.5 Pro (xhigh)",
+        "gpt-5-5-pro"
+      ],
+      "value": 90.1,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "GPT-5.4 Pro",
+      "modelAliases": [
+        "GPT-5.4 Pro",
+        "GPT-5.4 Pro (xhigh)",
+        "gpt-5-4-pro"
+      ],
+      "value": 89.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "Claude Opus 4.7",
+      "modelAliases": [
+        "Claude Opus 4.7",
+        "Claude Opus 4.7 (Adaptive Reasoning)",
+        "claude-opus-4-7"
+      ],
+      "value": 79.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 85.9,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "frontiermath-tier-1-3",
+      "benchmarkLabel": "FrontierMath Tier 1-3",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 51.7,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "frontiermath-tier-1-3",
+      "benchmarkLabel": "FrontierMath Tier 1-3",
+      "model": "GPT-5.4",
+      "modelAliases": [
+        "GPT-5.4",
+        "GPT-5.4 (xhigh)",
+        "gpt-5-4",
+        "gpt-5-4-xhigh"
+      ],
+      "value": 47.6,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "frontiermath-tier-1-3",
+      "benchmarkLabel": "FrontierMath Tier 1-3",
+      "model": "GPT-5.5 Pro",
+      "modelAliases": [
+        "GPT-5.5 Pro",
+        "GPT-5.5 Pro (xhigh)",
+        "gpt-5-5-pro"
+      ],
+      "value": 52.4,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "frontiermath-tier-1-3",
+      "benchmarkLabel": "FrontierMath Tier 1-3",
+      "model": "GPT-5.4 Pro",
+      "modelAliases": [
+        "GPT-5.4 Pro",
+        "GPT-5.4 Pro (xhigh)",
+        "gpt-5-4-pro"
+      ],
+      "value": 50.0,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "frontiermath-tier-1-3",
+      "benchmarkLabel": "FrontierMath Tier 1-3",
+      "model": "Claude Opus 4.7",
+      "modelAliases": [
+        "Claude Opus 4.7",
+        "Claude Opus 4.7 (Adaptive Reasoning)",
+        "claude-opus-4-7"
+      ],
+      "value": 43.8,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "frontiermath-tier-1-3",
+      "benchmarkLabel": "FrontierMath Tier 1-3",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 36.9,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "frontiermath-tier-4",
+      "benchmarkLabel": "FrontierMath Tier 4",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 35.4,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "frontiermath-tier-4",
+      "benchmarkLabel": "FrontierMath Tier 4",
+      "model": "GPT-5.4",
+      "modelAliases": [
+        "GPT-5.4",
+        "GPT-5.4 (xhigh)",
+        "gpt-5-4",
+        "gpt-5-4-xhigh"
+      ],
+      "value": 27.1,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "frontiermath-tier-4",
+      "benchmarkLabel": "FrontierMath Tier 4",
+      "model": "GPT-5.5 Pro",
+      "modelAliases": [
+        "GPT-5.5 Pro",
+        "GPT-5.5 Pro (xhigh)",
+        "gpt-5-5-pro"
+      ],
+      "value": 39.6,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "frontiermath-tier-4",
+      "benchmarkLabel": "FrontierMath Tier 4",
+      "model": "GPT-5.4 Pro",
+      "modelAliases": [
+        "GPT-5.4 Pro",
+        "GPT-5.4 Pro (xhigh)",
+        "gpt-5-4-pro"
+      ],
+      "value": 38.0,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "frontiermath-tier-4",
+      "benchmarkLabel": "FrontierMath Tier 4",
+      "model": "Claude Opus 4.7",
+      "modelAliases": [
+        "Claude Opus 4.7",
+        "Claude Opus 4.7 (Adaptive Reasoning)",
+        "claude-opus-4-7"
+      ],
+      "value": 22.9,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "frontiermath-tier-4",
+      "benchmarkLabel": "FrontierMath Tier 4",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 16.7,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "cybergym",
+      "benchmarkLabel": "CyberGym",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 81.8,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "cybergym",
+      "benchmarkLabel": "CyberGym",
+      "model": "GPT-5.4",
+      "modelAliases": [
+        "GPT-5.4",
+        "GPT-5.4 (xhigh)",
+        "gpt-5-4",
+        "gpt-5-4-xhigh"
+      ],
+      "value": 79.0,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "cybergym",
+      "benchmarkLabel": "CyberGym",
+      "model": "Claude Opus 4.7",
+      "modelAliases": [
+        "Claude Opus 4.7",
+        "Claude Opus 4.7 (Adaptive Reasoning)",
+        "claude-opus-4-7"
+      ],
+      "value": 73.1,
+      "unit": "%",
+      "sourceId": "openai-gpt-5-5",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    }
+  ]
+}

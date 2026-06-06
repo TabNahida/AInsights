@@ -1,6 +1,6 @@
 window.AINSIGHTS_MODELS_DATA = {
   "version": 1,
-  "generatedAt": "2026-06-06T14:51:24+00:00",
+  "generatedAt": "2026-06-06T15:55:32+00:00",
   "source": {
     "label": "Artificial Analysis Intelligence Evaluations",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -89,6 +89,96 @@ window.AINSIGHTS_MODELS_DATA = {
       "key": "AIME 2025",
       "label": "AIME 2025",
       "defaultWeight": 0
+    },
+    {
+      "key": "ext:swe-bench-pro",
+      "label": "SWE-Bench Pro",
+      "defaultWeight": 0,
+      "source": "external",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "SWE"
+    },
+    {
+      "key": "ext:terminal-bench-2",
+      "label": "Terminal-Bench 2.0",
+      "defaultWeight": 0,
+      "source": "external",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "TERM"
+    },
+    {
+      "key": "ext:expert-swe-internal",
+      "label": "Expert-SWE (Internal)",
+      "defaultWeight": 0,
+      "source": "external",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "EXP"
+    },
+    {
+      "key": "ext:gdpval-wins-ties",
+      "label": "GDPval (wins or ties)",
+      "defaultWeight": 0,
+      "source": "external",
+      "category": "Professional work",
+      "unit": "%",
+      "icon": "GDP"
+    },
+    {
+      "key": "ext:osworld-verified",
+      "label": "OSWorld-Verified",
+      "defaultWeight": 0,
+      "source": "external",
+      "category": "Computer use",
+      "unit": "%",
+      "icon": "OS"
+    },
+    {
+      "key": "ext:toolathlon",
+      "label": "Toolathlon",
+      "defaultWeight": 0,
+      "source": "external",
+      "category": "Tool use",
+      "unit": "%",
+      "icon": "TOOL"
+    },
+    {
+      "key": "ext:browsecomp",
+      "label": "BrowseComp",
+      "defaultWeight": 0,
+      "source": "external",
+      "category": "Tool use",
+      "unit": "%",
+      "icon": "WEB"
+    },
+    {
+      "key": "ext:frontiermath-tier-1-3",
+      "label": "FrontierMath Tier 1-3",
+      "defaultWeight": 0,
+      "source": "external",
+      "category": "Academic reasoning",
+      "unit": "%",
+      "icon": "FM"
+    },
+    {
+      "key": "ext:frontiermath-tier-4",
+      "label": "FrontierMath Tier 4",
+      "defaultWeight": 0,
+      "source": "external",
+      "category": "Academic reasoning",
+      "unit": "%",
+      "icon": "FM4"
+    },
+    {
+      "key": "ext:cybergym",
+      "label": "CyberGym",
+      "defaultWeight": 0,
+      "source": "external",
+      "category": "Cybersecurity",
+      "unit": "%",
+      "icon": "CY"
     }
   ],
   "presets": {
@@ -279,6 +369,128 @@ window.AINSIGHTS_MODELS_DATA = {
         "GPQA Diamond",
         "LiveCodeBench"
       ]
+    },
+    {
+      "id": "openai-gpt-5-5",
+      "label": "OpenAI GPT-5.5 launch evaluations",
+      "icon": "OG5",
+      "url": "https://openai.com/index/introducing-gpt-5-5/",
+      "category": "Official model release",
+      "coverage": "43 model-benchmark scores",
+      "focus": "BrowseComp, CyberGym, Expert-SWE (Internal), FrontierMath Tier 1-3, FrontierMath Tier 4, GDPval (wins or ties), +4",
+      "note": "Official OpenAI table covering GPT-5.5, GPT-5.4, GPT-5.5 Pro, GPT-5.4 Pro, Claude Opus 4.7, and Gemini 3.1 Pro.",
+      "scoreStatus": "external",
+      "defaultWeight": 0,
+      "relatedMetrics": [
+        "ext:browsecomp",
+        "ext:cybergym",
+        "ext:expert-swe-internal",
+        "ext:frontiermath-tier-1-3",
+        "ext:frontiermath-tier-4",
+        "ext:gdpval-wins-ties",
+        "ext:osworld-verified",
+        "ext:swe-bench-pro",
+        "ext:terminal-bench-2",
+        "ext:toolathlon"
+      ],
+      "benchmarkIds": [
+        "browsecomp",
+        "cybergym",
+        "expert-swe-internal",
+        "frontiermath-tier-1-3",
+        "frontiermath-tier-4",
+        "gdpval-wins-ties",
+        "osworld-verified",
+        "swe-bench-pro",
+        "terminal-bench-2",
+        "toolathlon"
+      ]
+    },
+    {
+      "id": "google-gemini-3-1-pro-card",
+      "label": "Google DeepMind Gemini 3.1 Pro model card",
+      "icon": "GDG",
+      "url": "https://deepmind.google/models/model-cards/gemini-3-1-pro/",
+      "category": "Official model card",
+      "coverage": "0 model-benchmark scores",
+      "focus": "Official Google DeepMind model card with Gemini 3.1 Pro cross-model benchmark context.",
+      "note": "Official Google DeepMind model card with Gemini 3.1 Pro cross-model benchmark context.",
+      "scoreStatus": "reference",
+      "defaultWeight": 0,
+      "relatedMetrics": [],
+      "benchmarkIds": []
+    }
+  ],
+  "externalBenchmarks": [
+    {
+      "id": "swe-bench-pro",
+      "label": "SWE-Bench Pro",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "SWE"
+    },
+    {
+      "id": "terminal-bench-2",
+      "label": "Terminal-Bench 2.0",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "TERM"
+    },
+    {
+      "id": "expert-swe-internal",
+      "label": "Expert-SWE (Internal)",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "EXP"
+    },
+    {
+      "id": "gdpval-wins-ties",
+      "label": "GDPval (wins or ties)",
+      "category": "Professional work",
+      "unit": "%",
+      "icon": "GDP"
+    },
+    {
+      "id": "osworld-verified",
+      "label": "OSWorld-Verified",
+      "category": "Computer use",
+      "unit": "%",
+      "icon": "OS"
+    },
+    {
+      "id": "toolathlon",
+      "label": "Toolathlon",
+      "category": "Tool use",
+      "unit": "%",
+      "icon": "TOOL"
+    },
+    {
+      "id": "browsecomp",
+      "label": "BrowseComp",
+      "category": "Tool use",
+      "unit": "%",
+      "icon": "WEB"
+    },
+    {
+      "id": "frontiermath-tier-1-3",
+      "label": "FrontierMath Tier 1-3",
+      "category": "Academic reasoning",
+      "unit": "%",
+      "icon": "FM"
+    },
+    {
+      "id": "frontiermath-tier-4",
+      "label": "FrontierMath Tier 4",
+      "category": "Academic reasoning",
+      "unit": "%",
+      "icon": "FM4"
+    },
+    {
+      "id": "cybergym",
+      "label": "CyberGym",
+      "category": "Cybersecurity",
+      "unit": "%",
+      "icon": "CY"
     }
   ],
   "models": [
@@ -299,9 +511,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 333.8705,
+      "medianOutputSpeed": 330.9371,
       "aa": {
         "aa-intelligence": 33.2657,
         "aa-coding": 28.6195,
@@ -334,8 +547,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 87.8307,
-        "AIME 2025": 93.4417
-      }
+        "AIME 2025": 93.4417,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "gpt-oss-20B (low) [R]",
@@ -354,9 +578,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 241.1016,
+      "medianOutputSpeed": 239.135,
       "aa": {
         "aa-intelligence": 20.7852,
         "aa-coding": 14.3729,
@@ -389,8 +614,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 65.1852,
-        "AIME 2025": 62.3333
-      }
+        "AIME 2025": 62.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "gpt-oss-120b (low) [R]",
@@ -409,9 +645,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 348.2887,
+      "medianOutputSpeed": 339.4501,
       "aa": {
         "aa-intelligence": 24.4666,
         "aa-coding": 15.5338,
@@ -444,8 +681,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 70.6878,
-        "AIME 2025": 66.6667
-      }
+        "AIME 2025": 66.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.4 mini (medium) [R]",
@@ -464,9 +712,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 170.088,
+      "medianOutputSpeed": 171.3342,
       "aa": {
         "aa-intelligence": 37.7279,
         "aa-coding": 37.4649,
@@ -499,8 +748,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 71.1561,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "gpt-oss-20B (high) [R]",
@@ -519,9 +779,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 239.9692,
+      "medianOutputSpeed": 238.2969,
       "aa": {
         "aa-intelligence": 24.4696,
         "aa-coding": 18.529,
@@ -554,8 +815,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 77.672,
-        "AIME 2025": 89.3333
-      }
+        "AIME 2025": 89.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok-1",
@@ -574,7 +846,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -609,8 +882,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.4 mini (xhigh) [R]",
@@ -629,9 +913,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 162.8727,
+      "medianOutputSpeed": 164.0155,
       "aa": {
         "aa-intelligence": 48.9037,
         "aa-coding": 51.4766,
@@ -664,8 +949,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 35.2166,
         "MMMU-Pro": 73.2948,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.4 nano (xhigh) [R]",
@@ -684,9 +980,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 152.921,
+      "medianOutputSpeed": 152.697,
       "aa": {
         "aa-intelligence": 43.9769,
         "aa-coding": 43.9078,
@@ -719,8 +1016,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 24.3879,
         "MMMU-Pro": 65.3757,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "o3 [R]",
@@ -739,9 +1047,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 148.7789,
+      "medianOutputSpeed": 152.1541,
       "aa": {
         "aa-intelligence": 38.374,
         "aa-coding": 38.4049,
@@ -774,8 +1083,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 70.0578,
         "LiveCodeBench": 80.8466,
-        "AIME 2025": 88.3333
-      }
+        "AIME 2025": 88.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.5 (xhigh) [R]",
@@ -794,9 +1114,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 62.8565,
+      "medianOutputSpeed": 61.7474,
       "aa": {
         "aa-intelligence": 60.2376,
         "aa-coding": 59.1155,
@@ -829,8 +1150,120 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 45.8098,
         "MMMU-Pro": 79.8844,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": 58.6,
+        "ext:terminal-bench-2": 82.7,
+        "ext:expert-swe-internal": 73.1,
+        "ext:gdpval-wins-ties": 84.9,
+        "ext:osworld-verified": 78.7,
+        "ext:toolathlon": 55.6,
+        "ext:browsecomp": 84.4,
+        "ext:frontiermath-tier-1-3": 51.7,
+        "ext:frontiermath-tier-4": 35.4,
+        "ext:cybergym": 81.8
+      },
+      "externalBenchmarks": [
+        {
+          "benchmarkId": "swe-bench-pro",
+          "metricKey": "ext:swe-bench-pro",
+          "label": "SWE-Bench Pro",
+          "value": 58.6,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "terminal-bench-2",
+          "metricKey": "ext:terminal-bench-2",
+          "label": "Terminal-Bench 2.0",
+          "value": 82.7,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "expert-swe-internal",
+          "metricKey": "ext:expert-swe-internal",
+          "label": "Expert-SWE (Internal)",
+          "value": 73.1,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "gdpval-wins-ties",
+          "metricKey": "ext:gdpval-wins-ties",
+          "label": "GDPval (wins or ties)",
+          "value": 84.9,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "osworld-verified",
+          "metricKey": "ext:osworld-verified",
+          "label": "OSWorld-Verified",
+          "value": 78.7,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "toolathlon",
+          "metricKey": "ext:toolathlon",
+          "label": "Toolathlon",
+          "value": 55.6,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "browsecomp",
+          "metricKey": "ext:browsecomp",
+          "label": "BrowseComp",
+          "value": 84.4,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "frontiermath-tier-1-3",
+          "metricKey": "ext:frontiermath-tier-1-3",
+          "label": "FrontierMath Tier 1-3",
+          "value": 51.7,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "frontiermath-tier-4",
+          "metricKey": "ext:frontiermath-tier-4",
+          "label": "FrontierMath Tier 4",
+          "value": 35.4,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "cybergym",
+          "metricKey": "ext:cybergym",
+          "label": "CyberGym",
+          "value": 81.8,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        }
+      ]
     },
     {
       "modelKey": "GPT-5.5 Instant (May 2026) [R]",
@@ -849,7 +1282,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -884,8 +1318,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.5 (low) [R]",
@@ -904,9 +1349,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 53.8988,
+      "medianOutputSpeed": 53.2598,
       "aa": {
         "aa-intelligence": 50.7794,
         "aa-coding": 52.0553,
@@ -939,8 +1385,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 79.0173,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.4 nano",
@@ -959,9 +1416,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 149.2015,
+      "medianOutputSpeed": 149.965,
       "aa": {
         "aa-intelligence": 24.3621,
         "aa-coding": 27.89,
@@ -994,8 +1452,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 43.7572,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.5 (high) [R]",
@@ -1014,9 +1483,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 60.254,
+      "medianOutputSpeed": 60.0446,
       "aa": {
         "aa-intelligence": 58.8681,
         "aa-coding": 58.5332,
@@ -1049,8 +1519,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 81.0983,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.4 mini",
@@ -1069,9 +1550,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 173.531,
+      "medianOutputSpeed": 168.5261,
       "aa": {
         "aa-intelligence": 23.279,
         "aa-coding": 25.3157,
@@ -1104,8 +1586,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 60.4624,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.4 nano [R]",
@@ -1124,9 +1617,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 152.0295,
+      "medianOutputSpeed": 153.1374,
       "aa": {
         "aa-intelligence": 38.1081,
         "aa-coding": 35.0309,
@@ -1159,8 +1653,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 59.5376,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.5 (Non-reasoning)",
@@ -1179,9 +1684,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 58.9719,
+      "medianOutputSpeed": 54.5447,
       "aa": {
         "aa-intelligence": 40.9367,
         "aa-coding": 48.6076,
@@ -1214,8 +1720,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 71.3873,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.5 (medium) [R]",
@@ -1234,7 +1751,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
       "medianOutputSpeed": 55.0054,
       "aa": {
@@ -1269,8 +1787,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 81.1561,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.3 Codex (xhigh) [R]",
@@ -1289,9 +1818,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 81.448,
+      "medianOutputSpeed": 82.2515,
       "aa": {
         "aa-intelligence": 53.5605,
         "aa-coding": 53.1004,
@@ -1324,8 +1854,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 78.4971,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 3.3 70B",
@@ -1344,9 +1885,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "assets/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg",
+        "color": "#0089f4"
       },
-      "medianOutputSpeed": 78.5929,
+      "medianOutputSpeed": 78.4313,
       "aa": {
         "aa-intelligence": 14.4886,
         "aa-coding": 10.7008,
@@ -1379,8 +1921,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 0.565,
         "MMMU-Pro": null,
         "LiveCodeBench": 28.7831,
-        "AIME 2025": 7.6667
-      }
+        "AIME 2025": 7.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 3.1 405B",
@@ -1399,7 +1952,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "assets/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg",
+        "color": "#0089f4"
       },
       "medianOutputSpeed": 39.5825,
       "aa": {
@@ -1434,8 +1988,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 30.4762,
-        "AIME 2025": 3.0
-      }
+        "AIME 2025": 3.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 3.2 90B (Vision)",
@@ -1454,9 +2019,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "assets/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg",
+        "color": "#0089f4"
       },
-      "medianOutputSpeed": 56.4738,
+      "medianOutputSpeed": 56.2032,
       "aa": {
         "aa-intelligence": 11.9013,
         "aa-coding": null,
@@ -1489,8 +2055,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 39.4798,
         "LiveCodeBench": 21.3757,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 3.2 11B (Vision)",
@@ -1509,9 +2086,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "assets/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg",
+        "color": "#0089f4"
       },
-      "medianOutputSpeed": 51.346,
+      "medianOutputSpeed": 50.5952,
       "aa": {
         "aa-intelligence": 8.7268,
         "aa-coding": 4.2473,
@@ -1544,8 +2122,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 29.3064,
         "LiveCodeBench": 11.0053,
-        "AIME 2025": 1.6667
-      }
+        "AIME 2025": 1.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 4 Maverick",
@@ -1564,9 +2153,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "assets/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg",
+        "color": "#0089f4"
       },
-      "medianOutputSpeed": 105.1914,
+      "medianOutputSpeed": 106.2808,
       "aa": {
         "aa-intelligence": 18.365,
         "aa-coding": 15.5794,
@@ -1599,8 +2189,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 62.1387,
         "LiveCodeBench": 39.6825,
-        "AIME 2025": 19.3333
-      }
+        "AIME 2025": 19.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 4 Scout",
@@ -1619,9 +2220,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "assets/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg",
+        "color": "#0089f4"
       },
-      "medianOutputSpeed": 102.9068,
+      "medianOutputSpeed": 103.5812,
       "aa": {
         "aa-intelligence": 13.5176,
         "aa-coding": 6.6814,
@@ -1654,8 +2256,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 52.948,
         "LiveCodeBench": 29.9471,
-        "AIME 2025": 14.0
-      }
+        "AIME 2025": 14.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Muse Spark [R]",
@@ -1674,7 +2287,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "assets/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg",
+        "color": "#0089f4"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -1709,8 +2323,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 80.5202,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemma 4 31B [R]",
@@ -1729,7 +2354,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 35.7331,
       "aa": {
@@ -1764,8 +2390,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 37.2881,
         "MMMU-Pro": 73.4104,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemma 4 26B A4B [R]",
@@ -1784,7 +2421,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -1819,8 +2457,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 23.6347,
         "MMMU-Pro": 69.2486,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemma 4 26B A4B",
@@ -1839,9 +2488,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
-      "medianOutputSpeed": 72.9545,
+      "medianOutputSpeed": 77.9548,
       "aa": {
         "aa-intelligence": 27.0858,
         "aa-coding": 29.0895,
@@ -1874,8 +2524,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 66.7052,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 3.5 Flash (minimal)",
@@ -1894,9 +2555,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
-      "medianOutputSpeed": 183.4994,
+      "medianOutputSpeed": 180.704,
       "aa": {
         "aa-intelligence": 43.3108,
         "aa-coding": 47.0889,
@@ -1929,8 +2591,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 80.1156,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemma 4 31B",
@@ -1949,9 +2622,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
-      "medianOutputSpeed": 42.6112,
+      "medianOutputSpeed": 43.7203,
       "aa": {
         "aa-intelligence": 32.2911,
         "aa-coding": 33.898,
@@ -1984,8 +2658,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 70.3468,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 3.5 Flash (medium) [R]",
@@ -2004,9 +2689,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
-      "medianOutputSpeed": 187.8706,
+      "medianOutputSpeed": 173.3926,
       "aa": {
         "aa-intelligence": 54.7833,
         "aa-coding": 43.9324,
@@ -2039,8 +2725,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 83.8728,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemma 4 E2B",
@@ -2059,7 +2756,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -2094,8 +2792,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 41.7919,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemma 4 E4B [R]",
@@ -2114,7 +2823,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -2149,8 +2859,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 51.3873,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemma 4 E4B",
@@ -2169,7 +2890,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -2204,8 +2926,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 51.2139,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 3.1 Flash-Lite [R]",
@@ -2224,9 +2957,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
-      "medianOutputSpeed": 332.9963,
+      "medianOutputSpeed": 326.624,
       "aa": {
         "aa-intelligence": 33.5181,
         "aa-coding": 30.1277,
@@ -2259,8 +2993,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 75.5491,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 3.1 Pro Preview [R]",
@@ -2279,9 +3024,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
-      "medianOutputSpeed": 139.8993,
+      "medianOutputSpeed": 140.2069,
       "aa": {
         "aa-intelligence": 57.1755,
         "aa-coding": 55.4959,
@@ -2314,8 +3060,90 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 30.3309,
         "MMMU-Pro": 82.4277,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": 54.2,
+        "ext:terminal-bench-2": 68.5,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": 67.3,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": 48.8,
+        "ext:browsecomp": 85.9,
+        "ext:frontiermath-tier-1-3": 36.9,
+        "ext:frontiermath-tier-4": 16.7,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": [
+        {
+          "benchmarkId": "swe-bench-pro",
+          "metricKey": "ext:swe-bench-pro",
+          "label": "SWE-Bench Pro",
+          "value": 54.2,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "terminal-bench-2",
+          "metricKey": "ext:terminal-bench-2",
+          "label": "Terminal-Bench 2.0",
+          "value": 68.5,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "gdpval-wins-ties",
+          "metricKey": "ext:gdpval-wins-ties",
+          "label": "GDPval (wins or ties)",
+          "value": 67.3,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "toolathlon",
+          "metricKey": "ext:toolathlon",
+          "label": "Toolathlon",
+          "value": 48.8,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "browsecomp",
+          "metricKey": "ext:browsecomp",
+          "label": "BrowseComp",
+          "value": 85.9,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "frontiermath-tier-1-3",
+          "metricKey": "ext:frontiermath-tier-1-3",
+          "label": "FrontierMath Tier 1-3",
+          "value": 36.9,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "frontiermath-tier-4",
+          "metricKey": "ext:frontiermath-tier-4",
+          "label": "FrontierMath Tier 4",
+          "value": 16.7,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        }
+      ]
     },
     {
       "modelKey": "Gemini 3.5 Flash [R]",
@@ -2334,9 +3162,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
-      "medianOutputSpeed": 182.5344,
+      "medianOutputSpeed": 180.2869,
       "aa": {
         "aa-intelligence": 55.329,
         "aa-coding": 44.9811,
@@ -2369,8 +3198,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 40.3484,
         "MMMU-Pro": 84.2775,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemma 3 270M",
@@ -2389,7 +3229,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -2424,8 +3265,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 0.3175,
-        "AIME 2025": 2.3333
-      }
+        "AIME 2025": 2.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Pro [R]",
@@ -2444,9 +3296,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
-      "medianOutputSpeed": 142.2285,
+      "medianOutputSpeed": 142.6525,
       "aa": {
         "aa-intelligence": 34.6276,
         "aa-coding": 31.9515,
@@ -2479,8 +3332,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 74.9133,
         "LiveCodeBench": 80.1058,
-        "AIME 2025": 87.6667
-      }
+        "AIME 2025": 87.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemma 4 E2B [R]",
@@ -2499,7 +3363,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -2534,8 +3399,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 44.5665,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude Opus 4.7 (max) [R]",
@@ -2554,7 +3430,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
       "medianOutputSpeed": 48.166,
       "aa": {
@@ -2589,8 +3466,100 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 46.6573,
         "MMMU-Pro": 78.8439,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": 64.3,
+        "ext:terminal-bench-2": 69.4,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": 80.3,
+        "ext:osworld-verified": 78.0,
+        "ext:toolathlon": null,
+        "ext:browsecomp": 79.3,
+        "ext:frontiermath-tier-1-3": 43.8,
+        "ext:frontiermath-tier-4": 22.9,
+        "ext:cybergym": 73.1
+      },
+      "externalBenchmarks": [
+        {
+          "benchmarkId": "swe-bench-pro",
+          "metricKey": "ext:swe-bench-pro",
+          "label": "SWE-Bench Pro",
+          "value": 64.3,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "terminal-bench-2",
+          "metricKey": "ext:terminal-bench-2",
+          "label": "Terminal-Bench 2.0",
+          "value": 69.4,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "gdpval-wins-ties",
+          "metricKey": "ext:gdpval-wins-ties",
+          "label": "GDPval (wins or ties)",
+          "value": 80.3,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "osworld-verified",
+          "metricKey": "ext:osworld-verified",
+          "label": "OSWorld-Verified",
+          "value": 78.0,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "browsecomp",
+          "metricKey": "ext:browsecomp",
+          "label": "BrowseComp",
+          "value": 79.3,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "frontiermath-tier-1-3",
+          "metricKey": "ext:frontiermath-tier-1-3",
+          "label": "FrontierMath Tier 1-3",
+          "value": 43.8,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "frontiermath-tier-4",
+          "metricKey": "ext:frontiermath-tier-4",
+          "label": "FrontierMath Tier 4",
+          "value": 22.9,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "cybergym",
+          "metricKey": "ext:cybergym",
+          "label": "CyberGym",
+          "value": 73.1,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        }
+      ]
     },
     {
       "modelKey": "Claude Opus 4.8 (max) [R]",
@@ -2609,9 +3578,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
-      "medianOutputSpeed": 57.424,
+      "medianOutputSpeed": 58.2108,
       "aa": {
         "aa-intelligence": 61.4409,
         "aa-coding": 56.713,
@@ -2644,8 +3614,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude Sonnet 4.6 (Non-reasoning)",
@@ -2664,9 +3645,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
-      "medianOutputSpeed": 42.9422,
+      "medianOutputSpeed": 42.9262,
       "aa": {
         "aa-intelligence": 44.3845,
         "aa-coding": 46.4331,
@@ -2699,8 +3681,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 70.578,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude Opus 4.7 (Non-reasoning, high)",
@@ -2719,9 +3712,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
-      "medianOutputSpeed": 45.0727,
+      "medianOutputSpeed": 44.4954,
       "aa": {
         "aa-intelligence": 51.8214,
         "aa-coding": 53.0689,
@@ -2754,8 +3748,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 76.3584,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 4.5 Haiku [R]",
@@ -2774,9 +3779,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
-      "medianOutputSpeed": 88.1955,
+      "medianOutputSpeed": 88.3641,
       "aa": {
         "aa-intelligence": 37.0918,
         "aa-coding": 32.6108,
@@ -2809,8 +3815,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 27.307,
         "MMMU-Pro": 58.5549,
         "LiveCodeBench": 61.4815,
-        "AIME 2025": 83.6667
-      }
+        "AIME 2025": 83.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 4.5 Haiku",
@@ -2829,9 +3846,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
-      "medianOutputSpeed": 90.5461,
+      "medianOutputSpeed": 89.104,
       "aa": {
         "aa-intelligence": 31.0484,
         "aa-coding": 29.6402,
@@ -2864,8 +3882,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 55.1445,
         "LiveCodeBench": 51.1111,
-        "AIME 2025": 39.0
-      }
+        "AIME 2025": 39.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude Sonnet 4.6 (max) [R]",
@@ -2884,9 +3913,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
-      "medianOutputSpeed": 54.6487,
+      "medianOutputSpeed": 55.4368,
       "aa": {
         "aa-intelligence": 51.7187,
         "aa-coding": 50.94,
@@ -2919,8 +3949,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 39.8023,
         "MMMU-Pro": 73.2948,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude Sonnet 4.6 (Non-reasoning, Low Effort)",
@@ -2939,9 +3980,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
-      "medianOutputSpeed": 42.4174,
+      "medianOutputSpeed": 42.4983,
       "aa": {
         "aa-intelligence": 42.6011,
         "aa-coding": 42.9819,
@@ -2974,8 +4016,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 69.1908,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Magistral Small 1.2 [R]",
@@ -2994,9 +4047,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 108.345,
+      "medianOutputSpeed": 109.2259,
       "aa": {
         "aa-intelligence": 18.1585,
         "aa-coding": 14.7587,
@@ -3029,8 +4083,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 55.4913,
         "LiveCodeBench": 72.2751,
-        "AIME 2025": 80.3333
-      }
+        "AIME 2025": 80.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Ministral 3 14B",
@@ -3049,9 +4114,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 79.4191,
+      "medianOutputSpeed": 83.1399,
       "aa": {
         "aa-intelligence": 15.9834,
         "aa-coding": 10.9007,
@@ -3084,8 +4150,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 49.8266,
         "LiveCodeBench": 35.1323,
-        "AIME 2025": 30.0
-      }
+        "AIME 2025": 30.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Ministral 3 8B",
@@ -3104,9 +4181,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 105.4862,
+      "medianOutputSpeed": 106.4749,
       "aa": {
         "aa-intelligence": 14.841,
         "aa-coding": 9.9747,
@@ -3139,8 +4217,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 45.9538,
         "LiveCodeBench": 30.2646,
-        "AIME 2025": 31.6667
-      }
+        "AIME 2025": 31.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mistral Large 3",
@@ -3159,9 +4248,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 49.1552,
+      "medianOutputSpeed": 50.6246,
       "aa": {
         "aa-intelligence": 22.8048,
         "aa-coding": 22.6817,
@@ -3194,8 +4284,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 55.6647,
         "LiveCodeBench": 46.455,
-        "AIME 2025": 38.0
-      }
+        "AIME 2025": 38.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mistral Small 4",
@@ -3214,7 +4315,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
       "medianOutputSpeed": 163.8988,
       "aa": {
@@ -3249,8 +4351,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 46.474,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mistral Medium 3.5 [R]",
@@ -3269,9 +4382,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 132.5258,
+      "medianOutputSpeed": 93.7955,
       "aa": {
         "aa-intelligence": 39.2258,
         "aa-coding": 35.4167,
@@ -3304,8 +4418,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 64.8555,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Devstral Small 2",
@@ -3324,9 +4449,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 52.6419,
+      "medianOutputSpeed": 50.2312,
       "aa": {
         "aa-intelligence": 19.4672,
         "aa-coding": 20.7176,
@@ -3359,8 +4485,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 44.6243,
         "LiveCodeBench": 34.8148,
-        "AIME 2025": 34.3333
-      }
+        "AIME 2025": 34.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Magistral Medium 1.2 [R]",
@@ -3379,9 +4516,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 39.9244,
+      "medianOutputSpeed": 41.1882,
       "aa": {
         "aa-intelligence": 27.1041,
         "aa-coding": 21.6646,
@@ -3414,8 +4552,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 59.6532,
         "LiveCodeBench": 75.0265,
-        "AIME 2025": 82.0
-      }
+        "AIME 2025": 82.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mistral Small 4 [R]",
@@ -3434,9 +4583,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 175.8886,
+      "medianOutputSpeed": 175.1235,
       "aa": {
         "aa-intelligence": 27.8035,
         "aa-coding": 24.2705,
@@ -3469,8 +4619,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 56.8208,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Ministral 3 3B",
@@ -3489,9 +4650,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 177.7279,
+      "medianOutputSpeed": 177.2888,
       "aa": {
         "aa-intelligence": 11.2394,
         "aa-coding": 4.784,
@@ -3524,8 +4686,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 38.0925,
         "LiveCodeBench": 24.6561,
-        "AIME 2025": 22.0
-      }
+        "AIME 2025": 22.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Devstral 2",
@@ -3544,9 +4717,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 50.0401,
+      "medianOutputSpeed": 53.8258,
       "aa": {
         "aa-intelligence": 22.0418,
         "aa-coding": 23.6602,
@@ -3579,8 +4753,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 44.7619,
-        "AIME 2025": 36.6667
-      }
+        "AIME 2025": 36.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V4 Pro (High) [R]",
@@ -3599,9 +4784,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
-      "medianOutputSpeed": 47.0463,
+      "medianOutputSpeed": 46.9218,
       "aa": {
         "aa-intelligence": 49.7899,
         "aa-coding": 43.2485,
@@ -3634,8 +4820,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V4 Flash (Max) [R]",
@@ -3654,9 +4851,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
-      "medianOutputSpeed": 128.3113,
+      "medianOutputSpeed": 126.7402,
       "aa": {
         "aa-intelligence": 46.5166,
         "aa-coding": 38.7065,
@@ -3689,8 +4887,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 31.516,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V4 Flash (High) [R]",
@@ -3709,7 +4918,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -3744,8 +4954,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V4 Pro (Max) [R]",
@@ -3764,9 +4985,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
-      "medianOutputSpeed": 52.4001,
+      "medianOutputSpeed": 53.9297,
       "aa": {
         "aa-intelligence": 51.5094,
         "aa-coding": 47.4747,
@@ -3799,8 +5021,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 38.3239,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V4 Pro",
@@ -3819,9 +5052,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
-      "medianOutputSpeed": 56.1362,
+      "medianOutputSpeed": 55.1984,
       "aa": {
         "aa-intelligence": 39.2654,
         "aa-coding": 38.3628,
@@ -3854,8 +5088,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V4 Flash",
@@ -3874,9 +5119,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
-      "medianOutputSpeed": 130.3182,
+      "medianOutputSpeed": 120.4165,
       "aa": {
         "aa-intelligence": 36.4592,
         "aa-coding": 35.1501,
@@ -3909,8 +5155,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "R1 1776 [R]",
@@ -3929,7 +5186,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "PPLX",
         "fallbackLabel": "PPLX",
         "title": "Perplexity",
-        "src": "assets/logos/perplexity_small.svg"
+        "src": "assets/logos/perplexity_small.png",
+        "color": "#1B818E"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -3964,8 +5222,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Falcon-H1R-7B [R]",
@@ -3984,7 +5253,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "TU",
         "fallbackLabel": "TU",
         "title": "TII UAE",
-        "src": "assets/logos/tii-uae_small.svg"
+        "src": "assets/logos/tii_small.svg",
+        "color": "#6502FF"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -4019,8 +5289,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 72.381,
-        "AIME 2025": 80.0
-      }
+        "AIME 2025": 80.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok 4.3 (high) [R]",
@@ -4039,9 +5320,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
-      "medianOutputSpeed": 187.7997,
+      "medianOutputSpeed": 194.2977,
       "aa": {
         "aa-intelligence": 53.1964,
         "aa-coding": 41.0318,
@@ -4074,8 +5356,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 32.7213,
         "MMMU-Pro": 78.0925,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok 4.3 (low) [R]",
@@ -4094,9 +5387,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
-      "medianOutputSpeed": 149.2057,
+      "medianOutputSpeed": 162.4208,
       "aa": {
         "aa-intelligence": 43.8861,
         "aa-coding": 31.6428,
@@ -4129,8 +5423,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 72.7746,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok 4.3 (medium) [R]",
@@ -4149,9 +5454,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
-      "medianOutputSpeed": 161.4212,
+      "medianOutputSpeed": 167.7745,
       "aa": {
         "aa-intelligence": 48.8032,
         "aa-coding": 35.0554,
@@ -4184,8 +5490,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 75.8382,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok 4.3 (Non-reasoning)",
@@ -4204,9 +5521,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
-      "medianOutputSpeed": 169.6634,
+      "medianOutputSpeed": 170.0165,
       "aa": {
         "aa-intelligence": 31.0184,
         "aa-coding": 25.0877,
@@ -4239,8 +5557,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 64.7977,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nova Micro",
@@ -4259,9 +5588,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "assets/logos/amazon_small.svg"
+        "src": "assets/logos/aws_small.svg",
+        "color": "#FF9900"
       },
-      "medianOutputSpeed": 272.9735,
+      "medianOutputSpeed": 261.2175,
       "aa": {
         "aa-intelligence": 10.2683,
         "aa-coding": 4.1351,
@@ -4294,8 +5624,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 13.9683,
-        "AIME 2025": 6.0
-      }
+        "AIME 2025": 6.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nova 2.0 Omni",
@@ -4314,7 +5655,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "assets/logos/amazon_small.svg"
+        "src": "assets/logos/aws_small.svg",
+        "color": "#FF9900"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -4349,8 +5691,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 49.8844,
         "LiveCodeBench": 30.4762,
-        "AIME 2025": 37.0
-      }
+        "AIME 2025": 37.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nova 2.0 Lite (high) [R]",
@@ -4369,9 +5722,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "assets/logos/amazon_small.svg"
+        "src": "assets/logos/aws_small.svg",
+        "color": "#FF9900"
       },
-      "medianOutputSpeed": 80.5153,
+      "medianOutputSpeed": 84.3953,
       "aa": {
         "aa-intelligence": 34.5432,
         "aa-coding": 23.4182,
@@ -4404,8 +5758,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 63.7572,
         "LiveCodeBench": 71.1111,
-        "AIME 2025": 94.3333
-      }
+        "AIME 2025": 94.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nova 2.0 Pro Preview (medium) [R]",
@@ -4424,9 +5789,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "assets/logos/amazon_small.svg"
+        "src": "assets/logos/aws_small.svg",
+        "color": "#FF9900"
       },
-      "medianOutputSpeed": 116.6023,
+      "medianOutputSpeed": 115.4065,
       "aa": {
         "aa-intelligence": 35.7111,
         "aa-coding": 30.3977,
@@ -4459,8 +5825,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 64.5087,
         "LiveCodeBench": 73.0159,
-        "AIME 2025": 89.0
-      }
+        "AIME 2025": 89.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nova 2.0 Pro Preview (low) [R]",
@@ -4479,9 +5856,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "assets/logos/amazon_small.svg"
+        "src": "assets/logos/aws_small.svg",
+        "color": "#FF9900"
       },
-      "medianOutputSpeed": 117.321,
+      "medianOutputSpeed": 115.2221,
       "aa": {
         "aa-intelligence": 31.9033,
         "aa-coding": 24.502,
@@ -4514,8 +5892,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 62.7168,
         "LiveCodeBench": 63.8095,
-        "AIME 2025": 63.3333
-      }
+        "AIME 2025": 63.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nova 2.0 Lite",
@@ -4534,9 +5923,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "assets/logos/amazon_small.svg"
+        "src": "assets/logos/aws_small.svg",
+        "color": "#FF9900"
       },
-      "medianOutputSpeed": 116.4386,
+      "medianOutputSpeed": 119.1856,
       "aa": {
         "aa-intelligence": 18.0299,
         "aa-coding": 12.5316,
@@ -4569,8 +5959,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 49.0173,
         "LiveCodeBench": 34.6032,
-        "AIME 2025": 33.6667
-      }
+        "AIME 2025": 33.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nova 2.0 Omni (medium) [R]",
@@ -4589,7 +5990,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "assets/logos/amazon_small.svg"
+        "src": "assets/logos/aws_small.svg",
+        "color": "#FF9900"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -4624,8 +6026,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 61.9075,
         "LiveCodeBench": 66.0317,
-        "AIME 2025": 89.6667
-      }
+        "AIME 2025": 89.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nova 2.0 Pro Preview",
@@ -4644,9 +6057,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "assets/logos/amazon_small.svg"
+        "src": "assets/logos/aws_small.svg",
+        "color": "#FF9900"
       },
-      "medianOutputSpeed": 111.7177,
+      "medianOutputSpeed": 110.8047,
       "aa": {
         "aa-intelligence": 23.0613,
         "aa-coding": 20.4861,
@@ -4679,8 +6093,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 47.3016,
-        "AIME 2025": 30.6667
-      }
+        "AIME 2025": 30.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nova 2.0 Omni (low) [R]",
@@ -4699,7 +6124,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "assets/logos/amazon_small.svg"
+        "src": "assets/logos/aws_small.svg",
+        "color": "#FF9900"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -4734,8 +6160,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 59.8266,
         "LiveCodeBench": 59.1534,
-        "AIME 2025": 56.0
-      }
+        "AIME 2025": 56.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nova Premier",
@@ -4754,9 +6191,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "assets/logos/amazon_small.svg"
+        "src": "assets/logos/aws_small.svg",
+        "color": "#FF9900"
       },
-      "medianOutputSpeed": 33.5504,
+      "medianOutputSpeed": 33.4566,
       "aa": {
         "aa-intelligence": 19.0143,
         "aa-coding": 13.8433,
@@ -4789,8 +6227,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 31.746,
-        "AIME 2025": 17.3333
-      }
+        "AIME 2025": 17.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nova 2.0 Lite (medium) [R]",
@@ -4809,9 +6258,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "assets/logos/amazon_small.svg"
+        "src": "assets/logos/aws_small.svg",
+        "color": "#FF9900"
       },
-      "medianOutputSpeed": 118.8981,
+      "medianOutputSpeed": 111.6364,
       "aa": {
         "aa-intelligence": 29.7271,
         "aa-coding": 23.8847,
@@ -4844,8 +6294,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 62.5434,
         "LiveCodeBench": 66.3492,
-        "AIME 2025": 88.6667
-      }
+        "AIME 2025": 88.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nova 2.0 Lite (low) [R]",
@@ -4864,9 +6325,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "assets/logos/amazon_small.svg"
+        "src": "assets/logos/aws_small.svg",
+        "color": "#FF9900"
       },
-      "medianOutputSpeed": 90.7589,
+      "medianOutputSpeed": 94.0464,
       "aa": {
         "aa-intelligence": 24.5866,
         "aa-coding": 13.6364,
@@ -4899,8 +6361,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 57.9769,
         "LiveCodeBench": 46.8783,
-        "AIME 2025": 46.6667
-      }
+        "AIME 2025": 46.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Phi-4",
@@ -4919,7 +6392,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIC",
         "fallbackLabel": "MIC",
         "title": "Microsoft",
-        "src": "assets/logos/microsoft_small.svg"
+        "src": "assets/logos/microsoft_small.svg",
+        "color": "#0078D5"
       },
       "medianOutputSpeed": 31.2763,
       "aa": {
@@ -4954,8 +6428,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 23.0688,
-        "AIME 2025": 18.0
-      }
+        "AIME 2025": 18.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Phi-4 Mini",
@@ -4974,9 +6459,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIC",
         "fallbackLabel": "MIC",
         "title": "Microsoft",
-        "src": "assets/logos/microsoft_small.svg"
+        "src": "assets/logos/microsoft_small.svg",
+        "color": "#0078D5"
       },
-      "medianOutputSpeed": 22.5698,
+      "medianOutputSpeed": 22.1149,
       "aa": {
         "aa-intelligence": 8.39,
         "aa-coding": 3.588,
@@ -5009,8 +6495,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 12.5926,
-        "AIME 2025": 6.6667
-      }
+        "AIME 2025": 6.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Phi-4 Multimodal",
@@ -5029,9 +6526,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIC",
         "fallbackLabel": "MIC",
         "title": "Microsoft",
-        "src": "assets/logos/microsoft_small.svg"
+        "src": "assets/logos/microsoft_small.svg",
+        "color": "#0078D5"
       },
-      "medianOutputSpeed": 16.7071,
+      "medianOutputSpeed": 16.7347,
       "aa": {
         "aa-intelligence": 10.0404,
         "aa-coding": null,
@@ -5064,8 +6562,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 14.5087,
         "LiveCodeBench": 13.1217,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "LFM2.5-1.2B-Thinking [R]",
@@ -5084,7 +6593,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LA",
         "fallbackLabel": "LA",
         "title": "Liquid AI",
-        "src": "assets/logos/liquid-ai_small.svg"
+        "src": "assets/logos/liquidai_small.svg",
+        "color": "#000000"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5119,8 +6629,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "LFM2.5-VL-1.6B",
@@ -5139,7 +6660,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LA",
         "fallbackLabel": "LA",
         "title": "Liquid AI",
-        "src": "assets/logos/liquid-ai_small.svg"
+        "src": "assets/logos/liquidai_small.svg",
+        "color": "#000000"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5174,8 +6696,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 26.5318,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "LFM2 2.6B",
@@ -5194,7 +6727,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LA",
         "fallbackLabel": "LA",
         "title": "Liquid AI",
-        "src": "assets/logos/liquid-ai_small.svg"
+        "src": "assets/logos/liquidai_small.svg",
+        "color": "#000000"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5229,8 +6763,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 8.1481,
-        "AIME 2025": 8.3333
-      }
+        "AIME 2025": 8.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "LFM2 8B A1B",
@@ -5249,7 +6794,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LA",
         "fallbackLabel": "LA",
         "title": "Liquid AI",
-        "src": "assets/logos/liquid-ai_small.svg"
+        "src": "assets/logos/liquidai_small.svg",
+        "color": "#000000"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5284,8 +6830,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 15.1323,
-        "AIME 2025": 25.3333
-      }
+        "AIME 2025": 25.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "LFM2.5-1.2B-Instruct",
@@ -5304,7 +6861,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LA",
         "fallbackLabel": "LA",
         "title": "Liquid AI",
-        "src": "assets/logos/liquid-ai_small.svg"
+        "src": "assets/logos/liquidai_small.svg",
+        "color": "#000000"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5339,8 +6897,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "LFM2 24B A2B",
@@ -5359,9 +6928,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LA",
         "fallbackLabel": "LA",
         "title": "Liquid AI",
-        "src": "assets/logos/liquid-ai_small.svg"
+        "src": "assets/logos/liquidai_small.svg",
+        "color": "#000000"
       },
-      "medianOutputSpeed": 102.6868,
+      "medianOutputSpeed": 106.0197,
       "aa": {
         "aa-intelligence": 10.4928,
         "aa-coding": 3.6265,
@@ -5394,8 +6964,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Solar Open 100B [R]",
@@ -5414,7 +6995,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "UPS",
         "fallbackLabel": "UPS",
         "title": "Upstage",
-        "src": "assets/logos/upstage_small.svg"
+        "src": "assets/logos/upstage_small.svg",
+        "color": "#7c59f5"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5449,8 +7031,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Solar Pro 2 [R]",
@@ -5469,7 +7062,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "UPS",
         "fallbackLabel": "UPS",
         "title": "Upstage",
-        "src": "assets/logos/upstage_small.svg"
+        "src": "assets/logos/upstage_small.svg",
+        "color": "#7c59f5"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5504,8 +7098,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 61.5873,
-        "AIME 2025": 61.3333
-      }
+        "AIME 2025": 61.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Solar Pro 3 [R]",
@@ -5524,7 +7129,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "UPS",
         "fallbackLabel": "UPS",
         "title": "Upstage",
-        "src": "assets/logos/upstage_small.svg"
+        "src": "assets/logos/upstage_small.svg",
+        "color": "#7c59f5"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5559,8 +7165,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Solar Pro 2",
@@ -5579,7 +7196,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "UPS",
         "fallbackLabel": "UPS",
         "title": "Upstage",
-        "src": "assets/logos/upstage_small.svg"
+        "src": "assets/logos/upstage_small.svg",
+        "color": "#7c59f5"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -5614,8 +7232,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 42.4339,
-        "AIME 2025": 30.0
-      }
+        "AIME 2025": 30.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiniMax-M3 [R]",
@@ -5634,9 +7263,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIN",
         "fallbackLabel": "MIN",
         "title": "MiniMax",
-        "src": "assets/logos/minimax_small.svg"
+        "src": "assets/logos/minimax_small.svg",
+        "color": "#EB3568"
       },
-      "medianOutputSpeed": 39.8998,
+      "medianOutputSpeed": 40.0922,
       "aa": {
         "aa-intelligence": 54.6748,
         "aa-coding": 43.4063,
@@ -5669,8 +7299,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 79.8844,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiniMax-M2.7 [R]",
@@ -5689,9 +7330,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIN",
         "fallbackLabel": "MIN",
         "title": "MiniMax",
-        "src": "assets/logos/minimax_small.svg"
+        "src": "assets/logos/minimax_small.svg",
+        "color": "#EB3568"
       },
-      "medianOutputSpeed": 72.2336,
+      "medianOutputSpeed": 77.7307,
       "aa": {
         "aa-intelligence": 49.6153,
         "aa-coding": 41.9262,
@@ -5724,8 +7366,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 26.4595,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 3.1 Nemotron 70B",
@@ -5744,9 +7397,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
-      "medianOutputSpeed": 290.0433,
+      "medianOutputSpeed": 290.5347,
       "aa": {
         "aa-intelligence": 13.4388,
         "aa-coding": 10.7849,
@@ -5779,8 +7433,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 16.9312,
-        "AIME 2025": 11.0
-      }
+        "AIME 2025": 11.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nemotron 3 Nano Omni 30B A3B Reasoning [R]",
@@ -5799,9 +7464,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
-      "medianOutputSpeed": 301.1377,
+      "medianOutputSpeed": 300.7209,
       "aa": {
         "aa-intelligence": 21.4254,
         "aa-coding": 14.8148,
@@ -5834,8 +7500,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 53.1792,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "NVIDIA Nemotron 3 Super [R]",
@@ -5854,9 +7531,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
-      "medianOutputSpeed": 154.886,
+      "medianOutputSpeed": 155.4835,
       "aa": {
         "aa-intelligence": 35.9698,
         "aa-coding": 31.1904,
@@ -5889,8 +7567,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nemotron 3 Ultra [R]",
@@ -5909,9 +7598,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
-      "medianOutputSpeed": 141.4073,
+      "medianOutputSpeed": 141.9839,
       "aa": {
         "aa-intelligence": 47.6726,
         "aa-coding": 37.5526,
@@ -5944,8 +7634,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "NVIDIA Nemotron 3 Nano",
@@ -5964,9 +7665,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
-      "medianOutputSpeed": 89.5908,
+      "medianOutputSpeed": 91.5889,
       "aa": {
         "aa-intelligence": 13.1698,
         "aa-coding": 15.7583,
@@ -5999,8 +7701,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 35.9788,
-        "AIME 2025": 13.3333
-      }
+        "AIME 2025": 13.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "NVIDIA Nemotron Nano 9B V2",
@@ -6019,7 +7732,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
       "medianOutputSpeed": 152.4618,
       "aa": {
@@ -6054,8 +7768,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 70.0529,
-        "AIME 2025": 62.3333
-      }
+        "AIME 2025": 62.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "NVIDIA Nemotron Nano 12B v2 VL",
@@ -6074,9 +7799,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
-      "medianOutputSpeed": 218.6286,
+      "medianOutputSpeed": 217.9137,
       "aa": {
         "aa-intelligence": 10.0894,
         "aa-coding": 5.8642,
@@ -6109,8 +7835,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 44.5087,
         "LiveCodeBench": 34.4974,
-        "AIME 2025": 26.6667
-      }
+        "AIME 2025": 26.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "NVIDIA Nemotron Nano 12B v2 VL [R]",
@@ -6129,9 +7866,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
-      "medianOutputSpeed": 276.86,
+      "medianOutputSpeed": 285.1453,
       "aa": {
         "aa-intelligence": 14.8876,
         "aa-coding": 11.7494,
@@ -6164,8 +7902,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 52.8902,
         "LiveCodeBench": 69.418,
-        "AIME 2025": 75.0
-      }
+        "AIME 2025": 75.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "NVIDIA Nemotron 3 Nano [R]",
@@ -6184,9 +7933,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
-      "medianOutputSpeed": 117.5238,
+      "medianOutputSpeed": 125.1905,
       "aa": {
         "aa-intelligence": 24.2725,
         "aa-coding": 18.9675,
@@ -6219,8 +7969,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 74.0741,
-        "AIME 2025": 91.0
-      }
+        "AIME 2025": 91.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama Nemotron Ultra [R]",
@@ -6239,9 +8000,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
-      "medianOutputSpeed": 51.8144,
+      "medianOutputSpeed": 51.5524,
       "aa": {
         "aa-intelligence": 15.018,
         "aa-coding": 13.0892,
@@ -6274,8 +8036,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 64.127,
-        "AIME 2025": 63.6667
-      }
+        "AIME 2025": 63.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "NVIDIA Nemotron Nano 9B V2 [R]",
@@ -6294,9 +8067,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
-      "medianOutputSpeed": 119.1376,
+      "medianOutputSpeed": 120.4227,
       "aa": {
         "aa-intelligence": 14.7575,
         "aa-coding": 8.3403,
@@ -6329,8 +8103,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 72.381,
-        "AIME 2025": 69.6667
-      }
+        "AIME 2025": 69.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama Nemotron Super 49B v1.5 [R]",
@@ -6349,7 +8134,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
       "medianOutputSpeed": 40.7054,
       "aa": {
@@ -6384,8 +8170,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 73.6508,
-        "AIME 2025": 76.6667
-      }
+        "AIME 2025": 76.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nemotron Cascade 2 30B A3B [R]",
@@ -6404,7 +8201,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -6439,8 +8237,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "NVIDIA Nemotron 3 Nano 4B [R]",
@@ -6459,7 +8268,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -6494,8 +8304,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama Nemotron Super 49B v1.5",
@@ -6514,7 +8335,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
       "medianOutputSpeed": 42.8644,
       "aa": {
@@ -6549,8 +8371,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 28.9947,
-        "AIME 2025": 8.0
-      }
+        "AIME 2025": 8.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Kimi K2.6 [R]",
@@ -6566,12 +8399,13 @@ window.AINSIGHTS_MODELS_DATA = {
       "openSourceCategorization": "Open Weights (Permissive License)",
       "openSourceType": "open",
       "modelIcon": {
-        "label": "KIM",
-        "fallbackLabel": "KIM",
+        "label": "KIMI",
+        "fallbackLabel": "KIMI",
         "title": "Kimi",
-        "src": "assets/logos/kimi_small.svg"
+        "src": "assets/logos/kimi_small.png",
+        "color": "#047AFE"
       },
-      "medianOutputSpeed": 41.8012,
+      "medianOutputSpeed": 44.0357,
       "aa": {
         "aa-intelligence": 53.9045,
         "aa-coding": 47.117,
@@ -6604,8 +8438,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 31.1864,
         "MMMU-Pro": 79.3642,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 65B",
@@ -6624,7 +8469,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "assets/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg",
+        "color": "#0089f4"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -6659,8 +8505,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Kimi K2.6",
@@ -6676,12 +8533,13 @@ window.AINSIGHTS_MODELS_DATA = {
       "openSourceCategorization": "Open Weights (Permissive License)",
       "openSourceType": "open",
       "modelIcon": {
-        "label": "KIM",
-        "fallbackLabel": "KIM",
+        "label": "KIMI",
+        "fallbackLabel": "KIMI",
         "title": "Kimi",
-        "src": "assets/logos/kimi_small.svg"
+        "src": "assets/logos/kimi_small.png",
+        "color": "#047AFE"
       },
-      "medianOutputSpeed": 34.5921,
+      "medianOutputSpeed": 38.2942,
       "aa": {
         "aa-intelligence": 42.9485,
         "aa-coding": 38.4084,
@@ -6714,8 +8572,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Kimi Linear 48B A3B Instruct",
@@ -6731,10 +8600,11 @@ window.AINSIGHTS_MODELS_DATA = {
       "openSourceCategorization": "Open Weights (Permissive License)",
       "openSourceType": "open",
       "modelIcon": {
-        "label": "KIM",
-        "fallbackLabel": "KIM",
+        "label": "KIMI",
+        "fallbackLabel": "KIMI",
         "title": "Kimi",
-        "src": "assets/logos/kimi_small.svg"
+        "src": "assets/logos/kimi_small.png",
+        "color": "#047AFE"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -6769,8 +8639,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 37.7778,
-        "AIME 2025": 36.3333
-      }
+        "AIME 2025": 36.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Step3 VL 10B [R]",
@@ -6789,7 +8670,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "STE",
         "fallbackLabel": "STE",
         "title": "StepFun",
-        "src": "assets/logos/stepfun_small.svg"
+        "src": "assets/logos/stepfun_small.svg",
+        "color": "#017AFF"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -6824,8 +8706,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 63.9884,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Step 3.5 Flash 2603 [R]",
@@ -6844,9 +8737,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "STE",
         "fallbackLabel": "STE",
         "title": "StepFun",
-        "src": "assets/logos/stepfun_small.svg"
+        "src": "assets/logos/stepfun_small.svg",
+        "color": "#017AFF"
       },
-      "medianOutputSpeed": 217.0302,
+      "medianOutputSpeed": 189.7405,
       "aa": {
         "aa-intelligence": 38.4677,
         "aa-coding": 34.5644,
@@ -6879,8 +8773,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Step 3.7 Flash [R]",
@@ -6899,9 +8804,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "STE",
         "fallbackLabel": "STE",
         "title": "StepFun",
-        "src": "assets/logos/stepfun_small.svg"
+        "src": "assets/logos/stepfun_small.svg",
+        "color": "#017AFF"
       },
-      "medianOutputSpeed": 392.1127,
+      "medianOutputSpeed": 388.9202,
       "aa": {
         "aa-intelligence": 42.5912,
         "aa-coding": 37.0861,
@@ -6934,8 +8840,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 75.3179,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Olmo 3.1 32B Instruct",
@@ -6954,7 +8871,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "assets/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/ai2_small.svg",
+        "color": "#F0529C"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -6989,8 +8907,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Molmo 7B-D",
@@ -7009,7 +8938,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "assets/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/ai2_small.svg",
+        "color": "#F0529C"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7044,8 +8974,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 24.5087,
         "LiveCodeBench": 3.9153,
-        "AIME 2025": 0.0
-      }
+        "AIME 2025": 0.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Olmo 3 7B",
@@ -7064,7 +9005,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "assets/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/ai2_small.svg",
+        "color": "#F0529C"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7099,8 +9041,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 26.5608,
-        "AIME 2025": 41.3333
-      }
+        "AIME 2025": 41.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Olmo 3.1 32B Think [R]",
@@ -7119,7 +9072,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "assets/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/ai2_small.svg",
+        "color": "#F0529C"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7154,8 +9108,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 69.5238,
-        "AIME 2025": 77.3333
-      }
+        "AIME 2025": 77.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Olmo 3 7B Think [R]",
@@ -7174,7 +9139,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "assets/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/ai2_small.svg",
+        "color": "#F0529C"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7209,8 +9175,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 61.6931,
-        "AIME 2025": 70.6667
-      }
+        "AIME 2025": 70.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Molmo2-8B",
@@ -7229,7 +9206,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "assets/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/ai2_small.svg",
+        "color": "#F0529C"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7264,8 +9242,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 37.4566,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Granite 4.0 H Small",
@@ -7284,9 +9273,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "assets/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg",
+        "color": "#0f62fe"
       },
-      "medianOutputSpeed": 400.4059,
+      "medianOutputSpeed": 428.4402,
       "aa": {
         "aa-intelligence": 10.8109,
         "aa-coding": 8.4982,
@@ -7319,8 +9309,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 25.0794,
-        "AIME 2025": 13.6667
-      }
+        "AIME 2025": 13.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Granite 4.0 H 350M",
@@ -7339,7 +9340,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "assets/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg",
+        "color": "#0f62fe"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7374,8 +9376,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 1.9048,
-        "AIME 2025": 1.3333
-      }
+        "AIME 2025": 1.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Granite 4.1 30B",
@@ -7394,7 +9407,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "assets/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg",
+        "color": "#0f62fe"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7429,8 +9443,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Granite 4.0 1B",
@@ -7449,7 +9474,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "assets/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg",
+        "color": "#0f62fe"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7484,8 +9510,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 4.6561,
-        "AIME 2025": 6.3333
-      }
+        "AIME 2025": 6.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Granite 4.1 3B",
@@ -7504,7 +9541,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "assets/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg",
+        "color": "#0f62fe"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7539,8 +9577,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Granite 4.1 8B",
@@ -7559,9 +9608,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "assets/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg",
+        "color": "#0f62fe"
       },
-      "medianOutputSpeed": 114.0188,
+      "medianOutputSpeed": 113.5412,
       "aa": {
         "aa-intelligence": 12.3806,
         "aa-coding": 7.2531,
@@ -7594,8 +9644,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Granite 4.0 350M",
@@ -7614,7 +9675,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "assets/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg",
+        "color": "#0f62fe"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7649,8 +9711,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 2.4339,
-        "AIME 2025": 0.0
-      }
+        "AIME 2025": 0.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Granite 4.0 H 1B",
@@ -7669,7 +9742,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "assets/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg",
+        "color": "#0f62fe"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7704,8 +9778,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 11.5344,
-        "AIME 2025": 6.3333
-      }
+        "AIME 2025": 6.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Granite 4.0 Micro",
@@ -7724,7 +9809,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "assets/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg",
+        "color": "#0f62fe"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7759,8 +9845,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 17.9894,
-        "AIME 2025": 6.0
-      }
+        "AIME 2025": 6.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mercury 2 [R]",
@@ -7779,9 +9876,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "Inception",
-        "src": "assets/logos/inception_small.svg"
+        "src": "assets/logos/inceptionlabs_small.jpg",
+        "color": "#021B30"
       },
-      "medianOutputSpeed": 899.4566,
+      "medianOutputSpeed": 814.0132,
       "aa": {
         "aa-intelligence": 32.8235,
         "aa-coding": 30.5626,
@@ -7814,8 +9912,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Reka Flash 3 [R]",
@@ -7834,7 +9943,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "RA",
         "fallbackLabel": "RA",
         "title": "Reka AI",
-        "src": "assets/logos/reka-ai_small.svg"
+        "src": "assets/logos/reka_small.svg",
+        "color": "#172136"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -7869,8 +9979,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 43.4921,
-        "AIME 2025": 33.6667
-      }
+        "AIME 2025": 33.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Hermes 4 70B",
@@ -7889,9 +10010,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NR",
         "fallbackLabel": "NR",
         "title": "Nous Research",
-        "src": "assets/logos/nous-research_small.svg"
+        "src": "assets/logos/nousresearch_small.jpg",
+        "color": "#006fa8"
       },
-      "medianOutputSpeed": 85.6749,
+      "medianOutputSpeed": 88.0442,
       "aa": {
         "aa-intelligence": 12.6298,
         "aa-coding": 9.2207,
@@ -7924,8 +10046,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 26.8783,
-        "AIME 2025": 11.3333
-      }
+        "AIME 2025": 11.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Hermes 4 405B",
@@ -7944,9 +10077,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NR",
         "fallbackLabel": "NR",
         "title": "Nous Research",
-        "src": "assets/logos/nous-research_small.svg"
+        "src": "assets/logos/nousresearch_small.jpg",
+        "color": "#006fa8"
       },
-      "medianOutputSpeed": 38.6533,
+      "medianOutputSpeed": 39.0176,
       "aa": {
         "aa-intelligence": 17.6291,
         "aa-coding": 18.1012,
@@ -7979,8 +10113,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 54.6032,
-        "AIME 2025": 15.3333
-      }
+        "AIME 2025": 15.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepHermes 3 - Mistral 24B",
@@ -7999,7 +10144,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NR",
         "fallbackLabel": "NR",
         "title": "Nous Research",
-        "src": "assets/logos/nous-research_small.svg"
+        "src": "assets/logos/nousresearch_small.jpg",
+        "color": "#006fa8"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8034,8 +10180,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 19.4709,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepHermes 3 - Llama-3.1 8B",
@@ -8054,7 +10211,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NR",
         "fallbackLabel": "NR",
         "title": "Nous Research",
-        "src": "assets/logos/nous-research_small.svg"
+        "src": "assets/logos/nousresearch_small.jpg",
+        "color": "#006fa8"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8089,8 +10247,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 8.4656,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Hermes 4 70B [R]",
@@ -8109,9 +10278,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NR",
         "fallbackLabel": "NR",
         "title": "Nous Research",
-        "src": "assets/logos/nous-research_small.svg"
+        "src": "assets/logos/nousresearch_small.jpg",
+        "color": "#006fa8"
       },
-      "medianOutputSpeed": 81.7915,
+      "medianOutputSpeed": 80.9231,
       "aa": {
         "aa-intelligence": 15.9947,
         "aa-coding": 14.4115,
@@ -8144,8 +10314,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 65.291,
-        "AIME 2025": 68.6667
-      }
+        "AIME 2025": 68.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Hermes 4 405B [R]",
@@ -8164,9 +10345,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NR",
         "fallbackLabel": "NR",
         "title": "Nous Research",
-        "src": "assets/logos/nous-research_small.svg"
+        "src": "assets/logos/nousresearch_small.jpg",
+        "color": "#006fa8"
       },
-      "medianOutputSpeed": 38.9478,
+      "medianOutputSpeed": 39.4825,
       "aa": {
         "aa-intelligence": 18.5583,
         "aa-coding": 15.9863,
@@ -8199,8 +10381,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 68.5714,
-        "AIME 2025": 69.6667
-      }
+        "AIME 2025": 69.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "K-EXAONE [R]",
@@ -8219,7 +10412,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LAR",
         "fallbackLabel": "LAR",
         "title": "LG AI Research",
-        "src": "assets/logos/lg-ai-research_small.svg"
+        "src": "assets/logos/lg_small.png",
+        "color": "#df3b8a"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8254,8 +10448,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 76.8254,
-        "AIME 2025": 90.3333
-      }
+        "AIME 2025": 90.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "K-EXAONE",
@@ -8274,7 +10479,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LAR",
         "fallbackLabel": "LAR",
         "title": "LG AI Research",
-        "src": "assets/logos/lg-ai-research_small.svg"
+        "src": "assets/logos/lg_small.png",
+        "color": "#df3b8a"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8309,8 +10515,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": 44.0
-      }
+        "AIME 2025": 44.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "EXAONE 4.0 32B [R]",
@@ -8329,7 +10546,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LAR",
         "fallbackLabel": "LAR",
         "title": "LG AI Research",
-        "src": "assets/logos/lg-ai-research_small.svg"
+        "src": "assets/logos/lg_small.png",
+        "color": "#df3b8a"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8364,8 +10582,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 74.709,
-        "AIME 2025": 80.0
-      }
+        "AIME 2025": 80.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Exaone 4.0 1.2B",
@@ -8384,7 +10613,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LAR",
         "fallbackLabel": "LAR",
         "title": "LG AI Research",
-        "src": "assets/logos/lg-ai-research_small.svg"
+        "src": "assets/logos/lg_small.png",
+        "color": "#df3b8a"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8419,8 +10649,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 29.3122,
-        "AIME 2025": 24.0
-      }
+        "AIME 2025": 24.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "EXAONE 4.5 33B [R]",
@@ -8439,7 +10680,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LAR",
         "fallbackLabel": "LAR",
         "title": "LG AI Research",
-        "src": "assets/logos/lg-ai-research_small.svg"
+        "src": "assets/logos/lg_small.png",
+        "color": "#df3b8a"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8474,8 +10716,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 67.341,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "EXAONE 4.0 32B",
@@ -8494,7 +10747,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LAR",
         "fallbackLabel": "LAR",
         "title": "LG AI Research",
-        "src": "assets/logos/lg-ai-research_small.svg"
+        "src": "assets/logos/lg_small.png",
+        "color": "#df3b8a"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8529,8 +10783,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 47.1958,
-        "AIME 2025": 39.3333
-      }
+        "AIME 2025": 39.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Exaone 4.0 1.2B [R]",
@@ -8549,7 +10814,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LAR",
         "fallbackLabel": "LAR",
         "title": "LG AI Research",
-        "src": "assets/logos/lg-ai-research_small.svg"
+        "src": "assets/logos/lg_small.png",
+        "color": "#df3b8a"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8584,8 +10850,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 51.6402,
-        "AIME 2025": 50.3333
-      }
+        "AIME 2025": 50.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiMo-V2.5-Pro",
@@ -8604,9 +10881,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "assets/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg",
+        "color": "#ff6900"
       },
-      "medianOutputSpeed": 49.0699,
+      "medianOutputSpeed": 50.482,
       "aa": {
         "aa-intelligence": 35.5859,
         "aa-coding": 36.7775,
@@ -8639,8 +10917,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiMo-V2-Omni-0327 [R]",
@@ -8659,9 +10948,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "assets/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg",
+        "color": "#ff6900"
       },
-      "medianOutputSpeed": 84.4368,
+      "medianOutputSpeed": 81.0242,
       "aa": {
         "aa-intelligence": 44.932,
         "aa-coding": 36.8932,
@@ -8694,8 +10984,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 73.9306,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiMo-V2.5-Pro [R]",
@@ -8714,9 +11015,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "assets/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg",
+        "color": "#ff6900"
       },
-      "medianOutputSpeed": 44.275,
+      "medianOutputSpeed": 43.9889,
       "aa": {
         "aa-intelligence": 53.8287,
         "aa-coding": 45.5317,
@@ -8749,8 +11051,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 38.2298,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiMo-V2-Flash",
@@ -8769,9 +11082,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "assets/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg",
+        "color": "#ff6900"
       },
-      "medianOutputSpeed": 115.8387,
+      "medianOutputSpeed": 110.3789,
       "aa": {
         "aa-intelligence": 30.3481,
         "aa-coding": 25.8137,
@@ -8804,8 +11118,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 40.2116,
-        "AIME 2025": 67.6667
-      }
+        "AIME 2025": 67.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiMo-V2-Omni [R]",
@@ -8824,9 +11149,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "assets/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg",
+        "color": "#ff6900"
       },
-      "medianOutputSpeed": 85.9683,
+      "medianOutputSpeed": 80.3061,
       "aa": {
         "aa-intelligence": 43.3995,
         "aa-coding": 35.4623,
@@ -8859,8 +11185,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 69.8844,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiMo-V2.5 [R]",
@@ -8879,9 +11216,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "assets/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg",
+        "color": "#ff6900"
       },
-      "medianOutputSpeed": 79.4889,
+      "medianOutputSpeed": 77.7852,
       "aa": {
         "aa-intelligence": 49.0344,
         "aa-coding": 42.1296,
@@ -8914,8 +11252,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 75.4335,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen Chat 14B",
@@ -8934,7 +11283,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -8969,8 +11319,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiMo-V2-Flash (Feb 2026) [R]",
@@ -8989,9 +11350,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "assets/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg",
+        "color": "#ff6900"
       },
-      "medianOutputSpeed": 115.8205,
+      "medianOutputSpeed": 113.8413,
       "aa": {
         "aa-intelligence": 41.4588,
         "aa-coding": 33.4771,
@@ -9024,8 +11386,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "ERNIE 4.5 300B A47B",
@@ -9044,7 +11417,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "BAI",
         "fallbackLabel": "BAI",
         "title": "Baidu",
-        "src": "assets/logos/baidu_small.svg"
+        "src": "assets/logos/baidu_small.svg",
+        "color": "#2436d8"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9079,8 +11453,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 46.6667,
-        "AIME 2025": 41.3333
-      }
+        "AIME 2025": 41.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "ERNIE 5.0 Thinking Preview [R]",
@@ -9099,7 +11484,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "BAI",
         "fallbackLabel": "BAI",
         "title": "Baidu",
-        "src": "assets/logos/baidu_small.svg"
+        "src": "assets/logos/baidu_small.svg",
+        "color": "#2436d8"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9134,8 +11520,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 64.5665,
         "LiveCodeBench": 81.164,
-        "AIME 2025": 85.0
-      }
+        "AIME 2025": 85.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Sarvam 105B (high) [R]",
@@ -9154,9 +11551,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SAR",
         "fallbackLabel": "SAR",
         "title": "Sarvam",
-        "src": "assets/logos/sarvam_small.svg"
+        "src": "assets/logos/sarvam_small.png",
+        "color": "#807D77"
       },
-      "medianOutputSpeed": 96.2252,
+      "medianOutputSpeed": 95.925,
       "aa": {
         "aa-intelligence": 18.1574,
         "aa-coding": 9.8064,
@@ -9189,8 +11587,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Sarvam 30B (high) [R]",
@@ -9209,9 +11618,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SAR",
         "fallbackLabel": "SAR",
         "title": "Sarvam",
-        "src": "assets/logos/sarvam_small.svg"
+        "src": "assets/logos/sarvam_small.png",
+        "color": "#807D77"
       },
-      "medianOutputSpeed": 171.3132,
+      "medianOutputSpeed": 173.0746,
       "aa": {
         "aa-intelligence": 12.3446,
         "aa-coding": 7.9195,
@@ -9244,8 +11654,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Hy3-preview",
@@ -9264,9 +11685,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "TEN",
         "fallbackLabel": "TEN",
         "title": "Tencent",
-        "src": "assets/logos/tencent_small.svg"
+        "src": "assets/logos/tencent_small.svg",
+        "color": "#5CB9FF"
       },
-      "medianOutputSpeed": 88.1335,
+      "medianOutputSpeed": 89.7152,
       "aa": {
         "aa-intelligence": 33.6648,
         "aa-coding": 34.3294,
@@ -9299,8 +11721,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Hy3-preview [R]",
@@ -9319,9 +11752,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "TEN",
         "fallbackLabel": "TEN",
         "title": "Tencent",
-        "src": "assets/logos/tencent_small.svg"
+        "src": "assets/logos/tencent_small.svg",
+        "color": "#5CB9FF"
       },
-      "medianOutputSpeed": 88.5433,
+      "medianOutputSpeed": 90.386,
       "aa": {
         "aa-intelligence": 41.8528,
         "aa-coding": 36.4618,
@@ -9354,8 +11788,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "KAT-Coder-Pro V1",
@@ -9374,9 +11819,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "KWA",
         "fallbackLabel": "KWA",
         "title": "KwaiKAT",
-        "src": "assets/logos/kwaikat_small.svg"
+        "src": "assets/logos/kwaikat_small.svg",
+        "color": "#489034"
       },
-      "medianOutputSpeed": 115.3071,
+      "medianOutputSpeed": 117.3017,
       "aa": {
         "aa-intelligence": 36.0287,
         "aa-coding": 18.252,
@@ -9409,8 +11855,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 74.709,
-        "AIME 2025": 94.6667
-      }
+        "AIME 2025": 94.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "KAT-Coder-Pro V2",
@@ -9429,9 +11886,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "KWA",
         "fallbackLabel": "KWA",
         "title": "KwaiKAT",
-        "src": "assets/logos/kwaikat_small.svg"
+        "src": "assets/logos/kwaikat_small.svg",
+        "color": "#489034"
       },
-      "medianOutputSpeed": 113.0327,
+      "medianOutputSpeed": 116.7725,
       "aa": {
         "aa-intelligence": 43.8335,
         "aa-coding": 45.5983,
@@ -9464,8 +11922,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "INTELLECT-3 [R]",
@@ -9484,7 +11953,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "PI",
         "fallbackLabel": "PI",
         "title": "Prime Intellect",
-        "src": "assets/logos/prime-intellect_small.svg"
+        "src": "assets/logos/prime-intellect_small.svg",
+        "color": "#000000"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9519,8 +11989,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 77.672,
-        "AIME 2025": 88.0
-      }
+        "AIME 2025": 88.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Motif-2-12.7B [R]",
@@ -9539,7 +12020,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MT",
         "fallbackLabel": "MT",
         "title": "Motif Technologies",
-        "src": "assets/logos/motif-technologies_small.svg"
+        "src": "assets/logos/motif_small.svg",
+        "color": "#6a93eb"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9574,8 +12056,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 65.0794,
-        "AIME 2025": 80.3333
-      }
+        "AIME 2025": 80.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "K2 Think V2 [R]",
@@ -9594,7 +12087,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIO",
         "fallbackLabel": "MIO",
         "title": "MBZUAI Institute of Foundation Models",
-        "src": "assets/logos/mbzuai-institute-of-foundation-models_small.svg"
+        "src": "assets/logos/mbzuai_small.svg",
+        "color": "#1521a9"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9629,8 +12123,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "K2-V2 (medium) [R]",
@@ -9649,7 +12154,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIO",
         "fallbackLabel": "MIO",
         "title": "MBZUAI Institute of Foundation Models",
-        "src": "assets/logos/mbzuai-institute-of-foundation-models_small.svg"
+        "src": "assets/logos/mbzuai_small.svg",
+        "color": "#1521a9"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9684,8 +12190,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 54.0741,
-        "AIME 2025": 64.6667
-      }
+        "AIME 2025": 64.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "K2-V2 (high) [R]",
@@ -9704,7 +12221,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIO",
         "fallbackLabel": "MIO",
         "title": "MBZUAI Institute of Foundation Models",
-        "src": "assets/logos/mbzuai-institute-of-foundation-models_small.svg"
+        "src": "assets/logos/mbzuai_small.svg",
+        "color": "#1521a9"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9739,8 +12257,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 69.418,
-        "AIME 2025": 78.3333
-      }
+        "AIME 2025": 78.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "K2-V2 (low) [R]",
@@ -9759,7 +12288,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIO",
         "fallbackLabel": "MIO",
         "title": "MBZUAI Institute of Foundation Models",
-        "src": "assets/logos/mbzuai-institute-of-foundation-models_small.svg"
+        "src": "assets/logos/mbzuai_small.svg",
+        "color": "#1521a9"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9794,8 +12324,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 39.2593,
-        "AIME 2025": 35.3333
-      }
+        "AIME 2025": 35.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mi:dm K 2.5 Pro [R]",
@@ -9814,7 +12355,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "KT",
         "fallbackLabel": "KT",
         "title": "Korea Telecom",
-        "src": "assets/logos/korea-telecom_small.svg"
+        "src": "assets/logos/korea-telecom_small.png",
+        "color": "black"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9849,8 +12391,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 65.6085,
-        "AIME 2025": 76.6667
-      }
+        "AIME 2025": 76.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "HyperCLOVA X SEED Think (32B) [R]",
@@ -9869,7 +12422,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NAV",
         "fallbackLabel": "NAV",
         "title": "Naver",
-        "src": "assets/logos/naver_small.svg"
+        "src": "assets/logos/naver_small.webp",
+        "color": "#03c75b"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9904,8 +12458,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 62.8571,
-        "AIME 2025": 59.0
-      }
+        "AIME 2025": 59.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "LongCat Flash Lite",
@@ -9924,7 +12489,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LON",
         "fallbackLabel": "LON",
         "title": "LongCat",
-        "src": "assets/logos/longcat_small.svg"
+        "src": "assets/logos/longcat_small.svg",
+        "color": "#2adb65"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -9959,8 +12525,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Tri-21B-think Preview [R]",
@@ -9979,7 +12556,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "TL",
         "fallbackLabel": "TL",
         "title": "Trillion Labs",
-        "src": "assets/logos/trillion-labs_small.svg"
+        "src": "assets/logos/trillionlabs_small.svg",
+        "color": "#1f2120"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10014,8 +12592,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Tri-21B-Think [R]",
@@ -10034,7 +12623,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "TL",
         "fallbackLabel": "TL",
         "title": "Trillion Labs",
-        "src": "assets/logos/trillion-labs_small.svg"
+        "src": "assets/logos/trillionlabs_small.svg",
+        "color": "#1f2120"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10069,8 +12659,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nanbeige4.1-3B [R]",
@@ -10089,7 +12690,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NAN",
         "fallbackLabel": "NAN",
         "title": "Nanbeige",
-        "src": "assets/logos/nanbeige_small.svg"
+        "src": "assets/logos/nanbeige_small.png",
+        "color": "#023c3e"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10124,8 +12726,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Apertus 70B Instruct",
@@ -10144,7 +12757,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SAI",
         "fallbackLabel": "SAI",
         "title": "Swiss AI Initiative",
-        "src": "assets/logos/swiss-ai-initiative_small.svg"
+        "src": "assets/logos/swiss-ai-initiative_small.png",
+        "color": "#bee9fa"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10179,8 +12793,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Apertus 8B Instruct",
@@ -10199,7 +12824,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SAI",
         "fallbackLabel": "SAI",
         "title": "Swiss AI Initiative",
-        "src": "assets/logos/swiss-ai-initiative_small.svg"
+        "src": "assets/logos/swiss-ai-initiative_small.png",
+        "color": "#bee9fa"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10234,8 +12860,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiniCPM5-1B [R]",
@@ -10254,7 +12891,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OPE",
         "fallbackLabel": "OPE",
         "title": "OpenBMB",
-        "src": "assets/logos/openbmb_small.svg"
+        "src": "assets/logos/openbmb_small.svg",
+        "color": "#3B62EC"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10289,8 +12927,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiniCPM5-1B",
@@ -10309,7 +12958,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OPE",
         "fallbackLabel": "OPE",
         "title": "OpenBMB",
-        "src": "assets/logos/openbmb_small.svg"
+        "src": "assets/logos/openbmb_small.svg",
+        "color": "#3B62EC"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10344,8 +12994,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiniCPM-V 4.6 1.3B",
@@ -10364,7 +13025,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OPE",
         "fallbackLabel": "OPE",
         "title": "OpenBMB",
-        "src": "assets/logos/openbmb_small.svg"
+        "src": "assets/logos/openbmb_small.svg",
+        "color": "#3B62EC"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10399,8 +13061,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 37.9191,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Trinity Large Thinking [R]",
@@ -10419,9 +13092,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AA",
         "fallbackLabel": "AA",
         "title": "Arcee AI",
-        "src": "assets/logos/arcee-ai_small.svg"
+        "src": "assets/logos/arcee_small.svg",
+        "color": "#008c8d"
       },
-      "medianOutputSpeed": 161.0365,
+      "medianOutputSpeed": 162.5443,
       "aa": {
         "aa-intelligence": 31.8709,
         "aa-coding": 27.1886,
@@ -10454,8 +13128,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "JT-35B-Flash",
@@ -10474,7 +13159,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "CM",
         "fallbackLabel": "CM",
         "title": "China Mobile",
-        "src": "assets/logos/china-mobile_small.svg"
+        "src": "assets/logos/china_mobile_small.png",
+        "color": "#00b8ea"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10509,8 +13195,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "JT-MINI",
@@ -10529,7 +13226,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "CM",
         "fallbackLabel": "CM",
         "title": "China Mobile",
-        "src": "assets/logos/china-mobile_small.svg"
+        "src": "assets/logos/china_mobile_small.png",
+        "color": "#00b8ea"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10564,8 +13262,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM-5.1 [R]",
@@ -10584,9 +13293,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 56.5236,
+      "medianOutputSpeed": 61.7899,
       "aa": {
         "aa-intelligence": 51.4081,
         "aa-coding": 43.3712,
@@ -10619,8 +13329,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 40.2542,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM-5.1",
@@ -10639,9 +13360,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 53.0429,
+      "medianOutputSpeed": 58.342,
       "aa": {
         "aa-intelligence": 43.8161,
         "aa-coding": 35.7744,
@@ -10674,8 +13396,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM 5V Turbo [R]",
@@ -10694,7 +13427,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10729,8 +13463,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 72.7746,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM-5-Turbo [R]",
@@ -10749,7 +13494,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10784,8 +13530,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Command A",
@@ -10804,7 +13561,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "CO",
         "fallbackLabel": "CO",
         "title": "Cohere",
-        "src": "assets/logos/cohere_small.svg"
+        "src": "assets/logos/cohere_small.svg",
+        "color": "#D18EE2"
       },
       "medianOutputSpeed": 69.4035,
       "aa": {
@@ -10839,8 +13597,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 28.6772,
-        "AIME 2025": 13.0
-      }
+        "AIME 2025": 13.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Command A+ [R]",
@@ -10859,9 +13628,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "CO",
         "fallbackLabel": "CO",
         "title": "Cohere",
-        "src": "assets/logos/cohere_small.svg"
+        "src": "assets/logos/cohere_small.svg",
+        "color": "#D18EE2"
       },
-      "medianOutputSpeed": 196.8912,
+      "medianOutputSpeed": 188.2122,
       "aa": {
         "aa-intelligence": 37.1569,
         "aa-coding": 29.2824,
@@ -10894,8 +13664,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 63.237,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Tiny Aya Global",
@@ -10914,7 +13695,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "CO",
         "fallbackLabel": "CO",
         "title": "Cohere",
-        "src": "assets/logos/cohere_small.svg"
+        "src": "assets/logos/cohere_small.svg",
+        "color": "#D18EE2"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -10949,8 +13731,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Apriel-v1.6-15B-Thinker [R]",
@@ -10969,7 +13762,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SER",
         "fallbackLabel": "SER",
         "title": "ServiceNow",
-        "src": "assets/logos/servicenow_small.svg"
+        "src": "assets/logos/servicenow_small.svg",
+        "color": "#80B6A1"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -11004,8 +13798,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 80.7407,
-        "AIME 2025": 88.0
-      }
+        "AIME 2025": 88.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Jamba 1.7 Mini",
@@ -11024,7 +13829,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AI21",
         "fallbackLabel": "AI21",
         "title": "AI21 Labs",
-        "src": "assets/logos/ai21_small.svg"
+        "src": "assets/logos/ai21_small.svg",
+        "color": "#d63864"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -11059,8 +13865,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 6.1376,
-        "AIME 2025": 0.3333
-      }
+        "AIME 2025": 0.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Jamba Reasoning 3B [R]",
@@ -11079,7 +13896,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AI21",
         "fallbackLabel": "AI21",
         "title": "AI21 Labs",
-        "src": "assets/logos/ai21_small.svg"
+        "src": "assets/logos/ai21_small.svg",
+        "color": "#d63864"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -11114,8 +13932,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 20.9524,
-        "AIME 2025": 10.6667
-      }
+        "AIME 2025": 10.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Jamba 1.7 Large",
@@ -11134,9 +13963,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AI21",
         "fallbackLabel": "AI21",
         "title": "AI21 Labs",
-        "src": "assets/logos/ai21_small.svg"
+        "src": "assets/logos/ai21_small.svg",
+        "color": "#d63864"
       },
-      "medianOutputSpeed": 58.3588,
+      "medianOutputSpeed": 58.4441,
       "aa": {
         "aa-intelligence": 10.8783,
         "aa-coding": 7.7652,
@@ -11169,8 +13999,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 18.0952,
-        "AIME 2025": 2.3333
-      }
+        "AIME 2025": 2.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.7 Max [R]",
@@ -11189,9 +14030,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 103.9461,
+      "medianOutputSpeed": 104.6037,
       "aa": {
         "aa-intelligence": 56.5845,
         "aa-coding": 50.1192,
@@ -11224,8 +14066,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 42.467,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.6 35B A3B",
@@ -11244,9 +14097,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 192.9982,
+      "medianOutputSpeed": 193.9998,
       "aa": {
         "aa-intelligence": 31.5271,
         "aa-coding": 17.5961,
@@ -11279,8 +14133,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 71.0405,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 Next 80B A3B [R]",
@@ -11299,9 +14164,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 143.5088,
+      "medianOutputSpeed": 144.729,
       "aa": {
         "aa-intelligence": 26.7232,
         "aa-coding": 19.49,
@@ -11334,8 +14200,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 78.4127,
-        "AIME 2025": 84.3333
-      }
+        "AIME 2025": 84.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 Omni 30B A3B [R]",
@@ -11354,7 +14231,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 73.4887,
       "aa": {
@@ -11389,8 +14267,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 60.2312,
         "LiveCodeBench": 67.9365,
-        "AIME 2025": 74.0
-      }
+        "AIME 2025": 74.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.7 Plus [R]",
@@ -11409,9 +14298,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 53.434,
+      "medianOutputSpeed": 53.7256,
       "aa": {
         "aa-intelligence": 53.2528,
         "aa-coding": 46.4752,
@@ -11444,8 +14334,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 44.7977,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.6 27B [R]",
@@ -11464,9 +14365,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 60.041,
+      "medianOutputSpeed": 60.2664,
       "aa": {
         "aa-intelligence": 45.8228,
         "aa-coding": 36.5039,
@@ -11499,8 +14401,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 74.6243,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.6 35B A3B [R]",
@@ -11519,9 +14432,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 183.3722,
+      "medianOutputSpeed": 183.18,
       "aa": {
         "aa-intelligence": 43.4942,
         "aa-coding": 35.1536,
@@ -11554,8 +14468,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 75.0289,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 122B A10B [R]",
@@ -11574,9 +14499,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 140.3279,
+      "medianOutputSpeed": 141.09,
       "aa": {
         "aa-intelligence": 41.6024,
         "aa-coding": 34.7117,
@@ -11609,8 +14535,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 74.9711,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 122B A10B",
@@ -11629,9 +14566,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 158.2224,
+      "medianOutputSpeed": 159.0003,
       "aa": {
         "aa-intelligence": 35.8707,
         "aa-coding": 31.5797,
@@ -11664,8 +14602,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 70.289,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 2B",
@@ -11684,9 +14633,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 327.7077,
+      "medianOutputSpeed": 336.7533,
       "aa": {
         "aa-intelligence": 14.6715,
         "aa-coding": 4.9161,
@@ -11719,8 +14669,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 42.659,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 9B [R]",
@@ -11739,9 +14700,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 75.5282,
+      "medianOutputSpeed": 76.2854,
       "aa": {
         "aa-intelligence": 32.4263,
         "aa-coding": 25.3437,
@@ -11774,8 +14736,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 69.2486,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 0.8B [R]",
@@ -11794,7 +14767,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -11829,8 +14803,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 25.8382,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 397B A17B [R]",
@@ -11849,9 +14834,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 53.2383,
+      "medianOutputSpeed": 53.3428,
       "aa": {
         "aa-intelligence": 45.0466,
         "aa-coding": 41.2774,
@@ -11884,8 +14870,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 34.0866,
         "MMMU-Pro": 77.2832,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 397B A17B",
@@ -11904,9 +14901,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 53.6012,
+      "medianOutputSpeed": 53.9369,
       "aa": {
         "aa-intelligence": 40.0985,
         "aa-coding": 37.4334,
@@ -11939,8 +14937,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 52.659,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 Omni Flash",
@@ -11959,9 +14968,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 257.2648,
+      "medianOutputSpeed": 253.559,
       "aa": {
         "aa-intelligence": 25.8693,
         "aa-coding": 14.0432,
@@ -11994,8 +15004,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 64.7399,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 9B",
@@ -12014,7 +15035,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -12049,8 +15071,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 66.763,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 Next 80B A3B",
@@ -12069,9 +15102,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 140.8839,
+      "medianOutputSpeed": 147.5114,
       "aa": {
         "aa-intelligence": 20.106,
         "aa-coding": 15.2743,
@@ -12104,8 +15138,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 68.3598,
-        "AIME 2025": 66.3333
-      }
+        "AIME 2025": 66.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.6 27B",
@@ -12124,9 +15169,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 59.6242,
+      "medianOutputSpeed": 62.4166,
       "aa": {
         "aa-intelligence": 37.1444,
         "aa-coding": 26.5643,
@@ -12159,8 +15205,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 71.7341,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 Coder Next",
@@ -12179,7 +15236,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 75.3888,
       "aa": {
@@ -12214,8 +15272,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 4B",
@@ -12234,7 +15303,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 209.6454,
       "aa": {
@@ -12269,8 +15339,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 62.0809,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 Omni 30B A3B",
@@ -12289,7 +15370,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 88.1135,
       "aa": {
@@ -12324,8 +15406,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 55.4913,
         "LiveCodeBench": 42.2222,
-        "AIME 2025": 52.3333
-      }
+        "AIME 2025": 52.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.6 Plus [R]",
@@ -12344,9 +15437,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 53.6338,
+      "medianOutputSpeed": 53.6684,
       "aa": {
         "aa-intelligence": 49.9849,
         "aa-coding": 42.8732,
@@ -12379,8 +15473,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 77.9769,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 4B [R]",
@@ -12399,9 +15504,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 202.3668,
+      "medianOutputSpeed": 203.1991,
       "aa": {
         "aa-intelligence": 27.0756,
         "aa-coding": 17.4883,
@@ -12434,8 +15540,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 65.3757,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 2B [R]",
@@ -12454,7 +15571,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -12489,8 +15607,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 43.0058,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 0.8B",
@@ -12509,9 +15638,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 99.6323,
+      "medianOutputSpeed": 93.9515,
       "aa": {
         "aa-intelligence": 9.9144,
         "aa-coding": 0.9645,
@@ -12544,8 +15674,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 25.6647,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 35B A3B",
@@ -12564,9 +15705,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 164.5828,
+      "medianOutputSpeed": 168.4967,
       "aa": {
         "aa-intelligence": 30.6853,
         "aa-coding": 16.8315,
@@ -12599,8 +15741,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 69.1908,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 Omni Plus",
@@ -12619,9 +15772,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 51.3887,
+      "medianOutputSpeed": 51.8969,
       "aa": {
         "aa-intelligence": 38.6333,
         "aa-coding": 27.6445,
@@ -12654,8 +15808,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 70.5202,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Ring-flash-2.0 [R]",
@@ -12674,7 +15839,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "InclusionAI",
-        "src": "assets/logos/inclusionai_small.svg"
+        "src": "assets/logos/inclusionai_small.jpg",
+        "color": "#4fb5ff"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -12709,8 +15875,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 62.7513,
-        "AIME 2025": 83.6667
-      }
+        "AIME 2025": 83.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Ling-2.6-1T",
@@ -12729,7 +15906,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "InclusionAI",
-        "src": "assets/logos/inclusionai_small.svg"
+        "src": "assets/logos/inclusionai_small.jpg",
+        "color": "#4fb5ff"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -12764,8 +15942,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Ling-mini-2.0",
@@ -12784,7 +15973,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "InclusionAI",
-        "src": "assets/logos/inclusionai_small.svg"
+        "src": "assets/logos/inclusionai_small.jpg",
+        "color": "#4fb5ff"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -12819,8 +16009,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 42.8571,
-        "AIME 2025": 49.3333
-      }
+        "AIME 2025": 49.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Ring-2.6-1T [R]",
@@ -12839,9 +16040,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "InclusionAI",
-        "src": "assets/logos/inclusionai_small.svg"
+        "src": "assets/logos/inclusionai_small.jpg",
+        "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 124.7248,
+      "medianOutputSpeed": 122.7424,
       "aa": {
         "aa-intelligence": 38.4564,
         "aa-coding": 33.3123,
@@ -12874,8 +16076,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Ling 2.6 Flash",
@@ -12894,7 +16107,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "InclusionAI",
-        "src": "assets/logos/inclusionai_small.svg"
+        "src": "assets/logos/inclusionai_small.jpg",
+        "color": "#4fb5ff"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -12929,8 +16143,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Doubao Seed Code [R]",
@@ -12949,7 +16174,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SEED",
         "fallbackLabel": "SEED",
         "title": "ByteDance Seed",
-        "src": "assets/logos/bytedance-seed_small.svg"
+        "src": "assets/logos/bytedance_small.svg",
+        "color": "#3c8bff"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -12984,8 +16210,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 68.0925,
         "LiveCodeBench": 76.6138,
-        "AIME 2025": 79.3333
-      }
+        "AIME 2025": 79.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "o1 [R]",
@@ -13004,9 +16241,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 116.0491,
+      "medianOutputSpeed": 120.3791,
       "aa": {
         "aa-intelligence": 30.7489,
         "aa-coding": 20.5072,
@@ -13039,8 +16277,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 67.9365,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "o1-preview [R]",
@@ -13059,7 +16308,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -13094,8 +16344,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "o1-mini [R]",
@@ -13114,7 +16375,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -13149,8 +16411,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 57.5661,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-4o (Aug)",
@@ -13169,9 +16442,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 85.9808,
+      "medianOutputSpeed": 90.5909,
       "aa": {
         "aa-intelligence": 18.6414,
         "aa-coding": 16.5895,
@@ -13204,8 +16478,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 56.3006,
         "LiveCodeBench": 31.746,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-4o (May)",
@@ -13224,9 +16509,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 88.1217,
+      "medianOutputSpeed": 86.9725,
       "aa": {
         "aa-intelligence": 14.4985,
         "aa-coding": 24.2437,
@@ -13259,8 +16545,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 33.4392,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-4 Turbo",
@@ -13279,9 +16576,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 24.0762,
+      "medianOutputSpeed": 26.0666,
       "aa": {
         "aa-intelligence": 13.7153,
         "aa-coding": 21.4873,
@@ -13314,8 +16612,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 29.1005,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-4o (Nov)",
@@ -13334,9 +16643,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 120.0942,
+      "medianOutputSpeed": 119.9524,
       "aa": {
         "aa-intelligence": 17.3233,
         "aa-coding": 16.6667,
@@ -13369,8 +16679,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 30.8995,
-        "AIME 2025": 6.0
-      }
+        "AIME 2025": 6.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-4o mini",
@@ -13389,9 +16710,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 62.8787,
+      "medianOutputSpeed": 61.0267,
       "aa": {
         "aa-intelligence": 12.6473,
         "aa-coding": null,
@@ -13424,8 +16746,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 41.5029,
         "LiveCodeBench": 23.3862,
-        "AIME 2025": 14.6667
-      }
+        "AIME 2025": 14.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-3.5 Turbo",
@@ -13444,7 +16777,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -13479,8 +16813,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-4.1 nano",
@@ -13499,9 +16844,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 111.6447,
+      "medianOutputSpeed": 117.0678,
       "aa": {
         "aa-intelligence": 13.0413,
         "aa-coding": 11.1672,
@@ -13534,8 +16880,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 40.1156,
         "LiveCodeBench": 32.5926,
-        "AIME 2025": 24.0
-      }
+        "AIME 2025": 24.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.4 (Non-reasoning)",
@@ -13554,9 +16911,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 75.9758,
+      "medianOutputSpeed": 74.1374,
       "aa": {
         "aa-intelligence": 35.3898,
         "aa-coding": 40.9547,
@@ -13589,8 +16947,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 18.9,
         "MMMU-Pro": 70.578,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.4 (low) [R]",
@@ -13609,9 +16978,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 73.1322,
+      "medianOutputSpeed": 73.5902,
       "aa": {
         "aa-intelligence": 47.9407,
         "aa-coding": 45.5703,
@@ -13644,8 +17014,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 77.9769,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.4 (xhigh) [R]",
@@ -13664,9 +17045,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 80.108,
+      "medianOutputSpeed": 77.8154,
       "aa": {
         "aa-intelligence": 56.7997,
         "aa-coding": 57.2496,
@@ -13699,8 +17081,120 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 34.5,
         "MMMU-Pro": 78.4393,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": 57.7,
+        "ext:terminal-bench-2": 75.1,
+        "ext:expert-swe-internal": 68.5,
+        "ext:gdpval-wins-ties": 83.0,
+        "ext:osworld-verified": 75.0,
+        "ext:toolathlon": 54.6,
+        "ext:browsecomp": 82.7,
+        "ext:frontiermath-tier-1-3": 47.6,
+        "ext:frontiermath-tier-4": 27.1,
+        "ext:cybergym": 79.0
+      },
+      "externalBenchmarks": [
+        {
+          "benchmarkId": "swe-bench-pro",
+          "metricKey": "ext:swe-bench-pro",
+          "label": "SWE-Bench Pro",
+          "value": 57.7,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "terminal-bench-2",
+          "metricKey": "ext:terminal-bench-2",
+          "label": "Terminal-Bench 2.0",
+          "value": 75.1,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "expert-swe-internal",
+          "metricKey": "ext:expert-swe-internal",
+          "label": "Expert-SWE (Internal)",
+          "value": 68.5,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "gdpval-wins-ties",
+          "metricKey": "ext:gdpval-wins-ties",
+          "label": "GDPval (wins or ties)",
+          "value": 83.0,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "osworld-verified",
+          "metricKey": "ext:osworld-verified",
+          "label": "OSWorld-Verified",
+          "value": 75.0,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "toolathlon",
+          "metricKey": "ext:toolathlon",
+          "label": "Toolathlon",
+          "value": 54.6,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "browsecomp",
+          "metricKey": "ext:browsecomp",
+          "label": "BrowseComp",
+          "value": 82.7,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "frontiermath-tier-1-3",
+          "metricKey": "ext:frontiermath-tier-1-3",
+          "label": "FrontierMath Tier 1-3",
+          "value": 47.6,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "frontiermath-tier-4",
+          "metricKey": "ext:frontiermath-tier-4",
+          "label": "FrontierMath Tier 4",
+          "value": 27.1,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        },
+        {
+          "benchmarkId": "cybergym",
+          "metricKey": "ext:cybergym",
+          "label": "CyberGym",
+          "value": 79.0,
+          "unit": "%",
+          "sourceId": "openai-gpt-5-5",
+          "sourceLabel": "OpenAI GPT-5.5 launch evaluations",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+        }
+      ]
     },
     {
       "modelKey": "GPT-5.2 Codex (xhigh) [R]",
@@ -13719,9 +17213,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 139.4828,
+      "medianOutputSpeed": 147.0276,
       "aa": {
         "aa-intelligence": 49.0346,
         "aa-coding": 42.9574,
@@ -13754,8 +17249,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 76.3006,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.1 Codex (high) [R]",
@@ -13774,7 +17280,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
       "medianOutputSpeed": 183.449,
       "aa": {
@@ -13809,8 +17316,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 72.4855,
         "LiveCodeBench": 84.8677,
-        "AIME 2025": 95.6667
-      }
+        "AIME 2025": 95.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5 nano (minimal)",
@@ -13829,9 +17347,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 179.8922,
+      "medianOutputSpeed": 175.1773,
       "aa": {
         "aa-intelligence": 13.8399,
         "aa-coding": 14.2291,
@@ -13864,8 +17383,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 31.7919,
         "LiveCodeBench": 46.9841,
-        "AIME 2025": 27.3333
-      }
+        "AIME 2025": 27.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "o3-mini (high) [R]",
@@ -13884,9 +17414,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 209.1289,
+      "medianOutputSpeed": 207.2072,
       "aa": {
         "aa-intelligence": 25.2105,
         "aa-coding": 17.3023,
@@ -13919,8 +17450,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 73.4392,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5 mini (high) [R]",
@@ -13939,9 +17481,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 96.574,
+      "medianOutputSpeed": 94.4417,
       "aa": {
         "aa-intelligence": 41.1708,
         "aa-coding": 35.3009,
@@ -13974,8 +17517,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 70.0578,
         "LiveCodeBench": 83.8095,
-        "AIME 2025": 90.6667
-      }
+        "AIME 2025": 90.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "o3-mini [R]",
@@ -13994,9 +17548,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 206.6699,
+      "medianOutputSpeed": 202.4148,
       "aa": {
         "aa-intelligence": 25.8632,
         "aa-coding": 17.8556,
@@ -14029,8 +17584,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 71.746,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-4.1",
@@ -14049,9 +17615,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 115.1985,
+      "medianOutputSpeed": 118.8007,
       "aa": {
         "aa-intelligence": 26.2763,
         "aa-coding": 21.7838,
@@ -14084,8 +17651,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 61.2139,
         "LiveCodeBench": 45.7143,
-        "AIME 2025": 34.6667
-      }
+        "AIME 2025": 34.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5 (high) [R]",
@@ -14104,9 +17682,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 90.3576,
+      "medianOutputSpeed": 88.9187,
       "aa": {
         "aa-intelligence": 44.6256,
         "aa-coding": 36.0304,
@@ -14139,8 +17718,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 74.2197,
         "LiveCodeBench": 84.5503,
-        "AIME 2025": 94.3333
-      }
+        "AIME 2025": 94.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.2 (xhigh) [R]",
@@ -14159,9 +17749,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 73.3479,
+      "medianOutputSpeed": 76.1397,
       "aa": {
         "aa-intelligence": 51.2766,
         "aa-coding": 48.6742,
@@ -14194,8 +17785,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 88.8889,
-        "AIME 2025": 99.0
-      }
+        "AIME 2025": 99.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.1 (high) [R]",
@@ -14214,9 +17816,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 120.2611,
+      "medianOutputSpeed": 120.9629,
       "aa": {
         "aa-intelligence": 47.6964,
         "aa-coding": 44.732,
@@ -14249,8 +17852,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 75.4913,
         "LiveCodeBench": 86.7725,
-        "AIME 2025": 94.0
-      }
+        "AIME 2025": 94.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-4o (Mar)",
@@ -14269,7 +17883,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -14304,8 +17919,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 42.5397,
-        "AIME 2025": 25.6667
-      }
+        "AIME 2025": 25.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-4.5 (Preview)",
@@ -14324,7 +17950,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -14359,8 +17986,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5 Codex (high) [R]",
@@ -14379,9 +18017,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 188.6485,
+      "medianOutputSpeed": 184.4075,
       "aa": {
         "aa-intelligence": 44.6313,
         "aa-coding": 38.8714,
@@ -14414,8 +18053,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 73.815,
         "LiveCodeBench": 84.0212,
-        "AIME 2025": 98.6667
-      }
+        "AIME 2025": 98.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5 (medium) [R]",
@@ -14434,9 +18084,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 96.7931,
+      "medianOutputSpeed": 91.0369,
       "aa": {
         "aa-intelligence": 42.0293,
         "aa-coding": 38.9485,
@@ -14469,8 +18120,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 74.3353,
         "LiveCodeBench": 70.2646,
-        "AIME 2025": 91.6667
-      }
+        "AIME 2025": 91.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-4",
@@ -14489,7 +18151,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -14524,8 +18187,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.2",
@@ -14544,9 +18218,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 65.2829,
+      "medianOutputSpeed": 71.411,
       "aa": {
         "aa-intelligence": 33.5705,
         "aa-coding": 34.6766,
@@ -14579,8 +18254,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 65.8382,
         "LiveCodeBench": 66.8783,
-        "AIME 2025": 51.0
-      }
+        "AIME 2025": 51.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5 (low) [R]",
@@ -14599,9 +18285,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 83.9475,
+      "medianOutputSpeed": 84.2518,
       "aa": {
         "aa-intelligence": 39.1972,
         "aa-coding": 30.7169,
@@ -14634,8 +18321,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 73.7572,
         "LiveCodeBench": 76.2963,
-        "AIME 2025": 83.0
-      }
+        "AIME 2025": 83.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "o4-mini (high) [R]",
@@ -14654,9 +18352,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 162.0099,
+      "medianOutputSpeed": 162.1333,
       "aa": {
         "aa-intelligence": 33.0617,
         "aa-coding": 25.6103,
@@ -14689,8 +18388,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 69.2486,
         "LiveCodeBench": 85.9259,
-        "AIME 2025": 90.6667
-      }
+        "AIME 2025": 90.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.2 (medium) [R]",
@@ -14709,7 +18419,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -14744,8 +18455,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 74.5665,
         "LiveCodeBench": 89.418,
-        "AIME 2025": 96.6667
-      }
+        "AIME 2025": 96.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5 nano (medium) [R]",
@@ -14764,9 +18486,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 166.1826,
+      "medianOutputSpeed": 174.6028,
       "aa": {
         "aa-intelligence": 25.8811,
         "aa-coding": 22.8816,
@@ -14799,8 +18522,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 58.2081,
         "LiveCodeBench": 76.2963,
-        "AIME 2025": 78.3333
-      }
+        "AIME 2025": 78.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-4.1 mini",
@@ -14819,7 +18553,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
       "medianOutputSpeed": 91.3901,
       "aa": {
@@ -14854,8 +18589,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 58.7283,
         "LiveCodeBench": 48.254,
-        "AIME 2025": 46.3333
-      }
+        "AIME 2025": 46.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-4o (ChatGPT)",
@@ -14874,7 +18620,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -14909,8 +18656,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5 mini (minimal)",
@@ -14929,9 +18687,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 101.9838,
+      "medianOutputSpeed": 101.8928,
       "aa": {
         "aa-intelligence": 20.6834,
         "aa-coding": 21.9031,
@@ -14964,8 +18723,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 58.3815,
         "LiveCodeBench": 54.4974,
-        "AIME 2025": 46.6667
-      }
+        "AIME 2025": 46.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5 mini (medium) [R]",
@@ -14984,9 +18754,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 98.965,
+      "medianOutputSpeed": 98.2446,
       "aa": {
         "aa-intelligence": 38.9362,
         "aa-coding": 32.8493,
@@ -15019,8 +18790,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 68.8439,
         "LiveCodeBench": 69.2063,
-        "AIME 2025": 85.0
-      }
+        "AIME 2025": 85.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5 (minimal)",
@@ -15039,9 +18821,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 83.8064,
+      "medianOutputSpeed": 75.3975,
       "aa": {
         "aa-intelligence": 23.8866,
         "aa-coding": 25.0456,
@@ -15074,8 +18857,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 62.0809,
         "LiveCodeBench": 55.7672,
-        "AIME 2025": 31.6667
-      }
+        "AIME 2025": 31.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "o3-pro [R]",
@@ -15094,9 +18888,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 38.3054,
+      "medianOutputSpeed": 42.6635,
       "aa": {
         "aa-intelligence": 40.6899,
         "aa-coding": null,
@@ -15129,8 +18924,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.1",
@@ -15149,9 +18955,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 120.7893,
+      "medianOutputSpeed": 122.1366,
       "aa": {
         "aa-intelligence": 27.4189,
         "aa-coding": 27.3043,
@@ -15184,8 +18991,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 62.3699,
         "LiveCodeBench": 49.418,
-        "AIME 2025": 38.0
-      }
+        "AIME 2025": 38.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5 nano (high) [R]",
@@ -15204,7 +19022,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
       "medianOutputSpeed": 154.8265,
       "aa": {
@@ -15239,8 +19058,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 60.9827,
         "LiveCodeBench": 78.9418,
-        "AIME 2025": 83.6667
-      }
+        "AIME 2025": 83.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "o1-pro [R]",
@@ -15259,7 +19089,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -15294,8 +19125,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5 (ChatGPT)",
@@ -15314,7 +19156,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
       "medianOutputSpeed": 186.9032,
       "aa": {
@@ -15349,8 +19192,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 54.2857,
-        "AIME 2025": 48.3333
-      }
+        "AIME 2025": 48.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GPT-5.1 Codex mini (high) [R]",
@@ -15369,9 +19223,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OAI",
         "fallbackLabel": "OAI",
         "title": "OpenAI",
-        "src": "assets/logos/openai_small.svg"
+        "src": "assets/logos/openai_small.svg",
+        "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 212.6907,
+      "medianOutputSpeed": 210.3146,
       "aa": {
         "aa-intelligence": 38.6251,
         "aa-coding": 36.4198,
@@ -15404,8 +19259,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 69.0173,
         "LiveCodeBench": 83.5979,
-        "AIME 2025": 91.6667
-      }
+        "AIME 2025": 91.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 3.1 70B",
@@ -15424,9 +19290,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "assets/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg",
+        "color": "#0089f4"
       },
-      "medianOutputSpeed": 39.9228,
+      "medianOutputSpeed": 39.063,
       "aa": {
         "aa-intelligence": 12.4733,
         "aa-coding": 10.9322,
@@ -15459,8 +19326,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 23.1746,
-        "AIME 2025": 4.0
-      }
+        "AIME 2025": 4.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 3.1 8B",
@@ -15479,9 +19357,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "assets/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg",
+        "color": "#0089f4"
       },
-      "medianOutputSpeed": 153.3827,
+      "medianOutputSpeed": 152.7856,
       "aa": {
         "aa-intelligence": 11.7584,
         "aa-coding": 4.9032,
@@ -15514,8 +19393,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 11.6402,
-        "AIME 2025": 4.3333
-      }
+        "AIME 2025": 4.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 3.2 3B",
@@ -15534,9 +19424,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "assets/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg",
+        "color": "#0089f4"
       },
-      "medianOutputSpeed": 50.7787,
+      "medianOutputSpeed": 48.345,
       "aa": {
         "aa-intelligence": 9.7022,
         "aa-coding": null,
@@ -15569,8 +19460,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 8.254,
-        "AIME 2025": 3.3333
-      }
+        "AIME 2025": 3.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 3 70B",
@@ -15589,7 +19491,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "assets/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg",
+        "color": "#0089f4"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -15624,8 +19527,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 19.7884,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 3 8B",
@@ -15644,7 +19558,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "assets/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg",
+        "color": "#0089f4"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -15679,8 +19594,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 9.6296,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 3.2 1B",
@@ -15699,9 +19625,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "assets/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg",
+        "color": "#0089f4"
       },
-      "medianOutputSpeed": 86.3098,
+      "medianOutputSpeed": 84.6715,
       "aa": {
         "aa-intelligence": 6.2771,
         "aa-coding": 0.5787,
@@ -15734,8 +19661,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 1.9048,
-        "AIME 2025": 0.0
-      }
+        "AIME 2025": 0.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 2 Chat 13B",
@@ -15754,7 +19692,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "assets/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg",
+        "color": "#0089f4"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -15789,8 +19728,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 9.8413,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 2 Chat 70B",
@@ -15809,7 +19759,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "assets/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg",
+        "color": "#0089f4"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -15844,8 +19795,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 9.8413,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 2 Chat 7B",
@@ -15864,7 +19826,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "META",
         "fallbackLabel": "META",
         "title": "Meta",
-        "src": "assets/logos/meta_small.svg"
+        "src": "assets/logos/meta_small.svg",
+        "color": "#0089f4"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -15899,8 +19862,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 0.2116,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.0 Pro Experimental",
@@ -15919,7 +19893,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -15954,8 +19929,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 34.709,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.0 Flash (exp)",
@@ -15974,7 +19960,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16009,8 +19996,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 20.9524,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 1.5 Pro (Sep)",
@@ -16029,7 +20027,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16064,8 +20063,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 55.0289,
         "LiveCodeBench": 31.6402,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.0 Flash-Lite (Preview)",
@@ -16084,7 +20094,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16119,8 +20130,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 17.8836,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.0 Flash",
@@ -16139,7 +20161,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16174,8 +20197,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 33.4392,
-        "AIME 2025": 21.6667
-      }
+        "AIME 2025": 21.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 1.5 Flash (Sep)",
@@ -16194,7 +20228,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16229,8 +20264,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 48.3815,
         "LiveCodeBench": 27.3016,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 1.5 Flash-8B",
@@ -16249,7 +20295,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16284,8 +20331,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 36.5318,
         "LiveCodeBench": 21.6931,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemma 3 27B",
@@ -16304,7 +20362,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16339,8 +20398,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 48.0347,
         "LiveCodeBench": 13.6508,
-        "AIME 2025": 20.6667
-      }
+        "AIME 2025": 20.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 3 Flash [R]",
@@ -16359,7 +20429,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 179.3041,
       "aa": {
@@ -16394,8 +20465,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 79.9422,
         "LiveCodeBench": 90.7937,
-        "AIME 2025": 97.0
-      }
+        "AIME 2025": 97.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.0 Flash-Lite (Feb)",
@@ -16414,7 +20496,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16449,8 +20532,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 18.5185,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 3 Flash",
@@ -16469,9 +20563,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
-      "medianOutputSpeed": 175.5997,
+      "medianOutputSpeed": 180.2837,
       "aa": {
         "aa-intelligence": 35.0479,
         "aa-coding": 37.8402,
@@ -16504,8 +20599,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 78.5549,
         "LiveCodeBench": 79.6825,
-        "AIME 2025": 55.6667
-      }
+        "AIME 2025": 55.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemma 3 12B",
@@ -16524,7 +20630,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16559,8 +20666,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 37.5145,
         "LiveCodeBench": 13.6508,
-        "AIME 2025": 18.3333
-      }
+        "AIME 2025": 18.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash-Lite (Sep)",
@@ -16579,7 +20697,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16614,8 +20733,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 63.4104,
         "LiveCodeBench": 64.127,
-        "AIME 2025": 46.6667
-      }
+        "AIME 2025": 46.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash [R]",
@@ -16634,7 +20764,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16669,8 +20800,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 50.4762,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash",
@@ -16689,7 +20831,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 223.4018,
       "aa": {
@@ -16724,8 +20867,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 65.4913,
         "LiveCodeBench": 49.5238,
-        "AIME 2025": 60.3333
-      }
+        "AIME 2025": 60.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemma 3 1B",
@@ -16744,7 +20898,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16779,8 +20934,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 1.6931,
-        "AIME 2025": 3.3333
-      }
+        "AIME 2025": 3.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemma 3 4B",
@@ -16799,7 +20965,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16834,8 +21001,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 29.9422,
         "LiveCodeBench": 11.2169,
-        "AIME 2025": 12.6667
-      }
+        "AIME 2025": 12.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemma 3n E4B",
@@ -16854,9 +21032,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
-      "medianOutputSpeed": 49.7284,
+      "medianOutputSpeed": 50.8746,
       "aa": {
         "aa-intelligence": 6.3793,
         "aa-coding": 4.2158,
@@ -16889,8 +21068,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 26.2428,
         "LiveCodeBench": 14.6032,
-        "AIME 2025": 14.3333
-      }
+        "AIME 2025": 14.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 3 Pro Preview (high) [R]",
@@ -16909,7 +21099,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16944,8 +21135,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 80.1734,
         "LiveCodeBench": 91.746,
-        "AIME 2025": 95.6667
-      }
+        "AIME 2025": 95.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash",
@@ -16964,7 +21166,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -16999,8 +21202,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 61.9653,
         "LiveCodeBench": 40.6349,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash-Lite [R]",
@@ -17019,9 +21233,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
-      "medianOutputSpeed": 334.8447,
+      "medianOutputSpeed": 312.1356,
       "aa": {
         "aa-intelligence": 17.5744,
         "aa-coding": 9.4732,
@@ -17054,8 +21269,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 58.2081,
         "LiveCodeBench": 59.2593,
-        "AIME 2025": 53.3333
-      }
+        "AIME 2025": 53.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.0 Flash Thinking exp. (Dec) [R]",
@@ -17074,7 +21300,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17109,8 +21336,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemma 3n E2B",
@@ -17129,7 +21367,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17164,8 +21403,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 9.5238,
-        "AIME 2025": 10.3333
-      }
+        "AIME 2025": 10.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash (Sep) [R]",
@@ -17184,7 +21434,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17219,8 +21470,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 73.1214,
         "LiveCodeBench": 71.3228,
-        "AIME 2025": 78.3333
-      }
+        "AIME 2025": 78.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemma 3n E4B (May)",
@@ -17239,7 +21501,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17274,8 +21537,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 13.7566,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.0 Flash Thinking exp. (Jan) [R]",
@@ -17294,7 +21568,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17329,8 +21604,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 32.0635,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 3 Pro Preview (low) [R]",
@@ -17349,7 +21635,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17384,8 +21671,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 85.7143,
-        "AIME 2025": 86.6667
-      }
+        "AIME 2025": 86.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Pro (May) [R]",
@@ -17404,7 +21702,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17439,8 +21738,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 77.037,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 1.5 Pro (May)",
@@ -17459,7 +21769,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17494,8 +21805,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 24.4444,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash-Lite",
@@ -17514,9 +21836,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
-      "medianOutputSpeed": 244.6344,
+      "medianOutputSpeed": 243.9773,
       "aa": {
         "aa-intelligence": 12.6594,
         "aa-coding": 7.4179,
@@ -17549,8 +21872,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 53.9884,
         "LiveCodeBench": 40.0,
-        "AIME 2025": 35.3333
-      }
+        "AIME 2025": 35.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash [R]",
@@ -17569,9 +21903,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
-      "medianOutputSpeed": 229.1671,
+      "medianOutputSpeed": 228.9768,
       "aa": {
         "aa-intelligence": 27.0414,
         "aa-coding": 22.2082,
@@ -17604,8 +21939,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 69.0751,
         "LiveCodeBench": 69.5238,
-        "AIME 2025": 73.3333
-      }
+        "AIME 2025": 73.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 1.5 Flash (May)",
@@ -17624,7 +21970,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17659,8 +22006,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 19.5767,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 1.0 Ultra",
@@ -17679,7 +22037,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17714,8 +22073,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 1.0 Pro",
@@ -17734,7 +22104,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17769,8 +22140,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 11.6402,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "PALM-2",
@@ -17789,7 +22171,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17824,8 +22207,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash (Sep)",
@@ -17844,7 +22238,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17879,8 +22274,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 70.2312,
         "LiveCodeBench": 62.5397,
-        "AIME 2025": 56.6667
-      }
+        "AIME 2025": 56.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash-Lite (Sep) [R]",
@@ -17899,7 +22305,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17934,8 +22341,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 64.9711,
         "LiveCodeBench": 68.7831,
-        "AIME 2025": 68.6667
-      }
+        "AIME 2025": 68.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Pro (Mar) [R]",
@@ -17954,7 +22372,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "G",
         "fallbackLabel": "G",
         "title": "Google",
-        "src": "assets/logos/google_small.svg"
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -17989,8 +22408,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 77.7778,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 3.5 Sonnet (Oct)",
@@ -18009,7 +22439,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -18044,8 +22475,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 38.0952,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 3.5 Sonnet (June)",
@@ -18064,7 +22506,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -18099,8 +22542,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 3 Opus",
@@ -18119,7 +22573,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -18154,8 +22609,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 27.9365,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 3.5 Haiku",
@@ -18174,7 +22640,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -18209,8 +22676,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 45.6069,
         "LiveCodeBench": 31.4286,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 3 Sonnet",
@@ -18229,7 +22707,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -18264,8 +22743,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 17.4603,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 3 Haiku",
@@ -18284,7 +22774,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -18319,8 +22810,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 30.8092,
         "LiveCodeBench": 15.4497,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude Instant",
@@ -18339,7 +22841,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -18374,8 +22877,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 10.8995,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude Opus 4.5",
@@ -18394,9 +22908,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
-      "medianOutputSpeed": 45.9289,
+      "medianOutputSpeed": 44.7039,
       "aa": {
         "aa-intelligence": 43.0907,
         "aa-coding": 42.9363,
@@ -18429,8 +22944,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 71.2139,
         "LiveCodeBench": 73.7566,
-        "AIME 2025": 62.6667
-      }
+        "AIME 2025": 62.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude Opus 4.6 (max) [R]",
@@ -18449,7 +22975,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
       "medianOutputSpeed": 40.25,
       "aa": {
@@ -18484,8 +23011,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 75.4335,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 4.5 Sonnet [R]",
@@ -18504,9 +23042,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
-      "medianOutputSpeed": 41.0577,
+      "medianOutputSpeed": 40.425,
       "aa": {
         "aa-intelligence": 43.0288,
         "aa-coding": 38.6293,
@@ -18539,8 +23078,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 68.7283,
         "LiveCodeBench": 71.4286,
-        "AIME 2025": 88.0
-      }
+        "AIME 2025": 88.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 4.5 Sonnet",
@@ -18559,9 +23109,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
-      "medianOutputSpeed": 40.1885,
+      "medianOutputSpeed": 38.6052,
       "aa": {
         "aa-intelligence": 37.1427,
         "aa-coding": 33.4666,
@@ -18594,8 +23145,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 65.2023,
         "LiveCodeBench": 59.0476,
-        "AIME 2025": 37.0
-      }
+        "AIME 2025": 37.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 3.7 Sonnet",
@@ -18614,7 +23176,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -18649,8 +23212,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 60.0578,
         "LiveCodeBench": 39.3651,
-        "AIME 2025": 21.0
-      }
+        "AIME 2025": 21.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 4.1 Opus [R]",
@@ -18669,9 +23243,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
-      "medianOutputSpeed": 29.2554,
+      "medianOutputSpeed": 29.4302,
       "aa": {
         "aa-intelligence": 42.0,
         "aa-coding": 36.5228,
@@ -18704,8 +23279,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 67.9191,
         "LiveCodeBench": 65.3545,
-        "AIME 2025": 80.3333
-      }
+        "AIME 2025": 80.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 3.7 Sonnet [R]",
@@ -18724,7 +23310,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -18759,8 +23346,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 47.3016,
-        "AIME 2025": 56.3333
-      }
+        "AIME 2025": 56.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 4.1 Opus",
@@ -18779,9 +23377,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
-      "medianOutputSpeed": 31.1213,
+      "medianOutputSpeed": 29.0612,
       "aa": {
         "aa-intelligence": 36.0,
         "aa-coding": null,
@@ -18814,8 +23413,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 4 Sonnet",
@@ -18834,7 +23444,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
       "medianOutputSpeed": 40.3379,
       "aa": {
@@ -18869,8 +23480,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 62.3699,
         "LiveCodeBench": 44.8677,
-        "AIME 2025": 38.0
-      }
+        "AIME 2025": 38.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 4 Sonnet [R]",
@@ -18889,9 +23511,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
-      "medianOutputSpeed": 40.5056,
+      "medianOutputSpeed": 40.3584,
       "aa": {
         "aa-intelligence": 38.6639,
         "aa-coding": 34.0558,
@@ -18924,8 +23547,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 61.7919,
         "LiveCodeBench": 65.5026,
-        "AIME 2025": 74.3333
-      }
+        "AIME 2025": 74.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 4 Opus [R]",
@@ -18944,9 +23578,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
-      "medianOutputSpeed": 28.7861,
+      "medianOutputSpeed": 28.9584,
       "aa": {
         "aa-intelligence": 39.0,
         "aa-coding": 33.9787,
@@ -18979,8 +23614,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 63.5979,
-        "AIME 2025": 73.3333
-      }
+        "AIME 2025": 73.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 4 Opus",
@@ -18999,9 +23645,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
-      "medianOutputSpeed": 31.3357,
+      "medianOutputSpeed": 29.4269,
       "aa": {
         "aa-intelligence": 33.0,
         "aa-coding": null,
@@ -19034,8 +23681,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 54.1799,
-        "AIME 2025": 36.3333
-      }
+        "AIME 2025": 36.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude Opus 4.6 (high)",
@@ -19054,9 +23712,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
-      "medianOutputSpeed": 40.7081,
+      "medianOutputSpeed": 40.1077,
       "aa": {
         "aa-intelligence": 46.4611,
         "aa-coding": 47.5624,
@@ -19089,8 +23748,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 72.5434,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude Opus 4.5 [R]",
@@ -19109,7 +23779,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
       "medianOutputSpeed": 45.0647,
       "aa": {
@@ -19144,8 +23815,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 74.0462,
         "LiveCodeBench": 87.0899,
-        "AIME 2025": 91.3333
-      }
+        "AIME 2025": 91.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 2.1",
@@ -19164,7 +23846,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -19199,8 +23882,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 19.4709,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Claude 2.0",
@@ -19219,7 +23913,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ANT",
         "fallbackLabel": "ANT",
         "title": "Anthropic",
-        "src": "assets/logos/anthropic_small.svg"
+        "src": "assets/logos/anthropic_small.svg",
+        "color": "#cc785c"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -19254,8 +23949,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 17.1429,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mistral Large 2 (Nov)",
@@ -19274,9 +23980,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 47.4083,
+      "medianOutputSpeed": 48.0208,
       "aa": {
         "aa-intelligence": 15.0918,
         "aa-coding": 13.7626,
@@ -19309,8 +24016,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 29.3122,
-        "AIME 2025": 14.0
-      }
+        "AIME 2025": 14.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mistral Large 2 (Jul)",
@@ -19329,7 +24047,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -19364,8 +24083,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 26.6667,
-        "AIME 2025": 0.0
-      }
+        "AIME 2025": 0.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Pixtral Large",
@@ -19384,9 +24114,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 46.1487,
+      "medianOutputSpeed": 47.7789,
       "aa": {
         "aa-intelligence": 14.0002,
         "aa-coding": null,
@@ -19419,8 +24150,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 50.578,
         "LiveCodeBench": 26.1376,
-        "AIME 2025": 2.3333
-      }
+        "AIME 2025": 2.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mistral Small 3",
@@ -19439,9 +24181,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 167.5133,
+      "medianOutputSpeed": 157.6317,
       "aa": {
         "aa-intelligence": 12.6671,
         "aa-coding": null,
@@ -19474,8 +24217,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 25.1852,
-        "AIME 2025": 4.3333
-      }
+        "AIME 2025": 4.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mistral Small (Sep)",
@@ -19494,7 +24248,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
       "medianOutputSpeed": 164.6926,
       "aa": {
@@ -19529,8 +24284,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 14.0741,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mixtral 8x22B",
@@ -19549,7 +24315,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -19584,8 +24351,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 14.8148,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mistral Small (Feb)",
@@ -19604,9 +24382,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 161.4111,
+      "medianOutputSpeed": 161.1398,
       "aa": {
         "aa-intelligence": 9.0395,
         "aa-coding": null,
@@ -19639,8 +24418,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 11.1111,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mistral Large (Feb)",
@@ -19659,7 +24449,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -19694,8 +24485,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 17.7778,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mixtral 8x7B",
@@ -19714,7 +24516,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -19749,8 +24552,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 6.5608,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mistral 7B",
@@ -19769,9 +24583,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 92.7911,
+      "medianOutputSpeed": 98.9562,
       "aa": {
         "aa-intelligence": 7.4139,
         "aa-coding": null,
@@ -19804,8 +24619,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 4.5503,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Devstral Small (May)",
@@ -19824,7 +24650,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -19859,8 +24686,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 25.8201,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mistral Medium 3.1",
@@ -19879,9 +24717,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 65.3044,
+      "medianOutputSpeed": 63.8353,
       "aa": {
         "aa-intelligence": 21.2549,
         "aa-coding": 18.3361,
@@ -19914,8 +24753,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 54.1618,
         "LiveCodeBench": 40.6349,
-        "AIME 2025": 38.3333
-      }
+        "AIME 2025": 38.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mistral Small 3.2",
@@ -19934,9 +24784,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 130.5512,
+      "medianOutputSpeed": 133.2943,
       "aa": {
         "aa-intelligence": 15.0667,
         "aa-coding": 13.3418,
@@ -19969,8 +24820,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 47.9769,
         "LiveCodeBench": 27.5132,
-        "AIME 2025": 27.0
-      }
+        "AIME 2025": 27.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Magistral Medium 1 [R]",
@@ -19989,7 +24851,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20024,8 +24887,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 52.6984,
-        "AIME 2025": 40.3333
-      }
+        "AIME 2025": 40.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mistral Small 3.1",
@@ -20044,9 +24918,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 162.1252,
+      "medianOutputSpeed": 163.6256,
       "aa": {
         "aa-intelligence": 14.4822,
         "aa-coding": 13.8854,
@@ -20079,8 +24954,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 21.164,
-        "AIME 2025": 3.6667
-      }
+        "AIME 2025": 3.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mistral Saba",
@@ -20099,7 +24985,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20134,8 +25021,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Devstral Small",
@@ -20154,7 +25052,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
       "medianOutputSpeed": 55.0615,
       "aa": {
@@ -20189,8 +25088,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 25.3968,
-        "AIME 2025": 29.3333
-      }
+        "AIME 2025": 29.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Magistral Small 1 [R]",
@@ -20209,7 +25119,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20244,8 +25155,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 51.4286,
-        "AIME 2025": 41.3333
-      }
+        "AIME 2025": 41.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mistral Medium",
@@ -20264,9 +25186,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 56.9996,
+      "medianOutputSpeed": 55.3,
       "aa": {
         "aa-intelligence": 9.011,
         "aa-coding": null,
@@ -20299,8 +25222,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 9.9471,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Mistral Medium 3",
@@ -20319,9 +25253,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 43.3189,
+      "medianOutputSpeed": 44.8908,
       "aa": {
         "aa-intelligence": 18.7575,
         "aa-coding": 13.5592,
@@ -20354,8 +25289,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 53.0058,
         "LiveCodeBench": 40.0,
-        "AIME 2025": 30.3333
-      }
+        "AIME 2025": 30.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Devstral Medium",
@@ -20374,9 +25320,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "M",
         "fallbackLabel": "M",
         "title": "Mistral",
-        "src": "assets/logos/mistral_small.svg"
+        "src": "assets/logos/mistral_small.png",
+        "color": "#fd6f00"
       },
-      "medianOutputSpeed": 51.5467,
+      "medianOutputSpeed": 58.662,
       "aa": {
         "aa-intelligence": 18.6607,
         "aa-coding": 15.86,
@@ -20409,8 +25356,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 33.6508,
-        "AIME 2025": 4.6667
-      }
+        "AIME 2025": 4.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek R1 Distill Llama 70B [R]",
@@ -20429,9 +25387,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
-      "medianOutputSpeed": 41.8054,
+      "medianOutputSpeed": 41.8544,
       "aa": {
         "aa-intelligence": 15.9502,
         "aa-coding": 11.4268,
@@ -20464,8 +25423,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 26.5608,
-        "AIME 2025": 53.6667
-      }
+        "AIME 2025": 53.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek R1 Distill Qwen 32B [R]",
@@ -20484,7 +25454,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20519,8 +25490,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 26.9841,
-        "AIME 2025": 63.0
-      }
+        "AIME 2025": 63.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V3 (Dec)",
@@ -20539,7 +25521,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20574,8 +25557,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 35.873,
-        "AIME 2025": 26.0
-      }
+        "AIME 2025": 26.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek R1 Distill Qwen 14B [R]",
@@ -20594,7 +25588,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20629,8 +25624,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 37.5661,
-        "AIME 2025": 55.6667
-      }
+        "AIME 2025": 55.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek-V2.5 (Dec)",
@@ -20649,7 +25655,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20684,8 +25691,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek-Coder-V2",
@@ -20704,7 +25722,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20739,8 +25758,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek R1 Distill Llama 8B [R]",
@@ -20759,7 +25789,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20794,8 +25825,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 23.2804,
-        "AIME 2025": 41.3333
-      }
+        "AIME 2025": 41.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek LLM 67B (V1)",
@@ -20814,7 +25856,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20849,8 +25892,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek R1 Distill Qwen 1.5B [R]",
@@ -20869,7 +25923,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20904,8 +25959,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 6.9841,
-        "AIME 2025": 22.0
-      }
+        "AIME 2025": 22.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V3 0324",
@@ -20924,7 +25990,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -20959,8 +26026,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 40.5291,
-        "AIME 2025": 41.0
-      }
+        "AIME 2025": 41.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek R1 (Jan) [R]",
@@ -20979,7 +26057,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21014,8 +26093,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 61.6931,
-        "AIME 2025": 68.0
-      }
+        "AIME 2025": 68.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek R1 0528 [R]",
@@ -21034,7 +26124,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21069,8 +26160,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 77.037,
-        "AIME 2025": 76.0
-      }
+        "AIME 2025": 76.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V3.2 [R]",
@@ -21089,7 +26191,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21124,8 +26227,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 86.2434,
-        "AIME 2025": 92.0
-      }
+        "AIME 2025": 92.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V3.1 Terminus [R]",
@@ -21144,7 +26258,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21179,8 +26294,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 79.7884,
-        "AIME 2025": 89.6667
-      }
+        "AIME 2025": 89.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V3.2",
@@ -21199,7 +26325,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21234,8 +26361,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 59.2593,
-        "AIME 2025": 59.0
-      }
+        "AIME 2025": 59.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V3.1 [R]",
@@ -21254,7 +26392,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21289,8 +26428,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 78.4127,
-        "AIME 2025": 89.6667
-      }
+        "AIME 2025": 89.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V3.2 Exp",
@@ -21309,7 +26459,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21344,8 +26495,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 55.4497,
-        "AIME 2025": 57.6667
-      }
+        "AIME 2025": 57.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V3.1",
@@ -21364,7 +26526,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21399,8 +26562,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 57.672,
-        "AIME 2025": 49.6667
-      }
+        "AIME 2025": 49.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V3.1 Terminus",
@@ -21419,7 +26593,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21454,8 +26629,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 52.9101,
-        "AIME 2025": 53.6667
-      }
+        "AIME 2025": 53.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek-V2.5",
@@ -21474,7 +26660,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21509,8 +26696,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V3.2 Speciale [R]",
@@ -21529,7 +26727,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21564,8 +26763,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 89.6296,
-        "AIME 2025": 96.6667
-      }
+        "AIME 2025": 96.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek R1 0528 Qwen3 8B [R]",
@@ -21584,7 +26794,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21619,8 +26830,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 51.3228,
-        "AIME 2025": 63.6667
-      }
+        "AIME 2025": 63.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V3.2 Exp [R]",
@@ -21639,7 +26861,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21674,8 +26897,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 78.9418,
-        "AIME 2025": 87.6667
-      }
+        "AIME 2025": 87.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek-V2",
@@ -21694,7 +26928,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21729,8 +26964,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DeepSeek Coder V2 Lite",
@@ -21749,7 +26995,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DS",
         "fallbackLabel": "DS",
         "title": "DeepSeek",
-        "src": "assets/logos/deepseek_small.svg"
+        "src": "assets/logos/deepseek_small.svg",
+        "color": "#2243e6"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21784,8 +27031,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 15.7672,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Sonar Reasoning [R]",
@@ -21804,7 +27062,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "PPLX",
         "fallbackLabel": "PPLX",
         "title": "Perplexity",
-        "src": "assets/logos/perplexity_small.svg"
+        "src": "assets/logos/perplexity_small.png",
+        "color": "#1B818E"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21839,8 +27098,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Sonar Reasoning Pro [R]",
@@ -21859,7 +27129,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "PPLX",
         "fallbackLabel": "PPLX",
         "title": "Perplexity",
-        "src": "assets/logos/perplexity_small.svg"
+        "src": "assets/logos/perplexity_small.png",
+        "color": "#1B818E"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21894,8 +27165,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Sonar Pro",
@@ -21914,7 +27196,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "PPLX",
         "fallbackLabel": "PPLX",
         "title": "Perplexity",
-        "src": "assets/logos/perplexity_small.svg"
+        "src": "assets/logos/perplexity_small.png",
+        "color": "#1B818E"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -21949,8 +27232,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 27.5132,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Sonar",
@@ -21969,7 +27263,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "PPLX",
         "fallbackLabel": "PPLX",
         "title": "Perplexity",
-        "src": "assets/logos/perplexity_small.svg"
+        "src": "assets/logos/perplexity_small.png",
+        "color": "#1B818E"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22004,8 +27299,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 29.5238,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok Beta",
@@ -22024,7 +27330,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22059,8 +27366,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 24.127,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok 3 mini Reasoning (high) [R]",
@@ -22079,9 +27397,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
-      "medianOutputSpeed": 114.5315,
+      "medianOutputSpeed": 111.8669,
       "aa": {
         "aa-intelligence": 32.0786,
         "aa-coding": 25.1578,
@@ -22114,8 +27433,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 69.6296,
-        "AIME 2025": 84.6667
-      }
+        "AIME 2025": 84.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok 4 Fast",
@@ -22134,7 +27464,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22169,8 +27500,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 48.0925,
         "LiveCodeBench": 40.1058,
-        "AIME 2025": 41.3333
-      }
+        "AIME 2025": 41.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok 4 Fast [R]",
@@ -22189,7 +27531,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22224,8 +27567,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 61.7919,
         "LiveCodeBench": 83.1746,
-        "AIME 2025": 89.6667
-      }
+        "AIME 2025": 89.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok 4.20 0309",
@@ -22244,7 +27598,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
       "medianOutputSpeed": 174.9984,
       "aa": {
@@ -22279,8 +27634,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 64.0462,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok 4.1 Fast",
@@ -22299,7 +27665,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22334,8 +27701,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 48.4393,
         "LiveCodeBench": 39.8942,
-        "AIME 2025": 34.3333
-      }
+        "AIME 2025": 34.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok Code Fast 1 [R]",
@@ -22354,7 +27732,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22389,8 +27768,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 65.7143,
-        "AIME 2025": 43.3333
-      }
+        "AIME 2025": 43.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok 3",
@@ -22409,7 +27799,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22444,8 +27835,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 42.5397,
-        "AIME 2025": 58.0
-      }
+        "AIME 2025": 58.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok 2",
@@ -22464,7 +27866,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22499,8 +27902,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 26.6667,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok 4.20 0309 [R]",
@@ -22519,9 +27933,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
-      "medianOutputSpeed": 164.7393,
+      "medianOutputSpeed": 168.7531,
       "aa": {
         "aa-intelligence": 48.4813,
         "aa-coding": 42.1647,
@@ -22554,8 +27969,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 73.1792,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok 4.1 Fast [R]",
@@ -22574,7 +28000,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22609,8 +28036,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 63.2948,
         "LiveCodeBench": 82.2222,
-        "AIME 2025": 89.3333
-      }
+        "AIME 2025": 89.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok 4.20 0309 v2 [R]",
@@ -22629,9 +28067,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
-      "medianOutputSpeed": 176.9533,
+      "medianOutputSpeed": 178.7156,
       "aa": {
         "aa-intelligence": 49.332,
         "aa-coding": 40.4531,
@@ -22664,8 +28103,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 74.5665,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok 4.20 0309 v2",
@@ -22684,7 +28134,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
       "medianOutputSpeed": 167.3346,
       "aa": {
@@ -22719,8 +28170,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 64.9133,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok 4 [R]",
@@ -22739,7 +28201,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22774,8 +28237,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 68.8439,
         "LiveCodeBench": 81.9048,
-        "AIME 2025": 92.6667
-      }
+        "AIME 2025": 92.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Grok 3 Reasoning Beta [R]",
@@ -22794,7 +28268,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "xAI",
         "fallbackLabel": "xAI",
         "title": "xAI",
-        "src": "assets/logos/xai_small.svg"
+        "src": "assets/logos/xai.svg",
+        "color": "#736cd3"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22829,8 +28304,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "OpenChat 3.5",
@@ -22849,7 +28335,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "OPE",
         "fallbackLabel": "OPE",
         "title": "OpenChat",
-        "src": "assets/logos/openchat_small.svg"
+        "src": "assets/logos/openchat_small.png",
+        "color": "#5a80de"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22884,8 +28371,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 11.5344,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nova Pro",
@@ -22904,7 +28402,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "assets/logos/amazon_small.svg"
+        "src": "assets/logos/aws_small.svg",
+        "color": "#FF9900"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -22939,8 +28438,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 44.3353,
         "LiveCodeBench": 23.2804,
-        "AIME 2025": 7.0
-      }
+        "AIME 2025": 7.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Nova Lite",
@@ -22959,9 +28469,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AMA",
         "fallbackLabel": "AMA",
         "title": "Amazon",
-        "src": "assets/logos/amazon_small.svg"
+        "src": "assets/logos/aws_small.svg",
+        "color": "#FF9900"
       },
-      "medianOutputSpeed": 156.0833,
+      "medianOutputSpeed": 154.3836,
       "aa": {
         "aa-intelligence": 12.6513,
         "aa-coding": 5.1347,
@@ -22994,8 +28505,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 37.8035,
         "LiveCodeBench": 16.7196,
-        "AIME 2025": 7.0
-      }
+        "AIME 2025": 7.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Phi-3 Mini",
@@ -23014,7 +28536,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIC",
         "fallbackLabel": "MIC",
         "title": "Microsoft",
-        "src": "assets/logos/microsoft_small.svg"
+        "src": "assets/logos/microsoft_small.svg",
+        "color": "#0078D5"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23049,8 +28572,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 11.6402,
-        "AIME 2025": 0.3333
-      }
+        "AIME 2025": 0.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "LFM 40B",
@@ -23069,7 +28603,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LA",
         "fallbackLabel": "LA",
         "title": "Liquid AI",
-        "src": "assets/logos/liquid-ai_small.svg"
+        "src": "assets/logos/liquidai_small.svg",
+        "color": "#000000"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23104,8 +28639,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 9.6296,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "LFM2 1.2B",
@@ -23124,7 +28670,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "LA",
         "fallbackLabel": "LA",
         "title": "Liquid AI",
-        "src": "assets/logos/liquid-ai_small.svg"
+        "src": "assets/logos/liquidai_small.svg",
+        "color": "#000000"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23159,8 +28706,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 2.0106,
-        "AIME 2025": 3.3333
-      }
+        "AIME 2025": 3.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Solar Mini",
@@ -23179,7 +28737,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "UPS",
         "fallbackLabel": "UPS",
         "title": "Upstage",
-        "src": "assets/logos/upstage_small.svg"
+        "src": "assets/logos/upstage_small.svg",
+        "color": "#7c59f5"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23214,8 +28773,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Solar Pro 2 ",
@@ -23234,7 +28804,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "UPS",
         "fallbackLabel": "UPS",
         "title": "Upstage",
-        "src": "assets/logos/upstage_small.svg"
+        "src": "assets/logos/upstage_small.svg",
+        "color": "#7c59f5"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23269,8 +28840,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 38.5185,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Solar Pro 2 [R]",
@@ -23289,7 +28871,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "UPS",
         "fallbackLabel": "UPS",
         "title": "Upstage",
-        "src": "assets/logos/upstage_small.svg"
+        "src": "assets/logos/upstage_small.svg",
+        "color": "#7c59f5"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23324,8 +28907,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 46.2434,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "DBRX",
@@ -23344,7 +28938,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "DAT",
         "fallbackLabel": "DAT",
         "title": "Databricks",
-        "src": "assets/logos/databricks_small.svg"
+        "src": "assets/logos/databricks_small.png",
+        "color": "#e4462f"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23379,8 +28974,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 9.3122,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiniMax-M2.5 [R]",
@@ -23399,9 +29005,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIN",
         "fallbackLabel": "MIN",
         "title": "MiniMax",
-        "src": "assets/logos/minimax_small.svg"
+        "src": "assets/logos/minimax_small.svg",
+        "color": "#EB3568"
       },
-      "medianOutputSpeed": 188.0793,
+      "medianOutputSpeed": 208.5529,
       "aa": {
         "aa-intelligence": 41.933,
         "aa-coding": 37.4299,
@@ -23434,8 +29041,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiniMax-M2 [R]",
@@ -23454,9 +29072,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIN",
         "fallbackLabel": "MIN",
         "title": "MiniMax",
-        "src": "assets/logos/minimax_small.svg"
+        "src": "assets/logos/minimax_small.svg",
+        "color": "#EB3568"
       },
-      "medianOutputSpeed": 119.342,
+      "medianOutputSpeed": 125.9238,
       "aa": {
         "aa-intelligence": 36.0873,
         "aa-coding": 29.2088,
@@ -23489,8 +29108,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 82.6455,
-        "AIME 2025": 78.3333
-      }
+        "AIME 2025": 78.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiniMax-M2.1 [R]",
@@ -23509,9 +29139,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIN",
         "fallbackLabel": "MIN",
         "title": "MiniMax",
-        "src": "assets/logos/minimax_small.svg"
+        "src": "assets/logos/minimax_small.svg",
+        "color": "#EB3568"
       },
-      "medianOutputSpeed": 210.9023,
+      "medianOutputSpeed": 212.154,
       "aa": {
         "aa-intelligence": 39.4197,
         "aa-coding": 32.7722,
@@ -23544,8 +29175,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 80.9524,
-        "AIME 2025": 82.6667
-      }
+        "AIME 2025": 82.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiniMax M1 80k [R]",
@@ -23564,7 +29206,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIN",
         "fallbackLabel": "MIN",
         "title": "MiniMax",
-        "src": "assets/logos/minimax_small.svg"
+        "src": "assets/logos/minimax_small.svg",
+        "color": "#EB3568"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23599,8 +29242,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 71.1111,
-        "AIME 2025": 61.0
-      }
+        "AIME 2025": 61.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiniMax M1 40k [R]",
@@ -23619,7 +29273,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "MIN",
         "fallbackLabel": "MIN",
         "title": "MiniMax",
-        "src": "assets/logos/minimax_small.svg"
+        "src": "assets/logos/minimax_small.svg",
+        "color": "#EB3568"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23654,8 +29309,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 65.7143,
-        "AIME 2025": 13.6667
-      }
+        "AIME 2025": 13.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 3.3 Nemotron Super 49B [R]",
@@ -23674,7 +29340,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23709,8 +29376,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 27.7249,
-        "AIME 2025": 54.6667
-      }
+        "AIME 2025": 54.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 3.3 Nemotron Super 49B",
@@ -23729,7 +29407,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23764,8 +29443,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 28.0423,
-        "AIME 2025": 7.6667
-      }
+        "AIME 2025": 7.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Llama 3.1 Nemotron Nano 4B v1.1 [R]",
@@ -23784,7 +29474,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NVI",
         "fallbackLabel": "NVI",
         "title": "NVIDIA",
-        "src": "assets/logos/nvidia_small.svg"
+        "src": "assets/logos/nvidia_small.svg",
+        "color": "#86b737"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -23819,8 +29510,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 49.3122,
-        "AIME 2025": 50.0
-      }
+        "AIME 2025": 50.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Kimi K2 Thinking [R]",
@@ -23836,12 +29538,13 @@ window.AINSIGHTS_MODELS_DATA = {
       "openSourceCategorization": "Open Weights (Permissive License)",
       "openSourceType": "open",
       "modelIcon": {
-        "label": "KIM",
-        "fallbackLabel": "KIM",
+        "label": "KIMI",
+        "fallbackLabel": "KIMI",
         "title": "Kimi",
-        "src": "assets/logos/kimi_small.svg"
+        "src": "assets/logos/kimi_small.png",
+        "color": "#047AFE"
       },
-      "medianOutputSpeed": 122.0774,
+      "medianOutputSpeed": 117.2137,
       "aa": {
         "aa-intelligence": 40.8932,
         "aa-coding": 34.8274,
@@ -23874,8 +29577,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 85.291,
-        "AIME 2025": 94.6667
-      }
+        "AIME 2025": 94.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Kimi K2.5 [R]",
@@ -23891,12 +29605,13 @@ window.AINSIGHTS_MODELS_DATA = {
       "openSourceCategorization": "Open Weights (Permissive License)",
       "openSourceType": "open",
       "modelIcon": {
-        "label": "KIM",
-        "fallbackLabel": "KIM",
+        "label": "KIMI",
+        "fallbackLabel": "KIMI",
         "title": "Kimi",
-        "src": "assets/logos/kimi_small.svg"
+        "src": "assets/logos/kimi_small.png",
+        "color": "#047AFE"
       },
-      "medianOutputSpeed": 45.1088,
+      "medianOutputSpeed": 46.004,
       "aa": {
         "aa-intelligence": 46.8125,
         "aa-coding": 39.5518,
@@ -23929,8 +29644,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 75.3757,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Kimi K2.5",
@@ -23946,10 +29672,11 @@ window.AINSIGHTS_MODELS_DATA = {
       "openSourceCategorization": "Open Weights (Permissive License)",
       "openSourceType": "open",
       "modelIcon": {
-        "label": "KIM",
-        "fallbackLabel": "KIM",
+        "label": "KIMI",
+        "fallbackLabel": "KIMI",
         "title": "Kimi",
-        "src": "assets/logos/kimi_small.svg"
+        "src": "assets/logos/kimi_small.png",
+        "color": "#047AFE"
       },
       "medianOutputSpeed": 41.5722,
       "aa": {
@@ -23984,8 +29711,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 73.0636,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Kimi K2 0905",
@@ -24001,12 +29739,13 @@ window.AINSIGHTS_MODELS_DATA = {
       "openSourceCategorization": "Open Weights (Permissive License)",
       "openSourceType": "open",
       "modelIcon": {
-        "label": "KIM",
-        "fallbackLabel": "KIM",
+        "label": "KIMI",
+        "fallbackLabel": "KIMI",
         "title": "Kimi",
-        "src": "assets/logos/kimi_small.svg"
+        "src": "assets/logos/kimi_small.png",
+        "color": "#047AFE"
       },
-      "medianOutputSpeed": 25.0163,
+      "medianOutputSpeed": 25.0291,
       "aa": {
         "aa-intelligence": 30.8543,
         "aa-coding": 25.8803,
@@ -24039,8 +29778,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 60.9524,
-        "AIME 2025": 57.3333
-      }
+        "AIME 2025": 57.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Kimi K2",
@@ -24056,12 +29806,13 @@ window.AINSIGHTS_MODELS_DATA = {
       "openSourceCategorization": "Open Weights (Permissive License)",
       "openSourceType": "open",
       "modelIcon": {
-        "label": "KIM",
-        "fallbackLabel": "KIM",
+        "label": "KIMI",
+        "fallbackLabel": "KIMI",
         "title": "Kimi",
-        "src": "assets/logos/kimi_small.svg"
+        "src": "assets/logos/kimi_small.png",
+        "color": "#047AFE"
       },
-      "medianOutputSpeed": 24.5727,
+      "medianOutputSpeed": 23.8561,
       "aa": {
         "aa-intelligence": 26.3213,
         "aa-coding": 22.103,
@@ -24094,8 +29845,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 55.5556,
-        "AIME 2025": 57.0
-      }
+        "AIME 2025": 57.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Step 3.5 Flash [R]",
@@ -24114,9 +29876,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "STE",
         "fallbackLabel": "STE",
         "title": "StepFun",
-        "src": "assets/logos/stepfun_small.svg"
+        "src": "assets/logos/stepfun_small.svg",
+        "color": "#017AFF"
       },
-      "medianOutputSpeed": 231.4209,
+      "medianOutputSpeed": 193.358,
       "aa": {
         "aa-intelligence": 37.7975,
         "aa-coding": 31.6401,
@@ -24149,8 +29912,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Tulu3 405B",
@@ -24169,7 +29943,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "assets/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/ai2_small.svg",
+        "color": "#F0529C"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -24204,8 +29979,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 29.1005,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "OLMo 2 7B",
@@ -24224,7 +30010,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "assets/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/ai2_small.svg",
+        "color": "#F0529C"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -24259,8 +30046,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 4.127,
-        "AIME 2025": 0.6667
-      }
+        "AIME 2025": 0.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "OLMo 2 32B",
@@ -24279,7 +30077,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "assets/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/ai2_small.svg",
+        "color": "#F0529C"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -24314,8 +30113,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 6.7725,
-        "AIME 2025": 3.3333
-      }
+        "AIME 2025": 3.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Olmo 3 32B Think [R]",
@@ -24334,7 +30144,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AIF",
         "fallbackLabel": "AIF",
         "title": "Allen Institute for AI",
-        "src": "assets/logos/allen-institute-for-ai_small.svg"
+        "src": "assets/logos/ai2_small.svg",
+        "color": "#F0529C"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -24369,8 +30180,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 67.1958,
-        "AIME 2025": 73.6667
-      }
+        "AIME 2025": 73.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Granite 3.3 8B",
@@ -24389,9 +30211,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "IBM",
         "fallbackLabel": "IBM",
         "title": "IBM",
-        "src": "assets/logos/ibm_small.svg"
+        "src": "assets/logos/ibm_small.svg",
+        "color": "#0f62fe"
       },
-      "medianOutputSpeed": 345.274,
+      "medianOutputSpeed": 341.0153,
       "aa": {
         "aa-intelligence": 6.9972,
         "aa-coding": 3.3565,
@@ -24424,8 +30247,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 12.6984,
-        "AIME 2025": 6.6667
-      }
+        "AIME 2025": 6.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Reka Flash",
@@ -24444,9 +30278,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "RA",
         "fallbackLabel": "RA",
         "title": "Reka AI",
-        "src": "assets/logos/reka-ai_small.svg"
+        "src": "assets/logos/reka_small.svg",
+        "color": "#172136"
       },
-      "medianOutputSpeed": 56.6378,
+      "medianOutputSpeed": 56.1671,
       "aa": {
         "aa-intelligence": 11.9673,
         "aa-coding": null,
@@ -24479,8 +30314,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Hermes 3 - Llama-3.1 70B",
@@ -24499,9 +30345,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "NR",
         "fallbackLabel": "NR",
         "title": "Nous Research",
-        "src": "assets/logos/nous-research_small.svg"
+        "src": "assets/logos/nousresearch_small.jpg",
+        "color": "#006fa8"
       },
-      "medianOutputSpeed": 29.4586,
+      "medianOutputSpeed": 28.985,
       "aa": {
         "aa-intelligence": 10.6474,
         "aa-coding": null,
@@ -24534,8 +30381,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 18.836,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiMo-V2-Flash [R]",
@@ -24554,9 +30412,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "assets/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg",
+        "color": "#ff6900"
       },
-      "medianOutputSpeed": 122.2344,
+      "medianOutputSpeed": 114.8107,
       "aa": {
         "aa-intelligence": 39.2421,
         "aa-coding": 31.8042,
@@ -24589,8 +30448,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 86.7725,
-        "AIME 2025": 96.3333
-      }
+        "AIME 2025": 96.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "MiMo-V2-Pro [R]",
@@ -24609,9 +30479,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "XIA",
         "fallbackLabel": "XIA",
         "title": "Xiaomi",
-        "src": "assets/logos/xiaomi_small.svg"
+        "src": "assets/logos/xiaomi_small.svg",
+        "color": "#ff6900"
       },
-      "medianOutputSpeed": 43.3489,
+      "medianOutputSpeed": 42.9072,
       "aa": {
         "aa-intelligence": 49.2015,
         "aa-coding": 41.4317,
@@ -24644,8 +30515,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Sarvam M [R]",
@@ -24664,7 +30546,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SAR",
         "fallbackLabel": "SAR",
         "title": "Sarvam",
-        "src": "assets/logos/sarvam_small.svg"
+        "src": "assets/logos/sarvam_small.png",
+        "color": "#807D77"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -24699,8 +30582,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 29.5238,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM-4.6 [R]",
@@ -24719,9 +30613,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 45.9886,
+      "medianOutputSpeed": 46.2944,
       "aa": {
         "aa-intelligence": 32.5136,
         "aa-coding": 29.4753,
@@ -24754,8 +30649,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 69.5238,
-        "AIME 2025": 86.0
-      }
+        "AIME 2025": 86.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM-4.6V [R]",
@@ -24774,9 +30680,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 84.3645,
+      "medianOutputSpeed": 83.5038,
       "aa": {
         "aa-intelligence": 23.4231,
         "aa-coding": 19.7426,
@@ -24809,8 +30716,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 48.5549,
         "LiveCodeBench": 15.9788,
-        "AIME 2025": 85.3333
-      }
+        "AIME 2025": 85.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM-4.7",
@@ -24829,9 +30747,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 71.9484,
+      "medianOutputSpeed": 72.839,
       "aa": {
         "aa-intelligence": 34.163,
         "aa-coding": 32.0076,
@@ -24864,8 +30783,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 56.1905,
-        "AIME 2025": 48.0
-      }
+        "AIME 2025": 48.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM-5",
@@ -24884,9 +30814,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 64.2373,
+      "medianOutputSpeed": 63.9135,
       "aa": {
         "aa-intelligence": 40.5712,
         "aa-coding": 39.0327,
@@ -24919,8 +30850,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM-4.7 [R]",
@@ -24939,9 +30881,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 79.0281,
+      "medianOutputSpeed": 78.7222,
       "aa": {
         "aa-intelligence": 42.108,
         "aa-coding": 36.2584,
@@ -24974,8 +30917,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 89.418,
-        "AIME 2025": 95.0
-      }
+        "AIME 2025": 95.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM-5 [R]",
@@ -24994,9 +30948,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 76.791,
+      "medianOutputSpeed": 75.2553,
       "aa": {
         "aa-intelligence": 49.7696,
         "aa-coding": 44.1814,
@@ -25029,8 +30984,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM-4.5 [R]",
@@ -25049,9 +31015,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 48.578,
+      "medianOutputSpeed": 48.338,
       "aa": {
         "aa-intelligence": 26.419,
         "aa-coding": 26.2591,
@@ -25084,8 +31051,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 73.7566,
-        "AIME 2025": 73.6667
-      }
+        "AIME 2025": 73.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM-4.6",
@@ -25104,9 +31082,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 42.4884,
+      "medianOutputSpeed": 50.6046,
       "aa": {
         "aa-intelligence": 30.2422,
         "aa-coding": 30.2259,
@@ -25139,8 +31118,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 56.0847,
-        "AIME 2025": 44.3333
-      }
+        "AIME 2025": 44.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM-4.5V",
@@ -25159,7 +31149,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
       "medianOutputSpeed": 32.2922,
       "aa": {
@@ -25194,8 +31185,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 42.7746,
         "LiveCodeBench": 35.2381,
-        "AIME 2025": 15.3333
-      }
+        "AIME 2025": 15.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM-4.5-Air [R]",
@@ -25214,9 +31216,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 85.8208,
+      "medianOutputSpeed": 85.8867,
       "aa": {
         "aa-intelligence": 23.1661,
         "aa-coding": 23.8215,
@@ -25249,8 +31252,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 68.3598,
-        "AIME 2025": 80.6667
-      }
+        "AIME 2025": 80.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM-4.7-Flash [R]",
@@ -25269,9 +31283,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 83.2321,
+      "medianOutputSpeed": 79.9948,
       "aa": {
         "aa-intelligence": 30.1452,
         "aa-coding": 25.8733,
@@ -25304,8 +31319,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM-4.5V [R]",
@@ -25324,9 +31350,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 26.7599,
+      "medianOutputSpeed": 30.4492,
       "aa": {
         "aa-intelligence": 15.0932,
         "aa-coding": 10.9042,
@@ -25359,8 +31386,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 50.4624,
         "LiveCodeBench": 60.4233,
-        "AIME 2025": 73.0
-      }
+        "AIME 2025": 73.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM-4.6V",
@@ -25379,9 +31417,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 90.6734,
+      "medianOutputSpeed": 93.8689,
       "aa": {
         "aa-intelligence": 17.1004,
         "aa-coding": 11.0866,
@@ -25414,8 +31453,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 42.1965,
         "LiveCodeBench": 41.0582,
-        "AIME 2025": 26.3333
-      }
+        "AIME 2025": 26.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "GLM-4.7-Flash",
@@ -25434,9 +31484,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "ZAI",
         "fallbackLabel": "ZAI",
         "title": "Z AI",
-        "src": "assets/logos/z-ai_small.svg"
+        "src": "assets/logos/zai_small.svg",
+        "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 120.1851,
+      "medianOutputSpeed": 131.2778,
       "aa": {
         "aa-intelligence": 22.069,
         "aa-coding": 11.0129,
@@ -25469,8 +31520,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Command-R+ (Apr)",
@@ -25489,7 +31551,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "CO",
         "fallbackLabel": "CO",
         "title": "Cohere",
-        "src": "assets/logos/cohere_small.svg"
+        "src": "assets/logos/cohere_small.svg",
+        "color": "#D18EE2"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -25524,8 +31587,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 12.1693,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Command-R (Mar)",
@@ -25544,7 +31618,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "CO",
         "fallbackLabel": "CO",
         "title": "Cohere",
-        "src": "assets/logos/cohere_small.svg"
+        "src": "assets/logos/cohere_small.svg",
+        "color": "#D18EE2"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -25579,8 +31654,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 4.7619,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Apriel-v1.5-15B-Thinker [R]",
@@ -25599,7 +31685,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SER",
         "fallbackLabel": "SER",
         "title": "ServiceNow",
-        "src": "assets/logos/servicenow_small.svg"
+        "src": "assets/logos/servicenow_small.svg",
+        "color": "#80B6A1"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -25634,8 +31721,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 57.052,
         "LiveCodeBench": 72.8042,
-        "AIME 2025": 87.5
-      }
+        "AIME 2025": 87.5,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Jamba 1.5 Large",
@@ -25654,7 +31752,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AI21",
         "fallbackLabel": "AI21",
         "title": "AI21 Labs",
-        "src": "assets/logos/ai21_small.svg"
+        "src": "assets/logos/ai21_small.svg",
+        "color": "#d63864"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -25689,8 +31788,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 14.2857,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Jamba 1.5 Mini",
@@ -25709,7 +31819,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AI21",
         "fallbackLabel": "AI21",
         "title": "AI21 Labs",
-        "src": "assets/logos/ai21_small.svg"
+        "src": "assets/logos/ai21_small.svg",
+        "color": "#d63864"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -25744,8 +31855,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 6.2434,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Jamba 1.6 Mini",
@@ -25764,9 +31886,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AI21",
         "fallbackLabel": "AI21",
         "title": "AI21 Labs",
-        "src": "assets/logos/ai21_small.svg"
+        "src": "assets/logos/ai21_small.svg",
+        "color": "#d63864"
       },
-      "medianOutputSpeed": 183.8956,
+      "medianOutputSpeed": 187.4871,
       "aa": {
         "aa-intelligence": 7.8708,
         "aa-coding": null,
@@ -25799,8 +31922,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 7.0899,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Jamba 1.6 Large",
@@ -25819,7 +31953,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "AI21",
         "fallbackLabel": "AI21",
         "title": "AI21 Labs",
-        "src": "assets/logos/ai21_small.svg"
+        "src": "assets/logos/ai21_small.svg",
+        "color": "#d63864"
       },
       "medianOutputSpeed": 58.1697,
       "aa": {
@@ -25854,8 +31989,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 17.2487,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Arctic",
@@ -25874,7 +32020,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SNO",
         "fallbackLabel": "SNO",
         "title": "Snowflake",
-        "src": "assets/logos/snowflake_small.svg"
+        "src": "assets/logos/snowflake_small.svg",
+        "color": "#4e9cd7"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -25909,8 +32056,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen2.5 Max",
@@ -25929,7 +32087,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -25964,8 +32123,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 35.873,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen2.5 72B",
@@ -25984,7 +32154,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -26019,8 +32190,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 27.619,
-        "AIME 2025": 14.0
-      }
+        "AIME 2025": 14.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen2.5 Coder 32B",
@@ -26039,7 +32221,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -26074,8 +32257,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 29.5238,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen2.5 Turbo",
@@ -26094,9 +32288,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 63.25,
+      "medianOutputSpeed": 62.6234,
       "aa": {
         "aa-intelligence": 11.9736,
         "aa-coding": null,
@@ -26129,8 +32324,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 16.2963,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen2 72B",
@@ -26149,7 +32355,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -26184,8 +32391,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 15.873,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "QwQ-32B [R]",
@@ -26204,9 +32422,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 28.6602,
+      "medianOutputSpeed": 29.2613,
       "aa": {
         "aa-intelligence": 19.7242,
         "aa-coding": null,
@@ -26239,8 +32458,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 63.0688,
-        "AIME 2025": 29.0
-      }
+        "AIME 2025": 29.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 235B A22B",
@@ -26259,9 +32489,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 45.8711,
+      "medianOutputSpeed": 47.647,
       "aa": {
         "aa-intelligence": 20.7505,
         "aa-coding": 16.5053,
@@ -26294,8 +32525,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 67.5723,
         "LiveCodeBench": 59.3651,
-        "AIME 2025": 70.6667
-      }
+        "AIME 2025": 70.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 32B [R]",
@@ -26314,9 +32556,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 82.9665,
+      "medianOutputSpeed": 82.235,
       "aa": {
         "aa-intelligence": 16.5266,
         "aa-coding": 13.8258,
@@ -26349,8 +32592,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 54.6032,
-        "AIME 2025": 73.0
-      }
+        "AIME 2025": 73.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 32B",
@@ -26369,9 +32623,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 87.865,
+      "medianOutputSpeed": 82.3041,
       "aa": {
         "aa-intelligence": 14.5323,
         "aa-coding": null,
@@ -26404,8 +32659,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 28.7831,
-        "AIME 2025": 19.6667
-      }
+        "AIME 2025": 19.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 235B [R]",
@@ -26424,9 +32690,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 52.8523,
+      "medianOutputSpeed": 51.3371,
       "aa": {
         "aa-intelligence": 19.7861,
         "aa-coding": 17.3506,
@@ -26459,8 +32726,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 62.2222,
-        "AIME 2025": 82.0
-      }
+        "AIME 2025": 82.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 27B [R]",
@@ -26479,9 +32757,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 77.4882,
+      "medianOutputSpeed": 78.1717,
       "aa": {
         "aa-intelligence": 42.069,
         "aa-coding": 34.873,
@@ -26514,8 +32793,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 35.4991,
         "MMMU-Pro": 75.0289,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 30B A3B [R]",
@@ -26534,9 +32824,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 108.8066,
+      "medianOutputSpeed": 102.198,
       "aa": {
         "aa-intelligence": 19.6815,
         "aa-coding": 13.1418,
@@ -26569,8 +32860,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 61.8497,
         "LiveCodeBench": 69.7354,
-        "AIME 2025": 82.3333
-      }
+        "AIME 2025": 82.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 14B [R]",
@@ -26589,9 +32891,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 59.4777,
+      "medianOutputSpeed": 58.4524,
       "aa": {
         "aa-intelligence": 16.1876,
         "aa-coding": 13.0577,
@@ -26624,8 +32927,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 52.2751,
-        "AIME 2025": 55.6667
-      }
+        "AIME 2025": 55.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 235B",
@@ -26644,9 +32958,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 53.8519,
+      "medianOutputSpeed": 47.3637,
       "aa": {
         "aa-intelligence": 16.965,
         "aa-coding": 13.9941,
@@ -26679,8 +32994,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 34.2857,
-        "AIME 2025": 23.6667
-      }
+        "AIME 2025": 23.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 35B A3B [R]",
@@ -26699,9 +33025,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 150.1358,
+      "medianOutputSpeed": 149.458,
       "aa": {
         "aa-intelligence": 37.1222,
         "aa-coding": 30.2539,
@@ -26734,8 +33061,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": 21.516,
         "MMMU-Pro": 72.659,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 32B",
@@ -26754,9 +33092,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 68.3592,
+      "medianOutputSpeed": 67.6906,
       "aa": {
         "aa-intelligence": 17.1906,
         "aa-coding": 15.5864,
@@ -26789,8 +33128,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 64.2775,
         "LiveCodeBench": 51.4286,
-        "AIME 2025": 68.3333
-      }
+        "AIME 2025": 68.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 235B 2507",
@@ -26809,9 +33159,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 48.1811,
+      "medianOutputSpeed": 47.2106,
       "aa": {
         "aa-intelligence": 24.9606,
         "aa-coding": 22.0995,
@@ -26844,8 +33195,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 52.381,
-        "AIME 2025": 71.6667
-      }
+        "AIME 2025": 71.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 Coder 480B",
@@ -26864,9 +33226,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 58.5879,
+      "medianOutputSpeed": 57.4996,
       "aa": {
         "aa-intelligence": 24.771,
         "aa-coding": 24.5861,
@@ -26899,8 +33262,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 58.5185,
-        "AIME 2025": 39.3333
-      }
+        "AIME 2025": 39.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 Coder 30B A3B",
@@ -26919,9 +33293,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 86.0937,
+      "medianOutputSpeed": 89.9712,
       "aa": {
         "aa-intelligence": 19.9773,
         "aa-coding": 19.3603,
@@ -26954,8 +33329,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 40.3175,
-        "AIME 2025": 29.0
-      }
+        "AIME 2025": 29.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 235B A22B 2507 [R]",
@@ -26974,9 +33360,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 52.7222,
+      "medianOutputSpeed": 52.3617,
       "aa": {
         "aa-intelligence": 29.5444,
         "aa-coding": 23.2113,
@@ -27009,8 +33396,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 78.836,
-        "AIME 2025": 91.0
-      }
+        "AIME 2025": 91.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 30B A3B",
@@ -27029,9 +33427,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 109.6339,
+      "medianOutputSpeed": 108.4708,
       "aa": {
         "aa-intelligence": 16.0469,
         "aa-coding": 14.3027,
@@ -27064,8 +33463,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 62.1387,
         "LiveCodeBench": 47.619,
-        "AIME 2025": 72.3333
-      }
+        "AIME 2025": 72.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 4B",
@@ -27084,7 +33494,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27119,8 +33530,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 23.2804,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 8B",
@@ -27139,7 +33561,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 38.3201,
       "aa": {
@@ -27174,8 +33597,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 20.2116,
-        "AIME 2025": 24.3333
-      }
+        "AIME 2025": 24.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 30B [R]",
@@ -27194,7 +33628,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 64.7947,
       "aa": {
@@ -27229,8 +33664,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 50.582,
-        "AIME 2025": 72.3333
-      }
+        "AIME 2025": 72.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 0.6B",
@@ -27249,7 +33695,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27284,8 +33731,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 7.3016,
-        "AIME 2025": 10.3333
-      }
+        "AIME 2025": 10.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 Max Thinking (Preview) [R]",
@@ -27304,9 +33762,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 50.1017,
+      "medianOutputSpeed": 48.3334,
       "aa": {
         "aa-intelligence": 32.4841,
         "aa-coding": 24.502,
@@ -27339,8 +33798,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 53.545,
-        "AIME 2025": 82.3333
-      }
+        "AIME 2025": 82.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 4B [R]",
@@ -27359,7 +33829,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27394,8 +33865,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 46.455,
-        "AIME 2025": 22.3333
-      }
+        "AIME 2025": 22.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen1.5 Chat 110B",
@@ -27414,7 +33896,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27449,8 +33932,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 4B 2507 [R]",
@@ -27469,7 +33963,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27504,8 +33999,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 64.127,
-        "AIME 2025": 82.6667
-      }
+        "AIME 2025": 82.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 1.7B",
@@ -27524,7 +34030,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27559,8 +34066,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 12.5926,
-        "AIME 2025": 7.3333
-      }
+        "AIME 2025": 7.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 32B [R]",
@@ -27579,9 +34097,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 88.6827,
+      "medianOutputSpeed": 88.6525,
       "aa": {
         "aa-intelligence": 24.7151,
         "aa-coding": 14.5412,
@@ -27614,8 +34133,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 63.4104,
         "LiveCodeBench": 73.7566,
-        "AIME 2025": 84.6667
-      }
+        "AIME 2025": 84.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 235B A22B [R]",
@@ -27634,9 +34164,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 34.191,
+      "medianOutputSpeed": 34.5163,
       "aa": {
         "aa-intelligence": 27.6424,
         "aa-coding": 20.8859,
@@ -27669,8 +34200,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 68.7283,
         "LiveCodeBench": 64.5503,
-        "AIME 2025": 88.3333
-      }
+        "AIME 2025": 88.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 8B [R]",
@@ -27689,7 +34231,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 37.0304,
       "aa": {
@@ -27724,8 +34267,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 40.6349,
-        "AIME 2025": 19.0
-      }
+        "AIME 2025": 19.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 0.6B [R]",
@@ -27744,7 +34298,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27779,8 +34334,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 12.0635,
-        "AIME 2025": 18.0
-      }
+        "AIME 2025": 18.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 8B [R]",
@@ -27799,7 +34365,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 111.7538,
       "aa": {
@@ -27834,8 +34401,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 56.6474,
         "LiveCodeBench": 35.3439,
-        "AIME 2025": 30.6667
-      }
+        "AIME 2025": 30.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 1.7B [R]",
@@ -27854,7 +34432,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27889,8 +34468,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 30.7937,
-        "AIME 2025": 38.6667
-      }
+        "AIME 2025": 38.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen2.5 Instruct 32B",
@@ -27909,7 +34499,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -27944,8 +34535,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 24.7619,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 Max",
@@ -27964,9 +34566,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 57.8197,
+      "medianOutputSpeed": 55.0719,
       "aa": {
         "aa-intelligence": 31.377,
         "aa-coding": 26.4064,
@@ -27999,8 +34602,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 76.7196,
-        "AIME 2025": 80.6667
-      }
+        "AIME 2025": 80.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 14B",
@@ -28019,9 +34633,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 60.9767,
+      "medianOutputSpeed": 59.4891,
       "aa": {
         "aa-intelligence": 12.7584,
         "aa-coding": 12.3702,
@@ -28054,8 +34669,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 28.0423,
-        "AIME 2025": 58.0
-      }
+        "AIME 2025": 58.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 30B A3B 2507 [R]",
@@ -28074,9 +34700,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 125.4592,
+      "medianOutputSpeed": 123.7991,
       "aa": {
         "aa-intelligence": 22.4131,
         "aa-coding": 14.6465,
@@ -28109,8 +34736,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 70.6878,
-        "AIME 2025": 56.3333
-      }
+        "AIME 2025": 56.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "QwQ 32B-Preview [R]",
@@ -28129,7 +34767,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28164,8 +34803,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 33.6508,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 4B 2507",
@@ -28184,7 +34834,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28219,8 +34870,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 37.672,
-        "AIME 2025": 52.3333
-      }
+        "AIME 2025": 52.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 30B A3B 2507",
@@ -28239,9 +34901,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 111.5054,
+      "medianOutputSpeed": 108.1485,
       "aa": {
         "aa-intelligence": 15.0011,
         "aa-coding": 14.187,
@@ -28274,8 +34937,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 51.5344,
-        "AIME 2025": 66.3333
-      }
+        "AIME 2025": 66.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen Chat 72B",
@@ -28294,7 +34968,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28329,8 +35004,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 8B",
@@ -28349,9 +35035,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 118.8298,
+      "medianOutputSpeed": 117.9613,
       "aa": {
         "aa-intelligence": 14.3014,
         "aa-coding": 7.3022,
@@ -28384,8 +35071,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 47.341,
         "LiveCodeBench": 33.2275,
-        "AIME 2025": 27.3333
-      }
+        "AIME 2025": 27.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 4B",
@@ -28404,7 +35102,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28439,8 +35138,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 43.8728,
         "LiveCodeBench": 28.9947,
-        "AIME 2025": 37.0
-      }
+        "AIME 2025": 37.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 4B [R]",
@@ -28459,7 +35169,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28494,8 +35205,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 52.0231,
         "LiveCodeBench": 31.9577,
-        "AIME 2025": 25.6667
-      }
+        "AIME 2025": 25.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen2.5 Coder 7B ",
@@ -28514,7 +35236,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28549,8 +35272,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 12.5926,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 30B",
@@ -28569,9 +35303,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 61.1175,
+      "medianOutputSpeed": 60.72,
       "aa": {
         "aa-intelligence": 12.527,
         "aa-coding": 13.3418,
@@ -28604,8 +35339,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 32.1693,
-        "AIME 2025": 21.6667
-      }
+        "AIME 2025": 21.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 27B",
@@ -28624,9 +35370,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 88.1557,
+      "medianOutputSpeed": 89.4503,
       "aa": {
         "aa-intelligence": 37.1787,
         "aa-coding": 33.4421,
@@ -28659,8 +35406,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": 70.0,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 Max (Preview)",
@@ -28679,9 +35437,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
-      "medianOutputSpeed": 63.4917,
+      "medianOutputSpeed": 59.598,
       "aa": {
         "aa-intelligence": 26.0841,
         "aa-coding": 25.477,
@@ -28714,8 +35473,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 65.0794,
-        "AIME 2025": 75.0
-      }
+        "AIME 2025": 75.0,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3 Max Thinking [R]",
@@ -28734,7 +35504,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28769,8 +35540,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Qwen3.6 Max Preview [R]",
@@ -28789,7 +35571,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "QW",
         "fallbackLabel": "QW",
         "title": "Alibaba",
-        "src": "assets/logos/alibaba_small.svg"
+        "src": "assets/logos/alibaba_small.svg",
+        "color": "#ff7018"
       },
       "medianOutputSpeed": 43.3307,
       "aa": {
@@ -28824,8 +35607,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": null,
-        "AIME 2025": null
-      }
+        "AIME 2025": null,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Ling-1T",
@@ -28844,7 +35638,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "InclusionAI",
-        "src": "assets/logos/inclusionai_small.svg"
+        "src": "assets/logos/inclusionai_small.jpg",
+        "color": "#4fb5ff"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28879,8 +35674,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 67.7249,
-        "AIME 2025": 71.3333
-      }
+        "AIME 2025": 71.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Ring-1T [R]",
@@ -28899,7 +35705,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "InclusionAI",
-        "src": "assets/logos/inclusionai_small.svg"
+        "src": "assets/logos/inclusionai_small.jpg",
+        "color": "#4fb5ff"
       },
       "medianOutputSpeed": 0.0,
       "aa": {
@@ -28934,8 +35741,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 64.3386,
-        "AIME 2025": 89.3333
-      }
+        "AIME 2025": 89.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Ling-flash-2.0",
@@ -28954,7 +35772,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "INC",
         "fallbackLabel": "INC",
         "title": "InclusionAI",
-        "src": "assets/logos/inclusionai_small.svg"
+        "src": "assets/logos/inclusionai_small.jpg",
+        "color": "#4fb5ff"
       },
       "medianOutputSpeed": 78.5645,
       "aa": {
@@ -28989,8 +35808,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 58.9418,
-        "AIME 2025": 65.3333
-      }
+        "AIME 2025": 65.3333,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     },
     {
       "modelKey": "Seed-OSS-36B-Instruct [R]",
@@ -29009,9 +35839,10 @@ window.AINSIGHTS_MODELS_DATA = {
         "label": "SEED",
         "fallbackLabel": "SEED",
         "title": "ByteDance Seed",
-        "src": "assets/logos/bytedance-seed_small.svg"
+        "src": "assets/logos/bytedance_small.svg",
+        "color": "#3c8bff"
       },
-      "medianOutputSpeed": 35.0951,
+      "medianOutputSpeed": 35.6529,
       "aa": {
         "aa-intelligence": 25.1572,
         "aa-coding": 16.6982,
@@ -29044,8 +35875,19 @@ window.AINSIGHTS_MODELS_DATA = {
         "ITBench-AA": null,
         "MMMU-Pro": null,
         "LiveCodeBench": 76.5079,
-        "AIME 2025": 84.6667
-      }
+        "AIME 2025": 84.6667,
+        "ext:swe-bench-pro": null,
+        "ext:terminal-bench-2": null,
+        "ext:expert-swe-internal": null,
+        "ext:gdpval-wins-ties": null,
+        "ext:osworld-verified": null,
+        "ext:toolathlon": null,
+        "ext:browsecomp": null,
+        "ext:frontiermath-tier-1-3": null,
+        "ext:frontiermath-tier-4": null,
+        "ext:cybergym": null
+      },
+      "externalBenchmarks": []
     }
   ],
   "summary": {

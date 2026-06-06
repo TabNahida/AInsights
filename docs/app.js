@@ -26,6 +26,7 @@ const copy = {
     sourceWeightStatuses: {
       active: "主数据源",
       mapped: "映射到现有子项",
+      external: "外部分数源",
       reference: "参考源",
     },
     relatedMetrics: "{count} 个相关子项",
@@ -62,6 +63,8 @@ const copy = {
     detailRankTitle: "排名快照",
     detailBenchmarkTitle: "Benchmark Profile",
     detailBenchmarkSubtitle: "AA 原始子项得分和 AInsights 默认权重",
+    detailExternalTitle: "外部 Benchmark 分数",
+    detailExternalSubtitle: "来自官方发布页或模型卡的逐模型公开测评，默认不影响 AInsights Index",
     detailCostTitle: "成本与吞吐",
     detailVariantsTitle: "同模型档位",
     detailSourcesTitle: "外部测评参考",
@@ -162,6 +165,7 @@ const copy = {
     sourceWeightStatuses: {
       active: "Primary source",
       mapped: "Mapped to available metrics",
+      external: "External score source",
       reference: "Reference source",
     },
     relatedMetrics: "{count} related metrics",
@@ -198,6 +202,8 @@ const copy = {
     detailRankTitle: "Rank snapshot",
     detailBenchmarkTitle: "Benchmark Profile",
     detailBenchmarkSubtitle: "AA raw component scores and AInsights default weights",
+    detailExternalTitle: "External benchmark scores",
+    detailExternalSubtitle: "Per-model public evals from official launch pages or model cards; excluded from AInsights Index by default",
     detailCostTitle: "Cost and throughput",
     detailVariantsTitle: "Same-model tiers",
     detailSourcesTitle: "External evaluation references",
@@ -448,6 +454,7 @@ function renderStaticControls() {
   els.top20Title.textContent = tr("top20Title", { count: state.topChartLimit });
   els.top20Subtitle.textContent = tr("top20Subtitle");
   els.viewFullRankingLink.textContent = tr("fullRanking");
+  els.viewFullRankingLink.href = pageHref("ranking");
   els.costScatterTitle.textContent = tr("costScatterTitle");
   els.costScatterSubtitle.textContent = tr("costScatterSubtitle");
   els.scoreBandsTitle.textContent = tr("scoreBandsTitle");
@@ -482,10 +489,7 @@ function renderPageButtons() {
     button.textContent = tr(`pages.${id}`);
     button.setAttribute("aria-pressed", String(id === state.page));
     button.addEventListener("click", () => {
-      state.page = id;
-      state.modelId = null;
-      history.replaceState(null, "", id === "home" ? "#" : "#ranking");
-      render();
+      window.location.href = pageHref(id);
     });
     els.pageButtons.append(button);
   }
@@ -1045,13 +1049,21 @@ function renderProviderChart(models) {
     .slice(0, 10);
   const maxCount = Math.max(...rows.map((row) => row.count), 1);
   els.providerChart.innerHTML = rows.map((row, index) => `
-    <a class="provider-row" href="${escapeHtml(row.bestModel ? modelHref(row.bestModel) : "#ranking")}" style="--bar-color: ${providerColor({ creator: row.provider }, index)}; --value: ${(row.count / maxCount) * 100}%">
-      <span class="provider-row-name">${escapeHtml(row.provider)}</span>
+    <a class="provider-row" href="${escapeHtml(row.bestModel ? modelHref(row.bestModel) : pageHref("ranking"))}" style="--bar-color: ${providerColor({ creator: row.provider }, index)}; --value: ${(row.count / maxCount) * 100}%">
+      <span class="provider-row-name">
+        ${renderProviderCoverageIcon(row)}
+        <span>${escapeHtml(row.provider)}</span>
+      </span>
       <span class="provider-row-track"><span></span></span>
       <strong>${row.count}</strong>
       <em>${escapeHtml(formatNumber(row.bestScore))}</em>
     </a>
   `).join("");
+}
+
+function renderProviderCoverageIcon(row) {
+  if (row.bestModel) return renderModelIcon(row.bestModel);
+  return renderModelIcon({ creator: row.provider, model: row.provider, modelIcon: { title: row.provider } });
 }
 
 function renderSourceExplorer(target, compact = false) {
@@ -1202,7 +1214,7 @@ function renderModelDetail(ranked, preset) {
   if (!model) {
     document.title = `${tr("modelNotFound")} · ${tr("pageTitle")}`;
     els.modelDetail.innerHTML = `
-      <a class="back-link" href="#ranking">${escapeHtml(tr("backToRanking"))}</a>
+      <a class="back-link" href="${escapeHtml(pageHref("ranking"))}">${escapeHtml(tr("backToRanking"))}</a>
       <section class="detail-empty">${escapeHtml(tr("modelNotFound"))}</section>
     `;
     return;
@@ -1212,9 +1224,10 @@ function renderModelDetail(ranked, preset) {
   const color = providerColor(model);
   const siblingRows = ranked.filter((row) => row.variantGroup === model.variantGroup);
   const benchmarkRows = benchmarkProfileRows(model);
+  const externalRows = externalBenchmarkRows(model);
 
   els.modelDetail.innerHTML = `
-    <a class="back-link" href="#ranking">${renderIcon("arrowLeft")}${escapeHtml(tr("backToRanking"))}</a>
+    <a class="back-link" href="${escapeHtml(pageHref("ranking"))}">${renderIcon("arrowLeft")}${escapeHtml(tr("backToRanking"))}</a>
     <section class="detail-hero" style="--detail-color: ${color}">
       <div class="detail-hero-main">
         ${renderModelIcon(model)}
@@ -1269,6 +1282,16 @@ function renderModelDetail(ranked, preset) {
       </div>
       <div class="benchmark-profile">
         ${benchmarkRows.length ? benchmarkRows.map(renderBenchmarkRow).join("") : `<div class="empty">${escapeHtml(tr("noBenchmarks"))}</div>`}
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <div class="detail-section-head">
+        <h2>${escapeHtml(tr("detailExternalTitle"))}</h2>
+        <p>${escapeHtml(tr("detailExternalSubtitle"))}</p>
+      </div>
+      <div class="external-benchmark-list">
+        ${externalRows.length ? externalRows.map(renderExternalBenchmarkRow).join("") : `<div class="empty">${escapeHtml(tr("notAvailable"))}</div>`}
       </div>
     </section>
 
@@ -1340,6 +1363,7 @@ function renderSiblingVariants(rows, currentModel) {
 function benchmarkProfileRows(model) {
   const defaultWeights = state.data.presets["zhihu-adjusted"].weights || {};
   return state.data.metrics
+    .filter((metric) => metric.source !== "external")
     .map((metric) => {
       const value = model.scores?.[metric.key];
       return {
@@ -1368,6 +1392,39 @@ function renderBenchmarkRow(row) {
   `;
 }
 
+function externalBenchmarkRows(model) {
+  return [...(model.externalBenchmarks || [])].sort((a, b) => {
+    const metricA = metricDefinition(a.metricKey);
+    const metricB = metricDefinition(b.metricKey);
+    return String(metricA.category || "").localeCompare(String(metricB.category || ""))
+      || String(a.label || "").localeCompare(String(b.label || ""));
+  });
+}
+
+function renderExternalBenchmarkRow(row) {
+  const metric = metricDefinition(row.metricKey);
+  const icon = metric.icon || initials(row.label);
+  const valueWidth = clamp(row.value, 0, 100);
+  const value = `${formatNumber(row.value)}${row.unit === "%" ? "%" : ` ${row.unit || ""}`}`.trim();
+  const source = row.sourceLabel || tr("source");
+  const href = row.sourceUrl || "#";
+  return `
+    <a class="external-benchmark-row" href="${escapeHtml(href)}" target="_blank" rel="noreferrer">
+      <span class="external-benchmark-icon">${escapeHtml(icon)}</span>
+      <span class="external-benchmark-copy">
+        <strong>${escapeHtml(row.label)}</strong>
+        <em>${escapeHtml(metric.category || source)} · ${escapeHtml(source)}</em>
+      </span>
+      <span class="external-benchmark-track"><span style="--value: ${valueWidth}%"></span></span>
+      <b>${escapeHtml(value)}</b>
+    </a>
+  `;
+}
+
+function metricDefinition(metricKey) {
+  return state.data.metrics.find((metric) => metric.key === metricKey) || {};
+}
+
 function renderIcon(name) {
   const paths = {
     arrowLeft: '<path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path>',
@@ -1393,10 +1450,11 @@ function renderModelIcon(model) {
   const src = typeof icon.src === "string" && !/^https?:\/\//i.test(icon.src)
     ? icon.src
     : "";
+  const colorStyle = icon.color ? ` style="--provider-color: ${escapeHtml(icon.color)}"` : "";
   const image = src
     ? `<img src="${escapeHtml(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" style="opacity:0" onload="this.style.opacity=1;this.nextElementSibling.hidden=true" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />`
     : "";
-  return `<span class="provider-icon" role="img" aria-label="${escapeHtml(title)}">${image}<span class="icon-fallback">${escapeHtml(label)}</span></span>`;
+  return `<span class="provider-icon" role="img" aria-label="${escapeHtml(title)}"${colorStyle}>${image}<span class="icon-fallback">${escapeHtml(label)}</span></span>`;
 }
 
 function renderSourcePill(model) {
@@ -1470,7 +1528,7 @@ function sameModelIdentity(a, b) {
 }
 
 function modelHref(model) {
-  return `#model/${encodeURIComponent(modelRouteId(model))}`;
+  return `model.html?id=${encodeURIComponent(modelRouteId(model))}`;
 }
 
 function modelRouteId(model) {
@@ -1488,11 +1546,26 @@ function getInitialLanguage() {
 }
 
 function getInitialRoute() {
+  const pageHint = document.body?.dataset.page || "";
+  const params = new URLSearchParams(location.search);
+  const filename = location.pathname.split("/").pop() || "index.html";
   const hash = location.hash.replace(/^#/, "");
   if (hash.startsWith("model/")) {
     return { page: "model", modelId: decodeRoutePart(hash.slice("model/".length)) };
   }
+  if (pageHint === "model" || filename === "model.html") {
+    return { page: "model", modelId: params.get("id") || null };
+  }
+  if (pageHint === "ranking" || filename === "full-rank.html") {
+    return { page: "ranking", modelId: null };
+  }
   return { page: hash === "ranking" ? "ranking" : "home", modelId: null };
+}
+
+function pageHref(page) {
+  if (page === "ranking") return "full-rank.html";
+  if (page === "model") return "model.html";
+  return "index.html";
 }
 
 function decodeRoutePart(value) {
