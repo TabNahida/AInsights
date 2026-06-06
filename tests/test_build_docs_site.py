@@ -67,7 +67,7 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["label"], "AInsights Index")
         self.assertGreater(payload["models"][0]["variantPriority"], payload["models"][1]["variantPriority"])
 
-    def test_build_site_payload_adds_model_icons_and_source_types(self):
+    def test_build_site_payload_adds_aa_logo_icons_and_source_types(self):
         payload = build_site_payload(
             [
                 {
@@ -102,10 +102,12 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(payload["models"][0]["openSourceType"], "open")
         self.assertEqual(payload["models"][1]["openSourceType"], "closed")
         self.assertEqual(payload["models"][2]["openSourceType"], "unknown")
-        self.assertEqual(payload["models"][0]["modelIcon"]["label"], "OAI")
+        self.assertEqual(payload["models"][0]["modelIcon"]["src"], "https://artificialanalysis.ai/img/logos/openai_small.svg")
         self.assertEqual(payload["models"][0]["modelIcon"]["title"], "OpenAI")
+        self.assertEqual(payload["models"][0]["modelIcon"]["fallbackLabel"], "OAI")
+        self.assertEqual(payload["models"][1]["modelIcon"]["src"], "https://artificialanalysis.ai/img/logos/lab-b_small.svg")
         self.assertEqual(payload["models"][1]["modelIcon"]["label"], "LB")
-        self.assertIn(payload["models"][1]["modelIcon"]["tone"], {"tone-1", "tone-2", "tone-3", "tone-4", "tone-5", "tone-6"})
+        self.assertEqual(payload["models"][1]["modelIcon"]["fallbackLabel"], "LB")
 
     def test_build_docs_site_runs_when_invoked_by_path(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -187,23 +189,23 @@ class BuildDocsSiteTests(unittest.TestCase):
 
         score = score_model_for_preset(model, preset, payload["metrics"])
 
-        self.assertAlmostEqual(preset["weights"]["GDPval-AA"], 12.5)
-        self.assertAlmostEqual(preset["weights"]["τ²-Bench Telecom"], 12.5)
-        self.assertAlmostEqual(preset["weights"]["Terminal-Bench Hard"], 12.5)
-        self.assertAlmostEqual(preset["weights"]["SciCode"], 12.5)
-        self.assertAlmostEqual(preset["weights"]["AA-LCR"], 25 / 3)
-        self.assertAlmostEqual(preset["weights"]["AA-Omniscience Accuracy"], 25 / 3)
-        self.assertAlmostEqual(preset["weights"]["IFBench"], 25 / 3)
-        self.assertAlmostEqual(preset["weights"]["Humanity's Last Exam"], 25 / 3)
-        self.assertAlmostEqual(preset["weights"]["GPQA Diamond"], 25 / 3)
-        self.assertAlmostEqual(preset["weights"]["CritPt"], 25 / 3)
+        self.assertAlmostEqual(preset["weights"]["GDPval-AA"], 100 / 6)
+        self.assertAlmostEqual(preset["weights"]["τ²-Bench Telecom"], 25 / 3)
+        self.assertAlmostEqual(preset["weights"]["Terminal-Bench Hard"], 100 / 6)
+        self.assertAlmostEqual(preset["weights"]["SciCode"], 25 / 3)
+        self.assertAlmostEqual(preset["weights"]["AA-LCR"], 6.25)
+        self.assertAlmostEqual(preset["weights"]["AA-Omniscience Accuracy"], 12.5)
+        self.assertAlmostEqual(preset["weights"]["IFBench"], 6.25)
+        self.assertAlmostEqual(preset["weights"]["Humanity's Last Exam"], 12.5)
+        self.assertAlmostEqual(preset["weights"]["GPQA Diamond"], 6.25)
+        self.assertAlmostEqual(preset["weights"]["CritPt"], 6.25)
         self.assertEqual(preset["weights"].get("AIME 2025", 0), 0)
         self.assertEqual(preset["weights"].get("LiveCodeBench", 0), 0)
         self.assertEqual(preset["weights"].get("MMMU-Pro", 0), 0)
         self.assertEqual(preset["weights"].get("APEX-Agents-AA", 0), 0)
         self.assertEqual(preset["weights"].get("ITBench-AA", 0), 0)
         self.assertEqual(preset["weights"].get("AA-Omniscience Non-Hallucination Rate", 0), 0)
-        self.assertAlmostEqual(score["score"], (100 * 12.5 + 80 * (25 / 3)) / 100)
+        self.assertAlmostEqual(score["score"], (100 * (100 / 6) + 80 * 12.5) / 100)
         self.assertEqual(score["coverage"], 10)
 
     def test_default_score_counts_missing_suite_metrics_in_denominator(self):
@@ -223,7 +225,7 @@ class BuildDocsSiteTests(unittest.TestCase):
 
         score = score_model_for_preset(model, preset, payload["metrics"])
 
-        self.assertAlmostEqual(score["score"], 84 * (25 / 3) / 100)
+        self.assertAlmostEqual(score["score"], 84 * 6.25 / 100)
         self.assertEqual(score["coverage"], 1)
 
     def test_custom_score_counts_missing_metrics_in_denominator(self):
@@ -243,7 +245,7 @@ class BuildDocsSiteTests(unittest.TestCase):
 
         score = score_model_for_preset(model, preset, payload["metrics"])
 
-        self.assertAlmostEqual(score["score"], 84 * (25 / 3) / 100)
+        self.assertAlmostEqual(score["score"], 84 * 6.25 / 100)
         self.assertEqual(score["coverage"], 1)
 
 

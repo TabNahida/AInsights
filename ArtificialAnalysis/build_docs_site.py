@@ -32,16 +32,16 @@ AA_PRESET_COLUMNS = {
 }
 
 AA_SUITE_WEIGHT_BY_METRIC = {
-    "GDPval-AA": 12.5,
-    "τ²-Bench Telecom": 12.5,
-    "Terminal-Bench Hard": 12.5,
-    "SciCode": 12.5,
-    "AA-LCR": 25 / 3,
-    "AA-Omniscience Accuracy": 25 / 3,
-    "IFBench": 25 / 3,
-    "Humanity's Last Exam": 25 / 3,
-    "GPQA Diamond": 25 / 3,
-    "CritPt": 25 / 3,
+    "GDPval-AA": 100 / 6,
+    "τ²-Bench Telecom": 25 / 3,
+    "Terminal-Bench Hard": 100 / 6,
+    "SciCode": 25 / 3,
+    "AA-LCR": 6.25,
+    "AA-Omniscience Accuracy": 12.5,
+    "IFBench": 6.25,
+    "Humanity's Last Exam": 12.5,
+    "GPQA Diamond": 6.25,
+    "CritPt": 6.25,
 }
 DEFAULT_CORRECTED_WEIGHTS = {
     spec.column: AA_SUITE_WEIGHT_BY_METRIC.get(spec.column, 0)
@@ -78,7 +78,28 @@ PROVIDER_ICON_LABELS = {
     "xAI": "xAI",
     "Z AI": "ZAI",
 }
-ICON_TONES = ("tone-1", "tone-2", "tone-3", "tone-4", "tone-5", "tone-6")
+PROVIDER_LOGO_SLUGS = {
+    "AI21 Labs": "ai21",
+    "Alibaba": "alibaba",
+    "Anthropic": "anthropic",
+    "Baidu": "baidu",
+    "ByteDance Seed": "bytedance-seed",
+    "Cohere": "cohere",
+    "DeepSeek": "deepseek",
+    "Google": "google",
+    "IBM": "ibm",
+    "Meta": "meta",
+    "Microsoft": "microsoft",
+    "Mistral": "mistral",
+    "Moonshot AI": "moonshot",
+    "NVIDIA": "nvidia",
+    "OpenAI": "openai",
+    "Perplexity": "perplexity",
+    "StepFun": "stepfun",
+    "xAI": "xai",
+    "Z AI": "z-ai",
+}
+AA_LOGO_BASE_URL = "https://artificialanalysis.ai/img/logos"
 
 STRENGTH_SUFFIX_RE = re.compile(
     r"\s*\((?:x?high|medium|low|max|min|minimal|default|fast|thinking|non[- ]reasoning|reasoning)\)\s*$",
@@ -111,8 +132,8 @@ def build_site_payload(rows: Iterable[dict[str, Any]]) -> dict[str, Any]:
             "defaultCorrectionReference": ARTICLE_URL,
             "defaultCorrectionNote": (
                 "AInsights Index follows the Artificial Analysis Intelligence Index evaluation suite "
-                "weights: four 25% categories split across their member evaluations. The AA-Omniscience "
-                "correction uses Accuracy only, assigning zero weight to the non-hallucination component."
+                "weights. The AA-Omniscience correction assigns the full 12.5% component weight to "
+                "Accuracy and zero weight to the non-hallucination component."
             ),
         },
         "defaultPreset": "zhihu-adjusted",
@@ -285,9 +306,18 @@ def model_icon(creator: str, model: str = "") -> dict[str, str]:
     label = PROVIDER_ICON_LABELS.get(title) or _initials(title)
     return {
         "label": label,
+        "fallbackLabel": label,
         "title": title,
-        "tone": _icon_tone(title),
+        "src": f"{AA_LOGO_BASE_URL}/{provider_logo_slug(title)}_small.svg",
     }
+
+
+def provider_logo_slug(creator: str) -> str:
+    return PROVIDER_LOGO_SLUGS.get(creator.strip()) or re.sub(
+        r"-+",
+        "-",
+        re.sub(r"[^a-z0-9]+", "-", creator.strip().lower()),
+    ).strip("-") or "unknown"
 
 
 def _initials(value: str) -> str:
@@ -297,10 +327,6 @@ def _initials(value: str) -> str:
     if len(tokens) == 1:
         return tokens[0][:3].upper()
     return "".join(token[0].upper() for token in tokens[:3])
-
-
-def _icon_tone(value: str) -> str:
-    return ICON_TONES[sum(ord(char) for char in value) % len(ICON_TONES)]
 
 
 def _source_type_counts(models: list[dict[str, Any]]) -> dict[str, int]:
@@ -316,7 +342,7 @@ def _presets() -> dict[str, dict[str, Any]]:
         "zhihu-adjusted": {
             "label": "AInsights Index",
             "kind": "weighted-metrics",
-            "description": "按 AA Intelligence Index evaluation suite 的四类 25% 权重计算；AA-Omniscience 按修正规则只计 Accuracy，非幻觉率权重为 0。",
+            "description": "按 AA Intelligence Index evaluation suite 原始占比计算；AA-Omniscience 修正为 12.5% 全部计入 Accuracy，非幻觉率权重为 0。",
             "ignoreMissing": False,
             "weights": DEFAULT_CORRECTED_WEIGHTS,
         },
@@ -341,7 +367,7 @@ def _presets() -> dict[str, dict[str, Any]]:
         "custom": {
             "label": "自定义占比",
             "kind": "weighted-metrics",
-            "description": "按用户设置的评测权重实时计算，缺失项按 0 计入分母。",
+            "description": "默认使用 AInsights Index 配置；可按用户设置的评测权重实时计算，缺失项按 0 计入分母。",
             "ignoreMissing": False,
             "weights": DEFAULT_CORRECTED_WEIGHTS,
         },

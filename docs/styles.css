@@ -10,12 +10,6 @@
   --accent-3: #315c96;
   --danger: #b42318;
   --shadow: 0 12px 30px rgb(0 0 0 / 0.08);
-  --tone-1: #0f766e;
-  --tone-2: #315c96;
-  --tone-3: #93370d;
-  --tone-4: #7f1d1d;
-  --tone-5: #4d7c0f;
-  --tone-6: #5b21b6;
 }
 
 * {
@@ -267,7 +261,7 @@ main {
 
 table {
   width: 100%;
-  min-width: 860px;
+  min-width: 680px;
   border-collapse: collapse;
 }
 
@@ -313,39 +307,30 @@ th {
   place-items: center;
   width: 32px;
   height: 32px;
-  border: 1px solid rgb(255 255 255 / 0.68);
+  border: 1px solid var(--line);
   border-radius: 8px;
-  color: #fff;
-  background: var(--tone-1);
+  color: var(--ink);
+  background: #fff;
   font-size: 10px;
   font-weight: 800;
   line-height: 1;
   text-transform: uppercase;
-  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.1);
+  overflow: hidden;
 }
 
-.tone-1 {
-  background: var(--tone-1);
+.provider-icon img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
 }
 
-.tone-2 {
-  background: var(--tone-2);
-}
-
-.tone-3 {
-  background: var(--tone-3);
-}
-
-.tone-4 {
-  background: var(--tone-4);
-}
-
-.tone-5 {
-  background: var(--tone-5);
-}
-
-.tone-6 {
-  background: var(--tone-6);
+.icon-fallback {
+  display: inline-grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  background: #f3f4f6;
 }
 
 .model-meta {

@@ -30,6 +30,7 @@ const copy = {
     headers: {
       model: "模型",
       score: "综合分",
+      source: "来源",
       coverage: "覆盖",
     },
     languages: {
@@ -55,7 +56,7 @@ const copy = {
     presets: {
       "zhihu-adjusted": {
         label: "AInsights Index",
-        description: "按 AA Intelligence Index evaluation suite 的四类 25% 权重计算；AA-Omniscience 按修正规则只计 Accuracy，非幻觉率权重为 0。",
+        description: "按 AA Intelligence Index evaluation suite 原始占比计算；AA-Omniscience 修正为 12.5% 全部计入 Accuracy，非幻觉率权重为 0。",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -71,7 +72,7 @@ const copy = {
       },
       custom: {
         label: "自定义占比",
-        description: "按用户设置的评测权重实时计算，缺失项按 0 计入分母。",
+        description: "默认使用 AInsights Index 配置；可按用户设置的评测权重实时计算，缺失项按 0 计入分母。",
       },
     },
   },
@@ -103,6 +104,7 @@ const copy = {
     headers: {
       model: "Model",
       score: "Score",
+      source: "Source",
       coverage: "Coverage",
     },
     languages: {
@@ -128,7 +130,7 @@ const copy = {
     presets: {
       "zhihu-adjusted": {
         label: "AInsights Index",
-        description: "Uses the AA Intelligence Index evaluation suite at four 25% category weights; AA-Omniscience counts Accuracy only and assigns zero weight to non-hallucination rate.",
+        description: "Uses the AA Intelligence Index evaluation suite weights; AA-Omniscience is corrected by assigning its full 12.5% weight to Accuracy and zero to non-hallucination rate.",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -144,7 +146,7 @@ const copy = {
       },
       custom: {
         label: "Custom weights",
-        description: "Recalculates live from user-selected benchmark weights, with missing values counted as zero in the denominator.",
+        description: "Defaults to the AInsights Index configuration and recalculates live from user-selected benchmark weights, with missing values counted as zero in the denominator.",
       },
     },
   },
@@ -183,6 +185,7 @@ const els = {
   resetWeightsButton: document.querySelector("#resetWeightsButton"),
   modelHeader: document.querySelector("#modelHeader"),
   scoreHeader: document.querySelector("#scoreHeader"),
+  sourceHeader: document.querySelector("#sourceHeader"),
   coverageHeader: document.querySelector("#coverageHeader"),
   siteFooter: document.querySelector("#siteFooter"),
   metricTemplate: document.querySelector("#metricTemplate"),
@@ -244,6 +247,7 @@ function renderStaticControls() {
   els.resetWeightsButton.textContent = tr("reset");
   els.modelHeader.textContent = tr("headers.model");
   els.scoreHeader.textContent = tr("headers.score");
+  els.sourceHeader.textContent = tr("headers.source");
   els.coverageHeader.textContent = tr("headers.coverage");
   els.languageButtons.setAttribute("aria-label", tr("languageLabel"));
   els.siteFooter.innerHTML = `${escapeHtml(tr("footerPrefix"))}<a href="${escapeHtml(state.data.source.url)}" target="_blank" rel="noreferrer">Artificial Analysis</a>${escapeHtml(tr("footerSuffix"))}`;
@@ -473,10 +477,10 @@ function renderWeights() {
     const output = fragment.querySelector("output");
     labelText.textContent = metric.label;
     input.value = state.customWeights[metric.key] ?? metric.defaultWeight;
-    output.value = input.value;
+    output.value = formatWeight(input.value);
     input.addEventListener("input", (event) => {
       state.customWeights[metric.key] = Number(event.target.value);
-      output.value = event.target.value;
+      output.value = formatWeight(event.target.value);
       renderResults(state.data.presets.custom);
     });
     els.weightsGrid.append(fragment);
@@ -524,7 +528,7 @@ function renderHistogramRow(model) {
 
 function renderTable(models) {
   if (models.length === 0) {
-    els.rankingBody.innerHTML = `<tr><td class="empty" colspan="7">${escapeHtml(tr("empty"))}</td></tr>`;
+    els.rankingBody.innerHTML = `<tr><td class="empty" colspan="5">${escapeHtml(tr("empty"))}</td></tr>`;
     return;
   }
   els.rankingBody.innerHTML = models.map(renderRow).join("");
@@ -545,7 +549,6 @@ function renderRow(model) {
           <div class="model-meta">
             <span>${escapeHtml(model.creator || tr("unknownCreator"))}</span>
             ${reason}
-            ${renderSourcePill(model)}
           </div>
         </div>
       </td>
@@ -553,9 +556,7 @@ function renderRow(model) {
         <div class="score-value"><span>${formatNumber(model.score)}</span><span class="muted">${escapeHtml(model.scoreMeta || "")}</span></div>
         <div class="score-bar" style="--value: ${scoreWidth}%"><span></span></div>
       </td>
-      <td>${formatNumber(model.aa["aa-intelligence"])}</td>
-      <td>${formatNumber(model.aa["aa-coding"])}</td>
-      <td>${formatNumber(model.aa["aa-agentic"])}</td>
+      <td>${renderSourcePill(model)}</td>
       <td>${escapeHtml(model.coverageLabel || model.coverage)}</td>
     </tr>
   `;
@@ -582,10 +583,15 @@ function renderTextRanking(models) {
 
 function renderModelIcon(model) {
   const icon = model.modelIcon || {};
-  const label = icon.label || initials(model.creator || model.model);
+  const label = icon.fallbackLabel || icon.label || initials(model.creator || model.model);
   const title = icon.title || model.creator || model.model;
-  const tone = /^tone-[1-6]$/.test(icon.tone || "") ? icon.tone : "tone-1";
-  return `<span class="provider-icon ${escapeHtml(tone)}" role="img" aria-label="${escapeHtml(title)}">${escapeHtml(label)}</span>`;
+  const src = typeof icon.src === "string" && icon.src.startsWith("https://artificialanalysis.ai/")
+    ? icon.src
+    : "";
+  const image = src
+    ? `<img src="${escapeHtml(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />`
+    : "";
+  return `<span class="provider-icon" role="img" aria-label="${escapeHtml(title)}">${image}<span class="icon-fallback" ${src ? "hidden" : ""}>${escapeHtml(label)}</span></span>`;
 }
 
 function renderSourcePill(model) {
@@ -596,7 +602,7 @@ function renderSourcePill(model) {
 
 function renderLoadError(error) {
   const message = tr("loadFailed", { message: error.message });
-  els.rankingBody.innerHTML = `<tr><td class="empty" colspan="7">${escapeHtml(message)}</td></tr>`;
+  els.rankingBody.innerHTML = `<tr><td class="empty" colspan="5">${escapeHtml(message)}</td></tr>`;
   els.histogramList.innerHTML = `<div class="empty">${escapeHtml(message)}</div>`;
   els.textRanking.innerHTML = `<div class="empty">${escapeHtml(message)}</div>`;
 }
@@ -660,6 +666,12 @@ function initials(value) {
 
 function formatNumber(value) {
   return Number.isFinite(value) ? value.toFixed(1) : "—";
+}
+
+function formatWeight(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "0";
+  return number.toFixed(2).replace(/\.?0+$/, "");
 }
 
 function formatDateTime(value) {

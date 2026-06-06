@@ -21,6 +21,16 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn('id="histogramList"', html)
         self.assertIn('id="textRanking"', html)
 
+    def test_table_omits_raw_aa_columns_and_custom_weights_are_fine_grained(self):
+        html = (Path(__file__).resolve().parents[1] / "docs" / "index.html").read_text(encoding="utf-8")
+
+        self.assertIn('id="sourceHeader"', html)
+        self.assertNotIn("<th>AA Intelligence</th>", html)
+        self.assertNotIn("<th>AA Coding</th>", html)
+        self.assertNotIn("<th>AA Agentic</th>", html)
+        self.assertIn('max="20"', html)
+        self.assertIn('step="0.01"', html)
+
 
 if __name__ == "__main__":
     unittest.main()
