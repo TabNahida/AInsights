@@ -290,6 +290,32 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertAlmostEqual(score["score"], (100 * (100 / 6) + 80 * 12.5) / 100)
         self.assertEqual(score["coverage"], 10)
 
+    def test_aa_presets_include_official_component_weights(self):
+        payload = build_site_payload(
+            [
+                {
+                    "model_key": "AA Preset Model",
+                    "model": "AA Preset Model",
+                    "is_reasoning": "false",
+                    "slug": "aa-preset-model",
+                    "AA Intelligence Index": "50",
+                }
+            ]
+        )
+
+        intelligence = payload["presets"]["aa-intelligence"]["weights"]
+        coding = payload["presets"]["aa-coding"]["weights"]
+        agentic = payload["presets"]["aa-agentic"]["weights"]
+
+        self.assertAlmostEqual(intelligence["GDPval-AA"], 100 / 6)
+        self.assertAlmostEqual(intelligence["τ²-Bench Telecom"], 25 / 3)
+        self.assertAlmostEqual(intelligence["Terminal-Bench Hard"], 100 / 6)
+        self.assertAlmostEqual(intelligence["SciCode"], 25 / 3)
+        self.assertAlmostEqual(intelligence["AA-Omniscience Accuracy"], 6.25)
+        self.assertAlmostEqual(intelligence["AA-Omniscience Non-Hallucination Rate"], 6.25)
+        self.assertEqual(coding, {"Terminal-Bench Hard": 50, "SciCode": 50})
+        self.assertEqual(agentic, {"GDPval-AA": 50, "τ²-Bench Telecom": 50})
+
     def test_default_score_counts_missing_suite_metrics_in_denominator(self):
         payload = build_site_payload(
             [

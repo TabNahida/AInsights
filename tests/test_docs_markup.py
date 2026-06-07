@@ -73,9 +73,20 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("metricGroupCoverageCount", app_js)
         self.assertIn("metric-weight-label", app_js)
         self.assertIn("customMissingMode", app_js)
-        self.assertIn("missingPenaltyMax", app_js)
+        self.assertIn("customPenaltyMax", app_js)
+        self.assertIn("customMinCoveragePct", app_js)
+        self.assertIn('max="100" step="0.5"', app_js)
+        self.assertIn("customMetricGroupsCache", app_js)
+        self.assertIn("applyMissingModePreset", app_js)
+        self.assertIn("customWeightsForPreset", app_js)
         self.assertIn("penalty", app_js)
+        self.assertIn("minCoverage", app_js)
         self.assertIn("missing-mode-controls", css)
+        self.assertIn("weight-preset-button", css)
+        self.assertNotIn("customMissingAsZero", app_js)
+        self.assertNotIn("checkbox-setting", css)
+        self.assertNotIn("customMissingBase", app_js)
+        self.assertNotIn("missingPenaltyMax", app_js)
         self.assertIn("scatter-leader", app_js)
         self.assertIn("externalBenchmarkRows", app_js)
         self.assertIn("model.html?id=", app_js)
@@ -117,6 +128,11 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("benchmarkRankingRows", app_js)
         self.assertIn('filename === "benchmark.html"', app_utils)
         self.assertIn(".benchmark-ranking-row", css)
+
+    def test_number_formatting_keeps_integer_zeroes(self):
+        app_utils = (Path(__file__).resolve().parents[1] / "docs" / "app-utils.js").read_text(encoding="utf-8")
+
+        self.assertIn('return text.includes(".") ? text.replace(/\\.?0+$/, "") : text;', app_utils)
 
     def test_model_icons_use_local_assets(self):
         data = (Path(__file__).resolve().parents[1] / "docs" / "data" / "models.json").read_text(encoding="utf-8")

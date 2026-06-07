@@ -1,6 +1,6 @@
 window.AINSIGHTS_MODELS_DATA = {
   "version": 1,
-  "generatedAt": "2026-06-07T14:36:21+00:00",
+  "generatedAt": "2026-06-07T17:19:05+00:00",
   "source": {
     "label": "Artificial Analysis Intelligence Evaluations",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -678,24 +678,45 @@ window.AINSIGHTS_MODELS_DATA = {
       "label": "AA Intelligence",
       "kind": "aa-column",
       "column": "aa-intelligence",
-      "description": "Artificial Analysis 官方 Intelligence Index。"
+      "description": "Artificial Analysis 官方 Intelligence Index。",
+      "weights": {
+        "GDPval-AA": 16.666666666666668,
+        "τ²-Bench Telecom": 8.333333333333334,
+        "Terminal-Bench Hard": 16.666666666666668,
+        "SciCode": 8.333333333333334,
+        "AA-LCR": 6.25,
+        "AA-Omniscience Accuracy": 6.25,
+        "AA-Omniscience Non-Hallucination Rate": 6.25,
+        "IFBench": 6.25,
+        "Humanity's Last Exam": 12.5,
+        "GPQA Diamond": 6.25,
+        "CritPt": 6.25
+      }
     },
     "aa-coding": {
       "label": "AA Coding",
       "kind": "aa-column",
       "column": "aa-coding",
-      "description": "Artificial Analysis 官方 Coding Index。"
+      "description": "Artificial Analysis 官方 Coding Index。",
+      "weights": {
+        "Terminal-Bench Hard": 50,
+        "SciCode": 50
+      }
     },
     "aa-agentic": {
       "label": "AA Agentic",
       "kind": "aa-column",
       "column": "aa-agentic",
-      "description": "Artificial Analysis 官方 Agentic Index。"
+      "description": "Artificial Analysis 官方 Agentic Index。",
+      "weights": {
+        "GDPval-AA": 50,
+        "τ²-Bench Telecom": 50
+      }
     },
     "custom": {
       "label": "自定义占比",
       "kind": "weighted-metrics",
-      "description": "默认使用 AInsights Index 配置；可按用户设置的评测权重实时计算，缺失项按 0 计入分母。",
+      "description": "默认使用 AInsights Index 配置；先按可用项求均分，再按用户设置的缺失扣分和覆盖率门槛实时计算。",
       "ignoreMissing": false,
       "weights": {
         "GDPval-AA": 16.666666666666668,

@@ -46,6 +46,27 @@ AA_SUITE_WEIGHT_BY_METRIC = {
     "GPQA Diamond": 6.25,
     "CritPt": 6.25,
 }
+AA_INTELLIGENCE_SUITE_WEIGHTS = {
+    "GDPval-AA": 100 / 6,
+    "τ²-Bench Telecom": 25 / 3,
+    "Terminal-Bench Hard": 100 / 6,
+    "SciCode": 25 / 3,
+    "AA-LCR": 6.25,
+    "AA-Omniscience Accuracy": 6.25,
+    "AA-Omniscience Non-Hallucination Rate": 6.25,
+    "IFBench": 6.25,
+    "Humanity's Last Exam": 12.5,
+    "GPQA Diamond": 6.25,
+    "CritPt": 6.25,
+}
+AA_CODING_SUITE_WEIGHTS = {
+    "Terminal-Bench Hard": 50,
+    "SciCode": 50,
+}
+AA_AGENTIC_SUITE_WEIGHTS = {
+    "GDPval-AA": 50,
+    "τ²-Bench Telecom": 50,
+}
 DEFAULT_CORRECTED_WEIGHTS = {
     spec.column: AA_SUITE_WEIGHT_BY_METRIC.get(spec.column, 0)
     for spec in SCORE_SPECS
@@ -620,23 +641,26 @@ def _presets() -> dict[str, dict[str, Any]]:
             "kind": "aa-column",
             "column": "aa-intelligence",
             "description": "Artificial Analysis 官方 Intelligence Index。",
+            "weights": AA_INTELLIGENCE_SUITE_WEIGHTS,
         },
         "aa-coding": {
             "label": "AA Coding",
             "kind": "aa-column",
             "column": "aa-coding",
             "description": "Artificial Analysis 官方 Coding Index。",
+            "weights": AA_CODING_SUITE_WEIGHTS,
         },
         "aa-agentic": {
             "label": "AA Agentic",
             "kind": "aa-column",
             "column": "aa-agentic",
             "description": "Artificial Analysis 官方 Agentic Index。",
+            "weights": AA_AGENTIC_SUITE_WEIGHTS,
         },
         "custom": {
             "label": "自定义占比",
             "kind": "weighted-metrics",
-            "description": "默认使用 AInsights Index 配置；可按用户设置的评测权重实时计算，缺失项按 0 计入分母。",
+            "description": "默认使用 AInsights Index 配置；先按可用项求均分，再按用户设置的缺失扣分和覆盖率门槛实时计算。",
             "ignoreMissing": False,
             "weights": DEFAULT_CORRECTED_WEIGHTS,
         },

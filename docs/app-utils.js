@@ -114,7 +114,8 @@ function formatAxisCost(value) {
 }
 
 function formatTrimmed(value, digits = 1) {
-  return Number(value).toFixed(digits).replace(/\.?0+$/, "");
+  const text = Number(value).toFixed(digits);
+  return text.includes(".") ? text.replace(/\.?0+$/, "") : text;
 }
 
 function formatWeight(value) {

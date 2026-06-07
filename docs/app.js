@@ -25,12 +25,22 @@ const copy = {
     metricWeightsSubtitle: "直接参与当前自定义排名的逐项权重，按已有模型数据量排序",
     metricCoverage: "{count} 个模型",
     metricGroupMeta: "{count} 个模型 · {metrics} 个数据项",
+    customWeightPresetTitle: "权重预设",
+    customWeightPresetSubtitle: "一键套用 AInsights Index 或 AA 三个方向，再继续微调下方测试项权重",
+    customWeightPresetMeta: "{count} 项",
     missingModeTitle: "缺失值处理",
-    missingModeSubtitle: "当选中的测试项在某些模型上没有分数时，选择排名算法如何处理",
+    missingModeSubtitle: "四个按钮是预设；下方滑块决定缺失项扣分强度和最低覆盖率",
+    missingPresetTitle: "处理预设",
+    penaltyLabel: "缺失扣分上限",
+    penaltyHint: "先按可用项求均分，再按缺失权重占比线性扣分；0 表示不额外扣分，100 表示缺失项扣满。",
+    minCoverageLabel: "最低覆盖率",
+    minCoverageHint: "低于该覆盖率的模型不进入排名；100% 等同全覆盖",
+    currentCustomStrategy: "当前策略",
+    manualCustomStrategy: "手动配置",
     missingModes: {
-      zero: "缺失记 0",
       available: "只按可用项",
-      penalty: "可用项+扣分",
+      penalty: "轻度扣分",
+      zero: "最大扣分",
       complete: "要求全覆盖",
     },
     sourceWeightStatuses: {
@@ -165,7 +175,7 @@ const copy = {
       },
       custom: {
         label: "自定义占比",
-        description: "默认使用 AInsights Index 配置；可按用户设置的评测权重实时计算，缺失项按 0 计入分母。",
+        description: "默认使用 AInsights Index 配置；先按可用项求均分，再按用户设置的缺失扣分和覆盖率门槛实时计算。",
       },
     },
   },
@@ -192,12 +202,22 @@ const copy = {
     metricWeightsSubtitle: "Fine-grained weights used directly by the custom ranking, sorted by model coverage",
     metricCoverage: "{count} models",
     metricGroupMeta: "{count} models · {metrics} data fields",
+    customWeightPresetTitle: "Weight presets",
+    customWeightPresetSubtitle: "Start from AInsights Index or the three AA directions, then tune individual benchmark weights below",
+    customWeightPresetMeta: "{count} fields",
     missingModeTitle: "Missing values",
-    missingModeSubtitle: "Choose how the custom ranking handles models without scores for selected benchmarks",
+    missingModeSubtitle: "The buttons are presets; use the sliders below to tune missing-value penalty strength and coverage",
+    missingPresetTitle: "Treatment presets",
+    penaltyLabel: "Missing penalty cap",
+    penaltyHint: "Average available scores first, then subtract a linear penalty by missing weight share; 0 means no extra penalty and 100 means full missing-field penalty.",
+    minCoverageLabel: "Minimum coverage",
+    minCoverageHint: "Models below this coverage are excluded; 100% equals full coverage",
+    currentCustomStrategy: "Current strategy",
+    manualCustomStrategy: "Manual",
     missingModes: {
-      zero: "Missing = 0",
       available: "Available only",
-      penalty: "Available + penalty",
+      penalty: "Light penalty",
+      zero: "Full penalty",
       complete: "Full coverage",
     },
     sourceWeightStatuses: {
@@ -332,7 +352,7 @@ const copy = {
       },
       custom: {
         label: "Custom weights",
-        description: "Defaults to the AInsights Index configuration and recalculates live from user-selected benchmark weights, with missing values counted as zero in the denominator.",
+        description: "Defaults to the AInsights Index configuration and recalculates live from user-selected benchmark weights, missing penalties, and coverage gates.",
       },
     },
   },
@@ -346,7 +366,11 @@ const state = {
   dedupe: true,
   query: "",
   customWeights: {},
-  customMissingMode: "zero",
+  customWeightPresetId: "zhihu-adjusted",
+  customMissingMode: "available",
+  customPenaltyMax: 0,
+  customMinCoveragePct: 0,
+  customMetricGroupsCache: null,
   language: getInitialLanguage(),
   page: initialRoute.page,
   modelId: initialRoute.modelId,
@@ -420,6 +444,14 @@ const els = {
 };
 
 const presetOrder = ["zhihu-adjusted", "aa-intelligence", "aa-coding", "aa-agentic", "custom"];
+const customWeightPresetOrder = ["zhihu-adjusted", "aa-intelligence", "aa-coding", "aa-agentic"];
+const missingModePresetOrder = ["available", "penalty", "zero", "complete"];
+const missingModePresets = {
+  available: { penalty: 0, minCoverage: 0 },
+  penalty: { penalty: 10, minCoverage: 0 },
+  zero: { penalty: 100, minCoverage: 0 },
+  complete: { penalty: 0, minCoverage: 100 },
+};
 const pageOrder = ["home", "ranking", "benchmarks", "sources"];
 const viewOrder = ["histogram", "table", "text"];
 const sourceFilterOrder = ["all", "open", "closed", "unknown"];
@@ -448,7 +480,7 @@ async function init() {
     state.data = window.AINSIGHTS_MODELS_DATA || (await fetchJsonData());
     state.presetId = state.data.defaultPreset;
     state.dedupe = Boolean(state.data.defaultDedupe);
-    state.customWeights = defaultCustomWeights();
+    state.customWeights = customWeightsForPreset(state.customWeightPresetId);
     els.dedupeToggle.checked = state.dedupe;
     bindControlEvents();
     renderStaticControls();
@@ -475,8 +507,7 @@ function bindControlEvents() {
     render();
   });
   els.resetWeightsButton.addEventListener("click", () => {
-    state.customWeights = defaultCustomWeights();
-    state.customMissingMode = "zero";
+    resetCustomConfiguration();
     state.presetId = "custom";
     render();
   });
@@ -744,7 +775,6 @@ function scoreModel(model, preset, presetId = state.presetId) {
 }
 
 function scoreModelForCustomWeights(model) {
-  const missingPenaltyMax = 10;
   let weightedScore = 0;
   let denominator = 0;
   let availableWeight = 0;
@@ -764,32 +794,24 @@ function scoreModelForCustomWeights(model) {
       denominator += weight;
       availableWeight += weight;
       coverage += 1;
-    } else if (state.customMissingMode === "zero") {
-      denominator += weight;
+    } else {
       missingWeight += weight;
-    } else if (state.customMissingMode === "penalty") {
-      missingWeight += weight;
-    } else if (state.customMissingMode === "complete") {
-      return {
-        score: null,
-        coverage,
-        coverageLabel: `${coverage}/${selected}`,
-        availableWeight,
-        scoreMeta: `${formatNumber(availableWeight)}w`,
-      };
     }
   }
 
-  let score = denominator > 0 && selected > 0 ? weightedScore / denominator : null;
-  if (Number.isFinite(score) && state.customMissingMode === "penalty" && selectedWeight > 0) {
-    score = Math.max(0, score - (missingWeight / selectedWeight) * missingPenaltyMax);
+  const coverageRatio = selected > 0 ? (coverage / selected) * 100 : 0;
+  const minCoverage = clamp(Number(state.customMinCoveragePct || 0), 0, 100);
+  let score = denominator > 0 && selected > 0 && coverageRatio >= minCoverage ? weightedScore / denominator : null;
+  const penaltyMax = Math.max(0, Number(state.customPenaltyMax || 0));
+  if (Number.isFinite(score) && penaltyMax > 0 && selectedWeight > 0) {
+    score = Math.max(0, score - (missingWeight / selectedWeight) * penaltyMax);
   }
   return {
     score,
     coverage,
-    coverageLabel: `${coverage}/${selected}`,
+    coverageLabel: `${coverage}/${selected} · ${formatTrimmed(coverageRatio, 0)}%`,
     availableWeight,
-    scoreMeta: `${formatNumber(availableWeight)}w`,
+    scoreMeta: `${formatNumber(availableWeight)}w · ${formatTrimmed(coverageRatio, 0)}%`,
   };
 }
 
@@ -852,12 +874,66 @@ function renderSummary(filteredCount, visibleCount, scoredCount, preset) {
   `;
 }
 
-function defaultMetricWeights() {
-  return Object.fromEntries(state.data.metrics.map((metric) => [metric.key, Number(metric.defaultWeight || 0)]));
+function resetCustomConfiguration() {
+  state.customWeightPresetId = "zhihu-adjusted";
+  state.customWeights = customWeightsForPreset(state.customWeightPresetId);
+  applyMissingModePreset("available");
 }
 
-function defaultCustomWeights() {
-  return Object.fromEntries(customMetricGroups().map((group) => [group.id, Number(group.defaultWeight || 0)]));
+function applyMissingModePreset(mode) {
+  const preset = missingModePresets[mode] || missingModePresets.zero;
+  state.customMissingMode = mode;
+  state.customPenaltyMax = preset.penalty;
+  state.customMinCoveragePct = preset.minCoverage;
+}
+
+function syncMissingModePreset() {
+  state.customMissingMode = matchingMissingModePreset() || "manual";
+}
+
+function matchingMissingModePreset() {
+  return missingModePresetOrder.find((mode) => {
+    const preset = missingModePresets[mode];
+    return Number(preset.penalty) === Number(state.customPenaltyMax)
+      && Number(preset.minCoverage) === Number(state.customMinCoveragePct);
+  });
+}
+
+function customWeightsForPreset(presetId) {
+  const weights = Object.fromEntries(customMetricGroups().map((group) => [group.id, 0]));
+  const preset = state.data.presets[presetId];
+  if (preset?.weights) {
+    for (const group of customMetricGroups()) {
+      weights[group.id] = Math.max(...group.metrics.map((metric) => Number(preset.weights[metric.key] || 0)), 0);
+    }
+    return weights;
+  }
+
+  const groups = customMetricGroups().filter((group) => customWeightPresetMatchesGroup(presetId, group));
+  const weight = groups.length > 0 ? 100 / groups.length : 0;
+  for (const group of groups) weights[group.id] = weight;
+  return weights;
+}
+
+function customWeightPresetMetricCount(presetId) {
+  return Object.values(customWeightsForPreset(presetId)).filter((weight) => weight > 0).length;
+}
+
+function customWeightPresetMatchesGroup(presetId, group) {
+  const haystack = group.metrics
+    .map((metric) => `${metric.key} ${metric.label} ${metric.category || ""}`)
+    .join(" ")
+    .toLowerCase();
+  if (presetId === "aa-intelligence") {
+    return group.metrics.some((metric) => !String(metric.key).startsWith("ext:"));
+  }
+  if (presetId === "aa-coding") {
+    return /\b(coding|code|swe|scicode|livecodebench|terminal|repository|software)\b/.test(haystack);
+  }
+  if (presetId === "aa-agentic") {
+    return /\b(agent|agentic|tool|computer|workflow|browse|search|gdpval|terminal|tau|apex|itbench|mcp|osworld|bfcl|finance)\b/.test(haystack);
+  }
+  return false;
 }
 
 function sourceMetricKeys(source) {
@@ -867,12 +943,19 @@ function sourceMetricKeys(source) {
 
 function renderWeights() {
   els.weightsGrid.innerHTML = `
+    <section class="weight-group custom-weight-preset-group">
+      <div class="weight-group-head">
+        <h3>${escapeHtml(tr("customWeightPresetTitle"))}</h3>
+        <p>${escapeHtml(tr("customWeightPresetSubtitle"))}</p>
+      </div>
+      <div class="custom-weight-preset-controls" data-custom-weight-presets></div>
+    </section>
     <section class="weight-group missing-mode-group">
       <div class="weight-group-head">
         <h3>${escapeHtml(tr("missingModeTitle"))}</h3>
         <p>${escapeHtml(tr("missingModeSubtitle"))}</p>
       </div>
-      <div class="missing-mode-controls segmented-control" data-missing-mode-controls></div>
+      <div class="missing-mode-controls" data-missing-mode-controls></div>
     </section>
     <section class="weight-group">
       <div class="weight-group-head">
@@ -882,6 +965,7 @@ function renderWeights() {
       <div class="metric-weight-controls" data-weight-controls="metrics"></div>
     </section>
   `;
+  renderCustomWeightPresetControls(els.weightsGrid.querySelector("[data-custom-weight-presets]"));
   renderMissingModeControls(els.weightsGrid.querySelector("[data-missing-mode-controls]"));
   const metricTarget = els.weightsGrid.querySelector('[data-weight-controls="metrics"]');
   const groups = customMetricGroups()
@@ -905,30 +989,118 @@ function renderWeights() {
     output.value = formatWeight(input.value);
     input.addEventListener("input", (event) => {
       state.customWeights[event.target.dataset.metricGroup] = Number(event.target.value);
+      state.customWeightPresetId = "custom";
+      updateCustomWeightPresetSelection();
       output.value = formatWeight(event.target.value);
+    });
+    input.addEventListener("change", () => {
       renderResults(state.data.presets.custom);
     });
     metricTarget.append(fragment);
   }
 }
 
-function renderMissingModeControls(target) {
-  const modes = ["zero", "available", "penalty", "complete"];
-  target.innerHTML = modes.map((mode) => `
-    <button type="button" data-missing-mode="${escapeHtml(mode)}" aria-pressed="${mode === state.customMissingMode}">
-      ${escapeHtml(tr(`missingModes.${mode}`))}
+function renderCustomWeightPresetControls(target) {
+  target.innerHTML = customWeightPresetOrder.map((id) => `
+    <button class="weight-preset-button" type="button" data-custom-weight-preset="${escapeHtml(id)}" aria-pressed="${id === state.customWeightPresetId}">
+      <strong>${escapeHtml(presetLabel(id))}</strong>
+      <em>${escapeHtml(tr("customWeightPresetMeta", { count: customWeightPresetMetricCount(id) }))}</em>
     </button>
   `).join("");
-  target.querySelectorAll("[data-missing-mode]").forEach((button) => {
+  target.querySelectorAll("[data-custom-weight-preset]").forEach((button) => {
     button.addEventListener("click", () => {
-      state.customMissingMode = button.dataset.missingMode;
+      state.customWeightPresetId = button.dataset.customWeightPreset;
+      state.customWeights = customWeightsForPreset(state.customWeightPresetId);
       renderWeights();
       renderResults(state.data.presets.custom);
     });
   });
 }
 
+function updateCustomWeightPresetSelection() {
+  document.querySelectorAll("[data-custom-weight-preset]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.customWeightPreset === state.customWeightPresetId));
+  });
+}
+
+function renderMissingModeControls(target) {
+  target.innerHTML = `
+    <div class="custom-config-grid">
+      <div class="custom-setting-block">
+        <span class="control-label">${escapeHtml(tr("missingPresetTitle"))}</span>
+        <div class="segmented-control" data-missing-preset>
+          ${missingModePresetOrder.map((mode) => `
+            <button type="button" data-missing-mode="${escapeHtml(mode)}" aria-pressed="${mode === state.customMissingMode}">
+              ${escapeHtml(tr(`missingModes.${mode}`))}
+            </button>
+          `).join("")}
+        </div>
+        <p class="custom-strategy-status">
+          ${escapeHtml(tr("currentCustomStrategy"))}: <strong data-custom-strategy-label>${escapeHtml(customMissingModeLabel())}</strong>
+        </p>
+      </div>
+      <label class="range-setting">
+        <span class="range-setting-head">
+          <span>${escapeHtml(tr("penaltyLabel"))}</span>
+          <output>${escapeHtml(formatWeight(state.customPenaltyMax))}</output>
+        </span>
+        <input type="range" min="0" max="100" step="0.5" value="${escapeHtml(state.customPenaltyMax)}" data-custom-penalty />
+        <em>${escapeHtml(tr("penaltyHint"))}</em>
+      </label>
+      <label class="range-setting">
+        <span class="range-setting-head">
+          <span>${escapeHtml(tr("minCoverageLabel"))}</span>
+          <output>${escapeHtml(formatTrimmed(state.customMinCoveragePct, 0))}%</output>
+        </span>
+        <input type="range" min="0" max="100" step="5" value="${escapeHtml(state.customMinCoveragePct)}" data-custom-min-coverage />
+        <em>${escapeHtml(tr("minCoverageHint"))}</em>
+      </label>
+    </div>
+  `;
+  target.querySelectorAll("[data-missing-mode]").forEach((button) => {
+    button.addEventListener("click", () => {
+      applyMissingModePreset(button.dataset.missingMode);
+      renderWeights();
+      renderResults(state.data.presets.custom);
+    });
+  });
+  const penaltyInput = target.querySelector("[data-custom-penalty]");
+  penaltyInput.addEventListener("input", (event) => {
+    state.customPenaltyMax = Number(event.target.value);
+    syncMissingModePreset();
+    event.target.closest(".range-setting").querySelector("output").textContent = formatWeight(state.customPenaltyMax);
+    updateMissingModeSelection(target);
+  });
+  penaltyInput.addEventListener("change", () => {
+    renderResults(state.data.presets.custom);
+  });
+  const coverageInput = target.querySelector("[data-custom-min-coverage]");
+  coverageInput.addEventListener("input", (event) => {
+    state.customMinCoveragePct = Number(event.target.value);
+    syncMissingModePreset();
+    event.target.closest(".range-setting").querySelector("output").textContent = `${formatTrimmed(state.customMinCoveragePct, 0)}%`;
+    updateMissingModeSelection(target);
+  });
+  coverageInput.addEventListener("change", () => {
+    renderResults(state.data.presets.custom);
+  });
+}
+
+function customMissingModeLabel() {
+  if (state.customMissingMode === "manual") return tr("manualCustomStrategy");
+  return tr(`missingModes.${state.customMissingMode}`);
+}
+
+function updateMissingModeSelection(target) {
+  target.querySelectorAll("[data-missing-mode]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.missingMode === state.customMissingMode));
+  });
+  const label = target.querySelector("[data-custom-strategy-label]");
+  if (label) label.textContent = customMissingModeLabel();
+}
+
 function customMetricGroups() {
+  if (state.customMetricGroupsCache) return state.customMetricGroupsCache;
   const groups = new Map();
   for (const metric of state.data.metrics || []) {
     const id = metricGroupId(metric);
@@ -944,10 +1116,11 @@ function customMetricGroups() {
     group.metrics.push(metric);
     group.defaultWeight = Math.max(group.defaultWeight, Number(metric.defaultWeight || 0));
   }
-  return [...groups.values()].map((group) => ({
+  state.customMetricGroupsCache = [...groups.values()].map((group) => ({
     ...group,
     coverage: metricGroupCoverageCount(group.metrics),
   }));
+  return state.customMetricGroupsCache;
 }
 
 function metricGroupId(metric) {
