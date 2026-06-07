@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-06T15:49:32+00:00",
+  "generatedAt": "2026-06-06T16:42:25+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
@@ -17,6 +17,70 @@
       "category": "Official model card",
       "collectionStatus": "reference",
       "note": "Official Google DeepMind model card with Gemini 3.1 Pro cross-model benchmark context."
+    },
+    {
+      "id": "qwen-qwen3-6-27b-card",
+      "label": "Qwen3.6-27B official model card",
+      "url": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "category": "Official model card",
+      "collectionStatus": "partial-refresh; parsed 4 of 56 seeded scores",
+      "note": "Qwen official Hugging Face card with Qwen3.6/Qwen3.5 benchmark table."
+    },
+    {
+      "id": "deepseek-v4-pro-card",
+      "label": "DeepSeek-V4-Pro official model card",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "category": "Official model card",
+      "collectionStatus": "refreshed",
+      "note": "DeepSeek official Hugging Face card with mode-by-mode V4 benchmark table."
+    },
+    {
+      "id": "kimi-k2-6-card",
+      "label": "Kimi K2.6 official model card",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+      "category": "Official model card",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "Moonshot AI Kimi K2.6 Hugging Face card and linked benchmark metadata."
+    },
+    {
+      "id": "kimi-k2-thinking-card",
+      "label": "Kimi K2 Thinking official model card",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2-Thinking",
+      "category": "Official model card",
+      "collectionStatus": "refreshed",
+      "note": "Moonshot AI Kimi K2 Thinking card with search, coding, and reasoning benchmarks."
+    },
+    {
+      "id": "kimi-k2-5-card",
+      "label": "Kimi K2.5 official model card",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2.5",
+      "category": "Official model card",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "Moonshot AI Kimi K2.5 Hugging Face card evaluation results."
+    },
+    {
+      "id": "kimi-k2-github",
+      "label": "Kimi K2 official GitHub report",
+      "url": "https://github.com/MoonshotAI/Kimi-K2",
+      "category": "Official technical report",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "Moonshot AI Kimi K2 GitHub README and technical report benchmark table."
+    },
+    {
+      "id": "zai-glm-5-1-card",
+      "label": "Z.ai GLM-5.1 official model card",
+      "url": "https://huggingface.co/zai-org/GLM-5.1",
+      "category": "Official model card",
+      "collectionStatus": "partial-refresh; parsed 26 of 38 seeded scores",
+      "note": "Z.ai GLM-5.1 Hugging Face card with GLM-5.1/GLM-5/GLM-4.7 benchmark table."
+    },
+    {
+      "id": "zai-glm-4-5-report",
+      "label": "Z.ai GLM-4.5 official report",
+      "url": "https://z.ai/blog/glm-4.5",
+      "category": "Official technical report",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "Z.ai GLM-4.5 official blog/report covering ARC benchmarks."
     }
   ],
   "benchmarks": [
@@ -35,6 +99,27 @@
       "icon": "TERM"
     },
     {
+      "id": "terminal-bench",
+      "label": "Terminal-Bench",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "TERM"
+    },
+    {
+      "id": "swe-bench-verified",
+      "label": "SWE-bench Verified",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "SWE-V"
+    },
+    {
+      "id": "swe-bench-multilingual",
+      "label": "SWE-bench Multilingual",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "SWE-M"
+    },
+    {
       "id": "expert-swe-internal",
       "label": "Expert-SWE (Internal)",
       "category": "Agentic coding",
@@ -46,6 +131,13 @@
       "label": "GDPval (wins or ties)",
       "category": "Professional work",
       "unit": "%",
+      "icon": "GDP"
+    },
+    {
+      "id": "gdpval-aa-elo",
+      "label": "GDPval-AA Elo",
+      "category": "Professional work",
+      "unit": "Elo",
       "icon": "GDP"
     },
     {
@@ -70,6 +162,27 @@
       "icon": "WEB"
     },
     {
+      "id": "browsecomp-context",
+      "label": "BrowseComp (Context Manage)",
+      "category": "Tool use",
+      "unit": "%",
+      "icon": "WEB+"
+    },
+    {
+      "id": "hle-tools",
+      "label": "HLE w/ tools",
+      "category": "Tool use",
+      "unit": "%",
+      "icon": "HLE+"
+    },
+    {
+      "id": "mcp-atlas",
+      "label": "MCP-Atlas Public",
+      "category": "Tool use",
+      "unit": "%",
+      "icon": "MCP"
+    },
+    {
       "id": "frontiermath-tier-1-3",
       "label": "FrontierMath Tier 1-3",
       "category": "Academic reasoning",
@@ -89,6 +202,111 @@
       "category": "Cybersecurity",
       "unit": "%",
       "icon": "CY"
+    },
+    {
+      "id": "mmlu-pro",
+      "label": "MMLU-Pro",
+      "category": "Academic reasoning",
+      "unit": "%",
+      "icon": "MMLU"
+    },
+    {
+      "id": "gpqa-diamond",
+      "label": "GPQA Diamond",
+      "category": "Academic reasoning",
+      "unit": "%",
+      "icon": "GPQA"
+    },
+    {
+      "id": "hle",
+      "label": "Humanity's Last Exam",
+      "category": "Academic reasoning",
+      "unit": "%",
+      "icon": "HLE"
+    },
+    {
+      "id": "livecodebench",
+      "label": "LiveCodeBench",
+      "category": "Coding",
+      "unit": "%",
+      "icon": "LCB"
+    },
+    {
+      "id": "scicode",
+      "label": "SciCode",
+      "category": "Coding",
+      "unit": "%",
+      "icon": "SCI"
+    },
+    {
+      "id": "aime-2024",
+      "label": "AIME 2024",
+      "category": "Math",
+      "unit": "%",
+      "icon": "A24"
+    },
+    {
+      "id": "aime-2025",
+      "label": "AIME 2025",
+      "category": "Math",
+      "unit": "%",
+      "icon": "A25"
+    },
+    {
+      "id": "aime-2026",
+      "label": "AIME 2026",
+      "category": "Math",
+      "unit": "%",
+      "icon": "A26"
+    },
+    {
+      "id": "hmmt-2026-feb",
+      "label": "HMMT Feb 2026",
+      "category": "Math",
+      "unit": "%",
+      "icon": "H26"
+    },
+    {
+      "id": "skillsbench",
+      "label": "SkillsBench Avg5",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "SKL"
+    },
+    {
+      "id": "qwenwebbench",
+      "label": "QwenWebBench",
+      "category": "Frontend coding",
+      "unit": "Elo",
+      "icon": "WEB"
+    },
+    {
+      "id": "claw-eval",
+      "label": "Claw-Eval Avg",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "CLAW"
+    },
+    {
+      "id": "nl2repo",
+      "label": "NL2Repo",
+      "category": "Repository generation",
+      "unit": "%",
+      "icon": "N2R"
+    },
+    {
+      "id": "tau-bench",
+      "label": "τ-Bench",
+      "category": "Agentic workflow",
+      "unit": "%",
+      "icon": "TAU"
+    },
+    {
+      "id": "bfcl-v3",
+      "label": "BFCL v3",
+      "category": "Tool use",
+      "unit": "%",
+      "icon": "BFCL"
     }
   ],
   "results": [
@@ -770,6 +988,3232 @@
       "sourceId": "openai-gpt-5-5",
       "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
       "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "Qwen3.5 27B",
+      "modelAliases": [
+        "Qwen3.5 27B",
+        "Qwen3.5-27B",
+        "qwen3-5-27b"
+      ],
+      "value": 75.0,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Qwen3.5 27B",
+      "modelAliases": [
+        "Qwen3.5 27B",
+        "Qwen3.5-27B",
+        "qwen3-5-27b"
+      ],
+      "value": 51.2,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "Qwen3.5 27B",
+      "modelAliases": [
+        "Qwen3.5 27B",
+        "Qwen3.5-27B",
+        "qwen3-5-27b"
+      ],
+      "value": 69.3,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "Qwen3.5 27B",
+      "modelAliases": [
+        "Qwen3.5 27B",
+        "Qwen3.5-27B",
+        "qwen3-5-27b"
+      ],
+      "value": -2.0,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "skillsbench",
+      "benchmarkLabel": "SkillsBench Avg5",
+      "model": "Qwen3.5 27B",
+      "modelAliases": [
+        "Qwen3.5 27B",
+        "Qwen3.5-27B",
+        "qwen3-5-27b"
+      ],
+      "value": 27.2,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "qwenwebbench",
+      "benchmarkLabel": "QwenWebBench",
+      "model": "Qwen3.5 27B",
+      "modelAliases": [
+        "Qwen3.5 27B",
+        "Qwen3.5-27B",
+        "qwen3-5-27b"
+      ],
+      "value": 1068,
+      "unit": "Elo",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "nl2repo",
+      "benchmarkLabel": "NL2Repo",
+      "model": "Qwen3.5 27B",
+      "modelAliases": [
+        "Qwen3.5 27B",
+        "Qwen3.5-27B",
+        "qwen3-5-27b"
+      ],
+      "value": 27.3,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "claw-eval",
+      "benchmarkLabel": "Claw-Eval Avg",
+      "model": "Qwen3.5 27B",
+      "modelAliases": [
+        "Qwen3.5 27B",
+        "Qwen3.5-27B",
+        "qwen3-5-27b"
+      ],
+      "value": 64.3,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "Qwen3.5 27B",
+      "modelAliases": [
+        "Qwen3.5 27B",
+        "Qwen3.5-27B",
+        "qwen3-5-27b"
+      ],
+      "value": 86.1,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Qwen3.5 27B",
+      "modelAliases": [
+        "Qwen3.5 27B",
+        "Qwen3.5-27B",
+        "qwen3-5-27b"
+      ],
+      "value": 85.5,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Qwen3.5 27B",
+      "modelAliases": [
+        "Qwen3.5 27B",
+        "Qwen3.5-27B",
+        "qwen3-5-27b"
+      ],
+      "value": 24.3,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "Qwen3.5 27B",
+      "modelAliases": [
+        "Qwen3.5 27B",
+        "Qwen3.5-27B",
+        "qwen3-5-27b"
+      ],
+      "value": 80.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "Qwen3.5 27B",
+      "modelAliases": [
+        "Qwen3.5 27B",
+        "Qwen3.5-27B",
+        "qwen3-5-27b"
+      ],
+      "value": 84.3,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "Qwen3.5 27B",
+      "modelAliases": [
+        "Qwen3.5 27B",
+        "Qwen3.5-27B",
+        "qwen3-5-27b"
+      ],
+      "value": 92.6,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "Qwen3.5 397B A17B",
+      "modelAliases": [
+        "Qwen3.5 397B A17B",
+        "Qwen3.5-397B-A17B",
+        "qwen3-5-397b-a17b"
+      ],
+      "value": 76.2,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Qwen3.5 397B A17B",
+      "modelAliases": [
+        "Qwen3.5 397B A17B",
+        "Qwen3.5-397B-A17B",
+        "qwen3-5-397b-a17b"
+      ],
+      "value": 50.9,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "Qwen3.5 397B A17B",
+      "modelAliases": [
+        "Qwen3.5 397B A17B",
+        "Qwen3.5-397B-A17B",
+        "qwen3-5-397b-a17b"
+      ],
+      "value": 69.3,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "Qwen3.5 397B A17B",
+      "modelAliases": [
+        "Qwen3.5 397B A17B",
+        "Qwen3.5-397B-A17B",
+        "qwen3-5-397b-a17b"
+      ],
+      "value": 3.0,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "skillsbench",
+      "benchmarkLabel": "SkillsBench Avg5",
+      "model": "Qwen3.5 397B A17B",
+      "modelAliases": [
+        "Qwen3.5 397B A17B",
+        "Qwen3.5-397B-A17B",
+        "qwen3-5-397b-a17b"
+      ],
+      "value": 30.0,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "qwenwebbench",
+      "benchmarkLabel": "QwenWebBench",
+      "model": "Qwen3.5 397B A17B",
+      "modelAliases": [
+        "Qwen3.5 397B A17B",
+        "Qwen3.5-397B-A17B",
+        "qwen3-5-397b-a17b"
+      ],
+      "value": 1186,
+      "unit": "Elo",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "nl2repo",
+      "benchmarkLabel": "NL2Repo",
+      "model": "Qwen3.5 397B A17B",
+      "modelAliases": [
+        "Qwen3.5 397B A17B",
+        "Qwen3.5-397B-A17B",
+        "qwen3-5-397b-a17b"
+      ],
+      "value": 32.2,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "claw-eval",
+      "benchmarkLabel": "Claw-Eval Avg",
+      "model": "Qwen3.5 397B A17B",
+      "modelAliases": [
+        "Qwen3.5 397B A17B",
+        "Qwen3.5-397B-A17B",
+        "qwen3-5-397b-a17b"
+      ],
+      "value": 70.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "Qwen3.5 397B A17B",
+      "modelAliases": [
+        "Qwen3.5 397B A17B",
+        "Qwen3.5-397B-A17B",
+        "qwen3-5-397b-a17b"
+      ],
+      "value": 87.8,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Qwen3.5 397B A17B",
+      "modelAliases": [
+        "Qwen3.5 397B A17B",
+        "Qwen3.5-397B-A17B",
+        "qwen3-5-397b-a17b"
+      ],
+      "value": 88.4,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Qwen3.5 397B A17B",
+      "modelAliases": [
+        "Qwen3.5 397B A17B",
+        "Qwen3.5-397B-A17B",
+        "qwen3-5-397b-a17b"
+      ],
+      "value": 28.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "Qwen3.5 397B A17B",
+      "modelAliases": [
+        "Qwen3.5 397B A17B",
+        "Qwen3.5-397B-A17B",
+        "qwen3-5-397b-a17b"
+      ],
+      "value": 83.6,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "Qwen3.5 397B A17B",
+      "modelAliases": [
+        "Qwen3.5 397B A17B",
+        "Qwen3.5-397B-A17B",
+        "qwen3-5-397b-a17b"
+      ],
+      "value": 87.9,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "Qwen3.5 397B A17B",
+      "modelAliases": [
+        "Qwen3.5 397B A17B",
+        "Qwen3.5-397B-A17B",
+        "qwen3-5-397b-a17b"
+      ],
+      "value": 93.3,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "Qwen3.6 35B A3B",
+      "modelAliases": [
+        "Qwen3.6 35B A3B",
+        "Qwen3.6-35B-A3B",
+        "qwen3-6-35b-a3b"
+      ],
+      "value": 73.4,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Qwen3.6 35B A3B",
+      "modelAliases": [
+        "Qwen3.6 35B A3B",
+        "Qwen3.6-35B-A3B",
+        "qwen3-6-35b-a3b"
+      ],
+      "value": 49.5,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "Qwen3.6 35B A3B",
+      "modelAliases": [
+        "Qwen3.6 35B A3B",
+        "Qwen3.6-35B-A3B",
+        "qwen3-6-35b-a3b"
+      ],
+      "value": 67.2,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "Qwen3.6 35B A3B",
+      "modelAliases": [
+        "Qwen3.6 35B A3B",
+        "Qwen3.6-35B-A3B",
+        "qwen3-6-35b-a3b"
+      ],
+      "value": 1.0,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "skillsbench",
+      "benchmarkLabel": "SkillsBench Avg5",
+      "model": "Qwen3.6 35B A3B",
+      "modelAliases": [
+        "Qwen3.6 35B A3B",
+        "Qwen3.6-35B-A3B",
+        "qwen3-6-35b-a3b"
+      ],
+      "value": 28.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "qwenwebbench",
+      "benchmarkLabel": "QwenWebBench",
+      "model": "Qwen3.6 35B A3B",
+      "modelAliases": [
+        "Qwen3.6 35B A3B",
+        "Qwen3.6-35B-A3B",
+        "qwen3-6-35b-a3b"
+      ],
+      "value": 1397,
+      "unit": "Elo",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "nl2repo",
+      "benchmarkLabel": "NL2Repo",
+      "model": "Qwen3.6 35B A3B",
+      "modelAliases": [
+        "Qwen3.6 35B A3B",
+        "Qwen3.6-35B-A3B",
+        "qwen3-6-35b-a3b"
+      ],
+      "value": 29.4,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "claw-eval",
+      "benchmarkLabel": "Claw-Eval Avg",
+      "model": "Qwen3.6 35B A3B",
+      "modelAliases": [
+        "Qwen3.6 35B A3B",
+        "Qwen3.6-35B-A3B",
+        "qwen3-6-35b-a3b"
+      ],
+      "value": 68.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "Qwen3.6 35B A3B",
+      "modelAliases": [
+        "Qwen3.6 35B A3B",
+        "Qwen3.6-35B-A3B",
+        "qwen3-6-35b-a3b"
+      ],
+      "value": 85.2,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Qwen3.6 35B A3B",
+      "modelAliases": [
+        "Qwen3.6 35B A3B",
+        "Qwen3.6-35B-A3B",
+        "qwen3-6-35b-a3b"
+      ],
+      "value": 86.0,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Qwen3.6 35B A3B",
+      "modelAliases": [
+        "Qwen3.6 35B A3B",
+        "Qwen3.6-35B-A3B",
+        "qwen3-6-35b-a3b"
+      ],
+      "value": 21.4,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "Qwen3.6 35B A3B",
+      "modelAliases": [
+        "Qwen3.6 35B A3B",
+        "Qwen3.6-35B-A3B",
+        "qwen3-6-35b-a3b"
+      ],
+      "value": 80.4,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "Qwen3.6 35B A3B",
+      "modelAliases": [
+        "Qwen3.6 35B A3B",
+        "Qwen3.6-35B-A3B",
+        "qwen3-6-35b-a3b"
+      ],
+      "value": 83.6,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "Qwen3.6 35B A3B",
+      "modelAliases": [
+        "Qwen3.6 35B A3B",
+        "Qwen3.6-35B-A3B",
+        "qwen3-6-35b-a3b"
+      ],
+      "value": 92.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "Qwen3.6 27B",
+      "modelAliases": [
+        "Qwen3.6 27B",
+        "Qwen3.6-27B",
+        "Qwen/Qwen3.6-27B",
+        "qwen3-6-27b"
+      ],
+      "value": 77.2,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Qwen3.6 27B",
+      "modelAliases": [
+        "Qwen3.6 27B",
+        "Qwen3.6-27B",
+        "Qwen/Qwen3.6-27B",
+        "qwen3-6-27b"
+      ],
+      "value": 53.5,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "Qwen3.6 27B",
+      "modelAliases": [
+        "Qwen3.6 27B",
+        "Qwen3.6-27B",
+        "Qwen/Qwen3.6-27B",
+        "qwen3-6-27b"
+      ],
+      "value": 71.3,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "Qwen3.6 27B",
+      "modelAliases": [
+        "Qwen3.6 27B",
+        "Qwen3.6-27B",
+        "Qwen/Qwen3.6-27B",
+        "qwen3-6-27b"
+      ],
+      "value": 0.95,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "skillsbench",
+      "benchmarkLabel": "SkillsBench Avg5",
+      "model": "Qwen3.6 27B",
+      "modelAliases": [
+        "Qwen3.6 27B",
+        "Qwen3.6-27B",
+        "Qwen/Qwen3.6-27B",
+        "qwen3-6-27b"
+      ],
+      "value": 48.2,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "qwenwebbench",
+      "benchmarkLabel": "QwenWebBench",
+      "model": "Qwen3.6 27B",
+      "modelAliases": [
+        "Qwen3.6 27B",
+        "Qwen3.6-27B",
+        "Qwen/Qwen3.6-27B",
+        "qwen3-6-27b"
+      ],
+      "value": 1487,
+      "unit": "Elo",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "nl2repo",
+      "benchmarkLabel": "NL2Repo",
+      "model": "Qwen3.6 27B",
+      "modelAliases": [
+        "Qwen3.6 27B",
+        "Qwen3.6-27B",
+        "Qwen/Qwen3.6-27B",
+        "qwen3-6-27b"
+      ],
+      "value": 36.2,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "claw-eval",
+      "benchmarkLabel": "Claw-Eval Avg",
+      "model": "Qwen3.6 27B",
+      "modelAliases": [
+        "Qwen3.6 27B",
+        "Qwen3.6-27B",
+        "Qwen/Qwen3.6-27B",
+        "qwen3-6-27b"
+      ],
+      "value": 72.4,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "Qwen3.6 27B",
+      "modelAliases": [
+        "Qwen3.6 27B",
+        "Qwen3.6-27B",
+        "Qwen/Qwen3.6-27B",
+        "qwen3-6-27b"
+      ],
+      "value": 86.2,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Qwen3.6 27B",
+      "modelAliases": [
+        "Qwen3.6 27B",
+        "Qwen3.6-27B",
+        "Qwen/Qwen3.6-27B",
+        "qwen3-6-27b"
+      ],
+      "value": 87.8,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Qwen3.6 27B",
+      "modelAliases": [
+        "Qwen3.6 27B",
+        "Qwen3.6-27B",
+        "Qwen/Qwen3.6-27B",
+        "qwen3-6-27b"
+      ],
+      "value": 24.0,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "Qwen3.6 27B",
+      "modelAliases": [
+        "Qwen3.6 27B",
+        "Qwen3.6-27B",
+        "Qwen/Qwen3.6-27B",
+        "qwen3-6-27b"
+      ],
+      "value": 83.9,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "Qwen3.6 27B",
+      "modelAliases": [
+        "Qwen3.6 27B",
+        "Qwen3.6-27B",
+        "Qwen/Qwen3.6-27B",
+        "qwen3-6-27b"
+      ],
+      "value": 84.3,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "Qwen3.6 27B",
+      "modelAliases": [
+        "Qwen3.6 27B",
+        "Qwen3.6-27B",
+        "Qwen/Qwen3.6-27B",
+        "qwen3-6-27b"
+      ],
+      "value": 94.1,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-6-27b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "sourceLabel": "Qwen3.6-27B official model card"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "DeepSeek V4 Flash",
+      "modelAliases": [
+        "DeepSeek V4 Flash",
+        "DeepSeek-V4-Flash Non-Think",
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "value": 83.0,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "DeepSeek V4 Flash",
+      "modelAliases": [
+        "DeepSeek V4 Flash",
+        "DeepSeek-V4-Flash Non-Think",
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "value": 71.2,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "DeepSeek V4 Flash",
+      "modelAliases": [
+        "DeepSeek V4 Flash",
+        "DeepSeek-V4-Flash Non-Think",
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "value": 8.1,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "DeepSeek V4 Flash",
+      "modelAliases": [
+        "DeepSeek V4 Flash",
+        "DeepSeek-V4-Flash Non-Think",
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "value": 55.2,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "DeepSeek V4 Flash",
+      "modelAliases": [
+        "DeepSeek V4 Flash",
+        "DeepSeek-V4-Flash Non-Think",
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "value": 40.8,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "DeepSeek V4 Flash",
+      "modelAliases": [
+        "DeepSeek V4 Flash",
+        "DeepSeek-V4-Flash Non-Think",
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "value": 49.1,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "DeepSeek V4 Flash",
+      "modelAliases": [
+        "DeepSeek V4 Flash",
+        "DeepSeek-V4-Flash Non-Think",
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "value": 73.7,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "DeepSeek V4 Flash",
+      "modelAliases": [
+        "DeepSeek V4 Flash",
+        "DeepSeek-V4-Flash Non-Think",
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "value": 49.1,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "DeepSeek V4 Flash",
+      "modelAliases": [
+        "DeepSeek V4 Flash",
+        "DeepSeek-V4-Flash Non-Think",
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "value": 69.7,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "DeepSeek V4 Flash",
+      "modelAliases": [
+        "DeepSeek V4 Flash",
+        "DeepSeek-V4-Flash Non-Think",
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "value": 64.0,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "DeepSeek V4 Flash",
+      "modelAliases": [
+        "DeepSeek V4 Flash",
+        "DeepSeek-V4-Flash Non-Think",
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "value": 40.7,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "DeepSeek V4 Flash (High)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (High)",
+        "DeepSeek-V4-Flash High",
+        "deepseek-v4-flash-high"
+      ],
+      "value": 86.4,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "DeepSeek V4 Flash (High)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (High)",
+        "DeepSeek-V4-Flash High",
+        "deepseek-v4-flash-high"
+      ],
+      "value": 87.4,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "DeepSeek V4 Flash (High)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (High)",
+        "DeepSeek-V4-Flash High",
+        "deepseek-v4-flash-high"
+      ],
+      "value": 29.4,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "DeepSeek V4 Flash (High)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (High)",
+        "DeepSeek-V4-Flash High",
+        "deepseek-v4-flash-high"
+      ],
+      "value": 88.4,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "DeepSeek V4 Flash (High)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (High)",
+        "DeepSeek-V4-Flash High",
+        "deepseek-v4-flash-high"
+      ],
+      "value": 91.9,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "DeepSeek V4 Flash (High)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (High)",
+        "DeepSeek-V4-Flash High",
+        "deepseek-v4-flash-high"
+      ],
+      "value": 56.6,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "DeepSeek V4 Flash (High)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (High)",
+        "DeepSeek-V4-Flash High",
+        "deepseek-v4-flash-high"
+      ],
+      "value": 78.6,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "DeepSeek V4 Flash (High)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (High)",
+        "DeepSeek-V4-Flash High",
+        "deepseek-v4-flash-high"
+      ],
+      "value": 52.3,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "DeepSeek V4 Flash (High)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (High)",
+        "DeepSeek-V4-Flash High",
+        "deepseek-v4-flash-high"
+      ],
+      "value": 70.2,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "DeepSeek V4 Flash (High)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (High)",
+        "DeepSeek-V4-Flash High",
+        "deepseek-v4-flash-high"
+      ],
+      "value": 53.5,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "DeepSeek V4 Flash (High)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (High)",
+        "DeepSeek-V4-Flash High",
+        "deepseek-v4-flash-high"
+      ],
+      "value": 40.3,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "DeepSeek V4 Flash (High)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (High)",
+        "DeepSeek-V4-Flash High",
+        "deepseek-v4-flash-high"
+      ],
+      "value": 67.4,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "DeepSeek V4 Flash (High)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (High)",
+        "DeepSeek-V4-Flash High",
+        "deepseek-v4-flash-high"
+      ],
+      "value": 43.5,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "DeepSeek V4 Flash (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (Max)",
+        "DeepSeek-V4-Flash Max",
+        "deepseek-v4-flash"
+      ],
+      "value": 86.2,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "DeepSeek V4 Flash (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (Max)",
+        "DeepSeek-V4-Flash Max",
+        "deepseek-v4-flash"
+      ],
+      "value": 88.1,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "DeepSeek V4 Flash (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (Max)",
+        "DeepSeek-V4-Flash Max",
+        "deepseek-v4-flash"
+      ],
+      "value": 34.8,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "DeepSeek V4 Flash (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (Max)",
+        "DeepSeek-V4-Flash Max",
+        "deepseek-v4-flash"
+      ],
+      "value": 91.6,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "DeepSeek V4 Flash (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (Max)",
+        "DeepSeek-V4-Flash Max",
+        "deepseek-v4-flash"
+      ],
+      "value": 94.8,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "DeepSeek V4 Flash (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (Max)",
+        "DeepSeek-V4-Flash Max",
+        "deepseek-v4-flash"
+      ],
+      "value": 56.9,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "DeepSeek V4 Flash (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (Max)",
+        "DeepSeek-V4-Flash Max",
+        "deepseek-v4-flash"
+      ],
+      "value": 79.0,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "DeepSeek V4 Flash (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (Max)",
+        "DeepSeek-V4-Flash Max",
+        "deepseek-v4-flash"
+      ],
+      "value": 52.6,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "DeepSeek V4 Flash (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (Max)",
+        "DeepSeek-V4-Flash Max",
+        "deepseek-v4-flash"
+      ],
+      "value": 73.3,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "DeepSeek V4 Flash (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (Max)",
+        "DeepSeek-V4-Flash Max",
+        "deepseek-v4-flash"
+      ],
+      "value": 73.2,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "DeepSeek V4 Flash (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (Max)",
+        "DeepSeek-V4-Flash Max",
+        "deepseek-v4-flash"
+      ],
+      "value": 45.1,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "gdpval-aa-elo",
+      "benchmarkLabel": "GDPval-AA Elo",
+      "model": "DeepSeek V4 Flash (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (Max)",
+        "DeepSeek-V4-Flash Max",
+        "deepseek-v4-flash"
+      ],
+      "value": 1395.0,
+      "unit": "Elo",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "DeepSeek V4 Flash (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (Max)",
+        "DeepSeek-V4-Flash Max",
+        "deepseek-v4-flash"
+      ],
+      "value": 69.0,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "DeepSeek V4 Flash (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash (Max)",
+        "DeepSeek-V4-Flash Max",
+        "deepseek-v4-flash"
+      ],
+      "value": 47.8,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 82.9,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 72.9,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 7.7,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 56.8,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 31.7,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 59.1,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 73.6,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 52.1,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 69.8,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 69.4,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 46.3,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "DeepSeek V4 Pro (High)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (High)",
+        "DeepSeek-V4-Pro High",
+        "deepseek-v4-pro-high"
+      ],
+      "value": 87.1,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "DeepSeek V4 Pro (High)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (High)",
+        "DeepSeek-V4-Pro High",
+        "deepseek-v4-pro-high"
+      ],
+      "value": 89.1,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "DeepSeek V4 Pro (High)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (High)",
+        "DeepSeek-V4-Pro High",
+        "deepseek-v4-pro-high"
+      ],
+      "value": 34.5,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "DeepSeek V4 Pro (High)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (High)",
+        "DeepSeek-V4-Pro High",
+        "deepseek-v4-pro-high"
+      ],
+      "value": 89.8,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "DeepSeek V4 Pro (High)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (High)",
+        "DeepSeek-V4-Pro High",
+        "deepseek-v4-pro-high"
+      ],
+      "value": 94.0,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "DeepSeek V4 Pro (High)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (High)",
+        "DeepSeek-V4-Pro High",
+        "deepseek-v4-pro-high"
+      ],
+      "value": 63.3,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "DeepSeek V4 Pro (High)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (High)",
+        "DeepSeek-V4-Pro High",
+        "deepseek-v4-pro-high"
+      ],
+      "value": 79.4,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "DeepSeek V4 Pro (High)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (High)",
+        "DeepSeek-V4-Pro High",
+        "deepseek-v4-pro-high"
+      ],
+      "value": 54.4,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "DeepSeek V4 Pro (High)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (High)",
+        "DeepSeek-V4-Pro High",
+        "deepseek-v4-pro-high"
+      ],
+      "value": 74.1,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "DeepSeek V4 Pro (High)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (High)",
+        "DeepSeek-V4-Pro High",
+        "deepseek-v4-pro-high"
+      ],
+      "value": 80.4,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "DeepSeek V4 Pro (High)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (High)",
+        "DeepSeek-V4-Pro High",
+        "deepseek-v4-pro-high"
+      ],
+      "value": 44.7,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "DeepSeek V4 Pro (High)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (High)",
+        "DeepSeek-V4-Pro High",
+        "deepseek-v4-pro-high"
+      ],
+      "value": 74.2,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "DeepSeek V4 Pro (High)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (High)",
+        "DeepSeek-V4-Pro High",
+        "deepseek-v4-pro-high"
+      ],
+      "value": 49.0,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "DeepSeek V4 Pro (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (Max)",
+        "DeepSeek-V4-Pro Max",
+        "DS-V4-Pro Max",
+        "deepseek-v4-pro"
+      ],
+      "value": 87.5,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "DeepSeek V4 Pro (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (Max)",
+        "DeepSeek-V4-Pro Max",
+        "DS-V4-Pro Max",
+        "deepseek-v4-pro"
+      ],
+      "value": 90.1,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "DeepSeek V4 Pro (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (Max)",
+        "DeepSeek-V4-Pro Max",
+        "DS-V4-Pro Max",
+        "deepseek-v4-pro"
+      ],
+      "value": 37.7,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "DeepSeek V4 Pro (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (Max)",
+        "DeepSeek-V4-Pro Max",
+        "DS-V4-Pro Max",
+        "deepseek-v4-pro"
+      ],
+      "value": 93.5,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "DeepSeek V4 Pro (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (Max)",
+        "DeepSeek-V4-Pro Max",
+        "DS-V4-Pro Max",
+        "deepseek-v4-pro"
+      ],
+      "value": 95.2,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "DeepSeek V4 Pro (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (Max)",
+        "DeepSeek-V4-Pro Max",
+        "DS-V4-Pro Max",
+        "deepseek-v4-pro"
+      ],
+      "value": 67.9,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "DeepSeek V4 Pro (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (Max)",
+        "DeepSeek-V4-Pro Max",
+        "DS-V4-Pro Max",
+        "deepseek-v4-pro"
+      ],
+      "value": 80.6,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "DeepSeek V4 Pro (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (Max)",
+        "DeepSeek-V4-Pro Max",
+        "DS-V4-Pro Max",
+        "deepseek-v4-pro"
+      ],
+      "value": 55.4,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "DeepSeek V4 Pro (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (Max)",
+        "DeepSeek-V4-Pro Max",
+        "DS-V4-Pro Max",
+        "deepseek-v4-pro"
+      ],
+      "value": 76.2,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "DeepSeek V4 Pro (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (Max)",
+        "DeepSeek-V4-Pro Max",
+        "DS-V4-Pro Max",
+        "deepseek-v4-pro"
+      ],
+      "value": 83.4,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "DeepSeek V4 Pro (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (Max)",
+        "DeepSeek-V4-Pro Max",
+        "DS-V4-Pro Max",
+        "deepseek-v4-pro"
+      ],
+      "value": 48.2,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "gdpval-aa-elo",
+      "benchmarkLabel": "GDPval-AA Elo",
+      "model": "DeepSeek V4 Pro (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (Max)",
+        "DeepSeek-V4-Pro Max",
+        "DS-V4-Pro Max",
+        "deepseek-v4-pro"
+      ],
+      "value": 1554.0,
+      "unit": "Elo",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "DeepSeek V4 Pro (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (Max)",
+        "DeepSeek-V4-Pro Max",
+        "DS-V4-Pro Max",
+        "deepseek-v4-pro"
+      ],
+      "value": 73.6,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "DeepSeek V4 Pro (Max)",
+      "modelAliases": [
+        "DeepSeek V4 Pro (Max)",
+        "DeepSeek-V4-Pro Max",
+        "DS-V4-Pro Max",
+        "deepseek-v4-pro"
+      ],
+      "value": 51.8,
+      "unit": "%",
+      "sourceId": "deepseek-v4-pro-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "sourceLabel": "DeepSeek-V4-Pro official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "Kimi K2.6",
+      "modelAliases": [
+        "Kimi K2.6",
+        "Kimi-K2.6",
+        "K2.6 Thinking",
+        "moonshotai/Kimi-K2.6",
+        "kimi-k2-6"
+      ],
+      "value": 80.2,
+      "unit": "%",
+      "sourceId": "kimi-k2-6-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2.6",
+      "sourceLabel": "Kimi K2.6 official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Kimi K2.6",
+      "modelAliases": [
+        "Kimi K2.6",
+        "Kimi-K2.6",
+        "K2.6 Thinking",
+        "moonshotai/Kimi-K2.6",
+        "kimi-k2-6"
+      ],
+      "value": 58.6,
+      "unit": "%",
+      "sourceId": "kimi-k2-6-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2.6",
+      "sourceLabel": "Kimi K2.6 official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Kimi K2.6",
+      "modelAliases": [
+        "Kimi K2.6",
+        "Kimi-K2.6",
+        "K2.6 Thinking",
+        "moonshotai/Kimi-K2.6",
+        "kimi-k2-6"
+      ],
+      "value": 90.5,
+      "unit": "%",
+      "sourceId": "kimi-k2-6-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2.6",
+      "sourceLabel": "Kimi K2.6 official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "Kimi K2.6",
+      "modelAliases": [
+        "Kimi K2.6",
+        "Kimi-K2.6",
+        "K2.6 Thinking",
+        "moonshotai/Kimi-K2.6",
+        "kimi-k2-6"
+      ],
+      "value": 66.7,
+      "unit": "%",
+      "sourceId": "kimi-k2-6-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2.6",
+      "sourceLabel": "Kimi K2.6 official model card"
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "Kimi K2.6",
+      "modelAliases": [
+        "Kimi K2.6",
+        "Kimi-K2.6",
+        "K2.6 Thinking",
+        "moonshotai/Kimi-K2.6",
+        "kimi-k2-6"
+      ],
+      "value": 96.4,
+      "unit": "%",
+      "sourceId": "kimi-k2-6-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2.6",
+      "sourceLabel": "Kimi K2.6 official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "Kimi K2.6",
+      "modelAliases": [
+        "Kimi K2.6",
+        "Kimi-K2.6",
+        "K2.6 Thinking",
+        "moonshotai/Kimi-K2.6",
+        "kimi-k2-6"
+      ],
+      "value": 92.7,
+      "unit": "%",
+      "sourceId": "kimi-k2-6-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2.6",
+      "sourceLabel": "Kimi K2.6 official model card"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "Kimi K2 Thinking",
+      "modelAliases": [
+        "Kimi K2 Thinking",
+        "Kimi-K2-Thinking",
+        "K2 Thinking",
+        "moonshotai/Kimi-K2-Thinking"
+      ],
+      "value": 84.6,
+      "unit": "%",
+      "sourceId": "kimi-k2-thinking-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2-Thinking",
+      "sourceLabel": "Kimi K2 Thinking official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Kimi K2 Thinking",
+      "modelAliases": [
+        "Kimi K2 Thinking",
+        "Kimi-K2-Thinking",
+        "K2 Thinking",
+        "moonshotai/Kimi-K2-Thinking"
+      ],
+      "value": 84.5,
+      "unit": "%",
+      "sourceId": "kimi-k2-thinking-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2-Thinking",
+      "sourceLabel": "Kimi K2 Thinking official model card"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "Kimi K2 Thinking",
+      "modelAliases": [
+        "Kimi K2 Thinking",
+        "Kimi-K2-Thinking",
+        "K2 Thinking",
+        "moonshotai/Kimi-K2-Thinking"
+      ],
+      "value": 60.2,
+      "unit": "%",
+      "sourceId": "kimi-k2-thinking-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2-Thinking",
+      "sourceLabel": "Kimi K2 Thinking official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "Kimi K2 Thinking",
+      "modelAliases": [
+        "Kimi K2 Thinking",
+        "Kimi-K2-Thinking",
+        "K2 Thinking",
+        "moonshotai/Kimi-K2-Thinking"
+      ],
+      "value": 71.3,
+      "unit": "%",
+      "sourceId": "kimi-k2-thinking-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2-Thinking",
+      "sourceLabel": "Kimi K2 Thinking official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "Kimi K2 Thinking",
+      "modelAliases": [
+        "Kimi K2 Thinking",
+        "Kimi-K2-Thinking",
+        "K2 Thinking",
+        "moonshotai/Kimi-K2-Thinking"
+      ],
+      "value": 61.1,
+      "unit": "%",
+      "sourceId": "kimi-k2-thinking-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2-Thinking",
+      "sourceLabel": "Kimi K2 Thinking official model card"
+    },
+    {
+      "benchmarkId": "scicode",
+      "benchmarkLabel": "SciCode",
+      "model": "Kimi K2 Thinking",
+      "modelAliases": [
+        "Kimi K2 Thinking",
+        "Kimi-K2-Thinking",
+        "K2 Thinking",
+        "moonshotai/Kimi-K2-Thinking"
+      ],
+      "value": 44.8,
+      "unit": "%",
+      "sourceId": "kimi-k2-thinking-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2-Thinking",
+      "sourceLabel": "Kimi K2 Thinking official model card"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "Kimi K2 Thinking",
+      "modelAliases": [
+        "Kimi K2 Thinking",
+        "Kimi-K2-Thinking",
+        "K2 Thinking",
+        "moonshotai/Kimi-K2-Thinking"
+      ],
+      "value": 83.1,
+      "unit": "%",
+      "sourceId": "kimi-k2-thinking-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2-Thinking",
+      "sourceLabel": "Kimi K2 Thinking official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench",
+      "benchmarkLabel": "Terminal-Bench",
+      "model": "Kimi K2 Thinking",
+      "modelAliases": [
+        "Kimi K2 Thinking",
+        "Kimi-K2-Thinking",
+        "K2 Thinking",
+        "moonshotai/Kimi-K2-Thinking"
+      ],
+      "value": 47.1,
+      "unit": "%",
+      "sourceId": "kimi-k2-thinking-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2-Thinking",
+      "sourceLabel": "Kimi K2 Thinking official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "Kimi K2.5",
+      "modelAliases": [
+        "Kimi K2.5",
+        "Kimi-K2.5",
+        "moonshotai/Kimi-K2.5"
+      ],
+      "value": 70.8,
+      "unit": "%",
+      "sourceId": "kimi-k2-5-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2.5",
+      "sourceLabel": "Kimi K2.5 official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Kimi K2.5",
+      "modelAliases": [
+        "Kimi K2.5",
+        "Kimi-K2.5",
+        "moonshotai/Kimi-K2.5"
+      ],
+      "value": 87.6,
+      "unit": "%",
+      "sourceId": "kimi-k2-5-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2.5",
+      "sourceLabel": "Kimi K2.5 official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "Kimi K2.5",
+      "modelAliases": [
+        "Kimi K2.5",
+        "Kimi-K2.5",
+        "moonshotai/Kimi-K2.5"
+      ],
+      "value": 43.2,
+      "unit": "%",
+      "sourceId": "kimi-k2-5-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2.5",
+      "sourceLabel": "Kimi K2.5 official model card"
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "Kimi K2.5",
+      "modelAliases": [
+        "Kimi K2.5",
+        "Kimi-K2.5",
+        "moonshotai/Kimi-K2.5"
+      ],
+      "value": 95.83,
+      "unit": "%",
+      "sourceId": "kimi-k2-5-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2.5",
+      "sourceLabel": "Kimi K2.5 official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "Kimi K2",
+      "modelAliases": [
+        "Kimi K2",
+        "Kimi-K2",
+        "Kimi-K2-Instruct"
+      ],
+      "value": 65.8,
+      "unit": "%",
+      "sourceId": "kimi-k2-github",
+      "sourceUrl": "https://github.com/MoonshotAI/Kimi-K2",
+      "sourceLabel": "Kimi K2 official GitHub report"
+    },
+    {
+      "benchmarkId": "aime-2024",
+      "benchmarkLabel": "AIME 2024",
+      "model": "Kimi K2",
+      "modelAliases": [
+        "Kimi K2",
+        "Kimi-K2",
+        "Kimi-K2-Instruct"
+      ],
+      "value": 69.6,
+      "unit": "%",
+      "sourceId": "kimi-k2-github",
+      "sourceUrl": "https://github.com/MoonshotAI/Kimi-K2",
+      "sourceLabel": "Kimi K2 official GitHub report"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Kimi K2",
+      "modelAliases": [
+        "Kimi K2",
+        "Kimi-K2",
+        "Kimi-K2-Instruct"
+      ],
+      "value": 75.1,
+      "unit": "%",
+      "sourceId": "kimi-k2-github",
+      "sourceUrl": "https://github.com/MoonshotAI/Kimi-K2",
+      "sourceLabel": "Kimi K2 official GitHub report"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "Kimi K2",
+      "modelAliases": [
+        "Kimi K2",
+        "Kimi-K2",
+        "Kimi-K2-Instruct"
+      ],
+      "value": 53.7,
+      "unit": "%",
+      "sourceId": "kimi-k2-github",
+      "sourceUrl": "https://github.com/MoonshotAI/Kimi-K2",
+      "sourceLabel": "Kimi K2 official GitHub report"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 31.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 52.3,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 95.3,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 82.6,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 86.2,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 58.4,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "nl2repo",
+      "benchmarkLabel": "NL2Repo",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 42.7,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 63.5,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "cybergym",
+      "benchmarkLabel": "CyberGym",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 68.7,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 68.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "browsecomp-context",
+      "benchmarkLabel": "BrowseComp (Context Manage)",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 79.3,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 71.8,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 40.7,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "GLM-5",
+      "modelAliases": [
+        "GLM-5",
+        "GLM 5",
+        "zai-org/GLM-5"
+      ],
+      "value": 30.5,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "GLM-5",
+      "modelAliases": [
+        "GLM-5",
+        "GLM 5",
+        "zai-org/GLM-5"
+      ],
+      "value": 50.4,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "GLM-5",
+      "modelAliases": [
+        "GLM-5",
+        "GLM 5",
+        "zai-org/GLM-5"
+      ],
+      "value": 95.4,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "GLM-5",
+      "modelAliases": [
+        "GLM-5",
+        "GLM 5",
+        "zai-org/GLM-5"
+      ],
+      "value": 82.8,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "GLM-5",
+      "modelAliases": [
+        "GLM-5",
+        "GLM 5",
+        "zai-org/GLM-5"
+      ],
+      "value": 86.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "GLM-5",
+      "modelAliases": [
+        "GLM-5",
+        "GLM 5",
+        "zai-org/GLM-5"
+      ],
+      "value": 55.1,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "nl2repo",
+      "benchmarkLabel": "NL2Repo",
+      "model": "GLM-5",
+      "modelAliases": [
+        "GLM-5",
+        "GLM 5",
+        "zai-org/GLM-5"
+      ],
+      "value": 35.9,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "GLM-5",
+      "modelAliases": [
+        "GLM-5",
+        "GLM 5",
+        "zai-org/GLM-5"
+      ],
+      "value": 56.2,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "cybergym",
+      "benchmarkLabel": "CyberGym",
+      "model": "GLM-5",
+      "modelAliases": [
+        "GLM-5",
+        "GLM 5",
+        "zai-org/GLM-5"
+      ],
+      "value": 48.3,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "GLM-5",
+      "modelAliases": [
+        "GLM-5",
+        "GLM 5",
+        "zai-org/GLM-5"
+      ],
+      "value": 62.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "browsecomp-context",
+      "benchmarkLabel": "BrowseComp (Context Manage)",
+      "model": "GLM-5",
+      "modelAliases": [
+        "GLM-5",
+        "GLM 5",
+        "zai-org/GLM-5"
+      ],
+      "value": 75.9,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "GLM-5",
+      "modelAliases": [
+        "GLM-5",
+        "GLM 5",
+        "zai-org/GLM-5"
+      ],
+      "value": 69.2,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "GLM-5",
+      "modelAliases": [
+        "GLM-5",
+        "GLM 5",
+        "zai-org/GLM-5"
+      ],
+      "value": 38.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "GLM-4.7",
+      "modelAliases": [
+        "GLM-4.7",
+        "GLM 4.7",
+        "zai-org/GLM-4.7"
+      ],
+      "value": 24.8,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "GLM-4.7",
+      "modelAliases": [
+        "GLM-4.7",
+        "GLM 4.7",
+        "zai-org/GLM-4.7"
+      ],
+      "value": 42.8,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "GLM-4.7",
+      "modelAliases": [
+        "GLM-4.7",
+        "GLM 4.7",
+        "zai-org/GLM-4.7"
+      ],
+      "value": 92.9,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "GLM-4.7",
+      "modelAliases": [
+        "GLM-4.7",
+        "GLM 4.7",
+        "zai-org/GLM-4.7"
+      ],
+      "value": 85.7,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "GLM-4.7",
+      "modelAliases": [
+        "GLM-4.7",
+        "GLM 4.7",
+        "zai-org/GLM-4.7"
+      ],
+      "value": 73.8,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "GLM-4.7",
+      "modelAliases": [
+        "GLM-4.7",
+        "GLM 4.7",
+        "zai-org/GLM-4.7"
+      ],
+      "value": 66.7,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "GLM-4.7",
+      "modelAliases": [
+        "GLM-4.7",
+        "GLM 4.7",
+        "zai-org/GLM-4.7"
+      ],
+      "value": 41.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "cybergym",
+      "benchmarkLabel": "CyberGym",
+      "model": "GLM-4.7",
+      "modelAliases": [
+        "GLM-4.7",
+        "GLM 4.7",
+        "zai-org/GLM-4.7"
+      ],
+      "value": 23.5,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "GLM-4.7",
+      "modelAliases": [
+        "GLM-4.7",
+        "GLM 4.7",
+        "zai-org/GLM-4.7"
+      ],
+      "value": 52.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "browsecomp-context",
+      "benchmarkLabel": "BrowseComp (Context Manage)",
+      "model": "GLM-4.7",
+      "modelAliases": [
+        "GLM-4.7",
+        "GLM 4.7",
+        "zai-org/GLM-4.7"
+      ],
+      "value": 67.5,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "GLM-4.7",
+      "modelAliases": [
+        "GLM-4.7",
+        "GLM 4.7",
+        "zai-org/GLM-4.7"
+      ],
+      "value": 52.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "GLM-4.7",
+      "modelAliases": [
+        "GLM-4.7",
+        "GLM 4.7",
+        "zai-org/GLM-4.7"
+      ],
+      "value": 23.8,
+      "unit": "%",
+      "sourceId": "zai-glm-5-1-card",
+      "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1",
+      "sourceLabel": "Z.ai GLM-5.1 official model card"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "GLM-4.5",
+      "modelAliases": [
+        "GLM-4.5",
+        "GLM 4.5",
+        "zai-org/GLM-4.5"
+      ],
+      "value": 84.6,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "aime-2024",
+      "benchmarkLabel": "AIME 2024",
+      "model": "GLM-4.5",
+      "modelAliases": [
+        "GLM-4.5",
+        "GLM 4.5",
+        "zai-org/GLM-4.5"
+      ],
+      "value": 91.0,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "scicode",
+      "benchmarkLabel": "SciCode",
+      "model": "GLM-4.5",
+      "modelAliases": [
+        "GLM-4.5",
+        "GLM 4.5",
+        "zai-org/GLM-4.5"
+      ],
+      "value": 41.7,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "GLM-4.5",
+      "modelAliases": [
+        "GLM-4.5",
+        "GLM 4.5",
+        "zai-org/GLM-4.5"
+      ],
+      "value": 79.1,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "GLM-4.5",
+      "modelAliases": [
+        "GLM-4.5",
+        "GLM 4.5",
+        "zai-org/GLM-4.5"
+      ],
+      "value": 14.4,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "GLM-4.5",
+      "modelAliases": [
+        "GLM-4.5",
+        "GLM 4.5",
+        "zai-org/GLM-4.5"
+      ],
+      "value": 72.9,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "GLM-4.5",
+      "modelAliases": [
+        "GLM-4.5",
+        "GLM 4.5",
+        "zai-org/GLM-4.5"
+      ],
+      "value": 64.2,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "terminal-bench",
+      "benchmarkLabel": "Terminal-Bench",
+      "model": "GLM-4.5",
+      "modelAliases": [
+        "GLM-4.5",
+        "GLM 4.5",
+        "zai-org/GLM-4.5"
+      ],
+      "value": 37.5,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "tau-bench",
+      "benchmarkLabel": "τ-Bench",
+      "model": "GLM-4.5",
+      "modelAliases": [
+        "GLM-4.5",
+        "GLM 4.5",
+        "zai-org/GLM-4.5"
+      ],
+      "value": 70.1,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "bfcl-v3",
+      "benchmarkLabel": "BFCL v3",
+      "model": "GLM-4.5",
+      "modelAliases": [
+        "GLM-4.5",
+        "GLM 4.5",
+        "zai-org/GLM-4.5"
+      ],
+      "value": 77.8,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "GLM-4.5",
+      "modelAliases": [
+        "GLM-4.5",
+        "GLM 4.5",
+        "zai-org/GLM-4.5"
+      ],
+      "value": 26.4,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "GLM-4.5-Air",
+      "modelAliases": [
+        "GLM-4.5-Air",
+        "GLM 4.5 Air",
+        "zai-org/GLM-4.5-Air"
+      ],
+      "value": 81.4,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "aime-2024",
+      "benchmarkLabel": "AIME 2024",
+      "model": "GLM-4.5-Air",
+      "modelAliases": [
+        "GLM-4.5-Air",
+        "GLM 4.5 Air",
+        "zai-org/GLM-4.5-Air"
+      ],
+      "value": 89.4,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "scicode",
+      "benchmarkLabel": "SciCode",
+      "model": "GLM-4.5-Air",
+      "modelAliases": [
+        "GLM-4.5-Air",
+        "GLM 4.5 Air",
+        "zai-org/GLM-4.5-Air"
+      ],
+      "value": 37.3,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "GLM-4.5-Air",
+      "modelAliases": [
+        "GLM-4.5-Air",
+        "GLM 4.5 Air",
+        "zai-org/GLM-4.5-Air"
+      ],
+      "value": 75.0,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "GLM-4.5-Air",
+      "modelAliases": [
+        "GLM-4.5-Air",
+        "GLM 4.5 Air",
+        "zai-org/GLM-4.5-Air"
+      ],
+      "value": 10.6,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "GLM-4.5-Air",
+      "modelAliases": [
+        "GLM-4.5-Air",
+        "GLM 4.5 Air",
+        "zai-org/GLM-4.5-Air"
+      ],
+      "value": 70.7,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "GLM-4.5-Air",
+      "modelAliases": [
+        "GLM-4.5-Air",
+        "GLM 4.5 Air",
+        "zai-org/GLM-4.5-Air"
+      ],
+      "value": 57.6,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
+    },
+    {
+      "benchmarkId": "terminal-bench",
+      "benchmarkLabel": "Terminal-Bench",
+      "model": "GLM-4.5-Air",
+      "modelAliases": [
+        "GLM-4.5-Air",
+        "GLM 4.5 Air",
+        "zai-org/GLM-4.5-Air"
+      ],
+      "value": 30.0,
+      "unit": "%",
+      "sourceId": "zai-glm-4-5-report",
+      "sourceUrl": "https://z.ai/blog/glm-4.5",
+      "sourceLabel": "Z.ai GLM-4.5 official report"
     }
   ]
 }

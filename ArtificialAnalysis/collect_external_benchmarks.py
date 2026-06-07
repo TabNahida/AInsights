@@ -24,6 +24,24 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT_JSON = PROJECT_ROOT / "ArtificialAnalysis" / "external_benchmark_scores.json"
 OPENAI_GPT55_URL = "https://openai.com/index/introducing-gpt-5-5/"
 GOOGLE_GEMINI31_URL = "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+QWEN36_27B_URL = "https://huggingface.co/Qwen/Qwen3.6-27B"
+QWEN36_27B_RAW_URL = "https://huggingface.co/Qwen/Qwen3.6-27B/raw/main/README.md"
+DEEPSEEK_V4_PRO_URL = "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"
+DEEPSEEK_V4_PRO_RAW_URL = "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/raw/main/README.md"
+KIMI_K26_URL = "https://huggingface.co/moonshotai/Kimi-K2.6"
+KIMI_K26_RAW_URL = "https://huggingface.co/moonshotai/Kimi-K2.6/raw/main/README.md"
+KIMI_K2_THINKING_URL = "https://huggingface.co/moonshotai/Kimi-K2-Thinking"
+KIMI_K2_THINKING_RAW_URL = "https://huggingface.co/moonshotai/Kimi-K2-Thinking/raw/main/README.md"
+KIMI_K25_URL = "https://huggingface.co/moonshotai/Kimi-K2.5"
+KIMI_K25_RAW_URL = "https://huggingface.co/moonshotai/Kimi-K2.5/raw/main/README.md"
+KIMI_K2_URL = "https://github.com/MoonshotAI/Kimi-K2"
+KIMI_K2_RAW_URL = "https://raw.githubusercontent.com/MoonshotAI/Kimi-K2/main/README.md"
+GLM51_URL = "https://huggingface.co/zai-org/GLM-5.1"
+GLM51_RAW_URL = "https://huggingface.co/zai-org/GLM-5.1/raw/main/README.md"
+GLM5_URL = "https://huggingface.co/zai-org/GLM-5"
+GLM5_RAW_URL = "https://huggingface.co/zai-org/GLM-5/raw/main/README.md"
+GLM45_URL = "https://z.ai/blog/glm-4.5"
+GLM45_RAW_URL = "https://raw.githubusercontent.com/zai-org/GLM-4.5/main/README.md"
 
 MODEL_ALIASES = {
     "GPT-5.5": ["GPT-5.5", "GPT-5.5 (xhigh)", "gpt-5-5", "gpt-5-5-xhigh"],
@@ -32,6 +50,25 @@ MODEL_ALIASES = {
     "GPT-5.4 Pro": ["GPT-5.4 Pro", "GPT-5.4 Pro (xhigh)", "gpt-5-4-pro"],
     "Claude Opus 4.7": ["Claude Opus 4.7", "Claude Opus 4.7 (Adaptive Reasoning)", "claude-opus-4-7"],
     "Gemini 3.1 Pro": ["Gemini 3.1 Pro", "Gemini 3.1 Pro Preview", "Gemini 3.1 Pro (high)", "gemini-3-1-pro-preview", "gemini-3-1-pro-high"],
+    "Qwen3.6 27B": ["Qwen3.6 27B", "Qwen3.6-27B", "Qwen/Qwen3.6-27B", "qwen3-6-27b"],
+    "Qwen3.6 35B A3B": ["Qwen3.6 35B A3B", "Qwen3.6-35B-A3B", "qwen3-6-35b-a3b"],
+    "Qwen3.5 397B A17B": ["Qwen3.5 397B A17B", "Qwen3.5-397B-A17B", "qwen3-5-397b-a17b"],
+    "Qwen3.5 27B": ["Qwen3.5 27B", "Qwen3.5-27B", "qwen3-5-27b"],
+    "DeepSeek V4 Pro (Max)": ["DeepSeek V4 Pro (Max)", "DeepSeek-V4-Pro Max", "DS-V4-Pro Max", "deepseek-v4-pro"],
+    "DeepSeek V4 Pro (High)": ["DeepSeek V4 Pro (High)", "DeepSeek-V4-Pro High", "deepseek-v4-pro-high"],
+    "DeepSeek V4 Pro": ["DeepSeek V4 Pro", "DeepSeek-V4-Pro Non-Think", "deepseek-v4-pro-non-reasoning"],
+    "DeepSeek V4 Flash (Max)": ["DeepSeek V4 Flash (Max)", "DeepSeek-V4-Flash Max", "deepseek-v4-flash"],
+    "DeepSeek V4 Flash (High)": ["DeepSeek V4 Flash (High)", "DeepSeek-V4-Flash High", "deepseek-v4-flash-high"],
+    "DeepSeek V4 Flash": ["DeepSeek V4 Flash", "DeepSeek-V4-Flash Non-Think", "deepseek-v4-flash-non-reasoning"],
+    "Kimi K2.6": ["Kimi K2.6", "Kimi-K2.6", "K2.6 Thinking", "moonshotai/Kimi-K2.6", "kimi-k2-6"],
+    "Kimi K2 Thinking": ["Kimi K2 Thinking", "Kimi-K2-Thinking", "K2 Thinking", "moonshotai/Kimi-K2-Thinking"],
+    "Kimi K2.5": ["Kimi K2.5", "Kimi-K2.5", "moonshotai/Kimi-K2.5"],
+    "Kimi K2": ["Kimi K2", "Kimi-K2", "Kimi-K2-Instruct"],
+    "GLM-5.1": ["GLM-5.1", "GLM 5.1", "zai-org/GLM-5.1", "glm-5-1"],
+    "GLM-5": ["GLM-5", "GLM 5", "zai-org/GLM-5"],
+    "GLM-4.7": ["GLM-4.7", "GLM 4.7", "zai-org/GLM-4.7"],
+    "GLM-4.5": ["GLM-4.5", "GLM 4.5", "zai-org/GLM-4.5"],
+    "GLM-4.5-Air": ["GLM-4.5-Air", "GLM 4.5 Air", "zai-org/GLM-4.5-Air"],
 }
 
 OPENAI_MODEL_COLUMNS = [
@@ -61,6 +98,27 @@ BENCHMARKS = [
         "openaiLabel": "Terminal-Bench 2.0",
     },
     {
+        "id": "terminal-bench",
+        "label": "Terminal-Bench",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "TERM",
+    },
+    {
+        "id": "swe-bench-verified",
+        "label": "SWE-bench Verified",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "SWE-V",
+    },
+    {
+        "id": "swe-bench-multilingual",
+        "label": "SWE-bench Multilingual",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "SWE-M",
+    },
+    {
         "id": "expert-swe-internal",
         "label": "Expert-SWE (Internal)",
         "category": "Agentic coding",
@@ -75,6 +133,13 @@ BENCHMARKS = [
         "unit": "%",
         "icon": "GDP",
         "openaiLabel": "GDPval (wins or ties)",
+    },
+    {
+        "id": "gdpval-aa-elo",
+        "label": "GDPval-AA Elo",
+        "category": "Professional work",
+        "unit": "Elo",
+        "icon": "GDP",
     },
     {
         "id": "osworld-verified",
@@ -101,6 +166,27 @@ BENCHMARKS = [
         "openaiLabel": "BrowseComp",
     },
     {
+        "id": "browsecomp-context",
+        "label": "BrowseComp (Context Manage)",
+        "category": "Tool use",
+        "unit": "%",
+        "icon": "WEB+",
+    },
+    {
+        "id": "hle-tools",
+        "label": "HLE w/ tools",
+        "category": "Tool use",
+        "unit": "%",
+        "icon": "HLE+",
+    },
+    {
+        "id": "mcp-atlas",
+        "label": "MCP-Atlas Public",
+        "category": "Tool use",
+        "unit": "%",
+        "icon": "MCP",
+    },
+    {
         "id": "frontiermath-tier-1-3",
         "label": "FrontierMath Tier 1-3",
         "category": "Academic reasoning",
@@ -124,6 +210,111 @@ BENCHMARKS = [
         "icon": "CY",
         "openaiLabel": "CyberGym",
     },
+    {
+        "id": "mmlu-pro",
+        "label": "MMLU-Pro",
+        "category": "Academic reasoning",
+        "unit": "%",
+        "icon": "MMLU",
+    },
+    {
+        "id": "gpqa-diamond",
+        "label": "GPQA Diamond",
+        "category": "Academic reasoning",
+        "unit": "%",
+        "icon": "GPQA",
+    },
+    {
+        "id": "hle",
+        "label": "Humanity's Last Exam",
+        "category": "Academic reasoning",
+        "unit": "%",
+        "icon": "HLE",
+    },
+    {
+        "id": "livecodebench",
+        "label": "LiveCodeBench",
+        "category": "Coding",
+        "unit": "%",
+        "icon": "LCB",
+    },
+    {
+        "id": "scicode",
+        "label": "SciCode",
+        "category": "Coding",
+        "unit": "%",
+        "icon": "SCI",
+    },
+    {
+        "id": "aime-2024",
+        "label": "AIME 2024",
+        "category": "Math",
+        "unit": "%",
+        "icon": "A24",
+    },
+    {
+        "id": "aime-2025",
+        "label": "AIME 2025",
+        "category": "Math",
+        "unit": "%",
+        "icon": "A25",
+    },
+    {
+        "id": "aime-2026",
+        "label": "AIME 2026",
+        "category": "Math",
+        "unit": "%",
+        "icon": "A26",
+    },
+    {
+        "id": "hmmt-2026-feb",
+        "label": "HMMT Feb 2026",
+        "category": "Math",
+        "unit": "%",
+        "icon": "H26",
+    },
+    {
+        "id": "skillsbench",
+        "label": "SkillsBench Avg5",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "SKL",
+    },
+    {
+        "id": "qwenwebbench",
+        "label": "QwenWebBench",
+        "category": "Frontend coding",
+        "unit": "Elo",
+        "icon": "WEB",
+    },
+    {
+        "id": "claw-eval",
+        "label": "Claw-Eval Avg",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "CLAW",
+    },
+    {
+        "id": "nl2repo",
+        "label": "NL2Repo",
+        "category": "Repository generation",
+        "unit": "%",
+        "icon": "N2R",
+    },
+    {
+        "id": "tau-bench",
+        "label": "τ-Bench",
+        "category": "Agentic workflow",
+        "unit": "%",
+        "icon": "TAU",
+    },
+    {
+        "id": "bfcl-v3",
+        "label": "BFCL v3",
+        "category": "Tool use",
+        "unit": "%",
+        "icon": "BFCL",
+    },
 ]
 
 SEED_OPENAI_VALUES = {
@@ -138,6 +329,466 @@ SEED_OPENAI_VALUES = {
     "frontiermath-tier-4": [35.4, 27.1, 39.6, 38.0, 22.9, 16.7],
     "cybergym": [81.8, 79.0, None, None, 73.1, None],
 }
+
+OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
+    {
+        "id": "qwen-qwen3-6-27b-card",
+        "label": "Qwen3.6-27B official model card",
+        "url": QWEN36_27B_URL,
+        "rawUrl": QWEN36_27B_RAW_URL,
+        "category": "Official model card",
+        "note": "Qwen official Hugging Face card with Qwen3.6/Qwen3.5 benchmark table.",
+        "columns": {
+            "Qwen3.5-27B": "Qwen3.5 27B",
+            "Qwen3.5-397B-A17B": "Qwen3.5 397B A17B",
+            "Qwen3.6-35B-A3B": "Qwen3.6 35B A3B",
+            "Qwen3.6-27B": "Qwen3.6 27B",
+        },
+        "textColumns": [
+            "Qwen3.5-27B",
+            "Qwen3.5-397B-A17B",
+            "Gemma4-31B",
+            "Claude 4.5 Opus",
+            "Qwen3.6-35B-A3B",
+            "Qwen3.6-27B",
+        ],
+        "rowLabels": {
+            "SWE-bench Verified": "swe-bench-verified",
+            "SWE-bench Pro": "swe-bench-pro",
+            "SWE-bench Multilingual": "swe-bench-multilingual",
+            "Terminal-Bench 2.0": "terminal-bench-2",
+            "SkillsBench Avg5": "skillsbench",
+            "QwenWebBench": "qwenwebbench",
+            "NL2Repo": "nl2repo",
+            "Claw-Eval Avg": "claw-eval",
+            "MMLU-Pro": "mmlu-pro",
+            "GPQA Diamond": "gpqa-diamond",
+            "HLE": "hle",
+            "LiveCodeBench v6": "livecodebench",
+            "HMMT Feb 26": "hmmt-2026-feb",
+            "AIME26": "aime-2026",
+        },
+        "scores": {
+            "Qwen3.5 27B": {
+                "swe-bench-verified": 75.0,
+                "swe-bench-pro": 51.2,
+                "swe-bench-multilingual": 69.3,
+                "terminal-bench-2": 41.6,
+                "skillsbench": 27.2,
+                "qwenwebbench": 1068,
+                "nl2repo": 27.3,
+                "claw-eval": 64.3,
+                "mmlu-pro": 86.1,
+                "gpqa-diamond": 85.5,
+                "hle": 24.3,
+                "livecodebench": 80.7,
+                "hmmt-2026-feb": 84.3,
+                "aime-2026": 92.6,
+            },
+            "Qwen3.5 397B A17B": {
+                "swe-bench-verified": 76.2,
+                "swe-bench-pro": 50.9,
+                "swe-bench-multilingual": 69.3,
+                "terminal-bench-2": 52.5,
+                "skillsbench": 30.0,
+                "qwenwebbench": 1186,
+                "nl2repo": 32.2,
+                "claw-eval": 70.7,
+                "mmlu-pro": 87.8,
+                "gpqa-diamond": 88.4,
+                "hle": 28.7,
+                "livecodebench": 83.6,
+                "hmmt-2026-feb": 87.9,
+                "aime-2026": 93.3,
+            },
+            "Qwen3.6 35B A3B": {
+                "swe-bench-verified": 73.4,
+                "swe-bench-pro": 49.5,
+                "swe-bench-multilingual": 67.2,
+                "terminal-bench-2": 51.5,
+                "skillsbench": 28.7,
+                "qwenwebbench": 1397,
+                "nl2repo": 29.4,
+                "claw-eval": 68.7,
+                "mmlu-pro": 85.2,
+                "gpqa-diamond": 86.0,
+                "hle": 21.4,
+                "livecodebench": 80.4,
+                "hmmt-2026-feb": 83.6,
+                "aime-2026": 92.7,
+            },
+            "Qwen3.6 27B": {
+                "swe-bench-verified": 77.2,
+                "swe-bench-pro": 53.5,
+                "swe-bench-multilingual": 71.3,
+                "terminal-bench-2": 59.3,
+                "skillsbench": 48.2,
+                "qwenwebbench": 1487,
+                "nl2repo": 36.2,
+                "claw-eval": 72.4,
+                "mmlu-pro": 86.2,
+                "gpqa-diamond": 87.8,
+                "hle": 24.0,
+                "livecodebench": 83.9,
+                "hmmt-2026-feb": 84.3,
+                "aime-2026": 94.1,
+            },
+        },
+    },
+    {
+        "id": "deepseek-v4-pro-card",
+        "label": "DeepSeek-V4-Pro official model card",
+        "url": DEEPSEEK_V4_PRO_URL,
+        "rawUrl": DEEPSEEK_V4_PRO_RAW_URL,
+        "category": "Official model card",
+        "note": "DeepSeek official Hugging Face card with mode-by-mode V4 benchmark table.",
+        "columns": {
+            "V4-Flash Non-Think": "DeepSeek V4 Flash",
+            "V4-Flash High": "DeepSeek V4 Flash (High)",
+            "V4-Flash Max": "DeepSeek V4 Flash (Max)",
+            "V4-Pro Non-Think": "DeepSeek V4 Pro",
+            "V4-Pro High": "DeepSeek V4 Pro (High)",
+            "V4-Pro Max": "DeepSeek V4 Pro (Max)",
+            "DS-V4-Pro Max": "DeepSeek V4 Pro (Max)",
+        },
+        "rowLabels": {
+            "MMLU-Pro (EM)": "mmlu-pro",
+            "GPQA Diamond (Pass@1)": "gpqa-diamond",
+            "HLE (Pass@1)": "hle",
+            "LiveCodeBench (Pass@1)": "livecodebench",
+            "HMMT 2026 Feb (Pass@1)": "hmmt-2026-feb",
+            "Terminal Bench 2.0 (Acc)": "terminal-bench-2",
+            "SWE Verified (Resolved)": "swe-bench-verified",
+            "SWE Pro (Resolved)": "swe-bench-pro",
+            "SWE Multilingual (Resolved)": "swe-bench-multilingual",
+            "BrowseComp (Pass@1)": "browsecomp",
+            "HLE w/ tools (Pass@1)": "hle-tools",
+            "GDPval-AA (Elo)": "gdpval-aa-elo",
+            "MCPAtlas (Pass@1)": "mcp-atlas",
+            "MCPAtlas Public (Pass@1)": "mcp-atlas",
+            "Toolathlon (Pass@1)": "toolathlon",
+        },
+        "scores": {
+            "DeepSeek V4 Flash": {
+                "mmlu-pro": 83.0,
+                "gpqa-diamond": 71.2,
+                "hle": 8.1,
+                "livecodebench": 55.2,
+                "hmmt-2026-feb": 40.8,
+                "terminal-bench-2": 49.1,
+                "swe-bench-verified": 73.7,
+                "swe-bench-pro": 49.1,
+                "swe-bench-multilingual": 69.7,
+                "mcp-atlas": 64.0,
+                "toolathlon": 40.7,
+            },
+            "DeepSeek V4 Flash (High)": {
+                "mmlu-pro": 86.4,
+                "gpqa-diamond": 87.4,
+                "hle": 29.4,
+                "livecodebench": 88.4,
+                "hmmt-2026-feb": 91.9,
+                "terminal-bench-2": 56.6,
+                "swe-bench-verified": 78.6,
+                "swe-bench-pro": 52.3,
+                "swe-bench-multilingual": 70.2,
+                "browsecomp": 53.5,
+                "hle-tools": 40.3,
+                "mcp-atlas": 67.4,
+                "toolathlon": 43.5,
+            },
+            "DeepSeek V4 Flash (Max)": {
+                "mmlu-pro": 86.2,
+                "gpqa-diamond": 88.1,
+                "hle": 34.8,
+                "livecodebench": 91.6,
+                "hmmt-2026-feb": 94.8,
+                "terminal-bench-2": 56.9,
+                "swe-bench-verified": 79.0,
+                "swe-bench-pro": 52.6,
+                "swe-bench-multilingual": 73.3,
+                "browsecomp": 73.2,
+                "hle-tools": 45.1,
+                "gdpval-aa-elo": 1395,
+                "mcp-atlas": 69.0,
+                "toolathlon": 47.8,
+            },
+            "DeepSeek V4 Pro": {
+                "mmlu-pro": 82.9,
+                "gpqa-diamond": 72.9,
+                "hle": 7.7,
+                "livecodebench": 56.8,
+                "hmmt-2026-feb": 31.7,
+                "terminal-bench-2": 59.1,
+                "swe-bench-verified": 73.6,
+                "swe-bench-pro": 52.1,
+                "swe-bench-multilingual": 69.8,
+                "mcp-atlas": 69.4,
+                "toolathlon": 46.3,
+            },
+            "DeepSeek V4 Pro (High)": {
+                "mmlu-pro": 87.1,
+                "gpqa-diamond": 89.1,
+                "hle": 34.5,
+                "livecodebench": 89.8,
+                "hmmt-2026-feb": 94.0,
+                "terminal-bench-2": 63.3,
+                "swe-bench-verified": 79.4,
+                "swe-bench-pro": 54.4,
+                "swe-bench-multilingual": 74.1,
+                "browsecomp": 80.4,
+                "hle-tools": 44.7,
+                "mcp-atlas": 74.2,
+                "toolathlon": 49.0,
+            },
+            "DeepSeek V4 Pro (Max)": {
+                "mmlu-pro": 87.5,
+                "gpqa-diamond": 90.1,
+                "hle": 37.7,
+                "livecodebench": 93.5,
+                "hmmt-2026-feb": 95.2,
+                "terminal-bench-2": 67.9,
+                "swe-bench-verified": 80.6,
+                "swe-bench-pro": 55.4,
+                "swe-bench-multilingual": 76.2,
+                "browsecomp": 83.4,
+                "hle-tools": 48.2,
+                "gdpval-aa-elo": 1554,
+                "mcp-atlas": 73.6,
+                "toolathlon": 51.8,
+            },
+        },
+    },
+    {
+        "id": "kimi-k2-6-card",
+        "label": "Kimi K2.6 official model card",
+        "url": KIMI_K26_URL,
+        "rawUrl": KIMI_K26_RAW_URL,
+        "category": "Official model card",
+        "note": "Moonshot AI Kimi K2.6 Hugging Face card and linked benchmark metadata.",
+        "columns": {"Kimi K2.6": "Kimi K2.6", "K2.6 Thinking": "Kimi K2.6"},
+        "rowLabels": {
+            "SWE Bench Resolved": "swe-bench-verified",
+            "SWE Bench Pro": "swe-bench-pro",
+            "Diamond": "gpqa-diamond",
+            "Terminalbench 2": "terminal-bench-2",
+            "MathArena Aime 2026": "aime-2026",
+            "MathArena Hmmt Feb 2026": "hmmt-2026-feb",
+        },
+        "scores": {
+            "Kimi K2.6": {
+                "swe-bench-verified": 80.2,
+                "swe-bench-pro": 58.6,
+                "gpqa-diamond": 90.5,
+                "terminal-bench-2": 66.7,
+                "aime-2026": 96.4,
+                "hmmt-2026-feb": 92.7,
+            }
+        },
+    },
+    {
+        "id": "kimi-k2-thinking-card",
+        "label": "Kimi K2 Thinking official model card",
+        "url": KIMI_K2_THINKING_URL,
+        "rawUrl": KIMI_K2_THINKING_RAW_URL,
+        "category": "Official model card",
+        "note": "Moonshot AI Kimi K2 Thinking card with search, coding, and reasoning benchmarks.",
+        "columns": {"K2 Thinking": "Kimi K2 Thinking"},
+        "rowLabels": {
+            "MMLU-Pro": "mmlu-pro",
+            "GPQA": "gpqa-diamond",
+            "BrowseComp": "browsecomp",
+            "SWE-bench Verified": "swe-bench-verified",
+            "SWE-bench Multilingual": "swe-bench-multilingual",
+            "SciCode": "scicode",
+            "LiveCodeBenchV6": "livecodebench",
+            "Terminal-Bench": "terminal-bench",
+        },
+        "scores": {
+            "Kimi K2 Thinking": {
+                "mmlu-pro": 84.6,
+                "gpqa-diamond": 84.5,
+                "browsecomp": 60.2,
+                "swe-bench-verified": 71.3,
+                "swe-bench-multilingual": 61.1,
+                "scicode": 44.8,
+                "livecodebench": 83.1,
+                "terminal-bench": 47.1,
+            }
+        },
+    },
+    {
+        "id": "kimi-k2-5-card",
+        "label": "Kimi K2.5 official model card",
+        "url": KIMI_K25_URL,
+        "rawUrl": KIMI_K25_RAW_URL,
+        "category": "Official model card",
+        "note": "Moonshot AI Kimi K2.5 Hugging Face card evaluation results.",
+        "columns": {"Kimi K2.5": "Kimi K2.5"},
+        "rowLabels": {
+            "SWE Bench Resolved": "swe-bench-verified",
+            "Diamond": "gpqa-diamond",
+            "Terminalbench 2": "terminal-bench-2",
+            "MathArena Aime 2026": "aime-2026",
+        },
+        "scores": {
+            "Kimi K2.5": {
+                "swe-bench-verified": 70.8,
+                "gpqa-diamond": 87.6,
+                "terminal-bench-2": 43.2,
+                "aime-2026": 95.83,
+            }
+        },
+    },
+    {
+        "id": "kimi-k2-github",
+        "label": "Kimi K2 official GitHub report",
+        "url": KIMI_K2_URL,
+        "rawUrl": KIMI_K2_RAW_URL,
+        "category": "Official technical report",
+        "note": "Moonshot AI Kimi K2 GitHub README and technical report benchmark table.",
+        "columns": {"Kimi-K2-Instruct": "Kimi K2", "Kimi K2": "Kimi K2"},
+        "rowLabels": {
+            "SWE-bench Verified": "swe-bench-verified",
+            "AIME 2024": "aime-2024",
+            "GPQA-Diamond": "gpqa-diamond",
+            "LiveCodeBench v6": "livecodebench",
+        },
+        "scores": {
+            "Kimi K2": {
+                "swe-bench-verified": 65.8,
+                "aime-2024": 69.6,
+                "gpqa-diamond": 75.1,
+                "livecodebench": 53.7,
+            }
+        },
+    },
+    {
+        "id": "zai-glm-5-1-card",
+        "label": "Z.ai GLM-5.1 official model card",
+        "url": GLM51_URL,
+        "rawUrl": GLM51_RAW_URL,
+        "category": "Official model card",
+        "note": "Z.ai GLM-5.1 Hugging Face card with GLM-5.1/GLM-5/GLM-4.7 benchmark table.",
+        "columns": {
+            "GLM-5.1": "GLM-5.1",
+            "GLM-5": "GLM-5",
+            "GLM-4.7": "GLM-4.7",
+        },
+        "rowLabels": {
+            "HLE": "hle",
+            "HLE (w/ Tools)": "hle-tools",
+            "AIME 2026": "aime-2026",
+            "HMMT Feb. 2026": "hmmt-2026-feb",
+            "GPQA-Diamond": "gpqa-diamond",
+            "SWE-Bench Pro": "swe-bench-pro",
+            "SWE-bench Verified": "swe-bench-verified",
+            "SWE-bench Multilingual": "swe-bench-multilingual",
+            "NL2Repo": "nl2repo",
+            "Terminal-Bench 2.0 (Terminus-2)": "terminal-bench-2",
+            "Terminal-Bench 2.0 (Terminus 2)": "terminal-bench-2",
+            "CyberGym": "cybergym",
+            "BrowseComp": "browsecomp",
+            "BrowseComp (w/ Context Manage)": "browsecomp-context",
+            "MCP-Atlas (Public Set)": "mcp-atlas",
+            "Tool-Decathlon": "toolathlon",
+        },
+        "scores": {
+            "GLM-5.1": {
+                "hle": 31.0,
+                "hle-tools": 52.3,
+                "aime-2026": 95.3,
+                "hmmt-2026-feb": 82.6,
+                "gpqa-diamond": 86.2,
+                "swe-bench-pro": 58.4,
+                "nl2repo": 42.7,
+                "terminal-bench-2": 63.5,
+                "cybergym": 68.7,
+                "browsecomp": 68.0,
+                "browsecomp-context": 79.3,
+                "mcp-atlas": 71.8,
+                "toolathlon": 40.7,
+            },
+            "GLM-5": {
+                "hle": 30.5,
+                "hle-tools": 50.4,
+                "aime-2026": 95.4,
+                "hmmt-2026-feb": 82.8,
+                "gpqa-diamond": 86.0,
+                "swe-bench-pro": 55.1,
+                "nl2repo": 35.9,
+                "terminal-bench-2": 56.2,
+                "cybergym": 48.3,
+                "browsecomp": 62.0,
+                "browsecomp-context": 75.9,
+                "mcp-atlas": 69.2,
+                "toolathlon": 38.0,
+            },
+            "GLM-4.7": {
+                "hle": 24.8,
+                "hle-tools": 42.8,
+                "aime-2026": 92.9,
+                "gpqa-diamond": 85.7,
+                "swe-bench-verified": 73.8,
+                "swe-bench-multilingual": 66.7,
+                "terminal-bench-2": 41.0,
+                "cybergym": 23.5,
+                "browsecomp": 52.0,
+                "browsecomp-context": 67.5,
+                "mcp-atlas": 52.0,
+                "toolathlon": 23.8,
+            },
+        },
+    },
+    {
+        "id": "zai-glm-4-5-report",
+        "label": "Z.ai GLM-4.5 official report",
+        "url": GLM45_URL,
+        "rawUrl": GLM45_RAW_URL,
+        "category": "Official technical report",
+        "note": "Z.ai GLM-4.5 official blog/report covering ARC benchmarks.",
+        "columns": {"GLM-4.5": "GLM-4.5", "GLM-4.5-Air": "GLM-4.5-Air"},
+        "rowLabels": {
+            "MMLU Pro": "mmlu-pro",
+            "MMLU-Pro": "mmlu-pro",
+            "AIME 24": "aime-2024",
+            "SciCode": "scicode",
+            "GPQA": "gpqa-diamond",
+            "HLE": "hle",
+            "LCB": "livecodebench",
+            "SWE-bench Verified": "swe-bench-verified",
+            "Terminal-Bench": "terminal-bench",
+            "TAU-Bench": "tau-bench",
+            "BFCL V3": "bfcl-v3",
+            "BrowseComp": "browsecomp",
+        },
+        "scores": {
+            "GLM-4.5": {
+                "mmlu-pro": 84.6,
+                "aime-2024": 91.0,
+                "scicode": 41.7,
+                "gpqa-diamond": 79.1,
+                "hle": 14.4,
+                "livecodebench": 72.9,
+                "swe-bench-verified": 64.2,
+                "terminal-bench": 37.5,
+                "tau-bench": 70.1,
+                "bfcl-v3": 77.8,
+                "browsecomp": 26.4,
+            },
+            "GLM-4.5-Air": {
+                "mmlu-pro": 81.4,
+                "aime-2024": 89.4,
+                "scicode": 37.3,
+                "gpqa-diamond": 75.0,
+                "hle": 10.6,
+                "livecodebench": 70.7,
+                "swe-bench-verified": 57.6,
+                "terminal-bench": 30.0,
+            },
+        },
+    },
+]
 
 
 class _VisibleTextParser(HTMLParser):
@@ -178,7 +829,9 @@ def parse_openai_scores(html: str) -> dict[str, list[float | None]]:
 
     scores: dict[str, list[float | None]] = {}
     for benchmark in BENCHMARKS:
-        label = benchmark["openaiLabel"]
+        label = benchmark.get("openaiLabel")
+        if not label:
+            continue
         index = _find_label_index(tokens, label)
         if index is None:
             continue
@@ -194,12 +847,18 @@ def visible_text_tokens(html: str) -> list[str]:
     return parser.tokens
 
 
-def build_payload(openai_scores: dict[str, list[float | None]], collection_status: str) -> dict[str, Any]:
+def build_payload(
+    openai_scores: dict[str, list[float | None]],
+    collection_status: str,
+    source_statuses: dict[str, str] | None = None,
+    official_results: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
     generated_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
     benchmarks = [
         {key: value for key, value in benchmark.items() if key != "openaiLabel"}
         for benchmark in BENCHMARKS
     ]
+    source_statuses = source_statuses or {}
     source = {
         "id": "openai-gpt-5-5",
         "label": "OpenAI GPT-5.5 launch evaluations",
@@ -216,6 +875,17 @@ def build_payload(openai_scores: dict[str, list[float | None]], collection_statu
         "collectionStatus": "reference",
         "note": "Official Google DeepMind model card with Gemini 3.1 Pro cross-model benchmark context.",
     }
+    additional_sources = [
+        {
+            "id": spec["id"],
+            "label": spec["label"],
+            "url": spec["url"],
+            "category": spec.get("category") or "Official model card",
+            "collectionStatus": source_statuses.get(spec["id"], "seeded-official-values"),
+            "note": spec.get("note") or "",
+        }
+        for spec in OFFICIAL_SOURCE_SPECS
+    ]
     results = []
     for benchmark in BENCHMARKS:
         values = openai_scores.get(benchmark["id"], SEED_OPENAI_VALUES.get(benchmark["id"], []))
@@ -235,11 +905,12 @@ def build_payload(openai_scores: dict[str, list[float | None]], collection_statu
                     "sourceLabel": source["label"],
                 }
             )
+    results.extend(official_results if official_results is not None else official_seed_results())
 
     return {
         "version": 1,
         "generatedAt": generated_at,
-        "sources": [source, google_source],
+        "sources": [source, google_source, *additional_sources],
         "benchmarks": benchmarks,
         "results": results,
     }
@@ -250,13 +921,229 @@ def collect(timeout: float = 30) -> dict[str, Any]:
         html = fetch_html(OPENAI_GPT55_URL, timeout=timeout)
         parsed = parse_openai_scores(html)
     except (HTTPError, URLError, TimeoutError, OSError) as exc:
-        return build_payload(SEED_OPENAI_VALUES, f"seeded-official-values; refresh blocked: {exc.__class__.__name__}")
+        official_results, source_statuses = collect_official_sources(timeout=timeout)
+        return build_payload(
+            SEED_OPENAI_VALUES,
+            f"seeded-official-values; refresh blocked: {exc.__class__.__name__}",
+            source_statuses,
+            official_results,
+        )
 
     missing = {benchmark["id"] for benchmark in BENCHMARKS} - set(parsed)
     if missing:
         merged = {**SEED_OPENAI_VALUES, **parsed}
-        return build_payload(merged, f"partial-refresh; seeded {len(missing)} benchmark rows")
-    return build_payload(parsed, "refreshed")
+        openai_status = f"partial-refresh; seeded {len(missing)} benchmark rows"
+    else:
+        merged = parsed
+        openai_status = "refreshed"
+
+    official_results, source_statuses = collect_official_sources(timeout=timeout)
+    return build_payload(merged, openai_status, source_statuses, official_results)
+
+
+def collect_official_sources(timeout: float = 30) -> tuple[list[dict[str, Any]], dict[str, str]]:
+    results: list[dict[str, Any]] = []
+    statuses: dict[str, str] = {}
+    for spec in OFFICIAL_SOURCE_SPECS:
+        seed_rows = official_seed_results_for_source(spec)
+        try:
+            text = fetch_html(str(spec.get("rawUrl") or spec["url"]), timeout=timeout)
+            parsed_rows = parse_markdown_source_scores(text, spec)
+        except (HTTPError, URLError, TimeoutError, OSError) as exc:
+            results.extend(seed_rows)
+            statuses[spec["id"]] = f"seeded-official-values; refresh blocked: {exc.__class__.__name__}"
+            continue
+
+        if parsed_rows:
+            merged_rows = merge_result_rows(seed_rows, parsed_rows)
+            statuses[spec["id"]] = (
+                "refreshed"
+                if len(parsed_rows) >= len(seed_rows)
+                else f"partial-refresh; parsed {len(parsed_rows)} of {len(seed_rows)} seeded scores"
+            )
+            results.extend(merged_rows)
+        else:
+            results.extend(seed_rows)
+            statuses[spec["id"]] = "seeded-official-values; no parseable benchmark table found"
+    return results, statuses
+
+
+def official_seed_results() -> list[dict[str, Any]]:
+    results: list[dict[str, Any]] = []
+    for spec in OFFICIAL_SOURCE_SPECS:
+        results.extend(official_seed_results_for_source(spec))
+    return results
+
+
+def official_seed_results_for_source(spec: dict[str, Any]) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    scores_by_model = spec.get("scores", {})
+    for model_name, scores in scores_by_model.items():
+        for benchmark_id, value in scores.items():
+            rows.append(_result_row(spec, str(model_name), str(benchmark_id), value))
+    return rows
+
+
+def merge_result_rows(
+    seed_rows: list[dict[str, Any]],
+    parsed_rows: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    merged = {
+        (row.get("sourceId"), row.get("model"), row.get("benchmarkId")): row
+        for row in seed_rows
+    }
+    for row in parsed_rows:
+        merged[(row.get("sourceId"), row.get("model"), row.get("benchmarkId"))] = row
+    return list(merged.values())
+
+
+def parse_markdown_source_scores(text: str, spec: dict[str, Any]) -> list[dict[str, Any]]:
+    column_model_by_key = {
+        _normalize_label(column): model
+        for column, model in spec.get("columns", {}).items()
+    }
+    benchmark_by_key = {
+        _normalize_label(label): benchmark_id
+        for label, benchmark_id in spec.get("rowLabels", {}).items()
+    }
+    results: list[dict[str, Any]] = []
+    for table in markdown_tables(text):
+        if not table:
+            continue
+        header = table[0]
+        column_indexes = {
+            index: column_model_by_key[_normalize_label(cell)]
+            for index, cell in enumerate(header)
+            if _normalize_label(cell) in column_model_by_key
+        }
+        if not column_indexes:
+            continue
+        for row in table[1:]:
+            if not row:
+                continue
+            benchmark_id = _benchmark_id_from_row(row, benchmark_by_key)
+            if not benchmark_id:
+                continue
+            for index, model_name in column_indexes.items():
+                if index >= len(row):
+                    continue
+                value = _numeric_cell(row[index])
+                if value is None:
+                    continue
+                results.append(_result_row(spec, model_name, benchmark_id, value))
+    if not results and spec.get("textColumns"):
+        results.extend(parse_plain_text_source_scores(text, spec))
+    return dedupe_result_rows(results)
+
+
+def parse_plain_text_source_scores(text: str, spec: dict[str, Any]) -> list[dict[str, Any]]:
+    text_columns = [str(column) for column in spec.get("textColumns", [])]
+    column_models = [spec.get("columns", {}).get(column) for column in text_columns]
+    if not any(column_models):
+        return []
+    results: list[dict[str, Any]] = []
+    row_labels = sorted(spec.get("rowLabels", {}).items(), key=lambda item: len(item[0]), reverse=True)
+    for raw_line in text.splitlines():
+        line = _clean_markdown_cell(raw_line)
+        if not line:
+            continue
+        for label, benchmark_id in row_labels:
+            tail = _line_tail_after_label(line, label)
+            if tail is None:
+                continue
+            values = [_numeric_cell(match.group(0)) for match in re.finditer(r"-?\d+(?:,\d{3})*(?:\.\d+)?", tail)]
+            values = [value for value in values if value is not None]
+            if len(values) < len(column_models):
+                continue
+            for index, model_name in enumerate(column_models):
+                if not model_name:
+                    continue
+                results.append(_result_row(spec, str(model_name), str(benchmark_id), values[index]))
+            break
+    return results
+
+
+def markdown_tables(text: str) -> list[list[list[str]]]:
+    tables: list[list[list[str]]] = []
+    current: list[list[str]] = []
+    for line in text.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("|") and stripped.endswith("|"):
+            cells = [_clean_markdown_cell(cell) for cell in stripped.strip("|").split("|")]
+            if _is_markdown_separator(cells):
+                continue
+            current.append(cells)
+        else:
+            if current:
+                tables.append(current)
+                current = []
+    if current:
+        tables.append(current)
+    return tables
+
+
+def dedupe_result_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    deduped: dict[tuple[Any, Any, Any], dict[str, Any]] = {}
+    for row in rows:
+        deduped[(row.get("sourceId"), row.get("model"), row.get("benchmarkId"))] = row
+    return list(deduped.values())
+
+
+def _benchmark_id_from_row(row: list[str], benchmark_by_key: dict[str, str]) -> str | None:
+    for cell in row[:2]:
+        key = _normalize_label(cell)
+        if key in benchmark_by_key:
+            return benchmark_by_key[key]
+    return None
+
+
+def _line_tail_after_label(line: str, label: str) -> str | None:
+    index = line.lower().find(label.lower())
+    if index >= 0:
+        return line[index + len(label) :]
+    normalized_line = _normalize_label(line)
+    normalized_label = _normalize_label(label)
+    if normalized_line.startswith(normalized_label):
+        return line
+    return None
+
+
+def _result_row(spec: dict[str, Any], model_name: str, benchmark_id: str, value: Any) -> dict[str, Any]:
+    benchmark = next((item for item in BENCHMARKS if item["id"] == benchmark_id), {})
+    return {
+        "benchmarkId": benchmark_id,
+        "benchmarkLabel": benchmark.get("label") or benchmark_id,
+        "model": model_name,
+        "modelAliases": MODEL_ALIASES.get(model_name, [model_name]),
+        "value": value,
+        "unit": benchmark.get("unit") or "%",
+        "sourceId": spec["id"],
+        "sourceUrl": spec["url"],
+        "sourceLabel": spec["label"],
+    }
+
+
+def _clean_markdown_cell(cell: str) -> str:
+    cell = re.sub(r"<[^>]+>", " ", cell)
+    cell = re.sub(r"!\[[^\]]*\]\([^)]*\)", " ", cell)
+    cell = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", cell)
+    cell = cell.replace("`", "").replace("*", "")
+    cell = cell.replace("$", "")
+    cell = re.sub(r"_\{([^}]*)\}", r" \1", cell)
+    return re.sub(r"\s+", " ", cell).strip()
+
+
+def _is_markdown_separator(cells: list[str]) -> bool:
+    return bool(cells) and all(re.fullmatch(r":?-{2,}:?", cell.strip()) for cell in cells)
+
+
+def _numeric_cell(cell: str) -> float | None:
+    if not cell or cell.strip() in {"-", "—", "–"}:
+        return None
+    match = re.search(r"-?\d+(?:,\d{3})*(?:\.\d+)?", cell)
+    if not match:
+        return None
+    return float(match.group(0).replace(",", ""))
 
 
 def write_payload(output_json: Path, timeout: float = 30) -> dict[str, Any]:
