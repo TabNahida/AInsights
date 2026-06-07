@@ -31,8 +31,8 @@ const copy = {
     missingModeTitle: "缺失值处理",
     missingModeSubtitle: "四个按钮是预设；下方滑块决定缺失项扣分强度和最低覆盖率",
     missingPresetTitle: "处理预设",
-    penaltyLabel: "缺失扣分上限",
-    penaltyHint: "先按可用项求均分，再按缺失权重占比线性扣分；0 表示不额外扣分，100 表示缺失项扣满。",
+    penaltyLabel: "缺失扣分强度",
+    penaltyHint: "0 表示只按可用项求均分；100 表示缺失项按 0 计入总权重，与普通 AInsights Index 排名口径一致。",
     minCoverageLabel: "最低覆盖率",
     minCoverageHint: "低于该覆盖率的模型不进入排名；100% 等同全覆盖",
     currentCustomStrategy: "当前策略",
@@ -40,7 +40,7 @@ const copy = {
     missingModes: {
       available: "只按可用项",
       penalty: "轻度扣分",
-      zero: "最大扣分",
+      zero: "缺失记 0",
       complete: "要求全覆盖",
     },
     sourceWeightStatuses: {
@@ -208,8 +208,8 @@ const copy = {
     missingModeTitle: "Missing values",
     missingModeSubtitle: "The buttons are presets; use the sliders below to tune missing-value penalty strength and coverage",
     missingPresetTitle: "Treatment presets",
-    penaltyLabel: "Missing penalty cap",
-    penaltyHint: "Average available scores first, then subtract a linear penalty by missing weight share; 0 means no extra penalty and 100 means full missing-field penalty.",
+    penaltyLabel: "Missing penalty strength",
+    penaltyHint: "0 averages available scores only; 100 counts missing fields as 0 in the total weight, matching the regular AInsights Index ranking.",
     minCoverageLabel: "Minimum coverage",
     minCoverageHint: "Models below this coverage are excluded; 100% equals full coverage",
     currentCustomStrategy: "Current strategy",
@@ -217,7 +217,7 @@ const copy = {
     missingModes: {
       available: "Available only",
       penalty: "Light penalty",
-      zero: "Full penalty",
+      zero: "Missing = 0",
       complete: "Full coverage",
     },
     sourceWeightStatuses: {
@@ -367,8 +367,8 @@ const state = {
   query: "",
   customWeights: {},
   customWeightPresetId: "zhihu-adjusted",
-  customMissingMode: "available",
-  customPenaltyMax: 0,
+  customMissingMode: "zero",
+  customPenaltyMax: 100,
   customMinCoveragePct: 0,
   customMetricGroupsCache: null,
   language: getInitialLanguage(),
@@ -801,11 +801,14 @@ function scoreModelForCustomWeights(model) {
 
   const coverageRatio = selected > 0 ? (coverage / selected) * 100 : 0;
   const minCoverage = clamp(Number(state.customMinCoveragePct || 0), 0, 100);
-  let score = denominator > 0 && selected > 0 && coverageRatio >= minCoverage ? weightedScore / denominator : null;
-  const penaltyMax = Math.max(0, Number(state.customPenaltyMax || 0));
-  if (Number.isFinite(score) && penaltyMax > 0 && selectedWeight > 0) {
-    score = Math.max(0, score - (missingWeight / selectedWeight) * penaltyMax);
+  const availableScore = denominator > 0 && selected > 0 && coverageRatio >= minCoverage ? weightedScore / denominator : null;
+  let score = availableScore;
+  const penaltyRatio = clamp(Number(state.customPenaltyMax || 0), 0, 100) / 100;
+  const zeroScore = selectedWeight > 0 && selected > 0 && coverageRatio >= minCoverage ? weightedScore / selectedWeight : null;
+  if (Number.isFinite(availableScore) && penaltyRatio > 0 && selectedWeight > 0) {
+    score = availableScore + (zeroScore - availableScore) * penaltyRatio;
   }
+  if (!Number.isFinite(score) && penaltyRatio >= 1 && Number.isFinite(zeroScore)) score = zeroScore;
   return {
     score,
     coverage,
@@ -877,7 +880,7 @@ function renderSummary(filteredCount, visibleCount, scoredCount, preset) {
 function resetCustomConfiguration() {
   state.customWeightPresetId = "zhihu-adjusted";
   state.customWeights = customWeightsForPreset(state.customWeightPresetId);
-  applyMissingModePreset("available");
+  applyMissingModePreset("zero");
 }
 
 function applyMissingModePreset(mode) {
@@ -1137,7 +1140,9 @@ function metricGroupCoverageCount(metrics) {
 }
 
 function customMetricGroupValue(model, group) {
-  const values = group.metrics
+  const presetWeightedMetrics = group.metrics.filter((metric) => Number(state.data.presets[state.customWeightPresetId]?.weights?.[metric.key] || 0) > 0);
+  const metrics = presetWeightedMetrics.length ? presetWeightedMetrics : group.metrics;
+  const values = metrics
     .map((metric) => model.scores?.[metric.key])
     .filter(Number.isFinite);
   if (values.length === 0) return null;

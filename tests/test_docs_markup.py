@@ -100,6 +100,18 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertNotIn(".source-weight-card", css)
         self.assertNotIn("Open AA page", app_js)
 
+    def test_custom_ainsights_preset_matches_default_ranking_missing_policy(self):
+        app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(encoding="utf-8")
+
+        self.assertIn('customMissingMode: "zero"', app_js)
+        self.assertIn("customPenaltyMax: 100", app_js)
+        self.assertIn("const zeroScore = selectedWeight > 0 && selected > 0 && coverageRatio >= minCoverage ? weightedScore / selectedWeight : null;", app_js)
+        self.assertIn("score = availableScore + (zeroScore - availableScore) * penaltyRatio;", app_js)
+        self.assertIn("if (!Number.isFinite(score) && penaltyRatio >= 1 && Number.isFinite(zeroScore)) score = zeroScore;", app_js)
+        self.assertIn("const presetWeightedMetrics = group.metrics.filter((metric) => Number(state.data.presets[state.customWeightPresetId]?.weights?.[metric.key] || 0) > 0);", app_js)
+        self.assertIn('zero: "缺失记 0"', app_js)
+        self.assertIn('zero: "Missing = 0"', app_js)
+
     def test_sources_page_and_split_scripts_are_present(self):
         docs_dir = Path(__file__).resolve().parents[1] / "docs"
         html = (docs_dir / "sources.html").read_text(encoding="utf-8")
