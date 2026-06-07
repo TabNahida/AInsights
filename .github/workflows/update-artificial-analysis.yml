@@ -2,11 +2,15 @@ name: Update Artificial Analysis data
 
 on:
   schedule:
-    - cron: "23 20 * * *"
+    - cron: "0 1 * * 1"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: update-artificial-analysis-data
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -14,6 +18,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -26,6 +32,9 @@ jobs:
       - name: Fetch latest Artificial Analysis data
         run: python ArtificialAnalysis/scrape_artificial_analysis.py --output-dir ArtificialAnalysis
 
+      - name: Fetch external benchmark data
+        run: python ArtificialAnalysis/collect_external_benchmarks.py
+
       - name: Rebuild docs site data
         run: python ArtificialAnalysis/build_docs_site.py
 
@@ -33,13 +42,28 @@ jobs:
         run: python -m unittest discover -s tests
 
       - name: Commit changed data and site
+        id: commit
         run: |
-          if git diff --quiet; then
+          git add ArtificialAnalysis/artificialanalysis_raw_scores_wide.csv ArtificialAnalysis/external_benchmark_scores.json docs/data/models.json docs/data/models.js docs/assets/logos
+          if git diff --cached --quiet; then
             echo "No Artificial Analysis changes detected."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ArtificialAnalysis/artificialanalysis_raw_scores_wide.csv docs/data/models.json docs/data/models.js
           git commit -m "Update Artificial Analysis data"
-          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Rebase latest branch before push
+        if: steps.commit.outputs.changed == 'true'
+        run: |
+          if ! git pull --rebase --autostash origin "$GITHUB_REF_NAME"; then
+            git rebase --abort || true
+            echo "::error::Remote changes conflict with refreshed benchmark data. Rerun after resolving the branch."
+            exit 1
+          fi
+
+      - name: Push changed data and site
+        if: steps.commit.outputs.changed == 'true'
+        run: git push origin "HEAD:$GITHUB_REF_NAME"

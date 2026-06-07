@@ -20,9 +20,8 @@ const copy = {
     dedupe: "去除重复档位",
     customTitle: "自定义占比",
     metricWeightsTitle: "AA 子项权重",
-    metricWeightsSubtitle: "直接参与当前自定义排名的逐项权重",
-    sourceWeightsTitle: "数据源权重",
-    sourceWeightsSubtitle: "外部测评源按相关 AA 子项映射，调整后会重新分配细粒度权重",
+    metricWeightsSubtitle: "直接参与当前自定义排名的逐项权重，按已有模型数据量排序",
+    metricCoverage: "{count} 个模型",
     sourceWeightStatuses: {
       active: "主数据源",
       mapped: "映射到现有子项",
@@ -159,9 +158,8 @@ const copy = {
     dedupe: "Remove duplicate tiers",
     customTitle: "Custom weights",
     metricWeightsTitle: "AA benchmark weights",
-    metricWeightsSubtitle: "Fine-grained weights used directly by the custom ranking",
-    sourceWeightsTitle: "Source weights",
-    sourceWeightsSubtitle: "External sources map onto related AA metrics and redistribute fine-grained weights",
+    metricWeightsSubtitle: "Fine-grained weights used directly by the custom ranking, sorted by model coverage",
+    metricCoverage: "{count} models",
     sourceWeightStatuses: {
       active: "Primary source",
       mapped: "Mapped to available metrics",
@@ -290,7 +288,6 @@ const state = {
   dedupe: true,
   query: "",
   customWeights: {},
-  sourceWeights: {},
   language: getInitialLanguage(),
   page: initialRoute.page,
   modelId: initialRoute.modelId,
@@ -381,8 +378,7 @@ async function init() {
     state.data = window.AINSIGHTS_MODELS_DATA || (await fetchJsonData());
     state.presetId = state.data.defaultPreset;
     state.dedupe = Boolean(state.data.defaultDedupe);
-    state.sourceWeights = defaultSourceWeights();
-    state.customWeights = combinedMetricWeightsFromSources();
+    state.customWeights = defaultMetricWeights();
     els.dedupeToggle.checked = state.dedupe;
     bindControlEvents();
     renderStaticControls();
@@ -409,8 +405,7 @@ function bindControlEvents() {
     render();
   });
   els.resetWeightsButton.addEventListener("click", () => {
-    state.sourceWeights = defaultSourceWeights();
-    state.customWeights = combinedMetricWeightsFromSources();
+    state.customWeights = defaultMetricWeights();
     state.presetId = "custom";
     render();
   });
@@ -721,52 +716,9 @@ function defaultMetricWeights() {
   return Object.fromEntries(state.data.metrics.map((metric) => [metric.key, Number(metric.defaultWeight || 0)]));
 }
 
-function defaultSourceWeights() {
-  return Object.fromEntries((state.data.externalSources || []).map((source) => [source.id, Number(source.defaultWeight || 0)]));
-}
-
 function sourceMetricKeys(source) {
   const knownMetrics = new Set(state.data.metrics.map((metric) => metric.key));
   return (source.relatedMetrics || []).filter((key) => knownMetrics.has(key));
-}
-
-function combinedMetricWeightsFromSources() {
-  const sources = state.data.externalSources || [];
-  const weights = Object.fromEntries(state.data.metrics.map((metric) => [metric.key, 0]));
-  let hasMappedWeight = false;
-
-  for (const source of sources) {
-    const sourceWeight = Number(state.sourceWeights[source.id] || 0);
-    const relatedMetrics = sourceMetricKeys(source);
-    if (sourceWeight <= 0 || relatedMetrics.length === 0) continue;
-    hasMappedWeight = true;
-
-    const sourceDistribution = source.id === "artificial-analysis"
-      ? state.data.presets["zhihu-adjusted"]?.weights || {}
-      : null;
-    const distributionTotal = sourceDistribution
-      ? relatedMetrics.reduce((sum, key) => sum + Math.max(0, Number(sourceDistribution[key] || 0)), 0)
-      : relatedMetrics.length;
-
-    if (distributionTotal <= 0) continue;
-    for (const key of relatedMetrics) {
-      const share = sourceDistribution
-        ? Math.max(0, Number(sourceDistribution[key] || 0)) / distributionTotal
-        : 1 / relatedMetrics.length;
-      weights[key] += sourceWeight * share;
-    }
-  }
-
-  return hasMappedWeight ? weights : defaultMetricWeights();
-}
-
-function syncMetricControlValues() {
-  els.weightsGrid.querySelectorAll("[data-metric-key]").forEach((input) => {
-    const value = state.customWeights[input.dataset.metricKey] ?? 0;
-    input.value = value;
-    const output = input.closest(".weight-control")?.querySelector("output");
-    if (output) output.value = formatWeight(value);
-  });
 }
 
 function renderWeights() {
@@ -778,21 +730,25 @@ function renderWeights() {
       </div>
       <div class="metric-weight-controls" data-weight-controls="metrics"></div>
     </section>
-    <section class="weight-group">
-      <div class="weight-group-head">
-        <h3>${escapeHtml(tr("sourceWeightsTitle"))}</h3>
-        <p>${escapeHtml(tr("sourceWeightsSubtitle"))}</p>
-      </div>
-      <div class="source-weight-controls" data-weight-controls="sources"></div>
-    </section>
   `;
   const metricTarget = els.weightsGrid.querySelector('[data-weight-controls="metrics"]');
-  for (const metric of state.data.metrics) {
+  const metrics = [...state.data.metrics]
+    .map((metric) => ({ metric, coverage: metricCoverageCount(metric.key) }))
+    .sort((a, b) => (
+      b.coverage - a.coverage
+      || Number(b.metric.defaultWeight || 0) - Number(a.metric.defaultWeight || 0)
+      || a.metric.label.localeCompare(b.metric.label)
+    ));
+  for (const { metric, coverage } of metrics) {
     const fragment = els.metricTemplate.content.cloneNode(true);
     const labelText = fragment.querySelector("span");
     const input = fragment.querySelector("input");
     const output = fragment.querySelector("output");
-    labelText.textContent = metric.label;
+    labelText.className = "metric-weight-label";
+    labelText.innerHTML = `
+      <strong>${escapeHtml(metric.label)}</strong>
+      <em>${escapeHtml(tr("metricCoverage", { count: coverage }))}</em>
+    `;
     input.dataset.metricKey = metric.key;
     input.value = state.customWeights[metric.key] ?? metric.defaultWeight;
     output.value = formatWeight(input.value);
@@ -803,38 +759,10 @@ function renderWeights() {
     });
     metricTarget.append(fragment);
   }
-  renderSourceWeights(els.weightsGrid.querySelector('[data-weight-controls="sources"]'));
 }
 
-function renderSourceWeights(target) {
-  const sources = state.data.externalSources || [];
-  target.innerHTML = sources.map((source) => {
-    const relatedMetrics = sourceMetricKeys(source);
-    const canMap = relatedMetrics.length > 0;
-    const value = state.sourceWeights[source.id] ?? source.defaultWeight ?? 0;
-    const status = tr(`sourceWeightStatuses.${source.scoreStatus || (canMap ? "mapped" : "reference")}`);
-    return `
-      <label class="source-weight-card${canMap ? "" : " is-reference"}">
-        <span class="source-weight-icon">${escapeHtml(source.icon || initials(source.label))}</span>
-        <span class="source-weight-copy">
-          <strong>${escapeHtml(source.label)}</strong>
-          <em>${escapeHtml(status)} · ${escapeHtml(tr("relatedMetrics", { count: relatedMetrics.length }))}</em>
-        </span>
-        <input type="range" min="0" max="100" step="1" value="${escapeHtml(value)}" data-source-weight="${escapeHtml(source.id)}"${canMap ? "" : " disabled"} />
-        <output>${escapeHtml(formatWeight(value))}</output>
-      </label>
-    `;
-  }).join("");
-
-  target.querySelectorAll("[data-source-weight]").forEach((input) => {
-    input.addEventListener("input", (event) => {
-      state.sourceWeights[event.target.dataset.sourceWeight] = Number(event.target.value);
-      event.target.closest(".source-weight-card").querySelector("output").value = formatWeight(event.target.value);
-      state.customWeights = combinedMetricWeightsFromSources();
-      syncMetricControlValues();
-      renderResults(state.data.presets.custom);
-    });
-  });
+function metricCoverageCount(metricKey) {
+  return (state.data.models || []).filter((model) => Number.isFinite(model.scores?.[metricKey])).length;
 }
 
 function renderHome(models) {

@@ -59,17 +59,22 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertNotIn("ranked.slice(0, 250)", app_js)
         self.assertNotIn("models.slice(0, 120)", app_js)
 
-    def test_custom_weights_include_source_weights_and_scatter_leaders(self):
+    def test_custom_weights_show_metric_coverage_and_scatter_leaders(self):
         app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(encoding="utf-8")
         css = (Path(__file__).resolve().parents[1] / "docs" / "styles.css").read_text(encoding="utf-8")
 
-        self.assertIn("source-weight-controls", app_js)
-        self.assertIn("combinedMetricWeightsFromSources", app_js)
+        self.assertIn("metricCoverageCount", app_js)
+        self.assertIn("metric-weight-label", app_js)
         self.assertIn("scatter-leader", app_js)
         self.assertIn("externalBenchmarkRows", app_js)
         self.assertIn("model.html?id=", app_js)
+        self.assertNotIn("source-weight-controls", app_js)
+        self.assertNotIn("combinedMetricWeightsFromSources", app_js)
+        self.assertNotIn("Source weights", app_js)
+        self.assertIn(".metric-weight-label", css)
         self.assertIn(".scatter-leader", css)
         self.assertIn(".external-benchmark-row", css)
+        self.assertNotIn(".source-weight-card", css)
         self.assertNotIn("Open AA page", app_js)
 
     def test_model_icons_use_local_assets(self):
