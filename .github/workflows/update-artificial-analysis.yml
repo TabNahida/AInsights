@@ -27,13 +27,13 @@ jobs:
           python-version: "3.13"
 
       - name: Run tests before update
-        run: python -m unittest discover -s tests
+        run: python -B -m unittest discover -s tests
 
       - name: Fetch latest Artificial Analysis data
         run: python ArtificialAnalysis/scrape_artificial_analysis.py --output-dir ArtificialAnalysis
 
-      - name: Fetch external benchmark data
-        run: python ArtificialAnalysis/collect_external_benchmarks.py
+      - name: Fetch benchmark data
+        run: python benchmarks/collect_benchmark_scores.py --output-json data/benchmarks/benchmark_scores.json
 
       - name: Validate official benchmark source policy
         run: |
@@ -57,7 +57,7 @@ jobs:
               "xai-grok-4-1-fast-release",
               "nvidia-nemotron-3-ultra-report",
           }
-          payload = json.loads(Path("ArtificialAnalysis/external_benchmark_scores.json").read_text(encoding="utf-8"))
+          payload = json.loads(Path("data/benchmarks/benchmark_scores.json").read_text(encoding="utf-8"))
           bad_sources = [
               source
               for source in payload.get("sources", [])
@@ -71,15 +71,15 @@ jobs:
           PY
 
       - name: Rebuild docs site data
-        run: python ArtificialAnalysis/build_docs_site.py
+        run: python scripts/build_docs_site.py
 
       - name: Run tests after update
-        run: python -m unittest discover -s tests
+        run: python -B -m unittest discover -s tests
 
       - name: Commit changed data and site
         id: commit
         run: |
-          git add ArtificialAnalysis/artificialanalysis_raw_scores_wide.csv ArtificialAnalysis/external_benchmark_scores.json docs/data/models.json docs/data/models.js docs/assets/logos
+          git add ArtificialAnalysis/artificialanalysis_raw_scores_wide.csv data/benchmarks/benchmark_scores.json docs/data/models.json docs/data/models.js docs/assets/logos
           if git diff --cached --quiet; then
             echo "No Artificial Analysis changes detected."
             echo "changed=false" >> "$GITHUB_OUTPUT"

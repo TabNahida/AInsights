@@ -6,7 +6,8 @@ Compare AI models across intelligence, coding, agentic behavior, speed, cost, an
 
 ```powershell
 python ArtificialAnalysis\scrape_artificial_analysis.py --output-dir ArtificialAnalysis
-python ArtificialAnalysis\build_docs_site.py
+python benchmarks\collect_benchmark_scores.py --output-json data\benchmarks\benchmark_scores.json
+python scripts\build_docs_site.py
 ```
 
 The static ranking site lives in `docs/` and reads `docs/data/models.json`.

@@ -88,7 +88,7 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertNotIn("customMissingBase", app_js)
         self.assertNotIn("missingPenaltyMax", app_js)
         self.assertIn("scatter-leader", app_js)
-        self.assertIn("externalBenchmarkRows", app_js)
+        self.assertIn("benchmarkEvidenceRows", app_js)
         self.assertIn("model.html?id=", app_js)
         self.assertIn("benchmark.html?id=", app_js)
         self.assertNotIn("source-weight-controls", app_js)
@@ -96,7 +96,7 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertNotIn("Source weights", app_js)
         self.assertIn(".metric-weight-label", css)
         self.assertIn(".scatter-leader", css)
-        self.assertIn(".external-benchmark-row", css)
+        self.assertIn(".benchmark-evidence-row", css)
         self.assertNotIn(".source-weight-card", css)
         self.assertNotIn("Open AA page", app_js)
 

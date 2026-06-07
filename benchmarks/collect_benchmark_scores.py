@@ -21,7 +21,7 @@ from urllib.request import Request, urlopen
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUTPUT_JSON = PROJECT_ROOT / "ArtificialAnalysis" / "external_benchmark_scores.json"
+DEFAULT_OUTPUT_JSON = PROJECT_ROOT / "data" / "benchmarks" / "benchmark_scores.json"
 OPENAI_GPT55_URL = "https://openai.com/index/introducing-gpt-5-5/"
 ANTHROPIC_OPUS47_URL = "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416"
 GOOGLE_GEMINI31_URL = "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
@@ -1830,7 +1830,7 @@ def _normalize_label(value: str) -> str:
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Collect external benchmark scores for the static site.")
+    parser = argparse.ArgumentParser(description="Collect benchmark scores for the static site.")
     parser.add_argument("--output-json", default=str(DEFAULT_OUTPUT_JSON), help="JSON payload to write.")
     parser.add_argument("--timeout", type=float, default=30, help="HTTP timeout in seconds.")
     return parser.parse_args(argv)

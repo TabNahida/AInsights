@@ -1455,7 +1455,7 @@ th {
 }
 
 .benchmark-profile,
-.external-benchmark-list,
+.benchmark-evidence-list,
 .variant-list {
   display: grid;
   gap: 8px;
@@ -1522,7 +1522,7 @@ th {
   text-align: right;
 }
 
-.external-benchmark-row {
+.benchmark-evidence-row {
   display: grid;
   grid-template-columns: 40px minmax(180px, 0.9fr) minmax(180px, 1fr) 64px;
   align-items: center;
@@ -1534,11 +1534,11 @@ th {
   text-decoration: none;
 }
 
-.external-benchmark-row:last-child {
+.benchmark-evidence-row:last-child {
   border-bottom: 0;
 }
 
-.external-benchmark-icon {
+.benchmark-evidence-icon {
   display: inline-grid;
   place-items: center;
   width: 34px;
@@ -1551,37 +1551,37 @@ th {
   letter-spacing: 0;
 }
 
-.external-benchmark-copy {
+.benchmark-evidence-copy {
   display: grid;
   gap: 4px;
   min-width: 0;
 }
 
-.external-benchmark-copy strong,
-.external-benchmark-copy em {
+.benchmark-evidence-copy strong,
+.benchmark-evidence-copy em {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.external-benchmark-copy strong {
+.benchmark-evidence-copy strong {
   font-size: 13px;
 }
 
-.external-benchmark-copy em {
+.benchmark-evidence-copy em {
   color: var(--muted);
   font-size: 12px;
   font-style: normal;
 }
 
-.external-benchmark-track {
+.benchmark-evidence-track {
   height: 12px;
   border-radius: 999px;
   background: #edf1f7;
   overflow: hidden;
 }
 
-.external-benchmark-track span {
+.benchmark-evidence-track span {
   display: block;
   width: var(--value, 0%);
   height: 100%;
@@ -1589,7 +1589,7 @@ th {
   background: linear-gradient(90deg, var(--accent-3), var(--accent-4));
 }
 
-.external-benchmark-row b {
+.benchmark-evidence-row b {
   color: var(--ink);
   font-size: 13px;
   text-align: right;
@@ -1989,7 +1989,7 @@ th {
     grid-template-columns: minmax(0, 1fr) 52px;
   }
 
-  .external-benchmark-row {
+  .benchmark-evidence-row {
     grid-template-columns: 36px minmax(0, 1fr) 58px;
   }
 
@@ -1998,7 +1998,7 @@ th {
   }
 
   .benchmark-track,
-  .external-benchmark-track,
+  .benchmark-evidence-track,
   .benchmark-ranking-track {
     grid-column: 1 / -1;
     order: 3;

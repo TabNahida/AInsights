@@ -928,7 +928,7 @@ function customWeightPresetMatchesGroup(presetId, group) {
     .join(" ")
     .toLowerCase();
   if (presetId === "aa-intelligence") {
-    return group.metrics.some((metric) => !String(metric.key).startsWith("ext:"));
+    return group.metrics.some((metric) => !String(metric.key).startsWith("benchmark:"));
   }
   if (presetId === "aa-coding") {
     return /\b(coding|code|swe|scicode|livecodebench|terminal|repository|software)\b/.test(haystack);
@@ -1762,7 +1762,7 @@ function benchmarkProfileRows(model, { reference = true } = {}) {
         weight: Number(defaultWeights[metric.key] || 0),
         rank: metricRank(metric.key, model),
         metric,
-        sourceLabel: externalRow?.sourceLabel || (metric.source === "external" ? tr("source") : "Artificial Analysis"),
+        sourceLabel: externalRow?.sourceLabel || (metric.source === "benchmark" ? tr("source") : "Artificial Analysis"),
         sourceUrl: externalRow?.sourceUrl || "",
         unit: externalRow?.unit || metric.unit || "%",
       };
@@ -1794,7 +1794,7 @@ function renderBenchmarkRow(row) {
   `;
 }
 
-function externalBenchmarkRows(model) {
+function benchmarkEvidenceRows(model) {
   return [...(model.externalBenchmarks || [])].sort((a, b) => {
     const metricA = metricDefinition(a.metricKey);
     const metricB = metricDefinition(b.metricKey);
@@ -1803,7 +1803,7 @@ function externalBenchmarkRows(model) {
   });
 }
 
-function renderExternalBenchmarkRow(row) {
+function renderBenchmarkEvidenceRow(row) {
   const metric = metricDefinition(row.metricKey);
   const icon = metric.icon || initials(row.label);
   const valueWidth = clamp(row.value, 0, 100);
@@ -1811,13 +1811,13 @@ function renderExternalBenchmarkRow(row) {
   const source = row.sourceLabel || tr("source");
   const href = row.sourceUrl || "#";
   return `
-    <a class="external-benchmark-row" href="${escapeHtml(href)}" target="_blank" rel="noreferrer">
-      <span class="external-benchmark-icon">${escapeHtml(icon)}</span>
-      <span class="external-benchmark-copy">
+    <a class="benchmark-evidence-row" href="${escapeHtml(href)}" target="_blank" rel="noreferrer">
+      <span class="benchmark-evidence-icon">${escapeHtml(icon)}</span>
+      <span class="benchmark-evidence-copy">
         <strong>${escapeHtml(row.label)}</strong>
         <em>${escapeHtml(metric.category || source)} · ${escapeHtml(source)}</em>
       </span>
-      <span class="external-benchmark-track"><span style="--value: ${valueWidth}%"></span></span>
+      <span class="benchmark-evidence-track"><span style="--value: ${valueWidth}%"></span></span>
       <b>${escapeHtml(value)}</b>
     </a>
   `;
@@ -1903,7 +1903,7 @@ function benchmarkRankingRows(metric) {
       return {
         model,
         value,
-        sourceLabel: sourceRow?.sourceLabel || (metric.source === "external" ? tr("source") : "Artificial Analysis"),
+        sourceLabel: sourceRow?.sourceLabel || (metric.source === "benchmark" ? tr("source") : "Artificial Analysis"),
         sourceUrl: sourceRow?.sourceUrl || "",
       };
     })

@@ -4,7 +4,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-from ArtificialAnalysis.build_docs_site import (
+from scripts.build_docs_site import (
     build_site_payload,
     score_model_for_preset,
     variant_group,
@@ -183,13 +183,13 @@ class BuildDocsSiteTests(unittest.TestCase):
         )
 
         model = payload["models"][0]
-        self.assertIn("ext:terminal-bench-2", [metric["key"] for metric in payload["metrics"]])
-        self.assertEqual(model["scores"]["ext:terminal-bench-2"], 82.7)
+        self.assertIn("benchmark:terminal-bench-2", [metric["key"] for metric in payload["metrics"]])
+        self.assertEqual(model["scores"]["benchmark:terminal-bench-2"], 82.7)
         self.assertEqual(model["externalBenchmarks"][0]["label"], "Terminal-Bench 2.0")
         self.assertEqual(model["modelIcon"]["src"], "assets/logos/openai_small.svg")
         self.assertEqual(model["modelIcon"]["color"], "#1f1f1f")
-        self.assertEqual(payload["externalSources"][-1]["scoreStatus"], "external")
-        self.assertIn("ext:terminal-bench-2", payload["externalSources"][-1]["relatedMetrics"])
+        self.assertEqual(payload["externalSources"][-1]["scoreStatus"], "benchmark")
+        self.assertIn("benchmark:terminal-bench-2", payload["externalSources"][-1]["relatedMetrics"])
 
     def test_build_docs_site_runs_when_invoked_by_path(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -205,7 +205,7 @@ class BuildDocsSiteTests(unittest.TestCase):
             result = subprocess.run(
                 [
                     sys.executable,
-                    "ArtificialAnalysis/build_docs_site.py",
+                    "scripts/build_docs_site.py",
                     "--input-csv",
                     str(input_csv),
                     "--output-json",

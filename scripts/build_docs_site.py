@@ -22,7 +22,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT_CSV = PROJECT_ROOT / "ArtificialAnalysis" / RAW_SCORES_FILENAME
 DEFAULT_OUTPUT_JSON = PROJECT_ROOT / "docs" / "data" / "models.json"
 DEFAULT_OUTPUT_JS = PROJECT_ROOT / "docs" / "data" / "models.js"
-DEFAULT_EXTERNAL_BENCHMARKS_JSON = PROJECT_ROOT / "ArtificialAnalysis" / "external_benchmark_scores.json"
+DEFAULT_EXTERNAL_BENCHMARKS_JSON = PROJECT_ROOT / "data" / "benchmarks" / "benchmark_scores.json"
 LOCAL_LOGO_DIR = "assets/logos"
 
 ARTICLE_URL = "https://zhuanlan.zhihu.com/p/2032797597627311070?share_code=YgrFlZy1McBQ&utm_psn=2043622787617641823"
@@ -230,7 +230,7 @@ def load_external_benchmarks(path: Path) -> dict[str, Any]:
 
 
 def external_metric_key(benchmark_id: str) -> str:
-    return f"ext:{benchmark_id}"
+    return f"benchmark:{benchmark_id}"
 
 
 def build_site_payload(
@@ -274,8 +274,8 @@ def build_site_payload(
                 "key": external_metric_key(benchmark["id"]),
                 "label": benchmark.get("label") or benchmark["id"],
                 "defaultWeight": 0,
-                "source": "external",
-                "category": benchmark.get("category") or "External benchmark",
+                "source": "benchmark",
+                "category": benchmark.get("category") or "Benchmark",
                 "unit": benchmark.get("unit") or "%",
                 "icon": benchmark.get("icon") or "",
             }
@@ -396,7 +396,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--external-benchmarks-json",
         default=str(DEFAULT_EXTERNAL_BENCHMARKS_JSON),
-        help="External benchmark scores JSON to merge into the site payload.",
+        help="Benchmark scores JSON to merge into the site payload.",
     )
     return parser.parse_args(argv)
 
@@ -452,11 +452,11 @@ def external_sources_payload(external_benchmark_data: dict[str, Any]) -> list[di
                 "label": source.get("label") or source_id,
                 "icon": _initials(source.get("label") or source_id),
                 "url": source.get("url") or "",
-                "category": source.get("category") or "External benchmark",
+                "category": source.get("category") or "Benchmark",
                 "coverage": f"{len(results)} model-benchmark scores",
-                "focus": focus or source.get("note") or "External evaluation reference.",
+                "focus": focus or source.get("note") or "Benchmark evaluation reference.",
                 "note": source.get("note") or source.get("collectionStatus") or "",
-                "scoreStatus": "external" if related_metrics else "reference",
+                "scoreStatus": "benchmark" if related_metrics else "reference",
                 "defaultWeight": 0,
                 "relatedMetrics": related_metrics,
                 "benchmarkIds": benchmark_ids,

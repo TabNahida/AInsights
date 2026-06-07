@@ -1,6 +1,6 @@
 import unittest
 
-from ArtificialAnalysis.collect_external_benchmarks import (
+from benchmarks.collect_benchmark_scores import (
     build_payload,
     parse_markdown_source_scores,
     parse_openai_scores,
