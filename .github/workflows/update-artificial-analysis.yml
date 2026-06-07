@@ -35,6 +35,41 @@ jobs:
       - name: Fetch external benchmark data
         run: python ArtificialAnalysis/collect_external_benchmarks.py
 
+      - name: Validate official benchmark source policy
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          top_vendor_source_ids = {
+              "anthropic-claude-opus-4-7-release",
+              "qwen-qwen3-6-27b-card",
+              "qwen-qwen3-6-plus-release",
+              "qwen-qwen3-6-max-preview-release",
+              "deepseek-v4-pro-card",
+              "kimi-k2-6-card",
+              "kimi-k2-thinking-card",
+              "kimi-k2-5-card",
+              "zai-glm-5-1-card",
+              "google-gemini-3-1-pro-card",
+              "google-gemma-4-card",
+              "xiaomi-mimo-v2-5-release",
+              "xai-grok-4-1-fast-release",
+              "nvidia-nemotron-3-ultra-report",
+          }
+          payload = json.loads(Path("ArtificialAnalysis/external_benchmark_scores.json").read_text(encoding="utf-8"))
+          bad_sources = [
+              source
+              for source in payload.get("sources", [])
+              if source.get("id") in top_vendor_source_ids
+              and "huggingface.co" in source.get("url", "")
+          ]
+          if bad_sources:
+              details = ", ".join(f"{source['id']} -> {source['url']}" for source in bad_sources)
+              raise SystemExit(f"Top-vendor official benchmark sources must not use Hugging Face as primary URL: {details}")
+          print(f"Validated {len(top_vendor_source_ids)} top-vendor official source ids.")
+          PY
+
       - name: Rebuild docs site data
         run: python ArtificialAnalysis/build_docs_site.py
 

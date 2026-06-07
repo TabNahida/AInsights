@@ -93,6 +93,32 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
 
         self.assertEqual(terminal["value"], 59.3)
 
+    def test_parse_markdown_source_scores_extracts_html_tables(self):
+        html = """
+        <table>
+          <tr><th>Benchmark</th><th>Gemini 3.1 Pro</th></tr>
+          <tr><td>Terminal-Bench 2.0 Agentic terminal coding</td><td>68.5%</td></tr>
+          <tr><td>GPQA Diamond Scientific knowledge</td><td>94.3%</td></tr>
+        </table>
+        """
+        spec = {
+            "id": "google-test",
+            "label": "Google test",
+            "url": "https://deepmind.google/models/model-cards/gemini-3-1-pro/",
+            "columns": {"Gemini 3.1 Pro": "Gemini 3.1 Pro"},
+            "rowLabels": {
+                "Terminal-Bench 2.0": "terminal-bench-2",
+                "GPQA Diamond": "gpqa-diamond",
+            },
+        }
+
+        rows = parse_markdown_source_scores(html, spec)
+        terminal = next(row for row in rows if row["benchmarkId"] == "terminal-bench-2")
+        gpqa = next(row for row in rows if row["benchmarkId"] == "gpqa-diamond")
+
+        self.assertEqual(terminal["value"], 68.5)
+        self.assertEqual(gpqa["value"], 94.3)
+
     def test_build_payload_includes_official_seed_sources(self):
         payload = build_payload({}, "seeded")
 
@@ -106,6 +132,71 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
 
         self.assertEqual(qwen_result["value"], 77.2)
         self.assertIn("qwen-qwen3-6-27b-card", [source["id"] for source in payload["sources"]])
+        self.assertTrue(qwen_result["sourceUrl"].startswith("https://qwen.ai/"))
+
+    def test_top_vendor_sources_prefer_official_pages_over_hugging_face(self):
+        payload = build_payload({}, "seeded")
+        top_vendor_ids = {
+            "anthropic-claude-opus-4-7-release",
+            "qwen-qwen3-6-27b-card",
+            "qwen-qwen3-6-plus-release",
+            "deepseek-v4-pro-card",
+            "kimi-k2-6-card",
+            "kimi-k2-thinking-card",
+            "kimi-k2-5-card",
+            "zai-glm-5-1-card",
+            "google-gemini-3-1-pro-card",
+            "google-gemma-4-card",
+            "xiaomi-mimo-v2-5-release",
+            "xai-grok-4-1-fast-release",
+            "nvidia-nemotron-3-ultra-report",
+        }
+
+        urls = {
+            source["id"]: source["url"]
+            for source in payload["sources"]
+            if source["id"] in top_vendor_ids
+        }
+
+        self.assertEqual(set(urls), top_vendor_ids)
+        for url in urls.values():
+            self.assertNotIn("huggingface.co", url)
+
+    def test_build_payload_includes_new_official_vendor_scores(self):
+        payload = build_payload({}, "seeded")
+        results = payload["results"]
+
+        gemini_terminal = next(
+            row
+            for row in results
+            if row["model"] == "Gemini 3.1 Pro" and row["benchmarkId"] == "terminal-bench-2"
+        )
+        claude_swe = next(
+            row
+            for row in results
+            if row["model"] == "Claude Opus 4.7" and row["benchmarkId"] == "swe-bench-verified"
+        )
+        mimo_swe = next(
+            row
+            for row in results
+            if row["model"] == "MiMo-V2.5-Pro" and row["benchmarkId"] == "swe-bench-pro"
+        )
+        grok_tau = next(
+            row
+            for row in results
+            if row["model"] == "Grok 4.1 Fast" and row["benchmarkId"] == "tau2-bench-telecom"
+        )
+        nemotron_mmlu = next(
+            row
+            for row in results
+            if row["model"] == "Nemotron 3 Ultra" and row["benchmarkId"] == "mmlu-pro"
+        )
+
+        self.assertEqual(gemini_terminal["value"], 68.5)
+        self.assertEqual(claude_swe["value"], 87.6)
+        self.assertEqual(mimo_swe["value"], 57.2)
+        self.assertEqual(grok_tau["value"], 100.0)
+        self.assertEqual(nemotron_mmlu["value"], 86.8)
 
 
 if __name__ == "__main__":

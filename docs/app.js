@@ -12,6 +12,8 @@ const copy = {
     pages: {
       home: "首页",
       ranking: "完整排名",
+      benchmarks: "测试项",
+      sources: "数据源",
     },
     backToRanking: "返回完整排名",
     modelNotFound: "没有找到这个模型",
@@ -22,6 +24,15 @@ const copy = {
     metricWeightsTitle: "AA 子项权重",
     metricWeightsSubtitle: "直接参与当前自定义排名的逐项权重，按已有模型数据量排序",
     metricCoverage: "{count} 个模型",
+    metricGroupMeta: "{count} 个模型 · {metrics} 个数据项",
+    missingModeTitle: "缺失值处理",
+    missingModeSubtitle: "当选中的测试项在某些模型上没有分数时，选择排名算法如何处理",
+    missingModes: {
+      zero: "缺失记 0",
+      available: "只按可用项",
+      penalty: "可用项+扣分",
+      complete: "要求全覆盖",
+    },
     sourceWeightStatuses: {
       active: "主数据源",
       mapped: "映射到现有子项",
@@ -30,6 +41,16 @@ const copy = {
     },
     relatedMetrics: "{count} 个相关子项",
     detailSourceCoverage: "{available}/{total} 个相关子项有分数",
+    sourcesBadge: "{count} 个数据源",
+    sourcesPageTitle: "独立测评与参考源",
+    sourcesPageSubtitle: "这里展示第三方或其他机构的测评源；厂商官方发布页和模型卡仅作为具体分数来源出现在模型/测试项详情里。",
+    sourceMetricMapTitle: "数据源与测试项映射",
+    sourceMetricMapSubtitle: "每个来源对应的 benchmark、覆盖模型数和在当前数据中的结果数量。",
+    sourceStats: {
+      metrics: "测试项",
+      models: "模型覆盖",
+      results: "分数记录",
+    },
     reset: "重置",
     empty: "没有符合条件的模型",
     loadFailed: "数据加载失败：{message}",
@@ -60,16 +81,24 @@ const copy = {
     sourceExplorerTitle: "测评源地图",
     sourceExplorerSubtitle: "AA 主数据之外的常用公开测评，用来交叉理解模型强弱项",
     detailRankTitle: "排名快照",
-    detailBenchmarkTitle: "Benchmark Profile",
-    detailBenchmarkSubtitle: "AA 原始子项得分和 AInsights 默认权重",
-    detailExternalTitle: "外部 Benchmark 分数",
-    detailExternalSubtitle: "来自官方发布页或模型卡的逐模型公开测评，默认不影响 AInsights Index",
+    detailBenchmarkTitle: "AInsights Index 参考项目",
+    detailBenchmarkSubtitle: "参与 AInsights Index 默认权重的测试项",
+    detailExternalTitle: "非参考项目分数",
+    detailExternalSubtitle: "未参与 AInsights Index 默认权重的 AA 子项、官方发布页或其他公开测评",
     detailCostTitle: "成本与吞吐",
     detailVariantsTitle: "同模型档位",
     detailSourcesTitle: "外部测评参考",
     releaseDate: "发布日期",
     currentPreset: "当前预设",
     noBenchmarks: "没有可展示的子项得分",
+    benchmarkPageTitle: "单项测试排名",
+    benchmarkPageSubtitle: "查看每一项测试下所有有分数模型的具体排名和来源",
+    benchmarkPickerTitle: "选择测试项",
+    benchmarkRankingTitle: "{label} 排名",
+    benchmarkRankingSubtitle: "{count} 个模型有分数 · {category}",
+    benchmarkReference: "AInsights 参考项",
+    benchmarkNonReference: "非参考项",
+    benchmarkSourcesOnly: "来源",
     notAvailable: "暂无",
     homeStats: {
       leader: "领先模型",
@@ -150,6 +179,8 @@ const copy = {
     pages: {
       home: "Home",
       ranking: "Full ranking",
+      benchmarks: "Benchmarks",
+      sources: "Sources",
     },
     backToRanking: "Back to full ranking",
     modelNotFound: "Model not found",
@@ -160,6 +191,15 @@ const copy = {
     metricWeightsTitle: "AA benchmark weights",
     metricWeightsSubtitle: "Fine-grained weights used directly by the custom ranking, sorted by model coverage",
     metricCoverage: "{count} models",
+    metricGroupMeta: "{count} models · {metrics} data fields",
+    missingModeTitle: "Missing values",
+    missingModeSubtitle: "Choose how the custom ranking handles models without scores for selected benchmarks",
+    missingModes: {
+      zero: "Missing = 0",
+      available: "Available only",
+      penalty: "Available + penalty",
+      complete: "Full coverage",
+    },
     sourceWeightStatuses: {
       active: "Primary source",
       mapped: "Mapped to available metrics",
@@ -168,6 +208,16 @@ const copy = {
     },
     relatedMetrics: "{count} related metrics",
     detailSourceCoverage: "{available}/{total} related metrics scored",
+    sourcesBadge: "{count} sources",
+    sourcesPageTitle: "Independent evaluation sources",
+    sourcesPageSubtitle: "This page shows third-party or cross-lab evaluation sources. Vendor launch pages and model cards appear only as score sources inside model and benchmark details.",
+    sourceMetricMapTitle: "Source-to-benchmark map",
+    sourceMetricMapSubtitle: "Benchmarks, model coverage, and score records represented by each source.",
+    sourceStats: {
+      metrics: "Benchmarks",
+      models: "Model coverage",
+      results: "Score records",
+    },
     reset: "Reset",
     empty: "No models match the current filters",
     loadFailed: "Failed to load data: {message}",
@@ -198,16 +248,24 @@ const copy = {
     sourceExplorerTitle: "Benchmark source map",
     sourceExplorerSubtitle: "Public evaluation sources to cross-check model strengths beyond AA",
     detailRankTitle: "Rank snapshot",
-    detailBenchmarkTitle: "Benchmark Profile",
-    detailBenchmarkSubtitle: "AA raw component scores and AInsights default weights",
-    detailExternalTitle: "External benchmark scores",
-    detailExternalSubtitle: "Per-model public evals from official launch pages or model cards; excluded from AInsights Index by default",
+    detailBenchmarkTitle: "AInsights Index reference benchmarks",
+    detailBenchmarkSubtitle: "Benchmarks used by the default AInsights Index weighting",
+    detailExternalTitle: "Non-reference benchmark scores",
+    detailExternalSubtitle: "AA submetrics, official release scores, and public evals outside the default AInsights Index weighting",
     detailCostTitle: "Cost and throughput",
     detailVariantsTitle: "Same-model tiers",
     detailSourcesTitle: "External evaluation references",
     releaseDate: "Release date",
     currentPreset: "Current preset",
     noBenchmarks: "No component scores to display",
+    benchmarkPageTitle: "Benchmark rankings",
+    benchmarkPageSubtitle: "Inspect model rankings and source-backed scores for each benchmark",
+    benchmarkPickerTitle: "Choose benchmark",
+    benchmarkRankingTitle: "{label} ranking",
+    benchmarkRankingSubtitle: "{count} scored models · {category}",
+    benchmarkReference: "AInsights reference",
+    benchmarkNonReference: "Non-reference",
+    benchmarkSourcesOnly: "Sources",
     notAvailable: "N/A",
     homeStats: {
       leader: "Leader",
@@ -288,9 +346,11 @@ const state = {
   dedupe: true,
   query: "",
   customWeights: {},
+  customMissingMode: "zero",
   language: getInitialLanguage(),
   page: initialRoute.page,
   modelId: initialRoute.modelId,
+  benchmarkId: initialRoute.benchmarkId,
   viewMode: "histogram",
   sourceFilter: "all",
   topChartLimit: 20,
@@ -299,11 +359,15 @@ const state = {
 const els = {
   updatedAt: document.querySelector("#updatedAt"),
   sourceLink: document.querySelector("#sourceLink"),
+  sourcesLink: document.querySelector("#sourcesLink"),
   pageButtons: document.querySelector("#pageButtons"),
   homeView: document.querySelector("#homeView"),
   rankingView: document.querySelector("#rankingView"),
+  sourcesView: document.querySelector("#sourcesView"),
   modelView: document.querySelector("#modelView"),
   modelDetail: document.querySelector("#modelDetail"),
+  benchmarkView: document.querySelector("#benchmarkView"),
+  benchmarkDetail: document.querySelector("#benchmarkDetail"),
   languageButtons: document.querySelector("#languageButtons"),
   presetButtons: document.querySelector("#presetButtons"),
   viewButtons: document.querySelector("#viewButtons"),
@@ -333,6 +397,12 @@ const els = {
   sourceExplorerTitle: document.querySelector("#sourceExplorerTitle"),
   sourceExplorerSubtitle: document.querySelector("#sourceExplorerSubtitle"),
   sourceExplorer: document.querySelector("#sourceExplorer"),
+  sourcesPageTitle: document.querySelector("#sourcesPageTitle"),
+  sourcesPageSubtitle: document.querySelector("#sourcesPageSubtitle"),
+  sourceOverview: document.querySelector("#sourceOverview"),
+  sourceMetricMapTitle: document.querySelector("#sourceMetricMapTitle"),
+  sourceMetricMapSubtitle: document.querySelector("#sourceMetricMapSubtitle"),
+  sourceMetricMap: document.querySelector("#sourceMetricMap"),
   histogramList: document.querySelector("#histogramList"),
   tableRanking: document.querySelector("#tableRanking"),
   rankingBody: document.querySelector("#rankingBody"),
@@ -350,7 +420,7 @@ const els = {
 };
 
 const presetOrder = ["zhihu-adjusted", "aa-intelligence", "aa-coding", "aa-agentic", "custom"];
-const pageOrder = ["home", "ranking"];
+const pageOrder = ["home", "ranking", "benchmarks", "sources"];
 const viewOrder = ["histogram", "table", "text"];
 const sourceFilterOrder = ["all", "open", "closed", "unknown"];
 const providerColors = {
@@ -378,7 +448,7 @@ async function init() {
     state.data = window.AINSIGHTS_MODELS_DATA || (await fetchJsonData());
     state.presetId = state.data.defaultPreset;
     state.dedupe = Boolean(state.data.defaultDedupe);
-    state.customWeights = defaultMetricWeights();
+    state.customWeights = defaultCustomWeights();
     els.dedupeToggle.checked = state.dedupe;
     bindControlEvents();
     renderStaticControls();
@@ -405,7 +475,8 @@ function bindControlEvents() {
     render();
   });
   els.resetWeightsButton.addEventListener("click", () => {
-    state.customWeights = defaultMetricWeights();
+    state.customWeights = defaultCustomWeights();
+    state.customMissingMode = "zero";
     state.presetId = "custom";
     render();
   });
@@ -413,6 +484,7 @@ function bindControlEvents() {
     const route = getInitialRoute();
     state.page = route.page;
     state.modelId = route.modelId;
+    state.benchmarkId = route.benchmarkId;
     renderStaticControls();
     render();
   });
@@ -441,6 +513,8 @@ function renderStaticControls() {
   els.updatedAt.textContent = tr("updatedAt", { date: formatDateTime(state.data.generatedAt) });
   els.sourceLink.textContent = tr("source");
   els.sourceLink.href = state.data.source.url;
+  els.sourcesLink.textContent = tr("sourcesBadge", { count: catalogSources().length });
+  els.sourcesLink.href = pageHref("sources");
   els.searchLabel.textContent = tr("search");
   els.searchInput.placeholder = tr("searchPlaceholder");
   els.dedupeLabel.textContent = tr("dedupe");
@@ -458,6 +532,10 @@ function renderStaticControls() {
   els.providerChartSubtitle.textContent = tr("providerChartSubtitle");
   els.sourceExplorerTitle.textContent = tr("sourceExplorerTitle");
   els.sourceExplorerSubtitle.textContent = tr("sourceExplorerSubtitle");
+  els.sourcesPageTitle.textContent = tr("sourcesPageTitle");
+  els.sourcesPageSubtitle.textContent = tr("sourcesPageSubtitle");
+  els.sourceMetricMapTitle.textContent = tr("sourceMetricMapTitle");
+  els.sourceMetricMapSubtitle.textContent = tr("sourceMetricMapSubtitle");
   els.modelHeader.textContent = tr("headers.model");
   els.scoreHeader.textContent = tr("headers.score");
   els.speedHeader.textContent = tr("headers.speed");
@@ -466,7 +544,7 @@ function renderStaticControls() {
   els.sourceHeader.textContent = tr("headers.source");
   els.coverageHeader.textContent = tr("headers.coverage");
   els.languageButtons.setAttribute("aria-label", tr("languageLabel"));
-  els.siteFooter.innerHTML = `${escapeHtml(tr("footerPrefix"))}<a href="${escapeHtml(state.data.source.url)}" target="_blank" rel="noreferrer">Artificial Analysis</a>${escapeHtml(tr("footerSuffix"))}`;
+  els.siteFooter.innerHTML = `${escapeHtml(tr("footerPrefix"))}<a href="${escapeHtml(state.data.source.url)}" target="_blank" rel="noreferrer">Artificial Analysis</a> · <a href="${escapeHtml(pageHref("sources"))}">${escapeHtml(tr("sourcesBadge", { count: catalogSources().length }))}</a>${escapeHtml(tr("footerSuffix"))}`;
 
   renderPageButtons();
   renderLanguageButtons();
@@ -560,7 +638,9 @@ function render() {
   const preset = state.data.presets[state.presetId];
   els.homeView.hidden = state.page !== "home";
   els.rankingView.hidden = state.page !== "ranking";
+  els.sourcesView.hidden = state.page !== "sources";
   els.modelView.hidden = state.page !== "model";
+  els.benchmarkView.hidden = state.page !== "benchmarks";
   document.querySelectorAll("#pageButtons button").forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.page === state.page));
   });
@@ -575,6 +655,11 @@ function render() {
   });
   els.customPanel.hidden = state.presetId !== "custom";
   if (!els.customPanel.hidden) renderWeights();
+
+  if (!els.sourcesView.hidden) {
+    renderSourcesPage();
+    return;
+  }
 
   renderResults(preset);
 }
@@ -594,6 +679,7 @@ function renderResults(preset) {
     renderRankings(ranked);
   }
   if (!els.modelView.hidden) renderModelDetail(allRanked, preset);
+  if (!els.benchmarkView.hidden) renderBenchmarkPage();
 }
 
 function scoreModels(preset, presetId = state.presetId) {
@@ -624,6 +710,10 @@ function scoreModel(model, preset, presetId = state.presetId) {
     };
   }
 
+  if (presetId === "custom") {
+    return scoreModelForCustomWeights(model);
+  }
+
   const weights = presetId === "custom" ? state.customWeights : preset.weights;
   let weightedScore = 0;
   let denominator = 0;
@@ -648,6 +738,56 @@ function scoreModel(model, preset, presetId = state.presetId) {
   return {
     score,
     coverage,
+    availableWeight,
+    scoreMeta: `${formatNumber(availableWeight)}w`,
+  };
+}
+
+function scoreModelForCustomWeights(model) {
+  const missingPenaltyMax = 10;
+  let weightedScore = 0;
+  let denominator = 0;
+  let availableWeight = 0;
+  let missingWeight = 0;
+  let coverage = 0;
+  let selected = 0;
+  let selectedWeight = 0;
+
+  for (const group of customMetricGroups()) {
+    const weight = Number(state.customWeights[group.id] || 0);
+    if (weight <= 0) continue;
+    selected += 1;
+    selectedWeight += weight;
+    const value = customMetricGroupValue(model, group);
+    if (Number.isFinite(value)) {
+      weightedScore += value * weight;
+      denominator += weight;
+      availableWeight += weight;
+      coverage += 1;
+    } else if (state.customMissingMode === "zero") {
+      denominator += weight;
+      missingWeight += weight;
+    } else if (state.customMissingMode === "penalty") {
+      missingWeight += weight;
+    } else if (state.customMissingMode === "complete") {
+      return {
+        score: null,
+        coverage,
+        coverageLabel: `${coverage}/${selected}`,
+        availableWeight,
+        scoreMeta: `${formatNumber(availableWeight)}w`,
+      };
+    }
+  }
+
+  let score = denominator > 0 && selected > 0 ? weightedScore / denominator : null;
+  if (Number.isFinite(score) && state.customMissingMode === "penalty" && selectedWeight > 0) {
+    score = Math.max(0, score - (missingWeight / selectedWeight) * missingPenaltyMax);
+  }
+  return {
+    score,
+    coverage,
+    coverageLabel: `${coverage}/${selected}`,
     availableWeight,
     scoreMeta: `${formatNumber(availableWeight)}w`,
   };
@@ -716,6 +856,10 @@ function defaultMetricWeights() {
   return Object.fromEntries(state.data.metrics.map((metric) => [metric.key, Number(metric.defaultWeight || 0)]));
 }
 
+function defaultCustomWeights() {
+  return Object.fromEntries(customMetricGroups().map((group) => [group.id, Number(group.defaultWeight || 0)]));
+}
+
 function sourceMetricKeys(source) {
   const knownMetrics = new Set(state.data.metrics.map((metric) => metric.key));
   return (source.relatedMetrics || []).filter((key) => knownMetrics.has(key));
@@ -723,6 +867,13 @@ function sourceMetricKeys(source) {
 
 function renderWeights() {
   els.weightsGrid.innerHTML = `
+    <section class="weight-group missing-mode-group">
+      <div class="weight-group-head">
+        <h3>${escapeHtml(tr("missingModeTitle"))}</h3>
+        <p>${escapeHtml(tr("missingModeSubtitle"))}</p>
+      </div>
+      <div class="missing-mode-controls segmented-control" data-missing-mode-controls></div>
+    </section>
     <section class="weight-group">
       <div class="weight-group-head">
         <h3>${escapeHtml(tr("metricWeightsTitle"))}</h3>
@@ -731,29 +882,29 @@ function renderWeights() {
       <div class="metric-weight-controls" data-weight-controls="metrics"></div>
     </section>
   `;
+  renderMissingModeControls(els.weightsGrid.querySelector("[data-missing-mode-controls]"));
   const metricTarget = els.weightsGrid.querySelector('[data-weight-controls="metrics"]');
-  const metrics = [...state.data.metrics]
-    .map((metric) => ({ metric, coverage: metricCoverageCount(metric.key) }))
+  const groups = customMetricGroups()
     .sort((a, b) => (
       b.coverage - a.coverage
-      || Number(b.metric.defaultWeight || 0) - Number(a.metric.defaultWeight || 0)
-      || a.metric.label.localeCompare(b.metric.label)
+      || Number(b.defaultWeight || 0) - Number(a.defaultWeight || 0)
+      || a.label.localeCompare(b.label)
     ));
-  for (const { metric, coverage } of metrics) {
+  for (const group of groups) {
     const fragment = els.metricTemplate.content.cloneNode(true);
     const labelText = fragment.querySelector("span");
     const input = fragment.querySelector("input");
     const output = fragment.querySelector("output");
     labelText.className = "metric-weight-label";
     labelText.innerHTML = `
-      <strong>${escapeHtml(metric.label)}</strong>
-      <em>${escapeHtml(tr("metricCoverage", { count: coverage }))}</em>
+      <strong>${escapeHtml(group.label)}</strong>
+      <em>${escapeHtml(tr("metricGroupMeta", { count: group.coverage, metrics: group.metrics.length }))}</em>
     `;
-    input.dataset.metricKey = metric.key;
-    input.value = state.customWeights[metric.key] ?? metric.defaultWeight;
+    input.dataset.metricGroup = group.id;
+    input.value = state.customWeights[group.id] ?? group.defaultWeight;
     output.value = formatWeight(input.value);
     input.addEventListener("input", (event) => {
-      state.customWeights[metric.key] = Number(event.target.value);
+      state.customWeights[event.target.dataset.metricGroup] = Number(event.target.value);
       output.value = formatWeight(event.target.value);
       renderResults(state.data.presets.custom);
     });
@@ -761,8 +912,63 @@ function renderWeights() {
   }
 }
 
-function metricCoverageCount(metricKey) {
-  return (state.data.models || []).filter((model) => Number.isFinite(model.scores?.[metricKey])).length;
+function renderMissingModeControls(target) {
+  const modes = ["zero", "available", "penalty", "complete"];
+  target.innerHTML = modes.map((mode) => `
+    <button type="button" data-missing-mode="${escapeHtml(mode)}" aria-pressed="${mode === state.customMissingMode}">
+      ${escapeHtml(tr(`missingModes.${mode}`))}
+    </button>
+  `).join("");
+  target.querySelectorAll("[data-missing-mode]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.customMissingMode = button.dataset.missingMode;
+      renderWeights();
+      renderResults(state.data.presets.custom);
+    });
+  });
+}
+
+function customMetricGroups() {
+  const groups = new Map();
+  for (const metric of state.data.metrics || []) {
+    const id = metricGroupId(metric);
+    if (!groups.has(id)) {
+      groups.set(id, {
+        id,
+        label: metric.label,
+        metrics: [],
+        defaultWeight: 0,
+      });
+    }
+    const group = groups.get(id);
+    group.metrics.push(metric);
+    group.defaultWeight = Math.max(group.defaultWeight, Number(metric.defaultWeight || 0));
+  }
+  return [...groups.values()].map((group) => ({
+    ...group,
+    coverage: metricGroupCoverageCount(group.metrics),
+  }));
+}
+
+function metricGroupId(metric) {
+  return String(metric.label || metric.key || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function metricGroupCoverageCount(metrics) {
+  return (state.data.models || []).filter((model) => (
+    metrics.some((metric) => Number.isFinite(model.scores?.[metric.key]))
+  )).length;
+}
+
+function customMetricGroupValue(model, group) {
+  const values = group.metrics
+    .map((metric) => model.scores?.[metric.key])
+    .filter(Number.isFinite);
+  if (values.length === 0) return null;
+  return values.reduce((sum, value) => sum + value, 0) / values.length;
 }
 
 function renderHome(models) {
@@ -1000,7 +1206,7 @@ function renderSourceExplorer(target, compact = false) {
 }
 
 function sourceCardsHtml(compact = false, model = null) {
-  const sources = state.data.externalSources || [];
+  const sources = catalogSources();
   return sources.map((source) => {
     const relatedMetrics = sourceMetricKeys(source);
     const coverage = currentSourceCoverage(source, model);
@@ -1023,6 +1229,83 @@ function currentSourceCoverage(source, model) {
   if (relatedMetrics.length === 0) return source.coverage || "";
   const available = relatedMetrics.filter((key) => Number.isFinite(model.scores?.[key])).length;
   return tr("detailSourceCoverage", { available, total: relatedMetrics.length });
+}
+
+function renderSourcesPage() {
+  const sources = catalogSources();
+  els.sourceOverview.innerHTML = sources.map(renderSourceOverviewCard).join("");
+  els.sourceMetricMap.innerHTML = sources.map(renderSourceMetricMapRow).join("");
+}
+
+function catalogSources() {
+  return (state.data.externalSources || []).filter((source) => !isOfficialModelSource(source));
+}
+
+function isOfficialModelSource(source) {
+  return /^official\b/i.test(String(source.category || ""))
+    || /\bofficial\b/i.test(String(source.label || ""));
+}
+
+function renderSourceOverviewCard(source) {
+  const relatedMetrics = sourceMetricKeys(source);
+  const modelCoverage = sourceModelCoverageCount(source);
+  const resultCount = sourceResultCount(source);
+  const status = tr(`sourceWeightStatuses.${source.scoreStatus || (relatedMetrics.length ? "mapped" : "reference")}`);
+  return `
+    <a class="source-list-card" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">
+      <span class="source-card-icon">${escapeHtml(source.icon || initials(source.label))}</span>
+      <span class="source-card-kicker">${escapeHtml(source.category || tr("source"))}</span>
+      <strong>${escapeHtml(source.label)}</strong>
+      <p>${escapeHtml(`${source.focus || ""} ${source.note || ""}`.trim())}</p>
+      <div class="source-stat-row">
+        <span><b>${escapeHtml(String(relatedMetrics.length))}</b>${escapeHtml(tr("sourceStats.metrics"))}</span>
+        <span><b>${escapeHtml(String(modelCoverage))}</b>${escapeHtml(tr("sourceStats.models"))}</span>
+        <span><b>${escapeHtml(String(resultCount))}</b>${escapeHtml(tr("sourceStats.results"))}</span>
+      </div>
+      <em>${escapeHtml(status)}</em>
+    </a>
+  `;
+}
+
+function renderSourceMetricMapRow(source) {
+  const relatedMetrics = sourceMetricKeys(source).map((key) => metricDefinition(key)).filter((metric) => metric.key);
+  const metricChips = relatedMetrics.length
+    ? relatedMetrics.map((metric) => `
+        <span class="source-metric-chip">
+          ${escapeHtml(metric.label)}
+          <b>${escapeHtml(tr("metricCoverage", { count: metricGroupCoverageCount([metric]) }))}</b>
+        </span>
+      `).join("")
+    : `<span class="source-metric-chip is-empty">${escapeHtml(source.coverage || tr("notAvailable"))}</span>`;
+  return `
+    <article class="source-map-row">
+      <div>
+        <span class="source-card-icon">${escapeHtml(source.icon || initials(source.label))}</span>
+        <strong>${escapeHtml(source.label)}</strong>
+        <em>${escapeHtml(source.category || tr("source"))}</em>
+      </div>
+      <div class="source-metric-chip-list">${metricChips}</div>
+    </article>
+  `;
+}
+
+function sourceModelCoverageCount(source) {
+  const relatedMetrics = sourceMetricKeys(source);
+  return (state.data.models || []).filter((model) => (
+    relatedMetrics.some((key) => Number.isFinite(model.scores?.[key]))
+    || (model.externalBenchmarks || []).some((row) => row.sourceId === source.id)
+  )).length;
+}
+
+function sourceResultCount(source) {
+  const relatedMetrics = sourceMetricKeys(source);
+  const externalRows = (state.data.models || []).reduce((total, model) => (
+    total + (model.externalBenchmarks || []).filter((row) => row.sourceId === source.id).length
+  ), 0);
+  if (externalRows > 0) return externalRows;
+  return (state.data.models || []).reduce((total, model) => (
+    total + relatedMetrics.filter((key) => Number.isFinite(model.scores?.[key])).length
+  ), 0);
 }
 
 function renderRankings(models) {
@@ -1151,8 +1434,8 @@ function renderModelDetail(ranked, preset) {
   document.title = `${model.model} · ${tr("pageTitle")}`;
   const color = providerColor(model);
   const siblingRows = ranked.filter((row) => row.variantGroup === model.variantGroup);
-  const benchmarkRows = benchmarkProfileRows(model);
-  const externalRows = externalBenchmarkRows(model);
+  const referenceRows = benchmarkProfileRows(model, { reference: true });
+  const nonReferenceRows = benchmarkProfileRows(model, { reference: false });
 
   els.modelDetail.innerHTML = `
     <a class="back-link" href="${escapeHtml(pageHref("ranking"))}">${renderIcon("arrowLeft")}${escapeHtml(tr("backToRanking"))}</a>
@@ -1209,7 +1492,7 @@ function renderModelDetail(ranked, preset) {
         <p>${escapeHtml(tr("detailBenchmarkSubtitle"))}</p>
       </div>
       <div class="benchmark-profile">
-        ${benchmarkRows.length ? benchmarkRows.map(renderBenchmarkRow).join("") : `<div class="empty">${escapeHtml(tr("noBenchmarks"))}</div>`}
+        ${referenceRows.length ? referenceRows.map(renderBenchmarkRow).join("") : `<div class="empty">${escapeHtml(tr("noBenchmarks"))}</div>`}
       </div>
     </section>
 
@@ -1218,8 +1501,8 @@ function renderModelDetail(ranked, preset) {
         <h2>${escapeHtml(tr("detailExternalTitle"))}</h2>
         <p>${escapeHtml(tr("detailExternalSubtitle"))}</p>
       </div>
-      <div class="external-benchmark-list">
-        ${externalRows.length ? externalRows.map(renderExternalBenchmarkRow).join("") : `<div class="empty">${escapeHtml(tr("notAvailable"))}</div>`}
+      <div class="benchmark-profile non-reference-profile">
+        ${nonReferenceRows.length ? nonReferenceRows.map(renderBenchmarkRow).join("") : `<div class="empty">${escapeHtml(tr("notAvailable"))}</div>`}
       </div>
     </section>
 
@@ -1288,34 +1571,47 @@ function renderSiblingVariants(rows, currentModel) {
   `).join("");
 }
 
-function benchmarkProfileRows(model) {
+function benchmarkProfileRows(model, { reference = true } = {}) {
   const defaultWeights = state.data.presets["zhihu-adjusted"].weights || {};
   return state.data.metrics
-    .filter((metric) => metric.source !== "external")
     .map((metric) => {
       const value = model.scores?.[metric.key];
+      const externalRow = (model.externalBenchmarks || []).find((row) => row.metricKey === metric.key);
       return {
         key: metric.key,
         label: metric.label,
         value,
         weight: Number(defaultWeights[metric.key] || 0),
         rank: metricRank(metric.key, model),
+        metric,
+        sourceLabel: externalRow?.sourceLabel || (metric.source === "external" ? tr("source") : "Artificial Analysis"),
+        sourceUrl: externalRow?.sourceUrl || "",
+        unit: externalRow?.unit || metric.unit || "%",
       };
     })
+    .filter((row) => (reference ? row.weight > 0 : row.weight <= 0))
     .filter((row) => Number.isFinite(row.value))
-    .sort((a, b) => b.weight - a.weight || b.value - a.value || a.label.localeCompare(b.label));
+    .sort((a, b) => b.weight - a.weight || String(a.metric.category || "").localeCompare(String(b.metric.category || "")) || b.value - a.value || a.label.localeCompare(b.label));
 }
 
 function renderBenchmarkRow(row) {
   const valueWidth = clamp(row.value, 0, 100);
+  const value = `${formatNumber(row.value)}${row.unit === "%" ? "%" : ` ${row.unit || ""}`}`.trim();
+  const meta = row.weight > 0
+    ? `#${row.rank || tr("notAvailable")} · w ${formatWeight(row.weight)}`
+    : `#${row.rank || tr("notAvailable")} · ${row.sourceLabel || tr("benchmarkNonReference")}`;
+  const label = `<strong>${escapeHtml(row.label)}</strong>`;
+  const labelHtml = row.key
+    ? `<a href="${escapeHtml(benchmarkHref(row.key))}">${label}</a>`
+    : label;
   return `
     <div class="benchmark-row">
       <div>
-        <strong>${escapeHtml(row.label)}</strong>
-        <span>#${escapeHtml(row.rank || tr("notAvailable"))} · w ${escapeHtml(formatWeight(row.weight))}</span>
+        ${labelHtml}
+        <span>${escapeHtml(meta)}</span>
       </div>
       <div class="benchmark-track"><span style="--value: ${valueWidth}%"></span></div>
-      <em>${escapeHtml(formatNumber(row.value))}</em>
+      <em>${escapeHtml(value)}</em>
     </div>
   `;
 }
@@ -1346,6 +1642,126 @@ function renderExternalBenchmarkRow(row) {
       <span class="external-benchmark-track"><span style="--value: ${valueWidth}%"></span></span>
       <b>${escapeHtml(value)}</b>
     </a>
+  `;
+}
+
+function renderBenchmarkPage() {
+  const metrics = rankedBenchmarkMetrics();
+  const selected = findBenchmarkMetric(metrics);
+  if (!selected) {
+    els.benchmarkDetail.innerHTML = `<section class="detail-empty">${escapeHtml(tr("notAvailable"))}</section>`;
+    return;
+  }
+  state.benchmarkId = selected.key;
+  const rows = benchmarkRankingRows(selected);
+  document.title = `${selected.label} · ${tr("benchmarkPageTitle")} · ${tr("pageTitle")}`;
+  els.benchmarkDetail.innerHTML = `
+    <section class="detail-section benchmark-page-hero">
+      <div class="detail-section-head">
+        <h2>${escapeHtml(tr("benchmarkPageTitle"))}</h2>
+        <p>${escapeHtml(tr("benchmarkPageSubtitle"))}</p>
+      </div>
+      <div class="benchmark-page-grid">
+        <section class="benchmark-picker" aria-labelledby="benchmarkPickerTitle">
+          <h3 id="benchmarkPickerTitle">${escapeHtml(tr("benchmarkPickerTitle"))}</h3>
+          <div class="benchmark-picker-list">
+            ${metrics.map((metric) => renderBenchmarkPickerItem(metric, selected)).join("")}
+          </div>
+        </section>
+        <section class="benchmark-ranking-panel">
+          <div class="detail-section-head">
+            <h2>${escapeHtml(tr("benchmarkRankingTitle", { label: selected.label }))}</h2>
+            <p>${escapeHtml(tr("benchmarkRankingSubtitle", { count: rows.length, category: selected.category || tr("benchmarkNonReference") }))}</p>
+          </div>
+          <div class="benchmark-ranking-list">
+            ${rows.length ? rows.map((row) => renderBenchmarkRankingRow(row, selected)).join("") : `<div class="empty">${escapeHtml(tr("notAvailable"))}</div>`}
+          </div>
+        </section>
+      </div>
+    </section>
+  `;
+}
+
+function rankedBenchmarkMetrics() {
+  const defaultWeights = state.data.presets["zhihu-adjusted"].weights || {};
+  return (state.data.metrics || []).map((metric) => ({
+    ...metric,
+    coverage: metricGroupCoverageCount([metric]),
+    referenceWeight: Number(defaultWeights[metric.key] || 0),
+  })).filter((metric) => metric.coverage > 0)
+    .sort((a, b) => (
+      (b.referenceWeight > 0) - (a.referenceWeight > 0)
+      || b.coverage - a.coverage
+      || a.label.localeCompare(b.label)
+    ));
+}
+
+function findBenchmarkMetric(metrics) {
+  const routeId = state.benchmarkId || new URLSearchParams(location.search).get("id") || "";
+  return metrics.find((metric) => metric.key === routeId)
+    || metrics.find((metric) => metricGroupId(metric) === routeId)
+    || metrics[0]
+    || null;
+}
+
+function renderBenchmarkPickerItem(metric, selected) {
+  const active = metric.key === selected.key;
+  const kind = metric.referenceWeight > 0 ? tr("benchmarkReference") : tr("benchmarkNonReference");
+  return `
+    <a class="benchmark-picker-item${active ? " is-active" : ""}" href="${escapeHtml(benchmarkHref(metric.key))}">
+      <span>${escapeHtml(metric.icon || initials(metric.label))}</span>
+      <strong>${escapeHtml(metric.label)}</strong>
+      <em>${escapeHtml(tr("metricCoverage", { count: metric.coverage }))} · ${escapeHtml(kind)}</em>
+    </a>
+  `;
+}
+
+function benchmarkRankingRows(metric) {
+  const rows = (state.data.models || [])
+    .map((model) => {
+      const value = model.scores?.[metric.key];
+      if (!Number.isFinite(value)) return null;
+      const sourceRow = (model.externalBenchmarks || []).find((row) => row.metricKey === metric.key);
+      return {
+        model,
+        value,
+        sourceLabel: sourceRow?.sourceLabel || (metric.source === "external" ? tr("source") : "Artificial Analysis"),
+        sourceUrl: sourceRow?.sourceUrl || "",
+      };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.value - a.value || a.model.model.localeCompare(b.model.model));
+  let previousValue = null;
+  let currentRank = 0;
+  return rows.map((row, index) => {
+    if (previousValue === null || row.value !== previousValue) {
+      currentRank = index + 1;
+      previousValue = row.value;
+    }
+    return { ...row, rank: currentRank };
+  });
+}
+
+function renderBenchmarkRankingRow(row, metric) {
+  const maxValue = metric.unit === "%"
+    ? 100
+    : Math.max(...benchmarkRankingRows(metric).map((item) => item.value), 1);
+  const valueWidth = clamp((row.value / maxValue) * 100, 0, 100);
+  const value = `${formatNumber(row.value)}${metric.unit === "%" ? "%" : ` ${metric.unit || ""}`}`.trim();
+  const source = row.sourceUrl
+    ? `<a href="${escapeHtml(row.sourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(row.sourceLabel)}</a>`
+    : escapeHtml(row.sourceLabel);
+  return `
+    <article class="benchmark-ranking-row" style="--value: ${valueWidth}%">
+      <span class="rank-number">#${escapeHtml(row.rank)}</span>
+      ${renderModelIcon(row.model)}
+      <a class="benchmark-ranking-model" href="${escapeHtml(modelHref(row.model))}">
+        <strong>${escapeHtml(row.model.model)}</strong>
+        <em>${escapeHtml(row.model.creator || tr("unknownCreator"))} · ${source}</em>
+      </a>
+      <span class="benchmark-ranking-track"><span></span></span>
+      <b>${escapeHtml(value)}</b>
+    </article>
   `;
 }
 
@@ -1459,265 +1875,10 @@ function modelHref(model) {
   return `model.html?id=${encodeURIComponent(modelRouteId(model))}`;
 }
 
+function benchmarkHref(metricKey) {
+  return `benchmark.html?id=${encodeURIComponent(metricKey)}`;
+}
+
 function modelRouteId(model) {
   return String(model.slug || model.modelKey || model.model || "").trim();
-}
-
-function getInitialLanguage() {
-  try {
-    const stored = localStorage.getItem(LANGUAGE_STORAGE_KEY);
-    if (copy[stored]) return stored;
-  } catch {
-    // Ignore storage errors in privacy-restricted contexts.
-  }
-  return navigator.language && navigator.language.toLowerCase().startsWith("zh") ? "zh-CN" : DEFAULT_LANGUAGE;
-}
-
-function getInitialRoute() {
-  const pageHint = document.body?.dataset.page || "";
-  const params = new URLSearchParams(location.search);
-  const filename = location.pathname.split("/").pop() || "index.html";
-  const hash = location.hash.replace(/^#/, "");
-  if (hash.startsWith("model/")) {
-    return { page: "model", modelId: decodeRoutePart(hash.slice("model/".length)) };
-  }
-  if (pageHint === "model" || filename === "model.html") {
-    return { page: "model", modelId: params.get("id") || null };
-  }
-  if (pageHint === "ranking" || filename === "full-rank.html") {
-    return { page: "ranking", modelId: null };
-  }
-  return { page: hash === "ranking" ? "ranking" : "home", modelId: null };
-}
-
-function pageHref(page) {
-  if (page === "ranking") return "full-rank.html";
-  if (page === "model") return "model.html";
-  return "index.html";
-}
-
-function decodeRoutePart(value) {
-  try {
-    return decodeURIComponent(value);
-  } catch {
-    return value;
-  }
-}
-
-function saveLanguage(language) {
-  try {
-    localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
-  } catch {
-    // Language selection still works for the current session.
-  }
-}
-
-function tr(path, variables = {}) {
-  const primary = lookup(copy[state.language], path);
-  const fallback = lookup(copy[DEFAULT_LANGUAGE], path);
-  const value = primary ?? fallback ?? path;
-  if (typeof value !== "string") return String(value);
-  return value.replace(/\{([a-zA-Z0-9_]+)\}/g, (_, key) => variables[key] ?? "");
-}
-
-function lookup(source, path) {
-  return path.split(".").reduce((current, part) => {
-    if (current && Object.prototype.hasOwnProperty.call(current, part)) return current[part];
-    return undefined;
-  }, source);
-}
-
-function initials(value) {
-  const tokens = String(value || "").match(/[a-z0-9]+/gi) || [];
-  if (tokens.length === 0) return "AI";
-  if (tokens.length === 1) return tokens[0].slice(0, 3).toUpperCase();
-  return tokens.slice(0, 3).map((token) => token[0].toUpperCase()).join("");
-}
-
-function formatNumber(value) {
-  return Number.isFinite(value) ? value.toFixed(1) : "—";
-}
-
-function formatSpeed(value) {
-  if (!Number.isFinite(value) || value <= 0) return "—";
-  return `${compactNumber(value)} ${tr("table.tokensPerSecond")}`;
-}
-
-function formatTokens(value) {
-  if (!Number.isFinite(value) || value <= 0) return "—";
-  return `${compactNumber(value)} ${tr("table.tokens")}`;
-}
-
-function formatMoney(value) {
-  if (!Number.isFinite(value)) return "—";
-  const digits = Math.abs(value) < 1 ? 4 : 2;
-  return `$${value.toLocaleString("en-US", {
-    maximumFractionDigits: digits,
-    minimumFractionDigits: 0,
-  })}`;
-}
-
-function compactNumber(value) {
-  return new Intl.NumberFormat(state.language, {
-    notation: "compact",
-    maximumFractionDigits: 1,
-  }).format(value);
-}
-
-function formatAxisCost(value) {
-  if (value >= 1000) return `${formatTrimmed(value / 1000)}k`;
-  if (value >= 1) return formatTrimmed(value);
-  return formatTrimmed(value, 2);
-}
-
-function formatTrimmed(value, digits = 1) {
-  return Number(value).toFixed(digits).replace(/\.?0+$/, "");
-}
-
-function formatWeight(value) {
-  const number = Number(value);
-  if (!Number.isFinite(number)) return "0";
-  return number.toFixed(2).replace(/\.?0+$/, "");
-}
-
-function formatDateTime(value) {
-  if (!value) return tr("unknownTime");
-  return new Intl.DateTimeFormat(state.language, {
-    dateStyle: "medium",
-    timeStyle: "short",
-  }).format(new Date(value));
-}
-
-function formatDate(value) {
-  if (!value) return tr("notAvailable");
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return String(value);
-  return new Intl.DateTimeFormat(state.language, {
-    dateStyle: "medium",
-  }).format(date);
-}
-
-function clamp(value, min, max) {
-  return Math.max(min, Math.min(max, value));
-}
-
-function computeTopChartLimit(width) {
-  if (!Number.isFinite(width) || width <= 0) return 20;
-  if (width >= 1180) return 30;
-  if (width >= 980) return 24;
-  if (width >= 720) return 20;
-  if (width >= 520) return 16;
-  return 12;
-}
-
-function modelCost(model) {
-  const pricingCost = model.pricing?.aaIndexCostUsd;
-  return Number.isFinite(pricingCost) ? pricingCost : model.aaCostUsd;
-}
-
-function bestValueModel(models) {
-  const costModels = models.filter((model) => Number.isFinite(modelCost(model)) && modelCost(model) > 0);
-  if (costModels.length === 0) return null;
-  const scoreThreshold = median(costModels.map((model) => model.score));
-  const costThreshold = median(costModels.map(modelCost));
-  const candidates = costModels.filter((model) => model.score >= scoreThreshold && modelCost(model) <= costThreshold);
-  return (candidates.length ? candidates : costModels)
-    .sort((a, b) => b.score - a.score || modelCost(a) - modelCost(b))[0];
-}
-
-function median(values) {
-  const sorted = values.filter(Number.isFinite).sort((a, b) => a - b);
-  if (sorted.length === 0) return 0;
-  const middle = Math.floor(sorted.length / 2);
-  return sorted.length % 2 ? sorted[middle] : (sorted[middle - 1] + sorted[middle]) / 2;
-}
-
-function linearTicks(min, max, count) {
-  if (max <= min) return [min];
-  const step = (max - min) / Math.max(count - 1, 1);
-  return Array.from({ length: count }, (_, index) => min + step * index);
-}
-
-function logTicks(min, max) {
-  const bases = [1, 2, 3, 5, 7];
-  const ticks = [];
-  const minPower = Math.floor(Math.log10(Math.max(min, 0.01)));
-  const maxPower = Math.ceil(Math.log10(Math.max(max, 0.02)));
-  for (let power = minPower; power <= maxPower; power += 1) {
-    for (const base of bases) {
-      const value = base * 10 ** power;
-      if (value >= min && value <= max) ticks.push(value);
-    }
-  }
-  return ticks.slice(0, 12);
-}
-
-function providerColor(model, index = 0) {
-  return providerColors[model.creator] || fallbackColors[index % fallbackColors.length];
-}
-
-function scatterLabelText(label) {
-  const value = String(label || "");
-  return value.length > 34 ? `${value.slice(0, 31)}...` : value;
-}
-
-function scatterLabelPlacements(points, margin, plotWidth, plotHeight, width) {
-  const splitX = margin.left + plotWidth * 0.52;
-  const sides = {
-    left: [],
-    right: [],
-  };
-  for (const point of points) {
-    sides[point.x >= splitX ? "right" : "left"].push(point);
-  }
-
-  const placements = new Map();
-  layoutScatterLabelSide(sides.left, "left", placements, margin, plotWidth, plotHeight, width);
-  layoutScatterLabelSide(sides.right, "right", placements, margin, plotWidth, plotHeight, width);
-  return placements;
-}
-
-function layoutScatterLabelSide(points, side, placements, margin, plotWidth, plotHeight, width) {
-  if (points.length === 0) return;
-  const minY = margin.top + 14;
-  const maxY = margin.top + plotHeight - 10;
-  const gap = 17;
-  const sorted = [...points].sort((a, b) => a.y - b.y || b.model.score - a.model.score);
-  const labelYs = sorted.map((point) => clamp(point.y, minY, maxY));
-
-  for (let index = 1; index < labelYs.length; index += 1) {
-    labelYs[index] = Math.max(labelYs[index], labelYs[index - 1] + gap);
-  }
-  const overflow = labelYs[labelYs.length - 1] - maxY;
-  if (overflow > 0) {
-    for (let index = 0; index < labelYs.length; index += 1) labelYs[index] -= overflow;
-  }
-  for (let index = labelYs.length - 2; index >= 0; index -= 1) {
-    labelYs[index] = Math.min(labelYs[index], labelYs[index + 1] - gap);
-  }
-
-  const plotRight = margin.left + plotWidth;
-  for (let index = 0; index < sorted.length; index += 1) {
-    const point = sorted[index];
-    const labelY = clamp(labelYs[index], minY, maxY);
-    const labelX = side === "right" ? plotRight + 34 : margin.left - 34;
-    const anchor = side === "right" ? "start" : "end";
-    const elbowX = side === "right" ? plotRight + 12 : margin.left - 12;
-    const endX = side === "right" ? labelX - 8 : labelX + 8;
-    placements.set(point.model.modelKey, {
-      anchor,
-      x: clamp(labelX, 18, width - 18),
-      y: labelY + 4,
-      path: `M${point.x.toFixed(1)},${point.y.toFixed(1)} L${elbowX.toFixed(1)},${labelY.toFixed(1)} L${endX.toFixed(1)},${labelY.toFixed(1)}`,
-    });
-  }
-}
-
-function escapeHtml(value) {
-  return String(value ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
 }

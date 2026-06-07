@@ -9,6 +9,8 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn('data-page="home"', (docs_dir / "index.html").read_text(encoding="utf-8"))
         self.assertIn('data-page="ranking"', (docs_dir / "full-rank.html").read_text(encoding="utf-8"))
         self.assertIn('data-page="model"', (docs_dir / "model.html").read_text(encoding="utf-8"))
+        self.assertIn('data-page="benchmark"', (docs_dir / "benchmark.html").read_text(encoding="utf-8"))
+        self.assertIn('data-page="sources"', (docs_dir / "sources.html").read_text(encoding="utf-8"))
 
     def test_page_title_and_footer_name_source(self):
         html = (Path(__file__).resolve().parents[1] / "docs" / "index.html").read_text(encoding="utf-8")
@@ -27,6 +29,10 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn('id="homeMetrics"', html)
         self.assertIn('id="modelView"', html)
         self.assertIn('id="modelDetail"', html)
+        self.assertIn('id="benchmarkView"', html)
+        self.assertIn('id="benchmarkDetail"', html)
+        self.assertIn('id="sourcesView"', html)
+        self.assertIn('id="sourceOverview"', html)
         self.assertIn('id="rankingView"', html)
         self.assertIn('id="top20Chart"', html)
         self.assertIn('id="costScatter"', html)
@@ -63,11 +69,17 @@ class DocsMarkupTests(unittest.TestCase):
         app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(encoding="utf-8")
         css = (Path(__file__).resolve().parents[1] / "docs" / "styles.css").read_text(encoding="utf-8")
 
-        self.assertIn("metricCoverageCount", app_js)
+        self.assertIn("customMetricGroups", app_js)
+        self.assertIn("metricGroupCoverageCount", app_js)
         self.assertIn("metric-weight-label", app_js)
+        self.assertIn("customMissingMode", app_js)
+        self.assertIn("missingPenaltyMax", app_js)
+        self.assertIn("penalty", app_js)
+        self.assertIn("missing-mode-controls", css)
         self.assertIn("scatter-leader", app_js)
         self.assertIn("externalBenchmarkRows", app_js)
         self.assertIn("model.html?id=", app_js)
+        self.assertIn("benchmark.html?id=", app_js)
         self.assertNotIn("source-weight-controls", app_js)
         self.assertNotIn("combinedMetricWeightsFromSources", app_js)
         self.assertNotIn("Source weights", app_js)
@@ -76,6 +88,35 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn(".external-benchmark-row", css)
         self.assertNotIn(".source-weight-card", css)
         self.assertNotIn("Open AA page", app_js)
+
+    def test_sources_page_and_split_scripts_are_present(self):
+        docs_dir = Path(__file__).resolve().parents[1] / "docs"
+        html = (docs_dir / "sources.html").read_text(encoding="utf-8")
+        app_js = (docs_dir / "app.js").read_text(encoding="utf-8")
+        app_utils = (docs_dir / "app-utils.js").read_text(encoding="utf-8")
+
+        self.assertIn('id="sourcesLink"', html)
+        self.assertIn('id="sourceMetricMap"', html)
+        self.assertIn('<script src="./app-utils.js"></script>', html)
+        self.assertIn("renderSourcesPage", app_js)
+        self.assertIn("catalogSources", app_js)
+        self.assertIn("isOfficialModelSource", app_js)
+        self.assertNotIn("function getInitialLanguage", app_js)
+        self.assertIn("function getInitialLanguage", app_utils)
+
+    def test_benchmark_page_surface_is_present(self):
+        docs_dir = Path(__file__).resolve().parents[1] / "docs"
+        html = (docs_dir / "benchmark.html").read_text(encoding="utf-8")
+        app_js = (docs_dir / "app.js").read_text(encoding="utf-8")
+        app_utils = (docs_dir / "app-utils.js").read_text(encoding="utf-8")
+        css = (docs_dir / "styles.css").read_text(encoding="utf-8")
+
+        self.assertIn('id="benchmarkView"', html)
+        self.assertIn('id="benchmarkDetail"', html)
+        self.assertIn("renderBenchmarkPage", app_js)
+        self.assertIn("benchmarkRankingRows", app_js)
+        self.assertIn('filename === "benchmark.html"', app_utils)
+        self.assertIn(".benchmark-ranking-row", css)
 
     def test_model_icons_use_local_assets(self):
         data = (Path(__file__).resolve().parents[1] / "docs" / "data" / "models.json").read_text(encoding="utf-8")

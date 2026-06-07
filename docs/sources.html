@@ -6,7 +6,7 @@
     <title>AI Insights Analysis</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body data-page="ranking">
+  <body data-page="sources">
     <header class="topbar">
       <div>
         <p class="eyebrow">AInsights</p>
@@ -81,7 +81,7 @@
         </section>
       </section>
 
-      <section class="ranking-view" id="rankingView">
+      <section class="ranking-view" id="rankingView" hidden>
         <section class="controls" aria-label="排名控制">
           <div class="preset-row" id="presetButtons" role="tablist" aria-label="排名预设"></div>
           <div class="switch-row">
@@ -132,15 +132,7 @@
         </section>
       </section>
 
-      <section class="benchmark-view" id="benchmarkView" hidden>
-        <div class="benchmark-detail" id="benchmarkDetail"></div>
-      </section>
-
-      <section class="model-view" id="modelView" hidden>
-        <div class="model-detail" id="modelDetail"></div>
-      </section>
-
-      <section class="sources-view" id="sourcesView" hidden>
+      <section class="sources-view" id="sourcesView">
         <section class="chart-shell sources-shell" aria-labelledby="sourcesPageTitle">
           <div class="chart-head">
             <div>
@@ -160,6 +152,14 @@
           </div>
           <div class="source-metric-map" id="sourceMetricMap"></div>
         </section>
+      </section>
+
+      <section class="benchmark-view" id="benchmarkView" hidden>
+        <div class="benchmark-detail" id="benchmarkDetail"></div>
+      </section>
+
+      <section class="model-view" id="modelView" hidden>
+        <div class="model-detail" id="modelDetail"></div>
       </section>
     </main>
 

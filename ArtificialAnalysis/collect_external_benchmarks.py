@@ -23,35 +23,52 @@ from urllib.request import Request, urlopen
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT_JSON = PROJECT_ROOT / "ArtificialAnalysis" / "external_benchmark_scores.json"
 OPENAI_GPT55_URL = "https://openai.com/index/introducing-gpt-5-5/"
+ANTHROPIC_OPUS47_URL = "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416"
 GOOGLE_GEMINI31_URL = "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
-QWEN36_27B_URL = "https://huggingface.co/Qwen/Qwen3.6-27B"
-QWEN36_27B_RAW_URL = "https://huggingface.co/Qwen/Qwen3.6-27B/raw/main/README.md"
-DEEPSEEK_V4_PRO_URL = "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"
-DEEPSEEK_V4_PRO_RAW_URL = "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/raw/main/README.md"
-KIMI_K26_URL = "https://huggingface.co/moonshotai/Kimi-K2.6"
-KIMI_K26_RAW_URL = "https://huggingface.co/moonshotai/Kimi-K2.6/raw/main/README.md"
-KIMI_K2_THINKING_URL = "https://huggingface.co/moonshotai/Kimi-K2-Thinking"
-KIMI_K2_THINKING_RAW_URL = "https://huggingface.co/moonshotai/Kimi-K2-Thinking/raw/main/README.md"
-KIMI_K25_URL = "https://huggingface.co/moonshotai/Kimi-K2.5"
-KIMI_K25_RAW_URL = "https://huggingface.co/moonshotai/Kimi-K2.5/raw/main/README.md"
-KIMI_K2_URL = "https://github.com/MoonshotAI/Kimi-K2"
-KIMI_K2_RAW_URL = "https://raw.githubusercontent.com/MoonshotAI/Kimi-K2/main/README.md"
-GLM51_URL = "https://huggingface.co/zai-org/GLM-5.1"
-GLM51_RAW_URL = "https://huggingface.co/zai-org/GLM-5.1/raw/main/README.md"
-GLM5_URL = "https://huggingface.co/zai-org/GLM-5"
-GLM5_RAW_URL = "https://huggingface.co/zai-org/GLM-5/raw/main/README.md"
+GOOGLE_GEMMA4_URL = "https://ai.google.dev/gemma/docs/core/model_card_4"
+QWEN36_PLUS_URL = "https://qwen.ai/blog?id=qwen3.6"
+QWEN36_27B_URL = "https://qwen.ai/blog?id=qwen3.6-27b"
+QWEN36_MAX_PREVIEW_URL = "https://qwen.ai/blog?id=qwen3.6-max-preview"
+DEEPSEEK_V4_PRO_URL = "https://api-docs.deepseek.com/news/news260424"
+KIMI_K26_URL = "https://www.kimi.com/blog/kimi-k2-6"
+KIMI_K2_THINKING_URL = "https://moonshotai.github.io/Kimi-K2/thinking"
+KIMI_K25_URL = "https://www.kimi.com/blog/kimi-k2-5"
+KIMI_K2_URL = "https://moonshotai.github.io/Kimi-K2/"
+GLM51_URL = "https://docs.z.ai/guides/llm/glm-5.1"
 GLM45_URL = "https://z.ai/blog/glm-4.5"
-GLM45_RAW_URL = "https://raw.githubusercontent.com/zai-org/GLM-4.5/main/README.md"
+GLM45_RAW_URL = GLM45_URL
+XIAOMI_MIMO25_URL = "https://platform.xiaomimimo.com/docs/en-US/news/v2.5-open-sourced"
+XAI_GROK41_FAST_URL = "https://x.ai/news/grok-4-1-fast"
+NVIDIA_NEMOTRON3_ULTRA_URL = "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf"
 
 MODEL_ALIASES = {
     "GPT-5.5": ["GPT-5.5", "GPT-5.5 (xhigh)", "gpt-5-5", "gpt-5-5-xhigh"],
     "GPT-5.4": ["GPT-5.4", "GPT-5.4 (xhigh)", "gpt-5-4", "gpt-5-4-xhigh"],
     "GPT-5.5 Pro": ["GPT-5.5 Pro", "GPT-5.5 Pro (xhigh)", "gpt-5-5-pro"],
     "GPT-5.4 Pro": ["GPT-5.4 Pro", "GPT-5.4 Pro (xhigh)", "gpt-5-4-pro"],
-    "Claude Opus 4.7": ["Claude Opus 4.7", "Claude Opus 4.7 (Adaptive Reasoning)", "claude-opus-4-7"],
+    "Claude Opus 4.7": [
+        "Claude Opus 4.7",
+        "Claude Opus 4.7 (max)",
+        "Claude Opus 4.7 (Non-reasoning, high)",
+        "Claude Opus 4.7 (Adaptive Reasoning)",
+        "claude-opus-4-7",
+    ],
+    "Claude Opus 4.6": [
+        "claude-opus-4-6-adaptive",
+        "Claude Opus 4.6",
+        "Claude Opus 4.6 (max)",
+        "Claude Opus 4.6 (high)",
+        "claude-opus-4-6",
+    ],
     "Gemini 3.1 Pro": ["Gemini 3.1 Pro", "Gemini 3.1 Pro Preview", "Gemini 3.1 Pro (high)", "gemini-3-1-pro-preview", "gemini-3-1-pro-high"],
+    "Gemma 4 31B": ["Gemma 4 31B", "Gemma-4-31B", "gemma-4-31b-it"],
+    "Gemma 4 26B A4B": ["Gemma 4 26B A4B", "Gemma-4-26B-A4B", "gemma-4-26b-a4b-it"],
+    "Gemma 4 E4B": ["Gemma 4 E4B", "Gemma-4-E4B", "gemma-4-e4b-it"],
+    "Gemma 4 E2B": ["Gemma 4 E2B", "Gemma-4-E2B", "gemma-4-e2b-it"],
     "Qwen3.6 27B": ["Qwen3.6 27B", "Qwen3.6-27B", "Qwen/Qwen3.6-27B", "qwen3-6-27b"],
     "Qwen3.6 35B A3B": ["Qwen3.6 35B A3B", "Qwen3.6-35B-A3B", "qwen3-6-35b-a3b"],
+    "Qwen3.6 Plus": ["Qwen3.6 Plus", "Qwen3.6-Plus", "qwen3.6-plus", "qwen3-6-plus"],
+    "Qwen3.6 Max Preview": ["Qwen3.6 Max Preview", "Qwen3.6-Max-Preview", "qwen3.6-max-preview", "qwen3-6-max-preview"],
     "Qwen3.5 397B A17B": ["Qwen3.5 397B A17B", "Qwen3.5-397B-A17B", "qwen3-5-397b-a17b"],
     "Qwen3.5 27B": ["Qwen3.5 27B", "Qwen3.5-27B", "qwen3-5-27b"],
     "DeepSeek V4 Pro (Max)": ["DeepSeek V4 Pro (Max)", "DeepSeek-V4-Pro Max", "DS-V4-Pro Max", "deepseek-v4-pro"],
@@ -69,6 +86,9 @@ MODEL_ALIASES = {
     "GLM-4.7": ["GLM-4.7", "GLM 4.7", "zai-org/GLM-4.7"],
     "GLM-4.5": ["GLM-4.5", "GLM 4.5", "zai-org/GLM-4.5"],
     "GLM-4.5-Air": ["GLM-4.5-Air", "GLM 4.5 Air", "zai-org/GLM-4.5-Air"],
+    "MiMo-V2.5-Pro": ["MiMo-V2.5-Pro", "mimo-v2.5-pro", "XiaomiMiMo/MiMo-V2.5-Pro"],
+    "Grok 4.1 Fast": ["Grok 4.1 Fast", "Grok-4.1-Fast", "grok-4-1-fast", "grok-4-1-fast-reasoning", "grok-4-1-fast-non-reasoning"],
+    "Nemotron 3 Ultra": ["Nemotron 3 Ultra", "NVIDIA Nemotron 3 Ultra", "N-3-Ultra", "nemotron-3-ultra"],
 }
 
 OPENAI_MODEL_COLUMNS = [
@@ -140,6 +160,13 @@ BENCHMARKS = [
         "category": "Professional work",
         "unit": "Elo",
         "icon": "GDP",
+    },
+    {
+        "id": "finance-agent-v1-1",
+        "label": "Finance Agent v1.1",
+        "category": "Professional work",
+        "unit": "%",
+        "icon": "FIN",
     },
     {
         "id": "osworld-verified",
@@ -315,6 +342,209 @@ BENCHMARKS = [
         "unit": "%",
         "icon": "BFCL",
     },
+    {
+        "id": "bfcl-v4",
+        "label": "BFCL v4",
+        "category": "Tool use",
+        "unit": "%",
+        "icon": "BFCL",
+    },
+    {
+        "id": "arc-agi-2",
+        "label": "ARC-AGI-2",
+        "category": "Abstract reasoning",
+        "unit": "%",
+        "icon": "ARC",
+    },
+    {
+        "id": "livecodebench-pro-elo",
+        "label": "LiveCodeBench Pro",
+        "category": "Coding",
+        "unit": "Elo",
+        "icon": "LCB+",
+    },
+    {
+        "id": "apex-agents",
+        "label": "APEX-Agents",
+        "category": "Agentic workflow",
+        "unit": "%",
+        "icon": "APEX",
+    },
+    {
+        "id": "tau2-bench-retail",
+        "label": "τ²-Bench Retail",
+        "category": "Agentic workflow",
+        "unit": "%",
+        "icon": "TAU2",
+    },
+    {
+        "id": "tau2-bench-telecom",
+        "label": "τ²-Bench Telecom",
+        "category": "Agentic workflow",
+        "unit": "%",
+        "icon": "TAU2",
+    },
+    {
+        "id": "mmmu-pro",
+        "label": "MMMU-Pro",
+        "category": "Multimodal reasoning",
+        "unit": "%",
+        "icon": "MMMU",
+    },
+    {
+        "id": "mmmlu",
+        "label": "MMMLU",
+        "category": "Multilingual knowledge",
+        "unit": "%",
+        "icon": "MLU",
+    },
+    {
+        "id": "charxiv-no-tools",
+        "label": "CharXiv Reasoning",
+        "category": "Visual reasoning",
+        "unit": "%",
+        "icon": "CX",
+    },
+    {
+        "id": "charxiv-tools",
+        "label": "CharXiv Reasoning w/ tools",
+        "category": "Visual reasoning",
+        "unit": "%",
+        "icon": "CX+",
+    },
+    {
+        "id": "mrcr-v2-128k",
+        "label": "MRCR v2 128K",
+        "category": "Long context",
+        "unit": "%",
+        "icon": "MRCR",
+    },
+    {
+        "id": "mrcr-v2-1m",
+        "label": "MRCR v2 1M",
+        "category": "Long context",
+        "unit": "%",
+        "icon": "MRCR",
+    },
+    {
+        "id": "bigbench-extra-hard",
+        "label": "BigBench Extra Hard",
+        "category": "Reasoning",
+        "unit": "%",
+        "icon": "BBEH",
+    },
+    {
+        "id": "codeforces-elo",
+        "label": "Codeforces Elo",
+        "category": "Coding",
+        "unit": "Elo",
+        "icon": "CF",
+    },
+    {
+        "id": "deepsearchqa-f1",
+        "label": "DeepSearchQA F1",
+        "category": "Agentic search",
+        "unit": "%",
+        "icon": "DSQ",
+    },
+    {
+        "id": "mathvision-python",
+        "label": "MathVision w/ Python",
+        "category": "Multimodal math",
+        "unit": "%",
+        "icon": "MV",
+    },
+    {
+        "id": "v-star-python",
+        "label": "V* w/ Python",
+        "category": "Visual reasoning",
+        "unit": "%",
+        "icon": "V*",
+    },
+    {
+        "id": "research-eval-reka",
+        "label": "Research-Eval Reka",
+        "category": "Agentic search",
+        "unit": "%",
+        "icon": "REKA",
+    },
+    {
+        "id": "frames",
+        "label": "FRAMES",
+        "category": "Agentic search",
+        "unit": "%",
+        "icon": "FRM",
+    },
+    {
+        "id": "x-browse",
+        "label": "X Browse",
+        "category": "Agentic search",
+        "unit": "%",
+        "icon": "XB",
+    },
+    {
+        "id": "terminal-bench-2-1",
+        "label": "Terminal-Bench 2.1",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "TERM",
+    },
+    {
+        "id": "pinchbench",
+        "label": "PinchBench",
+        "category": "Agentic workflow",
+        "unit": "%",
+        "icon": "PIN",
+    },
+    {
+        "id": "taubench-v3-average",
+        "label": "TauBench v3 Avg",
+        "category": "Agentic workflow",
+        "unit": "%",
+        "icon": "TAU3",
+    },
+    {
+        "id": "ifbench-prompt-loose",
+        "label": "IFBench Prompt Loose",
+        "category": "Instruction following",
+        "unit": "%",
+        "icon": "IF",
+    },
+    {
+        "id": "multi-challenge",
+        "label": "Multi-Challenge",
+        "category": "Instruction following",
+        "unit": "%",
+        "icon": "MC",
+    },
+    {
+        "id": "ruler-1m",
+        "label": "RULER 1M",
+        "category": "Long context",
+        "unit": "%",
+        "icon": "RUL",
+    },
+    {
+        "id": "longbench-v2-1m",
+        "label": "LongBench v2 ≤1M",
+        "category": "Long context",
+        "unit": "%",
+        "icon": "LB2",
+    },
+    {
+        "id": "mmlu-prox",
+        "label": "MMLU-ProX",
+        "category": "Multilingual knowledge",
+        "unit": "%",
+        "icon": "MPX",
+    },
+    {
+        "id": "wmt24-plusplus",
+        "label": "WMT24++",
+        "category": "Multilingual generation",
+        "unit": "%",
+        "icon": "WMT",
+    },
 ]
 
 SEED_OPENAI_VALUES = {
@@ -332,12 +562,76 @@ SEED_OPENAI_VALUES = {
 
 OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
     {
+        "id": "anthropic-claude-opus-4-7-release",
+        "label": "Anthropic Claude Opus 4.7 official release",
+        "url": ANTHROPIC_OPUS47_URL,
+        "rawUrl": ANTHROPIC_OPUS47_URL,
+        "category": "Official release",
+        "note": "Anthropic official release chart covering Opus 4.7, Opus 4.6, GPT-5.4, Gemini 3.1 Pro, and Mythos Preview across agentic coding, search, tool use, reasoning, and finance benchmarks.",
+        "columns": {
+            "Opus 4.7": "Claude Opus 4.7",
+            "Claude Opus 4.7": "Claude Opus 4.7",
+            "Opus 4.6": "Claude Opus 4.6",
+            "Claude Opus 4.6": "Claude Opus 4.6",
+        },
+        "rowLabels": {
+            "SWE-bench Pro": "swe-bench-pro",
+            "SWE-bench Verified": "swe-bench-verified",
+            "Terminal-Bench 2.0": "terminal-bench-2",
+            "Humanity's Last Exam": "hle",
+            "HLE with tools": "hle-tools",
+            "BrowseComp": "browsecomp",
+            "MCP-Atlas": "mcp-atlas",
+            "OSWorld-Verified": "osworld-verified",
+            "Finance Agent v1.1": "finance-agent-v1-1",
+            "CyberGym": "cybergym",
+            "GPQA Diamond": "gpqa-diamond",
+            "CharXiv Reasoning": "charxiv-no-tools",
+            "CharXiv Reasoning with tools": "charxiv-tools",
+            "MMMLU": "mmmlu",
+        },
+        "scores": {
+            "Claude Opus 4.7": {
+                "swe-bench-pro": 64.3,
+                "swe-bench-verified": 87.6,
+                "terminal-bench-2": 69.4,
+                "hle": 46.9,
+                "hle-tools": 54.7,
+                "browsecomp": 79.3,
+                "mcp-atlas": 77.3,
+                "osworld-verified": 78.0,
+                "finance-agent-v1-1": 64.4,
+                "cybergym": 73.1,
+                "gpqa-diamond": 94.2,
+                "charxiv-no-tools": 82.1,
+                "charxiv-tools": 91.0,
+                "mmmlu": 91.5,
+            },
+            "Claude Opus 4.6": {
+                "swe-bench-pro": 53.4,
+                "swe-bench-verified": 80.8,
+                "terminal-bench-2": 65.4,
+                "hle": 40.0,
+                "hle-tools": 53.3,
+                "browsecomp": 83.7,
+                "mcp-atlas": 75.8,
+                "osworld-verified": 72.7,
+                "finance-agent-v1-1": 60.1,
+                "cybergym": 73.8,
+                "gpqa-diamond": 91.3,
+                "charxiv-no-tools": 69.1,
+                "charxiv-tools": 84.7,
+                "mmmlu": 91.1,
+            },
+        },
+    },
+    {
         "id": "qwen-qwen3-6-27b-card",
-        "label": "Qwen3.6-27B official model card",
+        "label": "Qwen3.6-27B official release",
         "url": QWEN36_27B_URL,
-        "rawUrl": QWEN36_27B_RAW_URL,
-        "category": "Official model card",
-        "note": "Qwen official Hugging Face card with Qwen3.6/Qwen3.5 benchmark table.",
+        "rawUrl": QWEN36_27B_URL,
+        "category": "Official release",
+        "note": "Qwen.ai release page with Qwen3.6/Qwen3.5 benchmark table. Hugging Face is intentionally not used as the primary source for Qwen-family rows.",
         "columns": {
             "Qwen3.5-27B": "Qwen3.5 27B",
             "Qwen3.5-397B-A17B": "Qwen3.5 397B A17B",
@@ -436,12 +730,61 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
         },
     },
     {
+        "id": "qwen-qwen3-6-plus-release",
+        "label": "Qwen3.6-Plus official release",
+        "url": QWEN36_PLUS_URL,
+        "rawUrl": QWEN36_PLUS_URL,
+        "category": "Official release",
+        "note": "Qwen.ai proprietary model release page. Seed values are from the official launch benchmark image/table when HTML parsing cannot read the rendered image.",
+        "columns": {"Qwen3.6-Plus": "Qwen3.6 Plus", "Qwen3.6 Plus": "Qwen3.6 Plus"},
+        "rowLabels": {
+            "SWE-bench Verified": "swe-bench-verified",
+            "SWE-Bench Verified": "swe-bench-verified",
+            "SWE-bench Pro": "swe-bench-pro",
+            "SWE-bench Multilingual": "swe-bench-multilingual",
+            "Terminal-Bench 2.0": "terminal-bench-2",
+            "NL2Repo": "nl2repo",
+        },
+        "scores": {
+            "Qwen3.6 Plus": {
+                "swe-bench-verified": 78.8,
+                "swe-bench-pro": 56.6,
+                "swe-bench-multilingual": 73.8,
+                "terminal-bench-2": 61.6,
+                "nl2repo": 37.9,
+            },
+        },
+    },
+    {
+        "id": "qwen-qwen3-6-max-preview-release",
+        "label": "Qwen3.6-Max-Preview official release",
+        "url": QWEN36_MAX_PREVIEW_URL,
+        "rawUrl": QWEN36_MAX_PREVIEW_URL,
+        "category": "Official release",
+        "note": "Qwen.ai proprietary preview release. Seeded rows are limited to values derivable from official deltas over Qwen3.6-Plus; image-only absolute rows are left for parser/OCR follow-up.",
+        "columns": {"Qwen3.6-Max-Preview": "Qwen3.6 Max Preview"},
+        "rowLabels": {
+            "SWE-bench Pro": "swe-bench-pro",
+            "Terminal-Bench 2.0": "terminal-bench-2",
+            "SkillsBench": "skillsbench",
+            "QwenWebBench": "qwenwebbench",
+            "SciCode": "scicode",
+            "NL2Repo": "nl2repo",
+        },
+        "scores": {
+            "Qwen3.6 Max Preview": {
+                "terminal-bench-2": 65.4,
+                "nl2repo": 42.9,
+            }
+        },
+    },
+    {
         "id": "deepseek-v4-pro-card",
-        "label": "DeepSeek-V4-Pro official model card",
+        "label": "DeepSeek-V4 official release",
         "url": DEEPSEEK_V4_PRO_URL,
-        "rawUrl": DEEPSEEK_V4_PRO_RAW_URL,
-        "category": "Official model card",
-        "note": "DeepSeek official Hugging Face card with mode-by-mode V4 benchmark table.",
+        "rawUrl": DEEPSEEK_V4_PRO_URL,
+        "category": "Official release",
+        "note": "DeepSeek API Docs V4 preview release. Seed values mirror the official release report; Hugging Face is kept out of source URLs for this top-model collector.",
         "columns": {
             "V4-Flash Non-Think": "DeepSeek V4 Flash",
             "V4-Flash High": "DeepSeek V4 Flash (High)",
@@ -561,38 +904,58 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
     },
     {
         "id": "kimi-k2-6-card",
-        "label": "Kimi K2.6 official model card",
+        "label": "Kimi K2.6 official release",
         "url": KIMI_K26_URL,
-        "rawUrl": KIMI_K26_RAW_URL,
-        "category": "Official model card",
-        "note": "Moonshot AI Kimi K2.6 Hugging Face card and linked benchmark metadata.",
+        "rawUrl": KIMI_K26_URL,
+        "category": "Official release",
+        "note": "Moonshot AI Kimi.com release page with coding, agentic, search, and visual-agent benchmark tables.",
         "columns": {"Kimi K2.6": "Kimi K2.6", "K2.6 Thinking": "Kimi K2.6"},
         "rowLabels": {
             "SWE Bench Resolved": "swe-bench-verified",
             "SWE Bench Pro": "swe-bench-pro",
+            "SWE-Multilingual": "swe-bench-multilingual",
             "Diamond": "gpqa-diamond",
+            "GPQA-Diamond": "gpqa-diamond",
             "Terminalbench 2": "terminal-bench-2",
+            "Terminal-Bench 2.0": "terminal-bench-2",
             "MathArena Aime 2026": "aime-2026",
             "MathArena Hmmt Feb 2026": "hmmt-2026-feb",
+            "Humanity's Last Exam (Full) w/ tools": "hle-tools",
+            "BrowseComp": "browsecomp",
+            "DeepSearchQA (f1-score)": "deepsearchqa-f1",
+            "Toolathlon": "toolathlon",
+            "OSWorld-Verified": "osworld-verified",
+            "LiveCodeBench v6": "livecodebench",
+            "MMMU-Pro": "mmmu-pro",
+            "MathVision w/ python": "mathvision-python",
+            "V* w/ python": "v-star-python",
         },
         "scores": {
             "Kimi K2.6": {
                 "swe-bench-verified": 80.2,
                 "swe-bench-pro": 58.6,
+                "swe-bench-multilingual": 76.7,
                 "gpqa-diamond": 90.5,
                 "terminal-bench-2": 66.7,
                 "aime-2026": 96.4,
                 "hmmt-2026-feb": 92.7,
+                "hle-tools": 54.0,
+                "browsecomp": 83.2,
+                "deepsearchqa-f1": 92.5,
+                "toolathlon": 50.0,
+                "livecodebench": 89.6,
+                "mmmu-pro": 79.4,
+                "mathvision-python": 93.2,
             }
         },
     },
     {
         "id": "kimi-k2-thinking-card",
-        "label": "Kimi K2 Thinking official model card",
+        "label": "Kimi K2 Thinking official release",
         "url": KIMI_K2_THINKING_URL,
-        "rawUrl": KIMI_K2_THINKING_RAW_URL,
-        "category": "Official model card",
-        "note": "Moonshot AI Kimi K2 Thinking card with search, coding, and reasoning benchmarks.",
+        "rawUrl": KIMI_K2_THINKING_URL,
+        "category": "Official release",
+        "note": "Moonshot AI official Kimi K2 Thinking release page with search, coding, and reasoning benchmarks.",
         "columns": {"K2 Thinking": "Kimi K2 Thinking"},
         "rowLabels": {
             "MMLU-Pro": "mmlu-pro",
@@ -609,6 +972,7 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
                 "mmlu-pro": 84.6,
                 "gpqa-diamond": 84.5,
                 "browsecomp": 60.2,
+                "hle-tools": 44.9,
                 "swe-bench-verified": 71.3,
                 "swe-bench-multilingual": 61.1,
                 "scicode": 44.8,
@@ -619,24 +983,34 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
     },
     {
         "id": "kimi-k2-5-card",
-        "label": "Kimi K2.5 official model card",
+        "label": "Kimi K2.5 official release",
         "url": KIMI_K25_URL,
-        "rawUrl": KIMI_K25_RAW_URL,
-        "category": "Official model card",
-        "note": "Moonshot AI Kimi K2.5 Hugging Face card evaluation results.",
+        "rawUrl": KIMI_K25_URL,
+        "category": "Official release",
+        "note": "Moonshot AI Kimi.com K2.5 release page evaluation results.",
         "columns": {"Kimi K2.5": "Kimi K2.5"},
         "rowLabels": {
             "SWE Bench Resolved": "swe-bench-verified",
+            "SWE Bench Pro": "swe-bench-pro",
             "Diamond": "gpqa-diamond",
             "Terminalbench 2": "terminal-bench-2",
             "MathArena Aime 2026": "aime-2026",
+            "HLE-Full w/ tools": "hle-tools",
+            "BrowseComp": "browsecomp",
+            "LiveCodeBench v6": "livecodebench",
+            "MMMU-Pro": "mmmu-pro",
         },
         "scores": {
             "Kimi K2.5": {
-                "swe-bench-verified": 70.8,
+                "swe-bench-verified": 76.8,
+                "swe-bench-pro": 50.7,
                 "gpqa-diamond": 87.6,
-                "terminal-bench-2": 43.2,
+                "terminal-bench-2": 50.8,
                 "aime-2026": 95.83,
+                "hle-tools": 50.2,
+                "browsecomp": 74.9,
+                "livecodebench": 85.0,
+                "mmmu-pro": 78.5,
             }
         },
     },
@@ -644,7 +1018,7 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
         "id": "kimi-k2-github",
         "label": "Kimi K2 official GitHub report",
         "url": KIMI_K2_URL,
-        "rawUrl": KIMI_K2_RAW_URL,
+        "rawUrl": KIMI_K2_URL,
         "category": "Official technical report",
         "note": "Moonshot AI Kimi K2 GitHub README and technical report benchmark table.",
         "columns": {"Kimi-K2-Instruct": "Kimi K2", "Kimi K2": "Kimi K2"},
@@ -667,9 +1041,9 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
         "id": "zai-glm-5-1-card",
         "label": "Z.ai GLM-5.1 official model card",
         "url": GLM51_URL,
-        "rawUrl": GLM51_RAW_URL,
-        "category": "Official model card",
-        "note": "Z.ai GLM-5.1 Hugging Face card with GLM-5.1/GLM-5/GLM-4.7 benchmark table.",
+        "rawUrl": GLM51_URL,
+        "category": "Official release",
+        "note": "Z.ai developer documentation / official release page with GLM-5.1, GLM-5, and GLM-4.7 benchmark table.",
         "columns": {
             "GLM-5.1": "GLM-5.1",
             "GLM-5": "GLM-5",
@@ -788,6 +1162,230 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
             },
         },
     },
+    {
+        "id": "google-gemini-3-1-pro-card",
+        "label": "Google DeepMind Gemini 3.1 Pro model card",
+        "url": GOOGLE_GEMINI31_URL,
+        "rawUrl": GOOGLE_GEMINI31_URL,
+        "category": "Official model card",
+        "note": "Google DeepMind model card with cross-model benchmark context and Gemini 3.1 Pro results.",
+        "columns": {"Gemini 3.1 Pro": "Gemini 3.1 Pro", "Gemini 3.1 Pro Preview": "Gemini 3.1 Pro"},
+        "rowLabels": {
+            "ARC-AGI-2": "arc-agi-2",
+            "GPQA Diamond": "gpqa-diamond",
+            "Terminal-Bench 2.0": "terminal-bench-2",
+            "SWE-Bench Verified": "swe-bench-verified",
+            "SWE-Bench Pro (Public)": "swe-bench-pro",
+            "LiveCodeBench Pro": "livecodebench-pro-elo",
+            "SciCode": "scicode",
+            "APEX-Agents": "apex-agents",
+            "GDPval-AA Elo": "gdpval-aa-elo",
+            "Retail": "tau2-bench-retail",
+            "Telecom": "tau2-bench-telecom",
+            "MCP Atlas": "mcp-atlas",
+            "BrowseComp": "browsecomp",
+            "MMMU-Pro": "mmmu-pro",
+            "MMMLU": "mmmlu",
+            "MRCR v2 (8-needle) 128k": "mrcr-v2-128k",
+            "MRCR v2 (8-needle) 1M": "mrcr-v2-1m",
+        },
+        "scores": {
+            "Gemini 3.1 Pro": {
+                "arc-agi-2": 77.1,
+                "gpqa-diamond": 94.3,
+                "terminal-bench-2": 68.5,
+                "swe-bench-verified": 80.6,
+                "swe-bench-pro": 54.2,
+                "livecodebench-pro-elo": 2887,
+                "scicode": 59.0,
+                "apex-agents": 33.5,
+                "gdpval-aa-elo": 1317,
+                "tau2-bench-retail": 90.8,
+                "tau2-bench-telecom": 99.3,
+                "mcp-atlas": 69.2,
+                "browsecomp": 85.9,
+                "mmmu-pro": 80.5,
+                "mmmlu": 92.6,
+                "mrcr-v2-128k": 84.9,
+                "mrcr-v2-1m": 26.3,
+            }
+        },
+    },
+    {
+        "id": "google-gemma-4-card",
+        "label": "Google Gemma 4 official model card",
+        "url": GOOGLE_GEMMA4_URL,
+        "rawUrl": GOOGLE_GEMMA4_URL,
+        "category": "Official model card",
+        "note": "Google Gemma model card covering Gemma 4 31B, 26B-A4B, E4B, and E2B instruction-tuned benchmarks.",
+        "columns": {
+            "31B": "Gemma 4 31B",
+            "Gemma 4 31B": "Gemma 4 31B",
+            "26B A4B": "Gemma 4 26B A4B",
+            "Gemma 4 26B A4B": "Gemma 4 26B A4B",
+            "E4B": "Gemma 4 E4B",
+            "Gemma 4 E4B": "Gemma 4 E4B",
+            "E2B": "Gemma 4 E2B",
+            "Gemma 4 E2B": "Gemma 4 E2B",
+        },
+        "rowLabels": {
+            "MMLU Pro": "mmlu-pro",
+            "MMLU-Pro": "mmlu-pro",
+            "GPQA Diamond": "gpqa-diamond",
+            "BigBench Extra Hard": "bigbench-extra-hard",
+            "AIME 2026": "aime-2026",
+            "MMMLU": "mmmlu",
+            "LiveCodeBench v6": "livecodebench",
+            "Codeforces ELO": "codeforces-elo",
+        },
+        "scores": {
+            "Gemma 4 31B": {
+                "mmlu-pro": 85.2,
+                "gpqa-diamond": 84.3,
+                "bigbench-extra-hard": 74.4,
+                "aime-2026": 89.2,
+                "mmmlu": 88.4,
+                "livecodebench": 80.0,
+                "codeforces-elo": 2150,
+            },
+            "Gemma 4 26B A4B": {
+                "mmlu-pro": 82.6,
+                "gpqa-diamond": 82.3,
+                "bigbench-extra-hard": 64.8,
+                "aime-2026": 88.3,
+                "mmmlu": 86.3,
+                "livecodebench": 77.1,
+                "codeforces-elo": 1718,
+            },
+            "Gemma 4 E4B": {
+                "mmlu-pro": 69.4,
+                "gpqa-diamond": 58.6,
+                "bigbench-extra-hard": 33.1,
+                "aime-2026": 42.5,
+                "mmmlu": 76.6,
+                "livecodebench": 52.0,
+                "codeforces-elo": 940,
+            },
+            "Gemma 4 E2B": {
+                "mmlu-pro": 60.0,
+                "gpqa-diamond": 43.4,
+                "bigbench-extra-hard": 21.9,
+                "aime-2026": 37.5,
+                "mmmlu": 67.4,
+                "livecodebench": 44.0,
+            },
+        },
+    },
+    {
+        "id": "xiaomi-mimo-v2-5-release",
+        "label": "Xiaomi MiMo-V2.5 official release",
+        "url": XIAOMI_MIMO25_URL,
+        "rawUrl": XIAOMI_MIMO25_URL,
+        "category": "Official release",
+        "note": "Xiaomi MiMo official release/open-source page. Seed rows retain official benchmark values when the page renders charts as images.",
+        "columns": {"mimo-v2.5-pro": "MiMo-V2.5-Pro", "MiMo-V2.5-Pro": "MiMo-V2.5-Pro"},
+        "rowLabels": {
+            "SWE Bench Resolved": "swe-bench-verified",
+            "SWE-Bench Verified": "swe-bench-verified",
+            "SWE Bench Pro": "swe-bench-pro",
+            "SWE-Bench Pro": "swe-bench-pro",
+            "Terminalbench 2": "terminal-bench-2",
+            "Terminal-Bench 2.0": "terminal-bench-2",
+            "Diamond": "gpqa-diamond",
+            "MMLU Pro": "mmlu-pro",
+            "General": "claw-eval",
+        },
+        "scores": {
+            "MiMo-V2.5-Pro": {
+                "swe-bench-verified": 78.9,
+                "swe-bench-pro": 57.2,
+                "terminal-bench-2": 68.4,
+                "gpqa-diamond": 66.7,
+                "mmlu-pro": 68.5,
+                "claw-eval": 64.0,
+            }
+        },
+    },
+    {
+        "id": "xai-grok-4-1-fast-release",
+        "label": "xAI Grok 4.1 Fast official release",
+        "url": XAI_GROK41_FAST_URL,
+        "rawUrl": XAI_GROK41_FAST_URL,
+        "category": "Official release",
+        "note": "xAI release page for Grok 4.1 Fast and Agent Tools API with tool-calling and agentic-search benchmark tables.",
+        "columns": {
+            "Grok 4.1 Fast": "Grok 4.1 Fast",
+            "Grok 4.1 Fast Agent Tools API": "Grok 4.1 Fast",
+        },
+        "rowLabels": {
+            "τ²-bench Telecom": "tau2-bench-telecom",
+            "Berkeley Function Calling v4 Benchmark": "bfcl-v4",
+            "Research-Eval Reka": "research-eval-reka",
+            "FRAMES": "frames",
+            "X Browse": "x-browse",
+        },
+        "scores": {
+            "Grok 4.1 Fast": {
+                "tau2-bench-telecom": 100.0,
+                "bfcl-v4": 72.0,
+                "research-eval-reka": 63.9,
+                "frames": 87.6,
+                "x-browse": 56.3,
+            }
+        },
+    },
+    {
+        "id": "nvidia-nemotron-3-ultra-report",
+        "label": "NVIDIA Nemotron 3 Ultra technical report",
+        "url": NVIDIA_NEMOTRON3_ULTRA_URL,
+        "rawUrl": NVIDIA_NEMOTRON3_ULTRA_URL,
+        "category": "Official technical report",
+        "note": "NVIDIA Research technical report for Nemotron 3 Ultra. The PDF is kept as the official source and seed rows preserve the published benchmark table.",
+        "columns": {"N-3-Ultra": "Nemotron 3 Ultra", "Nemotron 3 Ultra": "Nemotron 3 Ultra"},
+        "rowLabels": {
+            "Terminal Bench 2.1": "terminal-bench-2-1",
+            "SWE-Bench Verifeid": "swe-bench-verified",
+            "SWE-Bench Verified": "swe-bench-verified",
+            "SWE-Bench Multilingual": "swe-bench-multilingual",
+            "BrowseComp": "browsecomp",
+            "LiveCodeBench (v6)": "livecodebench",
+            "GPQA (no tools)": "gpqa-diamond",
+            "SciCode (subtask)": "scicode",
+            "HLE (no tools)": "hle",
+            "HLE (with tools)": "hle-tools",
+            "MMLU-Pro": "mmlu-pro",
+            "PinchBench": "pinchbench",
+            "TauBench V3 Average": "taubench-v3-average",
+            "IFBench (prompt loose)": "ifbench-prompt-loose",
+            "Multi-Challenge": "multi-challenge",
+            "RULER (1M)": "ruler-1m",
+            "Longbench v2": "longbench-v2-1m",
+            "MMLU-ProX": "mmlu-prox",
+            "WMT24++": "wmt24-plusplus",
+        },
+        "scores": {
+            "Nemotron 3 Ultra": {
+                "terminal-bench-2-1": 56.4,
+                "swe-bench-verified": 71.9,
+                "swe-bench-multilingual": 67.7,
+                "browsecomp": 44.4,
+                "livecodebench": 89.0,
+                "gpqa-diamond": 87.0,
+                "scicode": 44.6,
+                "hle": 26.7,
+                "hle-tools": 37.4,
+                "mmlu-pro": 86.8,
+                "pinchbench": 90.0,
+                "taubench-v3-average": 70.9,
+                "ifbench-prompt-loose": 81.7,
+                "multi-challenge": 63.8,
+                "ruler-1m": 94.7,
+                "longbench-v2-1m": 61.9,
+                "mmlu-prox": 83.0,
+                "wmt24-plusplus": 83.7,
+            }
+        },
+    },
 ]
 
 
@@ -800,6 +1398,54 @@ class _VisibleTextParser(HTMLParser):
         text = re.sub(r"\s+", " ", data).strip()
         if text:
             self.tokens.append(text)
+
+
+class _HTMLTableParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.tables: list[list[list[str]]] = []
+        self._table_depth = 0
+        self._current_table: list[list[str]] | None = None
+        self._current_row: list[str] | None = None
+        self._current_cell: list[str] | None = None
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        tag = tag.lower()
+        if tag == "table":
+            if self._table_depth == 0:
+                self._current_table = []
+            self._table_depth += 1
+        elif self._table_depth and tag == "tr":
+            self._current_row = []
+        elif self._table_depth and tag in {"td", "th"}:
+            self._current_cell = []
+
+    def handle_data(self, data: str) -> None:
+        if self._current_cell is not None:
+            self._current_cell.append(data)
+
+    def handle_entityref(self, name: str) -> None:
+        if self._current_cell is not None:
+            self._current_cell.append(f"&{name};")
+
+    def handle_charref(self, name: str) -> None:
+        if self._current_cell is not None:
+            self._current_cell.append(f"&#{name};")
+
+    def handle_endtag(self, tag: str) -> None:
+        tag = tag.lower()
+        if tag in {"td", "th"} and self._current_cell is not None and self._current_row is not None:
+            self._current_row.append(_clean_markdown_cell(" ".join(self._current_cell)))
+            self._current_cell = None
+        elif tag == "tr" and self._current_row is not None and self._current_table is not None:
+            if any(cell for cell in self._current_row):
+                self._current_table.append(self._current_row)
+            self._current_row = None
+        elif tag == "table" and self._table_depth:
+            self._table_depth -= 1
+            if self._table_depth == 0 and self._current_table:
+                self.tables.append(self._current_table)
+                self._current_table = None
 
 
 def fetch_html(url: str, timeout: float = 30) -> str:
@@ -867,14 +1513,6 @@ def build_payload(
         "collectionStatus": collection_status,
         "note": "Official OpenAI table covering GPT-5.5, GPT-5.4, GPT-5.5 Pro, GPT-5.4 Pro, Claude Opus 4.7, and Gemini 3.1 Pro.",
     }
-    google_source = {
-        "id": "google-gemini-3-1-pro-card",
-        "label": "Google DeepMind Gemini 3.1 Pro model card",
-        "url": GOOGLE_GEMINI31_URL,
-        "category": "Official model card",
-        "collectionStatus": "reference",
-        "note": "Official Google DeepMind model card with Gemini 3.1 Pro cross-model benchmark context.",
-    }
     additional_sources = [
         {
             "id": spec["id"],
@@ -910,7 +1548,7 @@ def build_payload(
     return {
         "version": 1,
         "generatedAt": generated_at,
-        "sources": [source, google_source, *additional_sources],
+        "sources": [source, *additional_sources],
         "benchmarks": benchmarks,
         "results": results,
     }
@@ -1007,7 +1645,7 @@ def parse_markdown_source_scores(text: str, spec: dict[str, Any]) -> list[dict[s
         for label, benchmark_id in spec.get("rowLabels", {}).items()
     }
     results: list[dict[str, Any]] = []
-    for table in markdown_tables(text):
+    for table in html_tables(text) + markdown_tables(text):
         if not table:
             continue
         header = table[0]
@@ -1082,6 +1720,14 @@ def markdown_tables(text: str) -> list[list[list[str]]]:
     return tables
 
 
+def html_tables(text: str) -> list[list[list[str]]]:
+    if "<table" not in text.lower():
+        return []
+    parser = _HTMLTableParser()
+    parser.feed(text)
+    return parser.tables
+
+
 def dedupe_result_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     deduped: dict[tuple[Any, Any, Any], dict[str, Any]] = {}
     for row in rows:
@@ -1094,6 +1740,9 @@ def _benchmark_id_from_row(row: list[str], benchmark_by_key: dict[str, str]) -> 
         key = _normalize_label(cell)
         if key in benchmark_by_key:
             return benchmark_by_key[key]
+        for benchmark_key, benchmark_id in sorted(benchmark_by_key.items(), key=lambda item: len(item[0]), reverse=True):
+            if benchmark_key and (key.startswith(benchmark_key) or benchmark_key in key):
+                return benchmark_id
     return None
 
 
@@ -1194,9 +1843,13 @@ def main(argv: list[str] | None = None) -> int:
     except Exception as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
+    official_sources = [source for source in payload["sources"] if source["id"] != "openai-gpt-5-5"]
+    refreshed = sum(1 for source in official_sources if source.get("collectionStatus") == "refreshed")
+    fallback = len(official_sources) - refreshed
     print(
         f"Wrote {args.output_json} with {len(payload['results'])} benchmark scores "
-        f"({payload['sources'][0]['collectionStatus']})."
+        f"({payload['sources'][0]['collectionStatus']}; "
+        f"{refreshed} official sources refreshed, {fallback} seeded/reference)."
     )
     return 0
 

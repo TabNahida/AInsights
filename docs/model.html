@@ -18,6 +18,7 @@
         <div class="source-block">
           <span id="updatedAt">加载中</span>
           <a id="sourceLink" href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" target="_blank" rel="noreferrer">数据源</a>
+          <a id="sourcesLink" class="source-badge" href="sources.html">全部数据源</a>
         </div>
       </div>
     </header>
@@ -131,8 +132,34 @@
         </section>
       </section>
 
+      <section class="benchmark-view" id="benchmarkView" hidden>
+        <div class="benchmark-detail" id="benchmarkDetail"></div>
+      </section>
+
       <section class="model-view" id="modelView">
         <div class="model-detail" id="modelDetail"></div>
+      </section>
+
+      <section class="sources-view" id="sourcesView" hidden>
+        <section class="chart-shell sources-shell" aria-labelledby="sourcesPageTitle">
+          <div class="chart-head">
+            <div>
+              <h2 id="sourcesPageTitle">全部数据源</h2>
+              <p id="sourcesPageSubtitle">主数据、公开榜单、官方发布和模型卡来源</p>
+            </div>
+          </div>
+          <div class="source-overview-grid" id="sourceOverview"></div>
+        </section>
+
+        <section class="chart-shell source-map-shell" aria-labelledby="sourceMetricMapTitle">
+          <div class="chart-head">
+            <div>
+              <h2 id="sourceMetricMapTitle">数据源与测试项映射</h2>
+              <p id="sourceMetricMapSubtitle">每个来源对应的 benchmark、覆盖模型数和分数记录</p>
+            </div>
+          </div>
+          <div class="source-metric-map" id="sourceMetricMap"></div>
+        </section>
       </section>
     </main>
 
@@ -149,6 +176,7 @@
     </template>
 
     <script src="./data/models.js"></script>
+    <script src="./app-utils.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>
