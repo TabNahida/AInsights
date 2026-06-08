@@ -14,21 +14,27 @@ function getInitialRoute() {
   const filename = location.pathname.split("/").pop() || "index.html";
   const hash = location.hash.replace(/^#/, "");
   if (hash.startsWith("model/")) {
-    return { page: "model", modelId: decodeRoutePart(hash.slice("model/".length)), benchmarkId: null };
+    return { page: "model", modelId: decodeRoutePart(hash.slice("model/".length)), benchmarkId: null, providerId: null };
+  }
+  if (hash.startsWith("provider/")) {
+    return { page: "provider", modelId: null, benchmarkId: null, providerId: decodeRoutePart(hash.slice("provider/".length)) };
   }
   if (pageHint === "model" || filename === "model.html") {
-    return { page: "model", modelId: params.get("id") || null, benchmarkId: null };
+    return { page: "model", modelId: params.get("id") || null, benchmarkId: null, providerId: null };
   }
   if (pageHint === "ranking" || filename === "full-rank.html") {
-    return { page: "ranking", modelId: null, benchmarkId: null };
+    return { page: "ranking", modelId: null, benchmarkId: null, providerId: null };
   }
   if (pageHint === "benchmark" || filename === "benchmark.html") {
-    return { page: "benchmarks", modelId: null, benchmarkId: params.get("id") || null };
+    return { page: "benchmarks", modelId: null, benchmarkId: params.get("id") || null, providerId: null };
   }
   if (pageHint === "sources" || filename === "sources.html") {
-    return { page: "sources", modelId: null, benchmarkId: null };
+    return { page: "sources", modelId: null, benchmarkId: null, providerId: null };
   }
-  return { page: hash === "ranking" ? "ranking" : "home", modelId: null, benchmarkId: null };
+  if (pageHint === "provider" || filename === "provider.html") {
+    return { page: "provider", modelId: null, benchmarkId: null, providerId: params.get("id") || null };
+  }
+  return { page: hash === "ranking" ? "ranking" : "home", modelId: null, benchmarkId: null, providerId: null };
 }
 
 function pageHref(page) {
@@ -36,6 +42,7 @@ function pageHref(page) {
   if (page === "benchmarks") return "benchmark.html";
   if (page === "sources") return "sources.html";
   if (page === "model") return "model.html";
+  if (page === "provider") return "index.html";
   return "index.html";
 }
 

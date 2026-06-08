@@ -28,6 +28,16 @@
       <section class="home-view" id="homeView">
         <section class="home-metrics" id="homeMetrics" aria-label="首页摘要"></section>
 
+        <section class="chart-shell latest-models-shell" aria-labelledby="latestModelsTitle">
+          <div class="chart-head">
+            <div>
+              <h2 id="latestModelsTitle">最新模型</h2>
+              <p id="latestModelsSubtitle">按发布日期展示最近进入数据集的去重模型</p>
+            </div>
+          </div>
+          <div class="latest-models" id="latestModels"></div>
+        </section>
+
         <section class="chart-shell" aria-labelledby="top20Title">
           <div class="chart-head">
             <div>
@@ -161,6 +171,10 @@
 
       <section class="model-view" id="modelView" hidden>
         <div class="model-detail" id="modelDetail"></div>
+      </section>
+
+      <section class="provider-view" id="providerView" hidden>
+        <div class="provider-detail" id="providerDetail"></div>
       </section>
     </main>
 
