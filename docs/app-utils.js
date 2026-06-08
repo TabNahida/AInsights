@@ -34,6 +34,9 @@ function getInitialRoute() {
   if (pageHint === "provider" || filename === "provider.html") {
     return { page: "provider", modelId: null, benchmarkId: null, providerId: params.get("id") || null };
   }
+  if (pageHint === "compare" || filename === "compare.html") {
+    return { page: "compare", modelId: null, benchmarkId: null, providerId: null, compareIds: compareIdsFromParams(params) };
+  }
   return { page: hash === "ranking" ? "ranking" : "home", modelId: null, benchmarkId: null, providerId: null };
 }
 
@@ -42,8 +45,16 @@ function pageHref(page) {
   if (page === "benchmarks") return "benchmark.html";
   if (page === "sources") return "sources.html";
   if (page === "model") return "model.html";
-  if (page === "provider") return "index.html";
+  if (page === "provider") return "provider.html";
+  if (page === "compare") return "compare.html";
   return "index.html";
+}
+
+function compareIdsFromParams(params) {
+  return String(params.get("models") || "")
+    .split(",")
+    .map((value) => decodeRoutePart(value).trim())
+    .filter(Boolean);
 }
 
 function decodeRoutePart(value) {

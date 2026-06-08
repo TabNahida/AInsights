@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Insights Analysis</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="compare">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">AInsights</p>
+        <h1>AI Insights Analysis</h1>
+      </div>
+      <div class="header-actions">
+        <nav class="segmented-control compact" id="pageButtons" aria-label="页面"></nav>
+        <div class="segmented-control compact" id="languageButtons" role="group" aria-label="语言"></div>
+        <div class="source-block">
+          <span id="updatedAt">加载中</span>
+          <a id="sourceLink" href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" target="_blank" rel="noreferrer">数据源</a>
+          <a id="sourcesLink" class="source-badge" href="sources.html">全部数据源</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="home-view" id="homeView" hidden>
+        <section class="home-metrics" id="homeMetrics" aria-label="首页摘要"></section>
+
+        <section class="chart-shell latest-models-shell" aria-labelledby="latestModelsTitle">
+          <div class="chart-head">
+            <div>
+              <h2 id="latestModelsTitle">最新模型</h2>
+              <p id="latestModelsSubtitle">按发布日期展示最近进入数据集的去重模型</p>
+            </div>
+          </div>
+          <div class="latest-models" id="latestModels"></div>
+        </section>
+
+        <section class="chart-shell" aria-labelledby="top20Title">
+          <div class="chart-head">
+            <div>
+              <h2 id="top20Title">AInsights Index Top</h2>
+              <p id="top20Subtitle">固定使用 AInsights Index，按宽度最多展示 30 个去重模型</p>
+            </div>
+            <a id="viewFullRankingLink" href="full-rank.html">完整排名</a>
+          </div>
+          <div class="bar-chart" id="top20Chart"></div>
+        </section>
+
+        <section class="chart-shell" aria-labelledby="costScatterTitle">
+          <div class="chart-head">
+            <div>
+              <h2 id="costScatterTitle">智能 vs 运行成本</h2>
+              <p id="costScatterSubtitle">分数与 AA Intelligence Index 运行成本</p>
+            </div>
+          </div>
+          <div class="scatter-chart" id="costScatter"></div>
+        </section>
+
+        <section class="insight-grid" aria-label="数据分布">
+          <section class="chart-shell" aria-labelledby="scoreBandsTitle">
+            <div class="chart-head">
+              <div>
+                <h2 id="scoreBandsTitle">分数带分布</h2>
+                <p id="scoreBandsSubtitle">去重模型在 AInsights Index 上的集中区间</p>
+              </div>
+            </div>
+            <div class="score-bands" id="scoreBands"></div>
+          </section>
+
+          <section class="chart-shell" aria-labelledby="providerChartTitle">
+            <div class="chart-head">
+              <div>
+                <h2 id="providerChartTitle">机构覆盖</h2>
+                <p id="providerChartSubtitle">按可评分去重模型数量和最高分展示</p>
+              </div>
+            </div>
+            <div class="provider-chart" id="providerChart"></div>
+          </section>
+        </section>
+
+        <section class="chart-shell source-explorer" aria-labelledby="sourceExplorerTitle">
+          <div class="chart-head">
+            <div>
+              <h2 id="sourceExplorerTitle">测评源地图</h2>
+              <p id="sourceExplorerSubtitle">AA 主数据之外的常用公开测评，用来交叉理解模型强弱项</p>
+            </div>
+          </div>
+          <div class="source-grid" id="sourceExplorer"></div>
+        </section>
+      </section>
+
+      <section class="ranking-view" id="rankingView" hidden>
+        <section class="controls" aria-label="排名控制">
+          <div class="preset-row" id="presetButtons" role="tablist" aria-label="排名预设"></div>
+          <div class="switch-row">
+            <div class="segmented-control" id="viewButtons" role="group" aria-label="展示方式"></div>
+            <div class="segmented-control" id="sourceFilterButtons" role="group" aria-label="模型来源"></div>
+          </div>
+          <div class="filter-row">
+            <label class="search-label">
+              <span id="searchLabel">搜索</span>
+              <input id="searchInput" type="search" placeholder="模型或机构" />
+            </label>
+            <label class="toggle-label">
+              <input id="dedupeToggle" type="checkbox" checked />
+              <span id="dedupeLabel">去除重复档位</span>
+            </label>
+          </div>
+          <div class="summary-row" id="summaryRow"></div>
+        </section>
+
+        <section class="custom-panel" id="customPanel" hidden>
+          <div class="panel-head">
+            <h2 id="customTitle">自定义占比</h2>
+            <button id="resetWeightsButton" type="button">重置</button>
+          </div>
+          <div class="weights-grid" id="weightsGrid"></div>
+        </section>
+
+        <section class="ranking-shell">
+          <div class="histogram-list" id="histogramList"></div>
+          <div class="table-wrap" id="tableRanking">
+            <table>
+              <thead>
+                <tr>
+                  <th class="rank-col">#</th>
+                  <th id="modelHeader">模型</th>
+                  <th id="scoreHeader">综合分</th>
+                  <th id="speedHeader">速度</th>
+                  <th id="contextHeader">上下文</th>
+                  <th id="priceHeader">价格</th>
+                  <th id="sourceHeader">来源</th>
+                  <th id="coverageHeader">覆盖</th>
+                </tr>
+              </thead>
+              <tbody id="rankingBody"></tbody>
+            </table>
+          </div>
+          <div class="text-ranking" id="textRanking" hidden></div>
+        </section>
+      </section>
+
+      <section class="sources-view" id="sourcesView" hidden>
+        <section class="chart-shell sources-shell" aria-labelledby="sourcesPageTitle">
+          <div class="chart-head">
+            <div>
+              <h2 id="sourcesPageTitle">全部数据源</h2>
+              <p id="sourcesPageSubtitle">主数据、公开榜单、官方发布和模型卡来源</p>
+            </div>
+          </div>
+          <div class="source-overview-grid" id="sourceOverview"></div>
+        </section>
+
+        <section class="chart-shell source-map-shell" aria-labelledby="sourceMetricMapTitle">
+          <div class="chart-head">
+            <div>
+              <h2 id="sourceMetricMapTitle">数据源与测试项映射</h2>
+              <p id="sourceMetricMapSubtitle">每个来源对应的 benchmark、覆盖模型数和分数记录</p>
+            </div>
+          </div>
+          <div class="source-metric-map" id="sourceMetricMap"></div>
+        </section>
+      </section>
+
+      <section class="compare-view" id="compareView">
+        <section class="chart-shell compare-picker-shell" aria-labelledby="comparePageTitle">
+          <div class="chart-head">
+            <div>
+              <h2 id="comparePageTitle">模型对比</h2>
+              <p id="comparePageSubtitle">选择多个模型，横向查看关键数据</p>
+            </div>
+          </div>
+          <div class="compare-picker">
+            <div>
+              <h2 id="comparePickerTitle">选择模型</h2>
+              <div class="compare-search-wrap">
+                <label class="search-label compare-search-label">
+                  <span id="compareModelSelectLabel">模型</span>
+                  <input id="compareModelSelect" type="search" autocomplete="off" aria-controls="compareModelOptions" aria-expanded="false" placeholder="搜索模型或供应商" />
+                </label>
+                <div class="compare-option-list" id="compareModelOptions" role="listbox" aria-label="可添加模型" hidden></div>
+              </div>
+            </div>
+            <div class="compare-picker-actions">
+              <button id="compareAddButton" type="button">添加</button>
+              <button id="compareClearButton" type="button">清空</button>
+            </div>
+          </div>
+          <div class="compare-selected-head">
+            <h2 id="compareSelectedTitle">已选模型</h2>
+          </div>
+          <div class="compare-selected" id="compareSelectedModels"></div>
+        </section>
+        <div class="compare-results" id="compareResults"></div>
+      </section>
+
+      <section class="benchmark-view" id="benchmarkView" hidden>
+        <div class="benchmark-detail" id="benchmarkDetail"></div>
+      </section>
+
+      <section class="model-view" id="modelView" hidden>
+        <div class="model-detail" id="modelDetail"></div>
+      </section>
+
+      <section class="provider-view" id="providerView" hidden>
+        <div class="provider-detail" id="providerDetail"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="siteFooter">
+      数据来源：<a href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" target="_blank" rel="noreferrer">Artificial Analysis</a>。AInsights Index 基于其公开评测数据重新计算。
+    </footer>
+
+    <template id="metricTemplate">
+      <label class="weight-control">
+        <span></span>
+        <input type="range" min="0" max="100" step="0.01" />
+        <output></output>
+      </label>
+    </template>
+
+    <script src="./data/models.js"></script>
+    <script src="./app-utils.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
