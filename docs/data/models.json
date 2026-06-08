@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-07T19:22:50+00:00",
+  "generatedAt": "2026-06-08T05:21:14+00:00",
   "source": {
     "label": "Artificial Analysis Intelligence Evaluations",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -1941,7 +1941,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 331.8442,
+      "medianOutputSpeed": 344.3474,
       "aa": {
         "aa-intelligence": 33.2657,
         "aa-coding": 28.6195,
@@ -2060,7 +2060,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 236.8,
+      "medianOutputSpeed": 243.1337,
       "aa": {
         "aa-intelligence": 20.7852,
         "aa-coding": 14.3729,
@@ -2078,7 +2078,7 @@
         "aaIndexAnswerCostUsd": 0.5242
       },
       "scores": {
-        "GDPval-AA": 2.4848,
+        "GDPval-AA": 2.5577,
         "Terminal-Bench Hard": 4.5455,
         "τ²-Bench Telecom": 50.2924,
         "AA-LCR": 31.0,
@@ -2179,7 +2179,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 339.5203,
+      "medianOutputSpeed": 343.8339,
       "aa": {
         "aa-intelligence": 24.4666,
         "aa-coding": 15.5338,
@@ -2197,7 +2197,7 @@
         "aaIndexAnswerCostUsd": 1.8627
       },
       "scores": {
-        "GDPval-AA": 16.4481,
+        "GDPval-AA": 16.5598,
         "Terminal-Bench Hard": 5.303,
         "τ²-Bench Telecom": 45.0292,
         "AA-LCR": 43.6667,
@@ -2298,7 +2298,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 170.6981,
+      "medianOutputSpeed": 176.1203,
       "aa": {
         "aa-intelligence": 37.7279,
         "aa-coding": 37.4649,
@@ -2316,7 +2316,7 @@
         "aaIndexAnswerCostUsd": 15.5175
       },
       "scores": {
-        "GDPval-AA": 40.836,
+        "GDPval-AA": 40.8593,
         "Terminal-Bench Hard": 34.0909,
         "τ²-Bench Telecom": 36.5497,
         "AA-LCR": 61.3333,
@@ -2417,7 +2417,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 239.4591,
+      "medianOutputSpeed": 240.4595,
       "aa": {
         "aa-intelligence": 24.4696,
         "aa-coding": 18.529,
@@ -2435,7 +2435,7 @@
         "aaIndexAnswerCostUsd": 0.7688
       },
       "scores": {
-        "GDPval-AA": 7.4754,
+        "GDPval-AA": 7.4849,
         "Terminal-Bench Hard": 10.6061,
         "τ²-Bench Telecom": 60.2339,
         "AA-LCR": 30.6667,
@@ -2655,7 +2655,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 165.4487,
+      "medianOutputSpeed": 179.3353,
       "aa": {
         "aa-intelligence": 48.9037,
         "aa-coding": 51.4766,
@@ -2792,7 +2792,7 @@
         "aaIndexAnswerCostUsd": 8.4758
       },
       "scores": {
-        "GDPval-AA": 34.7379,
+        "GDPval-AA": 34.7381,
         "Terminal-Bench Hard": 42.4242,
         "τ²-Bench Telecom": 76.0234,
         "AA-LCR": 66.0,
@@ -2893,7 +2893,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 148.7789,
+      "medianOutputSpeed": 161.0938,
       "aa": {
         "aa-intelligence": 38.374,
         "aa-coding": 38.4049,
@@ -2911,7 +2911,7 @@
         "aaIndexAnswerCostUsd": 59.2994
       },
       "scores": {
-        "GDPval-AA": 12.6669,
+        "GDPval-AA": 12.9307,
         "Terminal-Bench Hard": 37.1212,
         "τ²-Bench Telecom": 80.7018,
         "AA-LCR": 69.3333,
@@ -3012,7 +3012,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 61.7474,
+      "medianOutputSpeed": 65.0171,
       "aa": {
         "aa-intelligence": 60.2376,
         "aa-coding": 59.1155,
@@ -3250,7 +3250,7 @@
         "aaIndexAnswerCostUsd": 68.6472
       },
       "scores": {
-        "GDPval-AA": 32.1133,
+        "GDPval-AA": 32.1723,
         "Terminal-Bench Hard": 42.4242,
         "τ²-Bench Telecom": 49.4152,
         "AA-LCR": 55.6667,
@@ -3351,7 +3351,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 52.8852,
+      "medianOutputSpeed": 58.1697,
       "aa": {
         "aa-intelligence": 50.7794,
         "aa-coding": 52.0553,
@@ -3369,7 +3369,7 @@
         "aaIndexAnswerCostUsd": 69.8559
       },
       "scores": {
-        "GDPval-AA": 47.0727,
+        "GDPval-AA": 47.0933,
         "Terminal-Bench Hard": 52.2727,
         "τ²-Bench Telecom": 83.9181,
         "AA-LCR": 72.0,
@@ -3470,7 +3470,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 149.8816,
+      "medianOutputSpeed": 161.3798,
       "aa": {
         "aa-intelligence": 24.3621,
         "aa-coding": 27.89,
@@ -3488,7 +3488,7 @@
         "aaIndexAnswerCostUsd": 4.6412
       },
       "scores": {
-        "GDPval-AA": 22.0306,
+        "GDPval-AA": 22.123,
         "Terminal-Bench Hard": 24.2424,
         "τ²-Bench Telecom": 34.7953,
         "AA-LCR": 24.6667,
@@ -3589,7 +3589,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 55.7537,
+      "medianOutputSpeed": 58.4869,
       "aa": {
         "aa-intelligence": 58.8681,
         "aa-coding": 58.5332,
@@ -3607,7 +3607,7 @@
         "aaIndexAnswerCostUsd": 175.561
       },
       "scores": {
-        "GDPval-AA": 62.6353,
+        "GDPval-AA": 62.6553,
         "Terminal-Bench Hard": 59.8485,
         "τ²-Bench Telecom": 92.9825,
         "AA-LCR": 73.3333,
@@ -3708,7 +3708,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 168.5261,
+      "medianOutputSpeed": 168.5059,
       "aa": {
         "aa-intelligence": 23.279,
         "aa-coding": 25.3157,
@@ -3726,7 +3726,7 @@
         "aaIndexAnswerCostUsd": 11.017
       },
       "scores": {
-        "GDPval-AA": 25.1071,
+        "GDPval-AA": 25.1376,
         "Terminal-Bench Hard": 18.1818,
         "τ²-Bench Telecom": 23.3918,
         "AA-LCR": 30.3333,
@@ -3827,7 +3827,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 152.8946,
+      "medianOutputSpeed": 152.3733,
       "aa": {
         "aa-intelligence": 38.1081,
         "aa-coding": 35.0309,
@@ -3845,7 +3845,7 @@
         "aaIndexAnswerCostUsd": 6.6306
       },
       "scores": {
-        "GDPval-AA": 34.9119,
+        "GDPval-AA": 34.958,
         "Terminal-Bench Hard": 33.3333,
         "τ²-Bench Telecom": 52.6316,
         "AA-LCR": 57.3333,
@@ -3946,7 +3946,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 51.9893,
+      "medianOutputSpeed": 54.4386,
       "aa": {
         "aa-intelligence": 40.9367,
         "aa-coding": 48.6076,
@@ -3964,7 +3964,7 @@
         "aaIndexAnswerCostUsd": 85.0174
       },
       "scores": {
-        "GDPval-AA": 40.7857,
+        "GDPval-AA": 40.8096,
         "Terminal-Bench Hard": 49.2424,
         "τ²-Bench Telecom": 69.2982,
         "AA-LCR": 56.3333,
@@ -4083,7 +4083,7 @@
         "aaIndexAnswerCostUsd": 130.4105
       },
       "scores": {
-        "GDPval-AA": 57.474,
+        "GDPval-AA": 57.494,
         "Terminal-Bench Hard": 57.5758,
         "τ²-Bench Telecom": 91.8129,
         "AA-LCR": 72.3333,
@@ -4184,7 +4184,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 85.994,
+      "medianOutputSpeed": 111.3453,
       "aa": {
         "aa-intelligence": 53.5605,
         "aa-coding": 53.1004,
@@ -4202,7 +4202,7 @@
         "aaIndexAnswerCostUsd": 58.6539
       },
       "scores": {
-        "GDPval-AA": 49.0573,
+        "GDPval-AA": 49.0785,
         "Terminal-Bench Hard": 53.0303,
         "τ²-Bench Telecom": 85.9649,
         "AA-LCR": 74.0,
@@ -4303,7 +4303,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 78.2124,
+      "medianOutputSpeed": 79.2293,
       "aa": {
         "aa-intelligence": 14.4886,
         "aa-coding": 10.7008,
@@ -4321,7 +4321,7 @@
         "aaIndexAnswerCostUsd": 2.7229
       },
       "scores": {
-        "GDPval-AA": -4.9954,
+        "GDPval-AA": -4.9717,
         "Terminal-Bench Hard": 3.0303,
         "τ²-Bench Telecom": 26.6082,
         "AA-LCR": 15.0,
@@ -4422,7 +4422,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 39.8875,
+      "medianOutputSpeed": 55.4432,
       "aa": {
         "aa-intelligence": 17.377,
         "aa-coding": 14.4992,
@@ -4440,7 +4440,7 @@
         "aaIndexAnswerCostUsd": 25.301
       },
       "scores": {
-        "GDPval-AA": -12.2483,
+        "GDPval-AA": -12.2149,
         "Terminal-Bench Hard": 6.8182,
         "τ²-Bench Telecom": 19.0058,
         "AA-LCR": 24.3333,
@@ -4541,7 +4541,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 56.2032,
+      "medianOutputSpeed": 58.6022,
       "aa": {
         "aa-intelligence": 11.9013,
         "aa-coding": null,
@@ -4660,7 +4660,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 50.6137,
+      "medianOutputSpeed": 51.5074,
       "aa": {
         "aa-intelligence": 8.7268,
         "aa-coding": 4.2473,
@@ -4779,7 +4779,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 106.2808,
+      "medianOutputSpeed": 112.6695,
       "aa": {
         "aa-intelligence": 18.365,
         "aa-coding": 15.5794,
@@ -4797,7 +4797,7 @@
         "aaIndexAnswerCostUsd": 6.9311
       },
       "scores": {
-        "GDPval-AA": -3.2364,
+        "GDPval-AA": -3.2128,
         "Terminal-Bench Hard": 6.8182,
         "τ²-Bench Telecom": 17.8363,
         "AA-LCR": 46.0,
@@ -4898,7 +4898,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 102.2057,
+      "medianOutputSpeed": 104.0684,
       "aa": {
         "aa-intelligence": 13.5176,
         "aa-coding": 6.6814,
@@ -4916,7 +4916,7 @@
         "aaIndexAnswerCostUsd": 4.8417
       },
       "scores": {
-        "GDPval-AA": -11.4713,
+        "GDPval-AA": -11.4445,
         "Terminal-Bench Hard": 1.5152,
         "τ²-Bench Telecom": 15.4971,
         "AA-LCR": 25.8,
@@ -5136,7 +5136,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 35.7331,
+      "medianOutputSpeed": 35.7261,
       "aa": {
         "aa-intelligence": 39.183,
         "aa-coding": 38.71,
@@ -5344,7 +5344,7 @@
         "aaIndexAnswerCostUsd": 2.5959
       },
       "scores": {
-        "GDPval-AA": 25.7113,
+        "GDPval-AA": 25.8102,
         "Terminal-Bench Hard": 13.64,
         "τ²-Bench Telecom": 43.5673,
         "AA-LCR": 55.6667,
@@ -5516,7 +5516,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 77.9548,
+      "medianOutputSpeed": 63.9142,
       "aa": {
         "aa-intelligence": 27.0858,
         "aa-coding": 29.0895,
@@ -5534,7 +5534,7 @@
         "aaIndexAnswerCostUsd": 5.5508
       },
       "scores": {
-        "GDPval-AA": 22.4189,
+        "GDPval-AA": 22.4942,
         "Terminal-Bench Hard": 25.0,
         "τ²-Bench Telecom": 40.3509,
         "AA-LCR": 39.6667,
@@ -5653,7 +5653,7 @@
         "aaIndexAnswerCostUsd": 103.8887
       },
       "scores": {
-        "GDPval-AA": 47.0564,
+        "GDPval-AA": 47.0785,
         "Terminal-Bench Hard": 46.2121,
         "τ²-Bench Telecom": 58.7719,
         "AA-LCR": 53.3333,
@@ -5754,7 +5754,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 44.4402,
+      "medianOutputSpeed": 45.8015,
       "aa": {
         "aa-intelligence": 32.2911,
         "aa-coding": 33.898,
@@ -5772,7 +5772,7 @@
         "aaIndexAnswerCostUsd": 2.854
       },
       "scores": {
-        "GDPval-AA": 25.2739,
+        "GDPval-AA": 25.2992,
         "Terminal-Bench Hard": 30.303,
         "τ²-Bench Telecom": 65.4971,
         "AA-LCR": 36.0,
@@ -5873,7 +5873,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 173.3926,
+      "medianOutputSpeed": 189.2027,
       "aa": {
         "aa-intelligence": 54.7833,
         "aa-coding": 43.9324,
@@ -5891,7 +5891,7 @@
         "aaIndexAnswerCostUsd": 100.087
       },
       "scores": {
-        "GDPval-AA": 57.9126,
+        "GDPval-AA": 57.9342,
         "Terminal-Bench Hard": 39.3939,
         "τ²-Bench Telecom": 95.614,
         "AA-LCR": 71.0,
@@ -6010,7 +6010,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -12.4624,
+        "GDPval-AA": -12.4332,
         "Terminal-Bench Hard": 2.2727,
         "τ²-Bench Telecom": 22.2222,
         "AA-LCR": 15.0,
@@ -6190,7 +6190,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -9.8696,
+        "GDPval-AA": -9.8416,
         "Terminal-Bench Hard": 8.3333,
         "τ²-Bench Telecom": 20.7602,
         "AA-LCR": 30.6667,
@@ -6380,7 +6380,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -10.4398,
+        "GDPval-AA": -10.4125,
         "Terminal-Bench Hard": 7.5758,
         "τ²-Bench Telecom": 26.0234,
         "AA-LCR": 18.0,
@@ -6394,6 +6394,125 @@
         "APEX-Agents-AA": null,
         "ITBench-AA": null,
         "MMMU-Pro": 51.2139,
+        "LiveCodeBench": null,
+        "AIME 2025": null,
+        "benchmark:swe-bench-pro": null,
+        "benchmark:terminal-bench-2": null,
+        "benchmark:terminal-bench": null,
+        "benchmark:swe-bench-verified": null,
+        "benchmark:swe-bench-multilingual": null,
+        "benchmark:expert-swe-internal": null,
+        "benchmark:gdpval-wins-ties": null,
+        "benchmark:gdpval-aa-elo": null,
+        "benchmark:finance-agent-v1-1": null,
+        "benchmark:osworld-verified": null,
+        "benchmark:toolathlon": null,
+        "benchmark:browsecomp": null,
+        "benchmark:browsecomp-context": null,
+        "benchmark:hle-tools": null,
+        "benchmark:mcp-atlas": null,
+        "benchmark:frontiermath-tier-1-3": null,
+        "benchmark:frontiermath-tier-4": null,
+        "benchmark:cybergym": null,
+        "benchmark:mmlu-pro": null,
+        "benchmark:gpqa-diamond": null,
+        "benchmark:hle": null,
+        "benchmark:livecodebench": null,
+        "benchmark:scicode": null,
+        "benchmark:aime-2024": null,
+        "benchmark:aime-2025": null,
+        "benchmark:aime-2026": null,
+        "benchmark:hmmt-2026-feb": null,
+        "benchmark:skillsbench": null,
+        "benchmark:qwenwebbench": null,
+        "benchmark:claw-eval": null,
+        "benchmark:nl2repo": null,
+        "benchmark:tau-bench": null,
+        "benchmark:bfcl-v3": null,
+        "benchmark:bfcl-v4": null,
+        "benchmark:arc-agi-2": null,
+        "benchmark:livecodebench-pro-elo": null,
+        "benchmark:apex-agents": null,
+        "benchmark:tau2-bench-retail": null,
+        "benchmark:tau2-bench-telecom": null,
+        "benchmark:mmmu-pro": null,
+        "benchmark:mmmlu": null,
+        "benchmark:charxiv-no-tools": null,
+        "benchmark:charxiv-tools": null,
+        "benchmark:mrcr-v2-128k": null,
+        "benchmark:mrcr-v2-1m": null,
+        "benchmark:bigbench-extra-hard": null,
+        "benchmark:codeforces-elo": null,
+        "benchmark:deepsearchqa-f1": null,
+        "benchmark:mathvision-python": null,
+        "benchmark:v-star-python": null,
+        "benchmark:research-eval-reka": null,
+        "benchmark:frames": null,
+        "benchmark:x-browse": null,
+        "benchmark:terminal-bench-2-1": null,
+        "benchmark:pinchbench": null,
+        "benchmark:taubench-v3-average": null,
+        "benchmark:ifbench-prompt-loose": null,
+        "benchmark:multi-challenge": null,
+        "benchmark:ruler-1m": null,
+        "benchmark:longbench-v2-1m": null,
+        "benchmark:mmlu-prox": null,
+        "benchmark:wmt24-plusplus": null
+      },
+      "externalBenchmarks": []
+    },
+    {
+      "modelKey": "Gemma 4 12B [R]",
+      "model": "Gemma 4 12B",
+      "variantGroup": "gemma 4 12b",
+      "variantPriority": 70,
+      "isReasoning": true,
+      "slug": "gemma-4-12b",
+      "creator": "Google",
+      "releaseDate": "2026-06-03",
+      "modelUrl": "/models/gemma-4-12b",
+      "contextWindowTokens": 131072.0,
+      "openSourceCategorization": "Open Weights (Permissive License)",
+      "openSourceType": "open",
+      "modelIcon": {
+        "label": "G",
+        "fallbackLabel": "G",
+        "title": "Google",
+        "src": "assets/logos/google_small.svg",
+        "color": "#34A853"
+      },
+      "medianOutputSpeed": 0.0,
+      "aa": {
+        "aa-intelligence": 29.1452,
+        "aa-coding": 24.8527,
+        "aa-agentic": 24.6254
+      },
+      "aaCostUsd": 0.0,
+      "pricing": {
+        "inputPerMillionTokensUsd": 0.0,
+        "outputPerMillionTokensUsd": 0.0,
+        "cacheHitPerMillionTokensUsd": null,
+        "aaIndexCostUsd": 0.0,
+        "aaIndexInputCostUsd": 0.0,
+        "aaIndexOutputCostUsd": 0.0,
+        "aaIndexReasoningCostUsd": 0.0,
+        "aaIndexAnswerCostUsd": 0.0
+      },
+      "scores": {
+        "GDPval-AA": 18.8095,
+        "Terminal-Bench Hard": 18.1818,
+        "τ²-Bench Telecom": 36.2573,
+        "AA-LCR": 55.3333,
+        "AA-Omniscience Accuracy": 16.0,
+        "AA-Omniscience Non-Hallucination Rate": 19.1865,
+        "Humanity's Last Exam": 14.5505,
+        "GPQA Diamond": 75.2525,
+        "SciCode": 38.1944,
+        "IFBench": 73.5374,
+        "CritPt": 0.0,
+        "APEX-Agents-AA": null,
+        "ITBench-AA": null,
+        "MMMU-Pro": 69.6532,
         "LiveCodeBench": null,
         "AIME 2025": null,
         "benchmark:swe-bench-pro": null,
@@ -6481,7 +6600,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 317.0337,
+      "medianOutputSpeed": 322.0961,
       "aa": {
         "aa-intelligence": 33.5181,
         "aa-coding": 30.1277,
@@ -6499,7 +6618,7 @@
         "aaIndexAnswerCostUsd": 3.9709
       },
       "scores": {
-        "GDPval-AA": 21.3727,
+        "GDPval-AA": 21.3936,
         "Terminal-Bench Hard": 24.2424,
         "τ²-Bench Telecom": 31.2865,
         "AA-LCR": 65.3333,
@@ -6600,7 +6719,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 139.8048,
+      "medianOutputSpeed": 142.5964,
       "aa": {
         "aa-intelligence": 57.1755,
         "aa-coding": 55.4959,
@@ -6960,7 +7079,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 180.2869,
+      "medianOutputSpeed": 206.7852,
       "aa": {
         "aa-intelligence": 55.329,
         "aa-coding": 44.9811,
@@ -7198,7 +7317,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 141.3943,
+      "medianOutputSpeed": 152.7925,
       "aa": {
         "aa-intelligence": 34.6276,
         "aa-coding": 31.9515,
@@ -7216,7 +7335,7 @@
         "aaIndexAnswerCostUsd": 54.6303
       },
       "scores": {
-        "GDPval-AA": 20.9327,
+        "GDPval-AA": 20.9931,
         "Terminal-Bench Hard": 26.5152,
         "τ²-Bench Telecom": 54.0936,
         "AA-LCR": 66.0,
@@ -7335,7 +7454,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -11.5588,
+        "GDPval-AA": -11.5316,
         "Terminal-Bench Hard": 3.0303,
         "τ²-Bench Telecom": 20.7602,
         "AA-LCR": 15.0,
@@ -7436,7 +7555,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 48.166,
+      "medianOutputSpeed": 53.6725,
       "aa": {
         "aa-intelligence": 57.2775,
         "aa-coding": 52.5147,
@@ -7776,7 +7895,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 57.8174,
+      "medianOutputSpeed": 66.7994,
       "aa": {
         "aa-intelligence": 61.4409,
         "aa-coding": 56.713,
@@ -7895,7 +8014,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 42.9262,
+      "medianOutputSpeed": 43.9644,
       "aa": {
         "aa-intelligence": 44.3845,
         "aa-coding": 46.4331,
@@ -7913,7 +8032,7 @@
         "aaIndexAnswerCostUsd": 206.3746
       },
       "scores": {
-        "GDPval-AA": 54.9353,
+        "GDPval-AA": 54.9549,
         "Terminal-Bench Hard": 46.2121,
         "τ²-Bench Telecom": 79.5322,
         "AA-LCR": 57.6667,
@@ -8014,7 +8133,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 44.4954,
+      "medianOutputSpeed": 46.4307,
       "aa": {
         "aa-intelligence": 51.8214,
         "aa-coding": 53.0689,
@@ -8032,7 +8151,7 @@
         "aaIndexAnswerCostUsd": 288.8791
       },
       "scores": {
-        "GDPval-AA": 58.857,
+        "GDPval-AA": 58.8773,
         "Terminal-Bench Hard": 54.5455,
         "τ²-Bench Telecom": 73.9766,
         "AA-LCR": 67.0,
@@ -8133,7 +8252,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 88.5703,
+      "medianOutputSpeed": 90.9763,
       "aa": {
         "aa-intelligence": 37.0918,
         "aa-coding": 32.6108,
@@ -8252,7 +8371,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 88.9463,
+      "medianOutputSpeed": 91.01,
       "aa": {
         "aa-intelligence": 31.0484,
         "aa-coding": 29.6402,
@@ -8270,7 +8389,7 @@
         "aaIndexAnswerCostUsd": 41.5086
       },
       "scores": {
-        "GDPval-AA": 31.8018,
+        "GDPval-AA": 31.8571,
         "Terminal-Bench Hard": 27.2727,
         "τ²-Bench Telecom": 32.4561,
         "AA-LCR": 43.6667,
@@ -8371,7 +8490,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 55.4368,
+      "medianOutputSpeed": 56.225,
       "aa": {
         "aa-intelligence": 51.7187,
         "aa-coding": 50.94,
@@ -8490,7 +8609,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 42.4174,
+      "medianOutputSpeed": 43.4717,
       "aa": {
         "aa-intelligence": 42.6011,
         "aa-coding": 42.9819,
@@ -8508,7 +8627,7 @@
         "aaIndexAnswerCostUsd": 108.4399
       },
       "scores": {
-        "GDPval-AA": 47.82,
+        "GDPval-AA": 47.8404,
         "Terminal-Bench Hard": 42.4242,
         "τ²-Bench Telecom": 78.9474,
         "AA-LCR": 58.6667,
@@ -8609,7 +8728,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 109.5131,
+      "medianOutputSpeed": 109.7228,
       "aa": {
         "aa-intelligence": 18.1585,
         "aa-coding": 14.7587,
@@ -8627,7 +8746,7 @@
         "aaIndexAnswerCostUsd": 4.828
       },
       "scores": {
-        "GDPval-AA": 8.47,
+        "GDPval-AA": 8.4998,
         "Terminal-Bench Hard": 4.5455,
         "τ²-Bench Telecom": 27.7778,
         "AA-LCR": 16.3333,
@@ -8728,7 +8847,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 85.7757,
+      "medianOutputSpeed": 86.303,
       "aa": {
         "aa-intelligence": 15.9834,
         "aa-coding": 10.9007,
@@ -8746,7 +8865,7 @@
         "aaIndexAnswerCostUsd": 2.1508
       },
       "scores": {
-        "GDPval-AA": 7.7753,
+        "GDPval-AA": 7.7737,
         "Terminal-Bench Hard": 4.5455,
         "τ²-Bench Telecom": 27.193,
         "AA-LCR": 22.0,
@@ -8865,7 +8984,7 @@
         "aaIndexAnswerCostUsd": 2.0063
       },
       "scores": {
-        "GDPval-AA": 6.9494,
+        "GDPval-AA": 6.9616,
         "Terminal-Bench Hard": 4.5455,
         "τ²-Bench Telecom": 26.6082,
         "AA-LCR": 24.0,
@@ -8966,7 +9085,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 50.6246,
+      "medianOutputSpeed": 51.6976,
       "aa": {
         "aa-intelligence": 22.8048,
         "aa-coding": 22.6817,
@@ -8984,7 +9103,7 @@
         "aaIndexAnswerCostUsd": 7.7951
       },
       "scores": {
-        "GDPval-AA": 18.2503,
+        "GDPval-AA": 18.2583,
         "Terminal-Bench Hard": 15.9091,
         "τ²-Bench Telecom": 24.5614,
         "AA-LCR": 34.6667,
@@ -9085,7 +9204,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 163.8988,
+      "medianOutputSpeed": 164.839,
       "aa": {
         "aa-intelligence": 18.6243,
         "aa-coding": 16.4457,
@@ -9103,7 +9222,7 @@
         "aaIndexAnswerCostUsd": 2.3382
       },
       "scores": {
-        "GDPval-AA": 17.2388,
+        "GDPval-AA": 17.2052,
         "Terminal-Bench Hard": 10.6061,
         "τ²-Bench Telecom": 18.4211,
         "AA-LCR": 21.3333,
@@ -9204,7 +9323,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 82.6306,
+      "medianOutputSpeed": 110.4341,
       "aa": {
         "aa-intelligence": 39.2258,
         "aa-coding": 35.4167,
@@ -9323,7 +9442,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 51.593,
+      "medianOutputSpeed": 57.3635,
       "aa": {
         "aa-intelligence": 19.4672,
         "aa-coding": 20.7176,
@@ -9341,7 +9460,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 16.0016,
+        "GDPval-AA": 16.0825,
         "Terminal-Bench Hard": 16.6667,
         "τ²-Bench Telecom": 23.3918,
         "AA-LCR": 24.0,
@@ -9442,7 +9561,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 41.6623,
+      "medianOutputSpeed": 41.3295,
       "aa": {
         "aa-intelligence": 27.1041,
         "aa-coding": 21.6646,
@@ -9460,7 +9579,7 @@
         "aaIndexAnswerCostUsd": 14.8453
       },
       "scores": {
-        "GDPval-AA": 6.3834,
+        "GDPval-AA": 6.4141,
         "Terminal-Bench Hard": 12.8788,
         "τ²-Bench Telecom": 52.0468,
         "AA-LCR": 51.3333,
@@ -9579,7 +9698,7 @@
         "aaIndexAnswerCostUsd": 2.4962
       },
       "scores": {
-        "GDPval-AA": 18.0427,
+        "GDPval-AA": 18.0649,
         "Terminal-Bench Hard": 17.4242,
         "τ²-Bench Telecom": 41.2281,
         "AA-LCR": 44.6667,
@@ -9680,7 +9799,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 175.0677,
+      "medianOutputSpeed": 176.3211,
       "aa": {
         "aa-intelligence": 11.2394,
         "aa-coding": 4.784,
@@ -9698,7 +9817,7 @@
         "aaIndexAnswerCostUsd": 1.5545
       },
       "scores": {
-        "GDPval-AA": -0.8291,
+        "GDPval-AA": -0.8148,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 24.8538,
         "AA-LCR": 11.6667,
@@ -9799,7 +9918,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 57.4359,
+      "medianOutputSpeed": 67.005,
       "aa": {
         "aa-intelligence": 22.0418,
         "aa-coding": 23.6602,
@@ -9817,7 +9936,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 17.724,
+        "GDPval-AA": 17.8325,
         "Terminal-Bench Hard": 18.9394,
         "τ²-Bench Telecom": 24.8538,
         "AA-LCR": 30.0,
@@ -9918,7 +10037,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 46.9218,
+      "medianOutputSpeed": 60.208,
       "aa": {
         "aa-intelligence": 49.7899,
         "aa-coding": 43.2485,
@@ -10168,7 +10287,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 121.8945,
+      "medianOutputSpeed": 121.0454,
       "aa": {
         "aa-intelligence": 46.5166,
         "aa-coding": 38.7065,
@@ -10788,7 +10907,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 52.5424,
+      "medianOutputSpeed": 59.7037,
       "aa": {
         "aa-intelligence": 51.5094,
         "aa-coding": 47.4747,
@@ -11158,7 +11277,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 52.8659,
+      "medianOutputSpeed": 61.5219,
       "aa": {
         "aa-intelligence": 39.2654,
         "aa-coding": 38.3628,
@@ -11176,7 +11295,7 @@
         "aaIndexAnswerCostUsd": 11.7646
       },
       "scores": {
-        "GDPval-AA": 48.87,
+        "GDPval-AA": 48.8911,
         "Terminal-Bench Hard": 36.3636,
         "τ²-Bench Telecom": 91.2281,
         "AA-LCR": 45.0,
@@ -11277,7 +11396,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 115.9345,
+      "medianOutputSpeed": 115.9961,
       "aa": {
         "aa-intelligence": 36.4592,
         "aa-coding": 35.1501,
@@ -11295,7 +11414,7 @@
         "aaIndexAnswerCostUsd": 3.0558
       },
       "scores": {
-        "GDPval-AA": 44.5857,
+        "GDPval-AA": 44.6069,
         "Terminal-Bench Hard": 34.0909,
         "τ²-Bench Telecom": 94.4444,
         "AA-LCR": 33.3333,
@@ -11533,7 +11652,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -6.4071,
+        "GDPval-AA": -6.3789,
         "Terminal-Bench Hard": 2.2727,
         "τ²-Bench Telecom": 27.7778,
         "AA-LCR": 8.6667,
@@ -11634,7 +11753,7 @@
         "src": "assets/logos/xai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 197.7182,
+      "medianOutputSpeed": 207.5868,
       "aa": {
         "aa-intelligence": 53.1964,
         "aa-coding": 41.0318,
@@ -11753,7 +11872,7 @@
         "src": "assets/logos/xai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 175.1575,
+      "medianOutputSpeed": 190.0577,
       "aa": {
         "aa-intelligence": 43.8861,
         "aa-coding": 31.6428,
@@ -11771,7 +11890,7 @@
         "aaIndexAnswerCostUsd": 6.6189
       },
       "scores": {
-        "GDPval-AA": 31.2148,
+        "GDPval-AA": 31.2826,
         "Terminal-Bench Hard": 26.5152,
         "τ²-Bench Telecom": 88.8889,
         "AA-LCR": 64.0,
@@ -11872,7 +11991,7 @@
         "src": "assets/logos/xai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 170.7254,
+      "medianOutputSpeed": 200.1811,
       "aa": {
         "aa-intelligence": 48.8032,
         "aa-coding": 35.0554,
@@ -11890,7 +12009,7 @@
         "aaIndexAnswerCostUsd": 8.8311
       },
       "scores": {
-        "GDPval-AA": 40.5916,
+        "GDPval-AA": 40.6167,
         "Terminal-Bench Hard": 30.303,
         "τ²-Bench Telecom": 91.2281,
         "AA-LCR": 65.0,
@@ -11991,7 +12110,7 @@
         "src": "assets/logos/xai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 164.4851,
+      "medianOutputSpeed": 181.3102,
       "aa": {
         "aa-intelligence": 31.0184,
         "aa-coding": 25.0877,
@@ -12009,7 +12128,7 @@
         "aaIndexAnswerCostUsd": 19.5391
       },
       "scores": {
-        "GDPval-AA": 39.9942,
+        "GDPval-AA": 40.0185,
         "Terminal-Bench Hard": 18.9394,
         "τ²-Bench Telecom": 65.7895,
         "AA-LCR": 24.6667,
@@ -12110,7 +12229,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 259.3567,
+      "medianOutputSpeed": 272.8064,
       "aa": {
         "aa-intelligence": 10.2683,
         "aa-coding": 4.1351,
@@ -12128,7 +12247,7 @@
         "aaIndexAnswerCostUsd": 0.9969
       },
       "scores": {
-        "GDPval-AA": -8.0556,
+        "GDPval-AA": -8.0283,
         "Terminal-Bench Hard": 1.5152,
         "τ²-Bench Telecom": 14.0351,
         "AA-LCR": 9.6667,
@@ -12247,7 +12366,7 @@
         "aaIndexAnswerCostUsd": 211.3889
       },
       "scores": {
-        "GDPval-AA": -9.7992,
+        "GDPval-AA": -9.7689,
         "Terminal-Bench Hard": 6.8182,
         "τ²-Bench Telecom": 44.7368,
         "AA-LCR": 22.3333,
@@ -12348,7 +12467,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 88.298,
+      "medianOutputSpeed": 102.654,
       "aa": {
         "aa-intelligence": 34.5432,
         "aa-coding": 23.4182,
@@ -12366,7 +12485,7 @@
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "GDPval-AA": 17.6804,
+        "GDPval-AA": 17.6374,
         "Terminal-Bench Hard": 16.6667,
         "τ²-Bench Telecom": 72.807,
         "AA-LCR": 55.3333,
@@ -12467,7 +12586,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 115.9246,
+      "medianOutputSpeed": 119.9127,
       "aa": {
         "aa-intelligence": 35.7111,
         "aa-coding": 30.3977,
@@ -12586,7 +12705,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 116.3549,
+      "medianOutputSpeed": 117.4616,
       "aa": {
         "aa-intelligence": 31.9033,
         "aa-coding": 24.502,
@@ -12604,7 +12723,7 @@
         "aaIndexAnswerCostUsd": 26.7498
       },
       "scores": {
-        "GDPval-AA": 7.9502,
+        "GDPval-AA": 7.922,
         "Terminal-Bench Hard": 17.4242,
         "τ²-Bench Telecom": 90.6433,
         "AA-LCR": 61.6667,
@@ -12705,7 +12824,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 117.9092,
+      "medianOutputSpeed": 130.1539,
       "aa": {
         "aa-intelligence": 18.0299,
         "aa-coding": 12.5316,
@@ -12723,7 +12842,7 @@
         "aaIndexAnswerCostUsd": 165.3103
       },
       "scores": {
-        "GDPval-AA": -5.9887,
+        "GDPval-AA": -5.9584,
         "Terminal-Bench Hard": 6.8182,
         "τ²-Bench Telecom": 61.9883,
         "AA-LCR": 17.6667,
@@ -12842,7 +12961,7 @@
         "aaIndexAnswerCostUsd": 8.072
       },
       "scores": {
-        "GDPval-AA": 14.1764,
+        "GDPval-AA": 14.2054,
         "Terminal-Bench Hard": 4.5455,
         "τ²-Bench Telecom": 80.4094,
         "AA-LCR": 53.6667,
@@ -12943,7 +13062,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 108.8559,
+      "medianOutputSpeed": 118.0774,
       "aa": {
         "aa-intelligence": 23.0613,
         "aa-coding": 20.4861,
@@ -12961,7 +13080,7 @@
         "aaIndexAnswerCostUsd": 435.2404
       },
       "scores": {
-        "GDPval-AA": -9.1353,
+        "GDPval-AA": -9.1128,
         "Terminal-Bench Hard": 16.6667,
         "τ²-Bench Telecom": 71.6374,
         "AA-LCR": 28.3333,
@@ -13080,7 +13199,7 @@
         "aaIndexAnswerCostUsd": 7.563
       },
       "scores": {
-        "GDPval-AA": -7.0203,
+        "GDPval-AA": -6.9923,
         "Terminal-Bench Hard": 3.7879,
         "τ²-Bench Telecom": 67.8363,
         "AA-LCR": 51.0,
@@ -13181,7 +13300,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 32.9489,
+      "medianOutputSpeed": 32.7069,
       "aa": {
         "aa-intelligence": 19.0143,
         "aa-coding": 13.8433,
@@ -13199,7 +13318,7 @@
         "aaIndexAnswerCostUsd": 53.1043
       },
       "scores": {
-        "GDPval-AA": 0.2792,
+        "GDPval-AA": 0.3495,
         "Terminal-Bench Hard": 6.8182,
         "τ²-Bench Telecom": 38.3041,
         "AA-LCR": 30.0,
@@ -13300,7 +13419,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 115.6509,
+      "medianOutputSpeed": 98.7678,
       "aa": {
         "aa-intelligence": 29.7271,
         "aa-coding": 23.8847,
@@ -13318,7 +13437,7 @@
         "aaIndexAnswerCostUsd": 10.5125
       },
       "scores": {
-        "GDPval-AA": 7.1478,
+        "GDPval-AA": 7.1593,
         "Terminal-Bench Hard": 17.4242,
         "τ²-Bench Telecom": 75.731,
         "AA-LCR": 58.3333,
@@ -13419,7 +13538,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 95.1521,
+      "medianOutputSpeed": 113.6356,
       "aa": {
         "aa-intelligence": 24.5866,
         "aa-coding": 13.6364,
@@ -13437,7 +13556,7 @@
         "aaIndexAnswerCostUsd": 6.7832
       },
       "scores": {
-        "GDPval-AA": 0.4228,
+        "GDPval-AA": 0.4834,
         "Terminal-Bench Hard": 3.7879,
         "τ²-Bench Telecom": 71.9298,
         "AA-LCR": 52.0,
@@ -13538,7 +13657,7 @@
         "src": "assets/logos/microsoft_small.svg",
         "color": "#0078D5"
       },
-      "medianOutputSpeed": 30.2692,
+      "medianOutputSpeed": 33.2947,
       "aa": {
         "aa-intelligence": 10.4142,
         "aa-coding": 11.2058,
@@ -13657,7 +13776,7 @@
         "src": "assets/logos/microsoft_small.svg",
         "color": "#0078D5"
       },
-      "medianOutputSpeed": 21.5335,
+      "medianOutputSpeed": 21.5073,
       "aa": {
         "aa-intelligence": 8.39,
         "aa-coding": 3.588,
@@ -13675,7 +13794,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -13.577,
+        "GDPval-AA": -13.5517,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 8.1871,
         "AA-LCR": 13.6667,
@@ -13913,7 +14032,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -12.4166,
+        "GDPval-AA": -12.3869,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 19.5906,
         "AA-LCR": 0.0,
@@ -14032,7 +14151,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -13.4329,
+        "GDPval-AA": -13.4054,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 8.4795,
         "AA-LCR": 0.0,
@@ -14151,7 +14270,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -13.238,
+        "GDPval-AA": -13.2079,
         "Terminal-Bench Hard": 0.7576,
         "τ²-Bench Telecom": 13.4503,
         "AA-LCR": 0.0,
@@ -14270,7 +14389,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -12.1018,
+        "GDPval-AA": -12.0728,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 10.5263,
         "AA-LCR": 0.0,
@@ -14389,7 +14508,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -11.7265,
+        "GDPval-AA": -11.6994,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 10.8187,
         "AA-LCR": 0.0,
@@ -14490,7 +14609,7 @@
         "src": "assets/logos/liquidai_small.svg",
         "color": "#000000"
       },
-      "medianOutputSpeed": 107.4655,
+      "medianOutputSpeed": 118.017,
       "aa": {
         "aa-intelligence": 10.4928,
         "aa-coding": 3.6265,
@@ -14508,7 +14627,7 @@
         "aaIndexAnswerCostUsd": 1.3442
       },
       "scores": {
-        "GDPval-AA": -13.2772,
+        "GDPval-AA": -13.2502,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 11.1111,
         "AA-LCR": 0.0,
@@ -14627,7 +14746,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 8.2516,
+        "GDPval-AA": 8.2816,
         "Terminal-Bench Hard": 2.2727,
         "τ²-Bench Telecom": 48.2456,
         "AA-LCR": 36.0,
@@ -14746,7 +14865,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -2.5532,
+        "GDPval-AA": -2.5061,
         "Terminal-Bench Hard": 3.0303,
         "τ²-Bench Telecom": 28.0702,
         "AA-LCR": 0.0,
@@ -14865,7 +14984,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 8.7722,
+        "GDPval-AA": 8.8289,
         "Terminal-Bench Hard": 7.5758,
         "τ²-Bench Telecom": 86.2573,
         "AA-LCR": 27.0,
@@ -14984,7 +15103,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -2.7641,
+        "GDPval-AA": -2.74,
         "Terminal-Bench Hard": 4.5455,
         "τ²-Bench Telecom": 31.8713,
         "AA-LCR": 0.0,
@@ -15085,25 +15204,25 @@
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 40.4899,
+      "medianOutputSpeed": 43.932,
       "aa": {
         "aa-intelligence": 54.6748,
         "aa-coding": 43.4063,
         "aa-agentic": 68.6217
       },
-      "aaCostUsd": 306.7883,
+      "aaCostUsd": 308.3398,
       "pricing": {
         "inputPerMillionTokensUsd": 0.3,
         "outputPerMillionTokensUsd": 1.2,
         "cacheHitPerMillionTokensUsd": 0.06,
-        "aaIndexCostUsd": 306.7883,
-        "aaIndexInputCostUsd": 197.8999,
-        "aaIndexOutputCostUsd": 108.8885,
-        "aaIndexReasoningCostUsd": 97.3207,
-        "aaIndexAnswerCostUsd": 11.5678
+        "aaIndexCostUsd": 308.3398,
+        "aaIndexInputCostUsd": 199.3553,
+        "aaIndexOutputCostUsd": 108.9845,
+        "aaIndexReasoningCostUsd": 97.306,
+        "aaIndexAnswerCostUsd": 11.6785
       },
       "scores": {
-        "GDPval-AA": 58.4174,
+        "GDPval-AA": 58.4376,
         "Terminal-Bench Hard": 42.4242,
         "τ²-Bench Telecom": 88.8889,
         "AA-LCR": 74.0,
@@ -15204,7 +15323,7 @@
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 84.2046,
+      "medianOutputSpeed": 118.1937,
       "aa": {
         "aa-intelligence": 49.6153,
         "aa-coding": 41.9262,
@@ -15323,7 +15442,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#86b737"
       },
-      "medianOutputSpeed": 290.6708,
+      "medianOutputSpeed": 301.9694,
       "aa": {
         "aa-intelligence": 13.4388,
         "aa-coding": 10.7849,
@@ -15341,7 +15460,7 @@
         "aaIndexAnswerCostUsd": 4.5992
       },
       "scores": {
-        "GDPval-AA": -8.2351,
+        "GDPval-AA": -8.2066,
         "Terminal-Bench Hard": 4.5455,
         "τ²-Bench Telecom": 23.0994,
         "AA-LCR": 7.0,
@@ -15460,7 +15579,7 @@
         "aaIndexAnswerCostUsd": 2.2861
       },
       "scores": {
-        "GDPval-AA": 13.1769,
+        "GDPval-AA": 13.1553,
         "Terminal-Bench Hard": 8.3333,
         "τ²-Bench Telecom": 45.3216,
         "AA-LCR": 35.6667,
@@ -15680,7 +15799,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#86b737"
       },
-      "medianOutputSpeed": 141.859,
+      "medianOutputSpeed": 146.2968,
       "aa": {
         "aa-intelligence": 47.6726,
         "aa-coding": 37.5526,
@@ -15698,7 +15817,7 @@
         "aaIndexAnswerCostUsd": 20.8701
       },
       "scores": {
-        "GDPval-AA": 43.8314,
+        "GDPval-AA": 43.8517,
         "Terminal-Bench Hard": 36.3636,
         "τ²-Bench Telecom": 83.3333,
         "AA-LCR": 67.0,
@@ -15980,7 +16099,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#86b737"
       },
-      "medianOutputSpeed": 91.2021,
+      "medianOutputSpeed": 94.2577,
       "aa": {
         "aa-intelligence": 13.1698,
         "aa-coding": 15.7583,
@@ -15998,7 +16117,7 @@
         "aaIndexAnswerCostUsd": 2.5453
       },
       "scores": {
-        "GDPval-AA": -7.7039,
+        "GDPval-AA": -7.6757,
         "Terminal-Bench Hard": 12.1212,
         "τ²-Bench Telecom": 25.4386,
         "AA-LCR": 6.6667,
@@ -16099,7 +16218,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#86b737"
       },
-      "medianOutputSpeed": 139.822,
+      "medianOutputSpeed": 137.3297,
       "aa": {
         "aa-intelligence": 13.1593,
         "aa-coding": 7.4881,
@@ -16117,7 +16236,7 @@
         "aaIndexAnswerCostUsd": 4.4727
       },
       "scores": {
-        "GDPval-AA": -9.8966,
+        "GDPval-AA": -9.8671,
         "Terminal-Bench Hard": 0.7576,
         "τ²-Bench Telecom": 23.3918,
         "AA-LCR": 22.6667,
@@ -16218,7 +16337,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#86b737"
       },
-      "medianOutputSpeed": 222.7756,
+      "medianOutputSpeed": 224.779,
       "aa": {
         "aa-intelligence": 10.0894,
         "aa-coding": 5.8642,
@@ -16236,7 +16355,7 @@
         "aaIndexAnswerCostUsd": 4.6582
       },
       "scores": {
-        "GDPval-AA": -10.8668,
+        "GDPval-AA": -10.8413,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 19.2982,
         "AA-LCR": 17.0,
@@ -16337,7 +16456,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#86b737"
       },
-      "medianOutputSpeed": 284.2621,
+      "medianOutputSpeed": 295.5412,
       "aa": {
         "aa-intelligence": 14.8876,
         "aa-coding": 11.7494,
@@ -16355,7 +16474,7 @@
         "aaIndexAnswerCostUsd": 5.9378
       },
       "scores": {
-        "GDPval-AA": -8.6153,
+        "GDPval-AA": -8.5879,
         "Terminal-Bench Hard": 4.5455,
         "τ²-Bench Telecom": 21.345,
         "AA-LCR": 40.0,
@@ -16456,7 +16575,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#86b737"
       },
-      "medianOutputSpeed": 125.1905,
+      "medianOutputSpeed": 167.0291,
       "aa": {
         "aa-intelligence": 24.2725,
         "aa-coding": 18.9675,
@@ -16474,7 +16593,7 @@
         "aaIndexAnswerCostUsd": 0.5502
       },
       "scores": {
-        "GDPval-AA": 3.181,
+        "GDPval-AA": 3.2488,
         "Terminal-Bench Hard": 13.6364,
         "τ²-Bench Telecom": 40.9357,
         "AA-LCR": 33.6667,
@@ -16575,7 +16694,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#86b737"
       },
-      "medianOutputSpeed": 51.6345,
+      "medianOutputSpeed": 51.8351,
       "aa": {
         "aa-intelligence": 15.018,
         "aa-coding": 13.0892,
@@ -16593,7 +16712,7 @@
         "aaIndexAnswerCostUsd": 26.4234
       },
       "scores": {
-        "GDPval-AA": -13.094,
+        "GDPval-AA": -13.0673,
         "Terminal-Bench Hard": 2.2727,
         "τ²-Bench Telecom": 11.4035,
         "AA-LCR": 7.3333,
@@ -16694,7 +16813,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#86b737"
       },
-      "medianOutputSpeed": 120.4227,
+      "medianOutputSpeed": 119.0738,
       "aa": {
         "aa-intelligence": 14.7575,
         "aa-coding": 8.3403,
@@ -16712,7 +16831,7 @@
         "aaIndexAnswerCostUsd": 0.434
       },
       "scores": {
-        "GDPval-AA": -3.0259,
+        "GDPval-AA": -3.0009,
         "Terminal-Bench Hard": 1.5152,
         "τ²-Bench Telecom": 21.9298,
         "AA-LCR": 21.0,
@@ -16813,7 +16932,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#86b737"
       },
-      "medianOutputSpeed": 42.4549,
+      "medianOutputSpeed": 45.2181,
       "aa": {
         "aa-intelligence": 18.6806,
         "aa-coding": 15.148,
@@ -16831,7 +16950,7 @@
         "aaIndexAnswerCostUsd": 1.1946
       },
       "scores": {
-        "GDPval-AA": -6.6161,
+        "GDPval-AA": -6.5972,
         "Terminal-Bench Hard": 5.303,
         "τ²-Bench Telecom": 28.0702,
         "AA-LCR": 34.0,
@@ -16950,7 +17069,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 12.7933,
+        "GDPval-AA": 12.7395,
         "Terminal-Bench Hard": 21.2121,
         "τ²-Bench Telecom": 53.2164,
         "AA-LCR": 34.0,
@@ -17069,7 +17188,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -1.0974,
+        "GDPval-AA": -1.0827,
         "Terminal-Bench Hard": 6.8182,
         "τ²-Bench Telecom": 28.0702,
         "AA-LCR": 16.6667,
@@ -17170,7 +17289,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#86b737"
       },
-      "medianOutputSpeed": 42.8167,
+      "medianOutputSpeed": 46.7529,
       "aa": {
         "aa-intelligence": 14.5859,
         "aa-coding": 10.4728,
@@ -17188,7 +17307,7 @@
         "aaIndexAnswerCostUsd": 2.6065
       },
       "scores": {
-        "GDPval-AA": -6.0484,
+        "GDPval-AA": -6.0207,
         "Terminal-Bench Hard": 3.7879,
         "τ²-Bench Telecom": 25.1462,
         "AA-LCR": 22.0,
@@ -17289,7 +17408,7 @@
         "src": "assets/logos/kimi_small.png",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 44.0357,
+      "medianOutputSpeed": 46.4484,
       "aa": {
         "aa-intelligence": 53.9045,
         "aa-coding": 47.117,
@@ -17688,7 +17807,7 @@
         "src": "assets/logos/kimi_small.png",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 38.3366,
+      "medianOutputSpeed": 37.2419,
       "aa": {
         "aa-intelligence": 42.9485,
         "aa-coding": 38.4084,
@@ -17706,7 +17825,7 @@
         "aaIndexAnswerCostUsd": 108.6322
       },
       "scores": {
-        "GDPval-AA": 41.3031,
+        "GDPval-AA": 41.3278,
         "Terminal-Bench Hard": 37.8788,
         "τ²-Bench Telecom": 93.8596,
         "AA-LCR": 57.6667,
@@ -17944,7 +18063,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -12.1645,
+        "GDPval-AA": -12.1373,
         "Terminal-Bench Hard": 5.303,
         "τ²-Bench Telecom": 16.0819,
         "AA-LCR": 0.0,
@@ -18045,7 +18164,7 @@
         "src": "assets/logos/stepfun_small.svg",
         "color": "#017AFF"
       },
-      "medianOutputSpeed": 179.3612,
+      "medianOutputSpeed": 176.5545,
       "aa": {
         "aa-intelligence": 38.4677,
         "aa-coding": 34.5644,
@@ -18063,7 +18182,7 @@
         "aaIndexAnswerCostUsd": 2.238
       },
       "scores": {
-        "GDPval-AA": 28.501,
+        "GDPval-AA": 28.5084,
         "Terminal-Bench Hard": 32.5758,
         "τ²-Bench Telecom": 87.4269,
         "AA-LCR": 54.3333,
@@ -18164,7 +18283,7 @@
         "src": "assets/logos/stepfun_small.svg",
         "color": "#017AFF"
       },
-      "medianOutputSpeed": 383.3481,
+      "medianOutputSpeed": 139.4771,
       "aa": {
         "aa-intelligence": 42.5912,
         "aa-coding": 37.0861,
@@ -18182,7 +18301,7 @@
         "aaIndexAnswerCostUsd": 7.9765
       },
       "scores": {
-        "GDPval-AA": 39.935,
+        "GDPval-AA": 39.9597,
         "Terminal-Bench Hard": 35.6061,
         "τ²-Bench Telecom": 98.538,
         "AA-LCR": 63.6667,
@@ -18301,7 +18420,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -7.28,
+        "GDPval-AA": -7.2504,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 21.345,
         "AA-LCR": 0.0,
@@ -18539,7 +18658,7 @@
         "aaIndexAnswerCostUsd": 2.2559
       },
       "scores": {
-        "GDPval-AA": -11.2125,
+        "GDPval-AA": -11.1856,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 12.5731,
         "AA-LCR": 0.0,
@@ -18997,7 +19116,7 @@
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 425.6305,
+      "medianOutputSpeed": 404.487,
       "aa": {
         "aa-intelligence": 10.8109,
         "aa-coding": 8.4982,
@@ -19015,7 +19134,7 @@
         "aaIndexAnswerCostUsd": 0.5854
       },
       "scores": {
-        "GDPval-AA": -7.8445,
+        "GDPval-AA": -7.8176,
         "Terminal-Bench Hard": 2.2727,
         "τ²-Bench Telecom": 17.2515,
         "AA-LCR": 9.0,
@@ -19134,7 +19253,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -10.551,
+        "GDPval-AA": -10.5256,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 14.6199,
         "AA-LCR": 0.0,
@@ -19253,7 +19372,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -0.2263,
+        "GDPval-AA": -0.2131,
         "Terminal-Bench Hard": 2.2727,
         "τ²-Bench Telecom": 42.1053,
         "AA-LCR": 18.6667,
@@ -19372,7 +19491,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -12.1172,
+        "GDPval-AA": -12.0894,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 22.807,
         "AA-LCR": 4.0,
@@ -19491,7 +19610,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -6.8043,
+        "GDPval-AA": -6.7757,
         "Terminal-Bench Hard": 2.2727,
         "τ²-Bench Telecom": 19.5906,
         "AA-LCR": 3.0,
@@ -19592,7 +19711,7 @@
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 114.0188,
+      "medianOutputSpeed": 120.452,
       "aa": {
         "aa-intelligence": 12.3806,
         "aa-coding": 7.2531,
@@ -19610,7 +19729,7 @@
         "aaIndexAnswerCostUsd": 0.3956
       },
       "scores": {
-        "GDPval-AA": 2.1311,
+        "GDPval-AA": 2.1646,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 27.7778,
         "AA-LCR": 12.0,
@@ -19729,7 +19848,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -11.7189,
+        "GDPval-AA": -11.6923,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 13.1579,
         "AA-LCR": 0.0,
@@ -19848,7 +19967,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -11.7104,
+        "GDPval-AA": -11.6829,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 19.5906,
         "AA-LCR": 6.3333,
@@ -19967,7 +20086,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -11.0557,
+        "GDPval-AA": -11.0335,
         "Terminal-Bench Hard": 1.5152,
         "τ²-Bench Telecom": 12.5731,
         "AA-LCR": 4.0,
@@ -20068,7 +20187,7 @@
         "src": "assets/logos/inceptionlabs_small.jpg",
         "color": "#021B30"
       },
-      "medianOutputSpeed": 791.8585,
+      "medianOutputSpeed": 835.3916,
       "aa": {
         "aa-intelligence": 32.8235,
         "aa-coding": 30.5626,
@@ -20086,7 +20205,7 @@
         "aaIndexAnswerCostUsd": 3.3944
       },
       "scores": {
-        "GDPval-AA": 22.9561,
+        "GDPval-AA": 23.0423,
         "Terminal-Bench Hard": 26.5152,
         "τ²-Bench Telecom": 70.7602,
         "AA-LCR": 36.3333,
@@ -20324,7 +20443,7 @@
         "aaIndexAnswerCostUsd": 2.5438
       },
       "scores": {
-        "GDPval-AA": 1.0898,
+        "GDPval-AA": 1.1068,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 21.6374,
         "AA-LCR": 2.0,
@@ -20425,7 +20544,7 @@
         "src": "assets/logos/nousresearch_small.jpg",
         "color": "#006fa8"
       },
-      "medianOutputSpeed": 39.0176,
+      "medianOutputSpeed": 40.043,
       "aa": {
         "aa-intelligence": 17.6291,
         "aa-coding": 18.1012,
@@ -20443,7 +20562,7 @@
         "aaIndexAnswerCostUsd": 11.8314
       },
       "scores": {
-        "GDPval-AA": 0.5002,
+        "GDPval-AA": 0.5494,
         "Terminal-Bench Hard": 9.8485,
         "τ²-Bench Telecom": 26.6082,
         "AA-LCR": 20.0,
@@ -20782,7 +20901,7 @@
         "src": "assets/logos/nousresearch_small.jpg",
         "color": "#006fa8"
       },
-      "medianOutputSpeed": 81.4983,
+      "medianOutputSpeed": 84.398,
       "aa": {
         "aa-intelligence": 15.9947,
         "aa-coding": 14.4115,
@@ -20800,7 +20919,7 @@
         "aaIndexAnswerCostUsd": 2.5455
       },
       "scores": {
-        "GDPval-AA": 1.8876,
+        "GDPval-AA": 1.9332,
         "Terminal-Bench Hard": 4.5455,
         "τ²-Bench Telecom": 22.5146,
         "AA-LCR": 6.6667,
@@ -20901,7 +21020,7 @@
         "src": "assets/logos/nousresearch_small.jpg",
         "color": "#006fa8"
       },
-      "medianOutputSpeed": 39.4825,
+      "medianOutputSpeed": 39.4266,
       "aa": {
         "aa-intelligence": 18.5583,
         "aa-coding": 15.9863,
@@ -20919,7 +21038,7 @@
         "aaIndexAnswerCostUsd": 11.2534
       },
       "scores": {
-        "GDPval-AA": 4.2441,
+        "GDPval-AA": 4.2374,
         "Terminal-Bench Hard": 11.3636,
         "τ²-Bench Telecom": 22.2222,
         "AA-LCR": 20.6667,
@@ -21038,7 +21157,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 16.2636,
+        "GDPval-AA": 16.291,
         "Terminal-Bench Hard": 22.7273,
         "τ²-Bench Telecom": 74.269,
         "AA-LCR": 55.6667,
@@ -21157,7 +21276,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 13.182,
+        "GDPval-AA": 13.2957,
         "Terminal-Bench Hard": 6.8182,
         "τ²-Bench Telecom": 59.0643,
         "AA-LCR": 47.0,
@@ -21276,7 +21395,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 0.1576,
+        "GDPval-AA": 0.1623,
         "Terminal-Bench Hard": 3.7879,
         "τ²-Bench Telecom": 17.2515,
         "AA-LCR": 14.0,
@@ -21395,7 +21514,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -10.2989,
+        "GDPval-AA": -10.2733,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 20.4678,
         "AA-LCR": 0.0,
@@ -21514,7 +21633,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 15.6426,
+        "GDPval-AA": 15.6601,
         "Terminal-Bench Hard": 20.4545,
         "τ²-Bench Telecom": 78.0702,
         "AA-LCR": 49.3333,
@@ -21633,7 +21752,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -8.5861,
+        "GDPval-AA": -8.5582,
         "Terminal-Bench Hard": 1.5152,
         "τ²-Bench Telecom": 4.0936,
         "AA-LCR": 8.0,
@@ -21752,7 +21871,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -10.43,
+        "GDPval-AA": -10.407,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 16.3743,
         "AA-LCR": 0.0,
@@ -21853,7 +21972,7 @@
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 50.1402,
+      "medianOutputSpeed": 54.319,
       "aa": {
         "aa-intelligence": 35.5859,
         "aa-coding": 36.7775,
@@ -21871,7 +21990,7 @@
         "aaIndexAnswerCostUsd": 76.6487
       },
       "scores": {
-        "GDPval-AA": 39.9169,
+        "GDPval-AA": 39.9419,
         "Terminal-Bench Hard": 35.6061,
         "τ²-Bench Telecom": 72.5146,
         "AA-LCR": 35.0,
@@ -22033,7 +22152,7 @@
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 75.245,
+      "medianOutputSpeed": 78.3419,
       "aa": {
         "aa-intelligence": 44.932,
         "aa-coding": 36.8932,
@@ -22051,7 +22170,7 @@
         "aaIndexAnswerCostUsd": 14.6494
       },
       "scores": {
-        "GDPval-AA": 42.281,
+        "GDPval-AA": 42.305,
         "Terminal-Bench Hard": 35.6061,
         "τ²-Bench Telecom": 88.0117,
         "AA-LCR": 63.6667,
@@ -22152,7 +22271,7 @@
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 43.9889,
+      "medianOutputSpeed": 45.1107,
       "aa": {
         "aa-intelligence": 53.8287,
         "aa-coding": 45.5317,
@@ -22271,7 +22390,7 @@
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 110.3789,
+      "medianOutputSpeed": 130.4957,
       "aa": {
         "aa-intelligence": 30.3481,
         "aa-coding": 25.8137,
@@ -22289,7 +22408,7 @@
         "aaIndexAnswerCostUsd": 5.038
       },
       "scores": {
-        "GDPval-AA": 27.9657,
+        "GDPval-AA": 28.0445,
         "Terminal-Bench Hard": 25.7576,
         "τ²-Bench Telecom": 83.9181,
         "AA-LCR": 31.3333,
@@ -22390,7 +22509,7 @@
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 73.6748,
+      "medianOutputSpeed": 74.8802,
       "aa": {
         "aa-intelligence": 43.3995,
         "aa-coding": 35.4623,
@@ -22408,7 +22527,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 40.9529,
+        "GDPval-AA": 40.9766,
         "Terminal-Bench Hard": 34.8485,
         "τ²-Bench Telecom": 91.2281,
         "AA-LCR": 66.6667,
@@ -22509,7 +22628,7 @@
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 76.2207,
+      "medianOutputSpeed": 76.3024,
       "aa": {
         "aa-intelligence": 49.0344,
         "aa-coding": 42.1296,
@@ -22527,7 +22646,7 @@
         "aaIndexAnswerCostUsd": 2.5579
       },
       "scores": {
-        "GDPval-AA": 52.5223,
+        "GDPval-AA": 52.543,
         "Terminal-Bench Hard": 41.6667,
         "τ²-Bench Telecom": 90.6433,
         "AA-LCR": 62.6667,
@@ -22747,7 +22866,7 @@
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 113.8413,
+      "medianOutputSpeed": 134.8225,
       "aa": {
         "aa-intelligence": 41.4588,
         "aa-coding": 33.4771,
@@ -22765,7 +22884,7 @@
         "aaIndexAnswerCostUsd": 1.6225
       },
       "scores": {
-        "GDPval-AA": 27.0767,
+        "GDPval-AA": 27.1189,
         "Terminal-Bench Hard": 31.0606,
         "τ²-Bench Telecom": 93.2749,
         "AA-LCR": 64.3333,
@@ -23003,7 +23122,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 14.4386,
+        "GDPval-AA": 14.4673,
         "Terminal-Bench Hard": 25.0,
         "τ²-Bench Telecom": 83.9181,
         "AA-LCR": 6.6667,
@@ -23104,7 +23223,7 @@
         "src": "assets/logos/sarvam_small.png",
         "color": "#807D77"
       },
-      "medianOutputSpeed": 106.0298,
+      "medianOutputSpeed": 112.2333,
       "aa": {
         "aa-intelligence": 18.1574,
         "aa-coding": 9.8064,
@@ -23122,7 +23241,7 @@
         "aaIndexAnswerCostUsd": 0.6563
       },
       "scores": {
-        "GDPval-AA": 11.8953,
+        "GDPval-AA": 11.9267,
         "Terminal-Bench Hard": 1.5152,
         "τ²-Bench Telecom": 46.7836,
         "AA-LCR": 0.0,
@@ -23223,7 +23342,7 @@
         "src": "assets/logos/sarvam_small.png",
         "color": "#807D77"
       },
-      "medianOutputSpeed": 172.4112,
+      "medianOutputSpeed": 171.0336,
       "aa": {
         "aa-intelligence": 12.3446,
         "aa-coding": 7.9195,
@@ -23241,7 +23360,7 @@
         "aaIndexAnswerCostUsd": 0.4095
       },
       "scores": {
-        "GDPval-AA": -7.1467,
+        "GDPval-AA": -7.1185,
         "Terminal-Bench Hard": 2.2727,
         "τ²-Bench Telecom": 34.5029,
         "AA-LCR": 0.0,
@@ -23342,7 +23461,7 @@
         "src": "assets/logos/tencent_small.svg",
         "color": "#5CB9FF"
       },
-      "medianOutputSpeed": 92.2759,
+      "medianOutputSpeed": 95.533,
       "aa": {
         "aa-intelligence": 33.6648,
         "aa-coding": 34.3294,
@@ -23360,7 +23479,7 @@
         "aaIndexAnswerCostUsd": 5.9265
       },
       "scores": {
-        "GDPval-AA": 36.3238,
+        "GDPval-AA": 36.344,
         "Terminal-Bench Hard": 31.8182,
         "τ²-Bench Telecom": 67.5439,
         "AA-LCR": 33.6667,
@@ -23461,7 +23580,7 @@
         "src": "assets/logos/tencent_small.svg",
         "color": "#5CB9FF"
       },
-      "medianOutputSpeed": 90.5649,
+      "medianOutputSpeed": 99.8145,
       "aa": {
         "aa-intelligence": 41.8528,
         "aa-coding": 36.4618,
@@ -23479,7 +23598,7 @@
         "aaIndexAnswerCostUsd": 4.1285
       },
       "scores": {
-        "GDPval-AA": 36.8658,
+        "GDPval-AA": 36.8997,
         "Terminal-Bench Hard": 34.0909,
         "τ²-Bench Telecom": 92.6901,
         "AA-LCR": 54.6667,
@@ -23580,7 +23699,7 @@
         "src": "assets/logos/kwaikat_small.svg",
         "color": "#489034"
       },
-      "medianOutputSpeed": 116.5807,
+      "medianOutputSpeed": 113.6273,
       "aa": {
         "aa-intelligence": 36.0287,
         "aa-coding": 18.252,
@@ -23598,7 +23717,7 @@
         "aaIndexAnswerCostUsd": 5.4236
       },
       "scores": {
-        "GDPval-AA": 15.936,
+        "GDPval-AA": 15.8642,
         "Terminal-Bench Hard": 9.0909,
         "τ²-Bench Telecom": 88.5965,
         "AA-LCR": 74.0,
@@ -23699,7 +23818,7 @@
         "src": "assets/logos/kwaikat_small.svg",
         "color": "#489034"
       },
-      "medianOutputSpeed": 115.8125,
+      "medianOutputSpeed": 116.857,
       "aa": {
         "aa-intelligence": 43.8335,
         "aa-coding": 45.5983,
@@ -23717,7 +23836,7 @@
         "aaIndexAnswerCostUsd": 10.4295
       },
       "scores": {
-        "GDPval-AA": 30.9594,
+        "GDPval-AA": 30.9402,
         "Terminal-Bench Hard": 49.2424,
         "τ²-Bench Telecom": 89.4737,
         "AA-LCR": 66.0,
@@ -23836,7 +23955,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 12.503,
+        "GDPval-AA": 12.5149,
         "Terminal-Bench Hard": 9.0909,
         "τ²-Bench Telecom": 26.6082,
         "AA-LCR": 32.3333,
@@ -23955,7 +24074,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -0.8086,
+        "GDPval-AA": -0.7762,
         "Terminal-Bench Hard": 3.7879,
         "τ²-Bench Telecom": 46.4912,
         "AA-LCR": 13.0,
@@ -24074,7 +24193,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 5.4064,
+        "GDPval-AA": 5.3877,
         "Terminal-Bench Hard": 6.8182,
         "τ²-Bench Telecom": 25.4386,
         "AA-LCR": 52.6667,
@@ -24193,7 +24312,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 4.0731,
+        "GDPval-AA": 4.1451,
         "Terminal-Bench Hard": 8.3333,
         "τ²-Bench Telecom": 24.8538,
         "AA-LCR": 28.0,
@@ -24312,7 +24431,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 3.08,
+        "GDPval-AA": 3.1044,
         "Terminal-Bench Hard": 9.8485,
         "τ²-Bench Telecom": 27.7778,
         "AA-LCR": 33.3333,
@@ -24431,7 +24550,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -6.759,
+        "GDPval-AA": -6.7321,
         "Terminal-Bench Hard": 4.5455,
         "τ²-Bench Telecom": 20.7602,
         "AA-LCR": 19.0,
@@ -24550,7 +24669,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 7.0905,
+        "GDPval-AA": 7.1206,
         "Terminal-Bench Hard": 2.2727,
         "τ²-Bench Telecom": 86.5497,
         "AA-LCR": 9.0,
@@ -24669,7 +24788,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 8.9727,
+        "GDPval-AA": 8.952,
         "Terminal-Bench Hard": 12.1212,
         "τ²-Bench Telecom": 87.4269,
         "AA-LCR": 11.6667,
@@ -24788,7 +24907,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 16.8618,
+        "GDPval-AA": 16.89,
         "Terminal-Bench Hard": 10.6061,
         "τ²-Bench Telecom": 79.5322,
         "AA-LCR": 25.6667,
@@ -25026,7 +25145,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -6.3819,
+        "GDPval-AA": -6.3537,
         "Terminal-Bench Hard": 0.7576,
         "τ²-Bench Telecom": 80.9942,
         "AA-LCR": 11.0,
@@ -25145,7 +25264,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -7.2007,
+        "GDPval-AA": -7.1752,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 21.6374,
         "AA-LCR": 0.0,
@@ -25502,7 +25621,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -13.0762,
+        "GDPval-AA": -13.0533,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 80.9942,
         "AA-LCR": 3.6667,
@@ -25621,7 +25740,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -13.4474,
+        "GDPval-AA": -13.4266,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 82.4561,
         "AA-LCR": 4.6667,
@@ -25740,7 +25859,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -12.1975,
+        "GDPval-AA": -12.1846,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 87.7193,
         "AA-LCR": 6.3333,
@@ -25841,7 +25960,7 @@
         "src": "assets/logos/arcee_small.svg",
         "color": "#008c8d"
       },
-      "medianOutputSpeed": 164.0521,
+      "medianOutputSpeed": 172.8034,
       "aa": {
         "aa-intelligence": 31.8709,
         "aa-coding": 27.1886,
@@ -25859,7 +25978,7 @@
         "aaIndexAnswerCostUsd": 6.0876
       },
       "scores": {
-        "GDPval-AA": 18.2757,
+        "GDPval-AA": 18.3186,
         "Terminal-Bench Hard": 22.7273,
         "τ²-Bench Telecom": 90.0585,
         "AA-LCR": 33.0,
@@ -25978,7 +26097,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 28.8069,
+        "GDPval-AA": 28.8985,
         "Terminal-Bench Hard": 28.7879,
         "τ²-Bench Telecom": 99.1228,
         "AA-LCR": 55.3333,
@@ -26097,7 +26216,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 16.6216,
+        "GDPval-AA": 16.6247,
         "Terminal-Bench Hard": 18.1818,
         "τ²-Bench Telecom": 92.9825,
         "AA-LCR": 11.6667,
@@ -26198,7 +26317,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 63.1436,
+      "medianOutputSpeed": 78.6645,
       "aa": {
         "aa-intelligence": 51.4081,
         "aa-coding": 43.3712,
@@ -26448,7 +26567,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 60.0138,
+      "medianOutputSpeed": 80.0378,
       "aa": {
         "aa-intelligence": 43.8161,
         "aa-coding": 35.7744,
@@ -26466,7 +26585,7 @@
         "aaIndexAnswerCostUsd": 333.4521
       },
       "scores": {
-        "GDPval-AA": 49.6114,
+        "GDPval-AA": 49.6326,
         "Terminal-Bench Hard": 35.6061,
         "τ²-Bench Telecom": 97.076,
         "AA-LCR": 44.3333,
@@ -26585,7 +26704,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 41.5033,
+        "GDPval-AA": 41.5272,
         "Terminal-Bench Hard": 32.5758,
         "τ²-Bench Telecom": 98.538,
         "AA-LCR": 61.0,
@@ -26704,7 +26823,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 49.833,
+        "GDPval-AA": 49.8526,
         "Terminal-Bench Hard": 33.3333,
         "τ²-Bench Telecom": 98.538,
         "AA-LCR": 60.6667,
@@ -26805,7 +26924,7 @@
         "src": "assets/logos/cohere_small.svg",
         "color": "#D18EE2"
       },
-      "medianOutputSpeed": 64.5844,
+      "medianOutputSpeed": 66.6722,
       "aa": {
         "aa-intelligence": 13.4789,
         "aa-coding": 9.8801,
@@ -26823,7 +26942,7 @@
         "aaIndexAnswerCostUsd": 38.4569
       },
       "scores": {
-        "GDPval-AA": -11.3185,
+        "GDPval-AA": -11.2916,
         "Terminal-Bench Hard": 0.7576,
         "τ²-Bench Telecom": 15.2047,
         "AA-LCR": 18.0,
@@ -26924,7 +27043,7 @@
         "src": "assets/logos/cohere_small.svg",
         "color": "#D18EE2"
       },
-      "medianOutputSpeed": 188.2122,
+      "medianOutputSpeed": 196.787,
       "aa": {
         "aa-intelligence": 37.1569,
         "aa-coding": 29.2824,
@@ -26942,7 +27061,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 20.9336,
+        "GDPval-AA": 20.9445,
         "Terminal-Bench Hard": 25.0,
         "τ²-Bench Telecom": 80.7018,
         "AA-LCR": 46.0,
@@ -27180,7 +27299,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 3.5376,
+        "GDPval-AA": 3.6241,
         "Terminal-Bench Hard": 14.3939,
         "τ²-Bench Telecom": 69.2982,
         "AA-LCR": 50.3333,
@@ -27299,7 +27418,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -11.2955,
+        "GDPval-AA": -11.272,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 12.5731,
         "AA-LCR": 12.6667,
@@ -27418,7 +27537,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -12.2821,
+        "GDPval-AA": -12.2558,
         "Terminal-Bench Hard": 0.7576,
         "τ²-Bench Telecom": 15.7895,
         "AA-LCR": 7.0,
@@ -27519,7 +27638,7 @@
         "src": "assets/logos/ai21_small.svg",
         "color": "#d63864"
       },
-      "medianOutputSpeed": 58.4441,
+      "medianOutputSpeed": 60.0103,
       "aa": {
         "aa-intelligence": 10.8783,
         "aa-coding": 7.7652,
@@ -27537,7 +27656,7 @@
         "aaIndexAnswerCostUsd": 64.6517
       },
       "scores": {
-        "GDPval-AA": -10.8847,
+        "GDPval-AA": -10.8582,
         "Terminal-Bench Hard": 2.2727,
         "τ²-Bench Telecom": 13.4503,
         "AA-LCR": 17.3333,
@@ -27638,7 +27757,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 104.6037,
+      "medianOutputSpeed": 108.3316,
       "aa": {
         "aa-intelligence": 56.5845,
         "aa-coding": 50.1192,
@@ -27656,7 +27775,7 @@
         "aaIndexAnswerCostUsd": 54.9785
       },
       "scores": {
-        "GDPval-AA": 52.2776,
+        "GDPval-AA": 52.299,
         "Terminal-Bench Hard": 50.7576,
         "τ²-Bench Telecom": 94.7368,
         "AA-LCR": 69.0,
@@ -27757,7 +27876,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 193.9998,
+      "medianOutputSpeed": 218.9389,
       "aa": {
         "aa-intelligence": 31.5271,
         "aa-coding": 17.5961,
@@ -27775,7 +27894,7 @@
         "aaIndexAnswerCostUsd": 54.7097
       },
       "scores": {
-        "GDPval-AA": 36.2766,
+        "GDPval-AA": 36.296,
         "Terminal-Bench Hard": 25.7576,
         "τ²-Bench Telecom": 85.0877,
         "AA-LCR": 56.6667,
@@ -28017,7 +28136,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 145.0738,
+      "medianOutputSpeed": 162.4148,
       "aa": {
         "aa-intelligence": 26.7232,
         "aa-coding": 19.49,
@@ -28035,7 +28154,7 @@
         "aaIndexAnswerCostUsd": 17.8226
       },
       "scores": {
-        "GDPval-AA": 11.2535,
+        "GDPval-AA": 11.2643,
         "Terminal-Bench Hard": 9.8485,
         "τ²-Bench Telecom": 41.5205,
         "AA-LCR": 60.3333,
@@ -28136,7 +28255,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 72.2176,
+      "medianOutputSpeed": 77.1128,
       "aa": {
         "aa-intelligence": 15.6245,
         "aa-coding": 12.7104,
@@ -28154,7 +28273,7 @@
         "aaIndexAnswerCostUsd": 5.7526
       },
       "scores": {
-        "GDPval-AA": -0.2193,
+        "GDPval-AA": -0.1706,
         "Terminal-Bench Hard": 3.7879,
         "τ²-Bench Telecom": 21.345,
         "AA-LCR": 0.0,
@@ -28255,7 +28374,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 53.6158,
+      "medianOutputSpeed": 53.1047,
       "aa": {
         "aa-intelligence": 53.2528,
         "aa-coding": 46.4752,
@@ -28273,7 +28392,7 @@
         "aaIndexAnswerCostUsd": 9.05
       },
       "scores": {
-        "GDPval-AA": 51.0861,
+        "GDPval-AA": 51.1065,
         "Terminal-Bench Hard": 46.9697,
         "τ²-Bench Telecom": 92.9825,
         "AA-LCR": 65.0,
@@ -28374,7 +28493,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 60.7004,
+      "medianOutputSpeed": 61.3897,
       "aa": {
         "aa-intelligence": 45.8228,
         "aa-coding": 36.5039,
@@ -28392,7 +28511,7 @@
         "aaIndexAnswerCostUsd": 36.1126
       },
       "scores": {
-        "GDPval-AA": 45.2141,
+        "GDPval-AA": 45.2347,
         "Terminal-Bench Hard": 34.8485,
         "τ²-Bench Telecom": 94.152,
         "AA-LCR": 68.6667,
@@ -28634,7 +28753,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 181.3619,
+      "medianOutputSpeed": 187.7431,
       "aa": {
         "aa-intelligence": 43.4942,
         "aa-coding": 35.1536,
@@ -28652,7 +28771,7 @@
         "aaIndexAnswerCostUsd": 17.0256
       },
       "scores": {
-        "GDPval-AA": 39.9415,
+        "GDPval-AA": 39.9657,
         "Terminal-Bench Hard": 34.8485,
         "τ²-Bench Telecom": 95.3216,
         "AA-LCR": 63.6667,
@@ -28753,7 +28872,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 139.2097,
+      "medianOutputSpeed": 138.6437,
       "aa": {
         "aa-intelligence": 41.6024,
         "aa-coding": 34.7117,
@@ -28771,7 +28890,7 @@
         "aaIndexAnswerCostUsd": 29.2664
       },
       "scores": {
-        "GDPval-AA": 30.7808,
+        "GDPval-AA": 30.7809,
         "Terminal-Bench Hard": 31.0606,
         "τ²-Bench Telecom": 93.5673,
         "AA-LCR": 66.6667,
@@ -28872,7 +28991,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 158.7986,
+      "medianOutputSpeed": 162.5313,
       "aa": {
         "aa-intelligence": 35.8707,
         "aa-coding": 31.5797,
@@ -28890,7 +29009,7 @@
         "aaIndexAnswerCostUsd": 93.9125
       },
       "scores": {
-        "GDPval-AA": 30.5888,
+        "GDPval-AA": 30.6053,
         "Terminal-Bench Hard": 29.5455,
         "τ²-Bench Telecom": 84.5029,
         "AA-LCR": 56.0,
@@ -28991,7 +29110,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 340.4384,
+      "medianOutputSpeed": 365.5959,
       "aa": {
         "aa-intelligence": 14.6715,
         "aa-coding": 4.9161,
@@ -29009,7 +29128,7 @@
         "aaIndexAnswerCostUsd": 10.0194
       },
       "scores": {
-        "GDPval-AA": -13.1206,
+        "GDPval-AA": -13.0933,
         "Terminal-Bench Hard": 3.7879,
         "τ²-Bench Telecom": 81.5789,
         "AA-LCR": 13.6667,
@@ -29110,7 +29229,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 77.4048,
+      "medianOutputSpeed": 80.0383,
       "aa": {
         "aa-intelligence": 32.4263,
         "aa-coding": 25.3437,
@@ -29128,7 +29247,7 @@
         "aaIndexAnswerCostUsd": 1.7638
       },
       "scores": {
-        "GDPval-AA": 10.724,
+        "GDPval-AA": 10.7528,
         "Terminal-Bench Hard": 24.2424,
         "τ²-Bench Telecom": 86.8421,
         "AA-LCR": 59.0,
@@ -29247,7 +29366,7 @@
         "aaIndexAnswerCostUsd": 0.1672
       },
       "scores": {
-        "GDPval-AA": -11.1909,
+        "GDPval-AA": -11.1626,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 47.6608,
         "AA-LCR": 5.3333,
@@ -29348,7 +29467,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 53.3428,
+      "medianOutputSpeed": 52.7306,
       "aa": {
         "aa-intelligence": 45.0466,
         "aa-coding": 41.2774,
@@ -29608,7 +29727,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 53.9369,
+      "medianOutputSpeed": 53.5244,
       "aa": {
         "aa-intelligence": 40.0985,
         "aa-coding": 37.4334,
@@ -29626,7 +29745,7 @@
         "aaIndexAnswerCostUsd": 72.1269
       },
       "scores": {
-        "GDPval-AA": 35.9779,
+        "GDPval-AA": 35.9852,
         "Terminal-Bench Hard": 35.6061,
         "τ²-Bench Telecom": 83.9181,
         "AA-LCR": 58.0,
@@ -29727,7 +29846,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 244.7535,
+      "medianOutputSpeed": 260.6787,
       "aa": {
         "aa-intelligence": 25.8693,
         "aa-coding": 14.0432,
@@ -29745,7 +29864,7 @@
         "aaIndexAnswerCostUsd": 15.5505
       },
       "scores": {
-        "GDPval-AA": 19.8566,
+        "GDPval-AA": 19.8454,
         "Terminal-Bench Hard": 8.3333,
         "τ²-Bench Telecom": 84.5029,
         "AA-LCR": 44.0,
@@ -29864,7 +29983,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 17.1947,
+        "GDPval-AA": 17.2072,
         "Terminal-Bench Hard": 18.1818,
         "τ²-Bench Telecom": 85.0877,
         "AA-LCR": 38.0,
@@ -29965,7 +30084,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 144.3673,
+      "medianOutputSpeed": 150.022,
       "aa": {
         "aa-intelligence": 20.106,
         "aa-coding": 15.2743,
@@ -29983,7 +30102,7 @@
         "aaIndexAnswerCostUsd": 29.0466
       },
       "scores": {
-        "GDPval-AA": 6.415,
+        "GDPval-AA": 6.4636,
         "Terminal-Bench Hard": 7.5758,
         "τ²-Bench Telecom": 21.6374,
         "AA-LCR": 51.3333,
@@ -30084,7 +30203,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 61.7892,
+      "medianOutputSpeed": 62.4166,
       "aa": {
         "aa-intelligence": 37.1444,
         "aa-coding": 26.5643,
@@ -30102,7 +30221,7 @@
         "aaIndexAnswerCostUsd": 80.286
       },
       "scores": {
-        "GDPval-AA": 44.2215,
+        "GDPval-AA": 44.2216,
         "Terminal-Bench Hard": 21.2121,
         "τ²-Bench Telecom": 93.5673,
         "AA-LCR": 55.0,
@@ -30203,7 +30322,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 77.2659,
+      "medianOutputSpeed": 105.5606,
       "aa": {
         "aa-intelligence": 28.2771,
         "aa-coding": 22.8851,
@@ -30221,7 +30340,7 @@
         "aaIndexAnswerCostUsd": 31.2583
       },
       "scores": {
-        "GDPval-AA": 20.6176,
+        "GDPval-AA": 20.6353,
         "Terminal-Bench Hard": 18.1818,
         "τ²-Bench Telecom": 79.5322,
         "AA-LCR": 40.0,
@@ -30322,7 +30441,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 210.1344,
+      "medianOutputSpeed": 214.6893,
       "aa": {
         "aa-intelligence": 22.6013,
         "aa-coding": 13.6714,
@@ -30340,7 +30459,7 @@
         "aaIndexAnswerCostUsd": 11.2703
       },
       "scores": {
-        "GDPval-AA": 8.4141,
+        "GDPval-AA": 8.3954,
         "Terminal-Bench Hard": 11.3636,
         "τ²-Bench Telecom": 87.7193,
         "AA-LCR": 28.3333,
@@ -30441,7 +30560,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 88.1135,
+      "medianOutputSpeed": 92.3593,
       "aa": {
         "aa-intelligence": 10.6765,
         "aa-coding": 7.2215,
@@ -30459,7 +30578,7 @@
         "aaIndexAnswerCostUsd": 35.3988
       },
       "scores": {
-        "GDPval-AA": -10.2654,
+        "GDPval-AA": -10.235,
         "Terminal-Bench Hard": 1.5152,
         "τ²-Bench Telecom": 16.3743,
         "AA-LCR": 0.0,
@@ -30560,7 +30679,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 53.748,
+      "medianOutputSpeed": 53.2252,
       "aa": {
         "aa-intelligence": 49.9849,
         "aa-coding": 42.8732,
@@ -30578,7 +30697,7 @@
         "aaIndexAnswerCostUsd": 47.0613
       },
       "scores": {
-        "GDPval-AA": 42.6573,
+        "GDPval-AA": 42.6809,
         "Terminal-Bench Hard": 43.9394,
         "τ²-Bench Telecom": 97.6608,
         "AA-LCR": 69.6667,
@@ -30730,7 +30849,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 203.8411,
+      "medianOutputSpeed": 205.3413,
       "aa": {
         "aa-intelligence": 27.0756,
         "aa-coding": 17.4883,
@@ -30748,7 +30867,7 @@
         "aaIndexAnswerCostUsd": 1.2625
       },
       "scores": {
-        "GDPval-AA": 0.4919,
+        "GDPval-AA": 0.4955,
         "Terminal-Bench Hard": 18.1818,
         "τ²-Bench Telecom": 92.1053,
         "AA-LCR": 55.6667,
@@ -30867,7 +30986,7 @@
         "aaIndexAnswerCostUsd": 0.4842
       },
       "scores": {
-        "GDPval-AA": -9.0234,
+        "GDPval-AA": -8.9949,
         "Terminal-Bench Hard": 3.7879,
         "τ²-Bench Telecom": 69.0058,
         "AA-LCR": 23.6667,
@@ -30968,7 +31087,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 87.7177,
+      "medianOutputSpeed": 84.707,
       "aa": {
         "aa-intelligence": 9.9144,
         "aa-coding": 0.9645,
@@ -30986,7 +31105,7 @@
         "aaIndexAnswerCostUsd": 5.073
       },
       "scores": {
-        "GDPval-AA": -13.3415,
+        "GDPval-AA": -13.3137,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 65.2047,
         "AA-LCR": 6.6667,
@@ -31087,7 +31206,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 170.444,
+      "medianOutputSpeed": 177.9584,
       "aa": {
         "aa-intelligence": 30.6853,
         "aa-coding": 16.8315,
@@ -31105,7 +31224,7 @@
         "aaIndexAnswerCostUsd": 73.1495
       },
       "scores": {
-        "GDPval-AA": 27.3733,
+        "GDPval-AA": 27.406,
         "Terminal-Bench Hard": 10.6061,
         "τ²-Bench Telecom": 86.2573,
         "AA-LCR": 55.3333,
@@ -31206,7 +31325,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 51.3074,
+      "medianOutputSpeed": 50.7323,
       "aa": {
         "aa-intelligence": 38.6333,
         "aa-coding": 27.6445,
@@ -31224,7 +31343,7 @@
         "aaIndexAnswerCostUsd": 74.9952
       },
       "scores": {
-        "GDPval-AA": 34.2806,
+        "GDPval-AA": 34.3023,
         "Terminal-Bench Hard": 21.2121,
         "τ²-Bench Telecom": 88.3041,
         "AA-LCR": 52.6667,
@@ -31462,7 +31581,7 @@
         "aaIndexAnswerCostUsd": 39.3293
       },
       "scores": {
-        "GDPval-AA": 27.3144,
+        "GDPval-AA": 27.3112,
         "Terminal-Bench Hard": 31.0606,
         "τ²-Bench Telecom": 89.7661,
         "AA-LCR": 34.6667,
@@ -31581,7 +31700,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -11.9891,
+        "GDPval-AA": -11.9633,
         "Terminal-Bench Hard": 0.7576,
         "τ²-Bench Telecom": 13.1579,
         "AA-LCR": 6.6667,
@@ -31682,7 +31801,7 @@
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 122.7424,
+      "medianOutputSpeed": 126.8241,
       "aa": {
         "aa-intelligence": 38.4564,
         "aa-coding": 33.3123,
@@ -31700,7 +31819,7 @@
         "aaIndexAnswerCostUsd": 28.7199
       },
       "scores": {
-        "GDPval-AA": 31.1116,
+        "GDPval-AA": 31.1707,
         "Terminal-Bench Hard": 28.7879,
         "τ²-Bench Telecom": 92.3977,
         "AA-LCR": 64.3333,
@@ -31819,7 +31938,7 @@
         "aaIndexAnswerCostUsd": 4.4081
       },
       "scores": {
-        "GDPval-AA": 14.1682,
+        "GDPval-AA": 14.2643,
         "Terminal-Bench Hard": 21.2121,
         "τ²-Bench Telecom": 85.9649,
         "AA-LCR": 25.0,
@@ -31938,7 +32057,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 24.2974,
+        "GDPval-AA": 24.3205,
         "Terminal-Bench Hard": 26.5152,
         "τ²-Bench Telecom": 58.1871,
         "AA-LCR": 65.3333,
@@ -32039,7 +32158,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 117.2245,
+      "medianOutputSpeed": 145.4368,
       "aa": {
         "aa-intelligence": 30.7489,
         "aa-coding": 20.5072,
@@ -32057,7 +32176,7 @@
         "aaIndexAnswerCostUsd": 187.143
       },
       "scores": {
-        "GDPval-AA": 11.7884,
+        "GDPval-AA": 11.7022,
         "Terminal-Bench Hard": 12.8788,
         "τ²-Bench Telecom": 62.5731,
         "AA-LCR": 59.3333,
@@ -32396,7 +32515,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 96.0983,
+      "medianOutputSpeed": 111.9764,
       "aa": {
         "aa-intelligence": 18.6414,
         "aa-coding": 16.5895,
@@ -32414,7 +32533,7 @@
         "aaIndexAnswerCostUsd": 29.1329
       },
       "scores": {
-        "GDPval-AA": -6.0823,
+        "GDPval-AA": -6.0518,
         "Terminal-Bench Hard": 8.3333,
         "τ²-Bench Telecom": 28.9474,
         "AA-LCR": 35.0,
@@ -32515,7 +32634,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 87.8907,
+      "medianOutputSpeed": 120.092,
       "aa": {
         "aa-intelligence": 14.4985,
         "aa-coding": 24.2437,
@@ -32634,7 +32753,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 26.8384,
+      "medianOutputSpeed": 29.6703,
       "aa": {
         "aa-intelligence": 13.7153,
         "aa-coding": 21.4873,
@@ -32753,7 +32872,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 124.1438,
+      "medianOutputSpeed": 170.9553,
       "aa": {
         "aa-intelligence": 17.3233,
         "aa-coding": 16.6667,
@@ -32771,7 +32890,7 @@
         "aaIndexAnswerCostUsd": 26.7265
       },
       "scores": {
-        "GDPval-AA": -7.5964,
+        "GDPval-AA": -7.5683,
         "Terminal-Bench Hard": 8.3333,
         "τ²-Bench Telecom": 25.1462,
         "AA-LCR": 0.0,
@@ -32872,7 +32991,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 61.0267,
+      "medianOutputSpeed": 68.5971,
       "aa": {
         "aa-intelligence": 12.6473,
         "aa-coding": null,
@@ -33110,7 +33229,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 123.0775,
+      "medianOutputSpeed": 161.731,
       "aa": {
         "aa-intelligence": 13.0413,
         "aa-coding": 11.1672,
@@ -33128,7 +33247,7 @@
         "aaIndexAnswerCostUsd": 2.0975
       },
       "scores": {
-        "GDPval-AA": -9.074,
+        "GDPval-AA": -9.0472,
         "Terminal-Bench Hard": 3.7879,
         "τ²-Bench Telecom": 17.2515,
         "AA-LCR": 17.0,
@@ -33229,7 +33348,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 74.1374,
+      "medianOutputSpeed": 75.1254,
       "aa": {
         "aa-intelligence": 35.3898,
         "aa-coding": 40.9547,
@@ -33348,7 +33467,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 72.733,
+      "medianOutputSpeed": 74.3441,
       "aa": {
         "aa-intelligence": 47.9407,
         "aa-coding": 45.5703,
@@ -33467,7 +33586,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 79.8058,
+      "medianOutputSpeed": 83.3129,
       "aa": {
         "aa-intelligence": 56.7997,
         "aa-coding": 57.2496,
@@ -33687,7 +33806,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 150.328,
+      "medianOutputSpeed": 152.7633,
       "aa": {
         "aa-intelligence": 49.0346,
         "aa-coding": 42.9574,
@@ -33705,7 +33824,7 @@
         "aaIndexAnswerCostUsd": 46.1847
       },
       "scores": {
-        "GDPval-AA": 39.4172,
+        "GDPval-AA": 39.4418,
         "Terminal-Bench Hard": 37.1212,
         "τ²-Bench Telecom": 92.1053,
         "AA-LCR": 75.6667,
@@ -33806,7 +33925,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 185.0622,
+      "medianOutputSpeed": 192.4908,
       "aa": {
         "aa-intelligence": 43.1145,
         "aa-coding": 36.6197,
@@ -33824,7 +33943,7 @@
         "aaIndexAnswerCostUsd": 29.9961
       },
       "scores": {
-        "GDPval-AA": 34.5822,
+        "GDPval-AA": 34.5947,
         "Terminal-Bench Hard": 34.8485,
         "τ²-Bench Telecom": 83.0409,
         "AA-LCR": 67.3333,
@@ -33925,7 +34044,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 178.255,
+      "medianOutputSpeed": 178.8736,
       "aa": {
         "aa-intelligence": 13.8399,
         "aa-coding": 14.2291,
@@ -33943,7 +34062,7 @@
         "aaIndexAnswerCostUsd": 3.6154
       },
       "scores": {
-        "GDPval-AA": -11.0484,
+        "GDPval-AA": -11.0228,
         "Terminal-Bench Hard": 6.8182,
         "τ²-Bench Telecom": 25.731,
         "AA-LCR": 20.0,
@@ -34044,7 +34163,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 198.1817,
+      "medianOutputSpeed": 209.9576,
       "aa": {
         "aa-intelligence": 25.2105,
         "aa-coding": 17.3023,
@@ -34062,7 +34181,7 @@
         "aaIndexAnswerCostUsd": 11.9802
       },
       "scores": {
-        "GDPval-AA": 12.3559,
+        "GDPval-AA": 12.3787,
         "Terminal-Bench Hard": 6.0606,
         "τ²-Bench Telecom": 31.2865,
         "AA-LCR": 39.3333,
@@ -34163,7 +34282,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 94.2535,
+      "medianOutputSpeed": 97.4665,
       "aa": {
         "aa-intelligence": 41.1708,
         "aa-coding": 35.3009,
@@ -34181,7 +34300,7 @@
         "aaIndexAnswerCostUsd": 7.6192
       },
       "scores": {
-        "GDPval-AA": 34.1947,
+        "GDPval-AA": 34.2184,
         "Terminal-Bench Hard": 33.3333,
         "τ²-Bench Telecom": 68.4211,
         "AA-LCR": 68.0,
@@ -34282,7 +34401,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 202.4148,
+      "medianOutputSpeed": 217.3877,
       "aa": {
         "aa-intelligence": 25.8632,
         "aa-coding": 17.8556,
@@ -34401,7 +34520,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 118.8007,
+      "medianOutputSpeed": 142.1887,
       "aa": {
         "aa-intelligence": 26.2763,
         "aa-coding": 21.7838,
@@ -34419,7 +34538,7 @@
         "aaIndexAnswerCostUsd": 35.9919
       },
       "scores": {
-        "GDPval-AA": 13.818,
+        "GDPval-AA": 13.8963,
         "Terminal-Bench Hard": 13.6364,
         "τ²-Bench Telecom": 47.076,
         "AA-LCR": 61.0,
@@ -34520,7 +34639,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 88.9187,
+      "medianOutputSpeed": 87.8541,
       "aa": {
         "aa-intelligence": 44.6256,
         "aa-coding": 36.0304,
@@ -34538,7 +34657,7 @@
         "aaIndexAnswerCostUsd": 43.8049
       },
       "scores": {
-        "GDPval-AA": 39.6764,
+        "GDPval-AA": 39.6986,
         "Terminal-Bench Hard": 32.5758,
         "τ²-Bench Telecom": 84.7953,
         "AA-LCR": 75.6,
@@ -34639,7 +34758,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 76.7638,
+      "medianOutputSpeed": 81.1288,
       "aa": {
         "aa-intelligence": 51.2766,
         "aa-coding": 48.6742,
@@ -34657,7 +34776,7 @@
         "aaIndexAnswerCostUsd": 64.5167
       },
       "scores": {
-        "GDPval-AA": 48.3697,
+        "GDPval-AA": 48.3895,
         "Terminal-Bench Hard": 46.9697,
         "τ²-Bench Telecom": 84.7953,
         "AA-LCR": 72.6667,
@@ -34758,7 +34877,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 122.3082,
+      "medianOutputSpeed": 141.6071,
       "aa": {
         "aa-intelligence": 47.6964,
         "aa-coding": 44.732,
@@ -34776,7 +34895,7 @@
         "aaIndexAnswerCostUsd": 51.5081
       },
       "scores": {
-        "GDPval-AA": 36.3591,
+        "GDPval-AA": 36.3646,
         "Terminal-Bench Hard": 45.4545,
         "τ²-Bench Telecom": 81.8713,
         "AA-LCR": 75.0,
@@ -35115,7 +35234,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 184.4075,
+      "medianOutputSpeed": 210.1564,
       "aa": {
         "aa-intelligence": 44.6313,
         "aa-coding": 38.8714,
@@ -35133,7 +35252,7 @@
         "aaIndexAnswerCostUsd": 36.575
       },
       "scores": {
-        "GDPval-AA": 35.7276,
+        "GDPval-AA": 35.7618,
         "Terminal-Bench Hard": 37.8788,
         "τ²-Bench Telecom": 86.8421,
         "AA-LCR": 69.0,
@@ -35234,7 +35353,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 91.0369,
+      "medianOutputSpeed": 99.3597,
       "aa": {
         "aa-intelligence": 42.0293,
         "aa-coding": 38.9485,
@@ -35252,7 +35371,7 @@
         "aaIndexAnswerCostUsd": 44.9322
       },
       "scores": {
-        "GDPval-AA": 25.0158,
+        "GDPval-AA": 25.0294,
         "Terminal-Bench Hard": 37.8788,
         "τ²-Bench Telecom": 86.5497,
         "AA-LCR": 72.8,
@@ -35472,7 +35591,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 67.0758,
+      "medianOutputSpeed": 75.487,
       "aa": {
         "aa-intelligence": 33.5705,
         "aa-coding": 34.6766,
@@ -35490,7 +35609,7 @@
         "aaIndexAnswerCostUsd": 53.3652
       },
       "scores": {
-        "GDPval-AA": 36.0915,
+        "GDPval-AA": 36.1284,
         "Terminal-Bench Hard": 31.8182,
         "τ²-Bench Telecom": 46.4912,
         "AA-LCR": 38.0,
@@ -35591,7 +35710,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 84.2518,
+      "medianOutputSpeed": 86.6871,
       "aa": {
         "aa-intelligence": 39.1972,
         "aa-coding": 30.7169,
@@ -35609,7 +35728,7 @@
         "aaIndexAnswerCostUsd": 31.7945
       },
       "scores": {
-        "GDPval-AA": 32.4782,
+        "GDPval-AA": 32.4831,
         "Terminal-Bench Hard": 26.5152,
         "τ²-Bench Telecom": 84.2105,
         "AA-LCR": 58.6667,
@@ -35710,7 +35829,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 165.2884,
+      "medianOutputSpeed": 179.7233,
       "aa": {
         "aa-intelligence": 33.0617,
         "aa-coding": 25.6103,
@@ -35728,7 +35847,7 @@
         "aaIndexAnswerCostUsd": 14.3824
       },
       "scores": {
-        "GDPval-AA": 25.4089,
+        "GDPval-AA": 25.4695,
         "Terminal-Bench Hard": 15.1515,
         "τ²-Bench Telecom": 55.5556,
         "AA-LCR": 55.0,
@@ -35847,7 +35966,7 @@
         "aaIndexAnswerCostUsd": 68.0335
       },
       "scores": {
-        "GDPval-AA": 45.2071,
+        "GDPval-AA": 45.2274,
         "Terminal-Bench Hard": 43.1818,
         "τ²-Bench Telecom": 74.269,
         "AA-LCR": 63.3333,
@@ -35948,7 +36067,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 174.6028,
+      "medianOutputSpeed": 188.0985,
       "aa": {
         "aa-intelligence": 25.8811,
         "aa-coding": 22.8816,
@@ -35966,7 +36085,7 @@
         "aaIndexAnswerCostUsd": 1.8606
       },
       "scores": {
-        "GDPval-AA": 4.6805,
+        "GDPval-AA": 4.6169,
         "Terminal-Bench Hard": 17.4242,
         "τ²-Bench Telecom": 30.4094,
         "AA-LCR": 40.0,
@@ -36085,7 +36204,7 @@
         "aaIndexAnswerCostUsd": 7.3639
       },
       "scores": {
-        "GDPval-AA": 6.0139,
+        "GDPval-AA": 6.0433,
         "Terminal-Bench Hard": 7.5758,
         "τ²-Bench Telecom": 52.924,
         "AA-LCR": 42.3333,
@@ -36305,7 +36424,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 101.6705,
+      "medianOutputSpeed": 101.958,
       "aa": {
         "aa-intelligence": 20.6834,
         "aa-coding": 21.9031,
@@ -36323,7 +36442,7 @@
         "aaIndexAnswerCostUsd": 5.7037
       },
       "scores": {
-        "GDPval-AA": -1.4421,
+        "GDPval-AA": -1.424,
         "Terminal-Bench Hard": 14.3939,
         "τ²-Bench Telecom": 31.8713,
         "AA-LCR": 35.6667,
@@ -36424,7 +36543,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 98.2446,
+      "medianOutputSpeed": 101.1989,
       "aa": {
         "aa-intelligence": 38.9362,
         "aa-coding": 32.8493,
@@ -36442,7 +36561,7 @@
         "aaIndexAnswerCostUsd": 7.1462
       },
       "scores": {
-        "GDPval-AA": 25.0924,
+        "GDPval-AA": 25.152,
         "Terminal-Bench Hard": 28.7879,
         "τ²-Bench Telecom": 71.0526,
         "AA-LCR": 66.0,
@@ -36543,7 +36662,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 75.3975,
+      "medianOutputSpeed": 72.9153,
       "aa": {
         "aa-intelligence": 23.8866,
         "aa-coding": 25.0456,
@@ -36561,7 +36680,7 @@
         "aaIndexAnswerCostUsd": 40.0144
       },
       "scores": {
-        "GDPval-AA": -5.7561,
+        "GDPval-AA": -5.726,
         "Terminal-Bench Hard": 18.1818,
         "τ²-Bench Telecom": 66.9591,
         "AA-LCR": 25.0,
@@ -36662,7 +36781,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 42.6635,
+      "medianOutputSpeed": 42.6021,
       "aa": {
         "aa-intelligence": 40.6899,
         "aa-coding": null,
@@ -36781,7 +36900,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 122.1366,
+      "medianOutputSpeed": 124.896,
       "aa": {
         "aa-intelligence": 27.4189,
         "aa-coding": 27.3043,
@@ -36900,7 +37019,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 153.4952,
+      "medianOutputSpeed": 168.511,
       "aa": {
         "aa-intelligence": 26.8329,
         "aa-coding": 20.2722,
@@ -36918,7 +37037,7 @@
         "aaIndexAnswerCostUsd": 2.0765
       },
       "scores": {
-        "GDPval-AA": 12.7393,
+        "GDPval-AA": 12.7922,
         "Terminal-Bench Hard": 12.1212,
         "τ²-Bench Telecom": 36.5497,
         "AA-LCR": 41.6667,
@@ -37138,7 +37257,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 185.0397,
+      "medianOutputSpeed": 191.1024,
       "aa": {
         "aa-intelligence": 21.8346,
         "aa-coding": 21.2016,
@@ -37257,7 +37376,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 211.9428,
+      "medianOutputSpeed": 213.915,
       "aa": {
         "aa-intelligence": 38.6251,
         "aa-coding": 36.4198,
@@ -37275,7 +37394,7 @@
         "aaIndexAnswerCostUsd": 4.9702
       },
       "scores": {
-        "GDPval-AA": 27.5947,
+        "GDPval-AA": 27.6588,
         "Terminal-Bench Hard": 33.3333,
         "τ²-Bench Telecom": 62.8655,
         "AA-LCR": 62.6667,
@@ -37376,7 +37495,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 38.1357,
+      "medianOutputSpeed": 34.7539,
       "aa": {
         "aa-intelligence": 12.4733,
         "aa-coding": 10.9322,
@@ -37394,7 +37513,7 @@
         "aaIndexAnswerCostUsd": 2.6177
       },
       "scores": {
-        "GDPval-AA": -10.7956,
+        "GDPval-AA": -10.7655,
         "Terminal-Bench Hard": 3.0303,
         "τ²-Bench Telecom": 15.2047,
         "AA-LCR": 6.3333,
@@ -37495,7 +37614,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 152.202,
+      "medianOutputSpeed": 154.8342,
       "aa": {
         "aa-intelligence": 11.7584,
         "aa-coding": 4.9032,
@@ -37513,7 +37632,7 @@
         "aaIndexAnswerCostUsd": 0.5184
       },
       "scores": {
-        "GDPval-AA": -11.1526,
+        "GDPval-AA": -11.1205,
         "Terminal-Bench Hard": 0.7576,
         "τ²-Bench Telecom": 16.3743,
         "AA-LCR": 15.6667,
@@ -37614,7 +37733,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 49.5349,
+      "medianOutputSpeed": 51.1395,
       "aa": {
         "aa-intelligence": 9.7022,
         "aa-coding": null,
@@ -37971,7 +38090,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 84.0704,
+      "medianOutputSpeed": 83.0861,
       "aa": {
         "aa-intelligence": 6.2771,
         "aa-coding": 0.5787,
@@ -38941,7 +39060,7 @@
         "aaIndexAnswerCostUsd": 3.0102
       },
       "scores": {
-        "GDPval-AA": 3.3106,
+        "GDPval-AA": 3.319,
         "Terminal-Bench Hard": 3.7879,
         "τ²-Bench Telecom": 29.5322,
         "AA-LCR": 28.3333,
@@ -39298,7 +39417,7 @@
         "aaIndexAnswerCostUsd": 0.9965
       },
       "scores": {
-        "GDPval-AA": -10.722,
+        "GDPval-AA": -10.6988,
         "Terminal-Bench Hard": 3.7879,
         "τ²-Bench Telecom": 10.5263,
         "AA-LCR": 5.6667,
@@ -39399,7 +39518,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 179.3041,
+      "medianOutputSpeed": 189.1026,
       "aa": {
         "aa-intelligence": 46.429,
         "aa-coding": 42.6171,
@@ -39637,7 +39756,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 180.2837,
+      "medianOutputSpeed": 194.6271,
       "aa": {
         "aa-intelligence": 35.0479,
         "aa-coding": 37.8402,
@@ -39655,7 +39774,7 @@
         "aaIndexAnswerCostUsd": 12.286
       },
       "scores": {
-        "GDPval-AA": 30.7801,
+        "GDPval-AA": 30.8012,
         "Terminal-Bench Hard": 31.8182,
         "τ²-Bench Telecom": 43.2749,
         "AA-LCR": 48.0,
@@ -39774,7 +39893,7 @@
         "aaIndexAnswerCostUsd": 1.5499
       },
       "scores": {
-        "GDPval-AA": -11.0322,
+        "GDPval-AA": -11.0064,
         "Terminal-Bench Hard": 0.7576,
         "τ²-Bench Telecom": 10.8187,
         "AA-LCR": 6.6667,
@@ -39893,7 +40012,7 @@
         "aaIndexAnswerCostUsd": 11.138
       },
       "scores": {
-        "GDPval-AA": -5.9957,
+        "GDPval-AA": -5.9653,
         "Terminal-Bench Hard": 7.5758,
         "τ²-Bench Telecom": 30.4094,
         "AA-LCR": 48.0,
@@ -40113,7 +40232,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 214.2277,
+      "medianOutputSpeed": 232.4849,
       "aa": {
         "aa-intelligence": 20.5637,
         "aa-coding": 17.7645,
@@ -40131,7 +40250,7 @@
         "aaIndexAnswerCostUsd": 43.7013
       },
       "scores": {
-        "GDPval-AA": 12.0455,
+        "GDPval-AA": 12.0916,
         "Terminal-Bench Hard": 12.1212,
         "τ²-Bench Telecom": 14.9123,
         "AA-LCR": 45.9,
@@ -40369,7 +40488,7 @@
         "aaIndexAnswerCostUsd": 0.3068
       },
       "scores": {
-        "GDPval-AA": -12.2758,
+        "GDPval-AA": -12.2465,
         "Terminal-Bench Hard": 0.7576,
         "τ²-Bench Telecom": 4.9708,
         "AA-LCR": 5.6667,
@@ -40470,7 +40589,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 52.2658,
+      "medianOutputSpeed": 52.7788,
       "aa": {
         "aa-intelligence": 6.3793,
         "aa-coding": 4.2158,
@@ -40488,7 +40607,7 @@
         "aaIndexAnswerCostUsd": 0.4199
       },
       "scores": {
-        "GDPval-AA": -12.8347,
+        "GDPval-AA": -12.8073,
         "Terminal-Bench Hard": 2.2727,
         "τ²-Bench Telecom": 4.9708,
         "AA-LCR": 0.0,
@@ -40607,7 +40726,7 @@
         "aaIndexAnswerCostUsd": 59.8131
       },
       "scores": {
-        "GDPval-AA": 34.2208,
+        "GDPval-AA": 34.2685,
         "Terminal-Bench Hard": 41.6667,
         "τ²-Bench Telecom": 87.1345,
         "AA-LCR": 70.6667,
@@ -40827,7 +40946,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 311.1617,
+      "medianOutputSpeed": 316.0388,
       "aa": {
         "aa-intelligence": 17.5744,
         "aa-coding": 9.4732,
@@ -40845,7 +40964,7 @@
         "aaIndexAnswerCostUsd": 9.6232
       },
       "scores": {
-        "GDPval-AA": -9.0964,
+        "GDPval-AA": -9.0724,
         "Terminal-Bench Hard": 4.5455,
         "τ²-Bench Telecom": 18.4211,
         "AA-LCR": 51.3333,
@@ -41202,7 +41321,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 28.5875,
+        "GDPval-AA": 28.5826,
         "Terminal-Bench Hard": 16.6667,
         "τ²-Bench Telecom": 45.614,
         "AA-LCR": 64.3333,
@@ -41559,7 +41678,7 @@
         "aaIndexAnswerCostUsd": 147.665
       },
       "scores": {
-        "GDPval-AA": 33.3629,
+        "GDPval-AA": 33.3828,
         "Terminal-Bench Hard": 34.0909,
         "τ²-Bench Telecom": 68.1287,
         "AA-LCR": 67.3333,
@@ -41898,7 +42017,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 243.9773,
+      "medianOutputSpeed": 247.1976,
       "aa": {
         "aa-intelligence": 12.6594,
         "aa-coding": 7.4179,
@@ -41916,7 +42035,7 @@
         "aaIndexAnswerCostUsd": 14.2452
       },
       "scores": {
-        "GDPval-AA": -9.8389,
+        "GDPval-AA": -9.8161,
         "Terminal-Bench Hard": 2.2727,
         "τ²-Bench Telecom": 19.0058,
         "AA-LCR": 31.3333,
@@ -42017,7 +42136,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 228.9768,
+      "medianOutputSpeed": 242.4747,
       "aa": {
         "aa-intelligence": 27.0414,
         "aa-coding": 22.2082,
@@ -42035,7 +42154,7 @@
         "aaIndexAnswerCostUsd": 24.6902
       },
       "scores": {
-        "GDPval-AA": 9.9102,
+        "GDPval-AA": 9.9692,
         "Terminal-Bench Hard": 13.6364,
         "τ²-Bench Telecom": 31.5789,
         "AA-LCR": 61.6667,
@@ -42630,7 +42749,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 17.5829,
+        "GDPval-AA": 17.6366,
         "Terminal-Bench Hard": 14.3939,
         "τ²-Bench Telecom": 28.3626,
         "AA-LCR": 56.6667,
@@ -42749,7 +42868,7 @@
         "aaIndexAnswerCostUsd": 3.9524
       },
       "scores": {
-        "GDPval-AA": -3.2724,
+        "GDPval-AA": -3.1978,
         "Terminal-Bench Hard": 12.8788,
         "τ²-Bench Telecom": 30.7018,
         "AA-LCR": 59.0,
@@ -43344,7 +43463,7 @@
         "aaIndexAnswerCostUsd": 9.0973
       },
       "scores": {
-        "GDPval-AA": 10.3896,
+        "GDPval-AA": 10.5053,
         "Terminal-Bench Hard": 2.2727,
         "τ²-Bench Telecom": 24.5614,
         "AA-LCR": 23.3333,
@@ -43582,7 +43701,7 @@
         "aaIndexAnswerCostUsd": 3.8532
       },
       "scores": {
-        "GDPval-AA": -6.0945,
+        "GDPval-AA": -6.0645,
         "Terminal-Bench Hard": 0.7576,
         "τ²-Bench Telecom": 21.0526,
         "AA-LCR": 21.0,
@@ -43802,7 +43921,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 43.9211,
+      "medianOutputSpeed": 46.5511,
       "aa": {
         "aa-intelligence": 43.0907,
         "aa-coding": 42.9363,
@@ -43820,7 +43939,7 @@
         "aaIndexAnswerCostUsd": 196.8066
       },
       "scores": {
-        "GDPval-AA": 45.9681,
+        "GDPval-AA": 45.9886,
         "Terminal-Bench Hard": 40.9091,
         "τ²-Bench Telecom": 86.2573,
         "AA-LCR": 65.3333,
@@ -43921,7 +44040,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 40.25,
+      "medianOutputSpeed": 42.9409,
       "aa": {
         "aa-intelligence": 52.9492,
         "aa-coding": 48.092,
@@ -44181,7 +44300,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 40.425,
+      "medianOutputSpeed": 42.1647,
       "aa": {
         "aa-intelligence": 43.0288,
         "aa-coding": 38.6293,
@@ -44199,7 +44318,7 @@
         "aaIndexAnswerCostUsd": 111.5369
       },
       "scores": {
-        "GDPval-AA": 40.8952,
+        "GDPval-AA": 40.9185,
         "Terminal-Bench Hard": 35.6061,
         "τ²-Bench Telecom": 78.0702,
         "AA-LCR": 65.6667,
@@ -44300,7 +44419,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 38.6052,
+      "medianOutputSpeed": 41.8305,
       "aa": {
         "aa-intelligence": 37.1427,
         "aa-coding": 33.4666,
@@ -44318,7 +44437,7 @@
         "aaIndexAnswerCostUsd": 118.1392
       },
       "scores": {
-        "GDPval-AA": 40.2995,
+        "GDPval-AA": 40.3217,
         "Terminal-Bench Hard": 28.7879,
         "τ²-Bench Telecom": 70.4678,
         "AA-LCR": 51.3333,
@@ -44437,7 +44556,7 @@
         "aaIndexAnswerCostUsd": 83.5373
       },
       "scores": {
-        "GDPval-AA": 27.3445,
+        "GDPval-AA": 27.4068,
         "Terminal-Bench Hard": 21.2121,
         "τ²-Bench Telecom": 50.0,
         "AA-LCR": 48.3333,
@@ -44538,7 +44657,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 29.4302,
+      "medianOutputSpeed": 30.0265,
       "aa": {
         "aa-intelligence": 42.0,
         "aa-coding": 36.5228,
@@ -44675,7 +44794,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 27.3996,
+        "GDPval-AA": 27.3488,
         "Terminal-Bench Hard": 21.2121,
         "τ²-Bench Telecom": 54.6784,
         "AA-LCR": 60.6667,
@@ -44776,7 +44895,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 29.0612,
+      "medianOutputSpeed": 30.6805,
       "aa": {
         "aa-intelligence": 36.0,
         "aa-coding": null,
@@ -44895,7 +45014,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 40.2827,
+      "medianOutputSpeed": 41.4263,
       "aa": {
         "aa-intelligence": 32.9972,
         "aa-coding": 30.6047,
@@ -44913,7 +45032,7 @@
         "aaIndexAnswerCostUsd": 89.7552
       },
       "scores": {
-        "GDPval-AA": 31.2373,
+        "GDPval-AA": 31.2476,
         "Terminal-Bench Hard": 27.2727,
         "τ²-Bench Telecom": 52.3392,
         "AA-LCR": 44.3333,
@@ -45014,7 +45133,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 40.5422,
+      "medianOutputSpeed": 41.46,
       "aa": {
         "aa-intelligence": 38.6639,
         "aa-coding": 34.0558,
@@ -45032,7 +45151,7 @@
         "aaIndexAnswerCostUsd": 93.1281
       },
       "scores": {
-        "GDPval-AA": 31.6544,
+        "GDPval-AA": 31.5934,
         "Terminal-Bench Hard": 31.0606,
         "τ²-Bench Telecom": 64.6199,
         "AA-LCR": 64.6667,
@@ -45133,7 +45252,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 28.9584,
+      "medianOutputSpeed": 29.9581,
       "aa": {
         "aa-intelligence": 39.0,
         "aa-coding": 33.9787,
@@ -45252,7 +45371,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 29.4269,
+      "medianOutputSpeed": 31.6257,
       "aa": {
         "aa-intelligence": 33.0,
         "aa-coding": null,
@@ -45371,7 +45490,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 39.7006,
+      "medianOutputSpeed": 42.1249,
       "aa": {
         "aa-intelligence": 46.4611,
         "aa-coding": 47.5624,
@@ -45389,7 +45508,7 @@
         "aaIndexAnswerCostUsd": 272.3778
       },
       "scores": {
-        "GDPval-AA": 54.4988,
+        "GDPval-AA": 54.5188,
         "Terminal-Bench Hard": 48.4848,
         "τ²-Bench Telecom": 84.7953,
         "AA-LCR": 58.3333,
@@ -45490,7 +45609,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 46.3305,
+      "medianOutputSpeed": 46.8687,
       "aa": {
         "aa-intelligence": 49.7271,
         "aa-coding": 47.8255,
@@ -45508,7 +45627,7 @@
         "aaIndexAnswerCostUsd": 190.7185
       },
       "scores": {
-        "GDPval-AA": 47.5826,
+        "GDPval-AA": 47.6036,
         "Terminal-Bench Hard": 46.9697,
         "τ²-Bench Telecom": 89.4737,
         "AA-LCR": 74.0,
@@ -45847,7 +45966,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 47.4083,
+      "medianOutputSpeed": 49.9341,
       "aa": {
         "aa-intelligence": 15.0918,
         "aa-coding": 13.7626,
@@ -45865,7 +45984,7 @@
         "aaIndexAnswerCostUsd": 15.7389
       },
       "scores": {
-        "GDPval-AA": -8.8382,
+        "GDPval-AA": -8.8099,
         "Terminal-Bench Hard": 6.0606,
         "τ²-Bench Telecom": 30.7018,
         "AA-LCR": 5.3333,
@@ -46085,7 +46204,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 47.6719,
+      "medianOutputSpeed": 52.6013,
       "aa": {
         "aa-intelligence": 14.0002,
         "aa-coding": null,
@@ -46204,7 +46323,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 153.7639,
+      "medianOutputSpeed": 159.6527,
       "aa": {
         "aa-intelligence": 12.6671,
         "aa-coding": null,
@@ -46323,7 +46442,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 164.6926,
+      "medianOutputSpeed": 165.7406,
       "aa": {
         "aa-intelligence": 10.1788,
         "aa-coding": null,
@@ -46561,7 +46680,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 161.1398,
+      "medianOutputSpeed": 157.9547,
       "aa": {
         "aa-intelligence": 9.0395,
         "aa-coding": null,
@@ -46918,7 +47037,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 93.7561,
+      "medianOutputSpeed": 104.2365,
       "aa": {
         "aa-intelligence": 7.4139,
         "aa-coding": null,
@@ -47055,7 +47174,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 16.4338,
+        "GDPval-AA": 16.5034,
         "Terminal-Bench Hard": 6.0606,
         "τ²-Bench Telecom": 38.0117,
         "AA-LCR": 26.6667,
@@ -47156,7 +47275,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 60.3434,
+      "medianOutputSpeed": 71.5631,
       "aa": {
         "aa-intelligence": 21.2549,
         "aa-coding": 18.3361,
@@ -47174,7 +47293,7 @@
         "aaIndexAnswerCostUsd": 15.2468
       },
       "scores": {
-        "GDPval-AA": 14.0266,
+        "GDPval-AA": 14.0681,
         "Terminal-Bench Hard": 10.6061,
         "τ²-Bench Telecom": 40.6433,
         "AA-LCR": 19.6667,
@@ -47275,7 +47394,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 133.2943,
+      "medianOutputSpeed": 138.6934,
       "aa": {
         "aa-intelligence": 15.0667,
         "aa-coding": 13.3418,
@@ -47293,7 +47412,7 @@
         "aaIndexAnswerCostUsd": 1.1343
       },
       "scores": {
-        "GDPval-AA": -9.8493,
+        "GDPval-AA": -9.8201,
         "Terminal-Bench Hard": 6.8182,
         "τ²-Bench Telecom": 29.5322,
         "AA-LCR": 17.3333,
@@ -47412,7 +47531,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 8.2999,
+        "GDPval-AA": 8.3288,
         "Terminal-Bench Hard": 9.0909,
         "τ²-Bench Telecom": 23.0994,
         "AA-LCR": 0.0,
@@ -47513,7 +47632,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 162.1252,
+      "medianOutputSpeed": 167.296,
       "aa": {
         "aa-intelligence": 14.4822,
         "aa-coding": 13.8854,
@@ -47531,7 +47650,7 @@
         "aaIndexAnswerCostUsd": 1.1071
       },
       "scores": {
-        "GDPval-AA": -8.1903,
+        "GDPval-AA": -8.1601,
         "Terminal-Bench Hard": 7.5758,
         "τ²-Bench Telecom": 25.1462,
         "AA-LCR": 19.6667,
@@ -47751,7 +47870,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 61.8016,
+      "medianOutputSpeed": 52.8996,
       "aa": {
         "aa-intelligence": 15.2141,
         "aa-coding": 12.1423,
@@ -47769,7 +47888,7 @@
         "aaIndexAnswerCostUsd": 1.3264
       },
       "scores": {
-        "GDPval-AA": 3.2088,
+        "GDPval-AA": 3.2402,
         "Terminal-Bench Hard": 6.0606,
         "τ²-Bench Telecom": 28.3626,
         "AA-LCR": 17.0,
@@ -47989,7 +48108,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 57.562,
+      "medianOutputSpeed": 67.8622,
       "aa": {
         "aa-intelligence": 9.011,
         "aa-coding": null,
@@ -48108,7 +48227,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 46.2106,
+      "medianOutputSpeed": 45.9279,
       "aa": {
         "aa-intelligence": 18.7575,
         "aa-coding": 13.5592,
@@ -48126,7 +48245,7 @@
         "aaIndexAnswerCostUsd": 7.9026
       },
       "scores": {
-        "GDPval-AA": 4.2902,
+        "GDPval-AA": 4.2947,
         "Terminal-Bench Hard": 3.7879,
         "τ²-Bench Telecom": 24.269,
         "AA-LCR": 28.0,
@@ -48227,7 +48346,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 58.662,
+      "medianOutputSpeed": 54.4393,
       "aa": {
         "aa-intelligence": 18.6607,
         "aa-coding": 15.86,
@@ -48245,7 +48364,7 @@
         "aaIndexAnswerCostUsd": 6.8152
       },
       "scores": {
-        "GDPval-AA": 9.5205,
+        "GDPval-AA": 9.6313,
         "Terminal-Bench Hard": 9.0909,
         "τ²-Bench Telecom": 19.883,
         "AA-LCR": 28.6667,
@@ -48346,7 +48465,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 41.8544,
+      "medianOutputSpeed": 44.3702,
       "aa": {
         "aa-intelligence": 15.9502,
         "aa-coding": 11.4268,
@@ -48602,7 +48721,7 @@
         "aaIndexAnswerCostUsd": 2.3154
       },
       "scores": {
-        "GDPval-AA": -4.4919,
+        "GDPval-AA": -4.4647,
         "Terminal-Bench Hard": 6.8182,
         "τ²-Bench Telecom": 22.807,
         "AA-LCR": 29.0,
@@ -49435,7 +49554,7 @@
         "aaIndexAnswerCostUsd": 4.9596
       },
       "scores": {
-        "GDPval-AA": -4.6553,
+        "GDPval-AA": -4.6277,
         "Terminal-Bench Hard": 15.1515,
         "τ²-Bench Telecom": 47.076,
         "AA-LCR": 41.0,
@@ -49554,7 +49673,7 @@
         "aaIndexAnswerCostUsd": 102.4521
       },
       "scores": {
-        "GDPval-AA": -12.6104,
+        "GDPval-AA": -12.581,
         "Terminal-Bench Hard": 6.0606,
         "τ²-Bench Telecom": 11.4035,
         "AA-LCR": 52.3333,
@@ -49673,7 +49792,7 @@
         "aaIndexAnswerCostUsd": 19.4681
       },
       "scores": {
-        "GDPval-AA": 9.0339,
+        "GDPval-AA": 9.0161,
         "Terminal-Bench Hard": 15.9091,
         "τ²-Bench Telecom": 36.5497,
         "AA-LCR": 54.6667,
@@ -49911,7 +50030,7 @@
         "aaIndexAnswerCostUsd": 10.4381
       },
       "scores": {
-        "GDPval-AA": 25.1868,
+        "GDPval-AA": 25.2291,
         "Terminal-Bench Hard": 30.303,
         "τ²-Bench Telecom": 37.1345,
         "AA-LCR": 65.0,
@@ -50030,7 +50149,7 @@
         "aaIndexAnswerCostUsd": 24.4257
       },
       "scores": {
-        "GDPval-AA": 18.864,
+        "GDPval-AA": 18.8572,
         "Terminal-Bench Hard": 32.5758,
         "τ²-Bench Telecom": 78.9474,
         "AA-LCR": 39.0,
@@ -50149,7 +50268,7 @@
         "aaIndexAnswerCostUsd": 44.8182
       },
       "scores": {
-        "GDPval-AA": 5.7048,
+        "GDPval-AA": 5.7308,
         "Terminal-Bench Hard": 25.0,
         "τ²-Bench Telecom": 37.4269,
         "AA-LCR": 53.3333,
@@ -50268,7 +50387,7 @@
         "aaIndexAnswerCostUsd": 4.2286
       },
       "scores": {
-        "GDPval-AA": 28.3127,
+        "GDPval-AA": 28.293,
         "Terminal-Bench Hard": 25.0,
         "τ²-Bench Telecom": 33.9181,
         "AA-LCR": 43.0,
@@ -50387,7 +50506,7 @@
         "aaIndexAnswerCostUsd": 15.429
       },
       "scores": {
-        "GDPval-AA": 29.0014,
+        "GDPval-AA": 28.8975,
         "Terminal-Bench Hard": 24.2424,
         "τ²-Bench Telecom": 34.7953,
         "AA-LCR": 45.0,
@@ -50506,7 +50625,7 @@
         "aaIndexAnswerCostUsd": 8.088
       },
       "scores": {
-        "GDPval-AA": 23.7913,
+        "GDPval-AA": 23.8542,
         "Terminal-Bench Hard": 31.8182,
         "τ²-Bench Telecom": 37.1345,
         "AA-LCR": 43.3333,
@@ -50982,7 +51101,7 @@
         "aaIndexAnswerCostUsd": 1.5889
       },
       "scores": {
-        "GDPval-AA": 25.008,
+        "GDPval-AA": 25.0285,
         "Terminal-Bench Hard": 31.0606,
         "τ²-Bench Telecom": 33.9181,
         "AA-LCR": 69.0,
@@ -51916,7 +52035,7 @@
         "src": "assets/logos/xai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 108.8851,
+      "medianOutputSpeed": 101.1309,
       "aa": {
         "aa-intelligence": 32.0786,
         "aa-coding": 25.1578,
@@ -51934,7 +52053,7 @@
         "aaIndexAnswerCostUsd": 2.5827
       },
       "scores": {
-        "GDPval-AA": -4.0582,
+        "GDPval-AA": -4.0263,
         "Terminal-Bench Hard": 17.4242,
         "τ²-Bench Telecom": 90.3509,
         "AA-LCR": 50.3333,
@@ -52053,7 +52172,7 @@
         "aaIndexAnswerCostUsd": 2.1618
       },
       "scores": {
-        "GDPval-AA": 13.9147,
+        "GDPval-AA": 13.9872,
         "Terminal-Bench Hard": 12.1212,
         "τ²-Bench Telecom": 63.7427,
         "AA-LCR": 20.0,
@@ -52172,7 +52291,7 @@
         "aaIndexAnswerCostUsd": 1.573
       },
       "scores": {
-        "GDPval-AA": 25.7364,
+        "GDPval-AA": 25.7427,
         "Terminal-Bench Hard": 18.9394,
         "τ²-Bench Telecom": 65.7895,
         "AA-LCR": 64.6667,
@@ -52273,7 +52392,7 @@
         "src": "assets/logos/xai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 174.9984,
+      "medianOutputSpeed": 200.7375,
       "aa": {
         "aa-intelligence": 29.6935,
         "aa-coding": 25.3718,
@@ -52291,7 +52410,7 @@
         "aaIndexAnswerCostUsd": 182.1922
       },
       "scores": {
-        "GDPval-AA": 20.4732,
+        "GDPval-AA": 20.4919,
         "Terminal-Bench Hard": 21.9697,
         "τ²-Bench Telecom": 69.5906,
         "AA-LCR": 18.0,
@@ -52410,7 +52529,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 14.1364,
+        "GDPval-AA": 14.1184,
         "Terminal-Bench Hard": 14.3939,
         "τ²-Bench Telecom": 63.7427,
         "AA-LCR": 22.0,
@@ -52580,7 +52699,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 13.116,
+        "GDPval-AA": 13.261,
         "Terminal-Bench Hard": 17.4242,
         "τ²-Bench Telecom": 75.731,
         "AA-LCR": 48.3333,
@@ -52699,7 +52818,7 @@
         "aaIndexAnswerCostUsd": 105.4932
       },
       "scores": {
-        "GDPval-AA": 8.326,
+        "GDPval-AA": 8.344,
         "Terminal-Bench Hard": 11.3636,
         "τ²-Bench Telecom": 48.8304,
         "AA-LCR": 54.6667,
@@ -52919,7 +53038,7 @@
         "src": "assets/logos/xai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 178.924,
+      "medianOutputSpeed": 186.948,
       "aa": {
         "aa-intelligence": 48.4813,
         "aa-coding": 42.1647,
@@ -52937,7 +53056,7 @@
         "aaIndexAnswerCostUsd": 20.3421
       },
       "scores": {
-        "GDPval-AA": 27.162,
+        "GDPval-AA": 27.1352,
         "Terminal-Bench Hard": 40.9091,
         "τ²-Bench Telecom": 96.4912,
         "AA-LCR": 59.0,
@@ -53056,7 +53175,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 27.2901,
+        "GDPval-AA": 27.2769,
         "Terminal-Bench Hard": 24.2424,
         "τ²-Bench Telecom": 93.2749,
         "AA-LCR": 68.0,
@@ -53157,7 +53276,7 @@
         "src": "assets/logos/xai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 178.7156,
+      "medianOutputSpeed": 197.7935,
       "aa": {
         "aa-intelligence": 49.332,
         "aa-coding": 40.4531,
@@ -53175,7 +53294,7 @@
         "aaIndexAnswerCostUsd": 31.0545
       },
       "scores": {
-        "GDPval-AA": 33.4756,
+        "GDPval-AA": 33.5199,
         "Terminal-Bench Hard": 37.8788,
         "τ²-Bench Telecom": 92.9825,
         "AA-LCR": 58.0,
@@ -53276,7 +53395,7 @@
         "src": "assets/logos/xai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 170.8754,
+      "medianOutputSpeed": 188.0061,
       "aa": {
         "aa-intelligence": 28.9933,
         "aa-coding": 22.0293,
@@ -53294,7 +53413,7 @@
         "aaIndexAnswerCostUsd": 216.236
       },
       "scores": {
-        "GDPval-AA": 26.852,
+        "GDPval-AA": 26.847,
         "Terminal-Bench Hard": 16.6667,
         "τ²-Bench Telecom": 59.9415,
         "AA-LCR": 17.3333,
@@ -53413,7 +53532,7 @@
         "aaIndexAnswerCostUsd": 92.4905
       },
       "scores": {
-        "GDPval-AA": 24.4814,
+        "GDPval-AA": 24.4861,
         "Terminal-Bench Hard": 37.8788,
         "τ²-Bench Telecom": 74.8538,
         "AA-LCR": 68.0,
@@ -53770,7 +53889,7 @@
         "aaIndexAnswerCostUsd": 14.172
       },
       "scores": {
-        "GDPval-AA": -5.6569,
+        "GDPval-AA": -5.627,
         "Terminal-Bench Hard": 6.0606,
         "τ²-Bench Telecom": 14.0351,
         "AA-LCR": 19.0,
@@ -53871,7 +53990,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 154.3836,
+      "medianOutputSpeed": 153.4346,
       "aa": {
         "aa-intelligence": 12.6513,
         "aa-coding": 5.1347,
@@ -53889,7 +54008,7 @@
         "aaIndexAnswerCostUsd": 1.6848
       },
       "scores": {
-        "GDPval-AA": -7.8489,
+        "GDPval-AA": -7.8215,
         "Terminal-Bench Hard": 0.7576,
         "τ²-Bench Telecom": 17.5439,
         "AA-LCR": 17.6667,
@@ -54246,7 +54365,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -11.4406,
+        "GDPval-AA": -11.414,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 12.5731,
         "AA-LCR": 0.0,
@@ -54823,7 +54942,7 @@
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 212.331,
+      "medianOutputSpeed": 217.1001,
       "aa": {
         "aa-intelligence": 41.933,
         "aa-coding": 37.4299,
@@ -54841,7 +54960,7 @@
         "aaIndexAnswerCostUsd": 6.3264
       },
       "scores": {
-        "GDPval-AA": 33.8152,
+        "GDPval-AA": 33.8758,
         "Terminal-Bench Hard": 34.8485,
         "τ²-Bench Telecom": 95.3216,
         "AA-LCR": 66.0,
@@ -54942,7 +55061,7 @@
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 122.3583,
+      "medianOutputSpeed": 129.4395,
       "aa": {
         "aa-intelligence": 36.0873,
         "aa-coding": 29.2088,
@@ -54960,7 +55079,7 @@
         "aaIndexAnswerCostUsd": 6.976
       },
       "scores": {
-        "GDPval-AA": 26.5636,
+        "GDPval-AA": 26.6093,
         "Terminal-Bench Hard": 25.7576,
         "τ²-Bench Telecom": 86.8421,
         "AA-LCR": 61.0,
@@ -55061,7 +55180,7 @@
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 211.5599,
+      "medianOutputSpeed": 215.037,
       "aa": {
         "aa-intelligence": 39.4197,
         "aa-coding": 32.7722,
@@ -55079,7 +55198,7 @@
         "aaIndexAnswerCostUsd": 8.8211
       },
       "scores": {
-        "GDPval-AA": 29.5585,
+        "GDPval-AA": 29.6436,
         "Terminal-Bench Hard": 28.7879,
         "τ²-Bench Telecom": 85.3801,
         "AA-LCR": 59.0,
@@ -55198,7 +55317,7 @@
         "aaIndexAnswerCostUsd": 11.934
       },
       "scores": {
-        "GDPval-AA": 24.8307,
+        "GDPval-AA": 24.8677,
         "Terminal-Bench Hard": 3.0303,
         "τ²-Bench Telecom": 34.2105,
         "AA-LCR": 54.3333,
@@ -55775,7 +55894,7 @@
         "src": "assets/logos/kimi_small.png",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 121.9153,
+      "medianOutputSpeed": 123.085,
       "aa": {
         "aa-intelligence": 40.8932,
         "aa-coding": 34.8274,
@@ -55793,7 +55912,7 @@
         "aaIndexAnswerCostUsd": 12.0303
       },
       "scores": {
-        "GDPval-AA": 24.6391,
+        "GDPval-AA": 24.6554,
         "Terminal-Bench Hard": 31.0606,
         "τ²-Bench Telecom": 92.9825,
         "AA-LCR": 66.3333,
@@ -55985,7 +56104,7 @@
         "src": "assets/logos/kimi_small.png",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 44.2213,
+      "medianOutputSpeed": 47.0331,
       "aa": {
         "aa-intelligence": 46.8125,
         "aa-coding": 39.5518,
@@ -56003,7 +56122,7 @@
         "aaIndexAnswerCostUsd": 20.4028
       },
       "scores": {
-        "GDPval-AA": 39.2178,
+        "GDPval-AA": 39.2052,
         "Terminal-Bench Hard": 34.8485,
         "τ²-Bench Telecom": 95.9064,
         "AA-LCR": 65.3333,
@@ -56195,7 +56314,7 @@
         "src": "assets/logos/kimi_small.png",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 40.9641,
+      "medianOutputSpeed": 41.3207,
       "aa": {
         "aa-intelligence": 37.2744,
         "aa-coding": 25.8207,
@@ -56213,7 +56332,7 @@
         "aaIndexAnswerCostUsd": 38.3751
       },
       "scores": {
-        "GDPval-AA": 38.297,
+        "GDPval-AA": 38.3073,
         "Terminal-Bench Hard": 18.9394,
         "τ²-Bench Telecom": 81.2865,
         "AA-LCR": 59.0,
@@ -56314,7 +56433,7 @@
         "src": "assets/logos/kimi_small.png",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 25.0291,
+      "medianOutputSpeed": 25.4923,
       "aa": {
         "aa-intelligence": 30.8543,
         "aa-coding": 25.8803,
@@ -56332,7 +56451,7 @@
         "aaIndexAnswerCostUsd": 19.7103
       },
       "scores": {
-        "GDPval-AA": 18.2077,
+        "GDPval-AA": 18.2342,
         "Terminal-Bench Hard": 23.4848,
         "τ²-Bench Telecom": 73.3918,
         "AA-LCR": 52.3333,
@@ -56433,7 +56552,7 @@
         "src": "assets/logos/kimi_small.png",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 23.8561,
+      "medianOutputSpeed": 24.6294,
       "aa": {
         "aa-intelligence": 26.3213,
         "aa-coding": 22.103,
@@ -56451,7 +56570,7 @@
         "aaIndexAnswerCostUsd": 27.6037
       },
       "scores": {
-        "GDPval-AA": 1.3092,
+        "GDPval-AA": 1.3183,
         "Terminal-Bench Hard": 15.9091,
         "τ²-Bench Telecom": 61.1111,
         "AA-LCR": 51.0,
@@ -56593,7 +56712,7 @@
         "src": "assets/logos/stepfun_small.svg",
         "color": "#017AFF"
       },
-      "medianOutputSpeed": 190.2172,
+      "medianOutputSpeed": 167.0475,
       "aa": {
         "aa-intelligence": 37.7975,
         "aa-coding": 31.6401,
@@ -56611,7 +56730,7 @@
         "aaIndexAnswerCostUsd": 1.7452
       },
       "scores": {
-        "GDPval-AA": 27.6831,
+        "GDPval-AA": 27.682,
         "Terminal-Bench Hard": 27.2727,
         "τ²-Bench Telecom": 94.4444,
         "AA-LCR": 43.0,
@@ -57188,7 +57307,7 @@
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 341.0153,
+      "medianOutputSpeed": 338.136,
       "aa": {
         "aa-intelligence": 6.9972,
         "aa-coding": 3.3565,
@@ -57206,7 +57325,7 @@
         "aaIndexAnswerCostUsd": 2.0642
       },
       "scores": {
-        "GDPval-AA": -13.8049,
+        "GDPval-AA": -13.7803,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 10.5263,
         "AA-LCR": 4.3333,
@@ -57307,7 +57426,7 @@
         "src": "assets/logos/reka_small.svg",
         "color": "#172136"
       },
-      "medianOutputSpeed": 56.1671,
+      "medianOutputSpeed": 57.1268,
       "aa": {
         "aa-intelligence": 11.9673,
         "aa-coding": null,
@@ -57426,7 +57545,7 @@
         "src": "assets/logos/nousresearch_small.jpg",
         "color": "#006fa8"
       },
-      "medianOutputSpeed": 28.985,
+      "medianOutputSpeed": 26.7237,
       "aa": {
         "aa-intelligence": 10.6474,
         "aa-coding": null,
@@ -57545,7 +57664,7 @@
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 114.8107,
+      "medianOutputSpeed": 138.3013,
       "aa": {
         "aa-intelligence": 39.2421,
         "aa-coding": 31.8042,
@@ -57563,7 +57682,7 @@
         "aaIndexAnswerCostUsd": 1.217
       },
       "scores": {
-        "GDPval-AA": 28.9702,
+        "GDPval-AA": 29.018,
         "Terminal-Bench Hard": 28.0303,
         "τ²-Bench Telecom": 95.0292,
         "AA-LCR": 63.0,
@@ -57664,7 +57783,7 @@
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 42.9072,
+      "medianOutputSpeed": 44.94,
       "aa": {
         "aa-intelligence": 49.2015,
         "aa-coding": 41.4317,
@@ -57682,7 +57801,7 @@
         "aaIndexAnswerCostUsd": 19.6369
       },
       "scores": {
-        "GDPval-AA": 45.2946,
+        "GDPval-AA": 45.3148,
         "Terminal-Bench Hard": 40.9091,
         "τ²-Bench Telecom": 95.0292,
         "AA-LCR": 60.6667,
@@ -57902,7 +58021,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 47.733,
+      "medianOutputSpeed": 51.641,
       "aa": {
         "aa-intelligence": 32.5136,
         "aa-coding": 29.4753,
@@ -57920,7 +58039,7 @@
         "aaIndexAnswerCostUsd": 10.788
       },
       "scores": {
-        "GDPval-AA": 26.5393,
+        "GDPval-AA": 26.4796,
         "Terminal-Bench Hard": 25.0,
         "τ²-Bench Telecom": 70.4678,
         "AA-LCR": 54.3333,
@@ -58021,7 +58140,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 83.4808,
+      "medianOutputSpeed": 86.3428,
       "aa": {
         "aa-intelligence": 23.4231,
         "aa-coding": 19.7426,
@@ -58039,7 +58158,7 @@
         "aaIndexAnswerCostUsd": 11.7515
       },
       "scores": {
-        "GDPval-AA": 5.4399,
+        "GDPval-AA": 5.4895,
         "Terminal-Bench Hard": 14.3939,
         "τ²-Bench Telecom": 31.5789,
         "AA-LCR": 40.3333,
@@ -58140,7 +58259,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 73.6137,
+      "medianOutputSpeed": 79.5383,
       "aa": {
         "aa-intelligence": 34.163,
         "aa-coding": 32.0076,
@@ -58158,7 +58277,7 @@
         "aaIndexAnswerCostUsd": 28.9265
       },
       "scores": {
-        "GDPval-AA": 33.7978,
+        "GDPval-AA": 33.7888,
         "Terminal-Bench Hard": 30.303,
         "τ²-Bench Telecom": 94.152,
         "AA-LCR": 36.3333,
@@ -58380,7 +58499,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 64.1764,
+      "medianOutputSpeed": 67.6507,
       "aa": {
         "aa-intelligence": 40.5712,
         "aa-coding": 39.0327,
@@ -58398,7 +58517,7 @@
         "aaIndexAnswerCostUsd": 40.4539
       },
       "scores": {
-        "GDPval-AA": 41.1872,
+        "GDPval-AA": 41.2097,
         "Terminal-Bench Hard": 39.3939,
         "τ²-Bench Telecom": 97.3684,
         "AA-LCR": 37.0,
@@ -58630,7 +58749,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 79.0187,
+      "medianOutputSpeed": 96.7922,
       "aa": {
         "aa-intelligence": 42.108,
         "aa-coding": 36.2584,
@@ -58648,7 +58767,7 @@
         "aaIndexAnswerCostUsd": 14.9026
       },
       "scores": {
-        "GDPval-AA": 34.2231,
+        "GDPval-AA": 34.2234,
         "Terminal-Bench Hard": 31.8182,
         "τ²-Bench Telecom": 95.9064,
         "AA-LCR": 64.0,
@@ -58749,7 +58868,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 72.2013,
+      "medianOutputSpeed": 70.9841,
       "aa": {
         "aa-intelligence": 49.7696,
         "aa-coding": 44.1814,
@@ -58767,7 +58886,7 @@
         "aaIndexAnswerCostUsd": 23.3154
       },
       "scores": {
-        "GDPval-AA": 44.692,
+        "GDPval-AA": 44.7139,
         "Terminal-Bench Hard": 43.1818,
         "τ²-Bench Telecom": 98.2456,
         "AA-LCR": 63.3333,
@@ -58868,7 +58987,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 48.578,
+      "medianOutputSpeed": 52.4143,
       "aa": {
         "aa-intelligence": 26.419,
         "aa-coding": 26.2591,
@@ -58886,7 +59005,7 @@
         "aaIndexAnswerCostUsd": 20.0164
       },
       "scores": {
-        "GDPval-AA": -1.6109,
+        "GDPval-AA": -1.595,
         "Terminal-Bench Hard": 21.9697,
         "τ²-Bench Telecom": 42.9825,
         "AA-LCR": 48.3333,
@@ -59098,7 +59217,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 53.0896,
+      "medianOutputSpeed": 54.431,
       "aa": {
         "aa-intelligence": 30.2422,
         "aa-coding": 30.2259,
@@ -59116,7 +59235,7 @@
         "aaIndexAnswerCostUsd": 19.1793
       },
       "scores": {
-        "GDPval-AA": 24.247,
+        "GDPval-AA": 24.2535,
         "Terminal-Bench Hard": 28.7879,
         "τ²-Bench Telecom": 76.9006,
         "AA-LCR": 26.3333,
@@ -59217,7 +59336,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 32.2922,
+      "medianOutputSpeed": 33.6456,
       "aa": {
         "aa-intelligence": 12.7403,
         "aa-coding": 10.7955,
@@ -59235,7 +59354,7 @@
         "aaIndexAnswerCostUsd": 12.5114
       },
       "scores": {
-        "GDPval-AA": -2.0303,
+        "GDPval-AA": -1.9979,
         "Terminal-Bench Hard": 6.8182,
         "τ²-Bench Telecom": 19.5906,
         "AA-LCR": 0.0,
@@ -59336,7 +59455,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 83.2572,
+      "medianOutputSpeed": 72.5725,
       "aa": {
         "aa-intelligence": 23.1661,
         "aa-coding": 23.8215,
@@ -59354,7 +59473,7 @@
         "aaIndexAnswerCostUsd": 3.6207
       },
       "scores": {
-        "GDPval-AA": 2.9666,
+        "GDPval-AA": 3.0575,
         "Terminal-Bench Hard": 20.4545,
         "τ²-Bench Telecom": 46.4912,
         "AA-LCR": 43.6667,
@@ -59536,7 +59655,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 79.9948,
+      "medianOutputSpeed": 77.341,
       "aa": {
         "aa-intelligence": 30.1452,
         "aa-coding": 25.8733,
@@ -59554,7 +59673,7 @@
         "aaIndexAnswerCostUsd": 3.1745
       },
       "scores": {
-        "GDPval-AA": 16.8539,
+        "GDPval-AA": 16.9288,
         "Terminal-Bench Hard": 21.9697,
         "τ²-Bench Telecom": 98.8304,
         "AA-LCR": 35.0,
@@ -59655,7 +59774,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 29.3282,
+      "medianOutputSpeed": 24.9641,
       "aa": {
         "aa-intelligence": 15.0932,
         "aa-coding": 10.9042,
@@ -59673,7 +59792,7 @@
         "aaIndexAnswerCostUsd": 12.905
       },
       "scores": {
-        "GDPval-AA": 0.4923,
+        "GDPval-AA": 0.5511,
         "Terminal-Bench Hard": 5.303,
         "τ²-Bench Telecom": 22.5146,
         "AA-LCR": 0.0,
@@ -59774,7 +59893,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 93.8689,
+      "medianOutputSpeed": 94.0186,
       "aa": {
         "aa-intelligence": 17.1004,
         "aa-coding": 11.0866,
@@ -59792,7 +59911,7 @@
         "aaIndexAnswerCostUsd": 5.8017
       },
       "scores": {
-        "GDPval-AA": 9.6011,
+        "GDPval-AA": 9.6796,
         "Terminal-Bench Hard": 3.0303,
         "τ²-Bench Telecom": 30.7018,
         "AA-LCR": 12.3333,
@@ -59893,7 +60012,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 107.1797,
+      "medianOutputSpeed": 119.2287,
       "aa": {
         "aa-intelligence": 22.069,
         "aa-coding": 11.0129,
@@ -59911,7 +60030,7 @@
         "aaIndexAnswerCostUsd": 7.9169
       },
       "scores": {
-        "GDPval-AA": 15.0819,
+        "GDPval-AA": 15.1013,
         "Terminal-Bench Hard": 3.7879,
         "τ²-Bench Telecom": 91.8129,
         "AA-LCR": 14.6667,
@@ -60607,7 +60726,7 @@
         "src": "assets/logos/ai21_small.svg",
         "color": "#d63864"
       },
-      "medianOutputSpeed": 188.091,
+      "medianOutputSpeed": 185.5525,
       "aa": {
         "aa-intelligence": 7.8708,
         "aa-coding": null,
@@ -60726,7 +60845,7 @@
         "src": "assets/logos/ai21_small.svg",
         "color": "#d63864"
       },
-      "medianOutputSpeed": 57.2645,
+      "medianOutputSpeed": 60.9311,
       "aa": {
         "aa-intelligence": 10.5553,
         "aa-coding": null,
@@ -61321,7 +61440,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 60.7657,
+      "medianOutputSpeed": 66.4856,
       "aa": {
         "aa-intelligence": 11.9736,
         "aa-coding": null,
@@ -61559,7 +61678,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 29.093,
+      "medianOutputSpeed": 29.1099,
       "aa": {
         "aa-intelligence": 19.7242,
         "aa-coding": null,
@@ -61678,7 +61797,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 47.7794,
+      "medianOutputSpeed": 50.3234,
       "aa": {
         "aa-intelligence": 20.7505,
         "aa-coding": 16.5053,
@@ -61696,7 +61815,7 @@
         "aaIndexAnswerCostUsd": 20.4021
       },
       "scores": {
-        "GDPval-AA": 6.7844,
+        "GDPval-AA": 6.7959,
         "Terminal-Bench Hard": 6.8182,
         "τ²-Bench Telecom": 35.0877,
         "AA-LCR": 31.6667,
@@ -61797,7 +61916,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 82.235,
+      "medianOutputSpeed": 78.8549,
       "aa": {
         "aa-intelligence": 16.5266,
         "aa-coding": 13.8258,
@@ -61815,7 +61934,7 @@
         "aaIndexAnswerCostUsd": 1.4275
       },
       "scores": {
-        "GDPval-AA": -0.5292,
+        "GDPval-AA": -0.5156,
         "Terminal-Bench Hard": 3.0303,
         "τ²-Bench Telecom": 29.8246,
         "AA-LCR": 0.0,
@@ -61916,7 +62035,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 84.9883,
+      "medianOutputSpeed": 86.4982,
       "aa": {
         "aa-intelligence": 14.5323,
         "aa-coding": null,
@@ -62035,7 +62154,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 52.8345,
+      "medianOutputSpeed": 53.1548,
       "aa": {
         "aa-intelligence": 19.7861,
         "aa-coding": 17.3506,
@@ -62053,7 +62172,7 @@
         "aaIndexAnswerCostUsd": 33.9497
       },
       "scores": {
-        "GDPval-AA": 12.8016,
+        "GDPval-AA": 12.8526,
         "Terminal-Bench Hard": 6.0606,
         "τ²-Bench Telecom": 23.9766,
         "AA-LCR": 0.0,
@@ -62154,7 +62273,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 78.1717,
+      "medianOutputSpeed": 83.3276,
       "aa": {
         "aa-intelligence": 42.069,
         "aa-coding": 34.873,
@@ -62172,7 +62291,7 @@
         "aaIndexAnswerCostUsd": 24.5773
       },
       "scores": {
-        "GDPval-AA": 32.9664,
+        "GDPval-AA": 33.0299,
         "Terminal-Bench Hard": 32.5758,
         "τ²-Bench Telecom": 93.8596,
         "AA-LCR": 67.3333,
@@ -62414,7 +62533,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 102.198,
+      "medianOutputSpeed": 102.8258,
       "aa": {
         "aa-intelligence": 19.6815,
         "aa-coding": 13.1418,
@@ -62432,7 +62551,7 @@
         "aaIndexAnswerCostUsd": 3.9154
       },
       "scores": {
-        "GDPval-AA": 8.3534,
+        "GDPval-AA": 8.3685,
         "Terminal-Bench Hard": 5.303,
         "τ²-Bench Telecom": 19.883,
         "AA-LCR": 40.6667,
@@ -62533,7 +62652,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 58.4524,
+      "medianOutputSpeed": 59.6059,
       "aa": {
         "aa-intelligence": 16.1876,
         "aa-coding": 13.0577,
@@ -62551,7 +62670,7 @@
         "aaIndexAnswerCostUsd": 5.2322
       },
       "scores": {
-        "GDPval-AA": -1.0475,
+        "GDPval-AA": -1.033,
         "Terminal-Bench Hard": 3.7879,
         "τ²-Bench Telecom": 34.5029,
         "AA-LCR": 0.0,
@@ -62652,7 +62771,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 46.3147,
+      "medianOutputSpeed": 49.6142,
       "aa": {
         "aa-intelligence": 16.965,
         "aa-coding": 13.9941,
@@ -62670,7 +62789,7 @@
         "aaIndexAnswerCostUsd": 7.3797
       },
       "scores": {
-        "GDPval-AA": 11.932,
+        "GDPval-AA": 11.8845,
         "Terminal-Bench Hard": 6.0606,
         "τ²-Bench Telecom": 27.193,
         "AA-LCR": 0.0,
@@ -62771,7 +62890,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 149.458,
+      "medianOutputSpeed": 159.502,
       "aa": {
         "aa-intelligence": 37.1222,
         "aa-coding": 30.2539,
@@ -62789,7 +62908,7 @@
         "aaIndexAnswerCostUsd": 21.1328
       },
       "scores": {
-        "GDPval-AA": 20.3368,
+        "GDPval-AA": 20.352,
         "Terminal-Bench Hard": 26.5152,
         "τ²-Bench Telecom": 89.1813,
         "AA-LCR": 62.6667,
@@ -62890,7 +63009,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 68.3031,
+      "medianOutputSpeed": 69.6877,
       "aa": {
         "aa-intelligence": 17.1906,
         "aa-coding": 15.5864,
@@ -62908,7 +63027,7 @@
         "aaIndexAnswerCostUsd": 41.3345
       },
       "scores": {
-        "GDPval-AA": -9.9997,
+        "GDPval-AA": -9.9714,
         "Terminal-Bench Hard": 8.3333,
         "τ²-Bench Telecom": 29.2398,
         "AA-LCR": 31.3333,
@@ -63009,7 +63128,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 46.1654,
+      "medianOutputSpeed": 50.6781,
       "aa": {
         "aa-intelligence": 24.9606,
         "aa-coding": 22.0995,
@@ -63027,7 +63146,7 @@
         "aaIndexAnswerCostUsd": 12.1804
       },
       "scores": {
-        "GDPval-AA": 13.9583,
+        "GDPval-AA": 14.0816,
         "Terminal-Bench Hard": 15.1515,
         "τ²-Bench Telecom": 33.3333,
         "AA-LCR": 31.2,
@@ -63128,7 +63247,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 55.9048,
+      "medianOutputSpeed": 57.838,
       "aa": {
         "aa-intelligence": 24.771,
         "aa-coding": 24.5861,
@@ -63146,7 +63265,7 @@
         "aaIndexAnswerCostUsd": 16.2202
       },
       "scores": {
-        "GDPval-AA": 0.3158,
+        "GDPval-AA": 0.3123,
         "Terminal-Bench Hard": 18.9394,
         "τ²-Bench Telecom": 43.5673,
         "AA-LCR": 42.3333,
@@ -63247,7 +63366,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 90.1986,
+      "medianOutputSpeed": 95.9023,
       "aa": {
         "aa-intelligence": 19.9773,
         "aa-coding": 19.3603,
@@ -63265,7 +63384,7 @@
         "aaIndexAnswerCostUsd": 11.0759
       },
       "scores": {
-        "GDPval-AA": 10.5789,
+        "GDPval-AA": 10.5852,
         "Terminal-Bench Hard": 15.1515,
         "τ²-Bench Telecom": 34.5029,
         "AA-LCR": 29.0,
@@ -63366,7 +63485,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 51.9393,
+      "medianOutputSpeed": 51.7199,
       "aa": {
         "aa-intelligence": 29.5444,
         "aa-coding": 23.2113,
@@ -63384,7 +63503,7 @@
         "aaIndexAnswerCostUsd": 5.6314
       },
       "scores": {
-        "GDPval-AA": 15.9875,
+        "GDPval-AA": 16.0973,
         "Terminal-Bench Hard": 13.6364,
         "τ²-Bench Telecom": 53.2164,
         "AA-LCR": 67.0,
@@ -63485,7 +63604,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 107.8627,
+      "medianOutputSpeed": 106.9929,
       "aa": {
         "aa-intelligence": 16.0469,
         "aa-coding": 14.3027,
@@ -63503,7 +63622,7 @@
         "aaIndexAnswerCostUsd": 12.4214
       },
       "scores": {
-        "GDPval-AA": -0.2263,
+        "GDPval-AA": -0.1731,
         "Terminal-Bench Hard": 6.0606,
         "τ²-Bench Telecom": 19.0058,
         "AA-LCR": 23.6667,
@@ -63723,7 +63842,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 38.3201,
+      "medianOutputSpeed": 39.236,
       "aa": {
         "aa-intelligence": 10.6326,
         "aa-coding": 7.1093,
@@ -63741,7 +63860,7 @@
         "aaIndexAnswerCostUsd": 2.3503
       },
       "scores": {
-        "GDPval-AA": -1.3363,
+        "GDPval-AA": -1.3185,
         "Terminal-Bench Hard": 2.2727,
         "τ²-Bench Telecom": 24.8538,
         "AA-LCR": 0.0,
@@ -63842,7 +63961,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 63.1663,
+      "medianOutputSpeed": 66.7376,
       "aa": {
         "aa-intelligence": 15.2761,
         "aa-coding": 11.0059,
@@ -63860,7 +63979,7 @@
         "aaIndexAnswerCostUsd": 1.2695
       },
       "scores": {
-        "GDPval-AA": 0.3713,
+        "GDPval-AA": 0.4138,
         "Terminal-Bench Hard": 2.2727,
         "τ²-Bench Telecom": 26.0234,
         "AA-LCR": 0.0,
@@ -63979,7 +64098,7 @@
         "aaIndexAnswerCostUsd": 1.209
       },
       "scores": {
-        "GDPval-AA": -11.1169,
+        "GDPval-AA": -11.0876,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 14.6199,
         "AA-LCR": 0.0,
@@ -64080,7 +64199,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 47.0564,
+      "medianOutputSpeed": 46.1735,
       "aa": {
         "aa-intelligence": 32.4841,
         "aa-coding": 24.502,
@@ -64098,7 +64217,7 @@
         "aaIndexAnswerCostUsd": 48.376
       },
       "scores": {
-        "GDPval-AA": 22.4157,
+        "GDPval-AA": 22.4386,
         "Terminal-Bench Hard": 17.4242,
         "τ²-Bench Telecom": 83.6257,
         "AA-LCR": 57.6667,
@@ -64455,7 +64574,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 4.4669,
+        "GDPval-AA": 4.5812,
         "Terminal-Bench Hard": 1.5152,
         "τ²-Bench Telecom": 25.4386,
         "AA-LCR": 37.6667,
@@ -64574,7 +64693,7 @@
         "aaIndexAnswerCostUsd": 1.8526
       },
       "scores": {
-        "GDPval-AA": -12.3538,
+        "GDPval-AA": -12.3294,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 21.6374,
         "AA-LCR": 0.0,
@@ -64693,7 +64812,7 @@
         "aaIndexAnswerCostUsd": 49.7994
       },
       "scores": {
-        "GDPval-AA": 7.3353,
+        "GDPval-AA": 7.365,
         "Terminal-Bench Hard": 7.5758,
         "τ²-Bench Telecom": 45.614,
         "AA-LCR": 55.3333,
@@ -64794,7 +64913,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 34.5736,
+      "medianOutputSpeed": 37.773,
       "aa": {
         "aa-intelligence": 27.6424,
         "aa-coding": 20.8859,
@@ -64812,7 +64931,7 @@
         "aaIndexAnswerCostUsd": 18.8179
       },
       "scores": {
-        "GDPval-AA": 10.7066,
+        "GDPval-AA": 10.6753,
         "Terminal-Bench Hard": 11.3636,
         "τ²-Bench Telecom": 54.0936,
         "AA-LCR": 58.6667,
@@ -64913,7 +65032,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 37.1859,
+      "medianOutputSpeed": 37.7431,
       "aa": {
         "aa-intelligence": 13.1756,
         "aa-coding": 9.0383,
@@ -64931,7 +65050,7 @@
         "aaIndexAnswerCostUsd": 1.9429
       },
       "scores": {
-        "GDPval-AA": -0.1681,
+        "GDPval-AA": -0.1353,
         "Terminal-Bench Hard": 2.2727,
         "τ²-Bench Telecom": 27.7778,
         "AA-LCR": 0.0,
@@ -65050,7 +65169,7 @@
         "aaIndexAnswerCostUsd": 4.5751
       },
       "scores": {
-        "GDPval-AA": -9.3034,
+        "GDPval-AA": -9.2739,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 21.0526,
         "AA-LCR": 0.0,
@@ -65151,7 +65270,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 108.4467,
+      "medianOutputSpeed": 110.0512,
       "aa": {
         "aa-intelligence": 16.6631,
         "aa-coding": 9.8169,
@@ -65169,7 +65288,7 @@
         "aaIndexAnswerCostUsd": 8.9345
       },
       "scores": {
-        "GDPval-AA": 8.4471,
+        "GDPval-AA": 8.4771,
         "Terminal-Bench Hard": 3.7879,
         "τ²-Bench Telecom": 22.5146,
         "AA-LCR": 31.0,
@@ -65288,7 +65407,7 @@
         "aaIndexAnswerCostUsd": 15.9136
       },
       "scores": {
-        "GDPval-AA": -11.2643,
+        "GDPval-AA": -11.2368,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 26.0234,
         "AA-LCR": 0.0,
@@ -65508,7 +65627,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 55.0719,
+      "medianOutputSpeed": 57.8756,
       "aa": {
         "aa-intelligence": 31.377,
         "aa-coding": 26.4064,
@@ -65526,7 +65645,7 @@
         "aaIndexAnswerCostUsd": 91.4947
       },
       "scores": {
-        "GDPval-AA": 26.8996,
+        "GDPval-AA": 26.8979,
         "Terminal-Bench Hard": 20.4545,
         "τ²-Bench Telecom": 74.269,
         "AA-LCR": 46.6667,
@@ -65627,7 +65746,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 59.1987,
+      "medianOutputSpeed": 59.5241,
       "aa": {
         "aa-intelligence": 12.7584,
         "aa-coding": 12.3702,
@@ -65645,7 +65764,7 @@
         "aaIndexAnswerCostUsd": 3.8959
       },
       "scores": {
-        "GDPval-AA": -1.4375,
+        "GDPval-AA": -1.379,
         "Terminal-Bench Hard": 5.303,
         "τ²-Bench Telecom": 32.1637,
         "AA-LCR": 0.0,
@@ -65764,7 +65883,7 @@
         "aaIndexAnswerCostUsd": 5.8383
       },
       "scores": {
-        "GDPval-AA": 7.9815,
+        "GDPval-AA": 7.948,
         "Terminal-Bench Hard": 5.303,
         "τ²-Bench Telecom": 28.0702,
         "AA-LCR": 59.0,
@@ -66002,7 +66121,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -9.7251,
+        "GDPval-AA": -9.6978,
         "Terminal-Bench Hard": 4.5455,
         "τ²-Bench Telecom": 26.6082,
         "AA-LCR": 7.3333,
@@ -66103,7 +66222,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 111.5257,
+      "medianOutputSpeed": 96.9423,
       "aa": {
         "aa-intelligence": 15.0011,
         "aa-coding": 14.187,
@@ -66121,7 +66240,7 @@
         "aaIndexAnswerCostUsd": 5.8903
       },
       "scores": {
-        "GDPval-AA": 0.7749,
+        "GDPval-AA": 0.8144,
         "Terminal-Bench Hard": 6.0606,
         "τ²-Bench Telecom": 10.2339,
         "AA-LCR": 22.6667,
@@ -66341,7 +66460,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 117.7838,
+      "medianOutputSpeed": 118.5948,
       "aa": {
         "aa-intelligence": 14.3014,
         "aa-coding": 7.3022,
@@ -66359,7 +66478,7 @@
         "aaIndexAnswerCostUsd": 18.3803
       },
       "scores": {
-        "GDPval-AA": 9.13,
+        "GDPval-AA": 9.1516,
         "Terminal-Bench Hard": 2.2727,
         "τ²-Bench Telecom": 29.2398,
         "AA-LCR": 15.3333,
@@ -66478,7 +66597,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -7.9074,
+        "GDPval-AA": -7.8797,
         "Terminal-Bench Hard": 0.0,
         "τ²-Bench Telecom": 23.3918,
         "AA-LCR": 13.0,
@@ -66817,7 +66936,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 60.72,
+      "medianOutputSpeed": 68.3509,
       "aa": {
         "aa-intelligence": 12.527,
         "aa-coding": 13.3418,
@@ -66835,7 +66954,7 @@
         "aaIndexAnswerCostUsd": 0.8848
       },
       "scores": {
-        "GDPval-AA": -8.5189,
+        "GDPval-AA": -8.493,
         "Terminal-Bench Hard": 6.8182,
         "τ²-Bench Telecom": 22.2222,
         "AA-LCR": 0.0,
@@ -66936,7 +67055,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 89.4503,
+      "medianOutputSpeed": 90.6897,
       "aa": {
         "aa-intelligence": 37.1787,
         "aa-coding": 33.4421,
@@ -66954,7 +67073,7 @@
         "aaIndexAnswerCostUsd": 65.2459
       },
       "scores": {
-        "GDPval-AA": 33.023,
+        "GDPval-AA": 33.0391,
         "Terminal-Bench Hard": 31.8182,
         "τ²-Bench Telecom": 87.1345,
         "AA-LCR": 55.6667,
@@ -67055,7 +67174,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 59.598,
+      "medianOutputSpeed": 64.3967,
       "aa": {
         "aa-intelligence": 26.0841,
         "aa-coding": 25.477,
@@ -67073,7 +67192,7 @@
         "aaIndexAnswerCostUsd": 47.1414
       },
       "scores": {
-        "GDPval-AA": 15.8359,
+        "GDPval-AA": 15.8587,
         "Terminal-Bench Hard": 19.697,
         "τ²-Bench Telecom": 32.7485,
         "AA-LCR": 39.6667,
@@ -67192,7 +67311,7 @@
         "aaIndexAnswerCostUsd": 38.4446
       },
       "scores": {
-        "GDPval-AA": 31.8293,
+        "GDPval-AA": 31.8041,
         "Terminal-Bench Hard": 24.2424,
         "τ²-Bench Telecom": 83.6257,
         "AA-LCR": 66.0,
@@ -67293,7 +67412,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 42.7784,
+      "medianOutputSpeed": 43.0736,
       "aa": {
         "aa-intelligence": 51.814,
         "aa-coding": 44.9179,
@@ -67451,7 +67570,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": -4.9463,
+        "GDPval-AA": -4.9216,
         "Terminal-Bench Hard": 10.6061,
         "τ²-Bench Telecom": 32.7485,
         "AA-LCR": 34.6667,
@@ -67570,7 +67689,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "GDPval-AA": 9.3361,
+        "GDPval-AA": 9.2462,
         "Terminal-Bench Hard": 6.8182,
         "τ²-Bench Telecom": 26.3158,
         "AA-LCR": 45.6667,
@@ -67671,7 +67790,7 @@
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 78.5645,
+      "medianOutputSpeed": 79.5146,
       "aa": {
         "aa-intelligence": 15.7441,
         "aa-coding": 16.7158,
@@ -67689,7 +67808,7 @@
         "aaIndexAnswerCostUsd": 8.8278
       },
       "scores": {
-        "GDPval-AA": -4.045,
+        "GDPval-AA": -3.9913,
         "Terminal-Bench Hard": 10.6061,
         "τ²-Bench Telecom": 20.7602,
         "AA-LCR": 15.0,
@@ -67790,7 +67909,7 @@
         "src": "assets/logos/bytedance_small.svg",
         "color": "#3c8bff"
       },
-      "medianOutputSpeed": 35.6529,
+      "medianOutputSpeed": 35.9046,
       "aa": {
         "aa-intelligence": 25.1572,
         "aa-coding": 16.6982,
@@ -67808,7 +67927,7 @@
         "aaIndexAnswerCostUsd": 2.6113
       },
       "scores": {
-        "GDPval-AA": 12.9488,
+        "GDPval-AA": 12.9403,
         "Terminal-Bench Hard": 6.8182,
         "τ²-Bench Telecom": 49.4152,
         "AA-LCR": 57.6667,
@@ -67891,10 +68010,10 @@
     }
   ],
   "summary": {
-    "modelRows": 523,
-    "variantGroups": 398,
+    "modelRows": 524,
+    "variantGroups": 399,
     "sourceTypes": {
-      "open": 316,
+      "open": 317,
       "closed": 207,
       "unknown": 0
     }
