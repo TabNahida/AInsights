@@ -23,9 +23,14 @@ const copy = {
     searchPlaceholder: "模型或机构",
     dedupe: "去除重复档位",
     customTitle: "自定义占比",
-    metricWeightsTitle: "AA 子项权重",
+    metricWeightsTitle: "测试项数据权重",
     metricWeightsSubtitle: "直接参与当前自定义排名的逐项权重，按已有模型数据量排序",
     metricCoverage: "{count} 个模型",
+    metricCoverageFilterLabel: "折叠低覆盖项目",
+    metricCoverageFilterAll: "显示全部",
+    metricCoverageFilterOption: "少于 {count} 个模型",
+    metricCoverageFilterSummary: "已折叠 {hidden} 项，正在显示 {visible}/{total} 项",
+    metricCoverageFilterEmpty: "没有达到该覆盖门槛的测试项",
     metricGroupMeta: "{count} 个模型 · {metrics} 个数据项",
     customWeightPresetTitle: "权重预设",
     customWeightPresetSubtitle: "一键套用 AInsights Index 或 AA 三个方向，再继续微调下方测试项权重",
@@ -244,9 +249,14 @@ const copy = {
     searchPlaceholder: "Model or lab",
     dedupe: "Remove duplicate tiers",
     customTitle: "Custom weights",
-    metricWeightsTitle: "AA benchmark weights",
+    metricWeightsTitle: "Evaluation data weights",
     metricWeightsSubtitle: "Fine-grained weights used directly by the custom ranking, sorted by model coverage",
     metricCoverage: "{count} models",
+    metricCoverageFilterLabel: "Collapse low-coverage fields",
+    metricCoverageFilterAll: "Show all fields",
+    metricCoverageFilterOption: "Fewer than {count} models",
+    metricCoverageFilterSummary: "{hidden} fields collapsed · showing {visible}/{total}",
+    metricCoverageFilterEmpty: "No fields meet this coverage threshold",
     metricGroupMeta: "{count} models · {metrics} data fields",
     customWeightPresetTitle: "Weight presets",
     customWeightPresetSubtitle: "Start from AInsights Index or the three AA directions, then tune individual benchmark weights below",
@@ -458,6 +468,7 @@ const state = {
   customMissingMode: "zero",
   customPenaltyMax: 100,
   customMinCoveragePct: 0,
+  customMinMetricCoverage: 0,
   customMetricGroupsCache: null,
   language: getInitialLanguage(),
   page: initialRoute.page,
@@ -562,6 +573,7 @@ const missingModePresets = {
   zero: { penalty: 100, minCoverage: 0 },
   complete: { penalty: 0, minCoverage: 100 },
 };
+const metricCoverageFilterOptions = [0, 10, 25, 50, 100, 250];
 const pageOrder = ["home", "ranking", "compare", "benchmarks", "sources"];
 const viewOrder = ["histogram", "table", "text"];
 const sourceFilterOrder = ["all", "open", "closed", "unknown"];
@@ -1159,23 +1171,57 @@ function renderWeights() {
       <div class="missing-mode-controls" data-missing-mode-controls></div>
     </section>
     <section class="weight-group">
-      <div class="weight-group-head">
-        <h3>${escapeHtml(tr("metricWeightsTitle"))}</h3>
-        <p>${escapeHtml(tr("metricWeightsSubtitle"))}</p>
+      <div class="weight-group-head metric-weight-head">
+        <div>
+          <h3>${escapeHtml(tr("metricWeightsTitle"))}</h3>
+          <p>${escapeHtml(tr("metricWeightsSubtitle"))}</p>
+        </div>
+        <label class="metric-coverage-filter">
+          <span>${escapeHtml(tr("metricCoverageFilterLabel"))}</span>
+          <select data-coverage-filter>
+            ${metricCoverageFilterOptions.map((count) => `
+              <option value="${count}" ${count === state.customMinMetricCoverage ? "selected" : ""}>
+                ${escapeHtml(count === 0 ? tr("metricCoverageFilterAll") : tr("metricCoverageFilterOption", { count }))}
+              </option>
+            `).join("")}
+          </select>
+        </label>
       </div>
+      <div class="metric-filter-summary" data-coverage-filter-summary></div>
       <div class="metric-weight-controls" data-weight-controls="metrics"></div>
     </section>
   `;
   renderCustomWeightPresetControls(els.weightsGrid.querySelector("[data-custom-weight-presets]"));
   renderMissingModeControls(els.weightsGrid.querySelector("[data-missing-mode-controls]"));
   const metricTarget = els.weightsGrid.querySelector('[data-weight-controls="metrics"]');
+  const coverageSelect = els.weightsGrid.querySelector("[data-coverage-filter]");
   const groups = customMetricGroups()
     .sort((a, b) => (
       b.coverage - a.coverage
       || Number(b.defaultWeight || 0) - Number(a.defaultWeight || 0)
       || a.label.localeCompare(b.label)
     ));
-  for (const group of groups) {
+  const visibleGroups = groups.filter((group) => group.coverage >= state.customMinMetricCoverage);
+  const hiddenCount = groups.length - visibleGroups.length;
+  const summary = els.weightsGrid.querySelector("[data-coverage-filter-summary]");
+  if (summary) {
+    summary.textContent = tr("metricCoverageFilterSummary", {
+      hidden: hiddenCount,
+      visible: visibleGroups.length,
+      total: groups.length,
+    });
+  }
+  if (coverageSelect) {
+    coverageSelect.addEventListener("change", (event) => {
+      state.customMinMetricCoverage = Number(event.target.value);
+      renderWeights();
+    });
+  }
+  if (visibleGroups.length === 0) {
+    metricTarget.innerHTML = `<div class="empty metric-filter-empty">${escapeHtml(tr("metricCoverageFilterEmpty"))}</div>`;
+    return;
+  }
+  for (const group of visibleGroups) {
     const fragment = els.metricTemplate.content.cloneNode(true);
     const labelText = fragment.querySelector("span");
     const input = fragment.querySelector("input");

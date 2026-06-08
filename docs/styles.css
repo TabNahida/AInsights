@@ -381,6 +381,12 @@ main {
   gap: 16px;
 }
 
+.weight-group-head > div {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
 .weight-group-head h3 {
   margin: 0;
   font-size: 15px;
@@ -391,6 +397,46 @@ main {
   color: var(--muted);
   font-size: 12px;
   text-align: right;
+}
+
+.metric-weight-head {
+  align-items: center;
+}
+
+.metric-coverage-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: max-content;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.metric-coverage-filter select {
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 30px 0 10px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+}
+
+.metric-filter-summary {
+  width: fit-content;
+  max-width: 100%;
+  border: 1px solid rgb(38 95 159 / 0.16);
+  border-radius: 999px;
+  padding: 4px 8px;
+  color: var(--accent-3);
+  background: rgb(38 95 159 / 0.07);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.metric-filter-empty {
+  grid-column: 1 / -1;
 }
 
 .metric-weight-controls {
@@ -2888,6 +2934,17 @@ tr[data-card-href]:focus-visible {
   .weight-group-head {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .metric-coverage-filter {
+    align-items: flex-start;
+    flex-direction: column;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .metric-coverage-filter select {
+    width: 100%;
   }
 
   .weight-group-head p {
