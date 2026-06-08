@@ -143,6 +143,7 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn('id="benchmarkDetail"', html)
         self.assertIn("renderBenchmarkPage", app_js)
         self.assertIn("benchmarkRankingRows", app_js)
+        self.assertIn('class="benchmark-ranking-row" data-card-href', app_js)
         self.assertIn('filename === "benchmark.html"', app_utils)
         self.assertIn(".benchmark-ranking-row", css)
 
@@ -163,6 +164,8 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("providerHref(row.provider)", app_js)
         self.assertIn("renderProviderTextLink(model.creator, \"home\")", app_js)
         self.assertIn('data-card-href="${escapeHtml(modelHref(model, "home"))}"', app_js)
+        self.assertIn('class="histogram-row" data-card-href', app_js)
+        self.assertIn('class="text-ranking-row" data-card-href', app_js)
         self.assertIn('class="detail-provider-link"', app_js)
         self.assertIn("providerHref(providerName, currentModelBackSource())", app_js)
         self.assertIn("provider.html?${params.toString()}", app_js)

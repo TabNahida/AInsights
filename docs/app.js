@@ -1749,7 +1749,7 @@ function renderHistogram(models) {
 function renderHistogramRow(model) {
   const scoreWidth = clamp(model.score, 0, 100);
   return `
-    <div class="histogram-row">
+    <div class="histogram-row" data-card-href="${escapeHtml(modelHref(model, "ranking"))}" role="link" tabindex="0" aria-label="${escapeHtml(`${tr("modelDetails")} ${model.model}`)}">
       <div class="histogram-rank">#${model.rank}</div>
       <div class="histogram-model">
         ${renderModelIcon(model)}
@@ -1779,7 +1779,7 @@ function renderRow(model) {
   const scoreWidth = clamp(model.score, 0, 100);
   const reason = model.isReasoning ? `<span class="pill">${escapeHtml(tr("reasoning"))}</span>` : "";
   return `
-    <tr>
+    <tr data-card-href="${escapeHtml(modelHref(model, "ranking"))}" tabindex="0" aria-label="${escapeHtml(`${tr("modelDetails")} ${model.model}`)}">
       <td class="rank-col">${model.rank}</td>
       <td>
         <div class="model-main">
@@ -1831,7 +1831,7 @@ function renderTextRanking(models) {
     const source = sourceTypeLabel(sourceType(model));
     const creator = model.creator || tr("unknownCreator");
     return `
-      <div class="text-ranking-row">
+      <div class="text-ranking-row" data-card-href="${escapeHtml(modelHref(model, "ranking"))}" role="link" tabindex="0" aria-label="${escapeHtml(`${tr("modelDetails")} ${model.model}`)}">
         <span>#${model.rank}</span>
         <a class="text-model" href="${escapeHtml(modelHref(model))}">${escapeHtml(model.model)}</a>
         ${renderProviderTextLink(creator, "ranking")}
@@ -2176,7 +2176,7 @@ function renderBenchmarkRankingRow(row, metric) {
     ? `<a href="${escapeHtml(row.sourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(row.sourceLabel)}</a>`
     : escapeHtml(row.sourceLabel);
   return `
-    <article class="benchmark-ranking-row" style="--value: ${valueWidth}%">
+    <article class="benchmark-ranking-row" data-card-href="${escapeHtml(modelHref(row.model, "benchmarks", { benchmarkId: metric.key }))}" role="link" tabindex="0" aria-label="${escapeHtml(`${tr("modelDetails")} ${row.model.model}`)}" style="--value: ${valueWidth}%">
       <span class="rank-number">#${escapeHtml(row.rank)}</span>
       ${renderModelIcon(row.model)}
       <span class="benchmark-ranking-model">

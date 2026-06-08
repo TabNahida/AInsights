@@ -818,6 +818,21 @@ th {
   outline-offset: 3px;
 }
 
+.histogram-row[data-card-href],
+.benchmark-ranking-row[data-card-href],
+.text-ranking-row[data-card-href],
+tr[data-card-href] {
+  cursor: pointer;
+}
+
+.histogram-row[data-card-href]:focus-visible,
+.benchmark-ranking-row[data-card-href]:focus-visible,
+.text-ranking-row[data-card-href]:focus-visible,
+tr[data-card-href]:focus-visible {
+  outline: 2px solid rgb(38 95 159 / 0.42);
+  outline-offset: -2px;
+}
+
 .top-bar-rank {
   color: var(--muted);
   font-size: 12px;
