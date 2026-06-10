@@ -13,6 +13,7 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn('data-page="compare"', (docs_dir / "compare.html").read_text(encoding="utf-8"))
         self.assertIn('data-page="benchmark"', (docs_dir / "benchmark.html").read_text(encoding="utf-8"))
         self.assertIn('data-page="sources"', (docs_dir / "sources.html").read_text(encoding="utf-8"))
+        self.assertIn('data-page="contribute"', (docs_dir / "contribute.html").read_text(encoding="utf-8"))
 
     def test_page_title_and_footer_name_source(self):
         html = (Path(__file__).resolve().parents[1] / "docs" / "index.html").read_text(encoding="utf-8")
@@ -22,6 +23,7 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("<footer", html)
         self.assertIn("数据来源", html)
         self.assertIn("Artificial Analysis", html)
+        self.assertIn("https://github.com/TabNahida/AInsights", html)
 
     def test_page_exposes_i18n_views_source_filter_and_rank_surfaces(self):
         html = (Path(__file__).resolve().parents[1] / "docs" / "index.html").read_text(encoding="utf-8")
@@ -137,8 +139,30 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("renderSourcesPage", app_js)
         self.assertIn("catalogSources", app_js)
         self.assertIn("isOfficialModelSource", app_js)
+        self.assertIn("modelSourceCardsHtml", app_js)
         self.assertNotIn("function getInitialLanguage", app_js)
         self.assertIn("function getInitialLanguage", app_utils)
+
+    def test_contribution_page_surface_is_present(self):
+        docs_dir = Path(__file__).resolve().parents[1] / "docs"
+        html = (docs_dir / "contribute.html").read_text(encoding="utf-8")
+        app_js = (docs_dir / "app.js").read_text(encoding="utf-8")
+        app_utils = (docs_dir / "app-utils.js").read_text(encoding="utf-8")
+        css = (docs_dir / "styles.css").read_text(encoding="utf-8")
+
+        self.assertIn('id="contributeView"', html)
+        self.assertIn('id="contributionPreview"', html)
+        self.assertIn('id="contributionGithubButton"', html)
+        self.assertIn('id="contributionBenchmarkId"', html)
+        self.assertIn('id="contributionBenchmarkName"', html)
+        self.assertIn('data-contribution-section="benchmark"', html)
+        self.assertIn("renderContributePage", app_js)
+        self.assertIn("contributionGithubNewFileHref", app_js)
+        self.assertIn('const contributionModes = ["score", "model", "benchmark"];', app_js)
+        self.assertIn('type: "benchmark"', app_js)
+        self.assertIn('filename === "contribute.html"', app_utils)
+        self.assertIn('if (page === "contribute") return "contribute.html";', app_utils)
+        self.assertIn(".contribute-layout", css)
 
     def test_benchmark_page_surface_is_present(self):
         docs_dir = Path(__file__).resolve().parents[1] / "docs"

@@ -138,17 +138,30 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         payload = build_payload({}, "seeded")
         top_vendor_ids = {
             "anthropic-claude-opus-4-7-release",
+            "qwen-qwen3-release",
+            "qwen-qwen2-release",
+            "qwen-qwen2-5-release",
+            "qwen-qwen2-5-coder-release",
+            "qwen-qwen2-5-max-release",
             "qwen-qwen3-6-27b-card",
             "qwen-qwen3-6-plus-release",
             "deepseek-v4-pro-card",
             "kimi-k2-6-card",
             "kimi-k2-thinking-card",
             "kimi-k2-5-card",
+            "zai-glm-4-6-card",
             "zai-glm-5-1-card",
+            "minimax-m2-5-release",
+            "minimax-m2-release",
+            "minimax-m1-card",
             "google-gemini-3-1-pro-card",
             "google-gemma-4-card",
             "xiaomi-mimo-v2-5-release",
+            "anthropic-claude-fable-5-docs",
+            "cohere-north-mini-code-card",
             "xai-grok-4-1-fast-release",
+            "nvidia-nemotron-3-super-report",
+            "nvidia-nemotron-3-nano-report",
             "nvidia-nemotron-3-ultra-report",
         }
 
@@ -161,6 +174,28 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertEqual(set(urls), top_vendor_ids)
         for url in urls.values():
             self.assertNotIn("huggingface.co", url)
+
+    def test_official_hugging_face_model_cards_are_explicit(self):
+        payload = build_payload({}, "seeded")
+        sources = {source["id"]: source for source in payload["sources"]}
+
+        kimi_0905 = sources["kimi-k2-0905-card"]
+
+        self.assertEqual(kimi_0905["category"], "Official model card")
+        self.assertEqual(kimi_0905["url"], "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905")
+
+    def test_reference_only_model_cards_keep_model_aliases(self):
+        payload = build_payload({}, "seeded")
+        sources = {source["id"]: source for source in payload["sources"]}
+
+        self.assertIn("north-mini-code-1-0", sources["cohere-north-mini-code-card"]["modelAliases"])
+        self.assertEqual(sources["cohere-north-mini-code-card"]["scoreStatus"], "reference")
+
+    def test_official_release_sources_keep_model_aliases(self):
+        payload = build_payload({}, "seeded")
+        sources = {source["id"]: source for source in payload["sources"]}
+
+        self.assertIn("Claude Fable 5 (with fallback)", sources["anthropic-claude-fable-5-docs"]["modelAliases"])
 
     def test_build_payload_includes_new_official_vendor_scores(self):
         payload = build_payload({}, "seeded")
@@ -191,12 +226,79 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             for row in results
             if row["model"] == "Nemotron 3 Ultra" and row["benchmarkId"] == "mmlu-pro"
         )
+        minimax_m25_swe = next(
+            row
+            for row in results
+            if row["model"] == "MiniMax-M2.5" and row["benchmarkId"] == "swe-bench-verified"
+        )
+        nemotron_super_lcb = next(
+            row
+            for row in results
+            if row["model"] == "NVIDIA Nemotron 3 Super [R]" and row["benchmarkId"] == "livecodebench"
+        )
+        nemotron_nano_aime = next(
+            row
+            for row in results
+            if row["model"] == "NVIDIA Nemotron 3 Nano [R]" and row["benchmarkId"] == "aime-2025"
+        )
 
         self.assertEqual(gemini_terminal["value"], 68.5)
         self.assertEqual(claude_swe["value"], 87.6)
         self.assertEqual(mimo_swe["value"], 57.2)
         self.assertEqual(grok_tau["value"], 100.0)
         self.assertEqual(nemotron_mmlu["value"], 86.8)
+        self.assertEqual(minimax_m25_swe["value"], 80.2)
+        self.assertEqual(nemotron_super_lcb["value"], 78.69)
+        self.assertEqual(nemotron_nano_aime["value"], 89.06)
+
+    def test_build_payload_includes_fable_and_older_qwen_official_scores(self):
+        payload = build_payload({}, "seeded")
+        results = payload["results"]
+
+        fable_swe = next(
+            row
+            for row in results
+            if row["model"] == "Claude Fable 5" and row["benchmarkId"] == "swe-bench-pro"
+        )
+        qwen3_aime = next(
+            row
+            for row in results
+            if row["model"] == "Qwen3 235B [R]" and row["benchmarkId"] == "aime-2024"
+        )
+        qwen25_max_gpqa = next(
+            row
+            for row in results
+            if row["model"] == "Qwen2.5 Max" and row["benchmarkId"] == "gpqa-diamond"
+        )
+        qwen25_coder_lcb = next(
+            row
+            for row in results
+            if row["model"] == "Qwen2.5 Coder 7B" and row["benchmarkId"] == "livecodebench"
+        )
+        qwen2_lcb = next(
+            row
+            for row in results
+            if row["model"] == "Qwen2 72B" and row["benchmarkId"] == "livecodebench"
+        )
+        kimi_0905_terminal = next(
+            row
+            for row in results
+            if row["model"] == "Kimi K2 0905" and row["benchmarkId"] == "terminal-bench"
+        )
+        glm46_tau = next(
+            row
+            for row in results
+            if row["model"] == "GLM-4.6" and row["benchmarkId"] == "tau2-bench-weighted"
+        )
+
+        self.assertEqual(fable_swe["value"], 80.3)
+        self.assertEqual(qwen3_aime["value"], 85.7)
+        self.assertIn("qwen3-235b-a22b-instruct-reasoning", qwen3_aime["modelAliases"])
+        self.assertEqual(qwen25_max_gpqa["value"], 60.1)
+        self.assertEqual(qwen25_coder_lcb["value"], 35.9)
+        self.assertEqual(qwen2_lcb["value"], 35.7)
+        self.assertEqual(kimi_0905_terminal["value"], 44.5)
+        self.assertEqual(glm46_tau["value"], 75.9)
 
 
 if __name__ == "__main__":

@@ -15,6 +15,7 @@ const copy = {
       compare: "模型对比",
       benchmarks: "测试项",
       sources: "数据源",
+      contribute: "贡献",
     },
     back: "返回",
     backToRanking: "返回完整排名",
@@ -68,6 +69,38 @@ const copy = {
       models: "模型覆盖",
       results: "分数记录",
     },
+    contributePageTitle: "贡献工作台",
+    contributePageSubtitle: "在这里整理新增模型、模型数据或测试项目，生成可提交到 GitHub 的 PR payload。",
+    contributeModeLabel: "贡献类型",
+    contributeModeModel: "新增模型",
+    contributeModeScore: "补充模型数据",
+    contributeModeBenchmark: "新增测试项目",
+    contributeModelName: "模型名称",
+    contributeCreator: "机构",
+    contributeReleaseDate: "发布日期",
+    contributeModelUrl: "模型链接",
+    contributeOpenSource: "开放状态",
+    contributeBenchmark: "测试项",
+    contributeBenchmarkId: "测试项 ID",
+    contributeBenchmarkName: "测试项名称",
+    contributeBenchmarkCategory: "测试项分类",
+    contributeBenchmarkUnit: "单位",
+    contributeBenchmarkIcon: "短标签",
+    contributeValue: "分数",
+    contributeSourceUrl: "官方来源 URL",
+    contributeSourceLabel: "来源名称",
+    contributeNotes: "备注",
+    contributePreviewTitle: "PR payload",
+    contributePreviewEmpty: "填写左侧字段后会生成 payload。",
+    contributeCopy: "复制 payload",
+    contributeCopied: "已复制",
+    contributeGithubPr: "登录 GitHub 提交 PR",
+    contributeGithubDev: "打开 GitHub.dev",
+    contributeEditBenchmarks: "编辑 benchmark 数据",
+    contributeEditCollector: "编辑来源脚本",
+    contributeEditAaCsv: "编辑 AA 模型 CSV",
+    contributeRequired: "名称和官方来源 URL 是必填项。",
+    contributeSelectBenchmark: "选择测试项",
     reset: "重置",
     empty: "没有符合条件的模型",
     loadFailed: "数据加载失败：{message}",
@@ -76,6 +109,7 @@ const copy = {
     defaultCorrection: "默认修正参考",
     footerPrefix: "数据来源：",
     footerSuffix: "。AInsights Index 基于其公开评测数据重新计算。",
+    repository: "仓库",
     rankingItems: "个排名项",
     scorableModels: "个可评分模型",
     removedPrefix: "已去除",
@@ -241,6 +275,7 @@ const copy = {
       compare: "Compare",
       benchmarks: "Benchmarks",
       sources: "Sources",
+      contribute: "Contribute",
     },
     back: "Back",
     backToRanking: "Back to full ranking",
@@ -294,6 +329,38 @@ const copy = {
       models: "Model coverage",
       results: "Score records",
     },
+    contributePageTitle: "Contribution workbench",
+    contributePageSubtitle: "Draft a new model, model data update, or benchmark and generate a GitHub-ready PR payload.",
+    contributeModeLabel: "Contribution type",
+    contributeModeModel: "New model",
+    contributeModeScore: "Model data",
+    contributeModeBenchmark: "New benchmark",
+    contributeModelName: "Model name",
+    contributeCreator: "Provider",
+    contributeReleaseDate: "Release date",
+    contributeModelUrl: "Model URL",
+    contributeOpenSource: "Open status",
+    contributeBenchmark: "Benchmark",
+    contributeBenchmarkId: "Benchmark ID",
+    contributeBenchmarkName: "Benchmark name",
+    contributeBenchmarkCategory: "Benchmark category",
+    contributeBenchmarkUnit: "Unit",
+    contributeBenchmarkIcon: "Short label",
+    contributeValue: "Score",
+    contributeSourceUrl: "Official source URL",
+    contributeSourceLabel: "Source label",
+    contributeNotes: "Notes",
+    contributePreviewTitle: "PR payload",
+    contributePreviewEmpty: "Fill in the fields to generate a payload.",
+    contributeCopy: "Copy payload",
+    contributeCopied: "Copied",
+    contributeGithubPr: "Log in to GitHub and PR",
+    contributeGithubDev: "Open GitHub.dev",
+    contributeEditBenchmarks: "Edit benchmark data",
+    contributeEditCollector: "Edit source collector",
+    contributeEditAaCsv: "Edit AA model CSV",
+    contributeRequired: "Name and official source URL are required.",
+    contributeSelectBenchmark: "Choose benchmark",
     reset: "Reset",
     empty: "No models match the current filters",
     loadFailed: "Failed to load data: {message}",
@@ -302,6 +369,7 @@ const copy = {
     defaultCorrection: "Default correction reference",
     footerPrefix: "Source: ",
     footerSuffix: ". AInsights Index recalculates the public benchmark data.",
+    repository: "Repository",
     rankingItems: "ranked items",
     scorableModels: "scorable models",
     removedPrefix: "Removed",
@@ -479,6 +547,7 @@ const state = {
   compareQuery: "",
   compareTouched: false,
   comparePickerOpen: false,
+  contributionMode: "score",
   viewMode: "histogram",
   sourceFilter: "all",
   topChartLimit: 20,
@@ -492,6 +561,31 @@ const els = {
   homeView: document.querySelector("#homeView"),
   rankingView: document.querySelector("#rankingView"),
   sourcesView: document.querySelector("#sourcesView"),
+  contributeView: document.querySelector("#contributeView"),
+  contributionModeButtons: document.querySelector("#contributionModeButtons"),
+  contributionModelName: document.querySelector("#contributionModelName"),
+  contributionCreator: document.querySelector("#contributionCreator"),
+  contributionReleaseDate: document.querySelector("#contributionReleaseDate"),
+  contributionModelUrl: document.querySelector("#contributionModelUrl"),
+  contributionOpenSource: document.querySelector("#contributionOpenSource"),
+  contributionBenchmark: document.querySelector("#contributionBenchmark"),
+  contributionBenchmarkId: document.querySelector("#contributionBenchmarkId"),
+  contributionBenchmarkName: document.querySelector("#contributionBenchmarkName"),
+  contributionBenchmarkCategory: document.querySelector("#contributionBenchmarkCategory"),
+  contributionBenchmarkUnit: document.querySelector("#contributionBenchmarkUnit"),
+  contributionBenchmarkIcon: document.querySelector("#contributionBenchmarkIcon"),
+  contributionValue: document.querySelector("#contributionValue"),
+  contributionSourceUrl: document.querySelector("#contributionSourceUrl"),
+  contributionSourceLabel: document.querySelector("#contributionSourceLabel"),
+  contributionNotes: document.querySelector("#contributionNotes"),
+  contributionPreview: document.querySelector("#contributionPreview"),
+  contributionCopyButton: document.querySelector("#contributionCopyButton"),
+  contributionGithubButton: document.querySelector("#contributionGithubButton"),
+  contributionGithubDevLink: document.querySelector("#contributionGithubDevLink"),
+  contributionEditBenchmarksLink: document.querySelector("#contributionEditBenchmarksLink"),
+  contributionEditCollectorLink: document.querySelector("#contributionEditCollectorLink"),
+  contributionEditCsvLink: document.querySelector("#contributionEditCsvLink"),
+  contributionModelList: document.querySelector("#contributionModelList"),
   providerView: document.querySelector("#providerView"),
   providerDetail: document.querySelector("#providerDetail"),
   compareView: document.querySelector("#compareView"),
@@ -574,9 +668,10 @@ const missingModePresets = {
   complete: { penalty: 0, minCoverage: 100 },
 };
 const metricCoverageFilterOptions = [0, 10, 25, 50, 100, 250];
-const pageOrder = ["home", "ranking", "compare", "benchmarks", "sources"];
+const pageOrder = ["home", "ranking", "compare", "benchmarks", "sources", "contribute"];
 const viewOrder = ["histogram", "table", "text"];
 const sourceFilterOrder = ["all", "open", "closed", "unknown"];
+const contributionModes = ["score", "model", "benchmark"];
 const providerColors = {
   Alibaba: "#ff6d00",
   Amazon: "#ff9900",
@@ -684,6 +779,7 @@ function bindControlEvents() {
       updateCompareSelection([]);
     });
   }
+  bindContributionEvents();
   document.addEventListener("click", (event) => {
     const addButton = event.target.closest("[data-compare-add]");
     if (!addButton) return;
@@ -773,6 +869,13 @@ function renderStaticControls() {
   els.sourcesPageSubtitle.textContent = tr("sourcesPageSubtitle");
   els.sourceMetricMapTitle.textContent = tr("sourceMetricMapTitle");
   els.sourceMetricMapSubtitle.textContent = tr("sourceMetricMapSubtitle");
+  if (els.contributionGithubDevLink) els.contributionGithubDevLink.textContent = tr("contributeGithubDev");
+  if (els.contributionEditBenchmarksLink) els.contributionEditBenchmarksLink.textContent = tr("contributeEditBenchmarks");
+  if (els.contributionEditCollectorLink) els.contributionEditCollectorLink.textContent = tr("contributeEditCollector");
+  if (els.contributionEditCsvLink) els.contributionEditCsvLink.textContent = tr("contributeEditAaCsv");
+  document.querySelectorAll("[data-i18n]").forEach((node) => {
+    node.textContent = tr(node.dataset.i18n);
+  });
   els.modelHeader.textContent = tr("headers.model");
   els.scoreHeader.textContent = tr("headers.score");
   els.speedHeader.textContent = tr("headers.speed");
@@ -781,7 +884,7 @@ function renderStaticControls() {
   els.sourceHeader.textContent = tr("headers.source");
   els.coverageHeader.textContent = tr("headers.coverage");
   els.languageButtons.setAttribute("aria-label", tr("languageLabel"));
-  els.siteFooter.innerHTML = `${escapeHtml(tr("footerPrefix"))}<a href="${escapeHtml(state.data.source.url)}" target="_blank" rel="noreferrer">Artificial Analysis</a> · <a href="${escapeHtml(pageHref("sources"))}">${escapeHtml(tr("sourcesBadge", { count: catalogSources().length }))}</a>${escapeHtml(tr("footerSuffix"))}`;
+  els.siteFooter.innerHTML = `${escapeHtml(tr("footerPrefix"))}<a href="${escapeHtml(state.data.source.url)}" target="_blank" rel="noreferrer">Artificial Analysis</a> · <a href="${escapeHtml(pageHref("sources"))}">${escapeHtml(tr("sourcesBadge", { count: catalogSources().length }))}</a>${escapeHtml(tr("footerSuffix"))} · <a href="https://github.com/TabNahida/AInsights" target="_blank" rel="noreferrer">${escapeHtml(tr("repository"))}: TabNahida/AInsights</a>`;
 
   renderPageButtons();
   renderLanguageButtons();
@@ -871,11 +974,220 @@ function renderSourceFilterButtons() {
   }
 }
 
+function bindContributionEvents() {
+  if (!els.contributeView) return;
+  els.contributeView.addEventListener("input", updateContributionPreview);
+  els.contributeView.addEventListener("change", updateContributionPreview);
+  els.contributeView.addEventListener("click", async (event) => {
+    const modeButton = event.target.closest("[data-contribution-mode]");
+    if (modeButton) {
+      state.contributionMode = modeButton.dataset.contributionMode;
+      renderContributionModeButtons();
+      renderContributionFormMode();
+      updateContributionPreview();
+      return;
+    }
+    if (event.target.closest("#contributionCopyButton")) {
+      event.preventDefault();
+      await copyContributionPayload();
+    }
+  });
+}
+
+function renderContributePage() {
+  document.title = `${tr("contributePageTitle")} · ${tr("pageTitle")}`;
+  renderContributionModeButtons();
+  renderContributionBenchmarkOptions();
+  renderContributionModelList();
+  renderContributionFormMode();
+  updateContributionPreview();
+}
+
+function renderContributionModeButtons() {
+  if (!els.contributionModeButtons) return;
+  els.contributionModeButtons.innerHTML = "";
+  for (const mode of contributionModes) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.contributionMode = mode;
+    button.textContent = contributionModeLabel(mode);
+    button.setAttribute("aria-pressed", String(state.contributionMode === mode));
+    els.contributionModeButtons.append(button);
+  }
+}
+
+function contributionModeLabel(mode) {
+  if (mode === "model") return tr("contributeModeModel");
+  if (mode === "benchmark") return tr("contributeModeBenchmark");
+  return tr("contributeModeScore");
+}
+
+function renderContributionFormMode() {
+  if (!els.contributeView) return;
+  els.contributeView.querySelectorAll("[data-contribution-section]").forEach((element) => {
+    const modes = String(element.dataset.contributionSection || "").split(/\s+/).filter(Boolean);
+    element.hidden = !modes.includes(state.contributionMode);
+  });
+}
+
+function renderContributionBenchmarkOptions() {
+  if (!els.contributionBenchmark) return;
+  const current = els.contributionBenchmark.value;
+  const options = [`<option value="">${escapeHtml(tr("contributeSelectBenchmark"))}</option>`]
+    .concat((state.data.metrics || []).map((metric) => (
+      `<option value="${escapeHtml(metric.key)}">${escapeHtml(metric.label)}</option>`
+    )));
+  els.contributionBenchmark.innerHTML = options.join("");
+  if (current) els.contributionBenchmark.value = current;
+}
+
+function renderContributionModelList() {
+  if (!els.contributionModelList) return;
+  els.contributionModelList.innerHTML = (state.data.models || [])
+    .map((model) => `<option value="${escapeHtml(model.model)}"></option>`)
+    .join("");
+}
+
+function contributionPayload() {
+  const modelName = els.contributionModelName?.value.trim() || "";
+  const creator = els.contributionCreator?.value.trim() || "";
+  const sourceUrl = els.contributionSourceUrl?.value.trim() || "";
+  const benchmarkKey = els.contributionBenchmark?.value || "";
+  const metric = metricDefinition(benchmarkKey);
+  const sourceLabel = els.contributionSourceLabel?.value.trim()
+    || defaultContributionSourceLabel(modelName, creator);
+  if (state.contributionMode === "benchmark") {
+    const benchmarkName = els.contributionBenchmarkName?.value.trim() || "";
+    const benchmarkId = els.contributionBenchmarkId?.value.trim() || slugPart(benchmarkName);
+    return {
+      version: 1,
+      type: "benchmark",
+      repository: "TabNahida/AInsights",
+      benchmark: {
+        id: benchmarkId,
+        label: benchmarkName,
+        category: els.contributionBenchmarkCategory?.value.trim() || "",
+        unit: els.contributionBenchmarkUnit?.value.trim() || "%",
+        icon: els.contributionBenchmarkIcon?.value.trim() || "",
+      },
+      source: {
+        label: sourceLabel || [benchmarkName, "benchmark source"].filter(Boolean).join(" "),
+        url: sourceUrl,
+        category: "Benchmark methodology",
+        note: els.contributionNotes?.value.trim() || "",
+      },
+      filesToReview: [
+        "benchmarks/collect_benchmark_scores.py",
+        "data/benchmarks/benchmark_scores.json",
+        "scripts/build_docs_site.py",
+      ],
+    };
+  }
+  const payload = {
+    version: 1,
+    type: state.contributionMode === "model" ? "model" : "model-benchmark-data",
+    repository: "TabNahida/AInsights",
+    model: {
+      name: modelName,
+      creator,
+      releaseDate: els.contributionReleaseDate?.value || "",
+      modelUrl: els.contributionModelUrl?.value.trim() || "",
+      openSourceCategorization: els.contributionOpenSource?.value || "",
+    },
+    source: {
+      label: sourceLabel,
+      url: sourceUrl,
+      category: state.contributionMode === "model" ? "Official model card" : "Official release",
+      note: els.contributionNotes?.value.trim() || "",
+    },
+    filesToReview: state.contributionMode === "model"
+      ? ["ArtificialAnalysis/artificialanalysis_raw_scores_wide.csv", "benchmarks/collect_benchmark_scores.py"]
+      : ["data/benchmarks/benchmark_scores.json", "benchmarks/collect_benchmark_scores.py"],
+  };
+  if (state.contributionMode === "score") {
+    payload.benchmark = {
+      metricKey: benchmarkKey,
+      label: metric.label || "",
+      value: numericContributionValue(),
+      unit: metric.unit || "%",
+    };
+  }
+  return payload;
+}
+
+function defaultContributionSourceLabel(modelName, creator) {
+  return [creator, modelName, "official source"].filter(Boolean).join(" ");
+}
+
+function updateContributionPreview() {
+  if (!els.contributionPreview) return;
+  const payload = contributionPayload();
+  const hasRequiredFields = contributionHasRequiredFields(payload);
+  els.contributionPreview.textContent = hasRequiredFields
+    ? JSON.stringify(payload, null, 2)
+    : tr("contributeRequired");
+  if (els.contributionGithubButton) {
+    els.contributionGithubButton.textContent = tr("contributeGithubPr");
+    els.contributionGithubButton.href = hasRequiredFields ? contributionGithubNewFileHref(payload) : "#";
+    els.contributionGithubButton.setAttribute("aria-disabled", String(!hasRequiredFields));
+  }
+  if (els.contributionCopyButton) {
+    els.contributionCopyButton.textContent = tr("contributeCopy");
+    els.contributionCopyButton.disabled = !hasRequiredFields;
+  }
+}
+
+async function copyContributionPayload() {
+  const payload = contributionPayload();
+  if (!contributionHasRequiredFields(payload)) return;
+  const text = JSON.stringify(payload, null, 2);
+  try {
+    await navigator.clipboard.writeText(text);
+    els.contributionCopyButton.textContent = tr("contributeCopied");
+  } catch {
+    els.contributionPreview.focus();
+  }
+}
+
+function contributionGithubNewFileHref(payload) {
+  const subject = contributionSubjectName(payload);
+  const owner = payload.model?.creator || payload.benchmark?.category || payload.type || "contribution";
+  const filename = `contributions/${slugPart(owner)}-${slugPart(subject || "update")}.json`;
+  const params = new URLSearchParams({
+    filename,
+    value: `${JSON.stringify(payload, null, 2)}\n`,
+    message: `Add ${subject} contribution payload`,
+  });
+  return `https://github.com/TabNahida/AInsights/new/main?${params.toString()}`;
+}
+
+function contributionHasRequiredFields(payload) {
+  return Boolean(contributionSubjectName(payload) && payload.source?.url);
+}
+
+function contributionSubjectName(payload) {
+  return payload.benchmark?.label || payload.model?.name || "";
+}
+
+function numericContributionValue() {
+  const raw = Number(els.contributionValue?.value);
+  return Number.isFinite(raw) ? raw : null;
+}
+
+function slugPart(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 60) || "update";
+}
+
 function render() {
   const preset = state.data.presets[state.presetId];
   els.homeView.hidden = state.page !== "home";
   els.rankingView.hidden = state.page !== "ranking";
   els.sourcesView.hidden = state.page !== "sources";
+  if (els.contributeView) els.contributeView.hidden = state.page !== "contribute";
   els.modelView.hidden = state.page !== "model";
   els.benchmarkView.hidden = state.page !== "benchmarks";
   if (els.providerView) els.providerView.hidden = state.page !== "provider";
@@ -897,6 +1209,10 @@ function render() {
 
   if (!els.sourcesView.hidden) {
     renderSourcesPage();
+    return;
+  }
+  if (els.contributeView && !els.contributeView.hidden) {
+    renderContributePage();
     return;
   }
 
@@ -1670,8 +1986,7 @@ function renderSourceExplorer(target, compact = false) {
   target.innerHTML = sourceCardsHtml(compact);
 }
 
-function sourceCardsHtml(compact = false, model = null) {
-  const sources = catalogSources();
+function sourceCardsHtml(compact = false, model = null, sources = catalogSources()) {
   return sources.map((source) => {
     const relatedMetrics = sourceMetricKeys(source);
     const coverage = currentSourceCoverage(source, model);
@@ -1709,6 +2024,55 @@ function catalogSources() {
 function isOfficialModelSource(source) {
   return /^official\b/i.test(String(source.category || ""))
     || /\bofficial\b/i.test(String(source.label || ""));
+}
+
+function modelSourceCardsHtml(model) {
+  const sources = uniqueSources([
+    ...modelOfficialSources(model),
+    ...catalogSources().filter((source) => sourceCoversModel(source, model)),
+  ]);
+  if (sources.length === 0) return `<div class="empty">${escapeHtml(tr("notAvailable"))}</div>`;
+  return sourceCardsHtml(true, model, sources);
+}
+
+function modelOfficialSources(model) {
+  return (state.data.externalSources || [])
+    .filter(isOfficialModelSource)
+    .filter((source) => sourceCoversModel(source, model));
+}
+
+function sourceCoversModel(source, model) {
+  if (!source || !model) return false;
+  if ((model.externalBenchmarks || []).some((row) => row.sourceId === source.id)) return true;
+  const relatedMetrics = sourceMetricKeys(source);
+  if (relatedMetrics.some((key) => Number.isFinite(model.scores?.[key]))) return true;
+  const modelKeys = [
+    model.modelKey,
+    model.model,
+    model.slug,
+    `${model.model} [R]`,
+  ].map(sourceMatchKey).filter(Boolean);
+  const aliases = [...(source.modelAliases || []), ...(source.modelKeys || [])].map(sourceMatchKey).filter(Boolean);
+  return aliases.some((alias) => modelKeys.includes(alias));
+}
+
+function uniqueSources(sources) {
+  const seen = new Set();
+  return sources.filter((source) => {
+    const id = source.id || source.url || source.label;
+    if (!id || seen.has(id)) return false;
+    seen.add(id);
+    return true;
+  });
+}
+
+function sourceMatchKey(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/\[r\]/g, "")
+    .replace(/with fallback/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
 }
 
 function renderSourceOverviewCard(source) {
@@ -1980,7 +2344,7 @@ function renderModelDetail(ranked, preset) {
       <div class="detail-section-head">
         <h2>${escapeHtml(tr("detailSourcesTitle"))}</h2>
       </div>
-      <div class="source-grid compact">${sourceCardsHtml(true, model)}</div>
+      <div class="source-grid compact">${modelSourceCardsHtml(model)}</div>
     </section>
   `;
 }

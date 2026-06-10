@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-10T03:04:54+00:00",
+  "generatedAt": "2026-06-10T21:16:34+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
@@ -15,8 +15,62 @@
       "label": "Anthropic Claude Opus 4.7 official release",
       "url": "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "collectionStatus": "seeded-official-values; refresh blocked: TimeoutError",
       "note": "Anthropic official release chart covering Opus 4.7, Opus 4.6, GPT-5.4, Gemini 3.1 Pro, and Mythos Preview across agentic coding, search, tool use, reasoning, and finance benchmarks."
+    },
+    {
+      "id": "anthropic-claude-fable-5-docs",
+      "label": "Anthropic Claude Fable 5 and Mythos 5 official release",
+      "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "category": "Official release",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "Anthropic release table for Claude Mythos 5 / Fable 5. Reported Mythos and Fable scores are within 1-3 percentage points unless starred; the table shows the higher score of the two, and starred rows can differ more because Fable falls back to Opus 4.8 for some cyber and biology requests.",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ]
+    },
+    {
+      "id": "qwen-qwen3-release",
+      "label": "Qwen3 official release",
+      "url": "https://qwen.ai/blog?id=qwen3",
+      "category": "Official release",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "Qwen.ai Qwen3 release page. Seed values are read from the official benchmark images for Qwen3-235B-A22B, Qwen3-32B, Qwen3-30B-A3B, and Qwen3-4B; Qwen3 rows are matched to the site's reasoning variants because the release notes indicate think mode is used for the main evaluations."
+    },
+    {
+      "id": "qwen-qwen2-release",
+      "label": "Qwen2 official release",
+      "url": "https://qwen.ai/blog?id=qwen2",
+      "category": "Official release",
+      "collectionStatus": "refreshed",
+      "note": "Qwen.ai/Qwen legacy official release page for Qwen2. Seed rows use the published Qwen2-72B-Instruct evaluation table."
+    },
+    {
+      "id": "qwen-qwen2-5-release",
+      "label": "Qwen2.5 official release",
+      "url": "https://qwen.ai/blog?id=qwen2.5",
+      "category": "Official release",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "Qwen.ai Qwen2.5 release page with official image tables for Qwen2.5-72B-Instruct, Qwen2.5-32B-Instruct, and Qwen-Turbo."
+    },
+    {
+      "id": "qwen-qwen2-5-coder-release",
+      "label": "Qwen2.5-Coder official release",
+      "url": "https://qwen.ai/blog?id=qwen2.5-coder",
+      "category": "Official release",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "Qwen.ai Qwen2.5-Coder release page. General and math rows are HTML tables; LiveCodeBench is read from the official code benchmark image."
+    },
+    {
+      "id": "qwen-qwen2-5-max-release",
+      "label": "Qwen2.5-Max official release",
+      "url": "https://qwen.ai/blog?id=qwen2.5-max",
+      "category": "Official release",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "Qwen.ai Qwen2.5-Max release page. Seed values use the official instruct-model comparison chart."
     },
     {
       "id": "qwen-qwen3-6-27b-card",
@@ -75,12 +129,28 @@
       "note": "Moonshot AI Kimi.com K2.5 release page evaluation results."
     },
     {
+      "id": "kimi-k2-0905-card",
+      "label": "Kimi K2 0905 official model card",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905",
+      "category": "Official model card",
+      "collectionStatus": "refreshed",
+      "note": "Moonshot AI official Hugging Face model card for Kimi-K2-Instruct-0905. Reported K2 0905 values are mean results over five full-test-set runs."
+    },
+    {
       "id": "kimi-k2-github",
       "label": "Kimi K2 official GitHub report",
       "url": "https://moonshotai.github.io/Kimi-K2/",
       "category": "Official technical report",
       "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Moonshot AI Kimi K2 GitHub README and technical report benchmark table."
+    },
+    {
+      "id": "zai-glm-4-6-card",
+      "label": "Z.ai GLM-4.6 official model card",
+      "url": "https://docs.z.ai/guides/llm/glm-4.6",
+      "category": "Official release",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "Z.ai developer documentation / GLM-4.6 release page. Seed values preserve the official benchmark image for agentic, reasoning, and coding evaluations."
     },
     {
       "id": "zai-glm-5-1-card",
@@ -115,6 +185,30 @@
       "note": "Google Gemma model card covering Gemma 4 31B, 26B-A4B, E4B, and E2B instruction-tuned benchmarks."
     },
     {
+      "id": "minimax-m2-5-release",
+      "label": "MiniMax M2.5 official release",
+      "url": "https://www.minimax.io/news/minimax-m25",
+      "category": "Official release",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "MiniMax M2.5 release page with official benchmark charts for M2.5 and M2.1 across agentic coding and reasoning evaluations."
+    },
+    {
+      "id": "minimax-m2-release",
+      "label": "MiniMax M2 official release",
+      "url": "https://www.minimax.io/news/minimax-m2",
+      "category": "Official release",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "MiniMax M2 release page with official agentic benchmark charts. Seed rows keep the chart values where the page renders the data as images."
+    },
+    {
+      "id": "minimax-m1-card",
+      "label": "MiniMax M1 official GitHub report",
+      "url": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "category": "Official technical report",
+      "collectionStatus": "refreshed",
+      "note": "MiniMax-AI official GitHub README benchmark table for MiniMax-M1-80K and MiniMax-M1-40K."
+    },
+    {
       "id": "xiaomi-mimo-v2-5-release",
       "label": "Xiaomi MiMo-V2.5 official release",
       "url": "https://platform.xiaomimimo.com/docs/en-US/news/v2.5-open-sourced",
@@ -123,12 +217,44 @@
       "note": "Xiaomi MiMo official release/open-source page. Seed rows retain official benchmark values when the page renders charts as images."
     },
     {
+      "id": "cohere-north-mini-code-card",
+      "label": "Cohere North Mini Code model card",
+      "url": "https://docs.cohere.com/docs/north-mini-code-1.0",
+      "category": "Official model card",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
+      "note": "Cohere documentation for North Mini Code: model ID north-mini-code-1-0, 256K context window, 64K max output, Apache 2.0 license, and agentic coding use cases.",
+      "coverage": "North Mini Code reference",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "North Mini Code",
+        "North Mini Code [R]",
+        "north-mini-code",
+        "north-mini-code-1-0"
+      ]
+    },
+    {
       "id": "xai-grok-4-1-fast-release",
       "label": "xAI Grok 4.1 Fast official release",
       "url": "https://x.ai/news/grok-4-1-fast",
       "category": "Official release",
       "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "xAI release page for Grok 4.1 Fast and Agent Tools API with tool-calling and agentic-search benchmark tables."
+    },
+    {
+      "id": "nvidia-nemotron-3-super-report",
+      "label": "NVIDIA Nemotron 3 Super technical report",
+      "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
+      "category": "Official technical report",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "NVIDIA Research technical report for Nemotron 3 Super. Seed rows preserve the BF16 evaluation suite from the published PDF table."
+    },
+    {
+      "id": "nvidia-nemotron-3-nano-report",
+      "label": "NVIDIA Nemotron 3 Nano technical report",
+      "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
+      "category": "Official technical report",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "NVIDIA Research technical report for Nemotron 3 Nano. Seed rows preserve the BF16 evaluation suite from the published PDF table."
     },
     {
       "id": "nvidia-nemotron-3-ultra-report",
@@ -162,6 +288,20 @@
       "icon": "TERM"
     },
     {
+      "id": "terminal-bench-hard",
+      "label": "Terminal-Bench Hard",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "TERM+"
+    },
+    {
+      "id": "frontiercode-diamond",
+      "label": "FrontierCode Diamond",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "FCD"
+    },
+    {
       "id": "swe-bench-verified",
       "label": "SWE-bench Verified",
       "category": "Agentic coding",
@@ -174,6 +314,20 @@
       "category": "Agentic coding",
       "unit": "%",
       "icon": "SWE-M"
+    },
+    {
+      "id": "multi-swe-bench",
+      "label": "Multi-SWE-Bench",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "MSWE"
+    },
+    {
+      "id": "swe-bench-openhands",
+      "label": "SWE-Bench (OpenHands)",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "SWE-O"
     },
     {
       "id": "expert-swe-internal",
@@ -197,6 +351,13 @@
       "icon": "GDP"
     },
     {
+      "id": "gdp-pdf",
+      "label": "GDP.pdf",
+      "category": "Knowledge work vision",
+      "unit": "%",
+      "icon": "PDF"
+    },
+    {
       "id": "finance-agent-v1-1",
       "label": "Finance Agent v1.1",
       "category": "Professional work",
@@ -216,6 +377,13 @@
       "category": "Tool use",
       "unit": "%",
       "icon": "TOOL"
+    },
+    {
+      "id": "automationbench",
+      "label": "AutomationBench",
+      "category": "Tool use",
+      "unit": "%",
+      "icon": "AUTO"
     },
     {
       "id": "browsecomp",
@@ -267,6 +435,13 @@
       "icon": "CY"
     },
     {
+      "id": "exploitbench-cap",
+      "label": "ExploitBench (Cap%)",
+      "category": "Cybersecurity",
+      "unit": "%",
+      "icon": "EX"
+    },
+    {
       "id": "mmlu-pro",
       "label": "MMLU-Pro",
       "category": "Academic reasoning",
@@ -286,6 +461,41 @@
       "category": "Academic reasoning",
       "unit": "%",
       "icon": "HLE"
+    },
+    {
+      "id": "blueprint-bench-2",
+      "label": "Blueprint-Bench 2",
+      "category": "Spatial reasoning",
+      "unit": "%",
+      "icon": "BP"
+    },
+    {
+      "id": "biomysterybench-hard",
+      "label": "BioMysteryBench hard",
+      "category": "Biology",
+      "unit": "%",
+      "icon": "BIO"
+    },
+    {
+      "id": "biomysterybench-human-solved",
+      "label": "BioMysteryBench human solved",
+      "category": "Biology",
+      "unit": "%",
+      "icon": "BIO"
+    },
+    {
+      "id": "legal-agent-benchmark",
+      "label": "Legal Agent Benchmark",
+      "category": "Legal",
+      "unit": "%",
+      "icon": "LAW"
+    },
+    {
+      "id": "healthbench-professional",
+      "label": "HealthBench Professional",
+      "category": "Health",
+      "unit": "%",
+      "icon": "HB"
     },
     {
       "id": "livecodebench",
@@ -365,6 +575,20 @@
       "icon": "TAU"
     },
     {
+      "id": "tau-bench-airline",
+      "label": "τ-Bench Airline",
+      "category": "Agentic workflow",
+      "unit": "%",
+      "icon": "TAU-A"
+    },
+    {
+      "id": "tau-bench-retail",
+      "label": "τ-Bench Retail",
+      "category": "Agentic workflow",
+      "unit": "%",
+      "icon": "TAU-R"
+    },
+    {
       "id": "bfcl-v3",
       "label": "BFCL v3",
       "category": "Tool use",
@@ -407,8 +631,29 @@
       "icon": "TAU2"
     },
     {
+      "id": "tau2-bench-airline",
+      "label": "τ²-Bench Airline",
+      "category": "Agentic workflow",
+      "unit": "%",
+      "icon": "TAU2"
+    },
+    {
       "id": "tau2-bench-telecom",
       "label": "τ²-Bench Telecom",
+      "category": "Agentic workflow",
+      "unit": "%",
+      "icon": "TAU2"
+    },
+    {
+      "id": "tau2-bench-average",
+      "label": "τ²-Bench Avg",
+      "category": "Agentic workflow",
+      "unit": "%",
+      "icon": "TAU2"
+    },
+    {
+      "id": "tau2-bench-weighted",
+      "label": "τ²-Bench Weighted",
       "category": "Agentic workflow",
       "unit": "%",
       "icon": "TAU2"
@@ -517,6 +762,27 @@
       "category": "Agentic coding",
       "unit": "%",
       "icon": "TERM"
+    },
+    {
+      "id": "ifbench",
+      "label": "IFBench",
+      "category": "Instruction following",
+      "unit": "%",
+      "icon": "IF"
+    },
+    {
+      "id": "aa-lcr",
+      "label": "AA-LCR",
+      "category": "Long context",
+      "unit": "%",
+      "icon": "LCR"
+    },
+    {
+      "id": "fullstackbench",
+      "label": "FullStackBench",
+      "category": "Coding",
+      "unit": "%",
+      "icon": "FSB"
     },
     {
       "id": "pinchbench",
@@ -1746,6 +2012,939 @@
       "sourceId": "anthropic-claude-opus-4-7-release",
       "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416",
       "sourceLabel": "Anthropic Claude Opus 4.7 official release"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 80.3,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-docs",
+      "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+    },
+    {
+      "benchmarkId": "frontiercode-diamond",
+      "benchmarkLabel": "FrontierCode Diamond",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 29.3,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-docs",
+      "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+    },
+    {
+      "benchmarkId": "gdpval-aa-elo",
+      "benchmarkLabel": "GDPval-AA Elo",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 1932,
+      "unit": "Elo",
+      "sourceId": "anthropic-claude-fable-5-docs",
+      "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+    },
+    {
+      "benchmarkId": "gdp-pdf",
+      "benchmarkLabel": "GDP.pdf",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 29.8,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-docs",
+      "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+    },
+    {
+      "benchmarkId": "blueprint-bench-2",
+      "benchmarkLabel": "Blueprint-Bench 2",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 38.6,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-docs",
+      "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+    },
+    {
+      "benchmarkId": "automationbench",
+      "benchmarkLabel": "AutomationBench",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 17.4,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-docs",
+      "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+    },
+    {
+      "benchmarkId": "osworld-verified",
+      "benchmarkLabel": "OSWorld-Verified",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 85.0,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-docs",
+      "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+    },
+    {
+      "benchmarkId": "legal-agent-benchmark",
+      "benchmarkLabel": "Legal Agent Benchmark",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 13.3,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-docs",
+      "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 59.0,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-docs",
+      "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 64.5,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-docs",
+      "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+    },
+    {
+      "benchmarkId": "biomysterybench-hard",
+      "benchmarkLabel": "BioMysteryBench hard",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 46.1,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-docs",
+      "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+    },
+    {
+      "benchmarkId": "biomysterybench-human-solved",
+      "benchmarkLabel": "BioMysteryBench human solved",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 83.9,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-docs",
+      "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 88.0,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-docs",
+      "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+    },
+    {
+      "benchmarkId": "exploitbench-cap",
+      "benchmarkLabel": "ExploitBench (Cap%)",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 78.0,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-docs",
+      "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+    },
+    {
+      "benchmarkId": "healthbench-professional",
+      "benchmarkLabel": "HealthBench Professional",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 66.0,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-docs",
+      "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+    },
+    {
+      "benchmarkId": "aime-2024",
+      "benchmarkLabel": "AIME 2024",
+      "model": "Qwen3 235B [R]",
+      "modelAliases": [
+        "Qwen3 235B [R]",
+        "Qwen3-235B-A22B",
+        "Qwen3-235B-A22B-Instruct",
+        "Qwen/Qwen3-235B-A22B",
+        "qwen3-235b-a22b-instruct-reasoning",
+        "qwen3-235b-a22b"
+      ],
+      "value": 85.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "aime-2025",
+      "benchmarkLabel": "AIME 2025",
+      "model": "Qwen3 235B [R]",
+      "modelAliases": [
+        "Qwen3 235B [R]",
+        "Qwen3-235B-A22B",
+        "Qwen3-235B-A22B-Instruct",
+        "Qwen/Qwen3-235B-A22B",
+        "qwen3-235b-a22b-instruct-reasoning",
+        "qwen3-235b-a22b"
+      ],
+      "value": 81.5,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "Qwen3 235B [R]",
+      "modelAliases": [
+        "Qwen3 235B [R]",
+        "Qwen3-235B-A22B",
+        "Qwen3-235B-A22B-Instruct",
+        "Qwen/Qwen3-235B-A22B",
+        "qwen3-235b-a22b-instruct-reasoning",
+        "qwen3-235b-a22b"
+      ],
+      "value": 70.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "codeforces-elo",
+      "benchmarkLabel": "Codeforces Elo",
+      "model": "Qwen3 235B [R]",
+      "modelAliases": [
+        "Qwen3 235B [R]",
+        "Qwen3-235B-A22B",
+        "Qwen3-235B-A22B-Instruct",
+        "Qwen/Qwen3-235B-A22B",
+        "qwen3-235b-a22b-instruct-reasoning",
+        "qwen3-235b-a22b"
+      ],
+      "value": 2056,
+      "unit": "Elo",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "bfcl-v3",
+      "benchmarkLabel": "BFCL v3",
+      "model": "Qwen3 235B [R]",
+      "modelAliases": [
+        "Qwen3 235B [R]",
+        "Qwen3-235B-A22B",
+        "Qwen3-235B-A22B-Instruct",
+        "Qwen/Qwen3-235B-A22B",
+        "qwen3-235b-a22b-instruct-reasoning",
+        "qwen3-235b-a22b"
+      ],
+      "value": 70.8,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "aime-2024",
+      "benchmarkLabel": "AIME 2024",
+      "model": "Qwen3 32B [R]",
+      "modelAliases": [
+        "Qwen3 32B [R]",
+        "Qwen3-32B",
+        "Qwen3-32B-Instruct",
+        "Qwen/Qwen3-32B",
+        "qwen3-32b-instruct-reasoning"
+      ],
+      "value": 81.4,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "aime-2025",
+      "benchmarkLabel": "AIME 2025",
+      "model": "Qwen3 32B [R]",
+      "modelAliases": [
+        "Qwen3 32B [R]",
+        "Qwen3-32B",
+        "Qwen3-32B-Instruct",
+        "Qwen/Qwen3-32B",
+        "qwen3-32b-instruct-reasoning"
+      ],
+      "value": 72.9,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "Qwen3 32B [R]",
+      "modelAliases": [
+        "Qwen3 32B [R]",
+        "Qwen3-32B",
+        "Qwen3-32B-Instruct",
+        "Qwen/Qwen3-32B",
+        "qwen3-32b-instruct-reasoning"
+      ],
+      "value": 65.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "codeforces-elo",
+      "benchmarkLabel": "Codeforces Elo",
+      "model": "Qwen3 32B [R]",
+      "modelAliases": [
+        "Qwen3 32B [R]",
+        "Qwen3-32B",
+        "Qwen3-32B-Instruct",
+        "Qwen/Qwen3-32B",
+        "qwen3-32b-instruct-reasoning"
+      ],
+      "value": 1977,
+      "unit": "Elo",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "bfcl-v3",
+      "benchmarkLabel": "BFCL v3",
+      "model": "Qwen3 32B [R]",
+      "modelAliases": [
+        "Qwen3 32B [R]",
+        "Qwen3-32B",
+        "Qwen3-32B-Instruct",
+        "Qwen/Qwen3-32B",
+        "qwen3-32b-instruct-reasoning"
+      ],
+      "value": 70.3,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "aime-2024",
+      "benchmarkLabel": "AIME 2024",
+      "model": "Qwen3 30B [R]",
+      "modelAliases": [
+        "Qwen3 30B [R]",
+        "Qwen3-30B-A3B",
+        "Qwen3-30B-A3B-Instruct",
+        "Qwen/Qwen3-30B-A3B",
+        "qwen3-30b-a3b-instruct-reasoning",
+        "qwen3-30b-a3b"
+      ],
+      "value": 80.4,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "aime-2025",
+      "benchmarkLabel": "AIME 2025",
+      "model": "Qwen3 30B [R]",
+      "modelAliases": [
+        "Qwen3 30B [R]",
+        "Qwen3-30B-A3B",
+        "Qwen3-30B-A3B-Instruct",
+        "Qwen/Qwen3-30B-A3B",
+        "qwen3-30b-a3b-instruct-reasoning",
+        "qwen3-30b-a3b"
+      ],
+      "value": 70.9,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "Qwen3 30B [R]",
+      "modelAliases": [
+        "Qwen3 30B [R]",
+        "Qwen3-30B-A3B",
+        "Qwen3-30B-A3B-Instruct",
+        "Qwen/Qwen3-30B-A3B",
+        "qwen3-30b-a3b-instruct-reasoning",
+        "qwen3-30b-a3b"
+      ],
+      "value": 62.6,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "codeforces-elo",
+      "benchmarkLabel": "Codeforces Elo",
+      "model": "Qwen3 30B [R]",
+      "modelAliases": [
+        "Qwen3 30B [R]",
+        "Qwen3-30B-A3B",
+        "Qwen3-30B-A3B-Instruct",
+        "Qwen/Qwen3-30B-A3B",
+        "qwen3-30b-a3b-instruct-reasoning",
+        "qwen3-30b-a3b"
+      ],
+      "value": 1974,
+      "unit": "Elo",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Qwen3 30B [R]",
+      "modelAliases": [
+        "Qwen3 30B [R]",
+        "Qwen3-30B-A3B",
+        "Qwen3-30B-A3B-Instruct",
+        "Qwen/Qwen3-30B-A3B",
+        "qwen3-30b-a3b-instruct-reasoning",
+        "qwen3-30b-a3b"
+      ],
+      "value": 65.8,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "bfcl-v3",
+      "benchmarkLabel": "BFCL v3",
+      "model": "Qwen3 30B [R]",
+      "modelAliases": [
+        "Qwen3 30B [R]",
+        "Qwen3-30B-A3B",
+        "Qwen3-30B-A3B-Instruct",
+        "Qwen/Qwen3-30B-A3B",
+        "qwen3-30b-a3b-instruct-reasoning",
+        "qwen3-30b-a3b"
+      ],
+      "value": 69.1,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "aime-2024",
+      "benchmarkLabel": "AIME 2024",
+      "model": "Qwen3 4B [R]",
+      "modelAliases": [
+        "Qwen3 4B [R]",
+        "Qwen3-4B",
+        "Qwen3-4B-Instruct",
+        "Qwen/Qwen3-4B",
+        "qwen3-4b-instruct-reasoning"
+      ],
+      "value": 73.8,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "aime-2025",
+      "benchmarkLabel": "AIME 2025",
+      "model": "Qwen3 4B [R]",
+      "modelAliases": [
+        "Qwen3 4B [R]",
+        "Qwen3-4B",
+        "Qwen3-4B-Instruct",
+        "Qwen/Qwen3-4B",
+        "qwen3-4b-instruct-reasoning"
+      ],
+      "value": 65.6,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "Qwen3 4B [R]",
+      "modelAliases": [
+        "Qwen3 4B [R]",
+        "Qwen3-4B",
+        "Qwen3-4B-Instruct",
+        "Qwen/Qwen3-4B",
+        "qwen3-4b-instruct-reasoning"
+      ],
+      "value": 54.2,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "codeforces-elo",
+      "benchmarkLabel": "Codeforces Elo",
+      "model": "Qwen3 4B [R]",
+      "modelAliases": [
+        "Qwen3 4B [R]",
+        "Qwen3-4B",
+        "Qwen3-4B-Instruct",
+        "Qwen/Qwen3-4B",
+        "qwen3-4b-instruct-reasoning"
+      ],
+      "value": 1671,
+      "unit": "Elo",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Qwen3 4B [R]",
+      "modelAliases": [
+        "Qwen3 4B [R]",
+        "Qwen3-4B",
+        "Qwen3-4B-Instruct",
+        "Qwen/Qwen3-4B",
+        "qwen3-4b-instruct-reasoning"
+      ],
+      "value": 55.9,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "bfcl-v3",
+      "benchmarkLabel": "BFCL v3",
+      "model": "Qwen3 4B [R]",
+      "modelAliases": [
+        "Qwen3 4B [R]",
+        "Qwen3-4B",
+        "Qwen3-4B-Instruct",
+        "Qwen/Qwen3-4B",
+        "qwen3-4b-instruct-reasoning"
+      ],
+      "value": 65.9,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3",
+      "sourceLabel": "Qwen3 official release"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "Qwen2 72B",
+      "modelAliases": [
+        "Qwen2 72B",
+        "Qwen2-72B-Instruct",
+        "Qwen/Qwen2-72B-Instruct",
+        "qwen2-72b-instruct"
+      ],
+      "value": 64.4,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2",
+      "sourceLabel": "Qwen2 official release"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Qwen2 72B",
+      "modelAliases": [
+        "Qwen2 72B",
+        "Qwen2-72B-Instruct",
+        "Qwen/Qwen2-72B-Instruct",
+        "qwen2-72b-instruct"
+      ],
+      "value": 42.4,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2",
+      "sourceLabel": "Qwen2 official release"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "Qwen2 72B",
+      "modelAliases": [
+        "Qwen2 72B",
+        "Qwen2-72B-Instruct",
+        "Qwen/Qwen2-72B-Instruct",
+        "qwen2-72b-instruct"
+      ],
+      "value": 35.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2",
+      "sourceLabel": "Qwen2 official release"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "Qwen2.5 72B",
+      "modelAliases": [
+        "Qwen2.5 72B",
+        "Qwen2.5-72B-Instruct",
+        "Qwen/Qwen2.5-72B-Instruct",
+        "qwen2-5-72b-instruct"
+      ],
+      "value": 71.1,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-5-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2.5",
+      "sourceLabel": "Qwen2.5 official release"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Qwen2.5 72B",
+      "modelAliases": [
+        "Qwen2.5 72B",
+        "Qwen2.5-72B-Instruct",
+        "Qwen/Qwen2.5-72B-Instruct",
+        "qwen2-5-72b-instruct"
+      ],
+      "value": 49.0,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-5-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2.5",
+      "sourceLabel": "Qwen2.5 official release"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "Qwen2.5 72B",
+      "modelAliases": [
+        "Qwen2.5 72B",
+        "Qwen2.5-72B-Instruct",
+        "Qwen/Qwen2.5-72B-Instruct",
+        "qwen2-5-72b-instruct"
+      ],
+      "value": 55.5,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-5-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2.5",
+      "sourceLabel": "Qwen2.5 official release"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "Qwen2.5 Instruct 32B",
+      "modelAliases": [
+        "Qwen2.5 Instruct 32B",
+        "Qwen2.5-32B-Instruct",
+        "Qwen/Qwen2.5-32B-Instruct",
+        "qwen2.5-32b-instruct",
+        "qwen2-5-32b-instruct"
+      ],
+      "value": 69.0,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-5-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2.5",
+      "sourceLabel": "Qwen2.5 official release"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Qwen2.5 Instruct 32B",
+      "modelAliases": [
+        "Qwen2.5 Instruct 32B",
+        "Qwen2.5-32B-Instruct",
+        "Qwen/Qwen2.5-32B-Instruct",
+        "qwen2.5-32b-instruct",
+        "qwen2-5-32b-instruct"
+      ],
+      "value": 49.5,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-5-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2.5",
+      "sourceLabel": "Qwen2.5 official release"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "Qwen2.5 Instruct 32B",
+      "modelAliases": [
+        "Qwen2.5 Instruct 32B",
+        "Qwen2.5-32B-Instruct",
+        "Qwen/Qwen2.5-32B-Instruct",
+        "qwen2.5-32b-instruct",
+        "qwen2-5-32b-instruct"
+      ],
+      "value": 51.2,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-5-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2.5",
+      "sourceLabel": "Qwen2.5 official release"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "Qwen2.5 Turbo",
+      "modelAliases": [
+        "Qwen2.5 Turbo",
+        "Qwen-Turbo",
+        "qwen-turbo"
+      ],
+      "value": 64.8,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-5-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2.5",
+      "sourceLabel": "Qwen2.5 official release"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Qwen2.5 Turbo",
+      "modelAliases": [
+        "Qwen2.5 Turbo",
+        "Qwen-Turbo",
+        "qwen-turbo"
+      ],
+      "value": 44.4,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-5-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2.5",
+      "sourceLabel": "Qwen2.5 official release"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "Qwen2.5 Turbo",
+      "modelAliases": [
+        "Qwen2.5 Turbo",
+        "Qwen-Turbo",
+        "qwen-turbo"
+      ],
+      "value": 43.1,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-5-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2.5",
+      "sourceLabel": "Qwen2.5 official release"
+    },
+    {
+      "benchmarkId": "aime-2024",
+      "benchmarkLabel": "AIME 2024",
+      "model": "Qwen2.5 Coder 7B",
+      "modelAliases": [
+        "Qwen2.5 Coder 7B",
+        "Qwen2.5 Coder 7B ",
+        "Qwen2.5-Coder-7B-Instruct",
+        "Qwen/Qwen2.5-Coder-7B-Instruct",
+        "qwen2-5-coder-7b-instruct"
+      ],
+      "value": 10.0,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-5-coder-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2.5-coder",
+      "sourceLabel": "Qwen2.5-Coder official release"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "Qwen2.5 Coder 7B",
+      "modelAliases": [
+        "Qwen2.5 Coder 7B",
+        "Qwen2.5 Coder 7B ",
+        "Qwen2.5-Coder-7B-Instruct",
+        "Qwen/Qwen2.5-Coder-7B-Instruct",
+        "qwen2-5-coder-7b-instruct"
+      ],
+      "value": 45.6,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-5-coder-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2.5-coder",
+      "sourceLabel": "Qwen2.5-Coder official release"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Qwen2.5 Coder 7B",
+      "modelAliases": [
+        "Qwen2.5 Coder 7B",
+        "Qwen2.5 Coder 7B ",
+        "Qwen2.5-Coder-7B-Instruct",
+        "Qwen/Qwen2.5-Coder-7B-Instruct",
+        "qwen2-5-coder-7b-instruct"
+      ],
+      "value": 35.6,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-5-coder-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2.5-coder",
+      "sourceLabel": "Qwen2.5-Coder official release"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "Qwen2.5 Coder 7B",
+      "modelAliases": [
+        "Qwen2.5 Coder 7B",
+        "Qwen2.5 Coder 7B ",
+        "Qwen2.5-Coder-7B-Instruct",
+        "Qwen/Qwen2.5-Coder-7B-Instruct",
+        "qwen2-5-coder-7b-instruct"
+      ],
+      "value": 35.9,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-5-coder-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2.5-coder",
+      "sourceLabel": "Qwen2.5-Coder official release"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "Qwen2.5 Max",
+      "modelAliases": [
+        "Qwen2.5 Max",
+        "Qwen2.5-Max",
+        "qwen-2-5-max",
+        "qwen-max-2025-01-25"
+      ],
+      "value": 76.1,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-5-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2.5-max",
+      "sourceLabel": "Qwen2.5-Max official release"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Qwen2.5 Max",
+      "modelAliases": [
+        "Qwen2.5 Max",
+        "Qwen2.5-Max",
+        "qwen-2-5-max",
+        "qwen-max-2025-01-25"
+      ],
+      "value": 60.1,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-5-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2.5-max",
+      "sourceLabel": "Qwen2.5-Max official release"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "Qwen2.5 Max",
+      "modelAliases": [
+        "Qwen2.5 Max",
+        "Qwen2.5-Max",
+        "qwen-2-5-max",
+        "qwen-max-2025-01-25"
+      ],
+      "value": 38.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen2-5-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen2.5-max",
+      "sourceLabel": "Qwen2.5-Max official release"
     },
     {
       "benchmarkId": "swe-bench-verified",
@@ -4421,6 +5620,66 @@
     {
       "benchmarkId": "swe-bench-verified",
       "benchmarkLabel": "SWE-bench Verified",
+      "model": "Kimi K2 0905",
+      "modelAliases": [
+        "Kimi K2 0905",
+        "Kimi-K2-Instruct-0905",
+        "moonshotai/Kimi-K2-Instruct-0905"
+      ],
+      "value": 69.2,
+      "unit": "%",
+      "sourceId": "kimi-k2-0905-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905",
+      "sourceLabel": "Kimi K2 0905 official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "Kimi K2 0905",
+      "modelAliases": [
+        "Kimi K2 0905",
+        "Kimi-K2-Instruct-0905",
+        "moonshotai/Kimi-K2-Instruct-0905"
+      ],
+      "value": 55.9,
+      "unit": "%",
+      "sourceId": "kimi-k2-0905-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905",
+      "sourceLabel": "Kimi K2 0905 official model card"
+    },
+    {
+      "benchmarkId": "multi-swe-bench",
+      "benchmarkLabel": "Multi-SWE-Bench",
+      "model": "Kimi K2 0905",
+      "modelAliases": [
+        "Kimi K2 0905",
+        "Kimi-K2-Instruct-0905",
+        "moonshotai/Kimi-K2-Instruct-0905"
+      ],
+      "value": 33.5,
+      "unit": "%",
+      "sourceId": "kimi-k2-0905-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905",
+      "sourceLabel": "Kimi K2 0905 official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench",
+      "benchmarkLabel": "Terminal-Bench",
+      "model": "Kimi K2 0905",
+      "modelAliases": [
+        "Kimi K2 0905",
+        "Kimi-K2-Instruct-0905",
+        "moonshotai/Kimi-K2-Instruct-0905"
+      ],
+      "value": 44.5,
+      "unit": "%",
+      "sourceId": "kimi-k2-0905-card",
+      "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905",
+      "sourceLabel": "Kimi K2 0905 official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
       "model": "Kimi K2",
       "modelAliases": [
         "Kimi K2",
@@ -4477,6 +5736,141 @@
       "sourceId": "kimi-k2-github",
       "sourceUrl": "https://moonshotai.github.io/Kimi-K2/",
       "sourceLabel": "Kimi K2 official GitHub report"
+    },
+    {
+      "benchmarkId": "aime-2025",
+      "benchmarkLabel": "AIME 2025",
+      "model": "GLM-4.6",
+      "modelAliases": [
+        "GLM-4.6",
+        "GLM 4.6",
+        "zai-org/GLM-4.6"
+      ],
+      "value": 93.9,
+      "unit": "%",
+      "sourceId": "zai-glm-4-6-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-4.6",
+      "sourceLabel": "Z.ai GLM-4.6 official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "GLM-4.6",
+      "modelAliases": [
+        "GLM-4.6",
+        "GLM 4.6",
+        "zai-org/GLM-4.6"
+      ],
+      "value": 81.0,
+      "unit": "%",
+      "sourceId": "zai-glm-4-6-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-4.6",
+      "sourceLabel": "Z.ai GLM-4.6 official model card"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "GLM-4.6",
+      "modelAliases": [
+        "GLM-4.6",
+        "GLM 4.6",
+        "zai-org/GLM-4.6"
+      ],
+      "value": 82.8,
+      "unit": "%",
+      "sourceId": "zai-glm-4-6-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-4.6",
+      "sourceLabel": "Z.ai GLM-4.6 official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "GLM-4.6",
+      "modelAliases": [
+        "GLM-4.6",
+        "GLM 4.6",
+        "zai-org/GLM-4.6"
+      ],
+      "value": 17.2,
+      "unit": "%",
+      "sourceId": "zai-glm-4-6-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-4.6",
+      "sourceLabel": "Z.ai GLM-4.6 official model card"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "GLM-4.6",
+      "modelAliases": [
+        "GLM-4.6",
+        "GLM 4.6",
+        "zai-org/GLM-4.6"
+      ],
+      "value": 30.4,
+      "unit": "%",
+      "sourceId": "zai-glm-4-6-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-4.6",
+      "sourceLabel": "Z.ai GLM-4.6 official model card"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "GLM-4.6",
+      "modelAliases": [
+        "GLM-4.6",
+        "GLM 4.6",
+        "zai-org/GLM-4.6"
+      ],
+      "value": 45.1,
+      "unit": "%",
+      "sourceId": "zai-glm-4-6-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-4.6",
+      "sourceLabel": "Z.ai GLM-4.6 official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "GLM-4.6",
+      "modelAliases": [
+        "GLM-4.6",
+        "GLM 4.6",
+        "zai-org/GLM-4.6"
+      ],
+      "value": 68.0,
+      "unit": "%",
+      "sourceId": "zai-glm-4-6-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-4.6",
+      "sourceLabel": "Z.ai GLM-4.6 official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench",
+      "benchmarkLabel": "Terminal-Bench",
+      "model": "GLM-4.6",
+      "modelAliases": [
+        "GLM-4.6",
+        "GLM 4.6",
+        "zai-org/GLM-4.6"
+      ],
+      "value": 40.5,
+      "unit": "%",
+      "sourceId": "zai-glm-4-6-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-4.6",
+      "sourceLabel": "Z.ai GLM-4.6 official model card"
+    },
+    {
+      "benchmarkId": "tau2-bench-weighted",
+      "benchmarkLabel": "τ²-Bench Weighted",
+      "model": "GLM-4.6",
+      "modelAliases": [
+        "GLM-4.6",
+        "GLM 4.6",
+        "zai-org/GLM-4.6"
+      ],
+      "value": 75.9,
+      "unit": "%",
+      "sourceId": "zai-glm-4-6-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-4.6",
+      "sourceLabel": "Z.ai GLM-4.6 official model card"
     },
     {
       "benchmarkId": "hle",
@@ -6043,6 +7437,727 @@
     {
       "benchmarkId": "swe-bench-verified",
       "benchmarkLabel": "SWE-bench Verified",
+      "model": "MiniMax-M2.5",
+      "modelAliases": [
+        "MiniMax-M2.5",
+        "MiniMax M2.5",
+        "minimax-m2.5",
+        "minimax-m25"
+      ],
+      "value": 80.2,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "MiniMax-M2.5",
+      "modelAliases": [
+        "MiniMax-M2.5",
+        "MiniMax M2.5",
+        "minimax-m2.5",
+        "minimax-m25"
+      ],
+      "value": 55.4,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "MiniMax-M2.5",
+      "modelAliases": [
+        "MiniMax-M2.5",
+        "MiniMax M2.5",
+        "minimax-m2.5",
+        "minimax-m25"
+      ],
+      "value": 51.7,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "multi-swe-bench",
+      "benchmarkLabel": "Multi-SWE-Bench",
+      "model": "MiniMax-M2.5",
+      "modelAliases": [
+        "MiniMax-M2.5",
+        "MiniMax M2.5",
+        "minimax-m2.5",
+        "minimax-m25"
+      ],
+      "value": 51.3,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "MiniMax-M2.5",
+      "modelAliases": [
+        "MiniMax-M2.5",
+        "MiniMax M2.5",
+        "minimax-m2.5",
+        "minimax-m25"
+      ],
+      "value": 74.1,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "aime-2025",
+      "benchmarkLabel": "AIME 2025",
+      "model": "MiniMax-M2.5",
+      "modelAliases": [
+        "MiniMax-M2.5",
+        "MiniMax M2.5",
+        "minimax-m2.5",
+        "minimax-m25"
+      ],
+      "value": 86.3,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "MiniMax-M2.5",
+      "modelAliases": [
+        "MiniMax-M2.5",
+        "MiniMax M2.5",
+        "minimax-m2.5",
+        "minimax-m25"
+      ],
+      "value": 85.2,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "MiniMax-M2.5",
+      "modelAliases": [
+        "MiniMax-M2.5",
+        "MiniMax M2.5",
+        "minimax-m2.5",
+        "minimax-m25"
+      ],
+      "value": 19.4,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "scicode",
+      "benchmarkLabel": "SciCode",
+      "model": "MiniMax-M2.5",
+      "modelAliases": [
+        "MiniMax-M2.5",
+        "MiniMax M2.5",
+        "minimax-m2.5",
+        "minimax-m25"
+      ],
+      "value": 44.4,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "ifbench",
+      "benchmarkLabel": "IFBench",
+      "model": "MiniMax-M2.5",
+      "modelAliases": [
+        "MiniMax-M2.5",
+        "MiniMax M2.5",
+        "minimax-m2.5",
+        "minimax-m25"
+      ],
+      "value": 70.0,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "aa-lcr",
+      "benchmarkLabel": "AA-LCR",
+      "model": "MiniMax-M2.5",
+      "modelAliases": [
+        "MiniMax-M2.5",
+        "MiniMax M2.5",
+        "minimax-m2.5",
+        "minimax-m25"
+      ],
+      "value": 69.5,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "MiniMax-M2.1",
+      "modelAliases": [
+        "MiniMax-M2.1",
+        "MiniMax M2.1",
+        "minimax-m2.1"
+      ],
+      "value": 74.0,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "MiniMax-M2.1",
+      "modelAliases": [
+        "MiniMax-M2.1",
+        "MiniMax M2.1",
+        "minimax-m2.1"
+      ],
+      "value": 49.7,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "MiniMax-M2.1",
+      "modelAliases": [
+        "MiniMax-M2.1",
+        "MiniMax M2.1",
+        "minimax-m2.1"
+      ],
+      "value": 47.9,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "multi-swe-bench",
+      "benchmarkLabel": "Multi-SWE-Bench",
+      "model": "MiniMax-M2.1",
+      "modelAliases": [
+        "MiniMax-M2.1",
+        "MiniMax M2.1",
+        "minimax-m2.1"
+      ],
+      "value": 47.2,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "MiniMax-M2.1",
+      "modelAliases": [
+        "MiniMax-M2.1",
+        "MiniMax M2.1",
+        "minimax-m2.1"
+      ],
+      "value": 71.9,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "aime-2025",
+      "benchmarkLabel": "AIME 2025",
+      "model": "MiniMax-M2.1",
+      "modelAliases": [
+        "MiniMax-M2.1",
+        "MiniMax M2.1",
+        "minimax-m2.1"
+      ],
+      "value": 83.0,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "MiniMax-M2.1",
+      "modelAliases": [
+        "MiniMax-M2.1",
+        "MiniMax M2.1",
+        "minimax-m2.1"
+      ],
+      "value": 83.0,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "MiniMax-M2.1",
+      "modelAliases": [
+        "MiniMax-M2.1",
+        "MiniMax M2.1",
+        "minimax-m2.1"
+      ],
+      "value": 22.2,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "scicode",
+      "benchmarkLabel": "SciCode",
+      "model": "MiniMax-M2.1",
+      "modelAliases": [
+        "MiniMax-M2.1",
+        "MiniMax M2.1",
+        "minimax-m2.1"
+      ],
+      "value": 41.0,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "ifbench",
+      "benchmarkLabel": "IFBench",
+      "model": "MiniMax-M2.1",
+      "modelAliases": [
+        "MiniMax-M2.1",
+        "MiniMax M2.1",
+        "minimax-m2.1"
+      ],
+      "value": 70.0,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "aa-lcr",
+      "benchmarkLabel": "AA-LCR",
+      "model": "MiniMax-M2.1",
+      "modelAliases": [
+        "MiniMax-M2.1",
+        "MiniMax M2.1",
+        "minimax-m2.1"
+      ],
+      "value": 62.0,
+      "unit": "%",
+      "sourceId": "minimax-m2-5-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "sourceLabel": "MiniMax M2.5 official release"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "MiniMax-M2",
+      "modelAliases": [
+        "MiniMax-M2",
+        "MiniMax M2",
+        "minimax-m2"
+      ],
+      "value": 69.4,
+      "unit": "%",
+      "sourceId": "minimax-m2-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m2",
+      "sourceLabel": "MiniMax M2 official release"
+    },
+    {
+      "benchmarkId": "multi-swe-bench",
+      "benchmarkLabel": "Multi-SWE-Bench",
+      "model": "MiniMax-M2",
+      "modelAliases": [
+        "MiniMax-M2",
+        "MiniMax M2",
+        "minimax-m2"
+      ],
+      "value": 36.2,
+      "unit": "%",
+      "sourceId": "minimax-m2-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m2",
+      "sourceLabel": "MiniMax M2 official release"
+    },
+    {
+      "benchmarkId": "terminal-bench",
+      "benchmarkLabel": "Terminal-Bench",
+      "model": "MiniMax-M2",
+      "modelAliases": [
+        "MiniMax-M2",
+        "MiniMax M2",
+        "minimax-m2"
+      ],
+      "value": 46.3,
+      "unit": "%",
+      "sourceId": "minimax-m2-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m2",
+      "sourceLabel": "MiniMax M2 official release"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "MiniMax-M2",
+      "modelAliases": [
+        "MiniMax-M2",
+        "MiniMax M2",
+        "minimax-m2"
+      ],
+      "value": 44.0,
+      "unit": "%",
+      "sourceId": "minimax-m2-release",
+      "sourceUrl": "https://www.minimax.io/news/minimax-m2",
+      "sourceLabel": "MiniMax M2 official release"
+    },
+    {
+      "benchmarkId": "aime-2024",
+      "benchmarkLabel": "AIME 2024",
+      "model": "MiniMax M1 80k",
+      "modelAliases": [
+        "MiniMax M1 80k",
+        "MiniMax-M1-80K",
+        "MiniMax-M1-80k",
+        "minimax-m1-80k"
+      ],
+      "value": 86.0,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "aime-2025",
+      "benchmarkLabel": "AIME 2025",
+      "model": "MiniMax M1 80k",
+      "modelAliases": [
+        "MiniMax M1 80k",
+        "MiniMax-M1-80K",
+        "MiniMax-M1-80k",
+        "minimax-m1-80k"
+      ],
+      "value": 76.9,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "MiniMax M1 80k",
+      "modelAliases": [
+        "MiniMax M1 80k",
+        "MiniMax-M1-80K",
+        "MiniMax-M1-80k",
+        "minimax-m1-80k"
+      ],
+      "value": 65.0,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "fullstackbench",
+      "benchmarkLabel": "FullStackBench",
+      "model": "MiniMax M1 80k",
+      "modelAliases": [
+        "MiniMax M1 80k",
+        "MiniMax-M1-80K",
+        "MiniMax-M1-80k",
+        "minimax-m1-80k"
+      ],
+      "value": 68.3,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "MiniMax M1 80k",
+      "modelAliases": [
+        "MiniMax M1 80k",
+        "MiniMax-M1-80K",
+        "MiniMax-M1-80k",
+        "minimax-m1-80k"
+      ],
+      "value": 70.0,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "MiniMax M1 80k",
+      "modelAliases": [
+        "MiniMax M1 80k",
+        "MiniMax-M1-80K",
+        "MiniMax-M1-80k",
+        "minimax-m1-80k"
+      ],
+      "value": 8.4,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "MiniMax M1 80k",
+      "modelAliases": [
+        "MiniMax M1 80k",
+        "MiniMax-M1-80K",
+        "MiniMax-M1-80k",
+        "minimax-m1-80k"
+      ],
+      "value": 81.1,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "MiniMax M1 80k",
+      "modelAliases": [
+        "MiniMax M1 80k",
+        "MiniMax-M1-80K",
+        "MiniMax-M1-80k",
+        "minimax-m1-80k"
+      ],
+      "value": 56.0,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "tau-bench-airline",
+      "benchmarkLabel": "τ-Bench Airline",
+      "model": "MiniMax M1 80k",
+      "modelAliases": [
+        "MiniMax M1 80k",
+        "MiniMax-M1-80K",
+        "MiniMax-M1-80k",
+        "minimax-m1-80k"
+      ],
+      "value": 62.0,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "tau-bench-retail",
+      "benchmarkLabel": "τ-Bench Retail",
+      "model": "MiniMax M1 80k",
+      "modelAliases": [
+        "MiniMax M1 80k",
+        "MiniMax-M1-80K",
+        "MiniMax-M1-80k",
+        "minimax-m1-80k"
+      ],
+      "value": 63.5,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "aime-2024",
+      "benchmarkLabel": "AIME 2024",
+      "model": "MiniMax M1 40k",
+      "modelAliases": [
+        "MiniMax M1 40k",
+        "MiniMax-M1-40K",
+        "MiniMax-M1-40k",
+        "minimax-m1-40k"
+      ],
+      "value": 83.3,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "aime-2025",
+      "benchmarkLabel": "AIME 2025",
+      "model": "MiniMax M1 40k",
+      "modelAliases": [
+        "MiniMax M1 40k",
+        "MiniMax-M1-40K",
+        "MiniMax-M1-40k",
+        "minimax-m1-40k"
+      ],
+      "value": 74.6,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "MiniMax M1 40k",
+      "modelAliases": [
+        "MiniMax M1 40k",
+        "MiniMax-M1-40K",
+        "MiniMax-M1-40k",
+        "minimax-m1-40k"
+      ],
+      "value": 62.3,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "fullstackbench",
+      "benchmarkLabel": "FullStackBench",
+      "model": "MiniMax M1 40k",
+      "modelAliases": [
+        "MiniMax M1 40k",
+        "MiniMax-M1-40K",
+        "MiniMax-M1-40k",
+        "minimax-m1-40k"
+      ],
+      "value": 67.6,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "MiniMax M1 40k",
+      "modelAliases": [
+        "MiniMax M1 40k",
+        "MiniMax-M1-40K",
+        "MiniMax-M1-40k",
+        "minimax-m1-40k"
+      ],
+      "value": 69.2,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "MiniMax M1 40k",
+      "modelAliases": [
+        "MiniMax M1 40k",
+        "MiniMax-M1-40K",
+        "MiniMax-M1-40k",
+        "minimax-m1-40k"
+      ],
+      "value": 7.2,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "MiniMax M1 40k",
+      "modelAliases": [
+        "MiniMax M1 40k",
+        "MiniMax-M1-40K",
+        "MiniMax-M1-40k",
+        "minimax-m1-40k"
+      ],
+      "value": 80.6,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "MiniMax M1 40k",
+      "modelAliases": [
+        "MiniMax M1 40k",
+        "MiniMax-M1-40K",
+        "MiniMax-M1-40k",
+        "minimax-m1-40k"
+      ],
+      "value": 55.6,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "tau-bench-airline",
+      "benchmarkLabel": "τ-Bench Airline",
+      "model": "MiniMax M1 40k",
+      "modelAliases": [
+        "MiniMax M1 40k",
+        "MiniMax-M1-40K",
+        "MiniMax-M1-40k",
+        "minimax-m1-40k"
+      ],
+      "value": 60.0,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "tau-bench-retail",
+      "benchmarkLabel": "τ-Bench Retail",
+      "model": "MiniMax M1 40k",
+      "modelAliases": [
+        "MiniMax M1 40k",
+        "MiniMax-M1-40K",
+        "MiniMax-M1-40k",
+        "minimax-m1-40k"
+      ],
+      "value": 67.8,
+      "unit": "%",
+      "sourceId": "minimax-m1-card",
+      "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M1",
+      "sourceLabel": "MiniMax M1 official GitHub report"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
       "model": "MiMo-V2.5-Pro",
       "modelAliases": [
         "MiMo-V2.5-Pro",
@@ -6214,6 +8329,561 @@
       "sourceId": "xai-grok-4-1-fast-release",
       "sourceUrl": "https://x.ai/news/grok-4-1-fast",
       "sourceLabel": "xAI Grok 4.1 Fast official release"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "NVIDIA Nemotron 3 Super [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Super [R]",
+        "NVIDIA Nemotron 3 Super",
+        "Nemotron 3 Super",
+        "N-3-Super",
+        "Nemotron-3-Super-120B-A12B",
+        "nvidia-nemotron-3-super-120b-a12b"
+      ],
+      "value": 83.73,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-super-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Super technical report"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "NVIDIA Nemotron 3 Super [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Super [R]",
+        "NVIDIA Nemotron 3 Super",
+        "Nemotron 3 Super",
+        "N-3-Super",
+        "Nemotron-3-Super-120B-A12B",
+        "nvidia-nemotron-3-super-120b-a12b"
+      ],
+      "value": 79.23,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-super-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Super technical report"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "NVIDIA Nemotron 3 Super [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Super [R]",
+        "NVIDIA Nemotron 3 Super",
+        "Nemotron 3 Super",
+        "N-3-Super",
+        "Nemotron-3-Super-120B-A12B",
+        "nvidia-nemotron-3-super-120b-a12b"
+      ],
+      "value": 78.69,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-super-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Super technical report"
+    },
+    {
+      "benchmarkId": "scicode",
+      "benchmarkLabel": "SciCode",
+      "model": "NVIDIA Nemotron 3 Super [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Super [R]",
+        "NVIDIA Nemotron 3 Super",
+        "Nemotron 3 Super",
+        "N-3-Super",
+        "Nemotron-3-Super-120B-A12B",
+        "nvidia-nemotron-3-super-120b-a12b"
+      ],
+      "value": 42.05,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-super-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Super technical report"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "NVIDIA Nemotron 3 Super [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Super [R]",
+        "NVIDIA Nemotron 3 Super",
+        "Nemotron 3 Super",
+        "N-3-Super",
+        "Nemotron-3-Super-120B-A12B",
+        "nvidia-nemotron-3-super-120b-a12b"
+      ],
+      "value": 18.26,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-super-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Super technical report"
+    },
+    {
+      "benchmarkId": "terminal-bench-hard",
+      "benchmarkLabel": "Terminal-Bench Hard",
+      "model": "NVIDIA Nemotron 3 Super [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Super [R]",
+        "NVIDIA Nemotron 3 Super",
+        "Nemotron 3 Super",
+        "N-3-Super",
+        "Nemotron-3-Super-120B-A12B",
+        "nvidia-nemotron-3-super-120b-a12b"
+      ],
+      "value": 25.78,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-super-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Super technical report"
+    },
+    {
+      "benchmarkId": "tau2-bench-airline",
+      "benchmarkLabel": "τ²-Bench Airline",
+      "model": "NVIDIA Nemotron 3 Super [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Super [R]",
+        "NVIDIA Nemotron 3 Super",
+        "Nemotron 3 Super",
+        "N-3-Super",
+        "Nemotron-3-Super-120B-A12B",
+        "nvidia-nemotron-3-super-120b-a12b"
+      ],
+      "value": 56.25,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-super-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Super technical report"
+    },
+    {
+      "benchmarkId": "tau2-bench-retail",
+      "benchmarkLabel": "τ²-Bench Retail",
+      "model": "NVIDIA Nemotron 3 Super [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Super [R]",
+        "NVIDIA Nemotron 3 Super",
+        "Nemotron 3 Super",
+        "N-3-Super",
+        "Nemotron-3-Super-120B-A12B",
+        "nvidia-nemotron-3-super-120b-a12b"
+      ],
+      "value": 62.83,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-super-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Super technical report"
+    },
+    {
+      "benchmarkId": "tau2-bench-telecom",
+      "benchmarkLabel": "τ²-Bench Telecom",
+      "model": "NVIDIA Nemotron 3 Super [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Super [R]",
+        "NVIDIA Nemotron 3 Super",
+        "Nemotron 3 Super",
+        "N-3-Super",
+        "Nemotron-3-Super-120B-A12B",
+        "nvidia-nemotron-3-super-120b-a12b"
+      ],
+      "value": 64.36,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-super-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Super technical report"
+    },
+    {
+      "benchmarkId": "tau2-bench-average",
+      "benchmarkLabel": "τ²-Bench Avg",
+      "model": "NVIDIA Nemotron 3 Super [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Super [R]",
+        "NVIDIA Nemotron 3 Super",
+        "Nemotron 3 Super",
+        "N-3-Super",
+        "Nemotron-3-Super-120B-A12B",
+        "nvidia-nemotron-3-super-120b-a12b"
+      ],
+      "value": 61.15,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-super-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Super technical report"
+    },
+    {
+      "benchmarkId": "ifbench",
+      "benchmarkLabel": "IFBench",
+      "model": "NVIDIA Nemotron 3 Super [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Super [R]",
+        "NVIDIA Nemotron 3 Super",
+        "Nemotron 3 Super",
+        "N-3-Super",
+        "Nemotron-3-Super-120B-A12B",
+        "nvidia-nemotron-3-super-120b-a12b"
+      ],
+      "value": 72.58,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-super-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Super technical report"
+    },
+    {
+      "benchmarkId": "multi-challenge",
+      "benchmarkLabel": "Multi-Challenge",
+      "model": "NVIDIA Nemotron 3 Super [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Super [R]",
+        "NVIDIA Nemotron 3 Super",
+        "Nemotron 3 Super",
+        "N-3-Super",
+        "Nemotron-3-Super-120B-A12B",
+        "nvidia-nemotron-3-super-120b-a12b"
+      ],
+      "value": 55.23,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-super-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Super technical report"
+    },
+    {
+      "benchmarkId": "aa-lcr",
+      "benchmarkLabel": "AA-LCR",
+      "model": "NVIDIA Nemotron 3 Super [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Super [R]",
+        "NVIDIA Nemotron 3 Super",
+        "Nemotron 3 Super",
+        "N-3-Super",
+        "Nemotron-3-Super-120B-A12B",
+        "nvidia-nemotron-3-super-120b-a12b"
+      ],
+      "value": 58.31,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-super-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Super technical report"
+    },
+    {
+      "benchmarkId": "ruler-1m",
+      "benchmarkLabel": "RULER 1M",
+      "model": "NVIDIA Nemotron 3 Super [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Super [R]",
+        "NVIDIA Nemotron 3 Super",
+        "Nemotron 3 Super",
+        "N-3-Super",
+        "Nemotron-3-Super-120B-A12B",
+        "nvidia-nemotron-3-super-120b-a12b"
+      ],
+      "value": 91.64,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-super-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Super technical report"
+    },
+    {
+      "benchmarkId": "mmlu-prox",
+      "benchmarkLabel": "MMLU-ProX",
+      "model": "NVIDIA Nemotron 3 Super [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Super [R]",
+        "NVIDIA Nemotron 3 Super",
+        "Nemotron 3 Super",
+        "N-3-Super",
+        "Nemotron-3-Super-120B-A12B",
+        "nvidia-nemotron-3-super-120b-a12b"
+      ],
+      "value": 79.35,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-super-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Super technical report"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "NVIDIA Nemotron 3 Nano [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Nano [R]",
+        "NVIDIA Nemotron 3 Nano",
+        "Nemotron 3 Nano",
+        "N-3-Nano",
+        "Nemotron-3-Nano-30B-A3B",
+        "nvidia-nemotron-3-nano-30b-a3b-reasoning",
+        "nvidia-nemotron-3-nano-30b-a3b"
+      ],
+      "value": 78.3,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-nano-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Nano technical report"
+    },
+    {
+      "benchmarkId": "aime-2025",
+      "benchmarkLabel": "AIME 2025",
+      "model": "NVIDIA Nemotron 3 Nano [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Nano [R]",
+        "NVIDIA Nemotron 3 Nano",
+        "Nemotron 3 Nano",
+        "N-3-Nano",
+        "Nemotron-3-Nano-30B-A3B",
+        "nvidia-nemotron-3-nano-30b-a3b-reasoning",
+        "nvidia-nemotron-3-nano-30b-a3b"
+      ],
+      "value": 89.06,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-nano-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Nano technical report"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "NVIDIA Nemotron 3 Nano [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Nano [R]",
+        "NVIDIA Nemotron 3 Nano",
+        "Nemotron 3 Nano",
+        "N-3-Nano",
+        "Nemotron-3-Nano-30B-A3B",
+        "nvidia-nemotron-3-nano-30b-a3b-reasoning",
+        "nvidia-nemotron-3-nano-30b-a3b"
+      ],
+      "value": 73.04,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-nano-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Nano technical report"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "NVIDIA Nemotron 3 Nano [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Nano [R]",
+        "NVIDIA Nemotron 3 Nano",
+        "Nemotron 3 Nano",
+        "N-3-Nano",
+        "Nemotron-3-Nano-30B-A3B",
+        "nvidia-nemotron-3-nano-30b-a3b-reasoning",
+        "nvidia-nemotron-3-nano-30b-a3b"
+      ],
+      "value": 68.25,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-nano-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Nano technical report"
+    },
+    {
+      "benchmarkId": "scicode",
+      "benchmarkLabel": "SciCode",
+      "model": "NVIDIA Nemotron 3 Nano [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Nano [R]",
+        "NVIDIA Nemotron 3 Nano",
+        "Nemotron 3 Nano",
+        "N-3-Nano",
+        "Nemotron-3-Nano-30B-A3B",
+        "nvidia-nemotron-3-nano-30b-a3b-reasoning",
+        "nvidia-nemotron-3-nano-30b-a3b"
+      ],
+      "value": 33.28,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-nano-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Nano technical report"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "NVIDIA Nemotron 3 Nano [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Nano [R]",
+        "NVIDIA Nemotron 3 Nano",
+        "Nemotron 3 Nano",
+        "N-3-Nano",
+        "Nemotron-3-Nano-30B-A3B",
+        "nvidia-nemotron-3-nano-30b-a3b-reasoning",
+        "nvidia-nemotron-3-nano-30b-a3b"
+      ],
+      "value": 10.57,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-nano-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Nano technical report"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "NVIDIA Nemotron 3 Nano [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Nano [R]",
+        "NVIDIA Nemotron 3 Nano",
+        "Nemotron 3 Nano",
+        "N-3-Nano",
+        "Nemotron-3-Nano-30B-A3B",
+        "nvidia-nemotron-3-nano-30b-a3b-reasoning",
+        "nvidia-nemotron-3-nano-30b-a3b"
+      ],
+      "value": 15.48,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-nano-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Nano technical report"
+    },
+    {
+      "benchmarkId": "tau2-bench-airline",
+      "benchmarkLabel": "τ²-Bench Airline",
+      "model": "NVIDIA Nemotron 3 Nano [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Nano [R]",
+        "NVIDIA Nemotron 3 Nano",
+        "Nemotron 3 Nano",
+        "N-3-Nano",
+        "Nemotron-3-Nano-30B-A3B",
+        "nvidia-nemotron-3-nano-30b-a3b-reasoning",
+        "nvidia-nemotron-3-nano-30b-a3b"
+      ],
+      "value": 48.0,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-nano-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Nano technical report"
+    },
+    {
+      "benchmarkId": "tau2-bench-retail",
+      "benchmarkLabel": "τ²-Bench Retail",
+      "model": "NVIDIA Nemotron 3 Nano [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Nano [R]",
+        "NVIDIA Nemotron 3 Nano",
+        "Nemotron 3 Nano",
+        "N-3-Nano",
+        "Nemotron-3-Nano-30B-A3B",
+        "nvidia-nemotron-3-nano-30b-a3b-reasoning",
+        "nvidia-nemotron-3-nano-30b-a3b"
+      ],
+      "value": 56.91,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-nano-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Nano technical report"
+    },
+    {
+      "benchmarkId": "tau2-bench-telecom",
+      "benchmarkLabel": "τ²-Bench Telecom",
+      "model": "NVIDIA Nemotron 3 Nano [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Nano [R]",
+        "NVIDIA Nemotron 3 Nano",
+        "Nemotron 3 Nano",
+        "N-3-Nano",
+        "Nemotron-3-Nano-30B-A3B",
+        "nvidia-nemotron-3-nano-30b-a3b-reasoning",
+        "nvidia-nemotron-3-nano-30b-a3b"
+      ],
+      "value": 42.21,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-nano-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Nano technical report"
+    },
+    {
+      "benchmarkId": "tau2-bench-average",
+      "benchmarkLabel": "τ²-Bench Avg",
+      "model": "NVIDIA Nemotron 3 Nano [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Nano [R]",
+        "NVIDIA Nemotron 3 Nano",
+        "Nemotron 3 Nano",
+        "N-3-Nano",
+        "Nemotron-3-Nano-30B-A3B",
+        "nvidia-nemotron-3-nano-30b-a3b-reasoning",
+        "nvidia-nemotron-3-nano-30b-a3b"
+      ],
+      "value": 49.04,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-nano-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Nano technical report"
+    },
+    {
+      "benchmarkId": "bfcl-v4",
+      "benchmarkLabel": "BFCL v4",
+      "model": "NVIDIA Nemotron 3 Nano [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Nano [R]",
+        "NVIDIA Nemotron 3 Nano",
+        "Nemotron 3 Nano",
+        "N-3-Nano",
+        "Nemotron-3-Nano-30B-A3B",
+        "nvidia-nemotron-3-nano-30b-a3b-reasoning",
+        "nvidia-nemotron-3-nano-30b-a3b"
+      ],
+      "value": 53.76,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-nano-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Nano technical report"
+    },
+    {
+      "benchmarkId": "ifbench",
+      "benchmarkLabel": "IFBench",
+      "model": "NVIDIA Nemotron 3 Nano [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Nano [R]",
+        "NVIDIA Nemotron 3 Nano",
+        "Nemotron 3 Nano",
+        "N-3-Nano",
+        "Nemotron-3-Nano-30B-A3B",
+        "nvidia-nemotron-3-nano-30b-a3b-reasoning",
+        "nvidia-nemotron-3-nano-30b-a3b"
+      ],
+      "value": 71.51,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-nano-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Nano technical report"
+    },
+    {
+      "benchmarkId": "aa-lcr",
+      "benchmarkLabel": "AA-LCR",
+      "model": "NVIDIA Nemotron 3 Nano [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Nano [R]",
+        "NVIDIA Nemotron 3 Nano",
+        "Nemotron 3 Nano",
+        "N-3-Nano",
+        "Nemotron-3-Nano-30B-A3B",
+        "nvidia-nemotron-3-nano-30b-a3b-reasoning",
+        "nvidia-nemotron-3-nano-30b-a3b"
+      ],
+      "value": 35.85,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-nano-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Nano technical report"
+    },
+    {
+      "benchmarkId": "mmlu-prox",
+      "benchmarkLabel": "MMLU-ProX",
+      "model": "NVIDIA Nemotron 3 Nano [R]",
+      "modelAliases": [
+        "NVIDIA Nemotron 3 Nano [R]",
+        "NVIDIA Nemotron 3 Nano",
+        "Nemotron 3 Nano",
+        "N-3-Nano",
+        "Nemotron-3-Nano-30B-A3B",
+        "nvidia-nemotron-3-nano-30b-a3b-reasoning",
+        "nvidia-nemotron-3-nano-30b-a3b"
+      ],
+      "value": 59.5,
+      "unit": "%",
+      "sourceId": "nvidia-nemotron-3-nano-report",
+      "sourceUrl": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
+      "sourceLabel": "NVIDIA Nemotron 3 Nano technical report"
     },
     {
       "benchmarkId": "terminal-bench-2-1",

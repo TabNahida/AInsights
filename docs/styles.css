@@ -184,6 +184,12 @@ main {
   line-height: 1.5;
 }
 
+.site-footer a {
+  color: var(--accent);
+  font-weight: 800;
+  text-decoration: none;
+}
+
 .controls,
 .custom-panel,
 .chart-shell,
@@ -1581,6 +1587,115 @@ tr[data-card-href]:focus-visible {
   font-size: 11px;
   font-style: normal;
   font-weight: 700;
+}
+
+.contribute-view {
+  display: grid;
+  gap: 16px;
+}
+
+.contribute-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(320px, 1.05fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.contribution-form {
+  display: grid;
+  gap: 12px;
+}
+
+.contribution-mode {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.contribution-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.contribution-field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.contribution-field.full {
+  grid-column: 1 / -1;
+}
+
+.contribution-field input,
+.contribution-field select,
+.contribution-field textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 11px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+}
+
+.contribution-field textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.contribution-preview {
+  min-height: 420px;
+  margin: 0;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  color: #152238;
+  background: #f8fafc;
+  font-size: 12px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.contribution-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.contribution-actions a,
+.contribution-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: var(--accent);
+  background: #fff;
+  font: inherit;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.contribution-actions a.primary {
+  border-color: transparent;
+  color: #fff;
+  background: var(--accent);
+}
+
+.contribution-actions [aria-disabled="true"],
+.contribution-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
 }
 
 .compare-option-card > .ui-icon {
@@ -3894,6 +4009,11 @@ tbody tr:hover {
 
   .source-block {
     justify-content: flex-start;
+  }
+
+  .contribute-layout,
+  .contribution-field-grid {
+    grid-template-columns: 1fr;
   }
 
   .top-bars {

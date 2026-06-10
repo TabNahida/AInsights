@@ -7,7 +7,7 @@
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body data-page="provider">
+  <body data-page="contribute">
     <header class="topbar">
       <div>
         <p class="eyebrow">AInsights</p>
@@ -27,7 +27,6 @@
     <main>
       <section class="home-view" id="homeView" hidden>
         <section class="home-metrics" id="homeMetrics" aria-label="首页摘要"></section>
-
         <section class="chart-shell latest-models-shell" aria-labelledby="latestModelsTitle">
           <div class="chart-head">
             <div>
@@ -37,7 +36,6 @@
           </div>
           <div class="latest-models" id="latestModels"></div>
         </section>
-
         <section class="chart-shell" aria-labelledby="top20Title">
           <div class="chart-head">
             <div>
@@ -48,7 +46,6 @@
           </div>
           <div class="bar-chart" id="top20Chart"></div>
         </section>
-
         <section class="chart-shell" aria-labelledby="costScatterTitle">
           <div class="chart-head">
             <div>
@@ -58,7 +55,6 @@
           </div>
           <div class="scatter-chart" id="costScatter"></div>
         </section>
-
         <section class="insight-grid" aria-label="数据分布">
           <section class="chart-shell" aria-labelledby="scoreBandsTitle">
             <div class="chart-head">
@@ -69,7 +65,6 @@
             </div>
             <div class="score-bands" id="scoreBands"></div>
           </section>
-
           <section class="chart-shell" aria-labelledby="providerChartTitle">
             <div class="chart-head">
               <div>
@@ -80,7 +75,6 @@
             <div class="provider-chart" id="providerChart"></div>
           </section>
         </section>
-
         <section class="chart-shell source-explorer" aria-labelledby="sourceExplorerTitle">
           <div class="chart-head">
             <div>
@@ -153,7 +147,6 @@
           </div>
           <div class="source-overview-grid" id="sourceOverview"></div>
         </section>
-
         <section class="chart-shell source-map-shell" aria-labelledby="sourceMetricMapTitle">
           <div class="chart-head">
             <div>
@@ -165,6 +158,112 @@
         </section>
       </section>
 
+      <section class="contribute-view" id="contributeView">
+        <section class="chart-shell contribute-shell" aria-labelledby="contributePageTitle">
+          <div class="chart-head">
+            <div>
+              <h2 id="contributePageTitle" data-i18n="contributePageTitle">贡献工作台</h2>
+              <p id="contributePageSubtitle" data-i18n="contributePageSubtitle">在这里整理新增模型、模型数据或测试项目，生成可提交到 GitHub 的 PR payload。</p>
+            </div>
+          </div>
+
+          <div class="contribute-layout">
+            <form class="contribution-form">
+              <label class="contribution-field full">
+                <span data-i18n="contributeModeLabel">贡献类型</span>
+                <span class="segmented-control contribution-mode" id="contributionModeButtons" role="group" aria-label="贡献类型"></span>
+              </label>
+
+              <div class="contribution-field-grid">
+                <label class="contribution-field" data-contribution-section="model score">
+                  <span data-i18n="contributeModelName">模型名称</span>
+                  <input id="contributionModelName" list="contributionModelList" autocomplete="off" />
+                  <datalist id="contributionModelList"></datalist>
+                </label>
+                <label class="contribution-field" data-contribution-section="model score">
+                  <span data-i18n="contributeCreator">机构</span>
+                  <input id="contributionCreator" autocomplete="organization" />
+                </label>
+                <label class="contribution-field" data-contribution-section="model">
+                  <span data-i18n="contributeReleaseDate">发布日期</span>
+                  <input id="contributionReleaseDate" type="date" />
+                </label>
+                <label class="contribution-field" data-contribution-section="model">
+                  <span data-i18n="contributeOpenSource">开放状态</span>
+                  <select id="contributionOpenSource">
+                    <option value="">Unknown</option>
+                    <option value="Proprietary">Proprietary</option>
+                    <option value="Open Weights (Permissive License)">Open Weights (Permissive License)</option>
+                    <option value="Open Weights (Non-Commercial)">Open Weights (Non-Commercial)</option>
+                  </select>
+                </label>
+                <label class="contribution-field full" data-contribution-section="model">
+                  <span data-i18n="contributeModelUrl">模型链接</span>
+                  <input id="contributionModelUrl" type="url" inputmode="url" />
+                </label>
+                <label class="contribution-field" data-contribution-section="score">
+                  <span data-i18n="contributeBenchmark">测试项</span>
+                  <select id="contributionBenchmark"></select>
+                </label>
+                <label class="contribution-field" data-contribution-section="score">
+                  <span data-i18n="contributeValue">分数</span>
+                  <input id="contributionValue" type="number" step="0.01" inputmode="decimal" />
+                </label>
+                <label class="contribution-field" data-contribution-section="benchmark">
+                  <span data-i18n="contributeBenchmarkId">测试项 ID</span>
+                  <input id="contributionBenchmarkId" autocomplete="off" />
+                </label>
+                <label class="contribution-field" data-contribution-section="benchmark">
+                  <span data-i18n="contributeBenchmarkName">测试项名称</span>
+                  <input id="contributionBenchmarkName" autocomplete="off" />
+                </label>
+                <label class="contribution-field" data-contribution-section="benchmark">
+                  <span data-i18n="contributeBenchmarkCategory">测试项分类</span>
+                  <input id="contributionBenchmarkCategory" autocomplete="off" />
+                </label>
+                <label class="contribution-field" data-contribution-section="benchmark">
+                  <span data-i18n="contributeBenchmarkUnit">单位</span>
+                  <input id="contributionBenchmarkUnit" autocomplete="off" placeholder="%" />
+                </label>
+                <label class="contribution-field" data-contribution-section="benchmark">
+                  <span data-i18n="contributeBenchmarkIcon">短标签</span>
+                  <input id="contributionBenchmarkIcon" autocomplete="off" maxlength="8" />
+                </label>
+                <label class="contribution-field full">
+                  <span data-i18n="contributeSourceUrl">官方来源 URL</span>
+                  <input id="contributionSourceUrl" type="url" inputmode="url" />
+                </label>
+                <label class="contribution-field full">
+                  <span data-i18n="contributeSourceLabel">来源名称</span>
+                  <input id="contributionSourceLabel" />
+                </label>
+                <label class="contribution-field full">
+                  <span data-i18n="contributeNotes">备注</span>
+                  <textarea id="contributionNotes"></textarea>
+                </label>
+              </div>
+            </form>
+
+            <section>
+              <div class="chart-head">
+                <div>
+                  <h2 data-i18n="contributePreviewTitle">PR payload</h2>
+                </div>
+              </div>
+              <pre class="contribution-preview" id="contributionPreview" tabindex="0">填写左侧字段后会生成 payload。</pre>
+              <div class="contribution-actions">
+                <button id="contributionCopyButton" type="button">复制 payload</button>
+                <a id="contributionGithubButton" class="primary" href="#" target="_blank" rel="noreferrer">登录 GitHub 提交 PR</a>
+                <a id="contributionGithubDevLink" href="https://github.dev/TabNahida/AInsights" target="_blank" rel="noreferrer">打开 GitHub.dev</a>
+                <a id="contributionEditBenchmarksLink" href="https://github.com/TabNahida/AInsights/edit/main/data/benchmarks/benchmark_scores.json" target="_blank" rel="noreferrer">编辑 benchmark 数据</a>
+                <a id="contributionEditCollectorLink" href="https://github.com/TabNahida/AInsights/edit/main/benchmarks/collect_benchmark_scores.py" target="_blank" rel="noreferrer">编辑来源脚本</a>
+                <a id="contributionEditCsvLink" href="https://github.com/TabNahida/AInsights/edit/main/ArtificialAnalysis/artificialanalysis_raw_scores_wide.csv" target="_blank" rel="noreferrer">编辑 AA 模型 CSV</a>
+              </div>
+            </section>
+          </div>
+        </section>
+      </section>
+
       <section class="benchmark-view" id="benchmarkView" hidden>
         <div class="benchmark-detail" id="benchmarkDetail"></div>
       </section>
@@ -173,7 +272,7 @@
         <div class="model-detail" id="modelDetail"></div>
       </section>
 
-      <section class="provider-view" id="providerView">
+      <section class="provider-view" id="providerView" hidden>
         <div class="provider-detail" id="providerDetail"></div>
       </section>
     </main>

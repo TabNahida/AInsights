@@ -446,6 +446,15 @@ def external_sources_payload(external_benchmark_data: dict[str, Any]) -> list[di
         focus = ", ".join(benchmark_labels[:6])
         if len(benchmark_labels) > 6:
             focus += f", +{len(benchmark_labels) - 6}"
+        model_aliases = [str(alias) for alias in source.get("modelAliases", []) if alias]
+        model_keys = [str(key) for key in source.get("modelKeys", []) if key]
+        coverage = f"{len(results)} model-benchmark scores"
+        if not results:
+            coverage = source.get("coverage") or (
+                f"{len(model_aliases) + len(model_keys)} model references"
+                if model_aliases or model_keys
+                else "0 model-benchmark scores"
+            )
         sources.append(
             {
                 "id": source_id,
@@ -453,13 +462,15 @@ def external_sources_payload(external_benchmark_data: dict[str, Any]) -> list[di
                 "icon": _initials(source.get("label") or source_id),
                 "url": source.get("url") or "",
                 "category": source.get("category") or "Benchmark",
-                "coverage": f"{len(results)} model-benchmark scores",
+                "coverage": coverage,
                 "focus": focus or source.get("note") or "Benchmark evaluation reference.",
                 "note": source.get("note") or source.get("collectionStatus") or "",
-                "scoreStatus": "benchmark" if related_metrics else "reference",
+                "scoreStatus": "benchmark" if related_metrics else source.get("scoreStatus") or "reference",
                 "defaultWeight": 0,
                 "relatedMetrics": related_metrics,
                 "benchmarkIds": benchmark_ids,
+                "modelAliases": model_aliases,
+                "modelKeys": model_keys,
             }
         )
     return sources
