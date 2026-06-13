@@ -32,7 +32,7 @@ a {
 .topbar {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 60;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -90,6 +90,7 @@ h2 {
   display: grid;
   justify-items: end;
   gap: 8px;
+  min-width: 0;
 }
 
 main {
@@ -1909,9 +1910,8 @@ tr[data-card-href]:focus-visible {
 
 .compare-model-facts b,
 .compare-model-facts em {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .compare-model-facts b {
@@ -1990,9 +1990,8 @@ tr[data-card-href]:focus-visible {
 
 .compare-value strong,
 .compare-value em {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .compare-value strong {
@@ -2385,12 +2384,21 @@ tr[data-card-href]:focus-visible {
 
 .rank-card strong,
 .detail-stat strong {
-  overflow: hidden;
   color: var(--ink);
   font-size: 24px;
   line-height: 1;
+}
+
+.rank-card strong {
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.detail-stat strong {
+  overflow-wrap: anywhere;
+  line-height: 1.08;
+  white-space: normal;
 }
 
 .rank-card em,
@@ -2454,8 +2462,8 @@ tr[data-card-href]:focus-visible {
 
 .radar-plot {
   display: block;
-  width: min(100%, 760px);
-  min-width: 560px;
+  width: min(100%, 980px);
+  min-width: 760px;
   height: auto;
   margin-inline: auto;
 }
@@ -2506,22 +2514,86 @@ tr[data-card-href]:focus-visible {
   stroke-width: 2;
 }
 
-.radar-labels text {
-  fill: var(--ink);
+.radar-axis-label {
+  display: grid;
+  align-content: center;
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+  color: var(--ink);
+  font-family: inherit;
   font-size: 13px;
-  font-weight: 760;
-}
-
-.radar-label-value {
-  fill: var(--accent-3);
-  font-size: 14px;
-  font-weight: 860;
-}
-
-.radar-label-average {
-  fill: var(--accent-2);
-  font-size: 12px;
   font-weight: 820;
+  line-height: 1.16;
+  overflow: visible;
+}
+
+.radar-axis-label.is-left {
+  text-align: right;
+}
+
+.radar-axis-label.is-center {
+  text-align: center;
+}
+
+.radar-axis-label strong {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.radar-axis-label strong b {
+  color: var(--accent-3);
+}
+
+.radar-axis-label em {
+  color: var(--accent-2);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 820;
+}
+
+.radar-axis-score-list {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.radar-axis-score {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 760;
+  line-height: 1.1;
+}
+
+.radar-axis-label.is-left .radar-axis-score {
+  justify-content: flex-end;
+}
+
+.radar-axis-label.is-center .radar-axis-score {
+  justify-content: center;
+}
+
+.radar-axis-score i {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--score-color, var(--accent-3));
+  box-shadow: 0 0 0 2px rgb(255 255 255 / 0.9);
+}
+
+.radar-axis-score b {
+  color: var(--score-color, var(--accent-3));
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.radar-axis-score span {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .radar-foot {
@@ -2538,13 +2610,121 @@ tr[data-card-href]:focus-visible {
   font-weight: 760;
 }
 
+.radar-basis {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.radar-basis-head {
+  display: grid;
+  gap: 3px;
+}
+
+.radar-basis-head strong {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.radar-basis-head span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.radar-basis-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.radar-basis-grid article {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  border: 1px solid rgb(148 163 184 / 0.26);
+  border-radius: 8px;
+  padding: 10px;
+  background: #fbfdff;
+}
+
+.radar-basis-grid strong {
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.radar-basis-grid span {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
 .detail-panel {
   display: grid;
   gap: 14px;
 }
 
 .detail-stat-grid {
-  grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.detail-modality-card {
+  align-content: start;
+}
+
+.modality-support-grid {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.modality-support-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  color: #aab2be;
+  background: transparent;
+  opacity: 0.58;
+}
+
+.modality-support-icon.is-supported {
+  border-color: rgb(38 95 159 / 0.2);
+  color: var(--accent-3);
+  background: rgb(38 95 159 / 0.08);
+  opacity: 1;
+}
+
+.modality-support-icon .ui-icon,
+.modality-support-icon .ui-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.compare-modality-value {
+  gap: 5px;
+}
+
+.compare-modality-value .modality-support-grid {
+  gap: 5px;
+}
+
+.compare-modality-value .modality-support-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.compare-modality-value .modality-support-icon .ui-icon,
+.compare-modality-value .modality-support-icon .ui-icon svg {
+  width: 16px;
+  height: 16px;
 }
 
 .detail-info-grid {
@@ -3084,11 +3264,14 @@ tr[data-card-href]:focus-visible {
 
   .header-actions {
     justify-items: start;
+    max-width: 100%;
     width: 100%;
   }
 
   .header-actions .segmented-control {
-    width: auto;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .chart-shell {
@@ -4106,6 +4289,11 @@ tbody tr:hover {
   font-weight: 850;
 }
 
+.detail-stat strong {
+  line-height: 1.08;
+  white-space: normal;
+}
+
 .benchmark-row,
 .benchmark-evidence-row,
 .variant-row,
@@ -4346,7 +4534,11 @@ tbody tr:hover {
   }
 
   .radar-plot {
-    min-width: 520px;
+    min-width: 700px;
+  }
+
+  .radar-basis-grid {
+    grid-template-columns: 1fr;
   }
 
   .compare-model-facts {

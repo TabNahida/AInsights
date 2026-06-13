@@ -156,7 +156,7 @@ const copy = {
     compareEmpty: "请选择至少一个模型",
     compareCoreTitle: "核心数据",
     compareRadarTitle: "能力雷达对比",
-    compareRadarSubtitle: "同一组六维能力聚合，叠加显示已选模型与全体平均值",
+    compareRadarSubtitle: "同一组六维能力聚合，叠加显示已选模型的分数",
     compareBenchmarkTitle: "测试项数据",
     compareMetricColumn: "指标",
     compareRemove: "移除",
@@ -168,6 +168,8 @@ const copy = {
       releaseDate: "发布日期",
       speed: "输出速度",
       context: "上下文",
+      inputModality: "输入模态",
+      outputModality: "输出模态",
       inputPrice: "输入价格",
       outputPrice: "输出价格",
       runCost: "AA 运行成本",
@@ -187,6 +189,8 @@ const copy = {
     radarAverage: "平均值",
     radarDataSource: "数据来源",
     radarSourceText: "AA / AInsights 参考项目",
+    radarBasisTitle: "雷达维度口径",
+    radarBasisSubtitle: "每个方向取下列测试项的可用分数均值。",
     radarNoData: "暂无可绘制的能力维度",
     radarAxes: {
       cognition: "认知逻辑",
@@ -198,8 +202,8 @@ const copy = {
     },
     detailRows: {
       provider: "供应商",
-      inputTypes: "输入类型",
-      outputTypes: "输出类型",
+      inputTypes: "输入模态",
+      outputTypes: "输出模态",
       parameters: "参数规模",
       activeParameters: "激活参数",
       reasoningModes: "推理模式",
@@ -216,6 +220,7 @@ const copy = {
       runCostRank: "运行成本排名",
       lowerBetter: "越低越好",
       higherBetter: "越高越好",
+      supported: "支持",
     },
     releaseDate: "发布日期",
     currentPreset: "当前预设",
@@ -452,7 +457,7 @@ const copy = {
     compareEmpty: "Choose at least one model",
     compareCoreTitle: "Core data",
     compareRadarTitle: "Capability radar",
-    compareRadarSubtitle: "Six aggregated capability axes overlaid for the selected models and dataset average",
+    compareRadarSubtitle: "Six aggregated capability axes overlaid for the selected models",
     compareBenchmarkTitle: "Benchmark data",
     compareMetricColumn: "Metric",
     compareRemove: "Remove",
@@ -464,6 +469,8 @@ const copy = {
       releaseDate: "Release date",
       speed: "Output speed",
       context: "Context",
+      inputModality: "Input modality",
+      outputModality: "Output modality",
       inputPrice: "Input price",
       outputPrice: "Output price",
       runCost: "AA run cost",
@@ -483,6 +490,8 @@ const copy = {
     radarAverage: "Average",
     radarDataSource: "Sources",
     radarSourceText: "AA / AInsights reference benchmarks",
+    radarBasisTitle: "Radar axis basis",
+    radarBasisSubtitle: "Each axis averages available scores from these benchmarks.",
     radarNoData: "No capability axes available",
     radarAxes: {
       cognition: "Cognition",
@@ -494,8 +503,8 @@ const copy = {
     },
     detailRows: {
       provider: "Provider",
-      inputTypes: "Input types",
-      outputTypes: "Output types",
+      inputTypes: "Input modality",
+      outputTypes: "Output modality",
       parameters: "Parameters",
       activeParameters: "Active parameters",
       reasoningModes: "Reasoning modes",
@@ -512,6 +521,7 @@ const copy = {
       runCostRank: "Run-cost rank",
       lowerBetter: "lower is better",
       higherBetter: "higher is better",
+      supported: "supported",
     },
     releaseDate: "Release date",
     currentPreset: "Current preset",
@@ -761,6 +771,12 @@ const providerColors = {
   "Z AI": "#4b5563",
 };
 const fallbackColors = ["#0f766e", "#315c96", "#b45309", "#7c3aed", "#be123c", "#047857"];
+const modalitySpecs = [
+  { key: "text", label: "Text", icon: "text" },
+  { key: "image", label: "Image", icon: "image" },
+  { key: "speech", label: "Audio", icon: "audio" },
+  { key: "video", label: "Video", icon: "video" },
+];
 
 init();
 
@@ -2432,6 +2448,7 @@ function renderModelDetail(ranked, preset) {
         <h2>${escapeHtml(tr("detailSourcesTitle"))}</h2>
       </div>
       <div class="source-grid compact">${modelSourceCardsHtml(model)}</div>
+      ${renderRadarBasisNotes()}
     </section>
   `;
 }
@@ -2468,10 +2485,10 @@ function renderRadarChart(models, options = {}) {
   if (!hasData) return `<div class="empty">${escapeHtml(tr("radarNoData"))}</div>`;
 
   const detailModel = options.mode === "detail" ? visibleModels[0] : null;
-  const center = { x: 320, y: 258 };
-  const radius = 150;
-  const labelRadius = 220;
+  const layout = radarChartLayout(options.mode, visibleModels.length);
+  const { center, radius, labelRadius } = layout;
   const rings = [20, 40, 60, 80, 100];
+  const showAverage = Boolean(options.average && options.mode !== "compare");
   const averageValues = axes.map((axis) => radarAxisAverage(axis));
   const averagePoints = radarPolygonPoints(averageValues, center, radius);
   const series = visibleModels.slice(0, 8).map((model, index) => ({
@@ -2486,10 +2503,10 @@ function renderRadarChart(models, options = {}) {
         ${series.map((item) => `
           <span><i style="--legend-color: ${escapeHtml(item.color)}"></i>${escapeHtml(item.model.model)}</span>
         `).join("")}
-        ${options.average ? `<span><i class="average-key"></i>${escapeHtml(tr("radarAverage"))}</span>` : ""}
+        ${showAverage ? `<span><i class="average-key"></i>${escapeHtml(tr("radarAverage"))}</span>` : ""}
       </div>
       <div class="radar-plot-wrap">
-        <svg class="radar-plot" viewBox="0 0 640 536" role="img" aria-label="${escapeHtml(tr(options.mode === "compare" ? "compareRadarTitle" : "detailRankTitle"))}">
+        <svg class="radar-plot" viewBox="0 0 ${layout.width} ${layout.height}" role="img" aria-label="${escapeHtml(tr(options.mode === "compare" ? "compareRadarTitle" : "detailRankTitle"))}">
           <g class="radar-grid">
             ${rings.map((ring) => `<polygon points="${escapeHtml(radarPolygonPoints(axes.map(() => ring), center, radius))}"></polygon>`).join("")}
             ${axes.map((axis, index) => {
@@ -2497,7 +2514,7 @@ function renderRadarChart(models, options = {}) {
               return `<line x1="${center.x}" y1="${center.y}" x2="${formatSvgNumber(end.x)}" y2="${formatSvgNumber(end.y)}"></line>`;
             }).join("")}
           </g>
-          ${options.average ? `<polygon class="radar-area radar-average-area" points="${escapeHtml(averagePoints)}"></polygon>` : ""}
+          ${showAverage ? `<polygon class="radar-area radar-average-area" points="${escapeHtml(averagePoints)}"></polygon>` : ""}
           ${series.map((item, index) => `
             <polygon class="radar-area radar-series-area" style="--series-color: ${escapeHtml(item.color)}; --series-index: ${index}" points="${escapeHtml(radarPolygonPoints(item.values, center, radius))}"></polygon>
             <polyline class="radar-series-line" style="--series-color: ${escapeHtml(item.color)}" points="${escapeHtml(radarPolygonPoints(item.values, center, radius))}"></polyline>
@@ -2507,9 +2524,9 @@ function renderRadarChart(models, options = {}) {
               return `<circle class="radar-point" style="--series-color: ${escapeHtml(item.color)}" cx="${formatSvgNumber(point.x)}" cy="${formatSvgNumber(point.y)}" r="3.8"></circle>`;
             }).join("")}
           `).join("")}
-          ${options.average ? `<polyline class="radar-average-line" points="${escapeHtml(averagePoints)}"></polyline>` : ""}
+          ${showAverage ? `<polyline class="radar-average-line" points="${escapeHtml(averagePoints)}"></polyline>` : ""}
           <g class="radar-labels">
-            ${axes.map((axis, index) => renderRadarAxisLabel(axis, index, axes.length, center, labelRadius, detailModel)).join("")}
+            ${axes.map((axis, index) => renderRadarAxisLabel(axis, index, axes.length, layout, detailModel, series, options.mode)).join("")}
           </g>
         </svg>
       </div>
@@ -2521,19 +2538,91 @@ function renderRadarChart(models, options = {}) {
   `;
 }
 
-function renderRadarAxisLabel(axis, index, count, center, labelRadius, detailModel) {
+function radarChartLayout(mode, seriesCount = 1) {
+  const isCompare = mode === "compare";
+  const scoreRows = Math.min(Math.max(seriesCount, 1), 8);
+  const width = isCompare ? 980 : 920;
+  const height = isCompare ? Math.max(720, 600 + scoreRows * 22) : 690;
+  return {
+    width,
+    height,
+    center: { x: width / 2, y: isCompare ? Math.round(height * 0.46) : 322 },
+    radius: isCompare ? 158 : 162,
+    labelRadius: isCompare ? 286 : 278,
+  };
+}
+
+function renderRadarAxisLabel(axis, index, count, layout, detailModel, series, mode) {
+  const { center, labelRadius } = layout;
   const point = radarPoint(index, 100, count, center, labelRadius);
-  const anchor = point.x < center.x - 24 ? "end" : point.x > center.x + 24 ? "start" : "middle";
+  const box = radarAxisLabelBox(point, layout, mode, series.length);
   const value = detailModel ? radarAxisValue(detailModel, axis) : null;
   const rank = detailModel ? radarAxisRank(axis, detailModel) : null;
   const average = radarAxisAverage(axis);
   const rankLabel = rank ? `#${rank.rank}` : "";
+  const content = mode === "compare"
+    ? renderRadarCompareAxisLabel(axis, series)
+    : renderRadarDetailAxisLabel(axis, value, average, rankLabel);
   return `
-    <text x="${formatSvgNumber(point.x)}" y="${formatSvgNumber(point.y)}" text-anchor="${anchor}">
-      ${detailModel ? `<tspan class="radar-label-value">${escapeHtml(formatNumber(value))}</tspan>` : ""}
-      <tspan class="radar-label-name" ${detailModel ? "" : `x="${formatSvgNumber(point.x)}"`}>${escapeHtml(axis.label)}</tspan>
-      <tspan class="radar-label-average" x="${formatSvgNumber(point.x)}" dy="17">${escapeHtml(formatNumber(average))}${rankLabel ? ` · ${escapeHtml(rankLabel)}` : ""}</tspan>
-    </text>
+    <foreignObject x="${formatSvgNumber(box.x)}" y="${formatSvgNumber(box.y)}" width="${formatSvgNumber(box.width)}" height="${formatSvgNumber(box.height)}">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="radar-axis-label ${box.anchorClass}">
+        ${content}
+      </div>
+    </foreignObject>
+  `;
+}
+
+function radarAxisLabelBox(point, layout, mode, seriesCount) {
+  const isCompare = mode === "compare";
+  const width = isCompare ? 244 : 236;
+  const height = isCompare ? Math.min(196, 50 + Math.min(Math.max(seriesCount, 1), 8) * 20) : 82;
+  const side = point.x < layout.center.x - 32 ? "left" : point.x > layout.center.x + 32 ? "right" : "center";
+  let x = point.x - width / 2;
+  let y = point.y - height / 2;
+  if (side === "left") x = point.x - width - 10;
+  if (side === "right") x = point.x + 10;
+  if (point.y < layout.center.y - layout.labelRadius * 0.62) y = point.y - height - 4;
+  if (point.y > layout.center.y + layout.labelRadius * 0.62) y = point.y + 4;
+  return {
+    x: clamp(x, 8, layout.width - width - 8),
+    y: clamp(y, 8, layout.height - height - 8),
+    width,
+    height,
+    anchorClass: side === "left" ? "is-left" : side === "right" ? "is-right" : "is-center",
+  };
+}
+
+function renderRadarDetailAxisLabel(axis, value, average, rankLabel) {
+  return `
+    <strong><b>${escapeHtml(formatNumber(value))}</b> ${escapeHtml(axis.label)}</strong>
+    <em>${escapeHtml(formatNumber(average))}${rankLabel ? ` · ${escapeHtml(rankLabel)}` : ""}</em>
+  `;
+}
+
+function renderRadarCompareAxisLabel(axis, series) {
+  const rows = series
+    .map((item) => ({
+      model: item.model,
+      color: item.color,
+      value: radarAxisValue(item.model, axis),
+    }))
+    .sort((a, b) => {
+      const aFinite = Number.isFinite(a.value);
+      const bFinite = Number.isFinite(b.value);
+      if (aFinite !== bFinite) return bFinite - aFinite;
+      return (b.value - a.value) || a.model.model.localeCompare(b.model.model);
+    });
+  return `
+    <strong>${escapeHtml(axis.label)}</strong>
+    <span class="radar-axis-score-list">
+      ${rows.map((row) => `
+        <span class="radar-axis-score" style="--score-color: ${escapeHtml(row.color)}">
+          <i></i>
+          <b>${escapeHtml(formatNumber(row.value))}</b>
+          <span>${escapeHtml(scatterLabelText(row.model.model))}</span>
+        </span>
+      `).join("")}
+    </span>
   `;
 }
 
@@ -2570,6 +2659,33 @@ function radarAxes() {
       metrics: ["AA-Omniscience Accuracy", "AA-Omniscience Non-Hallucination Rate"],
     },
   ];
+}
+
+function renderRadarBasisNotes() {
+  const axes = radarAxes();
+  return `
+    <div class="radar-basis">
+      <div class="radar-basis-head">
+        <strong>${escapeHtml(tr("radarBasisTitle"))}</strong>
+        <span>${escapeHtml(tr("radarBasisSubtitle"))}</span>
+      </div>
+      <div class="radar-basis-grid">
+        ${axes.map((axis) => `
+          <article>
+            <strong>${escapeHtml(axis.label)}</strong>
+            <span>${escapeHtml(radarAxisMetricLabels(axis).join(" / "))}</span>
+          </article>
+        `).join("")}
+      </div>
+    </div>
+  `;
+}
+
+function radarAxisMetricLabels(axis) {
+  const labels = axis.metrics
+    .map((key) => metricDefinition(key).label || key)
+    .filter(Boolean);
+  return [...new Set(labels)];
 }
 
 function radarAxisValue(model, axis) {
@@ -2620,46 +2736,87 @@ function renderDetailPanel(model) {
       <div class="stat-grid detail-stat-grid">
         ${renderDetailStat(tr("headers.score"), formatNumber(model.score), scoreRankMeta(model), "trophy")}
         ${renderDetailStat(tr("headers.speed"), formatSpeed(model.medianOutputSpeed), valueRankMeta(model, (row) => row.medianOutputSpeed, true, "higherBetter"), "gauge")}
+        ${renderDetailStat("AA run", formatMoney(modelCost(model)), valueRankMeta(model, modelCost, false, "lowerBetter"), "dollar")}
         ${renderDetailStat(tr("headers.context"), formatTokens(model.contextWindowTokens), valueRankMeta(model, (row) => row.contextWindowTokens, true, "higherBetter"), "database")}
+        ${renderDetailModalityStat(tr("detailRows.inputTypes"), model, "input", "arrowDown")}
+        ${renderDetailModalityStat(tr("detailRows.outputTypes"), model, "output", "arrowUp")}
         ${renderDetailStat(tr("table.input"), formatMoney(model.pricing?.inputPerMillionTokensUsd), valueRankMeta(model, (row) => row.pricing?.inputPerMillionTokensUsd, false, "lowerBetter"), "arrowDown")}
         ${renderDetailStat(tr("table.output"), formatMoney(model.pricing?.outputPerMillionTokensUsd), valueRankMeta(model, (row) => row.pricing?.outputPerMillionTokensUsd, false, "lowerBetter"), "arrowUp")}
         ${renderDetailStat(tr("table.cache"), formatMoney(model.pricing?.cacheHitPerMillionTokensUsd), valueRankMeta(model, (row) => row.pricing?.cacheHitPerMillionTokensUsd, false, "lowerBetter"), "database")}
-        ${renderDetailStat("AA run", formatMoney(modelCost(model)), valueRankMeta(model, modelCost, false, "lowerBetter"), "dollar")}
       </div>
-      ${renderDetailInfoGrid(model)}
     </div>
   `;
 }
 
-function renderDetailInfoGrid(model) {
-  const details = model.modelDetails || {};
-  const rows = [
-    [tr("detailRows.provider"), model.creator || tr("unknownCreator"), providerHref(model.creator || tr("unknownCreator"), currentModelBackSource())],
-    [tr("detailRows.inputTypes"), listLabel(model.inputModalities || details.inputModalities || ["Text"])],
-    [tr("detailRows.outputTypes"), listLabel(model.outputModalities || details.outputModalities || ["Text"])],
-    [tr("detailRows.parameters"), details.parameters || details.totalParameters || tr("notAvailable")],
-    [tr("detailRows.activeParameters"), details.activeParameters || tr("notAvailable")],
-    [tr("detailRows.reasoningModes"), listLabel(details.reasoningModes || (model.isReasoning ? [tr("reasoning")] : []))],
-    [tr("detailRows.architecture"), details.architecture || tr("notAvailable")],
-    [tr("detailRows.apiAccess"), listLabel(details.apiAccess || [])],
-    [tr("detailRows.license"), details.license || model.openSourceCategorization || tr("notAvailable")],
-    [tr("detailRows.contextNote"), details.contextNote || tr("notAvailable")],
-  ];
+function normalizeList(values) {
+  const list = Array.isArray(values) ? values : [values];
+  return list.map((value) => String(value || "").trim()).filter(Boolean);
+}
+
+function renderDetailModalityStat(label, model, kind, icon = "database") {
+  const state = modalitySupportState(model, kind);
+  const meta = `${state.supportedCount}/${modalitySpecs.length} ${tr("detailRows.supported")}`;
   return `
-    <div class="detail-info-grid">
-      ${rows.map(([label, value, href]) => {
-        const content = href && value !== tr("notAvailable")
-          ? `<a href="${escapeHtml(href)}">${escapeHtml(value)}</a>`
-          : escapeHtml(value || tr("notAvailable"));
+    <article class="detail-stat detail-modality-card">
+      ${renderIcon(icon)}
+      <span>${escapeHtml(label)}</span>
+      ${renderModalitySupportGrid(model, kind)}
+      <em>${escapeHtml(meta)}</em>
+    </article>
+  `;
+}
+
+function renderModalitySupportGrid(model, kind) {
+  const state = modalitySupportState(model, kind);
+  return `
+    <div class="modality-support-grid" role="list" aria-label="${escapeHtml(kind === "input" ? tr("detailRows.inputTypes") : tr("detailRows.outputTypes"))}">
+      ${modalitySpecs.map((spec) => {
+        const supported = Boolean(state.flags[spec.key]);
         return `
-          <div class="detail-info-row">
-            <span>${escapeHtml(label)}</span>
-            <strong>${content}</strong>
-          </div>
+          <span class="modality-support-icon${supported ? " is-supported" : ""}" role="listitem" title="${escapeHtml(spec.label)}" aria-label="${escapeHtml(`${spec.label}: ${supported ? tr("detailRows.supported") : tr("notAvailable")}`)}">
+            ${renderIcon(spec.icon)}
+          </span>
         `;
       }).join("")}
     </div>
   `;
+}
+
+function modalitySupportState(model, kind) {
+  const details = model.modelDetails || {};
+  const rawFlags = details.modalities?.[kind] || {};
+  const source = kind === "output"
+    ? (model.outputModalities || details.outputModalities)
+    : (model.inputModalities || details.inputModalities);
+  const list = normalizeList(source || ["Text"]);
+  const listFlags = modalityFlagsFromList(list);
+  const flags = {};
+  for (const spec of modalitySpecs) {
+    const raw = rawFlags[spec.key];
+    flags[spec.key] = typeof raw === "boolean" ? raw : Boolean(listFlags[spec.key]);
+  }
+  return {
+    flags,
+    supportedCount: modalitySpecs.filter((spec) => flags[spec.key]).length,
+  };
+}
+
+function modalityFlagsFromList(values) {
+  const flags = {};
+  for (const value of normalizeList(values)) {
+    const key = modalityKeyFromLabel(value);
+    if (key) flags[key] = true;
+  }
+  return flags;
+}
+
+function modalityKeyFromLabel(value) {
+  const text = String(value || "").toLowerCase();
+  if (text.includes("image") || text.includes("vision") || text.includes("图片") || text.includes("图像")) return "image";
+  if (text.includes("video") || text.includes("视频")) return "video";
+  if (text.includes("audio") || text.includes("speech") || text.includes("sound") || text.includes("voice") || text.includes("语音") || text.includes("音频")) return "speech";
+  if (text.includes("text") || text.includes("文本") || text.includes("文字")) return "text";
+  return "";
 }
 
 function scoreRankMeta(model) {
@@ -2966,7 +3123,7 @@ function renderComparePage(ranked) {
         <h2>${escapeHtml(tr("compareRadarTitle"))}</h2>
         <p>${escapeHtml(tr("compareRadarSubtitle"))}</p>
       </div>
-      ${renderRadarChart(selected, { average: true, mode: "compare" })}
+      ${renderRadarChart(selected, { average: false, mode: "compare" })}
     </section>
 
     <section class="detail-section compare-section">
@@ -2990,8 +3147,12 @@ function renderComparePage(ranked) {
 function ensureDefaultCompareSelection(models) {
   const hasModelsParam = new URLSearchParams(location.search).has("models");
   if (state.compareIds.length === 0 && !hasModelsParam && !state.compareTouched) {
-    state.compareIds = models.slice(0, 3).map(modelRouteId);
+    state.compareIds = defaultCompareModels(models).map(modelRouteId);
   }
+}
+
+function defaultCompareModels(models) {
+  return rankRows(dedupeByBestVariant(models.filter((model) => Number.isFinite(model.score)))).slice(0, 3);
 }
 
 function selectedCompareModels(models) {
@@ -3156,6 +3317,16 @@ function compareCoreRows(models) {
       values: models.map((model) => compareValue(formatTokens(model.contextWindowTokens), compactValueRank(model, (row) => row.contextWindowTokens, true))),
     },
     {
+      label: tr("compareRows.inputModality"),
+      iconName: "arrowDown",
+      values: models.map((model) => compareModalityValue(model, "input")),
+    },
+    {
+      label: tr("compareRows.outputModality"),
+      iconName: "arrowUp",
+      values: models.map((model) => compareModalityValue(model, "output")),
+    },
+    {
       label: tr("compareRows.inputPrice"),
       iconName: "arrowDown",
       values: models.map((model) => compareValue(formatMoney(model.pricing?.inputPerMillionTokensUsd), joinMeta(tr("table.perMillion"), compactValueRank(model, (row) => row.pricing?.inputPerMillionTokensUsd, false)))),
@@ -3207,6 +3378,16 @@ function compareValue(value, meta = "") {
     <span class="compare-value">
       <strong>${escapeHtml(value || tr("notAvailable"))}</strong>
       ${meta ? `<em>${escapeHtml(meta)}</em>` : ""}
+    </span>
+  `;
+}
+
+function compareModalityValue(model, kind) {
+  const state = modalitySupportState(model, kind);
+  return `
+    <span class="compare-value compare-modality-value">
+      ${renderModalitySupportGrid(model, kind)}
+      <em>${escapeHtml(`${state.supportedCount}/${modalitySpecs.length} ${tr("detailRows.supported")}`)}</em>
     </span>
   `;
 }
@@ -3347,16 +3528,20 @@ function renderIcon(name) {
     arrowLeft: '<path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path>',
     arrowDown: '<path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path>',
     arrowUp: '<path d="M12 19V5"></path><path d="m5 12 7-7 7 7"></path>',
+    audio: '<path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle>',
     brain: '<path d="M8 13a4 4 0 0 1-2-7.5A4 4 0 0 1 13 4a4 4 0 0 1 7 2.5A4 4 0 0 1 18 14"></path><path d="M8 13v3a4 4 0 0 0 4 4h1"></path><path d="M16 13v7"></path>',
     calendar: '<path d="M8 2v4"></path><path d="M16 2v4"></path><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M3 10h18"></path>',
     code: '<path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path>',
     database: '<ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"></path>',
     dollar: '<path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"></path>',
     gauge: '<path d="M12 14l4-4"></path><path d="M3.3 18a10 10 0 1 1 17.4 0"></path>',
+    image: '<rect x="3" y="5" width="18" height="14" rx="2"></rect><circle cx="8.5" cy="10.5" r="1.5"></circle><path d="m21 15-5-5L5 19"></path>',
     network: '<rect x="16" y="16" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="9" y="2" width="6" height="6" rx="1"></rect><path d="M12 8v4"></path><path d="M6 16l6-4 6 4"></path>',
     plus: '<path d="M5 12h14"></path><path d="M12 5v14"></path>',
     sliders: '<path d="M4 21v-7"></path><path d="M4 10V3"></path><path d="M12 21v-9"></path><path d="M12 8V3"></path><path d="M20 21v-5"></path><path d="M20 12V3"></path><path d="M2 14h4"></path><path d="M10 8h4"></path><path d="M18 16h4"></path>',
+    text: '<path d="M4 7h16"></path><path d="M4 12h10"></path><path d="M4 17h14"></path>',
     trophy: '<path d="M8 21h8"></path><path d="M12 17v4"></path><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"></path><path d="M5 6H3a3 3 0 0 0 3 3h1"></path><path d="M19 6h2a3 3 0 0 1-3 3h-1"></path>',
+    video: '<rect x="3" y="6" width="13" height="12" rx="2"></rect><path d="m16 10 5-3v10l-5-3"></path>',
     x: '<path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>',
   };
   return `<span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${paths[name] || paths.trophy}</svg></span>`;

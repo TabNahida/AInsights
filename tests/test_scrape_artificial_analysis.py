@@ -30,6 +30,14 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
                 "short_name": "Reasoning Model",
                 "reasoning_model": True,
                 "slug": "reasoning-model-high",
+                "input_modality_text": True,
+                "input_modality_image": True,
+                "input_modality_speech": False,
+                "input_modality_video": None,
+                "output_modality_text": True,
+                "output_modality_image": False,
+                "output_modality_speech": False,
+                "output_modality_video": False,
                 "release_date": "2026-01-01",
                 "model_url": "/models/reasoning-model",
                 "model_creators": {
@@ -88,6 +96,12 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
         self.assertEqual(output[0]["model"], "Reasoning Model")
         self.assertEqual(output[0]["is_reasoning"], "true")
         self.assertEqual(output[0]["slug"], "reasoning-model-high")
+        self.assertEqual(output[0]["input_modality_text"], "true")
+        self.assertEqual(output[0]["input_modality_image"], "true")
+        self.assertEqual(output[0]["input_modality_speech"], "false")
+        self.assertEqual(output[0]["input_modality_video"], "")
+        self.assertEqual(output[0]["output_modality_text"], "true")
+        self.assertEqual(output[0]["output_modality_image"], "false")
         self.assertEqual(output[0]["creator"], "Lab A")
         self.assertEqual(output[0]["creator_slug"], "lab-a")
         self.assertEqual(output[0]["creator_color"], "#123456")

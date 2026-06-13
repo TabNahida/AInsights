@@ -153,6 +153,10 @@ def build_raw_scores_rows(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]
             "creator_logo_small_url": creator_logo_small_url or creator_logo_url,
             "release_date": row.get("release_date") or "",
             "model_url": row.get("model_url") or "",
+            **{
+                column: _format_bool(row.get(column))
+                for column in MODALITY_COLUMNS
+            },
             "context_window_tokens": _format_number(row.get("context_window_tokens")),
             "open_source_categorization": row.get("open_source_categorization") or "",
             "median_output_speed": _format_number(timescale.get("median_output_speed")),
@@ -268,6 +272,14 @@ def _format_number(value: Any) -> float | str:
     return 0.0 if rounded == -0.0 else rounded
 
 
+def _format_bool(value: Any) -> str:
+    if value is True:
+        return "true"
+    if value is False:
+        return "false"
+    return ""
+
+
 def _percent(row: dict[str, Any], key: str) -> float | None:
     value = _as_float(row.get(key))
     return None if value is None else value * 100
@@ -349,12 +361,31 @@ RAW_METADATA_COLUMNS = [
     "creator_logo_small_url",
     "release_date",
     "model_url",
+    "input_modality_text",
+    "input_modality_image",
+    "input_modality_speech",
+    "input_modality_video",
+    "output_modality_text",
+    "output_modality_image",
+    "output_modality_speech",
+    "output_modality_video",
     "context_window_tokens",
     "open_source_categorization",
     "median_output_speed",
     "Cache Hit Price Per 1M Tokens (USD)",
     "Input Price Per 1M Tokens (USD)",
     "Output Price Per 1M Tokens (USD)",
+]
+
+MODALITY_COLUMNS = [
+    "input_modality_text",
+    "input_modality_image",
+    "input_modality_speech",
+    "input_modality_video",
+    "output_modality_text",
+    "output_modality_image",
+    "output_modality_speech",
+    "output_modality_video",
 ]
 
 AA_PRESET_COLUMNS = [

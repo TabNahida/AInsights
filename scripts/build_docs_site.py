@@ -140,6 +140,12 @@ MODEL_DETAIL_OVERRIDES = {
         },
     },
 }
+MODALITY_SPECS = [
+    ("text", "Text", "text"),
+    ("image", "Image", "image"),
+    ("speech", "Audio", "audio"),
+    ("video", "Video", "video"),
+]
 EXTERNAL_SOURCES = [
     {
         "id": "artificial-analysis",
@@ -586,14 +592,57 @@ def model_detail_payload(row: dict[str, Any]) -> dict[str, Any]:
         or MODEL_DETAIL_OVERRIDES.get(model_key)
         or {}
     )
-    if not override:
+    input_flags = modality_flags_from_row(row, "input")
+    output_flags = modality_flags_from_row(row, "output")
+    if input_flags is None and override.get("inputModalities"):
+        input_flags = modality_flags_from_list(override.get("inputModalities") or [])
+    if output_flags is None and override.get("outputModalities"):
+        output_flags = modality_flags_from_list(override.get("outputModalities") or [])
+
+    if not override and input_flags is None and output_flags is None:
         return {}
     details = dict(override.get("modelDetails") or {})
+    if input_flags is not None or output_flags is not None:
+        details["modalities"] = {
+            "input": input_flags or {},
+            "output": output_flags or {},
+        }
     return {
-        "inputModalities": list(override.get("inputModalities") or ["Text"]),
-        "outputModalities": list(override.get("outputModalities") or ["Text"]),
+        "inputModalities": modality_labels(input_flags, override.get("inputModalities") or ["Text"]),
+        "outputModalities": modality_labels(output_flags, override.get("outputModalities") or ["Text"]),
         "modelDetails": details,
     }
+
+
+def modality_flags_from_row(row: dict[str, Any], direction: str) -> dict[str, bool] | None:
+    values: dict[str, bool] = {}
+    saw_value = False
+    for key, _label, _icon in MODALITY_SPECS:
+        raw = row.get(f"{direction}_modality_{key}")
+        parsed = _bool_or_none(raw)
+        if parsed is None:
+            continue
+        values[key] = parsed
+        saw_value = True
+    return values if saw_value else None
+
+
+def modality_flags_from_list(values: Iterable[Any]) -> dict[str, bool]:
+    normalized = {_match_key(value) for value in values}
+    flags: dict[str, bool] = {}
+    for key, label, icon in MODALITY_SPECS:
+        aliases = {key, _match_key(label), _match_key(icon)}
+        if key == "speech":
+            aliases.update({"audio", "sound", "voice"})
+        flags[key] = bool(normalized & aliases)
+    return flags
+
+
+def modality_labels(flags: dict[str, bool] | None, fallback: Iterable[Any]) -> list[str]:
+    if flags is None:
+        return [str(value) for value in fallback if value]
+    labels = [label for key, label, _icon in MODALITY_SPECS if flags.get(key)]
+    return labels
 
 
 def pricing_payload(row: dict[str, Any]) -> dict[str, float | None]:
@@ -724,6 +773,17 @@ def _number_or_none(value: Any) -> float | None:
         return float(value)
     except (TypeError, ValueError):
         return None
+
+
+def _bool_or_none(value: Any) -> bool | None:
+    if isinstance(value, bool):
+        return value
+    text = str(value or "").strip().lower()
+    if text in {"true", "1", "yes", "y"}:
+        return True
+    if text in {"false", "0", "no", "n"}:
+        return False
+    return None
 
 
 def _variant_suffix(model: str, slug: str) -> str | None:

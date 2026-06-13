@@ -33,6 +33,14 @@ class BuildDocsSiteTests(unittest.TestCase):
                 "is_reasoning": "true",
                 "slug": "model-a-high",
                 "creator": "Lab A",
+                "input_modality_text": "true",
+                "input_modality_image": "true",
+                "input_modality_speech": "false",
+                "input_modality_video": "",
+                "output_modality_text": "true",
+                "output_modality_image": "false",
+                "output_modality_speech": "false",
+                "output_modality_video": "false",
                 "context_window_tokens": "128000",
                 "median_output_speed": "123.4",
                 "Input Price Per 1M Tokens (USD)": "1.25",
@@ -82,6 +90,10 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["label"], "AInsights Index")
         self.assertGreater(payload["models"][0]["variantPriority"], payload["models"][1]["variantPriority"])
         self.assertEqual(payload["models"][0]["contextWindowTokens"], 128000)
+        self.assertEqual(payload["models"][0]["inputModalities"], ["Text", "Image"])
+        self.assertEqual(payload["models"][0]["outputModalities"], ["Text"])
+        self.assertEqual(payload["models"][0]["modelDetails"]["modalities"]["input"]["image"], True)
+        self.assertEqual(payload["models"][0]["modelDetails"]["modalities"]["output"]["video"], False)
         self.assertEqual(payload["models"][0]["medianOutputSpeed"], 123.4)
         self.assertEqual(payload["models"][0]["pricing"]["inputPerMillionTokensUsd"], 1.25)
         self.assertEqual(payload["models"][0]["pricing"]["outputPerMillionTokensUsd"], 5)
