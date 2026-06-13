@@ -47,6 +47,7 @@ GLM47_URL = "https://docs.z.ai/guides/llm/glm-4.7"
 GLM46_URL = "https://docs.z.ai/guides/llm/glm-4.6"
 GLM45_URL = "https://z.ai/blog/glm-4.5"
 GLM45_RAW_URL = GLM45_URL
+MINIMAX_M3_URL = "https://www.minimax.io/models/text/m3"
 MINIMAX_M25_URL = "https://www.minimax.io/news/minimax-m25"
 MINIMAX_M2_URL = "https://www.minimax.io/news/minimax-m2"
 MINIMAX_M1_URL = "https://github.com/MiniMax-AI/MiniMax-M1"
@@ -167,6 +168,7 @@ MODEL_ALIASES = {
     "GLM-4.6": ["GLM-4.6", "GLM 4.6", "zai-org/GLM-4.6"],
     "GLM-4.5": ["GLM-4.5", "GLM 4.5", "zai-org/GLM-4.5"],
     "GLM-4.5-Air": ["GLM-4.5-Air", "GLM 4.5 Air", "zai-org/GLM-4.5-Air"],
+    "MiniMax-M3": ["MiniMax-M3", "MiniMax M3", "MiniMaxAI/MiniMax-M3", "minimax-m3"],
     "MiniMax-M2.5": ["MiniMax-M2.5", "MiniMax M2.5", "minimax-m2.5", "minimax-m25"],
     "MiniMax-M2.1": ["MiniMax-M2.1", "MiniMax M2.1", "minimax-m2.1"],
     "MiniMax-M2": ["MiniMax-M2", "MiniMax M2", "minimax-m2"],
@@ -342,6 +344,13 @@ BENCHMARKS = [
         "unit": "%",
         "icon": "WEB",
         "openaiLabel": "BrowseComp",
+    },
+    {
+        "id": "posttrainbench",
+        "label": "PostTrainBench",
+        "category": "Agentic training",
+        "unit": "%",
+        "icon": "PTB",
     },
     {
         "id": "browsecomp-context",
@@ -1794,6 +1803,25 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
         },
     },
     {
+        "id": "minimax-m3-release",
+        "label": "MiniMax M3 official release",
+        "url": MINIMAX_M3_URL,
+        "rawUrl": MINIMAX_M3_URL,
+        "category": "Official release",
+        "note": "MiniMax M3 official model page. Seed rows use text-visible values for BrowseComp and PostTrainBench; other chart-only values are left for parser/OCR follow-up.",
+        "columns": {"MiniMax M3": "MiniMax-M3", "MiniMax-M3": "MiniMax-M3"},
+        "rowLabels": {
+            "BrowseComp": "browsecomp",
+            "PostTrainBench": "posttrainbench",
+        },
+        "scores": {
+            "MiniMax-M3": {
+                "browsecomp": 83.5,
+                "posttrainbench": 37.1,
+            }
+        },
+    },
+    {
         "id": "minimax-m2-5-release",
         "label": "MiniMax M2.5 official release",
         "url": MINIMAX_M25_URL,
@@ -2565,6 +2593,22 @@ def write_payload(output_json: Path, timeout: float = 30) -> dict[str, Any]:
     return payload
 
 
+def write_seed_payload(output_json: Path) -> dict[str, Any]:
+    source_statuses = {
+        spec["id"]: "seeded-official-values"
+        for spec in OFFICIAL_SOURCE_SPECS
+    }
+    payload = build_payload(
+        {},
+        "seeded-official-values",
+        source_statuses,
+        official_seed_results(),
+    )
+    output_json.parent.mkdir(parents=True, exist_ok=True)
+    output_json.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return payload
+
+
 def _find_label_index(tokens: list[str], label: str) -> int | None:
     normalized_label = _normalize_label(label)
     for index, token in enumerate(tokens):
@@ -2596,13 +2640,14 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Collect benchmark scores for the static site.")
     parser.add_argument("--output-json", default=str(DEFAULT_OUTPUT_JSON), help="JSON payload to write.")
     parser.add_argument("--timeout", type=float, default=30, help="HTTP timeout in seconds.")
+    parser.add_argument("--seed-only", action="store_true", help="Write curated official seed rows without HTTP refresh.")
     return parser.parse_args(argv)
 
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     try:
-        payload = write_payload(Path(args.output_json), timeout=args.timeout)
+        payload = write_seed_payload(Path(args.output_json)) if args.seed_only else write_payload(Path(args.output_json), timeout=args.timeout)
     except Exception as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1

@@ -2401,6 +2401,191 @@ tr[data-card-href]:focus-visible {
   font-weight: 750;
 }
 
+.radar-card {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  border: 1px solid rgb(148 163 184 / 0.28);
+  border-radius: 8px;
+  padding: 14px;
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.96), rgb(250 252 255 / 0.96)),
+    radial-gradient(circle at 50% 44%, rgb(38 95 159 / 0.07), transparent 58%);
+}
+
+.radar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 760;
+}
+
+.radar-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 28px;
+  border: 1px solid rgb(148 163 184 / 0.28);
+  border-radius: 8px;
+  padding: 0 9px;
+  background: rgb(255 255 255 / 0.78);
+}
+
+.radar-legend i {
+  width: 16px;
+  height: 10px;
+  border: 2px solid var(--legend-color, var(--accent-3));
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--legend-color, var(--accent-3)) 14%, transparent);
+}
+
+.radar-legend .average-key {
+  border-color: var(--accent-2);
+  background: rgb(189 91 34 / 0.14);
+}
+
+.radar-plot-wrap {
+  overflow-x: auto;
+  min-width: 0;
+}
+
+.radar-plot {
+  display: block;
+  width: min(100%, 760px);
+  min-width: 560px;
+  height: auto;
+  margin-inline: auto;
+}
+
+.radar-grid polygon {
+  fill: none;
+  stroke: #d8d0c5;
+  stroke-width: 1;
+}
+
+.radar-grid line {
+  stroke: #e1d9cf;
+  stroke-width: 1;
+}
+
+.radar-area {
+  stroke-linejoin: round;
+}
+
+.radar-average-area {
+  fill: rgb(189 91 34 / 0.18);
+  stroke: rgb(189 91 34 / 0.62);
+  stroke-width: 2.5;
+}
+
+.radar-average-line {
+  fill: none;
+  stroke: rgb(189 91 34 / 0.82);
+  stroke-width: 2.5;
+}
+
+.radar-series-area {
+  fill: color-mix(in srgb, var(--series-color, var(--accent-3)) 26%, transparent);
+  stroke: var(--series-color, var(--accent-3));
+  stroke-width: 2.5;
+  opacity: calc(0.78 - (var(--series-index, 0) * 0.04));
+}
+
+.radar-series-line {
+  fill: none;
+  stroke: var(--series-color, var(--accent-3));
+  stroke-width: 2.4;
+}
+
+.radar-point {
+  fill: var(--series-color, var(--accent-3));
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.radar-labels text {
+  fill: var(--ink);
+  font-size: 13px;
+  font-weight: 760;
+}
+
+.radar-label-value {
+  fill: var(--accent-3);
+  font-size: 14px;
+  font-weight: 860;
+}
+
+.radar-label-average {
+  fill: var(--accent-2);
+  font-size: 12px;
+  font-weight: 820;
+}
+
+.radar-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.radar-foot b {
+  color: var(--accent-2);
+  font-weight: 760;
+}
+
+.detail-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.detail-stat-grid {
+  grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+}
+
+.detail-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.detail-info-row {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  border: 1px solid rgb(148 163 184 / 0.28);
+  border-radius: 8px;
+  padding: 10px;
+  background: #fbfdff;
+}
+
+.detail-info-row span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.detail-info-row strong,
+.detail-info-row a {
+  min-width: 0;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 780;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.detail-info-row a:hover {
+  color: var(--accent-3);
+  text-decoration: underline;
+}
+
 .benchmark-profile,
 .benchmark-evidence-list,
 .variant-list {
@@ -4147,8 +4332,21 @@ tbody tr:hover {
   .compare-model-grid,
   .compare-option-list,
   .rank-card-grid,
-  .stat-grid {
+  .stat-grid,
+  .detail-info-grid {
     grid-template-columns: 1fr;
+  }
+
+  .radar-card {
+    padding: 10px;
+  }
+
+  .radar-legend {
+    justify-content: flex-start;
+  }
+
+  .radar-plot {
+    min-width: 520px;
   }
 
   .compare-model-facts {

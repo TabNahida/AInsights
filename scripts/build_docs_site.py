@@ -125,6 +125,21 @@ PROVIDER_LOGO_SLUGS = {
     "xAI": "xai",
     "Z AI": "zai",
 }
+MODEL_DETAIL_OVERRIDES = {
+    "minimax-m3": {
+        "inputModalities": ["Text", "Image", "Video"],
+        "outputModalities": ["Text"],
+        "modelDetails": {
+            "parameters": "427B",
+            "activeParameters": "23B",
+            "reasoningModes": ["thinking", "non-thinking"],
+            "architecture": "MiniMax Sparse Attention (MSA), MoE",
+            "apiAccess": ["MiniMax API", "OpenAI-compatible", "Anthropic-compatible", "open weights"],
+            "license": "minimax-community",
+            "contextNote": "1M context window; MiniMax API documents a guaranteed minimum of 512K.",
+        },
+    },
+}
 EXTERNAL_SOURCES = [
     {
         "id": "artificial-analysis",
@@ -533,8 +548,9 @@ def _model_payload(row: dict[str, Any], metric_keys: list[str]) -> dict[str, Any
     scores = {key: _number_or_none(row.get(key)) for key in metric_keys}
     aa_scores = {key: _number_or_none(row.get(column)) for key, column in AA_PRESET_COLUMNS.items()}
     pricing = pricing_payload(row)
+    detail_payload = model_detail_payload(row)
 
-    return {
+    payload = {
         "modelKey": row.get("model_key") or model,
         "model": model,
         "variantGroup": variant_group(model, slug),
@@ -554,6 +570,29 @@ def _model_payload(row: dict[str, Any], metric_keys: list[str]) -> dict[str, Any
         "pricing": pricing,
         "scores": scores,
         "externalBenchmarks": [],
+    }
+    if detail_payload:
+        payload.update(detail_payload)
+    return payload
+
+
+def model_detail_payload(row: dict[str, Any]) -> dict[str, Any]:
+    slug = str(row.get("slug") or "").strip()
+    model = str(row.get("model") or "").strip()
+    model_key = str(row.get("model_key") or "").strip()
+    override = (
+        MODEL_DETAIL_OVERRIDES.get(slug)
+        or MODEL_DETAIL_OVERRIDES.get(model)
+        or MODEL_DETAIL_OVERRIDES.get(model_key)
+        or {}
+    )
+    if not override:
+        return {}
+    details = dict(override.get("modelDetails") or {})
+    return {
+        "inputModalities": list(override.get("inputModalities") or ["Text"]),
+        "outputModalities": list(override.get("outputModalities") or ["Text"]),
+        "modelDetails": details,
     }
 
 

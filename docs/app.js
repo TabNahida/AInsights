@@ -155,6 +155,8 @@ const copy = {
     compareSelectedTitle: "已选模型",
     compareEmpty: "请选择至少一个模型",
     compareCoreTitle: "核心数据",
+    compareRadarTitle: "能力雷达对比",
+    compareRadarSubtitle: "同一组六维能力聚合，叠加显示已选模型与全体平均值",
     compareBenchmarkTitle: "测试项数据",
     compareMetricColumn: "指标",
     compareRemove: "移除",
@@ -174,13 +176,47 @@ const copy = {
     sourceExplorerTitle: "测评源地图",
     sourceExplorerSubtitle: "AA 主数据之外的常用公开测评，用来交叉理解模型强弱项",
     detailRankTitle: "排名快照",
+    detailRadarSubtitle: "按默认参考项目聚合为六个方向；外圈为 100 分，橙色为全体平均值",
     detailBenchmarkTitle: "AInsights Index 参考项目",
     detailBenchmarkSubtitle: "参与 AInsights Index 默认权重的测试项",
     detailExternalTitle: "非参考项目分数",
     detailExternalSubtitle: "未参与 AInsights Index 默认权重的 AA 子项、官方发布页或其他公开测评",
-    detailCostTitle: "成本与吞吐",
+    detailCostTitle: "Detail",
     detailVariantsTitle: "同模型档位",
     detailSourcesTitle: "外部测评参考",
+    radarAverage: "平均值",
+    radarDataSource: "数据来源",
+    radarSourceText: "AA / AInsights 参考项目",
+    radarNoData: "暂无可绘制的能力维度",
+    radarAxes: {
+      cognition: "认知逻辑",
+      longContext: "长文本推理",
+      instruction: "指令遵循",
+      agentic: "智能体工作",
+      coding: "代码编程",
+      reliability: "抗幻觉性",
+    },
+    detailRows: {
+      provider: "供应商",
+      inputTypes: "输入类型",
+      outputTypes: "输出类型",
+      parameters: "参数规模",
+      activeParameters: "激活参数",
+      reasoningModes: "推理模式",
+      architecture: "架构",
+      apiAccess: "访问方式",
+      license: "许可",
+      contextNote: "上下文说明",
+      scoreRank: "当前排名",
+      speedRank: "速度排名",
+      contextRank: "上下文排名",
+      inputRank: "输入价排名",
+      outputRank: "输出价排名",
+      cacheRank: "缓存价排名",
+      runCostRank: "运行成本排名",
+      lowerBetter: "越低越好",
+      higherBetter: "越高越好",
+    },
     releaseDate: "发布日期",
     currentPreset: "当前预设",
     noBenchmarks: "没有可展示的子项得分",
@@ -415,6 +451,8 @@ const copy = {
     compareSelectedTitle: "Selected models",
     compareEmpty: "Choose at least one model",
     compareCoreTitle: "Core data",
+    compareRadarTitle: "Capability radar",
+    compareRadarSubtitle: "Six aggregated capability axes overlaid for the selected models and dataset average",
     compareBenchmarkTitle: "Benchmark data",
     compareMetricColumn: "Metric",
     compareRemove: "Remove",
@@ -434,13 +472,47 @@ const copy = {
     sourceExplorerTitle: "Benchmark source map",
     sourceExplorerSubtitle: "Public evaluation sources to cross-check model strengths beyond AA",
     detailRankTitle: "Rank snapshot",
+    detailRadarSubtitle: "Default reference benchmarks grouped into six axes; outer ring is 100, orange is the dataset average",
     detailBenchmarkTitle: "AInsights Index reference benchmarks",
     detailBenchmarkSubtitle: "Benchmarks used by the default AInsights Index weighting",
     detailExternalTitle: "Non-reference benchmark scores",
     detailExternalSubtitle: "AA submetrics, official release scores, and public evals outside the default AInsights Index weighting",
-    detailCostTitle: "Cost and throughput",
+    detailCostTitle: "Detail",
     detailVariantsTitle: "Same-model tiers",
     detailSourcesTitle: "External evaluation references",
+    radarAverage: "Average",
+    radarDataSource: "Sources",
+    radarSourceText: "AA / AInsights reference benchmarks",
+    radarNoData: "No capability axes available",
+    radarAxes: {
+      cognition: "Cognition",
+      longContext: "Long-context reasoning",
+      instruction: "Instruction following",
+      agentic: "Agentic work",
+      coding: "Code",
+      reliability: "Hallucination resistance",
+    },
+    detailRows: {
+      provider: "Provider",
+      inputTypes: "Input types",
+      outputTypes: "Output types",
+      parameters: "Parameters",
+      activeParameters: "Active parameters",
+      reasoningModes: "Reasoning modes",
+      architecture: "Architecture",
+      apiAccess: "Access",
+      license: "License",
+      contextNote: "Context note",
+      scoreRank: "Current rank",
+      speedRank: "Speed rank",
+      contextRank: "Context rank",
+      inputRank: "Input price rank",
+      outputRank: "Output price rank",
+      cacheRank: "Cache price rank",
+      runCostRank: "Run-cost rank",
+      lowerBetter: "lower is better",
+      higherBetter: "higher is better",
+    },
     releaseDate: "Release date",
     currentPreset: "Current preset",
     noBenchmarks: "No component scores to display",
@@ -1222,21 +1294,42 @@ function render() {
 function renderResults(preset) {
   const scored = scoreModels(preset);
   const homePreset = state.data.presets["zhihu-adjusted"];
-  const homeRanked = rankRows(dedupeByBestVariant(scoreModels(homePreset, "zhihu-adjusted")));
+  const homeScored = scoreModels(homePreset, "zhihu-adjusted");
+  const homeRanked = rankRows(dedupeByBestVariant(homeScored));
+  const compareRanked = rankRows(homeScored);
   const filtered = scored.filter(matchesQuery).filter(matchesSourceFilter);
   const visible = state.dedupe ? dedupeByBestVariant(filtered) : filtered;
   const ranked = rankRows(visible);
   const allRanked = rankRows(scored);
+  const homeDisplayModels = mergeRankedWithUnscored(homeRanked, homeScored);
+  const compareDisplayModels = mergeRankedWithUnscored(compareRanked, homeScored);
+  const allDisplayModels = mergeRankedWithUnscored(allRanked, scored);
 
-  if (!els.homeView.hidden) renderHome(homeRanked);
+  if (!els.homeView.hidden) renderHome(homeRanked, homeDisplayModels);
   if (!els.rankingView.hidden) {
     renderSummary(filtered.length, visible.length, scored.length, preset);
     renderRankings(ranked);
   }
-  if (!els.modelView.hidden) renderModelDetail(allRanked, preset);
+  if (!els.modelView.hidden) renderModelDetail(allDisplayModels, preset);
   if (!els.benchmarkView.hidden) renderBenchmarkPage();
   if (els.providerView && !els.providerView.hidden) renderProviderPage(homeRanked);
-  if (els.compareView && !els.compareView.hidden) renderComparePage(homeRanked);
+  if (els.compareView && !els.compareView.hidden) renderComparePage(compareDisplayModels);
+}
+
+function mergeRankedWithUnscored(ranked, scoredUniverse = ranked) {
+  const scoredIds = new Set(scoredUniverse.map(modelRouteId));
+  const unscored = state.data.models
+    .filter((model) => !scoredIds.has(modelRouteId(model)))
+    .map((model) => ({
+      ...model,
+      score: null,
+      rank: null,
+      coverage: 0,
+      coverageLabel: tr("notAvailable"),
+      availableWeight: 0,
+      scoreMeta: tr("notAvailable"),
+    }));
+  return [...ranked, ...unscored];
 }
 
 function scoreModels(preset, presetId = state.presetId) {
@@ -1709,9 +1802,9 @@ function customMetricGroupValue(model, group) {
   return values.reduce((sum, value) => sum + value, 0) / values.length;
 }
 
-function renderHome(models) {
+function renderHome(models, displayModels = models) {
   renderHomeMetrics(models);
-  renderLatestModels(models);
+  renderLatestModels(displayModels);
   renderTop20Chart(models.slice(0, state.topChartLimit));
   renderCostScatter(models.filter((model) => Number.isFinite(modelCost(model)) && modelCost(model) > 0).slice(0, 28));
   renderScoreBands(models);
@@ -1728,7 +1821,7 @@ function renderLatestModels(models) {
   if (!els.latestModels) return;
   const latest = models
     .filter((model) => parsedReleaseTime(model.releaseDate) !== null)
-    .sort((a, b) => parsedReleaseTime(b.releaseDate) - parsedReleaseTime(a.releaseDate) || b.score - a.score)
+    .sort((a, b) => parsedReleaseTime(b.releaseDate) - parsedReleaseTime(a.releaseDate) || safeScore(b) - safeScore(a))
     .slice(0, 6);
   if (latest.length === 0) {
     els.latestModels.innerHTML = `<div class="empty">${escapeHtml(tr("notAvailable"))}</div>`;
@@ -2292,24 +2385,18 @@ function renderModelDetail(ranked, preset) {
     <section class="detail-section">
       <div class="detail-section-head">
         <h2>${escapeHtml(tr("detailRankTitle"))}</h2>
-        <p>${escapeHtml(tr("currentPreset"))}: ${escapeHtml(presetLabel(state.presetId))}</p>
+        <p>${escapeHtml(tr("detailRadarSubtitle"))}</p>
       </div>
-      <div class="rank-card-grid">${renderRankCards(model)}</div>
+      ${renderRadarChart([model], { average: true, mode: "detail" })}
     </section>
 
     <section class="detail-grid">
       <section class="detail-section">
         <div class="detail-section-head">
           <h2>${escapeHtml(tr("detailCostTitle"))}</h2>
+          <p>${escapeHtml(tr("currentPreset"))}: ${escapeHtml(presetLabel(state.presetId))}</p>
         </div>
-        <div class="stat-grid">
-          ${renderDetailStat(tr("headers.score"), formatNumber(model.score), `#${model.rank}`, "trophy")}
-          ${renderDetailStat(tr("headers.speed"), formatSpeed(model.medianOutputSpeed), tr("table.tokensPerSecond"), "gauge")}
-          ${renderDetailStat(tr("headers.context"), formatTokens(model.contextWindowTokens), "", "database")}
-          ${renderDetailStat(tr("table.input"), formatMoney(model.pricing?.inputPerMillionTokensUsd), tr("table.perMillion"), "arrowDown")}
-          ${renderDetailStat(tr("table.output"), formatMoney(model.pricing?.outputPerMillionTokensUsd), tr("table.perMillion"), "arrowUp")}
-          ${renderDetailStat("AA run", formatMoney(modelCost(model)), "cost", "dollar")}
-        </div>
+        ${renderDetailPanel(model)}
       </section>
 
       <section class="detail-section">
@@ -2372,6 +2459,257 @@ function renderRankCards(model) {
       </article>
     `;
   }).join("");
+}
+
+function renderRadarChart(models, options = {}) {
+  const axes = radarAxes();
+  const visibleModels = models.filter(Boolean);
+  const hasData = visibleModels.some((model) => axes.some((axis) => Number.isFinite(radarAxisValue(model, axis))));
+  if (!hasData) return `<div class="empty">${escapeHtml(tr("radarNoData"))}</div>`;
+
+  const detailModel = options.mode === "detail" ? visibleModels[0] : null;
+  const center = { x: 320, y: 258 };
+  const radius = 150;
+  const labelRadius = 220;
+  const rings = [20, 40, 60, 80, 100];
+  const averageValues = axes.map((axis) => radarAxisAverage(axis));
+  const averagePoints = radarPolygonPoints(averageValues, center, radius);
+  const series = visibleModels.slice(0, 8).map((model, index) => ({
+    model,
+    color: providerColor(model, index),
+    values: axes.map((axis) => radarAxisValue(model, axis)),
+  }));
+
+  return `
+    <div class="radar-card ${options.mode === "compare" ? "compare-radar-card" : ""}">
+      <div class="radar-legend">
+        ${series.map((item) => `
+          <span><i style="--legend-color: ${escapeHtml(item.color)}"></i>${escapeHtml(item.model.model)}</span>
+        `).join("")}
+        ${options.average ? `<span><i class="average-key"></i>${escapeHtml(tr("radarAverage"))}</span>` : ""}
+      </div>
+      <div class="radar-plot-wrap">
+        <svg class="radar-plot" viewBox="0 0 640 536" role="img" aria-label="${escapeHtml(tr(options.mode === "compare" ? "compareRadarTitle" : "detailRankTitle"))}">
+          <g class="radar-grid">
+            ${rings.map((ring) => `<polygon points="${escapeHtml(radarPolygonPoints(axes.map(() => ring), center, radius))}"></polygon>`).join("")}
+            ${axes.map((axis, index) => {
+              const end = radarPoint(index, 100, axes.length, center, radius);
+              return `<line x1="${center.x}" y1="${center.y}" x2="${formatSvgNumber(end.x)}" y2="${formatSvgNumber(end.y)}"></line>`;
+            }).join("")}
+          </g>
+          ${options.average ? `<polygon class="radar-area radar-average-area" points="${escapeHtml(averagePoints)}"></polygon>` : ""}
+          ${series.map((item, index) => `
+            <polygon class="radar-area radar-series-area" style="--series-color: ${escapeHtml(item.color)}; --series-index: ${index}" points="${escapeHtml(radarPolygonPoints(item.values, center, radius))}"></polygon>
+            <polyline class="radar-series-line" style="--series-color: ${escapeHtml(item.color)}" points="${escapeHtml(radarPolygonPoints(item.values, center, radius))}"></polyline>
+            ${item.values.map((value, axisIndex) => {
+              if (!Number.isFinite(value)) return "";
+              const point = radarPoint(axisIndex, value, axes.length, center, radius);
+              return `<circle class="radar-point" style="--series-color: ${escapeHtml(item.color)}" cx="${formatSvgNumber(point.x)}" cy="${formatSvgNumber(point.y)}" r="3.8"></circle>`;
+            }).join("")}
+          `).join("")}
+          ${options.average ? `<polyline class="radar-average-line" points="${escapeHtml(averagePoints)}"></polyline>` : ""}
+          <g class="radar-labels">
+            ${axes.map((axis, index) => renderRadarAxisLabel(axis, index, axes.length, center, labelRadius, detailModel)).join("")}
+          </g>
+        </svg>
+      </div>
+      <div class="radar-foot">
+        <span>${escapeHtml(tr("radarDataSource"))}</span>
+        <b>${escapeHtml(tr("radarSourceText"))}</b>
+      </div>
+    </div>
+  `;
+}
+
+function renderRadarAxisLabel(axis, index, count, center, labelRadius, detailModel) {
+  const point = radarPoint(index, 100, count, center, labelRadius);
+  const anchor = point.x < center.x - 24 ? "end" : point.x > center.x + 24 ? "start" : "middle";
+  const value = detailModel ? radarAxisValue(detailModel, axis) : null;
+  const rank = detailModel ? radarAxisRank(axis, detailModel) : null;
+  const average = radarAxisAverage(axis);
+  const rankLabel = rank ? `#${rank.rank}` : "";
+  return `
+    <text x="${formatSvgNumber(point.x)}" y="${formatSvgNumber(point.y)}" text-anchor="${anchor}">
+      ${detailModel ? `<tspan class="radar-label-value">${escapeHtml(formatNumber(value))}</tspan>` : ""}
+      <tspan class="radar-label-name" ${detailModel ? "" : `x="${formatSvgNumber(point.x)}"`}>${escapeHtml(axis.label)}</tspan>
+      <tspan class="radar-label-average" x="${formatSvgNumber(point.x)}" dy="17">${escapeHtml(formatNumber(average))}${rankLabel ? ` · ${escapeHtml(rankLabel)}` : ""}</tspan>
+    </text>
+  `;
+}
+
+function radarAxes() {
+  return [
+    {
+      id: "cognition",
+      label: tr("radarAxes.cognition"),
+      metrics: ["Humanity's Last Exam", "GPQA Diamond"],
+    },
+    {
+      id: "longContext",
+      label: tr("radarAxes.longContext"),
+      metrics: ["AA-LCR"],
+    },
+    {
+      id: "instruction",
+      label: tr("radarAxes.instruction"),
+      metrics: ["IFBench", "CritPt"],
+    },
+    {
+      id: "agentic",
+      label: tr("radarAxes.agentic"),
+      metrics: ["GDPval-AA", "τ²-Bench Telecom", "Terminal-Bench Hard"],
+    },
+    {
+      id: "coding",
+      label: tr("radarAxes.coding"),
+      metrics: ["SciCode", "LiveCodeBench", "benchmark:livecodebench"],
+    },
+    {
+      id: "reliability",
+      label: tr("radarAxes.reliability"),
+      metrics: ["AA-Omniscience Accuracy", "AA-Omniscience Non-Hallucination Rate"],
+    },
+  ];
+}
+
+function radarAxisValue(model, axis) {
+  const values = axis.metrics
+    .map((key) => model.scores?.[key])
+    .filter(Number.isFinite);
+  if (values.length === 0) return null;
+  return values.reduce((sum, value) => sum + value, 0) / values.length;
+}
+
+function radarAxisAverage(axis) {
+  const values = state.data.models
+    .map((model) => radarAxisValue(model, axis))
+    .filter(Number.isFinite);
+  if (values.length === 0) return null;
+  return values.reduce((sum, value) => sum + value, 0) / values.length;
+}
+
+function radarAxisRank(axis, model) {
+  const target = radarAxisValue(model, axis);
+  if (!Number.isFinite(target)) return null;
+  const rows = state.data.models
+    .map((candidate) => ({ candidate, value: radarAxisValue(candidate, axis) }))
+    .filter((row) => Number.isFinite(row.value))
+    .sort((a, b) => b.value - a.value || a.candidate.model.localeCompare(b.candidate.model));
+  return rankFromRows(rows, model);
+}
+
+function radarPolygonPoints(values, center, radius) {
+  return values.map((value, index) => {
+    const point = radarPoint(index, Number.isFinite(value) ? value : 0, values.length, center, radius);
+    return `${formatSvgNumber(point.x)},${formatSvgNumber(point.y)}`;
+  }).join(" ");
+}
+
+function radarPoint(index, value, count, center, radius) {
+  const normalized = clamp(Number(value) || 0, 0, 100) / 100;
+  const angle = -Math.PI / 2 + (index * Math.PI * 2) / count;
+  return {
+    x: center.x + Math.cos(angle) * radius * normalized,
+    y: center.y + Math.sin(angle) * radius * normalized,
+  };
+}
+
+function renderDetailPanel(model) {
+  return `
+    <div class="detail-panel">
+      <div class="stat-grid detail-stat-grid">
+        ${renderDetailStat(tr("headers.score"), formatNumber(model.score), scoreRankMeta(model), "trophy")}
+        ${renderDetailStat(tr("headers.speed"), formatSpeed(model.medianOutputSpeed), valueRankMeta(model, (row) => row.medianOutputSpeed, true, "higherBetter"), "gauge")}
+        ${renderDetailStat(tr("headers.context"), formatTokens(model.contextWindowTokens), valueRankMeta(model, (row) => row.contextWindowTokens, true, "higherBetter"), "database")}
+        ${renderDetailStat(tr("table.input"), formatMoney(model.pricing?.inputPerMillionTokensUsd), valueRankMeta(model, (row) => row.pricing?.inputPerMillionTokensUsd, false, "lowerBetter"), "arrowDown")}
+        ${renderDetailStat(tr("table.output"), formatMoney(model.pricing?.outputPerMillionTokensUsd), valueRankMeta(model, (row) => row.pricing?.outputPerMillionTokensUsd, false, "lowerBetter"), "arrowUp")}
+        ${renderDetailStat(tr("table.cache"), formatMoney(model.pricing?.cacheHitPerMillionTokensUsd), valueRankMeta(model, (row) => row.pricing?.cacheHitPerMillionTokensUsd, false, "lowerBetter"), "database")}
+        ${renderDetailStat("AA run", formatMoney(modelCost(model)), valueRankMeta(model, modelCost, false, "lowerBetter"), "dollar")}
+      </div>
+      ${renderDetailInfoGrid(model)}
+    </div>
+  `;
+}
+
+function renderDetailInfoGrid(model) {
+  const details = model.modelDetails || {};
+  const rows = [
+    [tr("detailRows.provider"), model.creator || tr("unknownCreator"), providerHref(model.creator || tr("unknownCreator"), currentModelBackSource())],
+    [tr("detailRows.inputTypes"), listLabel(model.inputModalities || details.inputModalities || ["Text"])],
+    [tr("detailRows.outputTypes"), listLabel(model.outputModalities || details.outputModalities || ["Text"])],
+    [tr("detailRows.parameters"), details.parameters || details.totalParameters || tr("notAvailable")],
+    [tr("detailRows.activeParameters"), details.activeParameters || tr("notAvailable")],
+    [tr("detailRows.reasoningModes"), listLabel(details.reasoningModes || (model.isReasoning ? [tr("reasoning")] : []))],
+    [tr("detailRows.architecture"), details.architecture || tr("notAvailable")],
+    [tr("detailRows.apiAccess"), listLabel(details.apiAccess || [])],
+    [tr("detailRows.license"), details.license || model.openSourceCategorization || tr("notAvailable")],
+    [tr("detailRows.contextNote"), details.contextNote || tr("notAvailable")],
+  ];
+  return `
+    <div class="detail-info-grid">
+      ${rows.map(([label, value, href]) => {
+        const content = href && value !== tr("notAvailable")
+          ? `<a href="${escapeHtml(href)}">${escapeHtml(value)}</a>`
+          : escapeHtml(value || tr("notAvailable"));
+        return `
+          <div class="detail-info-row">
+            <span>${escapeHtml(label)}</span>
+            <strong>${content}</strong>
+          </div>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function scoreRankMeta(model) {
+  if (!model.rank) return tr("notAvailable");
+  const preset = state.data.presets[state.presetId];
+  const total = preset ? scoreModels(preset).length : 0;
+  return total ? `#${model.rank}/${total}` : `#${model.rank}`;
+}
+
+function valueRankMeta(model, accessor, descending, directionKey) {
+  const rank = valueRank(model, accessor, { descending });
+  if (!rank) return tr("notAvailable");
+  return `#${rank.rank}/${rank.total} · ${tr(`detailRows.${directionKey}`)}`;
+}
+
+function valueRank(model, accessor, options = {}) {
+  const target = accessor(model);
+  if (!Number.isFinite(target)) return null;
+  const descending = options.descending !== false;
+  const rows = state.data.models
+    .map((candidate) => ({ candidate, value: accessor(candidate) }))
+    .filter((row) => Number.isFinite(row.value))
+    .sort((a, b) => (descending ? b.value - a.value : a.value - b.value) || a.candidate.model.localeCompare(b.candidate.model));
+  return rankFromRows(rows, model);
+}
+
+function rankFromRows(rows, model) {
+  let previousValue = null;
+  let currentRank = 0;
+  for (let index = 0; index < rows.length; index += 1) {
+    const row = rows[index];
+    if (previousValue === null || row.value !== previousValue) {
+      currentRank = index + 1;
+      previousValue = row.value;
+    }
+    if (sameModelIdentity(row.candidate, model)) {
+      return { rank: currentRank, total: rows.length };
+    }
+  }
+  return null;
+}
+
+function listLabel(values) {
+  const list = Array.isArray(values) ? values : [values];
+  const cleaned = list.map((value) => String(value || "").trim()).filter(Boolean);
+  return cleaned.length ? cleaned.join(" / ") : tr("notAvailable");
+}
+
+function formatSvgNumber(value) {
+  return Number(value).toFixed(2).replace(/\.?0+$/, "");
 }
 
 function renderDetailHeroFacts(model) {
@@ -2623,6 +2961,14 @@ function renderComparePage(ranked) {
       ${selected.map(renderCompareModelCard).join("")}
     </section>
 
+    <section class="detail-section compare-section compare-radar-section">
+      <div class="detail-section-head">
+        <h2>${escapeHtml(tr("compareRadarTitle"))}</h2>
+        <p>${escapeHtml(tr("compareRadarSubtitle"))}</p>
+      </div>
+      ${renderRadarChart(selected, { average: true, mode: "compare" })}
+    </section>
+
     <section class="detail-section compare-section">
       <div class="detail-section-head">
         <h2>${escapeHtml(tr("compareCoreTitle"))}</h2>
@@ -2688,7 +3034,7 @@ function renderCompareOption(model) {
       ${renderModelIcon(model)}
       <span>
         <strong>${escapeHtml(model.model)}</strong>
-        <em>${escapeHtml(model.creator || tr("unknownCreator"))} · #${escapeHtml(model.rank)} · ${escapeHtml(formatNumber(model.score))}</em>
+        <em>${escapeHtml(model.creator || tr("unknownCreator"))} · ${escapeHtml(rankLabel(model))} · ${escapeHtml(formatNumber(model.score))}</em>
       </span>
       ${renderIcon("plus")}
     </button>
@@ -2722,9 +3068,9 @@ function renderCompareModelCard(model) {
         <button type="button" data-compare-remove="${escapeHtml(modelRouteId(model))}" aria-label="${escapeHtml(`${tr("compareRemove")} ${model.model}`)}">${renderIcon("x")}</button>
       </div>
       <div class="compare-model-facts">
-        <span>${renderIcon("trophy")}<b>${escapeHtml(formatNumber(model.score))}</b><em>#${escapeHtml(model.rank)}</em></span>
+        <span>${renderIcon("trophy")}<b>${escapeHtml(formatNumber(model.score))}</b><em>${escapeHtml(rankLabel(model))}</em></span>
         <span>${renderIcon("gauge")}<b>${escapeHtml(formatSpeed(model.medianOutputSpeed))}</b><em>${escapeHtml(tr("compareRows.speed"))}</em></span>
-        <span>${renderIcon("database")}<b>${escapeHtml(compactNumber(model.contextWindowTokens))}</b><em>${escapeHtml(tr("compareRows.context"))}</em></span>
+        <span>${renderIcon("database")}<b>${escapeHtml(formatTokens(model.contextWindowTokens))}</b><em>${escapeHtml(tr("compareRows.context"))}</em></span>
       </div>
     </article>
   `;
@@ -2787,7 +3133,7 @@ function compareCoreRows(models) {
     {
       label: tr("compareRows.score"),
       iconName: "trophy",
-      values: models.map((model) => compareValue(formatNumber(model.score), `#${model.rank}`)),
+      values: models.map((model) => compareValue(formatNumber(model.score), model.rank ? `#${model.rank}` : "")),
     },
     {
       label: tr("compareRows.source"),
@@ -2802,27 +3148,32 @@ function compareCoreRows(models) {
     {
       label: tr("compareRows.speed"),
       iconName: "gauge",
-      values: models.map((model) => compareValue(formatSpeed(model.medianOutputSpeed))),
+      values: models.map((model) => compareValue(formatSpeed(model.medianOutputSpeed), compactValueRank(model, (row) => row.medianOutputSpeed, true))),
     },
     {
       label: tr("compareRows.context"),
       iconName: "database",
-      values: models.map((model) => compareValue(formatTokens(model.contextWindowTokens))),
+      values: models.map((model) => compareValue(formatTokens(model.contextWindowTokens), compactValueRank(model, (row) => row.contextWindowTokens, true))),
     },
     {
       label: tr("compareRows.inputPrice"),
       iconName: "arrowDown",
-      values: models.map((model) => compareValue(formatMoney(model.pricing?.inputPerMillionTokensUsd), tr("table.perMillion"))),
+      values: models.map((model) => compareValue(formatMoney(model.pricing?.inputPerMillionTokensUsd), joinMeta(tr("table.perMillion"), compactValueRank(model, (row) => row.pricing?.inputPerMillionTokensUsd, false)))),
     },
     {
       label: tr("compareRows.outputPrice"),
       iconName: "arrowUp",
-      values: models.map((model) => compareValue(formatMoney(model.pricing?.outputPerMillionTokensUsd), tr("table.perMillion"))),
+      values: models.map((model) => compareValue(formatMoney(model.pricing?.outputPerMillionTokensUsd), joinMeta(tr("table.perMillion"), compactValueRank(model, (row) => row.pricing?.outputPerMillionTokensUsd, false)))),
+    },
+    {
+      label: tr("table.cache"),
+      iconName: "database",
+      values: models.map((model) => compareValue(formatMoney(model.pricing?.cacheHitPerMillionTokensUsd), joinMeta(tr("table.perMillion"), compactValueRank(model, (row) => row.pricing?.cacheHitPerMillionTokensUsd, false)))),
     },
     {
       label: tr("compareRows.runCost"),
       iconName: "dollar",
-      values: models.map((model) => compareValue(formatMoney(modelCost(model)))),
+      values: models.map((model) => compareValue(formatMoney(modelCost(model)), compactValueRank(model, modelCost, false))),
     },
     {
       label: tr("compareRows.coverage"),
@@ -2860,6 +3211,15 @@ function compareValue(value, meta = "") {
   `;
 }
 
+function compactValueRank(model, accessor, descending) {
+  const rank = valueRank(model, accessor, { descending });
+  return rank ? `#${rank.rank}/${rank.total}` : "";
+}
+
+function joinMeta(...parts) {
+  return parts.filter(Boolean).join(" · ");
+}
+
 function compareProviderCell(model) {
   const provider = model.creator || tr("unknownCreator");
   return `
@@ -2878,6 +3238,10 @@ function formatMetricValue(value, unit = "%") {
 
 function compareOptionLabel(model) {
   return `${model.model} · ${model.creator || tr("unknownCreator")} · ${formatNumber(model.score)}`;
+}
+
+function rankLabel(model) {
+  return model?.rank ? `#${model.rank}` : tr("notAvailable");
 }
 
 function renderCompareEntry(model) {

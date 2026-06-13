@@ -151,6 +151,7 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             "kimi-k2-5-card",
             "zai-glm-4-6-card",
             "zai-glm-5-1-card",
+            "minimax-m3-release",
             "minimax-m2-5-release",
             "minimax-m2-release",
             "minimax-m1-card",
@@ -231,6 +232,11 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             for row in results
             if row["model"] == "MiniMax-M2.5" and row["benchmarkId"] == "swe-bench-verified"
         )
+        minimax_m3_browse = next(
+            row
+            for row in results
+            if row["model"] == "MiniMax-M3" and row["benchmarkId"] == "browsecomp"
+        )
         nemotron_super_lcb = next(
             row
             for row in results
@@ -248,6 +254,7 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertEqual(grok_tau["value"], 100.0)
         self.assertEqual(nemotron_mmlu["value"], 86.8)
         self.assertEqual(minimax_m25_swe["value"], 80.2)
+        self.assertEqual(minimax_m3_browse["value"], 83.5)
         self.assertEqual(nemotron_super_lcb["value"], 78.69)
         self.assertEqual(nemotron_nano_aime["value"], 89.06)
 

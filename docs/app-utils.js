@@ -103,6 +103,10 @@ function formatNumber(value) {
   return Number.isFinite(value) ? value.toFixed(1) : "—";
 }
 
+function safeScore(model) {
+  return Number.isFinite(model?.score) ? model.score : -Infinity;
+}
+
 function formatSpeed(value) {
   if (!Number.isFinite(value) || value <= 0) return "—";
   return `${compactNumber(value)} ${tr("table.tokensPerSecond")}`;
