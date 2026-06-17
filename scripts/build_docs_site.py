@@ -36,37 +36,35 @@ AA_PRESET_COLUMNS = {
 }
 
 AA_SUITE_WEIGHT_BY_METRIC = {
-    "GDPval-AA": 100 / 6,
-    "τ²-Bench Telecom": 25 / 3,
-    "Terminal-Bench Hard": 100 / 6,
-    "SciCode": 25 / 3,
-    "AA-LCR": 6.25,
-    "AA-Omniscience Accuracy": 12.5,
-    "IFBench": 6.25,
-    "Humanity's Last Exam": 12.5,
-    "GPQA Diamond": 6.25,
-    "CritPt": 6.25,
+    "GDPval-AA v2": 20,
+    "τ³-Banking": 14,
+    "Terminal-Bench v2.1": 16,
+    "SciCode": 8,
+    "AA-LCR": 6,
+    "AA-Omniscience Accuracy": 12,
+    "Humanity's Last Exam": 12,
+    "GPQA Diamond": 6,
+    "CritPt": 6,
 }
 AA_INTELLIGENCE_SUITE_WEIGHTS = {
-    "GDPval-AA": 100 / 6,
-    "τ²-Bench Telecom": 25 / 3,
-    "Terminal-Bench Hard": 100 / 6,
-    "SciCode": 25 / 3,
-    "AA-LCR": 6.25,
-    "AA-Omniscience Accuracy": 6.25,
-    "AA-Omniscience Non-Hallucination Rate": 6.25,
-    "IFBench": 6.25,
-    "Humanity's Last Exam": 12.5,
-    "GPQA Diamond": 6.25,
-    "CritPt": 6.25,
+    "GDPval-AA v2": 20,
+    "τ³-Banking": 14,
+    "Terminal-Bench v2.1": 16,
+    "SciCode": 8,
+    "AA-LCR": 6,
+    "AA-Omniscience Accuracy": 8,
+    "AA-Omniscience Non-Hallucination Rate": 4,
+    "Humanity's Last Exam": 12,
+    "GPQA Diamond": 6,
+    "CritPt": 6,
 }
 AA_CODING_SUITE_WEIGHTS = {
-    "Terminal-Bench Hard": 50,
-    "SciCode": 50,
+    "Terminal-Bench v2.1": 200 / 3,
+    "SciCode": 100 / 3,
 }
 AA_AGENTIC_SUITE_WEIGHTS = {
-    "GDPval-AA": 50,
-    "τ²-Bench Telecom": 50,
+    "GDPval-AA v2": 1000 / 17,
+    "τ³-Banking": 700 / 17,
 }
 DEFAULT_CORRECTED_WEIGHTS = {
     spec.column: AA_SUITE_WEIGHT_BY_METRIC.get(spec.column, 0)
@@ -279,7 +277,7 @@ def build_site_payload(
             "defaultCorrectionReference": ARTICLE_URL,
             "defaultCorrectionNote": (
                 "AInsights Index follows the Artificial Analysis Intelligence Index evaluation suite "
-                "weights. The AA-Omniscience correction assigns the full 12.5% component weight to "
+                "weights. The AA-Omniscience correction assigns the full 12% component weight to "
                 "Accuracy and zero weight to the non-hallucination component."
             ),
         },
@@ -800,7 +798,7 @@ def _presets() -> dict[str, dict[str, Any]]:
         "zhihu-adjusted": {
             "label": "AInsights Index",
             "kind": "weighted-metrics",
-            "description": "按 AA Intelligence Index evaluation suite 原始占比计算；每项先除以该项最高分，再用几何加权均值聚合，并乘回 AA Intelligence 最高分展示。",
+            "description": "按新版 AA Intelligence Index evaluation suite 占比计算；去掉 Hallucination Rate 后把 Omniscience 的 12% 计入 Accuracy，每项先除以该项最高分，再用几何加权均值聚合，并乘回 AA Intelligence 最高分展示。",
             "ignoreMissing": False,
             "calculation": "geometric",
             "normalization": "relative-best",

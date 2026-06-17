@@ -61,8 +61,11 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
                     "answer_cost": 25,
                 },
                 "gdpval": 1500,
+                "gdpval_v2": 1600,
                 "terminalbench_hard": 0.5,
+                "terminalbench_v2_1": 0.7,
                 "tau2": 0.25,
+                "tau_banking": 0.35,
                 "lcr": 0.75,
                 "omniscience_breakdown": {
                     "total": {
@@ -85,7 +88,10 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
                 "short_name": "Plain Model",
                 "reasoning_model": False,
                 "gdpval": 1000,
+                "gdpval_v2": 1200,
                 "terminalbench_hard": 0.25,
+                "terminalbench_v2_1": 0.45,
+                "tau_banking": 0.15,
                 "gpqa": None,
             },
         ]
@@ -118,14 +124,15 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
         self.assertEqual(output[0]["Cache Hit Price Per 1M Tokens (USD)"], 0.25)
         self.assertEqual(output[0]["Input Price Per 1M Tokens (USD)"], 1.5)
         self.assertEqual(output[0]["Output Price Per 1M Tokens (USD)"], 10.0)
-        self.assertEqual(output[0]["GDPval-AA"], 50.0)
-        self.assertEqual(output[0]["Terminal-Bench Hard"], 50.0)
+        self.assertEqual(output[0]["GDPval-AA v2"], 55.0)
+        self.assertEqual(output[0]["Terminal-Bench v2.1"], 70.0)
+        self.assertEqual(output[0]["τ³-Banking"], 35.0)
         self.assertEqual(output[0]["AA-Omniscience Accuracy"], 80.0)
         self.assertEqual(output[0]["AA-Omniscience Non-Hallucination Rate"], 90.0)
         self.assertEqual(output[0]["GPQA Diamond_rank"], 1)
         self.assertEqual(output[1]["model_key"], "Plain Model")
-        self.assertEqual(output[1]["GDPval-AA"], 25.0)
-        self.assertEqual(output[1]["GDPval-AA_rank"], 2)
+        self.assertEqual(output[1]["GDPval-AA v2"], 35.0)
+        self.assertEqual(output[1]["GDPval-AA v2_rank"], 2)
         self.assertEqual(output[1]["GPQA Diamond_rank"], "")
 
     def test_build_raw_scores_rows_treats_next_undefined_sentinel_as_blank(self):

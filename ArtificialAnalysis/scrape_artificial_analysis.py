@@ -285,8 +285,8 @@ def _percent(row: dict[str, Any], key: str) -> float | None:
     return None if value is None else value * 100
 
 
-def _gdpval_score(row: dict[str, Any]) -> float | None:
-    value = _as_float(row.get("gdpval"))
+def _gdpval_score(row: dict[str, Any], key: str = "gdpval") -> float | None:
+    value = _as_float(row.get(key))
     return None if value is None else (value - 500) / 2000 * 100
 
 
@@ -327,6 +327,9 @@ def _http_headers() -> dict[str, str]:
 
 
 SCORE_SPECS = [
+    ScoreSpec("GDPval-AA v2", lambda row: _gdpval_score(row, "gdpval_v2")),
+    ScoreSpec("τ³-Banking", lambda row: _percent(row, "tau_banking")),
+    ScoreSpec("Terminal-Bench v2.1", lambda row: _percent(row, "terminalbench_v2_1")),
     ScoreSpec("GDPval-AA", _gdpval_score),
     ScoreSpec("Terminal-Bench Hard", lambda row: _percent(row, "terminalbench_hard")),
     ScoreSpec("τ²-Bench Telecom", lambda row: _percent(row, "tau2")),

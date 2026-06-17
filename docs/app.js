@@ -169,7 +169,7 @@ const copy = {
     compareEmpty: "请选择至少一个模型",
     compareCoreTitle: "核心数据",
     compareRadarTitle: "能力雷达对比",
-    compareRadarSubtitle: "同一组六维能力聚合，叠加显示已选模型的分数",
+    compareRadarSubtitle: "按 AA 当前四类参考项目聚合，叠加显示已选模型的分数",
     compareBenchmarkTitle: "测试项数据",
     compareMetricColumn: "指标",
     compareRemove: "移除",
@@ -191,7 +191,7 @@ const copy = {
     sourceExplorerTitle: "测评源地图",
     sourceExplorerSubtitle: "AA 主数据之外的常用公开测评，用来交叉理解模型强弱项",
     detailRankTitle: "排名快照",
-    detailRadarSubtitle: "按默认参考项目聚合为六个方向；外圈为 100 分，橙色为全体平均值",
+    detailRadarSubtitle: "按 AA 当前四类参考项目聚合；外圈为 100 分，橙色为全体平均值",
     detailBenchmarkTitle: "AInsights Index 参考项目",
     detailBenchmarkSubtitle: "参与 AInsights Index 默认权重的测试项",
     detailExternalTitle: "非参考项目分数",
@@ -206,12 +206,10 @@ const copy = {
     radarBasisSubtitle: "每个方向取下列测试项的可用分数均值。",
     radarNoData: "暂无可绘制的能力维度",
     radarAxes: {
-      cognition: "认知逻辑",
-      longContext: "长文本推理",
-      instruction: "指令遵循",
-      agentic: "智能体工作",
+      agents: "智能体",
       coding: "代码编程",
-      reliability: "抗幻觉性",
+      general: "通用能力",
+      science: "科学推理",
     },
     detailRows: {
       provider: "供应商",
@@ -298,7 +296,7 @@ const copy = {
         label: "AInsights Index",
         calculation: "geometric",
         normalization: "relative-best",
-        description: "按 AA Intelligence Index evaluation suite 原始占比计算；每项先除以该项最高分，再用几何加权均值聚合，并乘回 AA Intelligence 最高分展示。",
+        description: "按新版 AA Intelligence Index evaluation suite 占比计算；去掉 Hallucination Rate 后把 Omniscience 的 12% 计入 Accuracy，每项先除以该项最高分，再用几何加权均值聚合，并乘回 AA Intelligence 最高分展示。",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -487,7 +485,7 @@ const copy = {
     compareEmpty: "Choose at least one model",
     compareCoreTitle: "Core data",
     compareRadarTitle: "Capability radar",
-    compareRadarSubtitle: "Six aggregated capability axes overlaid for the selected models",
+    compareRadarSubtitle: "The same four-category AA reference aggregation, overlaid for selected models",
     compareBenchmarkTitle: "Benchmark data",
     compareMetricColumn: "Metric",
     compareRemove: "Remove",
@@ -509,7 +507,7 @@ const copy = {
     sourceExplorerTitle: "Benchmark source map",
     sourceExplorerSubtitle: "Public evaluation sources to cross-check model strengths beyond AA",
     detailRankTitle: "Rank snapshot",
-    detailRadarSubtitle: "Default reference benchmarks grouped into six axes; outer ring is 100, orange is the dataset average",
+    detailRadarSubtitle: "Default reference benchmarks grouped into the current four AA categories; outer ring is 100, orange is the dataset average",
     detailBenchmarkTitle: "AInsights Index reference benchmarks",
     detailBenchmarkSubtitle: "Benchmarks used by the default AInsights Index weighting",
     detailExternalTitle: "Non-reference benchmark scores",
@@ -524,12 +522,10 @@ const copy = {
     radarBasisSubtitle: "Each axis averages available scores from these benchmarks.",
     radarNoData: "No capability axes available",
     radarAxes: {
-      cognition: "Cognition",
-      longContext: "Long-context reasoning",
-      instruction: "Instruction following",
-      agentic: "Agentic work",
+      agents: "Agents",
       coding: "Code",
-      reliability: "Hallucination resistance",
+      general: "General",
+      science: "Scientific reasoning",
     },
     detailRows: {
       provider: "Provider",
@@ -616,7 +612,7 @@ const copy = {
         label: "AInsights Index",
         calculation: "geometric",
         normalization: "relative-best",
-        description: "Uses the AA Intelligence Index evaluation suite weights; each benchmark is divided by that benchmark's best score, aggregated with geometric weighted mean, then scaled by the highest AA Intelligence score.",
+        description: "Uses the updated AA Intelligence Index evaluation-suite weights; Hallucination Rate is dropped by assigning the full 12% Omniscience component to Accuracy, then each benchmark is divided by that benchmark's best score, aggregated with geometric weighted mean, and scaled by the highest AA Intelligence score.",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -2287,7 +2283,7 @@ function renderMethodologyPage() {
   const sections = zh ? [
     {
       title: "AInsights Index / AIndex",
-      body: "AInsights Index，也可简称 AIndex，使用 Artificial Analysis Intelligence Index evaluation suite 的公开测试项权重重新计算综合分。AA-Omniscience 的 12.5% 权重全部计入 Accuracy，Non-Hallucination Rate 权重为 0。",
+      body: "AInsights Index，也可简称 AIndex，使用新版 Artificial Analysis Intelligence Index evaluation suite 的公开测试项权重重新计算综合分：GDPval-AA v2、τ³-Banking、Terminal-Bench v2.1、SciCode、AA-LCR、AA-Omniscience Accuracy、HLE、GPQA Diamond 和 CritPt。AA-Omniscience 的 12% 权重全部计入 Accuracy，Hallucination Rate 权重为 0。",
     },
     {
       title: "默认均值",
@@ -2308,7 +2304,7 @@ function renderMethodologyPage() {
   ] : [
     {
       title: "AInsights Index / AIndex",
-      body: "AInsights Index, also usable as AIndex, recalculates public Artificial Analysis Intelligence Index evaluation-suite scores with the site weights. The AA-Omniscience 12.5% component is assigned fully to Accuracy, while Non-Hallucination Rate receives zero weight.",
+      body: "AInsights Index, also usable as AIndex, recalculates public scores with the updated Artificial Analysis Intelligence Index evaluation-suite weights: GDPval-AA v2, τ³-Banking, Terminal-Bench v2.1, SciCode, AA-LCR, AA-Omniscience Accuracy, HLE, GPQA Diamond, and CritPt. The full 12% AA-Omniscience component is assigned to Accuracy, while Hallucination Rate receives zero weight.",
     },
     {
       title: "Default Mean",
@@ -2847,34 +2843,24 @@ function renderRadarCompareAxisLabel(axis, series) {
 function radarAxes() {
   return [
     {
-      id: "cognition",
-      label: tr("radarAxes.cognition"),
-      metrics: ["Humanity's Last Exam", "GPQA Diamond"],
-    },
-    {
-      id: "longContext",
-      label: tr("radarAxes.longContext"),
-      metrics: ["AA-LCR"],
-    },
-    {
-      id: "instruction",
-      label: tr("radarAxes.instruction"),
-      metrics: ["IFBench", "CritPt"],
-    },
-    {
-      id: "agentic",
-      label: tr("radarAxes.agentic"),
-      metrics: ["GDPval-AA", "τ²-Bench Telecom", "Terminal-Bench Hard"],
+      id: "agents",
+      label: tr("radarAxes.agents"),
+      metrics: ["GDPval-AA v2", "τ³-Banking"],
     },
     {
       id: "coding",
       label: tr("radarAxes.coding"),
-      metrics: ["SciCode", "LiveCodeBench", "benchmark:livecodebench"],
+      metrics: ["Terminal-Bench v2.1", "SciCode"],
     },
     {
-      id: "reliability",
-      label: tr("radarAxes.reliability"),
-      metrics: ["AA-Omniscience Accuracy", "AA-Omniscience Non-Hallucination Rate"],
+      id: "general",
+      label: tr("radarAxes.general"),
+      metrics: ["AA-LCR", "AA-Omniscience Accuracy"],
+    },
+    {
+      id: "science",
+      label: tr("radarAxes.science"),
+      metrics: ["Humanity's Last Exam", "GPQA Diamond", "CritPt"],
     },
   ];
 }

@@ -54,8 +54,8 @@ class BuildDocsSiteTests(unittest.TestCase):
                 "AA Intelligence Index": "50",
                 "AA Coding Index": "60",
                 "AA Agentic Index": "70",
-                "GDPval-AA": "80",
-                "Terminal-Bench Hard": "40",
+                "GDPval-AA v2": "80",
+                "Terminal-Bench v2.1": "40",
             },
             {
                 "model_key": "Model A (low) [R]",
@@ -66,8 +66,8 @@ class BuildDocsSiteTests(unittest.TestCase):
                 "AA Intelligence Index": "45",
                 "AA Coding Index": "55",
                 "AA Agentic Index": "65",
-                "GDPval-AA": "60",
-                "Terminal-Bench Hard": "20",
+                "GDPval-AA v2": "60",
+                "Terminal-Bench v2.1": "20",
             },
         ]
 
@@ -84,16 +84,16 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertIn("url", payload["externalSources"][0])
         self.assertEqual(payload["externalSources"][0]["defaultWeight"], 100)
         self.assertEqual(payload["externalSources"][0]["scoreStatus"], "active")
-        self.assertIn("GDPval-AA", payload["externalSources"][0]["relatedMetrics"])
+        self.assertIn("GDPval-AA v2", payload["externalSources"][0]["relatedMetrics"])
         self.assertIn("relatedMetrics", payload["externalSources"][1])
         self.assertEqual(payload["defaultPreset"], "zhihu-adjusted")
-        self.assertIn("GDPval-AA", [metric["key"] for metric in payload["metrics"]])
+        self.assertIn("GDPval-AA v2", [metric["key"] for metric in payload["metrics"]])
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["kind"], "weighted-metrics")
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["label"], "AInsights Index")
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["calculation"], "geometric")
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["normalization"], "relative-best")
         self.assertEqual(payload["presets"]["custom"]["normalization"], "relative-best")
-        self.assertEqual(payload["metricBaselines"]["GDPval-AA"], 80)
+        self.assertEqual(payload["metricBaselines"]["GDPval-AA v2"], 80)
         self.assertEqual(payload["scoreBaselines"]["aaIntelligenceMax"], 50)
         self.assertGreater(payload["models"][0]["variantPriority"], payload["models"][1]["variantPriority"])
         self.assertEqual(payload["models"][0]["contextWindowTokens"], 128000)
@@ -216,7 +216,7 @@ class BuildDocsSiteTests(unittest.TestCase):
             input_csv = tmp / "raw.csv"
             output_json = tmp / "models.json"
             input_csv.write_text(
-                "model_key,model,is_reasoning,slug,creator,AA Intelligence Index,GDPval-AA\n"
+                "model_key,model,is_reasoning,slug,creator,AA Intelligence Index,GDPval-AA v2\n"
                 "Model A,Model A,false,model-a,Lab A,50,80\n",
                 encoding="utf-8",
             )
@@ -247,7 +247,7 @@ class BuildDocsSiteTests(unittest.TestCase):
             output_json = tmp / "models.json"
             output_js = tmp / "models.js"
             input_csv.write_text(
-                "model_key,model,is_reasoning,slug,creator,AA Intelligence Index,GDPval-AA\n"
+                "model_key,model,is_reasoning,slug,creator,AA Intelligence Index,GDPval-AA v2\n"
                 "Model A,Model A,false,model-a,Lab A,50,80\n",
                 encoding="utf-8",
             )
@@ -266,9 +266,9 @@ class BuildDocsSiteTests(unittest.TestCase):
                     "model": "Correction Model",
                     "is_reasoning": "true",
                     "slug": "correction-model",
-                    "GDPval-AA": "100",
-                    "τ²-Bench Telecom": "0",
-                    "Terminal-Bench Hard": "0",
+                    "GDPval-AA v2": "100",
+                    "τ³-Banking": "0",
+                    "Terminal-Bench v2.1": "0",
                     "SciCode": "0",
                     "AA-LCR": "0",
                     "AA-Omniscience Accuracy": "80",
@@ -296,16 +296,16 @@ class BuildDocsSiteTests(unittest.TestCase):
             payload["scoreBaselines"]["aaIntelligenceMax"],
         )
 
-        self.assertAlmostEqual(preset["weights"]["GDPval-AA"], 100 / 6)
-        self.assertAlmostEqual(preset["weights"]["τ²-Bench Telecom"], 25 / 3)
-        self.assertAlmostEqual(preset["weights"]["Terminal-Bench Hard"], 100 / 6)
-        self.assertAlmostEqual(preset["weights"]["SciCode"], 25 / 3)
-        self.assertAlmostEqual(preset["weights"]["AA-LCR"], 6.25)
-        self.assertAlmostEqual(preset["weights"]["AA-Omniscience Accuracy"], 12.5)
-        self.assertAlmostEqual(preset["weights"]["IFBench"], 6.25)
-        self.assertAlmostEqual(preset["weights"]["Humanity's Last Exam"], 12.5)
-        self.assertAlmostEqual(preset["weights"]["GPQA Diamond"], 6.25)
-        self.assertAlmostEqual(preset["weights"]["CritPt"], 6.25)
+        self.assertAlmostEqual(preset["weights"]["GDPval-AA v2"], 20)
+        self.assertAlmostEqual(preset["weights"]["τ³-Banking"], 14)
+        self.assertAlmostEqual(preset["weights"]["Terminal-Bench v2.1"], 16)
+        self.assertAlmostEqual(preset["weights"]["SciCode"], 8)
+        self.assertAlmostEqual(preset["weights"]["AA-LCR"], 6)
+        self.assertAlmostEqual(preset["weights"]["AA-Omniscience Accuracy"], 12)
+        self.assertAlmostEqual(preset["weights"]["Humanity's Last Exam"], 12)
+        self.assertAlmostEqual(preset["weights"]["GPQA Diamond"], 6)
+        self.assertAlmostEqual(preset["weights"]["CritPt"], 6)
+        self.assertEqual(preset["weights"].get("IFBench", 0), 0)
         self.assertEqual(preset["weights"].get("AIME 2025", 0), 0)
         self.assertEqual(preset["weights"].get("LiveCodeBench", 0), 0)
         self.assertEqual(preset["weights"].get("MMMU-Pro", 0), 0)
@@ -313,10 +313,10 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(preset["weights"].get("ITBench-AA", 0), 0)
         self.assertEqual(preset["weights"].get("AA-Omniscience Non-Hallucination Rate", 0), 0)
         expected = (
-            math.exp(((100 / 6) * math.log(2) + 12.5 * math.log(2)) / 100) - 1
+            math.exp((20 * math.log(2) + 12 * math.log(2)) / 100) - 1
         ) * 100
         self.assertAlmostEqual(score["score"], expected)
-        self.assertEqual(score["coverage"], 10)
+        self.assertEqual(score["coverage"], 9)
 
     def test_weighted_metric_score_supports_geometric_mean(self):
         model = {"scores": {"A": 100, "B": 25}}
@@ -356,7 +356,7 @@ class BuildDocsSiteTests(unittest.TestCase):
                     "is_reasoning": "true",
                     "slug": "leader-model",
                     "AA Intelligence Index": "90",
-                    "GDPval-AA": "100",
+                    "GDPval-AA v2": "100",
                 },
                 {
                     "model_key": "Ratio Model",
@@ -364,7 +364,7 @@ class BuildDocsSiteTests(unittest.TestCase):
                     "is_reasoning": "true",
                     "slug": "ratio-model",
                     "AA Intelligence Index": "60",
-                    "GDPval-AA": "50",
+                    "GDPval-AA v2": "50",
                 },
             ]
         )
@@ -379,7 +379,7 @@ class BuildDocsSiteTests(unittest.TestCase):
             payload["scoreBaselines"]["aaIntelligenceMax"],
         )
 
-        expected_ratio = math.exp((100 / 6) * math.log(1.5) / 100) - 1
+        expected_ratio = math.exp(20 * math.log(1.5) / 100) - 1
         self.assertAlmostEqual(score["score"], expected_ratio * 90)
         self.assertEqual(score["coverage"], 1)
 
@@ -413,14 +413,18 @@ class BuildDocsSiteTests(unittest.TestCase):
         coding = payload["presets"]["aa-coding"]["weights"]
         agentic = payload["presets"]["aa-agentic"]["weights"]
 
-        self.assertAlmostEqual(intelligence["GDPval-AA"], 100 / 6)
-        self.assertAlmostEqual(intelligence["τ²-Bench Telecom"], 25 / 3)
-        self.assertAlmostEqual(intelligence["Terminal-Bench Hard"], 100 / 6)
-        self.assertAlmostEqual(intelligence["SciCode"], 25 / 3)
-        self.assertAlmostEqual(intelligence["AA-Omniscience Accuracy"], 6.25)
-        self.assertAlmostEqual(intelligence["AA-Omniscience Non-Hallucination Rate"], 6.25)
-        self.assertEqual(coding, {"Terminal-Bench Hard": 50, "SciCode": 50})
-        self.assertEqual(agentic, {"GDPval-AA": 50, "τ²-Bench Telecom": 50})
+        self.assertAlmostEqual(intelligence["GDPval-AA v2"], 20)
+        self.assertAlmostEqual(intelligence["τ³-Banking"], 14)
+        self.assertAlmostEqual(intelligence["Terminal-Bench v2.1"], 16)
+        self.assertAlmostEqual(intelligence["SciCode"], 8)
+        self.assertAlmostEqual(intelligence["AA-LCR"], 6)
+        self.assertAlmostEqual(intelligence["AA-Omniscience Accuracy"], 8)
+        self.assertAlmostEqual(intelligence["AA-Omniscience Non-Hallucination Rate"], 4)
+        self.assertAlmostEqual(intelligence["Humanity's Last Exam"], 12)
+        self.assertAlmostEqual(intelligence["GPQA Diamond"], 6)
+        self.assertAlmostEqual(intelligence["CritPt"], 6)
+        self.assertEqual(coding, {"Terminal-Bench v2.1": 200 / 3, "SciCode": 100 / 3})
+        self.assertEqual(agentic, {"GDPval-AA v2": 1000 / 17, "τ³-Banking": 700 / 17})
 
     def test_default_score_counts_missing_suite_metrics_in_denominator(self):
         payload = build_site_payload(
@@ -445,7 +449,7 @@ class BuildDocsSiteTests(unittest.TestCase):
             payload["scoreBaselines"]["aaIntelligenceMax"],
         )
 
-        expected = (math.exp(6.25 * math.log(2) / 100) - 1) * 100
+        expected = (math.exp(6 * math.log(2) / 100) - 1) * 100
         self.assertAlmostEqual(score["score"], expected)
         self.assertEqual(score["coverage"], 1)
 
@@ -473,7 +477,7 @@ class BuildDocsSiteTests(unittest.TestCase):
         )
 
         self.assertEqual(preset["calculation"], "geometric")
-        expected = (math.exp(6.25 * math.log(2) / 100) - 1) * 100
+        expected = (math.exp(6 * math.log(2) / 100) - 1) * 100
         self.assertAlmostEqual(score["score"], expected)
         self.assertEqual(score["coverage"], 1)
 
