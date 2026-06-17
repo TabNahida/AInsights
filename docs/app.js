@@ -827,6 +827,7 @@ async function init() {
     state.presetId = state.data.defaultPreset;
     state.dedupe = Boolean(state.data.defaultDedupe);
     state.customWeights = customWeightsForPreset(state.customWeightPresetId);
+    applyRankingStateFromUrl();
     els.dedupeToggle.checked = state.dedupe;
     bindControlEvents();
     renderStaticControls();
@@ -843,18 +844,48 @@ async function fetchJsonData() {
   return response.json();
 }
 
+function applyRankingStateFromUrl(params = new URLSearchParams(location.search)) {
+  const presetId = params.get("preset");
+  if (presetId && state.data?.presets?.[presetId]) state.presetId = presetId;
+  const viewMode = params.get("view");
+  if (viewOrder.includes(viewMode)) state.viewMode = viewMode;
+  const sourceFilter = params.get("source");
+  if (sourceFilterOrder.includes(sourceFilter)) state.sourceFilter = sourceFilter;
+  if (params.has("q")) state.query = String(params.get("q") || "").trim().toLowerCase();
+  if (params.has("dedupe")) state.dedupe = parseDedupeParam(params.get("dedupe"), state.dedupe);
+  if (els.searchInput) els.searchInput.value = state.query;
+  if (els.dedupeToggle) els.dedupeToggle.checked = state.dedupe;
+}
+
+function parseDedupeParam(value, fallback = true) {
+  const normalized = String(value ?? "").trim().toLowerCase();
+  if (["0", "false", "no"].includes(normalized)) return false;
+  if (["1", "true", "yes"].includes(normalized)) return true;
+  return fallback;
+}
+
+function syncRankingUrl() {
+  if (state.page !== "ranking" || !window.history?.replaceState) return;
+  const nextHref = rankingHref(currentRankingContext());
+  const currentHref = `${location.pathname.split("/").pop() || "full-rank.html"}${location.search}`;
+  if (nextHref !== currentHref) history.replaceState(null, "", nextHref);
+}
+
 function bindControlEvents() {
   els.searchInput.addEventListener("input", (event) => {
     state.query = event.target.value.trim().toLowerCase();
+    syncRankingUrl();
     render();
   });
   els.dedupeToggle.addEventListener("change", (event) => {
     state.dedupe = event.target.checked;
+    syncRankingUrl();
     render();
   });
   els.resetWeightsButton.addEventListener("click", () => {
     resetCustomConfiguration();
     state.presetId = "custom";
+    syncRankingUrl();
     render();
   });
   window.addEventListener("hashchange", () => {
@@ -1065,6 +1096,7 @@ function renderPresetButtons() {
     button.textContent = presetLabel(id);
     button.addEventListener("click", () => {
       state.presetId = id;
+      syncRankingUrl();
       render();
     });
     els.presetButtons.append(button);
@@ -1081,6 +1113,7 @@ function renderViewButtons() {
     button.setAttribute("aria-pressed", String(id === state.viewMode));
     button.addEventListener("click", () => {
       state.viewMode = id;
+      syncRankingUrl();
       render();
     });
     els.viewButtons.append(button);
@@ -1097,6 +1130,7 @@ function renderSourceFilterButtons() {
     button.setAttribute("aria-pressed", String(id === state.sourceFilter));
     button.addEventListener("click", () => {
       state.sourceFilter = id;
+      syncRankingUrl();
       render();
     });
     els.sourceFilterButtons.append(button);
@@ -1759,7 +1793,9 @@ function renderWeights() {
     const output = fragment.querySelector("output");
     labelText.className = "metric-weight-label";
     labelText.innerHTML = `
-      <strong>${escapeHtml(group.label)}</strong>
+      <a class="metric-weight-link" href="${escapeHtml(benchmarkHref(group.metrics[0].key))}">
+        <strong>${escapeHtml(group.label)}</strong>
+      </a>
       <em>${escapeHtml(tr("metricGroupMeta", { count: group.coverage, metrics: group.metrics.length }))}</em>
     `;
     input.dataset.metricGroup = group.id;
@@ -2585,7 +2621,9 @@ function renderModelDetail(ranked, preset) {
   if (!model) {
     document.title = `${tr("modelNotFound")} · ${tr("pageTitle")}`;
     els.modelDetail.innerHTML = `
-      <a class="back-link" href="${escapeHtml(modelBackHref())}" data-history-back>${renderIcon("arrowLeft")}${escapeHtml(tr("back"))}</a>
+      <div class="detail-nav">
+        <a class="back-link" href="${escapeHtml(modelBackHref())}" data-history-back>${renderIcon("arrowLeft")}${escapeHtml(tr("back"))}</a>
+      </div>
       <section class="detail-empty">${escapeHtml(tr("modelNotFound"))}</section>
     `;
     return;
@@ -2599,7 +2637,13 @@ function renderModelDetail(ranked, preset) {
   const providerName = model.creator || tr("unknownCreator");
 
   els.modelDetail.innerHTML = `
-    <a class="back-link" href="${escapeHtml(modelBackHref())}" data-history-back>${renderIcon("arrowLeft")}${escapeHtml(tr("back"))}</a>
+    <div class="detail-nav">
+      <a class="back-link" href="${escapeHtml(modelBackHref())}" data-history-back>${renderIcon("arrowLeft")}${escapeHtml(tr("back"))}</a>
+      <a class="back-link detail-compare-link" href="${escapeHtml(modelCompareHref(model))}" aria-label="${escapeHtml(`${tr("compareEntry")} ${model.model}`)}">
+        <span>${escapeHtml(tr("compareEntry"))}</span>
+        ${renderIcon("arrowRight")}
+      </a>
+    </div>
     <section class="detail-hero" style="--detail-color: ${color}">
       <div class="detail-hero-main">
         ${renderModelIcon(model)}
@@ -3744,6 +3788,7 @@ function metricDefinition(metricKey) {
 function renderIcon(name) {
   const paths = {
     arrowLeft: '<path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path>',
+    arrowRight: '<path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>',
     arrowDown: '<path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path>',
     arrowUp: '<path d="M12 19V5"></path><path d="m5 12 7-7 7 7"></path>',
     audio: '<path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle>',
@@ -3854,21 +3899,32 @@ function sameModelIdentity(a, b) {
 
 function modelHref(model, source = state.page, context = {}) {
   const params = new URLSearchParams({ id: modelRouteId(model) });
-  const sourcePage = typeof source === "object" ? source.page : source;
-  const providerId = context.providerId || (typeof source === "object" ? source.providerId : "") || (sourcePage === "provider" ? state.providerId : "");
-  const benchmarkId = context.benchmarkId || (typeof source === "object" ? source.benchmarkId : "") || (sourcePage === "benchmarks" ? state.benchmarkId : "");
-  const compareIds = normalizeCompareIds(context.compareIds || (typeof source === "object" ? source.compareIds : []) || (sourcePage === "compare" ? state.compareIds : []));
-  const providerSource = context.providerSource || (typeof source === "object" ? source.providerSource : null) || null;
+  const sourceObject = typeof source === "object" ? source : { page: source };
+  const sourcePage = context.page || sourceObject.page || "";
+  const providerId = context.providerId || sourceObject.providerId || (sourcePage === "provider" ? state.providerId : "");
+  const benchmarkId = context.benchmarkId || sourceObject.benchmarkId || (sourcePage === "benchmarks" ? state.benchmarkId : "");
+  const compareIds = normalizeCompareIds(context.compareIds || sourceObject.compareIds || (sourcePage === "compare" ? state.compareIds : []));
+  const providerSource = context.providerSource || sourceObject.providerSource || null;
   if (sourcePage && sourcePage !== "model") params.set("from", sourcePage);
   if (providerId) params.set("provider", providerId);
   if (benchmarkId) params.set("benchmark", benchmarkId);
   if (compareIds.length) params.set("models", compareIds.join(","));
+  if (sourcePage === "ranking") appendRankingParams(params, rankingContextForSource(sourceObject, context));
   if (providerSource?.page) {
     params.set("providerFrom", providerSource.page);
     if (providerSource.benchmarkId) params.set("providerBenchmark", providerSource.benchmarkId);
     if (providerSource.compareIds?.length) params.set("providerModels", normalizeCompareIds(providerSource.compareIds).join(","));
   }
   return `model.html?${params.toString()}`;
+}
+
+function modelCompareHref(model) {
+  const modelId = modelRouteId(model);
+  const source = currentModelBackSource();
+  const ids = source.page === "compare"
+    ? normalizeCompareIds([...source.compareIds, modelId])
+    : [modelId];
+  return compareHref(ids, { forceModels: true });
 }
 
 function benchmarkHref(metricKey) {
@@ -3887,6 +3943,7 @@ function providerHref(provider, source = state.page, context = {}) {
   if (sourcePage && sourcePage !== "provider" && sourcePage !== "model") params.set("from", sourcePage);
   if (benchmarkId) params.set("benchmark", benchmarkId);
   if (compareIds.length) params.set("models", compareIds.join(","));
+  if (sourcePage === "ranking") appendRankingParams(params, rankingContextForSource(inheritedSource, context));
   return `provider.html?${params.toString()}`;
 }
 
@@ -3908,6 +3965,7 @@ function currentModelBackSource() {
     providerId: params.get("provider") || "",
     benchmarkId: params.get("benchmark") || "",
     compareIds: compareIdsFromParams(params),
+    ...rankingContextFromParams(params),
     providerSource: {
       page: params.get("providerFrom") || "",
       benchmarkId: params.get("providerBenchmark") || "",
@@ -3919,7 +3977,7 @@ function currentModelBackSource() {
 function modelBackHref() {
   const source = currentModelBackSource();
   if (source.page === "home") return pageHref("home");
-  if (source.page === "ranking") return pageHref("ranking");
+  if (source.page === "ranking") return rankingHref(source);
   if (source.page === "sources") return pageHref("sources");
   if (source.page === "compare") return compareHref(source.compareIds);
   if (source.page === "provider") return source.providerId ? providerHref(source.providerId, source.providerSource) : pageHref("home");
@@ -3935,18 +3993,68 @@ function compareHref(compareIds = state.compareIds, { forceModels = false } = {}
   return query ? `compare.html?${query}` : pageHref("compare");
 }
 
+function currentRankingContext() {
+  return {
+    presetId: state.presetId,
+    viewMode: state.viewMode,
+    query: state.query,
+    sourceFilter: state.sourceFilter,
+    dedupe: state.dedupe,
+  };
+}
+
+function rankingContextFromParams(params) {
+  return {
+    presetId: params.get("preset") || "",
+    viewMode: params.get("view") || "",
+    query: params.get("q") || "",
+    sourceFilter: params.get("source") || "",
+    dedupe: params.get("dedupe") ?? "",
+  };
+}
+
+function rankingContextForSource(source = {}, context = {}) {
+  return {
+    presetId: context.presetId || source.presetId || state.presetId,
+    viewMode: context.viewMode || source.viewMode || state.viewMode,
+    query: context.query ?? source.query ?? state.query,
+    sourceFilter: context.sourceFilter || source.sourceFilter || state.sourceFilter,
+    dedupe: context.dedupe ?? source.dedupe ?? state.dedupe,
+  };
+}
+
+function appendRankingParams(params, context = {}) {
+  const presetId = state.data?.presets?.[context.presetId] ? context.presetId : state.presetId;
+  const viewMode = viewOrder.includes(context.viewMode) ? context.viewMode : state.viewMode;
+  const query = String(context.query || "").trim().toLowerCase();
+  const sourceFilter = sourceFilterOrder.includes(context.sourceFilter) ? context.sourceFilter : state.sourceFilter;
+  const dedupe = parseDedupeParam(context.dedupe, state.dedupe);
+  params.set("preset", presetId);
+  params.set("view", viewMode);
+  if (query) params.set("q", query);
+  params.set("source", sourceFilter);
+  params.set("dedupe", dedupe ? "1" : "0");
+}
+
+function rankingHref(context = {}) {
+  const params = new URLSearchParams();
+  appendRankingParams(params, context);
+  return `full-rank.html?${params.toString()}`;
+}
+
 function currentProviderBackSource() {
   const params = new URLSearchParams(location.search);
   return {
     page: params.get("from") || "home",
     benchmarkId: params.get("benchmark") || "",
     compareIds: compareIdsFromParams(params),
+    ...rankingContextFromParams(params),
   };
 }
 
 function providerBackHref() {
   const source = currentProviderBackSource();
-  if (source.page === "ranking") return pageHref("ranking");
+  if (source.page === "ranking") return rankingHref(source);
   if (source.page === "sources") return pageHref("sources");
   if (source.page === "benchmarks") return source.benchmarkId ? benchmarkHref(source.benchmarkId) : pageHref("benchmarks");
   if (source.page === "compare") return compareHref(source.compareIds);
