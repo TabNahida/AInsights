@@ -37,7 +37,7 @@ const copy = {
     customWeightPresetSubtitle: "一键套用 AInsights Index 或 AA 三个方向，再继续微调下方测试项权重",
     customWeightPresetMeta: "{count} 项",
     missingModeTitle: "计算方式",
-    missingModeSubtitle: "选择分数基线、均值方式和缺失处理策略；默认 AIndex 使用 Frontier 组内/组间覆盖率 0.25 折扣。",
+    missingModeSubtitle: "选择分数基线、均值方式和缺失处理策略；默认 AIndex 使用 Frontier 组内 0.1 轻折扣、单项组内 0.25、组间 0.25 覆盖折扣。",
     normalizationMethodTitle: "分数基线",
     normalizationMethodHint: "AInsights Index / AIndex 默认先除以每个测试项最高分，再乘回 AA Intelligence 最高分展示。",
     normalizationMethods: {
@@ -301,7 +301,7 @@ const copy = {
         label: "AInsights Index",
         calculation: "geometric",
         normalization: "relative-best",
-        description: "Frontier 综合口径：60% AA suite，剩余 40% 按原 Frontier 非 AA 组比例分配；组内证据覆盖率和缺失组覆盖率都按 0.25 次方折扣。",
+        description: "Frontier 综合口径：90% AA suite，剩余 10% 按原 Frontier 非 AA 组比例分配；组内证据覆盖率通常按 0.1 次方轻折扣，单项组内证据按 0.25，缺失组覆盖率按 0.25，同模型档位共享官方外部 benchmark。",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -358,7 +358,7 @@ const copy = {
     customWeightPresetSubtitle: "Start from AInsights Index or the three AA directions, then tune individual benchmark weights below",
     customWeightPresetMeta: "{count} fields",
     missingModeTitle: "Calculation",
-    missingModeSubtitle: "Choose the score basis, mean method, and missing-value policy; default AIndex uses Frontier within-group and group-level 0.25 coverage discounts.",
+    missingModeSubtitle: "Choose the score basis, mean method, and missing-value policy; default AIndex uses within-group coverage^0.1, single-metric coverage^0.25, and group-level coverage^0.25 discounts.",
     normalizationMethodTitle: "Score basis",
     normalizationMethodHint: "AInsights Index / AIndex defaults to dividing each benchmark by its best score, then scales the result by the highest AA Intelligence score.",
     normalizationMethods: {
@@ -622,7 +622,7 @@ const copy = {
         label: "AInsights Index",
         calculation: "geometric",
         normalization: "relative-best",
-        description: "Frontier composite: 60% AA suite, with the remaining 40% allocated across the non-AA Frontier groups in their previous proportions. Within-group evidence coverage and missing groups are both discounted to the power of 0.25.",
+        description: "Frontier composite: 90% AA suite, with the remaining 10% allocated across the non-AA Frontier groups in their previous proportions. Within-group evidence coverage is usually discounted to the power of 0.1, single-metric group evidence uses 0.25, missing groups use 0.25, and official external benchmarks are shared across variants of the same model.",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -1513,6 +1513,9 @@ function scoreModelForFrontierGroups(model, preset) {
   const normalization = preset.normalization || "relative-best";
   const missingPolicy = preset.missingPolicy || "coverage-discount";
   const groupMetricCoverageDiscountExponent = Number(preset.groupMetricCoverageDiscountExponent || 0);
+  const singleMetricCoverageDiscountExponent = Number(
+    preset.singleMetricCoverageDiscountExponent ?? groupMetricCoverageDiscountExponent,
+  );
   const groups = Array.isArray(preset.groups) ? preset.groups : [];
   const entries = [];
   let denominator = 0;
@@ -1530,6 +1533,7 @@ function scoreModelForFrontierGroups(model, preset) {
       method,
       normalization,
       groupMetricCoverageDiscountExponent,
+      singleMetricCoverageDiscountExponent,
     );
     if (Number.isFinite(value)) {
       entries.push({ value, weight });
@@ -1567,6 +1571,7 @@ function frontierGroupValue(
   method = "geometric",
   normalization = "relative-best",
   coverageDiscountExponent = 0,
+  singleMetricCoverageDiscountExponent = coverageDiscountExponent,
 ) {
   const entries = (metricKeys || [])
     .map((key) => scoreValueForMetric(key, model.scores?.[key], normalization))
@@ -1574,8 +1579,11 @@ function frontierGroupValue(
     .map((value) => ({ value, weight: 1 }));
   if (!entries.length) return null;
   let score = aggregateScoreEntries(entries, entries.length, method);
-  if (Number.isFinite(score) && coverageDiscountExponent > 0 && metricKeys.length > 0) {
-    score *= (entries.length / metricKeys.length) ** coverageDiscountExponent;
+  const discountExponent = entries.length === 1
+    ? singleMetricCoverageDiscountExponent
+    : coverageDiscountExponent;
+  if (Number.isFinite(score) && discountExponent > 0 && metricKeys.length > 0) {
+    score *= (entries.length / metricKeys.length) ** discountExponent;
   }
   return score;
 }
@@ -2438,7 +2446,7 @@ function renderMethodologyPage() {
   const sections = zh ? [
     {
       title: "AInsights Index / AIndex",
-      body: "AInsights Index，也可简称 AIndex，现在使用 Frontier 综合口径：60% AA suite；剩余 40% 按原 Frontier 非 AA 组比例分配给 agentic coding、tools/work、reasoning 和 instruction/long-context。AA suite 保留 Artificial Analysis 的核心组件，外部官方发布页和公开 benchmark 用来补足前沿模型的 coding、工具和推理证据。",
+      body: "AInsights Index，也可简称 AIndex，现在使用 Frontier 综合口径：90% AA suite；剩余 10% 按原 Frontier 非 AA 组比例分配给 agentic coding、tools/work、reasoning 和 instruction/long-context。AA suite 保留 Artificial Analysis 的核心组件，外部官方发布页和公开 benchmark 只作为辅助证据。",
     },
     {
       title: "分组聚合",
@@ -2446,7 +2454,7 @@ function renderMethodologyPage() {
     },
     {
       title: "缺失处理",
-      body: "默认 AIndex 不再把所有缺失项直接记 0，而是先对每个组使用组内证据覆盖率的 0.25 次方折扣，再按可用组权重覆盖率的 0.25 次方做总折扣。这样能惩罚单项高分和证据不足，同时避免单个发布页缺少某些字段时把模型打到异常低位。",
+      body: "默认 AIndex 不再把所有缺失项直接记 0，而是先对每个组使用组内证据覆盖率的 0.1 次方轻折扣；如果该组只有单项证据，则仍用 0.25 次方折扣。最后再按可用组权重覆盖率的 0.25 次方做总折扣。",
     },
     {
       title: "能力组",
@@ -2459,7 +2467,7 @@ function renderMethodologyPage() {
   ] : [
     {
       title: "AInsights Index / AIndex",
-      body: "AInsights Index, also usable as AIndex, now uses a Frontier composite with a 60% AA suite anchor. The remaining 40% is allocated across agentic coding, tools/work, reasoning, and instruction/long-context in their previous non-AA proportions.",
+      body: "AInsights Index, also usable as AIndex, now uses a Frontier composite with a 90% AA suite anchor. The remaining 10% is allocated across agentic coding, tools/work, reasoning, and instruction/long-context in their previous non-AA proportions.",
     },
     {
       title: "Grouped Aggregation",
@@ -2467,7 +2475,7 @@ function renderMethodologyPage() {
     },
     {
       title: "Missing Values",
-      body: "Default AIndex no longer treats every missing field as zero. It first discounts each group by within-group evidence coverage^0.25, then discounts the final score by available group-weight coverage^0.25.",
+      body: "Default AIndex no longer treats every missing field as zero. It first applies within-group evidence coverage^0.1, uses coverage^0.25 for single-metric group evidence, then discounts the final score by available group-weight coverage^0.25.",
     },
     {
       title: "Capability Groups",

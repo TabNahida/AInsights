@@ -6,7 +6,11 @@ import tempfile
 from pathlib import Path
 
 from scripts.build_docs_site import (
+    DEFAULT_EXTERNAL_BENCHMARKS_JSON,
+    DEFAULT_INPUT_CSV,
     build_site_payload,
+    load_external_benchmarks,
+    read_csv_rows,
     score_model_for_preset,
     variant_group,
     variant_priority,
@@ -341,12 +345,13 @@ class BuildDocsSiteTests(unittest.TestCase):
             "reasoning",
             "instruction-long-context",
         ])
-        self.assertAlmostEqual(preset["groupWeights"]["aa-suite"], 60)
-        self.assertAlmostEqual(preset["groupWeights"]["agentic-coding"], 40 / 3)
-        self.assertAlmostEqual(preset["groupWeights"]["tools-work"], 10)
-        self.assertAlmostEqual(preset["groupWeights"]["reasoning"], 40 / 3)
-        self.assertAlmostEqual(preset["groupWeights"]["instruction-long-context"], 10 / 3)
-        self.assertEqual(preset["groupMetricCoverageDiscountExponent"], 0.25)
+        self.assertAlmostEqual(preset["groupWeights"]["aa-suite"], 90)
+        self.assertAlmostEqual(preset["groupWeights"]["agentic-coding"], 10 / 3)
+        self.assertAlmostEqual(preset["groupWeights"]["tools-work"], 2.5)
+        self.assertAlmostEqual(preset["groupWeights"]["reasoning"], 10 / 3)
+        self.assertAlmostEqual(preset["groupWeights"]["instruction-long-context"], 5 / 6)
+        self.assertEqual(preset["groupMetricCoverageDiscountExponent"], 0.1)
+        self.assertEqual(preset["singleMetricCoverageDiscountExponent"], 0.25)
         agentic_group = next(group for group in preset["groups"] if group["id"] == "agentic-coding")
         self.assertIn("Terminal-Bench v2.1", agentic_group["metrics"])
         self.assertIn("SciCode", agentic_group["metrics"])
@@ -359,7 +364,86 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertAlmostEqual(full_score["availableWeight"], 100)
         self.assertLess(partial_score["score"], 65)
         self.assertEqual(partial_score["coverage"], 2)
-        self.assertAlmostEqual(partial_score["availableWeight"], 70)
+        self.assertAlmostEqual(partial_score["availableWeight"], 92.5)
+
+    def test_external_benchmarks_are_shared_across_model_variants(self):
+        payload = build_site_payload(
+            [
+                {
+                    "model_key": "Variant Model",
+                    "model": "Variant Model",
+                    "is_reasoning": "false",
+                    "slug": "variant-model",
+                    "creator": "Lab",
+                    "AA Intelligence Index": "50",
+                },
+                {
+                    "model_key": "Variant Model [R]",
+                    "model": "Variant Model",
+                    "is_reasoning": "true",
+                    "slug": "variant-model-reasoning",
+                    "creator": "Lab",
+                    "AA Intelligence Index": "60",
+                },
+            ],
+            {
+                "version": 1,
+                "sources": [],
+                "benchmarks": [{"id": "bench", "label": "Bench", "category": "Reasoning"}],
+                "results": [
+                    {
+                        "benchmarkId": "bench",
+                        "benchmarkLabel": "Bench",
+                        "model": "Variant Model",
+                        "modelAliases": ["Variant Model"],
+                        "value": 88,
+                        "sourceId": "official",
+                        "sourceLabel": "Official",
+                        "sourceUrl": "https://example.com",
+                    }
+                ],
+            },
+        )
+
+        non_reasoning = next(model for model in payload["models"] if model["slug"] == "variant-model")
+        reasoning = next(model for model in payload["models"] if model["slug"] == "variant-model-reasoning")
+
+        self.assertEqual(non_reasoning["scores"]["benchmark:bench"], 88)
+        self.assertEqual(reasoning["scores"]["benchmark:bench"], 88)
+        self.assertEqual(reasoning["externalBenchmarks"][0]["sourceLabel"], "Official")
+        self.assertTrue(reasoning["externalBenchmarks"][0]["sharedFromVariant"])
+
+    def test_default_ranking_keeps_flash_below_qwen_and_kimi_successors(self):
+        payload = build_site_payload(
+            read_csv_rows(DEFAULT_INPUT_CSV),
+            load_external_benchmarks(DEFAULT_EXTERNAL_BENCHMARKS_JSON),
+        )
+        preset = payload["presets"]["zhihu-adjusted"]
+        scored = []
+        for model in payload["models"]:
+            score = score_model_for_preset(
+                model,
+                preset,
+                payload["metrics"],
+                payload["metricBaselines"],
+                payload["scoreBaselines"]["aaIntelligenceMax"],
+            )
+            if score["score"] is not None:
+                scored.append((score["score"], model))
+        scored.sort(key=lambda row: (-row[0], row[1]["model"]))
+        ranks = {model["slug"]: index + 1 for index, (_, model) in enumerate(scored)}
+        scores = {model["slug"]: score for score, model in scored}
+
+        self.assertLess(ranks["qwen3-7-max"], ranks["deepseek-v4-flash"])
+        self.assertLess(ranks["kimi-k2-6"], ranks["deepseek-v4-flash"])
+        self.assertGreater(scores["qwen3-7-max"] - scores["deepseek-v4-flash"], 0.5)
+        self.assertGreater(scores["kimi-k2-7-code"], scores["deepseek-v4-flash"])
+        self.assertGreater(scores["qwen3-7-plus"], scores["qwen3-5-397b-a17b"])
+        self.assertGreater(scores["qwen3-6-plus"], scores["qwen3-5-397b-a17b"])
+        self.assertGreater(scores["qwen3-6-max"], scores["qwen3-5-397b-a17b"])
+        self.assertGreater(scores["qwen3-7-plus"] - scores["qwen3-5-397b-a17b"], 3.0)
+        self.assertGreater(scores["qwen3-6-plus"] - scores["qwen3-5-397b-a17b"], 1.75)
+        self.assertGreater(scores["qwen3-6-max"] - scores["qwen3-5-397b-a17b"], 3.0)
 
     def test_default_score_discounts_single_metric_group_evidence(self):
         payload = build_site_payload(
@@ -506,10 +590,10 @@ class BuildDocsSiteTests(unittest.TestCase):
         aa_suite_ratio = 0.5 * (1 / 9) ** 0.25
         tools_ratio = 0.5 * (1 / 9) ** 0.25
         expected_ratio = math.exp(
-            60 * math.log(aa_suite_ratio + 1) / 70
-            + 10 * math.log(tools_ratio + 1) / 70
+            90 * math.log(aa_suite_ratio + 1) / 92.5
+            + 2.5 * math.log(tools_ratio + 1) / 92.5
         ) - 1
-        self.assertAlmostEqual(score["score"], expected_ratio * 90 * (70 / 100) ** 0.25)
+        self.assertAlmostEqual(score["score"], expected_ratio * 90 * (92.5 / 100) ** 0.25)
         self.assertEqual(score["coverage"], 2)
 
     def test_geometric_weighted_score_penalizes_missing_without_collapsing_to_zero(self):
@@ -581,10 +665,10 @@ class BuildDocsSiteTests(unittest.TestCase):
         aa_suite_ratio = (1 / 9) ** 0.25
         reasoning_ratio = (1 / 11) ** 0.25
         expected_ratio = math.exp(
-            60 * math.log(aa_suite_ratio + 1) / (60 + 40 / 3)
-            + (40 / 3) * math.log(reasoning_ratio + 1) / (60 + 40 / 3)
+            90 * math.log(aa_suite_ratio + 1) / (90 + 10 / 3)
+            + (10 / 3) * math.log(reasoning_ratio + 1) / (90 + 10 / 3)
         ) - 1
-        expected = expected_ratio * 100 * ((60 + 40 / 3) / 100) ** 0.25
+        expected = expected_ratio * 100 * ((90 + 10 / 3) / 100) ** 0.25
         self.assertAlmostEqual(score["score"], expected)
         self.assertEqual(score["coverage"], 2)
 

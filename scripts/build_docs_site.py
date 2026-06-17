@@ -70,7 +70,7 @@ FRONTIER_INDEX_GROUPS = [
     {
         "id": "aa-suite",
         "label": "AA suite",
-        "weight": 60,
+        "weight": 90,
         "metrics": [
             "GDPval-AA v2",
             "τ³-Banking",
@@ -86,7 +86,7 @@ FRONTIER_INDEX_GROUPS = [
     {
         "id": "agentic-coding",
         "label": "Agentic coding",
-        "weight": 40 / 3,
+        "weight": 10 / 3,
         "metrics": [
             "Terminal-Bench v2.1",
             "SciCode",
@@ -102,7 +102,7 @@ FRONTIER_INDEX_GROUPS = [
     {
         "id": "tools-work",
         "label": "Tools/work",
-        "weight": 10,
+        "weight": 2.5,
         "metrics": [
             "benchmark:browsecomp",
             "benchmark:hle-tools",
@@ -118,7 +118,7 @@ FRONTIER_INDEX_GROUPS = [
     {
         "id": "reasoning",
         "label": "Reasoning",
-        "weight": 40 / 3,
+        "weight": 10 / 3,
         "metrics": [
             "benchmark:hle",
             "Humanity's Last Exam",
@@ -136,7 +136,7 @@ FRONTIER_INDEX_GROUPS = [
     {
         "id": "instruction-long-context",
         "label": "Instruction/long-context",
-        "weight": 10 / 3,
+        "weight": 5 / 6,
         "metrics": [
             "AA-LCR",
             "CritPt",
@@ -450,6 +450,11 @@ def score_model_for_preset(
             group_metric_coverage_discount_exponent=float(
                 preset.get("groupMetricCoverageDiscountExponent") or 0
             ),
+            single_metric_coverage_discount_exponent=float(
+                preset.get("singleMetricCoverageDiscountExponent")
+                if preset.get("singleMetricCoverageDiscountExponent") is not None
+                else preset.get("groupMetricCoverageDiscountExponent") or 0
+            ),
             weak_prior_ratio=float(preset.get("weakPriorRatio") or 0.35),
             metric_baselines=metric_baselines,
             display_scale=display_scale,
@@ -478,6 +483,7 @@ def frontier_group_score(
     missing_policy: str = "coverage-discount",
     coverage_discount_exponent: float = 0.25,
     group_metric_coverage_discount_exponent: float = 0.0,
+    single_metric_coverage_discount_exponent: float | None = None,
     weak_prior_ratio: float = 0.35,
     metric_baselines: dict[str, Any] | None = None,
     display_scale: float | None = None,
@@ -499,6 +505,7 @@ def frontier_group_score(
             method=method,
             normalization=normalization,
             coverage_discount_exponent=group_metric_coverage_discount_exponent,
+            single_metric_coverage_discount_exponent=single_metric_coverage_discount_exponent,
             metric_baselines=metric_baselines,
         )
         if group_value is None:
@@ -537,6 +544,7 @@ def frontier_group_value(
     method: str = "geometric",
     normalization: str = "relative-best",
     coverage_discount_exponent: float = 0.0,
+    single_metric_coverage_discount_exponent: float | None = None,
     metric_baselines: dict[str, Any] | None = None,
 ) -> float | None:
     entries: list[tuple[float, float]] = []
@@ -549,8 +557,14 @@ def frontier_group_value(
     if not entries:
         return None
     value = aggregate_weighted_values(entries, float(len(entries)), method)
-    if value is not None and coverage_discount_exponent > 0 and keys:
-        value *= (len(entries) / len(keys)) ** coverage_discount_exponent
+    metric_count = len(entries)
+    discount_exponent = (
+        single_metric_coverage_discount_exponent
+        if metric_count == 1 and single_metric_coverage_discount_exponent is not None
+        else coverage_discount_exponent
+    )
+    if value is not None and discount_exponent > 0 and keys:
+        value *= (metric_count / len(keys)) ** discount_exponent
     return value
 
 
@@ -805,6 +819,44 @@ def attach_external_benchmark_scores(
                 "sourceUrl": result.get("sourceUrl") or "",
             }
         )
+    share_external_benchmarks_with_variants(models)
+
+
+def share_external_benchmarks_with_variants(models: list[dict[str, Any]]) -> None:
+    groups: dict[str, list[dict[str, Any]]] = {}
+    for model in models:
+        variant_key = str(model.get("variantGroup") or "")
+        if variant_key:
+            groups.setdefault(variant_key, []).append(model)
+
+    for siblings in groups.values():
+        benchmark_entries: dict[str, dict[str, Any]] = {}
+        benchmark_scores: dict[str, float] = {}
+        for sibling in siblings:
+            for entry in sibling.get("externalBenchmarks", []):
+                key = str(entry.get("metricKey") or "")
+                value = _number_or_none(entry.get("value"))
+                if key and value is not None and key not in benchmark_scores:
+                    benchmark_scores[key] = value
+                    benchmark_entries[key] = entry
+
+        if not benchmark_scores:
+            continue
+
+        for sibling in siblings:
+            existing_entries = {
+                str(entry.get("metricKey") or "")
+                for entry in sibling.get("externalBenchmarks", [])
+            }
+            for key, value in benchmark_scores.items():
+                if _number_or_none(sibling.get("scores", {}).get(key)) is None:
+                    sibling["scores"][key] = value
+                if key in existing_entries:
+                    continue
+                entry = dict(benchmark_entries[key])
+                entry["sharedFromVariant"] = True
+                sibling["externalBenchmarks"].append(entry)
+                existing_entries.add(key)
 
 
 def find_external_benchmark_model(
@@ -1010,12 +1062,13 @@ def _presets() -> dict[str, dict[str, Any]]:
         "zhihu-adjusted": {
             "label": "AInsights Index",
             "kind": "frontier-groups",
-            "description": "Frontier 综合口径：60% AA suite，剩余 40% 按原 Frontier 非 AA 组比例分配。每个测试项先除以该项最高分，组内和组间使用几何加权均值；组内证据覆盖率和缺失组覆盖率都按 0.25 次方折扣。",
+            "description": "Frontier 综合口径：90% AA suite，剩余 10% 按原 Frontier 非 AA 组比例分配。每个测试项先除以该项最高分，组内和组间使用几何加权均值；组内证据覆盖率通常按 0.1 次方轻折扣，只有单项证据时按 0.25 次方折扣，缺失组覆盖率按 0.25 次方折扣，同模型档位共享官方外部 benchmark。",
             "calculation": "geometric",
             "normalization": "relative-best",
             "missingPolicy": "coverage-discount",
             "coverageDiscountExponent": 0.25,
-            "groupMetricCoverageDiscountExponent": 0.25,
+            "groupMetricCoverageDiscountExponent": 0.1,
+            "singleMetricCoverageDiscountExponent": 0.25,
             "groupWeights": FRONTIER_GROUP_WEIGHTS,
             "groups": FRONTIER_INDEX_GROUPS,
             "weights": DEFAULT_FRONTIER_WEIGHTS,
