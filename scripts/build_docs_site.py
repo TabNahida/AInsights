@@ -66,10 +66,100 @@ AA_AGENTIC_SUITE_WEIGHTS = {
     "GDPval-AA v2": 1000 / 17,
     "τ³-Banking": 700 / 17,
 }
-DEFAULT_CORRECTED_WEIGHTS = {
-    spec.column: AA_SUITE_WEIGHT_BY_METRIC.get(spec.column, 0)
-    for spec in SCORE_SPECS
+FRONTIER_INDEX_GROUPS = [
+    {
+        "id": "aa-suite",
+        "label": "AA suite",
+        "weight": 60,
+        "metrics": [
+            "GDPval-AA v2",
+            "τ³-Banking",
+            "Terminal-Bench v2.1",
+            "SciCode",
+            "AA-LCR",
+            "AA-Omniscience Accuracy",
+            "Humanity's Last Exam",
+            "GPQA Diamond",
+            "CritPt",
+        ],
+    },
+    {
+        "id": "agentic-coding",
+        "label": "Agentic coding",
+        "weight": 40 / 3,
+        "metrics": [
+            "Terminal-Bench v2.1",
+            "SciCode",
+            "benchmark:swe-bench-pro",
+            "benchmark:swe-bench-verified",
+            "benchmark:swe-bench-multilingual",
+            "benchmark:terminal-bench-2",
+            "benchmark:terminal-bench-2-1",
+            "benchmark:livecodebench",
+            "benchmark:frontiercode-diamond",
+        ],
+    },
+    {
+        "id": "tools-work",
+        "label": "Tools/work",
+        "weight": 10,
+        "metrics": [
+            "benchmark:browsecomp",
+            "benchmark:hle-tools",
+            "benchmark:mcp-atlas",
+            "benchmark:toolathlon",
+            "benchmark:osworld-verified",
+            "benchmark:gdpval-wins-ties",
+            "benchmark:gdpval-aa-elo",
+            "GDPval-AA v2",
+            "τ³-Banking",
+        ],
+    },
+    {
+        "id": "reasoning",
+        "label": "Reasoning",
+        "weight": 40 / 3,
+        "metrics": [
+            "benchmark:hle",
+            "Humanity's Last Exam",
+            "benchmark:gpqa-diamond",
+            "GPQA Diamond",
+            "benchmark:mmlu-pro",
+            "benchmark:aime-2025",
+            "benchmark:aime-2026",
+            "benchmark:frontiermath-tier-1-3",
+            "benchmark:frontiermath-tier-4",
+            "benchmark:hmmt-2026-feb",
+            "AA-Omniscience Accuracy",
+        ],
+    },
+    {
+        "id": "instruction-long-context",
+        "label": "Instruction/long-context",
+        "weight": 10 / 3,
+        "metrics": [
+            "AA-LCR",
+            "CritPt",
+            "benchmark:ifbench",
+            "benchmark:mmmlu",
+            "benchmark:mmmu-pro",
+            "benchmark:charxiv-no-tools",
+            "benchmark:charxiv-tools",
+        ],
+    },
+]
+FRONTIER_GROUP_WEIGHTS = {
+    group["id"]: group["weight"]
+    for group in FRONTIER_INDEX_GROUPS
 }
+DEFAULT_FRONTIER_WEIGHTS: dict[str, float] = {}
+for group in FRONTIER_INDEX_GROUPS:
+    group_weight = float(group["weight"])
+    metrics = list(group["metrics"])
+    per_metric_weight = group_weight / len(metrics)
+    for metric in metrics:
+        DEFAULT_FRONTIER_WEIGHTS[metric] = DEFAULT_FRONTIER_WEIGHTS.get(metric, 0.0) + per_metric_weight
+
 VARIANT_PRIORITY_BY_SUFFIX = {
     "max": 100,
     "xhigh": 90,
@@ -287,7 +377,7 @@ def build_site_payload(
             {
                 "key": key,
                 "label": key,
-                "defaultWeight": DEFAULT_CORRECTED_WEIGHTS.get(key, 0),
+                "defaultWeight": DEFAULT_FRONTIER_WEIGHTS.get(key, 0),
             }
             for key in [spec.column for spec in SCORE_SPECS]
         ]
@@ -295,7 +385,7 @@ def build_site_payload(
             {
                 "key": external_metric_key(benchmark["id"]),
                 "label": benchmark.get("label") or benchmark["id"],
-                "defaultWeight": 0,
+                "defaultWeight": DEFAULT_FRONTIER_WEIGHTS.get(external_metric_key(benchmark["id"]), 0),
                 "source": "benchmark",
                 "category": benchmark.get("category") or "Benchmark",
                 "unit": benchmark.get("unit") or "%",
@@ -349,6 +439,22 @@ def score_model_for_preset(
             "availableWeight": 1 if score is not None else 0,
         }
 
+    if preset["kind"] == "frontier-groups":
+        return frontier_group_score(
+            model,
+            preset.get("groups", []),
+            method=str(preset.get("calculation") or "geometric"),
+            normalization=str(preset.get("normalization") or "relative-best"),
+            missing_policy=str(preset.get("missingPolicy") or "coverage-discount"),
+            coverage_discount_exponent=float(preset.get("coverageDiscountExponent") or 0),
+            group_metric_coverage_discount_exponent=float(
+                preset.get("groupMetricCoverageDiscountExponent") or 0
+            ),
+            weak_prior_ratio=float(preset.get("weakPriorRatio") or 0.35),
+            metric_baselines=metric_baselines,
+            display_scale=display_scale,
+        )
+
     return weighted_metric_score(
         model,
         preset.get("weights", {}),
@@ -358,7 +464,109 @@ def score_model_for_preset(
         normalization=str(preset.get("normalization") or "raw"),
         metric_baselines=metric_baselines,
         display_scale=display_scale,
+        missing_policy=preset.get("missingPolicy"),
+        coverage_discount_exponent=float(preset.get("coverageDiscountExponent") or 0),
+        weak_prior_ratio=float(preset.get("weakPriorRatio") or 0.35),
     )
+
+
+def frontier_group_score(
+    model: dict[str, Any],
+    groups: Iterable[dict[str, Any]],
+    method: str = "geometric",
+    normalization: str = "relative-best",
+    missing_policy: str = "coverage-discount",
+    coverage_discount_exponent: float = 0.25,
+    group_metric_coverage_discount_exponent: float = 0.0,
+    weak_prior_ratio: float = 0.35,
+    metric_baselines: dict[str, Any] | None = None,
+    display_scale: float | None = None,
+) -> dict[str, float | int | None]:
+    entries: list[tuple[float, float]] = []
+    denominator = 0.0
+    available_weight = 0.0
+    total_weight = 0.0
+    coverage = 0
+
+    for group in groups:
+        weight = _number_or_none(group.get("weight")) or 0.0
+        if weight <= 0:
+            continue
+        total_weight += weight
+        group_value = frontier_group_value(
+            model,
+            group.get("metrics", []),
+            method=method,
+            normalization=normalization,
+            coverage_discount_exponent=group_metric_coverage_discount_exponent,
+            metric_baselines=metric_baselines,
+        )
+        if group_value is None:
+            if missing_policy == "zero":
+                entries.append((0.0, weight))
+                denominator += weight
+            elif missing_policy == "weak-prior":
+                entries.append((weak_prior_ratio, weight))
+                denominator += weight
+            continue
+        entries.append((group_value, weight))
+        denominator += weight
+        available_weight += weight
+        coverage += 1
+
+    if denominator <= 0:
+        score = None
+    else:
+        score = aggregate_weighted_values(entries, denominator, method)
+        if score is not None and normalization == "relative-best":
+            score *= 100.0 if display_scale is None else display_scale
+        if score is not None and missing_policy == "coverage-discount":
+            coverage_ratio = available_weight / total_weight if total_weight > 0 else 0.0
+            score *= coverage_ratio ** coverage_discount_exponent
+
+    return {
+        "score": score,
+        "coverage": coverage,
+        "availableWeight": available_weight,
+    }
+
+
+def frontier_group_value(
+    model: dict[str, Any],
+    metric_keys: Iterable[Any],
+    method: str = "geometric",
+    normalization: str = "relative-best",
+    coverage_discount_exponent: float = 0.0,
+    metric_baselines: dict[str, Any] | None = None,
+) -> float | None:
+    entries: list[tuple[float, float]] = []
+    keys = [str(key_value) for key_value in metric_keys]
+    for key in keys:
+        value = _number_or_none(model.get("scores", {}).get(key))
+        if value is None:
+            continue
+        entries.append((normalized_metric_value(key, value, normalization, metric_baselines), 1.0))
+    if not entries:
+        return None
+    value = aggregate_weighted_values(entries, float(len(entries)), method)
+    if value is not None and coverage_discount_exponent > 0 and keys:
+        value *= (len(entries) / len(keys)) ** coverage_discount_exponent
+    return value
+
+
+def aggregate_weighted_values(
+    entries: Iterable[tuple[float, float]],
+    denominator: float,
+    method: str = "arithmetic",
+) -> float | None:
+    values = list(entries)
+    if denominator <= 0 or not values:
+        return None
+    if method == "geometric":
+        return math.exp(
+            sum(math.log(max(value, 0.0) + 1) * weight for value, weight in values) / denominator
+        ) - 1
+    return sum(value * weight for value, weight in values) / denominator
 
 
 def weighted_metric_score(
@@ -370,41 +578,45 @@ def weighted_metric_score(
     normalization: str = "raw",
     metric_baselines: dict[str, Any] | None = None,
     display_scale: float | None = None,
+    missing_policy: Any = None,
+    coverage_discount_exponent: float = 0.0,
+    weak_prior_ratio: float = 0.35,
 ) -> dict[str, float | int | None]:
-    weighted_score = 0.0
-    log_score = 0.0
+    entries: list[tuple[float, float]] = []
     denominator = 0.0
     available_weight = 0.0
+    total_weight = 0.0
     coverage = 0
-    use_geometric = method == "geometric"
+    policy = str(missing_policy or "").strip()
 
     for key, raw_weight in weights.items():
         weight = _number_or_none(raw_weight) or 0.0
         if weight <= 0:
             continue
+        total_weight += weight
         value = _number_or_none(model.get("scores", {}).get(key))
         if value is None:
-            if not ignore_missing:
+            if policy == "weak-prior":
+                entries.append((weak_prior_ratio, weight))
                 denominator += weight
-                if use_geometric:
-                    log_score += math.log(1) * weight
+            elif policy == "zero" or (not policy and not ignore_missing):
+                entries.append((0.0, weight))
+                denominator += weight
             continue
         score_value = normalized_metric_value(key, value, normalization, metric_baselines)
-        if use_geometric:
-            log_score += math.log(max(score_value, 0) + 1) * weight
-        else:
-            weighted_score += score_value * weight
+        entries.append((score_value, weight))
         denominator += weight
         available_weight += weight
         coverage += 1
     if denominator <= 0 or coverage < min_coverage:
         score = None
-    elif use_geometric:
-        score = math.exp(log_score / denominator) - 1
     else:
-        score = weighted_score / denominator
+        score = aggregate_weighted_values(entries, denominator, method)
     if score is not None and normalization == "relative-best":
         score *= 100.0 if display_scale is None else display_scale
+    if score is not None and policy == "coverage-discount":
+        coverage_ratio = available_weight / total_weight if total_weight > 0 else 0.0
+        score *= coverage_ratio ** coverage_discount_exponent
 
     return {
         "score": score,
@@ -797,12 +1009,16 @@ def _presets() -> dict[str, dict[str, Any]]:
     return {
         "zhihu-adjusted": {
             "label": "AInsights Index",
-            "kind": "weighted-metrics",
-            "description": "按新版 AA Intelligence Index evaluation suite 占比计算；去掉 Hallucination Rate 后把 Omniscience 的 12% 计入 Accuracy，每项先除以该项最高分，再用几何加权均值聚合，并乘回 AA Intelligence 最高分展示。",
-            "ignoreMissing": False,
+            "kind": "frontier-groups",
+            "description": "Frontier 综合口径：60% AA suite，剩余 40% 按原 Frontier 非 AA 组比例分配。每个测试项先除以该项最高分，组内和组间使用几何加权均值；组内证据覆盖率和缺失组覆盖率都按 0.25 次方折扣。",
             "calculation": "geometric",
             "normalization": "relative-best",
-            "weights": DEFAULT_CORRECTED_WEIGHTS,
+            "missingPolicy": "coverage-discount",
+            "coverageDiscountExponent": 0.25,
+            "groupMetricCoverageDiscountExponent": 0.25,
+            "groupWeights": FRONTIER_GROUP_WEIGHTS,
+            "groups": FRONTIER_INDEX_GROUPS,
+            "weights": DEFAULT_FRONTIER_WEIGHTS,
         },
         "aa-intelligence": {
             "label": "AA Intelligence",
@@ -828,11 +1044,14 @@ def _presets() -> dict[str, dict[str, Any]]:
         "custom": {
             "label": "自定义占比",
             "kind": "weighted-metrics",
-            "description": "默认使用 AInsights Index 配置；按用户设置的分数基线、均值方式、缺失扣分和覆盖率门槛实时计算。",
-            "ignoreMissing": False,
+            "description": "默认使用 AInsights Index Frontier 配置；按用户设置的分数基线、均值方式、缺失处理、覆盖率门槛和逐项权重实时计算。",
+            "ignoreMissing": True,
             "calculation": "geometric",
             "normalization": "relative-best",
-            "weights": DEFAULT_CORRECTED_WEIGHTS,
+            "missingPolicy": "coverage-discount",
+            "coverageDiscountExponent": 0.25,
+            "groupMetricCoverageDiscountExponent": 0.25,
+            "weights": DEFAULT_FRONTIER_WEIGHTS,
         },
     }
 

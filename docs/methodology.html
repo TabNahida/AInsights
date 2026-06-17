@@ -38,75 +38,57 @@
 
         <section class="methodology-grid">
           <article class="methodology-card methodology-card-wide">
-            <h3>Benchmarks and Weights</h3>
-            <p>AIndex uses the updated Artificial Analysis Intelligence Index evaluation-suite fields that are available in the public dataset, with the active weights below summing to 100%.</p>
+            <h3>Frontier Groups and Weights</h3>
+            <p>AIndex now uses a Frontier composite that gives the AA suite a 60% anchor, then allocates the remaining 40% across source-backed external benchmark evidence. The active group weights below sum to 100%.</p>
             <div class="methodology-table-wrap">
               <table class="methodology-weight-table">
                 <thead>
                   <tr>
-                    <th>Benchmark</th>
+                    <th>Capability group</th>
                     <th>Weight</th>
                     <th>Role in AIndex</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>GDPval-AA v2</td>
-                    <td>20%</td>
-                    <td>Agentic and economically grounded task performance.</td>
+                    <td>AA suite</td>
+                    <td>60%</td>
+                    <td>Core Artificial Analysis fields: GDPval-AA v2, τ³-Banking, Terminal-Bench v2.1, SciCode, AA-LCR, AA-Omniscience Accuracy, HLE, GPQA Diamond, and CritPt.</td>
                   </tr>
                   <tr>
-                    <td>τ³-Banking</td>
-                    <td>14%</td>
-                    <td>Agentic banking workflow performance.</td>
+                    <td>Agentic coding</td>
+                    <td>13.3%</td>
+                    <td>Software engineering and terminal execution signals such as AA Terminal-Bench v2.1, SciCode, SWE-Bench, Terminal-Bench, LiveCodeBench, and FrontierCode.</td>
                   </tr>
                   <tr>
-                    <td>Terminal-Bench v2.1</td>
-                    <td>16%</td>
-                    <td>Terminal-based coding and agentic execution.</td>
+                    <td>Tools/work</td>
+                    <td>10%</td>
+                    <td>Tool-use and knowledge-work signals such as BrowseComp, HLE with tools, MCP-Atlas, Toolathlon, OSWorld, and GDPval-style evaluations.</td>
                   </tr>
                   <tr>
-                    <td>SciCode</td>
-                    <td>8%</td>
-                    <td>Scientific coding performance.</td>
+                    <td>Reasoning</td>
+                    <td>13.3%</td>
+                    <td>Hard reasoning and knowledge signals such as HLE, GPQA, MMLU-Pro, AIME, FrontierMath, HMMT, and AA-Omniscience Accuracy.</td>
                   </tr>
                   <tr>
-                    <td>AA-LCR</td>
-                    <td>6%</td>
-                    <td>Long-context reasoning.</td>
-                  </tr>
-                  <tr>
-                    <td>AA-Omniscience Accuracy</td>
-                    <td>12%</td>
-                    <td>The full Omniscience share is assigned to Accuracy.</td>
-                  </tr>
-                  <tr>
-                    <td>Humanity's Last Exam</td>
-                    <td>12%</td>
-                    <td>Broad expert-level reasoning.</td>
-                  </tr>
-                  <tr>
-                    <td>GPQA Diamond</td>
-                    <td>6%</td>
-                    <td>Graduate-level scientific question answering.</td>
-                  </tr>
-                  <tr>
-                    <td>CritPt</td>
-                    <td>6%</td>
-                    <td>Instruction-following and critical-point reasoning signal.</td>
+                    <td>Instruction/long-context</td>
+                    <td>3.3%</td>
+                    <td>Instruction following, long-context, multilingual, multimodal, and visual reasoning signals such as AA-LCR, CritPt, IFBench, MMMLU, MMMU-Pro, and CharXiv.</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p>AA-Omniscience Non-Hallucination Rate remains visible elsewhere in the data, but Hallucination Rate is excluded from AIndex.</p>
+            <p>AA-Omniscience Non-Hallucination Rate remains visible elsewhere in the data, but Hallucination Rate is excluded from the AA suite anchor.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>AIndex Calculation</h3>
             <ol class="methodology-steps">
               <li>For each benchmark, convert the raw score into a <strong>Best score ratio</strong>: model score divided by the highest score observed for that benchmark.</li>
-              <li>Apply the benchmark weights listed above. Missing benchmark values are counted as a zero ratio under the default AIndex preset.</li>
-              <li>Aggregate the weighted ratios with <strong>Geometric Weighted Mean</strong>: exp(weighted average of log(ratio + 1)) - 1.</li>
+              <li>Within each capability group, aggregate available benchmark ratios with <strong>Geometric Weighted Mean</strong>: exp(weighted average of log(ratio + 1)) - 1.</li>
+              <li>Apply a mild within-group evidence coverage discount, using scored fields divided by active fields raised to the power of 0.25.</li>
+              <li>Aggregate available group scores with the group weights listed above.</li>
+              <li>Apply the default missing policy: multiply by available group-weight coverage raised to the power of 0.25.</li>
               <li>Scale the resulting aggregate ratio by the highest AA Intelligence Index score available on the site, producing the displayed AIndex score.</li>
             </ol>
           </article>
@@ -114,9 +96,9 @@
           <article class="methodology-card methodology-card-wide">
             <h3>Detailed Explanation</h3>
             <p>AIndex is designed to compare models across different benchmark scales without letting any single raw scoring convention dominate the final leaderboard. A percentage-style benchmark, an Elo-normalized field, and a long-context score can each have different ranges, so AIndex first places every active field on its own best-observed baseline.</p>
-            <p>The geometric weighted mean is used because it rewards balanced capability. A model that is very strong on one benchmark but missing or weak on another should not receive the same aggregate signal as a model that is consistently strong across the suite. The ratio + 1 transform keeps true zeroes and missing fields from collapsing the entire score to zero, while still penalizing them clearly.</p>
-            <p>After aggregation, AIndex is scaled back onto the AA Intelligence Index score range. This keeps the displayed numbers familiar while changing the underlying comparison from a raw weighted average to a relative-best, geometric-weighted method.</p>
-            <p>The Custom weights panel exposes the same building blocks for comparison: Best score ratio or Raw score, Geometric Weight Mean or regular Weight Mean, missing-value penalty strength, minimum coverage, and per-benchmark weights.</p>
+            <p>The Frontier grouping keeps the AA suite as a stronger stable anchor while allowing official release scores and public benchmarks to influence frontier coding, tool-use, and reasoning comparisons. AA suite now carries 60% of AIndex, and the non-AA groups keep their previous relative balance inside the remaining 40%.</p>
+            <p>The coverage discount is deliberately mild at both levels: if a group has only partial benchmark evidence, its group score is multiplied by within-group evidence coverage^0.25; if a model is missing whole groups, the final score is multiplied by available group-weight coverage^0.25. This keeps single-metric outliers from floating too high without treating missing source rows as hard zeroes.</p>
+            <p>The Custom weights panel exposes the same building blocks for comparison: Best score ratio or Raw score, Geometric Weight Mean or regular Weight Mean, available-only scoring, 0.25 coverage discount, sqrt coverage discount, weak prior, missing-as-zero, full-coverage gates, and per-benchmark weights.</p>
           </article>
         </section>
       </section>

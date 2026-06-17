@@ -1,6 +1,6 @@
 window.AINSIGHTS_MODELS_DATA = {
   "version": 1,
-  "generatedAt": "2026-06-17T17:15:50+00:00",
+  "generatedAt": "2026-06-17T19:37:11+00:00",
   "source": {
     "label": "Artificial Analysis Intelligence Evaluations",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -13,17 +13,17 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "GDPval-AA v2",
       "label": "GDPval-AA v2",
-      "defaultWeight": 20
+      "defaultWeight": 7.777777777777779
     },
     {
       "key": "τ³-Banking",
       "label": "τ³-Banking",
-      "defaultWeight": 14
+      "defaultWeight": 7.777777777777779
     },
     {
       "key": "Terminal-Bench v2.1",
       "label": "Terminal-Bench v2.1",
-      "defaultWeight": 16
+      "defaultWeight": 8.148148148148149
     },
     {
       "key": "GDPval-AA",
@@ -43,12 +43,12 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "AA-LCR",
       "label": "AA-LCR",
-      "defaultWeight": 6
+      "defaultWeight": 7.142857142857143
     },
     {
       "key": "AA-Omniscience Accuracy",
       "label": "AA-Omniscience Accuracy",
-      "defaultWeight": 12
+      "defaultWeight": 7.878787878787879
     },
     {
       "key": "AA-Omniscience Non-Hallucination Rate",
@@ -58,17 +58,17 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "Humanity's Last Exam",
       "label": "Humanity's Last Exam",
-      "defaultWeight": 12
+      "defaultWeight": 7.878787878787879
     },
     {
       "key": "GPQA Diamond",
       "label": "GPQA Diamond",
-      "defaultWeight": 6
+      "defaultWeight": 7.878787878787879
     },
     {
       "key": "SciCode",
       "label": "SciCode",
-      "defaultWeight": 8
+      "defaultWeight": 8.148148148148149
     },
     {
       "key": "IFBench",
@@ -78,7 +78,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "CritPt",
       "label": "CritPt",
-      "defaultWeight": 6
+      "defaultWeight": 7.142857142857143
     },
     {
       "key": "APEX-Agents-AA",
@@ -108,7 +108,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:swe-bench-pro",
       "label": "SWE-Bench Pro",
-      "defaultWeight": 0,
+      "defaultWeight": 1.4814814814814816,
       "source": "benchmark",
       "category": "Agentic coding",
       "unit": "%",
@@ -117,7 +117,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:terminal-bench-2",
       "label": "Terminal-Bench 2.0",
-      "defaultWeight": 0,
+      "defaultWeight": 1.4814814814814816,
       "source": "benchmark",
       "category": "Agentic coding",
       "unit": "%",
@@ -144,7 +144,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:frontiercode-diamond",
       "label": "FrontierCode Diamond",
-      "defaultWeight": 0,
+      "defaultWeight": 1.4814814814814816,
       "source": "benchmark",
       "category": "Agentic coding",
       "unit": "%",
@@ -153,7 +153,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:swe-bench-verified",
       "label": "SWE-bench Verified",
-      "defaultWeight": 0,
+      "defaultWeight": 1.4814814814814816,
       "source": "benchmark",
       "category": "Agentic coding",
       "unit": "%",
@@ -162,7 +162,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:swe-bench-multilingual",
       "label": "SWE-bench Multilingual",
-      "defaultWeight": 0,
+      "defaultWeight": 1.4814814814814816,
       "source": "benchmark",
       "category": "Agentic coding",
       "unit": "%",
@@ -198,7 +198,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:gdpval-wins-ties",
       "label": "GDPval (wins or ties)",
-      "defaultWeight": 0,
+      "defaultWeight": 1.1111111111111112,
       "source": "benchmark",
       "category": "Professional work",
       "unit": "%",
@@ -207,7 +207,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:gdpval-aa-elo",
       "label": "GDPval-AA Elo",
-      "defaultWeight": 0,
+      "defaultWeight": 1.1111111111111112,
       "source": "benchmark",
       "category": "Professional work",
       "unit": "Elo",
@@ -234,7 +234,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:osworld-verified",
       "label": "OSWorld-Verified",
-      "defaultWeight": 0,
+      "defaultWeight": 1.1111111111111112,
       "source": "benchmark",
       "category": "Computer use",
       "unit": "%",
@@ -243,7 +243,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:toolathlon",
       "label": "Toolathlon",
-      "defaultWeight": 0,
+      "defaultWeight": 1.1111111111111112,
       "source": "benchmark",
       "category": "Tool use",
       "unit": "%",
@@ -261,7 +261,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:browsecomp",
       "label": "BrowseComp",
-      "defaultWeight": 0,
+      "defaultWeight": 1.1111111111111112,
       "source": "benchmark",
       "category": "Tool use",
       "unit": "%",
@@ -288,7 +288,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:hle-tools",
       "label": "HLE w/ tools",
-      "defaultWeight": 0,
+      "defaultWeight": 1.1111111111111112,
       "source": "benchmark",
       "category": "Tool use",
       "unit": "%",
@@ -297,7 +297,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:mcp-atlas",
       "label": "MCP-Atlas Public",
-      "defaultWeight": 0,
+      "defaultWeight": 1.1111111111111112,
       "source": "benchmark",
       "category": "Tool use",
       "unit": "%",
@@ -306,7 +306,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:frontiermath-tier-1-3",
       "label": "FrontierMath Tier 1-3",
-      "defaultWeight": 0,
+      "defaultWeight": 1.2121212121212122,
       "source": "benchmark",
       "category": "Academic reasoning",
       "unit": "%",
@@ -315,7 +315,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:frontiermath-tier-4",
       "label": "FrontierMath Tier 4",
-      "defaultWeight": 0,
+      "defaultWeight": 1.2121212121212122,
       "source": "benchmark",
       "category": "Academic reasoning",
       "unit": "%",
@@ -342,7 +342,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:mmlu-pro",
       "label": "MMLU-Pro",
-      "defaultWeight": 0,
+      "defaultWeight": 1.2121212121212122,
       "source": "benchmark",
       "category": "Academic reasoning",
       "unit": "%",
@@ -351,7 +351,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:gpqa-diamond",
       "label": "GPQA Diamond",
-      "defaultWeight": 0,
+      "defaultWeight": 1.2121212121212122,
       "source": "benchmark",
       "category": "Academic reasoning",
       "unit": "%",
@@ -360,7 +360,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:hle",
       "label": "Humanity's Last Exam",
-      "defaultWeight": 0,
+      "defaultWeight": 1.2121212121212122,
       "source": "benchmark",
       "category": "Academic reasoning",
       "unit": "%",
@@ -423,7 +423,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:livecodebench",
       "label": "LiveCodeBench",
-      "defaultWeight": 0,
+      "defaultWeight": 1.4814814814814816,
       "source": "benchmark",
       "category": "Coding",
       "unit": "%",
@@ -477,7 +477,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:aime-2025",
       "label": "AIME 2025",
-      "defaultWeight": 0,
+      "defaultWeight": 1.2121212121212122,
       "source": "benchmark",
       "category": "Math",
       "unit": "%",
@@ -486,7 +486,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:aime-2026",
       "label": "AIME 2026",
-      "defaultWeight": 0,
+      "defaultWeight": 1.2121212121212122,
       "source": "benchmark",
       "category": "Math",
       "unit": "%",
@@ -495,7 +495,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:hmmt-2026-feb",
       "label": "HMMT Feb 2026",
-      "defaultWeight": 0,
+      "defaultWeight": 1.2121212121212122,
       "source": "benchmark",
       "category": "Math",
       "unit": "%",
@@ -720,7 +720,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:mmmu-pro",
       "label": "MMMU-Pro",
-      "defaultWeight": 0,
+      "defaultWeight": 0.4761904761904762,
       "source": "benchmark",
       "category": "Multimodal reasoning",
       "unit": "%",
@@ -729,7 +729,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:mmmlu",
       "label": "MMMLU",
-      "defaultWeight": 0,
+      "defaultWeight": 0.4761904761904762,
       "source": "benchmark",
       "category": "Multilingual knowledge",
       "unit": "%",
@@ -738,7 +738,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:charxiv-no-tools",
       "label": "CharXiv Reasoning",
-      "defaultWeight": 0,
+      "defaultWeight": 0.4761904761904762,
       "source": "benchmark",
       "category": "Visual reasoning",
       "unit": "%",
@@ -747,7 +747,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:charxiv-tools",
       "label": "CharXiv Reasoning w/ tools",
-      "defaultWeight": 0,
+      "defaultWeight": 0.4761904761904762,
       "source": "benchmark",
       "category": "Visual reasoning",
       "unit": "%",
@@ -846,7 +846,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:terminal-bench-2-1",
       "label": "Terminal-Bench 2.1",
-      "defaultWeight": 0,
+      "defaultWeight": 1.4814814814814816,
       "source": "benchmark",
       "category": "Agentic coding",
       "unit": "%",
@@ -855,7 +855,7 @@ window.AINSIGHTS_MODELS_DATA = {
     {
       "key": "benchmark:ifbench",
       "label": "IFBench",
-      "defaultWeight": 0,
+      "defaultWeight": 0.4761904761904762,
       "source": "benchmark",
       "category": "Instruction following",
       "unit": "%",
@@ -955,31 +955,139 @@ window.AINSIGHTS_MODELS_DATA = {
   "presets": {
     "zhihu-adjusted": {
       "label": "AInsights Index",
-      "kind": "weighted-metrics",
-      "description": "按新版 AA Intelligence Index evaluation suite 占比计算；去掉 Hallucination Rate 后把 Omniscience 的 12% 计入 Accuracy，每项先除以该项最高分，再用几何加权均值聚合，并乘回 AA Intelligence 最高分展示。",
-      "ignoreMissing": false,
+      "kind": "frontier-groups",
+      "description": "Frontier 综合口径：60% AA suite，剩余 40% 按原 Frontier 非 AA 组比例分配。每个测试项先除以该项最高分，组内和组间使用几何加权均值；组内证据覆盖率和缺失组覆盖率都按 0.25 次方折扣。",
       "calculation": "geometric",
       "normalization": "relative-best",
+      "missingPolicy": "coverage-discount",
+      "coverageDiscountExponent": 0.25,
+      "groupMetricCoverageDiscountExponent": 0.25,
+      "groupWeights": {
+        "aa-suite": 60,
+        "agentic-coding": 13.333333333333334,
+        "tools-work": 10,
+        "reasoning": 13.333333333333334,
+        "instruction-long-context": 3.3333333333333335
+      },
+      "groups": [
+        {
+          "id": "aa-suite",
+          "label": "AA suite",
+          "weight": 60,
+          "metrics": [
+            "GDPval-AA v2",
+            "τ³-Banking",
+            "Terminal-Bench v2.1",
+            "SciCode",
+            "AA-LCR",
+            "AA-Omniscience Accuracy",
+            "Humanity's Last Exam",
+            "GPQA Diamond",
+            "CritPt"
+          ]
+        },
+        {
+          "id": "agentic-coding",
+          "label": "Agentic coding",
+          "weight": 13.333333333333334,
+          "metrics": [
+            "Terminal-Bench v2.1",
+            "SciCode",
+            "benchmark:swe-bench-pro",
+            "benchmark:swe-bench-verified",
+            "benchmark:swe-bench-multilingual",
+            "benchmark:terminal-bench-2",
+            "benchmark:terminal-bench-2-1",
+            "benchmark:livecodebench",
+            "benchmark:frontiercode-diamond"
+          ]
+        },
+        {
+          "id": "tools-work",
+          "label": "Tools/work",
+          "weight": 10,
+          "metrics": [
+            "benchmark:browsecomp",
+            "benchmark:hle-tools",
+            "benchmark:mcp-atlas",
+            "benchmark:toolathlon",
+            "benchmark:osworld-verified",
+            "benchmark:gdpval-wins-ties",
+            "benchmark:gdpval-aa-elo",
+            "GDPval-AA v2",
+            "τ³-Banking"
+          ]
+        },
+        {
+          "id": "reasoning",
+          "label": "Reasoning",
+          "weight": 13.333333333333334,
+          "metrics": [
+            "benchmark:hle",
+            "Humanity's Last Exam",
+            "benchmark:gpqa-diamond",
+            "GPQA Diamond",
+            "benchmark:mmlu-pro",
+            "benchmark:aime-2025",
+            "benchmark:aime-2026",
+            "benchmark:frontiermath-tier-1-3",
+            "benchmark:frontiermath-tier-4",
+            "benchmark:hmmt-2026-feb",
+            "AA-Omniscience Accuracy"
+          ]
+        },
+        {
+          "id": "instruction-long-context",
+          "label": "Instruction/long-context",
+          "weight": 3.3333333333333335,
+          "metrics": [
+            "AA-LCR",
+            "CritPt",
+            "benchmark:ifbench",
+            "benchmark:mmmlu",
+            "benchmark:mmmu-pro",
+            "benchmark:charxiv-no-tools",
+            "benchmark:charxiv-tools"
+          ]
+        }
+      ],
       "weights": {
-        "GDPval-AA v2": 20,
-        "τ³-Banking": 14,
-        "Terminal-Bench v2.1": 16,
-        "GDPval-AA": 0,
-        "Terminal-Bench Hard": 0,
-        "τ²-Bench Telecom": 0,
-        "AA-LCR": 6,
-        "AA-Omniscience Accuracy": 12,
-        "AA-Omniscience Non-Hallucination Rate": 0,
-        "Humanity's Last Exam": 12,
-        "GPQA Diamond": 6,
-        "SciCode": 8,
-        "IFBench": 0,
-        "CritPt": 6,
-        "APEX-Agents-AA": 0,
-        "ITBench-AA": 0,
-        "MMMU-Pro": 0,
-        "LiveCodeBench": 0,
-        "AIME 2025": 0
+        "GDPval-AA v2": 7.777777777777779,
+        "τ³-Banking": 7.777777777777779,
+        "Terminal-Bench v2.1": 8.148148148148149,
+        "SciCode": 8.148148148148149,
+        "AA-LCR": 7.142857142857143,
+        "AA-Omniscience Accuracy": 7.878787878787879,
+        "Humanity's Last Exam": 7.878787878787879,
+        "GPQA Diamond": 7.878787878787879,
+        "CritPt": 7.142857142857143,
+        "benchmark:swe-bench-pro": 1.4814814814814816,
+        "benchmark:swe-bench-verified": 1.4814814814814816,
+        "benchmark:swe-bench-multilingual": 1.4814814814814816,
+        "benchmark:terminal-bench-2": 1.4814814814814816,
+        "benchmark:terminal-bench-2-1": 1.4814814814814816,
+        "benchmark:livecodebench": 1.4814814814814816,
+        "benchmark:frontiercode-diamond": 1.4814814814814816,
+        "benchmark:browsecomp": 1.1111111111111112,
+        "benchmark:hle-tools": 1.1111111111111112,
+        "benchmark:mcp-atlas": 1.1111111111111112,
+        "benchmark:toolathlon": 1.1111111111111112,
+        "benchmark:osworld-verified": 1.1111111111111112,
+        "benchmark:gdpval-wins-ties": 1.1111111111111112,
+        "benchmark:gdpval-aa-elo": 1.1111111111111112,
+        "benchmark:hle": 1.2121212121212122,
+        "benchmark:gpqa-diamond": 1.2121212121212122,
+        "benchmark:mmlu-pro": 1.2121212121212122,
+        "benchmark:aime-2025": 1.2121212121212122,
+        "benchmark:aime-2026": 1.2121212121212122,
+        "benchmark:frontiermath-tier-1-3": 1.2121212121212122,
+        "benchmark:frontiermath-tier-4": 1.2121212121212122,
+        "benchmark:hmmt-2026-feb": 1.2121212121212122,
+        "benchmark:ifbench": 0.4761904761904762,
+        "benchmark:mmmlu": 0.4761904761904762,
+        "benchmark:mmmu-pro": 0.4761904761904762,
+        "benchmark:charxiv-no-tools": 0.4761904761904762,
+        "benchmark:charxiv-tools": 0.4761904761904762
       }
     },
     "aa-intelligence": {
@@ -1023,30 +1131,50 @@ window.AINSIGHTS_MODELS_DATA = {
     "custom": {
       "label": "自定义占比",
       "kind": "weighted-metrics",
-      "description": "默认使用 AInsights Index 配置；按用户设置的分数基线、均值方式、缺失扣分和覆盖率门槛实时计算。",
-      "ignoreMissing": false,
+      "description": "默认使用 AInsights Index Frontier 配置；按用户设置的分数基线、均值方式、缺失处理、覆盖率门槛和逐项权重实时计算。",
+      "ignoreMissing": true,
       "calculation": "geometric",
       "normalization": "relative-best",
+      "missingPolicy": "coverage-discount",
+      "coverageDiscountExponent": 0.25,
+      "groupMetricCoverageDiscountExponent": 0.25,
       "weights": {
-        "GDPval-AA v2": 20,
-        "τ³-Banking": 14,
-        "Terminal-Bench v2.1": 16,
-        "GDPval-AA": 0,
-        "Terminal-Bench Hard": 0,
-        "τ²-Bench Telecom": 0,
-        "AA-LCR": 6,
-        "AA-Omniscience Accuracy": 12,
-        "AA-Omniscience Non-Hallucination Rate": 0,
-        "Humanity's Last Exam": 12,
-        "GPQA Diamond": 6,
-        "SciCode": 8,
-        "IFBench": 0,
-        "CritPt": 6,
-        "APEX-Agents-AA": 0,
-        "ITBench-AA": 0,
-        "MMMU-Pro": 0,
-        "LiveCodeBench": 0,
-        "AIME 2025": 0
+        "GDPval-AA v2": 7.777777777777779,
+        "τ³-Banking": 7.777777777777779,
+        "Terminal-Bench v2.1": 8.148148148148149,
+        "SciCode": 8.148148148148149,
+        "AA-LCR": 7.142857142857143,
+        "AA-Omniscience Accuracy": 7.878787878787879,
+        "Humanity's Last Exam": 7.878787878787879,
+        "GPQA Diamond": 7.878787878787879,
+        "CritPt": 7.142857142857143,
+        "benchmark:swe-bench-pro": 1.4814814814814816,
+        "benchmark:swe-bench-verified": 1.4814814814814816,
+        "benchmark:swe-bench-multilingual": 1.4814814814814816,
+        "benchmark:terminal-bench-2": 1.4814814814814816,
+        "benchmark:terminal-bench-2-1": 1.4814814814814816,
+        "benchmark:livecodebench": 1.4814814814814816,
+        "benchmark:frontiercode-diamond": 1.4814814814814816,
+        "benchmark:browsecomp": 1.1111111111111112,
+        "benchmark:hle-tools": 1.1111111111111112,
+        "benchmark:mcp-atlas": 1.1111111111111112,
+        "benchmark:toolathlon": 1.1111111111111112,
+        "benchmark:osworld-verified": 1.1111111111111112,
+        "benchmark:gdpval-wins-ties": 1.1111111111111112,
+        "benchmark:gdpval-aa-elo": 1.1111111111111112,
+        "benchmark:hle": 1.2121212121212122,
+        "benchmark:gpqa-diamond": 1.2121212121212122,
+        "benchmark:mmlu-pro": 1.2121212121212122,
+        "benchmark:aime-2025": 1.2121212121212122,
+        "benchmark:aime-2026": 1.2121212121212122,
+        "benchmark:frontiermath-tier-1-3": 1.2121212121212122,
+        "benchmark:frontiermath-tier-4": 1.2121212121212122,
+        "benchmark:hmmt-2026-feb": 1.2121212121212122,
+        "benchmark:ifbench": 0.4761904761904762,
+        "benchmark:mmmlu": 0.4761904761904762,
+        "benchmark:mmmu-pro": 0.4761904761904762,
+        "benchmark:charxiv-no-tools": 0.4761904761904762,
+        "benchmark:charxiv-tools": 0.4761904761904762
       }
     }
   },

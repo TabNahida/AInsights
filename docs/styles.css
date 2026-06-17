@@ -643,6 +643,11 @@ main {
   width: 100%;
 }
 
+.custom-setting-block [data-missing-preset] {
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  overflow: visible;
+}
+
 .custom-setting-block .segmented-control button {
   display: grid;
   place-items: center;
@@ -654,6 +659,12 @@ main {
   text-align: center;
   white-space: normal;
   overflow-wrap: anywhere;
+}
+
+.custom-setting-block [data-missing-preset] button {
+  min-height: 44px;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .custom-setting-block .segmented-control button + button {
@@ -4727,6 +4738,10 @@ tbody tr:hover {
 
   .segmented-control button {
     min-width: max-content;
+  }
+
+  .custom-setting-block [data-missing-preset] button {
+    min-width: 0;
   }
 
   .top-bar-item {

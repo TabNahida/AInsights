@@ -37,28 +37,31 @@ const copy = {
     customWeightPresetSubtitle: "一键套用 AInsights Index 或 AA 三个方向，再继续微调下方测试项权重",
     customWeightPresetMeta: "{count} 项",
     missingModeTitle: "计算方式",
-    missingModeSubtitle: "选择分数基线和均值方式，并用预设或滑块调整缺失项扣分强度和最低覆盖率",
+    missingModeSubtitle: "选择分数基线、均值方式和缺失处理策略；默认 AIndex 使用 Frontier 组内/组间覆盖率 0.25 折扣。",
     normalizationMethodTitle: "分数基线",
     normalizationMethodHint: "AInsights Index / AIndex 默认先除以每个测试项最高分，再乘回 AA Intelligence 最高分展示。",
     normalizationMethods: {
-      "relative-best": "Best score ratio",
-      raw: "Raw score",
+      "relative-best": "最佳分数比例",
+      raw: "原始分数",
     },
     calculationMethodTitle: "均值方式",
     calculationMethodHint: "AInsights Index / AIndex 默认使用几何加权均值；普通加权均值保留用于对照。",
     meanMethods: {
-      geometric: "Geometric Weight Mean",
-      arithmetic: "Weight Mean",
+      geometric: "几何加权均值",
+      arithmetic: "普通加权均值",
     },
     missingPresetTitle: "处理预设",
     penaltyLabel: "缺失扣分强度",
-    penaltyHint: "0 表示只按可用项求均分；100 表示缺失项按 0 计入总权重，与普通 AInsights Index 排名口径一致。",
+    penaltyHint: "手动扣分模式使用该强度；0 表示只按可用项，100 表示缺失按 0 进入总权重。",
     minCoverageLabel: "最低覆盖率",
     minCoverageHint: "低于该覆盖率的模型不进入排名；100% 等同全覆盖",
     currentCustomStrategy: "当前策略",
     manualCustomStrategy: "手动配置",
     missingModes: {
-      available: "只按可用项",
+      available: "可用项",
+      coverage025: "覆盖折扣 0.25",
+      coverageSqrt: "覆盖折扣 sqrt",
+      weakPrior: "弱先验",
       penalty: "轻度扣分",
       zero: "缺失记 0",
       complete: "要求全覆盖",
@@ -298,7 +301,7 @@ const copy = {
         label: "AInsights Index",
         calculation: "geometric",
         normalization: "relative-best",
-        description: "按新版 AA Intelligence Index evaluation suite 占比计算；去掉 Hallucination Rate 后把 Omniscience 的 12% 计入 Accuracy，每项先除以该项最高分，再用几何加权均值聚合，并乘回 AA Intelligence 最高分展示。",
+        description: "Frontier 综合口径：60% AA suite，剩余 40% 按原 Frontier 非 AA 组比例分配；组内证据覆盖率和缺失组覆盖率都按 0.25 次方折扣。",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -316,7 +319,7 @@ const copy = {
         label: "自定义占比",
         calculation: "geometric",
         normalization: "relative-best",
-        description: "默认使用 AInsights Index 配置；按用户设置的分数基线、均值方式、缺失扣分和覆盖率门槛实时计算。",
+        description: "默认使用 AInsights Index Frontier 配置；按用户设置的分数基线、均值方式、缺失处理和覆盖率门槛实时计算。",
       },
     },
   },
@@ -355,7 +358,7 @@ const copy = {
     customWeightPresetSubtitle: "Start from AInsights Index or the three AA directions, then tune individual benchmark weights below",
     customWeightPresetMeta: "{count} fields",
     missingModeTitle: "Calculation",
-    missingModeSubtitle: "Choose the score basis and mean method, then use presets or sliders to tune missing-value penalty strength and coverage",
+    missingModeSubtitle: "Choose the score basis, mean method, and missing-value policy; default AIndex uses Frontier within-group and group-level 0.25 coverage discounts.",
     normalizationMethodTitle: "Score basis",
     normalizationMethodHint: "AInsights Index / AIndex defaults to dividing each benchmark by its best score, then scales the result by the highest AA Intelligence score.",
     normalizationMethods: {
@@ -377,6 +380,9 @@ const copy = {
     manualCustomStrategy: "Manual",
     missingModes: {
       available: "Available only",
+      coverage025: "Coverage discount 0.25",
+      coverageSqrt: "Coverage discount sqrt",
+      weakPrior: "Weak prior",
       penalty: "Light penalty",
       zero: "Missing = 0",
       complete: "Full coverage",
@@ -616,7 +622,7 @@ const copy = {
         label: "AInsights Index",
         calculation: "geometric",
         normalization: "relative-best",
-        description: "Uses the updated AA Intelligence Index evaluation-suite weights; Hallucination Rate is dropped by assigning the full 12% Omniscience component to Accuracy, then each benchmark is divided by that benchmark's best score, aggregated with geometric weighted mean, and scaled by the highest AA Intelligence score.",
+        description: "Frontier composite: 60% AA suite, with the remaining 40% allocated across the non-AA Frontier groups in their previous proportions. Within-group evidence coverage and missing groups are both discounted to the power of 0.25.",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -634,7 +640,7 @@ const copy = {
         label: "Custom weights",
         calculation: "geometric",
         normalization: "relative-best",
-        description: "Defaults to the AInsights Index configuration and recalculates live from user-selected score basis, mean method, benchmark weights, missing penalties, and coverage gates.",
+        description: "Defaults to the AInsights Index Frontier configuration and recalculates live from user-selected score basis, mean method, benchmark weights, missing policy, and coverage gates.",
       },
     },
   },
@@ -651,9 +657,11 @@ const state = {
   customWeightPresetId: "zhihu-adjusted",
   customCalculationMethod: "geometric",
   customNormalizationMethod: "relative-best",
-  customMissingMode: "zero",
-  customPenaltyMax: 100,
+  customMissingMode: "coverage025",
+  customPenaltyMax: 0,
   customMinCoveragePct: 0,
+  customCoverageDiscountExponent: 0.25,
+  customWeakPriorRatio: 35,
   customMinMetricCoverage: 0,
   customMetricGroupsCache: null,
   language: getInitialLanguage(),
@@ -782,12 +790,15 @@ const presetOrder = ["zhihu-adjusted", "aa-intelligence", "aa-coding", "aa-agent
 const customWeightPresetOrder = ["zhihu-adjusted", "aa-intelligence", "aa-coding", "aa-agentic"];
 const customCalculationMethodOrder = ["geometric", "arithmetic"];
 const customNormalizationMethodOrder = ["relative-best", "raw"];
-const missingModePresetOrder = ["available", "penalty", "zero", "complete"];
+const missingModePresetOrder = ["available", "coverage025", "coverageSqrt", "weakPrior", "penalty", "zero", "complete"];
 const missingModePresets = {
-  available: { penalty: 0, minCoverage: 0 },
-  penalty: { penalty: 10, minCoverage: 0 },
-  zero: { penalty: 100, minCoverage: 0 },
-  complete: { penalty: 0, minCoverage: 100 },
+  available: { penalty: 0, minCoverage: 0, coverageDiscountExponent: 0, weakPriorRatio: 35 },
+  coverage025: { penalty: 0, minCoverage: 0, coverageDiscountExponent: 0.25, weakPriorRatio: 35 },
+  coverageSqrt: { penalty: 0, minCoverage: 0, coverageDiscountExponent: 0.5, weakPriorRatio: 35 },
+  weakPrior: { penalty: 0, minCoverage: 0, coverageDiscountExponent: 0, weakPriorRatio: 35 },
+  penalty: { penalty: 10, minCoverage: 0, coverageDiscountExponent: 0, weakPriorRatio: 35 },
+  zero: { penalty: 100, minCoverage: 0, coverageDiscountExponent: 0, weakPriorRatio: 35 },
+  complete: { penalty: 0, minCoverage: 100, coverageDiscountExponent: 0, weakPriorRatio: 35 },
 };
 const metricCoverageFilterOptions = [0, 10, 25, 50, 100, 250];
 const methodologyPageHref = "methodology.html";
@@ -1456,6 +1467,10 @@ function scoreModel(model, preset, presetId = state.presetId) {
     };
   }
 
+  if (preset.kind === "frontier-groups") {
+    return scoreModelForFrontierGroups(model, preset);
+  }
+
   if (presetId === "custom") {
     return scoreModelForCustomWeights(model);
   }
@@ -1491,6 +1506,78 @@ function scoreModel(model, preset, presetId = state.presetId) {
     availableWeight,
     scoreMeta: `${formatNumber(availableWeight)}w`,
   };
+}
+
+function scoreModelForFrontierGroups(model, preset) {
+  const method = preset.calculation || "geometric";
+  const normalization = preset.normalization || "relative-best";
+  const missingPolicy = preset.missingPolicy || "coverage-discount";
+  const groupMetricCoverageDiscountExponent = Number(preset.groupMetricCoverageDiscountExponent || 0);
+  const groups = Array.isArray(preset.groups) ? preset.groups : [];
+  const entries = [];
+  let denominator = 0;
+  let availableWeight = 0;
+  let totalWeight = 0;
+  let coverage = 0;
+
+  for (const group of groups) {
+    const weight = Number(group.weight || preset.groupWeights?.[group.id] || 0);
+    if (weight <= 0) continue;
+    totalWeight += weight;
+    const value = frontierGroupValue(
+      model,
+      group.metrics || [],
+      method,
+      normalization,
+      groupMetricCoverageDiscountExponent,
+    );
+    if (Number.isFinite(value)) {
+      entries.push({ value, weight });
+      denominator += weight;
+      availableWeight += weight;
+      coverage += 1;
+    } else if (missingPolicy === "zero") {
+      entries.push({ value: 0, weight });
+      denominator += weight;
+    } else if (missingPolicy === "weak-prior") {
+      entries.push({ value: Number(preset.weakPriorRatio || 0.35), weight });
+      denominator += weight;
+    }
+  }
+
+  let score = denominator > 0
+    ? customAggregateScore(entries, denominator, method, normalization)
+    : null;
+  if (Number.isFinite(score) && missingPolicy === "coverage-discount") {
+    const coverageRatio = totalWeight > 0 ? availableWeight / totalWeight : 0;
+    score *= coverageRatio ** Number(preset.coverageDiscountExponent ?? 0.25);
+  }
+  return {
+    score,
+    coverage,
+    coverageLabel: `${coverage}/${groups.length}`,
+    availableWeight,
+    scoreMeta: `${formatNumber(availableWeight)}w`,
+  };
+}
+
+function frontierGroupValue(
+  model,
+  metricKeys,
+  method = "geometric",
+  normalization = "relative-best",
+  coverageDiscountExponent = 0,
+) {
+  const entries = (metricKeys || [])
+    .map((key) => scoreValueForMetric(key, model.scores?.[key], normalization))
+    .filter(Number.isFinite)
+    .map((value) => ({ value, weight: 1 }));
+  if (!entries.length) return null;
+  let score = aggregateScoreEntries(entries, entries.length, method);
+  if (Number.isFinite(score) && coverageDiscountExponent > 0 && metricKeys.length > 0) {
+    score *= (entries.length / metricKeys.length) ** coverageDiscountExponent;
+  }
+  return score;
 }
 
 function scoreModelForCustomWeights(model) {
@@ -1529,8 +1616,26 @@ function scoreModelForCustomWeights(model) {
   let score = availableScore;
   const penaltyRatio = clamp(Number(state.customPenaltyMax || 0), 0, 100) / 100;
   const zeroScore = customAggregateScore(entries, selectedWeight, state.customCalculationMethod, state.customNormalizationMethod);
+  const weightCoverageRatio = selectedWeight > 0 ? availableWeight / selectedWeight : 0;
   if (Number.isFinite(availableScore) && penaltyRatio > 0 && selectedWeight > 0) {
     score = availableScore + (zeroScore - availableScore) * penaltyRatio;
+  }
+  if (Number.isFinite(availableScore) && state.customMissingMode === "coverage025") {
+    score = availableScore * (weightCoverageRatio ** 0.25);
+  }
+  if (Number.isFinite(availableScore) && state.customMissingMode === "coverageSqrt") {
+    score = availableScore * (weightCoverageRatio ** 0.5);
+  }
+  if (state.customMissingMode === "weakPrior" && selectedWeight > 0 && coverageRatio >= minCoverage) {
+    const prior = clamp(Number(state.customWeakPriorRatio || 35), 0, 100) / 100;
+    const priorEntries = [];
+    for (const group of customMetricGroups()) {
+      const weight = Number(state.customWeights[group.id] || 0);
+      if (weight <= 0) continue;
+      const value = customMetricGroupValue(model, group, state.customNormalizationMethod);
+      priorEntries.push({ value: Number.isFinite(value) ? value : prior, weight });
+    }
+    score = customAggregateScore(priorEntries, selectedWeight, state.customCalculationMethod, state.customNormalizationMethod);
   }
   if (!Number.isFinite(score) && penaltyRatio >= 1 && coverageRatio >= minCoverage && Number.isFinite(zeroScore)) score = zeroScore;
   return {
@@ -1543,6 +1648,12 @@ function scoreModelForCustomWeights(model) {
 }
 
 function customAggregateScore(entries, denominator, method = "arithmetic", normalization = "raw") {
+  if (!Number.isFinite(denominator) || denominator <= 0 || !entries.length) return null;
+  const score = aggregateScoreEntries(entries, denominator, method);
+  return scaleAggregateScore(score, normalization);
+}
+
+function aggregateScoreEntries(entries, denominator, method = "arithmetic") {
   if (!Number.isFinite(denominator) || denominator <= 0 || !entries.length) return null;
   let score;
   if (method === "geometric") {
@@ -1557,7 +1668,7 @@ function customAggregateScore(entries, denominator, method = "arithmetic", norma
     ), 0);
     score = weightedScore / denominator;
   }
-  return scaleAggregateScore(score, normalization);
+  return score;
 }
 
 function scoreValueForMetric(metricKey, rawValue, normalization = "raw") {
@@ -1655,14 +1766,16 @@ function resetCustomConfiguration() {
   state.customCalculationMethod = "geometric";
   state.customNormalizationMethod = "relative-best";
   state.customWeights = customWeightsForPreset(state.customWeightPresetId);
-  applyMissingModePreset("zero");
+  applyMissingModePreset("coverage025");
 }
 
 function applyMissingModePreset(mode) {
-  const preset = missingModePresets[mode] || missingModePresets.zero;
+  const preset = missingModePresets[mode] || missingModePresets.coverage025;
   state.customMissingMode = mode;
   state.customPenaltyMax = preset.penalty;
   state.customMinCoveragePct = preset.minCoverage;
+  state.customCoverageDiscountExponent = preset.coverageDiscountExponent;
+  state.customWeakPriorRatio = preset.weakPriorRatio;
 }
 
 function syncMissingModePreset() {
@@ -1673,7 +1786,9 @@ function matchingMissingModePreset() {
   return missingModePresetOrder.find((mode) => {
     const preset = missingModePresets[mode];
     return Number(preset.penalty) === Number(state.customPenaltyMax)
-      && Number(preset.minCoverage) === Number(state.customMinCoveragePct);
+      && Number(preset.minCoverage) === Number(state.customMinCoveragePct)
+      && Number(preset.coverageDiscountExponent || 0) === Number(state.customCoverageDiscountExponent || 0)
+      && Number(preset.weakPriorRatio || 0) === Number(state.customWeakPriorRatio || 0);
   });
 }
 
@@ -2323,44 +2438,44 @@ function renderMethodologyPage() {
   const sections = zh ? [
     {
       title: "AInsights Index / AIndex",
-      body: "AInsights Index，也可简称 AIndex，使用新版 Artificial Analysis Intelligence Index evaluation suite 的公开测试项权重重新计算综合分：GDPval-AA v2、τ³-Banking、Terminal-Bench v2.1、SciCode、AA-LCR、AA-Omniscience Accuracy、HLE、GPQA Diamond 和 CritPt。AA-Omniscience 的 12% 权重全部计入 Accuracy，Hallucination Rate 权重为 0。",
+      body: "AInsights Index，也可简称 AIndex，现在使用 Frontier 综合口径：60% AA suite；剩余 40% 按原 Frontier 非 AA 组比例分配给 agentic coding、tools/work、reasoning 和 instruction/long-context。AA suite 保留 Artificial Analysis 的核心组件，外部官方发布页和公开 benchmark 用来补足前沿模型的 coding、工具和推理证据。",
     },
     {
-      title: "默认均值",
-      body: "默认综合分使用 Geometric Weighted Mean。AIndex 先把每个测试项转换为 Best score ratio：模型分数 / 该测试项最高分，再进入几何加权均值。",
+      title: "分组聚合",
+      body: "每个测试项先转换为最佳分数比例：模型分数 / 该测试项最高分。每个能力组先用可用测试项的几何均值求组分，再按组权重做几何加权均值，最后乘回全站最高 AA Intelligence Index 分数展示。",
     },
     {
-      title: "Best score ratio",
-      body: "相对比例聚合后会乘回全站最高 AA Intelligence Index 分数，作为最终展示分。因此每个测试项先在自己的最高分基线上比较，再映射回 AA Intelligence 的分数尺度。",
+      title: "缺失处理",
+      body: "默认 AIndex 不再把所有缺失项直接记 0，而是先对每个组使用组内证据覆盖率的 0.25 次方折扣，再按可用组权重覆盖率的 0.25 次方做总折扣。这样能惩罚单项高分和证据不足，同时避免单个发布页缺少某些字段时把模型打到异常低位。",
     },
     {
-      title: "缺失和 0 分",
-      body: "默认 AInsights Index 会把缺失项作为 0 比例计入总权重。因为公式使用 ratio + 1，真实 0 分或缺失项会显著降低结果，但不会让整个模型的综合分直接归零。",
+      title: "能力组",
+      body: "AA suite 包含 GDPval-AA v2、τ³-Banking、Terminal-Bench v2.1、SciCode、AA-LCR、AA-Omniscience Accuracy、HLE、GPQA 和 CritPt；其他组覆盖 SWE/Terminal/LiveCodeBench、BrowseComp/HLE tools/MCP、AIME/MMLU-Pro/FrontierMath，以及 IF/long/multimodal 类信号。",
     },
     {
       title: "自定义权重",
-      body: "Custom weights 页面可以独立切换 Best score ratio / Raw score 和 Geometric Weight Mean / Weight Mean，并继续使用缺失扣分强度、最低覆盖率和逐项权重滑块做对照。",
+      body: "Custom weights 页面可以独立切换最佳分数比例 / 原始分数、几何加权均值 / 普通加权均值，并对比可用项、覆盖折扣 0.25、覆盖折扣 sqrt、弱先验、缺失记 0 和全覆盖要求等缺失处理方式。",
     },
   ] : [
     {
       title: "AInsights Index / AIndex",
-      body: "AInsights Index, also usable as AIndex, recalculates public scores with the updated Artificial Analysis Intelligence Index evaluation-suite weights: GDPval-AA v2, τ³-Banking, Terminal-Bench v2.1, SciCode, AA-LCR, AA-Omniscience Accuracy, HLE, GPQA Diamond, and CritPt. The full 12% AA-Omniscience component is assigned to Accuracy, while Hallucination Rate receives zero weight.",
+      body: "AInsights Index, also usable as AIndex, now uses a Frontier composite with a 60% AA suite anchor. The remaining 40% is allocated across agentic coding, tools/work, reasoning, and instruction/long-context in their previous non-AA proportions.",
     },
     {
-      title: "Default Mean",
-      body: "The default score uses Geometric Weighted Mean. AIndex first converts each benchmark to a Best score ratio: model score divided by that benchmark's best score, then applies the geometric weighted mean.",
+      title: "Grouped Aggregation",
+      body: "Each benchmark is first converted to a best-score ratio: model score divided by that benchmark's best observed score. Each capability group is aggregated from available benchmark ratios, then the group scores are combined with a geometric weighted mean and scaled back to the AA Intelligence score range.",
     },
     {
-      title: "Best score ratio",
-      body: "After aggregating the relative ratios, the result is multiplied by the highest AA Intelligence Index score on the site. This compares each benchmark on its own best-score baseline, then maps the result back to the AA Intelligence score scale.",
+      title: "Missing Values",
+      body: "Default AIndex no longer treats every missing field as zero. It first discounts each group by within-group evidence coverage^0.25, then discounts the final score by available group-weight coverage^0.25.",
     },
     {
-      title: "Missing and Zero Scores",
-      body: "By default, AInsights Index counts missing fields as a zero ratio within the total weight. Because the formula uses ratio + 1, real zeroes and missing fields strongly reduce the result without collapsing the whole model score to zero.",
+      title: "Capability Groups",
+      body: "AA suite covers GDPval-AA v2, τ³-Banking, Terminal-Bench v2.1, SciCode, AA-LCR, AA-Omniscience Accuracy, HLE, GPQA, and CritPt. Other groups cover SWE/Terminal/LiveCodeBench, BrowseComp/HLE tools/MCP, AIME/MMLU-Pro/FrontierMath, and IF/long/multimodal signals.",
     },
     {
       title: "Custom Weights",
-      body: "The Custom weights panel can independently switch Best score ratio / Raw score and Geometric Weight Mean / Weight Mean while keeping the missing-penalty, minimum-coverage, and per-benchmark weight controls for comparison.",
+      body: "The Custom weights panel can switch best-score ratio / raw score, geometric / arithmetic weighted mean, and missing-value policies including available only, 0.25 coverage discount, sqrt coverage discount, weak prior, missing = 0, and full coverage.",
     },
   ];
   els.methodologyDetail.innerHTML = `

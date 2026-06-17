@@ -88,10 +88,12 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertIn("relatedMetrics", payload["externalSources"][1])
         self.assertEqual(payload["defaultPreset"], "zhihu-adjusted")
         self.assertIn("GDPval-AA v2", [metric["key"] for metric in payload["metrics"]])
-        self.assertEqual(payload["presets"]["zhihu-adjusted"]["kind"], "weighted-metrics")
+        self.assertEqual(payload["presets"]["zhihu-adjusted"]["kind"], "frontier-groups")
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["label"], "AInsights Index")
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["calculation"], "geometric")
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["normalization"], "relative-best")
+        self.assertEqual(payload["presets"]["zhihu-adjusted"]["missingPolicy"], "coverage-discount")
+        self.assertEqual(payload["presets"]["zhihu-adjusted"]["coverageDiscountExponent"], 0.25)
         self.assertEqual(payload["presets"]["custom"]["normalization"], "relative-best")
         self.assertEqual(payload["metricBaselines"]["GDPval-AA v2"], 80)
         self.assertEqual(payload["scoreBaselines"]["aaIntelligenceMax"], 50)
@@ -258,65 +260,156 @@ class BuildDocsSiteTests(unittest.TestCase):
             self.assertTrue(content.startswith("window.AINSIGHTS_MODELS_DATA = "))
             self.assertIn('"modelRows": 1', content)
 
-    def test_default_score_uses_aa_suite_weights_and_corrected_omniscience_rule(self):
+    def test_default_score_uses_frontier_groups_and_coverage_discount(self):
         payload = build_site_payload(
             [
                 {
-                    "model_key": "Correction Model",
-                    "model": "Correction Model",
+                    "model_key": "Full Frontier Model",
+                    "model": "Full Frontier Model",
                     "is_reasoning": "true",
-                    "slug": "correction-model",
+                    "slug": "full-frontier-model",
                     "GDPval-AA v2": "100",
-                    "τ³-Banking": "0",
-                    "Terminal-Bench v2.1": "0",
-                    "SciCode": "0",
-                    "AA-LCR": "0",
-                    "AA-Omniscience Accuracy": "80",
-                    "AA-Omniscience Non-Hallucination Rate": "0",
-                    "IFBench": "0",
-                    "Humanity's Last Exam": "0",
-                    "GPQA Diamond": "0",
-                    "CritPt": "0",
-                    "APEX-Agents-AA": "100",
-                    "ITBench-AA": "100",
-                    "MMMU-Pro": "100",
-                    "LiveCodeBench": "100",
-                    "AIME 2025": "100",
-                }
-            ]
+                },
+                {
+                    "model_key": "Partial Frontier Model",
+                    "model": "Partial Frontier Model",
+                    "is_reasoning": "true",
+                    "slug": "partial-frontier-model",
+                    "GDPval-AA v2": "100",
+                },
+            ],
+            {
+                "version": 1,
+                "sources": [],
+                "benchmarks": [
+                    {"id": "swe-bench-pro", "label": "SWE-Bench Pro", "category": "Agentic coding"},
+                    {"id": "browsecomp", "label": "BrowseComp", "category": "Tool use"},
+                    {"id": "mmlu-pro", "label": "MMLU-Pro", "category": "Academic reasoning"},
+                    {"id": "ifbench", "label": "IFBench", "category": "Instruction following"},
+                ],
+                "results": [
+                    {
+                        "benchmarkId": "swe-bench-pro",
+                        "model": "Full Frontier Model",
+                        "modelAliases": ["Full Frontier Model", "full-frontier-model"],
+                        "value": 100,
+                    },
+                    {
+                        "benchmarkId": "browsecomp",
+                        "model": "Full Frontier Model",
+                        "modelAliases": ["Full Frontier Model", "full-frontier-model"],
+                        "value": 100,
+                    },
+                    {
+                        "benchmarkId": "mmlu-pro",
+                        "model": "Full Frontier Model",
+                        "modelAliases": ["Full Frontier Model", "full-frontier-model"],
+                        "value": 100,
+                    },
+                    {
+                        "benchmarkId": "ifbench",
+                        "model": "Full Frontier Model",
+                        "modelAliases": ["Full Frontier Model", "full-frontier-model"],
+                        "value": 100,
+                    },
+                ],
+            },
         )
-        model = payload["models"][0]
+        full_model = next(model for model in payload["models"] if model["slug"] == "full-frontier-model")
+        partial_model = next(model for model in payload["models"] if model["slug"] == "partial-frontier-model")
         preset = payload["presets"]["zhihu-adjusted"]
 
-        score = score_model_for_preset(
-            model,
+        full_score = score_model_for_preset(
+            full_model,
+            preset,
+            payload["metrics"],
+            payload["metricBaselines"],
+            payload["scoreBaselines"]["aaIntelligenceMax"],
+        )
+        partial_score = score_model_for_preset(
+            partial_model,
             preset,
             payload["metrics"],
             payload["metricBaselines"],
             payload["scoreBaselines"]["aaIntelligenceMax"],
         )
 
-        self.assertAlmostEqual(preset["weights"]["GDPval-AA v2"], 20)
-        self.assertAlmostEqual(preset["weights"]["τ³-Banking"], 14)
-        self.assertAlmostEqual(preset["weights"]["Terminal-Bench v2.1"], 16)
-        self.assertAlmostEqual(preset["weights"]["SciCode"], 8)
-        self.assertAlmostEqual(preset["weights"]["AA-LCR"], 6)
-        self.assertAlmostEqual(preset["weights"]["AA-Omniscience Accuracy"], 12)
-        self.assertAlmostEqual(preset["weights"]["Humanity's Last Exam"], 12)
-        self.assertAlmostEqual(preset["weights"]["GPQA Diamond"], 6)
-        self.assertAlmostEqual(preset["weights"]["CritPt"], 6)
-        self.assertEqual(preset["weights"].get("IFBench", 0), 0)
-        self.assertEqual(preset["weights"].get("AIME 2025", 0), 0)
-        self.assertEqual(preset["weights"].get("LiveCodeBench", 0), 0)
-        self.assertEqual(preset["weights"].get("MMMU-Pro", 0), 0)
-        self.assertEqual(preset["weights"].get("APEX-Agents-AA", 0), 0)
-        self.assertEqual(preset["weights"].get("ITBench-AA", 0), 0)
+        self.assertEqual([group["id"] for group in preset["groups"]], [
+            "aa-suite",
+            "agentic-coding",
+            "tools-work",
+            "reasoning",
+            "instruction-long-context",
+        ])
+        self.assertAlmostEqual(preset["groupWeights"]["aa-suite"], 60)
+        self.assertAlmostEqual(preset["groupWeights"]["agentic-coding"], 40 / 3)
+        self.assertAlmostEqual(preset["groupWeights"]["tools-work"], 10)
+        self.assertAlmostEqual(preset["groupWeights"]["reasoning"], 40 / 3)
+        self.assertAlmostEqual(preset["groupWeights"]["instruction-long-context"], 10 / 3)
+        self.assertEqual(preset["groupMetricCoverageDiscountExponent"], 0.25)
+        agentic_group = next(group for group in preset["groups"] if group["id"] == "agentic-coding")
+        self.assertIn("Terminal-Bench v2.1", agentic_group["metrics"])
+        self.assertIn("SciCode", agentic_group["metrics"])
+        self.assertIn("benchmark:swe-bench-pro", preset["weights"])
+        self.assertIn("benchmark:browsecomp", preset["weights"])
+        self.assertIn("benchmark:mmlu-pro", preset["weights"])
         self.assertEqual(preset["weights"].get("AA-Omniscience Non-Hallucination Rate", 0), 0)
-        expected = (
-            math.exp((20 * math.log(2) + 12 * math.log(2)) / 100) - 1
-        ) * 100
-        self.assertAlmostEqual(score["score"], expected)
-        self.assertEqual(score["coverage"], 9)
+        self.assertGreater(full_score["score"], partial_score["score"])
+        self.assertEqual(full_score["coverage"], 5)
+        self.assertAlmostEqual(full_score["availableWeight"], 100)
+        self.assertLess(partial_score["score"], 65)
+        self.assertEqual(partial_score["coverage"], 2)
+        self.assertAlmostEqual(partial_score["availableWeight"], 70)
+
+    def test_default_score_discounts_single_metric_group_evidence(self):
+        payload = build_site_payload(
+            [
+                {
+                    "model_key": "Sparse GPQA Model",
+                    "model": "Sparse GPQA Model",
+                    "is_reasoning": "true",
+                    "slug": "sparse-gpqa-model",
+                    "GPQA Diamond": "100",
+                },
+                {
+                    "model_key": "Broad Suite Model",
+                    "model": "Broad Suite Model",
+                    "is_reasoning": "true",
+                    "slug": "broad-suite-model",
+                    "GDPval-AA v2": "70",
+                    "τ³-Banking": "70",
+                    "Terminal-Bench v2.1": "70",
+                    "SciCode": "70",
+                    "AA-LCR": "70",
+                    "AA-Omniscience Accuracy": "70",
+                    "Humanity's Last Exam": "70",
+                    "GPQA Diamond": "70",
+                    "CritPt": "70",
+                },
+            ]
+        )
+        preset = payload["presets"]["zhihu-adjusted"]
+        sparse = next(model for model in payload["models"] if model["slug"] == "sparse-gpqa-model")
+        broad = next(model for model in payload["models"] if model["slug"] == "broad-suite-model")
+
+        sparse_score = score_model_for_preset(
+            sparse,
+            preset,
+            payload["metrics"],
+            payload["metricBaselines"],
+            payload["scoreBaselines"]["aaIntelligenceMax"],
+        )
+        broad_score = score_model_for_preset(
+            broad,
+            preset,
+            payload["metrics"],
+            payload["metricBaselines"],
+            payload["scoreBaselines"]["aaIntelligenceMax"],
+        )
+
+        self.assertGreater(broad_score["score"], sparse_score["score"])
+        self.assertLess(sparse_score["score"], 60)
+        self.assertEqual(sparse_score["coverage"], 2)
 
     def test_weighted_metric_score_supports_geometric_mean(self):
         model = {"scores": {"A": 100, "B": 25}}
@@ -346,6 +439,37 @@ class BuildDocsSiteTests(unittest.TestCase):
 
         self.assertAlmostEqual(score["score"], 45)
         self.assertEqual(score["coverage"], 2)
+
+    def test_weighted_metric_score_supports_custom_missing_policies(self):
+        model = {"scores": {"A": 100}}
+
+        coverage_discount = weighted_metric_score(
+            model,
+            {"A": 1, "B": 1},
+            True,
+            method="geometric",
+            normalization="relative-best",
+            metric_baselines={"A": 100, "B": 100},
+            display_scale=100,
+            missing_policy="coverage-discount",
+            coverage_discount_exponent=0.5,
+        )
+        weak_prior = weighted_metric_score(
+            model,
+            {"A": 1, "B": 1},
+            True,
+            method="geometric",
+            normalization="relative-best",
+            metric_baselines={"A": 100, "B": 100},
+            display_scale=100,
+            missing_policy="weak-prior",
+            weak_prior_ratio=0.35,
+        )
+
+        self.assertAlmostEqual(coverage_discount["score"], 100 * (1 / 2) ** 0.5)
+        self.assertEqual(coverage_discount["coverage"], 1)
+        self.assertAlmostEqual(weak_prior["score"], (math.sqrt(2 * 1.35) - 1) * 100)
+        self.assertEqual(weak_prior["coverage"], 1)
 
     def test_default_score_uses_relative_best_then_aa_intelligence_scale(self):
         payload = build_site_payload(
@@ -379,9 +503,14 @@ class BuildDocsSiteTests(unittest.TestCase):
             payload["scoreBaselines"]["aaIntelligenceMax"],
         )
 
-        expected_ratio = math.exp(20 * math.log(1.5) / 100) - 1
-        self.assertAlmostEqual(score["score"], expected_ratio * 90)
-        self.assertEqual(score["coverage"], 1)
+        aa_suite_ratio = 0.5 * (1 / 9) ** 0.25
+        tools_ratio = 0.5 * (1 / 9) ** 0.25
+        expected_ratio = math.exp(
+            60 * math.log(aa_suite_ratio + 1) / 70
+            + 10 * math.log(tools_ratio + 1) / 70
+        ) - 1
+        self.assertAlmostEqual(score["score"], expected_ratio * 90 * (70 / 100) ** 0.25)
+        self.assertEqual(score["coverage"], 2)
 
     def test_geometric_weighted_score_penalizes_missing_without_collapsing_to_zero(self):
         model = {"scores": {"A": 100}}
@@ -426,7 +555,7 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(coding, {"Terminal-Bench v2.1": 200 / 3, "SciCode": 100 / 3})
         self.assertEqual(agentic, {"GDPval-AA v2": 1000 / 17, "τ³-Banking": 700 / 17})
 
-    def test_default_score_counts_missing_suite_metrics_in_denominator(self):
+    def test_default_score_uses_available_frontier_group_coverage(self):
         payload = build_site_payload(
             [
                 {
@@ -449,11 +578,17 @@ class BuildDocsSiteTests(unittest.TestCase):
             payload["scoreBaselines"]["aaIntelligenceMax"],
         )
 
-        expected = (math.exp(6 * math.log(2) / 100) - 1) * 100
+        aa_suite_ratio = (1 / 9) ** 0.25
+        reasoning_ratio = (1 / 11) ** 0.25
+        expected_ratio = math.exp(
+            60 * math.log(aa_suite_ratio + 1) / (60 + 40 / 3)
+            + (40 / 3) * math.log(reasoning_ratio + 1) / (60 + 40 / 3)
+        ) - 1
+        expected = expected_ratio * 100 * ((60 + 40 / 3) / 100) ** 0.25
         self.assertAlmostEqual(score["score"], expected)
-        self.assertEqual(score["coverage"], 1)
+        self.assertEqual(score["coverage"], 2)
 
-    def test_custom_score_uses_geometric_mean_by_default(self):
+    def test_custom_score_uses_geometric_coverage_discount_by_default(self):
         payload = build_site_payload(
             [
                 {
@@ -477,7 +612,10 @@ class BuildDocsSiteTests(unittest.TestCase):
         )
 
         self.assertEqual(preset["calculation"], "geometric")
-        expected = (math.exp(6 * math.log(2) / 100) - 1) * 100
+        self.assertEqual(preset["missingPolicy"], "coverage-discount")
+        available_weight = preset["weights"]["GPQA Diamond"]
+        total_weight = sum(weight for weight in preset["weights"].values() if weight > 0)
+        expected = 100 * (available_weight / total_weight) ** 0.25
         self.assertAlmostEqual(score["score"], expected)
         self.assertEqual(score["coverage"], 1)
 
