@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-15T06:12:35+00:00",
+  "generatedAt": "2026-06-17T14:19:53+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
@@ -133,7 +133,7 @@
       "label": "Kimi K2 0905 official model card",
       "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905",
       "category": "Official model card",
-      "collectionStatus": "seeded-official-values; refresh blocked: HTTPError",
+      "collectionStatus": "refreshed",
       "note": "Moonshot AI official Hugging Face model card for Kimi-K2-Instruct-0905. Reported K2 0905 values are mean results over five full-test-set runs."
     },
     {
