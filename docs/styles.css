@@ -497,6 +497,57 @@ main {
   line-height: 1.55;
 }
 
+.methodology-card-wide {
+  grid-column: 1 / -1;
+}
+
+.methodology-table-wrap {
+  overflow-x: auto;
+  min-width: 0;
+}
+
+.methodology-weight-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.methodology-weight-table th,
+.methodology-weight-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 9px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.methodology-weight-table th {
+  color: var(--accent-3);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.methodology-weight-table td:nth-child(2) {
+  width: 96px;
+  color: var(--accent-2);
+  font-weight: 850;
+}
+
+.methodology-steps {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.methodology-steps strong {
+  color: var(--ink);
+}
+
 .metric-weight-controls {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
