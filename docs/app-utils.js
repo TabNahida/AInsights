@@ -34,6 +34,9 @@ function getInitialRoute() {
   if (pageHint === "contribute" || filename === "contribute.html") {
     return { page: "contribute", modelId: null, benchmarkId: null, providerId: null };
   }
+  if (pageHint === "methodology" || filename === "methodology.html") {
+    return { page: "methodology", modelId: null, benchmarkId: null, providerId: null };
+  }
   if (pageHint === "provider" || filename === "provider.html") {
     return { page: "provider", modelId: null, benchmarkId: null, providerId: params.get("id") || null };
   }
@@ -48,6 +51,7 @@ function pageHref(page) {
   if (page === "benchmarks") return "benchmark.html";
   if (page === "sources") return "sources.html";
   if (page === "contribute") return "contribute.html";
+  if (page === "methodology") return "methodology.html";
   if (page === "model") return "model.html";
   if (page === "provider") return "provider.html";
   if (page === "compare") return "compare.html";

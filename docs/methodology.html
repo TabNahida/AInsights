@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AInsights Index Methodology - AI Insights Analysis</title>
+    <meta name="description" content="Learn how AInsights Index (AIndex) is calculated, including best-score ratio normalization, geometric weighted mean scoring, custom weights, and missing benchmark handling." />
+    <meta name="keywords" content="AInsights Index, AIndex, AI model benchmark, LLM leaderboard, Artificial Analysis" />
+    <link rel="canonical" href="https://ainsights.tab.homes/methodology.html" />
+    <meta property="og:title" content="AInsights Index Methodology - AI Insights Analysis" />
+    <meta property="og:description" content="Learn how AInsights Index (AIndex) is calculated, including best-score ratio normalization, geometric weighted mean scoring, custom weights, and missing benchmark handling." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ainsights.tab.homes/methodology.html" />
+    <meta name="twitter:card" content="summary" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"AInsights Index Methodology - AI Insights Analysis","alternateName":["AInsights Index","AIndex"],"url":"https://ainsights.tab.homes/methodology.html","description":"Learn how AInsights Index (AIndex) is calculated, including best-score ratio normalization, geometric weighted mean scoring, custom weights, and missing benchmark handling."}</script>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="methodology">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">AInsights</p>
+        <h1>AI Insights Analysis</h1>
+      </div>
+      <div class="source-block">
+        <a class="source-badge" href="full-rank.html">完整排名</a>
+        <a class="source-badge" href="sources.html">全部数据源</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="methodology-view" id="methodologyView">
+        <section class="methodology-hero">
+          <p class="eyebrow">Methodology</p>
+          <h2>AInsights Index 计算方式</h2>
+          <p>AIndex 是 AInsights Index 的别名，两个名称指向同一套默认排名口径。</p>
+        </section>
+
+        <section class="methodology-grid">
+          <article class="methodology-card">
+            <h3>AInsights Index / AIndex</h3>
+            <p>AInsights Index 使用 Artificial Analysis Intelligence Index evaluation suite 的公开测试项权重重新计算综合分。AA-Omniscience 的 12.5% 权重全部计入 Accuracy，Non-Hallucination Rate 权重为 0。</p>
+          </article>
+          <article class="methodology-card">
+            <h3>Geometric Weighted Mean</h3>
+            <p>默认综合分使用 Geometric Weighted Mean。AIndex 先把每个测试项转换为 Best score ratio：模型分数 / 该测试项最高分，再进入几何加权均值。</p>
+          </article>
+          <article class="methodology-card">
+            <h3>Best score ratio</h3>
+            <p>相对比例聚合后会乘回全站最高 AA Intelligence Index 分数，作为最终展示分。因此每个测试项先在自己的最高分基线上比较，再映射回 AA Intelligence 的分数尺度。</p>
+          </article>
+          <article class="methodology-card">
+            <h3>缺失和 0 分</h3>
+            <p>默认 AInsights Index 会把缺失项作为 0 比例计入总权重。因为公式使用 ratio + 1，真实 0 分或缺失项会显著降低结果，但不会让整个模型的综合分直接归零。</p>
+          </article>
+          <article class="methodology-card">
+            <h3>Custom Weight</h3>
+            <p>Custom weights 面板可以独立切换 Best score ratio / Raw score 和 Geometric Weight Mean / Weight Mean，并继续使用缺失扣分强度、最低覆盖率和逐项权重滑块做对照。</p>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      数据来源：<a href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" target="_blank" rel="noreferrer">Artificial Analysis</a>。
+      AInsights Index / AIndex 基于其公开评测数据重新计算。
+    </footer>
+  </body>
+</html>

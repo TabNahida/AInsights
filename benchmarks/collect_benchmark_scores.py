@@ -38,11 +38,15 @@ QWEN36_27B_URL = "https://qwen.ai/blog?id=qwen3.6-27b"
 QWEN36_MAX_PREVIEW_URL = "https://qwen.ai/blog?id=qwen3.6-max-preview"
 DEEPSEEK_V4_PRO_URL = "https://api-docs.deepseek.com/news/news260424"
 KIMI_K26_URL = "https://www.kimi.com/blog/kimi-k2-6"
+KIMI_K27_CODE_URL = "https://www.kimi.com/resources/kimi-k2-7-code"
+KIMI_K27_CODE_HF_URL = "https://huggingface.co/moonshotai/Kimi-K2.7-Code"
 KIMI_K2_THINKING_URL = "https://moonshotai.github.io/Kimi-K2/thinking"
 KIMI_K25_URL = "https://www.kimi.com/blog/kimi-k2-5"
 KIMI_K2_URL = "https://moonshotai.github.io/Kimi-K2/"
 KIMI_K2_0905_URL = "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905"
 GLM51_URL = "https://docs.z.ai/guides/llm/glm-5.1"
+GLM52_URL = "https://docs.z.ai/guides/llm/glm-5.2"
+GLM52_HF_URL = "https://huggingface.co/zai-org/GLM-5.2"
 GLM47_URL = "https://docs.z.ai/guides/llm/glm-4.7"
 GLM46_URL = "https://docs.z.ai/guides/llm/glm-4.6"
 GLM45_URL = "https://z.ai/blog/glm-4.5"
@@ -158,11 +162,13 @@ MODEL_ALIASES = {
     "DeepSeek V4 Flash (High)": ["DeepSeek V4 Flash (High)", "DeepSeek-V4-Flash High", "deepseek-v4-flash-high"],
     "DeepSeek V4 Flash": ["DeepSeek V4 Flash", "DeepSeek-V4-Flash Non-Think", "deepseek-v4-flash-non-reasoning"],
     "Kimi K2.6": ["Kimi K2.6", "Kimi-K2.6", "K2.6 Thinking", "moonshotai/Kimi-K2.6", "kimi-k2-6"],
+    "Kimi K2.7 Code": ["Kimi K2.7 Code", "Kimi-K2.7-Code", "moonshotai/Kimi-K2.7-Code", "kimi-k2-7-code"],
     "Kimi K2 Thinking": ["Kimi K2 Thinking", "Kimi-K2-Thinking", "K2 Thinking", "moonshotai/Kimi-K2-Thinking"],
     "Kimi K2.5": ["Kimi K2.5", "Kimi-K2.5", "moonshotai/Kimi-K2.5"],
     "Kimi K2 0905": ["Kimi K2 0905", "Kimi-K2-Instruct-0905", "moonshotai/Kimi-K2-Instruct-0905"],
     "Kimi K2": ["Kimi K2", "Kimi-K2", "Kimi-K2-Instruct"],
     "GLM-5.1": ["GLM-5.1", "GLM 5.1", "zai-org/GLM-5.1", "glm-5-1"],
+    "GLM-5.2": ["GLM-5.2", "GLM 5.2", "GLM-5.2 (max)", "GLM-5.2 (max) [R]", "zai-org/GLM-5.2", "glm-5-2"],
     "GLM-5": ["GLM-5", "GLM 5", "zai-org/GLM-5"],
     "GLM-4.7": ["GLM-4.7", "GLM 4.7", "zai-org/GLM-4.7"],
     "GLM-4.6": ["GLM-4.6", "GLM 4.6", "zai-org/GLM-4.6"],
@@ -426,6 +432,13 @@ BENCHMARKS = [
         "icon": "HLE",
     },
     {
+        "id": "critpt",
+        "label": "CritPt",
+        "category": "Reasoning",
+        "unit": "%",
+        "icon": "CPT",
+    },
+    {
         "id": "blueprint-bench-2",
         "label": "Blueprint-Bench 2",
         "category": "Spatial reasoning",
@@ -468,6 +481,27 @@ BENCHMARKS = [
         "icon": "LCB",
     },
     {
+        "id": "kimi-code-bench-v2",
+        "label": "Kimi Code Bench v2",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "KCB",
+    },
+    {
+        "id": "programbench",
+        "label": "ProgramBench",
+        "category": "Code generation",
+        "unit": "%",
+        "icon": "PROG",
+    },
+    {
+        "id": "mls-bench-lite",
+        "label": "MLS Bench Lite",
+        "category": "ML coding",
+        "unit": "%",
+        "icon": "MLS",
+    },
+    {
         "id": "scicode",
         "label": "SciCode",
         "category": "Coding",
@@ -503,6 +537,20 @@ BENCHMARKS = [
         "icon": "H26",
     },
     {
+        "id": "hmmt-2025-nov",
+        "label": "HMMT Nov 2025",
+        "category": "Math",
+        "unit": "%",
+        "icon": "H25",
+    },
+    {
+        "id": "imoanswerbench",
+        "label": "IMOAnswerBench",
+        "category": "Math",
+        "unit": "%",
+        "icon": "IMO",
+    },
+    {
         "id": "skillsbench",
         "label": "SkillsBench Avg5",
         "category": "Agentic coding",
@@ -529,6 +577,41 @@ BENCHMARKS = [
         "category": "Repository generation",
         "unit": "%",
         "icon": "N2R",
+    },
+    {
+        "id": "deepswe",
+        "label": "DeepSWE",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "DSWE",
+    },
+    {
+        "id": "frontierswe-dominance",
+        "label": "FrontierSWE Dominance",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "FSWE",
+    },
+    {
+        "id": "swe-marathon",
+        "label": "SWE-Marathon",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "SWEM",
+    },
+    {
+        "id": "kimi-claw-24-7",
+        "label": "Kimi Claw 24/7 Bench",
+        "category": "Agentic workflow",
+        "unit": "%",
+        "icon": "CLAW",
+    },
+    {
+        "id": "mcp-mark-verified",
+        "label": "MCP Mark Verified",
+        "category": "Tool use",
+        "unit": "%",
+        "icon": "MCPV",
     },
     {
         "id": "tau-bench",
@@ -1419,6 +1502,42 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
         },
     },
     {
+        "id": "kimi-k2-7-code-card",
+        "label": "Kimi K2.7 Code official release",
+        "url": KIMI_K27_CODE_URL,
+        "rawUrl": KIMI_K27_CODE_URL,
+        "category": "Official release",
+        "note": "Moonshot AI Kimi.com release page and official model card for Kimi K2.7 Code with coding and agentic benchmark tables.",
+        "columns": {
+            "Kimi K2.6": "Kimi K2.6",
+            "Kimi K2.7 Code": "Kimi K2.7 Code",
+            "GPT-5.5": "GPT-5.5",
+            "Claude Opus 4.8": "Claude Opus 4.8",
+        },
+        "textColumns": ["Kimi K2.6", "Kimi K2.7 Code", "GPT-5.5", "Claude Opus 4.8"],
+        "rowLabels": {
+            "Kimi Code Bench v2": "kimi-code-bench-v2",
+            "Program Bench": "programbench",
+            "ProgramBench": "programbench",
+            "MLS Bench Lite": "mls-bench-lite",
+            "Kimi Claw 24/7 Bench": "kimi-claw-24-7",
+            "MCP Atlas": "mcp-atlas",
+            "MCP-Atlas": "mcp-atlas",
+            "MCP Mark Verified": "mcp-mark-verified",
+            "MCPMark Verified": "mcp-mark-verified",
+        },
+        "scores": {
+            "Kimi K2.7 Code": {
+                "kimi-code-bench-v2": 62.0,
+                "programbench": 53.6,
+                "mls-bench-lite": 35.1,
+                "kimi-claw-24-7": 46.9,
+                "mcp-atlas": 76.0,
+                "mcp-mark-verified": 81.1,
+            }
+        },
+    },
+    {
         "id": "kimi-k2-thinking-card",
         "label": "Kimi K2 Thinking official release",
         "url": KIMI_K2_THINKING_URL,
@@ -1560,6 +1679,77 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
                 "swe-bench-verified": 68.0,
                 "terminal-bench": 40.5,
                 "tau2-bench-weighted": 75.9,
+            }
+        },
+    },
+    {
+        "id": "zai-glm-5-2-card",
+        "label": "Z.ai GLM-5.2 official model card",
+        "url": GLM52_URL,
+        "rawUrl": GLM52_HF_URL,
+        "category": "Official release",
+        "note": "Z.ai GLM-5.2 official page and model card with long-horizon reasoning, coding, and agentic benchmark table.",
+        "columns": {
+            "GLM-5.2": "GLM-5.2",
+            "GLM-5.1": "GLM-5.1",
+            "Qwen3.7-Max": "Qwen3.7-Max",
+            "MiniMax M3": "MiniMax-M3",
+            "DeepSeek-V4-Pro": "DeepSeek V4 Pro",
+            "Claude Opus 4.8": "Claude Opus 4.8",
+            "GPT-5.5": "GPT-5.5",
+            "Gemini 3.1 Pro": "Gemini 3.1 Pro",
+        },
+        "textColumns": [
+            "GLM-5.2",
+            "GLM-5.1",
+            "Qwen3.7-Max",
+            "MiniMax M3",
+            "DeepSeek-V4-Pro",
+            "Claude Opus 4.8",
+            "GPT-5.5",
+            "Gemini 3.1 Pro",
+        ],
+        "rowLabels": {
+            "HLE": "hle",
+            "HLE (w/ Tools)": "hle-tools",
+            "CritPt": "critpt",
+            "AIME 2026": "aime-2026",
+            "HMMT Nov. 2025": "hmmt-2025-nov",
+            "HMMT Feb. 2026": "hmmt-2026-feb",
+            "IMOAnswerBench": "imoanswerbench",
+            "GPQA-Diamond": "gpqa-diamond",
+            "SWE-bench Pro": "swe-bench-pro",
+            "NL2Repo": "nl2repo",
+            "DeepSWE": "deepswe",
+            "ProgramBench": "programbench",
+            "Terminal Bench 2.1 (Terminus-2)": "terminal-bench-2-1",
+            "Terminal Bench 2.1 (Best Reported Harness)": "terminal-bench-2-1",
+            "FrontierSWE (Dominance)": "frontierswe-dominance",
+            "PostTrainBench": "posttrainbench",
+            "SWE-Marathon": "swe-marathon",
+            "MCP-Atlas (Public Set)": "mcp-atlas",
+            "Tool-Decathlon": "toolathlon",
+        },
+        "scores": {
+            "GLM-5.2": {
+                "hle": 40.5,
+                "hle-tools": 54.7,
+                "critpt": 20.9,
+                "aime-2026": 99.2,
+                "hmmt-2025-nov": 94.4,
+                "hmmt-2026-feb": 92.5,
+                "imoanswerbench": 91.0,
+                "gpqa-diamond": 91.2,
+                "swe-bench-pro": 62.1,
+                "nl2repo": 48.9,
+                "deepswe": 46.2,
+                "programbench": 63.7,
+                "terminal-bench-2-1": 81.0,
+                "frontierswe-dominance": 74.4,
+                "posttrainbench": 34.3,
+                "swe-marathon": 13.0,
+                "mcp-atlas": 76.8,
+                "toolathlon": 48.2,
             }
         },
     },

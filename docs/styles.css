@@ -103,6 +103,7 @@ main {
 .home-view,
 .ranking-view,
 .sources-view,
+.methodology-view,
 .model-view,
 .benchmark-view,
 .compare-view,
@@ -114,6 +115,7 @@ main {
 
 .home-view,
 .sources-view,
+.methodology-view,
 .model-view,
 .benchmark-view,
 .compare-view,
@@ -446,6 +448,55 @@ main {
   grid-column: 1 / -1;
 }
 
+.methodology-hero,
+.methodology-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.methodology-hero {
+  display: grid;
+  gap: 10px;
+  padding: clamp(18px, 3vw, 28px);
+}
+
+.methodology-hero p {
+  max-width: 820px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.methodology-card {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 16px;
+}
+
+.methodology-card h3,
+.methodology-card p {
+  margin: 0;
+}
+
+.methodology-card h3 {
+  font-size: 15px;
+}
+
+.methodology-card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
 .metric-weight-controls {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
@@ -502,7 +553,7 @@ main {
 
 .custom-config-grid {
   display: grid;
-  grid-template-columns: minmax(280px, 1.25fr) repeat(2, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 12px;
   align-items: stretch;
 }
@@ -535,6 +586,29 @@ main {
   line-height: 1.35;
 }
 
+.custom-setting-block .segmented-control {
+  display: grid;
+  grid-template-columns: repeat(var(--option-count), minmax(0, 1fr));
+  width: 100%;
+}
+
+.custom-setting-block .segmented-control button {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 58px;
+  border-right: 0;
+  padding: 8px 10px;
+  line-height: 1.18;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.custom-setting-block .segmented-control button + button {
+  border-left: 1px solid var(--line);
+}
+
 .custom-strategy-status strong {
   color: var(--accent-3);
 }
@@ -555,6 +629,8 @@ main {
   accent-color: var(--accent-2);
 }
 
+.normalization-method-controls button[aria-pressed="true"],
+.calculation-method-controls button[aria-pressed="true"],
 .missing-mode-controls button[aria-pressed="true"] {
   color: #fff;
   background: var(--accent-3);
@@ -3446,6 +3522,10 @@ tr[data-card-href]:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .methodology-grid {
+    grid-template-columns: 1fr;
+  }
+
   .weight-control {
     grid-template-columns: minmax(0, 1fr) 130px 40px;
   }
@@ -3857,6 +3937,8 @@ th {
 
 .preset-row button[aria-selected="true"],
 .segmented-control button[aria-pressed="true"],
+.normalization-method-controls button[aria-pressed="true"],
+.calculation-method-controls button[aria-pressed="true"],
 .missing-mode-controls button[aria-pressed="true"] {
   border-color: var(--accent-3);
   color: #fff;

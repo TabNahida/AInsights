@@ -36,8 +36,20 @@ const copy = {
     customWeightPresetTitle: "权重预设",
     customWeightPresetSubtitle: "一键套用 AInsights Index 或 AA 三个方向，再继续微调下方测试项权重",
     customWeightPresetMeta: "{count} 项",
-    missingModeTitle: "缺失值处理",
-    missingModeSubtitle: "四个按钮是预设；下方滑块决定缺失项扣分强度和最低覆盖率",
+    missingModeTitle: "计算方式",
+    missingModeSubtitle: "选择分数基线和均值方式，并用预设或滑块调整缺失项扣分强度和最低覆盖率",
+    normalizationMethodTitle: "分数基线",
+    normalizationMethodHint: "AInsights Index / AIndex 默认先除以每个测试项最高分，再乘回 AA Intelligence 最高分展示。",
+    normalizationMethods: {
+      "relative-best": "Best score ratio",
+      raw: "Raw score",
+    },
+    calculationMethodTitle: "均值方式",
+    calculationMethodHint: "AInsights Index / AIndex 默认使用几何加权均值；普通加权均值保留用于对照。",
+    meanMethods: {
+      geometric: "Geometric Weight Mean",
+      arithmetic: "Weight Mean",
+    },
     missingPresetTitle: "处理预设",
     penaltyLabel: "缺失扣分强度",
     penaltyHint: "0 表示只按可用项求均分；100 表示缺失项按 0 计入总权重，与普通 AInsights Index 排名口径一致。",
@@ -107,6 +119,7 @@ const copy = {
     unknownCreator: "Unknown",
     reasoning: "Reasoning",
     defaultCorrection: "默认修正参考",
+    methodologyLink: "AInsights Index 计算方式",
     footerPrefix: "数据来源：",
     footerSuffix: "。AInsights Index 基于其公开评测数据重新计算。",
     repository: "仓库",
@@ -283,7 +296,9 @@ const copy = {
     presets: {
       "zhihu-adjusted": {
         label: "AInsights Index",
-        description: "按 AA Intelligence Index evaluation suite 原始占比计算；AA-Omniscience 修正为 12.5% 全部计入 Accuracy，非幻觉率权重为 0。",
+        calculation: "geometric",
+        normalization: "relative-best",
+        description: "按 AA Intelligence Index evaluation suite 原始占比计算；每项先除以该项最高分，再用几何加权均值聚合，并乘回 AA Intelligence 最高分展示。",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -299,7 +314,9 @@ const copy = {
       },
       custom: {
         label: "自定义占比",
-        description: "默认使用 AInsights Index 配置；先按可用项求均分，再按用户设置的缺失扣分和覆盖率门槛实时计算。",
+        calculation: "geometric",
+        normalization: "relative-best",
+        description: "默认使用 AInsights Index 配置；按用户设置的分数基线、均值方式、缺失扣分和覆盖率门槛实时计算。",
       },
     },
   },
@@ -337,8 +354,20 @@ const copy = {
     customWeightPresetTitle: "Weight presets",
     customWeightPresetSubtitle: "Start from AInsights Index or the three AA directions, then tune individual benchmark weights below",
     customWeightPresetMeta: "{count} fields",
-    missingModeTitle: "Missing values",
-    missingModeSubtitle: "The buttons are presets; use the sliders below to tune missing-value penalty strength and coverage",
+    missingModeTitle: "Calculation",
+    missingModeSubtitle: "Choose the score basis and mean method, then use presets or sliders to tune missing-value penalty strength and coverage",
+    normalizationMethodTitle: "Score basis",
+    normalizationMethodHint: "AInsights Index / AIndex defaults to dividing each benchmark by its best score, then scales the result by the highest AA Intelligence score.",
+    normalizationMethods: {
+      "relative-best": "Best score ratio",
+      raw: "Raw score",
+    },
+    calculationMethodTitle: "Mean method",
+    calculationMethodHint: "AInsights Index / AIndex defaults to geometric weighted mean; regular weighted mean stays available for comparison.",
+    meanMethods: {
+      geometric: "Geometric Weight Mean",
+      arithmetic: "Weight Mean",
+    },
     missingPresetTitle: "Treatment presets",
     penaltyLabel: "Missing penalty strength",
     penaltyHint: "0 averages available scores only; 100 counts missing fields as 0 in the total weight, matching the regular AInsights Index ranking.",
@@ -408,6 +437,7 @@ const copy = {
     unknownCreator: "Unknown",
     reasoning: "Reasoning",
     defaultCorrection: "Default correction reference",
+    methodologyLink: "AInsights Index methodology",
     footerPrefix: "Source: ",
     footerSuffix: ". AInsights Index recalculates the public benchmark data.",
     repository: "Repository",
@@ -584,7 +614,9 @@ const copy = {
     presets: {
       "zhihu-adjusted": {
         label: "AInsights Index",
-        description: "Uses the AA Intelligence Index evaluation suite weights; AA-Omniscience is corrected by assigning its full 12.5% weight to Accuracy and zero to non-hallucination rate.",
+        calculation: "geometric",
+        normalization: "relative-best",
+        description: "Uses the AA Intelligence Index evaluation suite weights; each benchmark is divided by that benchmark's best score, aggregated with geometric weighted mean, then scaled by the highest AA Intelligence score.",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -600,7 +632,9 @@ const copy = {
       },
       custom: {
         label: "Custom weights",
-        description: "Defaults to the AInsights Index configuration and recalculates live from user-selected benchmark weights, missing penalties, and coverage gates.",
+        calculation: "geometric",
+        normalization: "relative-best",
+        description: "Defaults to the AInsights Index configuration and recalculates live from user-selected score basis, mean method, benchmark weights, missing penalties, and coverage gates.",
       },
     },
   },
@@ -615,6 +649,8 @@ const state = {
   query: "",
   customWeights: {},
   customWeightPresetId: "zhihu-adjusted",
+  customCalculationMethod: "geometric",
+  customNormalizationMethod: "relative-best",
   customMissingMode: "zero",
   customPenaltyMax: 100,
   customMinCoveragePct: 0,
@@ -643,6 +679,8 @@ const els = {
   homeView: document.querySelector("#homeView"),
   rankingView: document.querySelector("#rankingView"),
   sourcesView: document.querySelector("#sourcesView"),
+  methodologyView: document.querySelector("#methodologyView"),
+  methodologyDetail: document.querySelector("#methodologyDetail"),
   contributeView: document.querySelector("#contributeView"),
   contributionModeButtons: document.querySelector("#contributionModeButtons"),
   contributionModelName: document.querySelector("#contributionModelName"),
@@ -742,6 +780,8 @@ const els = {
 
 const presetOrder = ["zhihu-adjusted", "aa-intelligence", "aa-coding", "aa-agentic", "custom"];
 const customWeightPresetOrder = ["zhihu-adjusted", "aa-intelligence", "aa-coding", "aa-agentic"];
+const customCalculationMethodOrder = ["geometric", "arithmetic"];
+const customNormalizationMethodOrder = ["relative-best", "raw"];
 const missingModePresetOrder = ["available", "penalty", "zero", "complete"];
 const missingModePresets = {
   available: { penalty: 0, minCoverage: 0 },
@@ -750,6 +790,7 @@ const missingModePresets = {
   complete: { penalty: 0, minCoverage: 100 },
 };
 const metricCoverageFilterOptions = [0, 10, 25, 50, 100, 250];
+const methodologyPageHref = "methodology.html";
 const pageOrder = ["home", "ranking", "compare", "benchmarks", "sources", "contribute"];
 const viewOrder = ["histogram", "table", "text"];
 const sourceFilterOrder = ["all", "open", "closed", "unknown"];
@@ -1275,6 +1316,7 @@ function render() {
   els.homeView.hidden = state.page !== "home";
   els.rankingView.hidden = state.page !== "ranking";
   els.sourcesView.hidden = state.page !== "sources";
+  if (els.methodologyView) els.methodologyView.hidden = state.page !== "methodology";
   if (els.contributeView) els.contributeView.hidden = state.page !== "contribute";
   els.modelView.hidden = state.page !== "model";
   els.benchmarkView.hidden = state.page !== "benchmarks";
@@ -1297,6 +1339,10 @@ function render() {
 
   if (!els.sourcesView.hidden) {
     renderSourcesPage();
+    return;
+  }
+  if (els.methodologyView && !els.methodologyView.hidden) {
+    renderMethodologyPage();
     return;
   }
   if (els.contributeView && !els.contributeView.hidden) {
@@ -1381,26 +1427,30 @@ function scoreModel(model, preset, presetId = state.presetId) {
   }
 
   const weights = presetId === "custom" ? state.customWeights : preset.weights;
-  let weightedScore = 0;
+  const entries = [];
   let denominator = 0;
   let availableWeight = 0;
   let coverage = 0;
   const ignoreMissing = Boolean(preset.ignoreMissing);
   const minCoverage = Number(preset.minCoverage || 0);
+  const method = preset.calculation || "arithmetic";
+  const normalization = preset.normalization || "raw";
   for (const metric of state.data.metrics) {
     const weight = Number(weights[metric.key] || 0);
-    const value = model.scores[metric.key];
+    const rawValue = model.scores[metric.key];
     if (weight <= 0) continue;
-    if (Number.isFinite(value)) {
-      weightedScore += value * weight;
+    if (Number.isFinite(rawValue)) {
+      const value = scoreValueForMetric(metric.key, rawValue, normalization);
+      entries.push({ value, weight });
       denominator += weight;
       availableWeight += weight;
       coverage += 1;
     } else if (!ignoreMissing) {
+      entries.push({ value: 0, weight });
       denominator += weight;
     }
   }
-  const score = denominator > 0 && coverage >= minCoverage ? weightedScore / denominator : null;
+  const score = denominator > 0 && coverage >= minCoverage ? customAggregateScore(entries, denominator, method, normalization) : null;
   return {
     score,
     coverage,
@@ -1410,7 +1460,8 @@ function scoreModel(model, preset, presetId = state.presetId) {
 }
 
 function scoreModelForCustomWeights(model) {
-  let weightedScore = 0;
+  const availableEntries = [];
+  const entries = [];
   let denominator = 0;
   let availableWeight = 0;
   let missingWeight = 0;
@@ -1423,27 +1474,31 @@ function scoreModelForCustomWeights(model) {
     if (weight <= 0) continue;
     selected += 1;
     selectedWeight += weight;
-    const value = customMetricGroupValue(model, group);
+    const value = customMetricGroupValue(model, group, state.customNormalizationMethod);
     if (Number.isFinite(value)) {
-      weightedScore += value * weight;
+      availableEntries.push({ value, weight });
+      entries.push({ value, weight });
       denominator += weight;
       availableWeight += weight;
       coverage += 1;
     } else {
+      entries.push({ value: 0, weight });
       missingWeight += weight;
     }
   }
 
   const coverageRatio = selected > 0 ? (coverage / selected) * 100 : 0;
   const minCoverage = clamp(Number(state.customMinCoveragePct || 0), 0, 100);
-  const availableScore = denominator > 0 && selected > 0 && coverageRatio >= minCoverage ? weightedScore / denominator : null;
+  const availableScore = denominator > 0 && selected > 0 && coverageRatio >= minCoverage
+    ? customAggregateScore(availableEntries, denominator, state.customCalculationMethod, state.customNormalizationMethod)
+    : null;
   let score = availableScore;
   const penaltyRatio = clamp(Number(state.customPenaltyMax || 0), 0, 100) / 100;
-  const zeroScore = selectedWeight > 0 && selected > 0 && coverageRatio >= minCoverage ? weightedScore / selectedWeight : null;
+  const zeroScore = customAggregateScore(entries, selectedWeight, state.customCalculationMethod, state.customNormalizationMethod);
   if (Number.isFinite(availableScore) && penaltyRatio > 0 && selectedWeight > 0) {
     score = availableScore + (zeroScore - availableScore) * penaltyRatio;
   }
-  if (!Number.isFinite(score) && penaltyRatio >= 1 && Number.isFinite(zeroScore)) score = zeroScore;
+  if (!Number.isFinite(score) && penaltyRatio >= 1 && coverageRatio >= minCoverage && Number.isFinite(zeroScore)) score = zeroScore;
   return {
     score,
     coverage,
@@ -1451,6 +1506,56 @@ function scoreModelForCustomWeights(model) {
     availableWeight,
     scoreMeta: `${formatNumber(availableWeight)}w · ${formatTrimmed(coverageRatio, 0)}%`,
   };
+}
+
+function customAggregateScore(entries, denominator, method = "arithmetic", normalization = "raw") {
+  if (!Number.isFinite(denominator) || denominator <= 0 || !entries.length) return null;
+  let score;
+  if (method === "geometric") {
+    const weightedLogScore = entries.reduce((sum, entry) => {
+      const value = Math.max(Number(entry.value) || 0, 0);
+      return sum + Math.log(value + 1) * Number(entry.weight || 0);
+    }, 0);
+    score = Math.exp(weightedLogScore / denominator) - 1;
+  } else {
+    const weightedScore = entries.reduce((sum, entry) => (
+      sum + (Number(entry.value) || 0) * Number(entry.weight || 0)
+    ), 0);
+    score = weightedScore / denominator;
+  }
+  return scaleAggregateScore(score, normalization);
+}
+
+function scoreValueForMetric(metricKey, rawValue, normalization = "raw") {
+  if (!Number.isFinite(rawValue)) return null;
+  if (normalization !== "relative-best") return rawValue;
+  const baseline = metricBaseline(metricKey);
+  if (!Number.isFinite(baseline) || baseline <= 0) return 0;
+  return Math.max(rawValue, 0) / baseline;
+}
+
+function metricBaseline(metricKey) {
+  const payloadBaseline = Number(state.data.metricBaselines?.[metricKey]);
+  if (Number.isFinite(payloadBaseline)) return payloadBaseline;
+  const values = (state.data.models || [])
+    .map((model) => Number(model.scores?.[metricKey]))
+    .filter(Number.isFinite);
+  return values.length ? Math.max(...values) : null;
+}
+
+function scaleAggregateScore(score, normalization = "raw") {
+  if (!Number.isFinite(score)) return null;
+  if (normalization !== "relative-best") return score;
+  return score * aaIntelligenceScoreBaseline();
+}
+
+function aaIntelligenceScoreBaseline() {
+  const payloadBaseline = Number(state.data.scoreBaselines?.aaIntelligenceMax);
+  if (Number.isFinite(payloadBaseline)) return payloadBaseline;
+  const values = (state.data.models || [])
+    .map((model) => Number(model.aa?.["aa-intelligence"]))
+    .filter(Number.isFinite);
+  return values.length ? Math.max(...values) : 100;
 }
 
 function matchesQuery(model) {
@@ -1507,13 +1612,14 @@ function renderSummary(filteredCount, visibleCount, scoredCount, preset) {
     <span><strong>${scoredCount}</strong> ${escapeHtml(tr("scorableModels"))}</span>
     <span>${dedupeLabel}</span>
     <span>${escapeHtml(tr("sourceFilter"))}: <strong>${escapeHtml(tr(`sourceFilters.${state.sourceFilter}`))}</strong></span>
-    <span>${escapeHtml(presetDescription(state.presetId, preset))}</span>
-    <a href="${escapeHtml(state.data.source.defaultCorrectionReference)}" target="_blank" rel="noreferrer">${escapeHtml(tr("defaultCorrection"))}</a>
+    <a href="${escapeHtml(methodologyPageHref)}">${escapeHtml(tr("methodologyLink"))}</a>
   `;
 }
 
 function resetCustomConfiguration() {
   state.customWeightPresetId = "zhihu-adjusted";
+  state.customCalculationMethod = "geometric";
+  state.customNormalizationMethod = "relative-best";
   state.customWeights = customWeightsForPreset(state.customWeightPresetId);
   applyMissingModePreset("zero");
 }
@@ -1699,8 +1805,30 @@ function renderMissingModeControls(target) {
   target.innerHTML = `
     <div class="custom-config-grid">
       <div class="custom-setting-block">
+        <span class="control-label">${escapeHtml(tr("normalizationMethodTitle"))}</span>
+        <div class="segmented-control normalization-method-controls" data-normalization-method-controls style="--option-count: ${customNormalizationMethodOrder.length}">
+          ${customNormalizationMethodOrder.map((method) => `
+            <button type="button" data-normalization-method="${escapeHtml(method)}" aria-pressed="${method === state.customNormalizationMethod}">
+              ${escapeHtml(tr(`normalizationMethods.${method}`))}
+            </button>
+          `).join("")}
+        </div>
+        <p>${escapeHtml(tr("normalizationMethodHint"))}</p>
+      </div>
+      <div class="custom-setting-block">
+        <span class="control-label">${escapeHtml(tr("calculationMethodTitle"))}</span>
+        <div class="segmented-control calculation-method-controls" data-calculation-method-controls style="--option-count: ${customCalculationMethodOrder.length}">
+          ${customCalculationMethodOrder.map((method) => `
+            <button type="button" data-calculation-method="${escapeHtml(method)}" aria-pressed="${method === state.customCalculationMethod}">
+              ${escapeHtml(tr(`meanMethods.${method}`))}
+            </button>
+          `).join("")}
+        </div>
+        <p>${escapeHtml(tr("calculationMethodHint"))}</p>
+      </div>
+      <div class="custom-setting-block">
         <span class="control-label">${escapeHtml(tr("missingPresetTitle"))}</span>
-        <div class="segmented-control" data-missing-preset>
+        <div class="segmented-control" data-missing-preset style="--option-count: ${missingModePresetOrder.length}">
           ${missingModePresetOrder.map((mode) => `
             <button type="button" data-missing-mode="${escapeHtml(mode)}" aria-pressed="${mode === state.customMissingMode}">
               ${escapeHtml(tr(`missingModes.${mode}`))}
@@ -1729,6 +1857,20 @@ function renderMissingModeControls(target) {
       </label>
     </div>
   `;
+  target.querySelectorAll("[data-normalization-method]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.customNormalizationMethod = button.dataset.normalizationMethod;
+      updateNormalizationMethodSelection(target);
+      renderResults(state.data.presets.custom);
+    });
+  });
+  target.querySelectorAll("[data-calculation-method]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.customCalculationMethod = button.dataset.calculationMethod;
+      updateCalculationMethodSelection(target);
+      renderResults(state.data.presets.custom);
+    });
+  });
   target.querySelectorAll("[data-missing-mode]").forEach((button) => {
     button.addEventListener("click", () => {
       applyMissingModePreset(button.dataset.missingMode);
@@ -1755,6 +1897,18 @@ function renderMissingModeControls(target) {
   });
   coverageInput.addEventListener("change", () => {
     renderResults(state.data.presets.custom);
+  });
+}
+
+function updateNormalizationMethodSelection(target) {
+  target.querySelectorAll("[data-normalization-method]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.normalizationMethod === state.customNormalizationMethod));
+  });
+}
+
+function updateCalculationMethodSelection(target) {
+  target.querySelectorAll("[data-calculation-method]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.calculationMethod === state.customCalculationMethod));
   });
 }
 
@@ -1808,11 +1962,11 @@ function metricGroupCoverageCount(metrics) {
   )).length;
 }
 
-function customMetricGroupValue(model, group) {
+function customMetricGroupValue(model, group, normalization = "raw") {
   const presetWeightedMetrics = group.metrics.filter((metric) => Number(state.data.presets[state.customWeightPresetId]?.weights?.[metric.key] || 0) > 0);
   const metrics = presetWeightedMetrics.length ? presetWeightedMetrics : group.metrics;
   const values = metrics
-    .map((metric) => model.scores?.[metric.key])
+    .map((metric) => scoreValueForMetric(metric.key, model.scores?.[metric.key], normalization))
     .filter(Number.isFinite);
   if (values.length === 0) return null;
   return values.reduce((sum, value) => sum + value, 0) / values.length;
@@ -2124,6 +2278,70 @@ function renderSourcesPage() {
   const sources = catalogSources();
   els.sourceOverview.innerHTML = sources.map(renderSourceOverviewCard).join("");
   els.sourceMetricMap.innerHTML = sources.map(renderSourceMetricMapRow).join("");
+}
+
+function renderMethodologyPage() {
+  if (!els.methodologyDetail) return;
+  const zh = state.language === "zh-CN";
+  document.title = `${zh ? "AInsights Index 计算方式" : "AInsights Index Methodology"} · ${tr("pageTitle")}`;
+  const sections = zh ? [
+    {
+      title: "AInsights Index / AIndex",
+      body: "AInsights Index，也可简称 AIndex，使用 Artificial Analysis Intelligence Index evaluation suite 的公开测试项权重重新计算综合分。AA-Omniscience 的 12.5% 权重全部计入 Accuracy，Non-Hallucination Rate 权重为 0。",
+    },
+    {
+      title: "默认均值",
+      body: "默认综合分使用 Geometric Weighted Mean。AIndex 先把每个测试项转换为 Best score ratio：模型分数 / 该测试项最高分，再进入几何加权均值。",
+    },
+    {
+      title: "Best score ratio",
+      body: "相对比例聚合后会乘回全站最高 AA Intelligence Index 分数，作为最终展示分。因此每个测试项先在自己的最高分基线上比较，再映射回 AA Intelligence 的分数尺度。",
+    },
+    {
+      title: "缺失和 0 分",
+      body: "默认 AInsights Index 会把缺失项作为 0 比例计入总权重。因为公式使用 ratio + 1，真实 0 分或缺失项会显著降低结果，但不会让整个模型的综合分直接归零。",
+    },
+    {
+      title: "自定义权重",
+      body: "Custom weights 页面可以独立切换 Best score ratio / Raw score 和 Geometric Weight Mean / Weight Mean，并继续使用缺失扣分强度、最低覆盖率和逐项权重滑块做对照。",
+    },
+  ] : [
+    {
+      title: "AInsights Index / AIndex",
+      body: "AInsights Index, also usable as AIndex, recalculates public Artificial Analysis Intelligence Index evaluation-suite scores with the site weights. The AA-Omniscience 12.5% component is assigned fully to Accuracy, while Non-Hallucination Rate receives zero weight.",
+    },
+    {
+      title: "Default Mean",
+      body: "The default score uses Geometric Weighted Mean. AIndex first converts each benchmark to a Best score ratio: model score divided by that benchmark's best score, then applies the geometric weighted mean.",
+    },
+    {
+      title: "Best score ratio",
+      body: "After aggregating the relative ratios, the result is multiplied by the highest AA Intelligence Index score on the site. This compares each benchmark on its own best-score baseline, then maps the result back to the AA Intelligence score scale.",
+    },
+    {
+      title: "Missing and Zero Scores",
+      body: "By default, AInsights Index counts missing fields as a zero ratio within the total weight. Because the formula uses ratio + 1, real zeroes and missing fields strongly reduce the result without collapsing the whole model score to zero.",
+    },
+    {
+      title: "Custom Weights",
+      body: "The Custom weights panel can independently switch Best score ratio / Raw score and Geometric Weight Mean / Weight Mean while keeping the missing-penalty, minimum-coverage, and per-benchmark weight controls for comparison.",
+    },
+  ];
+  els.methodologyDetail.innerHTML = `
+    <section class="methodology-hero">
+      <p class="eyebrow">${escapeHtml(zh ? "Methodology" : "Methodology")}</p>
+      <h2>${escapeHtml(zh ? "AInsights Index 计算方式" : "AInsights Index Methodology")}</h2>
+      <p>${escapeHtml(zh ? "AIndex 是 AInsights Index 的别名，两个名称指向同一套默认排名口径。" : "AIndex is an alias for AInsights Index; both names refer to the same default ranking method.")}</p>
+    </section>
+    <section class="methodology-grid">
+      ${sections.map((section) => `
+        <article class="methodology-card">
+          <h3>${escapeHtml(section.title)}</h3>
+          <p>${escapeHtml(section.body)}</p>
+        </article>
+      `).join("")}
+    </section>
+  `;
 }
 
 function catalogSources() {

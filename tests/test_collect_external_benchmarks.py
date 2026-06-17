@@ -147,10 +147,12 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             "qwen-qwen3-6-plus-release",
             "deepseek-v4-pro-card",
             "kimi-k2-6-card",
+            "kimi-k2-7-code-card",
             "kimi-k2-thinking-card",
             "kimi-k2-5-card",
             "zai-glm-4-6-card",
             "zai-glm-5-1-card",
+            "zai-glm-5-2-card",
             "minimax-m3-release",
             "minimax-m2-5-release",
             "minimax-m2-release",
@@ -297,6 +299,31 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             for row in results
             if row["model"] == "GLM-4.6" and row["benchmarkId"] == "tau2-bench-weighted"
         )
+        kimi27_program = next(
+            row
+            for row in results
+            if row["model"] == "Kimi K2.7 Code" and row["benchmarkId"] == "programbench"
+        )
+        kimi27_mcp_mark = next(
+            row
+            for row in results
+            if row["model"] == "Kimi K2.7 Code" and row["benchmarkId"] == "mcp-mark-verified"
+        )
+        glm52_deepswe = next(
+            row
+            for row in results
+            if row["model"] == "GLM-5.2" and row["benchmarkId"] == "deepswe"
+        )
+        glm52_frontierswe = next(
+            row
+            for row in results
+            if row["model"] == "GLM-5.2" and row["benchmarkId"] == "frontierswe-dominance"
+        )
+        glm52_terminal = next(
+            row
+            for row in results
+            if row["model"] == "GLM-5.2" and row["benchmarkId"] == "terminal-bench-2-1"
+        )
 
         self.assertEqual(fable_swe["value"], 80.3)
         self.assertEqual(qwen3_aime["value"], 85.7)
@@ -306,6 +333,13 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertEqual(qwen2_lcb["value"], 35.7)
         self.assertEqual(kimi_0905_terminal["value"], 44.5)
         self.assertEqual(glm46_tau["value"], 75.9)
+        self.assertEqual(kimi27_program["value"], 53.6)
+        self.assertEqual(kimi27_mcp_mark["value"], 81.1)
+        self.assertIn("kimi-k2-7-code", kimi27_program["modelAliases"])
+        self.assertEqual(glm52_deepswe["value"], 46.2)
+        self.assertEqual(glm52_frontierswe["value"], 74.4)
+        self.assertEqual(glm52_terminal["value"], 81.0)
+        self.assertIn("GLM-5.2 (max)", glm52_deepswe["modelAliases"])
 
 
 if __name__ == "__main__":

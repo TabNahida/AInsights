@@ -1,4 +1,5 @@
 import unittest
+import math
 import subprocess
 import sys
 import tempfile
@@ -9,6 +10,7 @@ from scripts.build_docs_site import (
     score_model_for_preset,
     variant_group,
     variant_priority,
+    weighted_metric_score,
     write_site_payload,
 )
 
@@ -88,6 +90,11 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertIn("GDPval-AA", [metric["key"] for metric in payload["metrics"]])
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["kind"], "weighted-metrics")
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["label"], "AInsights Index")
+        self.assertEqual(payload["presets"]["zhihu-adjusted"]["calculation"], "geometric")
+        self.assertEqual(payload["presets"]["zhihu-adjusted"]["normalization"], "relative-best")
+        self.assertEqual(payload["presets"]["custom"]["normalization"], "relative-best")
+        self.assertEqual(payload["metricBaselines"]["GDPval-AA"], 80)
+        self.assertEqual(payload["scoreBaselines"]["aaIntelligenceMax"], 50)
         self.assertGreater(payload["models"][0]["variantPriority"], payload["models"][1]["variantPriority"])
         self.assertEqual(payload["models"][0]["contextWindowTokens"], 128000)
         self.assertEqual(payload["models"][0]["inputModalities"], ["Text", "Image"])
@@ -281,7 +288,13 @@ class BuildDocsSiteTests(unittest.TestCase):
         model = payload["models"][0]
         preset = payload["presets"]["zhihu-adjusted"]
 
-        score = score_model_for_preset(model, preset, payload["metrics"])
+        score = score_model_for_preset(
+            model,
+            preset,
+            payload["metrics"],
+            payload["metricBaselines"],
+            payload["scoreBaselines"]["aaIntelligenceMax"],
+        )
 
         self.assertAlmostEqual(preset["weights"]["GDPval-AA"], 100 / 6)
         self.assertAlmostEqual(preset["weights"]["τ²-Bench Telecom"], 25 / 3)
@@ -299,8 +312,89 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(preset["weights"].get("APEX-Agents-AA", 0), 0)
         self.assertEqual(preset["weights"].get("ITBench-AA", 0), 0)
         self.assertEqual(preset["weights"].get("AA-Omniscience Non-Hallucination Rate", 0), 0)
-        self.assertAlmostEqual(score["score"], (100 * (100 / 6) + 80 * 12.5) / 100)
+        expected = (
+            math.exp(((100 / 6) * math.log(2) + 12.5 * math.log(2)) / 100) - 1
+        ) * 100
+        self.assertAlmostEqual(score["score"], expected)
         self.assertEqual(score["coverage"], 10)
+
+    def test_weighted_metric_score_supports_geometric_mean(self):
+        model = {"scores": {"A": 100, "B": 25}}
+
+        score = weighted_metric_score(
+            model,
+            {"A": 1, "B": 1},
+            False,
+            method="geometric",
+        )
+
+        self.assertAlmostEqual(score["score"], math.sqrt(101 * 26) - 1)
+        self.assertEqual(score["coverage"], 2)
+
+    def test_weighted_metric_score_supports_relative_best_normalization(self):
+        model = {"scores": {"A": 50, "B": 25}}
+
+        score = weighted_metric_score(
+            model,
+            {"A": 1, "B": 1},
+            False,
+            method="arithmetic",
+            normalization="relative-best",
+            metric_baselines={"A": 100, "B": 50},
+            display_scale=90,
+        )
+
+        self.assertAlmostEqual(score["score"], 45)
+        self.assertEqual(score["coverage"], 2)
+
+    def test_default_score_uses_relative_best_then_aa_intelligence_scale(self):
+        payload = build_site_payload(
+            [
+                {
+                    "model_key": "Leader Model",
+                    "model": "Leader Model",
+                    "is_reasoning": "true",
+                    "slug": "leader-model",
+                    "AA Intelligence Index": "90",
+                    "GDPval-AA": "100",
+                },
+                {
+                    "model_key": "Ratio Model",
+                    "model": "Ratio Model",
+                    "is_reasoning": "true",
+                    "slug": "ratio-model",
+                    "AA Intelligence Index": "60",
+                    "GDPval-AA": "50",
+                },
+            ]
+        )
+        model = next(model for model in payload["models"] if model["slug"] == "ratio-model")
+        preset = payload["presets"]["zhihu-adjusted"]
+
+        score = score_model_for_preset(
+            model,
+            preset,
+            payload["metrics"],
+            payload["metricBaselines"],
+            payload["scoreBaselines"]["aaIntelligenceMax"],
+        )
+
+        expected_ratio = math.exp((100 / 6) * math.log(1.5) / 100) - 1
+        self.assertAlmostEqual(score["score"], expected_ratio * 90)
+        self.assertEqual(score["coverage"], 1)
+
+    def test_geometric_weighted_score_penalizes_missing_without_collapsing_to_zero(self):
+        model = {"scores": {"A": 100}}
+
+        score = weighted_metric_score(
+            model,
+            {"A": 1, "B": 1},
+            False,
+            method="geometric",
+        )
+
+        self.assertAlmostEqual(score["score"], math.sqrt(101) - 1)
+        self.assertEqual(score["coverage"], 1)
 
     def test_aa_presets_include_official_component_weights(self):
         payload = build_site_payload(
@@ -343,12 +437,19 @@ class BuildDocsSiteTests(unittest.TestCase):
         model = payload["models"][0]
         preset = payload["presets"]["zhihu-adjusted"]
 
-        score = score_model_for_preset(model, preset, payload["metrics"])
+        score = score_model_for_preset(
+            model,
+            preset,
+            payload["metrics"],
+            payload["metricBaselines"],
+            payload["scoreBaselines"]["aaIntelligenceMax"],
+        )
 
-        self.assertAlmostEqual(score["score"], 84 * 6.25 / 100)
+        expected = (math.exp(6.25 * math.log(2) / 100) - 1) * 100
+        self.assertAlmostEqual(score["score"], expected)
         self.assertEqual(score["coverage"], 1)
 
-    def test_custom_score_counts_missing_metrics_in_denominator(self):
+    def test_custom_score_uses_geometric_mean_by_default(self):
         payload = build_site_payload(
             [
                 {
@@ -363,9 +464,17 @@ class BuildDocsSiteTests(unittest.TestCase):
         model = payload["models"][0]
         preset = payload["presets"]["custom"]
 
-        score = score_model_for_preset(model, preset, payload["metrics"])
+        score = score_model_for_preset(
+            model,
+            preset,
+            payload["metrics"],
+            payload["metricBaselines"],
+            payload["scoreBaselines"]["aaIntelligenceMax"],
+        )
 
-        self.assertAlmostEqual(score["score"], 84 * 6.25 / 100)
+        self.assertEqual(preset["calculation"], "geometric")
+        expected = (math.exp(6.25 * math.log(2) / 100) - 1) * 100
+        self.assertAlmostEqual(score["score"], expected)
         self.assertEqual(score["coverage"], 1)
 
 

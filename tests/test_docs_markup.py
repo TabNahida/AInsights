@@ -14,16 +14,35 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn('data-page="benchmark"', (docs_dir / "benchmark.html").read_text(encoding="utf-8"))
         self.assertIn('data-page="sources"', (docs_dir / "sources.html").read_text(encoding="utf-8"))
         self.assertIn('data-page="contribute"', (docs_dir / "contribute.html").read_text(encoding="utf-8"))
+        self.assertIn('data-page="methodology"', (docs_dir / "methodology.html").read_text(encoding="utf-8"))
 
     def test_page_title_and_footer_name_source(self):
         html = (Path(__file__).resolve().parents[1] / "docs" / "index.html").read_text(encoding="utf-8")
 
         self.assertIn("<title>AI Insights Analysis</title>", html)
+        self.assertIn('name="description"', html)
+        self.assertIn("AIndex", html)
+        self.assertIn('rel="canonical"', html)
+        self.assertIn('property="og:title"', html)
+        self.assertIn('application/ld+json', html)
         self.assertIn("<h1>AI Insights Analysis</h1>", html)
         self.assertIn("<footer", html)
         self.assertIn("数据来源", html)
         self.assertIn("Artificial Analysis", html)
         self.assertIn("https://github.com/TabNahida/AInsights", html)
+
+    def test_all_static_pages_expose_search_metadata(self):
+        docs_dir = Path(__file__).resolve().parents[1] / "docs"
+
+        for path in docs_dir.glob("*.html"):
+            html = path.read_text(encoding="utf-8")
+            expected_url = "https://ainsights.tab.homes/" if path.name == "index.html" else f"https://ainsights.tab.homes/{path.name}"
+            self.assertIn('name="description"', html, path.name)
+            self.assertIn("AIndex", html, path.name)
+            self.assertIn(f'rel="canonical" href="{expected_url}"', html, path.name)
+            self.assertIn(f'property="og:url" content="{expected_url}"', html, path.name)
+            self.assertIn(f'"url":"{expected_url}"', html, path.name)
+            self.assertIn('property="og:description"', html, path.name)
 
     def test_page_exposes_i18n_views_source_filter_and_rank_surfaces(self):
         html = (Path(__file__).resolve().parents[1] / "docs" / "index.html").read_text(encoding="utf-8")
@@ -83,13 +102,24 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("customPenaltyMax", app_js)
         self.assertIn("customMinCoveragePct", app_js)
         self.assertIn("customMinMetricCoverage", app_js)
+        self.assertIn("customCalculationMethod", app_js)
+        self.assertIn("customNormalizationMethod", app_js)
+        self.assertIn("calculation-method-controls", app_js)
+        self.assertIn("normalization-method-controls", app_js)
+        self.assertIn("Geometric Weight Mean", app_js)
+        self.assertIn("Weight Mean", app_js)
+        self.assertIn("Best score ratio", app_js)
+        self.assertIn("Raw score", app_js)
         self.assertIn("metricCoverageFilterOptions", app_js)
         self.assertIn("data-coverage-filter", app_js)
         self.assertIn("visibleGroups", app_js)
         self.assertIn("Evaluation data weights", app_js)
+        self.assertIn("Calculation", app_js)
+        self.assertNotIn('missingModeTitle: "Missing values"', app_js)
         self.assertNotIn("AA benchmark weights", app_js)
         self.assertIn('max="100" step="0.5"', app_js)
         self.assertIn("customMetricGroupsCache", app_js)
+        self.assertIn("customAggregateScore", app_js)
         self.assertIn("applyMissingModePreset", app_js)
         self.assertIn("customWeightsForPreset", app_js)
         self.assertIn("penalty", app_js)
@@ -110,6 +140,7 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn(".metric-weight-label", css)
         self.assertIn(".metric-coverage-filter", css)
         self.assertIn(".metric-filter-summary", css)
+        self.assertIn("grid-template-columns: repeat(var(--option-count), minmax(0, 1fr));", css)
         self.assertIn(".scatter-leader", css)
         self.assertIn(".benchmark-evidence-row", css)
         self.assertNotIn(".source-weight-card", css)
@@ -119,13 +150,35 @@ class DocsMarkupTests(unittest.TestCase):
         app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(encoding="utf-8")
 
         self.assertIn('customMissingMode: "zero"', app_js)
+        self.assertIn('customCalculationMethod: "geometric"', app_js)
+        self.assertIn('customNormalizationMethod: "relative-best"', app_js)
         self.assertIn("customPenaltyMax: 100", app_js)
-        self.assertIn("const zeroScore = selectedWeight > 0 && selected > 0 && coverageRatio >= minCoverage ? weightedScore / selectedWeight : null;", app_js)
+        self.assertIn('calculation: "geometric"', app_js)
+        self.assertIn('normalization: "relative-best"', app_js)
+        self.assertIn("const zeroScore = customAggregateScore(entries, selectedWeight, state.customCalculationMethod, state.customNormalizationMethod);", app_js)
         self.assertIn("score = availableScore + (zeroScore - availableScore) * penaltyRatio;", app_js)
-        self.assertIn("if (!Number.isFinite(score) && penaltyRatio >= 1 && Number.isFinite(zeroScore)) score = zeroScore;", app_js)
+        self.assertIn("if (!Number.isFinite(score) && penaltyRatio >= 1 && coverageRatio >= minCoverage && Number.isFinite(zeroScore)) score = zeroScore;", app_js)
         self.assertIn("const presetWeightedMetrics = group.metrics.filter((metric) => Number(state.data.presets[state.customWeightPresetId]?.weights?.[metric.key] || 0) > 0);", app_js)
         self.assertIn('zero: "缺失记 0"', app_js)
         self.assertIn('zero: "Missing = 0"', app_js)
+
+    def test_methodology_page_is_linked_from_ranking_not_navigation(self):
+        docs_dir = Path(__file__).resolve().parents[1] / "docs"
+        html = (docs_dir / "methodology.html").read_text(encoding="utf-8")
+        full_rank_html = (docs_dir / "full-rank.html").read_text(encoding="utf-8")
+        app_js = (docs_dir / "app.js").read_text(encoding="utf-8")
+        app_utils = (docs_dir / "app-utils.js").read_text(encoding="utf-8")
+
+        self.assertIn("AInsights Index", html)
+        self.assertIn("AIndex", html)
+        self.assertIn("Geometric Weighted Mean", html)
+        self.assertIn("Best score ratio", html)
+        self.assertIn("methodology.html", app_js)
+        self.assertIn('href="methodology.html"', full_rank_html)
+        self.assertIn('filename === "methodology.html"', app_utils)
+        self.assertIn('if (page === "methodology") return "methodology.html";', app_utils)
+        self.assertIn('const pageOrder = ["home", "ranking", "compare", "benchmarks", "sources", "contribute"];', app_js)
+        self.assertNotIn("presetDescription(state.presetId, preset)", app_js)
 
     def test_sources_page_and_split_scripts_are_present(self):
         docs_dir = Path(__file__).resolve().parents[1] / "docs"

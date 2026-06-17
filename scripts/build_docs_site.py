@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import math
 import re
 import sys
 from datetime import datetime, timezone
@@ -266,6 +267,8 @@ def build_site_payload(
     ]
     models = [_model_payload(row, metric_keys) for row in source_rows]
     attach_external_benchmark_scores(models, external_benchmark_data)
+    baselines = metric_baselines(models, metric_keys)
+    aa_intelligence_max = aa_score_baseline(models, "aa-intelligence")
 
     return {
         "version": 1,
@@ -303,6 +306,10 @@ def build_site_payload(
             for benchmark in external_benchmarks
         ],
         "presets": _presets(),
+        "metricBaselines": baselines,
+        "scoreBaselines": {
+            "aaIntelligenceMax": aa_intelligence_max,
+        },
         "externalSources": external_sources_payload(external_benchmark_data),
         "externalBenchmarks": external_benchmarks,
         "models": models,
@@ -333,6 +340,8 @@ def score_model_for_preset(
     model: dict[str, Any],
     preset: dict[str, Any],
     metrics: list[dict[str, Any]],
+    metric_baselines: dict[str, Any] | None = None,
+    display_scale: float | None = None,
 ) -> dict[str, float | int | None]:
     if preset["kind"] == "aa-column":
         score = _number_or_none(model.get("aa", {}).get(preset["column"]))
@@ -347,6 +356,10 @@ def score_model_for_preset(
         preset.get("weights", {}),
         bool(preset.get("ignoreMissing")),
         int(preset.get("minCoverage") or 0),
+        method=str(preset.get("calculation") or "arithmetic"),
+        normalization=str(preset.get("normalization") or "raw"),
+        metric_baselines=metric_baselines,
+        display_scale=display_scale,
     )
 
 
@@ -355,11 +368,17 @@ def weighted_metric_score(
     weights: dict[str, Any],
     ignore_missing: bool,
     min_coverage: int = 0,
+    method: str = "arithmetic",
+    normalization: str = "raw",
+    metric_baselines: dict[str, Any] | None = None,
+    display_scale: float | None = None,
 ) -> dict[str, float | int | None]:
     weighted_score = 0.0
+    log_score = 0.0
     denominator = 0.0
     available_weight = 0.0
     coverage = 0
+    use_geometric = method == "geometric"
 
     for key, raw_weight in weights.items():
         weight = _number_or_none(raw_weight) or 0.0
@@ -369,17 +388,67 @@ def weighted_metric_score(
         if value is None:
             if not ignore_missing:
                 denominator += weight
+                if use_geometric:
+                    log_score += math.log(1) * weight
             continue
-        weighted_score += value * weight
+        score_value = normalized_metric_value(key, value, normalization, metric_baselines)
+        if use_geometric:
+            log_score += math.log(max(score_value, 0) + 1) * weight
+        else:
+            weighted_score += score_value * weight
         denominator += weight
         available_weight += weight
         coverage += 1
+    if denominator <= 0 or coverage < min_coverage:
+        score = None
+    elif use_geometric:
+        score = math.exp(log_score / denominator) - 1
+    else:
+        score = weighted_score / denominator
+    if score is not None and normalization == "relative-best":
+        score *= 100.0 if display_scale is None else display_scale
 
     return {
-        "score": weighted_score / denominator if denominator > 0 and coverage >= min_coverage else None,
+        "score": score,
         "coverage": coverage,
         "availableWeight": available_weight,
     }
+
+
+def metric_baselines(models: list[dict[str, Any]], metric_keys: Iterable[str]) -> dict[str, float]:
+    baselines: dict[str, float] = {}
+    for key in metric_keys:
+        values = [
+            value
+            for model in models
+            if (value := _number_or_none(model.get("scores", {}).get(key))) is not None
+        ]
+        if values:
+            baselines[key] = max(values)
+    return baselines
+
+
+def aa_score_baseline(models: list[dict[str, Any]], aa_key: str) -> float:
+    values = [
+        value
+        for model in models
+        if (value := _number_or_none(model.get("aa", {}).get(aa_key))) is not None
+    ]
+    return max(values) if values else 100.0
+
+
+def normalized_metric_value(
+    key: str,
+    value: float,
+    normalization: str = "raw",
+    metric_baselines: dict[str, Any] | None = None,
+) -> float:
+    if normalization != "relative-best":
+        return value
+    baseline = _number_or_none((metric_baselines or {}).get(key))
+    if baseline is None or baseline <= 0:
+        return 0.0
+    return max(value, 0.0) / baseline
 
 
 def write_site_payload(
@@ -731,8 +800,10 @@ def _presets() -> dict[str, dict[str, Any]]:
         "zhihu-adjusted": {
             "label": "AInsights Index",
             "kind": "weighted-metrics",
-            "description": "按 AA Intelligence Index evaluation suite 原始占比计算；AA-Omniscience 修正为 12.5% 全部计入 Accuracy，非幻觉率权重为 0。",
+            "description": "按 AA Intelligence Index evaluation suite 原始占比计算；每项先除以该项最高分，再用几何加权均值聚合，并乘回 AA Intelligence 最高分展示。",
             "ignoreMissing": False,
+            "calculation": "geometric",
+            "normalization": "relative-best",
             "weights": DEFAULT_CORRECTED_WEIGHTS,
         },
         "aa-intelligence": {
@@ -759,8 +830,10 @@ def _presets() -> dict[str, dict[str, Any]]:
         "custom": {
             "label": "自定义占比",
             "kind": "weighted-metrics",
-            "description": "默认使用 AInsights Index 配置；先按可用项求均分，再按用户设置的缺失扣分和覆盖率门槛实时计算。",
+            "description": "默认使用 AInsights Index 配置；按用户设置的分数基线、均值方式、缺失扣分和覆盖率门槛实时计算。",
             "ignoreMissing": False,
+            "calculation": "geometric",
+            "normalization": "relative-best",
             "weights": DEFAULT_CORRECTED_WEIGHTS,
         },
     }
