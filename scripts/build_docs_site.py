@@ -66,6 +66,56 @@ AA_AGENTIC_SUITE_WEIGHTS = {
     "GDPval-AA v2": 1000 / 17,
     "τ³-Banking": 700 / 17,
 }
+AINDEX_REGULAR_WEIGHTS = {
+    "Terminal-Bench v2.1": 28,
+    "Terminal-Bench Hard": 22,
+    "SciCode": 6,
+    "LiveCodeBench": 20,
+    "Humanity's Last Exam": 5,
+    "GPQA Diamond": 2,
+    "AIME 2025": 2,
+    "AA-Omniscience Accuracy": 1,
+    "CritPt": 13,
+    "AA-LCR": 1,
+    "IFBench": 0,
+}
+AINDEX_METRIC_TRANSFORMS = [
+    {
+        "type": "log1p",
+        "factor": 5,
+        "metrics": [
+            "Terminal-Bench Hard",
+            "SciCode",
+            "Humanity's Last Exam",
+            "CritPt",
+        ],
+    },
+]
+AINDEX_BONUS_WEIGHTS = {
+    "benchmark:swe-bench-pro": 1.8,
+    "benchmark:swe-bench-verified": 1.5,
+    "benchmark:swe-bench-multilingual": 1.0,
+    "benchmark:terminal-bench-2": 1.5,
+    "benchmark:terminal-bench-2-1": 1.2,
+    "benchmark:frontiercode-diamond": 1.5,
+    "benchmark:frontiermath-tier-1-3": 1.0,
+    "benchmark:frontiermath-tier-4": 1.2,
+    "benchmark:browsecomp": 1.0,
+    "benchmark:hle-tools": 1.0,
+    "benchmark:mcp-atlas": 0.8,
+    "benchmark:osworld-verified": 0.7,
+}
+AINDEX_BONUS_CAP = 2
+AINDEX_METRIC_FALLBACKS = [
+    {
+        "type": "linear-fit",
+        "source": "benchmark:livecodebench",
+        "target": "LiveCodeBench",
+        "minimumPairs": 2,
+        "min": 0,
+        "max": 100,
+    },
+]
 FRONTIER_INDEX_GROUPS = [
     {
         "id": "aa-suite",
@@ -159,6 +209,7 @@ for group in FRONTIER_INDEX_GROUPS:
     per_metric_weight = group_weight / len(metrics)
     for metric in metrics:
         DEFAULT_FRONTIER_WEIGHTS[metric] = DEFAULT_FRONTIER_WEIGHTS.get(metric, 0.0) + per_metric_weight
+DEFAULT_AINDEX_WEIGHTS = dict(AINDEX_REGULAR_WEIGHTS)
 
 VARIANT_PRIORITY_BY_SUFFIX = {
     "max": 100,
@@ -355,6 +406,7 @@ def build_site_payload(
     ]
     models = [_model_payload(row, metric_keys) for row in source_rows]
     attach_external_benchmark_scores(models, external_benchmark_data)
+    apply_metric_fallbacks(models, AINDEX_METRIC_FALLBACKS)
     baselines = metric_baselines(models, metric_keys)
     aa_intelligence_max = aa_score_baseline(models, "aa-intelligence")
 
@@ -366,9 +418,9 @@ def build_site_payload(
             "url": SOURCE_URL,
             "defaultCorrectionReference": ARTICLE_URL,
             "defaultCorrectionNote": (
-                "AInsights Index follows the Artificial Analysis Intelligence Index evaluation suite "
-                "weights. The AA-Omniscience correction assigns the full 12% component weight to "
-                "Accuracy and zero weight to the non-hallucination component."
+                "AInsights Index uses high-coverage regular tests for the base score, now weighted "
+                "toward coding and hard reasoning, plus a small additive bonus pool for hard external "
+                "coding, math, and tool benchmarks. Missing bonus rows do not penalize a model."
             ),
         },
         "defaultPreset": "zhihu-adjusted",
@@ -377,7 +429,7 @@ def build_site_payload(
             {
                 "key": key,
                 "label": key,
-                "defaultWeight": DEFAULT_FRONTIER_WEIGHTS.get(key, 0),
+                "defaultWeight": DEFAULT_AINDEX_WEIGHTS.get(key, 0),
             }
             for key in [spec.column for spec in SCORE_SPECS]
         ]
@@ -385,7 +437,7 @@ def build_site_payload(
             {
                 "key": external_metric_key(benchmark["id"]),
                 "label": benchmark.get("label") or benchmark["id"],
-                "defaultWeight": DEFAULT_FRONTIER_WEIGHTS.get(external_metric_key(benchmark["id"]), 0),
+                "defaultWeight": DEFAULT_AINDEX_WEIGHTS.get(external_metric_key(benchmark["id"]), 0),
                 "source": "benchmark",
                 "category": benchmark.get("category") or "Benchmark",
                 "unit": benchmark.get("unit") or "%",
@@ -460,6 +512,20 @@ def score_model_for_preset(
             display_scale=display_scale,
         )
 
+    if preset["kind"] == "regular-plus-bonus":
+        return regular_plus_bonus_score(
+            model,
+            preset.get("regularWeights", {}),
+            preset.get("bonusWeights", {}),
+            bonus_cap=float(preset.get("bonusCap") or 0),
+            method=str(preset.get("calculation") or "geometric"),
+            normalization=str(preset.get("normalization") or "relative-best"),
+            coverage_discount_exponent=float(preset.get("coverageDiscountExponent") or 0),
+            metric_baselines=metric_baselines,
+            display_scale=display_scale,
+            metric_transforms=preset.get("metricTransforms", []),
+        )
+
     return weighted_metric_score(
         model,
         preset.get("weights", {}),
@@ -473,6 +539,68 @@ def score_model_for_preset(
         coverage_discount_exponent=float(preset.get("coverageDiscountExponent") or 0),
         weak_prior_ratio=float(preset.get("weakPriorRatio") or 0.35),
     )
+
+
+def regular_plus_bonus_score(
+    model: dict[str, Any],
+    regular_weights: dict[str, Any],
+    bonus_weights: dict[str, Any],
+    bonus_cap: float = AINDEX_BONUS_CAP,
+    method: str = "geometric",
+    normalization: str = "relative-best",
+    coverage_discount_exponent: float = 0.25,
+    metric_baselines: dict[str, Any] | None = None,
+    display_scale: float | None = None,
+    metric_transforms: Iterable[dict[str, Any]] | None = None,
+) -> dict[str, float | int | None]:
+    regular = weighted_metric_score(
+        model,
+        regular_weights,
+        True,
+        method=method,
+        normalization=normalization,
+        metric_baselines=metric_baselines,
+        display_scale=display_scale,
+        missing_policy="coverage-discount",
+        coverage_discount_exponent=coverage_discount_exponent,
+        metric_transforms=metric_transforms,
+    )
+    base_score = regular["score"]
+    if base_score is None:
+        return {
+            "score": None,
+            "coverage": regular["coverage"],
+            "availableWeight": regular["availableWeight"],
+        }
+
+    bonus_total_weight = sum(
+        _number_or_none(weight) or 0.0
+        for weight in bonus_weights.values()
+        if (_number_or_none(weight) or 0.0) > 0
+    )
+    bonus_points = 0.0
+    bonus_coverage = 0
+    if bonus_cap > 0 and bonus_total_weight > 0:
+        for key, raw_weight in bonus_weights.items():
+            weight = _number_or_none(raw_weight) or 0.0
+            if weight <= 0:
+                continue
+            value = _number_or_none(model.get("scores", {}).get(key))
+            if value is None:
+                continue
+            bonus_points += (
+                bonus_cap
+                * weight
+                * normalized_metric_value(key, value, normalization, metric_baselines)
+                / bonus_total_weight
+            )
+            bonus_coverage += 1
+
+    return {
+        "score": base_score + bonus_points,
+        "coverage": int(regular["coverage"] or 0) + bonus_coverage,
+        "availableWeight": regular["availableWeight"],
+    }
 
 
 def frontier_group_score(
@@ -595,6 +723,7 @@ def weighted_metric_score(
     missing_policy: Any = None,
     coverage_discount_exponent: float = 0.0,
     weak_prior_ratio: float = 0.35,
+    metric_transforms: Iterable[dict[str, Any]] | None = None,
 ) -> dict[str, float | int | None]:
     entries: list[tuple[float, float]] = []
     denominator = 0.0
@@ -617,7 +746,7 @@ def weighted_metric_score(
                 entries.append((0.0, weight))
                 denominator += weight
             continue
-        score_value = normalized_metric_value(key, value, normalization, metric_baselines)
+        score_value = transformed_metric_value(key, value, normalization, metric_baselines, metric_transforms)
         entries.append((score_value, weight))
         denominator += weight
         available_weight += weight
@@ -637,6 +766,26 @@ def weighted_metric_score(
         "coverage": coverage,
         "availableWeight": available_weight,
     }
+
+
+def transformed_metric_value(
+    key: str,
+    value: float,
+    normalization: str = "raw",
+    metric_baselines: dict[str, Any] | None = None,
+    metric_transforms: Iterable[dict[str, Any]] | None = None,
+) -> float:
+    score = normalized_metric_value(key, value, normalization, metric_baselines)
+    for transform in metric_transforms or []:
+        metrics = transform.get("metrics") or []
+        if key not in metrics:
+            continue
+        transform_type = str(transform.get("type") or "").strip().lower()
+        if transform_type == "log1p":
+            factor = _number_or_none(transform.get("factor")) or 0.0
+            if factor > 0:
+                return math.log1p(factor * max(score, 0.0)) / math.log1p(factor)
+    return score
 
 
 def metric_baselines(models: list[dict[str, Any]], metric_keys: Iterable[str]) -> dict[str, float]:
@@ -820,6 +969,54 @@ def attach_external_benchmark_scores(
             }
         )
     share_external_benchmarks_with_variants(models)
+
+
+def apply_metric_fallbacks(
+    models: list[dict[str, Any]],
+    fallback_specs: Iterable[dict[str, Any]],
+) -> None:
+    for spec in fallback_specs:
+        if str(spec.get("type") or "").strip().lower() != "linear-fit":
+            continue
+        source_key = str(spec.get("source") or "").strip()
+        target_key = str(spec.get("target") or "").strip()
+        if not source_key or not target_key:
+            continue
+        pairs = [
+            (source_value, target_value)
+            for model in models
+            if (source_value := _number_or_none(model.get("scores", {}).get(source_key))) is not None
+            and (target_value := _number_or_none(model.get("scores", {}).get(target_key))) is not None
+        ]
+        minimum_pairs = int(_number_or_none(spec.get("minimumPairs")) or 2)
+        if len(pairs) < minimum_pairs:
+            continue
+        mean_source = sum(source_value for source_value, _ in pairs) / len(pairs)
+        mean_target = sum(target_value for _, target_value in pairs) / len(pairs)
+        variance = sum((source_value - mean_source) ** 2 for source_value, _ in pairs)
+        if variance <= 0:
+            continue
+        covariance = sum(
+            (source_value - mean_source) * (target_value - mean_target)
+            for source_value, target_value in pairs
+        )
+        slope = covariance / variance
+        intercept = mean_target - slope * mean_source
+        lower_bound = _number_or_none(spec.get("min"))
+        upper_bound = _number_or_none(spec.get("max"))
+        for model in models:
+            scores = model.get("scores", {})
+            if _number_or_none(scores.get(target_key)) is not None:
+                continue
+            source_value = _number_or_none(scores.get(source_key))
+            if source_value is None:
+                continue
+            fallback_value = intercept + slope * source_value
+            if lower_bound is not None:
+                fallback_value = max(lower_bound, fallback_value)
+            if upper_bound is not None:
+                fallback_value = min(upper_bound, fallback_value)
+            scores[target_key] = round(fallback_value, 4)
 
 
 def share_external_benchmarks_with_variants(models: list[dict[str, Any]]) -> None:
@@ -1061,17 +1258,17 @@ def _presets() -> dict[str, dict[str, Any]]:
     return {
         "zhihu-adjusted": {
             "label": "AInsights Index",
-            "kind": "frontier-groups",
-            "description": "Frontier 综合口径：90% AA suite，剩余 10% 按原 Frontier 非 AA 组比例分配。每个测试项先除以该项最高分，组内和组间使用几何加权均值；组内证据覆盖率通常按 0.1 次方轻折扣，只有单项证据时按 0.25 次方折扣，缺失组覆盖率按 0.25 次方折扣，同模型档位共享官方外部 benchmark。",
+            "kind": "regular-plus-bonus",
+            "description": "AIndex 使用高覆盖常规测试作为基础分，并明显偏向 terminal/coding；Terminal-Bench Hard、SciCode、HLE 和 CritPt 先经过 log1p(5x)/log(6) 校准。外部 LiveCodeBench 可拟合填补常规 LiveCodeBench 缺失，高难外部项目只提供小额加分。",
             "calculation": "geometric",
             "normalization": "relative-best",
             "missingPolicy": "coverage-discount",
             "coverageDiscountExponent": 0.25,
-            "groupMetricCoverageDiscountExponent": 0.1,
-            "singleMetricCoverageDiscountExponent": 0.25,
-            "groupWeights": FRONTIER_GROUP_WEIGHTS,
-            "groups": FRONTIER_INDEX_GROUPS,
-            "weights": DEFAULT_FRONTIER_WEIGHTS,
+            "regularWeights": AINDEX_REGULAR_WEIGHTS,
+            "metricTransforms": AINDEX_METRIC_TRANSFORMS,
+            "bonusWeights": AINDEX_BONUS_WEIGHTS,
+            "bonusCap": AINDEX_BONUS_CAP,
+            "weights": DEFAULT_AINDEX_WEIGHTS,
         },
         "aa-intelligence": {
             "label": "AA Intelligence",
@@ -1097,14 +1294,13 @@ def _presets() -> dict[str, dict[str, Any]]:
         "custom": {
             "label": "自定义占比",
             "kind": "weighted-metrics",
-            "description": "默认使用 AInsights Index Frontier 配置；按用户设置的分数基线、均值方式、缺失处理、覆盖率门槛和逐项权重实时计算。",
+            "description": "默认使用 AInsights Index 常规测试配置；按用户设置的分数基线、均值方式、缺失处理、覆盖率门槛和逐项权重实时计算。",
             "ignoreMissing": True,
             "calculation": "geometric",
             "normalization": "relative-best",
             "missingPolicy": "coverage-discount",
             "coverageDiscountExponent": 0.25,
-            "groupMetricCoverageDiscountExponent": 0.25,
-            "weights": DEFAULT_FRONTIER_WEIGHTS,
+            "weights": DEFAULT_AINDEX_WEIGHTS,
         },
     }
 

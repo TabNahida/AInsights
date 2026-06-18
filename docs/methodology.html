@@ -38,67 +38,66 @@
 
         <section class="methodology-grid">
           <article class="methodology-card methodology-card-wide">
-            <h3>Frontier Groups and Weights</h3>
-            <p>AIndex now uses a Frontier composite that gives the AA suite a 90% anchor, then allocates the remaining 10% across source-backed external benchmark evidence. The active group weights below sum to 100%.</p>
+            <h3>Regular Tests and Bonus Tests</h3>
+            <p>AIndex now uses high-coverage regular tests for the base score, with extra emphasis on coding and hard reasoning, then adds a small source-backed bonus for hard external coding, math, and tool benchmarks. Regular weights sum to 100; bonus rows are not part of the missing-data denominator.</p>
             <div class="methodology-table-wrap">
               <table class="methodology-weight-table">
                 <thead>
                   <tr>
-                    <th>Capability group</th>
+                    <th>Test set</th>
                     <th>Weight</th>
                     <th>Role in AIndex</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>AA suite</td>
-                    <td>90%</td>
-                    <td>Core Artificial Analysis fields: GDPval-AA v2, τ³-Banking, Terminal-Bench v2.1, SciCode, AA-LCR, AA-Omniscience Accuracy, HLE, GPQA Diamond, and CritPt.</td>
+                    <td>Regular coding</td>
+                    <td>76</td>
+                    <td>Terminal-Bench v2.1, Terminal-Bench Hard, SciCode, and LiveCodeBench form the largest part of the base score, led by terminal and coding tasks.</td>
                   </tr>
                   <tr>
-                    <td>Agentic coding</td>
-                    <td>3.3%</td>
-                    <td>Software engineering and terminal execution signals such as AA Terminal-Bench v2.1, SciCode, SWE-Bench, Terminal-Bench, LiveCodeBench, and FrontierCode.</td>
+                    <td>Regular hard reasoning</td>
+                    <td>23</td>
+                    <td>Humanity's Last Exam, GPQA Diamond, AIME 2025, AA-Omniscience Accuracy, and CritPt anchor broad hard-problem capability.</td>
                   </tr>
                   <tr>
-                    <td>Tools/work</td>
-                    <td>2.5%</td>
-                    <td>Tool-use and knowledge-work signals such as BrowseComp, HLE with tools, MCP-Atlas, Toolathlon, OSWorld, and GDPval-style evaluations.</td>
+                    <td>Regular instruction/context</td>
+                    <td>1</td>
+                    <td>AA-LCR remains as a small regular signal for long-context behavior; IFBench is listed with zero default weight for custom comparisons.</td>
                   </tr>
                   <tr>
-                    <td>Reasoning</td>
-                    <td>3.3%</td>
-                    <td>Hard reasoning and knowledge signals such as HLE, GPQA, MMLU-Pro, AIME, FrontierMath, HMMT, and AA-Omniscience Accuracy.</td>
-                  </tr>
-                  <tr>
-                    <td>Instruction/long-context</td>
-                    <td>0.8%</td>
-                    <td>Instruction following, long-context, multilingual, multimodal, and visual reasoning signals such as AA-LCR, CritPt, IFBench, MMMLU, MMMU-Pro, and CharXiv.</td>
+                    <td>Bonus hard external tests</td>
+                    <td>+2 max</td>
+                    <td>SWE-Bench, Terminal-Bench 2, FrontierCode, FrontierMath, BrowseComp, HLE tools, MCP-Atlas, and OSWorld can add points when source-backed scores exist.</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p>AA-Omniscience Non-Hallucination Rate remains visible elsewhere in the data, but Hallucination Rate is excluded from the AA suite anchor.</p>
+            <p>Current regular weights are Terminal-Bench v2.1 28, Terminal-Bench Hard 22, LiveCodeBench 20, CritPt 13, SciCode 6, Humanity's Last Exam 5, GPQA Diamond 2, AIME 2025 2, AA-Omniscience Accuracy 1, AA-LCR 1, and IFBench 0.</p>
+            <p>Terminal-Bench Hard, SciCode, Humanity's Last Exam, and CritPt use this calibrated curve before aggregation: log1p(5x) / log(6), where x is the best-score ratio.</p>
+            <p>LiveCodeBench is a high-weight regular coding signal. External benchmark:livecodebench scores can fill missing regular LiveCodeBench values through a linear fit learned from models that have both fields; existing regular LiveCodeBench values are never overwritten.</p>
+            <p>GDPval-AA, τ³-Banking, duplicate external HLE/GPQA rows, AIME 2026, HMMT, and external LiveCodeBench rows after fallback are not default bonus rows, to avoid rewarding models mainly for extra source coverage rather than stronger current capability.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>AIndex Calculation</h3>
             <ol class="methodology-steps">
-              <li>For each benchmark, convert the raw score into a <strong>Best score ratio</strong>: model score divided by the highest score observed for that benchmark.</li>
-              <li>Within each capability group, aggregate available benchmark ratios with <strong>Geometric Weighted Mean</strong>: exp(weighted average of log(ratio + 1)) - 1.</li>
-              <li>Apply a light within-group evidence coverage discount, using scored fields divided by active fields raised to the power of 0.1; groups with only one scored field use the stricter 0.25 power.</li>
-              <li>Aggregate available group scores with the group weights listed above.</li>
-              <li>Apply the default missing policy: multiply by available group-weight coverage raised to the power of 0.25.</li>
-              <li>Scale the resulting aggregate ratio by the highest AA Intelligence Index score available on the site, producing the displayed AIndex score.</li>
+              <li>For each regular benchmark, convert the raw score into a <strong>Best score ratio</strong>: model score divided by the highest score observed for that benchmark.</li>
+              <li>Apply the regular-test calibration curve where configured, then aggregate available regular benchmark ratios with <strong>Geometric Weighted Mean</strong>: exp(weighted average of log(ratio + 1)) - 1.</li>
+              <li>Apply the regular-test missing policy: multiply the base score by available regular-weight coverage raised to the power of 0.25.</li>
+              <li>Scale the resulting base ratio by the highest AA Intelligence Index score available on the site.</li>
+              <li>For each bonus benchmark with a score, add its best-score ratio times its share of the +2 bonus cap.</li>
+              <li>Leave missing bonus rows out of the denominator, so absent hard-benchmark sources do not lower a model's base score.</li>
             </ol>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>Detailed Explanation</h3>
             <p>AIndex is designed to compare models across different benchmark scales without letting any single raw scoring convention dominate the final leaderboard. A percentage-style benchmark, an Elo-normalized field, and a long-context score can each have different ranges, so AIndex first places every active field on its own best-observed baseline.</p>
-            <p>The Frontier grouping keeps the AA suite as the primary stable anchor while allowing official release scores and public benchmarks to make smaller adjustments to frontier coding, tool-use, and reasoning comparisons. AA suite now carries 90% of AIndex, and the non-AA groups keep their previous relative balance inside the remaining 10%.</p>
+            <p>The regular-test pool is now the primary anchor. It deliberately gives more weight to difficult coding and hard-problem benchmarks, while calibrating the hard-test high range so a cluster of strong scores does not over-expand small differences.</p>
             <p>Official external benchmark rows are shared across variants of the same model, so a release table attached to a non-reasoning or reasoning tier can still inform the sibling tier instead of creating artificial gaps between variants.</p>
-            <p>The coverage discount is deliberately asymmetric: if a group has partial benchmark evidence, its group score is multiplied by a light within-group evidence coverage^0.1 discount; if that group has only one scored field, the stricter coverage^0.25 discount is used; if a model is missing whole groups, the final score is multiplied by available group-weight coverage^0.25. This keeps single-metric outliers in check without letting uneven external source coverage dominate the ranking.</p>
+            <p>For LiveCodeBench only, the site can synthesize a missing regular value from external benchmark:livecodebench data. The fit is learned from overlapping models in the current dataset, then clamped to the normal percentage range before scoring.</p>
+            <p>The coverage discount is deliberately asymmetric: regular tests use available regular-weight coverage^0.25, while bonus tests are excluded from the coverage denominator and only add points when source-backed scores exist. This keeps single-metric outliers in check without letting uneven external source coverage dominate the ranking.</p>
             <p>The Custom weights panel exposes the same building blocks for comparison: Best score ratio or Raw score, Geometric Weight Mean or regular Weight Mean, available-only scoring, 0.25 coverage discount, sqrt coverage discount, weak prior, missing-as-zero, full-coverage gates, and per-benchmark weights.</p>
           </article>
         </section>
