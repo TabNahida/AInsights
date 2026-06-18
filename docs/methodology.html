@@ -52,7 +52,7 @@
                 <tbody>
                   <tr>
                     <td>Coding</td>
-                    <td>38</td>
+                    <td>40</td>
                     <td>SWE-Bench, Terminal-Bench, LiveCodeBench, FrontierCode, SciCode, and related coding tasks form the largest board.</td>
                   </tr>
                   <tr>
@@ -67,8 +67,8 @@
                   </tr>
                   <tr>
                     <td>Knowledge/science</td>
-                    <td>10</td>
-                    <td>Omniscience, GPQA, HLE, MMLU-Pro, MMLU, MMMU-Pro, and SciCode add scientific and factual breadth.</td>
+                    <td>8</td>
+                    <td>Omniscience, GPQA, HLE, lower-weight MMLU-Pro, MMLU, MMMU-Pro, and SciCode add scientific and factual breadth.</td>
                   </tr>
                   <tr>
                     <td>Instruction/context</td>
@@ -78,7 +78,7 @@
                 </tbody>
               </table>
             </div>
-            <p>Within each board, metrics use their own internal weights. Highly correlated contest rows such as AIME 2026 and HMMT remain hard-reasoning evidence, but they carry lower internal weight so source coverage does not dominate the board.</p>
+            <p>Within each board, metrics use their own internal weights. Highly correlated or saturated rows such as MMLU-Pro, AIME 2026, and HMMT remain evidence, but they carry lower internal weight so source coverage does not dominate the board.</p>
             <p>LiveCodeBench can still be filled from external benchmark:livecodebench through a linear fit learned from overlapping models; existing regular LiveCodeBench values are never overwritten. AIndex does not copy metrics from lower same-family models into higher tiers.</p>
           </article>
 
@@ -88,7 +88,7 @@
               <li>For each board metric, convert the raw score into a <strong>Best score ratio</strong>: model score divided by the highest score observed for that benchmark.</li>
               <li>Aggregate available metrics inside each board with a weighted geometric mean, then apply a light within-board coverage discount.</li>
               <li>If an entire board is missing, use a weak prior of 0.34 for that board; if all boards are missing, no default AIndex is produced.</li>
-              <li>Aggregate the five board values with board weights 38 / 24 / 20 / 10 / 8 using a geometric weighted mean.</li>
+              <li>Aggregate the five board values with board weights 40 / 24 / 20 / 8 / 8 using a geometric weighted mean.</li>
               <li>Scale the resulting ratio to the 0-100 AIndex display range.</li>
             </ol>
           </article>

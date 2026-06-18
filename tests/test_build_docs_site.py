@@ -331,13 +331,18 @@ class BuildDocsSiteTests(unittest.TestCase):
             "knowledge-science",
             "instruction-context",
         ])
-        self.assertEqual([group["weight"] for group in preset["groups"]], [38, 24, 20, 10, 8])
+        self.assertEqual([group["weight"] for group in preset["groups"]], [40, 24, 20, 8, 8])
         hard_metrics = {
             metric["key"]: metric["weight"]
             for metric in next(group for group in preset["groups"] if group["id"] == "hard-reasoning")["metrics"]
         }
-        self.assertEqual(hard_metrics["benchmark:aime-2026"], 0.4)
-        self.assertEqual(hard_metrics["benchmark:hmmt-2026-feb"], 0.4)
+        knowledge_metrics = {
+            metric["key"]: metric["weight"]
+            for metric in next(group for group in preset["groups"] if group["id"] == "knowledge-science")["metrics"]
+        }
+        self.assertEqual(hard_metrics["benchmark:aime-2026"], 0.3)
+        self.assertEqual(hard_metrics["benchmark:hmmt-2026-feb"], 0.3)
+        self.assertEqual(knowledge_metrics["benchmark:mmlu-pro"], 0.2)
         self.assertNotIn("bonusWeights", preset)
         self.assertGreater(balanced_score["score"], coding_score["score"])
         self.assertEqual(coding_score["coverage"], 2)
@@ -447,7 +452,7 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertAlmostEqual(payload["metricBaselines"]["LiveCodeBench"], 75)
         self.assertIsNotNone(score["score"])
         self.assertEqual(score["coverage"], 1)
-        self.assertAlmostEqual(score["availableWeight"], 38)
+        self.assertAlmostEqual(score["availableWeight"], 40)
 
     def test_external_benchmarks_are_shared_across_model_variants(self):
         payload = build_site_payload(
@@ -534,6 +539,7 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertGreater(scores["deepseek-v4-flash"], scores["glm-4-7"])
         self.assertGreater(scores["qwen3-7-plus"], scores["qwen3-5-397b-a17b"])
         self.assertGreater(scores["qwen3-7-plus"] - scores["qwen3-5-397b-a17b"], 1.0)
+        self.assertGreater(scores["qwen3-6-plus"], scores["qwen3-5-397b-a17b"])
         self.assertGreater(scores["claude-opus-4-6-adaptive"], scores["gemini-3-5-flash"])
         self.assertGreater(scores["minimax-m2-5"], scores["minimax-m2-1"])
 

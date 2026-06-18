@@ -301,7 +301,7 @@ const copy = {
         label: "AInsights Index",
         calculation: "geometric",
         normalization: "relative-best",
-        description: "AIndex 使用五个能力板块：Coding 38、Agentic/tool work 24、Hard reasoning 20、Knowledge/science 10、Instruction/context 8。板块内优先高含金量测试，缺整板块时使用弱先验；AIME 2026 与 HMMT 等相关竞赛项作为较低权重的高难信号，避免来源覆盖差异主导排序。",
+        description: "AIndex 使用五个能力板块：Coding 40、Agentic/tool work 24、Hard reasoning 20、Knowledge/science 8、Instruction/context 8。板块内优先高含金量测试，缺整板块时使用弱先验；MMLU-Pro 与 AIME 2026/HMMT 等偏饱和或覆盖不均的项目降权，避免来源覆盖差异主导排序。",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -622,7 +622,7 @@ const copy = {
         label: "AInsights Index",
         calculation: "geometric",
         normalization: "relative-best",
-        description: "AIndex uses five capability boards: Coding 38, Agentic/tool work 24, Hard reasoning 20, Knowledge/science 10, and Instruction/context 8. Within each board, high-signal benchmarks get priority; missing boards use a weak prior, while correlated contest rows such as AIME 2026 and HMMT stay lower-weight hard-reasoning signals.",
+        description: "AIndex uses five capability boards: Coding 40, Agentic/tool work 24, Hard reasoning 20, Knowledge/science 8, and Instruction/context 8. Within each board, high-signal benchmarks get priority; missing boards use a weak prior, while saturated or unevenly covered rows such as MMLU-Pro, AIME 2026, and HMMT stay lower-weight signals.",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -2568,11 +2568,11 @@ function renderMethodologyPage() {
     },
     {
       title: "板块权重",
-      body: "五个板块权重为 Coding 38、Agentic/tool work 24、Hard reasoning 20、Knowledge/science 10、Instruction/context 8。每个板块内部再按测试含金量和覆盖稳定性设置小权重。",
+      body: "五个板块权重为 Coding 40、Agentic/tool work 24、Hard reasoning 20、Knowledge/science 8、Instruction/context 8。每个板块内部再按测试含金量和覆盖稳定性设置小权重。",
     },
     {
       title: "板块内校准",
-      body: "每个指标先转成最佳分数比例，再在板块内做几何加权均值。板块内缺项只做轻微覆盖折扣；AIME 2026、HMMT 等高度相关竞赛项保留为高难信号，但权重较低，避免来源覆盖差异主导排序。",
+      body: "每个指标先转成最佳分数比例，再在板块内做几何加权均值。板块内缺项只做轻微覆盖折扣；MMLU-Pro、AIME 2026、HMMT 等偏饱和或覆盖不均的项目保留为信号，但权重较低，避免来源覆盖差异主导排序。",
     },
     {
       title: "LiveCodeBench 填补",
@@ -2593,11 +2593,11 @@ function renderMethodologyPage() {
     },
     {
       title: "Board Weights",
-      body: "The five board weights are Coding 38, Agentic/tool work 24, Hard reasoning 20, Knowledge/science 10, and Instruction/context 8. Each board then gives smaller internal weights to higher-signal, more stable benchmarks.",
+      body: "The five board weights are Coding 40, Agentic/tool work 24, Hard reasoning 20, Knowledge/science 8, and Instruction/context 8. Each board then gives smaller internal weights to higher-signal, more stable benchmarks.",
     },
     {
       title: "Within-Board Calibration",
-      body: "Each metric first becomes a best-score ratio, then each board uses a geometric weighted mean. Missing metrics inside a board receive only a light coverage discount; correlated contest rows such as AIME 2026 and HMMT remain hard signals but carry lower weight.",
+      body: "Each metric first becomes a best-score ratio, then each board uses a geometric weighted mean. Missing metrics inside a board receive only a light coverage discount; saturated or unevenly covered rows such as MMLU-Pro, AIME 2026, and HMMT remain signals but carry lower weight.",
     },
     {
       title: "LiveCodeBench Fallback",
