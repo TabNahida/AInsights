@@ -37,7 +37,7 @@ const copy = {
     customWeightPresetSubtitle: "一键套用 AInsights Index 或 AA 三个方向，再继续微调下方测试项权重",
     customWeightPresetMeta: "{count} 项",
     missingModeTitle: "计算方式",
-    missingModeSubtitle: "选择分数基线、均值方式和缺失处理策略；默认 AIndex 使用常规测试 coverage^0.25 基础分，硬题加分项缺失不扣分。",
+    missingModeSubtitle: "选择分数基线、均值方式和缺失处理策略；默认 AIndex 使用五板块弱先验口径，Custom weights 可用于对照不同缺失策略。",
     normalizationMethodTitle: "分数基线",
     normalizationMethodHint: "AInsights Index / AIndex 默认先除以每个测试项最高分，再乘回 AA Intelligence 最高分展示。",
     normalizationMethods: {
@@ -301,7 +301,7 @@ const copy = {
         label: "AInsights Index",
         calculation: "geometric",
         normalization: "relative-best",
-        description: "AIndex 使用高覆盖常规测试作为基础分，并明显偏向 terminal/coding；Terminal-Bench Hard、SciCode、HLE 和 CritPt 先经过 log1p(5x)/log(6) 校准。外部 LiveCodeBench 可拟合填补常规 LiveCodeBench 缺失，高难外部项目只提供小额加分。",
+        description: "AIndex 使用五个能力板块：Coding 38、Agentic/tool work 24、Hard reasoning 20、Knowledge/science 10、Instruction/context 8。板块内优先高含金量测试，缺整板块时使用弱先验；AIME 2026 与 HMMT 等相关竞赛项作为较低权重的高难信号，避免来源覆盖差异主导排序。",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -319,7 +319,7 @@ const copy = {
         label: "自定义占比",
         calculation: "geometric",
         normalization: "relative-best",
-        description: "默认使用 AInsights Index 常规测试配置；按用户设置的分数基线、均值方式、缺失处理和覆盖率门槛实时计算。",
+        description: "默认使用 AInsights Index 五板块展开后的指标权重；按用户设置的分数基线、均值方式、缺失处理和覆盖率门槛实时计算。",
       },
     },
   },
@@ -358,7 +358,7 @@ const copy = {
     customWeightPresetSubtitle: "Start from AInsights Index or the three AA directions, then tune individual benchmark weights below",
     customWeightPresetMeta: "{count} fields",
     missingModeTitle: "Calculation",
-    missingModeSubtitle: "Choose the score basis, mean method, and missing-value policy; default AIndex uses a regular-test coverage^0.25 base score, with hard-benchmark bonus rows never penalizing missing data.",
+    missingModeSubtitle: "Choose the score basis, mean method, and missing-value policy; default AIndex uses five weak-prior capability boards, while Custom weights can compare alternative missing-data strategies.",
     normalizationMethodTitle: "Score basis",
     normalizationMethodHint: "AInsights Index / AIndex defaults to dividing each benchmark by its best score, then scales the result by the highest AA Intelligence score.",
     normalizationMethods: {
@@ -373,7 +373,7 @@ const copy = {
     },
     missingPresetTitle: "Treatment presets",
     penaltyLabel: "Missing penalty strength",
-    penaltyHint: "0 averages available scores only; 100 counts missing fields as 0 in the total weight, matching the regular AInsights Index ranking.",
+    penaltyHint: "0 averages available scores only; 100 counts missing fields as 0 in the selected total weight.",
     minCoverageLabel: "Minimum coverage",
     minCoverageHint: "Models below this coverage are excluded; 100% equals full coverage",
     currentCustomStrategy: "Current strategy",
@@ -622,7 +622,7 @@ const copy = {
         label: "AInsights Index",
         calculation: "geometric",
         normalization: "relative-best",
-        description: "AIndex uses high-coverage regular tests for the base score, now weighted strongly toward terminal/coding work. Terminal-Bench Hard, SciCode, HLE, and CritPt use log1p(5x)/log(6) calibration; external LiveCodeBench can fill missing regular LiveCodeBench values through a fitted fallback.",
+        description: "AIndex uses five capability boards: Coding 38, Agentic/tool work 24, Hard reasoning 20, Knowledge/science 10, and Instruction/context 8. Within each board, high-signal benchmarks get priority; missing boards use a weak prior, while correlated contest rows such as AIME 2026 and HMMT stay lower-weight hard-reasoning signals.",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -640,7 +640,7 @@ const copy = {
         label: "Custom weights",
         calculation: "geometric",
         normalization: "relative-best",
-        description: "Defaults to the AInsights Index regular-test configuration and recalculates live from user-selected score basis, mean method, benchmark weights, missing policy, and coverage gates.",
+        description: "Defaults to the AInsights Index expanded board weights and recalculates live from user-selected score basis, mean method, benchmark weights, missing policy, and coverage gates.",
       },
     },
   },
@@ -1554,7 +1554,14 @@ function scoreModelForRegularPlusBonus(model, preset) {
   };
 }
 
-function scoreModelForWeightedMetrics(model, weights, method, normalization, coverageDiscountExponent, metricTransforms = []) {
+function scoreModelForWeightedMetrics(
+  model,
+  weights,
+  method,
+  normalization,
+  coverageDiscountExponent,
+  metricTransforms = [],
+) {
   const entries = [];
   let denominator = 0;
   let availableWeight = 0;
@@ -1639,9 +1646,13 @@ function scoreModelForFrontierGroups(model, preset) {
     }
   }
 
-  let score = denominator > 0
+  let score = denominator > 0 && coverage > 0
     ? customAggregateScore(entries, denominator, method, normalization)
     : null;
+  if (Number.isFinite(score) && normalization === "relative-best" && Number.isFinite(Number(preset.displayScale))) {
+    const defaultScale = aaIntelligenceScoreBaseline();
+    if (defaultScale > 0) score *= Number(preset.displayScale) / defaultScale;
+  }
   if (Number.isFinite(score) && missingPolicy === "coverage-discount") {
     const coverageRatio = totalWeight > 0 ? availableWeight / totalWeight : 0;
     score *= coverageRatio ** Number(preset.coverageDiscountExponent ?? 0.25);
@@ -1663,19 +1674,36 @@ function frontierGroupValue(
   coverageDiscountExponent = 0,
   singleMetricCoverageDiscountExponent = coverageDiscountExponent,
 ) {
-  const entries = (metricKeys || [])
-    .map((key) => scoreValueForMetric(key, model.scores?.[key], normalization))
-    .filter(Number.isFinite)
-    .map((value) => ({ value, weight: 1 }));
+  const metricItems = frontierGroupMetricItems(metricKeys);
+  const totalMetricWeight = metricItems.reduce((sum, metric) => sum + metric.weight, 0);
+  let availableMetricWeight = 0;
+  const entries = [];
+  for (const metric of metricItems) {
+    const value = scoreValueForMetric(metric.key, model.scores?.[metric.key], normalization);
+    if (!Number.isFinite(value)) continue;
+    entries.push({ value, weight: metric.weight });
+    availableMetricWeight += metric.weight;
+  }
   if (!entries.length) return null;
-  let score = aggregateScoreEntries(entries, entries.length, method);
+  let score = aggregateScoreEntries(entries, availableMetricWeight, method);
   const discountExponent = entries.length === 1
     ? singleMetricCoverageDiscountExponent
     : coverageDiscountExponent;
-  if (Number.isFinite(score) && discountExponent > 0 && metricKeys.length > 0) {
-    score *= (entries.length / metricKeys.length) ** discountExponent;
+  if (Number.isFinite(score) && discountExponent > 0 && totalMetricWeight > 0) {
+    score *= (availableMetricWeight / totalMetricWeight) ** discountExponent;
   }
   return score;
+}
+
+function frontierGroupMetricItems(metricKeys) {
+  return (metricKeys || [])
+    .map((item) => {
+      if (item && typeof item === "object") {
+        return { key: String(item.key || ""), weight: Number(item.weight || 0) };
+      }
+      return { key: String(item || ""), weight: 1 };
+    })
+    .filter((item) => item.key && item.weight > 0);
 }
 
 function scoreModelForCustomWeights(model) {
@@ -2536,27 +2564,23 @@ function renderMethodologyPage() {
   const sections = zh ? [
     {
       title: "AInsights Index / AIndex",
-      body: "AInsights Index，也可简称 AIndex，现在由常规测试基础分和高难测试加分项组成。常规测试进一步偏向 coding 与高难推理，并优先选择参测模型数量较多的项目；加分项只提供小额 bonus，缺失不扣分。",
+      body: "AInsights Index，也可简称 AIndex，现在由五个能力板块组成：Coding、Agentic/tool work、Hard reasoning、Knowledge/science 和 Instruction/context。默认分数固定缩放到 0-100，而不是跟随 AA Intelligence 的最高分。",
     },
     {
-      title: "常规测试",
-      body: "常规测试权重分为 coding 76、高难推理 23、指令/上下文 1。逐项权重为 Terminal-Bench v2.1 28、Terminal-Bench Hard 22、LiveCodeBench 20、CritPt 13、SciCode 6、HLE 5、GPQA 2、AIME 2025 2、Omniscience 1、AA-LCR 1、IFBench 0。",
+      title: "板块权重",
+      body: "五个板块权重为 Coding 38、Agentic/tool work 24、Hard reasoning 20、Knowledge/science 10、Instruction/context 8。每个板块内部再按测试含金量和覆盖稳定性设置小权重。",
     },
     {
-      title: "校准曲线",
-      body: "Terminal-Bench Hard、SciCode、HLE 和 CritPt 先使用 log1p(5x) / log(6) 校准，其中 x 是最佳分数比例；这样保留高难项信号，同时避免强模型之间的小分差被过度放大。",
+      title: "板块内校准",
+      body: "每个指标先转成最佳分数比例，再在板块内做几何加权均值。板块内缺项只做轻微覆盖折扣；AIME 2026、HMMT 等高度相关竞赛项保留为高难信号，但权重较低，避免来源覆盖差异主导排序。",
     },
     {
       title: "LiveCodeBench 填补",
-      body: "如果常规 LiveCodeBench 缺失但存在外部 benchmark:livecodebench，AIndex 会用同时拥有两项分数的模型拟合线性映射后填补；已有常规 LiveCodeBench 分数不会被覆盖。",
-    },
-    {
-      title: "加分项",
-      body: "加分项覆盖 SWE-Bench、Terminal-Bench 2、FrontierCode、FrontierMath、BrowseComp、HLE tools、MCP-Atlas 和 OSWorld。加分项按最佳分数比例线性累加，上限为 2 分；没有对应分数的模型不会被扣分。",
+      body: "如果常规 LiveCodeBench 缺失但存在外部 benchmark:livecodebench，AIndex 会用同时拥有两项分数的模型拟合线性映射后填补；已有常规 LiveCodeBench 分数不会被覆盖。这不是同系列模型之间的指标拷贝。",
     },
     {
       title: "缺失处理",
-      body: "常规测试按可用权重覆盖率的 0.25 次方折扣，避免单项高分模型漂浮到前排；加分项不参与覆盖率分母，只在有分数时增加少量分数。",
+      body: "如果一个模型缺少整个板块，就用弱先验进入总分，而不是直接按 0 处理；如果五个板块都没有有效分数，则不生成默认 AIndex。这样可以降低覆盖率偏差，又不让单项成绩凭空撑起整榜。",
     },
     {
       title: "自定义权重",
@@ -2565,27 +2589,23 @@ function renderMethodologyPage() {
   ] : [
     {
       title: "AInsights Index / AIndex",
-      body: "AInsights Index, also usable as AIndex, now combines a regular-test base score with a hard-benchmark bonus pool. Regular tests lean further into coding and hard reasoning while favoring benchmarks with broad model coverage; bonus rows add a small upside only when data exists.",
+      body: "AInsights Index, also usable as AIndex, is now composed from five capability boards: Coding, Agentic/tool work, Hard reasoning, Knowledge/science, and Instruction/context. Default scores are scaled to 0-100 rather than to the AA Intelligence maximum.",
     },
     {
-      title: "Regular Tests",
-      body: "Regular weights split into coding 76, hard reasoning 23, and instruction/context 1. Per-test weights are Terminal-Bench v2.1 28, Terminal-Bench Hard 22, LiveCodeBench 20, CritPt 13, SciCode 6, HLE 5, GPQA 2, AIME 2025 2, Omniscience 1, AA-LCR 1, and IFBench 0.",
+      title: "Board Weights",
+      body: "The five board weights are Coding 38, Agentic/tool work 24, Hard reasoning 20, Knowledge/science 10, and Instruction/context 8. Each board then gives smaller internal weights to higher-signal, more stable benchmarks.",
     },
     {
-      title: "Calibration Curve",
-      body: "Terminal-Bench Hard, SciCode, HLE, and CritPt first use log1p(5x) / log(6), where x is the best-score ratio. This keeps hard-test signal while avoiding over-expanded gaps among already strong scores.",
+      title: "Within-Board Calibration",
+      body: "Each metric first becomes a best-score ratio, then each board uses a geometric weighted mean. Missing metrics inside a board receive only a light coverage discount; correlated contest rows such as AIME 2026 and HMMT remain hard signals but carry lower weight.",
     },
     {
       title: "LiveCodeBench Fallback",
-      body: "When regular LiveCodeBench is missing but external benchmark:livecodebench exists, AIndex fits a linear mapping from models that have both fields and fills only the missing regular value. Existing regular LiveCodeBench scores are never overwritten.",
-    },
-    {
-      title: "Bonus Tests",
-      body: "Bonus tests cover SWE-Bench, Terminal-Bench 2, FrontierCode, FrontierMath, BrowseComp, HLE tools, MCP-Atlas, and OSWorld. Bonus rows are added linearly from best-score ratios with a 2-point cap, and missing bonus rows do not penalize a model.",
+      body: "When regular LiveCodeBench is missing but external benchmark:livecodebench exists, AIndex fits a linear mapping from models that have both fields and fills only the missing regular value. Existing regular LiveCodeBench scores are never overwritten; this is not same-family metric copying.",
     },
     {
       title: "Missing Values",
-      body: "Regular tests are discounted by available weight coverage^0.25 so single-field outliers do not float too high. Bonus tests are excluded from the coverage denominator and only add points when a model has a source-backed score.",
+      body: "If an entire board is missing, AIndex uses a weak prior for that board instead of treating it as 0. If all five boards are missing, no default AIndex is produced. This reduces coverage bias without letting a single metric carry the whole score.",
     },
     {
       title: "Custom Weights",

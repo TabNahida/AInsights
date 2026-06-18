@@ -116,6 +116,94 @@ AINDEX_METRIC_FALLBACKS = [
         "max": 100,
     },
 ]
+AINDEX_GROUPS = [
+    {
+        "id": "coding",
+        "label": "Coding",
+        "weight": 38,
+        "metrics": [
+            {"key": "benchmark:swe-bench-pro", "weight": 1.5},
+            {"key": "benchmark:swe-bench-verified", "weight": 1.1},
+            {"key": "benchmark:swe-bench-multilingual", "weight": 0.8},
+            {"key": "benchmark:terminal-bench-2", "weight": 1.4},
+            {"key": "benchmark:terminal-bench-2-1", "weight": 0.8},
+            {"key": "benchmark:frontiercode-diamond", "weight": 1.0},
+            {"key": "LiveCodeBench", "weight": 1.2},
+            {"key": "benchmark:livecodebench", "weight": 1.0},
+            {"key": "Terminal-Bench v2.1", "weight": 1.1},
+            {"key": "Terminal-Bench Hard", "weight": 1.0},
+            {"key": "SciCode", "weight": 0.8},
+            {"key": "benchmark:kimi-code-bench-v2", "weight": 0.6},
+            {"key": "benchmark:programbench", "weight": 0.5},
+            {"key": "benchmark:livecodebench-pro-elo", "weight": 0.5},
+        ],
+    },
+    {
+        "id": "agentic-tool-work",
+        "label": "Agentic/tool work",
+        "weight": 24,
+        "metrics": [
+            {"key": "benchmark:terminal-bench-2", "weight": 1.4},
+            {"key": "benchmark:swe-bench-pro", "weight": 1.3},
+            {"key": "benchmark:browsecomp", "weight": 1.0},
+            {"key": "benchmark:hle-tools", "weight": 1.0},
+            {"key": "benchmark:mcp-atlas", "weight": 0.9},
+            {"key": "benchmark:osworld-verified", "weight": 0.8},
+            {"key": "benchmark:gdpval-wins-ties", "weight": 0.8},
+            {"key": "benchmark:gdpval-aa-elo", "weight": 0.7},
+            {"key": "benchmark:toolathlon", "weight": 0.6},
+            {"key": "Terminal-Bench v2.1", "weight": 0.7},
+            {"key": "Terminal-Bench Hard", "weight": 0.8},
+            {"key": "AA-LCR", "weight": 0.5},
+        ],
+    },
+    {
+        "id": "hard-reasoning",
+        "label": "Hard reasoning",
+        "weight": 20,
+        "metrics": [
+            {"key": "Humanity's Last Exam", "weight": 1.3},
+            {"key": "benchmark:hle", "weight": 1.2},
+            {"key": "benchmark:frontiermath-tier-4", "weight": 1.2},
+            {"key": "benchmark:frontiermath-tier-1-3", "weight": 1.0},
+            {"key": "CritPt", "weight": 1.1},
+            {"key": "GPQA Diamond", "weight": 0.9},
+            {"key": "benchmark:gpqa-diamond", "weight": 0.8},
+            {"key": "AIME 2025", "weight": 0.7},
+            {"key": "benchmark:aime-2025", "weight": 0.7},
+            {"key": "benchmark:aime-2026", "weight": 0.4},
+            {"key": "benchmark:hmmt-2026-feb", "weight": 0.4},
+            {"key": "benchmark:arc-agi-2", "weight": 0.8},
+        ],
+    },
+    {
+        "id": "knowledge-science",
+        "label": "Knowledge/science",
+        "weight": 10,
+        "metrics": [
+            {"key": "AA-Omniscience Accuracy", "weight": 1.0},
+            {"key": "GPQA Diamond", "weight": 0.9},
+            {"key": "Humanity's Last Exam", "weight": 0.8},
+            {"key": "benchmark:mmlu-pro", "weight": 0.8},
+            {"key": "benchmark:mmmlu", "weight": 0.7},
+            {"key": "benchmark:mmmu-pro", "weight": 0.7},
+            {"key": "SciCode", "weight": 0.5},
+        ],
+    },
+    {
+        "id": "instruction-context",
+        "label": "Instruction/context",
+        "weight": 8,
+        "metrics": [
+            {"key": "IFBench", "weight": 1.0},
+            {"key": "benchmark:ifbench", "weight": 0.9},
+            {"key": "AA-LCR", "weight": 0.9},
+            {"key": "CritPt", "weight": 0.7},
+            {"key": "benchmark:charxiv-tools", "weight": 0.6},
+            {"key": "benchmark:charxiv-no-tools", "weight": 0.5},
+        ],
+    },
+]
 FRONTIER_INDEX_GROUPS = [
     {
         "id": "aa-suite",
@@ -209,7 +297,25 @@ for group in FRONTIER_INDEX_GROUPS:
     per_metric_weight = group_weight / len(metrics)
     for metric in metrics:
         DEFAULT_FRONTIER_WEIGHTS[metric] = DEFAULT_FRONTIER_WEIGHTS.get(metric, 0.0) + per_metric_weight
-DEFAULT_AINDEX_WEIGHTS = dict(AINDEX_REGULAR_WEIGHTS)
+DEFAULT_AINDEX_WEIGHTS: dict[str, float] = {}
+for group in AINDEX_GROUPS:
+    group_weight = float(group["weight"])
+    metrics = list(group["metrics"])
+    total_metric_weight = sum(
+        float(metric.get("weight") or 0.0)
+        for metric in metrics
+        if isinstance(metric, dict)
+    )
+    if total_metric_weight <= 0:
+        continue
+    for metric in metrics:
+        key = str(metric.get("key") or "") if isinstance(metric, dict) else str(metric)
+        metric_weight = float(metric.get("weight") or 0.0) if isinstance(metric, dict) else 1.0
+        if not key or not metric_weight or metric_weight <= 0:
+            continue
+        DEFAULT_AINDEX_WEIGHTS[key] = DEFAULT_AINDEX_WEIGHTS.get(key, 0.0) + (
+            group_weight * metric_weight / total_metric_weight
+        )
 
 VARIANT_PRIORITY_BY_SUFFIX = {
     "max": 100,
@@ -418,9 +524,9 @@ def build_site_payload(
             "url": SOURCE_URL,
             "defaultCorrectionReference": ARTICLE_URL,
             "defaultCorrectionNote": (
-                "AInsights Index uses high-coverage regular tests for the base score, now weighted "
-                "toward coding and hard reasoning, plus a small additive bonus pool for hard external "
-                "coding, math, and tool benchmarks. Missing bonus rows do not penalize a model."
+                "AInsights Index uses five capability boards weighted toward coding, agentic tool "
+                "work, and hard reasoning. Sparse board coverage uses a weak prior, while highly "
+                "correlated contest rows are kept as lower-weight hard-reasoning signals."
             ),
         },
         "defaultPreset": "zhihu-adjusted",
@@ -483,6 +589,8 @@ def score_model_for_preset(
     metric_baselines: dict[str, Any] | None = None,
     display_scale: float | None = None,
 ) -> dict[str, float | int | None]:
+    preset_display_scale = _number_or_none(preset.get("displayScale"))
+    effective_display_scale = preset_display_scale if preset_display_scale is not None else display_scale
     if preset["kind"] == "aa-column":
         score = _number_or_none(model.get("aa", {}).get(preset["column"]))
         return {
@@ -509,7 +617,7 @@ def score_model_for_preset(
             ),
             weak_prior_ratio=float(preset.get("weakPriorRatio") or 0.35),
             metric_baselines=metric_baselines,
-            display_scale=display_scale,
+            display_scale=effective_display_scale,
         )
 
     if preset["kind"] == "regular-plus-bonus":
@@ -522,7 +630,7 @@ def score_model_for_preset(
             normalization=str(preset.get("normalization") or "relative-best"),
             coverage_discount_exponent=float(preset.get("coverageDiscountExponent") or 0),
             metric_baselines=metric_baselines,
-            display_scale=display_scale,
+            display_scale=effective_display_scale,
             metric_transforms=preset.get("metricTransforms", []),
         )
 
@@ -534,7 +642,7 @@ def score_model_for_preset(
         method=str(preset.get("calculation") or "arithmetic"),
         normalization=str(preset.get("normalization") or "raw"),
         metric_baselines=metric_baselines,
-        display_scale=display_scale,
+        display_scale=effective_display_scale,
         missing_policy=preset.get("missingPolicy"),
         coverage_discount_exponent=float(preset.get("coverageDiscountExponent") or 0),
         weak_prior_ratio=float(preset.get("weakPriorRatio") or 0.35),
@@ -552,6 +660,7 @@ def regular_plus_bonus_score(
     metric_baselines: dict[str, Any] | None = None,
     display_scale: float | None = None,
     metric_transforms: Iterable[dict[str, Any]] | None = None,
+    metric_fallbacks: dict[str, Any] | None = None,
 ) -> dict[str, float | int | None]:
     regular = weighted_metric_score(
         model,
@@ -564,6 +673,7 @@ def regular_plus_bonus_score(
         missing_policy="coverage-discount",
         coverage_discount_exponent=coverage_discount_exponent,
         metric_transforms=metric_transforms,
+        metric_fallbacks=metric_fallbacks,
     )
     base_score = regular["score"]
     if base_score is None:
@@ -585,7 +695,7 @@ def regular_plus_bonus_score(
             weight = _number_or_none(raw_weight) or 0.0
             if weight <= 0:
                 continue
-            value = _number_or_none(model.get("scores", {}).get(key))
+            value = score_metric_value(model, key, metric_fallbacks)
             if value is None:
                 continue
             bonus_points += (
@@ -649,7 +759,7 @@ def frontier_group_score(
         available_weight += weight
         coverage += 1
 
-    if denominator <= 0:
+    if denominator <= 0 or coverage <= 0:
         score = None
     else:
         score = aggregate_weighted_values(entries, denominator, method)
@@ -676,24 +786,44 @@ def frontier_group_value(
     metric_baselines: dict[str, Any] | None = None,
 ) -> float | None:
     entries: list[tuple[float, float]] = []
-    keys = [str(key_value) for key_value in metric_keys]
-    for key in keys:
+    metrics = frontier_group_metric_items(metric_keys)
+    total_weight = sum(weight for _, weight in metrics if weight > 0)
+    available_weight = 0.0
+    metric_count = 0
+    for key, weight in metrics:
+        if weight <= 0:
+            continue
         value = _number_or_none(model.get("scores", {}).get(key))
         if value is None:
             continue
-        entries.append((normalized_metric_value(key, value, normalization, metric_baselines), 1.0))
+        entries.append((normalized_metric_value(key, value, normalization, metric_baselines), weight))
+        available_weight += weight
+        metric_count += 1
     if not entries:
         return None
-    value = aggregate_weighted_values(entries, float(len(entries)), method)
-    metric_count = len(entries)
+    value = aggregate_weighted_values(entries, available_weight, method)
     discount_exponent = (
         single_metric_coverage_discount_exponent
         if metric_count == 1 and single_metric_coverage_discount_exponent is not None
         else coverage_discount_exponent
     )
-    if value is not None and discount_exponent > 0 and keys:
-        value *= (metric_count / len(keys)) ** discount_exponent
+    if value is not None and discount_exponent > 0 and total_weight > 0:
+        value *= (available_weight / total_weight) ** discount_exponent
     return value
+
+
+def frontier_group_metric_items(metric_keys: Iterable[Any]) -> list[tuple[str, float]]:
+    items: list[tuple[str, float]] = []
+    for raw_item in metric_keys:
+        if isinstance(raw_item, dict):
+            key = str(raw_item.get("key") or "").strip()
+            weight = _number_or_none(raw_item.get("weight")) or 0.0
+        else:
+            key = str(raw_item).strip()
+            weight = 1.0
+        if key and weight > 0:
+            items.append((key, weight))
+    return items
 
 
 def aggregate_weighted_values(
@@ -724,6 +854,7 @@ def weighted_metric_score(
     coverage_discount_exponent: float = 0.0,
     weak_prior_ratio: float = 0.35,
     metric_transforms: Iterable[dict[str, Any]] | None = None,
+    metric_fallbacks: dict[str, Any] | None = None,
 ) -> dict[str, float | int | None]:
     entries: list[tuple[float, float]] = []
     denominator = 0.0
@@ -737,7 +868,7 @@ def weighted_metric_score(
         if weight <= 0:
             continue
         total_weight += weight
-        value = _number_or_none(model.get("scores", {}).get(key))
+        value = score_metric_value(model, key, metric_fallbacks)
         if value is None:
             if policy == "weak-prior":
                 entries.append((weak_prior_ratio, weight))
@@ -766,6 +897,19 @@ def weighted_metric_score(
         "coverage": coverage,
         "availableWeight": available_weight,
     }
+
+
+def score_metric_value(
+    model: dict[str, Any],
+    key: str,
+    metric_fallbacks: dict[str, Any] | None = None,
+) -> float | None:
+    value = _number_or_none(model.get("scores", {}).get(key))
+    if value is not None:
+        return value
+    if not metric_fallbacks:
+        return None
+    return _number_or_none(metric_fallbacks.get(key))
 
 
 def transformed_metric_value(
@@ -1257,17 +1401,18 @@ def _source_type_counts(models: list[dict[str, Any]]) -> dict[str, int]:
 def _presets() -> dict[str, dict[str, Any]]:
     return {
         "zhihu-adjusted": {
+            "id": "zhihu-adjusted",
             "label": "AInsights Index",
-            "kind": "regular-plus-bonus",
-            "description": "AIndex 使用高覆盖常规测试作为基础分，并明显偏向 terminal/coding；Terminal-Bench Hard、SciCode、HLE 和 CritPt 先经过 log1p(5x)/log(6) 校准。外部 LiveCodeBench 可拟合填补常规 LiveCodeBench 缺失，高难外部项目只提供小额加分。",
+            "kind": "frontier-groups",
+            "description": "AIndex 使用五个能力板块：Coding 38、Agentic/tool work 24、Hard reasoning 20、Knowledge/science 10、Instruction/context 8。板块内优先高含金量测试，缺整板块时使用弱先验；AIME 2026 与 HMMT 等相关竞赛项作为较低权重的高难信号，避免来源覆盖差异主导排序。",
             "calculation": "geometric",
             "normalization": "relative-best",
-            "missingPolicy": "coverage-discount",
-            "coverageDiscountExponent": 0.25,
-            "regularWeights": AINDEX_REGULAR_WEIGHTS,
-            "metricTransforms": AINDEX_METRIC_TRANSFORMS,
-            "bonusWeights": AINDEX_BONUS_WEIGHTS,
-            "bonusCap": AINDEX_BONUS_CAP,
+            "missingPolicy": "weak-prior",
+            "weakPriorRatio": 0.34,
+            "displayScale": 100,
+            "groupMetricCoverageDiscountExponent": 0.03,
+            "singleMetricCoverageDiscountExponent": 0.12,
+            "groups": AINDEX_GROUPS,
             "weights": DEFAULT_AINDEX_WEIGHTS,
         },
         "aa-intelligence": {
@@ -1294,7 +1439,7 @@ def _presets() -> dict[str, dict[str, Any]]:
         "custom": {
             "label": "自定义占比",
             "kind": "weighted-metrics",
-            "description": "默认使用 AInsights Index 常规测试配置；按用户设置的分数基线、均值方式、缺失处理、覆盖率门槛和逐项权重实时计算。",
+            "description": "默认使用 AInsights Index 五板块展开后的指标权重；按用户设置的分数基线、均值方式、缺失处理、覆盖率门槛和逐项权重实时计算。",
             "ignoreMissing": True,
             "calculation": "geometric",
             "normalization": "relative-best",

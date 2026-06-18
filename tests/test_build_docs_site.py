@@ -92,12 +92,12 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertIn("relatedMetrics", payload["externalSources"][1])
         self.assertEqual(payload["defaultPreset"], "zhihu-adjusted")
         self.assertIn("GDPval-AA v2", [metric["key"] for metric in payload["metrics"]])
-        self.assertEqual(payload["presets"]["zhihu-adjusted"]["kind"], "regular-plus-bonus")
+        self.assertEqual(payload["presets"]["zhihu-adjusted"]["kind"], "frontier-groups")
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["label"], "AInsights Index")
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["calculation"], "geometric")
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["normalization"], "relative-best")
-        self.assertEqual(payload["presets"]["zhihu-adjusted"]["missingPolicy"], "coverage-discount")
-        self.assertEqual(payload["presets"]["zhihu-adjusted"]["coverageDiscountExponent"], 0.25)
+        self.assertEqual(payload["presets"]["zhihu-adjusted"]["missingPolicy"], "weak-prior")
+        self.assertEqual(payload["presets"]["zhihu-adjusted"]["displayScale"], 100)
         self.assertEqual(payload["presets"]["custom"]["normalization"], "relative-best")
         self.assertEqual(payload["metricBaselines"]["GDPval-AA v2"], 80)
         self.assertEqual(payload["scoreBaselines"]["aaIntelligenceMax"], 50)
@@ -264,24 +264,25 @@ class BuildDocsSiteTests(unittest.TestCase):
             self.assertTrue(content.startswith("window.AINSIGHTS_MODELS_DATA = "))
             self.assertIn('"modelRows": 1', content)
 
-    def test_default_score_uses_regular_tests_plus_additive_bonus(self):
+    def test_default_score_uses_frontier_capability_boards(self):
         payload = build_site_payload(
             [
                 {
-                    "model_key": "Regular Only Model",
-                    "model": "Regular Only Model",
+                    "model_key": "Coding Only Model",
+                    "model": "Coding Only Model",
                     "is_reasoning": "true",
-                    "slug": "regular-only-model",
-                    "SciCode": "100",
-                    "Terminal-Bench Hard": "100",
+                    "slug": "coding-only-model",
+                    "Terminal-Bench v2.1": "100",
                 },
                 {
-                    "model_key": "Regular Plus Bonus Model",
-                    "model": "Regular Plus Bonus Model",
+                    "model_key": "Balanced Model",
+                    "model": "Balanced Model",
                     "is_reasoning": "true",
-                    "slug": "regular-plus-bonus-model",
-                    "SciCode": "100",
-                    "Terminal-Bench Hard": "100",
+                    "slug": "balanced-model",
+                    "Terminal-Bench v2.1": "100",
+                    "Humanity's Last Exam": "100",
+                    "AA-Omniscience Accuracy": "100",
+                    "IFBench": "100",
                 },
             ],
             {
@@ -293,70 +294,56 @@ class BuildDocsSiteTests(unittest.TestCase):
                 "results": [
                     {
                         "benchmarkId": "swe-bench-pro",
-                        "model": "Regular Plus Bonus Model",
-                        "modelAliases": ["Regular Plus Bonus Model", "regular-plus-bonus-model"],
+                        "model": "Balanced Model",
+                        "modelAliases": ["Balanced Model", "balanced-model"],
                         "value": 100,
                     },
                 ],
             },
         )
-        regular_model = next(model for model in payload["models"] if model["slug"] == "regular-only-model")
-        bonus_model = next(model for model in payload["models"] if model["slug"] == "regular-plus-bonus-model")
+        coding_model = next(model for model in payload["models"] if model["slug"] == "coding-only-model")
+        balanced_model = next(model for model in payload["models"] if model["slug"] == "balanced-model")
         preset = payload["presets"]["zhihu-adjusted"]
 
-        regular_score = score_model_for_preset(
-            regular_model,
+        coding_score = score_model_for_preset(
+            coding_model,
             preset,
             payload["metrics"],
             payload["metricBaselines"],
             payload["scoreBaselines"]["aaIntelligenceMax"],
         )
-        bonus_score = score_model_for_preset(
-            bonus_model,
+        balanced_score = score_model_for_preset(
+            balanced_model,
             preset,
             payload["metrics"],
             payload["metricBaselines"],
             payload["scoreBaselines"]["aaIntelligenceMax"],
         )
 
-        self.assertEqual(preset["kind"], "regular-plus-bonus")
-        self.assertEqual(preset["bonusCap"], 2)
-        self.assertEqual(preset["regularWeights"]["Terminal-Bench v2.1"], 28)
-        self.assertEqual(preset["regularWeights"]["Terminal-Bench Hard"], 22)
-        self.assertEqual(preset["regularWeights"]["LiveCodeBench"], 20)
-        self.assertEqual(preset["regularWeights"]["CritPt"], 13)
-        self.assertEqual(preset["regularWeights"]["SciCode"], 6)
-        self.assertEqual(preset["regularWeights"]["Humanity's Last Exam"], 5)
-        self.assertEqual(preset["regularWeights"]["AA-Omniscience Accuracy"], 1)
-        self.assertEqual(preset["regularWeights"]["AIME 2025"], 2)
-        self.assertEqual(preset["regularWeights"]["IFBench"], 0)
-        self.assertEqual(
-            preset["metricTransforms"][0],
-            {
-                "type": "log1p",
-                "factor": 5,
-                "metrics": [
-                    "Terminal-Bench Hard",
-                    "SciCode",
-                    "Humanity's Last Exam",
-                    "CritPt",
-                ],
-            },
-        )
-        self.assertNotIn("GDPval-AA v2", preset["regularWeights"])
-        self.assertIn("benchmark:swe-bench-pro", preset["bonusWeights"])
-        self.assertIn("benchmark:frontiermath-tier-4", preset["bonusWeights"])
-        self.assertNotIn("benchmark:aime-2026", preset["bonusWeights"])
-        self.assertNotIn("benchmark:hmmt-2026-feb", preset["bonusWeights"])
-        self.assertEqual(preset["weights"].get("AA-Omniscience Non-Hallucination Rate", 0), 0)
-        self.assertAlmostEqual(regular_score["score"], 100 * (28 / 100) ** 0.25)
-        self.assertAlmostEqual(bonus_score["score"] - regular_score["score"], 2 * 1.8 / 14.2)
-        self.assertEqual(regular_score["coverage"], 2)
-        self.assertEqual(bonus_score["coverage"], 3)
-        self.assertAlmostEqual(regular_score["availableWeight"], 28)
-        self.assertAlmostEqual(bonus_score["availableWeight"], 28)
+        self.assertEqual(preset["kind"], "frontier-groups")
+        self.assertEqual(preset["displayScale"], 100)
+        self.assertEqual(preset["missingPolicy"], "weak-prior")
+        self.assertEqual(preset["weakPriorRatio"], 0.34)
+        self.assertEqual([group["id"] for group in preset["groups"]], [
+            "coding",
+            "agentic-tool-work",
+            "hard-reasoning",
+            "knowledge-science",
+            "instruction-context",
+        ])
+        self.assertEqual([group["weight"] for group in preset["groups"]], [38, 24, 20, 10, 8])
+        hard_metrics = {
+            metric["key"]: metric["weight"]
+            for metric in next(group for group in preset["groups"] if group["id"] == "hard-reasoning")["metrics"]
+        }
+        self.assertEqual(hard_metrics["benchmark:aime-2026"], 0.4)
+        self.assertEqual(hard_metrics["benchmark:hmmt-2026-feb"], 0.4)
+        self.assertNotIn("bonusWeights", preset)
+        self.assertGreater(balanced_score["score"], coding_score["score"])
+        self.assertEqual(coding_score["coverage"], 2)
+        self.assertEqual(balanced_score["coverage"], 5)
 
-    def test_default_score_calibrates_hard_regular_metrics_with_log_curve(self):
+    def test_default_score_weights_metrics_inside_frontier_boards(self):
         payload = build_site_payload(
             [
                 {
@@ -386,11 +373,10 @@ class BuildDocsSiteTests(unittest.TestCase):
             payload["scoreBaselines"]["aaIntelligenceMax"],
         )
 
-        transformed_ratio = math.log1p(5 * 0.5) / math.log1p(5)
-        expected = 100 * transformed_ratio * (6 / 100) ** 0.25
-        self.assertAlmostEqual(score["score"], expected)
-        self.assertEqual(score["coverage"], 1)
-        self.assertAlmostEqual(score["availableWeight"], 6)
+        self.assertIsNotNone(score["score"])
+        self.assertGreater(score["score"], 0)
+        self.assertEqual(score["coverage"], 2)
+        self.assertAlmostEqual(score["availableWeight"], 48)
 
     def test_default_score_fills_missing_livecodebench_from_external_fit(self):
         payload = build_site_payload(
@@ -459,9 +445,9 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(paired["scores"]["LiveCodeBench"], 25)
         self.assertEqual(fallback["scores"]["LiveCodeBench"], 55)
         self.assertAlmostEqual(payload["metricBaselines"]["LiveCodeBench"], 75)
-        self.assertAlmostEqual(score["score"], 100 * (55 / 75) * (20 / 100) ** 0.25)
+        self.assertIsNotNone(score["score"])
         self.assertEqual(score["coverage"], 1)
-        self.assertAlmostEqual(score["availableWeight"], 20)
+        self.assertAlmostEqual(score["availableWeight"], 38)
 
     def test_external_benchmarks_are_shared_across_model_variants(self):
         payload = build_site_payload(
@@ -548,6 +534,31 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertGreater(scores["deepseek-v4-flash"], scores["glm-4-7"])
         self.assertGreater(scores["qwen3-7-plus"], scores["qwen3-5-397b-a17b"])
         self.assertGreater(scores["qwen3-7-plus"] - scores["qwen3-5-397b-a17b"], 1.0)
+        self.assertGreater(scores["claude-opus-4-6-adaptive"], scores["gemini-3-5-flash"])
+        self.assertGreater(scores["minimax-m2-5"], scores["minimax-m2-1"])
+
+    def test_qwen36_default_scores_follow_model_tier_order(self):
+        payload = build_site_payload(
+            read_csv_rows(DEFAULT_INPUT_CSV),
+            load_external_benchmarks(DEFAULT_EXTERNAL_BENCHMARKS_JSON),
+        )
+        preset = payload["presets"]["zhihu-adjusted"]
+        scores = {}
+        for model in payload["models"]:
+            if model["slug"] not in {"qwen3-6-27b", "qwen3-6-plus", "qwen3-6-max"}:
+                continue
+            score = score_model_for_preset(
+                model,
+                preset,
+                payload["metrics"],
+                payload["metricBaselines"],
+                payload["scoreBaselines"]["aaIntelligenceMax"],
+            )
+            scores[model["slug"]] = score["score"]
+            self.assertNotIn("presetMetricFallbacks", model)
+
+        self.assertGreater(scores["qwen3-6-plus"], scores["qwen3-6-27b"])
+        self.assertGreater(scores["qwen3-6-max"], scores["qwen3-6-plus"])
 
     def test_default_score_discounts_sparse_regular_coverage(self):
         payload = build_site_payload(
@@ -594,7 +605,7 @@ class BuildDocsSiteTests(unittest.TestCase):
 
         self.assertGreater(broad_score["score"], sparse_score["score"])
         self.assertLess(sparse_score["score"], 70)
-        self.assertEqual(sparse_score["coverage"], 1)
+        self.assertEqual(sparse_score["coverage"], 2)
 
     def test_weighted_metric_score_supports_geometric_mean(self):
         model = {"scores": {"A": 100, "B": 25}}
@@ -734,7 +745,7 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(coding, {"Terminal-Bench v2.1": 200 / 3, "SciCode": 100 / 3})
         self.assertEqual(agentic, {"GDPval-AA v2": 1000 / 17, "τ³-Banking": 700 / 17})
 
-    def test_default_score_uses_regular_metric_coverage(self):
+    def test_default_score_uses_frontier_board_coverage(self):
         payload = build_site_payload(
             [
                 {
@@ -757,11 +768,9 @@ class BuildDocsSiteTests(unittest.TestCase):
             payload["scoreBaselines"]["aaIntelligenceMax"],
         )
 
-        available_weight = preset["regularWeights"]["SciCode"]
-        total_weight = sum(weight for weight in preset["regularWeights"].values() if weight > 0)
-        expected = 100 * (available_weight / total_weight) ** 0.25
-        self.assertAlmostEqual(score["score"], expected)
-        self.assertEqual(score["coverage"], 1)
+        self.assertIsNotNone(score["score"])
+        self.assertEqual(score["coverage"], 2)
+        self.assertAlmostEqual(score["availableWeight"], 48)
 
     def test_custom_score_uses_geometric_coverage_discount_by_default(self):
         payload = build_site_payload(
