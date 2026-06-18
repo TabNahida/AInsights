@@ -83,10 +83,62 @@
           </article>
 
           <article class="methodology-card methodology-card-wide">
+            <h3>Metric Weights</h3>
+            <p>Internal weights are normalized within each board. For example, <code>benchmark:swe-bench-pro</code> weight 1.5 is larger than <code>benchmark:programbench</code> weight 0.5 inside Coding, but Coding still contributes 40 total AIndex weight after its board value is calculated.</p>
+            <div class="methodology-table-wrap">
+              <table class="methodology-weight-table">
+                <thead>
+                  <tr>
+                    <th>Board</th>
+                    <th>AIndex weight</th>
+                    <th>Metrics and internal weights</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Coding</td>
+                    <td>40</td>
+                    <td><code>benchmark:swe-bench-pro</code> 1.5; <code>benchmark:swe-bench-verified</code> 1.1; <code>benchmark:swe-bench-multilingual</code> 0.8; <code>benchmark:terminal-bench-2</code> 1.4; <code>benchmark:terminal-bench-2-1</code> 0.8; <code>benchmark:frontiercode-diamond</code> 1.0; <code>LiveCodeBench</code> 1.2; <code>benchmark:livecodebench</code> 1.0; <code>Terminal-Bench v2.1</code> 1.1; <code>Terminal-Bench Hard</code> 1.0; <code>SciCode</code> 0.8; <code>benchmark:kimi-code-bench-v2</code> 0.6; <code>benchmark:programbench</code> 0.5; <code>benchmark:livecodebench-pro-elo</code> 0.5.</td>
+                  </tr>
+                  <tr>
+                    <td>Agentic/tool work</td>
+                    <td>24</td>
+                    <td><code>benchmark:terminal-bench-2</code> 1.4; <code>benchmark:swe-bench-pro</code> 1.3; <code>benchmark:browsecomp</code> 1.0; <code>benchmark:hle-tools</code> 1.0; <code>benchmark:mcp-atlas</code> 0.9; <code>benchmark:osworld-verified</code> 0.8; <code>benchmark:gdpval-wins-ties</code> 0.8; <code>benchmark:gdpval-aa-elo</code> 0.7; <code>benchmark:toolathlon</code> 0.6; <code>Terminal-Bench v2.1</code> 0.7; <code>Terminal-Bench Hard</code> 0.8; <code>AA-LCR</code> 0.5.</td>
+                  </tr>
+                  <tr>
+                    <td>Hard reasoning</td>
+                    <td>20</td>
+                    <td><code>Humanity's Last Exam</code> 1.3; <code>benchmark:hle</code> 1.2; <code>benchmark:frontiermath-tier-4</code> 1.2; <code>benchmark:frontiermath-tier-1-3</code> 1.0; <code>CritPt</code> 1.1; <code>GPQA Diamond</code> 0.9; <code>benchmark:gpqa-diamond</code> 0.8; <code>AIME 2025</code> 0.7; <code>benchmark:aime-2025</code> 0.7; <code>benchmark:aime-2026</code> 0.3; <code>benchmark:hmmt-2026-feb</code> 0.3; <code>benchmark:arc-agi-2</code> 0.8.</td>
+                  </tr>
+                  <tr>
+                    <td>Knowledge/science</td>
+                    <td>8</td>
+                    <td><code>AA-Omniscience Accuracy</code> 1.0; <code>GPQA Diamond</code> 0.9; <code>Humanity's Last Exam</code> 0.8; <code>benchmark:mmlu-pro</code> 0.2; <code>benchmark:mmmlu</code> 0.7; <code>benchmark:mmmu-pro</code> 0.7; <code>SciCode</code> 0.5.</td>
+                  </tr>
+                  <tr>
+                    <td>Instruction/context</td>
+                    <td>8</td>
+                    <td><code>IFBench</code> 1.0; <code>benchmark:ifbench</code> 0.9; <code>AA-LCR</code> 0.9; <code>CritPt</code> 0.7; <code>benchmark:charxiv-tools</code> 0.6; <code>benchmark:charxiv-no-tools</code> 0.5.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="methodology-card methodology-card-wide">
+            <h3>Calculation Formula</h3>
+            <p>For a metric <code>m</code>, the normalized metric value is <code>ratio_m = max(raw_m, 0) / best_observed_m</code>. Best observed means the highest score currently present in the dataset for that exact metric key.</p>
+            <p>For each board, AIndex first aggregates available metric ratios with the weighted geometric mean used by the code: <code>exp(sum(weight_m * ln(1 + ratio_m)) / sum(available_weight_m)) - 1</code>.</p>
+            <p>The board metric coverage adjustment is then applied: multiply the board value by <code>(available_internal_weight / total_internal_weight) ^ exponent</code>. The normal within-board coverage discount exponent is 0.03; the single-metric board exponent is 0.12.</p>
+            <p>If a board has no available metrics, AIndex inserts a weak prior value of 0.34 for that board. If all five boards are missing, the model receives no default AIndex score.</p>
+            <p>The final board aggregation is another weighted geometric mean: <code>AIndex = 100 * (exp((40 * ln(1 + Coding) + 24 * ln(1 + Agentic) + 20 * ln(1 + HardReasoning) + 8 * ln(1 + KnowledgeScience) + 8 * ln(1 + InstructionContext)) / 100) - 1)</code>.</p>
+          </article>
+
+          <article class="methodology-card methodology-card-wide">
             <h3>AIndex Calculation</h3>
             <ol class="methodology-steps">
               <li>For each board metric, convert the raw score into a <strong>Best score ratio</strong>: model score divided by the highest score observed for that benchmark.</li>
-              <li>Aggregate available metrics inside each board with a weighted geometric mean, then apply a light within-board coverage discount.</li>
+              <li>Aggregate available metrics inside each board with a weighted geometric mean, then apply a light within-board coverage discount using exponent 0.03, or 0.12 if only one metric is present in that board.</li>
               <li>If an entire board is missing, use a weak prior of 0.34 for that board; if all boards are missing, no default AIndex is produced.</li>
               <li>Aggregate the five board values with board weights 40 / 24 / 20 / 8 / 8 using a geometric weighted mean.</li>
               <li>Scale the resulting ratio to the 0-100 AIndex display range.</li>

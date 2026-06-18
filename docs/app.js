@@ -2571,6 +2571,18 @@ function renderMethodologyPage() {
       body: "五个板块权重为 Coding 40、Agentic/tool work 24、Hard reasoning 20、Knowledge/science 8、Instruction/context 8。每个板块内部再按测试含金量和覆盖稳定性设置小权重。",
     },
     {
+      title: "指标权重",
+      body: "板块内权重只在本板块内部归一化。Coding: benchmark:swe-bench-pro 1.5, benchmark:swe-bench-verified 1.1, benchmark:swe-bench-multilingual 0.8, benchmark:terminal-bench-2 1.4, benchmark:terminal-bench-2-1 0.8, benchmark:frontiercode-diamond 1.0, LiveCodeBench 1.2, benchmark:livecodebench 1.0, Terminal-Bench v2.1 1.1, Terminal-Bench Hard 1.0, SciCode 0.8, benchmark:kimi-code-bench-v2 0.6, benchmark:programbench 0.5, benchmark:livecodebench-pro-elo 0.5。Agentic/tool work: benchmark:terminal-bench-2 1.4, benchmark:swe-bench-pro 1.3, benchmark:browsecomp 1.0, benchmark:hle-tools 1.0, benchmark:mcp-atlas 0.9, benchmark:osworld-verified 0.8, benchmark:gdpval-wins-ties 0.8, benchmark:gdpval-aa-elo 0.7, benchmark:toolathlon 0.6, Terminal-Bench v2.1 0.7, Terminal-Bench Hard 0.8, AA-LCR 0.5。",
+    },
+    {
+      title: "推理与知识指标",
+      body: "Hard reasoning: Humanity's Last Exam 1.3, benchmark:hle 1.2, benchmark:frontiermath-tier-4 1.2, benchmark:frontiermath-tier-1-3 1.0, CritPt 1.1, GPQA Diamond 0.9, benchmark:gpqa-diamond 0.8, AIME 2025 0.7, benchmark:aime-2025 0.7, benchmark:aime-2026 0.3, benchmark:hmmt-2026-feb 0.3, benchmark:arc-agi-2 0.8。Knowledge/science: AA-Omniscience Accuracy 1.0, GPQA Diamond 0.9, Humanity's Last Exam 0.8, benchmark:mmlu-pro 0.2, benchmark:mmmlu 0.7, benchmark:mmmu-pro 0.7, SciCode 0.5。Instruction/context: IFBench 1.0, benchmark:ifbench 0.9, AA-LCR 0.9, CritPt 0.7, benchmark:charxiv-tools 0.6, benchmark:charxiv-no-tools 0.5。",
+    },
+    {
+      title: "公式",
+      body: "每个指标先转为 ratio_m = max(raw_m, 0) / best_observed_m。板块值使用 exp(sum(w_m * ln(1 + ratio_m)) / sum(available_w_m)) - 1，再乘以 (available_internal_weight / total_internal_weight) 的覆盖折扣；普通板块内覆盖折扣指数为 0.03，只有一个指标命中时使用 0.12。最终 AIndex = 100 * 五个板块值的几何加权均值，板块权重为 40/24/20/8/8。",
+    },
+    {
       title: "板块内校准",
       body: "每个指标先转成最佳分数比例，再在板块内做几何加权均值。板块内缺项只做轻微覆盖折扣；MMLU-Pro、AIME 2026、HMMT 等偏饱和或覆盖不均的项目保留为信号，但权重较低，避免来源覆盖差异主导排序。",
     },
@@ -2594,6 +2606,18 @@ function renderMethodologyPage() {
     {
       title: "Board Weights",
       body: "The five board weights are Coding 40, Agentic/tool work 24, Hard reasoning 20, Knowledge/science 8, and Instruction/context 8. Each board then gives smaller internal weights to higher-signal, more stable benchmarks.",
+    },
+    {
+      title: "Metric Weights",
+      body: "Internal weights are normalized only within their own board. Coding: benchmark:swe-bench-pro 1.5, benchmark:swe-bench-verified 1.1, benchmark:swe-bench-multilingual 0.8, benchmark:terminal-bench-2 1.4, benchmark:terminal-bench-2-1 0.8, benchmark:frontiercode-diamond 1.0, LiveCodeBench 1.2, benchmark:livecodebench 1.0, Terminal-Bench v2.1 1.1, Terminal-Bench Hard 1.0, SciCode 0.8, benchmark:kimi-code-bench-v2 0.6, benchmark:programbench 0.5, benchmark:livecodebench-pro-elo 0.5. Agentic/tool work: benchmark:terminal-bench-2 1.4, benchmark:swe-bench-pro 1.3, benchmark:browsecomp 1.0, benchmark:hle-tools 1.0, benchmark:mcp-atlas 0.9, benchmark:osworld-verified 0.8, benchmark:gdpval-wins-ties 0.8, benchmark:gdpval-aa-elo 0.7, benchmark:toolathlon 0.6, Terminal-Bench v2.1 0.7, Terminal-Bench Hard 0.8, AA-LCR 0.5.",
+    },
+    {
+      title: "Reasoning And Knowledge Metrics",
+      body: "Hard reasoning: Humanity's Last Exam 1.3, benchmark:hle 1.2, benchmark:frontiermath-tier-4 1.2, benchmark:frontiermath-tier-1-3 1.0, CritPt 1.1, GPQA Diamond 0.9, benchmark:gpqa-diamond 0.8, AIME 2025 0.7, benchmark:aime-2025 0.7, benchmark:aime-2026 0.3, benchmark:hmmt-2026-feb 0.3, benchmark:arc-agi-2 0.8. Knowledge/science: AA-Omniscience Accuracy 1.0, GPQA Diamond 0.9, Humanity's Last Exam 0.8, benchmark:mmlu-pro 0.2, benchmark:mmmlu 0.7, benchmark:mmmu-pro 0.7, SciCode 0.5. Instruction/context: IFBench 1.0, benchmark:ifbench 0.9, AA-LCR 0.9, CritPt 0.7, benchmark:charxiv-tools 0.6, benchmark:charxiv-no-tools 0.5.",
+    },
+    {
+      title: "Formula",
+      body: "Each metric becomes ratio_m = max(raw_m, 0) / best_observed_m. Each board value is exp(sum(w_m * ln(1 + ratio_m)) / sum(available_w_m)) - 1, multiplied by a coverage discount from available_internal_weight / total_internal_weight. The normal within-board coverage exponent is 0.03; the single-metric board exponent is 0.12. Final AIndex = 100 * the geometric weighted mean of the five board values with weights 40/24/20/8/8.",
     },
     {
       title: "Within-Board Calibration",

@@ -474,7 +474,7 @@ EXTERNAL_SOURCES = [
 ]
 
 STRENGTH_SUFFIX_RE = re.compile(
-    r"\s*\((?:x?high|medium|low|max|min|minimal|default|fast|thinking|non[- ]reasoning|reasoning)\)\s*$",
+    r"\s*\((?:(?:x?high|medium|low|max|min|minimal|default|fast|thinking|non[- ]reasoning|reasoning)(?:\s*,\s*|\s+)*)+\)\s*$",
     re.IGNORECASE,
 )
 SLUG_SUFFIX_RE = re.compile(
@@ -1487,7 +1487,7 @@ def _normalize_variant_suffix(value: str) -> str:
     normalized = re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
     if normalized in {"x-high", "extra-high", "extra-high-reasoning"}:
         return "xhigh"
-    if normalized == "non-reasoning":
+    if normalized == "non-reasoning" or normalized.startswith("non-reasoning-"):
         return "non-reasoning"
     return normalized
 

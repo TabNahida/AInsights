@@ -24,12 +24,23 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(variant_group("GPT-5.5 (xhigh)", "gpt-5-5"), "gpt 5 5")
         self.assertEqual(variant_group("Claude Opus 4.8 (max)", "claude-opus-4-8"), "claude opus 4 8")
         self.assertEqual(variant_group("GPT-5.5 (Non-reasoning)", "gpt-5-5-non-reasoning"), "gpt 5 5")
+        self.assertEqual(variant_group("Claude Opus 4.7 (Non-reasoning, high)", "claude-opus-4-7-non-reasoning"), "claude opus 4 7")
         self.assertEqual(variant_group("Gemini 3.5 Flash (minimal)", "gemini-3-5-flash-minimal"), "gemini 3 5 flash")
 
     def test_variant_priority_prefers_stronger_inference_presets(self):
         self.assertGreater(variant_priority("GPT-5.5 (xhigh)", "gpt-5-5-xhigh"), variant_priority("GPT-5.5 (high)", "gpt-5-5-high"))
         self.assertGreater(variant_priority("GPT-5.5 (high)", "gpt-5-5-high"), variant_priority("GPT-5.5", "gpt-5-5"))
         self.assertGreater(variant_priority("Claude Opus 4.8 (max)", "claude-opus-4-8-max"), variant_priority("Claude Opus 4.8 (xhigh)", "claude-opus-4-8-xhigh"))
+        self.assertLess(variant_priority("Claude Opus 4.7 (Non-reasoning, high)", "claude-opus-4-7-non-reasoning"), variant_priority("Claude Opus 4.7", "claude-opus-4-7"))
+
+    def test_opus_non_reasoning_tier_dedupes_with_reasoning_tier(self):
+        payload = build_site_payload(read_csv_rows(DEFAULT_INPUT_CSV))
+        opus_max = next(model for model in payload["models"] if model["modelKey"] == "Claude Opus 4.7 (max) [R]")
+        opus_non_reasoning = next(model for model in payload["models"] if model["modelKey"] == "Claude Opus 4.7 (Non-reasoning, high)")
+
+        self.assertEqual(opus_max["variantGroup"], "claude opus 4 7")
+        self.assertEqual(opus_non_reasoning["variantGroup"], opus_max["variantGroup"])
+        self.assertLess(opus_non_reasoning["variantPriority"], opus_max["variantPriority"])
 
     def test_build_site_payload_includes_presets_metrics_and_model_groups(self):
         rows = [
