@@ -553,6 +553,7 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertGreater(scores["qwen3-6-plus"], scores["qwen3-5-397b-a17b"])
         self.assertGreater(scores["claude-opus-4-6-adaptive"], scores["gemini-3-5-flash"])
         self.assertGreater(scores["minimax-m2-5"], scores["minimax-m2-1"])
+        self.assertGreater(scores["minimax-m2-7"], scores["minimax-m2-5"])
 
     def test_qwen36_default_scores_follow_model_tier_order(self):
         payload = build_site_payload(

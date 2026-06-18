@@ -52,6 +52,7 @@ GLM46_URL = "https://docs.z.ai/guides/llm/glm-4.6"
 GLM45_URL = "https://z.ai/blog/glm-4.5"
 GLM45_RAW_URL = GLM45_URL
 MINIMAX_M3_URL = "https://www.minimax.io/models/text/m3"
+MINIMAX_M27_REPORT_URL = "https://arxiv.org/abs/2605.26494"
 MINIMAX_M25_URL = "https://www.minimax.io/news/minimax-m25"
 MINIMAX_M2_URL = "https://www.minimax.io/news/minimax-m2"
 MINIMAX_M1_URL = "https://github.com/MiniMax-AI/MiniMax-M1"
@@ -175,6 +176,7 @@ MODEL_ALIASES = {
     "GLM-4.5": ["GLM-4.5", "GLM 4.5", "zai-org/GLM-4.5"],
     "GLM-4.5-Air": ["GLM-4.5-Air", "GLM 4.5 Air", "zai-org/GLM-4.5-Air"],
     "MiniMax-M3": ["MiniMax-M3", "MiniMax M3", "MiniMaxAI/MiniMax-M3", "minimax-m3"],
+    "MiniMax-M2.7": ["MiniMax-M2.7", "MiniMax M2.7", "MiniMaxAI/MiniMax-M2.7", "minimax-m2-7"],
     "MiniMax-M2.5": ["MiniMax-M2.5", "MiniMax M2.5", "minimax-m2.5", "minimax-m25"],
     "MiniMax-M2.1": ["MiniMax-M2.1", "MiniMax M2.1", "minimax-m2.1"],
     "MiniMax-M2": ["MiniMax-M2", "MiniMax M2", "minimax-m2"],
@@ -2008,6 +2010,37 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
             "MiniMax-M3": {
                 "browsecomp": 83.5,
                 "posttrainbench": 37.1,
+            }
+        },
+    },
+    {
+        "id": "minimax-m2-7-report",
+        "label": "MiniMax M2.7 technical report",
+        "url": MINIMAX_M27_REPORT_URL,
+        "rawUrl": MINIMAX_M27_REPORT_URL,
+        "category": "Official technical report",
+        "note": "MiniMax M2 series technical report with M2.7 headline values across agentic coding, agentic cowork, and reasoning/knowledge. GDPval-AA is omitted from seeds because this dataset's GDPval-AA slot is Elo-based, while the report value is a percentage.",
+        "columns": {"MiniMax-M2.7": "MiniMax-M2.7", "MiniMax M2.7": "MiniMax-M2.7"},
+        "rowLabels": {
+            "SWE-bench Pro": "swe-bench-pro",
+            "SWE-bench Multilingual": "swe-bench-multilingual",
+            "Multi-SWE-bench": "multi-swe-bench",
+            "Terminal-Bench 2.0": "terminal-bench-2",
+            "BrowseComp": "browsecomp",
+            "Toolathlon": "toolathlon",
+            "AIME 2026": "aime-2026",
+            "GPQA-Diamond": "gpqa-diamond",
+        },
+        "scores": {
+            "MiniMax-M2.7": {
+                "swe-bench-pro": 56.2,
+                "swe-bench-multilingual": 76.5,
+                "multi-swe-bench": 52.7,
+                "terminal-bench-2": 57.0,
+                "browsecomp": 77.8,
+                "toolathlon": 46.3,
+                "aime-2026": 94.2,
+                "gpqa-diamond": 89.8,
             }
         },
     },

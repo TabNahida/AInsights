@@ -1,6 +1,6 @@
 window.AINSIGHTS_MODELS_DATA = {
   "version": 1,
-  "generatedAt": "2026-06-18T22:45:25+00:00",
+  "generatedAt": "2026-06-18T23:02:41+00:00",
   "source": {
     "label": "Artificial Analysis Intelligence Evaluations",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -1371,7 +1371,7 @@ window.AINSIGHTS_MODELS_DATA = {
     "benchmark:frontiercode-diamond": 29.3,
     "benchmark:swe-bench-verified": 87.6,
     "benchmark:swe-bench-multilingual": 76.7,
-    "benchmark:multi-swe-bench": 51.3,
+    "benchmark:multi-swe-bench": 52.7,
     "benchmark:expert-swe-internal": 73.1,
     "benchmark:gdpval-wins-ties": 84.9,
     "benchmark:gdpval-aa-elo": 1932.0,
@@ -2471,6 +2471,40 @@ window.AINSIGHTS_MODELS_DATA = {
       "benchmarkIds": [
         "browsecomp",
         "posttrainbench"
+      ],
+      "modelAliases": [],
+      "modelKeys": []
+    },
+    {
+      "id": "minimax-m2-7-report",
+      "label": "MiniMax M2.7 technical report",
+      "icon": "MM7",
+      "url": "https://arxiv.org/abs/2605.26494",
+      "category": "Official technical report",
+      "coverage": "8 model-benchmark scores",
+      "focus": "AIME 2026, BrowseComp, GPQA Diamond, Multi-SWE-Bench, SWE-bench Multilingual, SWE-Bench Pro, +2",
+      "note": "MiniMax M2 series technical report with M2.7 headline values across agentic coding, agentic cowork, and reasoning/knowledge. GDPval-AA is omitted from seeds because this dataset's GDPval-AA slot is Elo-based, while the report value is a percentage.",
+      "scoreStatus": "benchmark",
+      "defaultWeight": 0,
+      "relatedMetrics": [
+        "benchmark:aime-2026",
+        "benchmark:browsecomp",
+        "benchmark:gpqa-diamond",
+        "benchmark:multi-swe-bench",
+        "benchmark:swe-bench-multilingual",
+        "benchmark:swe-bench-pro",
+        "benchmark:terminal-bench-2",
+        "benchmark:toolathlon"
+      ],
+      "benchmarkIds": [
+        "aime-2026",
+        "browsecomp",
+        "gpqa-diamond",
+        "multi-swe-bench",
+        "swe-bench-multilingual",
+        "swe-bench-pro",
+        "terminal-bench-2",
+        "toolathlon"
       ],
       "modelAliases": [],
       "modelKeys": []
@@ -24114,14 +24148,14 @@ window.AINSIGHTS_MODELS_DATA = {
         "MMMU-Pro": null,
         "LiveCodeBench": null,
         "AIME 2025": null,
-        "benchmark:swe-bench-pro": null,
-        "benchmark:terminal-bench-2": null,
+        "benchmark:swe-bench-pro": 56.2,
+        "benchmark:terminal-bench-2": 57.0,
         "benchmark:terminal-bench": null,
         "benchmark:terminal-bench-hard": null,
         "benchmark:frontiercode-diamond": null,
         "benchmark:swe-bench-verified": null,
-        "benchmark:swe-bench-multilingual": null,
-        "benchmark:multi-swe-bench": null,
+        "benchmark:swe-bench-multilingual": 76.5,
+        "benchmark:multi-swe-bench": 52.7,
         "benchmark:swe-bench-openhands": null,
         "benchmark:expert-swe-internal": null,
         "benchmark:gdpval-wins-ties": null,
@@ -24129,9 +24163,9 @@ window.AINSIGHTS_MODELS_DATA = {
         "benchmark:gdp-pdf": null,
         "benchmark:finance-agent-v1-1": null,
         "benchmark:osworld-verified": null,
-        "benchmark:toolathlon": null,
+        "benchmark:toolathlon": 46.3,
         "benchmark:automationbench": null,
-        "benchmark:browsecomp": null,
+        "benchmark:browsecomp": 77.8,
         "benchmark:posttrainbench": null,
         "benchmark:browsecomp-context": null,
         "benchmark:hle-tools": null,
@@ -24141,7 +24175,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "benchmark:cybergym": null,
         "benchmark:exploitbench-cap": null,
         "benchmark:mmlu-pro": null,
-        "benchmark:gpqa-diamond": null,
+        "benchmark:gpqa-diamond": 89.8,
         "benchmark:hle": null,
         "benchmark:critpt": null,
         "benchmark:blueprint-bench-2": null,
@@ -24156,7 +24190,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "benchmark:scicode": null,
         "benchmark:aime-2024": null,
         "benchmark:aime-2025": null,
-        "benchmark:aime-2026": null,
+        "benchmark:aime-2026": 94.2,
         "benchmark:hmmt-2026-feb": null,
         "benchmark:hmmt-2025-nov": null,
         "benchmark:imoanswerbench": null,
@@ -24209,7 +24243,88 @@ window.AINSIGHTS_MODELS_DATA = {
         "benchmark:mmlu-prox": null,
         "benchmark:wmt24-plusplus": null
       },
-      "externalBenchmarks": [],
+      "externalBenchmarks": [
+        {
+          "benchmarkId": "swe-bench-pro",
+          "metricKey": "benchmark:swe-bench-pro",
+          "label": "SWE-Bench Pro",
+          "value": 56.2,
+          "unit": "%",
+          "sourceId": "minimax-m2-7-report",
+          "sourceLabel": "MiniMax M2.7 technical report",
+          "sourceUrl": "https://arxiv.org/abs/2605.26494"
+        },
+        {
+          "benchmarkId": "swe-bench-multilingual",
+          "metricKey": "benchmark:swe-bench-multilingual",
+          "label": "SWE-bench Multilingual",
+          "value": 76.5,
+          "unit": "%",
+          "sourceId": "minimax-m2-7-report",
+          "sourceLabel": "MiniMax M2.7 technical report",
+          "sourceUrl": "https://arxiv.org/abs/2605.26494"
+        },
+        {
+          "benchmarkId": "multi-swe-bench",
+          "metricKey": "benchmark:multi-swe-bench",
+          "label": "Multi-SWE-Bench",
+          "value": 52.7,
+          "unit": "%",
+          "sourceId": "minimax-m2-7-report",
+          "sourceLabel": "MiniMax M2.7 technical report",
+          "sourceUrl": "https://arxiv.org/abs/2605.26494"
+        },
+        {
+          "benchmarkId": "terminal-bench-2",
+          "metricKey": "benchmark:terminal-bench-2",
+          "label": "Terminal-Bench 2.0",
+          "value": 57.0,
+          "unit": "%",
+          "sourceId": "minimax-m2-7-report",
+          "sourceLabel": "MiniMax M2.7 technical report",
+          "sourceUrl": "https://arxiv.org/abs/2605.26494"
+        },
+        {
+          "benchmarkId": "browsecomp",
+          "metricKey": "benchmark:browsecomp",
+          "label": "BrowseComp",
+          "value": 77.8,
+          "unit": "%",
+          "sourceId": "minimax-m2-7-report",
+          "sourceLabel": "MiniMax M2.7 technical report",
+          "sourceUrl": "https://arxiv.org/abs/2605.26494"
+        },
+        {
+          "benchmarkId": "toolathlon",
+          "metricKey": "benchmark:toolathlon",
+          "label": "Toolathlon",
+          "value": 46.3,
+          "unit": "%",
+          "sourceId": "minimax-m2-7-report",
+          "sourceLabel": "MiniMax M2.7 technical report",
+          "sourceUrl": "https://arxiv.org/abs/2605.26494"
+        },
+        {
+          "benchmarkId": "aime-2026",
+          "metricKey": "benchmark:aime-2026",
+          "label": "AIME 2026",
+          "value": 94.2,
+          "unit": "%",
+          "sourceId": "minimax-m2-7-report",
+          "sourceLabel": "MiniMax M2.7 technical report",
+          "sourceUrl": "https://arxiv.org/abs/2605.26494"
+        },
+        {
+          "benchmarkId": "gpqa-diamond",
+          "metricKey": "benchmark:gpqa-diamond",
+          "label": "GPQA Diamond",
+          "value": 89.8,
+          "unit": "%",
+          "sourceId": "minimax-m2-7-report",
+          "sourceLabel": "MiniMax M2.7 technical report",
+          "sourceUrl": "https://arxiv.org/abs/2605.26494"
+        }
+      ],
       "inputModalities": [
         "Text"
       ],

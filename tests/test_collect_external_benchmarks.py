@@ -154,6 +154,7 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             "zai-glm-5-1-card",
             "zai-glm-5-2-card",
             "minimax-m3-release",
+            "minimax-m2-7-report",
             "minimax-m2-5-release",
             "minimax-m2-release",
             "minimax-m1-card",
@@ -239,6 +240,16 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             for row in results
             if row["model"] == "MiniMax-M3" and row["benchmarkId"] == "browsecomp"
         )
+        minimax_m27_terminal = next(
+            row
+            for row in results
+            if row["model"] == "MiniMax-M2.7" and row["benchmarkId"] == "terminal-bench-2"
+        )
+        minimax_m27_gpqa = next(
+            row
+            for row in results
+            if row["model"] == "MiniMax-M2.7" and row["benchmarkId"] == "gpqa-diamond"
+        )
         nemotron_super_lcb = next(
             row
             for row in results
@@ -257,6 +268,8 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertEqual(nemotron_mmlu["value"], 86.8)
         self.assertEqual(minimax_m25_swe["value"], 80.2)
         self.assertEqual(minimax_m3_browse["value"], 83.5)
+        self.assertEqual(minimax_m27_terminal["value"], 57.0)
+        self.assertEqual(minimax_m27_gpqa["value"], 89.8)
         self.assertEqual(nemotron_super_lcb["value"], 78.69)
         self.assertEqual(nemotron_nano_aime["value"], 89.06)
 
