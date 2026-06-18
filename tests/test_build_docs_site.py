@@ -6,6 +6,8 @@ import tempfile
 from pathlib import Path
 
 from scripts.build_docs_site import (
+    AINDEX_GROUPS,
+    DEFAULT_AINDEX_WEIGHTS,
     DEFAULT_EXTERNAL_BENCHMARKS_JSON,
     DEFAULT_INPUT_CSV,
     build_site_payload,
@@ -20,6 +22,40 @@ from scripts.build_docs_site import (
 
 
 class BuildDocsSiteTests(unittest.TestCase):
+    def test_default_ainsights_terminal_bench_uses_aa_column_not_duplicate_external_versions(self):
+        group_metrics = {
+            group["id"]: [metric["key"] for metric in group["metrics"]]
+            for group in AINDEX_GROUPS
+        }
+
+        self.assertIn("Terminal-Bench v2.1", group_metrics["coding"])
+        self.assertIn("Terminal-Bench v2.1", group_metrics["agentic-tool-work"])
+        self.assertNotIn("benchmark:terminal-bench-2", group_metrics["coding"])
+        self.assertNotIn("benchmark:terminal-bench-2-1", group_metrics["coding"])
+        self.assertNotIn("benchmark:terminal-bench-2", group_metrics["agentic-tool-work"])
+        self.assertNotIn("benchmark:terminal-bench-2-1", group_metrics["agentic-tool-work"])
+        self.assertEqual(DEFAULT_AINDEX_WEIGHTS.get("benchmark:terminal-bench-2", 0), 0)
+        self.assertEqual(DEFAULT_AINDEX_WEIGHTS.get("benchmark:terminal-bench-2-1", 0), 0)
+
+    def test_default_ainsights_uses_external_livecodebench_only_as_fallback_source(self):
+        group_metrics = {
+            group["id"]: [metric["key"] for metric in group["metrics"]]
+            for group in AINDEX_GROUPS
+        }
+
+        self.assertIn("LiveCodeBench", group_metrics["coding"])
+        self.assertNotIn("benchmark:livecodebench", group_metrics["coding"])
+        self.assertEqual(DEFAULT_AINDEX_WEIGHTS.get("benchmark:livecodebench", 0), 0)
+
+    def test_default_ainsights_group_metrics_are_ordered_by_internal_weight(self):
+        for group in AINDEX_GROUPS:
+            weights = [metric["weight"] for metric in group["metrics"]]
+            self.assertEqual(
+                weights,
+                sorted(weights, reverse=True),
+                f"{group['id']} metrics should be listed from highest to lowest weight",
+            )
+
     def test_variant_group_removes_common_strength_suffixes(self):
         self.assertEqual(variant_group("GPT-5.5 (xhigh)", "gpt-5-5"), "gpt 5 5")
         self.assertEqual(variant_group("Claude Opus 4.8 (max)", "claude-opus-4-8"), "claude opus 4 8")
@@ -108,7 +144,7 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["calculation"], "geometric")
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["normalization"], "relative-best")
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["missingPolicy"], "weak-prior")
-        self.assertEqual(payload["presets"]["zhihu-adjusted"]["displayScale"], 100)
+        self.assertNotIn("displayScale", payload["presets"]["zhihu-adjusted"])
         self.assertEqual(payload["presets"]["custom"]["normalization"], "relative-best")
         self.assertEqual(payload["metricBaselines"]["GDPval-AA v2"], 80)
         self.assertEqual(payload["scoreBaselines"]["aaIntelligenceMax"], 50)
@@ -332,7 +368,6 @@ class BuildDocsSiteTests(unittest.TestCase):
         )
 
         self.assertEqual(preset["kind"], "frontier-groups")
-        self.assertEqual(preset["displayScale"], 100)
         self.assertEqual(preset["missingPolicy"], "weak-prior")
         self.assertEqual(preset["weakPriorRatio"], 0.34)
         self.assertEqual([group["id"] for group in preset["groups"]], [
@@ -358,6 +393,25 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertGreater(balanced_score["score"], coding_score["score"])
         self.assertEqual(coding_score["coverage"], 2)
         self.assertEqual(balanced_score["coverage"], 5)
+
+    def test_default_ainsights_score_uses_aa_intelligence_scale(self):
+        payload = build_site_payload(
+            read_csv_rows(DEFAULT_INPUT_CSV),
+            load_external_benchmarks(DEFAULT_EXTERNAL_BENCHMARKS_JSON),
+        )
+        preset = payload["presets"]["zhihu-adjusted"]
+        fable = next(model for model in payload["models"] if model["slug"] == "claude-fable-5")
+
+        score = score_model_for_preset(
+            fable,
+            preset,
+            payload["metrics"],
+            payload["metricBaselines"],
+            payload["scoreBaselines"]["aaIntelligenceMax"],
+        )
+
+        self.assertGreater(score["score"], 55)
+        self.assertLess(score["score"], 60)
 
     def test_default_score_weights_metrics_inside_frontier_boards(self):
         payload = build_site_payload(
@@ -543,13 +597,13 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertGreater(ranks["glm-4-7"], 40)
         self.assertGreater(scores["claude-opus-4-8"] - scores["gpt-5-4"], 0.1)
         self.assertGreater(scores["claude-opus-4-7"] - scores["gemini-3-1-pro-preview"], 0.03)
-        self.assertGreater(scores["gemini-3-1-pro-preview"] - scores["deepseek-v4-pro"], 1.0)
-        self.assertGreater(scores["deepseek-v4-pro"] - scores["gemini-3-5-flash"], 1.5)
-        self.assertGreater(scores["qwen3-7-max"] - scores["deepseek-v4-flash"], 2.0)
-        self.assertGreater(scores["kimi-k2-6"] - scores["deepseek-v4-flash"], 0.5)
+        self.assertGreater(scores["gemini-3-1-pro-preview"] - scores["deepseek-v4-pro"], 0.6)
+        self.assertGreater(scores["deepseek-v4-pro"] - scores["gemini-3-5-flash"], 0.9)
+        self.assertGreater(scores["qwen3-7-max"] - scores["deepseek-v4-flash"], 1.2)
+        self.assertGreater(scores["kimi-k2-6"] - scores["deepseek-v4-flash"], 0.3)
         self.assertGreater(scores["deepseek-v4-flash"], scores["glm-4-7"])
         self.assertGreater(scores["qwen3-7-plus"], scores["qwen3-5-397b-a17b"])
-        self.assertGreater(scores["qwen3-7-plus"] - scores["qwen3-5-397b-a17b"], 1.0)
+        self.assertGreater(scores["qwen3-7-plus"] - scores["qwen3-5-397b-a17b"], 0.6)
         self.assertGreater(scores["qwen3-6-plus"], scores["qwen3-5-397b-a17b"])
         self.assertGreater(scores["claude-opus-4-6-adaptive"], scores["gemini-3-5-flash"])
         self.assertGreater(scores["minimax-m2-5"], scores["minimax-m2-1"])

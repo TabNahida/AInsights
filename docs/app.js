@@ -2561,94 +2561,110 @@ function renderMethodologyPage() {
   if (!els.methodologyDetail) return;
   const zh = state.language === "zh-CN";
   document.title = `${zh ? "AInsights Index 计算方式" : "AInsights Index Methodology"} · ${tr("pageTitle")}`;
-  const sections = zh ? [
-    {
-      title: "AInsights Index / AIndex",
-      body: "AInsights Index，也可简称 AIndex，现在由五个能力板块组成：Coding、Agentic/tool work、Hard reasoning、Knowledge/science 和 Instruction/context。默认分数固定缩放到 0-100，而不是跟随 AA Intelligence 的最高分。",
-    },
-    {
-      title: "板块权重",
-      body: "五个板块权重为 Coding 40、Agentic/tool work 24、Hard reasoning 20、Knowledge/science 8、Instruction/context 8。每个板块内部再按测试含金量和覆盖稳定性设置小权重。",
-    },
-    {
-      title: "指标权重",
-      body: "板块内权重只在本板块内部归一化。Coding: benchmark:swe-bench-pro 1.5, benchmark:swe-bench-verified 1.1, benchmark:swe-bench-multilingual 0.8, benchmark:terminal-bench-2 1.4, benchmark:terminal-bench-2-1 0.8, benchmark:frontiercode-diamond 1.0, LiveCodeBench 1.2, benchmark:livecodebench 1.0, Terminal-Bench v2.1 1.1, Terminal-Bench Hard 1.0, SciCode 0.8, benchmark:kimi-code-bench-v2 0.6, benchmark:programbench 0.5, benchmark:livecodebench-pro-elo 0.5。Agentic/tool work: benchmark:terminal-bench-2 1.4, benchmark:swe-bench-pro 1.3, benchmark:browsecomp 1.0, benchmark:hle-tools 1.0, benchmark:mcp-atlas 0.9, benchmark:osworld-verified 0.8, benchmark:gdpval-wins-ties 0.8, benchmark:gdpval-aa-elo 0.7, benchmark:toolathlon 0.6, Terminal-Bench v2.1 0.7, Terminal-Bench Hard 0.8, AA-LCR 0.5。",
-    },
-    {
-      title: "推理与知识指标",
-      body: "Hard reasoning: Humanity's Last Exam 1.3, benchmark:hle 1.2, benchmark:frontiermath-tier-4 1.2, benchmark:frontiermath-tier-1-3 1.0, CritPt 1.1, GPQA Diamond 0.9, benchmark:gpqa-diamond 0.8, AIME 2025 0.7, benchmark:aime-2025 0.7, benchmark:aime-2026 0.3, benchmark:hmmt-2026-feb 0.3, benchmark:arc-agi-2 0.8。Knowledge/science: AA-Omniscience Accuracy 1.0, GPQA Diamond 0.9, Humanity's Last Exam 0.8, benchmark:mmlu-pro 0.2, benchmark:mmmlu 0.7, benchmark:mmmu-pro 0.7, SciCode 0.5。Instruction/context: IFBench 1.0, benchmark:ifbench 0.9, AA-LCR 0.9, CritPt 0.7, benchmark:charxiv-tools 0.6, benchmark:charxiv-no-tools 0.5。",
-    },
-    {
-      title: "公式",
-      body: "每个指标先转为 ratio_m = max(raw_m, 0) / best_observed_m。板块值使用 exp(sum(w_m * ln(1 + ratio_m)) / sum(available_w_m)) - 1，再乘以 (available_internal_weight / total_internal_weight) 的覆盖折扣；普通板块内覆盖折扣指数为 0.03，只有一个指标命中时使用 0.12。最终 AIndex = 100 * 五个板块值的几何加权均值，板块权重为 40/24/20/8/8。",
-    },
-    {
-      title: "板块内校准",
-      body: "每个指标先转成最佳分数比例，再在板块内做几何加权均值。板块内缺项只做轻微覆盖折扣；MMLU-Pro、AIME 2026、HMMT 等偏饱和或覆盖不均的项目保留为信号，但权重较低，避免来源覆盖差异主导排序。",
-    },
-    {
-      title: "LiveCodeBench 填补",
-      body: "如果常规 LiveCodeBench 缺失但存在外部 benchmark:livecodebench，AIndex 会用同时拥有两项分数的模型拟合线性映射后填补；已有常规 LiveCodeBench 分数不会被覆盖。这不是同系列模型之间的指标拷贝。",
-    },
-    {
-      title: "缺失处理",
-      body: "如果一个模型缺少整个板块，就用弱先验进入总分，而不是直接按 0 处理；如果五个板块都没有有效分数，则不生成默认 AIndex。这样可以降低覆盖率偏差，又不让单项成绩凭空撑起整榜。",
-    },
-    {
-      title: "自定义权重",
-      body: "Custom weights 页面可以独立切换最佳分数比例 / 原始分数、几何加权均值 / 普通加权均值，并对比可用项、覆盖折扣 0.25、覆盖折扣 sqrt、弱先验、缺失记 0 和全覆盖要求等缺失处理方式。",
-    },
-  ] : [
-    {
-      title: "AInsights Index / AIndex",
-      body: "AInsights Index, also usable as AIndex, is now composed from five capability boards: Coding, Agentic/tool work, Hard reasoning, Knowledge/science, and Instruction/context. Default scores are scaled to 0-100 rather than to the AA Intelligence maximum.",
-    },
-    {
-      title: "Board Weights",
-      body: "The five board weights are Coding 40, Agentic/tool work 24, Hard reasoning 20, Knowledge/science 8, and Instruction/context 8. Each board then gives smaller internal weights to higher-signal, more stable benchmarks.",
-    },
-    {
-      title: "Metric Weights",
-      body: "Internal weights are normalized only within their own board. Coding: benchmark:swe-bench-pro 1.5, benchmark:swe-bench-verified 1.1, benchmark:swe-bench-multilingual 0.8, benchmark:terminal-bench-2 1.4, benchmark:terminal-bench-2-1 0.8, benchmark:frontiercode-diamond 1.0, LiveCodeBench 1.2, benchmark:livecodebench 1.0, Terminal-Bench v2.1 1.1, Terminal-Bench Hard 1.0, SciCode 0.8, benchmark:kimi-code-bench-v2 0.6, benchmark:programbench 0.5, benchmark:livecodebench-pro-elo 0.5. Agentic/tool work: benchmark:terminal-bench-2 1.4, benchmark:swe-bench-pro 1.3, benchmark:browsecomp 1.0, benchmark:hle-tools 1.0, benchmark:mcp-atlas 0.9, benchmark:osworld-verified 0.8, benchmark:gdpval-wins-ties 0.8, benchmark:gdpval-aa-elo 0.7, benchmark:toolathlon 0.6, Terminal-Bench v2.1 0.7, Terminal-Bench Hard 0.8, AA-LCR 0.5.",
-    },
-    {
-      title: "Reasoning And Knowledge Metrics",
-      body: "Hard reasoning: Humanity's Last Exam 1.3, benchmark:hle 1.2, benchmark:frontiermath-tier-4 1.2, benchmark:frontiermath-tier-1-3 1.0, CritPt 1.1, GPQA Diamond 0.9, benchmark:gpqa-diamond 0.8, AIME 2025 0.7, benchmark:aime-2025 0.7, benchmark:aime-2026 0.3, benchmark:hmmt-2026-feb 0.3, benchmark:arc-agi-2 0.8. Knowledge/science: AA-Omniscience Accuracy 1.0, GPQA Diamond 0.9, Humanity's Last Exam 0.8, benchmark:mmlu-pro 0.2, benchmark:mmmlu 0.7, benchmark:mmmu-pro 0.7, SciCode 0.5. Instruction/context: IFBench 1.0, benchmark:ifbench 0.9, AA-LCR 0.9, CritPt 0.7, benchmark:charxiv-tools 0.6, benchmark:charxiv-no-tools 0.5.",
-    },
-    {
-      title: "Formula",
-      body: "Each metric becomes ratio_m = max(raw_m, 0) / best_observed_m. Each board value is exp(sum(w_m * ln(1 + ratio_m)) / sum(available_w_m)) - 1, multiplied by a coverage discount from available_internal_weight / total_internal_weight. The normal within-board coverage exponent is 0.03; the single-metric board exponent is 0.12. Final AIndex = 100 * the geometric weighted mean of the five board values with weights 40/24/20/8/8.",
-    },
-    {
-      title: "Within-Board Calibration",
-      body: "Each metric first becomes a best-score ratio, then each board uses a geometric weighted mean. Missing metrics inside a board receive only a light coverage discount; saturated or unevenly covered rows such as MMLU-Pro, AIME 2026, and HMMT remain signals but carry lower weight.",
-    },
-    {
-      title: "LiveCodeBench Fallback",
-      body: "When regular LiveCodeBench is missing but external benchmark:livecodebench exists, AIndex fits a linear mapping from models that have both fields and fills only the missing regular value. Existing regular LiveCodeBench scores are never overwritten; this is not same-family metric copying.",
-    },
-    {
-      title: "Missing Values",
-      body: "If an entire board is missing, AIndex uses a weak prior for that board instead of treating it as 0. If all five boards are missing, no default AIndex is produced. This reduces coverage bias without letting a single metric carry the whole score.",
-    },
-    {
-      title: "Custom Weights",
-      body: "The Custom weights panel can switch best-score ratio / raw score, geometric / arithmetic weighted mean, and missing-value policies including available only, 0.25 coverage discount, sqrt coverage discount, weak prior, missing = 0, and full coverage.",
-    },
-  ];
+  const preset = state.data?.presets?.["zhihu-adjusted"] || {};
+  const groups = [...(preset.groups || [])].sort((a, b) => Number(b.weight || 0) - Number(a.weight || 0));
+  const formatMethodologyWeight = (value) => Number(value || 0).toFixed(2).replace(/\.?0+$/, "");
+  const sortedMetrics = (group) => [...(group.metrics || [])].sort((a, b) => Number(b.weight || 0) - Number(a.weight || 0));
+  const metricListHtml = (group) => sortedMetrics(group).map((metric) => `
+    <span class="methodology-metric-pill"><code>${escapeHtml(metric.key)}</code> ${escapeHtml(formatMethodologyWeight(metric.weight))}</span>
+  `).join("");
+  const roleCopy = {
+    coding: zh
+      ? "最大板块，优先真实软件工程与高难代码任务：SWE-Bench Pro/Verified/Multilingual 看仓库问题修复，Terminal-Bench v2.1 采用 AA 覆盖更广的数据，LiveCodeBench 与 FrontierCode 补充代码生成和前沿难题，Terminal-Bench Hard、SciCode、Kimi Code Bench、ProgramBench、LiveCodeBench Pro 作为难度和覆盖补充。"
+      : "The largest board prioritizes real software engineering and difficult coding tasks: SWE-Bench Pro/Verified/Multilingual for repository issue solving, AA Terminal-Bench v2.1 as the broader-covered Terminal-Bench 2 signal, LiveCodeBench and FrontierCode for generation and frontier coding, with Terminal-Bench Hard, SciCode, Kimi Code Bench, ProgramBench, and LiveCodeBench Pro as harder or supplemental coverage.",
+    "agentic-tool-work": zh
+      ? "衡量模型在工具、网页、终端和工作流中的完成能力。Terminal-Bench v2.1 与 SWE-Bench 会和 Coding 同时出现，因为每个板块的能力维度独立加权；BrowseComp、HLE tools、MCP-Atlas、OSWorld、GDPval、Toolathlon 与 AA-LCR 补足浏览、工具调用、桌面环境、业务任务和长上下文执行。"
+      : "Measures tool, browser, terminal, and workflow execution. Terminal-Bench v2.1 and SWE-Bench can also appear in Coding because each board scores an independent capability dimension; BrowseComp, HLE tools, MCP-Atlas, OSWorld, GDPval, Toolathlon, and AA-LCR cover browsing, tool use, desktop tasks, business work, and long-context execution.",
+    "hard-reasoning": zh
+      ? "突出高难问题求解：HLE、FrontierMath、CritPt、GPQA、AIME、HMMT 与 ARC-AGI 用来区分前沿推理能力。AIME 2026 和 HMMT 因覆盖不均、区分度更集中，所以只保留低权重信号。"
+      : "Emphasizes difficult problem solving: HLE, FrontierMath, CritPt, GPQA, AIME, HMMT, and ARC-AGI separate frontier reasoning. AIME 2026 and HMMT stay as low-weight signals because coverage is uneven and the top range can be compressed.",
+    "knowledge-science": zh
+      ? "补充科学、事实和多模态知识广度。Omniscience、GPQA、HLE、MMMLU/MMMU-Pro 和 SciCode 提供科学与知识信号；MMLU-Pro 因相对饱和和覆盖差异，只保留很低权重。"
+      : "Adds scientific, factual, and multimodal breadth. Omniscience, GPQA, HLE, MMMLU/MMMU-Pro, and SciCode provide science and knowledge signals; MMLU-Pro remains at very low weight because it is more saturated and unevenly covered.",
+    "instruction-context": zh
+      ? "覆盖指令遵循、长上下文和图文理解。IFBench、AA-LCR、CritPt 与 CharXiv variants 用来补足模型在复杂指令、长文档和视觉题目中的稳定性。"
+      : "Covers instruction following, long context, and chart/vision understanding. IFBench, AA-LCR, CritPt, and CharXiv variants capture stability on complex instructions, long documents, and visual reasoning tasks.",
+  };
+  const boardRows = groups.map((group) => `
+    <tr>
+      <td>${escapeHtml(group.label || group.id)}</td>
+      <td>${escapeHtml(formatMethodologyWeight(group.weight))}</td>
+      <td>${escapeHtml(roleCopy[group.id] || "")}</td>
+    </tr>
+  `).join("");
+  const matrixRows = groups.map((group) => `
+    <tr>
+      <td>${escapeHtml(group.label || group.id)}</td>
+      <td>${escapeHtml(formatMethodologyWeight(group.weight))}</td>
+      <td>${escapeHtml(roleCopy[group.id] || "")}</td>
+      <td>${metricListHtml(group)}</td>
+    </tr>
+  `).join("");
   els.methodologyDetail.innerHTML = `
     <section class="methodology-hero">
       <p class="eyebrow">${escapeHtml(zh ? "Methodology" : "Methodology")}</p>
       <h2>${escapeHtml(zh ? "AInsights Index 计算方式" : "AInsights Index Methodology")}</h2>
-      <p>${escapeHtml(zh ? "AIndex 是 AInsights Index 的别名，两个名称指向同一套默认排名口径。" : "AIndex is an alias for AInsights Index; both names refer to the same default ranking method.")}</p>
+      <p>${escapeHtml(zh ? "默认 AIndex 用五个独立能力板块计算，重点提高 Coding、Agentic/tool work 和 Hard reasoning 对最终排名的影响。" : "The default AIndex ranking is calculated from five independent capability boards, with extra emphasis on Coding, Agentic/tool work, and Hard reasoning.")}</p>
     </section>
     <section class="methodology-grid">
-      ${sections.map((section) => `
-        <article class="methodology-card">
-          <h3>${escapeHtml(section.title)}</h3>
-          <p>${escapeHtml(section.body)}</p>
-        </article>
-      `).join("")}
+      <article class="methodology-card methodology-card-wide">
+        <h3>${escapeHtml(zh ? "Capability Boards" : "Capability Boards")}</h3>
+        <p>${escapeHtml(zh ? "五个板块按权重从高到低排列。每个板块先独立算出板块分，再进入最终几何加权总分。" : "The five boards are shown from highest to lowest weight. Each board first gets its own board score, then those board scores enter the final geometric weighted mean.")}</p>
+        <div class="methodology-table-wrap">
+          <table class="methodology-weight-table">
+            <thead>
+              <tr>
+                <th>${escapeHtml(zh ? "板块" : "Board")}</th>
+                <th>${escapeHtml(zh ? "权重" : "Weight")}</th>
+                <th>${escapeHtml(zh ? "选择逻辑" : "Selection logic")}</th>
+              </tr>
+            </thead>
+            <tbody>${boardRows}</tbody>
+          </table>
+        </div>
+        <p>${escapeHtml(zh ? "同一个测试可以出现在多个板块，因为每个板块的能力维度独立加权。例如 Terminal-Bench 同时体现代码执行和工具工作流，但它在两个板块内的权重分别只服务于对应能力。" : "A metric can appear in multiple boards because each board scores an independent capability dimension. For example, Terminal-Bench can reflect both code execution and tool workflow ability, but its weight inside each board only serves that board.")}</p>
+      </article>
+      <article class="methodology-card methodology-card-wide">
+        <h3>${escapeHtml(zh ? "Metric Weights" : "Metric Weights")}</h3>
+        <p>${escapeHtml(zh ? "矩阵按板块权重从高到低展示；每个板块内的指标也按内部权重从高到低展示。内部权重只在本板块内归一化。" : "The matrix is ordered by board weight, and each board's metrics are ordered from highest to lowest internal weight. Internal weights are normalized only within their own board.")}</p>
+        <div class="methodology-table-wrap">
+          <table class="methodology-weight-table methodology-matrix-table">
+            <thead>
+              <tr>
+                <th>${escapeHtml(zh ? "板块" : "Board")}</th>
+                <th>${escapeHtml(zh ? "AIndex 权重" : "AIndex weight")}</th>
+                <th>${escapeHtml(zh ? "测试项目选择" : "Benchmark selection")}</th>
+                <th>${escapeHtml(zh ? "指标与内部权重" : "Metrics and internal weights")}</th>
+              </tr>
+            </thead>
+            <tbody>${matrixRows}</tbody>
+          </table>
+        </div>
+      </article>
+      <article class="methodology-card methodology-card-wide">
+        <h3>${escapeHtml(zh ? "Calculation Formula" : "Calculation Formula")}</h3>
+        <p>${escapeHtml(zh ? "每个指标先转为最佳分数比例：ratio_m = max(raw_m, 0) / best_observed_m。best_observed_m 是当前数据集中同一个指标 key 的最高有效分。" : "Each metric first becomes a best-score ratio: ratio_m = max(raw_m, 0) / best_observed_m. best_observed_m is the highest valid score currently present for that exact metric key.")}</p>
+        <p>${escapeHtml(zh ? "板块分使用几何加权均值：exp(sum(w_m * ln(1 + ratio_m)) / sum(available_w_m)) - 1，然后乘以 (available_internal_weight / total_internal_weight) 的覆盖折扣。" : "A board score uses the weighted geometric mean: exp(sum(w_m * ln(1 + ratio_m)) / sum(available_w_m)) - 1, then multiplies by a coverage discount from available_internal_weight / total_internal_weight.")}</p>
+        <p>${escapeHtml(zh ? "普通板块内覆盖折扣指数为 0.02；如果一个板块只有一个指标命中，则使用 0.10。若整个板块缺失，使用弱先验 0.34；若五个板块都缺失，则不生成默认分。" : "The normal within-board coverage discount exponent is 0.02; if a board has only one available metric, the exponent is 0.10. If an entire board is missing, AIndex uses a weak prior of 0.34; if all five boards are missing, no default score is produced.")}</p>
+        <p><code>${escapeHtml("AIndex = AA Intelligence max * (exp((40 * ln(1 + Coding) + 24 * ln(1 + Agentic) + 20 * ln(1 + HardReasoning) + 8 * ln(1 + KnowledgeScience) + 8 * ln(1 + InstructionContext)) / 100) - 1)")}</code></p>
+      </article>
+      <article class="methodology-card methodology-card-wide">
+        <h3>${escapeHtml(zh ? "AIndex Calculation" : "AIndex Calculation")}</h3>
+        <ol class="methodology-steps">
+          <li>${escapeHtml(zh ? "收集 AA 与外部来源中参与默认 AIndex 的指标；外部 Terminal-Bench 2/2.1 作为证据保留，但默认权重选 AA Terminal-Bench v2.1。" : "Collect AA and external metrics used by default AIndex; external Terminal-Bench 2/2.1 remains evidence, while the default weight uses AA Terminal-Bench v2.1.")}</li>
+          <li>${escapeHtml(zh ? "把每个原始分转成同指标内的 Best score ratio，避免百分制、Elo 或不同量纲直接相加。" : "Convert every raw score into a same-metric Best score ratio, avoiding direct addition across percentage, Elo, or differently scaled fields.")}</li>
+          <li>${escapeHtml(zh ? "在每个板块内部按指标权重做几何加权均值，并应用轻量覆盖折扣。" : "Within each board, aggregate available metrics with a weighted geometric mean and apply a light coverage discount.")}</li>
+          <li>${escapeHtml(zh ? "缺失整板块时使用弱先验 0.34，防止稀疏模型被直接归零，也防止单项测试撑起整榜。" : "Use a weak prior of 0.34 for a missing whole board, preventing sparse models from collapsing to zero while also stopping one metric from carrying the ranking.")}</li>
+          <li>${escapeHtml(zh ? "用 40/24/20/8/8 的板块权重做最终几何加权均值，并缩放到当前 AA Intelligence 最大分。" : "Aggregate the five board values with 40/24/20/8/8 board weights, then scale the result to the current AA Intelligence maximum.")}</li>
+        </ol>
+      </article>
+      <article class="methodology-card methodology-card-wide">
+        <h3>${escapeHtml(zh ? "Detailed Explanation" : "Detailed Explanation")}</h3>
+        <p>${escapeHtml(zh ? "AIndex 的核心不是把所有测试平铺相加，而是先把能力拆成五个板块。Coding 权重最高，因为真实代码、仓库修复和高难程序题最能拉开强模型；Agentic/tool work 和 Hard reasoning 紧随其后，用来放大工具执行、复杂工作流和高难推理差异。" : "AIndex does not flatten every benchmark into one pool. It first separates capability into five boards. Coding has the highest weight because real code, repository repair, and difficult programming tasks separate strong models most clearly; Agentic/tool work and Hard reasoning then amplify tool execution, complex workflow, and difficult reasoning differences.")}</p>
+        <p>${escapeHtml(zh ? "Knowledge/science 与 Instruction/context 权重较小，但仍保留，因为事实知识、科学题、长上下文和指令稳定性会影响实际可用性。MMLU-Pro、AIME 2026、HMMT 等项目因为覆盖、饱和或高分段集中问题被降权，而不是删除。" : "Knowledge/science and Instruction/context have smaller weights but remain included because factual knowledge, science, long context, and instruction stability affect real usability. MMLU-Pro, AIME 2026, and HMMT are downweighted rather than deleted because of coverage, saturation, or compressed top-range issues.")}</p>
+        <p>${escapeHtml(zh ? "LiveCodeBench 只有在常规列缺失、但存在外部 benchmark:livecodebench 时，才用当前数据中同时拥有两项的模型拟合线性映射进行填补；外部行只作为填补来源，不作为单独的默认矩阵指标。已有常规 LiveCodeBench 永远不被覆盖。AIndex does not copy metrics from lower same-family models into higher tiers." : "LiveCodeBench is filled only when the regular column is missing and external benchmark:livecodebench exists. The external row is used as a fallback source rather than as a separate default matrix metric. The mapping is learned from current models that have both fields, and existing regular LiveCodeBench scores are never overwritten. AIndex does not copy metrics from lower same-family models into higher tiers.")}</p>
+        <p>${escapeHtml(zh ? "Custom weights 页面暴露同样的积木：Best score ratio 或 Raw score、Geometric Weight Mean 或 Weight Mean、可用项、覆盖折扣 0.25、覆盖折扣 sqrt、弱先验、缺失记 0、全覆盖门槛和逐项权重。" : "The Custom weights panel exposes the same building blocks: Best score ratio or Raw score, Geometric Weight Mean or Weight Mean, available-only scoring, 0.25 coverage discount, sqrt coverage discount, weak prior, missing = 0, full-coverage gates, and per-benchmark weights.")}</p>
+      </article>
     </section>
   `;
 }

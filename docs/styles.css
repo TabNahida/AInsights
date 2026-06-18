@@ -534,6 +534,31 @@ main {
   font-weight: 850;
 }
 
+.methodology-matrix-table {
+  min-width: 920px;
+}
+
+.methodology-matrix-table td:nth-child(3) {
+  min-width: 280px;
+}
+
+.methodology-metric-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 6px 6px 0;
+  padding: 4px 7px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface);
+  white-space: nowrap;
+}
+
+.methodology-metric-pill code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
 .methodology-steps {
   display: grid;
   gap: 8px;

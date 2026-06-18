@@ -33,32 +33,32 @@
         <section class="methodology-hero">
           <p class="eyebrow">Methodology</p>
           <h2>AInsights Index Methodology</h2>
-          <p>AIndex is an alias for AInsights Index. Both names refer to the same default ranking method used on this site.</p>
+          <p>The default AIndex ranking is calculated from five independent capability boards, with extra emphasis on Coding, Agentic/tool work, and Hard reasoning.</p>
         </section>
 
         <section class="methodology-grid">
           <article class="methodology-card methodology-card-wide">
             <h3>Capability Boards</h3>
-            <p>AIndex now uses five capability boards instead of a regular-plus-bonus split. Scores are scaled to a 0-100 AIndex range, and each board prioritizes higher-signal benchmarks before the board scores are aggregated.</p>
+            <p>AIndex now uses five capability boards instead of a regular-plus-bonus split. Scores are scaled to the current AA Intelligence maximum, and the boards are shown from highest to lowest weight.</p>
             <div class="methodology-table-wrap">
               <table class="methodology-weight-table">
                 <thead>
                   <tr>
                     <th>Board</th>
                     <th>Weight</th>
-                    <th>Role in AIndex</th>
+                    <th>Selection logic</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>Coding</td>
                     <td>40</td>
-                    <td>SWE-Bench, Terminal-Bench, LiveCodeBench, FrontierCode, SciCode, and related coding tasks form the largest board.</td>
+                    <td>The largest board prioritizes real software engineering and difficult coding tasks: SWE-Bench Pro/Verified/Multilingual, AA Terminal-Bench v2.1, LiveCodeBench, FrontierCode, Terminal-Bench Hard, SciCode, Kimi Code Bench, ProgramBench, and LiveCodeBench Pro.</td>
                   </tr>
                   <tr>
                     <td>Agentic/tool work</td>
                     <td>24</td>
-                    <td>Terminal, SWE, BrowseComp, HLE tools, MCP-Atlas, OSWorld, GDPval, and Toolathlon capture tool-using work.</td>
+                    <td>Terminal-Bench v2.1, SWE-Bench, BrowseComp, HLE tools, MCP-Atlas, OSWorld, GDPval, Toolathlon, and AA-LCR capture tool, browser, terminal, desktop, and business workflow execution.</td>
                   </tr>
                   <tr>
                     <td>Hard reasoning</td>
@@ -78,19 +78,19 @@
                 </tbody>
               </table>
             </div>
-            <p>Within each board, metrics use their own internal weights. Highly correlated or saturated rows such as MMLU-Pro, AIME 2026, and HMMT remain evidence, but they carry lower internal weight so source coverage does not dominate the board.</p>
-            <p>LiveCodeBench can still be filled from external benchmark:livecodebench through a linear fit learned from overlapping models; existing regular LiveCodeBench values are never overwritten. AIndex does not copy metrics from lower same-family models into higher tiers.</p>
+            <p>A metric can appear in multiple boards because each board scores an independent capability dimension. For example, Terminal-Bench can reflect both code execution and tool workflow ability, but its weight inside each board only serves that board.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>Metric Weights</h3>
-            <p>Internal weights are normalized within each board. For example, <code>benchmark:swe-bench-pro</code> weight 1.5 is larger than <code>benchmark:programbench</code> weight 0.5 inside Coding, but Coding still contributes 40 total AIndex weight after its board value is calculated.</p>
+            <p>Internal weights are normalized within each board. The matrix is ordered by board weight, and each board's metrics are ordered from highest to lowest internal weight.</p>
             <div class="methodology-table-wrap">
-              <table class="methodology-weight-table">
+              <table class="methodology-weight-table methodology-matrix-table">
                 <thead>
                   <tr>
                     <th>Board</th>
                     <th>AIndex weight</th>
+                    <th>Benchmark selection</th>
                     <th>Metrics and internal weights</th>
                   </tr>
                 </thead>
@@ -98,27 +98,32 @@
                   <tr>
                     <td>Coding</td>
                     <td>40</td>
-                    <td><code>benchmark:swe-bench-pro</code> 1.5; <code>benchmark:swe-bench-verified</code> 1.1; <code>benchmark:swe-bench-multilingual</code> 0.8; <code>benchmark:terminal-bench-2</code> 1.4; <code>benchmark:terminal-bench-2-1</code> 0.8; <code>benchmark:frontiercode-diamond</code> 1.0; <code>LiveCodeBench</code> 1.2; <code>benchmark:livecodebench</code> 1.0; <code>Terminal-Bench v2.1</code> 1.1; <code>Terminal-Bench Hard</code> 1.0; <code>SciCode</code> 0.8; <code>benchmark:kimi-code-bench-v2</code> 0.6; <code>benchmark:programbench</code> 0.5; <code>benchmark:livecodebench-pro-elo</code> 0.5.</td>
+                    <td>Real repository repair, terminal coding, contest-style generation, and harder coding/science tasks.</td>
+                    <td><span class="methodology-metric-pill"><code>benchmark:swe-bench-pro</code> 1.5</span><span class="methodology-metric-pill"><code>LiveCodeBench</code> 1.2</span><span class="methodology-metric-pill"><code>benchmark:swe-bench-verified</code> 1.1</span><span class="methodology-metric-pill"><code>benchmark:frontiercode-diamond</code> 1.0</span><span class="methodology-metric-pill"><code>Terminal-Bench Hard</code> 1.0</span><span class="methodology-metric-pill"><code>Terminal-Bench v2.1</code> 0.9</span><span class="methodology-metric-pill"><code>benchmark:swe-bench-multilingual</code> 0.8</span><span class="methodology-metric-pill"><code>SciCode</code> 0.8</span><span class="methodology-metric-pill"><code>benchmark:kimi-code-bench-v2</code> 0.6</span><span class="methodology-metric-pill"><code>benchmark:programbench</code> 0.5</span><span class="methodology-metric-pill"><code>benchmark:livecodebench-pro-elo</code> 0.5</span></td>
                   </tr>
                   <tr>
                     <td>Agentic/tool work</td>
                     <td>24</td>
-                    <td><code>benchmark:terminal-bench-2</code> 1.4; <code>benchmark:swe-bench-pro</code> 1.3; <code>benchmark:browsecomp</code> 1.0; <code>benchmark:hle-tools</code> 1.0; <code>benchmark:mcp-atlas</code> 0.9; <code>benchmark:osworld-verified</code> 0.8; <code>benchmark:gdpval-wins-ties</code> 0.8; <code>benchmark:gdpval-aa-elo</code> 0.7; <code>benchmark:toolathlon</code> 0.6; <code>Terminal-Bench v2.1</code> 0.7; <code>Terminal-Bench Hard</code> 0.8; <code>AA-LCR</code> 0.5.</td>
+                    <td>Tool use, browser research, terminal work, desktop tasks, business task completion, and long-context execution.</td>
+                    <td><span class="methodology-metric-pill"><code>benchmark:swe-bench-pro</code> 1.3</span><span class="methodology-metric-pill"><code>benchmark:browsecomp</code> 1.0</span><span class="methodology-metric-pill"><code>benchmark:hle-tools</code> 1.0</span><span class="methodology-metric-pill"><code>benchmark:mcp-atlas</code> 0.9</span><span class="methodology-metric-pill"><code>benchmark:osworld-verified</code> 0.8</span><span class="methodology-metric-pill"><code>benchmark:gdpval-wins-ties</code> 0.8</span><span class="methodology-metric-pill"><code>Terminal-Bench Hard</code> 0.8</span><span class="methodology-metric-pill"><code>benchmark:gdpval-aa-elo</code> 0.7</span><span class="methodology-metric-pill"><code>benchmark:toolathlon</code> 0.6</span><span class="methodology-metric-pill"><code>Terminal-Bench v2.1</code> 0.5</span><span class="methodology-metric-pill"><code>AA-LCR</code> 0.5</span></td>
                   </tr>
                   <tr>
                     <td>Hard reasoning</td>
                     <td>20</td>
-                    <td><code>Humanity's Last Exam</code> 1.3; <code>benchmark:hle</code> 1.2; <code>benchmark:frontiermath-tier-4</code> 1.2; <code>benchmark:frontiermath-tier-1-3</code> 1.0; <code>CritPt</code> 1.1; <code>GPQA Diamond</code> 0.9; <code>benchmark:gpqa-diamond</code> 0.8; <code>AIME 2025</code> 0.7; <code>benchmark:aime-2025</code> 0.7; <code>benchmark:aime-2026</code> 0.3; <code>benchmark:hmmt-2026-feb</code> 0.3; <code>benchmark:arc-agi-2</code> 0.8.</td>
+                    <td>High-difficulty general reasoning, math, science QA, contest math, and ARC-style abstraction.</td>
+                    <td><span class="methodology-metric-pill"><code>Humanity's Last Exam</code> 1.3</span><span class="methodology-metric-pill"><code>benchmark:hle</code> 1.2</span><span class="methodology-metric-pill"><code>benchmark:frontiermath-tier-4</code> 1.2</span><span class="methodology-metric-pill"><code>CritPt</code> 1.1</span><span class="methodology-metric-pill"><code>benchmark:frontiermath-tier-1-3</code> 1.0</span><span class="methodology-metric-pill"><code>GPQA Diamond</code> 0.9</span><span class="methodology-metric-pill"><code>benchmark:gpqa-diamond</code> 0.8</span><span class="methodology-metric-pill"><code>benchmark:arc-agi-2</code> 0.8</span><span class="methodology-metric-pill"><code>AIME 2025</code> 0.7</span><span class="methodology-metric-pill"><code>benchmark:aime-2025</code> 0.7</span><span class="methodology-metric-pill"><code>benchmark:aime-2026</code> 0.3</span><span class="methodology-metric-pill"><code>benchmark:hmmt-2026-feb</code> 0.3</span></td>
                   </tr>
                   <tr>
                     <td>Knowledge/science</td>
                     <td>8</td>
-                    <td><code>AA-Omniscience Accuracy</code> 1.0; <code>GPQA Diamond</code> 0.9; <code>Humanity's Last Exam</code> 0.8; <code>benchmark:mmlu-pro</code> 0.2; <code>benchmark:mmmlu</code> 0.7; <code>benchmark:mmmu-pro</code> 0.7; <code>SciCode</code> 0.5.</td>
+                    <td>Scientific and factual breadth across omniscience, GPQA, HLE, multilingual knowledge, multimodal reasoning, and code-adjacent science.</td>
+                    <td><span class="methodology-metric-pill"><code>AA-Omniscience Accuracy</code> 1.0</span><span class="methodology-metric-pill"><code>GPQA Diamond</code> 0.9</span><span class="methodology-metric-pill"><code>Humanity's Last Exam</code> 0.8</span><span class="methodology-metric-pill"><code>benchmark:mmmlu</code> 0.7</span><span class="methodology-metric-pill"><code>benchmark:mmmu-pro</code> 0.7</span><span class="methodology-metric-pill"><code>SciCode</code> 0.5</span><span class="methodology-metric-pill"><code>benchmark:mmlu-pro</code> 0.2</span></td>
                   </tr>
                   <tr>
                     <td>Instruction/context</td>
                     <td>8</td>
-                    <td><code>IFBench</code> 1.0; <code>benchmark:ifbench</code> 0.9; <code>AA-LCR</code> 0.9; <code>CritPt</code> 0.7; <code>benchmark:charxiv-tools</code> 0.6; <code>benchmark:charxiv-no-tools</code> 0.5.</td>
+                    <td>Instruction following, long context, critique behavior, and chart/vision understanding with and without tools.</td>
+                    <td><span class="methodology-metric-pill"><code>IFBench</code> 1.0</span><span class="methodology-metric-pill"><code>benchmark:ifbench</code> 0.9</span><span class="methodology-metric-pill"><code>AA-LCR</code> 0.9</span><span class="methodology-metric-pill"><code>CritPt</code> 0.7</span><span class="methodology-metric-pill"><code>benchmark:charxiv-tools</code> 0.6</span><span class="methodology-metric-pill"><code>benchmark:charxiv-no-tools</code> 0.5</span></td>
                   </tr>
                 </tbody>
               </table>
@@ -129,19 +134,19 @@
             <h3>Calculation Formula</h3>
             <p>For a metric <code>m</code>, the normalized metric value is <code>ratio_m = max(raw_m, 0) / best_observed_m</code>. Best observed means the highest score currently present in the dataset for that exact metric key.</p>
             <p>For each board, AIndex first aggregates available metric ratios with the weighted geometric mean used by the code: <code>exp(sum(weight_m * ln(1 + ratio_m)) / sum(available_weight_m)) - 1</code>.</p>
-            <p>The board metric coverage adjustment is then applied: multiply the board value by <code>(available_internal_weight / total_internal_weight) ^ exponent</code>. The normal within-board coverage discount exponent is 0.03; the single-metric board exponent is 0.12.</p>
+            <p>The board metric coverage adjustment is then applied: multiply the board value by <code>(available_internal_weight / total_internal_weight) ^ exponent</code>. The normal within-board coverage discount exponent is 0.02; the single-metric board exponent is 0.10.</p>
             <p>If a board has no available metrics, AIndex inserts a weak prior value of 0.34 for that board. If all five boards are missing, the model receives no default AIndex score.</p>
-            <p>The final board aggregation is another weighted geometric mean: <code>AIndex = 100 * (exp((40 * ln(1 + Coding) + 24 * ln(1 + Agentic) + 20 * ln(1 + HardReasoning) + 8 * ln(1 + KnowledgeScience) + 8 * ln(1 + InstructionContext)) / 100) - 1)</code>.</p>
+            <p>The final board aggregation is another weighted geometric mean: <code>AIndex = AA Intelligence max * (exp((40 * ln(1 + Coding) + 24 * ln(1 + Agentic) + 20 * ln(1 + HardReasoning) + 8 * ln(1 + KnowledgeScience) + 8 * ln(1 + InstructionContext)) / 100) - 1)</code>.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>AIndex Calculation</h3>
             <ol class="methodology-steps">
               <li>For each board metric, convert the raw score into a <strong>Best score ratio</strong>: model score divided by the highest score observed for that benchmark.</li>
-              <li>Aggregate available metrics inside each board with a weighted geometric mean, then apply a light within-board coverage discount using exponent 0.03, or 0.12 if only one metric is present in that board.</li>
+              <li>Aggregate available metrics inside each board with a weighted geometric mean, then apply a light within-board coverage discount using exponent 0.02, or 0.10 if only one metric is present in that board.</li>
               <li>If an entire board is missing, use a weak prior of 0.34 for that board; if all boards are missing, no default AIndex is produced.</li>
               <li>Aggregate the five board values with board weights 40 / 24 / 20 / 8 / 8 using a geometric weighted mean.</li>
-              <li>Scale the resulting ratio to the 0-100 AIndex display range.</li>
+              <li>Scale the resulting ratio to the current AA Intelligence maximum.</li>
             </ol>
           </article>
 
@@ -150,7 +155,8 @@
             <p>AIndex is designed to compare models across different benchmark scales without letting any single raw scoring convention dominate the final leaderboard. A percentage-style benchmark, an Elo-normalized field, and a long-context score can each have different ranges, so AIndex first places every active field on its own best-observed baseline.</p>
             <p>The board structure is now the primary anchor. It deliberately gives the most weight to coding and agentic tool work, while keeping hard reasoning large enough to distinguish frontier models.</p>
             <p>Official external benchmark rows are shared across variants of the same model, so a release table attached to a non-reasoning or reasoning tier can still inform the sibling tier instead of creating artificial gaps between variants.</p>
-            <p>For LiveCodeBench only, the site can synthesize a missing regular value from external benchmark:livecodebench data. The fit is learned from overlapping models in the current dataset, then clamped to the normal percentage range before scoring.</p>
+            <p>For LiveCodeBench only, the site can synthesize a missing regular value from external benchmark:livecodebench data. The external row is used as a fallback source rather than as a separate default matrix metric. The fit is learned from overlapping models in the current dataset, then clamped to the normal percentage range before scoring. AIndex does not copy metrics from lower same-family models into higher tiers.</p>
+            <p>Highly correlated, saturated, or unevenly covered rows such as MMLU-Pro, AIME 2026, and HMMT remain evidence, but they carry lower internal weight so source coverage does not dominate the board.</p>
             <p>The weak-prior missing policy is deliberately softer than missing-as-zero, but stricter than ignoring absent boards entirely. It keeps sparse-source models from collapsing while preventing one rich external table from carrying the whole score.</p>
             <p>The Custom weights panel exposes the same building blocks for comparison: Best score ratio or Raw score, Geometric Weight Mean or regular Weight Mean, available-only scoring, 0.25 coverage discount, sqrt coverage discount, weak prior, missing-as-zero, full-coverage gates, and per-benchmark weights.</p>
           </article>
