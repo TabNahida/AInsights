@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-18T23:53:25+00:00",
+  "generatedAt": "2026-06-19T07:18:39+00:00",
   "source": {
     "label": "Artificial Analysis Intelligence Evaluations",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -23,7 +23,7 @@
     {
       "key": "Terminal-Bench v2.1",
       "label": "Terminal-Bench v2.1",
-      "defaultWeight": 4.9846782431052095
+      "defaultWeight": 6.279821456056641
     },
     {
       "key": "GDPval-AA",
@@ -33,7 +33,7 @@
     {
       "key": "Terminal-Bench Hard",
       "label": "Terminal-Bench Hard",
-      "defaultWeight": 6.197707411190558
+      "defaultWeight": 7.636755425581038
     },
     {
       "key": "τ²-Bench Telecom",
@@ -43,7 +43,7 @@
     {
       "key": "AA-LCR",
       "label": "AA-LCR",
-      "defaultWeight": 2.913531998045921
+      "defaultWeight": 3.294260552687519
     },
     {
       "key": "AA-Omniscience Accuracy",
@@ -58,27 +58,27 @@
     {
       "key": "Humanity's Last Exam",
       "label": "Humanity's Last Exam",
-      "defaultWeight": 3.8576051779935274
+      "defaultWeight": 4.0701754385964914
     },
     {
       "key": "GPQA Diamond",
       "label": "GPQA Diamond",
-      "defaultWeight": 3.2475728155339807
+      "defaultWeight": 3.394736842105263
     },
     {
       "key": "SciCode",
       "label": "SciCode",
-      "defaultWeight": 4.065656565656566
+      "defaultWeight": 5.216894977168949
     },
     {
       "key": "IFBench",
       "label": "IFBench",
-      "defaultWeight": 1.7391304347826089
+      "defaultWeight": 2.162162162162162
     },
     {
       "key": "CritPt",
       "label": "CritPt",
-      "defaultWeight": 3.3533136344449135
+      "defaultWeight": 3.8293029871977238
     },
     {
       "key": "APEX-Agents-AA",
@@ -98,17 +98,17 @@
     {
       "key": "LiveCodeBench",
       "label": "LiveCodeBench",
-      "defaultWeight": 4.848484848484849
+      "defaultWeight": 6.575342465753425
     },
     {
       "key": "AIME 2025",
       "label": "AIME 2025",
-      "defaultWeight": 1.3592233009708736
+      "defaultWeight": 1.4736842105263157
     },
     {
       "key": "benchmark:swe-bench-pro",
       "label": "SWE-Bench Pro",
-      "defaultWeight": 9.56622403813415,
+      "defaultWeight": 11.724796059719871,
       "source": "benchmark",
       "category": "Agentic coding",
       "unit": "%",
@@ -144,7 +144,7 @@
     {
       "key": "benchmark:frontiercode-diamond",
       "label": "FrontierCode Diamond",
-      "defaultWeight": 4.040404040404041,
+      "defaultWeight": 0,
       "source": "benchmark",
       "category": "Agentic coding",
       "unit": "%",
@@ -153,7 +153,7 @@
     {
       "key": "benchmark:swe-bench-verified",
       "label": "SWE-bench Verified",
-      "defaultWeight": 4.444444444444445,
+      "defaultWeight": 6.027397260273973,
       "source": "benchmark",
       "category": "Agentic coding",
       "unit": "%",
@@ -162,7 +162,7 @@
     {
       "key": "benchmark:swe-bench-multilingual",
       "label": "SWE-bench Multilingual",
-      "defaultWeight": 3.2323232323232323,
+      "defaultWeight": 4.383561643835616,
       "source": "benchmark",
       "category": "Agentic coding",
       "unit": "%",
@@ -306,7 +306,7 @@
     {
       "key": "benchmark:frontiermath-tier-1-3",
       "label": "FrontierMath Tier 1-3",
-      "defaultWeight": 1.9417475728155338,
+      "defaultWeight": 2.1052631578947367,
       "source": "benchmark",
       "category": "Academic reasoning",
       "unit": "%",
@@ -315,7 +315,7 @@
     {
       "key": "benchmark:frontiermath-tier-4",
       "label": "FrontierMath Tier 4",
-      "defaultWeight": 2.3300970873786406,
+      "defaultWeight": 2.526315789473684,
       "source": "benchmark",
       "category": "Academic reasoning",
       "unit": "%",
@@ -351,7 +351,7 @@
     {
       "key": "benchmark:gpqa-diamond",
       "label": "GPQA Diamond",
-      "defaultWeight": 1.5533980582524272,
+      "defaultWeight": 1.6842105263157894,
       "source": "benchmark",
       "category": "Academic reasoning",
       "unit": "%",
@@ -360,7 +360,7 @@
     {
       "key": "benchmark:hle",
       "label": "Humanity's Last Exam",
-      "defaultWeight": 2.3300970873786406,
+      "defaultWeight": 2.526315789473684,
       "source": "benchmark",
       "category": "Academic reasoning",
       "unit": "%",
@@ -432,7 +432,7 @@
     {
       "key": "benchmark:kimi-code-bench-v2",
       "label": "Kimi Code Bench v2",
-      "defaultWeight": 2.4242424242424243,
+      "defaultWeight": 0,
       "source": "benchmark",
       "category": "Agentic coding",
       "unit": "%",
@@ -441,7 +441,7 @@
     {
       "key": "benchmark:programbench",
       "label": "ProgramBench",
-      "defaultWeight": 2.0202020202020203,
+      "defaultWeight": 0,
       "source": "benchmark",
       "category": "Code generation",
       "unit": "%",
@@ -477,7 +477,7 @@
     {
       "key": "benchmark:aime-2025",
       "label": "AIME 2025",
-      "defaultWeight": 1.3592233009708736,
+      "defaultWeight": 1.4736842105263157,
       "source": "benchmark",
       "category": "Math",
       "unit": "%",
@@ -486,7 +486,7 @@
     {
       "key": "benchmark:aime-2026",
       "label": "AIME 2026",
-      "defaultWeight": 0.5825242718446602,
+      "defaultWeight": 0.631578947368421,
       "source": "benchmark",
       "category": "Math",
       "unit": "%",
@@ -495,7 +495,7 @@
     {
       "key": "benchmark:hmmt-2026-feb",
       "label": "HMMT Feb 2026",
-      "defaultWeight": 0.5825242718446602,
+      "defaultWeight": 0.631578947368421,
       "source": "benchmark",
       "category": "Math",
       "unit": "%",
@@ -648,7 +648,7 @@
     {
       "key": "benchmark:arc-agi-2",
       "label": "ARC-AGI-2",
-      "defaultWeight": 1.5533980582524272,
+      "defaultWeight": 0,
       "source": "benchmark",
       "category": "Abstract reasoning",
       "unit": "%",
@@ -657,7 +657,7 @@
     {
       "key": "benchmark:livecodebench-pro-elo",
       "label": "LiveCodeBench Pro",
-      "defaultWeight": 2.0202020202020203,
+      "defaultWeight": 0,
       "source": "benchmark",
       "category": "Coding",
       "unit": "Elo",
@@ -738,7 +738,7 @@
     {
       "key": "benchmark:charxiv-no-tools",
       "label": "CharXiv Reasoning",
-      "defaultWeight": 0.8695652173913044,
+      "defaultWeight": 1.081081081081081,
       "source": "benchmark",
       "category": "Visual reasoning",
       "unit": "%",
@@ -747,7 +747,7 @@
     {
       "key": "benchmark:charxiv-tools",
       "label": "CharXiv Reasoning w/ tools",
-      "defaultWeight": 1.0434782608695652,
+      "defaultWeight": 1.2972972972972971,
       "source": "benchmark",
       "category": "Visual reasoning",
       "unit": "%",
@@ -855,7 +855,7 @@
     {
       "key": "benchmark:ifbench",
       "label": "IFBench",
-      "defaultWeight": 1.565217391304348,
+      "defaultWeight": 0,
       "source": "benchmark",
       "category": "Instruction following",
       "unit": "%",
@@ -957,7 +957,7 @@
       "id": "zhihu-adjusted",
       "label": "AInsights Index",
       "kind": "frontier-groups",
-      "description": "AIndex 使用五个能力板块：Coding 40、Agentic/tool work 24、Hard reasoning 20、Knowledge/science 8、Instruction/context 8。板块内优先高含金量测试，缺整板块时使用弱先验；Terminal-Bench 2 系列默认选覆盖更多的 AA Terminal-Bench v2.1，不重复计入外部同义项；外部 LiveCodeBench 只作为常规 LiveCodeBench 缺失时的拟合来源；MMLU-Pro 与 AIME 2026/HMMT 等偏饱和或覆盖不均的项目降权，避免来源覆盖差异主导排序。",
+      "description": "AIndex 使用五个能力板块：Coding 40、Agentic/tool work 24、Hard reasoning 20、Knowledge/science 8、Instruction/context 8。板块内优先高含金量且至少覆盖 4 个模型的测试，缺整板块时使用弱先验；Terminal-Bench 2 系列默认选覆盖更多的 AA Terminal-Bench v2.1，不重复计入外部同义项；IFBench 默认使用 AA 列，不重复计入外部同义项；外部 LiveCodeBench 只作为常规 LiveCodeBench 缺失时的拟合来源；MMLU-Pro 与 AIME 2026/HMMT 等偏饱和或覆盖不均的项目降权，避免来源覆盖差异主导排序。",
       "calculation": "geometric",
       "normalization": "relative-best",
       "missingPolicy": "weak-prior",
@@ -983,10 +983,6 @@
               "weight": 1.1
             },
             {
-              "key": "benchmark:frontiercode-diamond",
-              "weight": 1.0
-            },
-            {
               "key": "Terminal-Bench Hard",
               "weight": 1.0
             },
@@ -1001,18 +997,6 @@
             {
               "key": "SciCode",
               "weight": 0.8
-            },
-            {
-              "key": "benchmark:kimi-code-bench-v2",
-              "weight": 0.6
-            },
-            {
-              "key": "benchmark:programbench",
-              "weight": 0.5
-            },
-            {
-              "key": "benchmark:livecodebench-pro-elo",
-              "weight": 0.5
             }
           ]
         },
@@ -1101,10 +1085,6 @@
               "weight": 0.8
             },
             {
-              "key": "benchmark:arc-agi-2",
-              "weight": 0.8
-            },
-            {
               "key": "AIME 2025",
               "weight": 0.7
             },
@@ -1167,10 +1147,6 @@
               "weight": 1.0
             },
             {
-              "key": "benchmark:ifbench",
-              "weight": 0.9
-            },
-            {
               "key": "AA-LCR",
               "weight": 0.9
             },
@@ -1190,17 +1166,13 @@
         }
       ],
       "weights": {
-        "benchmark:swe-bench-pro": 9.56622403813415,
-        "LiveCodeBench": 4.848484848484849,
-        "benchmark:swe-bench-verified": 4.444444444444445,
-        "benchmark:frontiercode-diamond": 4.040404040404041,
-        "Terminal-Bench Hard": 6.197707411190558,
-        "Terminal-Bench v2.1": 4.9846782431052095,
-        "benchmark:swe-bench-multilingual": 3.2323232323232323,
-        "SciCode": 4.065656565656566,
-        "benchmark:kimi-code-bench-v2": 2.4242424242424243,
-        "benchmark:programbench": 2.0202020202020203,
-        "benchmark:livecodebench-pro-elo": 2.0202020202020203,
+        "benchmark:swe-bench-pro": 11.724796059719871,
+        "LiveCodeBench": 6.575342465753425,
+        "benchmark:swe-bench-verified": 6.027397260273973,
+        "Terminal-Bench Hard": 7.636755425581038,
+        "Terminal-Bench v2.1": 6.279821456056641,
+        "benchmark:swe-bench-multilingual": 4.383561643835616,
+        "SciCode": 5.216894977168949,
         "benchmark:browsecomp": 2.696629213483146,
         "benchmark:hle-tools": 2.696629213483146,
         "benchmark:mcp-atlas": 2.4269662921348316,
@@ -1208,27 +1180,25 @@
         "benchmark:gdpval-wins-ties": 2.1573033707865172,
         "benchmark:gdpval-aa-elo": 1.8876404494382018,
         "benchmark:toolathlon": 1.6179775280898874,
-        "AA-LCR": 2.913531998045921,
-        "Humanity's Last Exam": 3.8576051779935274,
-        "benchmark:hle": 2.3300970873786406,
-        "benchmark:frontiermath-tier-4": 2.3300970873786406,
-        "CritPt": 3.3533136344449135,
-        "benchmark:frontiermath-tier-1-3": 1.9417475728155338,
-        "GPQA Diamond": 3.2475728155339807,
-        "benchmark:gpqa-diamond": 1.5533980582524272,
-        "benchmark:arc-agi-2": 1.5533980582524272,
-        "AIME 2025": 1.3592233009708736,
-        "benchmark:aime-2025": 1.3592233009708736,
-        "benchmark:aime-2026": 0.5825242718446602,
-        "benchmark:hmmt-2026-feb": 0.5825242718446602,
+        "AA-LCR": 3.294260552687519,
+        "Humanity's Last Exam": 4.0701754385964914,
+        "benchmark:hle": 2.526315789473684,
+        "benchmark:frontiermath-tier-4": 2.526315789473684,
+        "CritPt": 3.8293029871977238,
+        "benchmark:frontiermath-tier-1-3": 2.1052631578947367,
+        "GPQA Diamond": 3.394736842105263,
+        "benchmark:gpqa-diamond": 1.6842105263157894,
+        "AIME 2025": 1.4736842105263157,
+        "benchmark:aime-2025": 1.4736842105263157,
+        "benchmark:aime-2026": 0.631578947368421,
+        "benchmark:hmmt-2026-feb": 0.631578947368421,
         "AA-Omniscience Accuracy": 1.6666666666666667,
         "benchmark:mmmlu": 1.1666666666666667,
         "benchmark:mmmu-pro": 1.1666666666666667,
         "benchmark:mmlu-pro": 0.33333333333333337,
-        "IFBench": 1.7391304347826089,
-        "benchmark:ifbench": 1.565217391304348,
-        "benchmark:charxiv-tools": 1.0434782608695652,
-        "benchmark:charxiv-no-tools": 0.8695652173913044
+        "IFBench": 2.162162162162162,
+        "benchmark:charxiv-tools": 1.2972972972972971,
+        "benchmark:charxiv-no-tools": 1.081081081081081
       }
     },
     "aa-intelligence": {
@@ -1279,17 +1249,13 @@
       "missingPolicy": "coverage-discount",
       "coverageDiscountExponent": 0.25,
       "weights": {
-        "benchmark:swe-bench-pro": 9.56622403813415,
-        "LiveCodeBench": 4.848484848484849,
-        "benchmark:swe-bench-verified": 4.444444444444445,
-        "benchmark:frontiercode-diamond": 4.040404040404041,
-        "Terminal-Bench Hard": 6.197707411190558,
-        "Terminal-Bench v2.1": 4.9846782431052095,
-        "benchmark:swe-bench-multilingual": 3.2323232323232323,
-        "SciCode": 4.065656565656566,
-        "benchmark:kimi-code-bench-v2": 2.4242424242424243,
-        "benchmark:programbench": 2.0202020202020203,
-        "benchmark:livecodebench-pro-elo": 2.0202020202020203,
+        "benchmark:swe-bench-pro": 11.724796059719871,
+        "LiveCodeBench": 6.575342465753425,
+        "benchmark:swe-bench-verified": 6.027397260273973,
+        "Terminal-Bench Hard": 7.636755425581038,
+        "Terminal-Bench v2.1": 6.279821456056641,
+        "benchmark:swe-bench-multilingual": 4.383561643835616,
+        "SciCode": 5.216894977168949,
         "benchmark:browsecomp": 2.696629213483146,
         "benchmark:hle-tools": 2.696629213483146,
         "benchmark:mcp-atlas": 2.4269662921348316,
@@ -1297,27 +1263,25 @@
         "benchmark:gdpval-wins-ties": 2.1573033707865172,
         "benchmark:gdpval-aa-elo": 1.8876404494382018,
         "benchmark:toolathlon": 1.6179775280898874,
-        "AA-LCR": 2.913531998045921,
-        "Humanity's Last Exam": 3.8576051779935274,
-        "benchmark:hle": 2.3300970873786406,
-        "benchmark:frontiermath-tier-4": 2.3300970873786406,
-        "CritPt": 3.3533136344449135,
-        "benchmark:frontiermath-tier-1-3": 1.9417475728155338,
-        "GPQA Diamond": 3.2475728155339807,
-        "benchmark:gpqa-diamond": 1.5533980582524272,
-        "benchmark:arc-agi-2": 1.5533980582524272,
-        "AIME 2025": 1.3592233009708736,
-        "benchmark:aime-2025": 1.3592233009708736,
-        "benchmark:aime-2026": 0.5825242718446602,
-        "benchmark:hmmt-2026-feb": 0.5825242718446602,
+        "AA-LCR": 3.294260552687519,
+        "Humanity's Last Exam": 4.0701754385964914,
+        "benchmark:hle": 2.526315789473684,
+        "benchmark:frontiermath-tier-4": 2.526315789473684,
+        "CritPt": 3.8293029871977238,
+        "benchmark:frontiermath-tier-1-3": 2.1052631578947367,
+        "GPQA Diamond": 3.394736842105263,
+        "benchmark:gpqa-diamond": 1.6842105263157894,
+        "AIME 2025": 1.4736842105263157,
+        "benchmark:aime-2025": 1.4736842105263157,
+        "benchmark:aime-2026": 0.631578947368421,
+        "benchmark:hmmt-2026-feb": 0.631578947368421,
         "AA-Omniscience Accuracy": 1.6666666666666667,
         "benchmark:mmmlu": 1.1666666666666667,
         "benchmark:mmmu-pro": 1.1666666666666667,
         "benchmark:mmlu-pro": 0.33333333333333337,
-        "IFBench": 1.7391304347826089,
-        "benchmark:ifbench": 1.565217391304348,
-        "benchmark:charxiv-tools": 1.0434782608695652,
-        "benchmark:charxiv-no-tools": 0.8695652173913044
+        "IFBench": 2.162162162162162,
+        "benchmark:charxiv-tools": 1.2972972972972971,
+        "benchmark:charxiv-no-tools": 1.081081081081081
       }
     }
   },

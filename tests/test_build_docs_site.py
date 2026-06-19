@@ -47,6 +47,44 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertNotIn("benchmark:livecodebench", group_metrics["coding"])
         self.assertEqual(DEFAULT_AINDEX_WEIGHTS.get("benchmark:livecodebench", 0), 0)
 
+    def test_default_ainsights_excludes_metrics_with_fewer_than_four_models(self):
+        payload = build_site_payload(
+            read_csv_rows(DEFAULT_INPUT_CSV),
+            load_external_benchmarks(DEFAULT_EXTERNAL_BENCHMARKS_JSON),
+        )
+        selected_keys = {
+            metric["key"]
+            for group in payload["presets"]["zhihu-adjusted"]["groups"]
+            for metric in group["metrics"]
+        }
+
+        sparse_metrics = []
+        for key in sorted(selected_keys):
+            coverage = sum(
+                1
+                for model in payload["models"]
+                if model.get("scores", {}).get(key) is not None
+            )
+            if coverage < 4:
+                sparse_metrics.append((key, coverage))
+
+        self.assertEqual([], sparse_metrics)
+        self.assertNotIn("benchmark:frontiercode-diamond", selected_keys)
+        self.assertNotIn("benchmark:kimi-code-bench-v2", selected_keys)
+        self.assertNotIn("benchmark:programbench", selected_keys)
+        self.assertNotIn("benchmark:livecodebench-pro-elo", selected_keys)
+        self.assertNotIn("benchmark:arc-agi-2", selected_keys)
+
+    def test_default_ainsights_uses_aa_ifbench_not_duplicate_external_version(self):
+        group_metrics = {
+            group["id"]: [metric["key"] for metric in group["metrics"]]
+            for group in AINDEX_GROUPS
+        }
+
+        self.assertIn("IFBench", group_metrics["instruction-context"])
+        self.assertNotIn("benchmark:ifbench", group_metrics["instruction-context"])
+        self.assertEqual(DEFAULT_AINDEX_WEIGHTS.get("benchmark:ifbench", 0), 0)
+
     def test_default_ainsights_group_metrics_are_ordered_by_internal_weight(self):
         for group in AINDEX_GROUPS:
             weights = [metric["weight"] for metric in group["metrics"]]
