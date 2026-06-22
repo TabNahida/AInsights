@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-18T23:02:35+00:00",
+  "generatedAt": "2026-06-22T06:16:26+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
       "label": "OpenAI GPT-5.5 launch evaluations",
       "url": "https://openai.com/index/introducing-gpt-5-5/",
       "category": "Official model release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; refresh blocked: HTTPError",
       "note": "Official OpenAI table covering GPT-5.5, GPT-5.4, GPT-5.5 Pro, GPT-5.4 Pro, Claude Opus 4.7, and Gemini 3.1 Pro."
     },
     {
@@ -15,7 +15,7 @@
       "label": "Anthropic Claude Opus 4.7 official release",
       "url": "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Anthropic official release chart covering Opus 4.7, Opus 4.6, GPT-5.4, Gemini 3.1 Pro, and Mythos Preview across agentic coding, search, tool use, reasoning, and finance benchmarks."
     },
     {
@@ -23,7 +23,7 @@
       "label": "Anthropic Claude Fable 5 and Mythos 5 official release",
       "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Anthropic release table for Claude Mythos 5 / Fable 5. Reported Mythos and Fable scores are within 1-3 percentage points unless starred; the table shows the higher score of the two, and starred rows can differ more because Fable falls back to Opus 4.8 for some cyber and biology requests.",
       "modelAliases": [
         "Claude Fable 5",
@@ -37,7 +37,7 @@
       "label": "Qwen3 official release",
       "url": "https://qwen.ai/blog?id=qwen3",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Qwen.ai Qwen3 release page. Seed values are read from the official benchmark images for Qwen3-235B-A22B, Qwen3-32B, Qwen3-30B-A3B, and Qwen3-4B; Qwen3 rows are matched to the site's reasoning variants because the release notes indicate think mode is used for the main evaluations."
     },
     {
@@ -45,7 +45,7 @@
       "label": "Qwen2 official release",
       "url": "https://qwen.ai/blog?id=qwen2",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "refreshed",
       "note": "Qwen.ai/Qwen legacy official release page for Qwen2. Seed rows use the published Qwen2-72B-Instruct evaluation table."
     },
     {
@@ -53,7 +53,7 @@
       "label": "Qwen2.5 official release",
       "url": "https://qwen.ai/blog?id=qwen2.5",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Qwen.ai Qwen2.5 release page with official image tables for Qwen2.5-72B-Instruct, Qwen2.5-32B-Instruct, and Qwen-Turbo."
     },
     {
@@ -61,7 +61,7 @@
       "label": "Qwen2.5-Coder official release",
       "url": "https://qwen.ai/blog?id=qwen2.5-coder",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Qwen.ai Qwen2.5-Coder release page. General and math rows are HTML tables; LiveCodeBench is read from the official code benchmark image."
     },
     {
@@ -69,7 +69,7 @@
       "label": "Qwen2.5-Max official release",
       "url": "https://qwen.ai/blog?id=qwen2.5-max",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Qwen.ai Qwen2.5-Max release page. Seed values use the official instruct-model comparison chart."
     },
     {
@@ -77,7 +77,7 @@
       "label": "Qwen3.6-27B official release",
       "url": "https://qwen.ai/blog?id=qwen3.6-27b",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Qwen.ai release page with Qwen3.6/Qwen3.5 benchmark table. Hugging Face is intentionally not used as the primary source for Qwen-family rows."
     },
     {
@@ -85,7 +85,7 @@
       "label": "Qwen3.6-Plus official release",
       "url": "https://qwen.ai/blog?id=qwen3.6",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Qwen.ai proprietary model release page. Seed values are from the official launch benchmark image/table when HTML parsing cannot read the rendered image."
     },
     {
@@ -93,7 +93,7 @@
       "label": "Qwen3.6-Max-Preview official release",
       "url": "https://qwen.ai/blog?id=qwen3.6-max-preview",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Qwen.ai proprietary preview release. Seeded rows are limited to values derivable from official deltas over Qwen3.6-Plus; image-only absolute rows are left for parser/OCR follow-up."
     },
     {
@@ -101,7 +101,7 @@
       "label": "DeepSeek-V4 official release",
       "url": "https://api-docs.deepseek.com/news/news260424",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "DeepSeek API Docs V4 preview release. Seed values mirror the official release report; Hugging Face is kept out of source URLs for this top-model collector."
     },
     {
@@ -109,7 +109,7 @@
       "label": "Kimi K2.6 official release",
       "url": "https://www.kimi.com/blog/kimi-k2-6",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "partial-refresh; parsed 11 of 14 seeded scores",
       "note": "Moonshot AI Kimi.com release page with coding, agentic, search, and visual-agent benchmark tables."
     },
     {
@@ -117,7 +117,7 @@
       "label": "Kimi K2.7 Code official release",
       "url": "https://www.kimi.com/resources/kimi-k2-7-code",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "refreshed",
       "note": "Moonshot AI Kimi.com release page and official model card for Kimi K2.7 Code with coding and agentic benchmark tables."
     },
     {
@@ -125,7 +125,7 @@
       "label": "Kimi K2 Thinking official release",
       "url": "https://moonshotai.github.io/Kimi-K2/thinking",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Moonshot AI official Kimi K2 Thinking release page with search, coding, and reasoning benchmarks."
     },
     {
@@ -133,7 +133,7 @@
       "label": "Kimi K2.5 official release",
       "url": "https://www.kimi.com/blog/kimi-k2-5",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Moonshot AI Kimi.com K2.5 release page evaluation results."
     },
     {
@@ -141,7 +141,7 @@
       "label": "Kimi K2 0905 official model card",
       "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905",
       "category": "Official model card",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "refreshed",
       "note": "Moonshot AI official Hugging Face model card for Kimi-K2-Instruct-0905. Reported K2 0905 values are mean results over five full-test-set runs."
     },
     {
@@ -149,7 +149,7 @@
       "label": "Kimi K2 official GitHub report",
       "url": "https://moonshotai.github.io/Kimi-K2/",
       "category": "Official technical report",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Moonshot AI Kimi K2 GitHub README and technical report benchmark table."
     },
     {
@@ -157,7 +157,7 @@
       "label": "Z.ai GLM-4.6 official model card",
       "url": "https://docs.z.ai/guides/llm/glm-4.6",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Z.ai developer documentation / GLM-4.6 release page. Seed values preserve the official benchmark image for agentic, reasoning, and coding evaluations."
     },
     {
@@ -165,7 +165,7 @@
       "label": "Z.ai GLM-5.2 official model card",
       "url": "https://docs.z.ai/guides/llm/glm-5.2",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "refreshed",
       "note": "Z.ai GLM-5.2 official page and model card with long-horizon reasoning, coding, and agentic benchmark table."
     },
     {
@@ -173,7 +173,7 @@
       "label": "Z.ai GLM-5.1 official model card",
       "url": "https://docs.z.ai/guides/llm/glm-5.1",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Z.ai developer documentation / official release page with GLM-5.1, GLM-5, and GLM-4.7 benchmark table."
     },
     {
@@ -181,7 +181,7 @@
       "label": "Z.ai GLM-4.5 official report",
       "url": "https://z.ai/blog/glm-4.5",
       "category": "Official technical report",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Z.ai GLM-4.5 official blog/report covering ARC benchmarks."
     },
     {
@@ -189,7 +189,7 @@
       "label": "Google DeepMind Gemini 3.1 Pro model card",
       "url": "https://deepmind.google/models/model-cards/gemini-3-1-pro/",
       "category": "Official model card",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Google DeepMind model card with cross-model benchmark context and Gemini 3.1 Pro results."
     },
     {
@@ -197,7 +197,7 @@
       "label": "Google Gemma 4 official model card",
       "url": "https://ai.google.dev/gemma/docs/core/model_card_4",
       "category": "Official model card",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; refresh blocked: HTTPError",
       "note": "Google Gemma model card covering Gemma 4 31B, 26B-A4B, E4B, and E2B instruction-tuned benchmarks."
     },
     {
@@ -205,7 +205,7 @@
       "label": "MiniMax M3 official release",
       "url": "https://www.minimax.io/models/text/m3",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "MiniMax M3 official model page. Seed rows use text-visible values for BrowseComp and PostTrainBench; other chart-only values are left for parser/OCR follow-up."
     },
     {
@@ -213,7 +213,7 @@
       "label": "MiniMax M2.7 technical report",
       "url": "https://arxiv.org/abs/2605.26494",
       "category": "Official technical report",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "MiniMax M2 series technical report with M2.7 headline values across agentic coding, agentic cowork, and reasoning/knowledge. GDPval-AA is omitted from seeds because this dataset's GDPval-AA slot is Elo-based, while the report value is a percentage."
     },
     {
@@ -221,7 +221,7 @@
       "label": "MiniMax M2.5 official release",
       "url": "https://www.minimax.io/news/minimax-m25",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "MiniMax M2.5 release page with official benchmark charts for M2.5 and M2.1 across agentic coding and reasoning evaluations."
     },
     {
@@ -229,7 +229,7 @@
       "label": "MiniMax M2 official release",
       "url": "https://www.minimax.io/news/minimax-m2",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "MiniMax M2 release page with official agentic benchmark charts. Seed rows keep the chart values where the page renders the data as images."
     },
     {
@@ -237,7 +237,7 @@
       "label": "MiniMax M1 official GitHub report",
       "url": "https://github.com/MiniMax-AI/MiniMax-M1",
       "category": "Official technical report",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "refreshed",
       "note": "MiniMax-AI official GitHub README benchmark table for MiniMax-M1-80K and MiniMax-M1-40K."
     },
     {
@@ -245,7 +245,7 @@
       "label": "Xiaomi MiMo-V2.5 official release",
       "url": "https://platform.xiaomimimo.com/docs/en-US/news/v2.5-open-sourced",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Xiaomi MiMo official release/open-source page. Seed rows retain official benchmark values when the page renders charts as images."
     },
     {
@@ -253,7 +253,7 @@
       "label": "Cohere North Mini Code model card",
       "url": "https://docs.cohere.com/docs/north-mini-code-1.0",
       "category": "Official model card",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
       "note": "Cohere documentation for North Mini Code: model ID north-mini-code-1-0, 256K context window, 64K max output, Apache 2.0 license, and agentic coding use cases.",
       "coverage": "North Mini Code reference",
       "scoreStatus": "reference",
@@ -269,7 +269,7 @@
       "label": "xAI Grok 4.1 Fast official release",
       "url": "https://x.ai/news/grok-4-1-fast",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "xAI release page for Grok 4.1 Fast and Agent Tools API with tool-calling and agentic-search benchmark tables."
     },
     {
@@ -277,7 +277,7 @@
       "label": "NVIDIA Nemotron 3 Super technical report",
       "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
       "category": "Official technical report",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "NVIDIA Research technical report for Nemotron 3 Super. Seed rows preserve the BF16 evaluation suite from the published PDF table."
     },
     {
@@ -285,7 +285,7 @@
       "label": "NVIDIA Nemotron 3 Nano technical report",
       "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
       "category": "Official technical report",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "NVIDIA Research technical report for Nemotron 3 Nano. Seed rows preserve the BF16 evaluation suite from the published PDF table."
     },
     {
@@ -293,7 +293,7 @@
       "label": "NVIDIA Nemotron 3 Ultra technical report",
       "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf",
       "category": "Official technical report",
-      "collectionStatus": "seeded-official-values",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "NVIDIA Research technical report for Nemotron 3 Ultra. The PDF is kept as the official source and seed rows preserve the published benchmark table."
     }
   ],
@@ -5329,7 +5329,7 @@
         "moonshotai/Kimi-K2.6",
         "kimi-k2-6"
       ],
-      "value": 83.2,
+      "value": 86.3,
       "unit": "%",
       "sourceId": "kimi-k2-6-card",
       "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
@@ -5397,7 +5397,7 @@
         "moonshotai/Kimi-K2.6",
         "kimi-k2-6"
       ],
-      "value": 79.4,
+      "value": 80.1,
       "unit": "%",
       "sourceId": "kimi-k2-6-card",
       "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
@@ -5415,6 +5415,40 @@
         "kimi-k2-6"
       ],
       "value": 93.2,
+      "unit": "%",
+      "sourceId": "kimi-k2-6-card",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
+      "sourceLabel": "Kimi K2.6 official release"
+    },
+    {
+      "benchmarkId": "osworld-verified",
+      "benchmarkLabel": "OSWorld-Verified",
+      "model": "Kimi K2.6",
+      "modelAliases": [
+        "Kimi K2.6",
+        "Kimi-K2.6",
+        "K2.6 Thinking",
+        "moonshotai/Kimi-K2.6",
+        "kimi-k2-6"
+      ],
+      "value": 73.1,
+      "unit": "%",
+      "sourceId": "kimi-k2-6-card",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
+      "sourceLabel": "Kimi K2.6 official release"
+    },
+    {
+      "benchmarkId": "v-star-python",
+      "benchmarkLabel": "V* w/ Python",
+      "model": "Kimi K2.6",
+      "modelAliases": [
+        "Kimi K2.6",
+        "Kimi-K2.6",
+        "K2.6 Thinking",
+        "moonshotai/Kimi-K2.6",
+        "kimi-k2-6"
+      ],
+      "value": 96.9,
       "unit": "%",
       "sourceId": "kimi-k2-6-card",
       "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
@@ -5511,6 +5545,282 @@
         "kimi-k2-7-code"
       ],
       "value": 81.1,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "kimi-code-bench-v2",
+      "benchmarkLabel": "Kimi Code Bench v2",
+      "model": "Kimi K2.6",
+      "modelAliases": [
+        "Kimi K2.6",
+        "Kimi-K2.6",
+        "K2.6 Thinking",
+        "moonshotai/Kimi-K2.6",
+        "kimi-k2-6"
+      ],
+      "value": 50.9,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "kimi-code-bench-v2",
+      "benchmarkLabel": "Kimi Code Bench v2",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 69.0,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "kimi-code-bench-v2",
+      "benchmarkLabel": "Kimi Code Bench v2",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 67.4,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "programbench",
+      "benchmarkLabel": "ProgramBench",
+      "model": "Kimi K2.6",
+      "modelAliases": [
+        "Kimi K2.6",
+        "Kimi-K2.6",
+        "K2.6 Thinking",
+        "moonshotai/Kimi-K2.6",
+        "kimi-k2-6"
+      ],
+      "value": 48.3,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "programbench",
+      "benchmarkLabel": "ProgramBench",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 69.1,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "programbench",
+      "benchmarkLabel": "ProgramBench",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 63.8,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "mls-bench-lite",
+      "benchmarkLabel": "MLS Bench Lite",
+      "model": "Kimi K2.6",
+      "modelAliases": [
+        "Kimi K2.6",
+        "Kimi-K2.6",
+        "K2.6 Thinking",
+        "moonshotai/Kimi-K2.6",
+        "kimi-k2-6"
+      ],
+      "value": 26.7,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "mls-bench-lite",
+      "benchmarkLabel": "MLS Bench Lite",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 35.5,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "mls-bench-lite",
+      "benchmarkLabel": "MLS Bench Lite",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 42.8,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "kimi-claw-24-7",
+      "benchmarkLabel": "Kimi Claw 24/7 Bench",
+      "model": "Kimi K2.6",
+      "modelAliases": [
+        "Kimi K2.6",
+        "Kimi-K2.6",
+        "K2.6 Thinking",
+        "moonshotai/Kimi-K2.6",
+        "kimi-k2-6"
+      ],
+      "value": 42.9,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "kimi-claw-24-7",
+      "benchmarkLabel": "Kimi Claw 24/7 Bench",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 52.8,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "kimi-claw-24-7",
+      "benchmarkLabel": "Kimi Claw 24/7 Bench",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 50.4,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "Kimi K2.6",
+      "modelAliases": [
+        "Kimi K2.6",
+        "Kimi-K2.6",
+        "K2.6 Thinking",
+        "moonshotai/Kimi-K2.6",
+        "kimi-k2-6"
+      ],
+      "value": 69.4,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 79.4,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 81.3,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "mcp-mark-verified",
+      "benchmarkLabel": "MCP Mark Verified",
+      "model": "Kimi K2.6",
+      "modelAliases": [
+        "Kimi K2.6",
+        "Kimi-K2.6",
+        "K2.6 Thinking",
+        "moonshotai/Kimi-K2.6",
+        "kimi-k2-6"
+      ],
+      "value": 72.8,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "mcp-mark-verified",
+      "benchmarkLabel": "MCP Mark Verified",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 92.9,
+      "unit": "%",
+      "sourceId": "kimi-k2-7-code-card",
+      "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
+      "sourceLabel": "Kimi K2.7 Code official release"
+    },
+    {
+      "benchmarkId": "mcp-mark-verified",
+      "benchmarkLabel": "MCP Mark Verified",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 76.4,
       "unit": "%",
       "sourceId": "kimi-k2-7-code-card",
       "sourceUrl": "https://www.kimi.com/resources/kimi-k2-7-code",
@@ -6278,7 +6588,7 @@
         "zai-org/GLM-5.2",
         "glm-5-2"
       ],
-      "value": 81.0,
+      "value": 82.7,
       "unit": "%",
       "sourceId": "zai-glm-5-2-card",
       "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
@@ -6369,6 +6679,1675 @@
         "glm-5-2"
       ],
       "value": 48.2,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 31.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Qwen3.7-Max",
+      "modelAliases": [
+        "Qwen3.7-Max"
+      ],
+      "value": 41.4,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "MiniMax-M3",
+      "modelAliases": [
+        "MiniMax-M3",
+        "MiniMax M3",
+        "MiniMaxAI/MiniMax-M3",
+        "minimax-m3"
+      ],
+      "value": 37.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 37.7,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 49.8,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 41.4,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 45.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 52.3,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "Qwen3.7-Max",
+      "modelAliases": [
+        "Qwen3.7-Max"
+      ],
+      "value": 53.5,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 48.2,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 57.9,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 52.2,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 51.4,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "critpt",
+      "benchmarkLabel": "CritPt",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 4.6,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "critpt",
+      "benchmarkLabel": "CritPt",
+      "model": "Qwen3.7-Max",
+      "modelAliases": [
+        "Qwen3.7-Max"
+      ],
+      "value": 13.4,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "critpt",
+      "benchmarkLabel": "CritPt",
+      "model": "MiniMax-M3",
+      "modelAliases": [
+        "MiniMax-M3",
+        "MiniMax M3",
+        "MiniMaxAI/MiniMax-M3",
+        "minimax-m3"
+      ],
+      "value": 3.7,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "critpt",
+      "benchmarkLabel": "CritPt",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 12.9,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "critpt",
+      "benchmarkLabel": "CritPt",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 20.9,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "critpt",
+      "benchmarkLabel": "CritPt",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 27.1,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "critpt",
+      "benchmarkLabel": "CritPt",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 17.7,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 95.3,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "Qwen3.7-Max",
+      "modelAliases": [
+        "Qwen3.7-Max"
+      ],
+      "value": 97.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 94.6,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 95.7,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 98.3,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 98.2,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2025-nov",
+      "benchmarkLabel": "HMMT Nov 2025",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 94.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2025-nov",
+      "benchmarkLabel": "HMMT Nov 2025",
+      "model": "Qwen3.7-Max",
+      "modelAliases": [
+        "Qwen3.7-Max"
+      ],
+      "value": 95.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2025-nov",
+      "benchmarkLabel": "HMMT Nov 2025",
+      "model": "MiniMax-M3",
+      "modelAliases": [
+        "MiniMax-M3",
+        "MiniMax M3",
+        "MiniMaxAI/MiniMax-M3",
+        "minimax-m3"
+      ],
+      "value": 84.4,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2025-nov",
+      "benchmarkLabel": "HMMT Nov 2025",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 94.4,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2025-nov",
+      "benchmarkLabel": "HMMT Nov 2025",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 96.5,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2025-nov",
+      "benchmarkLabel": "HMMT Nov 2025",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 96.5,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2025-nov",
+      "benchmarkLabel": "HMMT Nov 2025",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 94.8,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 82.6,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "Qwen3.7-Max",
+      "modelAliases": [
+        "Qwen3.7-Max"
+      ],
+      "value": 97.1,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "MiniMax-M3",
+      "modelAliases": [
+        "MiniMax-M3",
+        "MiniMax M3",
+        "MiniMaxAI/MiniMax-M3",
+        "minimax-m3"
+      ],
+      "value": 84.4,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 95.2,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 96.7,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 96.7,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 87.3,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "imoanswerbench",
+      "benchmarkLabel": "IMOAnswerBench",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 83.8,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "imoanswerbench",
+      "benchmarkLabel": "IMOAnswerBench",
+      "model": "Qwen3.7-Max",
+      "modelAliases": [
+        "Qwen3.7-Max"
+      ],
+      "value": 90.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "imoanswerbench",
+      "benchmarkLabel": "IMOAnswerBench",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 89.8,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "imoanswerbench",
+      "benchmarkLabel": "IMOAnswerBench",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 83.5,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "imoanswerbench",
+      "benchmarkLabel": "IMOAnswerBench",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 81.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 86.2,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Qwen3.7-Max",
+      "modelAliases": [
+        "Qwen3.7-Max"
+      ],
+      "value": 90.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "MiniMax-M3",
+      "modelAliases": [
+        "MiniMax-M3",
+        "MiniMax M3",
+        "MiniMaxAI/MiniMax-M3",
+        "minimax-m3"
+      ],
+      "value": 93.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 90.1,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 93.6,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 93.6,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 94.3,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 58.4,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Qwen3.7-Max",
+      "modelAliases": [
+        "Qwen3.7-Max"
+      ],
+      "value": 60.6,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "MiniMax-M3",
+      "modelAliases": [
+        "MiniMax-M3",
+        "MiniMax M3",
+        "MiniMaxAI/MiniMax-M3",
+        "minimax-m3"
+      ],
+      "value": 59.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 55.4,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 69.2,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 58.6,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 54.2,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "nl2repo",
+      "benchmarkLabel": "NL2Repo",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 42.7,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "nl2repo",
+      "benchmarkLabel": "NL2Repo",
+      "model": "Qwen3.7-Max",
+      "modelAliases": [
+        "Qwen3.7-Max"
+      ],
+      "value": 47.2,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "nl2repo",
+      "benchmarkLabel": "NL2Repo",
+      "model": "MiniMax-M3",
+      "modelAliases": [
+        "MiniMax-M3",
+        "MiniMax M3",
+        "MiniMaxAI/MiniMax-M3",
+        "minimax-m3"
+      ],
+      "value": 42.1,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "nl2repo",
+      "benchmarkLabel": "NL2Repo",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 35.5,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "nl2repo",
+      "benchmarkLabel": "NL2Repo",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 69.7,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "nl2repo",
+      "benchmarkLabel": "NL2Repo",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 50.7,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "nl2repo",
+      "benchmarkLabel": "NL2Repo",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 33.4,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "deepswe",
+      "benchmarkLabel": "DeepSWE",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 18.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "deepswe",
+      "benchmarkLabel": "DeepSWE",
+      "model": "Qwen3.7-Max",
+      "modelAliases": [
+        "Qwen3.7-Max"
+      ],
+      "value": 18.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "deepswe",
+      "benchmarkLabel": "DeepSWE",
+      "model": "MiniMax-M3",
+      "modelAliases": [
+        "MiniMax-M3",
+        "MiniMax M3",
+        "MiniMaxAI/MiniMax-M3",
+        "minimax-m3"
+      ],
+      "value": 20.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "deepswe",
+      "benchmarkLabel": "DeepSWE",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 8.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "deepswe",
+      "benchmarkLabel": "DeepSWE",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 58.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "deepswe",
+      "benchmarkLabel": "DeepSWE",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 70.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "deepswe",
+      "benchmarkLabel": "DeepSWE",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 10.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "programbench",
+      "benchmarkLabel": "ProgramBench",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 50.9,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "programbench",
+      "benchmarkLabel": "ProgramBench",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 47.8,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "programbench",
+      "benchmarkLabel": "ProgramBench",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 71.9,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "programbench",
+      "benchmarkLabel": "ProgramBench",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 70.8,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "programbench",
+      "benchmarkLabel": "ProgramBench",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 39.5,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 69.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Qwen3.7-Max",
+      "modelAliases": [
+        "Qwen3.7-Max"
+      ],
+      "value": 75.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "MiniMax-M3",
+      "modelAliases": [
+        "MiniMax-M3",
+        "MiniMax M3",
+        "MiniMaxAI/MiniMax-M3",
+        "minimax-m3"
+      ],
+      "value": 65.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 64.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 78.9,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 83.4,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 70.7,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "frontierswe-dominance",
+      "benchmarkLabel": "FrontierSWE Dominance",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 30.5,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "frontierswe-dominance",
+      "benchmarkLabel": "FrontierSWE Dominance",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 29.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "frontierswe-dominance",
+      "benchmarkLabel": "FrontierSWE Dominance",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 75.1,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "frontierswe-dominance",
+      "benchmarkLabel": "FrontierSWE Dominance",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 72.6,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "frontierswe-dominance",
+      "benchmarkLabel": "FrontierSWE Dominance",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 39.6,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "posttrainbench",
+      "benchmarkLabel": "PostTrainBench",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 20.1,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "posttrainbench",
+      "benchmarkLabel": "PostTrainBench",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 37.2,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "posttrainbench",
+      "benchmarkLabel": "PostTrainBench",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 28.4,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "posttrainbench",
+      "benchmarkLabel": "PostTrainBench",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 21.6,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "swe-marathon",
+      "benchmarkLabel": "SWE-Marathon",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 1.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "swe-marathon",
+      "benchmarkLabel": "SWE-Marathon",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 26.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "swe-marathon",
+      "benchmarkLabel": "SWE-Marathon",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 12.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "swe-marathon",
+      "benchmarkLabel": "SWE-Marathon",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 4.0,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 71.8,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "Qwen3.7-Max",
+      "modelAliases": [
+        "Qwen3.7-Max"
+      ],
+      "value": 76.4,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "MiniMax-M3",
+      "modelAliases": [
+        "MiniMax-M3",
+        "MiniMax M3",
+        "MiniMaxAI/MiniMax-M3",
+        "minimax-m3"
+      ],
+      "value": 74.2,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 73.6,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 77.8,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 75.3,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 69.2,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "GLM-5.1",
+      "modelAliases": [
+        "GLM-5.1",
+        "GLM 5.1",
+        "zai-org/GLM-5.1",
+        "glm-5-1"
+      ],
+      "value": 40.7,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "DeepSeek V4 Pro",
+      "modelAliases": [
+        "DeepSeek V4 Pro",
+        "DeepSeek-V4-Pro Non-Think",
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "value": 52.8,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8"
+      ],
+      "value": 59.9,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 55.6,
+      "unit": "%",
+      "sourceId": "zai-glm-5-2-card",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
+      "sourceLabel": "Z.ai GLM-5.2 official model card"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "Gemini 3.1 Pro",
+      "modelAliases": [
+        "Gemini 3.1 Pro",
+        "Gemini 3.1 Pro Preview",
+        "Gemini 3.1 Pro (high)",
+        "gemini-3-1-pro-preview",
+        "gemini-3-1-pro-high"
+      ],
+      "value": 48.8,
       "unit": "%",
       "sourceId": "zai-glm-5-2-card",
       "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.2",
