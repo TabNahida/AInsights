@@ -8,6 +8,7 @@ from ArtificialAnalysis.scrape_artificial_analysis import (
     build_raw_scores_rows,
     download_creator_logos,
     extract_default_data,
+    write_raw_scores_csv,
 )
 
 
@@ -176,6 +177,16 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
             self.assertEqual(count, 1)
             self.assertEqual(mocked.call_count, 1)
             self.assertTrue((Path(tmpdir) / "kimi_small.png").exists())
+
+    def test_raw_scores_csv_uses_lf_line_endings(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output = Path(tmpdir) / "scores.csv"
+
+            write_raw_scores_csv([{}], output)
+
+            content = output.read_bytes()
+            self.assertIn(b"\n", content)
+            self.assertNotIn(b"\r\n", content)
 
 
 if __name__ == "__main__":

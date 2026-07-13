@@ -13,6 +13,7 @@ import json
 import re
 import sys
 from datetime import datetime, timezone
+from http.client import IncompleteRead
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
@@ -23,6 +24,7 @@ from urllib.request import Request, urlopen
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT_JSON = PROJECT_ROOT / "data" / "benchmarks" / "benchmark_scores.json"
 OPENAI_GPT55_URL = "https://openai.com/index/introducing-gpt-5-5/"
+OPENAI_GPT56_URL = "https://openai.com/index/gpt-5-6/"
 ANTHROPIC_OPUS47_URL = "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416"
 ANTHROPIC_FABLE5_URL = "https://www.anthropic.com/news/claude-fable-5-mythos-5"
 GOOGLE_GEMINI31_URL = "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
@@ -63,6 +65,51 @@ NVIDIA_NEMOTRON3_SUPER_URL = "https://research.nvidia.com/labs/nemotron/files/NV
 NVIDIA_NEMOTRON3_ULTRA_URL = "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf"
 
 MODEL_ALIASES = {
+    "GPT-5.6 Sol": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning",
+    ],
+    "GPT-5.6 Terra": [
+        "GPT-5.6 Terra",
+        "GPT-5.6 Terra (max)",
+        "GPT-5.6 Terra (xhigh)",
+        "GPT-5.6 Terra (high)",
+        "GPT-5.6 Terra (medium)",
+        "GPT-5.6 Terra (low)",
+        "GPT-5.6 Terra (Non-reasoning)",
+        "gpt-5-6-terra",
+        "gpt-5-6-terra-xhigh",
+        "gpt-5-6-terra-high",
+        "gpt-5-6-terra-medium",
+        "gpt-5-6-terra-low",
+        "gpt-5-6-terra-non-reasoning",
+    ],
+    "GPT-5.6 Luna": [
+        "GPT-5.6 Luna",
+        "GPT-5.6 Luna (max)",
+        "GPT-5.6 Luna (xhigh)",
+        "GPT-5.6 Luna (high)",
+        "GPT-5.6 Luna (medium)",
+        "GPT-5.6 Luna (low)",
+        "GPT-5.6 Luna (Non-reasoning)",
+        "gpt-5-6-luna",
+        "gpt-5-6-luna-xhigh",
+        "gpt-5-6-luna-high",
+        "gpt-5-6-luna-medium",
+        "gpt-5-6-luna-low",
+        "gpt-5-6-luna-non-reasoning",
+    ],
     "GPT-5.5": ["GPT-5.5", "GPT-5.5 (xhigh)", "gpt-5-5", "gpt-5-5-xhigh"],
     "GPT-5.4": ["GPT-5.4", "GPT-5.4 (xhigh)", "gpt-5-4", "gpt-5-4-xhigh"],
     "GPT-5.5 Pro": ["GPT-5.5 Pro", "GPT-5.5 Pro (xhigh)", "gpt-5-5-pro"],
@@ -169,7 +216,15 @@ MODEL_ALIASES = {
     "Kimi K2 0905": ["Kimi K2 0905", "Kimi-K2-Instruct-0905", "moonshotai/Kimi-K2-Instruct-0905"],
     "Kimi K2": ["Kimi K2", "Kimi-K2", "Kimi-K2-Instruct"],
     "GLM-5.1": ["GLM-5.1", "GLM 5.1", "zai-org/GLM-5.1", "glm-5-1"],
-    "GLM-5.2": ["GLM-5.2", "GLM 5.2", "GLM-5.2 (max)", "GLM-5.2 (max) [R]", "zai-org/GLM-5.2", "glm-5-2"],
+    "GLM-5.2": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning",
+    ],
     "GLM-5": ["GLM-5", "GLM 5", "zai-org/GLM-5"],
     "GLM-4.7": ["GLM-4.7", "GLM 4.7", "zai-org/GLM-4.7"],
     "GLM-4.6": ["GLM-4.6", "GLM 4.6", "zai-org/GLM-4.6"],
@@ -888,6 +943,202 @@ BENCHMARKS = [
         "unit": "%",
         "icon": "WMT",
     },
+    {
+        "id": "agents-last-exam",
+        "label": "Agents' Last Exam",
+        "category": "Agentic reasoning",
+        "unit": "%",
+        "icon": "ALE",
+    },
+    {
+        "id": "management-consulting-internal",
+        "label": "Management Consulting Tasks (Internal)",
+        "category": "Professional work",
+        "unit": "%",
+        "icon": "MGT",
+    },
+    {
+        "id": "big-finance-bench",
+        "label": "Big Finance Bench",
+        "category": "Professional work",
+        "unit": "%",
+        "icon": "BFB",
+    },
+    {
+        "id": "deepswe-v1-1",
+        "label": "DeepSWE v1.1",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "DSWE",
+    },
+    {
+        "id": "genebench-pro",
+        "label": "GeneBench Pro",
+        "category": "Biology",
+        "unit": "%",
+        "icon": "GENE",
+    },
+    {
+        "id": "lifescibench",
+        "label": "LifeSciBench",
+        "category": "Life sciences",
+        "unit": "%",
+        "icon": "LIFE",
+    },
+    {
+        "id": "medchembench-internal",
+        "label": "MedChemBench (Internal)",
+        "category": "Chemistry",
+        "unit": "%",
+        "icon": "MED",
+    },
+    {
+        "id": "osworld-2",
+        "label": "OSWorld 2.0",
+        "category": "Computer use",
+        "unit": "%",
+        "icon": "OS2",
+    },
+    {
+        "id": "benchcad",
+        "label": "BenchCAD",
+        "category": "Computer-aided design",
+        "unit": "%",
+        "icon": "CAD",
+    },
+    {
+        "id": "benchcad-python",
+        "label": "BenchCAD (Python tool)",
+        "category": "Computer-aided design",
+        "unit": "%",
+        "icon": "CAD+",
+    },
+    {
+        "id": "capture-the-flag",
+        "label": "Capture-the-Flag Challenges",
+        "category": "Cybersecurity",
+        "unit": "%",
+        "icon": "CTF",
+    },
+    {
+        "id": "sec-bench-pro",
+        "label": "SEC-Bench Pro",
+        "category": "Cybersecurity",
+        "unit": "%",
+        "icon": "SEC",
+    },
+    {
+        "id": "exploitbench",
+        "label": "ExploitBench",
+        "category": "Cybersecurity",
+        "unit": "%",
+        "icon": "EX",
+    },
+    {
+        "id": "exploitgym",
+        "label": "ExploitGym",
+        "category": "Cybersecurity",
+        "unit": "%",
+        "icon": "EXG",
+    },
+    {
+        "id": "internal-research-debugging",
+        "label": "Internal Research Debugging Evaluation",
+        "category": "Research coding",
+        "unit": "%",
+        "icon": "DBG",
+    },
+    {
+        "id": "kernelgen-1p",
+        "label": "KernelGen 1P",
+        "category": "Systems coding",
+        "unit": "%",
+        "icon": "KRN",
+    },
+    {
+        "id": "nanogpt",
+        "label": "NanoGPT",
+        "category": "ML coding",
+        "unit": "%",
+        "icon": "NGPT",
+    },
+    {
+        "id": "posttrainbench-lite",
+        "label": "PostTrainBench Lite",
+        "category": "Agentic training",
+        "unit": "%",
+        "icon": "PTB",
+    },
+    {
+        "id": "rsi-index",
+        "label": "RSI Index",
+        "category": "Self-improvement",
+        "unit": "%",
+        "icon": "RSI",
+    },
+    {
+        "id": "mmmu-pro-no-tools",
+        "label": "MMMU Pro (no tools)",
+        "category": "Multimodal reasoning",
+        "unit": "%",
+        "icon": "MMMU",
+    },
+    {
+        "id": "mmmu-pro-tools",
+        "label": "MMMU Pro (with tools)",
+        "category": "Multimodal reasoning",
+        "unit": "%",
+        "icon": "MMMU+",
+    },
+    {
+        "id": "frontiermath-tier-1-3-v2",
+        "label": "FrontierMath Tier 1-3 (v2)",
+        "category": "Academic reasoning",
+        "unit": "%",
+        "icon": "FM2",
+    },
+    {
+        "id": "frontiermath-tier-4-v2",
+        "label": "FrontierMath Tier 4 (v2)",
+        "category": "Academic reasoning",
+        "unit": "%",
+        "icon": "FM4",
+    },
+    {
+        "id": "openai-mrcr-v2-256k-512k",
+        "label": "OpenAI MRCR v2 8-needle 256K-512K",
+        "category": "Long context",
+        "unit": "%",
+        "icon": "MRCR",
+    },
+    {
+        "id": "openai-mrcr-v2-512k-1m",
+        "label": "OpenAI MRCR v2 8-needle 512K-1M",
+        "category": "Long context",
+        "unit": "%",
+        "icon": "MRCR",
+    },
+    {
+        "id": "graphwalks-bfs-256k-f1",
+        "label": "GraphWalks BFS 256K F1",
+        "category": "Long context",
+        "unit": "%",
+        "icon": "GW",
+    },
+    {
+        "id": "graphwalks-bfs-1m-f1",
+        "label": "GraphWalks BFS 1M F1",
+        "category": "Long context",
+        "unit": "%",
+        "icon": "GW",
+    },
+    {
+        "id": "arc-agi-3",
+        "label": "ARC-AGI-3",
+        "category": "Abstract reasoning",
+        "unit": "%",
+        "icon": "ARC3",
+    },
 ]
 
 SEED_OPENAI_VALUES = {
@@ -904,6 +1155,177 @@ SEED_OPENAI_VALUES = {
 }
 
 OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
+    {
+        "id": "openai-gpt-5-6-release",
+        "label": "OpenAI GPT-5.6 official release evaluations",
+        "url": OPENAI_GPT56_URL,
+        "rawUrl": OPENAI_GPT56_URL,
+        "category": "Official model release",
+        "note": "OpenAI official GPT-5.6 release tables covering Sol, Terra, and Luna across professional work, coding, science, computer use, cybersecurity, reasoning, tool use, and long-context evaluations.",
+        "columns": {
+            "GPT-5.6 Sol": "GPT-5.6 Sol",
+            "GPT-5.6 Terra": "GPT-5.6 Terra",
+            "GPT-5.6 Luna": "GPT-5.6 Luna",
+        },
+        "rowLabels": {
+            "Agents' Last Exam": "agents-last-exam",
+            "GDPval-AA v2": "gdpval-aa-elo",
+            "Management Consulting Tasks (Internal)": "management-consulting-internal",
+            "Big Finance Bench": "big-finance-bench",
+            "SWE-Bench Pro": "swe-bench-pro",
+            "DeepSWE v1.1": "deepswe-v1-1",
+            "Terminal-Bench 2.1": "terminal-bench-2-1",
+            "GeneBench Pro": "genebench-pro",
+            "LifeSciBench": "lifescibench",
+            "MedChemBench (Internal)": "medchembench-internal",
+            "HealthBench Professional": "healthbench-professional",
+            "OSWorld 2.0": "osworld-2",
+            "BrowseComp": "browsecomp",
+            "BenchCAD": "benchcad",
+            "BenchCAD (python tool)": "benchcad-python",
+            "Capture-the-Flag Challenges": "capture-the-flag",
+            "SEC-Bench Pro": "sec-bench-pro",
+            "ExploitBench": "exploitbench",
+            "ExploitGym": "exploitgym",
+            "Internal Research Debugging Evaluation": "internal-research-debugging",
+            "KernelGen 1P": "kernelgen-1p",
+            "NanoGPT": "nanogpt",
+            "PostTrainBench Lite": "posttrainbench-lite",
+            "RSI Index": "rsi-index",
+            "MMMU Pro (no tools)": "mmmu-pro-no-tools",
+            "MMMU Pro (with tools)": "mmmu-pro-tools",
+            "gdp.pdf": "gdp-pdf",
+            "GPQA Diamond": "gpqa-diamond",
+            "FrontierMath Tier 1-3 (v2)": "frontiermath-tier-1-3-v2",
+            "FrontierMath Tier 4 (v2)": "frontiermath-tier-4-v2",
+            "AutomationBench": "automationbench",
+            "Toolathlon": "toolathlon",
+            "OpenAI MRCR v2 8-needle 256K-512K": "openai-mrcr-v2-256k-512k",
+            "OpenAI MRCR v2 8-needle 512K-1M": "openai-mrcr-v2-512k-1m",
+            "GraphWalks BFS 256k f1": "graphwalks-bfs-256k-f1",
+            "GraphWalks BFS 1mil f1": "graphwalks-bfs-1m-f1",
+            "ARC-AGI-3": "arc-agi-3",
+        },
+        "scores": {
+            "GPT-5.6 Sol": {
+                "agents-last-exam": 52.7,
+                "gdpval-aa-elo": 1747.8,
+                "management-consulting-internal": 43.2,
+                "big-finance-bench": 53.0,
+                "swe-bench-pro": 64.6,
+                "deepswe-v1-1": 72.7,
+                "terminal-bench-2-1": 88.8,
+                "genebench-pro": 28.7,
+                "lifescibench": 59.9,
+                "medchembench-internal": 48.3,
+                "healthbench-professional": 60.5,
+                "osworld-2": 62.6,
+                "browsecomp": 90.4,
+                "benchcad": 70.6,
+                "benchcad-python": 83.4,
+                "capture-the-flag": 96.7,
+                "sec-bench-pro": 71.2,
+                "exploitbench": 73.5,
+                "exploitgym": 33.7,
+                "internal-research-debugging": 68.3,
+                "kernelgen-1p": 61.1,
+                "nanogpt": 9.69,
+                "posttrainbench-lite": 50.3,
+                "rsi-index": 57.9,
+                "mmmu-pro-no-tools": 83.0,
+                "mmmu-pro-tools": 84.6,
+                "gdp-pdf": 30.7,
+                "gpqa-diamond": 94.6,
+                "frontiermath-tier-1-3-v2": 89.0,
+                "frontiermath-tier-4-v2": 83.0,
+                "automationbench": 18.1,
+                "toolathlon": 58.0,
+                "openai-mrcr-v2-256k-512k": 91.5,
+                "openai-mrcr-v2-512k-1m": 73.8,
+                "graphwalks-bfs-256k-f1": 90.7,
+                "graphwalks-bfs-1m-f1": 77.1,
+                "arc-agi-3": 7.78,
+            },
+            "GPT-5.6 Terra": {
+                "agents-last-exam": 50.4,
+                "gdpval-aa-elo": 1593.0,
+                "management-consulting-internal": 37.2,
+                "big-finance-bench": 51.0,
+                "swe-bench-pro": 63.4,
+                "deepswe-v1-1": 69.6,
+                "terminal-bench-2-1": 87.4,
+                "genebench-pro": 23.3,
+                "lifescibench": 56.0,
+                "medchembench-internal": 35.0,
+                "healthbench-professional": 57.7,
+                "osworld-2": 50.2,
+                "browsecomp": 87.5,
+                "benchcad": 62.3,
+                "benchcad-python": 78.2,
+                "capture-the-flag": 91.8,
+                "sec-bench-pro": 57.7,
+                "exploitbench": 52.9,
+                "exploitgym": 23.2,
+                "internal-research-debugging": 67.8,
+                "kernelgen-1p": 49.2,
+                "nanogpt": 14.5,
+                "posttrainbench-lite": 51.5,
+                "rsi-index": 56.3,
+                "mmmu-pro-no-tools": 80.7,
+                "mmmu-pro-tools": 82.0,
+                "gdp-pdf": 24.7,
+                "gpqa-diamond": 92.9,
+                "frontiermath-tier-1-3-v2": 84.9,
+                "frontiermath-tier-4-v2": 68.3,
+                "automationbench": 15.2,
+                "toolathlon": 53.1,
+                "openai-mrcr-v2-256k-512k": 89.6,
+                "openai-mrcr-v2-512k-1m": 72.5,
+                "graphwalks-bfs-256k-f1": 76.9,
+                "graphwalks-bfs-1m-f1": 71.2,
+                "arc-agi-3": 0.8,
+            },
+            "GPT-5.6 Luna": {
+                "agents-last-exam": 50.3,
+                "gdpval-aa-elo": 1591.8,
+                "management-consulting-internal": 35.4,
+                "big-finance-bench": 36.0,
+                "swe-bench-pro": 62.7,
+                "deepswe-v1-1": 67.2,
+                "terminal-bench-2-1": 84.7,
+                "genebench-pro": 10.8,
+                "lifescibench": 51.2,
+                "medchembench-internal": 30.4,
+                "healthbench-professional": 55.7,
+                "osworld-2": 45.6,
+                "browsecomp": 83.3,
+                "benchcad": 63.1,
+                "benchcad-python": 73.9,
+                "capture-the-flag": 85.2,
+                "sec-bench-pro": 48.9,
+                "exploitbench": 33.2,
+                "exploitgym": 12.4,
+                "internal-research-debugging": 50.8,
+                "kernelgen-1p": 22.4,
+                "nanogpt": 1.66,
+                "posttrainbench-lite": 29.6,
+                "rsi-index": 41.9,
+                "mmmu-pro-no-tools": 78.4,
+                "mmmu-pro-tools": 79.5,
+                "gdp-pdf": 22.7,
+                "gpqa-diamond": 92.3,
+                "frontiermath-tier-1-3-v2": 78.6,
+                "frontiermath-tier-4-v2": 58.5,
+                "automationbench": 14.9,
+                "toolathlon": 53.4,
+                "openai-mrcr-v2-256k-512k": 41.3,
+                "openai-mrcr-v2-512k-1m": 41.3,
+                "graphwalks-bfs-256k-f1": 81.3,
+                "graphwalks-bfs-1m-f1": 51.2,
+                "arc-agi-3": 0.18,
+            },
+        },
+    },
     {
         "id": "anthropic-claude-opus-4-7-release",
         "label": "Anthropic Claude Opus 4.7 official release",
@@ -2569,7 +2991,7 @@ def collect(timeout: float = 30) -> dict[str, Any]:
     try:
         html = fetch_html(OPENAI_GPT55_URL, timeout=timeout)
         parsed = parse_openai_scores(html)
-    except (HTTPError, URLError, TimeoutError, OSError) as exc:
+    except (HTTPError, URLError, TimeoutError, OSError, IncompleteRead) as exc:
         official_results, source_statuses = collect_official_sources(timeout=timeout)
         return build_payload(
             SEED_OPENAI_VALUES,
@@ -2598,7 +3020,7 @@ def collect_official_sources(timeout: float = 30) -> tuple[list[dict[str, Any]],
         try:
             text = fetch_html(str(spec.get("rawUrl") or spec["url"]), timeout=timeout)
             parsed_rows = parse_markdown_source_scores(text, spec)
-        except (HTTPError, URLError, TimeoutError, OSError) as exc:
+        except (HTTPError, URLError, TimeoutError, OSError, IncompleteRead) as exc:
             results.extend(seed_rows)
             status_prefix = "seeded-official-values" if seed_rows else "reference-only"
             statuses[spec["id"]] = f"{status_prefix}; refresh blocked: {exc.__class__.__name__}"
@@ -2809,8 +3231,50 @@ def _numeric_cell(cell: str) -> float | None:
     return float(match.group(0).replace(",", ""))
 
 
+def retain_previous_results_on_blocked_refresh(
+    payload: dict[str, Any],
+    previous_payload: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not previous_payload:
+        return payload
+
+    current_rows_by_source: dict[str, list[dict[str, Any]]] = {}
+    for row in payload.get("results", []):
+        current_rows_by_source.setdefault(str(row.get("sourceId") or ""), []).append(row)
+
+    previous_rows_by_source: dict[str, list[dict[str, Any]]] = {}
+    for row in previous_payload.get("results", []):
+        previous_rows_by_source.setdefault(str(row.get("sourceId") or ""), []).append(row)
+
+    merged_results: list[dict[str, Any]] = []
+    source_ids: set[str] = set()
+    for source in payload.get("sources", []):
+        source_id = str(source.get("id") or "")
+        source_ids.add(source_id)
+        current_rows = current_rows_by_source.get(source_id, [])
+        previous_rows = previous_rows_by_source.get(source_id, [])
+        status = str(source.get("collectionStatus") or "")
+        if "refresh blocked:" in status and previous_rows:
+            current_rows = merge_result_rows(current_rows, previous_rows)
+            blocked_reason = status[status.index("refresh blocked:") :]
+            source["collectionStatus"] = f"stale-retained; {blocked_reason}"
+        merged_results.extend(current_rows)
+
+    for source_id, rows in current_rows_by_source.items():
+        if source_id not in source_ids:
+            merged_results.extend(rows)
+    payload["results"] = merged_results
+    return payload
+
+
 def write_payload(output_json: Path, timeout: float = 30) -> dict[str, Any]:
+    previous_payload: dict[str, Any] | None = None
+    try:
+        previous_payload = json.loads(output_json.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        pass
     payload = collect(timeout=timeout)
+    retain_previous_results_on_blocked_refresh(payload, previous_payload)
     output_json.parent.mkdir(parents=True, exist_ok=True)
     output_json.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return payload

@@ -1,9 +1,13 @@
 import unittest
+from http.client import IncompleteRead
+from unittest.mock import patch
 
 from benchmarks.collect_benchmark_scores import (
     build_payload,
+    collect_official_sources,
     parse_markdown_source_scores,
     parse_openai_scores,
+    retain_previous_results_on_blocked_refresh,
 )
 
 
@@ -118,6 +122,55 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
 
         self.assertEqual(terminal["value"], 68.5)
         self.assertEqual(gpqa["value"], 94.3)
+
+    def test_blocked_refresh_retains_last_successful_source_results(self):
+        current = {
+            "sources": [
+                {
+                    "id": "official-source",
+                    "collectionStatus": "seeded-official-values; refresh blocked: URLError",
+                },
+                {"id": "fresh-source", "collectionStatus": "refreshed"},
+            ],
+            "results": [
+                {"sourceId": "official-source", "model": "Model A", "benchmarkId": "seed", "value": 1},
+                {"sourceId": "fresh-source", "model": "Model B", "benchmarkId": "fresh", "value": 2},
+            ],
+        }
+        previous = {
+            "sources": [{"id": "official-source", "collectionStatus": "refreshed"}],
+            "results": [
+                {"sourceId": "official-source", "model": "Model A", "benchmarkId": "seed", "value": 3},
+                {"sourceId": "official-source", "model": "Model A", "benchmarkId": "extra", "value": 4},
+                {"sourceId": "fresh-source", "model": "Model B", "benchmarkId": "stale", "value": 5},
+            ],
+        }
+
+        retained = retain_previous_results_on_blocked_refresh(current, previous)
+        result_values = {
+            (row["sourceId"], row["benchmarkId"]): row["value"]
+            for row in retained["results"]
+        }
+        statuses = {source["id"]: source["collectionStatus"] for source in retained["sources"]}
+
+        self.assertEqual(result_values[("official-source", "seed")], 3)
+        self.assertEqual(result_values[("official-source", "extra")], 4)
+        self.assertNotIn(("fresh-source", "stale"), result_values)
+        self.assertEqual(statuses["official-source"], "stale-retained; refresh blocked: URLError")
+        self.assertEqual(statuses["fresh-source"], "refreshed")
+
+    def test_incomplete_official_response_falls_back_to_seeded_results(self):
+        with patch(
+            "benchmarks.collect_benchmark_scores.fetch_html",
+            side_effect=IncompleteRead(b"partial response"),
+        ):
+            results, statuses = collect_official_sources(timeout=1)
+
+        self.assertTrue(results)
+        self.assertTrue(statuses)
+        self.assertTrue(
+            all("refresh blocked: IncompleteRead" in status for status in statuses.values())
+        )
 
     def test_build_payload_includes_official_seed_sources(self):
         payload = build_payload({}, "seeded")
@@ -272,6 +325,69 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertEqual(minimax_m27_gpqa["value"], 89.8)
         self.assertEqual(nemotron_super_lcb["value"], 78.69)
         self.assertEqual(nemotron_nano_aime["value"], 89.06)
+
+    def test_build_payload_includes_gpt56_official_scores(self):
+        payload = build_payload({}, "seeded")
+        sources = {source["id"]: source for source in payload["sources"]}
+        results = {
+            (row["model"], row["benchmarkId"]): row
+            for row in payload["results"]
+            if row["sourceId"] == "openai-gpt-5-6-release"
+        }
+
+        self.assertEqual(
+            sources["openai-gpt-5-6-release"]["url"],
+            "https://openai.com/index/gpt-5-6/",
+        )
+        self.assertEqual(results[("GPT-5.6 Sol", "swe-bench-pro")]["value"], 64.6)
+        self.assertEqual(results[("GPT-5.6 Terra", "terminal-bench-2-1")]["value"], 87.4)
+        self.assertEqual(results[("GPT-5.6 Luna", "gpqa-diamond")]["value"], 92.3)
+        self.assertEqual(results[("GPT-5.6 Sol", "agents-last-exam")]["value"], 52.7)
+        self.assertEqual(results[("GPT-5.6 Terra", "osworld-2")]["value"], 50.2)
+        self.assertEqual(results[("GPT-5.6 Luna", "arc-agi-3")]["value"], 0.18)
+        self.assertIn("gpt-5-6-sol", results[("GPT-5.6 Sol", "swe-bench-pro")]["modelAliases"])
+        self.assertIn("GPT-5.6 Terra (max)", results[("GPT-5.6 Terra", "swe-bench-pro")]["modelAliases"])
+
+        benchmark_ids = {benchmark["id"] for benchmark in payload["benchmarks"]}
+        self.assertTrue(
+            {
+                "agents-last-exam",
+                "management-consulting-internal",
+                "big-finance-bench",
+                "deepswe-v1-1",
+                "genebench-pro",
+                "lifescibench",
+                "medchembench-internal",
+                "osworld-2",
+                "benchcad",
+                "benchcad-python",
+                "capture-the-flag",
+                "sec-bench-pro",
+                "exploitbench",
+                "exploitgym",
+                "internal-research-debugging",
+                "kernelgen-1p",
+                "nanogpt",
+                "posttrainbench-lite",
+                "rsi-index",
+                "mmmu-pro-no-tools",
+                "mmmu-pro-tools",
+                "frontiermath-tier-1-3-v2",
+                "frontiermath-tier-4-v2",
+                "openai-mrcr-v2-256k-512k",
+                "openai-mrcr-v2-512k-1m",
+                "graphwalks-bfs-256k-f1",
+                "graphwalks-bfs-1m-f1",
+                "arc-agi-3",
+            }.issubset(benchmark_ids)
+        )
+
+        glm52 = next(
+            row
+            for row in payload["results"]
+            if row["model"] == "GLM-5.2" and row["sourceId"] == "zai-glm-5-2-card"
+        )
+        self.assertIn("glm-5-2-non-reasoning", glm52["modelAliases"])
 
     def test_build_payload_includes_fable_and_older_qwen_official_scores(self):
         payload = build_payload({}, "seeded")
