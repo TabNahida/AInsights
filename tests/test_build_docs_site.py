@@ -12,6 +12,7 @@ from scripts.build_docs_site import (
     DEFAULT_INPUT_CSV,
     build_site_payload,
     load_external_benchmarks,
+    open_source_type,
     read_csv_rows,
     score_model_for_preset,
     variant_group,
@@ -242,6 +243,21 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertNotIn("sourceSrc", payload["models"][0]["modelIcon"])
         self.assertEqual(payload["models"][1]["modelIcon"]["label"], "LB")
         self.assertEqual(payload["models"][1]["modelIcon"]["fallbackLabel"], "LB")
+
+    def test_open_source_type_supports_current_and_legacy_categories(self):
+        expectations = {
+            "permissive": "open",
+            "commercial-license": "open",
+            "Open Weights (Permissive License)": "open",
+            "Proprietary": "closed",
+            "closed": "closed",
+            "": "unknown",
+            "future-category": "unknown",
+        }
+
+        for category, expected in expectations.items():
+            with self.subTest(category=category):
+                self.assertEqual(open_source_type(category), expected)
 
     def test_build_site_payload_merges_external_benchmark_scores(self):
         payload = build_site_payload(

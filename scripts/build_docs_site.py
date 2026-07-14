@@ -1324,7 +1324,7 @@ def open_source_type(category: str) -> str:
     normalized = category.strip().lower()
     if not normalized:
         return "unknown"
-    if "open" in normalized:
+    if normalized in {"permissive", "commercial-license"} or "open" in normalized:
         return "open"
     if "proprietary" in normalized or "closed" in normalized:
         return "closed"
