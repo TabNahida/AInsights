@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T14:46:38+00:00",
+  "generatedAt": "2026-07-14T03:54:30+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
@@ -149,7 +149,7 @@
       "label": "Kimi K2 0905 official model card",
       "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905",
       "category": "Official model card",
-      "collectionStatus": "stale-retained; refresh blocked: URLError",
+      "collectionStatus": "refreshed",
       "note": "Moonshot AI official Hugging Face model card for Kimi-K2-Instruct-0905. Reported K2 0905 values are mean results over five full-test-set runs."
     },
     {
@@ -173,7 +173,7 @@
       "label": "Z.ai GLM-5.2 official model card",
       "url": "https://docs.z.ai/guides/llm/glm-5.2",
       "category": "Official release",
-      "collectionStatus": "stale-retained; refresh blocked: URLError",
+      "collectionStatus": "refreshed",
       "note": "Z.ai GLM-5.2 official page and model card with long-horizon reasoning, coding, and agentic benchmark table."
     },
     {
@@ -205,7 +205,7 @@
       "label": "Google Gemma 4 official model card",
       "url": "https://ai.google.dev/gemma/docs/core/model_card_4",
       "category": "Official model card",
-      "collectionStatus": "stale-retained; refresh blocked: URLError",
+      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
       "note": "Google Gemma model card covering Gemma 4 31B, 26B-A4B, E4B, and E2B instruction-tuned benchmarks."
     },
     {
@@ -245,7 +245,7 @@
       "label": "MiniMax M1 official GitHub report",
       "url": "https://github.com/MiniMax-AI/MiniMax-M1",
       "category": "Official technical report",
-      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
+      "collectionStatus": "refreshed",
       "note": "MiniMax-AI official GitHub README benchmark table for MiniMax-M1-80K and MiniMax-M1-40K."
     },
     {
@@ -277,7 +277,7 @@
       "label": "xAI Grok 4.1 Fast official release",
       "url": "https://x.ai/news/grok-4-1-fast",
       "category": "Official release",
-      "collectionStatus": "stale-retained; refresh blocked: URLError",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "xAI release page for Grok 4.1 Fast and Agent Tools API with tool-calling and agentic-search benchmark tables."
     },
     {
@@ -9349,7 +9349,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 40.5,
       "unit": "%",
@@ -9367,7 +9368,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 54.7,
       "unit": "%",
@@ -9385,7 +9387,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 20.9,
       "unit": "%",
@@ -9403,7 +9406,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 99.2,
       "unit": "%",
@@ -9421,7 +9425,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 94.4,
       "unit": "%",
@@ -9439,7 +9444,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 92.5,
       "unit": "%",
@@ -9457,7 +9463,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 91.0,
       "unit": "%",
@@ -9475,7 +9482,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 91.2,
       "unit": "%",
@@ -9493,7 +9501,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 62.1,
       "unit": "%",
@@ -9511,7 +9520,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 48.9,
       "unit": "%",
@@ -9529,7 +9539,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 46.2,
       "unit": "%",
@@ -9547,7 +9558,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 63.7,
       "unit": "%",
@@ -9565,7 +9577,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 82.7,
       "unit": "%",
@@ -9583,7 +9596,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 74.4,
       "unit": "%",
@@ -9601,7 +9615,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 34.3,
       "unit": "%",
@@ -9619,7 +9634,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 13.0,
       "unit": "%",
@@ -9637,7 +9653,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 76.8,
       "unit": "%",
@@ -9655,7 +9672,8 @@
         "GLM-5.2 (max)",
         "GLM-5.2 (max) [R]",
         "zai-org/GLM-5.2",
-        "glm-5-2"
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
       ],
       "value": 48.2,
       "unit": "%",
