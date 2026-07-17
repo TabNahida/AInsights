@@ -1,3 +1,4 @@
+import json
 import unittest
 from http.client import IncompleteRead
 from unittest.mock import patch
@@ -123,6 +124,54 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertEqual(terminal["value"], 68.5)
         self.assertEqual(gpqa["value"], 94.3)
 
+    def test_parse_markdown_source_scores_extracts_next_sheet_data(self):
+        sheet = {
+            "options": {"variant": "sheet"},
+            "data": [
+                {
+                    "benchmark": "Terminal Bench 2.1",
+                    "scores": [
+                        {"model": "Kimi K3\n(max)", "value": "88.3"},
+                        {"model": "GPT 5.5\n(xhigh)", "value": "83.4"},
+                    ],
+                },
+                {
+                    "benchmark": "BrowseComp",
+                    "scores": [
+                        {"model": "Kimi K3\n(max)", "value": "91.2"},
+                        {"model": "GPT 5.5\n(xhigh)", "value": "84.4"},
+                    ],
+                },
+            ],
+        }
+        html = (
+            "<script>self.__next_f.push([1,"
+            + json.dumps(json.dumps(sheet))
+            + "])</script>"
+        )
+        spec = {
+            "id": "kimi-test",
+            "label": "Kimi test",
+            "url": "https://www.kimi.com/blog/kimi-k3",
+            "columns": {
+                "Kimi K3 (max)": "Kimi K3",
+                "GPT 5.5 (xhigh)": "GPT-5.5",
+            },
+            "rowLabels": {
+                "Terminal Bench 2.1": "terminal-bench-2-1",
+                "BrowseComp": "browsecomp",
+            },
+        }
+
+        rows = parse_markdown_source_scores(html, spec)
+        values = {
+            (row["model"], row["benchmarkId"]): row["value"]
+            for row in rows
+        }
+
+        self.assertEqual(values[("Kimi K3", "terminal-bench-2-1")], 88.3)
+        self.assertEqual(values[("GPT-5.5", "browsecomp")], 84.4)
+
     def test_blocked_refresh_retains_last_successful_source_results(self):
         current = {
             "sources": [
@@ -199,6 +248,7 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             "qwen-qwen3-6-27b-card",
             "qwen-qwen3-6-plus-release",
             "deepseek-v4-pro-card",
+            "kimi-k3-release",
             "kimi-k2-6-card",
             "kimi-k2-7-code-card",
             "kimi-k2-thinking-card",
@@ -388,6 +438,43 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             if row["model"] == "GLM-5.2" and row["sourceId"] == "zai-glm-5-2-card"
         )
         self.assertIn("glm-5-2-non-reasoning", glm52["modelAliases"])
+
+    def test_build_payload_includes_kimi_k3_official_scores(self):
+        payload = build_payload({}, "seeded")
+        sources = {source["id"]: source for source in payload["sources"]}
+        results = {
+            (row["model"], row["benchmarkId"]): row
+            for row in payload["results"]
+            if row["sourceId"] == "kimi-k3-release"
+        }
+
+        self.assertEqual(
+            sources["kimi-k3-release"]["url"],
+            "https://www.kimi.com/blog/kimi-k3",
+        )
+        self.assertEqual(results[("Kimi K3", "terminal-bench-2-1")]["value"], 88.3)
+        self.assertEqual(results[("Kimi K3", "browsecomp")]["value"], 91.2)
+        self.assertEqual(results[("GPT-5.5", "terminal-bench-2-1")]["value"], 83.4)
+        self.assertIn("kimi-k3", results[("Kimi K3", "browsecomp")]["modelAliases"])
+
+        benchmark_ids = {benchmark["id"] for benchmark in payload["benchmarks"]}
+        self.assertTrue(
+            {
+                "job-bench",
+                "aa-briefcase-elo",
+                "officeqa-pro",
+                "spreadsheetbench-2",
+                "deck-bench-internal",
+                "mmmu-pro-python",
+                "mathvision",
+                "babyvision-python",
+                "zerobench-pass5",
+                "zerobench-python-pass5",
+                "worldvqa-forceanswer",
+                "omnidocbench",
+                "perceptionbench",
+            }.issubset(benchmark_ids)
+        )
 
     def test_build_payload_includes_fable_and_older_qwen_official_scores(self):
         payload = build_payload({}, "seeded")

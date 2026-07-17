@@ -48,6 +48,7 @@ jobs:
               "qwen-qwen3-6-plus-release",
               "qwen-qwen3-6-max-preview-release",
               "deepseek-v4-pro-card",
+              "kimi-k3-release",
               "kimi-k2-6-card",
               "kimi-k2-thinking-card",
               "kimi-k2-5-card",

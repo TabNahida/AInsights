@@ -39,6 +39,7 @@ QWEN36_PLUS_URL = "https://qwen.ai/blog?id=qwen3.6"
 QWEN36_27B_URL = "https://qwen.ai/blog?id=qwen3.6-27b"
 QWEN36_MAX_PREVIEW_URL = "https://qwen.ai/blog?id=qwen3.6-max-preview"
 DEEPSEEK_V4_PRO_URL = "https://api-docs.deepseek.com/news/news260424"
+KIMI_K3_URL = "https://www.kimi.com/blog/kimi-k3"
 KIMI_K26_URL = "https://www.kimi.com/blog/kimi-k2-6"
 KIMI_K27_CODE_URL = "https://www.kimi.com/resources/kimi-k2-7-code"
 KIMI_K27_CODE_HF_URL = "https://huggingface.co/moonshotai/Kimi-K2.7-Code"
@@ -114,6 +115,12 @@ MODEL_ALIASES = {
     "GPT-5.4": ["GPT-5.4", "GPT-5.4 (xhigh)", "gpt-5-4", "gpt-5-4-xhigh"],
     "GPT-5.5 Pro": ["GPT-5.5 Pro", "GPT-5.5 Pro (xhigh)", "gpt-5-5-pro"],
     "GPT-5.4 Pro": ["GPT-5.4 Pro", "GPT-5.4 Pro (xhigh)", "gpt-5-4-pro"],
+    "Kimi K3": ["Kimi K3", "Kimi K3 (max)", "Kimi-K3", "kimi-k3"],
+    "Claude Opus 4.8": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8",
+    ],
     "Claude Opus 4.7": [
         "Claude Opus 4.7",
         "Claude Opus 4.7 (max)",
@@ -830,6 +837,97 @@ BENCHMARKS = [
         "category": "Multimodal math",
         "unit": "%",
         "icon": "MV",
+    },
+    {
+        "id": "mathvision",
+        "label": "MathVision",
+        "category": "Multimodal math",
+        "unit": "%",
+        "icon": "MV",
+    },
+    {
+        "id": "job-bench",
+        "label": "Job Bench",
+        "category": "Professional work",
+        "unit": "%",
+        "icon": "JOB",
+    },
+    {
+        "id": "aa-briefcase-elo",
+        "label": "AA-Briefcase Elo",
+        "category": "Professional work",
+        "unit": "Elo",
+        "icon": "CASE",
+    },
+    {
+        "id": "officeqa-pro",
+        "label": "Office QA Pro",
+        "category": "Professional work",
+        "unit": "%",
+        "icon": "OFF",
+    },
+    {
+        "id": "spreadsheetbench-2",
+        "label": "SpreadsheetBench 2",
+        "category": "Professional work",
+        "unit": "%",
+        "icon": "SHEET",
+    },
+    {
+        "id": "deck-bench-internal",
+        "label": "DECK-Bench (Internal)",
+        "category": "Professional work",
+        "unit": "%",
+        "icon": "DECK",
+    },
+    {
+        "id": "mmmu-pro-python",
+        "label": "MMMU-Pro w/ Python",
+        "category": "Multimodal reasoning",
+        "unit": "%",
+        "icon": "MMMU+",
+    },
+    {
+        "id": "babyvision-python",
+        "label": "BabyVision w/ Python",
+        "category": "Multimodal reasoning",
+        "unit": "%",
+        "icon": "BABY",
+    },
+    {
+        "id": "zerobench-pass5",
+        "label": "ZeroBench pass@5",
+        "category": "Multimodal reasoning",
+        "unit": "%",
+        "icon": "ZERO",
+    },
+    {
+        "id": "zerobench-python-pass5",
+        "label": "ZeroBench w/ Python pass@5",
+        "category": "Multimodal reasoning",
+        "unit": "%",
+        "icon": "ZERO+",
+    },
+    {
+        "id": "worldvqa-forceanswer",
+        "label": "WorldVQA ForceAnswer",
+        "category": "Multimodal reasoning",
+        "unit": "%",
+        "icon": "WVQA",
+    },
+    {
+        "id": "omnidocbench",
+        "label": "OmniDocBench",
+        "category": "Document understanding",
+        "unit": "%",
+        "icon": "DOC",
+    },
+    {
+        "id": "perceptionbench",
+        "label": "PerceptionBench",
+        "category": "Visual perception",
+        "unit": "%",
+        "icon": "PERC",
     },
     {
         "id": "v-star-python",
@@ -1875,6 +1973,140 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
                 "gdpval-aa-elo": 1554,
                 "mcp-atlas": 73.6,
                 "toolathlon": 51.8,
+            },
+        },
+    },
+    {
+        "id": "kimi-k3-release",
+        "label": "Kimi K3 official release evaluations",
+        "url": KIMI_K3_URL,
+        "rawUrl": KIMI_K3_URL,
+        "category": "Official release",
+        "modelAliases": MODEL_ALIASES["Kimi K3"],
+        "note": (
+            "Moonshot AI Kimi K3 release table covering six frontier models across coding, agentic, "
+            "reasoning, knowledge, and vision benchmarks. Kimi K3 uses max reasoning; comparator "
+            "scores mix KimiCode, Claude Code, Codex, and cited official leaderboards as documented "
+            "in the page footnotes, so harness-sensitive rows should not be treated as pure model-only tests."
+        ),
+        "columns": {
+            "Kimi K3 (max)": "Kimi K3",
+            "Claude Fable 5 (max, with fallback)": "Claude Fable 5",
+            "GPT 5.6 Sol (max)": "GPT-5.6 Sol",
+            "Claude Opus 4.8 (max)": "Claude Opus 4.8",
+            "GPT 5.5 (xhigh)": "GPT-5.5",
+            "GLM-5.2 (max)": "GLM-5.2",
+        },
+        "rowLabels": {
+            "DeepSWE": "deepswe",
+            "Program Bench": "programbench",
+            "Terminal Bench 2.1": "terminal-bench-2-1",
+            "FrontierSWE Dominance": "frontierswe-dominance",
+            "SWE Marathon": "swe-marathon",
+            "PostTrain Bench": "posttrainbench",
+            "MLS Bench": "mls-bench-lite",
+            "Kimi Code Bench 2.0 (Internal)": "kimi-code-bench-v2",
+            "GDPval-AA v2 (Elo-score)": "gdpval-aa-elo",
+            "BrowseComp": "browsecomp",
+            "DeepSearchQA (f1-score)": "deepsearchqa-f1",
+            "Toolathlon-Verified": "toolathlon",
+            "MCP Atlas": "mcp-atlas",
+            "Automation Bench": "automationbench",
+            "Job Bench": "job-bench",
+            "AA-Briefcase (Elo-score)": "aa-briefcase-elo",
+            "APEX-Agents": "apex-agents",
+            "Office QA Pro": "officeqa-pro",
+            "SpreadsheetBench 2": "spreadsheetbench-2",
+            "DECK-Bench (Internal)": "deck-bench-internal",
+            "GPQA-Diamond": "gpqa-diamond",
+            "HLE-Full": "hle",
+            "HLE-Full w/ tools": "hle-tools",
+            "MMMU-Pro": "mmmu-pro",
+            "MMMU-Pro w/ python": "mmmu-pro-python",
+            "CharXiv (RQ)": "charxiv-no-tools",
+            "CharXiv (RQ) w/ python": "charxiv-tools",
+            "MathVision": "mathvision",
+            "MathVision w/ python": "mathvision-python",
+            "BabyVision w/ python": "babyvision-python",
+            "ZeroBench_main (pass@5)": "zerobench-pass5",
+            "ZeroBench_main w/ python (pass@5)": "zerobench-python-pass5",
+            "WorldVQA ForceAnswer": "worldvqa-forceanswer",
+            "OmniDocBench": "omnidocbench",
+            "PerceptionBench": "perceptionbench",
+        },
+        "scores": {
+            "Kimi K3": {
+                "deepswe": 67.5,
+                "programbench": 77.8,
+                "terminal-bench-2-1": 88.3,
+                "frontierswe-dominance": 81.2,
+                "swe-marathon": 42.0,
+                "posttrainbench": 36.6,
+                "mls-bench-lite": 48.3,
+                "kimi-code-bench-v2": 72.9,
+                "gdpval-aa-elo": 1668,
+                "browsecomp": 91.2,
+                "deepsearchqa-f1": 95.0,
+                "toolathlon": 73.2,
+                "mcp-atlas": 84.2,
+                "automationbench": 30.8,
+                "job-bench": 52.9,
+                "aa-briefcase-elo": 1548,
+                "apex-agents": 37.6,
+                "officeqa-pro": 63.3,
+                "spreadsheetbench-2": 34.8,
+                "deck-bench-internal": 73.5,
+                "gpqa-diamond": 93.5,
+                "hle": 43.5,
+                "hle-tools": 56.0,
+                "mmmu-pro": 81.6,
+                "mmmu-pro-python": 83.4,
+                "charxiv-no-tools": 84.8,
+                "charxiv-tools": 91.3,
+                "mathvision": 94.3,
+                "mathvision-python": 97.8,
+                "babyvision-python": 85.7,
+                "zerobench-pass5": 23.0,
+                "zerobench-python-pass5": 41.0,
+                "worldvqa-forceanswer": 51.0,
+                "omnidocbench": 91.1,
+                "perceptionbench": 58.5,
+            },
+            "GPT-5.5": {
+                "deepswe": 67.0,
+                "programbench": 70.8,
+                "terminal-bench-2-1": 83.4,
+                "frontierswe-dominance": 64.9,
+                "swe-marathon": 14.0,
+                "posttrainbench": 28.4,
+                "mls-bench-lite": 35.5,
+                "kimi-code-bench-v2": 69.0,
+                "gdpval-aa-elo": 1494,
+                "browsecomp": 84.4,
+                "toolathlon": 73.5,
+                "mcp-atlas": 82.8,
+                "automationbench": 22.7,
+                "job-bench": 38.3,
+                "aa-briefcase-elo": 1158,
+                "apex-agents": 38.5,
+                "officeqa-pro": 60.9,
+                "spreadsheetbench-2": 29.05,
+                "deck-bench-internal": 68.2,
+                "gpqa-diamond": 93.5,
+                "hle": 41.4,
+                "hle-tools": 52.2,
+                "mmmu-pro": 81.2,
+                "mmmu-pro-python": 83.2,
+                "charxiv-no-tools": 84.1,
+                "charxiv-tools": 89.0,
+                "mathvision": 92.2,
+                "mathvision-python": 96.8,
+                "babyvision-python": 83.6,
+                "zerobench-pass5": 22.0,
+                "zerobench-python-pass5": 41.0,
+                "worldvqa-forceanswer": 38.5,
+                "omnidocbench": 89.4,
+                "perceptionbench": 55.8,
             },
         },
     },
@@ -3081,7 +3313,7 @@ def parse_markdown_source_scores(text: str, spec: dict[str, Any]) -> list[dict[s
         for label, benchmark_id in spec.get("rowLabels", {}).items()
     }
     results: list[dict[str, Any]] = []
-    for table in html_tables(text) + markdown_tables(text):
+    for table in html_tables(text) + markdown_tables(text) + embedded_sheet_tables(text):
         if not table:
             continue
         header = table[0]
@@ -3162,6 +3394,54 @@ def html_tables(text: str) -> list[list[list[str]]]:
     parser = _HTMLTableParser()
     parser.feed(text)
     return parser.tables
+
+
+def embedded_sheet_tables(text: str) -> list[list[list[str]]]:
+    """Extract sheet-style benchmark data serialized in Next.js flight scripts."""
+    tables: list[list[list[str]]] = []
+    pattern = re.compile(
+        r"<script>\s*self\.__next_f\.push\(\[1,(\"(?:\\.|[^\"\\])*\")\]\)\s*</script>",
+        re.DOTALL,
+    )
+    for match in pattern.finditer(text):
+        try:
+            serialized = json.loads(match.group(1))
+            payload = json.loads(serialized)
+        except (json.JSONDecodeError, TypeError):
+            continue
+        data = payload.get("data") if isinstance(payload, dict) else None
+        if not isinstance(data, list) or not data:
+            continue
+
+        model_labels: list[str] = []
+        for item in data:
+            if not isinstance(item, dict):
+                continue
+            for score in item.get("scores", []):
+                if not isinstance(score, dict):
+                    continue
+                model_label = _clean_markdown_cell(str(score.get("model") or ""))
+                if model_label and model_label not in model_labels:
+                    model_labels.append(model_label)
+        if not model_labels:
+            continue
+
+        table = [["Benchmark", *model_labels]]
+        for item in data:
+            if not isinstance(item, dict):
+                continue
+            benchmark = _clean_markdown_cell(str(item.get("benchmark") or ""))
+            if not benchmark:
+                continue
+            score_by_model = {
+                _clean_markdown_cell(str(score.get("model") or "")): str(score.get("value") or "")
+                for score in item.get("scores", [])
+                if isinstance(score, dict)
+            }
+            table.append([benchmark, *(score_by_model.get(model, "") for model in model_labels)])
+        if len(table) > 1:
+            tables.append(table)
+    return tables
 
 
 def dedupe_result_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:

@@ -14,6 +14,7 @@ class UpdateWorkflowTests(unittest.TestCase):
         self.assertIn("name: Update model and benchmark data", workflow)
         self.assertIn('cron: "0 1 * * *"', workflow)
         self.assertIn("openai-gpt-5-6-release", workflow)
+        self.assertIn("kimi-k3-release", workflow)
         self.assertIn("python ArtificialAnalysis/scrape_artificial_analysis.py", workflow)
         self.assertIn("python benchmarks/collect_benchmark_scores.py", workflow)
         self.assertIn("python scripts/build_docs_site.py", workflow)
