@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-17T03:57:54+00:00",
+  "generatedAt": "2026-07-18T03:52:13+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
@@ -117,7 +117,7 @@
       "label": "Kimi K2.6 official release",
       "url": "https://www.kimi.com/blog/kimi-k2-6",
       "category": "Official release",
-      "collectionStatus": "partial-refresh; parsed 11 of 14 seeded scores",
+      "collectionStatus": "partial-refresh; parsed 3 of 14 seeded scores",
       "note": "Moonshot AI Kimi.com release page with coding, agentic, search, and visual-agent benchmark tables."
     },
     {
@@ -8223,7 +8223,7 @@
         "moonshotai/Kimi-K2.6",
         "kimi-k2-6"
       ],
-      "value": 90.5,
+      "value": 88.4,
       "unit": "%",
       "sourceId": "kimi-k2-6-card",
       "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
@@ -8308,7 +8308,7 @@
         "moonshotai/Kimi-K2.6",
         "kimi-k2-6"
       ],
-      "value": 86.3,
+      "value": 83.2,
       "unit": "%",
       "sourceId": "kimi-k2-6-card",
       "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
@@ -8376,7 +8376,7 @@
         "moonshotai/Kimi-K2.6",
         "kimi-k2-6"
       ],
-      "value": 80.1,
+      "value": 79.4,
       "unit": "%",
       "sourceId": "kimi-k2-6-card",
       "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
@@ -8394,40 +8394,6 @@
         "kimi-k2-6"
       ],
       "value": 93.2,
-      "unit": "%",
-      "sourceId": "kimi-k2-6-card",
-      "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
-      "sourceLabel": "Kimi K2.6 official release"
-    },
-    {
-      "benchmarkId": "osworld-verified",
-      "benchmarkLabel": "OSWorld-Verified",
-      "model": "Kimi K2.6",
-      "modelAliases": [
-        "Kimi K2.6",
-        "Kimi-K2.6",
-        "K2.6 Thinking",
-        "moonshotai/Kimi-K2.6",
-        "kimi-k2-6"
-      ],
-      "value": 73.1,
-      "unit": "%",
-      "sourceId": "kimi-k2-6-card",
-      "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
-      "sourceLabel": "Kimi K2.6 official release"
-    },
-    {
-      "benchmarkId": "v-star-python",
-      "benchmarkLabel": "V* w/ Python",
-      "model": "Kimi K2.6",
-      "modelAliases": [
-        "Kimi K2.6",
-        "Kimi-K2.6",
-        "K2.6 Thinking",
-        "moonshotai/Kimi-K2.6",
-        "kimi-k2-6"
-      ],
-      "value": 96.9,
       "unit": "%",
       "sourceId": "kimi-k2-6-card",
       "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
