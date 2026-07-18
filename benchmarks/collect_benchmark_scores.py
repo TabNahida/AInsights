@@ -26,6 +26,7 @@ DEFAULT_OUTPUT_JSON = PROJECT_ROOT / "data" / "benchmarks" / "benchmark_scores.j
 OPENAI_GPT55_URL = "https://openai.com/index/introducing-gpt-5-5/"
 OPENAI_GPT56_URL = "https://openai.com/index/gpt-5-6/"
 ANTHROPIC_OPUS47_URL = "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416"
+ANTHROPIC_SONNET5_URL = "https://www.anthropic.com/news/claude-sonnet-5"
 ANTHROPIC_FABLE5_URL = "https://www.anthropic.com/news/claude-fable-5-mythos-5"
 GOOGLE_GEMINI31_URL = "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
 GOOGLE_GEMMA4_URL = "https://ai.google.dev/gemma/docs/core/model_card_4"
@@ -134,6 +135,13 @@ MODEL_ALIASES = {
         "Claude Opus 4.6 (max)",
         "Claude Opus 4.6 (high)",
         "claude-opus-4-6",
+    ],
+    "Claude Sonnet 5": [
+        "Claude Sonnet 5",
+        "Claude Sonnet 5 (max)",
+        "Claude Sonnet 5 (Non-reasoning)",
+        "claude-sonnet-5",
+        "claude-sonnet-5-non-reasoning",
     ],
     "Claude Fable 5": [
         "Claude Fable 5",
@@ -1485,6 +1493,37 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
                 "charxiv-no-tools": 69.1,
                 "charxiv-tools": 84.7,
                 "mmmlu": 91.1,
+            },
+        },
+    },
+    {
+        "id": "anthropic-claude-sonnet-5-release",
+        "label": "Anthropic Claude Sonnet 5 official release",
+        "url": ANTHROPIC_SONNET5_URL,
+        "rawUrl": ANTHROPIC_SONNET5_URL,
+        "category": "Official release",
+        "modelAliases": MODEL_ALIASES["Claude Sonnet 5"],
+        "note": (
+            "Anthropic official Sonnet 5 launch benchmark table. Seed values are transcribed from the "
+            "official benchmark image; Humanity's Last Exam is kept as separate no-tools and with-tools rows."
+        ),
+        "columns": {"Sonnet 5": "Claude Sonnet 5", "Claude Sonnet 5": "Claude Sonnet 5"},
+        "rowLabels": {
+            "SWE-bench Pro": "swe-bench-pro",
+            "Terminal-Bench 2.1": "terminal-bench-2-1",
+            "Humanity's Last Exam": "hle",
+            "Humanity's Last Exam with tools": "hle-tools",
+            "OSWorld-Verified": "osworld-verified",
+            "GDPval-AA v2": "gdpval-aa-elo",
+        },
+        "scores": {
+            "Claude Sonnet 5": {
+                "swe-bench-pro": 63.2,
+                "terminal-bench-2-1": 80.4,
+                "hle": 43.2,
+                "hle-tools": 57.4,
+                "osworld-verified": 81.2,
+                "gdpval-aa-elo": 1618,
             },
         },
     },

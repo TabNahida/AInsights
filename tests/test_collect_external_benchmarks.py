@@ -240,6 +240,7 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         payload = build_payload({}, "seeded")
         top_vendor_ids = {
             "anthropic-claude-opus-4-7-release",
+            "anthropic-claude-sonnet-5-release",
             "qwen-qwen3-release",
             "qwen-qwen2-release",
             "qwen-qwen2-5-release",
@@ -303,6 +304,28 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         sources = {source["id"]: source for source in payload["sources"]}
 
         self.assertIn("Claude Fable 5 (with fallback)", sources["anthropic-claude-fable-5-docs"]["modelAliases"])
+        self.assertIn("Claude Sonnet 5 (max)", sources["anthropic-claude-sonnet-5-release"]["modelAliases"])
+
+    def test_build_payload_includes_claude_sonnet_5_official_scores(self):
+        payload = build_payload({}, "seeded")
+        sources = {source["id"]: source for source in payload["sources"]}
+        results = {
+            row["benchmarkId"]: row
+            for row in payload["results"]
+            if row["sourceId"] == "anthropic-claude-sonnet-5-release"
+        }
+
+        self.assertEqual(
+            sources["anthropic-claude-sonnet-5-release"]["url"],
+            "https://www.anthropic.com/news/claude-sonnet-5",
+        )
+        self.assertEqual(results["swe-bench-pro"]["value"], 63.2)
+        self.assertEqual(results["terminal-bench-2-1"]["value"], 80.4)
+        self.assertEqual(results["hle"]["value"], 43.2)
+        self.assertEqual(results["hle-tools"]["value"], 57.4)
+        self.assertEqual(results["osworld-verified"]["value"], 81.2)
+        self.assertEqual(results["gdpval-aa-elo"]["value"], 1618)
+        self.assertIn("claude-sonnet-5", results["swe-bench-pro"]["modelAliases"])
 
     def test_build_payload_includes_new_official_vendor_scores(self):
         payload = build_payload({}, "seeded")

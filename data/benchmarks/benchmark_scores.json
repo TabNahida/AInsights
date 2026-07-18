@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T03:52:13+00:00",
+  "generatedAt": "2026-07-18T09:46:28+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
@@ -23,15 +23,30 @@
       "label": "Anthropic Claude Opus 4.7 official release",
       "url": "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
       "note": "Anthropic official release chart covering Opus 4.7, Opus 4.6, GPT-5.4, Gemini 3.1 Pro, and Mythos Preview across agentic coding, search, tool use, reasoning, and finance benchmarks."
+    },
+    {
+      "id": "anthropic-claude-sonnet-5-release",
+      "label": "Anthropic Claude Sonnet 5 official release",
+      "url": "https://www.anthropic.com/news/claude-sonnet-5",
+      "category": "Official release",
+      "collectionStatus": "seeded-official-values; refresh blocked: TimeoutError",
+      "note": "Anthropic official Sonnet 5 launch benchmark table. Seed values are transcribed from the official benchmark image; Humanity's Last Exam is kept as separate no-tools and with-tools rows.",
+      "modelAliases": [
+        "Claude Sonnet 5",
+        "Claude Sonnet 5 (max)",
+        "Claude Sonnet 5 (Non-reasoning)",
+        "claude-sonnet-5",
+        "claude-sonnet-5-non-reasoning"
+      ]
     },
     {
       "id": "anthropic-claude-fable-5-docs",
       "label": "Anthropic Claude Fable 5 and Mythos 5 official release",
       "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
       "note": "Anthropic release table for Claude Mythos 5 / Fable 5. Reported Mythos and Fable scores are within 1-3 percentage points unless starred; the table shows the higher score of the two, and starred rows can differ more because Fable falls back to Opus 4.8 for some cyber and biology requests.",
       "modelAliases": [
         "Claude Fable 5",
@@ -113,11 +128,25 @@
       "note": "DeepSeek API Docs V4 preview release. Seed values mirror the official release report; Hugging Face is kept out of source URLs for this top-model collector."
     },
     {
+      "id": "kimi-k3-release",
+      "label": "Kimi K3 official release evaluations",
+      "url": "https://www.kimi.com/blog/kimi-k3",
+      "category": "Official release",
+      "collectionStatus": "refreshed",
+      "note": "Moonshot AI Kimi K3 release table covering six frontier models across coding, agentic, reasoning, knowledge, and vision benchmarks. Kimi K3 uses max reasoning; comparator scores mix KimiCode, Claude Code, Codex, and cited official leaderboards as documented in the page footnotes, so harness-sensitive rows should not be treated as pure model-only tests.",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ]
+    },
+    {
       "id": "kimi-k2-6-card",
       "label": "Kimi K2.6 official release",
       "url": "https://www.kimi.com/blog/kimi-k2-6",
       "category": "Official release",
-      "collectionStatus": "partial-refresh; parsed 3 of 14 seeded scores",
+      "collectionStatus": "partial-refresh; parsed 11 of 14 seeded scores",
       "note": "Moonshot AI Kimi.com release page with coding, agentic, search, and visual-agent benchmark tables."
     },
     {
@@ -149,7 +178,7 @@
       "label": "Kimi K2 0905 official model card",
       "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905",
       "category": "Official model card",
-      "collectionStatus": "refreshed",
+      "collectionStatus": "stale-retained; refresh blocked: URLError",
       "note": "Moonshot AI official Hugging Face model card for Kimi-K2-Instruct-0905. Reported K2 0905 values are mean results over five full-test-set runs."
     },
     {
@@ -173,7 +202,7 @@
       "label": "Z.ai GLM-5.2 official model card",
       "url": "https://docs.z.ai/guides/llm/glm-5.2",
       "category": "Official release",
-      "collectionStatus": "refreshed",
+      "collectionStatus": "stale-retained; refresh blocked: URLError",
       "note": "Z.ai GLM-5.2 official page and model card with long-horizon reasoning, coding, and agentic benchmark table."
     },
     {
@@ -205,7 +234,7 @@
       "label": "Google Gemma 4 official model card",
       "url": "https://ai.google.dev/gemma/docs/core/model_card_4",
       "category": "Official model card",
-      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
+      "collectionStatus": "stale-retained; refresh blocked: URLError",
       "note": "Google Gemma model card covering Gemma 4 31B, 26B-A4B, E4B, and E2B instruction-tuned benchmarks."
     },
     {
@@ -229,7 +258,7 @@
       "label": "MiniMax M2.5 official release",
       "url": "https://www.minimax.io/news/minimax-m25",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
       "note": "MiniMax M2.5 release page with official benchmark charts for M2.5 and M2.1 across agentic coding and reasoning evaluations."
     },
     {
@@ -261,7 +290,7 @@
       "label": "Cohere North Mini Code model card",
       "url": "https://docs.cohere.com/docs/north-mini-code-1.0",
       "category": "Official model card",
-      "collectionStatus": "reference-only; no parseable benchmark table found",
+      "collectionStatus": "reference-only; refresh blocked: TimeoutError",
       "note": "Cohere documentation for North Mini Code: model ID north-mini-code-1-0, 256K context window, 64K max output, Apache 2.0 license, and agentic coding use cases.",
       "coverage": "North Mini Code reference",
       "scoreStatus": "reference",
@@ -277,7 +306,7 @@
       "label": "xAI Grok 4.1 Fast official release",
       "url": "https://x.ai/news/grok-4-1-fast",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "collectionStatus": "stale-retained; refresh blocked: URLError",
       "note": "xAI release page for Grok 4.1 Fast and Agent Tools API with tool-calling and agentic-search benchmark tables."
     },
     {
@@ -851,6 +880,97 @@
       "category": "Multimodal math",
       "unit": "%",
       "icon": "MV"
+    },
+    {
+      "id": "mathvision",
+      "label": "MathVision",
+      "category": "Multimodal math",
+      "unit": "%",
+      "icon": "MV"
+    },
+    {
+      "id": "job-bench",
+      "label": "Job Bench",
+      "category": "Professional work",
+      "unit": "%",
+      "icon": "JOB"
+    },
+    {
+      "id": "aa-briefcase-elo",
+      "label": "AA-Briefcase Elo",
+      "category": "Professional work",
+      "unit": "Elo",
+      "icon": "CASE"
+    },
+    {
+      "id": "officeqa-pro",
+      "label": "Office QA Pro",
+      "category": "Professional work",
+      "unit": "%",
+      "icon": "OFF"
+    },
+    {
+      "id": "spreadsheetbench-2",
+      "label": "SpreadsheetBench 2",
+      "category": "Professional work",
+      "unit": "%",
+      "icon": "SHEET"
+    },
+    {
+      "id": "deck-bench-internal",
+      "label": "DECK-Bench (Internal)",
+      "category": "Professional work",
+      "unit": "%",
+      "icon": "DECK"
+    },
+    {
+      "id": "mmmu-pro-python",
+      "label": "MMMU-Pro w/ Python",
+      "category": "Multimodal reasoning",
+      "unit": "%",
+      "icon": "MMMU+"
+    },
+    {
+      "id": "babyvision-python",
+      "label": "BabyVision w/ Python",
+      "category": "Multimodal reasoning",
+      "unit": "%",
+      "icon": "BABY"
+    },
+    {
+      "id": "zerobench-pass5",
+      "label": "ZeroBench pass@5",
+      "category": "Multimodal reasoning",
+      "unit": "%",
+      "icon": "ZERO"
+    },
+    {
+      "id": "zerobench-python-pass5",
+      "label": "ZeroBench w/ Python pass@5",
+      "category": "Multimodal reasoning",
+      "unit": "%",
+      "icon": "ZERO+"
+    },
+    {
+      "id": "worldvqa-forceanswer",
+      "label": "WorldVQA ForceAnswer",
+      "category": "Multimodal reasoning",
+      "unit": "%",
+      "icon": "WVQA"
+    },
+    {
+      "id": "omnidocbench",
+      "label": "OmniDocBench",
+      "category": "Document understanding",
+      "unit": "%",
+      "icon": "DOC"
+    },
+    {
+      "id": "perceptionbench",
+      "label": "PerceptionBench",
+      "category": "Visual perception",
+      "unit": "%",
+      "icon": "PERC"
     },
     {
       "id": "v-star-python",
@@ -5111,6 +5231,108 @@
     {
       "benchmarkId": "swe-bench-pro",
       "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Claude Sonnet 5",
+      "modelAliases": [
+        "Claude Sonnet 5",
+        "Claude Sonnet 5 (max)",
+        "Claude Sonnet 5 (Non-reasoning)",
+        "claude-sonnet-5",
+        "claude-sonnet-5-non-reasoning"
+      ],
+      "value": 63.2,
+      "unit": "%",
+      "sourceId": "anthropic-claude-sonnet-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-sonnet-5",
+      "sourceLabel": "Anthropic Claude Sonnet 5 official release"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Claude Sonnet 5",
+      "modelAliases": [
+        "Claude Sonnet 5",
+        "Claude Sonnet 5 (max)",
+        "Claude Sonnet 5 (Non-reasoning)",
+        "claude-sonnet-5",
+        "claude-sonnet-5-non-reasoning"
+      ],
+      "value": 80.4,
+      "unit": "%",
+      "sourceId": "anthropic-claude-sonnet-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-sonnet-5",
+      "sourceLabel": "Anthropic Claude Sonnet 5 official release"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Claude Sonnet 5",
+      "modelAliases": [
+        "Claude Sonnet 5",
+        "Claude Sonnet 5 (max)",
+        "Claude Sonnet 5 (Non-reasoning)",
+        "claude-sonnet-5",
+        "claude-sonnet-5-non-reasoning"
+      ],
+      "value": 43.2,
+      "unit": "%",
+      "sourceId": "anthropic-claude-sonnet-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-sonnet-5",
+      "sourceLabel": "Anthropic Claude Sonnet 5 official release"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "Claude Sonnet 5",
+      "modelAliases": [
+        "Claude Sonnet 5",
+        "Claude Sonnet 5 (max)",
+        "Claude Sonnet 5 (Non-reasoning)",
+        "claude-sonnet-5",
+        "claude-sonnet-5-non-reasoning"
+      ],
+      "value": 57.4,
+      "unit": "%",
+      "sourceId": "anthropic-claude-sonnet-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-sonnet-5",
+      "sourceLabel": "Anthropic Claude Sonnet 5 official release"
+    },
+    {
+      "benchmarkId": "osworld-verified",
+      "benchmarkLabel": "OSWorld-Verified",
+      "model": "Claude Sonnet 5",
+      "modelAliases": [
+        "Claude Sonnet 5",
+        "Claude Sonnet 5 (max)",
+        "Claude Sonnet 5 (Non-reasoning)",
+        "claude-sonnet-5",
+        "claude-sonnet-5-non-reasoning"
+      ],
+      "value": 81.2,
+      "unit": "%",
+      "sourceId": "anthropic-claude-sonnet-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-sonnet-5",
+      "sourceLabel": "Anthropic Claude Sonnet 5 official release"
+    },
+    {
+      "benchmarkId": "gdpval-aa-elo",
+      "benchmarkLabel": "GDPval-AA Elo",
+      "model": "Claude Sonnet 5",
+      "modelAliases": [
+        "Claude Sonnet 5",
+        "Claude Sonnet 5 (max)",
+        "Claude Sonnet 5 (Non-reasoning)",
+        "claude-sonnet-5",
+        "claude-sonnet-5-non-reasoning"
+      ],
+      "value": 1618,
+      "unit": "Elo",
+      "sourceId": "anthropic-claude-sonnet-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-sonnet-5",
+      "sourceLabel": "Anthropic Claude Sonnet 5 official release"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
       "model": "Claude Fable 5",
       "modelAliases": [
         "Claude Fable 5",
@@ -8162,6 +8384,3331 @@
       "sourceLabel": "DeepSeek-V4 official release"
     },
     {
+      "benchmarkId": "deepswe",
+      "benchmarkLabel": "DeepSWE",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 67.5,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "programbench",
+      "benchmarkLabel": "ProgramBench",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 77.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 88.3,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "frontierswe-dominance",
+      "benchmarkLabel": "FrontierSWE Dominance",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 81.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "swe-marathon",
+      "benchmarkLabel": "SWE-Marathon",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 42.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "posttrainbench",
+      "benchmarkLabel": "PostTrainBench",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 36.6,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mls-bench-lite",
+      "benchmarkLabel": "MLS Bench Lite",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 48.3,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "kimi-code-bench-v2",
+      "benchmarkLabel": "Kimi Code Bench v2",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 72.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "gdpval-aa-elo",
+      "benchmarkLabel": "GDPval-AA Elo",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 1668.0,
+      "unit": "Elo",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 91.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "deepsearchqa-f1",
+      "benchmarkLabel": "DeepSearchQA F1",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 95.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 73.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 84.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "automationbench",
+      "benchmarkLabel": "AutomationBench",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 30.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "job-bench",
+      "benchmarkLabel": "Job Bench",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 52.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "aa-briefcase-elo",
+      "benchmarkLabel": "AA-Briefcase Elo",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 1548.0,
+      "unit": "Elo",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "apex-agents",
+      "benchmarkLabel": "APEX-Agents",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 37.6,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "officeqa-pro",
+      "benchmarkLabel": "Office QA Pro",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 63.3,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "spreadsheetbench-2",
+      "benchmarkLabel": "SpreadsheetBench 2",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 34.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "deck-bench-internal",
+      "benchmarkLabel": "DECK-Bench (Internal)",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 73.5,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 93.5,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 43.5,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 56.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mmmu-pro",
+      "benchmarkLabel": "MMMU-Pro",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 81.6,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mmmu-pro-python",
+      "benchmarkLabel": "MMMU-Pro w/ Python",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 83.4,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "charxiv-no-tools",
+      "benchmarkLabel": "CharXiv Reasoning",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 84.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "charxiv-tools",
+      "benchmarkLabel": "CharXiv Reasoning w/ tools",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 91.3,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mathvision",
+      "benchmarkLabel": "MathVision",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 94.3,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mathvision-python",
+      "benchmarkLabel": "MathVision w/ Python",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 97.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "babyvision-python",
+      "benchmarkLabel": "BabyVision w/ Python",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 85.7,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "zerobench-pass5",
+      "benchmarkLabel": "ZeroBench pass@5",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 23.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "zerobench-python-pass5",
+      "benchmarkLabel": "ZeroBench w/ Python pass@5",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 41.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "worldvqa-forceanswer",
+      "benchmarkLabel": "WorldVQA ForceAnswer",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 51.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "omnidocbench",
+      "benchmarkLabel": "OmniDocBench",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 91.1,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "perceptionbench",
+      "benchmarkLabel": "PerceptionBench",
+      "model": "Kimi K3",
+      "modelAliases": [
+        "Kimi K3",
+        "Kimi K3 (max)",
+        "Kimi-K3",
+        "kimi-k3"
+      ],
+      "value": 58.5,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "deepswe",
+      "benchmarkLabel": "DeepSWE",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 67.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "programbench",
+      "benchmarkLabel": "ProgramBench",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 70.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 83.4,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "frontierswe-dominance",
+      "benchmarkLabel": "FrontierSWE Dominance",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 64.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "swe-marathon",
+      "benchmarkLabel": "SWE-Marathon",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 14.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "posttrainbench",
+      "benchmarkLabel": "PostTrainBench",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 28.4,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mls-bench-lite",
+      "benchmarkLabel": "MLS Bench Lite",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 35.5,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "kimi-code-bench-v2",
+      "benchmarkLabel": "Kimi Code Bench v2",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 69.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "gdpval-aa-elo",
+      "benchmarkLabel": "GDPval-AA Elo",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 1494.0,
+      "unit": "Elo",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 84.4,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 73.5,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 82.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "automationbench",
+      "benchmarkLabel": "AutomationBench",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 22.7,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "job-bench",
+      "benchmarkLabel": "Job Bench",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 38.3,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "aa-briefcase-elo",
+      "benchmarkLabel": "AA-Briefcase Elo",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 1158.0,
+      "unit": "Elo",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "apex-agents",
+      "benchmarkLabel": "APEX-Agents",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 38.5,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "officeqa-pro",
+      "benchmarkLabel": "Office QA Pro",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 60.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "spreadsheetbench-2",
+      "benchmarkLabel": "SpreadsheetBench 2",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 29.05,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "deck-bench-internal",
+      "benchmarkLabel": "DECK-Bench (Internal)",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 68.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 93.5,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 41.4,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 52.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mmmu-pro",
+      "benchmarkLabel": "MMMU-Pro",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 81.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mmmu-pro-python",
+      "benchmarkLabel": "MMMU-Pro w/ Python",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 83.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "charxiv-no-tools",
+      "benchmarkLabel": "CharXiv Reasoning",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 84.1,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "charxiv-tools",
+      "benchmarkLabel": "CharXiv Reasoning w/ tools",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 89.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mathvision",
+      "benchmarkLabel": "MathVision",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 92.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mathvision-python",
+      "benchmarkLabel": "MathVision w/ Python",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 96.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "babyvision-python",
+      "benchmarkLabel": "BabyVision w/ Python",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 83.6,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "zerobench-pass5",
+      "benchmarkLabel": "ZeroBench pass@5",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 22.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "zerobench-python-pass5",
+      "benchmarkLabel": "ZeroBench w/ Python pass@5",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 41.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "worldvqa-forceanswer",
+      "benchmarkLabel": "WorldVQA ForceAnswer",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 38.5,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "omnidocbench",
+      "benchmarkLabel": "OmniDocBench",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 89.4,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "perceptionbench",
+      "benchmarkLabel": "PerceptionBench",
+      "model": "GPT-5.5",
+      "modelAliases": [
+        "GPT-5.5",
+        "GPT-5.5 (xhigh)",
+        "gpt-5-5",
+        "gpt-5-5-xhigh"
+      ],
+      "value": 55.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "deepswe",
+      "benchmarkLabel": "DeepSWE",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 70.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "deepswe",
+      "benchmarkLabel": "DeepSWE",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 73.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "deepswe",
+      "benchmarkLabel": "DeepSWE",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 59.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "deepswe",
+      "benchmarkLabel": "DeepSWE",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 46.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "programbench",
+      "benchmarkLabel": "ProgramBench",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 76.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "programbench",
+      "benchmarkLabel": "ProgramBench",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 77.6,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "programbench",
+      "benchmarkLabel": "ProgramBench",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 71.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "programbench",
+      "benchmarkLabel": "ProgramBench",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 63.7,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 84.6,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 88.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 84.6,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 82.7,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "swe-marathon",
+      "benchmarkLabel": "SWE-Marathon",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 35.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "swe-marathon",
+      "benchmarkLabel": "SWE-Marathon",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 39.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "swe-marathon",
+      "benchmarkLabel": "SWE-Marathon",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 40.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "swe-marathon",
+      "benchmarkLabel": "SWE-Marathon",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 13.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "posttrainbench",
+      "benchmarkLabel": "PostTrainBench",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 41.4,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "posttrainbench",
+      "benchmarkLabel": "PostTrainBench",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 34.6,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "posttrainbench",
+      "benchmarkLabel": "PostTrainBench",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 34.1,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "posttrainbench",
+      "benchmarkLabel": "PostTrainBench",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 34.3,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mls-bench-lite",
+      "benchmarkLabel": "MLS Bench Lite",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 49.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mls-bench-lite",
+      "benchmarkLabel": "MLS Bench Lite",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 46.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mls-bench-lite",
+      "benchmarkLabel": "MLS Bench Lite",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 42.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mls-bench-lite",
+      "benchmarkLabel": "MLS Bench Lite",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 40.4,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "kimi-code-bench-v2",
+      "benchmarkLabel": "Kimi Code Bench v2",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 76.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "kimi-code-bench-v2",
+      "benchmarkLabel": "Kimi Code Bench v2",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 64.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "kimi-code-bench-v2",
+      "benchmarkLabel": "Kimi Code Bench v2",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 71.7,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "kimi-code-bench-v2",
+      "benchmarkLabel": "Kimi Code Bench v2",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 64.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "gdpval-aa-elo",
+      "benchmarkLabel": "GDPval-AA Elo",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 1760.0,
+      "unit": "Elo",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "gdpval-aa-elo",
+      "benchmarkLabel": "GDPval-AA Elo",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 1748.0,
+      "unit": "Elo",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "gdpval-aa-elo",
+      "benchmarkLabel": "GDPval-AA Elo",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 1600.0,
+      "unit": "Elo",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "gdpval-aa-elo",
+      "benchmarkLabel": "GDPval-AA Elo",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 1514.0,
+      "unit": "Elo",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 88.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 90.4,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 84.3,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "deepsearchqa-f1",
+      "benchmarkLabel": "DeepSearchQA F1",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 94.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "deepsearchqa-f1",
+      "benchmarkLabel": "DeepSearchQA F1",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 93.1,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 77.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 74.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 76.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 59.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 84.7,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 83.6,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 83.6,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 82.6,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "automationbench",
+      "benchmarkLabel": "AutomationBench",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 29.1,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "automationbench",
+      "benchmarkLabel": "AutomationBench",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 29.7,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "automationbench",
+      "benchmarkLabel": "AutomationBench",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 27.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "automationbench",
+      "benchmarkLabel": "AutomationBench",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 12.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "job-bench",
+      "benchmarkLabel": "Job Bench",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 57.4,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "job-bench",
+      "benchmarkLabel": "Job Bench",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 46.5,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "job-bench",
+      "benchmarkLabel": "Job Bench",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 48.4,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "job-bench",
+      "benchmarkLabel": "Job Bench",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 43.4,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "aa-briefcase-elo",
+      "benchmarkLabel": "AA-Briefcase Elo",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 1583.0,
+      "unit": "Elo",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "aa-briefcase-elo",
+      "benchmarkLabel": "AA-Briefcase Elo",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 1495.0,
+      "unit": "Elo",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "aa-briefcase-elo",
+      "benchmarkLabel": "AA-Briefcase Elo",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 1354.0,
+      "unit": "Elo",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "aa-briefcase-elo",
+      "benchmarkLabel": "AA-Briefcase Elo",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 1260.0,
+      "unit": "Elo",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "apex-agents",
+      "benchmarkLabel": "APEX-Agents",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 43.3,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "apex-agents",
+      "benchmarkLabel": "APEX-Agents",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 39.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "apex-agents",
+      "benchmarkLabel": "APEX-Agents",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 39.4,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "apex-agents",
+      "benchmarkLabel": "APEX-Agents",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 35.6,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "officeqa-pro",
+      "benchmarkLabel": "Office QA Pro",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 69.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "officeqa-pro",
+      "benchmarkLabel": "Office QA Pro",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 63.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "officeqa-pro",
+      "benchmarkLabel": "Office QA Pro",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 63.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "officeqa-pro",
+      "benchmarkLabel": "Office QA Pro",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 41.4,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "spreadsheetbench-2",
+      "benchmarkLabel": "SpreadsheetBench 2",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 34.7,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "spreadsheetbench-2",
+      "benchmarkLabel": "SpreadsheetBench 2",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 32.4,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "spreadsheetbench-2",
+      "benchmarkLabel": "SpreadsheetBench 2",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 31.55,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "spreadsheetbench-2",
+      "benchmarkLabel": "SpreadsheetBench 2",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 28.12,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "deck-bench-internal",
+      "benchmarkLabel": "DECK-Bench (Internal)",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 73.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "deck-bench-internal",
+      "benchmarkLabel": "DECK-Bench (Internal)",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 74.7,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "deck-bench-internal",
+      "benchmarkLabel": "DECK-Bench (Internal)",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 66.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "deck-bench-internal",
+      "benchmarkLabel": "DECK-Bench (Internal)",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 68.6,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 92.6,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 94.1,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 91.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "GLM-5.2",
+      "modelAliases": [
+        "GLM-5.2",
+        "GLM 5.2",
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "zai-org/GLM-5.2",
+        "glm-5-2",
+        "glm-5-2-non-reasoning"
+      ],
+      "value": 91.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 53.3,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 44.5,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 49.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 63.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 58.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 57.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mmmu-pro",
+      "benchmarkLabel": "MMMU-Pro",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 81.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mmmu-pro",
+      "benchmarkLabel": "MMMU-Pro",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 83.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mmmu-pro",
+      "benchmarkLabel": "MMMU-Pro",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 78.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mmmu-pro-python",
+      "benchmarkLabel": "MMMU-Pro w/ Python",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 86.5,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mmmu-pro-python",
+      "benchmarkLabel": "MMMU-Pro w/ Python",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 84.6,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mmmu-pro-python",
+      "benchmarkLabel": "MMMU-Pro w/ Python",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 82.7,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "charxiv-no-tools",
+      "benchmarkLabel": "CharXiv Reasoning",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 88.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "charxiv-no-tools",
+      "benchmarkLabel": "CharXiv Reasoning",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 84.6,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "charxiv-no-tools",
+      "benchmarkLabel": "CharXiv Reasoning",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 80.5,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "charxiv-tools",
+      "benchmarkLabel": "CharXiv Reasoning w/ tools",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 93.5,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "charxiv-tools",
+      "benchmarkLabel": "CharXiv Reasoning w/ tools",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 89.1,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "charxiv-tools",
+      "benchmarkLabel": "CharXiv Reasoning w/ tools",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 89.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mathvision",
+      "benchmarkLabel": "MathVision",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 94.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mathvision",
+      "benchmarkLabel": "MathVision",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 95.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mathvision",
+      "benchmarkLabel": "MathVision",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 86.7,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mathvision-python",
+      "benchmarkLabel": "MathVision w/ Python",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 98.6,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mathvision-python",
+      "benchmarkLabel": "MathVision w/ Python",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 97.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "mathvision-python",
+      "benchmarkLabel": "MathVision w/ Python",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 97.1,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "babyvision-python",
+      "benchmarkLabel": "BabyVision w/ Python",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 90.5,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "babyvision-python",
+      "benchmarkLabel": "BabyVision w/ Python",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 88.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "babyvision-python",
+      "benchmarkLabel": "BabyVision w/ Python",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 81.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "zerobench-pass5",
+      "benchmarkLabel": "ZeroBench pass@5",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 23.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "zerobench-pass5",
+      "benchmarkLabel": "ZeroBench pass@5",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 17.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "zerobench-pass5",
+      "benchmarkLabel": "ZeroBench pass@5",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 17.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "zerobench-python-pass5",
+      "benchmarkLabel": "ZeroBench w/ Python pass@5",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 46.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "zerobench-python-pass5",
+      "benchmarkLabel": "ZeroBench w/ Python pass@5",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 35.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "zerobench-python-pass5",
+      "benchmarkLabel": "ZeroBench w/ Python pass@5",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 34.0,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "worldvqa-forceanswer",
+      "benchmarkLabel": "WorldVQA ForceAnswer",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 56.7,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "worldvqa-forceanswer",
+      "benchmarkLabel": "WorldVQA ForceAnswer",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 41.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "worldvqa-forceanswer",
+      "benchmarkLabel": "WorldVQA ForceAnswer",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 39.1,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "omnidocbench",
+      "benchmarkLabel": "OmniDocBench",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 89.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "omnidocbench",
+      "benchmarkLabel": "OmniDocBench",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 85.8,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "omnidocbench",
+      "benchmarkLabel": "OmniDocBench",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 87.9,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "perceptionbench",
+      "benchmarkLabel": "PerceptionBench",
+      "model": "Claude Fable 5",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "Claude Fable 5 (with fallback) [R]",
+        "claude-fable-5"
+      ],
+      "value": 57.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "perceptionbench",
+      "benchmarkLabel": "PerceptionBench",
+      "model": "GPT-5.6 Sol",
+      "modelAliases": [
+        "GPT-5.6 Sol",
+        "GPT-5.6 Sol (max)",
+        "GPT-5.6 Sol (xhigh)",
+        "GPT-5.6 Sol (high)",
+        "GPT-5.6 Sol (medium)",
+        "GPT-5.6 Sol (low)",
+        "GPT-5.6 Sol (Non-reasoning)",
+        "gpt-5-6-sol",
+        "gpt-5-6-sol-xhigh",
+        "gpt-5-6-sol-high",
+        "gpt-5-6-sol-medium",
+        "gpt-5-6-sol-low",
+        "gpt-5-6-sol-non-reasoning"
+      ],
+      "value": 59.7,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
+      "benchmarkId": "perceptionbench",
+      "benchmarkLabel": "PerceptionBench",
+      "model": "Claude Opus 4.8",
+      "modelAliases": [
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
+      ],
+      "value": 47.2,
+      "unit": "%",
+      "sourceId": "kimi-k3-release",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+      "sourceLabel": "Kimi K3 official release evaluations"
+    },
+    {
       "benchmarkId": "swe-bench-verified",
       "benchmarkLabel": "SWE-bench Verified",
       "model": "Kimi K2.6",
@@ -8223,7 +11770,7 @@
         "moonshotai/Kimi-K2.6",
         "kimi-k2-6"
       ],
-      "value": 88.4,
+      "value": 90.5,
       "unit": "%",
       "sourceId": "kimi-k2-6-card",
       "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
@@ -8308,7 +11855,7 @@
         "moonshotai/Kimi-K2.6",
         "kimi-k2-6"
       ],
-      "value": 83.2,
+      "value": 86.3,
       "unit": "%",
       "sourceId": "kimi-k2-6-card",
       "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
@@ -8376,7 +11923,7 @@
         "moonshotai/Kimi-K2.6",
         "kimi-k2-6"
       ],
-      "value": 79.4,
+      "value": 80.1,
       "unit": "%",
       "sourceId": "kimi-k2-6-card",
       "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
@@ -8394,6 +11941,40 @@
         "kimi-k2-6"
       ],
       "value": 93.2,
+      "unit": "%",
+      "sourceId": "kimi-k2-6-card",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
+      "sourceLabel": "Kimi K2.6 official release"
+    },
+    {
+      "benchmarkId": "osworld-verified",
+      "benchmarkLabel": "OSWorld-Verified",
+      "model": "Kimi K2.6",
+      "modelAliases": [
+        "Kimi K2.6",
+        "Kimi-K2.6",
+        "K2.6 Thinking",
+        "moonshotai/Kimi-K2.6",
+        "kimi-k2-6"
+      ],
+      "value": 73.1,
+      "unit": "%",
+      "sourceId": "kimi-k2-6-card",
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
+      "sourceLabel": "Kimi K2.6 official release"
+    },
+    {
+      "benchmarkId": "v-star-python",
+      "benchmarkLabel": "V* w/ Python",
+      "model": "Kimi K2.6",
+      "modelAliases": [
+        "Kimi K2.6",
+        "Kimi-K2.6",
+        "K2.6 Thinking",
+        "moonshotai/Kimi-K2.6",
+        "kimi-k2-6"
+      ],
+      "value": 96.9,
       "unit": "%",
       "sourceId": "kimi-k2-6-card",
       "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
@@ -8533,7 +12114,9 @@
       "benchmarkLabel": "Kimi Code Bench v2",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 67.4,
       "unit": "%",
@@ -8579,7 +12162,9 @@
       "benchmarkLabel": "ProgramBench",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 63.8,
       "unit": "%",
@@ -8625,7 +12210,9 @@
       "benchmarkLabel": "MLS Bench Lite",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 42.8,
       "unit": "%",
@@ -8671,7 +12258,9 @@
       "benchmarkLabel": "Kimi Claw 24/7 Bench",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 50.4,
       "unit": "%",
@@ -8717,7 +12306,9 @@
       "benchmarkLabel": "MCP-Atlas Public",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 81.3,
       "unit": "%",
@@ -8763,7 +12354,9 @@
       "benchmarkLabel": "MCP Mark Verified",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 76.4,
       "unit": "%",
