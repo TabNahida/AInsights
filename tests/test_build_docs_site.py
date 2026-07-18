@@ -23,6 +23,24 @@ from scripts.build_docs_site import (
 
 
 class BuildDocsSiteTests(unittest.TestCase):
+    def test_grok45_official_scores_attach_to_high_variant(self):
+        payload = build_site_payload(
+            read_csv_rows(DEFAULT_INPUT_CSV),
+            load_external_benchmarks(DEFAULT_EXTERNAL_BENCHMARKS_JSON),
+        )
+        grok = next(model for model in payload["models"] if model["model"] == "Grok 4.5 (high)")
+
+        self.assertEqual(grok["scores"]["benchmark:deepswe"], 62.0)
+        self.assertEqual(grok["scores"]["benchmark:deepswe-v1-1"], 53.0)
+        self.assertEqual(grok["scores"]["benchmark:swe-marathon"], 29.0)
+        self.assertEqual(grok["scores"]["benchmark:terminal-bench-2-1"], 83.3)
+        self.assertEqual(grok["scores"]["benchmark:swe-bench-pro"], 64.7)
+        self.assertEqual(len(grok["externalBenchmarks"]), 5)
+        self.assertEqual(
+            {row["sourceId"] for row in grok["externalBenchmarks"]},
+            {"spacexai-grok-4-5-release"},
+        )
+
     def test_default_ainsights_terminal_bench_uses_aa_column_not_duplicate_external_versions(self):
         group_metrics = {
             group["id"]: [metric["key"] for metric in group["metrics"]]
@@ -424,6 +442,8 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(preset["kind"], "frontier-groups")
         self.assertEqual(preset["missingPolicy"], "weak-prior")
         self.assertEqual(preset["weakPriorRatio"], 0.34)
+        self.assertEqual(preset["groupMetricCoverageDiscountExponent"], 0.10)
+        self.assertEqual(preset["singleMetricCoverageDiscountExponent"], 0.10)
         self.assertEqual([group["id"] for group in preset["groups"]], [
             "coding",
             "agentic-tool-work",
@@ -656,8 +676,9 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertGreater(scores["qwen3-7-max"] - scores["deepseek-v4-flash"], 1.2)
         self.assertGreater(scores["kimi-k2-6"] - scores["deepseek-v4-flash"], 0.3)
         self.assertGreater(scores["deepseek-v4-flash"], scores["glm-4-7"])
-        self.assertGreater(scores["qwen3-7-plus"], scores["qwen3-5-397b-a17b"])
-        self.assertGreater(scores["qwen3-7-plus"] - scores["qwen3-5-397b-a17b"], 0.6)
+        # The 0.10 within-board coverage discount rewards the more complete Qwen3.5 metric set.
+        self.assertGreater(scores["qwen3-5-397b-a17b"], scores["qwen3-7-plus"])
+        self.assertGreater(scores["qwen3-5-397b-a17b"] - scores["qwen3-7-plus"], 0.8)
         self.assertGreater(scores["claude-opus-4-6-adaptive"], scores["gemini-3-5-flash"])
         self.assertGreater(scores["minimax-m2-5"], scores["minimax-m2-1"])
         self.assertGreater(scores["minimax-m2-7"], scores["minimax-m2-5"])

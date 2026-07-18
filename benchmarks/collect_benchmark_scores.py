@@ -61,6 +61,7 @@ MINIMAX_M25_URL = "https://www.minimax.io/news/minimax-m25"
 MINIMAX_M2_URL = "https://www.minimax.io/news/minimax-m2"
 MINIMAX_M1_URL = "https://github.com/MiniMax-AI/MiniMax-M1"
 XIAOMI_MIMO25_URL = "https://platform.xiaomimimo.com/docs/en-US/news/v2.5-open-sourced"
+SPACEXAI_GROK45_URL = "https://x.ai/news/grok-4-5"
 XAI_GROK41_FAST_URL = "https://x.ai/news/grok-4-1-fast"
 NVIDIA_NEMOTRON3_NANO_URL = "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf"
 NVIDIA_NEMOTRON3_SUPER_URL = "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf"
@@ -117,6 +118,13 @@ MODEL_ALIASES = {
     "GPT-5.5 Pro": ["GPT-5.5 Pro", "GPT-5.5 Pro (xhigh)", "gpt-5-5-pro"],
     "GPT-5.4 Pro": ["GPT-5.4 Pro", "GPT-5.4 Pro (xhigh)", "gpt-5-4-pro"],
     "Kimi K3": ["Kimi K3", "Kimi K3 (max)", "Kimi-K3", "kimi-k3"],
+    "Grok 4.5": [
+        "Grok 4.5",
+        "Grok 4.5 (high)",
+        "Grok 4.5 (high) [R]",
+        "grok-4.5",
+        "grok-4-5",
+    ],
     "Claude Opus 4.8": [
         "Claude Opus 4.8",
         "Claude Opus 4.8 (max)",
@@ -2910,6 +2918,38 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
             "Cohere documentation for North Mini Code: model ID north-mini-code-1-0, "
             "256K context window, 64K max output, Apache 2.0 license, and agentic coding use cases."
         ),
+    },
+    {
+        "id": "spacexai-grok-4-5-release",
+        "label": "SpaceXAI Grok 4.5 official release",
+        "url": SPACEXAI_GROK45_URL,
+        "rawUrl": SPACEXAI_GROK45_URL,
+        "category": "Official release",
+        "note": (
+            "SpaceXAI/xAI Grok 4.5 release page dated July 8, 2026. Seed rows transcribe "
+            "the five numeric Grok 4.5 results shown in the official benchmark charts; "
+            "competitor columns, token-use comparisons, and non-numeric rank claims are excluded."
+        ),
+        "modelAliases": MODEL_ALIASES["Grok 4.5"],
+        "columns": {"Grok 4.5": "Grok 4.5"},
+        "rowLabels": {
+            "DeepSWE 1.0": "deepswe",
+            "DeepSWE 1.1": "deepswe-v1-1",
+            "SWE Marathon": "swe-marathon",
+            "Terminal Bench 2.1": "terminal-bench-2-1",
+            "Terminal-Bench 2.1": "terminal-bench-2-1",
+            "SWE Bench Pro": "swe-bench-pro",
+            "SWE-Bench Pro": "swe-bench-pro",
+        },
+        "scores": {
+            "Grok 4.5": {
+                "deepswe": 62.0,
+                "deepswe-v1-1": 53.0,
+                "swe-marathon": 29.0,
+                "terminal-bench-2-1": 83.3,
+                "swe-bench-pro": 64.7,
+            }
+        },
     },
     {
         "id": "xai-grok-4-1-fast-release",

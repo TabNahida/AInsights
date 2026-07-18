@@ -204,9 +204,11 @@ const copy = {
     detailSourcesTitle: "外部测评参考",
     radarAverage: "平均值",
     radarDataSource: "数据来源",
-    radarSourceText: "AA / AInsights 参考项目",
+    radarSourceText: "AA / 官方模型发布 / AInsights 参考项目",
     radarBasisTitle: "雷达维度口径",
-    radarBasisSubtitle: "每个方向取下列测试项的可用分数均值。",
+    radarBasisSubtitle: "各项目先按同项目最佳分归一化，再按内部权重做几何均值，并应用 0.10 覆盖折扣。",
+    radarMetricCount: "{count} 项",
+    radarCoverage: "{available}/{total} 项",
     radarNoData: "暂无可绘制的能力维度",
     radarAxes: {
       cognition: "认知推理",
@@ -214,7 +216,7 @@ const copy = {
       instruction: "指令遵循",
       agenticWork: "智能体工作",
       code: "代码编程",
-      hallucinationResistance: "幻觉抵抗",
+      knowledgeReliability: "知识可靠性",
     },
     detailRows: {
       provider: "供应商",
@@ -525,9 +527,11 @@ const copy = {
     detailSourcesTitle: "External evaluation references",
     radarAverage: "Average",
     radarDataSource: "Sources",
-    radarSourceText: "AA / AInsights reference benchmarks",
+    radarSourceText: "AA / official model releases / AInsights reference benchmarks",
     radarBasisTitle: "Radar axis basis",
-    radarBasisSubtitle: "Each axis averages available scores from these benchmarks.",
+    radarBasisSubtitle: "Each metric is normalized to its best observed score, then combined with a weighted geometric mean and a 0.10 coverage discount.",
+    radarMetricCount: "{count} metrics",
+    radarCoverage: "{available}/{total} metrics",
     radarNoData: "No capability axes available",
     radarAxes: {
       cognition: "Cognition",
@@ -535,7 +539,7 @@ const copy = {
       instruction: "Instruction following",
       agenticWork: "Agentic work",
       code: "Code",
-      hallucinationResistance: "Hallucination resistance",
+      knowledgeReliability: "Knowledge reliability",
     },
     detailRows: {
       provider: "Provider",
@@ -2645,7 +2649,7 @@ function renderMethodologyPage() {
         <h3>${escapeHtml(zh ? "Calculation Formula" : "Calculation Formula")}</h3>
         <p>${escapeHtml(zh ? "每个指标先转为最佳分数比例：ratio_m = max(raw_m, 0) / best_observed_m。best_observed_m 是当前数据集中同一个指标 key 的最高有效分。" : "Each metric first becomes a best-score ratio: ratio_m = max(raw_m, 0) / best_observed_m. best_observed_m is the highest valid score currently present for that exact metric key.")}</p>
         <p>${escapeHtml(zh ? "板块分使用几何加权均值：exp(sum(w_m * ln(1 + ratio_m)) / sum(available_w_m)) - 1，然后乘以 (available_internal_weight / total_internal_weight) 的覆盖折扣。" : "A board score uses the weighted geometric mean: exp(sum(w_m * ln(1 + ratio_m)) / sum(available_w_m)) - 1, then multiplies by a coverage discount from available_internal_weight / total_internal_weight.")}</p>
-        <p>${escapeHtml(zh ? "普通板块内覆盖折扣指数为 0.02；如果一个板块只有一个指标命中，则使用 0.10。若整个板块缺失，使用弱先验 0.34；若五个板块都缺失，则不生成默认分。" : "The normal within-board coverage discount exponent is 0.02; if a board has only one available metric, the exponent is 0.10. If an entire board is missing, AIndex uses a weak prior of 0.34; if all five boards are missing, no default score is produced.")}</p>
+        <p>${escapeHtml(zh ? "板块内覆盖折扣指数统一为 0.10，包括只有一个指标命中的板块。若整个板块缺失，使用弱先验 0.34；若五个板块都缺失，则不生成默认分。" : "The within-board coverage discount exponent is 0.10, including boards with only one available metric. If an entire board is missing, AIndex uses a weak prior of 0.34; if all five boards are missing, no default score is produced.")}</p>
         <p><code>${escapeHtml("AIndex = AA Intelligence max * (exp((40 * ln(1 + Coding) + 24 * ln(1 + Agentic) + 20 * ln(1 + HardReasoning) + 8 * ln(1 + KnowledgeScience) + 8 * ln(1 + InstructionContext)) / 100) - 1)")}</code></p>
       </article>
       <article class="methodology-card methodology-card-wide">
@@ -3108,12 +3112,13 @@ function renderRadarAxisLabel(axis, index, count, layout, detailModel, series, m
   const point = radarPoint(index, 100, count, center, labelRadius);
   const box = radarAxisLabelBox(point, layout, mode, series.length);
   const value = detailModel ? radarAxisValue(detailModel, axis) : null;
+  const coverage = detailModel ? radarAxisCoverage(detailModel, axis) : null;
   const rank = detailModel ? radarAxisRank(axis, detailModel) : null;
   const average = radarAxisAverage(axis);
   const rankLabel = rank ? `#${rank.rank}` : "";
   const content = mode === "compare"
     ? renderRadarCompareAxisLabel(axis, series)
-    : renderRadarDetailAxisLabel(axis, value, average, rankLabel);
+    : renderRadarDetailAxisLabel(axis, value, average, rankLabel, coverage);
   return `
     <foreignObject x="${formatSvgNumber(box.x)}" y="${formatSvgNumber(box.y)}" width="${formatSvgNumber(box.width)}" height="${formatSvgNumber(box.height)}">
       <div xmlns="http://www.w3.org/1999/xhtml" class="radar-axis-label ${box.anchorClass}">
@@ -3143,10 +3148,11 @@ function radarAxisLabelBox(point, layout, mode, seriesCount) {
   };
 }
 
-function renderRadarDetailAxisLabel(axis, value, average, rankLabel) {
+function renderRadarDetailAxisLabel(axis, value, average, rankLabel, coverage) {
+  const coverageLabel = radarCoverageLabel(coverage);
   return `
     <strong><b>${escapeHtml(formatNumber(value))}</b> ${escapeHtml(axis.label)}</strong>
-    <em>${escapeHtml(formatNumber(average))}${rankLabel ? ` · ${escapeHtml(rankLabel)}` : ""}</em>
+    <em>${escapeHtml(formatNumber(average))}${rankLabel ? ` · ${escapeHtml(rankLabel)}` : ""}${coverageLabel ? ` · ${escapeHtml(coverageLabel)}` : ""}</em>
   `;
 }
 
@@ -3156,6 +3162,7 @@ function renderRadarCompareAxisLabel(axis, series) {
       model: item.model,
       color: item.color,
       value: radarAxisValue(item.model, axis),
+      coverage: radarAxisCoverage(item.model, axis),
     }))
     .sort((a, b) => {
       const aFinite = Number.isFinite(a.value);
@@ -3170,7 +3177,7 @@ function renderRadarCompareAxisLabel(axis, series) {
         <span class="radar-axis-score" style="--score-color: ${escapeHtml(row.color)}">
           <i></i>
           <b>${escapeHtml(formatNumber(row.value))}</b>
-          <span>${escapeHtml(scatterLabelText(row.model.model))}</span>
+          <span>${escapeHtml(scatterLabelText(row.model.model))} · ${escapeHtml(radarCoverageLabel(row.coverage))}</span>
         </span>
       `).join("")}
     </span>
@@ -3182,32 +3189,80 @@ function radarAxes() {
     {
       id: "cognition",
       label: tr("radarAxes.cognition"),
-      metrics: ["Humanity's Last Exam", "GPQA Diamond"],
+      metrics: [
+        { key: "Humanity's Last Exam", weight: 1.3 },
+        { key: "CritPt", weight: 1.1 },
+        { key: "GPQA Diamond", weight: 0.9 },
+        { key: "AIME 2025", weight: 0.7 },
+        { key: "benchmark:frontiermath-tier-4", weight: 0.6 },
+        { key: "benchmark:frontiermath-tier-1-3", weight: 0.5 },
+        { key: "benchmark:aime-2026", weight: 0.3 },
+        { key: "benchmark:hmmt-2026-feb", weight: 0.3 },
+      ],
     },
     {
       id: "long-context",
       label: tr("radarAxes.longContext"),
-      metrics: ["AA-LCR"],
+      metrics: [
+        { key: "AA-LCR", weight: 1.4 },
+        { key: "CritPt", weight: 0.7 },
+        { key: "benchmark:charxiv-tools", weight: 0.5 },
+        { key: "benchmark:charxiv-no-tools", weight: 0.4 },
+      ],
     },
     {
       id: "instruction",
       label: tr("radarAxes.instruction"),
-      metrics: ["IFBench", "CritPt"],
+      metrics: [
+        { key: "IFBench", weight: 1.4 },
+        { key: "CritPt", weight: 0.5 },
+        { key: "AA-LCR", weight: 0.3 },
+        { key: "benchmark:charxiv-tools", weight: 0.2 },
+        { key: "benchmark:charxiv-no-tools", weight: 0.2 },
+      ],
     },
     {
       id: "agentic-work",
       label: tr("radarAxes.agenticWork"),
-      metrics: ["GDPval-AA v2", "τ³-Banking"],
+      metrics: [
+        { key: "GDPval-AA v2", weight: 1.2 },
+        { key: "τ³-Banking", weight: 1.0 },
+        { key: "benchmark:browsecomp", weight: 1.0 },
+        { key: "benchmark:hle-tools", weight: 1.0 },
+        { key: "benchmark:mcp-atlas", weight: 0.9 },
+        { key: "benchmark:osworld-verified", weight: 0.8 },
+        { key: "benchmark:toolathlon", weight: 0.6 },
+        { key: "Terminal-Bench v2.1", weight: 0.5 },
+        { key: "AA-LCR", weight: 0.5 },
+      ],
     },
     {
       id: "code",
       label: tr("radarAxes.code"),
-      metrics: ["Terminal-Bench v2.1", "SciCode"],
+      metrics: [
+        { key: "benchmark:swe-bench-pro", weight: 1.5 },
+        { key: "LiveCodeBench", weight: 1.2 },
+        { key: "benchmark:swe-bench-verified", weight: 1.1 },
+        { key: "Terminal-Bench Hard", weight: 1.0 },
+        { key: "Terminal-Bench v2.1", weight: 0.9 },
+        { key: "benchmark:swe-bench-multilingual", weight: 0.8 },
+        { key: "SciCode", weight: 0.8 },
+        { key: "benchmark:deepswe", weight: 0.7 },
+        { key: "benchmark:deepswe-v1-1", weight: 0.6 },
+        { key: "benchmark:swe-marathon", weight: 0.5 },
+      ],
     },
     {
-      id: "hallucination-resistance",
-      label: tr("radarAxes.hallucinationResistance"),
-      metrics: ["AA-Omniscience Accuracy", "AA-Omniscience Non-Hallucination Rate"],
+      id: "knowledge-reliability",
+      label: tr("radarAxes.knowledgeReliability"),
+      metrics: [
+        { key: "AA-Omniscience Accuracy", weight: 1.2 },
+        { key: "AA-Omniscience Non-Hallucination Rate", weight: 1.2 },
+        { key: "GPQA Diamond", weight: 0.6 },
+        { key: "Humanity's Last Exam", weight: 0.5 },
+        { key: "MMMU-Pro", weight: 0.4 },
+        { key: "benchmark:mmlu-pro", weight: 0.2 },
+      ],
     },
   ];
 }
@@ -3223,7 +3278,7 @@ function renderRadarBasisNotes() {
       <div class="radar-basis-grid">
         ${axes.map((axis) => `
           <article>
-            <strong>${escapeHtml(axis.label)}</strong>
+            <strong>${escapeHtml(axis.label)} · ${escapeHtml(tr("radarMetricCount", { count: axis.metrics.length }))}</strong>
             <span>${escapeHtml(radarAxisMetricLabels(axis).join(" / "))}</span>
           </article>
         `).join("")}
@@ -3233,18 +3288,38 @@ function renderRadarBasisNotes() {
 }
 
 function radarAxisMetricLabels(axis) {
-  const labels = axis.metrics
-    .map((key) => metricDefinition(key).label || key)
+  const labels = frontierGroupMetricItems(axis.metrics)
+    .map((metric) => `${metricDefinition(metric.key).label || metric.key} ×${formatNumber(metric.weight)}`)
     .filter(Boolean);
   return [...new Set(labels)];
 }
 
 function radarAxisValue(model, axis) {
-  const values = axis.metrics
-    .map((key) => model.scores?.[key])
-    .filter(Number.isFinite);
-  if (values.length === 0) return null;
-  return values.reduce((sum, value) => sum + value, 0) / values.length;
+  const preset = state.data?.presets?.["zhihu-adjusted"] || {};
+  const groupExponent = Number(preset.groupMetricCoverageDiscountExponent ?? 0.10);
+  const singleExponent = Number(preset.singleMetricCoverageDiscountExponent ?? groupExponent);
+  const ratio = frontierGroupValue(
+    model,
+    axis.metrics,
+    "geometric",
+    "relative-best",
+    groupExponent,
+    singleExponent,
+  );
+  return Number.isFinite(ratio) ? clamp(ratio * 100, 0, 100) : null;
+}
+
+function radarAxisCoverage(model, axis) {
+  const metrics = frontierGroupMetricItems(axis.metrics);
+  return {
+    available: metrics.filter((metric) => Number.isFinite(model.scores?.[metric.key])).length,
+    total: metrics.length,
+  };
+}
+
+function radarCoverageLabel(coverage) {
+  if (!coverage || !Number.isFinite(coverage.available) || !Number.isFinite(coverage.total)) return "";
+  return tr("radarCoverage", coverage);
 }
 
 function radarAxisAverage(axis) {

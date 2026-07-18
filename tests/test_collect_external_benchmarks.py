@@ -399,6 +399,31 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertEqual(nemotron_super_lcb["value"], 78.69)
         self.assertEqual(nemotron_nano_aime["value"], 89.06)
 
+    def test_build_payload_includes_grok45_official_scores_only(self):
+        payload = build_payload({}, "seeded")
+        sources = {source["id"]: source for source in payload["sources"]}
+        results = {
+            row["benchmarkId"]: row
+            for row in payload["results"]
+            if row["sourceId"] == "spacexai-grok-4-5-release"
+        }
+
+        self.assertEqual(
+            sources["spacexai-grok-4-5-release"]["url"],
+            "https://x.ai/news/grok-4-5",
+        )
+        self.assertEqual(
+            set(results),
+            {"deepswe", "deepswe-v1-1", "swe-marathon", "terminal-bench-2-1", "swe-bench-pro"},
+        )
+        self.assertEqual(results["deepswe"]["value"], 62.0)
+        self.assertEqual(results["deepswe-v1-1"]["value"], 53.0)
+        self.assertEqual(results["swe-marathon"]["value"], 29.0)
+        self.assertEqual(results["terminal-bench-2-1"]["value"], 83.3)
+        self.assertEqual(results["swe-bench-pro"]["value"], 64.7)
+        self.assertIn("Grok 4.5 (high)", results["swe-bench-pro"]["modelAliases"])
+        self.assertIn("grok-4-5", results["swe-bench-pro"]["modelAliases"])
+
     def test_build_payload_includes_gpt56_official_scores(self):
         payload = build_payload({}, "seeded")
         sources = {source["id"]: source for source in payload["sources"]}

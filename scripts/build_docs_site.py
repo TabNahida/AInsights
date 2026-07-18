@@ -1399,7 +1399,7 @@ def _presets() -> dict[str, dict[str, Any]]:
             "normalization": "relative-best",
             "missingPolicy": "weak-prior",
             "weakPriorRatio": 0.34,
-            "groupMetricCoverageDiscountExponent": 0.02,
+            "groupMetricCoverageDiscountExponent": 0.10,
             "singleMetricCoverageDiscountExponent": 0.10,
             "groups": AINDEX_GROUPS,
             "weights": DEFAULT_AINDEX_WEIGHTS,

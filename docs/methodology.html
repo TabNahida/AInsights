@@ -134,7 +134,7 @@
             <h3>Calculation Formula</h3>
             <p>For a metric <code>m</code>, the normalized metric value is <code>ratio_m = max(raw_m, 0) / best_observed_m</code>. Best observed means the highest score currently present in the dataset for that exact metric key.</p>
             <p>For each board, AIndex first aggregates available metric ratios with the weighted geometric mean used by the code: <code>exp(sum(weight_m * ln(1 + ratio_m)) / sum(available_weight_m)) - 1</code>.</p>
-            <p>The board metric coverage adjustment is then applied: multiply the board value by <code>(available_internal_weight / total_internal_weight) ^ exponent</code>. The normal within-board coverage discount exponent is 0.02; the single-metric board exponent is 0.10.</p>
+            <p>The board metric coverage adjustment is then applied: multiply the board value by <code>(available_internal_weight / total_internal_weight) ^ exponent</code>. The within-board coverage discount exponent is 0.10, including boards with only one available metric.</p>
             <p>If a board has no available metrics, AIndex inserts a weak prior value of 0.34 for that board. If all five boards are missing, the model receives no default AIndex score.</p>
             <p>The final board aggregation is another weighted geometric mean: <code>AIndex = AA Intelligence max * (exp((40 * ln(1 + Coding) + 24 * ln(1 + Agentic) + 20 * ln(1 + HardReasoning) + 8 * ln(1 + KnowledgeScience) + 8 * ln(1 + InstructionContext)) / 100) - 1)</code>.</p>
           </article>
@@ -143,7 +143,7 @@
             <h3>AIndex Calculation</h3>
             <ol class="methodology-steps">
               <li>For each board metric, convert the raw score into a <strong>Best score ratio</strong>: model score divided by the highest score observed for that benchmark.</li>
-              <li>Aggregate available metrics inside each board with a weighted geometric mean, then apply a light within-board coverage discount using exponent 0.02, or 0.10 if only one metric is present in that board.</li>
+              <li>Aggregate available metrics inside each board with a weighted geometric mean, then apply a within-board coverage discount using exponent 0.10, including when only one metric is present in that board.</li>
               <li>If an entire board is missing, use a weak prior of 0.34 for that board; if all boards are missing, no default AIndex is produced.</li>
               <li>Aggregate the five board values with board weights 40 / 24 / 20 / 8 / 8 using a geometric weighted mean.</li>
               <li>Scale the resulting ratio to the current AA Intelligence maximum.</li>

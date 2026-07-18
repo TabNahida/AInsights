@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T09:46:28+00:00",
+  "generatedAt": "2026-07-18T18:47:32+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
@@ -31,7 +31,7 @@
       "label": "Anthropic Claude Sonnet 5 official release",
       "url": "https://www.anthropic.com/news/claude-sonnet-5",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values; refresh blocked: TimeoutError",
+      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
       "note": "Anthropic official Sonnet 5 launch benchmark table. Seed values are transcribed from the official benchmark image; Humanity's Last Exam is kept as separate no-tools and with-tools rows.",
       "modelAliases": [
         "Claude Sonnet 5",
@@ -46,7 +46,7 @@
       "label": "Anthropic Claude Fable 5 and Mythos 5 official release",
       "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
       "category": "Official release",
-      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Anthropic release table for Claude Mythos 5 / Fable 5. Reported Mythos and Fable scores are within 1-3 percentage points unless starred; the table shows the higher score of the two, and starred rows can differ more because Fable falls back to Opus 4.8 for some cyber and biology requests.",
       "modelAliases": [
         "Claude Fable 5",
@@ -210,7 +210,7 @@
       "label": "Z.ai GLM-5.1 official model card",
       "url": "https://docs.z.ai/guides/llm/glm-5.1",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
       "note": "Z.ai developer documentation / official release page with GLM-5.1, GLM-5, and GLM-4.7 benchmark table."
     },
     {
@@ -258,7 +258,7 @@
       "label": "MiniMax M2.5 official release",
       "url": "https://www.minimax.io/news/minimax-m25",
       "category": "Official release",
-      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "MiniMax M2.5 release page with official benchmark charts for M2.5 and M2.1 across agentic coding and reasoning evaluations."
     },
     {
@@ -266,7 +266,7 @@
       "label": "MiniMax M2 official release",
       "url": "https://www.minimax.io/news/minimax-m2",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
       "note": "MiniMax M2 release page with official agentic benchmark charts. Seed rows keep the chart values where the page renders the data as images."
     },
     {
@@ -274,7 +274,7 @@
       "label": "MiniMax M1 official GitHub report",
       "url": "https://github.com/MiniMax-AI/MiniMax-M1",
       "category": "Official technical report",
-      "collectionStatus": "refreshed",
+      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
       "note": "MiniMax-AI official GitHub README benchmark table for MiniMax-M1-80K and MiniMax-M1-40K."
     },
     {
@@ -290,7 +290,7 @@
       "label": "Cohere North Mini Code model card",
       "url": "https://docs.cohere.com/docs/north-mini-code-1.0",
       "category": "Official model card",
-      "collectionStatus": "reference-only; refresh blocked: TimeoutError",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
       "note": "Cohere documentation for North Mini Code: model ID north-mini-code-1-0, 256K context window, 64K max output, Apache 2.0 license, and agentic coding use cases.",
       "coverage": "North Mini Code reference",
       "scoreStatus": "reference",
@@ -299,6 +299,21 @@
         "North Mini Code [R]",
         "north-mini-code",
         "north-mini-code-1-0"
+      ]
+    },
+    {
+      "id": "spacexai-grok-4-5-release",
+      "label": "SpaceXAI Grok 4.5 official release",
+      "url": "https://x.ai/news/grok-4-5",
+      "category": "Official release",
+      "collectionStatus": "seeded-official-values; refresh blocked: URLError",
+      "note": "SpaceXAI/xAI Grok 4.5 release page dated July 8, 2026. Seed rows transcribe the five numeric Grok 4.5 results shown in the official benchmark charts; competitor columns, token-use comparisons, and non-numeric rank claims are excluded.",
+      "modelAliases": [
+        "Grok 4.5",
+        "Grok 4.5 (high)",
+        "Grok 4.5 (high) [R]",
+        "grok-4.5",
+        "grok-4-5"
       ]
     },
     {
@@ -17441,6 +17456,91 @@
       "sourceId": "xiaomi-mimo-v2-5-release",
       "sourceUrl": "https://platform.xiaomimimo.com/docs/en-US/news/v2.5-open-sourced",
       "sourceLabel": "Xiaomi MiMo-V2.5 official release"
+    },
+    {
+      "benchmarkId": "deepswe",
+      "benchmarkLabel": "DeepSWE",
+      "model": "Grok 4.5",
+      "modelAliases": [
+        "Grok 4.5",
+        "Grok 4.5 (high)",
+        "Grok 4.5 (high) [R]",
+        "grok-4.5",
+        "grok-4-5"
+      ],
+      "value": 62.0,
+      "unit": "%",
+      "sourceId": "spacexai-grok-4-5-release",
+      "sourceUrl": "https://x.ai/news/grok-4-5",
+      "sourceLabel": "SpaceXAI Grok 4.5 official release"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "Grok 4.5",
+      "modelAliases": [
+        "Grok 4.5",
+        "Grok 4.5 (high)",
+        "Grok 4.5 (high) [R]",
+        "grok-4.5",
+        "grok-4-5"
+      ],
+      "value": 53.0,
+      "unit": "%",
+      "sourceId": "spacexai-grok-4-5-release",
+      "sourceUrl": "https://x.ai/news/grok-4-5",
+      "sourceLabel": "SpaceXAI Grok 4.5 official release"
+    },
+    {
+      "benchmarkId": "swe-marathon",
+      "benchmarkLabel": "SWE-Marathon",
+      "model": "Grok 4.5",
+      "modelAliases": [
+        "Grok 4.5",
+        "Grok 4.5 (high)",
+        "Grok 4.5 (high) [R]",
+        "grok-4.5",
+        "grok-4-5"
+      ],
+      "value": 29.0,
+      "unit": "%",
+      "sourceId": "spacexai-grok-4-5-release",
+      "sourceUrl": "https://x.ai/news/grok-4-5",
+      "sourceLabel": "SpaceXAI Grok 4.5 official release"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Grok 4.5",
+      "modelAliases": [
+        "Grok 4.5",
+        "Grok 4.5 (high)",
+        "Grok 4.5 (high) [R]",
+        "grok-4.5",
+        "grok-4-5"
+      ],
+      "value": 83.3,
+      "unit": "%",
+      "sourceId": "spacexai-grok-4-5-release",
+      "sourceUrl": "https://x.ai/news/grok-4-5",
+      "sourceLabel": "SpaceXAI Grok 4.5 official release"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Grok 4.5",
+      "modelAliases": [
+        "Grok 4.5",
+        "Grok 4.5 (high)",
+        "Grok 4.5 (high) [R]",
+        "grok-4.5",
+        "grok-4-5"
+      ],
+      "value": 64.7,
+      "unit": "%",
+      "sourceId": "spacexai-grok-4-5-release",
+      "sourceUrl": "https://x.ai/news/grok-4-5",
+      "sourceLabel": "SpaceXAI Grok 4.5 official release"
     },
     {
       "benchmarkId": "tau2-bench-telecom",

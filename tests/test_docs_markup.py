@@ -1,8 +1,30 @@
+import json
+import re
 import unittest
 from pathlib import Path
 
 
 class DocsMarkupTests(unittest.TestCase):
+    def test_radar_axes_use_valid_weighted_metric_sets(self):
+        root = Path(__file__).resolve().parents[1]
+        app_js = (root / "docs" / "app.js").read_text(encoding="utf-8")
+        payload = json.loads((root / "docs" / "data" / "models.json").read_text(encoding="utf-8"))
+        radar_source = app_js.split("function radarAxes()", 1)[1].split("function renderRadarBasisNotes()", 1)[0]
+        axis_blocks = re.findall(
+            r'id: "([^"]+)",\s+label:.*?\s+metrics: \[(.*?)\],\s+\}',
+            radar_source,
+            flags=re.DOTALL,
+        )
+        metric_keys = {metric["key"] for metric in payload["metrics"]}
+
+        self.assertEqual(len(axis_blocks), 6)
+        for axis_id, block in axis_blocks:
+            metrics = re.findall(r'\{ key: "([^"]+)", weight: ([\d.]+) \}', block)
+            weights = [float(weight) for _, weight in metrics]
+            self.assertGreaterEqual(len(metrics), 4, axis_id)
+            self.assertEqual(weights, sorted(weights, reverse=True), axis_id)
+            self.assertFalse({key for key, _ in metrics} - metric_keys, axis_id)
+
     def test_static_site_has_separate_entry_pages(self):
         docs_dir = Path(__file__).resolve().parents[1] / "docs"
 
@@ -116,12 +138,18 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("Weight Mean", app_js)
         self.assertIn("Best score ratio", app_js)
         self.assertIn("Raw score", app_js)
-        self.assertIn('metrics: ["Humanity\'s Last Exam", "GPQA Diamond"]', app_js)
-        self.assertIn('metrics: ["AA-LCR"]', app_js)
-        self.assertIn('metrics: ["IFBench", "CritPt"]', app_js)
-        self.assertIn('metrics: ["GDPval-AA v2", "τ³-Banking"]', app_js)
-        self.assertIn('metrics: ["Terminal-Bench v2.1", "SciCode"]', app_js)
-        self.assertIn('metrics: ["AA-Omniscience Accuracy", "AA-Omniscience Non-Hallucination Rate"]', app_js)
+        self.assertIn('{ key: "Humanity\'s Last Exam", weight: 1.3 }', app_js)
+        self.assertIn('{ key: "benchmark:charxiv-tools", weight: 0.5 }', app_js)
+        self.assertIn('{ key: "IFBench", weight: 1.4 }', app_js)
+        self.assertIn('{ key: "benchmark:mcp-atlas", weight: 0.9 }', app_js)
+        self.assertIn('{ key: "benchmark:deepswe", weight: 0.7 }', app_js)
+        self.assertIn('{ key: "AA-Omniscience Non-Hallucination Rate", weight: 1.2 }', app_js)
+        self.assertIn('id: "knowledge-reliability"', app_js)
+        self.assertIn('knowledgeReliability: "知识可靠性"', app_js)
+        self.assertIn('knowledgeReliability: "Knowledge reliability"', app_js)
+        self.assertIn('"geometric",\n    "relative-best",', app_js)
+        self.assertIn('preset.groupMetricCoverageDiscountExponent ?? 0.10', app_js)
+        self.assertIn('function radarAxisCoverage(model, axis)', app_js)
         self.assertNotIn('metrics: ["GDPval-AA", "τ²-Bench Telecom", "Terminal-Bench Hard"]', app_js)
         self.assertNotIn("当前四类参考项目", app_js)
         self.assertNotIn("four-category AA reference", app_js)
@@ -215,8 +243,8 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("Best score ratio", html)
         self.assertIn("within-board coverage discount", html)
         self.assertIn("weak prior of 0.34", html)
-        self.assertIn("within-board coverage discount exponent is 0.02", html)
-        self.assertIn("single-metric board exponent is 0.10", html)
+        self.assertIn("within-board coverage discount exponent is 0.10", html)
+        self.assertIn("including boards with only one available metric", html)
         self.assertIn("AIndex = AA Intelligence max *", html)
         self.assertNotIn("AIndex = 100 *", html)
         self.assertIn("Internal weights are normalized within each board", html)
