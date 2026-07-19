@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T18:47:32+00:00",
+  "generatedAt": "2026-07-19T04:19:39+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
@@ -23,7 +23,7 @@
       "label": "Anthropic Claude Opus 4.7 official release",
       "url": "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416",
       "category": "Official release",
-      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Anthropic official release chart covering Opus 4.7, Opus 4.6, GPT-5.4, Gemini 3.1 Pro, and Mythos Preview across agentic coding, search, tool use, reasoning, and finance benchmarks."
     },
     {
@@ -31,7 +31,7 @@
       "label": "Anthropic Claude Sonnet 5 official release",
       "url": "https://www.anthropic.com/news/claude-sonnet-5",
       "category": "Official release",
-      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Anthropic official Sonnet 5 launch benchmark table. Seed values are transcribed from the official benchmark image; Humanity's Last Exam is kept as separate no-tools and with-tools rows.",
       "modelAliases": [
         "Claude Sonnet 5",
@@ -178,7 +178,7 @@
       "label": "Kimi K2 0905 official model card",
       "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905",
       "category": "Official model card",
-      "collectionStatus": "stale-retained; refresh blocked: URLError",
+      "collectionStatus": "refreshed",
       "note": "Moonshot AI official Hugging Face model card for Kimi-K2-Instruct-0905. Reported K2 0905 values are mean results over five full-test-set runs."
     },
     {
@@ -202,7 +202,7 @@
       "label": "Z.ai GLM-5.2 official model card",
       "url": "https://docs.z.ai/guides/llm/glm-5.2",
       "category": "Official release",
-      "collectionStatus": "stale-retained; refresh blocked: URLError",
+      "collectionStatus": "refreshed",
       "note": "Z.ai GLM-5.2 official page and model card with long-horizon reasoning, coding, and agentic benchmark table."
     },
     {
@@ -210,7 +210,7 @@
       "label": "Z.ai GLM-5.1 official model card",
       "url": "https://docs.z.ai/guides/llm/glm-5.1",
       "category": "Official release",
-      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Z.ai developer documentation / official release page with GLM-5.1, GLM-5, and GLM-4.7 benchmark table."
     },
     {
@@ -234,7 +234,7 @@
       "label": "Google Gemma 4 official model card",
       "url": "https://ai.google.dev/gemma/docs/core/model_card_4",
       "category": "Official model card",
-      "collectionStatus": "stale-retained; refresh blocked: URLError",
+      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
       "note": "Google Gemma model card covering Gemma 4 31B, 26B-A4B, E4B, and E2B instruction-tuned benchmarks."
     },
     {
@@ -266,7 +266,7 @@
       "label": "MiniMax M2 official release",
       "url": "https://www.minimax.io/news/minimax-m2",
       "category": "Official release",
-      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "MiniMax M2 release page with official agentic benchmark charts. Seed rows keep the chart values where the page renders the data as images."
     },
     {
@@ -274,7 +274,7 @@
       "label": "MiniMax M1 official GitHub report",
       "url": "https://github.com/MiniMax-AI/MiniMax-M1",
       "category": "Official technical report",
-      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
+      "collectionStatus": "refreshed",
       "note": "MiniMax-AI official GitHub README benchmark table for MiniMax-M1-80K and MiniMax-M1-40K."
     },
     {
@@ -306,7 +306,7 @@
       "label": "SpaceXAI Grok 4.5 official release",
       "url": "https://x.ai/news/grok-4-5",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values; refresh blocked: URLError",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "SpaceXAI/xAI Grok 4.5 release page dated July 8, 2026. Seed rows transcribe the five numeric Grok 4.5 results shown in the official benchmark charts; competitor columns, token-use comparisons, and non-numeric rank claims are excluded.",
       "modelAliases": [
         "Grok 4.5",
@@ -321,7 +321,7 @@
       "label": "xAI Grok 4.1 Fast official release",
       "url": "https://x.ai/news/grok-4-1-fast",
       "category": "Official release",
-      "collectionStatus": "stale-retained; refresh blocked: URLError",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "xAI release page for Grok 4.1 Fast and Agent Tools API with tool-calling and agentic-search benchmark tables."
     },
     {
@@ -13320,7 +13320,9 @@
       "benchmarkLabel": "Humanity's Last Exam",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 49.8,
       "unit": "%",
@@ -13410,7 +13412,9 @@
       "benchmarkLabel": "HLE w/ tools",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 57.9,
       "unit": "%",
@@ -13516,7 +13520,9 @@
       "benchmarkLabel": "CritPt",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 20.9,
       "unit": "%",
@@ -13606,7 +13612,9 @@
       "benchmarkLabel": "AIME 2026",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 95.7,
       "unit": "%",
@@ -13712,7 +13720,9 @@
       "benchmarkLabel": "HMMT Nov 2025",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 96.5,
       "unit": "%",
@@ -13818,7 +13828,9 @@
       "benchmarkLabel": "HMMT Feb 2026",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 96.7,
       "unit": "%",
@@ -13908,7 +13920,9 @@
       "benchmarkLabel": "IMOAnswerBench",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 83.5,
       "unit": "%",
@@ -13998,7 +14012,9 @@
       "benchmarkLabel": "GPQA Diamond",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 93.6,
       "unit": "%",
@@ -14104,7 +14120,9 @@
       "benchmarkLabel": "SWE-Bench Pro",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 69.2,
       "unit": "%",
@@ -14210,7 +14228,9 @@
       "benchmarkLabel": "NL2Repo",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 69.7,
       "unit": "%",
@@ -14316,7 +14336,9 @@
       "benchmarkLabel": "DeepSWE",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 58.0,
       "unit": "%",
@@ -14393,7 +14415,9 @@
       "benchmarkLabel": "ProgramBench",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 71.9,
       "unit": "%",
@@ -14499,7 +14523,9 @@
       "benchmarkLabel": "Terminal-Bench 2.1",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 78.9,
       "unit": "%",
@@ -14576,7 +14602,9 @@
       "benchmarkLabel": "FrontierSWE Dominance",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 75.1,
       "unit": "%",
@@ -14638,7 +14666,9 @@
       "benchmarkLabel": "PostTrainBench",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 37.2,
       "unit": "%",
@@ -14700,7 +14730,9 @@
       "benchmarkLabel": "SWE-Marathon",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 26.0,
       "unit": "%",
@@ -14806,7 +14838,9 @@
       "benchmarkLabel": "MCP-Atlas Public",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 77.8,
       "unit": "%",
@@ -14883,7 +14917,9 @@
       "benchmarkLabel": "Toolathlon",
       "model": "Claude Opus 4.8",
       "modelAliases": [
-        "Claude Opus 4.8"
+        "Claude Opus 4.8",
+        "Claude Opus 4.8 (max)",
+        "claude-opus-4-8"
       ],
       "value": 59.9,
       "unit": "%",
