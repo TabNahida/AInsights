@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T04:33:55+00:00",
+  "generatedAt": "2026-07-21T04:13:24+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
@@ -8664,7 +8664,7 @@
         "Kimi-K3",
         "kimi-k3"
       ],
-      "value": 37.6,
+      "value": 41.0,
       "unit": "%",
       "sourceId": "kimi-k3-release",
       "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
