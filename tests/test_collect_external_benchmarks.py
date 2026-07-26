@@ -124,6 +124,46 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertEqual(terminal["value"], 68.5)
         self.assertEqual(gpqa["value"], 94.3)
 
+    def test_parse_markdown_source_scores_preserves_rowspan_column_alignment(self):
+        html = """
+        <table>
+          <tr>
+            <th>Benchmark</th><th>Notes</th>
+            <th>Gemini 3.6 Flash</th><th>Gemini 3.5 Flash</th>
+          </tr>
+          <tr>
+            <td rowspan="2">CharXiv Reasoning</td><td>No tools</td>
+            <td>85.2%</td><td>84.2%</td>
+          </tr>
+          <tr><td>With tools</td><td>89.4%</td><td>84.9%</td></tr>
+          <tr>
+            <td rowspan="2">GDM-MRCR v2 (8-needle)</td><td>128k (average)</td>
+            <td>91.8%</td><td>77.3%</td>
+          </tr>
+          <tr><td>1M (pointwise)</td><td>54.0%</td><td>26.6%</td></tr>
+        </table>
+        """
+        spec = {
+            "id": "google-test",
+            "label": "Google test",
+            "url": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+            "columns": {"Gemini 3.6 Flash": "Gemini 3.6 Flash"},
+            "rowLabels": {
+                "CharXiv Reasoning": "charxiv-no-tools",
+                "With tools": "charxiv-tools",
+                "GDM-MRCR v2 (8-needle)": "mrcr-v2-128k",
+                "1M (pointwise)": "mrcr-v2-1m",
+            },
+        }
+
+        rows = parse_markdown_source_scores(html, spec)
+        values = {row["benchmarkId"]: row["value"] for row in rows}
+
+        self.assertEqual(values["charxiv-no-tools"], 85.2)
+        self.assertEqual(values["charxiv-tools"], 89.4)
+        self.assertEqual(values["mrcr-v2-128k"], 91.8)
+        self.assertEqual(values["mrcr-v2-1m"], 54.0)
+
     def test_parse_markdown_source_scores_extracts_next_sheet_data(self):
         sheet = {
             "options": {"variant": "sheet"},
@@ -288,9 +328,12 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         sources = {source["id"]: source for source in payload["sources"]}
 
         kimi_0905 = sources["kimi-k2-0905-card"]
+        g9v3 = sources["ai9stars-g9v3-3b-card"]
 
         self.assertEqual(kimi_0905["category"], "Official model card")
         self.assertEqual(kimi_0905["url"], "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905")
+        self.assertEqual(g9v3["category"], "Official model card")
+        self.assertEqual(g9v3["url"], "https://huggingface.co/ai9stars/G9v3-3B")
 
     def test_reference_only_model_cards_keep_model_aliases(self):
         payload = build_payload({}, "seeded")
@@ -298,6 +341,10 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
 
         self.assertIn("north-mini-code-1-0", sources["cohere-north-mini-code-card"]["modelAliases"])
         self.assertEqual(sources["cohere-north-mini-code-card"]["scoreStatus"], "reference")
+        self.assertIn("g9v3-3b", sources["ai9stars-g9v3-3b-card"]["modelAliases"])
+        self.assertEqual(sources["ai9stars-g9v3-3b-card"]["scoreStatus"], "reference")
+        self.assertIn("motif-0714", sources["motif-motif-3-beta-hub"]["modelAliases"])
+        self.assertEqual(sources["motif-motif-3-beta-hub"]["scoreStatus"], "reference")
 
     def test_official_release_sources_keep_model_aliases(self):
         payload = build_payload({}, "seeded")
@@ -305,6 +352,12 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
 
         self.assertIn("Claude Fable 5 (with fallback)", sources["anthropic-claude-fable-5-docs"]["modelAliases"])
         self.assertIn("Claude Sonnet 5 (max)", sources["anthropic-claude-sonnet-5-release"]["modelAliases"])
+        self.assertIn("Claude Opus 5 (max)", sources["anthropic-claude-opus-5-release"]["modelAliases"])
+        self.assertIn("gemini-3-6-flash", sources["google-gemini-3-6-flash-card"]["modelAliases"])
+        self.assertIn(
+            "agnes-2-5-pro-alpha",
+            sources["sapiens-agnes-2-5-pro-alpha-docs"]["modelAliases"],
+        )
 
     def test_build_payload_includes_claude_sonnet_5_official_scores(self):
         payload = build_payload({}, "seeded")
@@ -326,6 +379,72 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertEqual(results["osworld-verified"]["value"], 81.2)
         self.assertEqual(results["gdpval-aa-elo"]["value"], 1618)
         self.assertIn("claude-sonnet-5", results["swe-bench-pro"]["modelAliases"])
+
+    def test_build_payload_includes_latest_models_official_scores(self):
+        payload = build_payload({}, "seeded")
+        sources = {source["id"]: source for source in payload["sources"]}
+        by_source = {}
+        for row in payload["results"]:
+            by_source.setdefault(row["sourceId"], {})[row["benchmarkId"]] = row
+
+        opus = by_source["anthropic-claude-opus-5-release"]
+        gemini36 = by_source["google-gemini-3-6-flash-card"]
+        gemini35_lite = by_source["google-gemini-3-5-flash-lite-card"]
+        agnes = by_source["sapiens-agnes-2-5-pro-alpha-docs"]
+
+        self.assertEqual(
+            sources["anthropic-claude-opus-5-release"]["url"],
+            "https://www.anthropic.com/news/claude-opus-5",
+        )
+        self.assertEqual(opus["frontier-bench-v0-1"]["value"], 43.3)
+        self.assertEqual(opus["gdpval-aa-elo"]["value"], 1861)
+        self.assertEqual(opus["hle"]["value"], 56.3)
+        self.assertEqual(opus["hle-tools"]["value"], 64.7)
+        self.assertEqual(opus["biomysterybench-human-solved"]["value"], 90.1)
+        self.assertTrue(
+            all(row["model"] == "Claude Opus 5" for row in opus.values())
+        )
+
+        self.assertEqual(gemini36["swe-bench-pro"]["value"], 58.7)
+        self.assertEqual(gemini36["mle-bench"]["value"], 63.9)
+        self.assertEqual(gemini36["mrcr-v2-1m"]["value"], 54.0)
+        self.assertEqual(gemini35_lite["swe-bench-pro"]["value"], 54.2)
+        self.assertEqual(gemini35_lite["mle-bench"]["value"], 39.2)
+        self.assertEqual(gemini35_lite["mrcr-v2-1m"]["value"], 21.3)
+
+        self.assertEqual(
+            sources["sapiens-agnes-2-5-pro-alpha-docs"]["category"],
+            "Official provider documentation",
+        )
+        self.assertIn("Artificial Analysis snapshot", sources["sapiens-agnes-2-5-pro-alpha-docs"]["note"])
+        self.assertEqual(agnes["gpqa-diamond"]["value"], 87.6)
+        self.assertEqual(agnes["aa-omniscience"]["value"], -26.3)
+        self.assertEqual(agnes["terminal-bench-2-1"]["value"], 67.0)
+        self.assertEqual(agnes["gdpval-aa-elo"]["value"], 1170)
+
+        benchmark_ids = {benchmark["id"] for benchmark in payload["benchmarks"]}
+        self.assertTrue(
+            {
+                "frontier-bench-v0-1",
+                "frontiercode-v1-1-main",
+                "mle-bench",
+                "aa-omniscience",
+                "aa-omniscience-accuracy",
+                "aa-omniscience-non-hallucination",
+                "tau3-banking",
+            }.issubset(benchmark_ids)
+        )
+
+    def test_payload_results_reference_declared_benchmarks_without_duplicates(self):
+        payload = build_payload({}, "seeded")
+        benchmark_ids = {benchmark["id"] for benchmark in payload["benchmarks"]}
+        result_keys = [
+            (row["sourceId"], row["model"], row["benchmarkId"])
+            for row in payload["results"]
+        ]
+
+        self.assertTrue(all(row["benchmarkId"] in benchmark_ids for row in payload["results"]))
+        self.assertEqual(len(result_keys), len(set(result_keys)))
 
     def test_build_payload_includes_new_official_vendor_scores(self):
         payload = build_payload({}, "seeded")

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-26T04:23:46+00:00",
+  "generatedAt": "2026-07-26T18:33:42+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
@@ -17,6 +17,27 @@
       "category": "Official model release",
       "collectionStatus": "stale-retained; refresh blocked: HTTPError",
       "note": "OpenAI official GPT-5.6 release tables covering Sol, Terra, and Luna across professional work, coding, science, computer use, cybersecurity, reasoning, tool use, and long-context evaluations."
+    },
+    {
+      "id": "anthropic-claude-opus-5-release",
+      "label": "Anthropic Claude Opus 5 official release",
+      "url": "https://www.anthropic.com/news/claude-opus-5",
+      "category": "Official release",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "Anthropic's July 24, 2026 Opus 5 release summary. Seed values transcribe only the Opus 5 column from the official benchmark image; competitor columns are excluded. The summary reports the published effort configuration for each benchmark, with ARC-AGI-3 explicitly shown at high effort.",
+      "modelAliases": [
+        "Claude Opus 5",
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (xhigh)",
+        "Claude Opus 5 (high)",
+        "Claude Opus 5 (medium)",
+        "Claude Opus 5 (low)",
+        "claude-opus-5",
+        "claude-opus-5-xhigh",
+        "claude-opus-5-high",
+        "claude-opus-5-medium",
+        "claude-opus-5-low"
+      ]
     },
     {
       "id": "anthropic-claude-opus-4-7-release",
@@ -178,7 +199,7 @@
       "label": "Kimi K2 0905 official model card",
       "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905",
       "category": "Official model card",
-      "collectionStatus": "refreshed",
+      "collectionStatus": "stale-retained; refresh blocked: URLError",
       "note": "Moonshot AI official Hugging Face model card for Kimi-K2-Instruct-0905. Reported K2 0905 values are mean results over five full-test-set runs."
     },
     {
@@ -202,7 +223,7 @@
       "label": "Z.ai GLM-5.2 official model card",
       "url": "https://docs.z.ai/guides/llm/glm-5.2",
       "category": "Official release",
-      "collectionStatus": "refreshed",
+      "collectionStatus": "stale-retained; refresh blocked: URLError",
       "note": "Z.ai GLM-5.2 official page and model card with long-horizon reasoning, coding, and agentic benchmark table."
     },
     {
@@ -222,6 +243,32 @@
       "note": "Z.ai GLM-4.5 official blog/report covering ARC benchmarks."
     },
     {
+      "id": "google-gemini-3-6-flash-card",
+      "label": "Google DeepMind Gemini 3.6 Flash model card",
+      "url": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+      "category": "Official model card",
+      "collectionStatus": "refreshed",
+      "note": "Google DeepMind's July 21, 2026 model card. Only the Gemini 3.6 Flash column is retained from the official comparison table.",
+      "modelAliases": [
+        "Gemini 3.6 Flash",
+        "Gemini 3.6 Flash [R]",
+        "gemini-3-6-flash"
+      ]
+    },
+    {
+      "id": "google-gemini-3-5-flash-lite-card",
+      "label": "Google DeepMind Gemini 3.5 Flash-Lite model card",
+      "url": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/",
+      "category": "Official model card",
+      "collectionStatus": "refreshed",
+      "note": "Google DeepMind's July 21, 2026 model card. Only the Gemini 3.5 Flash-Lite column is retained from the official comparison table.",
+      "modelAliases": [
+        "Gemini 3.5 Flash-Lite",
+        "Gemini 3.5 Flash-Lite [R]",
+        "gemini-3-5-flash-lite"
+      ]
+    },
+    {
       "id": "google-gemini-3-1-pro-card",
       "label": "Google DeepMind Gemini 3.1 Pro model card",
       "url": "https://deepmind.google/models/model-cards/gemini-3-1-pro/",
@@ -234,7 +281,7 @@
       "label": "Google Gemma 4 official model card",
       "url": "https://ai.google.dev/gemma/docs/core/model_card_4",
       "category": "Official model card",
-      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
+      "collectionStatus": "stale-retained; refresh blocked: URLError",
       "note": "Google Gemma model card covering Gemma 4 31B, 26B-A4B, E4B, and E2B instruction-tuned benchmarks."
     },
     {
@@ -258,7 +305,7 @@
       "label": "MiniMax M2.5 official release",
       "url": "https://www.minimax.io/news/minimax-m25",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
       "note": "MiniMax M2.5 release page with official benchmark charts for M2.5 and M2.1 across agentic coding and reasoning evaluations."
     },
     {
@@ -274,7 +321,7 @@
       "label": "MiniMax M1 official GitHub report",
       "url": "https://github.com/MiniMax-AI/MiniMax-M1",
       "category": "Official technical report",
-      "collectionStatus": "refreshed",
+      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
       "note": "MiniMax-AI official GitHub README benchmark table for MiniMax-M1-80K and MiniMax-M1-40K."
     },
     {
@@ -284,6 +331,51 @@
       "category": "Official release",
       "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Xiaomi MiMo official release/open-source page. Seed rows retain official benchmark values when the page renders charts as images."
+    },
+    {
+      "id": "sapiens-agnes-2-5-pro-alpha-docs",
+      "label": "Sapiens AI Agnes 2.5 Pro Alpha documentation",
+      "url": "https://agnes-ai.com/doc/agnes-25-pro-alpha",
+      "category": "Official provider documentation",
+      "collectionStatus": "refreshed",
+      "note": "Sapiens AI's official Agnes 2.5 Pro Alpha documentation dated July 24, 2026. The page explicitly labels these rows as an Artificial Analysis snapshot rather than first-party evaluations; values are retained at the provider-published precision.",
+      "modelAliases": [
+        "Agnes 2.5 Pro Alpha",
+        "Agnes 2.5 Pro Alpha [R]",
+        "agnes-2-5-pro-alpha"
+      ]
+    },
+    {
+      "id": "ai9stars-g9v3-3b-card",
+      "label": "AI9Stars G9v3-3B official model card",
+      "url": "https://huggingface.co/ai9stars/G9v3-3B",
+      "category": "Official model card",
+      "collectionStatus": "reference-only; refresh blocked: URLError",
+      "note": "AI9Stars' official Hugging Face model card. It is kept as a reference-only source because no first-party numeric benchmark table was available for reliable mapping during this update.",
+      "coverage": "G9v3-3B official model-card reference",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "G9v3-3B",
+        "G9v3-3B [R]",
+        "g9v3-3b"
+      ]
+    },
+    {
+      "id": "motif-motif-3-beta-hub",
+      "label": "Motif Technologies official model hub",
+      "url": "https://model-hub.motiftech.io/en/",
+      "category": "Official model hub",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
+      "note": "Motif Technologies' official model hub. The currently published English AI Model and Open API pages expose Motif 2.x materials but no Motif 3 (Beta) benchmark table, so no numeric scores are inferred.",
+      "coverage": "Motif 3 (Beta) official provider reference",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "Motif 3 (Beta)",
+        "Motif 3 (Beta) [R]",
+        "Motif 3 Beta",
+        "Motif-3 Beta",
+        "motif-0714"
+      ]
     },
     {
       "id": "cohere-north-mini-code-card",
@@ -306,7 +398,7 @@
       "label": "SpaceXAI Grok 4.5 official release",
       "url": "https://x.ai/news/grok-4-5",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "collectionStatus": "stale-retained; refresh blocked: URLError",
       "note": "SpaceXAI/xAI Grok 4.5 release page dated July 8, 2026. Seed rows transcribe the five numeric Grok 4.5 results shown in the official benchmark charts; competitor columns, token-use comparisons, and non-numeric rank claims are excluded.",
       "modelAliases": [
         "Grok 4.5",
@@ -321,7 +413,7 @@
       "label": "xAI Grok 4.1 Fast official release",
       "url": "https://x.ai/news/grok-4-1-fast",
       "category": "Official release",
-      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "collectionStatus": "stale-retained; refresh blocked: URLError",
       "note": "xAI release page for Grok 4.1 Fast and Agent Tools API with tool-calling and agentic-search benchmark tables."
     },
     {
@@ -329,7 +421,7 @@
       "label": "NVIDIA Nemotron 3 Super technical report",
       "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
       "category": "Official technical report",
-      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "collectionStatus": "stale-retained; refresh blocked: URLError",
       "note": "NVIDIA Research technical report for Nemotron 3 Super. Seed rows preserve the BF16 evaluation suite from the published PDF table."
     },
     {
@@ -379,11 +471,25 @@
       "icon": "TERM+"
     },
     {
+      "id": "frontier-bench-v0-1",
+      "label": "Frontier-Bench v0.1",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "FB"
+    },
+    {
       "id": "frontiercode-diamond",
       "label": "FrontierCode Diamond",
       "category": "Agentic coding",
       "unit": "%",
       "icon": "FCD"
+    },
+    {
+      "id": "frontiercode-v1-1-main",
+      "label": "FrontierCode v1.1 Main",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "FC"
     },
     {
       "id": "swe-bench-verified",
@@ -622,6 +728,13 @@
       "category": "ML coding",
       "unit": "%",
       "icon": "MLS"
+    },
+    {
+      "id": "mle-bench",
+      "label": "MLE-Bench",
+      "category": "ML engineering",
+      "unit": "%",
+      "icon": "MLE"
     },
     {
       "id": "scicode",
@@ -1035,6 +1148,34 @@
       "category": "Long context",
       "unit": "%",
       "icon": "LCR"
+    },
+    {
+      "id": "aa-omniscience",
+      "label": "AA-Omniscience",
+      "category": "Factuality",
+      "unit": "score",
+      "icon": "OMNI"
+    },
+    {
+      "id": "aa-omniscience-accuracy",
+      "label": "AA-Omniscience Accuracy",
+      "category": "Factuality",
+      "unit": "%",
+      "icon": "OMNI"
+    },
+    {
+      "id": "aa-omniscience-non-hallucination",
+      "label": "AA-Omniscience Non-Hallucination",
+      "category": "Factuality",
+      "unit": "%",
+      "icon": "OMNI"
+    },
+    {
+      "id": "tau3-banking",
+      "label": "τ³-Banking",
+      "category": "Agentic workflow",
+      "unit": "%",
+      "icon": "TAU3"
     },
     {
       "id": "fullstackbench",
@@ -4766,6 +4907,328 @@
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
       "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+    },
+    {
+      "benchmarkId": "frontier-bench-v0-1",
+      "benchmarkLabel": "Frontier-Bench v0.1",
+      "model": "Claude Opus 5",
+      "modelAliases": [
+        "Claude Opus 5",
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (xhigh)",
+        "Claude Opus 5 (high)",
+        "Claude Opus 5 (medium)",
+        "Claude Opus 5 (low)",
+        "claude-opus-5",
+        "claude-opus-5-xhigh",
+        "claude-opus-5-high",
+        "claude-opus-5-medium",
+        "claude-opus-5-low"
+      ],
+      "value": 43.3,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
+      "sourceLabel": "Anthropic Claude Opus 5 official release"
+    },
+    {
+      "benchmarkId": "gdpval-aa-elo",
+      "benchmarkLabel": "GDPval-AA Elo",
+      "model": "Claude Opus 5",
+      "modelAliases": [
+        "Claude Opus 5",
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (xhigh)",
+        "Claude Opus 5 (high)",
+        "Claude Opus 5 (medium)",
+        "Claude Opus 5 (low)",
+        "claude-opus-5",
+        "claude-opus-5-xhigh",
+        "claude-opus-5-high",
+        "claude-opus-5-medium",
+        "claude-opus-5-low"
+      ],
+      "value": 1861,
+      "unit": "Elo",
+      "sourceId": "anthropic-claude-opus-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
+      "sourceLabel": "Anthropic Claude Opus 5 official release"
+    },
+    {
+      "benchmarkId": "arc-agi-3",
+      "benchmarkLabel": "ARC-AGI-3",
+      "model": "Claude Opus 5",
+      "modelAliases": [
+        "Claude Opus 5",
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (xhigh)",
+        "Claude Opus 5 (high)",
+        "Claude Opus 5 (medium)",
+        "Claude Opus 5 (low)",
+        "claude-opus-5",
+        "claude-opus-5-xhigh",
+        "claude-opus-5-high",
+        "claude-opus-5-medium",
+        "claude-opus-5-low"
+      ],
+      "value": 30.2,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
+      "sourceLabel": "Anthropic Claude Opus 5 official release"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "Claude Opus 5",
+      "modelAliases": [
+        "Claude Opus 5",
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (xhigh)",
+        "Claude Opus 5 (high)",
+        "Claude Opus 5 (medium)",
+        "Claude Opus 5 (low)",
+        "claude-opus-5",
+        "claude-opus-5-xhigh",
+        "claude-opus-5-high",
+        "claude-opus-5-medium",
+        "claude-opus-5-low"
+      ],
+      "value": 90.8,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
+      "sourceLabel": "Anthropic Claude Opus 5 official release"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Claude Opus 5",
+      "modelAliases": [
+        "Claude Opus 5",
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (xhigh)",
+        "Claude Opus 5 (high)",
+        "Claude Opus 5 (medium)",
+        "Claude Opus 5 (low)",
+        "claude-opus-5",
+        "claude-opus-5-xhigh",
+        "claude-opus-5-high",
+        "claude-opus-5-medium",
+        "claude-opus-5-low"
+      ],
+      "value": 56.3,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
+      "sourceLabel": "Anthropic Claude Opus 5 official release"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "Claude Opus 5",
+      "modelAliases": [
+        "Claude Opus 5",
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (xhigh)",
+        "Claude Opus 5 (high)",
+        "Claude Opus 5 (medium)",
+        "Claude Opus 5 (low)",
+        "claude-opus-5",
+        "claude-opus-5-xhigh",
+        "claude-opus-5-high",
+        "claude-opus-5-medium",
+        "claude-opus-5-low"
+      ],
+      "value": 64.7,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
+      "sourceLabel": "Anthropic Claude Opus 5 official release"
+    },
+    {
+      "benchmarkId": "osworld-2",
+      "benchmarkLabel": "OSWorld 2.0",
+      "model": "Claude Opus 5",
+      "modelAliases": [
+        "Claude Opus 5",
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (xhigh)",
+        "Claude Opus 5 (high)",
+        "Claude Opus 5 (medium)",
+        "Claude Opus 5 (low)",
+        "claude-opus-5",
+        "claude-opus-5-xhigh",
+        "claude-opus-5-high",
+        "claude-opus-5-medium",
+        "claude-opus-5-low"
+      ],
+      "value": 70.6,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
+      "sourceLabel": "Anthropic Claude Opus 5 official release"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "Claude Opus 5",
+      "modelAliases": [
+        "Claude Opus 5",
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (xhigh)",
+        "Claude Opus 5 (high)",
+        "Claude Opus 5 (medium)",
+        "Claude Opus 5 (low)",
+        "claude-opus-5",
+        "claude-opus-5-xhigh",
+        "claude-opus-5-high",
+        "claude-opus-5-medium",
+        "claude-opus-5-low"
+      ],
+      "value": 68.8,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
+      "sourceLabel": "Anthropic Claude Opus 5 official release"
+    },
+    {
+      "benchmarkId": "frontiercode-v1-1-main",
+      "benchmarkLabel": "FrontierCode v1.1 Main",
+      "model": "Claude Opus 5",
+      "modelAliases": [
+        "Claude Opus 5",
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (xhigh)",
+        "Claude Opus 5 (high)",
+        "Claude Opus 5 (medium)",
+        "Claude Opus 5 (low)",
+        "claude-opus-5",
+        "claude-opus-5-xhigh",
+        "claude-opus-5-high",
+        "claude-opus-5-medium",
+        "claude-opus-5-low"
+      ],
+      "value": 53.4,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
+      "sourceLabel": "Anthropic Claude Opus 5 official release"
+    },
+    {
+      "benchmarkId": "automationbench",
+      "benchmarkLabel": "AutomationBench",
+      "model": "Claude Opus 5",
+      "modelAliases": [
+        "Claude Opus 5",
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (xhigh)",
+        "Claude Opus 5 (high)",
+        "Claude Opus 5 (medium)",
+        "Claude Opus 5 (low)",
+        "claude-opus-5",
+        "claude-opus-5-xhigh",
+        "claude-opus-5-high",
+        "claude-opus-5-medium",
+        "claude-opus-5-low"
+      ],
+      "value": 26.0,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
+      "sourceLabel": "Anthropic Claude Opus 5 official release"
+    },
+    {
+      "benchmarkId": "legal-agent-benchmark",
+      "benchmarkLabel": "Legal Agent Benchmark",
+      "model": "Claude Opus 5",
+      "modelAliases": [
+        "Claude Opus 5",
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (xhigh)",
+        "Claude Opus 5 (high)",
+        "Claude Opus 5 (medium)",
+        "Claude Opus 5 (low)",
+        "claude-opus-5",
+        "claude-opus-5-xhigh",
+        "claude-opus-5-high",
+        "claude-opus-5-medium",
+        "claude-opus-5-low"
+      ],
+      "value": 11.7,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
+      "sourceLabel": "Anthropic Claude Opus 5 official release"
+    },
+    {
+      "benchmarkId": "healthbench-professional",
+      "benchmarkLabel": "HealthBench Professional",
+      "model": "Claude Opus 5",
+      "modelAliases": [
+        "Claude Opus 5",
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (xhigh)",
+        "Claude Opus 5 (high)",
+        "Claude Opus 5 (medium)",
+        "Claude Opus 5 (low)",
+        "claude-opus-5",
+        "claude-opus-5-xhigh",
+        "claude-opus-5-high",
+        "claude-opus-5-medium",
+        "claude-opus-5-low"
+      ],
+      "value": 59.8,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
+      "sourceLabel": "Anthropic Claude Opus 5 official release"
+    },
+    {
+      "benchmarkId": "biomysterybench-hard",
+      "benchmarkLabel": "BioMysteryBench hard",
+      "model": "Claude Opus 5",
+      "modelAliases": [
+        "Claude Opus 5",
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (xhigh)",
+        "Claude Opus 5 (high)",
+        "Claude Opus 5 (medium)",
+        "Claude Opus 5 (low)",
+        "claude-opus-5",
+        "claude-opus-5-xhigh",
+        "claude-opus-5-high",
+        "claude-opus-5-medium",
+        "claude-opus-5-low"
+      ],
+      "value": 49.4,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
+      "sourceLabel": "Anthropic Claude Opus 5 official release"
+    },
+    {
+      "benchmarkId": "biomysterybench-human-solved",
+      "benchmarkLabel": "BioMysteryBench human solved",
+      "model": "Claude Opus 5",
+      "modelAliases": [
+        "Claude Opus 5",
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (xhigh)",
+        "Claude Opus 5 (high)",
+        "Claude Opus 5 (medium)",
+        "Claude Opus 5 (low)",
+        "claude-opus-5",
+        "claude-opus-5-xhigh",
+        "claude-opus-5-high",
+        "claude-opus-5-medium",
+        "claude-opus-5-low"
+      ],
+      "value": 90.1,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-release",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
+      "sourceLabel": "Anthropic Claude Opus 5 official release"
     },
     {
       "benchmarkId": "swe-bench-pro",
@@ -15829,6 +16292,291 @@
       "sourceLabel": "Z.ai GLM-4.5 official report"
     },
     {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Gemini 3.6 Flash",
+      "modelAliases": [
+        "Gemini 3.6 Flash",
+        "Gemini 3.6 Flash [R]",
+        "gemini-3-6-flash"
+      ],
+      "value": 58.7,
+      "unit": "%",
+      "sourceId": "google-gemini-3-6-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.6 Flash model card"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "Gemini 3.6 Flash",
+      "modelAliases": [
+        "Gemini 3.6 Flash",
+        "Gemini 3.6 Flash [R]",
+        "gemini-3-6-flash"
+      ],
+      "value": 49.0,
+      "unit": "%",
+      "sourceId": "google-gemini-3-6-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.6 Flash model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Gemini 3.6 Flash",
+      "modelAliases": [
+        "Gemini 3.6 Flash",
+        "Gemini 3.6 Flash [R]",
+        "gemini-3-6-flash"
+      ],
+      "value": 78.0,
+      "unit": "%",
+      "sourceId": "google-gemini-3-6-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.6 Flash model card"
+    },
+    {
+      "benchmarkId": "mle-bench",
+      "benchmarkLabel": "MLE-Bench",
+      "model": "Gemini 3.6 Flash",
+      "modelAliases": [
+        "Gemini 3.6 Flash",
+        "Gemini 3.6 Flash [R]",
+        "gemini-3-6-flash"
+      ],
+      "value": 63.9,
+      "unit": "%",
+      "sourceId": "google-gemini-3-6-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.6 Flash model card"
+    },
+    {
+      "benchmarkId": "gdpval-aa-elo",
+      "benchmarkLabel": "GDPval-AA Elo",
+      "model": "Gemini 3.6 Flash",
+      "modelAliases": [
+        "Gemini 3.6 Flash",
+        "Gemini 3.6 Flash [R]",
+        "gemini-3-6-flash"
+      ],
+      "value": 1421.0,
+      "unit": "Elo",
+      "sourceId": "google-gemini-3-6-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.6 Flash model card"
+    },
+    {
+      "benchmarkId": "osworld-verified",
+      "benchmarkLabel": "OSWorld-Verified",
+      "model": "Gemini 3.6 Flash",
+      "modelAliases": [
+        "Gemini 3.6 Flash",
+        "Gemini 3.6 Flash [R]",
+        "gemini-3-6-flash"
+      ],
+      "value": 83.0,
+      "unit": "%",
+      "sourceId": "google-gemini-3-6-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.6 Flash model card"
+    },
+    {
+      "benchmarkId": "charxiv-no-tools",
+      "benchmarkLabel": "CharXiv Reasoning",
+      "model": "Gemini 3.6 Flash",
+      "modelAliases": [
+        "Gemini 3.6 Flash",
+        "Gemini 3.6 Flash [R]",
+        "gemini-3-6-flash"
+      ],
+      "value": 85.2,
+      "unit": "%",
+      "sourceId": "google-gemini-3-6-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.6 Flash model card"
+    },
+    {
+      "benchmarkId": "charxiv-tools",
+      "benchmarkLabel": "CharXiv Reasoning w/ tools",
+      "model": "Gemini 3.6 Flash",
+      "modelAliases": [
+        "Gemini 3.6 Flash",
+        "Gemini 3.6 Flash [R]",
+        "gemini-3-6-flash"
+      ],
+      "value": 89.4,
+      "unit": "%",
+      "sourceId": "google-gemini-3-6-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.6 Flash model card"
+    },
+    {
+      "benchmarkId": "mrcr-v2-128k",
+      "benchmarkLabel": "MRCR v2 128K",
+      "model": "Gemini 3.6 Flash",
+      "modelAliases": [
+        "Gemini 3.6 Flash",
+        "Gemini 3.6 Flash [R]",
+        "gemini-3-6-flash"
+      ],
+      "value": 91.8,
+      "unit": "%",
+      "sourceId": "google-gemini-3-6-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.6 Flash model card"
+    },
+    {
+      "benchmarkId": "mrcr-v2-1m",
+      "benchmarkLabel": "MRCR v2 1M",
+      "model": "Gemini 3.6 Flash",
+      "modelAliases": [
+        "Gemini 3.6 Flash",
+        "Gemini 3.6 Flash [R]",
+        "gemini-3-6-flash"
+      ],
+      "value": 54.0,
+      "unit": "%",
+      "sourceId": "google-gemini-3-6-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.6 Flash model card"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Gemini 3.5 Flash-Lite",
+      "modelAliases": [
+        "Gemini 3.5 Flash-Lite",
+        "Gemini 3.5 Flash-Lite [R]",
+        "gemini-3-5-flash-lite"
+      ],
+      "value": 54.2,
+      "unit": "%",
+      "sourceId": "google-gemini-3-5-flash-lite-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/",
+      "sourceLabel": "Google DeepMind Gemini 3.5 Flash-Lite model card"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Gemini 3.5 Flash-Lite",
+      "modelAliases": [
+        "Gemini 3.5 Flash-Lite",
+        "Gemini 3.5 Flash-Lite [R]",
+        "gemini-3-5-flash-lite"
+      ],
+      "value": 54.0,
+      "unit": "%",
+      "sourceId": "google-gemini-3-5-flash-lite-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/",
+      "sourceLabel": "Google DeepMind Gemini 3.5 Flash-Lite model card"
+    },
+    {
+      "benchmarkId": "mle-bench",
+      "benchmarkLabel": "MLE-Bench",
+      "model": "Gemini 3.5 Flash-Lite",
+      "modelAliases": [
+        "Gemini 3.5 Flash-Lite",
+        "Gemini 3.5 Flash-Lite [R]",
+        "gemini-3-5-flash-lite"
+      ],
+      "value": 39.2,
+      "unit": "%",
+      "sourceId": "google-gemini-3-5-flash-lite-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/",
+      "sourceLabel": "Google DeepMind Gemini 3.5 Flash-Lite model card"
+    },
+    {
+      "benchmarkId": "gdpval-aa-elo",
+      "benchmarkLabel": "GDPval-AA Elo",
+      "model": "Gemini 3.5 Flash-Lite",
+      "modelAliases": [
+        "Gemini 3.5 Flash-Lite",
+        "Gemini 3.5 Flash-Lite [R]",
+        "gemini-3-5-flash-lite"
+      ],
+      "value": 1140.0,
+      "unit": "Elo",
+      "sourceId": "google-gemini-3-5-flash-lite-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/",
+      "sourceLabel": "Google DeepMind Gemini 3.5 Flash-Lite model card"
+    },
+    {
+      "benchmarkId": "osworld-verified",
+      "benchmarkLabel": "OSWorld-Verified",
+      "model": "Gemini 3.5 Flash-Lite",
+      "modelAliases": [
+        "Gemini 3.5 Flash-Lite",
+        "Gemini 3.5 Flash-Lite [R]",
+        "gemini-3-5-flash-lite"
+      ],
+      "value": 74.0,
+      "unit": "%",
+      "sourceId": "google-gemini-3-5-flash-lite-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/",
+      "sourceLabel": "Google DeepMind Gemini 3.5 Flash-Lite model card"
+    },
+    {
+      "benchmarkId": "charxiv-no-tools",
+      "benchmarkLabel": "CharXiv Reasoning",
+      "model": "Gemini 3.5 Flash-Lite",
+      "modelAliases": [
+        "Gemini 3.5 Flash-Lite",
+        "Gemini 3.5 Flash-Lite [R]",
+        "gemini-3-5-flash-lite"
+      ],
+      "value": 74.5,
+      "unit": "%",
+      "sourceId": "google-gemini-3-5-flash-lite-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/",
+      "sourceLabel": "Google DeepMind Gemini 3.5 Flash-Lite model card"
+    },
+    {
+      "benchmarkId": "charxiv-tools",
+      "benchmarkLabel": "CharXiv Reasoning w/ tools",
+      "model": "Gemini 3.5 Flash-Lite",
+      "modelAliases": [
+        "Gemini 3.5 Flash-Lite",
+        "Gemini 3.5 Flash-Lite [R]",
+        "gemini-3-5-flash-lite"
+      ],
+      "value": 76.5,
+      "unit": "%",
+      "sourceId": "google-gemini-3-5-flash-lite-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/",
+      "sourceLabel": "Google DeepMind Gemini 3.5 Flash-Lite model card"
+    },
+    {
+      "benchmarkId": "mrcr-v2-128k",
+      "benchmarkLabel": "MRCR v2 128K",
+      "model": "Gemini 3.5 Flash-Lite",
+      "modelAliases": [
+        "Gemini 3.5 Flash-Lite",
+        "Gemini 3.5 Flash-Lite [R]",
+        "gemini-3-5-flash-lite"
+      ],
+      "value": 72.2,
+      "unit": "%",
+      "sourceId": "google-gemini-3-5-flash-lite-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/",
+      "sourceLabel": "Google DeepMind Gemini 3.5 Flash-Lite model card"
+    },
+    {
+      "benchmarkId": "mrcr-v2-1m",
+      "benchmarkLabel": "MRCR v2 1M",
+      "model": "Gemini 3.5 Flash-Lite",
+      "modelAliases": [
+        "Gemini 3.5 Flash-Lite",
+        "Gemini 3.5 Flash-Lite [R]",
+        "gemini-3-5-flash-lite"
+      ],
+      "value": 21.3,
+      "unit": "%",
+      "sourceId": "google-gemini-3-5-flash-lite-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/",
+      "sourceLabel": "Google DeepMind Gemini 3.5 Flash-Lite model card"
+    },
+    {
       "benchmarkId": "arc-agi-2",
       "benchmarkLabel": "ARC-AGI-2",
       "model": "Gemini 3.1 Pro",
@@ -17492,6 +18240,171 @@
       "sourceId": "xiaomi-mimo-v2-5-release",
       "sourceUrl": "https://platform.xiaomimimo.com/docs/en-US/news/v2.5-open-sourced",
       "sourceLabel": "Xiaomi MiMo-V2.5 official release"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Agnes 2.5 Pro Alpha",
+      "modelAliases": [
+        "Agnes 2.5 Pro Alpha",
+        "Agnes 2.5 Pro Alpha [R]",
+        "agnes-2-5-pro-alpha"
+      ],
+      "value": 87.6,
+      "unit": "%",
+      "sourceId": "sapiens-agnes-2-5-pro-alpha-docs",
+      "sourceUrl": "https://agnes-ai.com/doc/agnes-25-pro-alpha",
+      "sourceLabel": "Sapiens AI Agnes 2.5 Pro Alpha documentation"
+    },
+    {
+      "benchmarkId": "scicode",
+      "benchmarkLabel": "SciCode",
+      "model": "Agnes 2.5 Pro Alpha",
+      "modelAliases": [
+        "Agnes 2.5 Pro Alpha",
+        "Agnes 2.5 Pro Alpha [R]",
+        "agnes-2-5-pro-alpha"
+      ],
+      "value": 42.2,
+      "unit": "%",
+      "sourceId": "sapiens-agnes-2-5-pro-alpha-docs",
+      "sourceUrl": "https://agnes-ai.com/doc/agnes-25-pro-alpha",
+      "sourceLabel": "Sapiens AI Agnes 2.5 Pro Alpha documentation"
+    },
+    {
+      "benchmarkId": "aa-lcr",
+      "benchmarkLabel": "AA-LCR",
+      "model": "Agnes 2.5 Pro Alpha",
+      "modelAliases": [
+        "Agnes 2.5 Pro Alpha",
+        "Agnes 2.5 Pro Alpha [R]",
+        "agnes-2-5-pro-alpha"
+      ],
+      "value": 63.7,
+      "unit": "%",
+      "sourceId": "sapiens-agnes-2-5-pro-alpha-docs",
+      "sourceUrl": "https://agnes-ai.com/doc/agnes-25-pro-alpha",
+      "sourceLabel": "Sapiens AI Agnes 2.5 Pro Alpha documentation"
+    },
+    {
+      "benchmarkId": "aa-omniscience",
+      "benchmarkLabel": "AA-Omniscience",
+      "model": "Agnes 2.5 Pro Alpha",
+      "modelAliases": [
+        "Agnes 2.5 Pro Alpha",
+        "Agnes 2.5 Pro Alpha [R]",
+        "agnes-2-5-pro-alpha"
+      ],
+      "value": -26.3,
+      "unit": "score",
+      "sourceId": "sapiens-agnes-2-5-pro-alpha-docs",
+      "sourceUrl": "https://agnes-ai.com/doc/agnes-25-pro-alpha",
+      "sourceLabel": "Sapiens AI Agnes 2.5 Pro Alpha documentation"
+    },
+    {
+      "benchmarkId": "aa-omniscience-accuracy",
+      "benchmarkLabel": "AA-Omniscience Accuracy",
+      "model": "Agnes 2.5 Pro Alpha",
+      "modelAliases": [
+        "Agnes 2.5 Pro Alpha",
+        "Agnes 2.5 Pro Alpha [R]",
+        "agnes-2-5-pro-alpha"
+      ],
+      "value": 32.3,
+      "unit": "%",
+      "sourceId": "sapiens-agnes-2-5-pro-alpha-docs",
+      "sourceUrl": "https://agnes-ai.com/doc/agnes-25-pro-alpha",
+      "sourceLabel": "Sapiens AI Agnes 2.5 Pro Alpha documentation"
+    },
+    {
+      "benchmarkId": "aa-omniscience-non-hallucination",
+      "benchmarkLabel": "AA-Omniscience Non-Hallucination",
+      "model": "Agnes 2.5 Pro Alpha",
+      "modelAliases": [
+        "Agnes 2.5 Pro Alpha",
+        "Agnes 2.5 Pro Alpha [R]",
+        "agnes-2-5-pro-alpha"
+      ],
+      "value": 13.3,
+      "unit": "%",
+      "sourceId": "sapiens-agnes-2-5-pro-alpha-docs",
+      "sourceUrl": "https://agnes-ai.com/doc/agnes-25-pro-alpha",
+      "sourceLabel": "Sapiens AI Agnes 2.5 Pro Alpha documentation"
+    },
+    {
+      "benchmarkId": "critpt",
+      "benchmarkLabel": "CritPt",
+      "model": "Agnes 2.5 Pro Alpha",
+      "modelAliases": [
+        "Agnes 2.5 Pro Alpha",
+        "Agnes 2.5 Pro Alpha [R]",
+        "agnes-2-5-pro-alpha"
+      ],
+      "value": 10.9,
+      "unit": "%",
+      "sourceId": "sapiens-agnes-2-5-pro-alpha-docs",
+      "sourceUrl": "https://agnes-ai.com/doc/agnes-25-pro-alpha",
+      "sourceLabel": "Sapiens AI Agnes 2.5 Pro Alpha documentation"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Agnes 2.5 Pro Alpha",
+      "modelAliases": [
+        "Agnes 2.5 Pro Alpha",
+        "Agnes 2.5 Pro Alpha [R]",
+        "agnes-2-5-pro-alpha"
+      ],
+      "value": 31.9,
+      "unit": "%",
+      "sourceId": "sapiens-agnes-2-5-pro-alpha-docs",
+      "sourceUrl": "https://agnes-ai.com/doc/agnes-25-pro-alpha",
+      "sourceLabel": "Sapiens AI Agnes 2.5 Pro Alpha documentation"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Agnes 2.5 Pro Alpha",
+      "modelAliases": [
+        "Agnes 2.5 Pro Alpha",
+        "Agnes 2.5 Pro Alpha [R]",
+        "agnes-2-5-pro-alpha"
+      ],
+      "value": 67.0,
+      "unit": "%",
+      "sourceId": "sapiens-agnes-2-5-pro-alpha-docs",
+      "sourceUrl": "https://agnes-ai.com/doc/agnes-25-pro-alpha",
+      "sourceLabel": "Sapiens AI Agnes 2.5 Pro Alpha documentation"
+    },
+    {
+      "benchmarkId": "gdpval-aa-elo",
+      "benchmarkLabel": "GDPval-AA Elo",
+      "model": "Agnes 2.5 Pro Alpha",
+      "modelAliases": [
+        "Agnes 2.5 Pro Alpha",
+        "Agnes 2.5 Pro Alpha [R]",
+        "agnes-2-5-pro-alpha"
+      ],
+      "value": 1170.0,
+      "unit": "Elo",
+      "sourceId": "sapiens-agnes-2-5-pro-alpha-docs",
+      "sourceUrl": "https://agnes-ai.com/doc/agnes-25-pro-alpha",
+      "sourceLabel": "Sapiens AI Agnes 2.5 Pro Alpha documentation"
+    },
+    {
+      "benchmarkId": "tau3-banking",
+      "benchmarkLabel": "τ³-Banking",
+      "model": "Agnes 2.5 Pro Alpha",
+      "modelAliases": [
+        "Agnes 2.5 Pro Alpha",
+        "Agnes 2.5 Pro Alpha [R]",
+        "agnes-2-5-pro-alpha"
+      ],
+      "value": 11.6,
+      "unit": "%",
+      "sourceId": "sapiens-agnes-2-5-pro-alpha-docs",
+      "sourceUrl": "https://agnes-ai.com/doc/agnes-25-pro-alpha",
+      "sourceLabel": "Sapiens AI Agnes 2.5 Pro Alpha documentation"
     },
     {
       "benchmarkId": "deepswe",

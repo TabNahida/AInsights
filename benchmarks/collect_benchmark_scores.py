@@ -26,10 +26,16 @@ DEFAULT_OUTPUT_JSON = PROJECT_ROOT / "data" / "benchmarks" / "benchmark_scores.j
 OPENAI_GPT55_URL = "https://openai.com/index/introducing-gpt-5-5/"
 OPENAI_GPT56_URL = "https://openai.com/index/gpt-5-6/"
 ANTHROPIC_OPUS47_URL = "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416"
+ANTHROPIC_OPUS5_URL = "https://www.anthropic.com/news/claude-opus-5"
 ANTHROPIC_SONNET5_URL = "https://www.anthropic.com/news/claude-sonnet-5"
 ANTHROPIC_FABLE5_URL = "https://www.anthropic.com/news/claude-fable-5-mythos-5"
 GOOGLE_GEMINI31_URL = "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+GOOGLE_GEMINI36_FLASH_URL = "https://deepmind.google/models/model-cards/gemini-3-6-flash/"
+GOOGLE_GEMINI35_FLASH_LITE_URL = "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/"
 GOOGLE_GEMMA4_URL = "https://ai.google.dev/gemma/docs/core/model_card_4"
+SAPIENS_AGNES25_PRO_ALPHA_URL = "https://agnes-ai.com/doc/agnes-25-pro-alpha"
+AI9STARS_G9V3_3B_URL = "https://huggingface.co/ai9stars/G9v3-3B"
+MOTIF3_BETA_URL = "https://model-hub.motiftech.io/en/"
 COHERE_NORTH_MINI_CODE_URL = "https://docs.cohere.com/docs/north-mini-code-1.0"
 QWEN3_URL = "https://qwen.ai/blog?id=qwen3"
 QWEN25_URL = "https://qwen.ai/blog?id=qwen2.5"
@@ -118,6 +124,42 @@ MODEL_ALIASES = {
     "GPT-5.5 Pro": ["GPT-5.5 Pro", "GPT-5.5 Pro (xhigh)", "gpt-5-5-pro"],
     "GPT-5.4 Pro": ["GPT-5.4 Pro", "GPT-5.4 Pro (xhigh)", "gpt-5-4-pro"],
     "Kimi K3": ["Kimi K3", "Kimi K3 (max)", "Kimi-K3", "kimi-k3"],
+    "Claude Opus 5": [
+        "Claude Opus 5",
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (xhigh)",
+        "Claude Opus 5 (high)",
+        "Claude Opus 5 (medium)",
+        "Claude Opus 5 (low)",
+        "claude-opus-5",
+        "claude-opus-5-xhigh",
+        "claude-opus-5-high",
+        "claude-opus-5-medium",
+        "claude-opus-5-low",
+    ],
+    "Gemini 3.6 Flash": [
+        "Gemini 3.6 Flash",
+        "Gemini 3.6 Flash [R]",
+        "gemini-3-6-flash",
+    ],
+    "Gemini 3.5 Flash-Lite": [
+        "Gemini 3.5 Flash-Lite",
+        "Gemini 3.5 Flash-Lite [R]",
+        "gemini-3-5-flash-lite",
+    ],
+    "Agnes 2.5 Pro Alpha": [
+        "Agnes 2.5 Pro Alpha",
+        "Agnes 2.5 Pro Alpha [R]",
+        "agnes-2-5-pro-alpha",
+    ],
+    "G9v3-3B": ["G9v3-3B", "G9v3-3B [R]", "g9v3-3b"],
+    "Motif 3 (Beta)": [
+        "Motif 3 (Beta)",
+        "Motif 3 (Beta) [R]",
+        "Motif 3 Beta",
+        "Motif-3 Beta",
+        "motif-0714",
+    ],
     "Grok 4.5": [
         "Grok 4.5",
         "Grok 4.5 (high)",
@@ -329,11 +371,25 @@ BENCHMARKS = [
         "icon": "TERM+",
     },
     {
+        "id": "frontier-bench-v0-1",
+        "label": "Frontier-Bench v0.1",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "FB",
+    },
+    {
         "id": "frontiercode-diamond",
         "label": "FrontierCode Diamond",
         "category": "Agentic coding",
         "unit": "%",
         "icon": "FCD",
+    },
+    {
+        "id": "frontiercode-v1-1-main",
+        "label": "FrontierCode v1.1 Main",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "FC",
     },
     {
         "id": "swe-bench-verified",
@@ -580,6 +636,13 @@ BENCHMARKS = [
         "category": "ML coding",
         "unit": "%",
         "icon": "MLS",
+    },
+    {
+        "id": "mle-bench",
+        "label": "MLE-Bench",
+        "category": "ML engineering",
+        "unit": "%",
+        "icon": "MLE",
     },
     {
         "id": "scicode",
@@ -993,6 +1056,34 @@ BENCHMARKS = [
         "category": "Long context",
         "unit": "%",
         "icon": "LCR",
+    },
+    {
+        "id": "aa-omniscience",
+        "label": "AA-Omniscience",
+        "category": "Factuality",
+        "unit": "score",
+        "icon": "OMNI",
+    },
+    {
+        "id": "aa-omniscience-accuracy",
+        "label": "AA-Omniscience Accuracy",
+        "category": "Factuality",
+        "unit": "%",
+        "icon": "OMNI",
+    },
+    {
+        "id": "aa-omniscience-non-hallucination",
+        "label": "AA-Omniscience Non-Hallucination",
+        "category": "Factuality",
+        "unit": "%",
+        "icon": "OMNI",
+    },
+    {
+        "id": "tau3-banking",
+        "label": "τ³-Banking",
+        "category": "Agentic workflow",
+        "unit": "%",
+        "icon": "TAU3",
     },
     {
         "id": "fullstackbench",
@@ -1437,6 +1528,55 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
                 "graphwalks-bfs-256k-f1": 81.3,
                 "graphwalks-bfs-1m-f1": 51.2,
                 "arc-agi-3": 0.18,
+            },
+        },
+    },
+    {
+        "id": "anthropic-claude-opus-5-release",
+        "label": "Anthropic Claude Opus 5 official release",
+        "url": ANTHROPIC_OPUS5_URL,
+        "rawUrl": ANTHROPIC_OPUS5_URL,
+        "category": "Official release",
+        "modelAliases": MODEL_ALIASES["Claude Opus 5"],
+        "note": (
+            "Anthropic's July 24, 2026 Opus 5 release summary. Seed values transcribe only the "
+            "Opus 5 column from the official benchmark image; competitor columns are excluded. "
+            "The summary reports the published effort configuration for each benchmark, with "
+            "ARC-AGI-3 explicitly shown at high effort."
+        ),
+        "columns": {"Opus 5": "Claude Opus 5", "Claude Opus 5": "Claude Opus 5"},
+        "rowLabels": {
+            "Frontier-Bench v0.1": "frontier-bench-v0-1",
+            "GDPval-AA v2": "gdpval-aa-elo",
+            "ARC-AGI-3": "arc-agi-3",
+            "BrowseComp": "browsecomp",
+            "Humanity's Last Exam no tools": "hle",
+            "Humanity's Last Exam with tools": "hle-tools",
+            "OSWorld 2.0": "osworld-2",
+            "DeepSWE v1.1": "deepswe-v1-1",
+            "FrontierCode v1.1 Main": "frontiercode-v1-1-main",
+            "AutomationBench": "automationbench",
+            "Legal Agent Benchmark, Held-out": "legal-agent-benchmark",
+            "HealthBench Professional": "healthbench-professional",
+            "BioMysteryBench hard": "biomysterybench-hard",
+            "BioMysteryBench human solved": "biomysterybench-human-solved",
+        },
+        "scores": {
+            "Claude Opus 5": {
+                "frontier-bench-v0-1": 43.3,
+                "gdpval-aa-elo": 1861,
+                "arc-agi-3": 30.2,
+                "browsecomp": 90.8,
+                "hle": 56.3,
+                "hle-tools": 64.7,
+                "osworld-2": 70.6,
+                "deepswe-v1-1": 68.8,
+                "frontiercode-v1-1-main": 53.4,
+                "automationbench": 26.0,
+                "legal-agent-benchmark": 11.7,
+                "healthbench-professional": 59.8,
+                "biomysterybench-hard": 49.4,
+                "biomysterybench-human-solved": 90.1,
             },
         },
     },
@@ -2582,6 +2722,82 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
         },
     },
     {
+        "id": "google-gemini-3-6-flash-card",
+        "label": "Google DeepMind Gemini 3.6 Flash model card",
+        "url": GOOGLE_GEMINI36_FLASH_URL,
+        "rawUrl": GOOGLE_GEMINI36_FLASH_URL,
+        "category": "Official model card",
+        "modelAliases": MODEL_ALIASES["Gemini 3.6 Flash"],
+        "note": (
+            "Google DeepMind's July 21, 2026 model card. Only the Gemini 3.6 Flash column "
+            "is retained from the official comparison table."
+        ),
+        "columns": {"Gemini 3.6 Flash": "Gemini 3.6 Flash"},
+        "rowLabels": {
+            "SWE-Bench Pro (Public)": "swe-bench-pro",
+            "DeepSWE v1.1": "deepswe-v1-1",
+            "Terminal-bench 2.1": "terminal-bench-2-1",
+            "MLE-Bench": "mle-bench",
+            "GDPVal-AA v2": "gdpval-aa-elo",
+            "OSWorld-Verified": "osworld-verified",
+            "CharXiv Reasoning": "charxiv-no-tools",
+            "With tools": "charxiv-tools",
+            "GDM-MRCR v2 (8-needle)": "mrcr-v2-128k",
+            "1M (pointwise)": "mrcr-v2-1m",
+        },
+        "scores": {
+            "Gemini 3.6 Flash": {
+                "swe-bench-pro": 58.7,
+                "deepswe-v1-1": 49.0,
+                "terminal-bench-2-1": 78.0,
+                "mle-bench": 63.9,
+                "gdpval-aa-elo": 1421,
+                "osworld-verified": 83.0,
+                "charxiv-no-tools": 85.2,
+                "charxiv-tools": 89.4,
+                "mrcr-v2-128k": 91.8,
+                "mrcr-v2-1m": 54.0,
+            },
+        },
+    },
+    {
+        "id": "google-gemini-3-5-flash-lite-card",
+        "label": "Google DeepMind Gemini 3.5 Flash-Lite model card",
+        "url": GOOGLE_GEMINI35_FLASH_LITE_URL,
+        "rawUrl": GOOGLE_GEMINI35_FLASH_LITE_URL,
+        "category": "Official model card",
+        "modelAliases": MODEL_ALIASES["Gemini 3.5 Flash-Lite"],
+        "note": (
+            "Google DeepMind's July 21, 2026 model card. Only the Gemini 3.5 Flash-Lite "
+            "column is retained from the official comparison table."
+        ),
+        "columns": {"Gemini 3.5 Flash-Lite": "Gemini 3.5 Flash-Lite"},
+        "rowLabels": {
+            "SWE-Bench Pro (Public)": "swe-bench-pro",
+            "Terminal-bench 2.1": "terminal-bench-2-1",
+            "MLE-Bench": "mle-bench",
+            "GDPVal-AA v2": "gdpval-aa-elo",
+            "OSWorld-Verified": "osworld-verified",
+            "CharXiv Reasoning": "charxiv-no-tools",
+            "With tools": "charxiv-tools",
+            "GDM-MRCR v2 (8-needle)": "mrcr-v2-128k",
+            "1M (pointwise)": "mrcr-v2-1m",
+        },
+        "scores": {
+            "Gemini 3.5 Flash-Lite": {
+                "swe-bench-pro": 54.2,
+                "terminal-bench-2-1": 54.0,
+                "mle-bench": 39.2,
+                "gdpval-aa-elo": 1140,
+                "osworld-verified": 74.0,
+                "charxiv-no-tools": 74.5,
+                "charxiv-tools": 76.5,
+                "mrcr-v2-128k": 72.2,
+                "mrcr-v2-1m": 21.3,
+            },
+        },
+    },
+    {
         "id": "google-gemini-3-1-pro-card",
         "label": "Google DeepMind Gemini 3.1 Pro model card",
         "url": GOOGLE_GEMINI31_URL,
@@ -2906,6 +3122,78 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
         },
     },
     {
+        "id": "sapiens-agnes-2-5-pro-alpha-docs",
+        "label": "Sapiens AI Agnes 2.5 Pro Alpha documentation",
+        "url": SAPIENS_AGNES25_PRO_ALPHA_URL,
+        "rawUrl": SAPIENS_AGNES25_PRO_ALPHA_URL,
+        "category": "Official provider documentation",
+        "modelAliases": MODEL_ALIASES["Agnes 2.5 Pro Alpha"],
+        "note": (
+            "Sapiens AI's official Agnes 2.5 Pro Alpha documentation dated July 24, 2026. "
+            "The page explicitly labels these rows as an Artificial Analysis snapshot rather "
+            "than first-party evaluations; values are retained at the provider-published precision."
+        ),
+        "columns": {"Score": "Agnes 2.5 Pro Alpha"},
+        "rowLabels": {
+            "GPQA": "gpqa-diamond",
+            "SciCode": "scicode",
+            "LCR": "aa-lcr",
+            "Omniscience": "aa-omniscience",
+            "Accuracy": "aa-omniscience-accuracy",
+            "Non-hallucination": "aa-omniscience-non-hallucination",
+            "CritPt": "critpt",
+            "HLE": "hle",
+            "TerminalBench v2.1": "terminal-bench-2-1",
+            "GDPval v2": "gdpval-aa-elo",
+            "Tau3": "tau3-banking",
+        },
+        "scores": {
+            "Agnes 2.5 Pro Alpha": {
+                "gpqa-diamond": 87.6,
+                "scicode": 42.2,
+                "aa-lcr": 63.7,
+                "aa-omniscience": -26.3,
+                "aa-omniscience-accuracy": 32.3,
+                "aa-omniscience-non-hallucination": 13.3,
+                "critpt": 10.9,
+                "hle": 31.9,
+                "terminal-bench-2-1": 67.0,
+                "gdpval-aa-elo": 1170,
+                "tau3-banking": 11.6,
+            },
+        },
+    },
+    {
+        "id": "ai9stars-g9v3-3b-card",
+        "label": "AI9Stars G9v3-3B official model card",
+        "url": AI9STARS_G9V3_3B_URL,
+        "rawUrl": AI9STARS_G9V3_3B_URL,
+        "category": "Official model card",
+        "coverage": "G9v3-3B official model-card reference",
+        "scoreStatus": "reference",
+        "modelAliases": MODEL_ALIASES["G9v3-3B"],
+        "note": (
+            "AI9Stars' official Hugging Face model card. It is kept as a reference-only source "
+            "because no first-party numeric benchmark table was available for reliable mapping "
+            "during this update."
+        ),
+    },
+    {
+        "id": "motif-motif-3-beta-hub",
+        "label": "Motif Technologies official model hub",
+        "url": MOTIF3_BETA_URL,
+        "rawUrl": MOTIF3_BETA_URL,
+        "category": "Official model hub",
+        "coverage": "Motif 3 (Beta) official provider reference",
+        "scoreStatus": "reference",
+        "modelAliases": MODEL_ALIASES["Motif 3 (Beta)"],
+        "note": (
+            "Motif Technologies' official model hub. The currently published English AI Model "
+            "and Open API pages expose Motif 2.x materials but no Motif 3 (Beta) benchmark table, "
+            "so no numeric scores are inferred."
+        ),
+    },
+    {
         "id": "cohere-north-mini-code-card",
         "label": "Cohere North Mini Code model card",
         "url": COHERE_NORTH_MINI_CODE_URL,
@@ -3149,17 +3437,27 @@ class _HTMLTableParser(HTMLParser):
         self._current_table: list[list[str]] | None = None
         self._current_row: list[str] | None = None
         self._current_cell: list[str] | None = None
+        self._current_column = 0
+        self._current_colspan = 1
+        self._current_rowspan = 1
+        self._rowspans: dict[int, tuple[int, str]] = {}
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         tag = tag.lower()
         if tag == "table":
             if self._table_depth == 0:
                 self._current_table = []
+                self._rowspans = {}
             self._table_depth += 1
         elif self._table_depth and tag == "tr":
             self._current_row = []
+            self._current_column = 0
         elif self._table_depth and tag in {"td", "th"}:
+            self._append_pending_rowspans()
             self._current_cell = []
+            attributes = {name.lower(): value for name, value in attrs}
+            self._current_colspan = _positive_int(attributes.get("colspan"))
+            self._current_rowspan = _positive_int(attributes.get("rowspan"))
 
     def handle_data(self, data: str) -> None:
         if self._current_cell is not None:
@@ -3176,9 +3474,17 @@ class _HTMLTableParser(HTMLParser):
     def handle_endtag(self, tag: str) -> None:
         tag = tag.lower()
         if tag in {"td", "th"} and self._current_cell is not None and self._current_row is not None:
-            self._current_row.append(_clean_markdown_cell(" ".join(self._current_cell)))
+            value = _clean_markdown_cell(" ".join(self._current_cell))
+            for offset in range(self._current_colspan):
+                column = self._current_column + offset
+                spanned_value = value if offset == 0 else ""
+                self._current_row.append(spanned_value)
+                if self._current_rowspan > 1:
+                    self._rowspans[column] = (self._current_rowspan - 1, spanned_value)
+            self._current_column += self._current_colspan
             self._current_cell = None
         elif tag == "tr" and self._current_row is not None and self._current_table is not None:
+            self._append_pending_rowspans()
             if any(cell for cell in self._current_row):
                 self._current_table.append(self._current_row)
             self._current_row = None
@@ -3187,6 +3493,26 @@ class _HTMLTableParser(HTMLParser):
             if self._table_depth == 0 and self._current_table:
                 self.tables.append(self._current_table)
                 self._current_table = None
+                self._rowspans = {}
+
+    def _append_pending_rowspans(self) -> None:
+        if self._current_row is None:
+            return
+        while self._current_column in self._rowspans:
+            remaining, value = self._rowspans[self._current_column]
+            self._current_row.append(value)
+            if remaining <= 1:
+                del self._rowspans[self._current_column]
+            else:
+                self._rowspans[self._current_column] = (remaining - 1, value)
+            self._current_column += 1
+
+
+def _positive_int(value: str | None) -> int:
+    try:
+        return max(1, int(value or 1))
+    except ValueError:
+        return 1
 
 
 def fetch_html(url: str, timeout: float = 30) -> str:
@@ -3531,10 +3857,22 @@ def dedupe_result_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def _benchmark_id_from_row(row: list[str], benchmark_by_key: dict[str, str]) -> str | None:
-    for cell in row[:2]:
-        key = _normalize_label(cell)
+    normalized_cells = [_normalize_label(cell) for cell in row[:2]]
+    combined_key = _normalize_label(" ".join(row[:2]))
+    exact_candidates = [
+        combined_key,
+        normalized_cells[1] if len(normalized_cells) > 1 else "",
+        normalized_cells[0] if normalized_cells else "",
+    ]
+    for key in exact_candidates:
         if key in benchmark_by_key:
             return benchmark_by_key[key]
+    fuzzy_candidates = [
+        combined_key,
+        normalized_cells[0] if normalized_cells else "",
+        normalized_cells[1] if len(normalized_cells) > 1 else "",
+    ]
+    for key in fuzzy_candidates:
         for benchmark_key, benchmark_id in sorted(benchmark_by_key.items(), key=lambda item: len(item[0]), reverse=True):
             if benchmark_key and (key.startswith(benchmark_key) or benchmark_key in key):
                 return benchmark_id
