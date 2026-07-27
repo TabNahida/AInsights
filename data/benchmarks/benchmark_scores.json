@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-26T18:33:42+00:00",
+  "generatedAt": "2026-07-27T04:34:08+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
@@ -199,7 +199,7 @@
       "label": "Kimi K2 0905 official model card",
       "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905",
       "category": "Official model card",
-      "collectionStatus": "stale-retained; refresh blocked: URLError",
+      "collectionStatus": "refreshed",
       "note": "Moonshot AI official Hugging Face model card for Kimi-K2-Instruct-0905. Reported K2 0905 values are mean results over five full-test-set runs."
     },
     {
@@ -223,7 +223,7 @@
       "label": "Z.ai GLM-5.2 official model card",
       "url": "https://docs.z.ai/guides/llm/glm-5.2",
       "category": "Official release",
-      "collectionStatus": "stale-retained; refresh blocked: URLError",
+      "collectionStatus": "refreshed",
       "note": "Z.ai GLM-5.2 official page and model card with long-horizon reasoning, coding, and agentic benchmark table."
     },
     {
@@ -281,7 +281,7 @@
       "label": "Google Gemma 4 official model card",
       "url": "https://ai.google.dev/gemma/docs/core/model_card_4",
       "category": "Official model card",
-      "collectionStatus": "stale-retained; refresh blocked: URLError",
+      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
       "note": "Google Gemma model card covering Gemma 4 31B, 26B-A4B, E4B, and E2B instruction-tuned benchmarks."
     },
     {
@@ -305,7 +305,7 @@
       "label": "MiniMax M2.5 official release",
       "url": "https://www.minimax.io/news/minimax-m25",
       "category": "Official release",
-      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "MiniMax M2.5 release page with official benchmark charts for M2.5 and M2.1 across agentic coding and reasoning evaluations."
     },
     {
@@ -321,7 +321,7 @@
       "label": "MiniMax M1 official GitHub report",
       "url": "https://github.com/MiniMax-AI/MiniMax-M1",
       "category": "Official technical report",
-      "collectionStatus": "stale-retained; refresh blocked: TimeoutError",
+      "collectionStatus": "refreshed",
       "note": "MiniMax-AI official GitHub README benchmark table for MiniMax-M1-80K and MiniMax-M1-40K."
     },
     {
@@ -350,7 +350,7 @@
       "label": "AI9Stars G9v3-3B official model card",
       "url": "https://huggingface.co/ai9stars/G9v3-3B",
       "category": "Official model card",
-      "collectionStatus": "reference-only; refresh blocked: URLError",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
       "note": "AI9Stars' official Hugging Face model card. It is kept as a reference-only source because no first-party numeric benchmark table was available for reliable mapping during this update.",
       "coverage": "G9v3-3B official model-card reference",
       "scoreStatus": "reference",
@@ -398,7 +398,7 @@
       "label": "SpaceXAI Grok 4.5 official release",
       "url": "https://x.ai/news/grok-4-5",
       "category": "Official release",
-      "collectionStatus": "stale-retained; refresh blocked: URLError",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "SpaceXAI/xAI Grok 4.5 release page dated July 8, 2026. Seed rows transcribe the five numeric Grok 4.5 results shown in the official benchmark charts; competitor columns, token-use comparisons, and non-numeric rank claims are excluded.",
       "modelAliases": [
         "Grok 4.5",
@@ -413,7 +413,7 @@
       "label": "xAI Grok 4.1 Fast official release",
       "url": "https://x.ai/news/grok-4-1-fast",
       "category": "Official release",
-      "collectionStatus": "stale-retained; refresh blocked: URLError",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "xAI release page for Grok 4.1 Fast and Agent Tools API with tool-calling and agentic-search benchmark tables."
     },
     {
@@ -421,7 +421,7 @@
       "label": "NVIDIA Nemotron 3 Super technical report",
       "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
       "category": "Official technical report",
-      "collectionStatus": "stale-retained; refresh blocked: URLError",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "NVIDIA Research technical report for Nemotron 3 Super. Seed rows preserve the BF16 evaluation suite from the published PDF table."
     },
     {
