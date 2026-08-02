@@ -543,6 +543,40 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertIn("Grok 4.5 (high)", results["swe-bench-pro"]["modelAliases"])
         self.assertIn("grok-4-5", results["swe-bench-pro"]["modelAliases"])
 
+    def test_build_payload_includes_inkling_and_celeris_official_scores(self):
+        payload = build_payload({}, "seeded")
+        sources = {source["id"]: source for source in payload["sources"]}
+        results = {
+            (row["model"], row["benchmarkId"]): row
+            for row in payload["results"]
+            if row["sourceId"] == "thinking-machines-inkling-small-release"
+        }
+        celeris = next(
+            row
+            for row in payload["results"]
+            if row["sourceId"] == "celeris-celeris-1-benchmarks"
+        )
+
+        self.assertEqual(
+            sources["thinking-machines-inkling-small-release"]["url"],
+            "https://thinkingmachines.ai/news/inkling-small/",
+        )
+        self.assertEqual(results[("Inkling Small", "swe-bench-verified")]["value"], 80.2)
+        self.assertEqual(results[("Inkling", "terminal-bench-2-1")]["value"], 63.8)
+        self.assertEqual(results[("Inkling Small", "mcp-atlas")]["value"], 79.6)
+        self.assertEqual(results[("Inkling", "gdpval-aa-elo")]["value"], 1238)
+        self.assertEqual(len(results), 44)
+        self.assertIn("inkling-small", results[("Inkling Small", "hle")]["modelAliases"])
+
+        self.assertEqual(
+            sources["celeris-celeris-1-benchmarks"]["url"],
+            "https://celeris.ai/blog-benchmarks.html",
+        )
+        self.assertEqual(celeris["model"], "Celeris-1")
+        self.assertEqual(celeris["benchmarkId"], "mmlu-pro")
+        self.assertEqual(celeris["value"], 75.9)
+        self.assertIn("celeris-1", celeris["modelAliases"])
+
     def test_build_payload_includes_gpt56_official_scores(self):
         payload = build_payload({}, "seeded")
         sources = {source["id"]: source for source in payload["sources"]}

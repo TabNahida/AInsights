@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-02T04:21:41+00:00",
+  "generatedAt": "2026-08-02T15:59:31+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
@@ -343,6 +343,37 @@
         "Agnes 2.5 Pro Alpha",
         "Agnes 2.5 Pro Alpha [R]",
         "agnes-2-5-pro-alpha"
+      ]
+    },
+    {
+      "id": "thinking-machines-inkling-small-release",
+      "label": "Thinking Machines Inkling and Inkling-Small official release",
+      "url": "https://thinkingmachines.ai/news/inkling-small/",
+      "category": "Official release",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "Thinking Machines' July 30, 2026 Inkling-Small release table. Values use effort=0.99 and temperature=1.0; coding evaluations use a 256K-token trajectory. The release attributes HLE, GPQA, SciCode, GDPval, τ³-Banking, AA Omniscience, MMMU-Pro, and AA-Briefcase to Artificial Analysis; MCP-Atlas to Scale AI; and ARC-AGI-2 to ARC Prize. SWE-bench Verified uses a bash-only harness, while Terminal-Bench 2.1 uses an internal harness that scores known web-search-contaminated solutions as zero. MCP-Atlas retains the public rather than all score. Only the Inkling and Inkling-Small columns are retained, and the final Inkling-Small table supersedes its preview.",
+      "coverage": "Inkling and Inkling-Small final benchmark table",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling",
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ]
+    },
+    {
+      "id": "celeris-celeris-1-benchmarks",
+      "label": "Celeris-1 official benchmark report",
+      "url": "https://celeris.ai/blog-benchmarks.html",
+      "category": "Official benchmark report",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "Celeris' vendor-reported Celeris-1 MMLU-Pro evaluation: full test set across 14 categories, 5-shot chain-of-thought, strict 'the answer is (X)' scoring, a zero reasoning budget, and single-request p50 measurement. The page does not identify a fixed model snapshot or publish raw outputs, so this is not an independently reproduced result.",
+      "coverage": "Celeris-1 MMLU-Pro full-test evaluation",
+      "modelAliases": [
+        "Celeris-1",
+        "celeris-1"
       ]
     },
     {
@@ -18405,6 +18436,702 @@
       "sourceId": "sapiens-agnes-2-5-pro-alpha-docs",
       "sourceUrl": "https://agnes-ai.com/doc/agnes-25-pro-alpha",
       "sourceLabel": "Sapiens AI Agnes 2.5 Pro Alpha documentation"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 80.2,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 55.9,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 64.7,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "scicode",
+      "benchmarkLabel": "SciCode",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 48.7,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "gdpval-aa-elo",
+      "benchmarkLabel": "GDPval-AA Elo",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 1269,
+      "unit": "Elo",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 79.6,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "tau3-banking",
+      "benchmarkLabel": "τ³-Banking",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 15.5,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "browsecomp-context",
+      "benchmarkLabel": "BrowseComp (Context Manage)",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 77.4,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 54.4,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "aa-briefcase-elo",
+      "benchmarkLabel": "AA-Briefcase Elo",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 917,
+      "unit": "Elo",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 89.5,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 31.6,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 47.8,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 95.5,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 90.2,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "critpt",
+      "benchmarkLabel": "CritPt",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 8.3,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "arc-agi-2",
+      "benchmarkLabel": "ARC-AGI-2",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 40.1,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "aa-omniscience",
+      "benchmarkLabel": "AA-Omniscience",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": -9.0,
+      "unit": "score",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "ifbench",
+      "benchmarkLabel": "IFBench",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 82.2,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "mmmu-pro",
+      "benchmarkLabel": "MMMU-Pro",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 74.0,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "charxiv-no-tools",
+      "benchmarkLabel": "CharXiv Reasoning",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 77.4,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "charxiv-tools",
+      "benchmarkLabel": "CharXiv Reasoning w/ tools",
+      "model": "Inkling Small",
+      "modelAliases": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small"
+      ],
+      "value": 81.3,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 77.6,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 54.3,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 63.8,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "scicode",
+      "benchmarkLabel": "SciCode",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 46.1,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "gdpval-aa-elo",
+      "benchmarkLabel": "GDPval-AA Elo",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 1238,
+      "unit": "Elo",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 78.8,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "tau3-banking",
+      "benchmarkLabel": "τ³-Banking",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 23.7,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "browsecomp-context",
+      "benchmarkLabel": "BrowseComp (Context Manage)",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 77.1,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 45.5,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "aa-briefcase-elo",
+      "benchmarkLabel": "AA-Briefcase Elo",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 839,
+      "unit": "Elo",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 87.2,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 29.7,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 46.0,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 97.1,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 86.3,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "critpt",
+      "benchmarkLabel": "CritPt",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 5.4,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "arc-agi-2",
+      "benchmarkLabel": "ARC-AGI-2",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 36.5,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "aa-omniscience",
+      "benchmarkLabel": "AA-Omniscience",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 2.1,
+      "unit": "score",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "ifbench",
+      "benchmarkLabel": "IFBench",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 79.8,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "mmmu-pro",
+      "benchmarkLabel": "MMMU-Pro",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 73.5,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "charxiv-no-tools",
+      "benchmarkLabel": "CharXiv Reasoning",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 78.1,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "charxiv-tools",
+      "benchmarkLabel": "CharXiv Reasoning w/ tools",
+      "model": "Inkling",
+      "modelAliases": [
+        "Inkling",
+        "Inkling [R]",
+        "inkling"
+      ],
+      "value": 82.0,
+      "unit": "%",
+      "sourceId": "thinking-machines-inkling-small-release",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+      "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "Celeris-1",
+      "modelAliases": [
+        "Celeris-1",
+        "celeris-1"
+      ],
+      "value": 75.9,
+      "unit": "%",
+      "sourceId": "celeris-celeris-1-benchmarks",
+      "sourceUrl": "https://celeris.ai/blog-benchmarks.html",
+      "sourceLabel": "Celeris-1 official benchmark report"
     },
     {
       "benchmarkId": "deepswe",

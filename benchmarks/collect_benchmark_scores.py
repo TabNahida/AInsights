@@ -36,6 +36,8 @@ GOOGLE_GEMMA4_URL = "https://ai.google.dev/gemma/docs/core/model_card_4"
 SAPIENS_AGNES25_PRO_ALPHA_URL = "https://agnes-ai.com/doc/agnes-25-pro-alpha"
 AI9STARS_G9V3_3B_URL = "https://huggingface.co/ai9stars/G9v3-3B"
 MOTIF3_BETA_URL = "https://model-hub.motiftech.io/en/"
+THINKING_MACHINES_INKLING_SMALL_URL = "https://thinkingmachines.ai/news/inkling-small/"
+CELERIS_CELERIS1_BENCHMARKS_URL = "https://celeris.ai/blog-benchmarks.html"
 COHERE_NORTH_MINI_CODE_URL = "https://docs.cohere.com/docs/north-mini-code-1.0"
 QWEN3_URL = "https://qwen.ai/blog?id=qwen3"
 QWEN25_URL = "https://qwen.ai/blog?id=qwen2.5"
@@ -160,6 +162,14 @@ MODEL_ALIASES = {
         "Motif-3 Beta",
         "motif-0714",
     ],
+    "Inkling": ["Inkling", "Inkling [R]", "inkling"],
+    "Inkling Small": [
+        "Inkling Small",
+        "Inkling Small [R]",
+        "Inkling-Small",
+        "inkling-small",
+    ],
+    "Celeris-1": ["Celeris-1", "celeris-1"],
     "Grok 4.5": [
         "Grok 4.5",
         "Grok 4.5 (high)",
@@ -3162,6 +3172,91 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
                 "tau3-banking": 11.6,
             },
         },
+    },
+    {
+        "id": "thinking-machines-inkling-small-release",
+        "label": "Thinking Machines Inkling and Inkling-Small official release",
+        "url": THINKING_MACHINES_INKLING_SMALL_URL,
+        "rawUrl": THINKING_MACHINES_INKLING_SMALL_URL,
+        "category": "Official release",
+        "coverage": "Inkling and Inkling-Small final benchmark table",
+        "modelAliases": MODEL_ALIASES["Inkling"] + MODEL_ALIASES["Inkling Small"],
+        "note": (
+            "Thinking Machines' July 30, 2026 Inkling-Small release table. Values use effort=0.99 "
+            "and temperature=1.0; coding evaluations use a 256K-token trajectory. The release attributes "
+            "HLE, GPQA, SciCode, GDPval, τ³-Banking, AA Omniscience, MMMU-Pro, and AA-Briefcase to "
+            "Artificial Analysis; MCP-Atlas to Scale AI; and ARC-AGI-2 to ARC Prize. SWE-bench Verified "
+            "uses a bash-only harness, while Terminal-Bench 2.1 uses an internal harness that scores known "
+            "web-search-contaminated solutions as zero. MCP-Atlas retains the public rather than all score. "
+            "Only the Inkling and Inkling-Small columns are retained, and the final Inkling-Small table "
+            "supersedes its preview."
+        ),
+        "scores": {
+            "Inkling Small": {
+                "swe-bench-verified": 80.2,
+                "swe-bench-pro": 55.9,
+                "terminal-bench-2-1": 64.7,
+                "scicode": 48.7,
+                "gdpval-aa-elo": 1269,
+                "mcp-atlas": 79.6,
+                "tau3-banking": 15.5,
+                "browsecomp-context": 77.4,
+                "toolathlon": 54.4,
+                "aa-briefcase-elo": 917,
+                "gpqa-diamond": 89.5,
+                "hle": 31.6,
+                "hle-tools": 47.8,
+                "aime-2026": 95.5,
+                "hmmt-2026-feb": 90.2,
+                "critpt": 8.3,
+                "arc-agi-2": 40.1,
+                "aa-omniscience": -9.0,
+                "ifbench": 82.2,
+                "mmmu-pro": 74.0,
+                "charxiv-no-tools": 77.4,
+                "charxiv-tools": 81.3,
+            },
+            "Inkling": {
+                "swe-bench-verified": 77.6,
+                "swe-bench-pro": 54.3,
+                "terminal-bench-2-1": 63.8,
+                "scicode": 46.1,
+                "gdpval-aa-elo": 1238,
+                "mcp-atlas": 78.8,
+                "tau3-banking": 23.7,
+                "browsecomp-context": 77.1,
+                "toolathlon": 45.5,
+                "aa-briefcase-elo": 839,
+                "gpqa-diamond": 87.2,
+                "hle": 29.7,
+                "hle-tools": 46.0,
+                "aime-2026": 97.1,
+                "hmmt-2026-feb": 86.3,
+                "critpt": 5.4,
+                "arc-agi-2": 36.5,
+                "aa-omniscience": 2.1,
+                "ifbench": 79.8,
+                "mmmu-pro": 73.5,
+                "charxiv-no-tools": 78.1,
+                "charxiv-tools": 82.0,
+            },
+        },
+    },
+    {
+        "id": "celeris-celeris-1-benchmarks",
+        "label": "Celeris-1 official benchmark report",
+        "url": CELERIS_CELERIS1_BENCHMARKS_URL,
+        "rawUrl": CELERIS_CELERIS1_BENCHMARKS_URL,
+        "category": "Official benchmark report",
+        "coverage": "Celeris-1 MMLU-Pro full-test evaluation",
+        "modelAliases": MODEL_ALIASES["Celeris-1"],
+        "note": (
+            "Celeris' vendor-reported Celeris-1 MMLU-Pro evaluation: full test set across 14 categories, "
+            "5-shot chain-of-thought, strict 'the answer is (X)' scoring, a zero reasoning budget, and "
+            "single-request p50 measurement. The page does not identify a fixed model snapshot or publish "
+            "raw outputs, so this is not an independently reproduced result."
+        ),
+        "scores": {"Celeris-1": {"mmlu-pro": 75.9}},
     },
     {
         "id": "ai9stars-g9v3-3b-card",
