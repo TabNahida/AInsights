@@ -39,6 +39,7 @@ MOTIF3_BETA_URL = "https://model-hub.motiftech.io/en/"
 THINKING_MACHINES_INKLING_SMALL_URL = "https://thinkingmachines.ai/news/inkling-small/"
 CELERIS_CELERIS1_BENCHMARKS_URL = "https://celeris.ai/blog-benchmarks.html"
 COHERE_NORTH_MINI_CODE_URL = "https://docs.cohere.com/docs/north-mini-code-1.0"
+TENCENT_HY3_URL = "https://github.com/Tencent-Hunyuan/Hy3"
 QWEN3_URL = "https://qwen.ai/blog?id=qwen3"
 QWEN25_URL = "https://qwen.ai/blog?id=qwen2.5"
 QWEN2_URL = "https://qwen.ai/blog?id=qwen2"
@@ -48,6 +49,7 @@ QWEN36_PLUS_URL = "https://qwen.ai/blog?id=qwen3.6"
 QWEN36_27B_URL = "https://qwen.ai/blog?id=qwen3.6-27b"
 QWEN36_MAX_PREVIEW_URL = "https://qwen.ai/blog?id=qwen3.6-max-preview"
 DEEPSEEK_V4_PRO_URL = "https://api-docs.deepseek.com/news/news260424"
+DEEPSEEK_V4_FLASH_0731_URL = "https://api-docs.deepseek.com/updates/"
 KIMI_K3_URL = "https://www.kimi.com/blog/kimi-k3"
 KIMI_K26_URL = "https://www.kimi.com/blog/kimi-k2-6"
 KIMI_K27_CODE_URL = "https://www.kimi.com/resources/kimi-k2-7-code"
@@ -281,9 +283,16 @@ MODEL_ALIASES = {
     "DeepSeek V4 Pro (Max)": ["DeepSeek V4 Pro (Max)", "DeepSeek-V4-Pro Max", "DS-V4-Pro Max", "deepseek-v4-pro"],
     "DeepSeek V4 Pro (High)": ["DeepSeek V4 Pro (High)", "DeepSeek-V4-Pro High", "deepseek-v4-pro-high"],
     "DeepSeek V4 Pro": ["DeepSeek V4 Pro", "DeepSeek-V4-Pro Non-Think", "deepseek-v4-pro-non-reasoning"],
-    "DeepSeek V4 Flash (Max)": ["DeepSeek V4 Flash (Max)", "DeepSeek-V4-Flash Max", "deepseek-v4-flash"],
+    "DeepSeek V4 Flash (Max)": ["DeepSeek V4 Flash (Max)", "DeepSeek-V4-Flash Max", "deepseek-v4-flash-0420"],
     "DeepSeek V4 Flash (High)": ["DeepSeek V4 Flash (High)", "DeepSeek-V4-Flash High", "deepseek-v4-flash-high"],
     "DeepSeek V4 Flash": ["DeepSeek V4 Flash", "DeepSeek-V4-Flash Non-Think", "deepseek-v4-flash-non-reasoning"],
+    "DeepSeek V4 Flash 0731 (max)": [
+        "DeepSeek V4 Flash 0731 (max)",
+        "DeepSeek V4 Flash 0731 (max) [R]",
+        "DeepSeek-V4-Flash-0731",
+        "deepseek-v4-flash-0731",
+    ],
+    "Hy3": ["Hy3", "Hy3 [R]", "hy3"],
     "Kimi K2.6": ["Kimi K2.6", "Kimi-K2.6", "K2.6 Thinking", "moonshotai/Kimi-K2.6", "kimi-k2-6"],
     "Kimi K2.7 Code": ["Kimi K2.7 Code", "Kimi-K2.7-Code", "moonshotai/Kimi-K2.7-Code", "kimi-k2-7-code"],
     "Kimi K2 Thinking": ["Kimi K2 Thinking", "Kimi-K2-Thinking", "K2 Thinking", "moonshotai/Kimi-K2-Thinking"],
@@ -299,6 +308,11 @@ MODEL_ALIASES = {
         "zai-org/GLM-5.2",
         "glm-5-2",
         "glm-5-2-non-reasoning",
+    ],
+    "GLM-5.2 (max)": [
+        "GLM-5.2 (max)",
+        "GLM-5.2 (max) [R]",
+        "glm-5-2",
     ],
     "GLM-5": ["GLM-5", "GLM 5", "zai-org/GLM-5"],
     "GLM-4.7": ["GLM-4.7", "GLM 4.7", "zai-org/GLM-4.7"],
@@ -2174,6 +2188,96 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
         },
     },
     {
+        "id": "deepseek-v4-flash-0731-update",
+        "label": "DeepSeek V4 Flash 0731 official update",
+        "url": DEEPSEEK_V4_FLASH_0731_URL,
+        "rawUrl": DEEPSEEK_V4_FLASH_0731_URL,
+        "category": "Official update",
+        "coverage": "Seven public DeepSeek-V4-Flash-0731 benchmark scores",
+        "modelAliases": MODEL_ALIASES["DeepSeek V4 Flash 0731 (max)"],
+        "modelKeys": ["DeepSeek V4 Flash 0731 (max) [R]"],
+        "note": (
+            "DeepSeek's July 31, 2026 update for DeepSeek-V4-Flash-0731. The retained rows are the "
+            "seven public benchmarks explicitly reported for the 0731 post-training update. Public Code "
+            "Agent tasks use DeepSeek Harness minimal mode, max reasoning effort, top_p=0.95, and "
+            "temperature=1.0. DSBench-FullStack (68.7) and DSBench-Hard (59.6) are internal evaluations "
+            "and are intentionally not mapped into the shared benchmark catalog."
+        ),
+        "columns": {"DeepSeek-V4-Flash-0731": "DeepSeek V4 Flash 0731 (max)"},
+        "rowLabels": {
+            "Terminal Bench 2.1": "terminal-bench-2-1",
+            "NL2Repo": "nl2repo",
+            "Cybergym": "cybergym",
+            "DeepSWE": "deepswe",
+            "Toolathlon verified": "toolathlon",
+            "Agent Last Exam": "agents-last-exam",
+            "Automation Bench (Public)": "automationbench",
+        },
+        "scores": {
+            "DeepSeek V4 Flash 0731 (max)": {
+                "terminal-bench-2-1": 82.7,
+                "nl2repo": 54.2,
+                "cybergym": 76.7,
+                "deepswe": 54.4,
+                "toolathlon": 70.3,
+                "agents-last-exam": 25.2,
+                "automationbench": 25.1,
+            }
+        },
+    },
+    {
+        "id": "tencent-hy3-repository",
+        "label": "Tencent Hunyuan Hy3 official benchmark report",
+        "url": TENCENT_HY3_URL,
+        "rawUrl": TENCENT_HY3_URL,
+        "category": "Official model repository",
+        "coverage": "Fourteen public Hy3 benchmark scores",
+        "modelAliases": MODEL_ALIASES["Hy3"],
+        "modelKeys": ["Hy3 [R]"],
+        "note": (
+            "Seed values transcribe only the public Hy3 rows in Tencent Hunyuan's official repository "
+            "benchmark and appendix figures; internal rows and unverified protocol mappings are excluded. "
+            "The figures report the highest reasoning tier. SWE benchmarks use SWE-agent; Terminal-Bench "
+            "2.1 uses Terminus-2 with XML and a four-hour limit; NL2Repo uses Claude Code for 250 turns; "
+            "and MCP-Atlas uses its public 500-task set."
+        ),
+        "columns": {"Hy3": "Hy3"},
+        "rowLabels": {
+            "SWE-Multilingual": "swe-bench-multilingual",
+            "SWE-Verified": "swe-bench-verified",
+            "SWE-Pro": "swe-bench-pro",
+            "Terminal-Bench 2.1": "terminal-bench-2-1",
+            "NL2Repo": "nl2repo",
+            "DeepSWE": "deepswe",
+            "BrowseComp": "browsecomp",
+            "MCP-Atlas Public": "mcp-atlas",
+            "Toolathlon": "toolathlon",
+            "HLE w/ tools (text-only)": "hle-tools",
+            "GPQA Diamond": "gpqa-diamond",
+            "HLE (text-only)": "hle",
+            "IMOAnswerBench": "imoanswerbench",
+            "AA-LCR": "aa-lcr",
+        },
+        "scores": {
+            "Hy3": {
+                "swe-bench-multilingual": 75.8,
+                "swe-bench-verified": 78.0,
+                "swe-bench-pro": 57.9,
+                "terminal-bench-2-1": 71.7,
+                "nl2repo": 45.6,
+                "deepswe": 28.0,
+                "browsecomp": 84.2,
+                "mcp-atlas": 79.1,
+                "toolathlon": 48.5,
+                "hle-tools": 53.2,
+                "gpqa-diamond": 90.4,
+                "hle": 37.0,
+                "imoanswerbench": 90.0,
+                "aa-lcr": 73.4,
+            }
+        },
+    },
+    {
         "id": "kimi-k3-release",
         "label": "Kimi K3 official release evaluations",
         "url": KIMI_K3_URL,
@@ -2192,7 +2296,7 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
             "GPT 5.6 Sol (max)": "GPT-5.6 Sol",
             "Claude Opus 4.8 (max)": "Claude Opus 4.8",
             "GPT 5.5 (xhigh)": "GPT-5.5",
-            "GLM-5.2 (max)": "GLM-5.2",
+            "GLM-5.2 (max)": "GLM-5.2 (max)",
         },
         "rowLabels": {
             "DeepSWE": "deepswe",
@@ -2543,11 +2647,11 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
         "category": "Official release",
         "note": "Z.ai GLM-5.2 official page and model card with long-horizon reasoning, coding, and agentic benchmark table.",
         "columns": {
-            "GLM-5.2": "GLM-5.2",
+            "GLM-5.2": "GLM-5.2 (max)",
             "GLM-5.1": "GLM-5.1",
             "Qwen3.7-Max": "Qwen3.7-Max",
             "MiniMax M3": "MiniMax-M3",
-            "DeepSeek-V4-Pro": "DeepSeek V4 Pro",
+            "DeepSeek-V4-Pro": "DeepSeek V4 Pro (Max)",
             "Claude Opus 4.8": "Claude Opus 4.8",
             "GPT-5.5": "GPT-5.5",
             "Gemini 3.1 Pro": "Gemini 3.1 Pro",
@@ -2584,7 +2688,7 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
             "Tool-Decathlon": "toolathlon",
         },
         "scores": {
-            "GLM-5.2": {
+            "GLM-5.2 (max)": {
                 "hle": 40.5,
                 "hle-tools": 54.7,
                 "critpt": 20.9,

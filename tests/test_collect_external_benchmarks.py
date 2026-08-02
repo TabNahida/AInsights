@@ -4,6 +4,7 @@ from http.client import IncompleteRead
 from unittest.mock import patch
 
 from benchmarks.collect_benchmark_scores import (
+    OFFICIAL_SOURCE_SPECS,
     build_payload,
     collect_official_sources,
     parse_markdown_source_scores,
@@ -276,6 +277,100 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertIn("qwen-qwen3-6-27b-card", [source["id"] for source in payload["sources"]])
         self.assertTrue(qwen_result["sourceUrl"].startswith("https://qwen.ai/"))
 
+    def test_build_payload_includes_deepseek_v4_flash_0731_official_scores(self):
+        payload = build_payload({}, "seeded")
+        sources = {source["id"]: source for source in payload["sources"]}
+        results = {
+            row["benchmarkId"]: row
+            for row in payload["results"]
+            if row["sourceId"] == "deepseek-v4-flash-0731-update"
+        }
+
+        self.assertEqual(
+            sources["deepseek-v4-flash-0731-update"]["url"],
+            "https://api-docs.deepseek.com/updates/",
+        )
+        self.assertIn(
+            "DeepSeek V4 Flash 0731 (max) [R]",
+            sources["deepseek-v4-flash-0731-update"]["modelAliases"],
+        )
+        self.assertNotIn(
+            "deepseek-v4-flash",
+            sources["deepseek-v4-flash-0731-update"]["modelAliases"],
+        )
+        self.assertEqual(
+            {benchmark_id: row["value"] for benchmark_id, row in results.items()},
+            {
+                "terminal-bench-2-1": 82.7,
+                "nl2repo": 54.2,
+                "cybergym": 76.7,
+                "deepswe": 54.4,
+                "toolathlon": 70.3,
+                "agents-last-exam": 25.2,
+                "automationbench": 25.1,
+            },
+        )
+        old_flash_max = next(
+            row
+            for row in payload["results"]
+            if row["sourceId"] == "deepseek-v4-pro-card"
+            and row["model"] == "DeepSeek V4 Flash (Max)"
+        )
+        self.assertIn("deepseek-v4-flash-0420", old_flash_max["modelAliases"])
+        self.assertNotIn("deepseek-v4-flash", old_flash_max["modelAliases"])
+
+    def test_build_payload_includes_hy3_public_official_scores(self):
+        payload = build_payload({}, "seeded")
+        sources = {source["id"]: source for source in payload["sources"]}
+        results = {
+            row["benchmarkId"]: row["value"]
+            for row in payload["results"]
+            if row["sourceId"] == "tencent-hy3-repository"
+        }
+
+        self.assertEqual(sources["tencent-hy3-repository"]["url"], "https://github.com/Tencent-Hunyuan/Hy3")
+        self.assertIn("Hy3 [R]", sources["tencent-hy3-repository"]["modelAliases"])
+        self.assertEqual(
+            results,
+            {
+                "swe-bench-multilingual": 75.8,
+                "swe-bench-verified": 78.0,
+                "swe-bench-pro": 57.9,
+                "terminal-bench-2-1": 71.7,
+                "nl2repo": 45.6,
+                "deepswe": 28.0,
+                "browsecomp": 84.2,
+                "mcp-atlas": 79.1,
+                "toolathlon": 48.5,
+                "hle-tools": 53.2,
+                "gpqa-diamond": 90.4,
+                "hle": 37.0,
+                "imoanswerbench": 90.0,
+                "aa-lcr": 73.4,
+            },
+        )
+        self.assertNotIn("apex-agents", results)
+        self.assertNotIn("claw-eval", results)
+        self.assertNotIn("skillsbench", results)
+
+    def test_glm52_max_sources_keep_the_specific_target_model(self):
+        specs = {spec["id"]: spec for spec in OFFICIAL_SOURCE_SPECS}
+        payload = build_payload({}, "seeded")
+        glm_result = next(
+            row
+            for row in payload["results"]
+            if row["sourceId"] == "zai-glm-5-2-card" and row["benchmarkId"] == "hle"
+        )
+
+        self.assertEqual(specs["kimi-k3-release"]["columns"]["GLM-5.2 (max)"], "GLM-5.2 (max)")
+        self.assertEqual(specs["zai-glm-5-2-card"]["columns"]["GLM-5.2"], "GLM-5.2 (max)")
+        self.assertEqual(
+            specs["zai-glm-5-2-card"]["columns"]["DeepSeek-V4-Pro"],
+            "DeepSeek V4 Pro (Max)",
+        )
+        self.assertEqual(glm_result["model"], "GLM-5.2 (max)")
+        self.assertIn("GLM-5.2 (max) [R]", glm_result["modelAliases"])
+
     def test_top_vendor_sources_prefer_official_pages_over_hugging_face(self):
         payload = build_payload({}, "seeded")
         top_vendor_ids = {
@@ -289,6 +384,8 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             "qwen-qwen3-6-27b-card",
             "qwen-qwen3-6-plus-release",
             "deepseek-v4-pro-card",
+            "deepseek-v4-flash-0731-update",
+            "tencent-hy3-repository",
             "kimi-k3-release",
             "kimi-k2-6-card",
             "kimi-k2-7-code-card",
@@ -636,9 +733,10 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         glm52 = next(
             row
             for row in payload["results"]
-            if row["model"] == "GLM-5.2" and row["sourceId"] == "zai-glm-5-2-card"
+            if row["model"] == "GLM-5.2 (max)" and row["sourceId"] == "zai-glm-5-2-card"
         )
-        self.assertIn("glm-5-2-non-reasoning", glm52["modelAliases"])
+        self.assertIn("glm-5-2", glm52["modelAliases"])
+        self.assertNotIn("glm-5-2-non-reasoning", glm52["modelAliases"])
 
     def test_build_payload_includes_kimi_k3_official_scores(self):
         payload = build_payload({}, "seeded")
@@ -729,17 +827,17 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         glm52_deepswe = next(
             row
             for row in results
-            if row["model"] == "GLM-5.2" and row["benchmarkId"] == "deepswe"
+            if row["model"] == "GLM-5.2 (max)" and row["benchmarkId"] == "deepswe"
         )
         glm52_frontierswe = next(
             row
             for row in results
-            if row["model"] == "GLM-5.2" and row["benchmarkId"] == "frontierswe-dominance"
+            if row["model"] == "GLM-5.2 (max)" and row["benchmarkId"] == "frontierswe-dominance"
         )
         glm52_terminal = next(
             row
             for row in results
-            if row["model"] == "GLM-5.2" and row["benchmarkId"] == "terminal-bench-2-1"
+            if row["model"] == "GLM-5.2 (max)" and row["benchmarkId"] == "terminal-bench-2-1"
         )
 
         self.assertEqual(fable_swe["value"], 80.3)

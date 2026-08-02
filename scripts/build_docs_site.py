@@ -1194,17 +1194,28 @@ def find_external_benchmark_model(
     models: list[dict[str, Any]],
     aliases: Iterable[Any],
 ) -> dict[str, Any] | None:
-    model_keys: dict[str, dict[str, Any]] = {}
+    normalized_aliases = [
+        key
+        for alias in aliases
+        if (key := _match_key(alias))
+    ]
+    by_model_key: dict[str, dict[str, Any]] = {}
+    by_model: dict[str, dict[str, Any]] = {}
+    by_slug: dict[str, dict[str, Any]] = {}
     for model in models:
-        for value in (model.get("slug"), model.get("modelKey"), model.get("model")):
+        for value, index in (
+            (model.get("modelKey"), by_model_key),
+            (model.get("model"), by_model),
+            (model.get("slug"), by_slug),
+        ):
             key = _match_key(value)
-            if key and key not in model_keys:
-                model_keys[key] = model
+            if key and key not in index:
+                index[key] = model
 
-    for alias in aliases:
-        key = _match_key(alias)
-        if key in model_keys:
-            return model_keys[key]
+    for key in normalized_aliases:
+        for index in (by_model_key, by_model, by_slug):
+            if key in index:
+                return index[key]
     return None
 
 

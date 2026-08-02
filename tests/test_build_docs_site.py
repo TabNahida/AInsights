@@ -335,6 +335,66 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(payload["externalSources"][-1]["scoreStatus"], "benchmark")
         self.assertIn("benchmark:terminal-bench-2", payload["externalSources"][-1]["relatedMetrics"])
 
+    def test_external_benchmark_matching_keeps_deepseek_0731_separate_from_0424(self):
+        payload = build_site_payload(
+            [
+                {
+                    "model_key": "DeepSeek V4 Flash 0731 (max) [R]",
+                    "model": "DeepSeek V4 Flash 0731 (max)",
+                    "is_reasoning": "true",
+                    "slug": "deepseek-v4-flash",
+                    "creator": "DeepSeek",
+                    "AA Intelligence Index": "60",
+                },
+                {
+                    "model_key": "DeepSeek V4 Flash",
+                    "model": "DeepSeek V4 Flash",
+                    "is_reasoning": "false",
+                    "slug": "deepseek-v4-flash-non-reasoning",
+                    "creator": "DeepSeek",
+                    "AA Intelligence Index": "50",
+                },
+            ],
+            {
+                "version": 1,
+                "sources": [],
+                "benchmarks": [
+                    {"id": "old-0424", "label": "Old 0424", "category": "General"},
+                    {"id": "new-0731", "label": "New 0731", "category": "Agentic"},
+                ],
+                "results": [
+                    {
+                        "benchmarkId": "old-0424",
+                        "model": "DeepSeek V4 Flash",
+                        "modelAliases": ["DeepSeek V4 Flash", "deepseek-v4-flash-non-reasoning"],
+                        "value": 83.0,
+                        "sourceId": "deepseek-v4-preview-0424",
+                    },
+                    {
+                        "benchmarkId": "new-0731",
+                        "model": "DeepSeek V4 Flash 0731 (max)",
+                        "modelAliases": ["DeepSeek V4 Flash 0731 (max)", "DeepSeek-V4-Flash-0731"],
+                        "value": 82.7,
+                        "sourceId": "deepseek-v4-flash-0731-update",
+                    },
+                ],
+            },
+        )
+
+        flash_0731 = next(model for model in payload["models"] if model["slug"] == "deepseek-v4-flash")
+        flash_0424 = next(
+            model for model in payload["models"] if model["slug"] == "deepseek-v4-flash-non-reasoning"
+        )
+
+        self.assertEqual(flash_0424["scores"]["benchmark:old-0424"], 83.0)
+        self.assertIsNone(flash_0731["scores"]["benchmark:old-0424"])
+        self.assertEqual(flash_0731["scores"]["benchmark:new-0731"], 82.7)
+        self.assertIsNone(flash_0424["scores"]["benchmark:new-0731"])
+        self.assertEqual(
+            {row["sourceId"] for row in flash_0731["externalBenchmarks"]},
+            {"deepseek-v4-flash-0731-update"},
+        )
+
     def test_build_docs_site_runs_when_invoked_by_path(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             tmp = Path(tmpdir)
