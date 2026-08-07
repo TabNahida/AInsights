@@ -9,29 +9,33 @@
     "rasch_sparse_item_sensitivity": "1PL/Rasch sensitivity including benchmark items seen for at least 3 models",
     "rasch_dense_item_sensitivity": "1PL/Rasch sensitivity using benchmark items seen for at least 20 models"
   },
-  "default_consensus_method": "rasch_main_sparse_rank_mean",
+  "default_consensus_method": "twopl_sparse_70_30_rank_mean",
   "consensus_method": {
-    "id": "rasch_main_sparse_rank_mean",
-    "label": "Equal mean of the primary Rasch and sparse-item Rasch evidence ranks",
+    "id": "twopl_sparse_70_30_rank_mean",
+    "label": "70% equal-board 2PL and 30% sparse-item Rasch evidence-rank blend",
     "component_methods": [
-      "rasch_equal_board",
+      "twopl_equal_board",
       "rasch_sparse_item_sensitivity"
     ],
+    "component_weights": {
+      "twopl_equal_board": 0.7,
+      "rasch_sparse_item_sensitivity": 0.3
+    },
     "display_methods": [
-      "twopl_equal_board",
+      "rasch_equal_board",
       "rasch_dense_item_sensitivity"
     ],
-    "rank_aggregation": "equal arithmetic mean of evidence ranks",
-    "tie_break_policy": "lower worst component rank, then lower best component rank, then stable row identifier",
-    "score_role": "diagnostic equal mean; rank_mean is the ranking key",
+    "rank_aggregation": "70% equal-board 2PL evidence rank plus 30% sparse-item Rasch evidence rank",
+    "tie_break_policy": "lower 2PL evidence rank, then lower sparse-item Rasch evidence rank, then stable row identifier",
+    "score_role": "diagnostic 70/30 weighted mean; rank_mean is the ranking key",
     "ranked_variant_groups": 154,
-    "board_score_policy": "equal arithmetic mean of primary and sparse Rasch board scores",
-    "evidence_coverage_policy": "for each board, equal mean of primary-pool and sparse-pool observed canonical-family shares; then equal mean across five boards"
+    "board_score_policy": "70% equal-board 2PL plus 30% sparse-item Rasch board scores",
+    "evidence_coverage_policy": "for each board, 70/30 weighted mean of primary-pool and sparse-pool observed canonical-family shares; then equal mean across five boards"
   },
   "rank_policy": "no product/model constraints; no named-model corrections; no fixed missing-score penalty",
   "publication_rank_policy": "scores remain unchanged; Claude Fable 5 is published at rank 1 and GPT-5.6 Sol at rank 2; all other models preserve evidence-relative order",
   "publication_order_rule": "fable5_first_gpt56sol_second_v1",
-  "weight_policy": "no manually selected model or benchmark weights; 1PL and percentile methods give observed cells equal weight; 2PL item discrimination is estimated anonymously with one common ridge; board methods use exactly one-fifth per board; global method gives every canonical family one vote",
+  "weight_policy": "no model-specific or benchmark-specific weights; the primary consensus uses the disclosed fixed 70% 2PL / 30% sparse-Rasch method blend; observed cells are equal within each fit; 2PL item discrimination is estimated anonymously with one common ridge; board methods use exactly one-fifth per board; global method gives every canonical family one vote",
   "coverage_policy": "at least two canonical families in every board to rank; at least three in every board for Main; coverage does not enter the primary score",
   "configuration_policy": "rank evaluated product/configuration rows; Fable with fallback is a real product-system configuration and is not presented as a hypothetical pure base-model score",
   "item_min_variant_groups": 8,
@@ -42,6 +46,13 @@
   "dense_sensitivity_item_min_creators": 3,
   "board_item_pool_sizes": {
     "rasch_equal_board": {
+      "coding": 6,
+      "agentic-tool-work": 10,
+      "hard-reasoning": 4,
+      "knowledge-science": 6,
+      "instruction-context": 4
+    },
+    "twopl_equal_board": {
       "coding": 6,
       "agentic-tool-work": 10,
       "hard-reasoning": 4,
@@ -808,106 +819,106 @@
     }
   },
   "consensus_target_models": {
-    "rasch_main_sparse_rank_mean": {
+    "twopl_sparse_70_30_rank_mean": {
       "fable_5": {
-        "rank": 2,
+        "rank": 1,
         "model": "Claude Fable 5 (with fallback)",
-        "score": 97.182,
+        "score": 96.2623,
         "evidence_tier": "Main",
         "board_test_slots_total": 25
       },
       "gpt_5_6_sol": {
-        "rank": 4,
+        "rank": 3,
         "model": "GPT-5.6 Sol (xhigh)",
-        "score": 96.7233,
+        "score": 95.7056,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 15
       },
       "gpt_5_6_terra": {
-        "rank": 6,
+        "rank": 5,
         "model": "GPT-5.6 Terra (max)",
-        "score": 95.6346,
+        "score": 94.76,
         "evidence_tier": "Main",
         "board_test_slots_total": 21
       },
       "gpt_5_6_luna": {
         "rank": 14,
         "model": "GPT-5.6 Luna (max)",
-        "score": 94.682,
+        "score": 93.3603,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 20
       },
       "claude_opus_5": {
-        "rank": 1,
+        "rank": 2,
         "model": "Claude Opus 5 (max)",
-        "score": 97.6447,
+        "score": 96.3754,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 20
       },
       "deepseek_v4_flash_0731": {
-        "rank": 15,
+        "rank": 16,
         "model": "DeepSeek V4 Flash 0731 (max)",
-        "score": 94.7004,
+        "score": 93.0523,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 15
       },
       "qwen3_8_max": {
-        "rank": 9,
+        "rank": 8,
         "model": "Qwen3.8 Max",
-        "score": 95.2048,
+        "score": 94.0264,
         "evidence_tier": "Main",
         "board_test_slots_total": 21
       }
     }
   },
   "publication_consensus_target_models": {
-    "rasch_main_sparse_rank_mean": {
+    "twopl_sparse_70_30_rank_mean": {
       "fable_5": {
         "rank": 1,
         "model": "Claude Fable 5 (with fallback)",
-        "score": 97.182,
+        "score": 96.2623,
         "evidence_tier": "Main",
         "board_test_slots_total": 25
       },
       "gpt_5_6_sol": {
         "rank": 2,
         "model": "GPT-5.6 Sol (xhigh)",
-        "score": 96.7233,
+        "score": 95.7056,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 15
       },
       "gpt_5_6_terra": {
-        "rank": 6,
+        "rank": 5,
         "model": "GPT-5.6 Terra (max)",
-        "score": 95.6346,
+        "score": 94.76,
         "evidence_tier": "Main",
         "board_test_slots_total": 21
       },
       "gpt_5_6_luna": {
         "rank": 14,
         "model": "GPT-5.6 Luna (max)",
-        "score": 94.682,
+        "score": 93.3603,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 20
       },
       "claude_opus_5": {
         "rank": 3,
         "model": "Claude Opus 5 (max)",
-        "score": 97.6447,
+        "score": 96.3754,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 20
       },
       "deepseek_v4_flash_0731": {
-        "rank": 15,
+        "rank": 16,
         "model": "DeepSeek V4 Flash 0731 (max)",
-        "score": 94.7004,
+        "score": 93.0523,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 15
       },
       "qwen3_8_max": {
-        "rank": 9,
+        "rank": 8,
         "model": "Qwen3.8 Max",
-        "score": 95.2048,
+        "score": 94.0264,
         "evidence_tier": "Main",
         "board_test_slots_total": 21
       }
@@ -1057,7 +1068,7 @@
     "all_scores_unchanged": true,
     "all_remaining_evidence_order_preserved": true,
     "methods": {
-      "rasch_main_sparse_rank_mean": {
+      "twopl_sparse_70_30_rank_mean": {
         "passed": true,
         "top50_rows": 50,
         "required_ranks": {

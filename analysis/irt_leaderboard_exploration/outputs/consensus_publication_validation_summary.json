@@ -20,7 +20,7 @@
   "all_scores_unchanged": true,
   "all_remaining_evidence_order_preserved": true,
   "methods": {
-    "rasch_main_sparse_rank_mean": {
+    "twopl_sparse_70_30_rank_mean": {
       "passed": true,
       "top50_rows": 50,
       "required_ranks": {

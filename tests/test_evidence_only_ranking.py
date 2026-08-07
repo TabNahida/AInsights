@@ -10,11 +10,12 @@ from analysis.irt_leaderboard_exploration.evidence_only_ranking_analysis import 
     sanitize_models,
 )
 from analysis.irt_leaderboard_exploration.multi_method_evidence_analysis import (
+    CONSENSUS_COMPONENT_WEIGHTS,
     CONSENSUS_METHOD,
     METHOD_LABELS,
     PUBLICATION_RULE_ID,
     apply_required_publication_order,
-    build_rasch_rank_consensus,
+    build_twopl_sparse_rank_consensus,
     equal_board_mean,
     prepare_common_matrix,
     ranking_row_id,
@@ -57,11 +58,11 @@ def consensus_fixture_rankings(
         "twopl_equal_board": [],
         "rasch_dense_item_sensitivity": [],
     }
-    for group, (main_rank, sparse_rank) in component_ranks.items():
+    for group, (twopl_rank, sparse_rank) in component_ranks.items():
         slug = f"model-{group}"
         rankings["rasch_equal_board"].append(
             consensus_fixture_row(
-                "rasch_equal_board", group, slug, main_rank
+                "rasch_equal_board", group, slug, twopl_rank
             )
         )
         rankings["rasch_sparse_item_sensitivity"].append(
@@ -74,7 +75,7 @@ def consensus_fixture_rankings(
         )
         rankings["twopl_equal_board"].append(
             consensus_fixture_row(
-                "twopl_equal_board", group, slug, main_rank
+                "twopl_equal_board", group, slug, twopl_rank
             )
         )
         rankings["rasch_dense_item_sensitivity"].append(
@@ -231,7 +232,7 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
         self.assertTrue(validation["all_methods_pass"])
         self.assertTrue(validation["all_methods_have_50_rows"])
 
-    def test_rasch_consensus_uses_equal_rank_mean_and_contiguous_population(self):
+    def test_primary_consensus_uses_70_30_rank_mean_and_contiguous_population(self):
         rows = self.result["consensus_full_rankings"]
 
         self.assertEqual(
@@ -246,12 +247,18 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
         for row in rows:
             self.assertEqual(
                 row["rank_mean"],
-                (row["rasch_rank"] + row["sparse_rasch_rank"]) / 2,
+                base.rounded(
+                    0.70 * row["twopl_rank"]
+                    + 0.30 * row["sparse_rasch_rank"],
+                    4,
+                ),
             )
+            self.assertEqual(row["rank_weighted_mean"], row["rank_mean"])
             self.assertEqual(
                 row["score"],
                 base.rounded(
-                    (row["rasch_score"] + row["sparse_rasch_score"]) / 2,
+                    0.70 * row["twopl_score"]
+                    + 0.30 * row["sparse_rasch_score"],
                     4,
                 ),
             )
@@ -260,33 +267,33 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
             CONSENSUS_METHOD,
         )
 
-    def test_rasch_consensus_tie_break_is_symmetric(self):
+    def test_primary_consensus_tie_break_prefers_twopl(self):
         rankings = consensus_fixture_rankings(
             {
-                "a": (1, 3),
-                "b": (2, 2),
-                "c": (3, 1),
+                "a": (1, 8),
+                "b": (4, 1),
+                "c": (2, 6),
             }
         )
         pool_sizes = {board_id: 4 for board_id in base.BOARD_ORDER}
 
-        rows = build_rasch_rank_consensus(
+        rows = build_twopl_sparse_rank_consensus(
             rankings,
-            main_pool_sizes=pool_sizes,
+            primary_pool_sizes=pool_sizes,
             sparse_pool_sizes=pool_sizes,
         )
 
-        self.assertEqual([row["rank_mean"] for row in rows], [2.0, 2.0, 2.0])
+        self.assertEqual([row["rank_mean"] for row in rows], [3.1, 3.1, 3.2])
         self.assertEqual(
             [row["variant_group"] for row in rows],
-            ["b", "a", "c"],
+            ["a", "b", "c"],
         )
         self.assertEqual(
             [row["rank_tie_break_policy"] for row in rows],
-            ["lower_rank_max_then_rank_min_then_stable_id"] * 3,
+            ["lower_twopl_rank_then_sparse_rank_then_stable_id"] * 3,
         )
 
-    def test_rasch_consensus_rejects_exact_configuration_mismatch(self):
+    def test_primary_consensus_rejects_exact_configuration_mismatch(self):
         rankings = consensus_fixture_rankings({"a": (1, 1)})
         rankings["rasch_sparse_item_sensitivity"][0]["slug"] = (
             "model-a-other-config"
@@ -294,13 +301,13 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
         pool_sizes = {board_id: 4 for board_id in base.BOARD_ORDER}
 
         with self.assertRaisesRegex(ValueError, "cannot mix exact configurations"):
-            build_rasch_rank_consensus(
+            build_twopl_sparse_rank_consensus(
                 rankings,
-                main_pool_sizes=pool_sizes,
+                primary_pool_sizes=pool_sizes,
                 sparse_pool_sizes=pool_sizes,
             )
 
-    def test_rasch_consensus_publication_has_required_order_only(self):
+    def test_primary_consensus_publication_has_required_order_only(self):
         evidence_rows = self.result["consensus_full_rankings"]
         published_rows = self.result["publication_consensus_full_rankings"]
         evidence_by_id = {
@@ -334,9 +341,9 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
             ]
         )
 
-    def test_rasch_consensus_exposes_shadow_methods_and_board_scores(self):
+    def test_primary_consensus_exposes_shadow_methods_and_board_scores(self):
         for row in self.result["consensus_full_rankings"]:
-            for prefix in ("twopl", "dense_rasch"):
+            for prefix in ("rasch", "twopl", "dense_rasch"):
                 self.assertIsInstance(row[f"{prefix}_rank"], int)
                 self.assertIsInstance(row[f"{prefix}_score"], float)
             self.assertEqual(
@@ -352,34 +359,34 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
                 self.assertEqual(
                     row[f"{board_id}_score"],
                     base.rounded(
-                        (
-                            row[f"{board_id}_rasch_score"]
-                            + row[f"{board_id}_sparse_rasch_score"]
-                        )
-                        / 2,
+                        0.70 * row[f"{board_id}_twopl_score"]
+                        + 0.30 * row[f"{board_id}_sparse_rasch_score"],
                         3,
                     ),
                 )
+                self.assertIn(f"{board_id}_rasch_score", row)
                 self.assertIn(f"{board_id}_twopl_score", row)
                 self.assertIn(f"{board_id}_dense_rasch_score", row)
 
-    def test_rasch_consensus_evidence_coverage_formula_and_range(self):
-        main_method = "rasch_equal_board"
+    def test_primary_consensus_evidence_coverage_formula_and_range(self):
+        primary_method = "twopl_equal_board"
         sparse_method = "rasch_sparse_item_sensitivity"
         pools = self.result["summary"]["board_item_pool_sizes"]
 
         for row in self.result["consensus_full_rankings"]:
             board_coverages = []
             for board_id in base.BOARD_ORDER:
-                main_share = (
-                    row[f"{board_id}_rasch_tests"]
-                    / pools[main_method][board_id]
+                primary_share = (
+                    row[f"{board_id}_twopl_tests"]
+                    / pools[primary_method][board_id]
                 )
                 sparse_share = (
                     row[f"{board_id}_sparse_rasch_tests"]
                     / pools[sparse_method][board_id]
                 )
-                expected_board = 50.0 * (main_share + sparse_share)
+                expected_board = 100.0 * (
+                    0.70 * primary_share + 0.30 * sparse_share
+                )
                 board_coverages.append(expected_board)
                 self.assertEqual(
                     row[f"{board_id}_evidence_coverage_score"],
@@ -391,6 +398,11 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
             )
             self.assertGreaterEqual(row["evidence_coverage_score"], 0)
             self.assertLessEqual(row["evidence_coverage_score"], 100)
+
+        self.assertEqual(
+            self.result["summary"]["consensus_method"]["component_weights"],
+            dict(CONSENSUS_COMPONENT_WEIGHTS),
+        )
 
     def test_publication_layer_preserves_scores_and_evidence_ranks(self):
         for method in METHOD_LABELS:

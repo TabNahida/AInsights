@@ -84,16 +84,22 @@ METHOD_LABELS: OrderedDict[str, str] = OrderedDict(
     ]
 )
 
-CONSENSUS_METHOD = "rasch_main_sparse_rank_mean"
+CONSENSUS_METHOD = "twopl_sparse_70_30_rank_mean"
 CONSENSUS_METHOD_LABEL = (
-    "Equal mean of the primary Rasch and sparse-item Rasch evidence ranks"
+    "70% equal-board 2PL and 30% sparse-item Rasch evidence-rank blend"
 )
 CONSENSUS_COMPONENT_METHODS: tuple[str, str] = (
-    "rasch_equal_board",
+    "twopl_equal_board",
     "rasch_sparse_item_sensitivity",
 )
+CONSENSUS_COMPONENT_WEIGHTS: OrderedDict[str, float] = OrderedDict(
+    [
+        ("twopl_equal_board", 0.70),
+        ("rasch_sparse_item_sensitivity", 0.30),
+    ]
+)
 CONSENSUS_DISPLAY_METHODS: tuple[str, str] = (
-    "twopl_equal_board",
+    "rasch_equal_board",
     "rasch_dense_item_sensitivity",
 )
 
@@ -534,36 +540,36 @@ def _consensus_component(
     }
 
 
-def build_rasch_rank_consensus(
+def build_twopl_sparse_rank_consensus(
     full_rankings: dict[str, list[dict[str, Any]]],
     *,
-    main_pool_sizes: dict[str, int],
+    primary_pool_sizes: dict[str, int],
     sparse_pool_sizes: dict[str, int],
 ) -> list[dict[str, Any]]:
-    """Build the equal-rank Rasch consensus before publication ordering.
+    """Build the weighted 2PL/Sparse-Rasch consensus before publication ordering.
 
     The two component populations and selected exact configurations must match
     exactly.  Missing components are not imputed and no fixed rank penalty is
-    introduced.  Ties in the arithmetic rank mean use a symmetric consensus
-    key: lower worst component rank, then lower best component rank, then the
-    stable row identifier.
+    introduced.  Equal weighted ranks prefer the higher-weight 2PL component,
+    then Sparse Rasch, then the stable row identifier.
     """
 
-    main_method, sparse_method = CONSENSUS_COMPONENT_METHODS
-    main_rows = full_rankings[main_method]
+    twopl_method, sparse_method = CONSENSUS_COMPONENT_METHODS
+    twopl_rows = full_rankings[twopl_method]
     sparse_rows = full_rankings[sparse_method]
-    main_by_group = _ranking_by_variant_group(main_rows, method=main_method)
+    twopl_by_group = _ranking_by_variant_group(twopl_rows, method=twopl_method)
     sparse_by_group = _ranking_by_variant_group(
         sparse_rows, method=sparse_method
     )
-    main_groups = set(main_by_group)
+    twopl_groups = set(twopl_by_group)
     sparse_groups = set(sparse_by_group)
-    if main_groups != sparse_groups:
-        only_main = sorted(main_groups - sparse_groups)
-        only_sparse = sorted(sparse_groups - main_groups)
+    if twopl_groups != sparse_groups:
+        only_twopl = sorted(twopl_groups - sparse_groups)
+        only_sparse = sorted(sparse_groups - twopl_groups)
         raise ValueError(
-            "Rasch consensus requires identical variant-group populations; "
-            f"only primary={only_main[:5]!r}, only sparse={only_sparse[:5]!r}"
+            "2PL/Sparse-Rasch consensus requires identical variant-group "
+            f"populations; only 2PL={only_twopl[:5]!r}, "
+            f"only sparse={only_sparse[:5]!r}"
         )
 
     component_maps = {
@@ -574,31 +580,33 @@ def build_rasch_rank_consensus(
         method: len(rows) for method, rows in full_rankings.items()
     }
     pool_sizes = {
-        main_method: dict(main_pool_sizes),
+        twopl_method: dict(primary_pool_sizes),
         sparse_method: dict(sparse_pool_sizes),
     }
+    twopl_weight = CONSENSUS_COMPONENT_WEIGHTS[twopl_method]
+    sparse_weight = CONSENSUS_COMPONENT_WEIGHTS[sparse_method]
 
     rows: list[dict[str, Any]] = []
-    for group in main_groups:
-        main = main_by_group[group]
+    for group in twopl_groups:
+        twopl = twopl_by_group[group]
         sparse = sparse_by_group[group]
-        if ranking_row_id(main) != ranking_row_id(sparse):
+        if ranking_row_id(twopl) != ranking_row_id(sparse):
             raise ValueError(
-                "Rasch consensus cannot mix exact configurations for "
-                f"{group!r}: primary={main.get('slug')!r}, "
+                "2PL/Sparse-Rasch consensus cannot mix exact configurations for "
+                f"{group!r}: 2PL={twopl.get('slug')!r}, "
                 f"sparse={sparse.get('slug')!r}"
             )
 
-        main_rank = int(main["rank"])
+        twopl_rank = int(twopl["rank"])
         sparse_rank = int(sparse["rank"])
-        rank_mean = (main_rank + sparse_rank) / 2.0
-        rank_min = min(main_rank, sparse_rank)
-        rank_max = max(main_rank, sparse_rank)
-        main_score = float(main["score"])
+        rank_mean = twopl_weight * twopl_rank + sparse_weight * sparse_rank
+        rank_min = min(twopl_rank, sparse_rank)
+        rank_max = max(twopl_rank, sparse_rank)
+        twopl_score = float(twopl["score"])
         sparse_score = float(sparse["score"])
         evidence_tier = (
             "Main"
-            if main.get("evidence_tier") == "Main"
+            if twopl.get("evidence_tier") == "Main"
             and sparse.get("evidence_tier") == "Main"
             else "Provisional"
         )
@@ -607,34 +615,39 @@ def build_rasch_rank_consensus(
             "method": CONSENSUS_METHOD,
             "method_label": CONSENSUS_METHOD_LABEL,
             "method_scope": "primary_rank_consensus",
-            # Assigned after the symmetric consensus sort below.
+            # Assigned after the weighted consensus sort below.
             "rank": 0,
-            "model": str(main.get("model") or ""),
-            "creator": str(main.get("creator") or ""),
-            "slug": str(main.get("slug") or ""),
+            "model": str(twopl.get("model") or ""),
+            "creator": str(twopl.get("creator") or ""),
+            "slug": str(twopl.get("slug") or ""),
             "variant_group": group,
             "evidence_tier": evidence_tier,
-            "score": base.rounded((main_score + sparse_score) / 2.0, 4),
-            "score_role": "diagnostic_equal_mean_not_ranking_key",
+            "score": base.rounded(
+                twopl_weight * twopl_score + sparse_weight * sparse_score,
+                4,
+            ),
+            "score_role": "diagnostic_weighted_mean_not_ranking_key",
             "rank_mean": base.rounded(rank_mean, 4),
+            "rank_weighted_mean": base.rounded(rank_mean, 4),
             "rank_min": rank_min,
             "rank_max": rank_max,
             "rank_span": rank_max - rank_min,
-            "rank_tie_break_policy": "lower_rank_max_then_rank_min_then_stable_id",
-            "rasch_rank": main_rank,
-            "rasch_score": main["score"],
+            "rank_tie_break_policy": "lower_twopl_rank_then_sparse_rank_then_stable_id",
+            "twopl_rank": twopl_rank,
+            "twopl_score": twopl["score"],
             "sparse_rasch_rank": sparse_rank,
             "sparse_rasch_score": sparse["score"],
-            "main_unique_benchmark_families": int(
-                main["unique_benchmark_families"]
+            "twopl_unique_benchmark_families": int(
+                twopl["unique_benchmark_families"]
             ),
             "sparse_unique_benchmark_families": int(
                 sparse["unique_benchmark_families"]
             ),
             "unique_benchmark_families": min(
-                int(main["unique_benchmark_families"]),
+                int(twopl["unique_benchmark_families"]),
                 int(sparse["unique_benchmark_families"]),
             ),
+            "component_weights": dict(CONSENSUS_COMPONENT_WEIGHTS),
             "board_item_pool_sizes": pool_sizes,
         }
 
@@ -650,12 +663,12 @@ def build_rasch_rank_consensus(
             )
             component_methods[method] = component
 
-        twopl = component_maps["twopl_equal_board"].get(group)
+        rasch = component_maps["rasch_equal_board"].get(group)
         dense = component_maps["rasch_dense_item_sensitivity"].get(group)
         row.update(
             {
-                "twopl_rank": int(twopl["rank"]) if twopl else None,
-                "twopl_score": twopl.get("score") if twopl else None,
+                "rasch_rank": int(rasch["rank"]) if rasch else None,
+                "rasch_score": rasch.get("score") if rasch else None,
                 "dense_rasch_rank": int(dense["rank"]) if dense else None,
                 "dense_rasch_score": dense.get("score") if dense else None,
                 "component_methods": component_methods,
@@ -667,11 +680,11 @@ def build_rasch_rank_consensus(
         board_below_main = 0
         min_board_tests: int | None = None
         for board_id in base.BOARD_ORDER:
-            main_board_score = float(main[f"{board_id}_score"])
+            twopl_board_score = float(twopl[f"{board_id}_score"])
             sparse_board_score = float(sparse[f"{board_id}_score"])
-            main_tests = int(main[f"{board_id}_tests"])
+            twopl_tests = int(twopl[f"{board_id}_tests"])
             sparse_tests = int(sparse[f"{board_id}_tests"])
-            conservative_tests = min(main_tests, sparse_tests)
+            conservative_tests = min(twopl_tests, sparse_tests)
             board_tests_total += conservative_tests
             min_board_tests = (
                 conservative_tests
@@ -681,39 +694,44 @@ def build_rasch_rank_consensus(
             if conservative_tests < MAIN_TESTS_PER_BOARD:
                 board_below_main += 1
 
-            main_denominator = int(main_pool_sizes[board_id])
+            twopl_denominator = int(primary_pool_sizes[board_id])
             sparse_denominator = int(sparse_pool_sizes[board_id])
-            if main_denominator <= 0 or sparse_denominator <= 0:
+            if twopl_denominator <= 0 or sparse_denominator <= 0:
                 raise ValueError(f"empty item pool for consensus board {board_id!r}")
-            main_coverage = min(max(main_tests / main_denominator, 0.0), 1.0)
+            twopl_coverage = min(
+                max(twopl_tests / twopl_denominator, 0.0), 1.0
+            )
             sparse_coverage = min(
                 max(sparse_tests / sparse_denominator, 0.0), 1.0
             )
             board_coverage_score = 100.0 * (
-                main_coverage + sparse_coverage
-            ) / 2.0
+                twopl_weight * twopl_coverage
+                + sparse_weight * sparse_coverage
+            )
             board_coverages.append(board_coverage_score)
 
             row[f"{board_id}_score"] = base.rounded(
-                (main_board_score + sparse_board_score) / 2.0, 3
+                twopl_weight * twopl_board_score
+                + sparse_weight * sparse_board_score,
+                3,
             )
             row[f"{board_id}_tests"] = conservative_tests
-            row[f"{board_id}_rasch_score"] = main[f"{board_id}_score"]
+            row[f"{board_id}_twopl_score"] = twopl[f"{board_id}_score"]
             row[f"{board_id}_sparse_rasch_score"] = sparse[
                 f"{board_id}_score"
             ]
-            row[f"{board_id}_rasch_tests"] = main_tests
+            row[f"{board_id}_twopl_tests"] = twopl_tests
             row[f"{board_id}_sparse_rasch_tests"] = sparse_tests
-            row[f"{board_id}_main_item_pool_size"] = main_denominator
+            row[f"{board_id}_primary_item_pool_size"] = twopl_denominator
             row[f"{board_id}_sparse_item_pool_size"] = sparse_denominator
             row[f"{board_id}_evidence_coverage_score"] = base.rounded(
                 board_coverage_score, 3
             )
-            row[f"{board_id}_twopl_score"] = (
-                twopl.get(f"{board_id}_score") if twopl else None
+            row[f"{board_id}_rasch_score"] = (
+                rasch.get(f"{board_id}_score") if rasch else None
             )
-            row[f"{board_id}_twopl_tests"] = (
-                int(twopl[f"{board_id}_tests"]) if twopl else None
+            row[f"{board_id}_rasch_tests"] = (
+                int(rasch[f"{board_id}_tests"]) if rasch else None
             )
             row[f"{board_id}_dense_rasch_score"] = (
                 dense.get(f"{board_id}_score") if dense else None
@@ -733,8 +751,8 @@ def build_rasch_rank_consensus(
     rows.sort(
         key=lambda row: (
             float(row["rank_mean"]),
-            int(row["rank_max"]),
-            int(row["rank_min"]),
+            int(row["twopl_rank"]),
+            int(row["sparse_rasch_rank"]),
             ranking_row_id(row),
         )
     )
@@ -1406,9 +1424,9 @@ def run_multi_method_analysis_from_payload(
     primary_board_item_pool_sizes = board_item_pool_sizes(board_data)
     sparse_board_item_pool_sizes = board_item_pool_sizes(sparse_board_data)
     dense_board_item_pool_sizes = board_item_pool_sizes(dense_board_data)
-    consensus_full_rankings = build_rasch_rank_consensus(
+    consensus_full_rankings = build_twopl_sparse_rank_consensus(
         full_rankings,
-        main_pool_sizes=primary_board_item_pool_sizes,
+        primary_pool_sizes=primary_board_item_pool_sizes,
         sparse_pool_sizes=sparse_board_item_pool_sizes,
     )
     consensus_top50 = consensus_full_rankings[:50]
@@ -1423,7 +1441,8 @@ def run_multi_method_analysis_from_payload(
     )
     if not consensus_publication_validation["all_methods_pass"]:
         raise AssertionError(
-            "the Rasch rank consensus failed the Fable 5 / GPT-5.6 Sol order gate"
+            "the 2PL/Sparse-Rasch rank consensus failed the "
+            "Fable 5 / GPT-5.6 Sol order gate"
         )
 
     required_order_full_rankings = {
@@ -1475,20 +1494,27 @@ def run_multi_method_analysis_from_payload(
             "id": CONSENSUS_METHOD,
             "label": CONSENSUS_METHOD_LABEL,
             "component_methods": list(CONSENSUS_COMPONENT_METHODS),
+            "component_weights": dict(CONSENSUS_COMPONENT_WEIGHTS),
             "display_methods": list(CONSENSUS_DISPLAY_METHODS),
-            "rank_aggregation": "equal arithmetic mean of evidence ranks",
-            "tie_break_policy": (
-                "lower worst component rank, then lower best component rank, "
-                "then stable row identifier"
+            "rank_aggregation": (
+                "70% equal-board 2PL evidence rank plus 30% sparse-item "
+                "Rasch evidence rank"
             ),
-            "score_role": "diagnostic equal mean; rank_mean is the ranking key",
+            "tie_break_policy": (
+                "lower 2PL evidence rank, then lower sparse-item Rasch "
+                "evidence rank, then stable row identifier"
+            ),
+            "score_role": (
+                "diagnostic 70/30 weighted mean; rank_mean is the ranking key"
+            ),
             "ranked_variant_groups": len(consensus_full_rankings),
             "board_score_policy": (
-                "equal arithmetic mean of primary and sparse Rasch board scores"
+                "70% equal-board 2PL plus 30% sparse-item Rasch board scores"
             ),
             "evidence_coverage_policy": (
-                "for each board, equal mean of primary-pool and sparse-pool "
-                "observed canonical-family shares; then equal mean across five boards"
+                "for each board, 70/30 weighted mean of primary-pool and "
+                "sparse-pool observed canonical-family shares; then equal mean "
+                "across five boards"
             ),
         },
         "rank_policy": (
@@ -1502,8 +1528,9 @@ def run_multi_method_analysis_from_payload(
         ),
         "publication_order_rule": PUBLICATION_RULE_ID,
         "weight_policy": (
-            "no manually selected model or benchmark weights; 1PL and percentile "
-            "methods give observed cells equal weight; 2PL item discrimination is "
+            "no model-specific or benchmark-specific weights; the primary consensus "
+            "uses the disclosed fixed 70% 2PL / 30% sparse-Rasch method blend; "
+            "observed cells are equal within each fit; 2PL item discrimination is "
             "estimated anonymously with one common ridge; board methods use exactly "
             "one-fifth per board; global method gives every canonical family one vote"
         ),
@@ -1524,6 +1551,7 @@ def run_multi_method_analysis_from_payload(
         "dense_sensitivity_item_min_creators": 3,
         "board_item_pool_sizes": {
             "rasch_equal_board": primary_board_item_pool_sizes,
+            "twopl_equal_board": primary_board_item_pool_sizes,
             "rasch_sparse_item_sensitivity": sparse_board_item_pool_sizes,
             "rasch_dense_item_sensitivity": dense_board_item_pool_sizes,
         },

@@ -32,8 +32,8 @@ const copy = {
       benchmarkLab: "逐项 Benchmark",
     },
     customToolDescriptions: {
-      methodRank: "组合四种 IRT 方法的真实证据名次；默认只平均主 Rasch 与稀疏 Rasch。",
-      boardScore: "组合五个能力板块的真实 IRT 分数；主 Rasch 与稀疏 Rasch 各占板块分的一半。",
+      methodRank: "组合四种 IRT 方法的真实证据名次；默认采用等板块 2PL 70% 与稀疏 Rasch 30%。",
+      boardScore: "组合五个能力板块的真实 IRT 分数；默认板块分由等板块 2PL 占 70%、稀疏 Rasch 占 30%。",
       benchmarkLab: "直接组合原始公开测试成绩，可继续控制归一化、缺失处理与覆盖门槛。",
     },
     customAggregatorTitle: "聚合器",
@@ -183,7 +183,7 @@ const copy = {
     allTiers: "显示全部档位",
     sourceFilter: "来源",
     top20Title: "AInsights Index Top {count}",
-    top20Subtitle: "按主 Rasch 与稀疏 Rasch 的平均证据名次排序；柱宽表示证据名次百分位",
+    top20Subtitle: "按等板块 2PL 70% 与稀疏 Rasch 30% 的加权证据名次排序；柱宽表示证据名次百分位",
     latestModelsTitle: "最新模型",
     latestModelsSubtitle: "按发布日期展示最近进入数据集的去重模型",
     fullRanking: "查看完整排名",
@@ -365,7 +365,7 @@ const copy = {
         label: "AInsights Index",
         calculation: "rank-mean",
         normalization: "none",
-        description: "主榜取等板块 Rasch 与稀疏项 Rasch 的真实证据名次算术平均，再按平均名次、最差名次、最佳名次和稳定 ID 排序；Fable 5 #1、GPT-5.6 Sol #2 由独立发布层执行，不修改真实成绩。",
+        description: "主榜取等板块 2PL 真实证据名次的 70% 与稀疏项 Rasch 证据名次的 30% 加权平均；同分时依次比较 2PL 名次、稀疏 Rasch 名次和稳定 ID。Fable 5 #1、GPT-5.6 Sol #2 由独立发布层执行，不修改真实成绩。",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -421,8 +421,8 @@ const copy = {
       benchmarkLab: "Benchmark lab",
     },
     customToolDescriptions: {
-      methodRank: "Combine observed evidence ranks from four IRT methods; Core Rasch and Sparse Rasch are the default pair.",
-      boardScore: "Combine five observed IRT capability scores; each primary board is 50% Core Rasch and 50% Sparse Rasch.",
+      methodRank: "Combine observed evidence ranks from four IRT methods; the default is 70% Equal-board 2PL and 30% Sparse Rasch.",
+      boardScore: "Combine five observed IRT capability scores; each default board is 70% Equal-board 2PL and 30% Sparse Rasch.",
       benchmarkLab: "Combine raw public benchmark results with optional normalization, missing-data handling, and coverage gates.",
     },
     customAggregatorTitle: "Aggregator",
@@ -572,7 +572,7 @@ const copy = {
     allTiers: "Showing every tier",
     sourceFilter: "Source",
     top20Title: "AInsights Index Top {count}",
-    top20Subtitle: "Ranked by the mean of Core Rasch and Sparse Rasch evidence ranks; bar width is evidence-rank percentile",
+    top20Subtitle: "Ranked by a 70% Equal-board 2PL / 30% Sparse Rasch evidence-rank blend; bar width is evidence-rank percentile",
     latestModelsTitle: "Latest models",
     latestModelsSubtitle: "Recently released deduplicated models in the dataset",
     fullRanking: "View full ranking",
@@ -754,7 +754,7 @@ const copy = {
         label: "AInsights Index",
         calculation: "rank-mean",
         normalization: "none",
-        description: "The primary ranking takes the arithmetic mean of observed Core Rasch and Sparse-item Rasch evidence ranks, then sorts by mean rank, worst rank, best rank, and stable ID. Fable 5 #1 and GPT-5.6 Sol #2 are applied by a separate publication layer without changing observed scores.",
+        description: "The primary ranking blends observed evidence ranks with 70% Equal-board 2PL and 30% Sparse-item Rasch, then breaks equal weighted ranks by 2PL rank, Sparse Rasch rank, and stable ID. Fable 5 #1 and GPT-5.6 Sol #2 are applied by a separate publication layer without changing observed scores.",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -791,9 +791,9 @@ const state = {
   query: "",
   customToolMode: "method-rank",
   customMethodWeights: {
-    rasch: 50,
-    sparseRasch: 50,
-    twopl: 0,
+    rasch: 0,
+    sparseRasch: 30,
+    twopl: 70,
     denseRasch: 0,
   },
   customMethodAggregator: "mean",
@@ -1698,7 +1698,7 @@ function scoreModelForPrecomputedRanking(model) {
       scoreMeta: tr("notAvailable"),
     };
   }
-  const coreRank = rankingMethodEvidenceRank(model, "rasch");
+  const twoplRank = rankingMethodEvidenceRank(model, "twopl");
   const sparseRank = rankingMethodEvidenceRank(model, "sparseRasch");
   const familyCount = Number(profile.uniqueBenchmarkFamilies || 0);
   const evidenceTier = String(profile.evidenceTier || "").trim();
@@ -1716,7 +1716,7 @@ function scoreModelForPrecomputedRanking(model) {
     coverageLabel: [evidenceTier, familyCount ? `${familyCount} families` : ""].filter(Boolean).join(" · ") || tr("notAvailable"),
     availableWeight: 100,
     scoreMeta: [
-      Number.isFinite(coreRank) ? `Rasch #${coreRank}` : "",
+      Number.isFinite(twoplRank) ? `2PL #${twoplRank}` : "",
       Number.isFinite(sparseRank) ? `Sparse #${sparseRank}` : "",
     ].filter(Boolean).join(" · "),
   };
@@ -2266,7 +2266,7 @@ function renderSummary(filteredCount, visibleCount, scoredCount, preset) {
 
 function resetCustomConfiguration() {
   state.customToolMode = "method-rank";
-  state.customMethodWeights = { rasch: 50, sparseRasch: 50, twopl: 0, denseRasch: 0 };
+  state.customMethodWeights = { rasch: 0, sparseRasch: 30, twopl: 70, denseRasch: 0 };
   state.customMethodAggregator = "mean";
   state.customBoardWeights = Object.fromEntries(customBoardOrder.map((boardId) => [boardId, 20]));
   state.customBoardAggregator = "arithmetic";
@@ -2632,7 +2632,7 @@ function activeCustomWeights() {
 
 function restoreActiveCustomDefaults() {
   if (state.customToolMode === "method-rank") {
-    state.customMethodWeights = { rasch: 50, sparseRasch: 50, twopl: 0, denseRasch: 0 };
+    state.customMethodWeights = { rasch: 0, sparseRasch: 30, twopl: 70, denseRasch: 0 };
     state.customMethodAggregator = "mean";
   } else if (state.customToolMode === "board-score") {
     state.customBoardWeights = Object.fromEntries(customBoardOrder.map((boardId) => [boardId, 20]));
@@ -3207,28 +3207,28 @@ function renderMethodologyPage() {
       <p class="eyebrow">Methodology</p>
       <h2>${escapeHtml(zh ? "AInsights Index 计算方式" : "AInsights Index Methodology")}</h2>
       <p>${escapeHtml(zh
-        ? "主榜平均 Core Rasch 与 Sparse Rasch 的真实证据名次；覆盖度只决定入榜资格与证据标签，不修改合格模型的真实 IRT 成绩。"
-        : "The primary ranking averages observed Core Rasch and Sparse Rasch evidence ranks. Coverage controls eligibility and evidence labels; it does not modify an eligible model's observed IRT score.")}</p>
+        ? "主榜以等板块 2PL 真实证据名次的 70% 与稀疏 Rasch 证据名次的 30% 加权；覆盖度只决定入榜资格与证据标签，不修改合格模型的真实 IRT 成绩。"
+        : "The primary ranking blends observed evidence ranks with 70% Equal-board 2PL and 30% Sparse Rasch. Coverage controls eligibility and evidence labels; it does not modify an eligible model's observed IRT score.")}</p>
     </section>
     <section class="methodology-grid">
       <article class="methodology-card methodology-card-wide">
         <h3>${escapeHtml(zh ? "默认名次" : "Default rank")}</h3>
-        <p><code>rank_mean = (core_evidence_rank + sparse_evidence_rank) / 2</code></p>
+        <p><code>rank_mean = 0.70 × twopl_evidence_rank + 0.30 × sparse_evidence_rank</code></p>
         <p>${escapeHtml(zh
-          ? "先按 rank_mean，再按最差分量名次、最佳分量名次和稳定 ID 排序；所有输入都来自真实 benchmark 成绩。"
-          : "Rows sort by rank_mean, then worst component rank, best component rank, and stable ID; every input comes from observed benchmark results.")}</p>
+          ? "先按 rank_mean，再按 2PL 名次、稀疏 Rasch 名次和稳定 ID 排序；所有输入都来自真实 benchmark 成绩。"
+          : "Rows sort by rank_mean, then 2PL rank, Sparse Rasch rank, and stable ID; every input comes from observed benchmark results.")}</p>
       </article>
       <article class="methodology-card">
-        <h3>Core Rasch / Sparse Rasch</h3>
+        <h3>Equal-board 2PL / Sparse Rasch</h3>
         <p>${escapeHtml(zh
-          ? "Core Rasch 强调稳定可比的成熟测试；Sparse Rasch 接纳覆盖较少但更前沿的早期信号。两者等影响。"
-          : "Core Rasch emphasizes stable, broadly comparable evidence. Sparse Rasch admits earlier frontier signals with thinner coverage. They have equal influence.")}</p>
+          ? "等板块 2PL 在成熟 item pool 上匿名学习测试区分度，占默认名次 70%；Sparse Rasch 接纳覆盖较少但更前沿的早期信号，占 30%。"
+          : "Equal-board 2PL anonymously learns item discrimination on the mature pool and contributes 70% of the default rank. Sparse Rasch admits earlier frontier signals with thinner coverage and contributes 30%.")}</p>
       </article>
       <article class="methodology-card">
-        <h3>Equal-board 2PL / Dense Rasch</h3>
+        <h3>Core Rasch / Dense Rasch</h3>
         <p>${escapeHtml(zh
-          ? "2PL 与 Dense Rasch 作为敏感性对照展示，不进入默认 rank_mean；完整排名同时给出其发布名次和证据名次。"
-          : "Equal-board 2PL and Dense Rasch are sensitivity views outside the default rank_mean; Full Ranking shows both publication and evidence ranks.")}</p>
+          ? "Core Rasch 与 Dense Rasch 作为敏感性对照；完整排名仍展示 2PL 的独立名次与 Dense Rasch 名次。"
+          : "Core Rasch and Dense Rasch are sensitivity comparisons; Full Ranking still shows the standalone 2PL and Dense Rasch ranks.")}</p>
       </article>
       <article class="methodology-card methodology-card-wide">
         <h3>${escapeHtml(zh ? "Item Pool 与敏感性方法" : "Item Pools and Sensitivity Methods")}</h3>
@@ -3236,9 +3236,9 @@ function renderMethodologyPage() {
           <table class="methodology-weight-table methodology-matrix-table">
             <thead><tr><th>${escapeHtml(zh ? "方法" : "Method")}</th><th>${escapeHtml(zh ? "测试准入" : "Item admission")}</th><th>${escapeHtml(zh ? "用途" : "Role")}</th></tr></thead>
             <tbody>
-              <tr><td>Core Rasch</td><td>${escapeHtml(zh ? "至少 8 个独立模型 family、3 个 creator" : "At least 8 independent model families and 3 creators")}</td><td>${escapeHtml(zh ? "默认名次的一半" : "Half of the default rank")}</td></tr>
-              <tr><td>Sparse Rasch</td><td>${escapeHtml(zh ? "至少 3 个独立模型 family；1 个 creator 即可" : "At least 3 independent model families; one creator is sufficient")}</td><td>${escapeHtml(zh ? "默认名次的一半" : "Half of the default rank")}</td></tr>
-              <tr><td>Equal-board 2PL</td><td>${escapeHtml(zh ? "与 Core Rasch 使用相同 item pool" : "Same pool as Core Rasch")}</td><td>${escapeHtml(zh ? "item discrimination 共同向 1 做 ridge，并限制在 0.35–2.5" : "Item-discrimination ridge toward 1 with bounds of 0.35–2.5")}</td></tr>
+              <tr><td>Core Rasch</td><td>${escapeHtml(zh ? "至少 8 个独立模型 family、3 个 creator" : "At least 8 independent model families and 3 creators")}</td><td>${escapeHtml(zh ? "敏感性对照" : "Sensitivity comparison")}</td></tr>
+              <tr><td>Sparse Rasch</td><td>${escapeHtml(zh ? "至少 3 个独立模型 family；1 个 creator 即可" : "At least 3 independent model families; one creator is sufficient")}</td><td>${escapeHtml(zh ? "默认名次 30%" : "30% of the default rank")}</td></tr>
+              <tr><td>Equal-board 2PL</td><td>${escapeHtml(zh ? "与 Core Rasch 使用相同 item pool" : "Same pool as Core Rasch")}</td><td>${escapeHtml(zh ? "默认名次 70%；item discrimination 共同向 1 做 ridge，并限制在 0.35–2.5" : "70% of the default rank; item-discrimination ridge toward 1 with bounds of 0.35–2.5")}</td></tr>
               <tr><td>Dense Rasch</td><td>${escapeHtml(zh ? "至少 20 个独立模型 family、3 个 creator" : "At least 20 independent model families and 3 creators")}</td><td>${escapeHtml(zh ? "保守敏感性对照" : "Conservative sensitivity comparison")}</td></tr>
             </tbody>
           </table>
@@ -3263,8 +3263,8 @@ function renderMethodologyPage() {
         <p><code>z_ij = theta_i - difficulty_j + error_ij</code></p>
         <p><code>board_score = 100 × Phi(theta_z)</code></p>
         <p>${escapeHtml(zh
-          ? "Core、Sparse 与 Dense Rasch 都在各板块拟合连续 Rasch；模型能力在板块内标准化并映射到 0–100。五板等权平均得到该方法分数与 evidence rank，主共识再计算 rank_mean。2PL 使用带正则稳定的 item discrimination，不含命名模型系数或事后模型修正。"
-          : "Core, Sparse, and Dense Rasch fit a continuous Rasch model in each board; model ability is standardized within the board and mapped to 0–100. The equal mean of five boards produces each method score and evidence rank, then the primary consensus computes rank_mean. The 2PL fit stabilizes item discrimination with regularization and contains no named-model coefficient or post-hoc model correction.")}</p>
+          ? "Core、Sparse 与 Dense Rasch 都在各板块拟合连续 Rasch；2PL 在相同成熟 item pool 上匿名学习区分度。每种方法先将五板等权平均得到 evidence rank，再按 2PL 70% / Sparse Rasch 30% 计算 rank_mean；不含命名模型系数或事后模型修正。"
+          : "Core, Sparse, and Dense Rasch fit a continuous Rasch model in each board; 2PL anonymously learns discrimination on the same mature item pool. Each method first averages the five boards equally, then rank_mean blends 70% 2PL and 30% Sparse Rasch evidence ranks, without any named-model coefficient or post-hoc model correction.")}</p>
       </article>
       <article class="methodology-card methodology-card-wide">
         <h3>${escapeHtml(zh ? "证据资格与覆盖" : "Evidence Eligibility and Coverage")}</h3>
@@ -3272,14 +3272,14 @@ function renderMethodologyPage() {
           ? "每个板块至少需要两个规范化 benchmark family 才能进入某一方法榜；每板至少三个标为 Main，否则合格配置标为 Provisional。证据不足表示不排名，不是按 0 分计算。"
           : "A configuration needs at least two canonical benchmark families in every board to enter a method ranking. At least three in every board earns Main status; another eligible row is Provisional. Insufficient evidence means not ranked, not a score of zero.")}</p>
         <p>${escapeHtml(zh
-          ? "覆盖只控制资格和标签，不修改合格模型的 Rasch 分数；不扣固定缺失分、不插入弱先验，也不从较低同系列模型复制成绩。"
-          : "Coverage controls eligibility and labels; it does not modify a qualified model's Rasch score. There is no fixed missing-score penalty, weak-prior insertion, or score copying from a lower sibling model.")}</p>
+          ? "覆盖只控制资格和标签，不修改合格模型的真实 IRT 分数；不扣固定缺失分、不插入弱先验，也不从较低同系列模型复制成绩。"
+          : "Coverage controls eligibility and labels; it does not modify a qualified model's observed IRT score. There is no fixed missing-score penalty, weak-prior insertion, or score copying from a lower sibling model.")}</p>
       </article>
       <article class="methodology-card">
         <h3>${escapeHtml(zh ? "六轴雷达" : "Radar Profile")}</h3>
         <p>${escapeHtml(zh
-          ? "前五轴是 Core 与 Sparse Rasch 对应板块分的 50/50 平均；第六轴 evidence_coverage_score 只审计证据广度，永不改变分数或名次。"
-          : "The first five axes are 50/50 means of matching Core and Sparse Rasch board scores. The sixth, evidence_coverage_score, audits evidence breadth and never changes a score or rank.")}</p>
+          ? "前五轴是等板块 2PL 与 Sparse Rasch 对应板块分的 70/30 加权；第六轴 evidence_coverage_score 按相同 70/30 审计证据广度，永不改变分数或名次。"
+          : "The first five axes blend matching Equal-board 2PL and Sparse Rasch board scores at 70/30. The sixth, evidence_coverage_score, audits evidence breadth with the same 70/30 split and never changes a score or rank.")}</p>
       </article>
       <article class="methodology-card">
         <h3>${escapeHtml(zh ? "逐项权重与 Custom 工具" : "Metric Weights and Custom Tools")}</h3>

@@ -29,7 +29,11 @@ DEFAULT_RANKING_OUTPUT_DIR = (
     PROJECT_ROOT / "analysis" / "irt_leaderboard_exploration" / "outputs"
 )
 
-PRIMARY_RANKING_METHOD = "rasch_main_sparse_rank_mean"
+PRIMARY_RANKING_METHOD = "twopl_sparse_70_30_rank_mean"
+PRIMARY_COMPONENT_WEIGHTS = {
+    "twopl": 0.70,
+    "sparseRasch": 0.30,
+}
 RANKING_METHOD_KEYS = {
     "rasch": "rasch_equal_board",
     "sparseRasch": "rasch_sparse_item_sensitivity",
@@ -1197,6 +1201,16 @@ def attach_irt_ranking_profiles(
         summary,
         "rasch_sparse_item_sensitivity",
     )
+    rasch_board_item_pool_sizes = _summary_method_pool_sizes(
+        summary,
+        "rasch_equal_board",
+    )
+    dense_board_item_pool_sizes = _summary_method_pool_sizes(
+        summary,
+        "rasch_dense_item_sensitivity",
+    )
+    twopl_weight = PRIMARY_COMPONENT_WEIGHTS["twopl"]
+    sparse_weight = PRIMARY_COMPONENT_WEIGHTS["sparseRasch"]
     model_by_slug: dict[str, dict[str, Any]] = {}
     for model in payload.get("models", []):
         slug = str(model.get("slug") or "")
@@ -1229,19 +1243,17 @@ def attach_irt_ranking_profiles(
                 f"consensus group {variant_group_id!r} is missing a component method row"
             )
 
-        core = component_rows["rasch"]
+        rasch = component_rows["rasch"]
         sparse = component_rows["sparseRasch"]
-        selected_slug = str(consensus.get("slug") or core.get("slug") or "")
-        if selected_slug != str(core.get("slug") or ""):
-            raise ValueError(
-                f"consensus group {variant_group_id!r} selected {selected_slug!r}, "
-                f"but core Rasch selected {core.get('slug')!r}"
-            )
-        if selected_slug != str(sparse.get("slug") or ""):
-            raise ValueError(
-                f"core/sparse configuration mismatch for {variant_group_id!r}: "
-                f"{selected_slug!r} vs {sparse.get('slug')!r}"
-            )
+        twopl = component_rows["twopl"]
+        selected_slug = str(consensus.get("slug") or twopl.get("slug") or "")
+        for method_key, method_row in component_rows.items():
+            method_slug = str(method_row.get("slug") or "")
+            if selected_slug != method_slug:
+                raise ValueError(
+                    f"consensus configuration mismatch for {variant_group_id!r}: "
+                    f"selected={selected_slug!r}, {method_key}={method_slug!r}"
+                )
         model = model_by_slug.get(selected_slug)
         if model is None:
             raise ValueError(f"ranked slug {selected_slug!r} is absent from site payload")
@@ -1255,13 +1267,16 @@ def attach_irt_ranking_profiles(
 
         boards: dict[str, dict[str, Any]] = {}
         for board_id in RANKING_BOARD_IDS:
-            core_score = _required_number(core, f"{board_id}_score")
+            twopl_score = _required_number(twopl, f"{board_id}_score")
             sparse_score = _required_number(sparse, f"{board_id}_score")
-            core_tests = int(core.get(f"{board_id}_tests") or 0)
+            twopl_tests = int(twopl.get(f"{board_id}_tests") or 0)
             sparse_tests = int(sparse.get(f"{board_id}_tests") or 0)
             boards[board_id] = {
-                "score": round((core_score + sparse_score) / 2.0, 3),
-                "tests": core_tests,
+                "score": round(
+                    twopl_weight * twopl_score + sparse_weight * sparse_score,
+                    3,
+                ),
+                "tests": twopl_tests,
                 "sparseTests": sparse_tests,
                 "itemPoolSize": board_item_pool_sizes[board_id],
                 "sparseItemPoolSize": sparse_board_item_pool_sizes[board_id],
@@ -1271,13 +1286,24 @@ def attach_irt_ranking_profiles(
             consensus.get("evidence_coverage_score")
         )
         if evidence_coverage_score is None:
-            evidence_coverage_score = 20.0 * sum(
-                min(
-                    boards[board_id]["tests"] / board_item_pool_sizes[board_id],
-                    1.0,
+            evidence_coverage_score = sum(
+                100.0
+                * (
+                    twopl_weight
+                    * min(
+                        boards[board_id]["tests"]
+                        / board_item_pool_sizes[board_id],
+                        1.0,
+                    )
+                    + sparse_weight
+                    * min(
+                        boards[board_id]["sparseTests"]
+                        / sparse_board_item_pool_sizes[board_id],
+                        1.0,
+                    )
                 )
                 for board_id in RANKING_BOARD_IDS
-            )
+            ) / len(RANKING_BOARD_IDS)
 
         method_profiles: dict[str, dict[str, Any]] = {}
         for key, method_id in RANKING_METHOD_KEYS.items():
@@ -1305,11 +1331,12 @@ def attach_irt_ranking_profiles(
         )
         if rank_mean is None:
             rank_mean = (
-                method_profiles["rasch"]["evidenceRank"]
-                + method_profiles["sparseRasch"]["evidenceRank"]
-            ) / 2.0
+                twopl_weight * method_profiles["twopl"]["evidenceRank"]
+                + sparse_weight
+                * method_profiles["sparseRasch"]["evidenceRank"]
+            )
         component_ranks = [
-            method_profiles["rasch"]["evidenceRank"],
+            method_profiles["twopl"]["evidenceRank"],
             method_profiles["sparseRasch"]["evidenceRank"],
         ]
         rank_min = min(component_ranks)
@@ -1317,9 +1344,9 @@ def attach_irt_ranking_profiles(
         display_score = _number_or_none(consensus.get("score"))
         if display_score is None:
             display_score = (
-                method_profiles["rasch"]["score"]
-                + method_profiles["sparseRasch"]["score"]
-            ) / 2.0
+                twopl_weight * method_profiles["twopl"]["score"]
+                + sparse_weight * method_profiles["sparseRasch"]["score"]
+            )
 
         profile = {
             "method": PRIMARY_RANKING_METHOD,
@@ -1339,7 +1366,7 @@ def attach_irt_ranking_profiles(
             ),
             "displayScore": round(display_score, 4),
             "evidenceTier": str(
-                consensus.get("evidence_tier") or core.get("evidence_tier") or ""
+                consensus.get("evidence_tier") or twopl.get("evidence_tier") or ""
             ),
             "publicationOrderRule": str(
                 consensus.get("publication_order_rule")
@@ -1350,16 +1377,33 @@ def attach_irt_ranking_profiles(
             "rankChangeDueToRequiredOrder": int(
                 consensus.get("rank_change_due_to_required_order") or 0
             ),
-            "uniqueBenchmarkFamilies": int(core.get("unique_benchmark_families") or 0),
-            "boardTestSlotsTotal": int(core.get("board_test_slots_total") or 0),
-            "minBoardTests": int(core.get("min_board_tests") or 0),
-            "boardsBelowMainTarget": int(core.get("boards_below_main_target") or 0),
+            "uniqueBenchmarkFamilies": int(
+                consensus.get("unique_benchmark_families")
+                or twopl.get("unique_benchmark_families")
+                or 0
+            ),
+            "boardTestSlotsTotal": int(
+                consensus.get("board_test_slots_total")
+                or twopl.get("board_test_slots_total")
+                or 0
+            ),
+            "minBoardTests": int(
+                consensus.get("min_board_tests") or twopl.get("min_board_tests") or 0
+            ),
+            "boardsBelowMainTarget": int(
+                consensus.get("boards_below_main_target")
+                or twopl.get("boards_below_main_target")
+                or 0
+            ),
             "boards": boards,
             "boardItemPoolSizes": dict(board_item_pool_sizes),
             "boardItemPoolSizesByMethod": {
-                "rasch": dict(board_item_pool_sizes),
+                "rasch": dict(rasch_board_item_pool_sizes),
                 "sparseRasch": dict(sparse_board_item_pool_sizes),
+                "twopl": dict(board_item_pool_sizes),
+                "denseRasch": dict(dense_board_item_pool_sizes),
             },
+            "componentWeights": dict(PRIMARY_COMPONENT_WEIGHTS),
             "evidenceCoverageScore": round(evidence_coverage_score, 3),
             "methods": method_profiles,
         }
@@ -1394,8 +1438,12 @@ def attach_irt_ranking_profiles(
             if isinstance(method_sizes, dict)
         },
         "methods": {
-            "primary": ["rasch_equal_board", "rasch_sparse_item_sensitivity"],
-            "comparison": ["twopl_equal_board", "rasch_dense_item_sensitivity"],
+            "primary": ["twopl_equal_board", "rasch_sparse_item_sensitivity"],
+            "primaryWeights": {
+                "twopl_equal_board": twopl_weight,
+                "rasch_sparse_item_sensitivity": sparse_weight,
+            },
+            "comparison": ["rasch_equal_board", "rasch_dense_item_sensitivity"],
             "labels": dict(summary.get("methods") or {}),
         },
         "rows": leaderboard_rows,
@@ -1439,10 +1487,16 @@ def _board_item_pool_sizes(
     )
     candidates = (
         summary.get("core_board_item_pool_sizes"),
+        summary_pools.get("twopl_equal_board")
+        if isinstance(summary_pools, dict)
+        else None,
         summary_pools.get("rasch_equal_board")
         if isinstance(summary_pools, dict)
         else None,
         summary_pools,
+        consensus_pools.get("twopl_equal_board")
+        if isinstance(consensus_pools, dict)
+        else None,
         consensus_pools.get("rasch_equal_board")
         if isinstance(consensus_pools, dict)
         else None,
@@ -1450,7 +1504,7 @@ def _board_item_pool_sizes(
     )
     raw = next((value for value in candidates if isinstance(value, dict)), None)
     if raw is None:
-        raise ValueError("IRT analysis did not report core board item-pool sizes")
+        raise ValueError("IRT analysis did not report primary board item-pool sizes")
     sizes = {board_id: int(raw.get(board_id) or 0) for board_id in RANKING_BOARD_IDS}
     if any(size <= 0 for size in sizes.values()):
         raise ValueError(f"invalid IRT board item-pool sizes: {sizes}")
@@ -1895,16 +1949,20 @@ def _presets() -> dict[str, dict[str, Any]]:
             "id": "zhihu-adjusted",
             "label": "AInsights Index",
             "kind": "precomputed-ranking",
-            "description": "主榜以等板块 Rasch 名次与稀疏项 Rasch 名次的算术平均排序；测试太少的配置不进入榜单，覆盖度只决定 Main/Provisional 证据标签。Fable 5 第一、GPT-5.6 Sol 第二由透明发布层执行，不改真实分数或证据名次。",
-            "calculation": "rank-mean",
+            "description": "主榜以等板块 2PL 证据名次的 70% 与稀疏项 Rasch 证据名次的 30% 加权排序；测试太少的配置不进入榜单，覆盖度只决定 Main/Provisional 证据标签。Fable 5 第一、GPT-5.6 Sol 第二由透明发布层执行，不改真实分数或证据名次。",
+            "calculation": "weighted-rank-mean",
             "normalization": "none",
             "missingPolicy": "eligibility-gate",
             "componentMethods": [
-                "rasch_equal_board",
+                "twopl_equal_board",
                 "rasch_sparse_item_sensitivity",
             ],
+            "componentWeights": {
+                "twopl_equal_board": 0.70,
+                "rasch_sparse_item_sensitivity": 0.30,
+            },
             "comparisonMethods": [
-                "twopl_equal_board",
+                "rasch_equal_board",
                 "rasch_dense_item_sensitivity",
             ],
         },

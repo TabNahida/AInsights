@@ -13,15 +13,15 @@
 
 `constrained_ranking_analysis.py` 是早期产品规则实验，仅保留作历史对照，不是当前推荐榜，也不应当用于证明模型强弱。
 
-## 当前推荐：主 Rasch / 稀疏 Rasch 平均名次
+## 当前推荐：等板块 2PL 70% / 稀疏 Rasch 30% 加权名次
 
-同一份净化后的成绩矩阵仍并行运行七种真实成绩方法用于审计，但站点主榜只采用一个明确的共识口径：先分别生成主 Rasch 与稀疏项 Rasch 的未锚定证据名次，再计算
+同一份净化后的成绩矩阵仍并行运行七种真实成绩方法用于审计，但站点主榜只采用一个明确的共识口径：先分别生成等板块 2PL 与稀疏项 Rasch 的未锚定证据名次，再计算
 
 ```text
-rank_mean = (rasch_equal_board_rank + sparse_item_rasch_rank) / 2
+rank_mean = 0.70 * twopl_equal_board_rank + 0.30 * sparse_item_rasch_rank
 ```
 
-平均名次越低越好。完全相同时依次比较两法中的较差名次、较好名次和稳定 ID；不平均发布层名次，也不引入模型修正。完成证据排序后，才单独应用 Fable #1、GPT-5.6 Sol #2 的透明发布层。七种审计方法为：
+加权名次越低越好。完全相同时依次比较 2PL 名次、稀疏 Rasch 名次和稳定 ID；不平均发布层名次，也不引入模型修正。70/30 只是在两个匿名证据方法之间公开固定的合成比例，不是模型特定或 benchmark 特定加权。完成证据排序后，才单独应用 Fable #1、GPT-5.6 Sol #2 的透明发布层。七种审计方法为：
 
 1. 无观测权重的连续 1PL/Rasch 点估计，五板块算术等权。
 2. 匿名学习 item discrimination 的连续 2PL 点估计，五板块算术等权；所有残差等权，统一 slope ridge 只用于稳定 item 参数。
@@ -31,7 +31,7 @@ rank_mean = (rasch_equal_board_rank + sparse_item_rasch_rank) / 2
 6. `variantGroup >= 3` 的稀疏 item Rasch 敏感性，只作补充观察。
 7. `variantGroup >= 20` 且 creator >= 3 的保守 Rasch 敏感性。
 
-主口径不调用旧版 `coverage_adjusted_scores`，也不使用 SE、shortfall、pseudo-count、先验均值或 LCB 改写分数。2PL 与密集项 Rasch只作为 Full Ranking 对照列，不进入 `rank_mean`。固定 exact config 对照、方法相关性、Top 50 重合和关键模型共同 benchmark 明细均单独输出。
+主口径不调用旧版 `coverage_adjusted_scores`，也不使用 SE、shortfall、pseudo-count、先验均值或 LCB 改写分数。等板块 2PL 进入 `rank_mean` 的 70%，稀疏项 Rasch 进入 30%；Core Rasch 与密集项 Rasch 作为敏感性对照。固定 exact config 对照、方法相关性、Top 50 重合和关键模型共同 benchmark 明细均单独输出。
 
 当前主共识榜与七种方法对照均通过发布层硬校验：Fable 5 为第 1、5.6 Sol 为第 2。这里的前两位是明确的产品发布顺序，不伪装成统计估计；CSV 同时保留 `score`、`evidence_rank`、`rank_mean` 和 `rank_change_due_to_required_order`。原始证据排序继续输出，用于审计方法与数据覆盖。
 
@@ -134,11 +134,11 @@ analysis/irt_leaderboard_exploration/irt_leaderboard_exploration.ipynb
 
 ## 输出
 
-- `outputs/full_rankings_rasch_main_sparse_rank_mean.csv`：主/稀疏 Rasch 平均证据名次的全榜。
-- `outputs/top50_rasch_main_sparse_rank_mean.csv`：未锚定共识 Top 50 审计文件。
-- `outputs/full_rankings_required_rasch_main_sparse_rank_mean.csv`：应用透明发布层后的主榜全量结果。
-- `outputs/top50_required_rasch_main_sparse_rank_mean.csv`：站点主口径 Top 50。
-- `outputs/consensus_publication_validation_summary.json`：平均公式、前两位发布层和其余相对顺序的校验。
+- `outputs/full_rankings_twopl_sparse_70_30_rank_mean.csv`：2PL 70% / 稀疏 Rasch 30% 加权证据名次的全榜。
+- `outputs/top50_twopl_sparse_70_30_rank_mean.csv`：未锚定共识 Top 50 审计文件。
+- `outputs/full_rankings_required_twopl_sparse_70_30_rank_mean.csv`：应用透明发布层后的主榜全量结果。
+- `outputs/top50_required_twopl_sparse_70_30_rank_mean.csv`：站点主口径 Top 50。
+- `outputs/consensus_publication_validation_summary.json`：加权公式、前两位发布层和其余相对顺序的校验。
 
 - `outputs/top50_all_schemes.csv`：五套方案各 50 行，共 250 行。
 - `outputs/full_rankings_all_schemes.csv`：全部可排名模型。

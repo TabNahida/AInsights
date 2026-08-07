@@ -60,7 +60,8 @@ class BuildDocsSiteTests(unittest.TestCase):
             methods = profile["methods"]
             self.assertAlmostEqual(
                 profile["evidenceMeanRank"],
-                (methods["rasch"]["evidenceRank"] + methods["sparseRasch"]["evidenceRank"]) / 2,
+                0.70 * methods["twopl"]["evidenceRank"]
+                + 0.30 * methods["sparseRasch"]["evidenceRank"],
             )
             self.assertIn("twopl", methods)
             self.assertIn("denseRasch", methods)
@@ -68,18 +69,17 @@ class BuildDocsSiteTests(unittest.TestCase):
             for board_id, board in profile["boards"].items():
                 self.assertAlmostEqual(
                     board["score"],
-                    (
-                        methods["rasch"]["boards"][board_id]["score"]
-                        + methods["sparseRasch"]["boards"][board_id]["score"]
-                    )
-                    / 2,
+                    0.70 * methods["twopl"]["boards"][board_id]["score"]
+                    + 0.30
+                    * methods["sparseRasch"]["boards"][board_id]["score"],
                     delta=0.0006,
                 )
                 board_coverages.append(
-                    50
+                    100
                     * (
-                        min(board["tests"] / board["itemPoolSize"], 1)
-                        + min(
+                        0.70 * min(board["tests"] / board["itemPoolSize"], 1)
+                        + 0.30
+                        * min(
                             board["sparseTests"] / board["sparseItemPoolSize"],
                             1,
                         )
@@ -377,12 +377,22 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertIn("GDPval-AA v2", [metric["key"] for metric in payload["metrics"]])
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["kind"], "precomputed-ranking")
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["label"], "AInsights Index")
-        self.assertEqual(payload["presets"]["zhihu-adjusted"]["calculation"], "rank-mean")
+        self.assertEqual(
+            payload["presets"]["zhihu-adjusted"]["calculation"],
+            "weighted-rank-mean",
+        )
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["normalization"], "none")
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["missingPolicy"], "eligibility-gate")
         self.assertEqual(
             payload["presets"]["zhihu-adjusted"]["componentMethods"],
-            ["rasch_equal_board", "rasch_sparse_item_sensitivity"],
+            ["twopl_equal_board", "rasch_sparse_item_sensitivity"],
+        )
+        self.assertEqual(
+            payload["presets"]["zhihu-adjusted"]["componentWeights"],
+            {
+                "twopl_equal_board": 0.70,
+                "rasch_sparse_item_sensitivity": 0.30,
+            },
         )
         self.assertNotIn("groups", payload["presets"]["zhihu-adjusted"])
         self.assertNotIn("weights", payload["presets"]["zhihu-adjusted"])

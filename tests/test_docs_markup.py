@@ -263,9 +263,9 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("model?.rankingProfile?.boards?.[boardId]?.score", app_js)
         self.assertIn("function scoreModelForCustomMethodRanks(model)", app_js)
         self.assertIn("function scoreModelForCustomBoards(model)", app_js)
-        self.assertIn("rasch: 50", app_js)
-        self.assertIn("sparseRasch: 50", app_js)
-        self.assertIn("twopl: 0", app_js)
+        self.assertIn("rasch: 0", app_js)
+        self.assertIn("sparseRasch: 30", app_js)
+        self.assertIn("twopl: 70", app_js)
         self.assertIn("denseRasch: 0", app_js)
         self.assertIn('customMethodAggregator: "mean"', app_js)
         self.assertIn('customBoardAggregator: "arithmetic"', app_js)
@@ -392,7 +392,7 @@ class DocsMarkupTests(unittest.TestCase):
             self.assertIn(section, html)
 
         self.assertIn(
-            "rank_mean = (core_evidence_rank + sparse_evidence_rank) / 2",
+            "rank_mean = 0.70 × twopl_evidence_rank + 0.30 × sparse_evidence_rank",
             html,
         )
         self.assertIn("Core Rasch", html)
@@ -403,11 +403,11 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("at least two canonical benchmark families", html)
         self.assertIn("at least three in every board", html)
         self.assertIn("Coverage controls eligibility and labels", html)
-        self.assertIn("it does not modify a qualified model's Rasch score", html)
+        self.assertIn("it does not modify a qualified model's observed IRT score", html)
         self.assertIn("Claude Fable 5", html)
         self.assertIn("GPT-5.6 Sol", html)
         self.assertIn("evidence_rank", html)
-        self.assertIn("there is no 40 / 24 / 20 / 8 / 8 weighting", html)
+        self.assertIn("there is no 40 / 24 / 20 / 8 / 8 board weighting", html)
         for runtime_term in (
             "Core Rasch",
             "Sparse Rasch",
