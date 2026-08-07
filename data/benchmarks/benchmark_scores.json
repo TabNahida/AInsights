@@ -16,7 +16,18 @@
       "url": "https://openai.com/index/gpt-5-6/",
       "category": "Official model release",
       "collectionStatus": "stale-retained; refresh blocked: HTTPError",
-      "note": "OpenAI official GPT-5.6 release tables covering Sol, Terra, and Luna across professional work, coding, science, computer use, cybersecurity, reasoning, tool use, and long-context evaluations."
+      "note": "OpenAI official GPT-5.6 release tables covering Sol, Terra, and Luna across professional work, coding, science, computer use, cybersecurity, reasoning, tool use, and long-context evaluations. The release appendix labels the single-agent columns only by model tier, while the surrounding AA index values and separately reported Sol Ultra rows support mapping these columns to max effort. The mapping is therefore exact-variant scoped but marked as configuration-inferred and must not be broadcast to other effort settings.",
+      "modelAliases": [
+        "GPT-5.6 Sol (max)",
+        "gpt-5-6-sol",
+        "GPT-5.6 Terra (max)",
+        "gpt-5-6-terra",
+        "GPT-5.6 Luna (max)",
+        "gpt-5-6-luna"
+      ],
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "id": "anthropic-claude-opus-5-release",
@@ -24,7 +35,7 @@
       "url": "https://www.anthropic.com/news/claude-opus-5",
       "category": "Official release",
       "collectionStatus": "seeded-official-values; no parseable benchmark table found",
-      "note": "Anthropic's July 24, 2026 Opus 5 release summary. Seed values transcribe only the Opus 5 column from the official benchmark image; competitor columns are excluded. The summary reports the published effort configuration for each benchmark, with ARC-AGI-3 explicitly shown at high effort.",
+      "note": "Anthropic's July 24, 2026 Opus 5 release summary. Seed values transcribe only the Opus 5 column from the official benchmark image; competitor columns are excluded. Scores without an exact effort mapping remain source-library evidence and are excluded from the evidence-only ranking. ARC-AGI-3 is explicitly high effort. Frontier-Bench is a system result with an Opus 4.8 safety fallback and is not eligible for a pure Opus 5 model ranking.",
       "modelAliases": [
         "Claude Opus 5",
         "Claude Opus 5 (max)",
@@ -37,7 +48,24 @@
         "claude-opus-5-high",
         "claude-opus-5-medium",
         "claude-opus-5-low"
-      ]
+      ],
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "id": "anthropic-claude-opus-5-system-card",
+      "label": "Anthropic Claude Opus 5 System Card",
+      "url": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
+      "category": "Official system card",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "Anthropic's July 2026 Opus 5 System Card. SWE scores are from Table 8.1.A and Section 8.2 (adaptive thinking, max effort, default sampling, five trials). MCP-Atlas, OfficeQA Pro, AA-Briefcase, and Toolathlon are transcribed from Sections 8.13.1-8.13.6 with their published harnesses. Values are scoped to the max-effort Opus 5 variant and must not be broadcast to lower-effort variants.",
+      "modelAliases": [
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (max) [R]",
+        "claude-opus-5-max"
+      ],
+      "variantScoped": true,
+      "effort": "max"
     },
     {
       "id": "anthropic-claude-opus-4-7-release",
@@ -68,13 +96,19 @@
       "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
       "category": "Official release",
       "collectionStatus": "seeded-official-values; no parseable benchmark table found",
-      "note": "Anthropic release table for Claude Mythos 5 / Fable 5. Reported Mythos and Fable scores are within 1-3 percentage points unless starred; the table shows the higher score of the two, and starred rows can differ more because Fable falls back to Opus 4.8 for some cyber and biology requests.",
+      "note": "Anthropic release table for Claude Mythos 5 / Fable 5. Reported Mythos and Fable scores are within 1-3 percentage points unless starred; the table shows the higher score of the two, and starred rows can differ more because Fable falls back to Opus 4.8 for some cyber and biology requests. These higher-of-two chart values remain in the source library but are not attributable to either model and are excluded from model scoring.",
       "modelAliases": [
-        "Claude Fable 5",
-        "Claude Fable 5 (with fallback)",
-        "Claude Fable 5 (with fallback) [R]",
-        "claude-fable-5"
-      ]
+        "Claude Mythos 5 / Fable 5 (higher of two)"
+      ],
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "composite": true,
+      "compositeModelResult": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": false,
+      "pureModelEligible": false
     },
     {
       "id": "qwen-qwen3-release",
@@ -139,6 +173,39 @@
       "category": "Official release",
       "collectionStatus": "seeded-official-values; no parseable benchmark table found",
       "note": "Qwen.ai proprietary preview release. Seeded rows are limited to values derivable from official deltas over Qwen3.6-Plus; image-only absolute rows are left for parser/OCR follow-up."
+    },
+    {
+      "id": "anthropic-claude-fable-5-system-card",
+      "label": "Anthropic Claude Fable 5 and Mythos 5 System Card",
+      "url": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "category": "Official system card",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "Anthropic's official Fable 5 / Mythos 5 System Card reports separate model columns. Only values directly present in the Fable 5 column are retained here. They describe the released Fable 5 product configuration, whose safeguards can fall back to Opus 4.8, and therefore are eligible for the product leaderboard but not a hypothetical pure-base-model leaderboard.",
+      "modelAliases": [
+        "Claude Fable 5",
+        "Claude Fable 5 (with fallback)",
+        "claude-fable-5"
+      ],
+      "variantScoped": true,
+      "systemScore": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "id": "qwen-qwen3-8-max-release",
+      "label": "Qwen3.8-Max official release",
+      "url": "https://qwen.ai/blog?id=qwen3.8",
+      "category": "Official release",
+      "collectionStatus": "refreshed",
+      "note": "Qwen's August 3, 2026 Qwen3.8-Max release table. Only the Qwen3.8-Max column is ingested from Qwen's article-retrieval JSON API. Scores retain the published harness/configuration: for example Terminal-Bench 2.1 is Claude Code avg@10, SWE-bench Pro uses the Claude Code harness on the refined task set, and CharXiv reports without/with Code Interpreter separately. Slash-valued rows use explicit semantic component selection so refreshes cannot silently replace Score with Pass or partial with binary.",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ]
     },
     {
       "id": "deepseek-v4-pro-card",
@@ -2202,2800 +2269,2018 @@
     {
       "benchmarkId": "agents-last-exam",
       "benchmarkLabel": "Agents' Last Exam",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 52.7,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "gdpval-aa-elo",
       "benchmarkLabel": "GDPval-AA Elo",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 1747.8,
       "unit": "Elo",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "management-consulting-internal",
       "benchmarkLabel": "Management Consulting Tasks (Internal)",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 43.2,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "big-finance-bench",
       "benchmarkLabel": "Big Finance Bench",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 53.0,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "swe-bench-pro",
       "benchmarkLabel": "SWE-Bench Pro",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 64.6,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "deepswe-v1-1",
       "benchmarkLabel": "DeepSWE v1.1",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 72.7,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "terminal-bench-2-1",
       "benchmarkLabel": "Terminal-Bench 2.1",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 88.8,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "genebench-pro",
       "benchmarkLabel": "GeneBench Pro",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 28.7,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "lifescibench",
       "benchmarkLabel": "LifeSciBench",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 59.9,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "medchembench-internal",
       "benchmarkLabel": "MedChemBench (Internal)",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 48.3,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "healthbench-professional",
       "benchmarkLabel": "HealthBench Professional",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 60.5,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "osworld-2",
       "benchmarkLabel": "OSWorld 2.0",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 62.6,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "browsecomp",
       "benchmarkLabel": "BrowseComp",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 90.4,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "benchcad",
       "benchmarkLabel": "BenchCAD",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 70.6,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "benchcad-python",
       "benchmarkLabel": "BenchCAD (Python tool)",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 83.4,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "capture-the-flag",
       "benchmarkLabel": "Capture-the-Flag Challenges",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 96.7,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "sec-bench-pro",
       "benchmarkLabel": "SEC-Bench Pro",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 71.2,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "exploitbench",
       "benchmarkLabel": "ExploitBench",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 73.5,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "exploitgym",
       "benchmarkLabel": "ExploitGym",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 33.7,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "internal-research-debugging",
       "benchmarkLabel": "Internal Research Debugging Evaluation",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 68.3,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "kernelgen-1p",
       "benchmarkLabel": "KernelGen 1P",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 61.1,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "nanogpt",
       "benchmarkLabel": "NanoGPT",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 9.69,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "posttrainbench-lite",
       "benchmarkLabel": "PostTrainBench Lite",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 50.3,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "rsi-index",
       "benchmarkLabel": "RSI Index",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 57.9,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "mmmu-pro-no-tools",
       "benchmarkLabel": "MMMU Pro (no tools)",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 83.0,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "mmmu-pro-tools",
       "benchmarkLabel": "MMMU Pro (with tools)",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 84.6,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "gdp-pdf",
       "benchmarkLabel": "GDP.pdf",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 30.7,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "gpqa-diamond",
       "benchmarkLabel": "GPQA Diamond",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 94.6,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "frontiermath-tier-1-3-v2",
       "benchmarkLabel": "FrontierMath Tier 1-3 (v2)",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 89.0,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "frontiermath-tier-4-v2",
       "benchmarkLabel": "FrontierMath Tier 4 (v2)",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 83.0,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "automationbench",
       "benchmarkLabel": "AutomationBench",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 18.1,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "toolathlon",
       "benchmarkLabel": "Toolathlon",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 58.0,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "openai-mrcr-v2-256k-512k",
       "benchmarkLabel": "OpenAI MRCR v2 8-needle 256K-512K",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 91.5,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "openai-mrcr-v2-512k-1m",
       "benchmarkLabel": "OpenAI MRCR v2 8-needle 512K-1M",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 73.8,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "graphwalks-bfs-256k-f1",
       "benchmarkLabel": "GraphWalks BFS 256K F1",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 90.7,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "graphwalks-bfs-1m-f1",
       "benchmarkLabel": "GraphWalks BFS 1M F1",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 77.1,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "arc-agi-3",
       "benchmarkLabel": "ARC-AGI-3",
-      "model": "GPT-5.6 Sol",
+      "model": "GPT-5.6 Sol (max)",
       "modelAliases": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
-        "GPT-5.6 Sol (xhigh)",
-        "GPT-5.6 Sol (high)",
-        "GPT-5.6 Sol (medium)",
-        "GPT-5.6 Sol (low)",
-        "GPT-5.6 Sol (Non-reasoning)",
-        "gpt-5-6-sol",
-        "gpt-5-6-sol-xhigh",
-        "gpt-5-6-sol-high",
-        "gpt-5-6-sol-medium",
-        "gpt-5-6-sol-low",
-        "gpt-5-6-sol-non-reasoning"
+        "gpt-5-6-sol"
       ],
       "value": 7.78,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "agents-last-exam",
       "benchmarkLabel": "Agents' Last Exam",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 50.4,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "gdpval-aa-elo",
       "benchmarkLabel": "GDPval-AA Elo",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 1593.0,
       "unit": "Elo",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "management-consulting-internal",
       "benchmarkLabel": "Management Consulting Tasks (Internal)",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 37.2,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "big-finance-bench",
       "benchmarkLabel": "Big Finance Bench",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 51.0,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "swe-bench-pro",
       "benchmarkLabel": "SWE-Bench Pro",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 63.4,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "deepswe-v1-1",
       "benchmarkLabel": "DeepSWE v1.1",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 69.6,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "terminal-bench-2-1",
       "benchmarkLabel": "Terminal-Bench 2.1",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 87.4,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "genebench-pro",
       "benchmarkLabel": "GeneBench Pro",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 23.3,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "lifescibench",
       "benchmarkLabel": "LifeSciBench",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 56.0,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "medchembench-internal",
       "benchmarkLabel": "MedChemBench (Internal)",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 35.0,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "healthbench-professional",
       "benchmarkLabel": "HealthBench Professional",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 57.7,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "osworld-2",
       "benchmarkLabel": "OSWorld 2.0",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 50.2,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "browsecomp",
       "benchmarkLabel": "BrowseComp",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 87.5,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "benchcad",
       "benchmarkLabel": "BenchCAD",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 62.3,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "benchcad-python",
       "benchmarkLabel": "BenchCAD (Python tool)",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 78.2,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "capture-the-flag",
       "benchmarkLabel": "Capture-the-Flag Challenges",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 91.8,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "sec-bench-pro",
       "benchmarkLabel": "SEC-Bench Pro",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 57.7,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "exploitbench",
       "benchmarkLabel": "ExploitBench",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 52.9,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "exploitgym",
       "benchmarkLabel": "ExploitGym",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 23.2,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "internal-research-debugging",
       "benchmarkLabel": "Internal Research Debugging Evaluation",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 67.8,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "kernelgen-1p",
       "benchmarkLabel": "KernelGen 1P",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 49.2,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "nanogpt",
       "benchmarkLabel": "NanoGPT",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 14.5,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "posttrainbench-lite",
       "benchmarkLabel": "PostTrainBench Lite",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 51.5,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "rsi-index",
       "benchmarkLabel": "RSI Index",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 56.3,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "mmmu-pro-no-tools",
       "benchmarkLabel": "MMMU Pro (no tools)",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 80.7,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "mmmu-pro-tools",
       "benchmarkLabel": "MMMU Pro (with tools)",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 82.0,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "gdp-pdf",
       "benchmarkLabel": "GDP.pdf",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 24.7,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "gpqa-diamond",
       "benchmarkLabel": "GPQA Diamond",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 92.9,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "frontiermath-tier-1-3-v2",
       "benchmarkLabel": "FrontierMath Tier 1-3 (v2)",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 84.9,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "frontiermath-tier-4-v2",
       "benchmarkLabel": "FrontierMath Tier 4 (v2)",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 68.3,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "automationbench",
       "benchmarkLabel": "AutomationBench",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 15.2,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "toolathlon",
       "benchmarkLabel": "Toolathlon",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 53.1,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "openai-mrcr-v2-256k-512k",
       "benchmarkLabel": "OpenAI MRCR v2 8-needle 256K-512K",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 89.6,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "openai-mrcr-v2-512k-1m",
       "benchmarkLabel": "OpenAI MRCR v2 8-needle 512K-1M",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 72.5,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "graphwalks-bfs-256k-f1",
       "benchmarkLabel": "GraphWalks BFS 256K F1",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 76.9,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "graphwalks-bfs-1m-f1",
       "benchmarkLabel": "GraphWalks BFS 1M F1",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 71.2,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "arc-agi-3",
       "benchmarkLabel": "ARC-AGI-3",
-      "model": "GPT-5.6 Terra",
+      "model": "GPT-5.6 Terra (max)",
       "modelAliases": [
         "GPT-5.6 Terra",
         "GPT-5.6 Terra (max)",
-        "GPT-5.6 Terra (xhigh)",
-        "GPT-5.6 Terra (high)",
-        "GPT-5.6 Terra (medium)",
-        "GPT-5.6 Terra (low)",
-        "GPT-5.6 Terra (Non-reasoning)",
-        "gpt-5-6-terra",
-        "gpt-5-6-terra-xhigh",
-        "gpt-5-6-terra-high",
-        "gpt-5-6-terra-medium",
-        "gpt-5-6-terra-low",
-        "gpt-5-6-terra-non-reasoning"
+        "gpt-5-6-terra"
       ],
       "value": 0.8,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "agents-last-exam",
       "benchmarkLabel": "Agents' Last Exam",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 50.3,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "gdpval-aa-elo",
       "benchmarkLabel": "GDPval-AA Elo",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 1591.8,
       "unit": "Elo",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "management-consulting-internal",
       "benchmarkLabel": "Management Consulting Tasks (Internal)",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 35.4,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "big-finance-bench",
       "benchmarkLabel": "Big Finance Bench",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 36.0,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "swe-bench-pro",
       "benchmarkLabel": "SWE-Bench Pro",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 62.7,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "deepswe-v1-1",
       "benchmarkLabel": "DeepSWE v1.1",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 67.2,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "terminal-bench-2-1",
       "benchmarkLabel": "Terminal-Bench 2.1",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 84.7,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "genebench-pro",
       "benchmarkLabel": "GeneBench Pro",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 10.8,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "lifescibench",
       "benchmarkLabel": "LifeSciBench",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 51.2,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "medchembench-internal",
       "benchmarkLabel": "MedChemBench (Internal)",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 30.4,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "healthbench-professional",
       "benchmarkLabel": "HealthBench Professional",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 55.7,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "osworld-2",
       "benchmarkLabel": "OSWorld 2.0",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 45.6,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "browsecomp",
       "benchmarkLabel": "BrowseComp",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 83.3,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "benchcad",
       "benchmarkLabel": "BenchCAD",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 63.1,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "benchcad-python",
       "benchmarkLabel": "BenchCAD (Python tool)",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 73.9,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "capture-the-flag",
       "benchmarkLabel": "Capture-the-Flag Challenges",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 85.2,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "sec-bench-pro",
       "benchmarkLabel": "SEC-Bench Pro",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 48.9,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "exploitbench",
       "benchmarkLabel": "ExploitBench",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 33.2,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "exploitgym",
       "benchmarkLabel": "ExploitGym",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 12.4,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "internal-research-debugging",
       "benchmarkLabel": "Internal Research Debugging Evaluation",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 50.8,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "kernelgen-1p",
       "benchmarkLabel": "KernelGen 1P",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 22.4,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "nanogpt",
       "benchmarkLabel": "NanoGPT",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 1.66,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "posttrainbench-lite",
       "benchmarkLabel": "PostTrainBench Lite",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 29.6,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "rsi-index",
       "benchmarkLabel": "RSI Index",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 41.9,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "mmmu-pro-no-tools",
       "benchmarkLabel": "MMMU Pro (no tools)",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 78.4,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "mmmu-pro-tools",
       "benchmarkLabel": "MMMU Pro (with tools)",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 79.5,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "gdp-pdf",
       "benchmarkLabel": "GDP.pdf",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 22.7,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "gpqa-diamond",
       "benchmarkLabel": "GPQA Diamond",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 92.3,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "frontiermath-tier-1-3-v2",
       "benchmarkLabel": "FrontierMath Tier 1-3 (v2)",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 78.6,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "frontiermath-tier-4-v2",
       "benchmarkLabel": "FrontierMath Tier 4 (v2)",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 58.5,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "automationbench",
       "benchmarkLabel": "AutomationBench",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 14.9,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "toolathlon",
       "benchmarkLabel": "Toolathlon",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 53.4,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "openai-mrcr-v2-256k-512k",
       "benchmarkLabel": "OpenAI MRCR v2 8-needle 256K-512K",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 41.3,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "openai-mrcr-v2-512k-1m",
       "benchmarkLabel": "OpenAI MRCR v2 8-needle 512K-1M",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 41.3,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "graphwalks-bfs-256k-f1",
       "benchmarkLabel": "GraphWalks BFS 256K F1",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 81.3,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "graphwalks-bfs-1m-f1",
       "benchmarkLabel": "GraphWalks BFS 1M F1",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 51.2,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "arc-agi-3",
       "benchmarkLabel": "ARC-AGI-3",
-      "model": "GPT-5.6 Luna",
+      "model": "GPT-5.6 Luna (max)",
       "modelAliases": [
         "GPT-5.6 Luna",
         "GPT-5.6 Luna (max)",
-        "GPT-5.6 Luna (xhigh)",
-        "GPT-5.6 Luna (high)",
-        "GPT-5.6 Luna (medium)",
-        "GPT-5.6 Luna (low)",
-        "GPT-5.6 Luna (Non-reasoning)",
-        "gpt-5-6-luna",
-        "gpt-5-6-luna-xhigh",
-        "gpt-5-6-luna-high",
-        "gpt-5-6-luna-medium",
-        "gpt-5-6-luna-low",
-        "gpt-5-6-luna-non-reasoning"
+        "gpt-5-6-luna"
       ],
       "value": 0.18,
       "unit": "%",
       "sourceId": "openai-gpt-5-6-release",
       "sourceUrl": "https://openai.com/index/gpt-5-6/",
-      "sourceLabel": "OpenAI GPT-5.6 official release evaluations"
+      "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "inferred"
     },
     {
       "benchmarkId": "frontier-bench-v0-1",
       "benchmarkLabel": "Frontier-Bench v0.1",
-      "model": "Claude Opus 5",
+      "model": "Claude Opus 5 with Opus 4.8 safety fallback",
       "modelAliases": [
-        "Claude Opus 5",
-        "Claude Opus 5 (max)",
-        "Claude Opus 5 (xhigh)",
-        "Claude Opus 5 (high)",
-        "Claude Opus 5 (medium)",
-        "Claude Opus 5 (low)",
-        "claude-opus-5",
-        "claude-opus-5-xhigh",
-        "claude-opus-5-high",
-        "claude-opus-5-medium",
-        "claude-opus-5-low"
+        "Claude Opus 5 with Opus 4.8 safety fallback"
       ],
       "value": 43.3,
       "unit": "%",
       "sourceId": "anthropic-claude-opus-5-release",
       "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
-      "sourceLabel": "Anthropic Claude Opus 5 official release"
+      "sourceLabel": "Anthropic Claude Opus 5 official release",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "configurationNote": "mini-SWE-agent on GKE with five attempts; Opus 4.8 is used when the Opus 5 safety classifier refuses the request."
     },
     {
       "benchmarkId": "gdpval-aa-elo",
@@ -5018,30 +4303,29 @@
       "unit": "Elo",
       "sourceId": "anthropic-claude-opus-5-release",
       "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
-      "sourceLabel": "Anthropic Claude Opus 5 official release"
+      "sourceLabel": "Anthropic Claude Opus 5 official release",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
     },
     {
       "benchmarkId": "arc-agi-3",
       "benchmarkLabel": "ARC-AGI-3",
-      "model": "Claude Opus 5",
+      "model": "Claude Opus 5 (high)",
       "modelAliases": [
-        "Claude Opus 5",
-        "Claude Opus 5 (max)",
-        "Claude Opus 5 (xhigh)",
         "Claude Opus 5 (high)",
-        "Claude Opus 5 (medium)",
-        "Claude Opus 5 (low)",
-        "claude-opus-5",
-        "claude-opus-5-xhigh",
-        "claude-opus-5-high",
-        "claude-opus-5-medium",
-        "claude-opus-5-low"
+        "Claude Opus 5 (high) [R]",
+        "claude-opus-5-high"
       ],
       "value": 30.2,
       "unit": "%",
       "sourceId": "anthropic-claude-opus-5-release",
       "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
-      "sourceLabel": "Anthropic Claude Opus 5 official release"
+      "sourceLabel": "Anthropic Claude Opus 5 official release",
+      "variantScoped": true,
+      "modelScoreEligible": true,
+      "evidenceEligible": true,
+      "effort": "high",
+      "configurationNote": "Official release table explicitly labels ARC-AGI-3 as high effort."
     },
     {
       "benchmarkId": "browsecomp",
@@ -5064,7 +4348,9 @@
       "unit": "%",
       "sourceId": "anthropic-claude-opus-5-release",
       "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
-      "sourceLabel": "Anthropic Claude Opus 5 official release"
+      "sourceLabel": "Anthropic Claude Opus 5 official release",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
     },
     {
       "benchmarkId": "hle",
@@ -5087,7 +4373,9 @@
       "unit": "%",
       "sourceId": "anthropic-claude-opus-5-release",
       "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
-      "sourceLabel": "Anthropic Claude Opus 5 official release"
+      "sourceLabel": "Anthropic Claude Opus 5 official release",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
     },
     {
       "benchmarkId": "hle-tools",
@@ -5110,7 +4398,9 @@
       "unit": "%",
       "sourceId": "anthropic-claude-opus-5-release",
       "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
-      "sourceLabel": "Anthropic Claude Opus 5 official release"
+      "sourceLabel": "Anthropic Claude Opus 5 official release",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
     },
     {
       "benchmarkId": "osworld-2",
@@ -5133,7 +4423,9 @@
       "unit": "%",
       "sourceId": "anthropic-claude-opus-5-release",
       "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
-      "sourceLabel": "Anthropic Claude Opus 5 official release"
+      "sourceLabel": "Anthropic Claude Opus 5 official release",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
     },
     {
       "benchmarkId": "deepswe-v1-1",
@@ -5156,7 +4448,9 @@
       "unit": "%",
       "sourceId": "anthropic-claude-opus-5-release",
       "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
-      "sourceLabel": "Anthropic Claude Opus 5 official release"
+      "sourceLabel": "Anthropic Claude Opus 5 official release",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
     },
     {
       "benchmarkId": "frontiercode-v1-1-main",
@@ -5179,7 +4473,9 @@
       "unit": "%",
       "sourceId": "anthropic-claude-opus-5-release",
       "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
-      "sourceLabel": "Anthropic Claude Opus 5 official release"
+      "sourceLabel": "Anthropic Claude Opus 5 official release",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
     },
     {
       "benchmarkId": "automationbench",
@@ -5202,7 +4498,9 @@
       "unit": "%",
       "sourceId": "anthropic-claude-opus-5-release",
       "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
-      "sourceLabel": "Anthropic Claude Opus 5 official release"
+      "sourceLabel": "Anthropic Claude Opus 5 official release",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
     },
     {
       "benchmarkId": "legal-agent-benchmark",
@@ -5225,7 +4523,9 @@
       "unit": "%",
       "sourceId": "anthropic-claude-opus-5-release",
       "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
-      "sourceLabel": "Anthropic Claude Opus 5 official release"
+      "sourceLabel": "Anthropic Claude Opus 5 official release",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
     },
     {
       "benchmarkId": "healthbench-professional",
@@ -5248,7 +4548,9 @@
       "unit": "%",
       "sourceId": "anthropic-claude-opus-5-release",
       "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
-      "sourceLabel": "Anthropic Claude Opus 5 official release"
+      "sourceLabel": "Anthropic Claude Opus 5 official release",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
     },
     {
       "benchmarkId": "biomysterybench-hard",
@@ -5271,7 +4573,9 @@
       "unit": "%",
       "sourceId": "anthropic-claude-opus-5-release",
       "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
-      "sourceLabel": "Anthropic Claude Opus 5 official release"
+      "sourceLabel": "Anthropic Claude Opus 5 official release",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
     },
     {
       "benchmarkId": "biomysterybench-human-solved",
@@ -5294,7 +4598,128 @@
       "unit": "%",
       "sourceId": "anthropic-claude-opus-5-release",
       "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
-      "sourceLabel": "Anthropic Claude Opus 5 official release"
+      "sourceLabel": "Anthropic Claude Opus 5 official release",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "Claude Opus 5 (max)",
+      "modelAliases": [
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (max) [R]",
+        "claude-opus-5-max"
+      ],
+      "value": 96.0,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-system-card",
+      "sourceUrl": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
+      "sourceLabel": "Anthropic Claude Opus 5 System Card",
+      "variantScoped": true,
+      "effort": "max"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Claude Opus 5 (max)",
+      "modelAliases": [
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (max) [R]",
+        "claude-opus-5-max"
+      ],
+      "value": 79.2,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-system-card",
+      "sourceUrl": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
+      "sourceLabel": "Anthropic Claude Opus 5 System Card",
+      "variantScoped": true,
+      "effort": "max"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "Claude Opus 5 (max)",
+      "modelAliases": [
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (max) [R]",
+        "claude-opus-5-max"
+      ],
+      "value": 89.5,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-system-card",
+      "sourceUrl": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
+      "sourceLabel": "Anthropic Claude Opus 5 System Card",
+      "variantScoped": true,
+      "effort": "max"
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "Claude Opus 5 (max)",
+      "modelAliases": [
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (max) [R]",
+        "claude-opus-5-max"
+      ],
+      "value": 85.8,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-system-card",
+      "sourceUrl": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
+      "sourceLabel": "Anthropic Claude Opus 5 System Card",
+      "variantScoped": true,
+      "effort": "max"
+    },
+    {
+      "benchmarkId": "officeqa-pro",
+      "benchmarkLabel": "Office QA Pro",
+      "model": "Claude Opus 5 (max)",
+      "modelAliases": [
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (max) [R]",
+        "claude-opus-5-max"
+      ],
+      "value": 66.9,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-system-card",
+      "sourceUrl": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
+      "sourceLabel": "Anthropic Claude Opus 5 System Card",
+      "variantScoped": true,
+      "effort": "max"
+    },
+    {
+      "benchmarkId": "aa-briefcase-elo",
+      "benchmarkLabel": "AA-Briefcase Elo",
+      "model": "Claude Opus 5 (max)",
+      "modelAliases": [
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (max) [R]",
+        "claude-opus-5-max"
+      ],
+      "value": 1720,
+      "unit": "Elo",
+      "sourceId": "anthropic-claude-opus-5-system-card",
+      "sourceUrl": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
+      "sourceLabel": "Anthropic Claude Opus 5 System Card",
+      "variantScoped": true,
+      "effort": "max"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "Claude Opus 5 (max)",
+      "modelAliases": [
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (max) [R]",
+        "claude-opus-5-max"
+      ],
+      "value": 80.6,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-system-card",
+      "sourceUrl": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
+      "sourceLabel": "Anthropic Claude Opus 5 System Card",
+      "variantScoped": true,
+      "effort": "max"
     },
     {
       "benchmarkId": "swe-bench-pro",
@@ -5877,242 +5302,347 @@
     {
       "benchmarkId": "swe-bench-pro",
       "benchmarkLabel": "SWE-Bench Pro",
-      "model": "Claude Fable 5",
+      "model": "Claude Mythos 5 / Fable 5 (higher of two)",
       "modelAliases": [
-        "Claude Fable 5",
-        "Claude Fable 5 (with fallback)",
-        "Claude Fable 5 (with fallback) [R]",
-        "claude-fable-5"
+        "Claude Mythos 5 / Fable 5 (higher of two)"
       ],
       "value": 80.3,
       "unit": "%",
       "sourceId": "anthropic-claude-fable-5-docs",
       "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "configurationNote": "News chart reports the higher of Mythos 5 and Fable 5; the value cannot be attributed to either model.",
+      "composite": true,
+      "compositeModelResult": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": false,
+      "pureModelEligible": false
     },
     {
       "benchmarkId": "frontiercode-diamond",
       "benchmarkLabel": "FrontierCode Diamond",
-      "model": "Claude Fable 5",
+      "model": "Claude Mythos 5 / Fable 5 (higher of two)",
       "modelAliases": [
-        "Claude Fable 5",
-        "Claude Fable 5 (with fallback)",
-        "Claude Fable 5 (with fallback) [R]",
-        "claude-fable-5"
+        "Claude Mythos 5 / Fable 5 (higher of two)"
       ],
       "value": 29.3,
       "unit": "%",
       "sourceId": "anthropic-claude-fable-5-docs",
       "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "configurationNote": "News chart reports the higher of Mythos 5 and Fable 5; the value cannot be attributed to either model.",
+      "composite": true,
+      "compositeModelResult": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": false,
+      "pureModelEligible": false
     },
     {
       "benchmarkId": "gdpval-aa-elo",
       "benchmarkLabel": "GDPval-AA Elo",
-      "model": "Claude Fable 5",
+      "model": "Claude Mythos 5 / Fable 5 (higher of two)",
       "modelAliases": [
-        "Claude Fable 5",
-        "Claude Fable 5 (with fallback)",
-        "Claude Fable 5 (with fallback) [R]",
-        "claude-fable-5"
+        "Claude Mythos 5 / Fable 5 (higher of two)"
       ],
       "value": 1932,
       "unit": "Elo",
       "sourceId": "anthropic-claude-fable-5-docs",
       "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "configurationNote": "News chart reports the higher of Mythos 5 and Fable 5; the value cannot be attributed to either model.",
+      "composite": true,
+      "compositeModelResult": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": false,
+      "pureModelEligible": false
     },
     {
       "benchmarkId": "gdp-pdf",
       "benchmarkLabel": "GDP.pdf",
-      "model": "Claude Fable 5",
+      "model": "Claude Mythos 5 / Fable 5 (higher of two)",
       "modelAliases": [
-        "Claude Fable 5",
-        "Claude Fable 5 (with fallback)",
-        "Claude Fable 5 (with fallback) [R]",
-        "claude-fable-5"
+        "Claude Mythos 5 / Fable 5 (higher of two)"
       ],
       "value": 29.8,
       "unit": "%",
       "sourceId": "anthropic-claude-fable-5-docs",
       "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "configurationNote": "News chart reports the higher of Mythos 5 and Fable 5; the value cannot be attributed to either model.",
+      "composite": true,
+      "compositeModelResult": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": false,
+      "pureModelEligible": false
     },
     {
       "benchmarkId": "blueprint-bench-2",
       "benchmarkLabel": "Blueprint-Bench 2",
-      "model": "Claude Fable 5",
+      "model": "Claude Mythos 5 / Fable 5 (higher of two)",
       "modelAliases": [
-        "Claude Fable 5",
-        "Claude Fable 5 (with fallback)",
-        "Claude Fable 5 (with fallback) [R]",
-        "claude-fable-5"
+        "Claude Mythos 5 / Fable 5 (higher of two)"
       ],
       "value": 38.6,
       "unit": "%",
       "sourceId": "anthropic-claude-fable-5-docs",
       "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "configurationNote": "News chart reports the higher of Mythos 5 and Fable 5; the value cannot be attributed to either model.",
+      "composite": true,
+      "compositeModelResult": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": false,
+      "pureModelEligible": false
     },
     {
       "benchmarkId": "automationbench",
       "benchmarkLabel": "AutomationBench",
-      "model": "Claude Fable 5",
+      "model": "Claude Mythos 5 / Fable 5 (higher of two)",
       "modelAliases": [
-        "Claude Fable 5",
-        "Claude Fable 5 (with fallback)",
-        "Claude Fable 5 (with fallback) [R]",
-        "claude-fable-5"
+        "Claude Mythos 5 / Fable 5 (higher of two)"
       ],
       "value": 17.4,
       "unit": "%",
       "sourceId": "anthropic-claude-fable-5-docs",
       "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "configurationNote": "News chart reports the higher of Mythos 5 and Fable 5; the value cannot be attributed to either model.",
+      "composite": true,
+      "compositeModelResult": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": false,
+      "pureModelEligible": false
     },
     {
       "benchmarkId": "osworld-verified",
       "benchmarkLabel": "OSWorld-Verified",
-      "model": "Claude Fable 5",
+      "model": "Claude Mythos 5 / Fable 5 (higher of two)",
       "modelAliases": [
-        "Claude Fable 5",
-        "Claude Fable 5 (with fallback)",
-        "Claude Fable 5 (with fallback) [R]",
-        "claude-fable-5"
+        "Claude Mythos 5 / Fable 5 (higher of two)"
       ],
       "value": 85.0,
       "unit": "%",
       "sourceId": "anthropic-claude-fable-5-docs",
       "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "configurationNote": "News chart reports the higher of Mythos 5 and Fable 5; the value cannot be attributed to either model.",
+      "composite": true,
+      "compositeModelResult": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": false,
+      "pureModelEligible": false
     },
     {
       "benchmarkId": "legal-agent-benchmark",
       "benchmarkLabel": "Legal Agent Benchmark",
-      "model": "Claude Fable 5",
+      "model": "Claude Mythos 5 / Fable 5 (higher of two)",
       "modelAliases": [
-        "Claude Fable 5",
-        "Claude Fable 5 (with fallback)",
-        "Claude Fable 5 (with fallback) [R]",
-        "claude-fable-5"
+        "Claude Mythos 5 / Fable 5 (higher of two)"
       ],
       "value": 13.3,
       "unit": "%",
       "sourceId": "anthropic-claude-fable-5-docs",
       "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "configurationNote": "News chart reports the higher of Mythos 5 and Fable 5; the value cannot be attributed to either model.",
+      "composite": true,
+      "compositeModelResult": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": false,
+      "pureModelEligible": false
     },
     {
       "benchmarkId": "hle",
       "benchmarkLabel": "Humanity's Last Exam",
-      "model": "Claude Fable 5",
+      "model": "Claude Mythos 5 / Fable 5 (higher of two)",
       "modelAliases": [
-        "Claude Fable 5",
-        "Claude Fable 5 (with fallback)",
-        "Claude Fable 5 (with fallback) [R]",
-        "claude-fable-5"
+        "Claude Mythos 5 / Fable 5 (higher of two)"
       ],
       "value": 59.0,
       "unit": "%",
       "sourceId": "anthropic-claude-fable-5-docs",
       "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "configurationNote": "News chart reports the higher of Mythos 5 and Fable 5; the value cannot be attributed to either model.",
+      "composite": true,
+      "compositeModelResult": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": false,
+      "pureModelEligible": false
     },
     {
       "benchmarkId": "hle-tools",
       "benchmarkLabel": "HLE w/ tools",
-      "model": "Claude Fable 5",
+      "model": "Claude Mythos 5 / Fable 5 (higher of two)",
       "modelAliases": [
-        "Claude Fable 5",
-        "Claude Fable 5 (with fallback)",
-        "Claude Fable 5 (with fallback) [R]",
-        "claude-fable-5"
+        "Claude Mythos 5 / Fable 5 (higher of two)"
       ],
       "value": 64.5,
       "unit": "%",
       "sourceId": "anthropic-claude-fable-5-docs",
       "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "configurationNote": "News chart reports the higher of Mythos 5 and Fable 5; the value cannot be attributed to either model.",
+      "composite": true,
+      "compositeModelResult": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": false,
+      "pureModelEligible": false
     },
     {
       "benchmarkId": "biomysterybench-hard",
       "benchmarkLabel": "BioMysteryBench hard",
-      "model": "Claude Fable 5",
+      "model": "Claude Mythos 5 / Fable 5 (higher of two)",
       "modelAliases": [
-        "Claude Fable 5",
-        "Claude Fable 5 (with fallback)",
-        "Claude Fable 5 (with fallback) [R]",
-        "claude-fable-5"
+        "Claude Mythos 5 / Fable 5 (higher of two)"
       ],
       "value": 46.1,
       "unit": "%",
       "sourceId": "anthropic-claude-fable-5-docs",
       "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "configurationNote": "News chart reports the higher of Mythos 5 and Fable 5; the value cannot be attributed to either model.",
+      "composite": true,
+      "compositeModelResult": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": false,
+      "pureModelEligible": false
     },
     {
       "benchmarkId": "biomysterybench-human-solved",
       "benchmarkLabel": "BioMysteryBench human solved",
-      "model": "Claude Fable 5",
+      "model": "Claude Mythos 5 / Fable 5 (higher of two)",
       "modelAliases": [
-        "Claude Fable 5",
-        "Claude Fable 5 (with fallback)",
-        "Claude Fable 5 (with fallback) [R]",
-        "claude-fable-5"
+        "Claude Mythos 5 / Fable 5 (higher of two)"
       ],
       "value": 83.9,
       "unit": "%",
       "sourceId": "anthropic-claude-fable-5-docs",
       "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "configurationNote": "News chart reports the higher of Mythos 5 and Fable 5; the value cannot be attributed to either model.",
+      "composite": true,
+      "compositeModelResult": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": false,
+      "pureModelEligible": false
     },
     {
       "benchmarkId": "terminal-bench-2-1",
       "benchmarkLabel": "Terminal-Bench 2.1",
-      "model": "Claude Fable 5",
+      "model": "Claude Mythos 5 / Fable 5 (higher of two)",
       "modelAliases": [
-        "Claude Fable 5",
-        "Claude Fable 5 (with fallback)",
-        "Claude Fable 5 (with fallback) [R]",
-        "claude-fable-5"
+        "Claude Mythos 5 / Fable 5 (higher of two)"
       ],
       "value": 88.0,
       "unit": "%",
       "sourceId": "anthropic-claude-fable-5-docs",
       "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "configurationNote": "News chart reports the higher of Mythos 5 and Fable 5; the value cannot be attributed to either model.",
+      "composite": true,
+      "compositeModelResult": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": false,
+      "pureModelEligible": false
     },
     {
       "benchmarkId": "exploitbench-cap",
       "benchmarkLabel": "ExploitBench (Cap%)",
-      "model": "Claude Fable 5",
+      "model": "Claude Mythos 5 / Fable 5 (higher of two)",
       "modelAliases": [
-        "Claude Fable 5",
-        "Claude Fable 5 (with fallback)",
-        "Claude Fable 5 (with fallback) [R]",
-        "claude-fable-5"
+        "Claude Mythos 5 / Fable 5 (higher of two)"
       ],
       "value": 78.0,
       "unit": "%",
       "sourceId": "anthropic-claude-fable-5-docs",
       "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "configurationNote": "News chart reports the higher of Mythos 5 and Fable 5; the value cannot be attributed to either model.",
+      "composite": true,
+      "compositeModelResult": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": false,
+      "pureModelEligible": false
     },
     {
       "benchmarkId": "healthbench-professional",
       "benchmarkLabel": "HealthBench Professional",
-      "model": "Claude Fable 5",
+      "model": "Claude Mythos 5 / Fable 5 (higher of two)",
       "modelAliases": [
-        "Claude Fable 5",
-        "Claude Fable 5 (with fallback)",
-        "Claude Fable 5 (with fallback) [R]",
-        "claude-fable-5"
+        "Claude Mythos 5 / Fable 5 (higher of two)"
       ],
       "value": 66.0,
       "unit": "%",
       "sourceId": "anthropic-claude-fable-5-docs",
       "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release"
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 official release",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "configurationNote": "News chart reports the higher of Mythos 5 and Fable 5; the value cannot be attributed to either model.",
+      "composite": true,
+      "compositeModelResult": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": false,
+      "pureModelEligible": false
     },
     {
       "benchmarkId": "aime-2024",
@@ -7772,6 +7302,741 @@
       "sourceId": "qwen-qwen3-6-max-preview-release",
       "sourceUrl": "https://qwen.ai/blog?id=qwen3.6-max-preview",
       "sourceLabel": "Qwen3.6-Max-Preview official release"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "Claude Fable 5 (with fallback)",
+      "modelAliases": [
+        "Claude Fable 5 (with fallback)"
+      ],
+      "value": 95.0,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Claude Fable 5 (with fallback)",
+      "modelAliases": [
+        "Claude Fable 5 (with fallback)"
+      ],
+      "value": 80.0,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Claude Fable 5 (with fallback)",
+      "modelAliases": [
+        "Claude Fable 5 (with fallback)"
+      ],
+      "value": 84.3,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "high",
+      "configurationNote": "High effort; 20.9% of trials were routed to Opus 4.8 after a Fable 5 safety refusal.",
+      "composite": true,
+      "fallbackConfigured": true,
+      "fallbackObserved": true,
+      "fallbackRate": 0.209,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "frontiercode-diamond",
+      "benchmarkLabel": "FrontierCode Diamond",
+      "model": "Claude Fable 5 (with fallback)",
+      "modelAliases": [
+        "Claude Fable 5 (with fallback)"
+      ],
+      "value": 29.3,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "xhigh",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "frontiercode-v1-1-main",
+      "benchmarkLabel": "FrontierCode v1.1 Main",
+      "model": "Claude Fable 5 (with fallback)",
+      "modelAliases": [
+        "Claude Fable 5 (with fallback)"
+      ],
+      "value": 46.3,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "xhigh",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "gdpval-aa-elo",
+      "benchmarkLabel": "GDPval-AA Elo",
+      "model": "Claude Fable 5 (with fallback)",
+      "modelAliases": [
+        "Claude Fable 5 (with fallback)"
+      ],
+      "value": 1932,
+      "unit": "Elo",
+      "sourceId": "anthropic-claude-fable-5-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "gdp-pdf",
+      "benchmarkLabel": "GDP.pdf",
+      "model": "Claude Fable 5 (with fallback)",
+      "modelAliases": [
+        "Claude Fable 5 (with fallback)"
+      ],
+      "value": 29.8,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "officeqa-pro",
+      "benchmarkLabel": "Office QA Pro",
+      "model": "Claude Fable 5 (with fallback)",
+      "modelAliases": [
+        "Claude Fable 5 (with fallback)"
+      ],
+      "value": 57.9,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "automationbench",
+      "benchmarkLabel": "AutomationBench",
+      "model": "Claude Fable 5 (with fallback)",
+      "modelAliases": [
+        "Claude Fable 5 (with fallback)"
+      ],
+      "value": 17.4,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "blueprint-bench-2",
+      "benchmarkLabel": "Blueprint-Bench 2",
+      "model": "Claude Fable 5 (with fallback)",
+      "modelAliases": [
+        "Claude Fable 5 (with fallback)"
+      ],
+      "value": 38.6,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "osworld-verified",
+      "benchmarkLabel": "OSWorld-Verified",
+      "model": "Claude Fable 5 (with fallback)",
+      "modelAliases": [
+        "Claude Fable 5 (with fallback)"
+      ],
+      "value": 85.0,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "legal-agent-benchmark",
+      "benchmarkLabel": "Legal Agent Benchmark",
+      "model": "Claude Fable 5 (with fallback)",
+      "modelAliases": [
+        "Claude Fable 5 (with fallback)"
+      ],
+      "value": 13.3,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "mcp-atlas",
+      "benchmarkLabel": "MCP-Atlas Public",
+      "model": "Claude Fable 5 (with fallback)",
+      "modelAliases": [
+        "Claude Fable 5 (with fallback)"
+      ],
+      "value": 83.3,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "Claude Fable 5 (with fallback)",
+      "modelAliases": [
+        "Claude Fable 5 (with fallback)"
+      ],
+      "value": 61.7,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5 and Mythos 5 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "configurationNote": "Pass@1 under Anthropic's internal harness; the System Card notes that this harness is approximately three points above strict upstream.",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 86.6,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 67.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 56.6,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
+    },
+    {
+      "benchmarkId": "nl2repo",
+      "benchmarkLabel": "NL2Repo",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 55.9,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
+    },
+    {
+      "benchmarkId": "frontierswe-dominance",
+      "benchmarkLabel": "FrontierSWE Dominance",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 73.5,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
+    },
+    {
+      "benchmarkId": "mls-bench-lite",
+      "benchmarkLabel": "MLS Bench Lite",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 41.0,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
+    },
+    {
+      "benchmarkId": "job-bench",
+      "benchmarkLabel": "Job Bench",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 53.4,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
+    },
+    {
+      "benchmarkId": "skillsbench",
+      "benchmarkLabel": "SkillsBench Avg5",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 70.2,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
+    },
+    {
+      "benchmarkId": "agents-last-exam",
+      "benchmarkLabel": "Agents' Last Exam",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 52.4,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release",
+      "scoreSelection": "Score (second value in Pass / Score)"
+    },
+    {
+      "benchmarkId": "automationbench",
+      "benchmarkLabel": "AutomationBench",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 27.3,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 72.5,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 56.2,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 92.6,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 43.6,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
+    },
+    {
+      "benchmarkId": "ifbench",
+      "benchmarkLabel": "IFBench",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 82.8,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
+    },
+    {
+      "benchmarkId": "mmmu-pro",
+      "benchmarkLabel": "MMMU-Pro",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 82.3,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
+    },
+    {
+      "benchmarkId": "mathvision",
+      "benchmarkLabel": "MathVision",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 95.2,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release",
+      "scoreSelection": "without Python (first value)"
+    },
+    {
+      "benchmarkId": "mathvision-python",
+      "benchmarkLabel": "MathVision w/ Python",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 97.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release",
+      "scoreSelection": "with Python (second value)"
+    },
+    {
+      "benchmarkId": "babyvision-python",
+      "benchmarkLabel": "BabyVision w/ Python",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 91.3,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release",
+      "scoreSelection": "with Python (second value)"
+    },
+    {
+      "benchmarkId": "zerobench-pass5",
+      "benchmarkLabel": "ZeroBench pass@5",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 24.0,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release",
+      "scoreSelection": "without Python (first value)"
+    },
+    {
+      "benchmarkId": "zerobench-python-pass5",
+      "benchmarkLabel": "ZeroBench w/ Python pass@5",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 49.0,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release",
+      "scoreSelection": "with Python (second value)"
+    },
+    {
+      "benchmarkId": "osworld-verified",
+      "benchmarkLabel": "OSWorld-Verified",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 86.1,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
+    },
+    {
+      "benchmarkId": "osworld-2",
+      "benchmarkLabel": "OSWorld 2.0",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 46.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release",
+      "scoreSelection": "partial (second value in binary / partial)"
+    },
+    {
+      "benchmarkId": "charxiv-no-tools",
+      "benchmarkLabel": "CharXiv Reasoning",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 88.4,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release",
+      "scoreSelection": "without Code Interpreter (first value)"
+    },
+    {
+      "benchmarkId": "charxiv-tools",
+      "benchmarkLabel": "CharXiv Reasoning w/ tools",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 93.5,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release",
+      "scoreSelection": "with Code Interpreter (second value)"
+    },
+    {
+      "benchmarkId": "omnidocbench",
+      "benchmarkLabel": "OmniDocBench",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 92.1,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
+    },
+    {
+      "benchmarkId": "perceptionbench",
+      "benchmarkLabel": "PerceptionBench",
+      "model": "Qwen3.8 Max",
+      "modelAliases": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max"
+      ],
+      "value": 63.5,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-max-release",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+      "sourceLabel": "Qwen3.8-Max official release"
     },
     {
       "benchmarkId": "mmlu-pro",

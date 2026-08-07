@@ -1,0 +1,16 @@
+﻿scheme_id,flash_open_floor,fable_rank,qwen_direct_edge_violations,gemini_flash_min_main_open_models_above,gemini_3_5_flash_rank,gemini_3_6_flash_rank,spearman_vs_unconstrained,top50_overlap_with_unconstrained,max_absolute_shift
+guarded_aindex,5,1,0,5,30,19,0.999286,47,45
+guarded_aindex,10,1,0,10,30,24,0.999242,47,45
+guarded_aindex,15,1,0,15,35,29,0.999155,47,42
+guarded_rasch,5,1,0,5,23,16,0.998205,48,72
+guarded_rasch,10,1,0,10,27,21,0.998199,48,72
+guarded_rasch,15,1,0,15,32,26,0.998023,48,72
+guarded_twopl,5,1,0,5,22,17,0.998731,48,63
+guarded_twopl,10,1,0,10,26,22,0.99868,48,63
+guarded_twopl,15,1,0,15,31,27,0.998519,48,63
+guarded_robust,5,1,0,5,21,19,0.999394,48,53
+guarded_robust,10,1,0,10,26,24,0.99901,48,53
+guarded_robust,15,1,0,15,31,29,0.998292,46,53
+guarded_borda,5,1,0,5,17,22,0.999179,48,62
+guarded_borda,10,1,0,10,22,27,0.998701,48,62
+guarded_borda,15,1,0,15,27,32,0.997825,47,62

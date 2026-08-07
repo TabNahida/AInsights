@@ -18,6 +18,8 @@ class UpdateWorkflowTests(unittest.TestCase):
         self.assertIn("python ArtificialAnalysis/scrape_artificial_analysis.py", workflow)
         self.assertIn("python benchmarks/collect_benchmark_scores.py", workflow)
         self.assertIn("python scripts/build_docs_site.py", workflow)
+        self.assertIn("pip install --disable-pip-version-check -r requirements.txt", workflow)
+        self.assertIn("analysis/irt_leaderboard_exploration/outputs", workflow)
         self.assertGreaterEqual(workflow.count("python -B -m unittest discover -s tests"), 2)
         self.assertIn("data/benchmarks/benchmark_scores.json", workflow)
         self.assertIn("docs/data/models.json", workflow)

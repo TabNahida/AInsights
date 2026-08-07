@@ -1,0 +1,69 @@
+﻿method,board_id,board,item_id,item,source_keys,scale,counts_for_board_gate,n_obs,reliability_weight,difficulty,discrimination,discrimination_status,rmse,board_residual_sigma
+rasch,coding,Coding,swe-bench-pro,SWE-Bench Pro,benchmark:swe-bench-pro,percent,True,35,0.636364,0.885373,0.743617,common_1pl_transformed,,0.633224
+rasch,coding,Coding,livecodebench,LiveCodeBench,LiveCodeBench,percent,True,278,0.932886,0.301077,0.743617,common_1pl_transformed,,0.633224
+rasch,coding,Coding,swe-bench-verified,SWE-bench Verified,benchmark:swe-bench-verified,percent,True,29,0.591837,-0.41964,0.743617,common_1pl_transformed,,0.633224
+rasch,coding,Coding,terminal-bench-hard,Terminal-Bench Hard,Terminal-Bench Hard,percent,True,302,0.937888,3.061026,0.743617,common_1pl_transformed,,0.633224
+rasch,coding,Coding,terminal-bench-v2-1,Terminal-Bench v2.1,Terminal-Bench v2.1,percent,True,144,0.878049,1.71232,0.743617,common_1pl_transformed,,0.633224
+rasch,coding,Coding,swe-bench-multilingual,SWE-bench Multilingual,benchmark:swe-bench-multilingual,percent,True,16,0.444444,-0.054821,0.743617,common_1pl_transformed,,0.633224
+rasch,coding,Coding,scicode,SciCode,SciCode,percent,True,403,0.952719,1.369494,0.743617,common_1pl_transformed,,0.633224
+rasch,agentic-tool-work,Agentic/tool work,swe-bench-pro,SWE-Bench Pro,benchmark:swe-bench-pro,percent,True,35,0.636364,0.880982,0.918892,common_1pl_transformed,,0.782716
+rasch,agentic-tool-work,Agentic/tool work,browsecomp,BrowseComp,benchmark:browsecomp,percent,True,27,0.574468,-0.042206,0.918892,common_1pl_transformed,,0.782716
+rasch,agentic-tool-work,Agentic/tool work,hle-tools,HLE w/ tools,benchmark:hle-tools,percent,True,26,0.565217,1.220235,0.918892,common_1pl_transformed,,0.782716
+rasch,agentic-tool-work,Agentic/tool work,mcp-atlas,MCP-Atlas Public,benchmark:mcp-atlas,percent,True,21,0.512195,0.10371,0.918892,common_1pl_transformed,,0.782716
+rasch,agentic-tool-work,Agentic/tool work,osworld-verified,OSWorld-Verified,benchmark:osworld-verified,percent,True,9,0.310345,-0.007222,0.918892,common_1pl_transformed,,0.782716
+rasch,agentic-tool-work,Agentic/tool work,terminal-bench-hard,Terminal-Bench Hard,Terminal-Bench Hard,percent,True,302,0.937888,2.379497,0.918892,common_1pl_transformed,,0.782716
+rasch,agentic-tool-work,Agentic/tool work,gdpval-aa-elo,GDPval-AA Elo,benchmark:gdpval-aa-elo,rank,True,18,0.473684,1.342803,0.918892,common_1pl_transformed,,0.782716
+rasch,agentic-tool-work,Agentic/tool work,toolathlon,Toolathlon,benchmark:toolathlon,percent,True,21,0.512195,1.166308,0.918892,common_1pl_transformed,,0.782716
+rasch,agentic-tool-work,Agentic/tool work,terminal-bench-v2-1,Terminal-Bench v2.1,Terminal-Bench v2.1,percent,True,144,0.878049,1.439505,0.918892,common_1pl_transformed,,0.782716
+rasch,agentic-tool-work,Agentic/tool work,aa-lcr,AA-LCR,AA-LCR,percent,True,340,0.944444,1.12787,0.918892,common_1pl_transformed,,0.782716
+rasch,hard-reasoning,Hard reasoning,hle,Humanity's Last Exam,Humanity's Last Exam | benchmark:hle,percent,True,405,0.952941,3.435766,0.662121,common_1pl_transformed,,0.608865
+rasch,hard-reasoning,Hard reasoning,critpt,CritPt,CritPt,percent,True,321,0.941349,6.346669,0.662121,common_1pl_transformed,,0.608865
+rasch,hard-reasoning,Hard reasoning,gpqa-diamond,GPQA Diamond,GPQA Diamond | benchmark:gpqa-diamond,percent,True,409,0.95338,-0.976488,0.662121,common_1pl_transformed,,0.608865
+rasch,hard-reasoning,Hard reasoning,aime-2025,AIME 2025,AIME 2025 | benchmark:aime-2025,percent,True,194,0.906542,-0.176248,0.662121,common_1pl_transformed,,0.608865
+rasch,hard-reasoning,Hard reasoning,aime-2026,AIME 2026,benchmark:aime-2026,percent,True,22,0.52381,-2.97532,0.662121,common_1pl_transformed,,0.608865
+rasch,hard-reasoning,Hard reasoning,hmmt-2026-feb,HMMT Feb 2026,benchmark:hmmt-2026-feb,percent,True,17,0.459459,-1.95946,0.662121,common_1pl_transformed,,0.608865
+rasch,knowledge-science,Knowledge/science,omniscience,AA-Omniscience Accuracy,AA-Omniscience Accuracy,percent,True,320,0.941176,2.6484,0.584587,common_1pl_transformed,,0.398077
+rasch,knowledge-science,Knowledge/science,gpqa-diamond,GPQA Diamond,GPQA Diamond | benchmark:gpqa-diamond,percent,True,409,0.95338,-1.106708,0.584587,common_1pl_transformed,,0.398077
+rasch,knowledge-science,Knowledge/science,hle,Humanity's Last Exam,Humanity's Last Exam | benchmark:hle,percent,True,405,0.952941,3.891405,0.584587,common_1pl_transformed,,0.398077
+rasch,knowledge-science,Knowledge/science,mmmu-pro,MMMU-Pro,benchmark:mmmu-pro,percent,True,10,0.333333,-0.456362,0.584587,common_1pl_transformed,,0.398077
+rasch,knowledge-science,Knowledge/science,scicode,SciCode,SciCode,percent,True,403,0.952719,1.744503,0.584587,common_1pl_transformed,,0.398077
+rasch,knowledge-science,Knowledge/science,mmlu-pro,MMLU-Pro,benchmark:mmlu-pro,percent,True,26,0.565217,-1.923318,0.584587,common_1pl_transformed,,0.398077
+rasch,instruction-context,Instruction/context,ifbench,IFBench,IFBench | benchmark:ifbench,percent,True,318,0.940828,-0.006435,0.663596,common_1pl_transformed,,0.742128
+rasch,instruction-context,Instruction/context,aa-lcr,AA-LCR,AA-LCR,percent,True,340,0.944444,1.560815,0.663596,common_1pl_transformed,,0.742128
+rasch,instruction-context,Instruction/context,critpt,CritPt,CritPt,percent,True,321,0.941349,6.191516,0.663596,common_1pl_transformed,,0.742128
+rasch,instruction-context,Instruction/context,charxiv-tools,CharXiv Reasoning w/ tools,benchmark:charxiv-tools,percent,True,11,0.354839,-1.391018,0.663596,common_1pl_transformed,,0.742128
+rasch,instruction-context,Instruction/context,charxiv-no-tools,CharXiv Reasoning,benchmark:charxiv-no-tools,percent,True,11,0.354839,-0.673101,0.663596,common_1pl_transformed,,0.742128
+twopl,coding,Coding,swe-bench-pro,SWE-Bench Pro,benchmark:swe-bench-pro,percent,True,35,0.636364,0.735444,0.511197,fixed_sparse,0.1662,0.483542
+twopl,coding,Coding,livecodebench,LiveCodeBench,LiveCodeBench,percent,True,278,0.932886,0.044418,1.277992,estimated,0.545583,0.483542
+twopl,coding,Coding,swe-bench-verified,SWE-bench Verified,benchmark:swe-bench-verified,percent,True,29,0.591837,-1.114626,0.511197,fixed_sparse,0.213932,0.483542
+twopl,coding,Coding,terminal-bench-hard,Terminal-Bench Hard,Terminal-Bench Hard,percent,True,302,0.937888,1.827491,1.277992,estimated,0.526062,0.483542
+twopl,coding,Coding,terminal-bench-v2-1,Terminal-Bench v2.1,Terminal-Bench v2.1,percent,True,144,0.878049,1.254102,1.277992,estimated,0.697052,0.483542
+twopl,coding,Coding,swe-bench-multilingual,SWE-bench Multilingual,benchmark:swe-bench-multilingual,percent,True,16,0.444444,-0.653684,0.511197,fixed_sparse,0.18711,0.483542
+twopl,coding,Coding,scicode,SciCode,SciCode,percent,True,403,0.952719,1.229589,0.83113,estimated,0.418203,0.483542
+twopl,agentic-tool-work,Agentic/tool work,swe-bench-pro,SWE-Bench Pro,benchmark:swe-bench-pro,percent,True,35,0.636364,0.663685,0.594254,fixed_sparse,0.164391,0.438209
+twopl,agentic-tool-work,Agentic/tool work,browsecomp,BrowseComp,benchmark:browsecomp,percent,True,27,0.574468,-0.787907,0.594254,fixed_sparse,0.681364,0.438209
+twopl,agentic-tool-work,Agentic/tool work,hle-tools,HLE w/ tools,benchmark:hle-tools,percent,True,26,0.565217,1.220894,0.594254,fixed_sparse,0.248937,0.438209
+twopl,agentic-tool-work,Agentic/tool work,mcp-atlas,MCP-Atlas Public,benchmark:mcp-atlas,percent,True,21,0.512195,-0.612357,0.594254,fixed_sparse,0.265453,0.438209
+twopl,agentic-tool-work,Agentic/tool work,osworld-verified,OSWorld-Verified,benchmark:osworld-verified,percent,True,9,0.310345,-0.787145,0.594254,fixed_sparse,0.192493,0.438209
+twopl,agentic-tool-work,Agentic/tool work,terminal-bench-hard,Terminal-Bench Hard,Terminal-Bench Hard,percent,True,302,0.937888,1.525706,1.424734,estimated,0.483523,0.438209
+twopl,agentic-tool-work,Agentic/tool work,gdpval-aa-elo,GDPval-AA Elo,benchmark:gdpval-aa-elo,rank,True,18,0.473684,1.366681,0.594254,fixed_sparse,1.523103,0.438209
+twopl,agentic-tool-work,Agentic/tool work,toolathlon,Toolathlon,benchmark:toolathlon,percent,True,21,0.512195,1.070225,0.594254,fixed_sparse,0.411615,0.438209
+twopl,agentic-tool-work,Agentic/tool work,terminal-bench-v2-1,Terminal-Bench v2.1,Terminal-Bench v2.1,percent,True,144,0.878049,1.077494,1.485635,estimated,0.658805,0.438209
+twopl,agentic-tool-work,Agentic/tool work,aa-lcr,AA-LCR,AA-LCR,percent,True,340,0.944444,0.699361,1.485635,estimated,0.660899,0.438209
+twopl,hard-reasoning,Hard reasoning,hle,Humanity's Last Exam,Humanity's Last Exam | benchmark:hle,percent,True,405,0.952941,2.771936,0.822257,estimated,0.363884,0.496206
+twopl,hard-reasoning,Hard reasoning,critpt,CritPt,CritPt,percent,True,321,0.941349,5.823171,0.726003,estimated,0.620105,0.496206
+twopl,hard-reasoning,Hard reasoning,gpqa-diamond,GPQA Diamond,GPQA Diamond | benchmark:gpqa-diamond,percent,True,409,0.95338,-0.68903,0.938462,estimated,0.37521,0.496206
+twopl,hard-reasoning,Hard reasoning,aime-2025,AIME 2025,AIME 2025 | benchmark:aime-2025,percent,True,194,0.906542,-0.181673,1.225574,estimated,0.964721,0.496206
+twopl,hard-reasoning,Hard reasoning,aime-2026,AIME 2026,benchmark:aime-2026,percent,True,22,0.52381,-4.491918,0.490229,fixed_sparse,0.807465,0.496206
+twopl,hard-reasoning,Hard reasoning,hmmt-2026-feb,HMMT Feb 2026,benchmark:hmmt-2026-feb,percent,True,17,0.459459,-3.243174,0.490229,fixed_sparse,0.499871,0.496206
+twopl,knowledge-science,Knowledge/science,omniscience,AA-Omniscience Accuracy,AA-Omniscience Accuracy,percent,True,320,0.941176,2.469538,0.63352,estimated,0.316371,0.35
+twopl,knowledge-science,Knowledge/science,gpqa-diamond,GPQA Diamond,GPQA Diamond | benchmark:gpqa-diamond,percent,True,409,0.95338,-0.721194,0.897638,estimated,0.260481,0.35
+twopl,knowledge-science,Knowledge/science,hle,Humanity's Last Exam,Humanity's Last Exam | benchmark:hle,percent,True,405,0.952941,3.048453,0.747761,estimated,0.43076,0.35
+twopl,knowledge-science,Knowledge/science,mmmu-pro,MMMU-Pro,benchmark:mmmu-pro,percent,True,10,0.333333,-1.953141,0.359055,fixed_sparse,0.099953,0.35
+twopl,knowledge-science,Knowledge/science,scicode,SciCode,SciCode,percent,True,403,0.952719,1.325862,0.772921,estimated,0.425038,0.35
+twopl,knowledge-science,Knowledge/science,mmlu-pro,MMLU-Pro,benchmark:mmlu-pro,percent,True,26,0.565217,-3.362684,0.359055,fixed_sparse,0.337105,0.35
+twopl,instruction-context,Instruction/context,ifbench,IFBench,IFBench | benchmark:ifbench,percent,True,318,0.940828,0.002963,0.657899,estimated,0.451035,0.665556
+twopl,instruction-context,Instruction/context,aa-lcr,AA-LCR,AA-LCR,percent,True,340,0.944444,0.771658,1.345545,estimated,0.653326,0.665556
+twopl,instruction-context,Instruction/context,critpt,CritPt,CritPt,percent,True,321,0.941349,6.383916,0.644291,estimated,0.742135,0.665556
+twopl,instruction-context,Instruction/context,charxiv-tools,CharXiv Reasoning w/ tools,benchmark:charxiv-tools,percent,True,11,0.354839,-2.345305,0.538218,fixed_sparse,0.314022,0.665556
+twopl,instruction-context,Instruction/context,charxiv-no-tools,CharXiv Reasoning,benchmark:charxiv-no-tools,percent,True,11,0.354839,-1.419915,0.538218,fixed_sparse,0.255418,0.665556

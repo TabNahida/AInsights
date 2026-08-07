@@ -19,6 +19,7 @@ from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
+from uuid import uuid4
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -27,8 +28,21 @@ OPENAI_GPT55_URL = "https://openai.com/index/introducing-gpt-5-5/"
 OPENAI_GPT56_URL = "https://openai.com/index/gpt-5-6/"
 ANTHROPIC_OPUS47_URL = "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416"
 ANTHROPIC_OPUS5_URL = "https://www.anthropic.com/news/claude-opus-5"
+ANTHROPIC_OPUS5_SYSTEM_CARD_URL = (
+    "https://www-cdn.anthropic.com/"
+    "b514064af1408018e64b1ad24e7d5e75850b4ffd/"
+    "Claude%20Opus%205%20System%20Card.pdf"
+)
 ANTHROPIC_SONNET5_URL = "https://www.anthropic.com/news/claude-sonnet-5"
 ANTHROPIC_FABLE5_URL = "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+ANTHROPIC_FABLE5_SYSTEM_CARD_URL = (
+    "https://www.anthropic.com/claude-fable-5-mythos-5-system-card"
+)
+ANTHROPIC_FABLE5_SYSTEM_CARD_PDF_URL = (
+    "https://www-cdn.anthropic.com/"
+    "57a52ea7d8f0e54e8a542e908266086df425cdf5/"
+    "Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf"
+)
 GOOGLE_GEMINI31_URL = "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
 GOOGLE_GEMINI36_FLASH_URL = "https://deepmind.google/models/model-cards/gemini-3-6-flash/"
 GOOGLE_GEMINI35_FLASH_LITE_URL = "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/"
@@ -48,6 +62,11 @@ QWEN25_MAX_URL = "https://qwen.ai/blog?id=qwen2.5-max"
 QWEN36_PLUS_URL = "https://qwen.ai/blog?id=qwen3.6"
 QWEN36_27B_URL = "https://qwen.ai/blog?id=qwen3.6-27b"
 QWEN36_MAX_PREVIEW_URL = "https://qwen.ai/blog?id=qwen3.6-max-preview"
+QWEN38_MAX_URL = "https://qwen.ai/blog?id=qwen3.8"
+QWEN38_MAX_ARTICLE_API_URL = (
+    "https://qwen.ai/api/v2/article/retrieval"
+    "?language=en-US&path=qwen3.8&type=qwen_ai"
+)
 DEEPSEEK_V4_PRO_URL = "https://api-docs.deepseek.com/news/news260424"
 DEEPSEEK_V4_FLASH_0731_URL = "https://api-docs.deepseek.com/updates/"
 KIMI_K3_URL = "https://www.kimi.com/blog/kimi-k3"
@@ -141,6 +160,16 @@ MODEL_ALIASES = {
         "claude-opus-5-medium",
         "claude-opus-5-low",
     ],
+    "Claude Opus 5 (max)": [
+        "Claude Opus 5 (max)",
+        "Claude Opus 5 (max) [R]",
+        "claude-opus-5-max",
+    ],
+    "Claude Opus 5 (high)": [
+        "Claude Opus 5 (high)",
+        "Claude Opus 5 (high) [R]",
+        "claude-opus-5-high",
+    ],
     "Gemini 3.6 Flash": [
         "Gemini 3.6 Flash",
         "Gemini 3.6 Flash [R]",
@@ -220,6 +249,13 @@ MODEL_ALIASES = {
     "Qwen3.6 35B A3B": ["Qwen3.6 35B A3B", "Qwen3.6-35B-A3B", "qwen3-6-35b-a3b"],
     "Qwen3.6 Plus": ["Qwen3.6 Plus", "Qwen3.6-Plus", "qwen3.6-plus", "qwen3-6-plus"],
     "Qwen3.6 Max Preview": ["Qwen3.6 Max Preview", "Qwen3.6-Max-Preview", "qwen3.6-max-preview", "qwen3-6-max-preview"],
+    "Qwen3.8 Max": [
+        "Qwen3.8 Max",
+        "Qwen3.8-Max",
+        "Qwen 3.8-Max",
+        "qwen3.8-max",
+        "qwen3-8-max",
+    ],
     "Qwen3 235B [R]": [
         "Qwen3 235B [R]",
         "Qwen3-235B-A22B",
@@ -1390,7 +1426,52 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
         "url": OPENAI_GPT56_URL,
         "rawUrl": OPENAI_GPT56_URL,
         "category": "Official model release",
-        "note": "OpenAI official GPT-5.6 release tables covering Sol, Terra, and Luna across professional work, coding, science, computer use, cybersecurity, reasoning, tool use, and long-context evaluations.",
+        "variantScoped": True,
+        "effort": "max",
+        "configurationConfidence": "inferred",
+        "modelAliases": [
+            "GPT-5.6 Sol (max)",
+            "gpt-5-6-sol",
+            "GPT-5.6 Terra (max)",
+            "gpt-5-6-terra",
+            "GPT-5.6 Luna (max)",
+            "gpt-5-6-luna",
+        ],
+        "note": (
+            "OpenAI official GPT-5.6 release tables covering Sol, Terra, and Luna across "
+            "professional work, coding, science, computer use, cybersecurity, reasoning, "
+            "tool use, and long-context evaluations. The release appendix labels the "
+            "single-agent columns only by model tier, while the surrounding AA index "
+            "values and separately reported Sol Ultra rows support mapping these columns "
+            "to max effort. The mapping is therefore exact-variant scoped but marked as "
+            "configuration-inferred and must not be broadcast to other effort settings."
+        ),
+        "modelResultOverrides": {
+            "GPT-5.6 Sol": {
+                "model": "GPT-5.6 Sol (max)",
+                "modelAliases": [
+                    "GPT-5.6 Sol",
+                    "GPT-5.6 Sol (max)",
+                    "gpt-5-6-sol",
+                ],
+            },
+            "GPT-5.6 Terra": {
+                "model": "GPT-5.6 Terra (max)",
+                "modelAliases": [
+                    "GPT-5.6 Terra",
+                    "GPT-5.6 Terra (max)",
+                    "gpt-5-6-terra",
+                ],
+            },
+            "GPT-5.6 Luna": {
+                "model": "GPT-5.6 Luna (max)",
+                "modelAliases": [
+                    "GPT-5.6 Luna",
+                    "GPT-5.6 Luna (max)",
+                    "gpt-5-6-luna",
+                ],
+            },
+        },
         "columns": {
             "GPT-5.6 Sol": "GPT-5.6 Sol",
             "GPT-5.6 Terra": "GPT-5.6 Terra",
@@ -1562,11 +1643,15 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
         "rawUrl": ANTHROPIC_OPUS5_URL,
         "category": "Official release",
         "modelAliases": MODEL_ALIASES["Claude Opus 5"],
+        "modelScoreEligible": False,
+        "evidenceEligible": False,
         "note": (
             "Anthropic's July 24, 2026 Opus 5 release summary. Seed values transcribe only the "
             "Opus 5 column from the official benchmark image; competitor columns are excluded. "
-            "The summary reports the published effort configuration for each benchmark, with "
-            "ARC-AGI-3 explicitly shown at high effort."
+            "Scores without an exact effort mapping remain source-library evidence and are "
+            "excluded from the evidence-only ranking. ARC-AGI-3 is explicitly high "
+            "effort. Frontier-Bench is a system result with an Opus 4.8 safety fallback and is "
+            "not eligible for a pure Opus 5 model ranking."
         ),
         "columns": {"Opus 5": "Claude Opus 5", "Claude Opus 5": "Claude Opus 5"},
         "rowLabels": {
@@ -1601,6 +1686,57 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
                 "healthbench-professional": 59.8,
                 "biomysterybench-hard": 49.4,
                 "biomysterybench-human-solved": 90.1,
+            },
+        },
+        "resultOverrides": {
+            "arc-agi-3": {
+                "model": "Claude Opus 5 (high)",
+                "modelAliases": MODEL_ALIASES["Claude Opus 5 (high)"],
+                "variantScoped": True,
+                "modelScoreEligible": True,
+                "evidenceEligible": True,
+                "effort": "high",
+                "configurationNote": "Official release table explicitly labels ARC-AGI-3 as high effort.",
+            },
+            "frontier-bench-v0-1": {
+                "model": "Claude Opus 5 with Opus 4.8 safety fallback",
+                "modelAliases": ["Claude Opus 5 with Opus 4.8 safety fallback"],
+                "variantScoped": True,
+                "modelScoreEligible": False,
+                "evidenceEligible": False,
+                "systemScore": True,
+                "configurationNote": (
+                    "mini-SWE-agent on GKE with five attempts; Opus 4.8 is used when the "
+                    "Opus 5 safety classifier refuses the request."
+                ),
+            },
+        },
+    },
+    {
+        "id": "anthropic-claude-opus-5-system-card",
+        "label": "Anthropic Claude Opus 5 System Card",
+        "url": ANTHROPIC_OPUS5_SYSTEM_CARD_URL,
+        "rawUrl": ANTHROPIC_OPUS5_SYSTEM_CARD_URL,
+        "category": "Official system card",
+        "modelAliases": MODEL_ALIASES["Claude Opus 5 (max)"],
+        "variantScoped": True,
+        "effort": "max",
+        "note": (
+            "Anthropic's July 2026 Opus 5 System Card. SWE scores are from Table 8.1.A "
+            "and Section 8.2 (adaptive thinking, max effort, default sampling, five trials). "
+            "MCP-Atlas, OfficeQA Pro, AA-Briefcase, and Toolathlon are transcribed from "
+            "Sections 8.13.1-8.13.6 with their published harnesses. Values are scoped to the "
+            "max-effort Opus 5 variant and must not be broadcast to lower-effort variants."
+        ),
+        "scores": {
+            "Claude Opus 5 (max)": {
+                "swe-bench-verified": 96.0,
+                "swe-bench-pro": 79.2,
+                "swe-bench-multilingual": 89.5,
+                "mcp-atlas": 85.8,
+                "officeqa-pro": 66.9,
+                "aa-briefcase-elo": 1720,
+                "toolathlon": 80.6,
             },
         },
     },
@@ -1705,12 +1841,33 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
         "url": ANTHROPIC_FABLE5_URL,
         "rawUrl": ANTHROPIC_FABLE5_URL,
         "category": "Official release",
-        "modelAliases": MODEL_ALIASES["Claude Fable 5"],
+        "modelAliases": ["Claude Mythos 5 / Fable 5 (higher of two)"],
+        "variantScoped": True,
+        "modelScoreEligible": False,
+        "evidenceEligible": False,
+        "systemScore": True,
+        "composite": True,
+        "compositeModelResult": True,
+        "fallbackConfigured": True,
+        "productEvidenceEligible": False,
+        "pureModelEligible": False,
         "note": (
             "Anthropic release table for Claude Mythos 5 / Fable 5. Reported Mythos and Fable scores are "
             "within 1-3 percentage points unless starred; the table shows the higher score of the two, and "
-            "starred rows can differ more because Fable falls back to Opus 4.8 for some cyber and biology requests."
+            "starred rows can differ more because Fable falls back to Opus 4.8 for some cyber and biology requests. "
+            "These higher-of-two chart values remain in the source library but are not attributable to either "
+            "model and are excluded from model scoring."
         ),
+        "modelResultOverrides": {
+            "Claude Fable 5": {
+                "model": "Claude Mythos 5 / Fable 5 (higher of two)",
+                "modelAliases": ["Claude Mythos 5 / Fable 5 (higher of two)"],
+                "configurationNote": (
+                    "News chart reports the higher of Mythos 5 and Fable 5; the value "
+                    "cannot be attributed to either model."
+                ),
+            }
+        },
         "columns": {"Claude Mythos 5 / Fable 5": "Claude Fable 5", "Claude Fable 5": "Claude Fable 5"},
         "rowLabels": {
             "SWE-Bench Pro": "swe-bench-pro",
@@ -2061,6 +2218,193 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
                 "terminal-bench-2": 65.4,
                 "nl2repo": 42.9,
             }
+        },
+    },
+    {
+        "id": "anthropic-claude-fable-5-system-card",
+        "label": "Anthropic Claude Fable 5 and Mythos 5 System Card",
+        "url": ANTHROPIC_FABLE5_SYSTEM_CARD_URL,
+        "rawUrl": ANTHROPIC_FABLE5_SYSTEM_CARD_PDF_URL,
+        "category": "Official system card",
+        "modelAliases": [
+            "Claude Fable 5",
+            "Claude Fable 5 (with fallback)",
+            "claude-fable-5",
+        ],
+        "variantScoped": True,
+        "systemScore": True,
+        "fallbackConfigured": True,
+        "productEvidenceEligible": True,
+        "pureModelEligible": False,
+        "note": (
+            "Anthropic's official Fable 5 / Mythos 5 System Card reports separate model "
+            "columns. Only values directly present in the Fable 5 column are retained here. "
+            "They describe the released Fable 5 product configuration, whose safeguards can "
+            "fall back to Opus 4.8, and therefore are eligible for the product leaderboard but "
+            "not a hypothetical pure-base-model leaderboard."
+        ),
+        "scores": {
+            "Claude Fable 5 (with fallback)": {
+                "swe-bench-verified": 95.0,
+                "swe-bench-pro": 80.0,
+                "terminal-bench-2-1": 84.3,
+                "frontiercode-diamond": 29.3,
+                "frontiercode-v1-1-main": 46.3,
+                "gdpval-aa-elo": 1932,
+                "gdp-pdf": 29.8,
+                "officeqa-pro": 57.9,
+                "automationbench": 17.4,
+                "blueprint-bench-2": 38.6,
+                "osworld-verified": 85.0,
+                "legal-agent-benchmark": 13.3,
+                "mcp-atlas": 83.3,
+                "toolathlon": 61.7,
+            }
+        },
+        "resultOverrides": {
+            "swe-bench-verified": {"effort": "max"},
+            "swe-bench-pro": {"effort": "max"},
+            "terminal-bench-2-1": {
+                "effort": "high",
+                "composite": True,
+                "fallbackObserved": True,
+                "fallbackRate": 0.209,
+                "configurationNote": (
+                    "High effort; 20.9% of trials were routed to Opus 4.8 after a "
+                    "Fable 5 safety refusal."
+                ),
+            },
+            "frontiercode-diamond": {"effort": "xhigh"},
+            "frontiercode-v1-1-main": {"effort": "xhigh"},
+            "gdp-pdf": {"effort": "max"},
+            "automationbench": {"effort": "max"},
+            "blueprint-bench-2": {"effort": "max"},
+            "osworld-verified": {"effort": "max"},
+            "toolathlon": {
+                "effort": "max",
+                "configurationNote": (
+                    "Pass@1 under Anthropic's internal harness; the System Card notes "
+                    "that this harness is approximately three points above strict upstream."
+                ),
+            },
+        },
+    },
+    {
+        "id": "qwen-qwen3-8-max-release",
+        "label": "Qwen3.8-Max official release",
+        "url": QWEN38_MAX_URL,
+        "rawUrl": QWEN38_MAX_ARTICLE_API_URL,
+        "requestHeaders": {"Accept": "application/json"},
+        "requestIdHeader": "X-Request-Id",
+        "jsonArticlesPath": ["data", "articles"],
+        "jsonArticleSelector": {"path": "qwen3.8"},
+        "jsonArticleContentKey": "content",
+        "category": "Official release",
+        "modelAliases": MODEL_ALIASES["Qwen3.8 Max"],
+        "note": (
+            "Qwen's August 3, 2026 Qwen3.8-Max release table. Only the Qwen3.8-Max "
+            "column is ingested from Qwen's article-retrieval JSON API. Scores retain the "
+            "published harness/configuration: for "
+            "example Terminal-Bench 2.1 is Claude Code avg@10, SWE-bench Pro uses the "
+            "Claude Code harness on the refined task set, and CharXiv reports without/with "
+            "Code Interpreter separately. Slash-valued rows use explicit semantic component "
+            "selection so refreshes cannot silently replace Score with Pass or partial with binary."
+        ),
+        "columns": {
+            "Qwen3.8-Max": "Qwen3.8 Max",
+            "Qwen 3.8-Max": "Qwen3.8 Max",
+        },
+        "rowLabels": {
+            "Terminal Bench 2.1": "terminal-bench-2-1",
+            "SWE-bench Pro": "swe-bench-pro",
+            "DeepSWE 1.1": "deepswe-v1-1",
+            "NL2Repo-Bench": "nl2repo",
+            "FrontierSWE": "frontierswe-dominance",
+            "MLS-Bench-Lite": "mls-bench-lite",
+            "JobBench": "job-bench",
+            "SkillsBench": "skillsbench",
+            "Agents' Last Exam": "agents-last-exam",
+            "Automation-Bench (Pass@1)": "automationbench",
+            "Toolathlon Verified (Pass@1)": "toolathlon",
+            "HLE w/ tools": "hle-tools",
+            "GPQA Diamond": "gpqa-diamond",
+            "HLE": "hle",
+            "HLE-VL (w/ Tools)": "",
+            "IFBench": "ifbench",
+            "MMMU-Pro": "mmmu-pro",
+            "MathVision": "mathvision",
+            "BabyVision": "babyvision-python",
+            "ZeroBench (Pass@5)": "zerobench-pass5",
+            "CharXiv (RQ)": "charxiv-no-tools",
+            "OSWorld-Verified": "osworld-verified",
+            "OSWorld 2.0": "osworld-2",
+            "OmniDocBench 1.5": "omnidocbench",
+            "PerceptionBench": "perceptionbench",
+        },
+        "compositeRows": {
+            "agents-last-exam": [
+                {"benchmarkId": "agents-last-exam", "component": 1},
+            ],
+            "mathvision": [
+                {"benchmarkId": "mathvision", "component": 0},
+                {"benchmarkId": "mathvision-python", "component": 1},
+            ],
+            "babyvision-python": [
+                {"benchmarkId": "babyvision-python", "component": 1},
+            ],
+            "zerobench-pass5": [
+                {"benchmarkId": "zerobench-pass5", "component": 0},
+                {"benchmarkId": "zerobench-python-pass5", "component": 1},
+            ],
+            "osworld-2": [
+                {"benchmarkId": "osworld-2", "component": 1},
+            ],
+            "charxiv-no-tools": [
+                {"benchmarkId": "charxiv-no-tools", "component": 0},
+                {"benchmarkId": "charxiv-tools", "component": 1},
+            ],
+        },
+        "scoreSelections": {
+            "agents-last-exam": "Score (second value in Pass / Score)",
+            "mathvision": "without Python (first value)",
+            "mathvision-python": "with Python (second value)",
+            "babyvision-python": "with Python (second value)",
+            "zerobench-pass5": "without Python (first value)",
+            "zerobench-python-pass5": "with Python (second value)",
+            "osworld-2": "partial (second value in binary / partial)",
+            "charxiv-no-tools": "without Code Interpreter (first value)",
+            "charxiv-tools": "with Code Interpreter (second value)",
+        },
+        "scores": {
+            "Qwen3.8 Max": {
+                "terminal-bench-2-1": 86.6,
+                "swe-bench-pro": 67.7,
+                "deepswe-v1-1": 56.6,
+                "nl2repo": 55.9,
+                "frontierswe-dominance": 73.5,
+                "mls-bench-lite": 41.0,
+                "job-bench": 53.4,
+                "skillsbench": 70.2,
+                "agents-last-exam": 52.4,
+                "automationbench": 27.3,
+                "toolathlon": 72.5,
+                "hle-tools": 56.2,
+                "gpqa-diamond": 92.6,
+                "hle": 43.6,
+                "ifbench": 82.8,
+                "mmmu-pro": 82.3,
+                "mathvision": 95.2,
+                "mathvision-python": 97.7,
+                "babyvision-python": 91.3,
+                "zerobench-pass5": 24.0,
+                "zerobench-python-pass5": 49.0,
+                "osworld-verified": 86.1,
+                "osworld-2": 46.7,
+                "charxiv-no-tools": 88.4,
+                "charxiv-tools": 93.5,
+                "omnidocbench": 92.1,
+                "perceptionbench": 63.5,
+            },
         },
     },
     {
@@ -3714,21 +4058,89 @@ def _positive_int(value: str | None) -> int:
         return 1
 
 
-def fetch_html(url: str, timeout: float = 30) -> str:
+def fetch_html(
+    url: str,
+    timeout: float = 30,
+    headers: dict[str, str] | None = None,
+) -> str:
+    request_headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/125.0 Safari/537.36"
+        ),
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+    }
+    request_headers.update(headers or {})
     request = Request(
         url,
-        headers={
-            "User-Agent": (
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/125.0 Safari/537.36"
-            ),
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Accept-Language": "en-US,en;q=0.9",
-        },
+        headers=request_headers,
     )
     with urlopen(request, timeout=timeout) as response:
         return response.read().decode("utf-8", errors="replace")
+
+
+def fetch_official_source_text(spec: dict[str, Any], timeout: float = 30) -> str:
+    """Fetch one source and unwrap provider JSON when its stable API returns article text."""
+
+    headers = dict(spec.get("requestHeaders") or {})
+    request_id_header = spec.get("requestIdHeader")
+    if request_id_header:
+        headers[str(request_id_header)] = str(uuid4())
+    text = fetch_html(
+        str(spec.get("rawUrl") or spec["url"]),
+        timeout=timeout,
+        headers=headers or None,
+    )
+
+    articles_path = spec.get("jsonArticlesPath")
+    content_path = spec.get("jsonContentPath")
+    if not articles_path and not content_path:
+        return text
+    payload: Any = json.loads(text)
+    if articles_path:
+        articles: Any = payload
+        for key in articles_path:
+            if not isinstance(articles, dict) or key not in articles:
+                raise ValueError(
+                    f"source {spec.get('id')!r} JSON response is missing "
+                    f"{'.'.join(articles_path)}"
+                )
+            articles = articles[key]
+        selector = dict(spec.get("jsonArticleSelector") or {})
+        if not isinstance(articles, list) or not selector:
+            raise ValueError(
+                f"source {spec.get('id')!r} JSON article collection is invalid"
+            )
+        article = next(
+            (
+                item
+                for item in articles
+                if isinstance(item, dict)
+                and all(item.get(key) == value for key, value in selector.items())
+            ),
+            None,
+        )
+        content_key = str(spec.get("jsonArticleContentKey") or "content")
+        article_text = article.get(content_key) if isinstance(article, dict) else None
+        if not isinstance(article_text, str) or not article_text.strip():
+            raise ValueError(
+                f"source {spec.get('id')!r} JSON response has no matching article text"
+            )
+        return article_text
+
+    for key in content_path:
+        if not isinstance(payload, dict) or key not in payload:
+            raise ValueError(
+                f"source {spec.get('id')!r} JSON response is missing {'.'.join(content_path)}"
+            )
+        payload = payload[key]
+    if not isinstance(payload, str) or not payload.strip():
+        raise ValueError(
+            f"source {spec.get('id')!r} JSON field {'.'.join(content_path)} is not article text"
+        )
+    return payload
 
 
 def parse_openai_scores(html: str) -> dict[str, list[float | None]]:
@@ -3789,8 +4201,27 @@ def build_payload(
             "collectionStatus": source_statuses.get(spec["id"], "seeded-official-values"),
             "note": spec.get("note") or "",
         }
-        for key in ("coverage", "focus", "scoreStatus", "modelAliases", "modelKeys"):
-            if spec.get(key):
+        for key in (
+            "coverage",
+            "focus",
+            "scoreStatus",
+            "modelAliases",
+            "modelKeys",
+            "variantScoped",
+            "modelScoreEligible",
+            "evidenceEligible",
+            "systemScore",
+            "effort",
+            "configurationConfidence",
+            "composite",
+            "compositeModelResult",
+            "fallbackConfigured",
+            "fallbackObserved",
+            "fallbackRate",
+            "productEvidenceEligible",
+            "pureModelEligible",
+        ):
+            if key in spec and spec[key] is not None:
                 official_source[key] = spec[key]
         additional_sources.append(official_source)
     results = []
@@ -3854,9 +4285,17 @@ def collect_official_sources(timeout: float = 30) -> tuple[list[dict[str, Any]],
     for spec in OFFICIAL_SOURCE_SPECS:
         seed_rows = official_seed_results_for_source(spec)
         try:
-            text = fetch_html(str(spec.get("rawUrl") or spec["url"]), timeout=timeout)
+            text = fetch_official_source_text(spec, timeout=timeout)
             parsed_rows = parse_markdown_source_scores(text, spec)
-        except (HTTPError, URLError, TimeoutError, OSError, IncompleteRead) as exc:
+        except (
+            HTTPError,
+            URLError,
+            TimeoutError,
+            OSError,
+            IncompleteRead,
+            json.JSONDecodeError,
+            ValueError,
+        ) as exc:
             results.extend(seed_rows)
             status_prefix = "seeded-official-values" if seed_rows else "reference-only"
             statuses[spec["id"]] = f"{status_prefix}; refresh blocked: {exc.__class__.__name__}"
@@ -3936,6 +4375,35 @@ def parse_markdown_source_scores(text: str, spec: dict[str, Any]) -> list[dict[s
                 continue
             for index, model_name in column_indexes.items():
                 if index >= len(row):
+                    continue
+                composite_rows = spec.get("compositeRows", {}).get(benchmark_id, [])
+                if composite_rows:
+                    values = _numeric_cell_values(row[index])
+                    expected_components = 1 + max(
+                        int(component_spec.get("component", 0))
+                        for component_spec in composite_rows
+                    )
+                    if len(values) != expected_components:
+                        continue
+                    for component_spec in composite_rows:
+                        component = int(component_spec.get("component", 0))
+                        target_benchmark_id = str(
+                            component_spec.get("benchmarkId") or benchmark_id
+                        )
+                        if component < 0 or component >= len(values):
+                            continue
+                        result = _result_row(
+                            spec,
+                            model_name,
+                            target_benchmark_id,
+                            values[component],
+                        )
+                        selection = spec.get("scoreSelections", {}).get(
+                            target_benchmark_id
+                        )
+                        if selection:
+                            result["scoreSelection"] = selection
+                        results.append(result)
                     continue
                 value = _numeric_cell(row[index])
                 if value is None:
@@ -4091,17 +4559,53 @@ def _line_tail_after_label(line: str, label: str) -> str | None:
 
 def _result_row(spec: dict[str, Any], model_name: str, benchmark_id: str, value: Any) -> dict[str, Any]:
     benchmark = next((item for item in BENCHMARKS if item["id"] == benchmark_id), {})
-    return {
+    model_override = spec.get("modelResultOverrides", {}).get(model_name, {})
+    override = spec.get("resultOverrides", {}).get(benchmark_id, {})
+    effective_model_name = str(
+        override.get("model") or model_override.get("model") or model_name
+    )
+    aliases = override.get("modelAliases")
+    if aliases is None:
+        aliases = model_override.get("modelAliases")
+    if aliases is None:
+        aliases = MODEL_ALIASES.get(effective_model_name, [effective_model_name])
+    row = {
         "benchmarkId": benchmark_id,
         "benchmarkLabel": benchmark.get("label") or benchmark_id,
-        "model": model_name,
-        "modelAliases": MODEL_ALIASES.get(model_name, [model_name]),
+        "model": effective_model_name,
+        "modelAliases": list(aliases),
         "value": value,
         "unit": benchmark.get("unit") or "%",
         "sourceId": spec["id"],
         "sourceUrl": spec["url"],
         "sourceLabel": spec["label"],
     }
+    for key in (
+        "variantScoped",
+        "modelScoreEligible",
+        "evidenceEligible",
+        "systemScore",
+        "effort",
+        "configurationNote",
+        "configurationConfidence",
+        "composite",
+        "compositeModelResult",
+        "fallbackConfigured",
+        "fallbackObserved",
+        "fallbackRate",
+        "productEvidenceEligible",
+        "pureModelEligible",
+    ):
+        if key in override:
+            row[key] = override[key]
+        elif key in model_override:
+            row[key] = model_override[key]
+        elif key in spec:
+            row[key] = spec[key]
+    score_selection = spec.get("scoreSelections", {}).get(benchmark_id)
+    if score_selection:
+        row["scoreSelection"] = score_selection
+    return row
 
 
 def _clean_markdown_cell(cell: str) -> str:
@@ -4125,6 +4629,15 @@ def _numeric_cell(cell: str) -> float | None:
     if not match:
         return None
     return float(match.group(0).replace(",", ""))
+
+
+def _numeric_cell_values(cell: str) -> list[float]:
+    """Return all numeric components from a slash-valued score cell."""
+
+    return [
+        float(match.group(0).replace(",", ""))
+        for match in re.finditer(r"-?\d+(?:,\d{3})*(?:\.\d+)?", cell or "")
+    ]
 
 
 def retain_previous_results_on_blocked_refresh(

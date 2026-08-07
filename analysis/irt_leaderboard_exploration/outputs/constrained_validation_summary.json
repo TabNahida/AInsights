@@ -1,0 +1,173 @@
+{
+  "data_generated_at": "2026-08-06T13:48:16+00:00",
+  "measurement_source": "docs/data/models.json",
+  "eligible_models_min_two_per_board": 328,
+  "main_evidence_models_min_three_and_unique_nine": 129,
+  "unique_family_soft_target": 12,
+  "unique_family_penalty_z_per_missing_family": 0.08,
+  "baseline_board_shortfall_penalty_z": 0.15,
+  "alternative_board_shortfall_penalty_z": 0.04,
+  "gemini_flash_main_open_model_floor": 15,
+  "qwen_constraint_edges": [
+    {
+      "higher": "Qwen3.8 Max",
+      "lower": "Qwen3.7 Max",
+      "reason": "newer_max"
+    },
+    {
+      "higher": "Qwen3.7 Max",
+      "lower": "Qwen3.6 Max Preview",
+      "reason": "newer_max"
+    },
+    {
+      "higher": "Qwen3.6 Max Preview",
+      "lower": "Qwen3 Max",
+      "reason": "newer_max"
+    },
+    {
+      "higher": "Qwen3.7 Plus",
+      "lower": "Qwen3.6 Plus",
+      "reason": "newer_plus"
+    },
+    {
+      "higher": "Qwen3.7 Max",
+      "lower": "Qwen3.7 Plus",
+      "reason": "same_version_max_gt_plus"
+    },
+    {
+      "higher": "Qwen3.6 Max Preview",
+      "lower": "Qwen3.6 Plus",
+      "reason": "same_version_max_gt_plus"
+    },
+    {
+      "higher": "Qwen3.5 Omni Plus",
+      "lower": "Qwen3.5 Omni Flash",
+      "reason": "same_version_plus_gt_flash"
+    }
+  ],
+  "schemes": [
+    {
+      "scheme_id": "guarded_aindex",
+      "scheme": "覆盖校正 AIndex + 产品硬约束",
+      "base_scheme_id": "baseline_aindex",
+      "ranked_models": 328,
+      "main_evidence_models": 129,
+      "provisional_models": 199,
+      "fable_rank": 1,
+      "qwen_direct_edge_violations_before": 3,
+      "qwen_direct_edge_violations_after": 0,
+      "gemini_flash_min_main_open_models_above": 15,
+      "gemini_3_5_flash_rank": 35,
+      "gemini_3_6_flash_rank": 29,
+      "qwen_3_8_max_rank": 14,
+      "qwen_3_7_max_rank": 15,
+      "qwen_3_7_plus_rank": 37,
+      "qwen_3_6_plus_rank": 39,
+      "spearman_vs_unconstrained_after_coverage": 0.999155,
+      "top50_overlap_with_unconstrained_after_coverage": 47,
+      "max_absolute_constraint_shift": 42,
+      "top50_provisional_models": 13,
+      "top50_median_unique_families": 14.0
+    },
+    {
+      "scheme_id": "guarded_rasch",
+      "scheme": "连续 1PL/Rasch + 独立覆盖校正 + 产品硬约束",
+      "base_scheme_id": "rasch_business",
+      "ranked_models": 328,
+      "main_evidence_models": 129,
+      "provisional_models": 199,
+      "fable_rank": 1,
+      "qwen_direct_edge_violations_before": 3,
+      "qwen_direct_edge_violations_after": 0,
+      "gemini_flash_min_main_open_models_above": 15,
+      "gemini_3_5_flash_rank": 32,
+      "gemini_3_6_flash_rank": 26,
+      "qwen_3_8_max_rank": 10,
+      "qwen_3_7_max_rank": 11,
+      "qwen_3_7_plus_rank": 33,
+      "qwen_3_6_plus_rank": 35,
+      "spearman_vs_unconstrained_after_coverage": 0.998023,
+      "top50_overlap_with_unconstrained_after_coverage": 48,
+      "max_absolute_constraint_shift": 72,
+      "top50_provisional_models": 12,
+      "top50_median_unique_families": 13.0
+    },
+    {
+      "scheme_id": "guarded_twopl",
+      "scheme": "强收缩连续 2PL + 独立覆盖校正 + 产品硬约束",
+      "base_scheme_id": "twopl_equal",
+      "ranked_models": 328,
+      "main_evidence_models": 129,
+      "provisional_models": 199,
+      "fable_rank": 1,
+      "qwen_direct_edge_violations_before": 3,
+      "qwen_direct_edge_violations_after": 0,
+      "gemini_flash_min_main_open_models_above": 15,
+      "gemini_3_5_flash_rank": 31,
+      "gemini_3_6_flash_rank": 27,
+      "qwen_3_8_max_rank": 11,
+      "qwen_3_7_max_rank": 12,
+      "qwen_3_7_plus_rank": 34,
+      "qwen_3_6_plus_rank": 36,
+      "spearman_vs_unconstrained_after_coverage": 0.998519,
+      "top50_overlap_with_unconstrained_after_coverage": 48,
+      "max_absolute_constraint_shift": 63,
+      "top50_provisional_models": 12,
+      "top50_median_unique_families": 13.0
+    },
+    {
+      "scheme_id": "guarded_robust",
+      "scheme": "稳健秩收缩 + 独立覆盖校正 + 产品硬约束",
+      "base_scheme_id": "robust_eb",
+      "ranked_models": 328,
+      "main_evidence_models": 129,
+      "provisional_models": 199,
+      "fable_rank": 1,
+      "qwen_direct_edge_violations_before": 3,
+      "qwen_direct_edge_violations_after": 0,
+      "gemini_flash_min_main_open_models_above": 15,
+      "gemini_3_5_flash_rank": 31,
+      "gemini_3_6_flash_rank": 29,
+      "qwen_3_8_max_rank": 10,
+      "qwen_3_7_max_rank": 11,
+      "qwen_3_7_plus_rank": 42,
+      "qwen_3_6_plus_rank": 44,
+      "spearman_vs_unconstrained_after_coverage": 0.998292,
+      "top50_overlap_with_unconstrained_after_coverage": 46,
+      "max_absolute_constraint_shift": 53,
+      "top50_provisional_models": 14,
+      "top50_median_unique_families": 12.0
+    },
+    {
+      "scheme_id": "guarded_borda",
+      "scheme": "收缩 Borda 广度榜 + 独立覆盖校正 + 产品硬约束",
+      "base_scheme_id": "borda_breadth",
+      "ranked_models": 328,
+      "main_evidence_models": 129,
+      "provisional_models": 199,
+      "fable_rank": 1,
+      "qwen_direct_edge_violations_before": 3,
+      "qwen_direct_edge_violations_after": 0,
+      "gemini_flash_min_main_open_models_above": 15,
+      "gemini_3_5_flash_rank": 27,
+      "gemini_3_6_flash_rank": 32,
+      "qwen_3_8_max_rank": 6,
+      "qwen_3_7_max_rank": 7,
+      "qwen_3_7_plus_rank": 41,
+      "qwen_3_6_plus_rank": 43,
+      "spearman_vs_unconstrained_after_coverage": 0.997825,
+      "top50_overlap_with_unconstrained_after_coverage": 47,
+      "max_absolute_constraint_shift": 62,
+      "top50_provisional_models": 14,
+      "top50_median_unique_families": 12.0
+    }
+  ],
+  "validation": {
+    "all_schemes_fable_rank_one": true,
+    "all_schemes_qwen_constraints_satisfied": true,
+    "all_schemes_gemini_flash_open_floor_satisfied": true,
+    "each_scheme_has_50_rows": true,
+    "constraint_edges_satisfied": true
+  },
+  "interpretation": "Measurement scores are benchmark-derived; coverage penalties and partial-order constraints are explicit product policy overlays."
+}

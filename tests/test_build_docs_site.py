@@ -1,4 +1,5 @@
 import unittest
+import json
 import math
 import subprocess
 import sys
@@ -10,6 +11,7 @@ from scripts.build_docs_site import (
     DEFAULT_AINDEX_WEIGHTS,
     DEFAULT_EXTERNAL_BENCHMARKS_JSON,
     DEFAULT_INPUT_CSV,
+    DEFAULT_OUTPUT_JSON,
     build_site_payload,
     load_external_benchmarks,
     open_source_type,
@@ -23,6 +25,77 @@ from scripts.build_docs_site import (
 
 
 class BuildDocsSiteTests(unittest.TestCase):
+    @staticmethod
+    def benchmark_lab_frontier_preset():
+        """Legacy board calculator retained only inside the Custom benchmark lab."""
+
+        return {
+            "kind": "frontier-groups",
+            "calculation": "geometric",
+            "normalization": "relative-best",
+            "missingPolicy": "weak-prior",
+            "weakPriorRatio": 0.34,
+            "groupMetricCoverageDiscountExponent": 0.10,
+            "singleMetricCoverageDiscountExponent": 0.10,
+            "groups": AINDEX_GROUPS,
+        }
+
+    def test_generated_site_attaches_consensus_only_to_selected_exact_configs(self):
+        payload = json.loads(DEFAULT_OUTPUT_JSON.read_text(encoding="utf-8"))
+        ranked = [model for model in payload["models"] if model.get("rankingProfile")]
+        ranked.sort(key=lambda model: model["rankingProfile"]["publicationRank"])
+
+        self.assertEqual(len(ranked), payload["leaderboard"]["populationSize"])
+        self.assertGreaterEqual(len(ranked), 50)
+        self.assertEqual(ranked[0]["slug"], "claude-fable-5")
+        self.assertEqual(ranked[1]["variantGroup"], "gpt 5 6 sol")
+        self.assertEqual(ranked[2]["slug"], "claude-opus-5")
+        self.assertEqual(
+            [model["rankingProfile"]["publicationRank"] for model in ranked],
+            list(range(1, len(ranked) + 1)),
+        )
+
+        for model in ranked:
+            profile = model["rankingProfile"]
+            methods = profile["methods"]
+            self.assertAlmostEqual(
+                profile["evidenceMeanRank"],
+                (methods["rasch"]["evidenceRank"] + methods["sparseRasch"]["evidenceRank"]) / 2,
+            )
+            self.assertIn("twopl", methods)
+            self.assertIn("denseRasch", methods)
+            board_coverages = []
+            for board_id, board in profile["boards"].items():
+                self.assertAlmostEqual(
+                    board["score"],
+                    (
+                        methods["rasch"]["boards"][board_id]["score"]
+                        + methods["sparseRasch"]["boards"][board_id]["score"]
+                    )
+                    / 2,
+                    delta=0.0006,
+                )
+                board_coverages.append(
+                    50
+                    * (
+                        min(board["tests"] / board["itemPoolSize"], 1)
+                        + min(
+                            board["sparseTests"] / board["sparseItemPoolSize"],
+                            1,
+                        )
+                    )
+                )
+            self.assertAlmostEqual(
+                profile["evidenceCoverageScore"],
+                sum(board_coverages) / len(board_coverages),
+                delta=0.0006,
+            )
+
+        selected_slugs = {model["slug"] for model in ranked}
+        for model in payload["models"]:
+            if model["slug"] not in selected_slugs:
+                self.assertNotIn("rankingProfile", model)
+
     def test_grok45_official_scores_attach_to_high_variant(self):
         payload = build_site_payload(
             read_csv_rows(DEFAULT_INPUT_CSV),
@@ -40,6 +113,112 @@ class BuildDocsSiteTests(unittest.TestCase):
             {row["sourceId"] for row in grok["externalBenchmarks"]},
             {"spacexai-grok-4-5-release"},
         )
+
+    def test_opus5_max_effort_scores_do_not_broadcast_to_lower_effort_variants(self):
+        payload = build_site_payload(
+            read_csv_rows(DEFAULT_INPUT_CSV),
+            load_external_benchmarks(DEFAULT_EXTERNAL_BENCHMARKS_JSON),
+        )
+        opus_max = next(
+            model for model in payload["models"] if model["model"] == "Claude Opus 5 (max)"
+        )
+        opus_low = next(
+            model for model in payload["models"] if model["model"] == "Claude Opus 5 (low)"
+        )
+
+        self.assertEqual(opus_max["scores"]["benchmark:swe-bench-pro"], 79.2)
+        self.assertIsNone(opus_low["scores"]["benchmark:swe-bench-pro"])
+        self.assertTrue(
+            next(
+                row
+                for row in opus_max["externalBenchmarks"]
+                if row["metricKey"] == "benchmark:swe-bench-pro"
+            )["variantScoped"]
+        )
+
+    def test_gpt56_release_scores_attach_only_to_max_variants(self):
+        payload = build_site_payload(
+            read_csv_rows(DEFAULT_INPUT_CSV),
+            load_external_benchmarks(DEFAULT_EXTERNAL_BENCHMARKS_JSON),
+        )
+        sol_max = next(
+            model for model in payload["models"] if model["model"] == "GPT-5.6 Sol (max)"
+        )
+        sol_xhigh = next(
+            model
+            for model in payload["models"]
+            if model["model"] == "GPT-5.6 Sol (xhigh)"
+        )
+
+        self.assertEqual(sol_max["scores"]["benchmark:swe-bench-pro"], 64.6)
+        self.assertIsNone(sol_xhigh["scores"]["benchmark:swe-bench-pro"])
+        swe_row = next(
+            row
+            for row in sol_max["externalBenchmarks"]
+            if row["metricKey"] == "benchmark:swe-bench-pro"
+        )
+        self.assertTrue(swe_row["variantScoped"])
+        self.assertEqual(swe_row["effort"], "max")
+        self.assertEqual(swe_row["configurationConfidence"], "inferred")
+
+    def test_fable_system_card_replaces_unattributed_higher_of_two_rows(self):
+        payload = build_site_payload(
+            read_csv_rows(DEFAULT_INPUT_CSV),
+            load_external_benchmarks(DEFAULT_EXTERNAL_BENCHMARKS_JSON),
+        )
+        fable = next(
+            model
+            for model in payload["models"]
+            if model["model"] == "Claude Fable 5 (with fallback)"
+        )
+
+        self.assertEqual(fable["scores"]["benchmark:swe-bench-pro"], 80.0)
+        self.assertEqual(fable["scores"]["benchmark:terminal-bench-2-1"], 84.3)
+        self.assertNotIn(
+            "anthropic-claude-fable-5-docs",
+            {row["sourceId"] for row in fable["externalBenchmarks"]},
+        )
+        terminal_row = next(
+            row
+            for row in fable["externalBenchmarks"]
+            if row["metricKey"] == "benchmark:terminal-bench-2-1"
+        )
+        self.assertEqual(terminal_row["sourceId"], "anthropic-claude-fable-5-system-card")
+        self.assertTrue(terminal_row["variantScoped"])
+        self.assertTrue(terminal_row["composite"])
+        self.assertTrue(terminal_row["fallbackObserved"])
+        self.assertEqual(terminal_row["fallbackRate"], 0.209)
+        self.assertTrue(terminal_row["productEvidenceEligible"])
+        self.assertFalse(terminal_row["pureModelEligible"])
+
+    def test_opus5_release_effort_and_fallback_scores_are_isolated(self):
+        payload = build_site_payload(
+            read_csv_rows(DEFAULT_INPUT_CSV),
+            load_external_benchmarks(DEFAULT_EXTERNAL_BENCHMARKS_JSON),
+        )
+        opus_high = next(
+            model for model in payload["models"] if model["model"] == "Claude Opus 5 (high)"
+        )
+        opus_max = next(
+            model for model in payload["models"] if model["model"] == "Claude Opus 5 (max)"
+        )
+
+        high_release_rows = [
+            row
+            for row in opus_high["externalBenchmarks"]
+            if row["sourceId"] == "anthropic-claude-opus-5-release"
+            and not row.get("sharedFromVariant")
+        ]
+        max_release_rows = [
+            row
+            for row in opus_max["externalBenchmarks"]
+            if row["sourceId"] == "anthropic-claude-opus-5-release"
+        ]
+        self.assertEqual(
+            [(row["benchmarkId"], row["effort"]) for row in high_release_rows],
+            [("arc-agi-3", "high")],
+        )
+        self.assertEqual(max_release_rows, [])
 
     def test_default_ainsights_terminal_bench_uses_aa_column_not_duplicate_external_versions(self):
         group_metrics = {
@@ -66,14 +245,14 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertNotIn("benchmark:livecodebench", group_metrics["coding"])
         self.assertEqual(DEFAULT_AINDEX_WEIGHTS.get("benchmark:livecodebench", 0), 0)
 
-    def test_default_ainsights_excludes_metrics_with_fewer_than_four_models(self):
+    def test_advanced_benchmark_profile_excludes_metrics_with_fewer_than_four_models(self):
         payload = build_site_payload(
             read_csv_rows(DEFAULT_INPUT_CSV),
             load_external_benchmarks(DEFAULT_EXTERNAL_BENCHMARKS_JSON),
         )
         selected_keys = {
             metric["key"]
-            for group in payload["presets"]["zhihu-adjusted"]["groups"]
+            for group in AINDEX_GROUPS
             for metric in group["metrics"]
         }
 
@@ -196,11 +375,17 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertIn("relatedMetrics", payload["externalSources"][1])
         self.assertEqual(payload["defaultPreset"], "zhihu-adjusted")
         self.assertIn("GDPval-AA v2", [metric["key"] for metric in payload["metrics"]])
-        self.assertEqual(payload["presets"]["zhihu-adjusted"]["kind"], "frontier-groups")
+        self.assertEqual(payload["presets"]["zhihu-adjusted"]["kind"], "precomputed-ranking")
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["label"], "AInsights Index")
-        self.assertEqual(payload["presets"]["zhihu-adjusted"]["calculation"], "geometric")
-        self.assertEqual(payload["presets"]["zhihu-adjusted"]["normalization"], "relative-best")
-        self.assertEqual(payload["presets"]["zhihu-adjusted"]["missingPolicy"], "weak-prior")
+        self.assertEqual(payload["presets"]["zhihu-adjusted"]["calculation"], "rank-mean")
+        self.assertEqual(payload["presets"]["zhihu-adjusted"]["normalization"], "none")
+        self.assertEqual(payload["presets"]["zhihu-adjusted"]["missingPolicy"], "eligibility-gate")
+        self.assertEqual(
+            payload["presets"]["zhihu-adjusted"]["componentMethods"],
+            ["rasch_equal_board", "rasch_sparse_item_sensitivity"],
+        )
+        self.assertNotIn("groups", payload["presets"]["zhihu-adjusted"])
+        self.assertNotIn("weights", payload["presets"]["zhihu-adjusted"])
         self.assertNotIn("displayScale", payload["presets"]["zhihu-adjusted"])
         self.assertEqual(payload["presets"]["custom"]["normalization"], "relative-best")
         self.assertEqual(payload["metricBaselines"]["GDPval-AA v2"], 80)
@@ -335,6 +520,56 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(payload["externalSources"][-1]["scoreStatus"], "benchmark")
         self.assertIn("benchmark:terminal-bench-2", payload["externalSources"][-1]["relatedMetrics"])
 
+    def test_first_party_score_beats_later_vendor_comparator(self):
+        payload = build_site_payload(
+            [
+                {
+                    "model_key": "Claude Fable 5",
+                    "model": "Claude Fable 5 (with fallback)",
+                    "slug": "claude-fable-5",
+                    "creator": "Anthropic",
+                    "AA Intelligence Index": "60",
+                }
+            ],
+            {
+                "version": 1,
+                "sources": [
+                    {
+                        "id": "anthropic-fable",
+                        "category": "Official release",
+                        "modelAliases": ["Claude Fable 5", "claude-fable-5"],
+                    },
+                    {
+                        "id": "competitor-release",
+                        "category": "Official release",
+                        "modelAliases": ["Competitor Model"],
+                    },
+                ],
+                "benchmarks": [{"id": "hle", "label": "HLE"}],
+                "results": [
+                    {
+                        "benchmarkId": "hle",
+                        "model": "Claude Fable 5",
+                        "modelAliases": ["Claude Fable 5", "claude-fable-5"],
+                        "value": 59.0,
+                        "sourceId": "anthropic-fable",
+                    },
+                    {
+                        "benchmarkId": "hle",
+                        "model": "Claude Fable 5",
+                        "modelAliases": ["Claude Fable 5", "claude-fable-5"],
+                        "value": 53.3,
+                        "sourceId": "competitor-release",
+                    },
+                ],
+            },
+        )
+
+        model = payload["models"][0]
+        self.assertEqual(model["scores"]["benchmark:hle"], 59.0)
+        self.assertEqual(len(model["externalBenchmarks"]), 1)
+        self.assertEqual(model["externalBenchmarks"][0]["sourceId"], "anthropic-fable")
+
     def test_external_benchmark_matching_keeps_deepseek_0731_separate_from_0424(self):
         payload = build_site_payload(
             [
@@ -414,6 +649,7 @@ class BuildDocsSiteTests(unittest.TestCase):
                     str(input_csv),
                     "--output-json",
                     str(output_json),
+                    "--skip-irt-ranking",
                 ],
                 cwd=Path(__file__).resolve().parents[1],
                 text=True,
@@ -443,7 +679,7 @@ class BuildDocsSiteTests(unittest.TestCase):
             self.assertTrue(content.startswith("window.AINSIGHTS_MODELS_DATA = "))
             self.assertIn('"modelRows": 1', content)
 
-    def test_default_score_uses_frontier_capability_boards(self):
+    def test_custom_benchmark_lab_can_use_frontier_capability_boards(self):
         payload = build_site_payload(
             [
                 {
@@ -482,7 +718,7 @@ class BuildDocsSiteTests(unittest.TestCase):
         )
         coding_model = next(model for model in payload["models"] if model["slug"] == "coding-only-model")
         balanced_model = next(model for model in payload["models"] if model["slug"] == "balanced-model")
-        preset = payload["presets"]["zhihu-adjusted"]
+        preset = self.benchmark_lab_frontier_preset()
 
         coding_score = score_model_for_preset(
             coding_model,
@@ -528,13 +764,18 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(coding_score["coverage"], 2)
         self.assertEqual(balanced_score["coverage"], 5)
 
-    def test_default_ainsights_score_uses_aa_intelligence_scale(self):
+    def test_precomputed_ranking_score_uses_real_profile_value(self):
         payload = build_site_payload(
             read_csv_rows(DEFAULT_INPUT_CSV),
             load_external_benchmarks(DEFAULT_EXTERNAL_BENCHMARKS_JSON),
         )
-        preset = payload["presets"]["zhihu-adjusted"]
         fable = next(model for model in payload["models"] if model["slug"] == "claude-fable-5")
+        fable["rankingProfile"] = {
+            "displayScore": 97.25,
+            "publicationRank": 1,
+            "boardTestSlotsTotal": 25,
+        }
+        preset = payload["presets"]["zhihu-adjusted"]
 
         score = score_model_for_preset(
             fable,
@@ -544,10 +785,11 @@ class BuildDocsSiteTests(unittest.TestCase):
             payload["scoreBaselines"]["aaIntelligenceMax"],
         )
 
-        self.assertGreater(score["score"], 55)
-        self.assertLess(score["score"], 60)
+        self.assertEqual(score["score"], 97.25)
+        self.assertEqual(score["rank"], 1)
+        self.assertEqual(score["coverage"], 25)
 
-    def test_default_score_weights_metrics_inside_frontier_boards(self):
+    def test_custom_benchmark_lab_weights_metrics_inside_frontier_boards(self):
         payload = build_site_payload(
             [
                 {
@@ -567,7 +809,7 @@ class BuildDocsSiteTests(unittest.TestCase):
             ]
         )
         model = next(model for model in payload["models"] if model["slug"] == "half-scicode-model")
-        preset = payload["presets"]["zhihu-adjusted"]
+        preset = self.benchmark_lab_frontier_preset()
 
         score = score_model_for_preset(
             model,
@@ -582,7 +824,7 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(score["coverage"], 2)
         self.assertAlmostEqual(score["availableWeight"], 48)
 
-    def test_default_score_fills_missing_livecodebench_from_external_fit(self):
+    def test_custom_benchmark_lab_uses_livecodebench_external_fit(self):
         payload = build_site_payload(
             [
                 {
@@ -636,7 +878,7 @@ class BuildDocsSiteTests(unittest.TestCase):
         )
         paired = next(model for model in payload["models"] if model["slug"] == "paired-low-model")
         fallback = next(model for model in payload["models"] if model["slug"] == "fallback-model")
-        preset = payload["presets"]["zhihu-adjusted"]
+        preset = self.benchmark_lab_frontier_preset()
 
         score = score_model_for_preset(
             fallback,
@@ -700,55 +942,47 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(reasoning["externalBenchmarks"][0]["sourceLabel"], "Official")
         self.assertTrue(reasoning["externalBenchmarks"][0]["sharedFromVariant"])
 
-    def test_default_ranking_uses_coding_and_hard_problem_signal(self):
+    def test_precomputed_ranking_profile_is_model_name_agnostic(self):
         payload = build_site_payload(
             read_csv_rows(DEFAULT_INPUT_CSV),
             load_external_benchmarks(DEFAULT_EXTERNAL_BENCHMARKS_JSON),
         )
         preset = payload["presets"]["zhihu-adjusted"]
-        scored = []
-        for model in payload["models"]:
-            score = score_model_for_preset(
-                model,
+        model = next(model for model in payload["models"] if model["slug"] == "qwen3-8-max")
+        model["rankingProfile"] = {
+            "displayScore": 95.5,
+            "publicationRank": 7,
+            "boardTestSlotsTotal": 21,
+        }
+        relabeled = dict(model)
+        relabeled.update(
+            {
+                "model": "Anonymous evaluation configuration",
+                "slug": "anonymous-evaluation-configuration",
+                "creator": "Anonymous",
+                "variantGroup": "anonymous-evaluation-configuration",
+            }
+        )
+
+        def score(candidate):
+            return score_model_for_preset(
+                candidate,
                 preset,
                 payload["metrics"],
                 payload["metricBaselines"],
                 payload["scoreBaselines"]["aaIntelligenceMax"],
-            )
-            if score["score"] is not None:
-                scored.append((score["score"], model))
-        scored.sort(key=lambda row: (-row[0], row[1]["model"]))
-        ranks = {model["slug"]: index + 1 for index, (_, model) in enumerate(scored)}
-        scores = {model["slug"]: score for score, model in scored}
+            )["score"]
 
-        self.assertLess(ranks["claude-opus-4-7"], ranks["gemini-3-1-pro-preview"])
-        self.assertLess(ranks["claude-opus-4-8"], ranks["gpt-5-4"])
-        self.assertLess(ranks["gemini-3-1-pro-preview"], ranks["deepseek-v4-pro"])
-        self.assertLess(ranks["deepseek-v4-pro"], ranks["gemini-3-5-flash"])
-        self.assertLess(ranks["qwen3-7-max"], ranks["deepseek-v4-flash"])
-        self.assertLess(ranks["kimi-k2-6"], ranks["deepseek-v4-flash"])
-        self.assertGreater(ranks["gemini-3-flash-reasoning"], 15)
-        self.assertGreater(ranks["glm-4-7"], 40)
-        self.assertGreater(scores["claude-opus-4-8"] - scores["gpt-5-4"], 0.1)
-        self.assertGreater(scores["claude-opus-4-7"] - scores["gemini-3-1-pro-preview"], 0.03)
-        self.assertGreater(scores["gemini-3-1-pro-preview"] - scores["deepseek-v4-pro"], 0.6)
-        self.assertGreater(scores["deepseek-v4-pro"] - scores["gemini-3-5-flash"], 0.9)
-        self.assertGreater(scores["qwen3-7-max"] - scores["deepseek-v4-flash"], 1.2)
-        self.assertGreater(scores["kimi-k2-6"] - scores["deepseek-v4-flash"], 0.3)
-        self.assertGreater(scores["deepseek-v4-flash"], scores["glm-4-7"])
-        # The 0.10 within-board coverage discount rewards the more complete Qwen3.5 metric set.
-        self.assertGreater(scores["qwen3-5-397b-a17b"], scores["qwen3-7-plus"])
-        self.assertGreater(scores["qwen3-5-397b-a17b"] - scores["qwen3-7-plus"], 0.8)
-        self.assertGreater(scores["claude-opus-4-6-adaptive"], scores["gemini-3-5-flash"])
-        self.assertGreater(scores["minimax-m2-5"], scores["minimax-m2-1"])
-        self.assertGreater(scores["minimax-m2-7"], scores["minimax-m2-5"])
+        self.assertIsNotNone(score(model))
+        self.assertEqual(score(model), score(relabeled))
+        self.assertEqual(score(model), 95.5)
 
-    def test_qwen36_default_scores_are_independently_data_driven(self):
+    def test_qwen36_benchmark_lab_scores_are_independently_data_driven(self):
         payload = build_site_payload(
             read_csv_rows(DEFAULT_INPUT_CSV),
             load_external_benchmarks(DEFAULT_EXTERNAL_BENCHMARKS_JSON),
         )
-        preset = payload["presets"]["zhihu-adjusted"]
+        preset = self.benchmark_lab_frontier_preset()
         scores = {}
         for model in payload["models"]:
             if model["slug"] not in {"qwen3-6-27b", "qwen3-6-plus", "qwen3-6-max"}:
@@ -768,7 +1002,7 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertGreater(scores["qwen3-6-plus"], scores["qwen3-6-27b"])
         self.assertNotEqual(scores["qwen3-6-max"], scores["qwen3-6-plus"])
 
-    def test_default_score_discounts_sparse_regular_coverage(self):
+    def test_custom_benchmark_lab_discounts_sparse_regular_coverage(self):
         payload = build_site_payload(
             [
                 {
@@ -792,7 +1026,7 @@ class BuildDocsSiteTests(unittest.TestCase):
                 },
             ]
         )
-        preset = payload["presets"]["zhihu-adjusted"]
+        preset = self.benchmark_lab_frontier_preset()
         sparse = next(model for model in payload["models"] if model["slug"] == "sparse-gpqa-model")
         broad = next(model for model in payload["models"] if model["slug"] == "broad-suite-model")
 
@@ -953,7 +1187,7 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(coding, {"Terminal-Bench v2.1": 200 / 3, "SciCode": 100 / 3})
         self.assertEqual(agentic, {"GDPval-AA v2": 1000 / 17, "τ³-Banking": 700 / 17})
 
-    def test_default_score_uses_frontier_board_coverage(self):
+    def test_custom_benchmark_lab_uses_frontier_board_coverage(self):
         payload = build_site_payload(
             [
                 {
@@ -966,7 +1200,7 @@ class BuildDocsSiteTests(unittest.TestCase):
             ]
         )
         model = payload["models"][0]
-        preset = payload["presets"]["zhihu-adjusted"]
+        preset = self.benchmark_lab_frontier_preset()
 
         score = score_model_for_preset(
             model,

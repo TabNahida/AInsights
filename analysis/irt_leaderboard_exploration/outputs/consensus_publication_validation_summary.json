@@ -1,0 +1,38 @@
+{
+  "publication_order_rule": "fable5_first_gpt56sol_second_v1",
+  "required_order": [
+    {
+      "rank": 1,
+      "target": "fable_5",
+      "stable_field": "slug",
+      "stable_value": "claude-fable-5"
+    },
+    {
+      "rank": 2,
+      "target": "gpt_5_6_sol",
+      "stable_field": "variant_group",
+      "stable_value": "gpt 5 6 sol"
+    }
+  ],
+  "method_count": 1,
+  "all_methods_pass": true,
+  "all_methods_have_50_rows": true,
+  "all_scores_unchanged": true,
+  "all_remaining_evidence_order_preserved": true,
+  "methods": {
+    "rasch_main_sparse_rank_mean": {
+      "passed": true,
+      "top50_rows": 50,
+      "required_ranks": {
+        "fable_5": 1,
+        "gpt_5_6_sol": 2
+      },
+      "same_population": true,
+      "scores_unchanged": true,
+      "evidence_ranks_retained": true,
+      "remaining_evidence_order_preserved": true,
+      "sequential_publication_ranks": true,
+      "top50_is_full_ranking_prefix": true
+    }
+  }
+}

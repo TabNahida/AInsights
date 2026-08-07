@@ -1,0 +1,251 @@
+﻿scheme_id,scheme,rank,model,creator,variant_group,score,rank_percentile,baseline_rank,rank_change_vs_baseline,board_test_slots_total,unique_benchmark_families,min_board_tests,boards_below_soft_target,native_aindex,coding_tests,agentic-tool-work_tests,hard-reasoning_tests,knowledge-science_tests,instruction-context_tests,coding_score,agentic-tool-work_score,hard-reasoning_score,knowledge-science_score,instruction-context_score
+baseline_aindex,现行 AIndex（基准）,1,Claude Fable 5 (with fallback),Anthropic,claude fable 5 with fallback,56.7811,100.0,1,0,27,19,3,0,56.7811,4,10,3,5,5,,,,,
+baseline_aindex,现行 AIndex（基准）,2,GPT-5.6 Sol (max),OpenAI,gpt 5 6 sol,53.818,99.76,2,0,26,18,3,0,53.818,4,9,3,5,5,,,,,
+baseline_aindex,现行 AIndex（基准）,3,Claude Opus 5 (max),Anthropic,claude opus 5,52.5445,99.51,3,0,16,10,2,2,52.5445,2,5,3,4,2,,,,,
+baseline_aindex,现行 AIndex（基准）,4,GPT-5.5 (xhigh),OpenAI,gpt 5 5,51.8909,99.27,4,0,29,21,4,0,51.8909,4,10,5,5,5,,,,,
+baseline_aindex,现行 AIndex（基准）,5,Kimi K3 (max),Kimi,kimi k3,51.2253,99.02,5,0,21,15,2,1,51.2253,2,7,3,5,4,,,,,
+baseline_aindex,现行 AIndex（基准）,6,Claude Opus 4.8 (max),Anthropic,claude opus 4 8,51.1241,98.78,6,0,28,20,4,0,51.1241,4,9,5,5,5,,,,,
+baseline_aindex,现行 AIndex（基准）,7,GPT-5.6 Terra (max),OpenAI,gpt 5 6 terra,50.1946,98.53,7,0,21,13,3,0,50.1946,4,7,3,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,8,Claude Opus 4.7 (max),Anthropic,claude opus 4 7,49.4889,98.29,8,0,25,17,3,0,49.4889,5,8,3,4,5,,,,,
+baseline_aindex,现行 AIndex（基准）,9,GPT-5.4 (xhigh),OpenAI,gpt 5 4,48.5873,98.04,9,0,21,13,3,0,48.5873,4,7,3,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,10,Gemini 3.1 Pro Preview,Google,gemini 3 1 pro preview,47.9716,97.8,10,0,27,19,3,0,47.9716,5,9,5,5,3,,,,,
+baseline_aindex,现行 AIndex（基准）,11,GPT-5.6 Luna (max),OpenAI,gpt 5 6 luna,46.2806,97.56,11,0,18,11,2,1,46.2806,3,6,3,4,2,,,,,
+baseline_aindex,现行 AIndex（基准）,12,GLM-5.2 (max),Z AI,glm 5 2,46.2548,97.31,12,0,24,16,3,0,46.2548,4,8,5,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,13,DeepSeek V4 Pro (max),DeepSeek,deepseek v4 pro,46.1716,97.07,13,0,29,21,3,0,46.1716,7,9,5,5,3,,,,,
+baseline_aindex,现行 AIndex（基准）,14,Kimi K2.6,Kimi,kimi k2 6,45.9102,96.82,14,0,29,21,3,0,45.9102,7,9,5,5,3,,,,,
+baseline_aindex,现行 AIndex（基准）,15,Claude Sonnet 5 (max),Anthropic,claude sonnet 5,45.8533,96.58,15,0,18,11,2,1,45.8533,3,6,3,4,2,,,,,
+baseline_aindex,现行 AIndex（基准）,16,Qwen3.7 Max,Alibaba,qwen3 7 max,44.9845,96.33,16,0,22,14,3,0,44.9845,4,6,5,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,17,Grok 4.5 (high),SpaceXAI,grok 4 5,44.8746,96.09,17,0,15,8,2,1,44.8746,3,3,3,4,2,,,,,
+baseline_aindex,现行 AIndex（基准）,18,Muse Spark 1.2 (xhigh),Meta,muse spark 1 2,44.6804,95.84,18,0,13,7,2,3,44.6804,2,2,3,4,2,,,,,
+baseline_aindex,现行 AIndex（基准）,19,Qwen3.8 Max,Alibaba,qwen3 8 max,44.6178,95.6,19,0,13,7,2,3,44.6178,2,2,3,4,2,,,,,
+baseline_aindex,现行 AIndex（基准）,20,Claude Opus 4.6 (max),Anthropic,claude opus 4 6,44.5765,95.35,20,0,23,16,3,0,44.5765,4,7,3,4,5,,,,,
+baseline_aindex,现行 AIndex（基准）,21,Muse Spark 1.1 (xhigh),Meta,muse spark 1 1,44.0304,95.11,21,0,13,7,2,3,44.0304,2,2,3,4,2,,,,,
+baseline_aindex,现行 AIndex（基准）,22,GPT-5.3 Codex (xhigh),OpenAI,gpt 5 3 codex,43.8891,94.87,22,0,14,8,2,2,43.8891,2,2,3,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,23,GPT-5.2 (xhigh),OpenAI,gpt 5 2,43.3944,94.62,23,0,16,10,2,1,43.3944,3,2,4,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,24,Gemini 3.6 Flash,Google,gemini 3 6 flash,43.3867,94.38,24,0,19,12,3,0,43.3867,3,5,3,4,4,,,,,
+baseline_aindex,现行 AIndex（基准）,25,DeepSeek V4 Flash 0731 (max),DeepSeek,deepseek v4 flash 0731,43.0369,94.13,25,0,14,8,2,2,43.0369,2,3,3,4,2,,,,,
+baseline_aindex,现行 AIndex（基准）,26,Gemini 3 Pro Preview (high),Google,gemini 3 pro preview,42.4866,93.89,26,0,16,10,2,1,42.4866,3,2,4,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,27,Hy3,Tencent,hy3,42.324,93.64,27,0,21,14,2,1,42.324,5,7,3,4,2,,,,,
+baseline_aindex,现行 AIndex（基准）,28,DeepSeek V4 Flash (max),DeepSeek,deepseek v4 flash,42.1954,93.4,28,0,28,20,3,0,42.1954,7,9,4,5,3,,,,,
+baseline_aindex,现行 AIndex（基准）,29,Gemini 3.5 Flash,Google,gemini 3 5 flash,41.7862,93.15,29,0,16,9,3,0,41.7862,3,3,3,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,30,Inkling Small,Thinking Machines,inkling small,41.5699,92.91,30,0,26,19,4,0,41.5699,4,7,5,5,5,,,,,
+baseline_aindex,现行 AIndex（基准）,31,MiniMax-M3,MiniMax,minimax m3,40.8384,92.67,31,0,21,13,3,0,40.8384,4,6,4,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,32,Gemini 3 Flash,Google,gemini 3 flash,40.4998,92.42,32,0,16,10,2,1,40.4998,3,2,4,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,33,Claude Opus 4.5,Anthropic,claude opus 4 5,40.4904,92.18,33,0,16,10,2,1,40.4904,3,2,4,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,34,Inkling,Thinking Machines,inkling,40.1522,91.93,34,0,26,19,4,0,40.1522,4,7,5,5,5,,,,,
+baseline_aindex,现行 AIndex（基准）,35,Muse Spark,Meta,muse spark,39.8987,91.69,35,0,16,9,3,0,39.8987,3,3,3,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,36,MiMo-V2.5-Pro,Xiaomi,mimo v2 5 pro,39.7738,91.44,36,0,20,12,3,0,39.7738,5,4,3,5,3,,,,,
+baseline_aindex,现行 AIndex（基准）,37,Kimi K2.7 Code,Kimi,kimi k2 7 code,39.3333,91.2,37,0,17,10,3,0,39.3333,3,4,3,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,38,GLM-5.1,Z AI,glm 5 1,38.9862,90.95,38,0,24,16,3,0,38.9862,4,8,5,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,39,GPT-5.4 mini (xhigh),OpenAI,gpt 5 4 mini,38.7835,90.71,39,0,16,9,3,0,38.7835,3,3,3,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,40,Kimi K2.5,Kimi,kimi k2 5,38.7429,90.46,40,0,24,16,3,0,38.7429,6,6,4,5,3,,,,,
+baseline_aindex,现行 AIndex（基准）,41,Claude Sonnet 4.6 (max),Anthropic,claude sonnet 4 6,38.7385,90.22,41,0,16,9,3,0,38.7385,3,3,3,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,42,GPT-5.1 (high),OpenAI,gpt 5 1,38.4441,89.98,42,0,18,11,3,0,38.4441,4,3,4,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,43,Qwen3.5 397B A17B,Alibaba,qwen3 5 397b a17b,38.4038,89.73,43,0,24,16,3,0,38.4038,7,4,5,5,3,,,,,
+baseline_aindex,现行 AIndex（基准）,44,MiniMax-M2.7,MiniMax,minimax m2 7,38.3319,89.49,44,0,22,14,3,0,38.3319,5,6,4,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,45,Qwen3.6 Plus,Alibaba,qwen3 6 plus,37.8798,89.24,45,0,20,12,3,0,37.8798,6,4,3,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,46,Kimi K2 Thinking,Kimi,kimi k2 thinking,37.7765,89.0,46,0,21,15,3,0,37.7765,5,4,4,5,3,,,,,
+baseline_aindex,现行 AIndex（基准）,47,Qwen3.7 Plus,Alibaba,qwen3 7 plus,37.537,88.75,47,0,16,9,3,0,37.537,3,3,3,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,48,GLM-5,Z AI,glm 5,37.4417,88.51,48,0,22,15,3,0,37.4417,3,7,5,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,49,Nex-N2-Pro,Nex AGI,nex n2 pro,37.3641,88.26,49,0,14,8,2,2,37.3641,2,2,3,4,3,,,,,
+baseline_aindex,现行 AIndex（基准）,50,Qwen3.6 27B,Alibaba,qwen3 6 27b,37.3128,88.02,50,0,24,16,3,0,37.3128,7,4,5,5,3,,,,,
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,1,Claude Fable 5 (with fallback),Anthropic,claude fable 5 with fallback,97.3772,100.0,1,0,27,19,3,0,,4,10,3,5,5,97.127,97.379,98.494,98.33,94.903
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,2,GPT-5.6 Sol (max),OpenAI,gpt 5 6 sol,97.0588,99.69,2,0,26,18,3,0,,4,9,3,5,5,96.585,96.529,98.688,98.034,95.995
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,3,GPT-5.6 Terra (max),OpenAI,gpt 5 6 terra,95.7745,99.39,7,4,21,13,3,0,,4,7,3,4,3,95.597,94.312,97.932,95.892,95.587
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,4,GPT-5.5 (xhigh),OpenAI,gpt 5 5,95.383,99.08,4,0,29,21,4,0,,4,10,5,5,5,95.081,92.233,98.777,97.556,95.847
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,5,Claude Opus 4.8 (max),Anthropic,claude opus 4 8,95.1718,98.78,6,1,28,20,4,0,,4,9,5,5,5,95.412,93.699,97.631,96.127,91.381
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,6,GPT-5.4 (xhigh),OpenAI,gpt 5 4,94.1911,98.47,9,3,21,13,3,0,,4,7,3,4,3,93.696,91.565,97.2,96.363,94.976
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,7,Claude Opus 4.7 (max),Anthropic,claude opus 4 7,93.5154,98.17,8,1,25,17,3,0,,5,8,3,4,5,94.791,91.558,94.633,95.285,88.579
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,8,Gemini 3.1 Pro Preview,Google,gemini 3 1 pro preview,93.0027,97.86,10,2,27,19,3,0,,5,9,5,5,3,92.414,88.417,97.46,97.789,94.133
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,9,GLM-5.2 (max),Z AI,glm 5 2,92.7552,97.55,12,3,24,16,3,0,,4,8,5,4,3,92.314,90.112,97.439,90.274,93.879
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,10,Qwen3.7 Max,Alibaba,qwen3 7 max,92.1739,97.25,16,6,22,14,3,0,,4,6,5,4,3,91.265,89.616,96.763,92.338,92.955
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,11,Gemini 3.5 Flash,Google,gemini 3 5 flash,91.8872,96.94,29,18,16,9,3,0,,3,3,3,4,3,91.18,88.727,95.483,96.211,91.807
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,12,DeepSeek V4 Pro (max),DeepSeek,deepseek v4 pro,91.0996,96.64,13,1,29,21,3,0,,7,9,5,5,3,91.633,87.417,93.941,92.594,91.051
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,13,Kimi K2.6,Kimi,kimi k2 6,90.8054,96.33,14,1,29,21,3,0,,7,9,5,5,3,91.373,87.899,93.149,92.895,88.869
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,14,GPT-5.6 Luna (max),OpenAI,gpt 5 6 luna,90.3058,96.02,11,-3,18,11,2,1,,3,6,3,4,2,87.599,89.59,96.121,94.042,88.081
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,15,Claude Opus 5 (max),Anthropic,claude opus 5,90.2145,95.72,3,-12,16,10,2,2,,2,5,3,4,2,81.836,95.316,98.598,97.803,90.003
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,16,Claude Sonnet 5 (max),Anthropic,claude sonnet 5,90.1895,95.41,15,-1,18,11,2,1,,3,6,3,4,2,87.809,90.247,95.732,94.076,84.573
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,17,Grok 4.5 (high),SpaceXAI,grok 4 5,89.7928,95.11,17,0,15,8,2,1,,3,3,3,4,2,88.587,86.889,96.283,96.558,82.173
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,18,Kimi K3 (max),Kimi,kimi k3,89.3956,94.8,5,-13,21,15,2,1,,2,7,3,5,4,79.715,94.539,97.815,97.001,95.915
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,19,Muse Spark,Meta,muse spark,89.2547,94.5,35,16,16,9,3,0,,3,3,3,4,3,87.986,86.141,93.178,93.69,90.951
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,20,GPT-5.1 (high),OpenAI,gpt 5 1,88.9359,94.19,42,22,18,11,3,0,,4,3,4,4,3,89.958,85.61,92.779,87.219,86.139
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,21,Kimi K2.7 Code,Kimi,kimi k2 7 code,88.5176,93.88,37,16,17,10,3,0,,3,4,3,4,3,88.099,86.69,91.733,91.224,85.489
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,22,Gemini 3.6 Flash,Google,gemini 3 6 flash,88.5067,93.58,24,2,19,12,3,0,,3,5,3,4,4,85.659,85.129,94.626,95.937,90.753
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,23,GPT-5.4 mini (xhigh),OpenAI,gpt 5 4 mini,88.3029,93.27,39,16,16,9,3,0,,3,3,3,4,3,88.481,86.829,89.061,88.905,89.364
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,24,MiniMax-M3,MiniMax,minimax m3,87.6498,92.97,31,7,21,13,3,0,,4,6,4,4,3,87.012,88.322,88.18,87.346,87.811
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,25,Qwen3.7 Plus,Alibaba,qwen3 7 plus,87.4906,92.66,47,22,16,9,3,0,,3,3,3,4,3,86.661,85.13,91.616,86.948,89.127
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,26,GPT-5.2 (xhigh),OpenAI,gpt 5 2,87.4309,92.35,23,-3,16,10,2,1,,3,2,4,4,3,91.265,69.203,99.065,93.694,91.651
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,27,DeepSeek V4 Flash (max),DeepSeek,deepseek v4 flash,87.2375,92.05,28,1,28,20,3,0,,7,9,4,5,3,88.193,81.499,91.224,89.949,87.401
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,28,Claude Sonnet 4.6 (max),Anthropic,claude sonnet 4 6,87.0564,91.74,41,13,16,9,3,0,,3,3,3,4,3,90.513,89.479,81.611,89.696,74.354
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,29,Claude Opus 4.6 (max),Anthropic,claude opus 4 6,87.0069,91.44,20,-9,23,16,3,0,,4,7,3,4,5,83.877,85.331,93.599,93.949,84.835
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,30,Gemini 3 Pro Preview (high),Google,gemini 3 pro preview,86.6408,91.13,26,-4,16,10,2,1,,3,2,4,4,3,92.42,66.03,97.418,96.065,88.325
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,31,MiMo-V2.5-Pro,Xiaomi,mimo v2 5 pro,86.5492,90.83,36,5,20,12,3,0,,5,4,3,5,3,88.126,87.109,84.317,82.419,86.812
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,32,GPT-5.4 nano (xhigh),OpenAI,gpt 5 4 nano,85.257,90.52,64,32,16,9,3,0,,3,3,3,4,3,85.789,84.306,85.553,81.266,88.791
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,33,Gemini 3 Flash,Google,gemini 3 flash,84.879,90.21,32,-1,16,10,2,1,,3,2,4,4,3,90.383,62.587,97.521,94.564,89.06
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,34,GPT-5 (high),OpenAI,gpt 5,84.5973,89.91,68,34,18,11,3,0,,4,3,4,4,3,83.016,78.729,93.016,86.926,87.555
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,35,Claude Opus 4.5,Anthropic,claude opus 4 5,84.4536,89.6,33,-2,16,10,2,1,,3,2,4,4,3,90.007,69.878,91.2,90.621,80.07
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,36,GLM-5.1,Z AI,glm 5 1,84.4214,89.3,38,2,24,16,3,0,,4,8,5,4,3,86.011,83.733,83.256,83.36,82.575
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,37,Qwen3.6 Plus,Alibaba,qwen3 6 plus,83.9758,88.99,45,8,20,12,3,0,,6,4,3,4,3,85.969,85.734,79.516,83.32,80.782
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,38,DeepSeek V3.2,DeepSeek,deepseek v3 2,82.9977,88.69,71,33,18,11,3,0,,4,3,4,4,3,86.046,79.194,86.675,81.227,72.411
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,39,Hy3,Tencent,hy3,82.8671,88.38,27,-12,21,14,2,1,,5,7,3,4,2,81.798,84.936,87.153,89.489,65.812
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,40,Kimi K2.5,Kimi,kimi k2 5,82.8599,88.07,40,0,24,16,3,0,,6,6,4,5,3,83.661,80.47,83.68,89.41,77.673
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,41,Grok 4.3 (high),SpaceXAI,grok 4 3,82.8218,87.77,74,33,16,9,3,0,,3,3,3,4,3,78.837,77.85,91.318,91.146,89.301
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,42,Inkling Small,Thinking Machines,inkling small,82.4581,87.46,30,-12,26,19,4,0,,4,7,5,5,5,78.419,78.254,90.762,89.406,88.621
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,43,MiMo-V2.5,Xiaomi,mimo v2 5,82.4355,87.16,72,29,16,9,3,0,,3,3,3,4,3,85.353,83.988,79.153,77.325,76.874
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,44,DeepSeek V4 Flash 0731 (max),DeepSeek,deepseek v4 flash 0731,82.1114,86.85,25,-19,14,8,2,2,,2,3,3,4,2,71.289,86.76,95.217,92.78,82.12
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,45,Qwen3.5 397B A17B,Alibaba,qwen3 5 397b a17b,81.7451,86.54,43,-2,24,16,3,0,,7,4,5,5,3,84.011,81.588,77.572,87.225,76.196
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,46,GLM-4.7,Z AI,glm 4 7,81.4816,86.24,51,5,25,18,3,0,,6,7,5,4,3,86.666,71.568,87.459,83.98,69.719
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,47,GPT-5 Codex (high),OpenAI,gpt 5 codex,81.4765,85.93,55,8,16,10,2,1,,3,2,4,4,3,84.428,63.549,96.2,84.69,84.92
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,48,Nemotron 3 Ultra,NVIDIA,nemotron 3 ultra,81.2597,85.63,56,8,22,15,3,0,,6,5,3,5,3,84.259,77.025,79.537,81.315,83.531
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,49,MiniMax-M2.7,MiniMax,minimax m2 7,80.8409,85.32,44,-5,22,14,3,0,,5,6,4,4,3,84.984,84.013,71.664,85.382,70.303
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,50,DeepSeek V3.2 Speciale,DeepSeek,deepseek v3 2 speciale,80.8312,85.02,58,8,16,10,2,1,,3,2,4,4,3,87.457,57.539,95.732,87.375,80.876
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,1,GPT-5.6 Sol (max),OpenAI,gpt 5 6 sol,96.2491,100.0,2,1,26,18,3,0,,4,9,3,5,5,97.055,95.718,98.482,97.741,92.31
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,2,Claude Fable 5 (with fallback),Anthropic,claude fable 5 with fallback,95.8524,99.69,1,-1,27,19,3,0,,4,10,3,5,5,96.919,95.84,98.244,98.023,90.345
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,3,GPT-5.5 (xhigh),OpenAI,gpt 5 5,95.2795,99.39,4,1,29,21,4,0,,4,10,5,5,5,95.788,92.729,98.468,97.227,92.262
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,4,GPT-5.6 Terra (max),OpenAI,gpt 5 6 terra,95.0019,99.08,7,3,21,13,3,0,,4,7,3,4,3,96.181,93.92,97.593,95.56,91.807
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,5,GPT-5.4 (xhigh),OpenAI,gpt 5 4,93.972,98.78,9,4,21,13,3,0,,4,7,3,4,3,94.423,91.494,96.836,95.956,91.219
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,6,Claude Opus 4.8 (max),Anthropic,claude opus 4 8,93.6545,98.47,6,0,28,20,4,0,,4,9,5,5,5,95.755,92.967,97.319,95.755,86.664
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,7,Gemini 3.1 Pro Preview,Google,gemini 3 1 pro preview,93.4775,98.17,10,3,27,19,3,0,,5,9,5,5,3,93.267,89.133,97.386,97.555,90.206
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,8,Kimi K3 (max),Kimi,kimi k3,93.1083,97.86,5,-3,21,15,2,1,,2,7,3,5,4,85.442,94.355,97.572,96.748,91.676
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,9,Claude Opus 4.7 (max),Anthropic,claude opus 4 7,92.011,97.55,8,-1,25,17,3,0,,5,8,3,4,5,95.002,91.333,94.341,94.86,84.719
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,10,GLM-5.2 (max),Z AI,glm 5 2,91.9382,97.25,12,2,24,16,3,0,,4,8,5,4,3,93.048,90.071,96.673,90.274,89.715
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,11,Gemini 3.5 Flash,Google,gemini 3 5 flash,91.7235,96.94,29,18,16,9,3,0,,3,3,3,4,3,91.807,88.432,95.233,95.771,87.525
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,12,Qwen3.7 Max,Alibaba,qwen3 7 max,91.6523,96.64,16,4,22,14,3,0,,4,6,5,4,3,92.15,89.213,96.15,92.371,88.474
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,13,Claude Opus 5 (max),Anthropic,claude opus 5,91.1165,96.33,3,-10,16,10,2,2,,2,5,3,4,2,87.974,94.828,98.375,97.492,77.707
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,14,Gemini 3.6 Flash,Google,gemini 3 6 flash,90.8398,96.02,24,10,19,12,3,0,,3,5,3,4,4,90.743,87.841,94.488,95.557,85.755
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,15,GPT-5.6 Luna (max),OpenAI,gpt 5 6 luna,89.8821,95.72,11,-4,18,11,2,1,,3,6,3,4,2,92.275,90.989,95.663,93.651,77.402
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,16,DeepSeek V4 Pro (max),DeepSeek,deepseek v4 pro,89.5413,95.41,13,-3,29,21,3,0,,7,9,5,5,3,89.575,86.418,93.233,92.313,86.277
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,17,Muse Spark,Meta,muse spark,89.4554,95.11,35,18,16,9,3,0,,3,3,3,4,3,88.833,86.0,92.667,93.001,86.887
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,18,Kimi K2.6,Kimi,kimi k2 6,89.2358,94.8,14,-4,29,21,3,0,,7,9,5,5,3,88.873,87.001,92.643,92.512,85.266
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,19,Claude Sonnet 5 (max),Anthropic,claude sonnet 5,88.9402,94.5,15,-4,18,11,2,1,,3,6,3,4,2,92.341,90.887,95.328,93.761,73.278
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,20,Grok 4.5 (high),SpaceXAI,grok 4 5,88.6837,94.19,17,-3,15,8,2,1,,3,3,3,4,2,92.921,89.239,96.056,96.198,70.298
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,21,Claude Opus 4.6 (max),Anthropic,claude opus 4 6,87.8778,93.88,20,-1,23,16,3,0,,4,7,3,4,5,85.973,85.011,93.125,93.323,82.225
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,22,Kimi K2.7 Code,Kimi,kimi k2 7 code,87.8675,93.58,37,15,17,10,3,0,,3,4,3,4,3,89.248,86.252,91.32,90.74,81.937
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,23,MiniMax-M3,MiniMax,minimax m3,87.7422,93.27,31,8,21,13,3,0,,4,6,4,4,3,88.07,87.479,89.136,88.477,85.568
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,24,GPT-5.4 mini (xhigh),OpenAI,gpt 5 4 mini,87.6428,92.97,39,15,16,9,3,0,,3,3,3,4,3,89.431,86.585,88.397,88.273,85.553
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,25,GPT-5.2 (xhigh),OpenAI,gpt 5 2,87.268,92.66,23,-2,16,10,2,1,,3,2,4,4,3,89.55,68.467,98.509,93.178,88.08
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,26,Qwen3.7 Plus,Alibaba,qwen3 7 plus,87.2022,92.35,47,21,16,9,3,0,,3,3,3,4,3,88.041,85.057,91.287,87.275,84.43
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,27,GPT-5.1 (high),OpenAI,gpt 5 1,86.9802,92.05,42,15,18,11,3,0,,4,3,4,4,3,87.573,85.51,90.722,86.521,84.634
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,28,Gemini 3 Pro Preview (high),Google,gemini 3 pro preview,86.0767,91.74,26,-2,16,10,2,1,,3,2,4,4,3,90.618,65.239,95.785,95.468,85.066
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,29,DeepSeek V4 Flash (max),DeepSeek,deepseek v4 flash,86.0379,91.44,28,-1,28,20,3,0,,7,9,4,5,3,86.025,81.479,90.31,89.91,82.641
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,30,MiMo-V2.5-Pro,Xiaomi,mimo v2 5 pro,85.9129,91.13,36,6,20,12,3,0,,5,4,3,5,3,88.926,86.945,84.283,84.759,84.693
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,31,Claude Sonnet 4.6 (max),Anthropic,claude sonnet 4 6,85.3974,90.83,41,10,16,9,3,0,,3,3,3,4,3,91.569,89.057,81.925,88.953,75.936
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,32,GPT-5.3 Codex (xhigh),OpenAI,gpt 5 3 codex,85.0193,90.52,22,-10,14,8,2,2,,2,2,3,4,3,74.022,71.519,95.542,95.359,90.15
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,33,Grok 4.3 (high),SpaceXAI,grok 4 3,84.9709,90.21,74,41,16,9,3,0,,3,3,3,4,3,80.337,78.53,91.076,90.833,84.443
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,34,Inkling Small,Thinking Machines,inkling small,84.6582,89.91,30,-4,26,19,4,0,,4,7,5,5,5,81.444,79.155,90.257,89.089,83.596
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,35,Gemini 3 Flash,Google,gemini 3 flash,84.5727,89.6,32,-3,16,10,2,1,,3,2,4,4,3,88.65,61.698,96.197,93.812,84.673
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,36,GPT-5 (high),OpenAI,gpt 5,84.4502,89.3,68,32,18,11,3,0,,4,3,4,4,3,80.564,79.378,90.896,85.904,85.742
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,37,DeepSeek V4 Flash 0731 (max),DeepSeek,deepseek v4 flash 0731,84.3478,88.99,25,-12,14,8,2,2,,2,3,3,4,2,77.926,88.333,94.769,92.454,69.503
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,38,GPT-5.4 nano (xhigh),OpenAI,gpt 5 4 nano,84.1714,88.69,64,26,16,9,3,0,,3,3,3,4,3,87.097,84.338,84.386,80.715,84.377
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,39,Qwen3.8 Max,Alibaba,qwen3 8 max,83.2724,88.38,19,-20,13,7,2,3,,2,2,3,4,2,80.891,74.272,96.676,93.945,71.954
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,40,GLM-5.1,Z AI,glm 5 1,83.1408,88.07,38,-2,24,16,3,0,,4,8,5,4,3,87.202,83.484,82.826,83.34,78.946
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,41,Qwen3.6 Plus,Alibaba,qwen3 6 plus,83.11,87.77,45,4,20,12,3,0,,6,4,3,4,3,86.991,85.582,80.047,83.34,79.705
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,42,Claude Opus 4.5,Anthropic,claude opus 4 5,83.0558,87.46,33,-9,16,10,2,1,,3,2,4,4,3,88.303,69.174,88.572,89.647,80.427
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,43,Inkling,Thinking Machines,inkling,82.6826,87.16,34,-9,26,19,4,0,,4,7,5,5,5,80.05,77.81,86.36,88.409,81.0
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,44,Muse Spark 1.2 (xhigh),Meta,muse spark 1 2,82.3882,86.85,18,-26,13,7,2,3,,2,2,3,4,2,81.194,72.787,95.724,94.421,69.412
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,45,Kimi K2.5,Kimi,kimi k2 5,81.6859,86.54,40,-5,24,16,3,0,,6,6,4,5,3,80.834,79.685,83.117,88.55,76.466
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,46,Muse Spark 1.1 (xhigh),Meta,muse spark 1 1,81.2519,86.24,21,-25,13,7,2,3,,2,2,3,4,2,80.251,70.979,95.146,94.786,66.985
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,47,GPT-5 Codex (high),OpenAI,gpt 5 codex,81.098,85.93,55,8,16,10,2,1,,3,2,4,4,3,82.959,62.717,95.576,83.558,82.261
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,48,Nemotron 3 Ultra,NVIDIA,nemotron 3 ultra,80.8732,85.63,56,8,22,15,3,0,,6,5,3,5,3,82.601,79.832,79.798,81.308,80.842
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,49,Qwen3.5 397B A17B,Alibaba,qwen3 5 397b a17b,80.7946,85.32,43,-6,24,16,3,0,,7,4,5,5,3,81.845,81.882,77.725,87.048,75.686
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,50,Hy3,Tencent,hy3,80.7942,85.02,27,-23,21,14,2,1,,5,7,3,4,2,85.104,85.021,87.229,89.28,59.15
+robust_eb,稳健秩变换 + 贝叶斯式收缩,1,GPT-5.6 Sol (max),OpenAI,gpt 5 6 sol,97.9,100.0,2,1,26,18,3,0,,4,9,3,5,5,98.539,99.356,99.106,99.104,93.46
+robust_eb,稳健秩变换 + 贝叶斯式收缩,2,Claude Fable 5 (with fallback),Anthropic,claude fable 5 with fallback,97.8119,99.69,1,-1,27,19,3,0,,4,10,3,5,5,99.188,99.712,98.213,98.779,93.238
+robust_eb,稳健秩变换 + 贝叶斯式收缩,3,GPT-5.6 Terra (max),OpenAI,gpt 5 6 terra,96.7657,99.39,7,4,21,13,3,0,,4,7,3,4,3,97.136,97.49,97.565,95.977,95.668
+robust_eb,稳健秩变换 + 贝叶斯式收缩,4,GPT-5.5 (xhigh),OpenAI,gpt 5 5,95.9075,99.08,4,0,29,21,4,0,,4,10,5,5,5,96.1,92.426,98.266,98.285,94.525
+robust_eb,稳健秩变换 + 贝叶斯式收缩,5,Kimi K3 (max),Kimi,kimi k3,95.3072,98.78,5,0,21,15,2,1,,2,7,3,5,4,87.154,98.383,97.99,98.169,95.078
+robust_eb,稳健秩变换 + 贝叶斯式收缩,6,GPT-5.4 (xhigh),OpenAI,gpt 5 4,94.4572,98.47,9,3,21,13,3,0,,4,7,3,4,3,93.811,90.687,96.0,96.876,94.973
+robust_eb,稳健秩变换 + 贝叶斯式收缩,7,Claude Opus 4.8 (max),Anthropic,claude opus 4 8,93.0526,98.17,6,-1,28,20,4,0,,4,9,5,5,5,97.509,96.505,96.1,95.393,80.315
+robust_eb,稳健秩变换 + 贝叶斯式收缩,8,Claude Opus 5 (max),Anthropic,claude opus 5,92.7967,97.86,3,-5,16,10,2,2,,2,5,3,4,2,87.115,98.494,98.792,98.48,81.772
+robust_eb,稳健秩变换 + 贝叶斯式收缩,9,Gemini 3.5 Flash,Google,gemini 3 5 flash,91.2923,97.55,29,20,16,9,3,0,,3,3,3,4,3,87.929,88.595,93.896,95.878,90.286
+robust_eb,稳健秩变换 + 贝叶斯式收缩,10,Claude Opus 4.7 (max),Anthropic,claude opus 4 7,91.1138,97.25,8,-2,25,17,3,0,,5,8,3,4,5,97.005,91.841,92.149,94.818,80.208
+robust_eb,稳健秩变换 + 贝叶斯式收缩,11,Gemini 3.1 Pro Preview,Google,gemini 3 1 pro preview,90.8073,96.94,10,-1,27,19,3,0,,5,9,5,5,3,92.664,73.191,96.452,98.569,94.303
+robust_eb,稳健秩变换 + 贝叶斯式收缩,12,Qwen3.7 Max,Alibaba,qwen3 7 max,90.7139,96.64,16,4,22,14,3,0,,4,6,5,4,3,87.893,87.974,94.545,90.067,93.187
+robust_eb,稳健秩变换 + 贝叶斯式收缩,13,GPT-5.2 (xhigh),OpenAI,gpt 5 2,90.4063,96.33,23,10,16,10,2,1,,3,2,4,4,3,94.959,79.301,96.054,91.523,90.67
+robust_eb,稳健秩变换 + 贝叶斯式收缩,14,GLM-5.2 (max),Z AI,glm 5 2,90.2027,96.02,12,-2,24,16,3,0,,4,8,5,4,3,89.81,87.009,94.233,87.344,92.725
+robust_eb,稳健秩变换 + 贝叶斯式收缩,15,GPT-5.3 Codex (xhigh),OpenAI,gpt 5 3 codex,89.356,95.72,22,7,14,8,2,2,,2,2,3,4,3,78.119,86.821,93.607,95.239,93.541
+robust_eb,稳健秩变换 + 贝叶斯式收缩,16,Muse Spark,Meta,muse spark,88.5389,95.41,35,19,16,9,3,0,,3,3,3,4,3,85.033,87.449,89.213,91.704,89.361
+robust_eb,稳健秩变换 + 贝叶斯式收缩,17,Gemini 3 Pro Preview (high),Google,gemini 3 pro preview,88.2955,95.11,26,9,16,10,2,1,,3,2,4,4,3,96.56,70.459,94.264,96.34,85.219
+robust_eb,稳健秩变换 + 贝叶斯式收缩,18,GPT-5.1 (high),OpenAI,gpt 5 1,87.8177,94.8,42,24,18,11,3,0,,4,3,4,4,3,87.754,92.911,85.988,81.283,91.38
+robust_eb,稳健秩变换 + 贝叶斯式收缩,19,GPT-5.6 Luna (max),OpenAI,gpt 5 6 luna,87.3657,94.5,11,-8,18,11,2,1,,3,6,3,4,2,84.762,85.263,93.219,92.551,81.323
+robust_eb,稳健秩变换 + 贝叶斯式收缩,20,Grok 4.5 (high),SpaceXAI,grok 4 5,86.9492,94.19,17,-3,15,8,2,1,,3,3,3,4,2,91.299,89.242,95.446,97.041,63.797
+robust_eb,稳健秩变换 + 贝叶斯式收缩,21,Claude Sonnet 5 (max),Anthropic,claude sonnet 5,86.9074,93.88,15,-6,18,11,2,1,,3,6,3,4,2,86.737,89.876,92.882,92.705,73.079
+robust_eb,稳健秩变换 + 贝叶斯式收缩,22,Kimi K2.6,Kimi,kimi k2 6,86.2708,93.58,14,-8,29,21,3,0,,7,9,5,5,3,91.795,75.765,87.285,89.233,87.695
+robust_eb,稳健秩变换 + 贝叶斯式收缩,23,Claude Opus 4.5,Anthropic,claude opus 4 5,85.7256,93.27,33,10,16,10,2,1,,3,2,4,4,3,93.37,83.023,84.608,86.961,80.911
+robust_eb,稳健秩变换 + 贝叶斯式收缩,24,MiniMax-M3,MiniMax,minimax m3,85.4698,92.97,31,7,21,13,3,0,,4,6,4,4,3,79.699,84.853,86.373,81.326,95.502
+robust_eb,稳健秩变换 + 贝叶斯式收缩,25,GPT-5.4 mini (xhigh),OpenAI,gpt 5 4 mini,85.3443,92.66,39,14,16,9,3,0,,3,3,3,4,3,85.496,88.492,82.326,84.715,85.746
+robust_eb,稳健秩变换 + 贝叶斯式收缩,26,Gemini 3.6 Flash,Google,gemini 3 6 flash,85.132,92.35,24,-2,19,12,3,0,,3,5,3,4,4,79.257,77.23,93.203,95.439,81.287
+robust_eb,稳健秩变换 + 贝叶斯式收缩,27,GPT-5.2 Codex (xhigh),OpenAI,gpt 5 2 codex,84.713,92.05,54,27,14,8,2,2,,2,2,3,4,3,67.829,82.477,86.727,92.113,95.726
+robust_eb,稳健秩变换 + 贝叶斯式收缩,28,Gemini 3 Flash,Google,gemini 3 flash,84.2001,91.74,32,4,16,10,2,1,,3,2,4,4,3,94.1,56.12,94.109,93.062,86.735
+robust_eb,稳健秩变换 + 贝叶斯式收缩,29,Claude Sonnet 4.6 (max),Anthropic,claude sonnet 4 6,83.9899,91.44,41,12,16,9,3,0,,3,3,3,4,3,88.268,93.936,78.671,85.567,74.173
+robust_eb,稳健秩变换 + 贝叶斯式收缩,30,GPT-5 (high),OpenAI,gpt 5,83.8115,91.13,68,38,18,11,3,0,,4,3,4,4,3,76.171,84.379,85.402,81.199,92.285
+robust_eb,稳健秩变换 + 贝叶斯式收缩,31,Qwen3.7 Plus,Alibaba,qwen3 7 plus,83.4779,90.83,47,16,16,9,3,0,,3,3,3,4,3,81.54,81.93,86.969,81.253,85.775
+robust_eb,稳健秩变换 + 贝叶斯式收缩,32,DeepSeek V4 Pro (max),DeepSeek,deepseek v4 pro,83.3955,90.52,13,-19,29,21,3,0,,7,9,5,5,3,89.811,64.154,85.281,91.392,87.766
+robust_eb,稳健秩变换 + 贝叶斯式收缩,33,Kimi K2.7 Code,Kimi,kimi k2 7 code,82.9988,90.21,37,4,17,10,3,0,,3,4,3,4,3,83.991,81.976,86.517,87.588,75.189
+robust_eb,稳健秩变换 + 贝叶斯式收缩,34,MiMo-V2.5-Pro,Xiaomi,mimo v2 5 pro,82.3931,89.91,36,2,20,12,3,0,,5,4,3,5,3,80.25,86.675,80.108,73.709,91.745
+robust_eb,稳健秩变换 + 贝叶斯式收缩,35,Grok 4.3 (high),SpaceXAI,grok 4 3,79.7434,89.6,74,39,16,9,3,0,,3,3,3,4,3,70.933,66.504,86.845,87.625,88.036
+robust_eb,稳健秩变换 + 贝叶斯式收缩,36,GPT-5.4 nano (xhigh),OpenAI,gpt 5 4 nano,78.4565,89.3,64,28,16,9,3,0,,3,3,3,4,3,78.519,78.672,75.939,74.802,84.507
+robust_eb,稳健秩变换 + 贝叶斯式收缩,37,Claude Opus 4.6 (max),Anthropic,claude opus 4 6,78.4343,88.99,20,-17,23,16,3,0,,4,7,3,4,5,81.063,64.92,88.97,92.07,66.893
+robust_eb,稳健秩变换 + 贝叶斯式收缩,38,GPT-5 Codex (high),OpenAI,gpt 5 codex,78.1586,88.69,55,17,16,10,2,1,,3,2,4,4,3,81.798,61.257,88.822,77.182,83.002
+robust_eb,稳健秩变换 + 贝叶斯式收缩,39,Qwen3.6 Plus,Alibaba,qwen3 6 plus,77.5978,88.38,45,6,20,12,3,0,,6,4,3,4,3,71.549,82.01,76.598,75.836,82.226
+robust_eb,稳健秩变换 + 贝叶斯式收缩,40,Qwen3.8 Max,Alibaba,qwen3 8 max,77.2317,88.07,19,-21,13,7,2,3,,2,2,3,4,2,69.877,63.868,95.808,93.464,65.824
+robust_eb,稳健秩变换 + 贝叶斯式收缩,41,Qwen3.6 Max Preview,Alibaba,qwen3 6 max preview,76.4443,87.77,65,24,14,8,2,2,,2,2,3,4,3,62.056,70.406,79.713,85.06,86.207
+robust_eb,稳健秩变换 + 贝叶斯式收缩,42,DeepSeek V4 Flash 0731 (max),DeepSeek,deepseek v4 flash 0731,75.7689,87.46,25,-17,14,8,2,2,,2,3,3,4,2,61.938,79.111,91.371,89.689,59.339
+robust_eb,稳健秩变换 + 贝叶斯式收缩,43,Muse Spark 1.2 (xhigh),Meta,muse spark 1 2,75.4068,87.16,18,-25,13,7,2,3,,2,2,3,4,2,76.463,55.443,94.328,95.035,59.72
+robust_eb,稳健秩变换 + 贝叶斯式收缩,44,GPT-5.1 Codex (high),OpenAI,gpt 5 1 codex,74.8166,86.85,62,18,16,10,2,1,,3,2,4,4,3,79.748,53.74,86.968,78.147,77.385
+robust_eb,稳健秩变换 + 贝叶斯式收缩,45,Grok 4,SpaceXAI,grok 4,74.7902,86.54,60,15,16,10,2,1,,3,2,4,4,3,84.084,59.6,82.855,84.292,64.788
+robust_eb,稳健秩变换 + 贝叶斯式收缩,46,Muse Spark 1.1 (xhigh),Meta,muse spark 1 1,72.6758,86.24,21,-25,13,7,2,3,,2,2,3,4,2,76.558,48.795,94.179,96.162,53.414
+robust_eb,稳健秩变换 + 贝叶斯式收缩,47,MiniMax-M2.7,MiniMax,minimax m2 7,72.6044,85.93,44,-3,22,14,3,0,,5,6,4,4,3,75.857,63.059,67.964,80.257,76.459
+robust_eb,稳健秩变换 + 贝叶斯式收缩,48,DeepSeek V3.2,DeepSeek,deepseek v3 2,72.3239,85.63,71,23,18,11,3,0,,4,3,4,4,3,78.126,67.939,79.58,71.999,64.462
+robust_eb,稳健秩变换 + 贝叶斯式收缩,49,o3,OpenAI,o3,72.1303,85.32,66,17,16,10,2,1,,3,2,4,4,3,78.808,61.421,71.502,74.589,74.844
+robust_eb,稳健秩变换 + 贝叶斯式收缩,50,DeepSeek V3.2 Speciale,DeepSeek,deepseek v3 2 speciale,71.9735,85.02,58,8,16,10,2,1,,3,2,4,4,3,88.95,39.551,89.908,81.678,65.341
+borda_breadth,收缩 Borda + 广度优先合成,1,GPT-5.6 Sol (max),OpenAI,gpt 5 6 sol,93.3638,100.0,2,1,26,18,3,0,,4,9,3,5,5,94.619,93.676,97.846,96.122,85.098
+borda_breadth,收缩 Borda + 广度优先合成,2,GPT-5.6 Terra (max),OpenAI,gpt 5 6 terra,93.2335,99.69,7,5,21,13,3,0,,4,7,3,4,3,92.994,89.836,96.273,95.635,91.587
+borda_breadth,收缩 Borda + 广度优先合成,3,Claude Fable 5 (with fallback),Anthropic,claude fable 5 with fallback,92.5272,99.39,1,-2,27,19,3,0,,4,10,3,5,5,95.569,93.934,96.969,95.54,81.544
+borda_breadth,收缩 Borda + 广度优先合成,4,Gemini 3.5 Flash,Google,gemini 3 5 flash,91.2716,99.08,29,25,16,9,3,0,,3,3,3,4,3,87.584,89.16,93.536,95.627,90.683
+borda_breadth,收缩 Borda + 广度优先合成,5,GPT-5.4 (xhigh),OpenAI,gpt 5 4,90.1673,98.78,9,4,21,13,3,0,,4,7,3,4,3,86.145,80.839,95.301,96.234,93.319
+borda_breadth,收缩 Borda + 广度优先合成,6,GPT-5.2 (xhigh),OpenAI,gpt 5 2,90.1491,98.47,23,17,16,10,2,1,,3,2,4,4,3,94.499,79.712,94.505,92.078,90.834
+borda_breadth,收缩 Borda + 广度优先合成,7,GPT-5.3 Codex (xhigh),OpenAI,gpt 5 3 codex,88.5902,98.17,22,15,14,8,2,2,,2,2,3,4,3,77.424,85.399,93.514,95.158,92.742
+borda_breadth,收缩 Borda + 广度优先合成,8,GPT-5.5 (xhigh),OpenAI,gpt 5 5,88.3493,97.86,4,-4,29,21,4,0,,4,10,5,5,5,89.723,79.241,91.989,94.965,86.669
+borda_breadth,收缩 Borda + 广度优先合成,9,Muse Spark,Meta,muse spark,88.2766,97.55,35,26,16,9,3,0,,3,3,3,4,3,83.768,86.726,89.195,91.902,90.02
+borda_breadth,收缩 Borda + 广度优先合成,10,Kimi K3 (max),Kimi,kimi k3,87.7342,97.25,5,-5,21,15,2,1,,2,7,3,5,4,78.062,87.608,96.729,94.813,82.877
+borda_breadth,收缩 Borda + 广度优先合成,11,Gemini 3 Pro Preview (high),Google,gemini 3 pro preview,87.4627,96.94,26,15,16,10,2,1,,3,2,4,4,3,94.302,71.276,93.818,95.453,85.031
+borda_breadth,收缩 Borda + 广度优先合成,12,Qwen3.7 Max,Alibaba,qwen3 7 max,87.3383,96.64,16,4,22,14,3,0,,4,6,5,4,3,84.853,82.629,88.333,88.982,92.214
+borda_breadth,收缩 Borda + 广度优先合成,13,Claude Opus 4.7 (max),Anthropic,claude opus 4 7,86.9806,96.33,8,-5,25,17,3,0,,5,8,3,4,5,92.062,83.976,92.166,94.77,73.728
+borda_breadth,收缩 Borda + 广度优先合成,14,Claude Opus 5 (max),Anthropic,claude opus 5,86.9338,96.02,3,-11,16,10,2,2,,2,5,3,4,2,78.111,88.949,97.428,97.527,75.211
+borda_breadth,收缩 Borda + 广度优先合成,15,Claude Opus 4.8 (max),Anthropic,claude opus 4 8,86.8201,95.72,6,-9,28,20,4,0,,4,9,5,5,5,93.957,87.938,88.608,92.088,73.167
+borda_breadth,收缩 Borda + 广度优先合成,16,GLM-5.2 (max),Z AI,glm 5 2,85.9908,95.41,12,-4,24,16,3,0,,4,8,5,4,3,86.75,79.481,87.212,85.244,91.725
+borda_breadth,收缩 Borda + 广度优先合成,17,GPT-5.1 (high),OpenAI,gpt 5 1,85.2182,95.11,42,25,18,11,3,0,,4,3,4,4,3,84.84,85.649,86.113,82.367,87.199
+borda_breadth,收缩 Borda + 广度优先合成,18,GPT-5.4 mini (xhigh),OpenAI,gpt 5 4 mini,84.5985,94.8,39,21,16,9,3,0,,3,3,3,4,3,82.165,85.505,83.12,85.618,86.67
+borda_breadth,收缩 Borda + 广度优先合成,19,Claude Opus 4.5,Anthropic,claude opus 4 5,84.4582,94.5,33,14,16,10,2,1,,3,2,4,4,3,93.154,82.174,85.126,87.409,75.45
+borda_breadth,收缩 Borda + 广度优先合成,20,Gemini 3.1 Pro Preview,Google,gemini 3 1 pro preview,84.082,94.19,10,-10,27,19,3,0,,5,9,5,5,3,81.385,65.649,87.987,94.971,94.132
+borda_breadth,收缩 Borda + 广度优先合成,21,Grok 4.5 (high),SpaceXAI,grok 4 5,83.6525,93.88,17,-4,15,8,2,1,,3,3,3,4,2,85.238,83.88,94.542,96.453,62.829
+borda_breadth,收缩 Borda + 广度优先合成,22,Claude Sonnet 5 (max),Anthropic,claude sonnet 5,83.5118,93.58,15,-7,18,11,2,1,,3,6,3,4,2,81.025,80.639,92.928,92.498,72.327
+borda_breadth,收缩 Borda + 广度优先合成,23,GPT-5.6 Luna (max),OpenAI,gpt 5 6 luna,83.3321,93.27,11,-12,18,11,2,1,,3,6,3,4,2,79.624,74.172,93.04,92.914,78.709
+borda_breadth,收缩 Borda + 广度优先合成,24,Kimi K2.6,Kimi,kimi k2 6,82.963,92.97,14,-10,29,21,3,0,,7,9,5,5,3,86.344,71.952,82.277,87.084,88.295
+borda_breadth,收缩 Borda + 广度优先合成,25,Gemini 3 Flash,Google,gemini 3 flash,82.9183,92.66,32,7,16,10,2,1,,3,2,4,4,3,91.495,57.676,92.832,92.827,86.195
+borda_breadth,收缩 Borda + 广度优先合成,26,Claude Sonnet 4.6 (max),Anthropic,claude sonnet 4 6,82.8721,92.35,41,15,16,9,3,0,,3,3,3,4,3,86.682,92.639,79.34,86.621,70.827
+borda_breadth,收缩 Borda + 广度优先合成,27,Kimi K2.7 Code,Kimi,kimi k2 7 code,82.7107,92.05,37,10,17,10,3,0,,3,4,3,4,3,84.023,80.044,87.328,88.526,74.448
+borda_breadth,收缩 Borda + 广度优先合成,28,Qwen3.7 Plus,Alibaba,qwen3 7 plus,82.2258,91.74,47,19,16,9,3,0,,3,3,3,4,3,80.061,80.071,87.641,79.127,84.549
+borda_breadth,收缩 Borda + 广度优先合成,29,GPT-5.2 Codex (xhigh),OpenAI,gpt 5 2 codex,81.3378,91.44,54,25,14,8,2,2,,2,2,3,4,3,64.785,73.079,87.41,92.088,93.417
+borda_breadth,收缩 Borda + 广度优先合成,30,Gemini 3.6 Flash,Google,gemini 3 6 flash,80.343,91.13,24,-6,19,12,3,0,,3,5,3,4,4,74.059,69.768,92.385,95.122,73.727
+borda_breadth,收缩 Borda + 广度优先合成,31,MiMo-V2.5-Pro,Xiaomi,mimo v2 5 pro,79.8222,90.83,36,5,20,12,3,0,,5,4,3,5,3,76.135,82.595,80.592,71.264,89.726
+borda_breadth,收缩 Borda + 广度优先合成,32,DeepSeek V4 Pro (max),DeepSeek,deepseek v4 pro,79.782,90.52,13,-19,29,21,3,0,,7,9,5,5,3,83.972,61.206,80.263,89.513,87.538
+borda_breadth,收缩 Borda + 广度优先合成,33,MiniMax-M3,MiniMax,minimax m3,79.4863,90.21,31,-2,21,13,3,0,,4,6,4,4,3,78.139,78.295,80.317,70.884,91.099
+borda_breadth,收缩 Borda + 广度优先合成,34,GPT-5 (high),OpenAI,gpt 5,79.4299,89.91,68,34,18,11,3,0,,4,3,4,4,3,72.987,70.499,85.202,81.876,88.082
+borda_breadth,收缩 Borda + 广度优先合成,35,GPT-5.4 nano (xhigh),OpenAI,gpt 5 4 nano,78.2555,89.6,64,29,16,9,3,0,,3,3,3,4,3,78.18,78.646,75.513,74.567,84.769
+borda_breadth,收缩 Borda + 广度优先合成,36,Grok 4.3 (high),SpaceXAI,grok 4 3,77.9907,89.3,74,38,16,9,3,0,,3,3,3,4,3,68.684,65.132,87.344,88.16,83.764
+borda_breadth,收缩 Borda + 广度优先合成,37,GPT-5 Codex (high),OpenAI,gpt 5 codex,77.6686,88.99,55,18,16,10,2,1,,3,2,4,4,3,81.658,62.891,84.419,77.591,84.021
+borda_breadth,收缩 Borda + 广度优先合成,38,Qwen3.6 Max Preview,Alibaba,qwen3 6 max preview,77.0474,88.69,65,27,14,8,2,2,,2,2,3,4,3,63.503,71.985,80.333,86.139,85.834
+borda_breadth,收缩 Borda + 广度优先合成,39,Qwen3.6 Plus,Alibaba,qwen3 6 plus,76.1502,88.38,45,6,20,12,3,0,,6,4,3,4,3,67.349,78.788,77.09,75.968,82.401
+borda_breadth,收缩 Borda + 广度优先合成,40,Claude Opus 4.6 (max),Anthropic,claude opus 4 6,74.9407,88.07,20,-20,23,16,3,0,,4,7,3,4,5,71.395,61.3,89.554,92.476,65.215
+borda_breadth,收缩 Borda + 广度优先合成,41,Grok 4,SpaceXAI,grok 4,74.6259,87.77,60,19,16,10,2,1,,3,2,4,4,3,85.411,61.341,82.404,85.011,63.061
+borda_breadth,收缩 Borda + 广度优先合成,42,GPT-5.1 Codex (high),OpenAI,gpt 5 1 codex,74.3427,87.46,62,20,16,10,2,1,,3,2,4,4,3,78.307,54.984,85.667,78.429,78.5
+borda_breadth,收缩 Borda + 广度优先合成,43,Qwen3.8 Max,Alibaba,qwen3 8 max,74.3199,87.16,19,-24,13,7,2,3,,2,2,3,4,2,67.505,61.519,95.192,91.866,62.434
+borda_breadth,收缩 Borda + 广度优先合成,44,DeepSeek V4 Flash 0731 (max),DeepSeek,deepseek v4 flash 0731,73.1459,86.85,25,-19,14,8,2,2,,2,3,3,4,2,60.874,73.732,91.631,90.058,56.533
+borda_breadth,收缩 Borda + 广度优先合成,45,o3,OpenAI,o3,72.4166,86.54,66,21,16,10,2,1,,3,2,4,4,3,79.776,62.787,71.45,74.878,74.317
+borda_breadth,收缩 Borda + 广度优先合成,46,DeepSeek V3.2,DeepSeek,deepseek v3 2,71.4403,86.24,71,25,18,11,3,0,,4,3,4,4,3,74.308,67.527,79.293,72.244,64.739
+borda_breadth,收缩 Borda + 广度优先合成,47,MiMo-V2.5,Xiaomi,mimo v2 5,70.9325,85.93,72,25,16,9,3,0,,3,3,3,4,3,76.462,74.816,74.324,63.714,66.286
+borda_breadth,收缩 Borda + 广度优先合成,48,Muse Spark 1.2 (xhigh),Meta,muse spark 1 2,70.7479,85.63,18,-30,13,7,2,3,,2,2,3,4,2,69.643,52.767,93.782,93.803,54.826
+borda_breadth,收缩 Borda + 广度优先合成,49,Claude 4.5 Sonnet,Anthropic,claude 4 5 sonnet,70.6173,85.32,76,27,18,11,3,0,,4,3,4,4,3,76.985,73.221,70.02,74.951,59.363
+borda_breadth,收缩 Borda + 广度优先合成,50,MiniMax-M2.7,MiniMax,minimax m2 7,70.2963,85.02,44,-6,22,14,3,0,,5,6,4,4,3,70.383,62.32,65.601,80.453,74.15

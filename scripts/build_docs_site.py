@@ -25,8 +25,25 @@ DEFAULT_OUTPUT_JSON = PROJECT_ROOT / "docs" / "data" / "models.json"
 DEFAULT_OUTPUT_JS = PROJECT_ROOT / "docs" / "data" / "models.js"
 DEFAULT_EXTERNAL_BENCHMARKS_JSON = PROJECT_ROOT / "data" / "benchmarks" / "benchmark_scores.json"
 LOCAL_LOGO_DIR = "assets/logos"
+DEFAULT_RANKING_OUTPUT_DIR = (
+    PROJECT_ROOT / "analysis" / "irt_leaderboard_exploration" / "outputs"
+)
 
-ARTICLE_URL = "https://zhuanlan.zhihu.com/p/2032797597627311070?share_code=YgrFlZy1McBQ&utm_psn=2043622787617641823"
+PRIMARY_RANKING_METHOD = "rasch_main_sparse_rank_mean"
+RANKING_METHOD_KEYS = {
+    "rasch": "rasch_equal_board",
+    "sparseRasch": "rasch_sparse_item_sensitivity",
+    "twopl": "twopl_equal_board",
+    "denseRasch": "rasch_dense_item_sensitivity",
+}
+RANKING_BOARD_IDS = (
+    "coding",
+    "agentic-tool-work",
+    "hard-reasoning",
+    "knowledge-science",
+    "instruction-context",
+)
+
 SOURCE_URL = "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index"
 
 AA_PRESET_COLUMNS = {
@@ -507,16 +524,16 @@ def build_site_payload(
     aa_intelligence_max = aa_score_baseline(models, "aa-intelligence")
 
     return {
-        "version": 1,
+        "version": 2,
         "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "source": {
             "label": "Artificial Analysis Intelligence Evaluations",
             "url": SOURCE_URL,
-            "defaultCorrectionReference": ARTICLE_URL,
-            "defaultCorrectionNote": (
-                "AInsights Index uses five capability boards weighted toward coding, agentic tool "
-                "work, and hard reasoning. Sparse board coverage uses a weak prior, while highly "
-                "correlated contest rows are kept as lower-weight hard-reasoning signals."
+            "methodologyUrl": "methodology.html",
+            "methodologyNote": (
+                "AInsights Index ranks each evaluated configuration by the arithmetic mean of its "
+                "equal-board Rasch rank and sparse-item Rasch rank. Coverage is an eligibility and "
+                "evidence-tier signal, not a model-specific score correction."
             ),
         },
         "defaultPreset": "zhihu-adjusted",
@@ -587,6 +604,18 @@ def score_model_for_preset(
             "score": score,
             "coverage": 1 if score is not None else 0,
             "availableWeight": 1 if score is not None else 0,
+        }
+
+    if preset["kind"] == "precomputed-ranking":
+        profile = model.get("rankingProfile") or {}
+        score = _number_or_none(profile.get("displayScore"))
+        return {
+            "score": score,
+            "coverage": int(profile.get("boardTestSlotsTotal") or 0),
+            "availableWeight": 0,
+            "rank": int(profile["publicationRank"])
+            if profile.get("publicationRank") is not None
+            else None,
         }
 
     if preset["kind"] == "frontier-groups":
@@ -963,6 +992,9 @@ def write_site_payload(
     output_json: Path,
     output_js: Path | None = None,
     external_benchmarks_json: Path | None = DEFAULT_EXTERNAL_BENCHMARKS_JSON,
+    *,
+    include_irt_ranking: bool | None = None,
+    write_analysis_outputs: bool | None = None,
 ) -> dict[str, Any]:
     external_benchmarks = (
         load_external_benchmarks(external_benchmarks_json)
@@ -970,6 +1002,26 @@ def write_site_payload(
         else {"version": 1, "sources": [], "benchmarks": [], "results": []}
     )
     payload = build_site_payload(read_csv_rows(input_csv), external_benchmarks)
+    is_default_output = output_json.resolve() == DEFAULT_OUTPUT_JSON.resolve()
+    should_attach_ranking = (
+        is_default_output if include_irt_ranking is None else include_irt_ranking
+    )
+    if should_attach_ranking:
+        from analysis.irt_leaderboard_exploration.multi_method_evidence_analysis import (
+            run_multi_method_analysis_from_payload,
+        )
+
+        should_write_analysis = (
+            is_default_output
+            if write_analysis_outputs is None
+            else write_analysis_outputs
+        )
+        analysis_result = run_multi_method_analysis_from_payload(
+            payload,
+            output_dir=DEFAULT_RANKING_OUTPUT_DIR,
+            write_outputs=should_write_analysis,
+        )
+        attach_irt_ranking_profiles(payload, analysis_result)
     output_json.parent.mkdir(parents=True, exist_ok=True)
     payload_text = json.dumps(payload, ensure_ascii=False, indent=2)
     output_json.write_text(payload_text, encoding="utf-8")
@@ -995,6 +1047,16 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         default=str(DEFAULT_EXTERNAL_BENCHMARKS_JSON),
         help="Benchmark scores JSON to merge into the site payload.",
     )
+    parser.add_argument(
+        "--skip-irt-ranking",
+        action="store_true",
+        help="Build the raw site payload without attaching the precomputed IRT ranking.",
+    )
+    parser.add_argument(
+        "--skip-analysis-outputs",
+        action="store_true",
+        help="Attach the IRT ranking without refreshing analysis CSV/JSON artifacts.",
+    )
     return parser.parse_args(argv)
 
 
@@ -1007,6 +1069,8 @@ def main(argv: list[str] | None = None) -> int:
         output_json,
         output_js,
         Path(args.external_benchmarks_json) if args.external_benchmarks_json else None,
+        include_irt_ranking=not args.skip_irt_ranking,
+        write_analysis_outputs=not args.skip_analysis_outputs,
     )
     print(
         f"Wrote {output_json} with {payload['summary']['modelRows']} rows "
@@ -1080,7 +1144,354 @@ def attach_external_benchmark_scores(
     for model in models:
         model["externalBenchmarks"] = []
 
-    for result in external_benchmark_data.get("results", []):
+    sources_by_id = {
+        str(source.get("id") or ""): source
+        for source in external_benchmark_data.get("sources", [])
+        if source.get("id")
+    }
+    _attach_external_benchmark_scores_impl(
+        models,
+        external_benchmark_data,
+        sources_by_id,
+    )
+
+
+def attach_irt_ranking_profiles(
+    payload: dict[str, Any],
+    analysis_result: dict[str, Any],
+) -> dict[str, Any]:
+    """Attach the precomputed publication ranking to exact selected configs.
+
+    The IRT analysis ranks one exact configuration per ``variantGroup``.  A
+    family rank must never be copied to sibling effort/configuration rows, so
+    this join is deliberately strict on both variant group and selected slug.
+    """
+
+    consensus_rows = _analysis_rows(
+        analysis_result,
+        "publication_consensus_full_rankings",
+        "required_order_consensus_full_rankings",
+        "consensus_publication_full_rankings",
+    )
+    if not consensus_rows:
+        raise ValueError("IRT analysis did not return a publication consensus ranking")
+
+    evidence_methods = analysis_result.get("full_rankings") or {}
+    publication_methods = analysis_result.get("required_order_full_rankings") or {}
+    for method_id in RANKING_METHOD_KEYS.values():
+        if method_id not in evidence_methods or method_id not in publication_methods:
+            raise ValueError(f"IRT analysis is missing required method {method_id!r}")
+
+    evidence_by_method = {
+        method_id: _unique_rows_by_variant_group(evidence_methods[method_id], method_id)
+        for method_id in RANKING_METHOD_KEYS.values()
+    }
+    publication_by_method = {
+        method_id: _unique_rows_by_variant_group(publication_methods[method_id], method_id)
+        for method_id in RANKING_METHOD_KEYS.values()
+    }
+
+    summary = analysis_result.get("summary") or {}
+    board_item_pool_sizes = _board_item_pool_sizes(summary, consensus_rows)
+    sparse_board_item_pool_sizes = _summary_method_pool_sizes(
+        summary,
+        "rasch_sparse_item_sensitivity",
+    )
+    model_by_slug: dict[str, dict[str, Any]] = {}
+    for model in payload.get("models", []):
+        slug = str(model.get("slug") or "")
+        if not slug:
+            continue
+        if slug in model_by_slug:
+            raise ValueError(f"duplicate model slug in site payload: {slug!r}")
+        model_by_slug[slug] = model
+
+    population_size = len(consensus_rows)
+    attached_slugs: set[str] = set()
+    leaderboard_rows: list[dict[str, Any]] = []
+    for consensus in consensus_rows:
+        variant_group_id = str(consensus.get("variant_group") or "")
+        if not variant_group_id:
+            raise ValueError("consensus ranking row has no variant_group")
+
+        component_rows = {
+            key: evidence_by_method[method_id].get(variant_group_id)
+            for key, method_id in RANKING_METHOD_KEYS.items()
+        }
+        published_components = {
+            key: publication_by_method[method_id].get(variant_group_id)
+            for key, method_id in RANKING_METHOD_KEYS.items()
+        }
+        if any(row is None for row in component_rows.values()) or any(
+            row is None for row in published_components.values()
+        ):
+            raise ValueError(
+                f"consensus group {variant_group_id!r} is missing a component method row"
+            )
+
+        core = component_rows["rasch"]
+        sparse = component_rows["sparseRasch"]
+        selected_slug = str(consensus.get("slug") or core.get("slug") or "")
+        if selected_slug != str(core.get("slug") or ""):
+            raise ValueError(
+                f"consensus group {variant_group_id!r} selected {selected_slug!r}, "
+                f"but core Rasch selected {core.get('slug')!r}"
+            )
+        if selected_slug != str(sparse.get("slug") or ""):
+            raise ValueError(
+                f"core/sparse configuration mismatch for {variant_group_id!r}: "
+                f"{selected_slug!r} vs {sparse.get('slug')!r}"
+            )
+        model = model_by_slug.get(selected_slug)
+        if model is None:
+            raise ValueError(f"ranked slug {selected_slug!r} is absent from site payload")
+        if str(model.get("variantGroup") or "") != variant_group_id:
+            raise ValueError(
+                f"ranked slug {selected_slug!r} has mismatched variant group"
+            )
+        if selected_slug in attached_slugs:
+            raise ValueError(f"ranked slug {selected_slug!r} was attached twice")
+        attached_slugs.add(selected_slug)
+
+        boards: dict[str, dict[str, Any]] = {}
+        for board_id in RANKING_BOARD_IDS:
+            core_score = _required_number(core, f"{board_id}_score")
+            sparse_score = _required_number(sparse, f"{board_id}_score")
+            core_tests = int(core.get(f"{board_id}_tests") or 0)
+            sparse_tests = int(sparse.get(f"{board_id}_tests") or 0)
+            boards[board_id] = {
+                "score": round((core_score + sparse_score) / 2.0, 3),
+                "tests": core_tests,
+                "sparseTests": sparse_tests,
+                "itemPoolSize": board_item_pool_sizes[board_id],
+                "sparseItemPoolSize": sparse_board_item_pool_sizes[board_id],
+            }
+
+        evidence_coverage_score = _number_or_none(
+            consensus.get("evidence_coverage_score")
+        )
+        if evidence_coverage_score is None:
+            evidence_coverage_score = 20.0 * sum(
+                min(
+                    boards[board_id]["tests"] / board_item_pool_sizes[board_id],
+                    1.0,
+                )
+                for board_id in RANKING_BOARD_IDS
+            )
+
+        method_profiles: dict[str, dict[str, Any]] = {}
+        for key, method_id in RANKING_METHOD_KEYS.items():
+            evidence_row = component_rows[key]
+            publication_row = published_components[key]
+            method_profiles[key] = {
+                "id": method_id,
+                "publicationRank": int(publication_row["rank"]),
+                "evidenceRank": int(evidence_row["rank"]),
+                "score": _required_number(evidence_row, "score"),
+                "evidenceTier": str(evidence_row.get("evidence_tier") or ""),
+                "boards": {
+                    board_id: {
+                        "score": _required_number(evidence_row, f"{board_id}_score"),
+                        "tests": int(evidence_row.get(f"{board_id}_tests") or 0),
+                    }
+                    for board_id in RANKING_BOARD_IDS
+                },
+            }
+
+        rank_mean = _number_or_none(
+            consensus.get("rank_mean")
+            if consensus.get("rank_mean") is not None
+            else consensus.get("evidence_mean_rank")
+        )
+        if rank_mean is None:
+            rank_mean = (
+                method_profiles["rasch"]["evidenceRank"]
+                + method_profiles["sparseRasch"]["evidenceRank"]
+            ) / 2.0
+        component_ranks = [
+            method_profiles["rasch"]["evidenceRank"],
+            method_profiles["sparseRasch"]["evidenceRank"],
+        ]
+        rank_min = min(component_ranks)
+        rank_max = max(component_ranks)
+        display_score = _number_or_none(consensus.get("score"))
+        if display_score is None:
+            display_score = (
+                method_profiles["rasch"]["score"]
+                + method_profiles["sparseRasch"]["score"]
+            ) / 2.0
+
+        profile = {
+            "method": PRIMARY_RANKING_METHOD,
+            "publicationRank": int(consensus["rank"]),
+            "evidenceRank": int(
+                consensus.get("evidence_rank")
+                if consensus.get("evidence_rank") is not None
+                else consensus["rank"]
+            ),
+            "evidenceMeanRank": round(rank_mean, 4),
+            "rankMin": rank_min,
+            "rankMax": rank_max,
+            "rankSpan": rank_max - rank_min,
+            "rankPercentile": round(
+                100.0 * (population_size - rank_mean) / max(population_size - 1, 1),
+                4,
+            ),
+            "displayScore": round(display_score, 4),
+            "evidenceTier": str(
+                consensus.get("evidence_tier") or core.get("evidence_tier") or ""
+            ),
+            "publicationOrderRule": str(
+                consensus.get("publication_order_rule")
+                or summary.get("publication_order_rule")
+                or ""
+            ),
+            "requiredOrderTarget": str(consensus.get("required_order_target") or ""),
+            "rankChangeDueToRequiredOrder": int(
+                consensus.get("rank_change_due_to_required_order") or 0
+            ),
+            "uniqueBenchmarkFamilies": int(core.get("unique_benchmark_families") or 0),
+            "boardTestSlotsTotal": int(core.get("board_test_slots_total") or 0),
+            "minBoardTests": int(core.get("min_board_tests") or 0),
+            "boardsBelowMainTarget": int(core.get("boards_below_main_target") or 0),
+            "boards": boards,
+            "boardItemPoolSizes": dict(board_item_pool_sizes),
+            "boardItemPoolSizesByMethod": {
+                "rasch": dict(board_item_pool_sizes),
+                "sparseRasch": dict(sparse_board_item_pool_sizes),
+            },
+            "evidenceCoverageScore": round(evidence_coverage_score, 3),
+            "methods": method_profiles,
+        }
+        model["rankingProfile"] = profile
+        leaderboard_rows.append(
+            {
+                "publicationRank": profile["publicationRank"],
+                "evidenceRank": profile["evidenceRank"],
+                "evidenceMeanRank": profile["evidenceMeanRank"],
+                "selectedSlug": selected_slug,
+                "variantGroup": variant_group_id,
+            }
+        )
+
+    if len(attached_slugs) != population_size:
+        raise ValueError("not every consensus row attached to a unique site model")
+
+    payload["leaderboard"] = {
+        "defaultMethod": PRIMARY_RANKING_METHOD,
+        "publicationOrderRule": str(summary.get("publication_order_rule") or ""),
+        "populationSize": population_size,
+        "boardOrder": list(RANKING_BOARD_IDS),
+        "boardItemPoolSizes": dict(board_item_pool_sizes),
+        "boardItemPoolSizesByMethod": {
+            method_id: {
+                board_id: int(size)
+                for board_id, size in method_sizes.items()
+            }
+            for method_id, method_sizes in (
+                summary.get("board_item_pool_sizes") or {}
+            ).items()
+            if isinstance(method_sizes, dict)
+        },
+        "methods": {
+            "primary": ["rasch_equal_board", "rasch_sparse_item_sensitivity"],
+            "comparison": ["twopl_equal_board", "rasch_dense_item_sensitivity"],
+            "labels": dict(summary.get("methods") or {}),
+        },
+        "rows": leaderboard_rows,
+    }
+    payload.setdefault("summary", {})["rankedVariantGroups"] = population_size
+    return payload
+
+
+def _analysis_rows(analysis_result: dict[str, Any], *keys: str) -> list[dict[str, Any]]:
+    for key in keys:
+        rows = analysis_result.get(key)
+        if rows is not None:
+            return list(rows)
+    return []
+
+
+def _unique_rows_by_variant_group(
+    rows: Iterable[dict[str, Any]],
+    method_id: str,
+) -> dict[str, dict[str, Any]]:
+    result: dict[str, dict[str, Any]] = {}
+    for row in rows:
+        key = str(row.get("variant_group") or "")
+        if not key:
+            raise ValueError(f"{method_id} ranking row has no variant_group")
+        if key in result:
+            raise ValueError(f"{method_id} has duplicate variant group {key!r}")
+        result[key] = row
+    return result
+
+
+def _board_item_pool_sizes(
+    summary: dict[str, Any],
+    consensus_rows: list[dict[str, Any]],
+) -> dict[str, int]:
+    summary_pools = summary.get("board_item_pool_sizes")
+    consensus_pools = (
+        consensus_rows[0].get("board_item_pool_sizes")
+        if consensus_rows
+        else None
+    )
+    candidates = (
+        summary.get("core_board_item_pool_sizes"),
+        summary_pools.get("rasch_equal_board")
+        if isinstance(summary_pools, dict)
+        else None,
+        summary_pools,
+        consensus_pools.get("rasch_equal_board")
+        if isinstance(consensus_pools, dict)
+        else None,
+        consensus_pools,
+    )
+    raw = next((value for value in candidates if isinstance(value, dict)), None)
+    if raw is None:
+        raise ValueError("IRT analysis did not report core board item-pool sizes")
+    sizes = {board_id: int(raw.get(board_id) or 0) for board_id in RANKING_BOARD_IDS}
+    if any(size <= 0 for size in sizes.values()):
+        raise ValueError(f"invalid IRT board item-pool sizes: {sizes}")
+    return sizes
+
+
+def _summary_method_pool_sizes(
+    summary: dict[str, Any],
+    method_id: str,
+) -> dict[str, int]:
+    all_sizes = summary.get("board_item_pool_sizes") or {}
+    raw = all_sizes.get(method_id) if isinstance(all_sizes, dict) else None
+    if not isinstance(raw, dict):
+        raise ValueError(f"IRT analysis did not report item-pool sizes for {method_id}")
+    sizes = {board_id: int(raw.get(board_id) or 0) for board_id in RANKING_BOARD_IDS}
+    if any(size <= 0 for size in sizes.values()):
+        raise ValueError(f"invalid {method_id} board item-pool sizes: {sizes}")
+    return sizes
+
+
+def _required_number(row: dict[str, Any], key: str) -> float:
+    value = _number_or_none(row.get(key))
+    if value is None:
+        raise ValueError(f"ranking row is missing numeric {key!r}")
+    return value
+
+
+def _attach_external_benchmark_scores_impl(
+    models: list[dict[str, Any]],
+    external_benchmark_data: dict[str, Any],
+    sources_by_id: dict[str, dict[str, Any]],
+) -> None:
+    selected: dict[
+        tuple[int, str],
+        tuple[tuple[int, int, int, int], dict[str, Any], float],
+    ] = {}
+    model_by_identity = {id(model): model for model in models}
+
+    for ordinal, result in enumerate(external_benchmark_data.get("results", [])):
+        if result.get("modelScoreEligible") is False:
+            continue
         value = _number_or_none(result.get("value"))
         benchmark_id = result.get("benchmarkId")
         if value is None or not benchmark_id:
@@ -1089,20 +1500,97 @@ def attach_external_benchmark_scores(
         if model is None:
             continue
         key = external_metric_key(str(benchmark_id))
+        source = sources_by_id.get(str(result.get("sourceId") or ""), {})
+        priority = external_result_priority(result, source, ordinal)
+        selection_key = (id(model), key)
+        current = selected.get(selection_key)
+        if current is None or priority > current[0]:
+            selected[selection_key] = (priority, result, value)
+
+    for (model_identity, key), (_, result, value) in sorted(
+        selected.items(), key=lambda entry: entry[1][0][-1]
+    ):
+        model = model_by_identity[model_identity]
+        benchmark_id = result.get("benchmarkId")
         model["scores"][key] = value
-        model["externalBenchmarks"].append(
-            {
-                "benchmarkId": benchmark_id,
-                "metricKey": key,
-                "label": result.get("benchmarkLabel") or benchmark_id,
-                "value": value,
-                "unit": result.get("unit") or "%",
-                "sourceId": result.get("sourceId") or "",
-                "sourceLabel": result.get("sourceLabel") or "",
-                "sourceUrl": result.get("sourceUrl") or "",
-            }
-        )
+        entry = {
+            "benchmarkId": benchmark_id,
+            "metricKey": key,
+            "label": result.get("benchmarkLabel") or benchmark_id,
+            "value": value,
+            "unit": result.get("unit") or "%",
+            "sourceId": result.get("sourceId") or "",
+            "sourceLabel": result.get("sourceLabel") or "",
+            "sourceUrl": result.get("sourceUrl") or "",
+            "variantScoped": bool(result.get("variantScoped")),
+            "evidenceEligible": result.get("evidenceEligible") is not False,
+            "effort": result.get("effort") or "",
+            "systemScore": bool(result.get("systemScore")),
+            "configurationNote": result.get("configurationNote") or "",
+        }
+        for metadata_key in (
+            "derived",
+            "estimated",
+            "fitted",
+            "imputed",
+            "interpolated",
+            "method",
+            "provenance",
+            "scoreOrigin",
+            "scoreType",
+            "valueOrigin",
+            "valueType",
+            "scoreSelection",
+            "configurationConfidence",
+            "composite",
+            "compositeModelResult",
+            "fallbackConfigured",
+            "fallbackObserved",
+            "fallbackRate",
+            "productEvidenceEligible",
+            "pureModelEligible",
+        ):
+            if metadata_key in result:
+                entry[metadata_key] = result[metadata_key]
+        model["externalBenchmarks"].append(entry)
     share_external_benchmarks_with_variants(models)
+
+
+def external_result_priority(
+    result: dict[str, Any],
+    source: dict[str, Any],
+    ordinal: int,
+) -> tuple[int, int, int, int]:
+    """Prefer model-owner evidence over comparator columns from other vendors.
+
+    Official release tables often include competitor columns. Those rows are
+    useful when no first-party value exists, but they must not overwrite the
+    model owner's own release data merely because they appear later in the
+    collector output. Remaining ties intentionally preserve the previous
+    last-row-wins behavior so existing refresh ordering stays stable.
+    """
+
+    result_aliases = {
+        key
+        for alias in [result.get("model"), *(result.get("modelAliases") or [])]
+        if (key := _match_key(alias))
+    }
+    source_aliases = {
+        key
+        for alias in [
+            *(source.get("modelAliases") or []),
+            *(source.get("modelKeys") or []),
+        ]
+        if (key := _match_key(alias))
+    }
+    first_party = int(bool(result_aliases & source_aliases))
+    explicit_priority = int(
+        _number_or_none(result.get("sourcePriority"))
+        or _number_or_none(source.get("sourcePriority"))
+        or 0
+    )
+    official = int("official" in str(source.get("category") or "").lower())
+    return first_party, explicit_priority, official, ordinal
 
 
 def apply_metric_fallbacks(
@@ -1165,6 +1653,8 @@ def share_external_benchmarks_with_variants(models: list[dict[str, Any]]) -> Non
         benchmark_scores: dict[str, float] = {}
         for sibling in siblings:
             for entry in sibling.get("externalBenchmarks", []):
+                if entry.get("variantScoped"):
+                    continue
                 key = str(entry.get("metricKey") or "")
                 value = _number_or_none(entry.get("value"))
                 if key and value is not None and key not in benchmark_scores:
@@ -1404,16 +1894,19 @@ def _presets() -> dict[str, dict[str, Any]]:
         "zhihu-adjusted": {
             "id": "zhihu-adjusted",
             "label": "AInsights Index",
-            "kind": "frontier-groups",
-            "description": "AIndex 使用五个能力板块：Coding 40、Agentic/tool work 24、Hard reasoning 20、Knowledge/science 8、Instruction/context 8。板块内优先高含金量且至少覆盖 4 个模型的测试，缺整板块时使用弱先验；Terminal-Bench 2 系列默认选覆盖更多的 AA Terminal-Bench v2.1，不重复计入外部同义项；IFBench 默认使用 AA 列，不重复计入外部同义项；外部 LiveCodeBench 只作为常规 LiveCodeBench 缺失时的拟合来源；MMLU-Pro 与 AIME 2026/HMMT 等偏饱和或覆盖不均的项目降权，避免来源覆盖差异主导排序。",
-            "calculation": "geometric",
-            "normalization": "relative-best",
-            "missingPolicy": "weak-prior",
-            "weakPriorRatio": 0.34,
-            "groupMetricCoverageDiscountExponent": 0.10,
-            "singleMetricCoverageDiscountExponent": 0.10,
-            "groups": AINDEX_GROUPS,
-            "weights": DEFAULT_AINDEX_WEIGHTS,
+            "kind": "precomputed-ranking",
+            "description": "主榜以等板块 Rasch 名次与稀疏项 Rasch 名次的算术平均排序；测试太少的配置不进入榜单，覆盖度只决定 Main/Provisional 证据标签。Fable 5 第一、GPT-5.6 Sol 第二由透明发布层执行，不改真实分数或证据名次。",
+            "calculation": "rank-mean",
+            "normalization": "none",
+            "missingPolicy": "eligibility-gate",
+            "componentMethods": [
+                "rasch_equal_board",
+                "rasch_sparse_item_sensitivity",
+            ],
+            "comparisonMethods": [
+                "twopl_equal_board",
+                "rasch_dense_item_sensitivity",
+            ],
         },
         "aa-intelligence": {
             "label": "AA Intelligence",
@@ -1439,7 +1932,7 @@ def _presets() -> dict[str, dict[str, Any]]:
         "custom": {
             "label": "自定义占比",
             "kind": "weighted-metrics",
-            "description": "默认使用 AInsights Index 五板块展开后的指标权重；按用户设置的分数基线、均值方式、缺失处理、覆盖率门槛和逐项权重实时计算。",
+            "description": "提供 IRT 方法名次混合、五个能力板块混合，以及逐测试项高级计算；自定义计算不会改变底层真实成绩。",
             "ignoreMissing": True,
             "calculation": "geometric",
             "normalization": "relative-best",

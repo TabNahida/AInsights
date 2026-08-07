@@ -2,11 +2,13 @@ import json
 import unittest
 from http.client import IncompleteRead
 from unittest.mock import patch
+from uuid import UUID
 
 from benchmarks.collect_benchmark_scores import (
     OFFICIAL_SOURCE_SPECS,
     build_payload,
     collect_official_sources,
+    fetch_official_source_text,
     parse_markdown_source_scores,
     parse_openai_scores,
     retain_previous_results_on_blocked_refresh,
@@ -14,6 +16,32 @@ from benchmarks.collect_benchmark_scores import (
 
 
 class ExternalBenchmarkCollectorTests(unittest.TestCase):
+    @patch("benchmarks.collect_benchmark_scores.fetch_html")
+    def test_qwen_article_api_selects_matching_article_and_sends_request_id(self, fetch):
+        spec = next(
+            source
+            for source in OFFICIAL_SOURCE_SPECS
+            if source["id"] == "qwen-qwen3-8-max-release"
+        )
+        fetch.return_value = json.dumps(
+            {
+                "data": {
+                    "articles": [
+                        {"path": "unrelated", "content": "wrong article"},
+                        {"path": "qwen3.8", "content": "target benchmark table"},
+                    ]
+                }
+            }
+        )
+
+        text = fetch_official_source_text(spec, timeout=7)
+
+        self.assertEqual(text, "target benchmark table")
+        _, kwargs = fetch.call_args
+        self.assertEqual(kwargs["timeout"], 7)
+        self.assertEqual(kwargs["headers"]["Accept"], "application/json")
+        UUID(kwargs["headers"]["X-Request-Id"])
+
     def test_parse_openai_scores_extracts_target_benchmark_rows(self):
         html = """
         <section>
@@ -65,6 +93,67 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
 
         self.assertEqual(qwen36_swe["value"], 77.2)
         self.assertIn("qwen3-6-27b", qwen36_swe["modelAliases"])
+
+    def test_qwen38_composite_cells_use_the_declared_semantic_component(self):
+        spec = next(
+            source
+            for source in OFFICIAL_SOURCE_SPECS
+            if source["id"] == "qwen-qwen3-8-max-release"
+        )
+        markdown = """
+        | Benchmark | Qwen3.8-Max |
+        | --- | ---: |
+        | Agents' Last Exam (Pass / Score) | 27.0 / 52.4 |
+        | MathVision | 95.2 / 97.7 |
+        | BabyVision | 82.0 / 91.3 |
+        | ZeroBench (Pass@5) | 24.0 / 49.0 |
+        | OSWorld 2.0 | 19.4 / 46.7 |
+        | HLE | 43.6 |
+        | HLE-VL (w/ Tools) | 52.2 |
+        | CharXiv (RQ) | 88.4 / 93.5 |
+        """
+
+        rows = parse_markdown_source_scores(markdown, spec)
+        values = {row["benchmarkId"]: row["value"] for row in rows}
+
+        self.assertEqual(
+            values,
+            {
+                "agents-last-exam": 52.4,
+                "mathvision": 95.2,
+                "mathvision-python": 97.7,
+                "babyvision-python": 91.3,
+                "zerobench-pass5": 24.0,
+                "zerobench-python-pass5": 49.0,
+                "osworld-2": 46.7,
+                "hle": 43.6,
+                "charxiv-no-tools": 88.4,
+                "charxiv-tools": 93.5,
+            },
+        )
+        self.assertIn(
+            "second value",
+            next(row for row in rows if row["benchmarkId"] == "agents-last-exam")[
+                "scoreSelection"
+            ],
+        )
+
+    def test_qwen38_composite_cell_with_unexpected_arity_is_not_ingested(self):
+        spec = next(
+            source
+            for source in OFFICIAL_SOURCE_SPECS
+            if source["id"] == "qwen-qwen3-8-max-release"
+        )
+        rows = parse_markdown_source_scores(
+            """
+            | Benchmark | Qwen3.8-Max |
+            | --- | ---: |
+            | OSWorld 2.0 | 19.4 / 46.7 / 99.9 |
+            """,
+            spec,
+        )
+
+        self.assertEqual(rows, [])
 
     def test_parse_markdown_source_scores_falls_back_to_plain_text_rows(self):
         text = """
@@ -447,7 +536,14 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         payload = build_payload({}, "seeded")
         sources = {source["id"]: source for source in payload["sources"]}
 
-        self.assertIn("Claude Fable 5 (with fallback)", sources["anthropic-claude-fable-5-docs"]["modelAliases"])
+        self.assertIn(
+            "Claude Mythos 5 / Fable 5 (higher of two)",
+            sources["anthropic-claude-fable-5-docs"]["modelAliases"],
+        )
+        self.assertIn(
+            "Claude Fable 5 (with fallback)",
+            sources["anthropic-claude-fable-5-system-card"]["modelAliases"],
+        )
         self.assertIn("Claude Sonnet 5 (max)", sources["anthropic-claude-sonnet-5-release"]["modelAliases"])
         self.assertIn("Claude Opus 5 (max)", sources["anthropic-claude-opus-5-release"]["modelAliases"])
         self.assertIn("gemini-3-6-flash", sources["google-gemini-3-6-flash-card"]["modelAliases"])
@@ -498,9 +594,9 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertEqual(opus["hle"]["value"], 56.3)
         self.assertEqual(opus["hle-tools"]["value"], 64.7)
         self.assertEqual(opus["biomysterybench-human-solved"]["value"], 90.1)
-        self.assertTrue(
-            all(row["model"] == "Claude Opus 5" for row in opus.values())
-        )
+        self.assertEqual(opus["browsecomp"]["model"], "Claude Opus 5")
+        self.assertEqual(opus["arc-agi-3"]["model"], "Claude Opus 5 (high)")
+        self.assertIn("Opus 4.8", opus["frontier-bench-v0-1"]["model"])
 
         self.assertEqual(gemini36["swe-bench-pro"]["value"], 58.7)
         self.assertEqual(gemini36["mle-bench"]["value"], 63.9)
@@ -531,6 +627,45 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
                 "tau3-banking",
             }.issubset(benchmark_ids)
         )
+
+    def test_build_payload_includes_qwen38_and_opus5_system_card_scores(self):
+        payload = build_payload({}, "seeded")
+        sources = {source["id"]: source for source in payload["sources"]}
+        by_source = {}
+        for row in payload["results"]:
+            by_source.setdefault(row["sourceId"], {})[row["benchmarkId"]] = row
+
+        qwen = by_source["qwen-qwen3-8-max-release"]
+        opus = by_source["anthropic-claude-opus-5-system-card"]
+
+        self.assertEqual(
+            sources["qwen-qwen3-8-max-release"]["url"],
+            "https://qwen.ai/blog?id=qwen3.8",
+        )
+        self.assertEqual(qwen["swe-bench-pro"]["value"], 67.7)
+        self.assertEqual(qwen["terminal-bench-2-1"]["value"], 86.6)
+        self.assertEqual(qwen["ifbench"]["value"], 82.8)
+        self.assertEqual(qwen["charxiv-tools"]["value"], 93.5)
+        self.assertIn("partial", qwen["osworld-2"]["scoreSelection"])
+        self.assertIn("qwen3-8-max", qwen["swe-bench-pro"]["modelAliases"])
+
+        self.assertEqual(opus["swe-bench-verified"]["value"], 96.0)
+        self.assertEqual(opus["swe-bench-pro"]["value"], 79.2)
+        self.assertEqual(opus["swe-bench-multilingual"]["value"], 89.5)
+        self.assertEqual(opus["mcp-atlas"]["value"], 85.8)
+        self.assertEqual(opus["toolathlon"]["value"], 80.6)
+        self.assertTrue(opus["swe-bench-pro"]["variantScoped"])
+        self.assertTrue(sources["anthropic-claude-opus-5-system-card"]["variantScoped"])
+
+        opus_release = by_source["anthropic-claude-opus-5-release"]
+        self.assertEqual(opus_release["arc-agi-3"]["model"], "Claude Opus 5 (high)")
+        self.assertEqual(opus_release["arc-agi-3"]["effort"], "high")
+        self.assertTrue(opus_release["arc-agi-3"]["evidenceEligible"])
+        self.assertFalse(opus_release["browsecomp"]["evidenceEligible"])
+        self.assertFalse(opus_release["frontier-bench-v0-1"]["modelScoreEligible"])
+        self.assertFalse(opus_release["frontier-bench-v0-1"]["evidenceEligible"])
+        self.assertTrue(opus_release["frontier-bench-v0-1"]["systemScore"])
+        self.assertIn("Opus 4.8", opus_release["frontier-bench-v0-1"]["model"])
 
     def test_payload_results_reference_declared_benchmarks_without_duplicates(self):
         payload = build_payload({}, "seeded")
@@ -687,14 +822,20 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             sources["openai-gpt-5-6-release"]["url"],
             "https://openai.com/index/gpt-5-6/",
         )
-        self.assertEqual(results[("GPT-5.6 Sol", "swe-bench-pro")]["value"], 64.6)
-        self.assertEqual(results[("GPT-5.6 Terra", "terminal-bench-2-1")]["value"], 87.4)
-        self.assertEqual(results[("GPT-5.6 Luna", "gpqa-diamond")]["value"], 92.3)
-        self.assertEqual(results[("GPT-5.6 Sol", "agents-last-exam")]["value"], 52.7)
-        self.assertEqual(results[("GPT-5.6 Terra", "osworld-2")]["value"], 50.2)
-        self.assertEqual(results[("GPT-5.6 Luna", "arc-agi-3")]["value"], 0.18)
-        self.assertIn("gpt-5-6-sol", results[("GPT-5.6 Sol", "swe-bench-pro")]["modelAliases"])
-        self.assertIn("GPT-5.6 Terra (max)", results[("GPT-5.6 Terra", "swe-bench-pro")]["modelAliases"])
+        self.assertEqual(results[("GPT-5.6 Sol (max)", "swe-bench-pro")]["value"], 64.6)
+        self.assertEqual(results[("GPT-5.6 Terra (max)", "terminal-bench-2-1")]["value"], 87.4)
+        self.assertEqual(results[("GPT-5.6 Luna (max)", "gpqa-diamond")]["value"], 92.3)
+        self.assertEqual(results[("GPT-5.6 Sol (max)", "agents-last-exam")]["value"], 52.7)
+        self.assertEqual(results[("GPT-5.6 Terra (max)", "osworld-2")]["value"], 50.2)
+        self.assertEqual(results[("GPT-5.6 Luna (max)", "arc-agi-3")]["value"], 0.18)
+        sol_swe = results[("GPT-5.6 Sol (max)", "swe-bench-pro")]
+        terra_swe = results[("GPT-5.6 Terra (max)", "swe-bench-pro")]
+        self.assertIn("gpt-5-6-sol", sol_swe["modelAliases"])
+        self.assertIn("GPT-5.6 Terra (max)", terra_swe["modelAliases"])
+        self.assertTrue(sol_swe["variantScoped"])
+        self.assertEqual(sol_swe["effort"], "max")
+        self.assertEqual(sol_swe["configurationConfidence"], "inferred")
+        self.assertNotIn("gpt-5-6-sol-xhigh", sol_swe["modelAliases"])
 
         benchmark_ids = {benchmark["id"] for benchmark in payload["benchmarks"]}
         self.assertTrue(
@@ -779,10 +920,24 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         payload = build_payload({}, "seeded")
         results = payload["results"]
 
+        fable_composite_swe = next(
+            row
+            for row in results
+            if row["model"] == "Claude Mythos 5 / Fable 5 (higher of two)"
+            and row["benchmarkId"] == "swe-bench-pro"
+        )
         fable_swe = next(
             row
             for row in results
-            if row["model"] == "Claude Fable 5" and row["benchmarkId"] == "swe-bench-pro"
+            if row["sourceId"] == "anthropic-claude-fable-5-system-card"
+            and row["model"] == "Claude Fable 5 (with fallback)"
+            and row["benchmarkId"] == "swe-bench-pro"
+        )
+        fable_terminal = next(
+            row
+            for row in results
+            if row["sourceId"] == "anthropic-claude-fable-5-system-card"
+            and row["benchmarkId"] == "terminal-bench-2-1"
         )
         qwen3_aime = next(
             row
@@ -840,7 +995,17 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             if row["model"] == "GLM-5.2 (max)" and row["benchmarkId"] == "terminal-bench-2-1"
         )
 
-        self.assertEqual(fable_swe["value"], 80.3)
+        self.assertEqual(fable_composite_swe["value"], 80.3)
+        self.assertFalse(fable_composite_swe["modelScoreEligible"])
+        self.assertFalse(fable_composite_swe["evidenceEligible"])
+        self.assertTrue(fable_composite_swe["composite"])
+        self.assertEqual(fable_swe["value"], 80.0)
+        self.assertTrue(fable_swe["variantScoped"])
+        self.assertTrue(fable_swe["productEvidenceEligible"])
+        self.assertFalse(fable_swe["pureModelEligible"])
+        self.assertEqual(fable_terminal["value"], 84.3)
+        self.assertTrue(fable_terminal["fallbackObserved"])
+        self.assertEqual(fable_terminal["fallbackRate"], 0.209)
         self.assertEqual(qwen3_aime["value"], 85.7)
         self.assertIn("qwen3-235b-a22b-instruct-reasoning", qwen3_aime["modelAliases"])
         self.assertEqual(qwen25_max_gpqa["value"], 60.1)

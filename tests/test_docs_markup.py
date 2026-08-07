@@ -5,25 +5,52 @@ from pathlib import Path
 
 
 class DocsMarkupTests(unittest.TestCase):
-    def test_radar_axes_use_valid_weighted_metric_sets(self):
+    def test_radar_axes_read_six_direct_ranking_profile_values(self):
         root = Path(__file__).resolve().parents[1]
         app_js = (root / "docs" / "app.js").read_text(encoding="utf-8")
-        payload = json.loads((root / "docs" / "data" / "models.json").read_text(encoding="utf-8"))
         radar_source = app_js.split("function radarAxes()", 1)[1].split("function renderRadarBasisNotes()", 1)[0]
-        axis_blocks = re.findall(
-            r'id: "([^"]+)",\s+label:.*?\s+metrics: \[(.*?)\],\s+\}',
-            radar_source,
-            flags=re.DOTALL,
-        )
-        metric_keys = {metric["key"] for metric in payload["metrics"]}
+        value_source = app_js.split("function radarAxisValue(model, axis)", 1)[1].split(
+            "function radarAxisCoverage(model, axis)", 1
+        )[0]
+        coverage_source = app_js.split("function radarAxisCoverage(model, axis)", 1)[1].split(
+            "function radarHasCompleteProfile(model, axes", 1
+        )[0]
 
-        self.assertEqual(len(axis_blocks), 6)
-        for axis_id, block in axis_blocks:
-            metrics = re.findall(r'\{ key: "([^"]+)", weight: ([\d.]+) \}', block)
-            weights = [float(weight) for _, weight in metrics]
-            self.assertGreaterEqual(len(metrics), 4, axis_id)
-            self.assertEqual(weights, sorted(weights, reverse=True), axis_id)
-            self.assertFalse({key for key, _ in metrics} - metric_keys, axis_id)
+        self.assertEqual(
+            re.findall(r'id: "([^"]+)"', radar_source),
+            [
+                "coding",
+                "agentic-tool-work",
+                "hard-reasoning",
+                "knowledge-science",
+                "instruction-context",
+                "evidence-coverage",
+            ],
+        )
+        self.assertEqual(
+            re.findall(r'boardId: "([^"]+)"', radar_source),
+            [
+                "coding",
+                "agentic-tool-work",
+                "hard-reasoning",
+                "knowledge-science",
+                "instruction-context",
+            ],
+        )
+        self.assertIn('profileKey: "evidenceCoverageScore"', radar_source)
+        self.assertIn("model?.rankingProfile?.boards?.[boardId]", app_js)
+        self.assertIn("model?.rankingProfile?.[axis.profileKey]", value_source)
+        self.assertNotIn("frontierGroupValue", value_source)
+        self.assertNotIn("axis.metrics", radar_source + value_source)
+        self.assertIn("board?.sparseTests", coverage_source)
+        self.assertIn("board?.sparseItemPoolSize", coverage_source)
+        self.assertIn("boardItemPoolSizesByMethod?.sparseRasch", coverage_source)
+        self.assertIn('tr("radarDualCoverage", coverage)', coverage_source)
+        self.assertIn("function radarHasCompleteProfile(model, axes", app_js)
+        self.assertIn(
+            "values.some((value) => !Number.isFinite(value))",
+            app_js,
+        )
 
     def test_static_site_has_separate_entry_pages(self):
         docs_dir = Path(__file__).resolve().parents[1] / "docs"
@@ -113,112 +140,231 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertNotIn("ranked.slice(0, 250)", app_js)
         self.assertNotIn("models.slice(0, 120)", app_js)
 
-    def test_custom_weights_show_metric_coverage_and_scatter_leaders(self):
-        app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(encoding="utf-8")
-        css = (Path(__file__).resolve().parents[1] / "docs" / "styles.css").read_text(encoding="utf-8")
+    def test_default_ranking_is_precomputed_and_keeps_global_publication_ranks(self):
+        root = Path(__file__).resolve().parents[1]
+        app_js = (root / "docs" / "app.js").read_text(encoding="utf-8")
+        payload = json.loads(
+            (root / "docs" / "data" / "models.json").read_text(encoding="utf-8")
+        )
+        default_preset = payload["presets"][payload["defaultPreset"]]
+        profiles = [
+            model["rankingProfile"]
+            for model in payload["models"]
+            if model.get("rankingProfile")
+        ]
 
+        self.assertEqual(default_preset["kind"], "precomputed-ranking")
+        self.assertEqual(len(profiles), payload["leaderboard"]["populationSize"])
+        self.assertEqual(
+            sorted(profile["publicationRank"] for profile in profiles),
+            list(range(1, len(profiles) + 1)),
+        )
+        self.assertIn('if (preset.kind === "precomputed-ranking")', app_js)
+        self.assertIn("function scoreModelForPrecomputedRanking(model)", app_js)
+        precomputed_source = app_js.split(
+            "function scoreModelForPrecomputedRanking(model)", 1
+        )[1].split("\nfunction ", 1)[0]
+        for field in (
+            "displayScore",
+            "publicationRank",
+            "evidenceRank",
+            "evidenceMeanRank",
+        ):
+            self.assertIn(field, precomputed_source)
+
+        rank_source = app_js.split("function rankRows(models)", 1)[1].split(
+            "\nfunction ", 1
+        )[0]
+        self.assertIn("publicationRank", rank_source)
+        render_results_source = app_js.split("function renderResults(preset)", 1)[
+            1
+        ].split("\nfunction ", 1)[0]
+        self.assertRegex(
+            render_results_source,
+            r"rankRows\(rankingUniverse\).*?filter\(matchesQuery\).*?filter\(matchesSourceFilter\)",
+        )
+
+    def test_full_ranking_has_ten_columns_and_sensitivity_ranks(self):
+        docs_dir = Path(__file__).resolve().parents[1] / "docs"
+        html = (docs_dir / "full-rank.html").read_text(encoding="utf-8")
+        app_js = (docs_dir / "app.js").read_text(encoding="utf-8")
+        table_head = html.split("<thead>", 1)[1].split("</thead>", 1)[0]
+
+        self.assertEqual(len(re.findall(r"<th\b", table_head)), 10)
+        self.assertIn('id="twoplRankHeader"', table_head)
+        self.assertIn('id="denseRaschRankHeader"', table_head)
+
+        render_table_source = app_js.split("function renderTable(models)", 1)[
+            1
+        ].split("\nfunction renderRow(model)", 1)[0]
+        self.assertIn('colspan="10"', render_table_source)
+        render_row_source = app_js.split("function renderRow(model)", 1)[1].split(
+            "\nfunction ", 1
+        )[0]
+        self.assertEqual(
+            render_row_source.count("<td")
+            + render_row_source.count("${renderMethodRankCell("),
+            10,
+        )
+        self.assertEqual(render_row_source.count("${renderMethodRankCell("), 2)
+        self.assertIn("twopl", render_row_source)
+        self.assertIn("denseRasch", render_row_source)
+        self.assertIn("${model.rank}", render_row_source)
+
+    def test_custom_lab_exposes_three_separate_tools_and_actions(self):
+        app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(
+            encoding="utf-8"
+        )
+
+        self.assertIn(
+            'const customToolModeOrder = ["method-rank", "board-score", "benchmark-lab"]',
+            app_js,
+        )
+        self.assertIn('data-custom-tool-mode="${mode}"', app_js)
+        for mode in ("method-rank", "board-score", "benchmark-lab"):
+            self.assertRegex(
+                app_js,
+                rf"state\.customToolMode\s*===\s*\"{re.escape(mode)}\"",
+            )
+
+        self.assertIn(
+            '["equalize", "normalize", "clear", "restore", "export"]',
+            app_js,
+        )
+        self.assertIn('data-custom-action="${action}"', app_js)
+        for action in ("equalize", "normalize", "clear", "restore", "export"):
+            self.assertRegex(
+                app_js,
+                rf'action\s*===\s*"{action}"|case\s+"{action}"',
+            )
+        self.assertIn('querySelectorAll("[data-custom-action]")', app_js)
+        self.assertIn("function exportCustomConfiguration()", app_js)
+        self.assertIn("new Blob", app_js)
+        self.assertIn("link.download", app_js)
+
+    def test_custom_method_and_board_tools_use_ranking_profile_evidence(self):
+        app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(
+            encoding="utf-8"
+        )
+
+        for method in ("rasch", "sparseRasch", "twopl", "denseRasch"):
+            self.assertIn(method, app_js)
+        for board in (
+            "coding",
+            "agentic-tool-work",
+            "hard-reasoning",
+            "knowledge-science",
+            "instruction-context",
+        ):
+            self.assertIn(board, app_js)
+        self.assertIn("rankingProfile", app_js)
+        self.assertIn("evidenceRank", app_js)
+        self.assertIn("model?.rankingProfile?.methods?.[methodId]?.evidenceRank", app_js)
+        self.assertIn("model?.rankingProfile?.boards?.[boardId]?.score", app_js)
+        self.assertIn("function scoreModelForCustomMethodRanks(model)", app_js)
+        self.assertIn("function scoreModelForCustomBoards(model)", app_js)
+        self.assertIn("rasch: 50", app_js)
+        self.assertIn("sparseRasch: 50", app_js)
+        self.assertIn("twopl: 0", app_js)
+        self.assertIn("denseRasch: 0", app_js)
+        self.assertIn('customMethodAggregator: "mean"', app_js)
+        self.assertIn('customBoardAggregator: "arithmetic"', app_js)
         self.assertIn("customMetricGroups", app_js)
-        self.assertIn("metricGroupCoverageCount", app_js)
-        self.assertIn("metric-weight-label", app_js)
-        self.assertIn("metric-weight-link", app_js)
-        self.assertIn("benchmarkHref(group.metrics[0].key)", app_js)
         self.assertIn("customMissingMode", app_js)
-        self.assertIn("customPenaltyMax", app_js)
-        self.assertIn("customMinCoveragePct", app_js)
-        self.assertIn("customMinMetricCoverage", app_js)
-        self.assertIn("customCalculationMethod", app_js)
-        self.assertIn("customNormalizationMethod", app_js)
-        self.assertIn("calculation-method-controls", app_js)
-        self.assertIn("normalization-method-controls", app_js)
-        self.assertIn('geometric: "几何加权均值"', app_js)
-        self.assertIn('arithmetic: "普通加权均值"', app_js)
-        self.assertIn('"relative-best": "最佳分数比例"', app_js)
-        self.assertIn('raw: "原始分数"', app_js)
-        self.assertIn("Geometric Weight Mean", app_js)
-        self.assertIn("Weight Mean", app_js)
-        self.assertIn("Best score ratio", app_js)
-        self.assertIn("Raw score", app_js)
-        self.assertIn('{ key: "Humanity\'s Last Exam", weight: 1.3 }', app_js)
-        self.assertIn('{ key: "benchmark:charxiv-tools", weight: 0.5 }', app_js)
-        self.assertIn('{ key: "IFBench", weight: 1.4 }', app_js)
-        self.assertIn('{ key: "benchmark:mcp-atlas", weight: 0.9 }', app_js)
-        self.assertIn('{ key: "benchmark:deepswe", weight: 0.7 }', app_js)
-        self.assertIn('{ key: "AA-Omniscience Non-Hallucination Rate", weight: 1.2 }', app_js)
-        self.assertIn('id: "knowledge-reliability"', app_js)
-        self.assertIn('knowledgeReliability: "知识可靠性"', app_js)
-        self.assertIn('knowledgeReliability: "Knowledge reliability"', app_js)
-        self.assertIn('"geometric",\n    "relative-best",', app_js)
-        self.assertIn('preset.groupMetricCoverageDiscountExponent ?? 0.10', app_js)
-        self.assertIn('function radarAxisCoverage(model, axis)', app_js)
-        self.assertNotIn('metrics: ["GDPval-AA", "τ²-Bench Telecom", "Terminal-Bench Hard"]', app_js)
-        self.assertNotIn("当前四类参考项目", app_js)
-        self.assertNotIn("four-category AA reference", app_js)
-        self.assertIn("metricCoverageFilterOptions", app_js)
-        self.assertIn("data-coverage-filter", app_js)
-        self.assertIn("visibleGroups", app_js)
-        self.assertIn("Evaluation data weights", app_js)
-        self.assertIn("Calculation", app_js)
-        self.assertNotIn('missingModeTitle: "Missing values"', app_js)
-        self.assertNotIn("AA benchmark weights", app_js)
-        self.assertIn('max="100" step="0.5"', app_js)
-        self.assertIn("customMetricGroupsCache", app_js)
-        self.assertIn("customAggregateScore", app_js)
-        self.assertIn("applyMissingModePreset", app_js)
-        self.assertIn("customWeightsForPreset", app_js)
-        self.assertIn("penalty", app_js)
-        self.assertIn("minCoverage", app_js)
-        self.assertIn("missing-mode-controls", css)
-        self.assertIn("weight-preset-button", css)
-        self.assertNotIn("customMissingAsZero", app_js)
-        self.assertNotIn("checkbox-setting", css)
-        self.assertNotIn("customMissingBase", app_js)
-        self.assertNotIn("missingPenaltyMax", app_js)
-        self.assertIn("scatter-leader", app_js)
-        self.assertIn("benchmarkEvidenceRows", app_js)
-        self.assertIn("model.html?${params.toString()}", app_js)
-        self.assertIn("benchmark.html?id=", app_js)
-        self.assertNotIn("source-weight-controls", app_js)
-        self.assertNotIn("combinedMetricWeightsFromSources", app_js)
-        self.assertNotIn("Source weights", app_js)
-        self.assertIn(".metric-weight-label", css)
-        self.assertIn(".metric-weight-link", css)
-        self.assertIn(".metric-coverage-filter", css)
-        self.assertIn(".metric-filter-summary", css)
-        self.assertIn("grid-template-columns: repeat(var(--option-count), minmax(0, 1fr));", css)
-        self.assertIn("[data-missing-preset]", css)
-        self.assertIn("grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));", css)
-        self.assertIn(".scatter-leader", css)
-        self.assertIn(".benchmark-evidence-row", css)
-        self.assertNotIn(".source-weight-card", css)
-        self.assertNotIn("Open AA page", app_js)
 
-    def test_custom_ainsights_preset_matches_default_ranking_missing_policy(self):
-        app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(encoding="utf-8")
+    def test_benchmark_lab_manual_controls_preserve_base_missing_strategy(self):
+        app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(
+            encoding="utf-8"
+        )
+        score_source = app_js.split("function scoreModelForBenchmarkWeights(model)", 1)[
+            1
+        ].split("\nfunction ", 1)[0]
+        prior_source = app_js.split("function customMetricGroupPriorValue(", 1)[1].split(
+            "\nfunction ", 1
+        )[0]
+        export_source = app_js.split("function exportCustomConfiguration()", 1)[
+            1
+        ].split("\nfunction ", 1)[0]
 
-        self.assertIn('customMissingMode: "coverage025"', app_js)
-        self.assertIn('customCalculationMethod: "geometric"', app_js)
-        self.assertIn('customNormalizationMethod: "relative-best"', app_js)
-        self.assertIn("customPenaltyMax: 0", app_js)
-        self.assertIn("customCoverageDiscountExponent: 0.25", app_js)
-        self.assertIn("customWeakPriorRatio: 35", app_js)
-        self.assertIn('calculation: "geometric"', app_js)
-        self.assertIn('normalization: "relative-best"', app_js)
-        self.assertIn('preset.missingPolicy || "coverage-discount"', app_js)
-        self.assertIn("preset.coverageDiscountExponent ?? 0.25", app_js)
-        self.assertIn("const zeroScore = customAggregateScore(entries, selectedWeight, state.customCalculationMethod, state.customNormalizationMethod);", app_js)
-        self.assertIn("score = availableScore + (zeroScore - availableScore) * penaltyRatio;", app_js)
-        self.assertIn("if (!Number.isFinite(score) && penaltyRatio >= 1 && coverageRatio >= minCoverage && Number.isFinite(zeroScore)) score = zeroScore;", app_js)
-        self.assertIn("state.customMissingMode === \"coverageSqrt\"", app_js)
-        self.assertIn("state.customMissingMode === \"weakPrior\"", app_js)
-        self.assertIn("const presetWeightedMetrics = group.metrics.filter((metric) => Number(state.data.presets[state.customWeightPresetId]?.weights?.[metric.key] || 0) > 0);", app_js)
-        self.assertIn('coverage025: "覆盖折扣 0.25"', app_js)
-        self.assertIn('coverageSqrt: "覆盖折扣 sqrt"', app_js)
-        self.assertIn('weakPrior: "弱先验"', app_js)
-        self.assertIn('coverage025: "Coverage discount 0.25"', app_js)
-        self.assertIn('coverageSqrt: "Coverage discount sqrt"', app_js)
-        self.assertIn('weakPrior: "Weak prior"', app_js)
-        self.assertIn('zero: "缺失记 0"', app_js)
-        self.assertIn('zero: "Missing = 0"', app_js)
+        self.assertIn('customMissingBaseMode: "coverage025"', app_js)
+        self.assertIn('state.customMissingBaseMode === "weakPrior"', score_source)
+        self.assertIn("state.customCoverageDiscountExponent", score_source)
+        self.assertIn("score *= weightCoverageRatio ** coverageExponent", score_source)
+        self.assertIn("score += (zeroScore - score) * penaltyRatio", score_source)
+        self.assertLess(
+            score_source.index('state.customMissingBaseMode === "weakPrior"'),
+            score_source.index("score *= weightCoverageRatio ** coverageExponent"),
+        )
+        self.assertLess(
+            score_source.index("score *= weightCoverageRatio ** coverageExponent"),
+            score_source.index("score += (zeroScore - score) * penaltyRatio"),
+        )
+        self.assertNotIn('state.customMissingMode === "coverage', score_source)
+        self.assertIn('normalization === "relative-best"', prior_source)
+        self.assertIn("baseline * priorRatio", prior_source)
+        for field in (
+            "missingBaseMode",
+            "penaltyMax",
+            "coverageDiscountExponent",
+            "weakPriorRatio",
+            "minCoveragePct",
+        ):
+            self.assertIn(field, export_source)
+
+    def test_benchmark_lab_manual_weights_do_not_switch_metric_aliases(self):
+        app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(
+            encoding="utf-8"
+        )
+        value_source = app_js.split("function customMetricGroupValue(", 1)[1].split(
+            "\nfunction ", 1
+        )[0]
+
+        self.assertIn('const customManualWeightPresetId = "manual"', app_js)
+        self.assertIn("state.customWeightPresetId = customManualWeightPresetId", app_js)
+        self.assertNotIn('state.customWeightPresetId = "custom"', app_js)
+        self.assertIn("state.data.presets.custom?.weights", value_source)
+        self.assertIn("canonicalMetrics", value_source)
+        self.assertNotIn("state.customWeightPresetId", value_source)
+
+    def test_all_three_custom_tools_apply_the_publication_order(self):
+        app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(
+            encoding="utf-8"
+        )
+        for function_name in (
+            "scoreModelForCustomMethodRanks",
+            "scoreModelForCustomBoards",
+            "scoreModelForBenchmarkWeights",
+        ):
+            source = app_js.split(f"function {function_name}(model)", 1)[1].split(
+                "\nfunction ", 1
+            )[0]
+            self.assertIn("customPublicationRanking: true", source)
+
+        publication_source = app_js.split("function applyCustomPublicationLayer(", 1)[
+            1
+        ].split("\nfunction ", 1)[0]
+        self.assertIn('model.slug === "claude-fable-5"', publication_source)
+        self.assertIn('model.variantGroup === "gpt 5 6 sol"', publication_source)
+        self.assertIn("if (!fable || !sol) return evidenceRows;", publication_source)
+        self.assertIn("publicationRank: index + 1", publication_source)
+        benchmark_ui = app_js.split("function renderBenchmarkWeightLab(", 1)[1].split(
+            "\nfunction ", 1
+        )[0]
+        self.assertIn('tr("publicationLayerNote")', benchmark_ui)
+        self.assertIn("均有真实可计算结果", app_js)
+        self.assertIn("both models have observed, calculable results", app_js)
+
+    def test_unranked_sibling_variants_do_not_render_null_rank(self):
+        app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(
+            encoding="utf-8"
+        )
+        sibling_source = app_js.split("function renderSiblingVariants(", 1)[1].split(
+            "\nfunction ", 1
+        )[0]
+
+        self.assertIn("Number.isFinite(row.rank)", sibling_source)
+        self.assertIn('escapeHtml(tr("notAvailable"))', sibling_source)
+        self.assertNotIn("<span>#${row.rank}</span>", sibling_source)
 
     def test_methodology_page_is_linked_from_ranking_not_navigation(self):
         docs_dir = Path(__file__).resolve().parents[1] / "docs"
@@ -226,65 +372,77 @@ class DocsMarkupTests(unittest.TestCase):
         full_rank_html = (docs_dir / "full-rank.html").read_text(encoding="utf-8")
         app_js = (docs_dir / "app.js").read_text(encoding="utf-8")
         app_utils = (docs_dir / "app-utils.js").read_text(encoding="utf-8")
+        methodology_source = app_js.split("function renderMethodologyPage()", 1)[
+            1
+        ].split("\nfunction ", 1)[0]
 
         self.assertIn("AInsights Index", html)
         self.assertIn("AIndex", html)
         self.assertIn('<html lang="en">', html)
-        self.assertNotIn("AIndex is an alias for AInsights Index", html)
-        self.assertNotIn("AIndex is an alias for AInsights Index", app_js)
-        self.assertIn("Capability Boards", html)
-        self.assertIn("AIndex Calculation", html)
-        self.assertIn("Detailed Explanation", html)
-        self.assertIn("Metric Weights", html)
-        self.assertIn("methodology-matrix-table", html)
-        self.assertIn("methodology-matrix-table", app_js)
-        self.assertIn("Calculation Formula", html)
-        self.assertIn("geometric weighted mean", html)
-        self.assertIn("Best score ratio", html)
-        self.assertIn("within-board coverage discount", html)
-        self.assertIn("weak prior of 0.34", html)
-        self.assertIn("within-board coverage discount exponent is 0.10", html)
-        self.assertIn("including boards with only one available metric", html)
-        self.assertIn("AIndex = AA Intelligence max *", html)
-        self.assertNotIn("AIndex = 100 *", html)
-        self.assertIn("Internal weights are normalized within each board", html)
-        self.assertIn("Coding", html)
-        self.assertIn("Agentic/tool work", html)
-        self.assertIn("hard reasoning", html)
-        self.assertIn("Instruction/context", html)
-        self.assertIn("SWE-Bench", html)
-        self.assertIn("FrontierMath", html)
-        self.assertIn("Terminal-Bench", html)
-        self.assertIn("A metric can appear in multiple boards because each board scores an independent capability dimension", html)
-        self.assertIn("每个板块的能力维度独立加权", app_js)
-        self.assertNotIn("External Terminal-Bench 2 and Terminal-Bench 2.1 scores are kept for source inspection", html)
-        self.assertNotIn("External Terminal-Bench 2 and Terminal-Bench 2.1 scores are kept for source inspection", app_js)
-        self.assertIn("<td>40</td>", html)
-        self.assertIn("<td>24</td>", html)
-        self.assertIn("<td>20</td>", html)
-        self.assertIn("<td>8</td>", html)
-        self.assertNotIn("benchmark:", html)
-        self.assertIn("SWE-Bench Pro", html)
-        self.assertNotIn('<span class="methodology-metric-pill"><code>benchmark:terminal-bench-2</code>', html)
-        self.assertNotIn('<span class="methodology-metric-pill"><code>benchmark:terminal-bench-2-1</code>', html)
-        self.assertNotIn('<span class="methodology-metric-pill"><code>benchmark:livecodebench</code>', html)
-        self.assertIn("AIME 2026", html)
-        self.assertIn("MMLU-Pro", html)
-        self.assertIn("CharXiv Reasoning", html)
-        self.assertIn("MMLU-Pro, AIME 2026, and HMMT", html)
-        self.assertIn("AIndex does not copy metrics from lower same-family models into higher tiers", html)
-        self.assertIn("external LiveCodeBench data", html)
-        self.assertIn("shared across variants of the same model", html)
-        self.assertLess(html.index("Capability Boards"), html.index("AIndex Calculation"))
-        self.assertLess(html.index("AIndex Calculation"), html.index("Detailed Explanation"))
-        self.assertNotIn("AInsights Index 计算方式", html)
-        self.assertNotIn("权重为 0", html)
+        for section in (
+            "Default Ranking at a Glance",
+            "Capability Boards",
+            "Item Pools and Sensitivity Methods",
+            "Calculation Formula",
+            "Evidence Eligibility and Coverage",
+            "Publication Order",
+            "Radar Profile",
+            "Metric Weights and Custom Tools",
+        ):
+            self.assertIn(section, html)
+
+        self.assertIn(
+            "rank_mean = (core_evidence_rank + sparse_evidence_rank) / 2",
+            html,
+        )
+        self.assertIn("Core Rasch", html)
+        self.assertIn("Sparse Rasch", html)
+        self.assertIn("Equal-board 2PL", html)
+        self.assertIn("Dense Rasch", html)
+        self.assertEqual(html.count("<td>20%</td>"), 5)
+        self.assertIn("at least two canonical benchmark families", html)
+        self.assertIn("at least three in every board", html)
+        self.assertIn("Coverage controls eligibility and labels", html)
+        self.assertIn("it does not modify a qualified model's Rasch score", html)
+        self.assertIn("Claude Fable 5", html)
+        self.assertIn("GPT-5.6 Sol", html)
+        self.assertIn("evidence_rank", html)
+        self.assertIn("there is no 40 / 24 / 20 / 8 / 8 weighting", html)
+        for runtime_term in (
+            "Core Rasch",
+            "Sparse Rasch",
+            "Equal-board 2PL",
+            "Dense Rasch",
+            "rank_mean",
+            "Claude Fable 5",
+            "GPT-5.6 Sol",
+        ):
+            self.assertIn(runtime_term, methodology_source)
+
+        for obsolete in (
+            "Coding 40、Agentic/tool work 24、Hard reasoning 20",
+            "Coding 40, Agentic/tool work 24, Hard reasoning 20",
+            "重点提高 Coding、Agentic/tool work 和 Hard reasoning 对最终排名的影响",
+            "with extra emphasis on Coding, Agentic/tool work, and Hard reasoning",
+            "再进入最终几何加权总分",
+            "then those board scores enter the final geometric weighted mean",
+            "<td>40</td>",
+            "<td>24</td>",
+            "AIndex = AA Intelligence max *",
+            "默认 AIndex 使用五板块弱先验口径",
+            "default AIndex uses five weak-prior capability boards",
+            "AInsights Index / AIndex 默认使用几何加权均值",
+            "AInsights Index / AIndex defaults to geometric weighted mean",
+            "boards enter the final geometric weighted mean",
+        ):
+            self.assertNotIn(obsolete, html)
+            self.assertNotIn(obsolete, app_js)
+
         self.assertIn("methodology.html", app_js)
         self.assertIn('href="methodology.html"', full_rank_html)
         self.assertIn('filename === "methodology.html"', app_utils)
         self.assertIn('if (page === "methodology") return "methodology.html";', app_utils)
         self.assertIn('const pageOrder = ["home", "ranking", "compare", "benchmarks", "sources", "contribute"];', app_js)
-        self.assertNotIn("presetDescription(state.presetId, preset)", app_js)
 
     def test_sources_page_and_split_scripts_are_present(self):
         docs_dir = Path(__file__).resolve().parents[1] / "docs"

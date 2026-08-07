@@ -1,0 +1,105 @@
+﻿omitted_item_id,affected_boards,scheme_id,scheme,full_eligible_models,post_omission_eligible_models,eligible_population_retention,conditional_spearman,top50_retention
+swe-bench-pro,coding | agentic-tool-work,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.999337,0.98
+swe-bench-pro,coding | agentic-tool-work,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,0.999743,1.0
+swe-bench-pro,coding | agentic-tool-work,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.999614,0.94
+swe-bench-pro,coding | agentic-tool-work,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.999709,0.94
+livecodebench,coding,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.991668,0.88
+livecodebench,coding,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,0.997324,0.94
+livecodebench,coding,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.997377,0.9
+livecodebench,coding,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.997463,0.96
+swe-bench-verified,coding,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.999972,0.98
+swe-bench-verified,coding,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,0.999998,1.0
+swe-bench-verified,coding,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.999924,1.0
+swe-bench-verified,coding,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.999973,0.98
+terminal-bench-hard,coding | agentic-tool-work,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,151,0.460366,0.975092,0.8
+terminal-bench-hard,coding | agentic-tool-work,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,151,0.460366,0.98931,0.86
+terminal-bench-hard,coding | agentic-tool-work,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,151,0.460366,0.989418,0.76
+terminal-bench-hard,coding | agentic-tool-work,borda_breadth,收缩 Borda + 广度优先合成,328,151,0.460366,0.985671,0.74
+terminal-bench-v2-1,coding | agentic-tool-work,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,310,0.945122,0.988342,0.8
+terminal-bench-v2-1,coding | agentic-tool-work,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,310,0.945122,0.9946,0.82
+terminal-bench-v2-1,coding | agentic-tool-work,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,310,0.945122,0.997533,0.88
+terminal-bench-v2-1,coding | agentic-tool-work,borda_breadth,收缩 Borda + 广度优先合成,328,310,0.945122,0.997509,0.86
+swe-bench-multilingual,coding,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.999994,0.98
+swe-bench-multilingual,coding,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,0.999999,1.0
+swe-bench-multilingual,coding,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.999973,1.0
+swe-bench-multilingual,coding,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.999991,0.98
+scicode,coding | knowledge-science,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,268,0.817073,0.995677,0.9
+scicode,coding | knowledge-science,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,268,0.817073,0.997781,0.86
+scicode,coding | knowledge-science,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,268,0.817073,0.997632,0.82
+scicode,coding | knowledge-science,borda_breadth,收缩 Borda + 广度优先合成,328,268,0.817073,0.997532,0.84
+browsecomp,agentic-tool-work,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.999939,0.98
+browsecomp,agentic-tool-work,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,0.999919,1.0
+browsecomp,agentic-tool-work,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.999967,0.98
+browsecomp,agentic-tool-work,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.999949,0.98
+hle-tools,agentic-tool-work,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.999996,1.0
+hle-tools,agentic-tool-work,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,0.999998,1.0
+hle-tools,agentic-tool-work,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.999923,0.98
+hle-tools,agentic-tool-work,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.999962,0.96
+mcp-atlas,agentic-tool-work,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.999997,1.0
+mcp-atlas,agentic-tool-work,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,0.999999,1.0
+mcp-atlas,agentic-tool-work,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.999968,0.98
+mcp-atlas,agentic-tool-work,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.99997,0.98
+osworld-verified,agentic-tool-work,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.999999,1.0
+osworld-verified,agentic-tool-work,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,1.0,1.0
+osworld-verified,agentic-tool-work,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.999996,1.0
+osworld-verified,agentic-tool-work,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.999998,1.0
+gdpval-aa-elo,agentic-tool-work,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.999967,0.98
+gdpval-aa-elo,agentic-tool-work,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,0.999956,1.0
+gdpval-aa-elo,agentic-tool-work,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.999943,1.0
+gdpval-aa-elo,agentic-tool-work,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.999981,1.0
+toolathlon,agentic-tool-work,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.99994,0.98
+toolathlon,agentic-tool-work,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,0.999983,1.0
+toolathlon,agentic-tool-work,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.999948,0.98
+toolathlon,agentic-tool-work,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.999966,0.98
+aa-lcr,agentic-tool-work | instruction-context,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,130,0.396341,0.996389,0.76
+aa-lcr,agentic-tool-work | instruction-context,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,130,0.396341,0.99492,0.7
+aa-lcr,agentic-tool-work | instruction-context,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,130,0.396341,0.994478,0.6
+aa-lcr,agentic-tool-work | instruction-context,borda_breadth,收缩 Borda + 广度优先合成,328,130,0.396341,0.992735,0.64
+hle,hard-reasoning | knowledge-science,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.996789,0.9
+hle,hard-reasoning | knowledge-science,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,0.995687,0.9
+hle,hard-reasoning | knowledge-science,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.995849,0.98
+hle,hard-reasoning | knowledge-science,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.996855,0.96
+critpt,hard-reasoning | instruction-context,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,309,0.942073,0.997806,0.84
+critpt,hard-reasoning | instruction-context,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,309,0.942073,0.996814,0.78
+critpt,hard-reasoning | instruction-context,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,309,0.942073,0.995916,0.84
+critpt,hard-reasoning | instruction-context,borda_breadth,收缩 Borda + 广度优先合成,328,309,0.942073,0.996066,0.84
+gpqa-diamond,hard-reasoning | knowledge-science,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.997369,0.9
+gpqa-diamond,hard-reasoning | knowledge-science,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,0.996084,0.92
+gpqa-diamond,hard-reasoning | knowledge-science,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.997104,0.98
+gpqa-diamond,hard-reasoning | knowledge-science,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.997101,0.96
+aime-2025,hard-reasoning,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.998643,0.94
+aime-2025,hard-reasoning,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,0.998514,0.98
+aime-2025,hard-reasoning,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.999533,0.94
+aime-2025,hard-reasoning,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.999626,0.96
+aime-2026,hard-reasoning,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.999978,0.98
+aime-2026,hard-reasoning,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,0.999984,1.0
+aime-2026,hard-reasoning,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.99997,1.0
+aime-2026,hard-reasoning,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.999968,1.0
+hmmt-2026-feb,hard-reasoning,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.999996,1.0
+hmmt-2026-feb,hard-reasoning,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,0.999998,1.0
+hmmt-2026-feb,hard-reasoning,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.999978,1.0
+hmmt-2026-feb,hard-reasoning,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.999982,0.98
+omniscience,knowledge-science,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.999943,0.98
+omniscience,knowledge-science,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,0.999821,0.98
+omniscience,knowledge-science,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.999491,0.98
+omniscience,knowledge-science,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.999702,0.98
+mmmu-pro,knowledge-science,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,1.0,1.0
+mmmu-pro,knowledge-science,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,1.0,1.0
+mmmu-pro,knowledge-science,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.99999,1.0
+mmmu-pro,knowledge-science,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.999987,1.0
+mmlu-pro,knowledge-science,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.999998,1.0
+mmlu-pro,knowledge-science,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,0.999997,1.0
+mmlu-pro,knowledge-science,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.999985,1.0
+mmlu-pro,knowledge-science,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.999997,1.0
+ifbench,instruction-context,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,320,0.97561,0.999644,0.92
+ifbench,instruction-context,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,320,0.97561,0.998751,0.96
+ifbench,instruction-context,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,320,0.97561,0.998074,0.98
+ifbench,instruction-context,borda_breadth,收缩 Borda + 广度优先合成,328,320,0.97561,0.997453,0.96
+charxiv-tools,instruction-context,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,1.0,1.0
+charxiv-tools,instruction-context,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,0.999999,1.0
+charxiv-tools,instruction-context,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.999976,1.0
+charxiv-tools,instruction-context,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.999993,1.0
+charxiv-no-tools,instruction-context,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,328,1.0,0.999999,1.0
+charxiv-no-tools,instruction-context,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,328,1.0,1.0,1.0
+charxiv-no-tools,instruction-context,robust_eb,稳健秩变换 + 贝叶斯式收缩,328,328,1.0,0.999989,1.0
+charxiv-no-tools,instruction-context,borda_breadth,收缩 Borda + 广度优先合成,328,328,1.0,0.99999,1.0

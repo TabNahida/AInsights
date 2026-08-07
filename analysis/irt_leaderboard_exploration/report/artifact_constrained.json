@@ -1,0 +1,5362 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "AInsights 榜单：IRT 测量与产品约束分层方案",
+    "description": "基于 2026-08-06 21:48（北京时间） 数据快照，比较五套显式产品约束榜并给出完整 Top 50。",
+    "generatedAt": "2026-08-06T22:24:10+08:00",
+    "cards": [],
+    "charts": [
+      {
+        "id": "target_ranks",
+        "title": "重点模型在五套受约束方案中的名次",
+        "subtitle": "名次数值越小越靠前；Fable 固定第一，Qwen 与 Gemini 使用显式产品规则。",
+        "showDescription": true,
+        "intent": "comparison",
+        "question": "产品规则在不同测量方法下给出怎样的重点模型次序？",
+        "rationale": "折线显示方法变化与硬约束共同作用后的名次范围。",
+        "type": "line",
+        "dataset": "target_ranks",
+        "sourceId": "src_constrained_diagnostics",
+        "encodings": {
+          "x": {
+            "field": "scheme_display",
+            "type": "nominal",
+            "label": "方案"
+          },
+          "y": {
+            "field": "rank",
+            "type": "quantitative",
+            "format": "number",
+            "label": "名次（越小越好）"
+          },
+          "color": {
+            "field": "model",
+            "type": "nominal",
+            "label": "模型"
+          },
+          "tooltip": [
+            {
+              "field": "model",
+              "type": "nominal",
+              "label": "模型"
+            },
+            {
+              "field": "rank",
+              "type": "quantitative",
+              "label": "名次"
+            }
+          ]
+        },
+        "valueFormat": "number",
+        "yAxisTitle": "名次（越小越好）",
+        "layout": "full",
+        "settings": {
+          "sort": "none",
+          "showValues": true
+        },
+        "surface": {
+          "viewMode": "visualization",
+          "showControls": false
+        }
+      },
+      {
+        "id": "target_coverage",
+        "title": "重点模型的板块槽位与唯一测试家族",
+        "subtitle": "跨板块复用会让槽位数高于真正独立的 benchmark family 数。",
+        "showDescription": true,
+        "intent": "comparison",
+        "question": "哪些重点模型的表面覆盖高于独立证据广度？",
+        "rationale": "并列柱直接显示同一模型的槽位数与去重后证据量差距。",
+        "type": "bar",
+        "dataset": "target_coverage",
+        "sourceId": "src_constrained_full",
+        "encodings": {
+          "x": {
+            "field": "model",
+            "type": "nominal",
+            "label": "模型"
+          },
+          "y": {
+            "field": "count",
+            "type": "quantitative",
+            "format": "number",
+            "label": "测试数"
+          },
+          "color": {
+            "field": "measure",
+            "type": "nominal",
+            "label": "覆盖口径"
+          },
+          "tooltip": [
+            {
+              "field": "measure",
+              "type": "nominal",
+              "label": "覆盖口径"
+            },
+            {
+              "field": "count",
+              "type": "quantitative",
+              "label": "数量"
+            }
+          ]
+        },
+        "valueFormat": "number",
+        "yAxisTitle": "测试数",
+        "layout": "full",
+        "settings": {
+          "groupMode": "grouped",
+          "sort": "none",
+          "showValues": true
+        },
+        "surface": {
+          "viewMode": "visualization",
+          "showControls": false
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "scheme_diagnostics",
+        "title": "五套方案的约束验收与连续性",
+        "subtitle": "约束位移与原始测量分并列保留；最大位移用于触发人工复核。",
+        "showDescription": true,
+        "dataset": "scheme_diagnostics",
+        "defaultSort": {
+          "field": "scheme_display",
+          "direction": "asc"
+        },
+        "density": "dense",
+        "sourceId": "src_constrained_diagnostics",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "scheme_display",
+            "label": "方案",
+            "type": "text"
+          },
+          {
+            "field": "fable_rank",
+            "label": "Fable 名次",
+            "format": "number"
+          },
+          {
+            "field": "qwen_violations_before",
+            "label": "Qwen 调整前违反",
+            "format": "number"
+          },
+          {
+            "field": "qwen_violations_after",
+            "label": "Qwen 调整后违反",
+            "format": "number"
+          },
+          {
+            "field": "flash_open_above",
+            "label": "Flash 前 Main 开源数",
+            "format": "number"
+          },
+          {
+            "field": "spearman",
+            "label": "vs 约束前 Spearman",
+            "format": "number"
+          },
+          {
+            "field": "top50_overlap",
+            "label": "Top 50 重合",
+            "format": "number"
+          },
+          {
+            "field": "max_shift",
+            "label": "最大硬约束位移",
+            "format": "number"
+          },
+          {
+            "field": "top50_provisional",
+            "label": "Top 50 Provisional",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "target_coverage_table",
+        "title": "重点模型覆盖明细",
+        "subtitle": "Main 要求每板块至少 3 项且至少 9 个唯一测试家族；其余为 Provisional。",
+        "showDescription": true,
+        "dataset": "target_coverage_table",
+        "defaultSort": {
+          "field": "unique_families",
+          "direction": "desc"
+        },
+        "density": "dense",
+        "sourceId": "src_constrained_full",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "model",
+            "label": "模型",
+            "type": "text"
+          },
+          {
+            "field": "evidence_tier",
+            "label": "证据层级",
+            "type": "text"
+          },
+          {
+            "field": "board_slots",
+            "label": "板块槽位",
+            "format": "number"
+          },
+          {
+            "field": "unique_families",
+            "label": "唯一测试家族",
+            "format": "number"
+          },
+          {
+            "field": "min_board_tests",
+            "label": "最少板块测试",
+            "format": "number"
+          },
+          {
+            "field": "boards_below_3",
+            "label": "低于 3 项板块",
+            "format": "number"
+          },
+          {
+            "field": "coverage_penalty_z",
+            "label": "覆盖惩罚（SD）",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "flash_sensitivity",
+        "title": "Gemini Flash 开源模型下限敏感性",
+        "subtitle": "比较至少 5、10、15 个 Main-evidence 开源模型排在 Flash 前面的政策强度。",
+        "showDescription": true,
+        "dataset": "flash_sensitivity",
+        "defaultSort": {
+          "field": "flash_open_floor",
+          "direction": "asc"
+        },
+        "density": "dense",
+        "sourceId": "src_sensitivity",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "scheme_display",
+            "label": "方案",
+            "type": "text"
+          },
+          {
+            "field": "flash_open_floor",
+            "label": "开源下限",
+            "format": "number"
+          },
+          {
+            "field": "gemini_3_6_rank",
+            "label": "Gemini 3.6 Flash",
+            "format": "number"
+          },
+          {
+            "field": "gemini_3_5_rank",
+            "label": "Gemini 3.5 Flash",
+            "format": "number"
+          },
+          {
+            "field": "spearman",
+            "label": "vs 约束前 Spearman",
+            "format": "number"
+          },
+          {
+            "field": "top50_overlap",
+            "label": "Top 50 重合",
+            "format": "number"
+          },
+          {
+            "field": "max_shift",
+            "label": "最大位移",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "external_sources",
+        "title": "可自动更新外部评测源审计",
+        "subtitle": "只有同时满足时效、稳定接口、许可与纯模型可比性才建议进入每日 Action。",
+        "showDescription": true,
+        "dataset": "external_sources",
+        "defaultSort": {
+          "field": "mapping_risk",
+          "direction": "asc"
+        },
+        "density": "dense",
+        "sourceId": "src_external_sources",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "source",
+            "label": "来源",
+            "type": "text"
+          },
+          {
+            "field": "freshness",
+            "label": "实测时效",
+            "type": "text"
+          },
+          {
+            "field": "license",
+            "label": "许可 / 再分发",
+            "type": "text"
+          },
+          {
+            "field": "mapping_risk",
+            "label": "模型映射风险",
+            "type": "text"
+          },
+          {
+            "field": "recommendation",
+            "label": "结论",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "id": "top50_guarded_aindex",
+        "title": "覆盖校正 AIndex · Top 50",
+        "subtitle": "原测量分与硬约束位移并列；Provisional 表示至少一个板块不足 3 项或唯一家族不足 9。",
+        "showDescription": true,
+        "dataset": "top50_guarded_aindex",
+        "defaultSort": {
+          "field": "rank",
+          "direction": "asc"
+        },
+        "density": "dense",
+        "sourceId": "src_constrained_top50",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "rank",
+            "label": "名次",
+            "format": "number"
+          },
+          {
+            "field": "model",
+            "label": "模型",
+            "type": "text"
+          },
+          {
+            "field": "creator",
+            "label": "厂商",
+            "type": "text"
+          },
+          {
+            "field": "evidence_tier",
+            "label": "证据层级",
+            "type": "text"
+          },
+          {
+            "field": "measurement_score",
+            "label": "原测量分",
+            "format": "number"
+          },
+          {
+            "field": "raw_method_rank",
+            "label": "原方法名次",
+            "format": "number"
+          },
+          {
+            "field": "coverage_penalty_z",
+            "label": "覆盖惩罚（SD）",
+            "format": "number"
+          },
+          {
+            "field": "constraint_shift",
+            "label": "硬约束位移",
+            "format": "number",
+            "movement": true
+          },
+          {
+            "field": "unique_families",
+            "label": "唯一测试家族",
+            "format": "number"
+          },
+          {
+            "field": "min_board_tests",
+            "label": "最少板块测试",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "top50_guarded_rasch",
+        "title": "约束 1PL/Rasch · Top 50",
+        "subtitle": "原测量分与硬约束位移并列；Provisional 表示至少一个板块不足 3 项或唯一家族不足 9。",
+        "showDescription": true,
+        "dataset": "top50_guarded_rasch",
+        "defaultSort": {
+          "field": "rank",
+          "direction": "asc"
+        },
+        "density": "dense",
+        "sourceId": "src_constrained_top50",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "rank",
+            "label": "名次",
+            "format": "number"
+          },
+          {
+            "field": "model",
+            "label": "模型",
+            "type": "text"
+          },
+          {
+            "field": "creator",
+            "label": "厂商",
+            "type": "text"
+          },
+          {
+            "field": "evidence_tier",
+            "label": "证据层级",
+            "type": "text"
+          },
+          {
+            "field": "measurement_score",
+            "label": "原测量分",
+            "format": "number"
+          },
+          {
+            "field": "raw_method_rank",
+            "label": "原方法名次",
+            "format": "number"
+          },
+          {
+            "field": "coverage_penalty_z",
+            "label": "覆盖惩罚（SD）",
+            "format": "number"
+          },
+          {
+            "field": "constraint_shift",
+            "label": "硬约束位移",
+            "format": "number",
+            "movement": true
+          },
+          {
+            "field": "unique_families",
+            "label": "唯一测试家族",
+            "format": "number"
+          },
+          {
+            "field": "min_board_tests",
+            "label": "最少板块测试",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "top50_guarded_twopl",
+        "title": "约束 2PL · Top 50",
+        "subtitle": "原测量分与硬约束位移并列；Provisional 表示至少一个板块不足 3 项或唯一家族不足 9。",
+        "showDescription": true,
+        "dataset": "top50_guarded_twopl",
+        "defaultSort": {
+          "field": "rank",
+          "direction": "asc"
+        },
+        "density": "dense",
+        "sourceId": "src_constrained_top50",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "rank",
+            "label": "名次",
+            "format": "number"
+          },
+          {
+            "field": "model",
+            "label": "模型",
+            "type": "text"
+          },
+          {
+            "field": "creator",
+            "label": "厂商",
+            "type": "text"
+          },
+          {
+            "field": "evidence_tier",
+            "label": "证据层级",
+            "type": "text"
+          },
+          {
+            "field": "measurement_score",
+            "label": "原测量分",
+            "format": "number"
+          },
+          {
+            "field": "raw_method_rank",
+            "label": "原方法名次",
+            "format": "number"
+          },
+          {
+            "field": "coverage_penalty_z",
+            "label": "覆盖惩罚（SD）",
+            "format": "number"
+          },
+          {
+            "field": "constraint_shift",
+            "label": "硬约束位移",
+            "format": "number",
+            "movement": true
+          },
+          {
+            "field": "unique_families",
+            "label": "唯一测试家族",
+            "format": "number"
+          },
+          {
+            "field": "min_board_tests",
+            "label": "最少板块测试",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "top50_guarded_robust",
+        "title": "约束稳健秩 · Top 50",
+        "subtitle": "原测量分与硬约束位移并列；Provisional 表示至少一个板块不足 3 项或唯一家族不足 9。",
+        "showDescription": true,
+        "dataset": "top50_guarded_robust",
+        "defaultSort": {
+          "field": "rank",
+          "direction": "asc"
+        },
+        "density": "dense",
+        "sourceId": "src_constrained_top50",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "rank",
+            "label": "名次",
+            "format": "number"
+          },
+          {
+            "field": "model",
+            "label": "模型",
+            "type": "text"
+          },
+          {
+            "field": "creator",
+            "label": "厂商",
+            "type": "text"
+          },
+          {
+            "field": "evidence_tier",
+            "label": "证据层级",
+            "type": "text"
+          },
+          {
+            "field": "measurement_score",
+            "label": "原测量分",
+            "format": "number"
+          },
+          {
+            "field": "raw_method_rank",
+            "label": "原方法名次",
+            "format": "number"
+          },
+          {
+            "field": "coverage_penalty_z",
+            "label": "覆盖惩罚（SD）",
+            "format": "number"
+          },
+          {
+            "field": "constraint_shift",
+            "label": "硬约束位移",
+            "format": "number",
+            "movement": true
+          },
+          {
+            "field": "unique_families",
+            "label": "唯一测试家族",
+            "format": "number"
+          },
+          {
+            "field": "min_board_tests",
+            "label": "最少板块测试",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "top50_guarded_borda",
+        "title": "约束 Borda · Top 50",
+        "subtitle": "原测量分与硬约束位移并列；Provisional 表示至少一个板块不足 3 项或唯一家族不足 9。",
+        "showDescription": true,
+        "dataset": "top50_guarded_borda",
+        "defaultSort": {
+          "field": "rank",
+          "direction": "asc"
+        },
+        "density": "dense",
+        "sourceId": "src_constrained_top50",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "rank",
+            "label": "名次",
+            "format": "number"
+          },
+          {
+            "field": "model",
+            "label": "模型",
+            "type": "text"
+          },
+          {
+            "field": "creator",
+            "label": "厂商",
+            "type": "text"
+          },
+          {
+            "field": "evidence_tier",
+            "label": "证据层级",
+            "type": "text"
+          },
+          {
+            "field": "measurement_score",
+            "label": "原测量分",
+            "format": "number"
+          },
+          {
+            "field": "raw_method_rank",
+            "label": "原方法名次",
+            "format": "number"
+          },
+          {
+            "field": "coverage_penalty_z",
+            "label": "覆盖惩罚（SD）",
+            "format": "number"
+          },
+          {
+            "field": "constraint_shift",
+            "label": "硬约束位移",
+            "format": "number",
+            "movement": true
+          },
+          {
+            "field": "unique_families",
+            "label": "唯一测试家族",
+            "format": "number"
+          },
+          {
+            "field": "min_board_tests",
+            "label": "最少板块测试",
+            "format": "number"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "src_models",
+        "label": "生产模型与 benchmark 快照",
+        "path": "docs/data/models.json",
+        "query": {
+          "language": "python/file",
+          "sql": "SELECT * FROM read_json_auto('docs/data/models.json')",
+          "query": "python -B scripts/build_docs_site.py",
+          "description": "修复第一方来源优先级后重建的生产模型、指标和外部 benchmark 快照。",
+          "tables_used": [
+            "docs/data/models.json"
+          ],
+          "metric_definitions": []
+        }
+      },
+      {
+        "id": "src_benchmarks",
+        "label": "外部 benchmark 原始来源记录",
+        "path": "data/benchmarks/benchmark_scores.json",
+        "query": {
+          "language": "python/file",
+          "sql": "SELECT * FROM read_json_auto('data/benchmarks/benchmark_scores.json')",
+          "query": "python -B benchmarks/collect_benchmark_scores.py",
+          "description": "包含第一方发布与其他厂商 comparator 列，供冲突和来源优先级审计。",
+          "tables_used": [
+            "data/benchmarks/benchmark_scores.json"
+          ],
+          "metric_definitions": []
+        }
+      },
+      {
+        "id": "src_measurement",
+        "label": "覆盖感知测量层",
+        "path": "analysis/irt_leaderboard_exploration/irt_leaderboard_analysis.py",
+        "query": {
+          "language": "python/file",
+          "query": "python -B analysis/irt_leaderboard_exploration/irt_leaderboard_analysis.py",
+          "description": "构建五板块响应矩阵并拟合 AIndex、1PL、2PL、稳健秩和 Borda 测量分。",
+          "tables_used": [
+            "analysis/irt_leaderboard_exploration/irt_leaderboard_analysis.py"
+          ],
+          "metric_definitions": []
+        }
+      },
+      {
+        "id": "src_constraints",
+        "label": "产品约束与覆盖校正实现",
+        "path": "analysis/irt_leaderboard_exploration/constrained_ranking_analysis.py",
+        "query": {
+          "language": "python/file",
+          "query": "python -B analysis/irt_leaderboard_exploration/constrained_ranking_analysis.py",
+          "description": "把独立测试家族覆盖惩罚与 Fable、Qwen、Gemini Flash 产品规则作为单独重排层。",
+          "tables_used": [
+            "analysis/irt_leaderboard_exploration/constrained_ranking_analysis.py"
+          ],
+          "metric_definitions": [
+            "Main evidence：每个板块至少 3 项且至少 9 个唯一 benchmark family。",
+            "软覆盖目标：12 个唯一 benchmark family，每少 1 个扣 0.08 个榜内标准差。",
+            "Gemini Flash：至少 15 个 Main-evidence 开源模型排在其前。",
+            "Qwen：只约束明确列出的同产品线相邻版本和同版本 tier 边。"
+          ]
+        }
+      },
+      {
+        "id": "src_constrained_validation",
+        "label": "受约束榜验证摘要",
+        "path": "analysis/irt_leaderboard_exploration/outputs/constrained_validation_summary.json",
+        "query": {
+          "language": "python/file",
+          "sql": "SELECT * FROM read_json_auto('analysis/irt_leaderboard_exploration/outputs/constrained_validation_summary.json')",
+          "query": "python -B analysis/irt_leaderboard_exploration/constrained_ranking_analysis.py",
+          "description": "五套方案的锚点、Qwen 违反数、Gemini Flash 开源模型下限和验收结果。",
+          "tables_used": [
+            "analysis/irt_leaderboard_exploration/outputs/constrained_validation_summary.json"
+          ],
+          "metric_definitions": []
+        }
+      },
+      {
+        "id": "src_constrained_diagnostics",
+        "label": "受约束方案诊断",
+        "path": "analysis/irt_leaderboard_exploration/outputs/constrained_scheme_diagnostics.csv",
+        "query": {
+          "language": "python/file",
+          "sql": "SELECT * FROM read_csv_auto('analysis/irt_leaderboard_exploration/outputs/constrained_scheme_diagnostics.csv', header = true)",
+          "query": "python -B analysis/irt_leaderboard_exploration/constrained_ranking_analysis.py",
+          "description": "各方案约束前后违反数、目标模型名次、相关性、Top 50 重合和最大位移。",
+          "tables_used": [
+            "analysis/irt_leaderboard_exploration/outputs/constrained_scheme_diagnostics.csv"
+          ],
+          "metric_definitions": []
+        }
+      },
+      {
+        "id": "src_constrained_full",
+        "label": "受约束完整榜单",
+        "path": "analysis/irt_leaderboard_exploration/outputs/full_rankings_constrained_schemes.csv",
+        "query": {
+          "language": "python/file",
+          "sql": "SELECT * FROM read_csv_auto('analysis/irt_leaderboard_exploration/outputs/full_rankings_constrained_schemes.csv', header = true)",
+          "query": "python -B analysis/irt_leaderboard_exploration/constrained_ranking_analysis.py",
+          "description": "五套方案全部可排名模型，包含测量分、覆盖惩罚、约束前后名次和证据层级。",
+          "tables_used": [
+            "analysis/irt_leaderboard_exploration/outputs/full_rankings_constrained_schemes.csv"
+          ],
+          "metric_definitions": []
+        }
+      },
+      {
+        "id": "src_constrained_top50",
+        "label": "五套受约束方案 Top 50",
+        "path": "analysis/irt_leaderboard_exploration/outputs/top50_constrained_schemes.csv",
+        "query": {
+          "language": "python/file",
+          "sql": "SELECT * FROM read_csv_auto('analysis/irt_leaderboard_exploration/outputs/top50_constrained_schemes.csv', header = true)",
+          "query": "python -B analysis/irt_leaderboard_exploration/constrained_ranking_analysis.py",
+          "description": "每套方案各 50 行，保留原始测量名次和产品约束位移。",
+          "tables_used": [
+            "analysis/irt_leaderboard_exploration/outputs/top50_constrained_schemes.csv"
+          ],
+          "metric_definitions": []
+        }
+      },
+      {
+        "id": "src_sensitivity",
+        "label": "Gemini Flash 开源下限敏感性",
+        "path": "analysis/irt_leaderboard_exploration/outputs/constraint_sensitivity.csv",
+        "query": {
+          "language": "python/file",
+          "sql": "SELECT * FROM read_csv_auto('analysis/irt_leaderboard_exploration/outputs/constraint_sensitivity.csv', header = true)",
+          "query": "python -B analysis/irt_leaderboard_exploration/constrained_ranking_analysis.py",
+          "description": "比较 5、10、15 个 Main-evidence 开源模型下限对名次和整体连续性的影响。",
+          "tables_used": [
+            "analysis/irt_leaderboard_exploration/outputs/constraint_sensitivity.csv"
+          ],
+          "metric_definitions": []
+        }
+      },
+      {
+        "id": "src_external_sources",
+        "label": "自动更新外部源评估",
+        "path": "analysis/irt_leaderboard_exploration/outputs/external_source_assessment.csv",
+        "query": {
+          "language": "python/file",
+          "sql": "SELECT * FROM read_csv_auto('analysis/irt_leaderboard_exploration/outputs/external_source_assessment.csv', header = true)",
+          "query": "manual endpoint and license audit; see assessment rows",
+          "description": "对 LiveBench、Aider、SWE-bench、LMArena 等的接口、时效、许可和模型映射风险审计。",
+          "tables_used": [
+            "analysis/irt_leaderboard_exploration/outputs/external_source_assessment.csv"
+          ],
+          "metric_definitions": []
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "layout": "full",
+        "body": "# AInsights 榜单：IRT 测量与产品约束分层方案"
+      },
+      {
+        "id": "executive_summary",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## Executive Summary\n\n- **五套候选榜均满足三条产品规则。** Claude Fable 5 全部为 #1；七条 Qwen 相邻版本 / tier 边调整后零违反；所有 Gemini Flash 前方至少有 15 个证据达标的开源模型。\n- **产品约束没有被伪装成 IRT 结果。** 每行同时保留原测量分、覆盖惩罚、约束前名次和硬约束位移；Qwen3.8 Max 因只有 7 个唯一测试家族仍标为 Provisional。\n- **先修了一个会污染榜首的来源优先级缺陷。** Kimi 发布页中的 Fable comparator 不再覆盖 Anthropic 第一方值；修复后重建的 Fable AIndex 为 56.7811，仍居第一。\n- **本轮不把新外部源接入每日 Action。** LiveBench、Aider、SWE-bench 等均至少缺一项：当前汇总接口、稳定访问、明确再分发许可或纯模型可比性；可先做离线 PoC。"
+      },
+      {
+        "id": "source_fix",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 1. 先修输入：第一方成绩优先于竞品比较列\n\n原生产合并逻辑对同一模型 / benchmark 使用后写覆盖，导致 Kimi K3 发布页中的 Claude Fable 5 对比列覆盖 Anthropic 自己的发布数据。冲突涉及 GDPval-AA Elo、AutomationBench、HLE、HLE with tools 和 Terminal-Bench v2.1。现在先判断来源是否属于该模型厂商，再在同优先级内保留原来的刷新顺序。\n\n**影响：** 这不是 IRT 参数问题，而是输入选择问题。继续增加来源之前必须先有冲突优先级，否则数据越多，榜单越依赖文件行序。"
+      },
+      {
+        "id": "constraint_layers",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src_constraints",
+        "body": "## 2. 测量分与产品规则分层，才能知道名次为什么变\n\n每套候选榜先取对应测量方法，再用唯一 benchmark family 做小幅覆盖校正，最后执行显式偏序。Fable 是冠军锚点；Qwen 只约束明确可比的相邻商业产品边；Gemini Flash 使用‘至少 15 个 Main-evidence 开源模型在前’的可审计下限。\n\n重排采用 raise-only 投影：违反边时把应更强的新型号提升到旧型号之前，而不是把旧型号拖到稀疏新型号原来的低位。位移超过 10 名应触发人工复核。"
+      },
+      {
+        "id": "diagnostics_table",
+        "type": "table",
+        "layout": "full",
+        "tableId": "scheme_diagnostics"
+      },
+      {
+        "id": "diagnostics_read",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src_constrained_diagnostics",
+        "body": "### 解读\n\n五套方案与各自覆盖校正后、约束前榜单的 Spearman 为 0.9978–0.9992，Top 50 保留 46–48 个席位；总体结构变化小。但最大单模型位移很大，主要来自证据稀疏却被强制满足新版顺序的 Qwen 产品，因此必须同时展示 Provisional 和原名次。"
+      },
+      {
+        "id": "target_rank_intro",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src_constrained_diagnostics",
+        "body": "## 3. Fable 稳定第一，Qwen 顺序一致，Flash 退出异常头部\n\n图中名次数值越小越好。Fable 在五套方案均为 #1；Qwen3.8 Max 均排在 Qwen3.7 Max 之前，同版 Max 也排在 Plus 之前。Gemini 3.5/3.6 Flash 在 15 个开源模型下限下落在约 #26–#35，避免了原 Borda #4 这类与产品判断冲突的异常。"
+      },
+      {
+        "id": "target_rank_chart",
+        "type": "chart",
+        "layout": "full",
+        "chartId": "target_ranks"
+      },
+      {
+        "id": "coverage_intro",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src_constrained_full",
+        "body": "## 4. 异常不只来自‘每板块太少’，还来自跨板块重复\n\nGemini 3.5 Flash 的五板块覆盖为 3/3/3/4/3，看似完全达标，但 16 个板块槽位只对应 9 个唯一测试家族；Muse Spark 也有同样结构。Qwen3.8 Max 则更直接地稀疏：13 个槽位、7 个唯一家族，三个板块不足 3 项。"
+      },
+      {
+        "id": "coverage_chart",
+        "type": "chart",
+        "layout": "full",
+        "chartId": "target_coverage"
+      },
+      {
+        "id": "coverage_table",
+        "type": "table",
+        "layout": "full",
+        "tableId": "target_coverage_table"
+      },
+      {
+        "id": "flash_policy",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src_sensitivity",
+        "body": "## 5. Gemini Flash 下调幅度是一条政策旋钮\n\n下限从 5 提高到 15 时，Gemini 3.5/3.6 Flash 大致再下移 10 名，但整体 Spearman 与 Top 50 重合变化很小。默认选择 15，是因为它既能消除 Flash 进入前十的异常，又不会把整个榜单重写。若产品希望更温和，可把 10 作为影子对照。"
+      },
+      {
+        "id": "flash_sensitivity_table",
+        "type": "table",
+        "layout": "full",
+        "tableId": "flash_sensitivity"
+      },
+      {
+        "id": "source_assessment",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src_external_sources",
+        "body": "## 6. 没有新来源达到‘现在就进 Action’的标准\n\nAider 的官方 YAML 最容易自动拉取，但实测最新运行停在 2025-10-03；LiveBench 更当前，却只提供 judgment 数据，需要自行按 release/category 汇总，而且数据许可与本环境访问稳定性未闭环；SWE-bench 的机器文件稳定，但排名对象是 agent/system + model，不是纯模型。\n\n**结论：** 本轮只把来源冲突优先级修复纳入现有每日链路，不新增抓取步骤。LiveBench 与 Aider 可各做一次离线 PoC，验证映射、许可和增量更新后再决定。"
+      },
+      {
+        "id": "source_assessment_table",
+        "type": "table",
+        "layout": "full",
+        "tableId": "external_sources"
+      },
+      {
+        "id": "recommendations",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 7. 推荐推进顺序\n\n1. **以约束 1PL/Rasch 做首要影子榜：** 它保留现行业务板块权重，同时满足三条产品规则；2PL 保持 challenger。\n2. **公开两列而不是一个神秘总分：** 同时展示 measurement rank 与 constrained rank，并对位移 >10 名标记人工复核。\n3. **保留 Main / Provisional 分层：** Main 要求每板块 ≥3 且唯一测试家族 ≥9；Qwen3.8 Max 等稀疏新型号可以按产品规则提升，但不能隐藏 Provisional。\n4. **为 Qwen 建结构化产品元数据：** version、tier、subfamily、preview、reasoning mode 不应继续靠名称正则推断。\n5. **给来源冲突增加 CI 门禁：** 第一方与 comparator 冲突必须记录选择原因；reasoning/non-reasoning 的 benchmark 广播在元数据补齐前继续列为风险。\n6. **新源先做离线 PoC：** LiveBench 检验汇总与许可，Aider 检验增量抓取；两者都不直接进入本轮生产分。"
+      },
+      {
+        "id": "caveats",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 8. 解释边界与待解决问题\n\n- Fable 5 当前是带 fallback 的系统口径，严格说不等同于单一基础模型；本报告按明确产品要求将其锚定第一。\n- Qwen3.8 Max 只有 7 个唯一测试家族；把它提升到 Qwen3.7 Max 之前是产品先验，不是当前 benchmark 证据自然支持的结论。\n- Gemini Flash 的 15 个开源模型下限是政策参数，不是统计估计；敏感性表提供 5/10/15 三档。\n- 当前 IRT 仍是聚合 benchmark-as-item 连续近似，没有题目级响应。\n- variantGroup 仍可能跨 reasoning mode 共享外部分数；直接禁止会破坏部分现有 alias，因此需要先补结构化评测模式元数据。\n- 外部源许可审计只支持‘暂不接入’结论；正式 PoC 前仍需逐个确认数据集卡与提交工件许可。"
+      },
+      {
+        "id": "appendix",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src_constrained_top50",
+        "body": "## 附录：五套受约束方案完整 Top 50\n\n每表严格 50 行。原测量分只在同一方法内解释；硬约束位移为正表示相对覆盖校正后的未约束榜上升。各方案前三名：\n\n- **覆盖校正 AIndex**：Claude Fable 5 (with fallback)、GPT-5.6 Sol (max)、GPT-5.5 (xhigh)\n- **约束 1PL/Rasch**：Claude Fable 5 (with fallback)、GPT-5.6 Sol (max)、GPT-5.6 Terra (max)\n- **约束 2PL**：Claude Fable 5 (with fallback)、GPT-5.6 Sol (max)、GPT-5.5 (xhigh)\n- **约束稳健秩**：Claude Fable 5 (with fallback)、GPT-5.6 Sol (max)、GPT-5.6 Terra (max)\n- **约束 Borda**：Claude Fable 5 (with fallback)、GPT-5.6 Sol (max)、GPT-5.6 Terra (max)"
+      },
+      {
+        "id": "top50_block_guarded_aindex",
+        "type": "table",
+        "layout": "full",
+        "tableId": "top50_guarded_aindex"
+      },
+      {
+        "id": "top50_note_guarded_aindex",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src_constrained_top50",
+        "body": "### 覆盖校正 AIndex 表后说明\n\n榜首为 **Claude Fable 5 (with fallback)**；Top 50 含 13 个 Provisional 模型。"
+      },
+      {
+        "id": "top50_block_guarded_rasch",
+        "type": "table",
+        "layout": "full",
+        "tableId": "top50_guarded_rasch"
+      },
+      {
+        "id": "top50_note_guarded_rasch",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src_constrained_top50",
+        "body": "### 约束 1PL/Rasch 表后说明\n\n榜首为 **Claude Fable 5 (with fallback)**；Top 50 含 12 个 Provisional 模型。"
+      },
+      {
+        "id": "top50_block_guarded_twopl",
+        "type": "table",
+        "layout": "full",
+        "tableId": "top50_guarded_twopl"
+      },
+      {
+        "id": "top50_note_guarded_twopl",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src_constrained_top50",
+        "body": "### 约束 2PL 表后说明\n\n榜首为 **Claude Fable 5 (with fallback)**；Top 50 含 12 个 Provisional 模型。"
+      },
+      {
+        "id": "top50_block_guarded_robust",
+        "type": "table",
+        "layout": "full",
+        "tableId": "top50_guarded_robust"
+      },
+      {
+        "id": "top50_note_guarded_robust",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src_constrained_top50",
+        "body": "### 约束稳健秩 表后说明\n\n榜首为 **Claude Fable 5 (with fallback)**；Top 50 含 14 个 Provisional 模型。"
+      },
+      {
+        "id": "top50_block_guarded_borda",
+        "type": "table",
+        "layout": "full",
+        "tableId": "top50_guarded_borda"
+      },
+      {
+        "id": "top50_note_guarded_borda",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src_constrained_top50",
+        "body": "### 约束 Borda 表后说明\n\n榜首为 **Claude Fable 5 (with fallback)**；Top 50 含 14 个 Provisional 模型。"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-08-06T13:48:16+00:00",
+    "status": "ready",
+    "datasets": {
+      "scheme_diagnostics": [
+        {
+          "scheme_id": "guarded_aindex",
+          "scheme_display": "覆盖校正 AIndex",
+          "ranked_models": 328,
+          "main_evidence_models": 129,
+          "fable_rank": 1,
+          "qwen_violations_before": 3,
+          "qwen_violations_after": 0,
+          "flash_open_above": 15,
+          "gemini_3_5_rank": 35,
+          "gemini_3_6_rank": 29,
+          "qwen_3_8_rank": 14,
+          "qwen_3_7_max_rank": 15,
+          "qwen_3_7_plus_rank": 37,
+          "qwen_3_6_plus_rank": 39,
+          "spearman": 0.999155,
+          "top50_overlap": 47,
+          "max_shift": 42,
+          "top50_provisional": 13,
+          "top50_median_unique": 14.0
+        },
+        {
+          "scheme_id": "guarded_rasch",
+          "scheme_display": "约束 1PL/Rasch",
+          "ranked_models": 328,
+          "main_evidence_models": 129,
+          "fable_rank": 1,
+          "qwen_violations_before": 3,
+          "qwen_violations_after": 0,
+          "flash_open_above": 15,
+          "gemini_3_5_rank": 32,
+          "gemini_3_6_rank": 26,
+          "qwen_3_8_rank": 10,
+          "qwen_3_7_max_rank": 11,
+          "qwen_3_7_plus_rank": 33,
+          "qwen_3_6_plus_rank": 35,
+          "spearman": 0.998023,
+          "top50_overlap": 48,
+          "max_shift": 72,
+          "top50_provisional": 12,
+          "top50_median_unique": 13.0
+        },
+        {
+          "scheme_id": "guarded_twopl",
+          "scheme_display": "约束 2PL",
+          "ranked_models": 328,
+          "main_evidence_models": 129,
+          "fable_rank": 1,
+          "qwen_violations_before": 3,
+          "qwen_violations_after": 0,
+          "flash_open_above": 15,
+          "gemini_3_5_rank": 31,
+          "gemini_3_6_rank": 27,
+          "qwen_3_8_rank": 11,
+          "qwen_3_7_max_rank": 12,
+          "qwen_3_7_plus_rank": 34,
+          "qwen_3_6_plus_rank": 36,
+          "spearman": 0.998519,
+          "top50_overlap": 48,
+          "max_shift": 63,
+          "top50_provisional": 12,
+          "top50_median_unique": 13.0
+        },
+        {
+          "scheme_id": "guarded_robust",
+          "scheme_display": "约束稳健秩",
+          "ranked_models": 328,
+          "main_evidence_models": 129,
+          "fable_rank": 1,
+          "qwen_violations_before": 3,
+          "qwen_violations_after": 0,
+          "flash_open_above": 15,
+          "gemini_3_5_rank": 31,
+          "gemini_3_6_rank": 29,
+          "qwen_3_8_rank": 10,
+          "qwen_3_7_max_rank": 11,
+          "qwen_3_7_plus_rank": 42,
+          "qwen_3_6_plus_rank": 44,
+          "spearman": 0.998292,
+          "top50_overlap": 46,
+          "max_shift": 53,
+          "top50_provisional": 14,
+          "top50_median_unique": 12.0
+        },
+        {
+          "scheme_id": "guarded_borda",
+          "scheme_display": "约束 Borda",
+          "ranked_models": 328,
+          "main_evidence_models": 129,
+          "fable_rank": 1,
+          "qwen_violations_before": 3,
+          "qwen_violations_after": 0,
+          "flash_open_above": 15,
+          "gemini_3_5_rank": 27,
+          "gemini_3_6_rank": 32,
+          "qwen_3_8_rank": 6,
+          "qwen_3_7_max_rank": 7,
+          "qwen_3_7_plus_rank": 41,
+          "qwen_3_6_plus_rank": 43,
+          "spearman": 0.997825,
+          "top50_overlap": 47,
+          "max_shift": 62,
+          "top50_provisional": 14,
+          "top50_median_unique": 12.0
+        }
+      ],
+      "target_ranks": [
+        {
+          "scheme_id": "guarded_aindex",
+          "scheme_display": "覆盖校正 AIndex",
+          "model": "Claude Fable 5",
+          "rank": 1
+        },
+        {
+          "scheme_id": "guarded_aindex",
+          "scheme_display": "覆盖校正 AIndex",
+          "model": "Qwen3.8 Max",
+          "rank": 14
+        },
+        {
+          "scheme_id": "guarded_aindex",
+          "scheme_display": "覆盖校正 AIndex",
+          "model": "Qwen3.7 Max",
+          "rank": 15
+        },
+        {
+          "scheme_id": "guarded_aindex",
+          "scheme_display": "覆盖校正 AIndex",
+          "model": "Qwen3.7 Plus",
+          "rank": 37
+        },
+        {
+          "scheme_id": "guarded_aindex",
+          "scheme_display": "覆盖校正 AIndex",
+          "model": "Qwen3.6 Plus",
+          "rank": 39
+        },
+        {
+          "scheme_id": "guarded_aindex",
+          "scheme_display": "覆盖校正 AIndex",
+          "model": "Gemini 3.6 Flash",
+          "rank": 29
+        },
+        {
+          "scheme_id": "guarded_aindex",
+          "scheme_display": "覆盖校正 AIndex",
+          "model": "Gemini 3.5 Flash",
+          "rank": 35
+        },
+        {
+          "scheme_id": "guarded_rasch",
+          "scheme_display": "约束 1PL/Rasch",
+          "model": "Claude Fable 5",
+          "rank": 1
+        },
+        {
+          "scheme_id": "guarded_rasch",
+          "scheme_display": "约束 1PL/Rasch",
+          "model": "Qwen3.8 Max",
+          "rank": 10
+        },
+        {
+          "scheme_id": "guarded_rasch",
+          "scheme_display": "约束 1PL/Rasch",
+          "model": "Qwen3.7 Max",
+          "rank": 11
+        },
+        {
+          "scheme_id": "guarded_rasch",
+          "scheme_display": "约束 1PL/Rasch",
+          "model": "Qwen3.7 Plus",
+          "rank": 33
+        },
+        {
+          "scheme_id": "guarded_rasch",
+          "scheme_display": "约束 1PL/Rasch",
+          "model": "Qwen3.6 Plus",
+          "rank": 35
+        },
+        {
+          "scheme_id": "guarded_rasch",
+          "scheme_display": "约束 1PL/Rasch",
+          "model": "Gemini 3.6 Flash",
+          "rank": 26
+        },
+        {
+          "scheme_id": "guarded_rasch",
+          "scheme_display": "约束 1PL/Rasch",
+          "model": "Gemini 3.5 Flash",
+          "rank": 32
+        },
+        {
+          "scheme_id": "guarded_twopl",
+          "scheme_display": "约束 2PL",
+          "model": "Claude Fable 5",
+          "rank": 1
+        },
+        {
+          "scheme_id": "guarded_twopl",
+          "scheme_display": "约束 2PL",
+          "model": "Qwen3.8 Max",
+          "rank": 11
+        },
+        {
+          "scheme_id": "guarded_twopl",
+          "scheme_display": "约束 2PL",
+          "model": "Qwen3.7 Max",
+          "rank": 12
+        },
+        {
+          "scheme_id": "guarded_twopl",
+          "scheme_display": "约束 2PL",
+          "model": "Qwen3.7 Plus",
+          "rank": 34
+        },
+        {
+          "scheme_id": "guarded_twopl",
+          "scheme_display": "约束 2PL",
+          "model": "Qwen3.6 Plus",
+          "rank": 36
+        },
+        {
+          "scheme_id": "guarded_twopl",
+          "scheme_display": "约束 2PL",
+          "model": "Gemini 3.6 Flash",
+          "rank": 27
+        },
+        {
+          "scheme_id": "guarded_twopl",
+          "scheme_display": "约束 2PL",
+          "model": "Gemini 3.5 Flash",
+          "rank": 31
+        },
+        {
+          "scheme_id": "guarded_robust",
+          "scheme_display": "约束稳健秩",
+          "model": "Claude Fable 5",
+          "rank": 1
+        },
+        {
+          "scheme_id": "guarded_robust",
+          "scheme_display": "约束稳健秩",
+          "model": "Qwen3.8 Max",
+          "rank": 10
+        },
+        {
+          "scheme_id": "guarded_robust",
+          "scheme_display": "约束稳健秩",
+          "model": "Qwen3.7 Max",
+          "rank": 11
+        },
+        {
+          "scheme_id": "guarded_robust",
+          "scheme_display": "约束稳健秩",
+          "model": "Qwen3.7 Plus",
+          "rank": 42
+        },
+        {
+          "scheme_id": "guarded_robust",
+          "scheme_display": "约束稳健秩",
+          "model": "Qwen3.6 Plus",
+          "rank": 44
+        },
+        {
+          "scheme_id": "guarded_robust",
+          "scheme_display": "约束稳健秩",
+          "model": "Gemini 3.6 Flash",
+          "rank": 29
+        },
+        {
+          "scheme_id": "guarded_robust",
+          "scheme_display": "约束稳健秩",
+          "model": "Gemini 3.5 Flash",
+          "rank": 31
+        },
+        {
+          "scheme_id": "guarded_borda",
+          "scheme_display": "约束 Borda",
+          "model": "Claude Fable 5",
+          "rank": 1
+        },
+        {
+          "scheme_id": "guarded_borda",
+          "scheme_display": "约束 Borda",
+          "model": "Qwen3.8 Max",
+          "rank": 6
+        },
+        {
+          "scheme_id": "guarded_borda",
+          "scheme_display": "约束 Borda",
+          "model": "Qwen3.7 Max",
+          "rank": 7
+        },
+        {
+          "scheme_id": "guarded_borda",
+          "scheme_display": "约束 Borda",
+          "model": "Qwen3.7 Plus",
+          "rank": 41
+        },
+        {
+          "scheme_id": "guarded_borda",
+          "scheme_display": "约束 Borda",
+          "model": "Qwen3.6 Plus",
+          "rank": 43
+        },
+        {
+          "scheme_id": "guarded_borda",
+          "scheme_display": "约束 Borda",
+          "model": "Gemini 3.6 Flash",
+          "rank": 32
+        },
+        {
+          "scheme_id": "guarded_borda",
+          "scheme_display": "约束 Borda",
+          "model": "Gemini 3.5 Flash",
+          "rank": 27
+        }
+      ],
+      "target_coverage": [
+        {
+          "model": "Claude Fable 5",
+          "measure": "板块测试槽位",
+          "count": 27
+        },
+        {
+          "model": "Claude Fable 5",
+          "measure": "唯一测试家族",
+          "count": 19
+        },
+        {
+          "model": "Qwen3.8 Max",
+          "measure": "板块测试槽位",
+          "count": 13
+        },
+        {
+          "model": "Qwen3.8 Max",
+          "measure": "唯一测试家族",
+          "count": 7
+        },
+        {
+          "model": "Qwen3.7 Max",
+          "measure": "板块测试槽位",
+          "count": 22
+        },
+        {
+          "model": "Qwen3.7 Max",
+          "measure": "唯一测试家族",
+          "count": 14
+        },
+        {
+          "model": "Qwen3.7 Plus",
+          "measure": "板块测试槽位",
+          "count": 16
+        },
+        {
+          "model": "Qwen3.7 Plus",
+          "measure": "唯一测试家族",
+          "count": 9
+        },
+        {
+          "model": "Qwen3.6 Max Preview",
+          "measure": "板块测试槽位",
+          "count": 14
+        },
+        {
+          "model": "Qwen3.6 Max Preview",
+          "measure": "唯一测试家族",
+          "count": 8
+        },
+        {
+          "model": "Qwen3.6 Plus",
+          "measure": "板块测试槽位",
+          "count": 20
+        },
+        {
+          "model": "Qwen3.6 Plus",
+          "measure": "唯一测试家族",
+          "count": 12
+        },
+        {
+          "model": "Gemini 3.6 Flash",
+          "measure": "板块测试槽位",
+          "count": 19
+        },
+        {
+          "model": "Gemini 3.6 Flash",
+          "measure": "唯一测试家族",
+          "count": 12
+        },
+        {
+          "model": "Gemini 3.5 Flash",
+          "measure": "板块测试槽位",
+          "count": 16
+        },
+        {
+          "model": "Gemini 3.5 Flash",
+          "measure": "唯一测试家族",
+          "count": 9
+        }
+      ],
+      "target_coverage_table": [
+        {
+          "model": "Claude Fable 5",
+          "evidence_tier": "Main",
+          "board_slots": 27,
+          "unique_families": 19,
+          "min_board_tests": 3,
+          "boards_below_3": 0,
+          "coverage_penalty_z": 0.0
+        },
+        {
+          "model": "Qwen3.8 Max",
+          "evidence_tier": "Provisional",
+          "board_slots": 13,
+          "unique_families": 7,
+          "min_board_tests": 2,
+          "boards_below_3": 3,
+          "coverage_penalty_z": 0.85
+        },
+        {
+          "model": "Qwen3.7 Max",
+          "evidence_tier": "Main",
+          "board_slots": 22,
+          "unique_families": 14,
+          "min_board_tests": 3,
+          "boards_below_3": 0,
+          "coverage_penalty_z": 0.0
+        },
+        {
+          "model": "Qwen3.7 Plus",
+          "evidence_tier": "Main",
+          "board_slots": 16,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "boards_below_3": 0,
+          "coverage_penalty_z": 0.24
+        },
+        {
+          "model": "Qwen3.6 Max Preview",
+          "evidence_tier": "Provisional",
+          "board_slots": 14,
+          "unique_families": 8,
+          "min_board_tests": 2,
+          "boards_below_3": 2,
+          "coverage_penalty_z": 0.62
+        },
+        {
+          "model": "Qwen3.6 Plus",
+          "evidence_tier": "Main",
+          "board_slots": 20,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "boards_below_3": 0,
+          "coverage_penalty_z": 0.0
+        },
+        {
+          "model": "Gemini 3.6 Flash",
+          "evidence_tier": "Main",
+          "board_slots": 19,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "boards_below_3": 0,
+          "coverage_penalty_z": 0.0
+        },
+        {
+          "model": "Gemini 3.5 Flash",
+          "evidence_tier": "Main",
+          "board_slots": 16,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "boards_below_3": 0,
+          "coverage_penalty_z": 0.24
+        }
+      ],
+      "flash_sensitivity": [
+        {
+          "scheme_display": "覆盖校正 AIndex",
+          "flash_open_floor": 5,
+          "gemini_3_5_rank": 30,
+          "gemini_3_6_rank": 19,
+          "min_open_above": 5,
+          "spearman": 0.999286,
+          "top50_overlap": 47,
+          "max_shift": 45
+        },
+        {
+          "scheme_display": "覆盖校正 AIndex",
+          "flash_open_floor": 10,
+          "gemini_3_5_rank": 30,
+          "gemini_3_6_rank": 24,
+          "min_open_above": 10,
+          "spearman": 0.999242,
+          "top50_overlap": 47,
+          "max_shift": 45
+        },
+        {
+          "scheme_display": "覆盖校正 AIndex",
+          "flash_open_floor": 15,
+          "gemini_3_5_rank": 35,
+          "gemini_3_6_rank": 29,
+          "min_open_above": 15,
+          "spearman": 0.999155,
+          "top50_overlap": 47,
+          "max_shift": 42
+        },
+        {
+          "scheme_display": "约束 1PL/Rasch",
+          "flash_open_floor": 5,
+          "gemini_3_5_rank": 23,
+          "gemini_3_6_rank": 16,
+          "min_open_above": 5,
+          "spearman": 0.998205,
+          "top50_overlap": 48,
+          "max_shift": 72
+        },
+        {
+          "scheme_display": "约束 1PL/Rasch",
+          "flash_open_floor": 10,
+          "gemini_3_5_rank": 27,
+          "gemini_3_6_rank": 21,
+          "min_open_above": 10,
+          "spearman": 0.998199,
+          "top50_overlap": 48,
+          "max_shift": 72
+        },
+        {
+          "scheme_display": "约束 1PL/Rasch",
+          "flash_open_floor": 15,
+          "gemini_3_5_rank": 32,
+          "gemini_3_6_rank": 26,
+          "min_open_above": 15,
+          "spearman": 0.998023,
+          "top50_overlap": 48,
+          "max_shift": 72
+        },
+        {
+          "scheme_display": "约束 2PL",
+          "flash_open_floor": 5,
+          "gemini_3_5_rank": 22,
+          "gemini_3_6_rank": 17,
+          "min_open_above": 5,
+          "spearman": 0.998731,
+          "top50_overlap": 48,
+          "max_shift": 63
+        },
+        {
+          "scheme_display": "约束 2PL",
+          "flash_open_floor": 10,
+          "gemini_3_5_rank": 26,
+          "gemini_3_6_rank": 22,
+          "min_open_above": 10,
+          "spearman": 0.99868,
+          "top50_overlap": 48,
+          "max_shift": 63
+        },
+        {
+          "scheme_display": "约束 2PL",
+          "flash_open_floor": 15,
+          "gemini_3_5_rank": 31,
+          "gemini_3_6_rank": 27,
+          "min_open_above": 15,
+          "spearman": 0.998519,
+          "top50_overlap": 48,
+          "max_shift": 63
+        },
+        {
+          "scheme_display": "约束稳健秩",
+          "flash_open_floor": 5,
+          "gemini_3_5_rank": 21,
+          "gemini_3_6_rank": 19,
+          "min_open_above": 5,
+          "spearman": 0.999394,
+          "top50_overlap": 48,
+          "max_shift": 53
+        },
+        {
+          "scheme_display": "约束稳健秩",
+          "flash_open_floor": 10,
+          "gemini_3_5_rank": 26,
+          "gemini_3_6_rank": 24,
+          "min_open_above": 10,
+          "spearman": 0.99901,
+          "top50_overlap": 48,
+          "max_shift": 53
+        },
+        {
+          "scheme_display": "约束稳健秩",
+          "flash_open_floor": 15,
+          "gemini_3_5_rank": 31,
+          "gemini_3_6_rank": 29,
+          "min_open_above": 15,
+          "spearman": 0.998292,
+          "top50_overlap": 46,
+          "max_shift": 53
+        },
+        {
+          "scheme_display": "约束 Borda",
+          "flash_open_floor": 5,
+          "gemini_3_5_rank": 17,
+          "gemini_3_6_rank": 22,
+          "min_open_above": 5,
+          "spearman": 0.999179,
+          "top50_overlap": 48,
+          "max_shift": 62
+        },
+        {
+          "scheme_display": "约束 Borda",
+          "flash_open_floor": 10,
+          "gemini_3_5_rank": 22,
+          "gemini_3_6_rank": 27,
+          "min_open_above": 10,
+          "spearman": 0.998701,
+          "top50_overlap": 48,
+          "max_shift": 62
+        },
+        {
+          "scheme_display": "约束 Borda",
+          "flash_open_floor": 15,
+          "gemini_3_5_rank": 27,
+          "gemini_3_6_rank": 32,
+          "min_open_above": 15,
+          "spearman": 0.997825,
+          "top50_overlap": 47,
+          "max_shift": 62
+        }
+      ],
+      "external_sources": [
+        {
+          "source": "LiveBench",
+          "authority": "Official LiveBench project",
+          "freshness": "Repository release constants reach 2026-06-25; public changelog observed through 2026-01-08",
+          "license": "Code is Apache-2.0; dataset and upstream question/result redistribution terms require separate confirmation",
+          "mapping_risk": "High",
+          "recommendation": "Offline PoC only; do not add to Action until aggregation contract, access reliability and data license are confirmed",
+          "endpoint": "https://huggingface.co/datasets/livebench/model_judgment (leaderboard split; must aggregate judgments by release/category)"
+        },
+        {
+          "source": "Aider Polyglot",
+          "authority": "Official Aider repository",
+          "freshness": "69 runs; latest observed test date 2025-10-03",
+          "license": "Repository is Apache-2.0",
+          "mapping_risk": "Medium",
+          "recommendation": "Good parser PoC or low-weight historical reference; too stale for the production Action",
+          "endpoint": "https://api.github.com/repos/Aider-AI/aider/contents/aider/website/_data/polyglot_leaderboard.yml"
+        },
+        {
+          "source": "SWE-bench Verified",
+          "authority": "Official SWE-bench experiments repository",
+          "freshness": "134 verified submission directories; latest observed 2025-12-15",
+          "license": "Main SWE-bench repo is MIT; experiments submission artifacts have no independently confirmed redistribution license",
+          "mapping_risk": "High",
+          "recommendation": "Do not merge into pure-model main score; suitable for a separate agent/system leaderboard after license review",
+          "endpoint": "GitHub tree: SWE-bench/experiments/evaluation/verified/<submission>/results/results.json plus metadata.yaml"
+        },
+        {
+          "source": "LMArena",
+          "authority": "Official LMArena project",
+          "freshness": "Current machine endpoint and refresh contract not verified",
+          "license": "Redistribution license for leaderboard snapshots not confirmed",
+          "mapping_risk": "High",
+          "recommendation": "Do not automate until LMArena documents a stable versioned export and reuse terms",
+          "endpoint": "No stable documented current API; older guidance exposes dated CSV artifacts in a Hugging Face Space"
+        },
+        {
+          "source": "Open LLM Leaderboard",
+          "authority": "Hugging Face community leaderboard",
+          "freshness": "Current activity and accessible export not verified in this run",
+          "license": "Dataset-specific license must be checked",
+          "mapping_risk": "High",
+          "recommendation": "Discovery source only; do not add to Action",
+          "endpoint": "Hugging Face datasets/Spaces only; exact active export not verified"
+        },
+        {
+          "source": "MMLU-Pro",
+          "authority": "Official benchmark dataset/evaluation code",
+          "freshness": "Static benchmark rather than continuously refreshed leaderboard",
+          "license": "Dataset/code terms apply; no canonical results redistribution contract",
+          "mapping_risk": "Medium",
+          "recommendation": "Keep existing sourced scores; not an AA-like refresh source",
+          "endpoint": "Static dataset and evaluator; no maintained canonical model-results feed"
+        },
+        {
+          "source": "GPQA",
+          "authority": "Official benchmark dataset/evaluation code",
+          "freshness": "Static benchmark rather than continuously refreshed leaderboard",
+          "license": "Dataset terms apply; no canonical results redistribution contract",
+          "mapping_risk": "Medium",
+          "recommendation": "Keep existing sourced scores; not an AA-like refresh source",
+          "endpoint": "Static dataset and evaluator; no maintained canonical model-results feed"
+        }
+      ],
+      "top50_guarded_aindex": [
+        {
+          "rank": 1,
+          "model": "Claude Fable 5 (with fallback)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 56.7811,
+          "raw_method_rank": 1,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 19,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 2,
+          "model": "GPT-5.6 Sol (max)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 53.818,
+          "raw_method_rank": 2,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 18,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 3,
+          "model": "GPT-5.5 (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 51.8909,
+          "raw_method_rank": 4,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 1,
+          "unique_families": 21,
+          "min_board_tests": 4,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 4,
+          "model": "Claude Opus 4.8 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 51.1241,
+          "raw_method_rank": 6,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 2,
+          "unique_families": 20,
+          "min_board_tests": 4,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 5,
+          "model": "GPT-5.6 Terra (max)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 50.1946,
+          "raw_method_rank": 7,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 2,
+          "unique_families": 13,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 6,
+          "model": "Claude Opus 4.7 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 49.4889,
+          "raw_method_rank": 8,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 2,
+          "unique_families": 17,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 7,
+          "model": "Kimi K3 (max)",
+          "creator": "Kimi",
+          "evidence_tier": "Provisional",
+          "measurement_score": 51.2253,
+          "raw_method_rank": 5,
+          "coverage_penalty_z": 0.15,
+          "constraint_shift": 0,
+          "total_shift": -2,
+          "unique_families": 15,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 8,
+          "model": "GPT-5.4 (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 48.5873,
+          "raw_method_rank": 9,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 1,
+          "unique_families": 13,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 9,
+          "model": "Gemini 3.1 Pro Preview",
+          "creator": "Google",
+          "evidence_tier": "Main",
+          "measurement_score": 47.9716,
+          "raw_method_rank": 10,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 1,
+          "unique_families": 19,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 10,
+          "model": "Claude Opus 5 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Provisional",
+          "measurement_score": 52.5445,
+          "raw_method_rank": 3,
+          "coverage_penalty_z": 0.46,
+          "constraint_shift": 0,
+          "total_shift": -7,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 11,
+          "model": "GLM-5.2 (max)",
+          "creator": "Z AI",
+          "evidence_tier": "Main",
+          "measurement_score": 46.2548,
+          "raw_method_rank": 12,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 1,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 12,
+          "model": "DeepSeek V4 Pro (max)",
+          "creator": "DeepSeek",
+          "evidence_tier": "Main",
+          "measurement_score": 46.1716,
+          "raw_method_rank": 13,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 1,
+          "unique_families": 21,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 13,
+          "model": "Kimi K2.6",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 45.9102,
+          "raw_method_rank": 14,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 1,
+          "unique_families": 21,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 14,
+          "model": "Qwen3.8 Max",
+          "creator": "Alibaba",
+          "evidence_tier": "Provisional",
+          "measurement_score": 44.6178,
+          "raw_method_rank": 19,
+          "coverage_penalty_z": 0.85,
+          "constraint_shift": 40,
+          "total_shift": 5,
+          "unique_families": 7,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_max"
+        },
+        {
+          "rank": 15,
+          "model": "Qwen3.7 Max",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 44.9845,
+          "raw_method_rank": 16,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": 1,
+          "unique_families": 14,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_max | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 16,
+          "model": "Claude Opus 4.6 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 44.5765,
+          "raw_method_rank": 20,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": 4,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 17,
+          "model": "DeepSeek V4 Flash (max)",
+          "creator": "DeepSeek",
+          "evidence_tier": "Main",
+          "measurement_score": 42.1954,
+          "raw_method_rank": 28,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 2,
+          "total_shift": 11,
+          "unique_families": 20,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 18,
+          "model": "Inkling Small",
+          "creator": "Thinking Machines",
+          "evidence_tier": "Main",
+          "measurement_score": 41.5699,
+          "raw_method_rank": 30,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 2,
+          "total_shift": 12,
+          "unique_families": 19,
+          "min_board_tests": 4,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 19,
+          "model": "MiniMax-M3",
+          "creator": "MiniMax",
+          "evidence_tier": "Main",
+          "measurement_score": 40.8384,
+          "raw_method_rank": 31,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 2,
+          "total_shift": 12,
+          "unique_families": 13,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 20,
+          "model": "Inkling",
+          "creator": "Thinking Machines",
+          "evidence_tier": "Main",
+          "measurement_score": 40.1522,
+          "raw_method_rank": 34,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 3,
+          "total_shift": 14,
+          "unique_families": 19,
+          "min_board_tests": 4,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 21,
+          "model": "MiMo-V2.5-Pro",
+          "creator": "Xiaomi",
+          "evidence_tier": "Main",
+          "measurement_score": 39.7738,
+          "raw_method_rank": 36,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 3,
+          "total_shift": 15,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 22,
+          "model": "GLM-5.1",
+          "creator": "Z AI",
+          "evidence_tier": "Main",
+          "measurement_score": 38.9862,
+          "raw_method_rank": 38,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 4,
+          "total_shift": 16,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 23,
+          "model": "Kimi K2.5",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 38.7429,
+          "raw_method_rank": 40,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 5,
+          "total_shift": 17,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 24,
+          "model": "Qwen3.5 397B A17B",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 38.4038,
+          "raw_method_rank": 43,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 7,
+          "total_shift": 19,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 25,
+          "model": "MiniMax-M2.7",
+          "creator": "MiniMax",
+          "evidence_tier": "Main",
+          "measurement_score": 38.3319,
+          "raw_method_rank": 44,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 7,
+          "total_shift": 19,
+          "unique_families": 14,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 26,
+          "model": "Kimi K2 Thinking",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 37.7765,
+          "raw_method_rank": 46,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 8,
+          "total_shift": 20,
+          "unique_families": 15,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 27,
+          "model": "GLM-5",
+          "creator": "Z AI",
+          "evidence_tier": "Main",
+          "measurement_score": 37.4417,
+          "raw_method_rank": 48,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 8,
+          "total_shift": 21,
+          "unique_families": 15,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 28,
+          "model": "Qwen3.6 27B",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 37.3128,
+          "raw_method_rank": 50,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 9,
+          "total_shift": 22,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 29,
+          "model": "Gemini 3.6 Flash",
+          "creator": "Google",
+          "evidence_tier": "Main",
+          "measurement_score": 43.3867,
+          "raw_method_rank": 24,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -13,
+          "total_shift": -5,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 30,
+          "model": "GPT-5.6 Luna (max)",
+          "creator": "OpenAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 46.2806,
+          "raw_method_rank": 11,
+          "coverage_penalty_z": 0.23,
+          "constraint_shift": -13,
+          "total_shift": -19,
+          "unique_families": 11,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 31,
+          "model": "Claude Sonnet 5 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Provisional",
+          "measurement_score": 45.8533,
+          "raw_method_rank": 15,
+          "coverage_penalty_z": 0.23,
+          "constraint_shift": -13,
+          "total_shift": -16,
+          "unique_families": 11,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 32,
+          "model": "Hy3",
+          "creator": "Tencent",
+          "evidence_tier": "Provisional",
+          "measurement_score": 42.324,
+          "raw_method_rank": 27,
+          "coverage_penalty_z": 0.15,
+          "constraint_shift": -10,
+          "total_shift": -5,
+          "unique_families": 14,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 33,
+          "model": "GPT-5.2 (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 43.3944,
+          "raw_method_rank": 23,
+          "coverage_penalty_z": 0.31,
+          "constraint_shift": -8,
+          "total_shift": -10,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 34,
+          "model": "Grok 4.5 (high)",
+          "creator": "SpaceXAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 44.8746,
+          "raw_method_rank": 17,
+          "coverage_penalty_z": 0.47,
+          "constraint_shift": -7,
+          "total_shift": -17,
+          "unique_families": 8,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 35,
+          "model": "Gemini 3.5 Flash",
+          "creator": "Google",
+          "evidence_tier": "Main",
+          "measurement_score": 41.7862,
+          "raw_method_rank": 29,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -6,
+          "total_shift": -6,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 36,
+          "model": "Gemini 3 Pro Preview (high)",
+          "creator": "Google",
+          "evidence_tier": "Provisional",
+          "measurement_score": 42.4866,
+          "raw_method_rank": 26,
+          "coverage_penalty_z": 0.31,
+          "constraint_shift": -6,
+          "total_shift": -10,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 37,
+          "model": "Qwen3.7 Plus",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 37.537,
+          "raw_method_rank": 47,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": 15,
+          "total_shift": 10,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_plus | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 38,
+          "model": "Qwen3.6 Max Preview",
+          "creator": "Alibaba",
+          "evidence_tier": "Provisional",
+          "measurement_score": 35.6555,
+          "raw_method_rank": 65,
+          "coverage_penalty_z": 0.62,
+          "constraint_shift": 42,
+          "total_shift": 27,
+          "unique_families": 8,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_max | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 39,
+          "model": "Qwen3.6 Plus",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 37.8798,
+          "raw_method_rank": 45,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -6,
+          "total_shift": 6,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_plus | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 40,
+          "model": "GPT-5.1 (high)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 38.4441,
+          "raw_method_rank": 42,
+          "coverage_penalty_z": 0.08,
+          "constraint_shift": -4,
+          "total_shift": 2,
+          "unique_families": 11,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 41,
+          "model": "Kimi K2.7 Code",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 39.3333,
+          "raw_method_rank": 37,
+          "coverage_penalty_z": 0.16,
+          "constraint_shift": -3,
+          "total_shift": -4,
+          "unique_families": 10,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 42,
+          "model": "GLM-4.7",
+          "creator": "Z AI",
+          "evidence_tier": "Main",
+          "measurement_score": 37.1534,
+          "raw_method_rank": 51,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -3,
+          "total_shift": 9,
+          "unique_families": 18,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 43,
+          "model": "MiniMax-M2.5",
+          "creator": "MiniMax",
+          "evidence_tier": "Main",
+          "measurement_score": 36.8677,
+          "raw_method_rank": 53,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -3,
+          "total_shift": 10,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 44,
+          "model": "Nemotron 3 Ultra",
+          "creator": "NVIDIA",
+          "evidence_tier": "Main",
+          "measurement_score": 36.789,
+          "raw_method_rank": 56,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -3,
+          "total_shift": 12,
+          "unique_families": 15,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 45,
+          "model": "Muse Spark",
+          "creator": "Meta",
+          "evidence_tier": "Main",
+          "measurement_score": 39.8987,
+          "raw_method_rank": 35,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -3,
+          "total_shift": -10,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 46,
+          "model": "Gemini 3 Flash",
+          "creator": "Google",
+          "evidence_tier": "Provisional",
+          "measurement_score": 40.4998,
+          "raw_method_rank": 32,
+          "coverage_penalty_z": 0.31,
+          "constraint_shift": -3,
+          "total_shift": -14,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 47,
+          "model": "Claude Opus 4.5",
+          "creator": "Anthropic",
+          "evidence_tier": "Provisional",
+          "measurement_score": 40.4904,
+          "raw_method_rank": 33,
+          "coverage_penalty_z": 0.31,
+          "constraint_shift": -3,
+          "total_shift": -14,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 48,
+          "model": "Qwen3.5 27B",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 36.246,
+          "raw_method_rank": 59,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -3,
+          "total_shift": 11,
+          "unique_families": 15,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 49,
+          "model": "GPT-5.3 Codex (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 43.8891,
+          "raw_method_rank": 22,
+          "coverage_penalty_z": 0.62,
+          "constraint_shift": -3,
+          "total_shift": -27,
+          "unique_families": 8,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 50,
+          "model": "MiniMax-M2.1",
+          "creator": "MiniMax",
+          "evidence_tier": "Main",
+          "measurement_score": 35.7579,
+          "raw_method_rank": 63,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -3,
+          "total_shift": 13,
+          "unique_families": 13,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        }
+      ],
+      "top50_guarded_rasch": [
+        {
+          "rank": 1,
+          "model": "Claude Fable 5 (with fallback)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 97.3772,
+          "raw_method_rank": 1,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 19,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 2,
+          "model": "GPT-5.6 Sol (max)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 97.0588,
+          "raw_method_rank": 2,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 18,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 3,
+          "model": "GPT-5.6 Terra (max)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 95.7745,
+          "raw_method_rank": 3,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 13,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 4,
+          "model": "GPT-5.5 (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 95.383,
+          "raw_method_rank": 4,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 21,
+          "min_board_tests": 4,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 5,
+          "model": "Claude Opus 4.8 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 95.1718,
+          "raw_method_rank": 5,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 20,
+          "min_board_tests": 4,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 6,
+          "model": "GPT-5.4 (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 94.1911,
+          "raw_method_rank": 6,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 13,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 7,
+          "model": "Claude Opus 4.7 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 93.5154,
+          "raw_method_rank": 7,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 17,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 8,
+          "model": "Gemini 3.1 Pro Preview",
+          "creator": "Google",
+          "evidence_tier": "Main",
+          "measurement_score": 93.0027,
+          "raw_method_rank": 8,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 19,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 9,
+          "model": "GLM-5.2 (max)",
+          "creator": "Z AI",
+          "evidence_tier": "Main",
+          "measurement_score": 92.7552,
+          "raw_method_rank": 9,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 10,
+          "model": "Qwen3.8 Max",
+          "creator": "Alibaba",
+          "evidence_tier": "Provisional",
+          "measurement_score": 80.5932,
+          "raw_method_rank": 52,
+          "coverage_penalty_z": 0.52,
+          "constraint_shift": 72,
+          "total_shift": 42,
+          "unique_families": 7,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_max"
+        },
+        {
+          "rank": 11,
+          "model": "Qwen3.7 Max",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 92.1739,
+          "raw_method_rank": 10,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": -1,
+          "unique_families": 14,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_max | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 12,
+          "model": "DeepSeek V4 Pro (max)",
+          "creator": "DeepSeek",
+          "evidence_tier": "Main",
+          "measurement_score": 91.0996,
+          "raw_method_rank": 12,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": 0,
+          "unique_families": 21,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 13,
+          "model": "Kimi K2.6",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 90.8054,
+          "raw_method_rank": 13,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": 0,
+          "unique_families": 21,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 14,
+          "model": "MiniMax-M3",
+          "creator": "MiniMax",
+          "evidence_tier": "Main",
+          "measurement_score": 87.6498,
+          "raw_method_rank": 24,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 1,
+          "total_shift": 10,
+          "unique_families": 13,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 15,
+          "model": "DeepSeek V4 Flash (max)",
+          "creator": "DeepSeek",
+          "evidence_tier": "Main",
+          "measurement_score": 87.2375,
+          "raw_method_rank": 27,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 1,
+          "total_shift": 12,
+          "unique_families": 20,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 16,
+          "model": "MiMo-V2.5-Pro",
+          "creator": "Xiaomi",
+          "evidence_tier": "Main",
+          "measurement_score": 86.5492,
+          "raw_method_rank": 31,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 5,
+          "total_shift": 15,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 17,
+          "model": "GLM-5.1",
+          "creator": "Z AI",
+          "evidence_tier": "Main",
+          "measurement_score": 84.4214,
+          "raw_method_rank": 36,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 6,
+          "total_shift": 19,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 18,
+          "model": "Kimi K2.7 Code",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 88.5176,
+          "raw_method_rank": 21,
+          "coverage_penalty_z": 0.16,
+          "constraint_shift": 7,
+          "total_shift": 3,
+          "unique_families": 10,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 19,
+          "model": "Kimi K2.5",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 82.8599,
+          "raw_method_rank": 40,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 8,
+          "total_shift": 21,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 20,
+          "model": "Inkling Small",
+          "creator": "Thinking Machines",
+          "evidence_tier": "Main",
+          "measurement_score": 82.4581,
+          "raw_method_rank": 42,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 8,
+          "total_shift": 22,
+          "unique_families": 19,
+          "min_board_tests": 4,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 21,
+          "model": "Qwen3.5 397B A17B",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 81.7451,
+          "raw_method_rank": 45,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 10,
+          "total_shift": 24,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 22,
+          "model": "GLM-4.7",
+          "creator": "Z AI",
+          "evidence_tier": "Main",
+          "measurement_score": 81.4816,
+          "raw_method_rank": 46,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 12,
+          "total_shift": 24,
+          "unique_families": 18,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 23,
+          "model": "Nemotron 3 Ultra",
+          "creator": "NVIDIA",
+          "evidence_tier": "Main",
+          "measurement_score": 81.2597,
+          "raw_method_rank": 48,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 13,
+          "total_shift": 25,
+          "unique_families": 15,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 24,
+          "model": "MiniMax-M2.7",
+          "creator": "MiniMax",
+          "evidence_tier": "Main",
+          "measurement_score": 80.8409,
+          "raw_method_rank": 49,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 14,
+          "total_shift": 25,
+          "unique_families": 14,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 25,
+          "model": "DeepSeek V3.2",
+          "creator": "DeepSeek",
+          "evidence_tier": "Main",
+          "measurement_score": 82.9977,
+          "raw_method_rank": 38,
+          "coverage_penalty_z": 0.08,
+          "constraint_shift": 14,
+          "total_shift": 13,
+          "unique_families": 11,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 26,
+          "model": "Gemini 3.6 Flash",
+          "creator": "Google",
+          "evidence_tier": "Main",
+          "measurement_score": 88.5067,
+          "raw_method_rank": 22,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -13,
+          "total_shift": -4,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 27,
+          "model": "Kimi K3 (max)",
+          "creator": "Kimi",
+          "evidence_tier": "Provisional",
+          "measurement_score": 89.3956,
+          "raw_method_rank": 18,
+          "coverage_penalty_z": 0.04,
+          "constraint_shift": -13,
+          "total_shift": -9,
+          "unique_families": 15,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 28,
+          "model": "Claude Opus 4.6 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 87.0069,
+          "raw_method_rank": 29,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -11,
+          "total_shift": 1,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 29,
+          "model": "GPT-5.6 Luna (max)",
+          "creator": "OpenAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 90.3058,
+          "raw_method_rank": 14,
+          "coverage_penalty_z": 0.12,
+          "constraint_shift": -11,
+          "total_shift": -15,
+          "unique_families": 11,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 30,
+          "model": "Claude Sonnet 5 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Provisional",
+          "measurement_score": 90.1895,
+          "raw_method_rank": 16,
+          "coverage_penalty_z": 0.12,
+          "constraint_shift": -11,
+          "total_shift": -14,
+          "unique_families": 11,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 31,
+          "model": "GPT-5.1 (high)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 88.9359,
+          "raw_method_rank": 20,
+          "coverage_penalty_z": 0.08,
+          "constraint_shift": -11,
+          "total_shift": -11,
+          "unique_families": 11,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 32,
+          "model": "Gemini 3.5 Flash",
+          "creator": "Google",
+          "evidence_tier": "Main",
+          "measurement_score": 91.8872,
+          "raw_method_rank": 11,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -10,
+          "total_shift": -21,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 33,
+          "model": "Qwen3.7 Plus",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 87.4906,
+          "raw_method_rank": 25,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": 8,
+          "total_shift": -8,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_plus | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 34,
+          "model": "Qwen3.6 Max Preview",
+          "creator": "Alibaba",
+          "evidence_tier": "Provisional",
+          "measurement_score": 72.0223,
+          "raw_method_rank": 80,
+          "coverage_penalty_z": 0.4,
+          "constraint_shift": 61,
+          "total_shift": 46,
+          "unique_families": 8,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_max | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 35,
+          "model": "Qwen3.6 Plus",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 83.9758,
+          "raw_method_rank": 37,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -11,
+          "total_shift": 2,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_plus | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 36,
+          "model": "Claude Opus 5 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Provisional",
+          "measurement_score": 90.2145,
+          "raw_method_rank": 15,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -10,
+          "total_shift": -21,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 37,
+          "model": "Muse Spark",
+          "creator": "Meta",
+          "evidence_tier": "Main",
+          "measurement_score": 89.2547,
+          "raw_method_rank": 19,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -8,
+          "total_shift": -18,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 38,
+          "model": "GPT-5 (high)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 84.5973,
+          "raw_method_rank": 34,
+          "coverage_penalty_z": 0.08,
+          "constraint_shift": -8,
+          "total_shift": -4,
+          "unique_families": 11,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 39,
+          "model": "GPT-5.2 (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 87.4309,
+          "raw_method_rank": 26,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -7,
+          "total_shift": -13,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 40,
+          "model": "Hy3",
+          "creator": "Tencent",
+          "evidence_tier": "Provisional",
+          "measurement_score": 82.8671,
+          "raw_method_rank": 39,
+          "coverage_penalty_z": 0.04,
+          "constraint_shift": -7,
+          "total_shift": -1,
+          "unique_families": 14,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 41,
+          "model": "GPT-5.4 mini (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 88.3029,
+          "raw_method_rank": 23,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -6,
+          "total_shift": -18,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 42,
+          "model": "Gemini 3 Pro Preview (high)",
+          "creator": "Google",
+          "evidence_tier": "Provisional",
+          "measurement_score": 86.6408,
+          "raw_method_rank": 30,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -5,
+          "total_shift": -12,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 43,
+          "model": "Kimi K2 Thinking",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 80.698,
+          "raw_method_rank": 51,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -3,
+          "total_shift": 8,
+          "unique_families": 15,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 44,
+          "model": "Claude Sonnet 4.6 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 87.0564,
+          "raw_method_rank": 28,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -2,
+          "total_shift": -16,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 45,
+          "model": "Inkling",
+          "creator": "Thinking Machines",
+          "evidence_tier": "Main",
+          "measurement_score": 80.1513,
+          "raw_method_rank": 55,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -2,
+          "total_shift": 10,
+          "unique_families": 19,
+          "min_board_tests": 4,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 46,
+          "model": "Grok 4.5 (high)",
+          "creator": "SpaceXAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 89.7928,
+          "raw_method_rank": 17,
+          "coverage_penalty_z": 0.36,
+          "constraint_shift": -2,
+          "total_shift": -29,
+          "unique_families": 8,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 47,
+          "model": "Gemini 3 Flash",
+          "creator": "Google",
+          "evidence_tier": "Provisional",
+          "measurement_score": 84.879,
+          "raw_method_rank": 33,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -2,
+          "total_shift": -14,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 48,
+          "model": "Claude Opus 4.5",
+          "creator": "Anthropic",
+          "evidence_tier": "Provisional",
+          "measurement_score": 84.4536,
+          "raw_method_rank": 35,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -2,
+          "total_shift": -13,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 49,
+          "model": "Qwen3.6 27B",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 78.6045,
+          "raw_method_rank": 59,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -2,
+          "total_shift": 10,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 50,
+          "model": "GPT-5.4 nano (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 85.257,
+          "raw_method_rank": 32,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -2,
+          "total_shift": -18,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        }
+      ],
+      "top50_guarded_twopl": [
+        {
+          "rank": 1,
+          "model": "Claude Fable 5 (with fallback)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 95.8524,
+          "raw_method_rank": 2,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 1,
+          "total_shift": 1,
+          "unique_families": 19,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 2,
+          "model": "GPT-5.6 Sol (max)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 96.2491,
+          "raw_method_rank": 1,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": -1,
+          "unique_families": 18,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 3,
+          "model": "GPT-5.5 (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 95.2795,
+          "raw_method_rank": 3,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 21,
+          "min_board_tests": 4,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 4,
+          "model": "GPT-5.6 Terra (max)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 95.0019,
+          "raw_method_rank": 4,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 13,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 5,
+          "model": "GPT-5.4 (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 93.972,
+          "raw_method_rank": 5,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 13,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 6,
+          "model": "Claude Opus 4.8 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 93.6545,
+          "raw_method_rank": 6,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 20,
+          "min_board_tests": 4,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 7,
+          "model": "Gemini 3.1 Pro Preview",
+          "creator": "Google",
+          "evidence_tier": "Main",
+          "measurement_score": 93.4775,
+          "raw_method_rank": 7,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 19,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 8,
+          "model": "Claude Opus 4.7 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 92.011,
+          "raw_method_rank": 9,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 1,
+          "unique_families": 17,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 9,
+          "model": "Kimi K3 (max)",
+          "creator": "Kimi",
+          "evidence_tier": "Provisional",
+          "measurement_score": 93.1083,
+          "raw_method_rank": 8,
+          "coverage_penalty_z": 0.04,
+          "constraint_shift": 0,
+          "total_shift": -1,
+          "unique_families": 15,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 10,
+          "model": "GLM-5.2 (max)",
+          "creator": "Z AI",
+          "evidence_tier": "Main",
+          "measurement_score": 91.9382,
+          "raw_method_rank": 10,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 11,
+          "model": "Qwen3.8 Max",
+          "creator": "Alibaba",
+          "evidence_tier": "Provisional",
+          "measurement_score": 83.2724,
+          "raw_method_rank": 39,
+          "coverage_penalty_z": 0.52,
+          "constraint_shift": 63,
+          "total_shift": 28,
+          "unique_families": 7,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_max"
+        },
+        {
+          "rank": 12,
+          "model": "Qwen3.7 Max",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 91.6523,
+          "raw_method_rank": 12,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": 0,
+          "unique_families": 14,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_max | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 13,
+          "model": "DeepSeek V4 Pro (max)",
+          "creator": "DeepSeek",
+          "evidence_tier": "Main",
+          "measurement_score": 89.5413,
+          "raw_method_rank": 16,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 3,
+          "unique_families": 21,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 14,
+          "model": "Kimi K2.6",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 89.2358,
+          "raw_method_rank": 18,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 4,
+          "unique_families": 21,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 15,
+          "model": "MiniMax-M3",
+          "creator": "MiniMax",
+          "evidence_tier": "Main",
+          "measurement_score": 87.7422,
+          "raw_method_rank": 23,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 1,
+          "total_shift": 8,
+          "unique_families": 13,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 16,
+          "model": "DeepSeek V4 Flash (max)",
+          "creator": "DeepSeek",
+          "evidence_tier": "Main",
+          "measurement_score": 86.0379,
+          "raw_method_rank": 29,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 2,
+          "total_shift": 13,
+          "unique_families": 20,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 17,
+          "model": "MiMo-V2.5-Pro",
+          "creator": "Xiaomi",
+          "evidence_tier": "Main",
+          "measurement_score": 85.9129,
+          "raw_method_rank": 30,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 2,
+          "total_shift": 13,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 18,
+          "model": "Inkling Small",
+          "creator": "Thinking Machines",
+          "evidence_tier": "Main",
+          "measurement_score": 84.6582,
+          "raw_method_rank": 34,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 5,
+          "total_shift": 16,
+          "unique_families": 19,
+          "min_board_tests": 4,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 19,
+          "model": "Kimi K2.7 Code",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 87.8675,
+          "raw_method_rank": 22,
+          "coverage_penalty_z": 0.16,
+          "constraint_shift": 6,
+          "total_shift": 3,
+          "unique_families": 10,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 20,
+          "model": "GLM-5.1",
+          "creator": "Z AI",
+          "evidence_tier": "Main",
+          "measurement_score": 83.1408,
+          "raw_method_rank": 40,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 6,
+          "total_shift": 20,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 21,
+          "model": "Inkling",
+          "creator": "Thinking Machines",
+          "evidence_tier": "Main",
+          "measurement_score": 82.6826,
+          "raw_method_rank": 43,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 8,
+          "total_shift": 22,
+          "unique_families": 19,
+          "min_board_tests": 4,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 22,
+          "model": "Kimi K2.5",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 81.6859,
+          "raw_method_rank": 45,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 9,
+          "total_shift": 23,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 23,
+          "model": "Nemotron 3 Ultra",
+          "creator": "NVIDIA",
+          "evidence_tier": "Main",
+          "measurement_score": 80.8732,
+          "raw_method_rank": 48,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 11,
+          "total_shift": 25,
+          "unique_families": 15,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 24,
+          "model": "Qwen3.5 397B A17B",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 80.7946,
+          "raw_method_rank": 49,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 11,
+          "total_shift": 25,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 25,
+          "model": "GLM-4.7",
+          "creator": "Z AI",
+          "evidence_tier": "Main",
+          "measurement_score": 80.1346,
+          "raw_method_rank": 54,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 13,
+          "total_shift": 29,
+          "unique_families": 18,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 26,
+          "model": "Kimi K2 Thinking",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 80.0532,
+          "raw_method_rank": 55,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 13,
+          "total_shift": 29,
+          "unique_families": 15,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 27,
+          "model": "Gemini 3.6 Flash",
+          "creator": "Google",
+          "evidence_tier": "Main",
+          "measurement_score": 90.8398,
+          "raw_method_rank": 14,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -15,
+          "total_shift": -13,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 28,
+          "model": "Claude Opus 4.6 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 87.8778,
+          "raw_method_rank": 21,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -13,
+          "total_shift": -7,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 29,
+          "model": "GPT-5.6 Luna (max)",
+          "creator": "OpenAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 89.8821,
+          "raw_method_rank": 15,
+          "coverage_penalty_z": 0.12,
+          "constraint_shift": -12,
+          "total_shift": -14,
+          "unique_families": 11,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 30,
+          "model": "Claude Sonnet 5 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Provisional",
+          "measurement_score": 88.9402,
+          "raw_method_rank": 19,
+          "coverage_penalty_z": 0.12,
+          "constraint_shift": -10,
+          "total_shift": -11,
+          "unique_families": 11,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 31,
+          "model": "Gemini 3.5 Flash",
+          "creator": "Google",
+          "evidence_tier": "Main",
+          "measurement_score": 91.7235,
+          "raw_method_rank": 11,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -10,
+          "total_shift": -20,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 32,
+          "model": "GPT-5.1 (high)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 86.9802,
+          "raw_method_rank": 27,
+          "coverage_penalty_z": 0.08,
+          "constraint_shift": -10,
+          "total_shift": -5,
+          "unique_families": 11,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 33,
+          "model": "Claude Opus 5 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Provisional",
+          "measurement_score": 91.1165,
+          "raw_method_rank": 13,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -9,
+          "total_shift": -20,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 34,
+          "model": "Qwen3.7 Plus",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 87.2022,
+          "raw_method_rank": 26,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": 2,
+          "total_shift": -8,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_plus | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 35,
+          "model": "Qwen3.6 Max Preview",
+          "creator": "Alibaba",
+          "evidence_tier": "Provisional",
+          "measurement_score": 76.9671,
+          "raw_method_rank": 63,
+          "coverage_penalty_z": 0.4,
+          "constraint_shift": 50,
+          "total_shift": 28,
+          "unique_families": 8,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_max | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 36,
+          "model": "Qwen3.6 Plus",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 83.11,
+          "raw_method_rank": 41,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -9,
+          "total_shift": 5,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_plus | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 37,
+          "model": "Muse Spark",
+          "creator": "Meta",
+          "evidence_tier": "Main",
+          "measurement_score": 89.4554,
+          "raw_method_rank": 17,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -9,
+          "total_shift": -20,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 38,
+          "model": "GPT-5 (high)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 84.4502,
+          "raw_method_rank": 36,
+          "coverage_penalty_z": 0.08,
+          "constraint_shift": -8,
+          "total_shift": -2,
+          "unique_families": 11,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 39,
+          "model": "GPT-5.2 (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 87.268,
+          "raw_method_rank": 25,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -7,
+          "total_shift": -14,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 40,
+          "model": "GPT-5.4 mini (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 87.6428,
+          "raw_method_rank": 24,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -7,
+          "total_shift": -16,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 41,
+          "model": "Gemini 3 Pro Preview (high)",
+          "creator": "Google",
+          "evidence_tier": "Provisional",
+          "measurement_score": 86.0767,
+          "raw_method_rank": 28,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -4,
+          "total_shift": -13,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 42,
+          "model": "MiniMax-M2.7",
+          "creator": "MiniMax",
+          "evidence_tier": "Main",
+          "measurement_score": 79.782,
+          "raw_method_rank": 56,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -2,
+          "total_shift": 14,
+          "unique_families": 14,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 43,
+          "model": "Hy3",
+          "creator": "Tencent",
+          "evidence_tier": "Provisional",
+          "measurement_score": 80.7942,
+          "raw_method_rank": 50,
+          "coverage_penalty_z": 0.04,
+          "constraint_shift": -2,
+          "total_shift": 7,
+          "unique_families": 14,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 44,
+          "model": "Gemini 3 Flash",
+          "creator": "Google",
+          "evidence_tier": "Provisional",
+          "measurement_score": 84.5727,
+          "raw_method_rank": 35,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -2,
+          "total_shift": -9,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 45,
+          "model": "Claude Sonnet 4.6 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 85.3974,
+          "raw_method_rank": 31,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -2,
+          "total_shift": -14,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 46,
+          "model": "Grok 4.5 (high)",
+          "creator": "SpaceXAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 88.6837,
+          "raw_method_rank": 20,
+          "coverage_penalty_z": 0.36,
+          "constraint_shift": -2,
+          "total_shift": -26,
+          "unique_families": 8,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 47,
+          "model": "Grok 4.3 (high)",
+          "creator": "SpaceXAI",
+          "evidence_tier": "Main",
+          "measurement_score": 84.9709,
+          "raw_method_rank": 33,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -2,
+          "total_shift": -14,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 48,
+          "model": "DeepSeek V3.2",
+          "creator": "DeepSeek",
+          "evidence_tier": "Main",
+          "measurement_score": 80.3394,
+          "raw_method_rank": 52,
+          "coverage_penalty_z": 0.08,
+          "constraint_shift": -2,
+          "total_shift": 4,
+          "unique_families": 11,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 49,
+          "model": "GLM-5",
+          "creator": "Z AI",
+          "evidence_tier": "Main",
+          "measurement_score": 77.895,
+          "raw_method_rank": 60,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -2,
+          "total_shift": 11,
+          "unique_families": 15,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 50,
+          "model": "Claude Opus 4.5",
+          "creator": "Anthropic",
+          "evidence_tier": "Provisional",
+          "measurement_score": 83.0558,
+          "raw_method_rank": 42,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -2,
+          "total_shift": -8,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        }
+      ],
+      "top50_guarded_robust": [
+        {
+          "rank": 1,
+          "model": "Claude Fable 5 (with fallback)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 97.8119,
+          "raw_method_rank": 2,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 1,
+          "total_shift": 1,
+          "unique_families": 19,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 2,
+          "model": "GPT-5.6 Sol (max)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 97.9,
+          "raw_method_rank": 1,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": -1,
+          "unique_families": 18,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 3,
+          "model": "GPT-5.6 Terra (max)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 96.7657,
+          "raw_method_rank": 3,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 13,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 4,
+          "model": "GPT-5.5 (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 95.9075,
+          "raw_method_rank": 4,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 21,
+          "min_board_tests": 4,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 5,
+          "model": "GPT-5.4 (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 94.4572,
+          "raw_method_rank": 6,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 1,
+          "unique_families": 13,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 6,
+          "model": "Kimi K3 (max)",
+          "creator": "Kimi",
+          "evidence_tier": "Provisional",
+          "measurement_score": 95.3072,
+          "raw_method_rank": 5,
+          "coverage_penalty_z": 0.04,
+          "constraint_shift": 0,
+          "total_shift": -1,
+          "unique_families": 15,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 7,
+          "model": "Claude Opus 4.8 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 93.0526,
+          "raw_method_rank": 7,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 0,
+          "unique_families": 20,
+          "min_board_tests": 4,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 8,
+          "model": "Claude Opus 4.7 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 91.1138,
+          "raw_method_rank": 10,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 2,
+          "unique_families": 17,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 9,
+          "model": "Gemini 3.1 Pro Preview",
+          "creator": "Google",
+          "evidence_tier": "Main",
+          "measurement_score": 90.8073,
+          "raw_method_rank": 11,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 2,
+          "unique_families": 19,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 10,
+          "model": "Qwen3.8 Max",
+          "creator": "Alibaba",
+          "evidence_tier": "Provisional",
+          "measurement_score": 77.2317,
+          "raw_method_rank": 40,
+          "coverage_penalty_z": 0.52,
+          "constraint_shift": 53,
+          "total_shift": 30,
+          "unique_families": 7,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_max"
+        },
+        {
+          "rank": 11,
+          "model": "Qwen3.7 Max",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 90.7139,
+          "raw_method_rank": 12,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": 1,
+          "unique_families": 14,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_max | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 12,
+          "model": "GLM-5.2 (max)",
+          "creator": "Z AI",
+          "evidence_tier": "Main",
+          "measurement_score": 90.2027,
+          "raw_method_rank": 14,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": 2,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 13,
+          "model": "Kimi K2.6",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 86.2708,
+          "raw_method_rank": 22,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": 9,
+          "unique_families": 21,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 14,
+          "model": "Claude Opus 5 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Provisional",
+          "measurement_score": 92.7967,
+          "raw_method_rank": 8,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -1,
+          "total_shift": -6,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 15,
+          "model": "GPT-5.1 (high)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 87.8177,
+          "raw_method_rank": 18,
+          "coverage_penalty_z": 0.08,
+          "constraint_shift": -1,
+          "total_shift": 3,
+          "unique_families": 11,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 16,
+          "model": "MiniMax-M3",
+          "creator": "MiniMax",
+          "evidence_tier": "Main",
+          "measurement_score": 85.4698,
+          "raw_method_rank": 24,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": 8,
+          "unique_families": 13,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 17,
+          "model": "DeepSeek V4 Pro (max)",
+          "creator": "DeepSeek",
+          "evidence_tier": "Main",
+          "measurement_score": 83.3955,
+          "raw_method_rank": 32,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 4,
+          "total_shift": 15,
+          "unique_families": 21,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 18,
+          "model": "MiMo-V2.5-Pro",
+          "creator": "Xiaomi",
+          "evidence_tier": "Main",
+          "measurement_score": 82.3931,
+          "raw_method_rank": 34,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 5,
+          "total_shift": 16,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 19,
+          "model": "Kimi K2.7 Code",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 82.9988,
+          "raw_method_rank": 33,
+          "coverage_penalty_z": 0.16,
+          "constraint_shift": 10,
+          "total_shift": 14,
+          "unique_families": 10,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 20,
+          "model": "MiniMax-M2.7",
+          "creator": "MiniMax",
+          "evidence_tier": "Main",
+          "measurement_score": 72.6044,
+          "raw_method_rank": 47,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 19,
+          "total_shift": 27,
+          "unique_families": 14,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 21,
+          "model": "DeepSeek V4 Flash (max)",
+          "creator": "DeepSeek",
+          "evidence_tier": "Main",
+          "measurement_score": 70.511,
+          "raw_method_rank": 53,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 20,
+          "total_shift": 32,
+          "unique_families": 20,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 22,
+          "model": "DeepSeek V3.2",
+          "creator": "DeepSeek",
+          "evidence_tier": "Main",
+          "measurement_score": 72.3239,
+          "raw_method_rank": 48,
+          "coverage_penalty_z": 0.08,
+          "constraint_shift": 20,
+          "total_shift": 26,
+          "unique_families": 11,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 23,
+          "model": "Nemotron 3 Ultra",
+          "creator": "NVIDIA",
+          "evidence_tier": "Main",
+          "measurement_score": 70.0638,
+          "raw_method_rank": 55,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 20,
+          "total_shift": 32,
+          "unique_families": 15,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 24,
+          "model": "Qwen3.5 397B A17B",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 70.0556,
+          "raw_method_rank": 56,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 20,
+          "total_shift": 32,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 25,
+          "model": "Inkling Small",
+          "creator": "Thinking Machines",
+          "evidence_tier": "Main",
+          "measurement_score": 69.9554,
+          "raw_method_rank": 57,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 20,
+          "total_shift": 32,
+          "unique_families": 19,
+          "min_board_tests": 4,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 26,
+          "model": "GLM-5.1",
+          "creator": "Z AI",
+          "evidence_tier": "Main",
+          "measurement_score": 68.864,
+          "raw_method_rank": 60,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 23,
+          "total_shift": 34,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 27,
+          "model": "MiniMax-M2.5",
+          "creator": "MiniMax",
+          "evidence_tier": "Main",
+          "measurement_score": 68.1436,
+          "raw_method_rank": 62,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 24,
+          "total_shift": 35,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 28,
+          "model": "Kimi K2.5",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 66.9225,
+          "raw_method_rank": 66,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 24,
+          "total_shift": 38,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 29,
+          "model": "Gemini 3.6 Flash",
+          "creator": "Google",
+          "evidence_tier": "Main",
+          "measurement_score": 85.132,
+          "raw_method_rank": 26,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -13,
+          "total_shift": -3,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 30,
+          "model": "GPT-5.2 (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 90.4063,
+          "raw_method_rank": 13,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -13,
+          "total_shift": -17,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 31,
+          "model": "Gemini 3.5 Flash",
+          "creator": "Google",
+          "evidence_tier": "Main",
+          "measurement_score": 91.2923,
+          "raw_method_rank": 9,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -13,
+          "total_shift": -22,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 32,
+          "model": "GPT-5.6 Luna (max)",
+          "creator": "OpenAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 87.3657,
+          "raw_method_rank": 19,
+          "coverage_penalty_z": 0.12,
+          "constraint_shift": -13,
+          "total_shift": -13,
+          "unique_families": 11,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 33,
+          "model": "Claude Sonnet 5 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Provisional",
+          "measurement_score": 86.9074,
+          "raw_method_rank": 21,
+          "coverage_penalty_z": 0.12,
+          "constraint_shift": -13,
+          "total_shift": -12,
+          "unique_families": 11,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 34,
+          "model": "Gemini 3 Pro Preview (high)",
+          "creator": "Google",
+          "evidence_tier": "Provisional",
+          "measurement_score": 88.2955,
+          "raw_method_rank": 17,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -12,
+          "total_shift": -17,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 35,
+          "model": "Muse Spark",
+          "creator": "Meta",
+          "evidence_tier": "Main",
+          "measurement_score": 88.5389,
+          "raw_method_rank": 16,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -11,
+          "total_shift": -19,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 36,
+          "model": "GPT-5 (high)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 83.8115,
+          "raw_method_rank": 30,
+          "coverage_penalty_z": 0.08,
+          "constraint_shift": -11,
+          "total_shift": -6,
+          "unique_families": 11,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 37,
+          "model": "Claude Opus 4.5",
+          "creator": "Anthropic",
+          "evidence_tier": "Provisional",
+          "measurement_score": 85.7256,
+          "raw_method_rank": 23,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -11,
+          "total_shift": -14,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 38,
+          "model": "GPT-5.4 mini (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 85.3443,
+          "raw_method_rank": 25,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -11,
+          "total_shift": -13,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 39,
+          "model": "Gemini 3 Flash",
+          "creator": "Google",
+          "evidence_tier": "Provisional",
+          "measurement_score": 84.2001,
+          "raw_method_rank": 28,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -11,
+          "total_shift": -11,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 40,
+          "model": "Claude Opus 4.6 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 78.4343,
+          "raw_method_rank": 37,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -10,
+          "total_shift": -3,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 41,
+          "model": "GPT-5.3 Codex (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 89.356,
+          "raw_method_rank": 15,
+          "coverage_penalty_z": 0.4,
+          "constraint_shift": -10,
+          "total_shift": -26,
+          "unique_families": 8,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 42,
+          "model": "Qwen3.7 Plus",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 83.4779,
+          "raw_method_rank": 31,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -7,
+          "total_shift": -11,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_plus | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 43,
+          "model": "Qwen3.6 Max Preview",
+          "creator": "Alibaba",
+          "evidence_tier": "Provisional",
+          "measurement_score": 76.4443,
+          "raw_method_rank": 41,
+          "coverage_penalty_z": 0.4,
+          "constraint_shift": 14,
+          "total_shift": -2,
+          "unique_families": 8,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_max | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 44,
+          "model": "Qwen3.6 Plus",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 77.5978,
+          "raw_method_rank": 39,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -12,
+          "total_shift": -5,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_plus | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 45,
+          "model": "Claude Sonnet 4.6 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 83.9899,
+          "raw_method_rank": 29,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -12,
+          "total_shift": -16,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 46,
+          "model": "Grok 4.5 (high)",
+          "creator": "SpaceXAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 86.9492,
+          "raw_method_rank": 20,
+          "coverage_penalty_z": 0.36,
+          "constraint_shift": -12,
+          "total_shift": -26,
+          "unique_families": 8,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 47,
+          "model": "GPT-5.2 Codex (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 84.713,
+          "raw_method_rank": 27,
+          "coverage_penalty_z": 0.4,
+          "constraint_shift": -11,
+          "total_shift": -20,
+          "unique_families": 8,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 48,
+          "model": "Grok 4.3 (high)",
+          "creator": "SpaceXAI",
+          "evidence_tier": "Main",
+          "measurement_score": 79.7434,
+          "raw_method_rank": 35,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -11,
+          "total_shift": -13,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 49,
+          "model": "GPT-5 Codex (high)",
+          "creator": "OpenAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 78.1586,
+          "raw_method_rank": 38,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -11,
+          "total_shift": -11,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 50,
+          "model": "GPT-5.4 nano (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 78.4565,
+          "raw_method_rank": 36,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -10,
+          "total_shift": -14,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        }
+      ],
+      "top50_guarded_borda": [
+        {
+          "rank": 1,
+          "model": "Claude Fable 5 (with fallback)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 92.5272,
+          "raw_method_rank": 3,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 2,
+          "total_shift": 2,
+          "unique_families": 19,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 2,
+          "model": "GPT-5.6 Sol (max)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 93.3638,
+          "raw_method_rank": 1,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": -1,
+          "unique_families": 18,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 3,
+          "model": "GPT-5.6 Terra (max)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 93.2335,
+          "raw_method_rank": 2,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": -1,
+          "unique_families": 13,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 4,
+          "model": "GPT-5.4 (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 90.1673,
+          "raw_method_rank": 5,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 1,
+          "unique_families": 13,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 5,
+          "model": "GPT-5.5 (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 88.3493,
+          "raw_method_rank": 8,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 0,
+          "total_shift": 3,
+          "unique_families": 21,
+          "min_board_tests": 4,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 6,
+          "model": "Qwen3.8 Max",
+          "creator": "Alibaba",
+          "evidence_tier": "Provisional",
+          "measurement_score": 74.3199,
+          "raw_method_rank": 43,
+          "coverage_penalty_z": 0.52,
+          "constraint_shift": 62,
+          "total_shift": 37,
+          "unique_families": 7,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_max"
+        },
+        {
+          "rank": 7,
+          "model": "Qwen3.7 Max",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 87.3383,
+          "raw_method_rank": 12,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": 5,
+          "unique_families": 14,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_max | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 8,
+          "model": "Claude Opus 4.7 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 86.9806,
+          "raw_method_rank": 13,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": 5,
+          "unique_families": 17,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 9,
+          "model": "Claude Opus 4.8 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 86.8201,
+          "raw_method_rank": 15,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": 6,
+          "unique_families": 20,
+          "min_board_tests": 4,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 10,
+          "model": "Kimi K3 (max)",
+          "creator": "Kimi",
+          "evidence_tier": "Provisional",
+          "measurement_score": 87.7342,
+          "raw_method_rank": 10,
+          "coverage_penalty_z": 0.04,
+          "constraint_shift": -1,
+          "total_shift": 0,
+          "unique_families": 15,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 11,
+          "model": "GLM-5.2 (max)",
+          "creator": "Z AI",
+          "evidence_tier": "Main",
+          "measurement_score": 85.9908,
+          "raw_method_rank": 16,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -1,
+          "total_shift": 5,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 12,
+          "model": "GPT-5.2 (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 90.1491,
+          "raw_method_rank": 6,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -1,
+          "total_shift": -6,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 13,
+          "model": "Kimi K2.6",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 82.963,
+          "raw_method_rank": 24,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 2,
+          "total_shift": 11,
+          "unique_families": 21,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 14,
+          "model": "MiMo-V2.5-Pro",
+          "creator": "Xiaomi",
+          "evidence_tier": "Main",
+          "measurement_score": 79.8222,
+          "raw_method_rank": 31,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 8,
+          "total_shift": 17,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 15,
+          "model": "DeepSeek V4 Pro (max)",
+          "creator": "DeepSeek",
+          "evidence_tier": "Main",
+          "measurement_score": 79.782,
+          "raw_method_rank": 32,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 8,
+          "total_shift": 17,
+          "unique_families": 21,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 16,
+          "model": "MiniMax-M3",
+          "creator": "MiniMax",
+          "evidence_tier": "Main",
+          "measurement_score": 79.4863,
+          "raw_method_rank": 33,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 8,
+          "total_shift": 17,
+          "unique_families": 13,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 17,
+          "model": "Kimi K2.7 Code",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 82.7107,
+          "raw_method_rank": 27,
+          "coverage_penalty_z": 0.16,
+          "constraint_shift": 9,
+          "total_shift": 10,
+          "unique_families": 10,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 18,
+          "model": "MiniMax-M2.7",
+          "creator": "MiniMax",
+          "evidence_tier": "Main",
+          "measurement_score": 70.2963,
+          "raw_method_rank": 50,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 21,
+          "total_shift": 32,
+          "unique_families": 14,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 19,
+          "model": "Nemotron 3 Ultra",
+          "creator": "NVIDIA",
+          "evidence_tier": "Main",
+          "measurement_score": 69.8273,
+          "raw_method_rank": 51,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 22,
+          "total_shift": 32,
+          "unique_families": 15,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 20,
+          "model": "DeepSeek V4 Flash (max)",
+          "creator": "DeepSeek",
+          "evidence_tier": "Main",
+          "measurement_score": 69.8046,
+          "raw_method_rank": 52,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 22,
+          "total_shift": 32,
+          "unique_families": 20,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 21,
+          "model": "DeepSeek V3.2",
+          "creator": "DeepSeek",
+          "evidence_tier": "Main",
+          "measurement_score": 71.4403,
+          "raw_method_rank": 46,
+          "coverage_penalty_z": 0.08,
+          "constraint_shift": 22,
+          "total_shift": 25,
+          "unique_families": 11,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 22,
+          "model": "GLM-5.1",
+          "creator": "Z AI",
+          "evidence_tier": "Main",
+          "measurement_score": 68.9783,
+          "raw_method_rank": 53,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 23,
+          "total_shift": 31,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 23,
+          "model": "Qwen3.5 397B A17B",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 68.8168,
+          "raw_method_rank": 55,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 23,
+          "total_shift": 32,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 24,
+          "model": "Kimi K2.5",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 67.4416,
+          "raw_method_rank": 58,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 25,
+          "total_shift": 34,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 25,
+          "model": "MiniMax-M2.5",
+          "creator": "MiniMax",
+          "evidence_tier": "Main",
+          "measurement_score": 67.0886,
+          "raw_method_rank": 59,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 25,
+          "total_shift": 34,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 26,
+          "model": "Kimi K2 Thinking",
+          "creator": "Kimi",
+          "evidence_tier": "Main",
+          "measurement_score": 66.0947,
+          "raw_method_rank": 63,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": 27,
+          "total_shift": 37,
+          "unique_families": 15,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 27,
+          "model": "Gemini 3.5 Flash",
+          "creator": "Google",
+          "evidence_tier": "Main",
+          "measurement_score": 91.2716,
+          "raw_method_rank": 4,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -15,
+          "total_shift": -23,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 28,
+          "model": "Gemini 3.1 Pro Preview",
+          "creator": "Google",
+          "evidence_tier": "Main",
+          "measurement_score": 84.082,
+          "raw_method_rank": 20,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -15,
+          "total_shift": -8,
+          "unique_families": 19,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 29,
+          "model": "GPT-5.1 (high)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 85.2182,
+          "raw_method_rank": 17,
+          "coverage_penalty_z": 0.08,
+          "constraint_shift": -15,
+          "total_shift": -12,
+          "unique_families": 11,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 30,
+          "model": "Gemini 3 Pro Preview (high)",
+          "creator": "Google",
+          "evidence_tier": "Provisional",
+          "measurement_score": 87.4627,
+          "raw_method_rank": 11,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -14,
+          "total_shift": -19,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 31,
+          "model": "Muse Spark",
+          "creator": "Meta",
+          "evidence_tier": "Main",
+          "measurement_score": 88.2766,
+          "raw_method_rank": 9,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -14,
+          "total_shift": -22,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 32,
+          "model": "Gemini 3.6 Flash",
+          "creator": "Google",
+          "evidence_tier": "Main",
+          "measurement_score": 80.343,
+          "raw_method_rank": 30,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -14,
+          "total_shift": -2,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 33,
+          "model": "Claude Opus 5 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Provisional",
+          "measurement_score": 86.9338,
+          "raw_method_rank": 14,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -14,
+          "total_shift": -19,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 34,
+          "model": "Claude Sonnet 5 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Provisional",
+          "measurement_score": 83.5118,
+          "raw_method_rank": 22,
+          "coverage_penalty_z": 0.12,
+          "constraint_shift": -14,
+          "total_shift": -12,
+          "unique_families": 11,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 35,
+          "model": "GPT-5.6 Luna (max)",
+          "creator": "OpenAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 83.3321,
+          "raw_method_rank": 23,
+          "coverage_penalty_z": 0.12,
+          "constraint_shift": -14,
+          "total_shift": -12,
+          "unique_families": 11,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 36,
+          "model": "Claude Opus 4.5",
+          "creator": "Anthropic",
+          "evidence_tier": "Provisional",
+          "measurement_score": 84.4582,
+          "raw_method_rank": 19,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -11,
+          "total_shift": -17,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 37,
+          "model": "GPT-5.4 mini (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 84.5985,
+          "raw_method_rank": 18,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -10,
+          "total_shift": -19,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 38,
+          "model": "GPT-5.3 Codex (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 88.5902,
+          "raw_method_rank": 7,
+          "coverage_penalty_z": 0.4,
+          "constraint_shift": -10,
+          "total_shift": -31,
+          "unique_families": 8,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 39,
+          "model": "Gemini 3 Flash",
+          "creator": "Google",
+          "evidence_tier": "Provisional",
+          "measurement_score": 82.9183,
+          "raw_method_rank": 25,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -10,
+          "total_shift": -14,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor | gemini_flash_below_open_floor"
+        },
+        {
+          "rank": 40,
+          "model": "GPT-5 (high)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 79.4299,
+          "raw_method_rank": 34,
+          "coverage_penalty_z": 0.08,
+          "constraint_shift": -10,
+          "total_shift": -6,
+          "unique_families": 11,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 41,
+          "model": "Qwen3.7 Plus",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 82.2258,
+          "raw_method_rank": 28,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -8,
+          "total_shift": -13,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_plus | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 42,
+          "model": "Qwen3.6 Max Preview",
+          "creator": "Alibaba",
+          "evidence_tier": "Provisional",
+          "measurement_score": 77.0474,
+          "raw_method_rank": 38,
+          "coverage_penalty_z": 0.4,
+          "constraint_shift": 13,
+          "total_shift": -4,
+          "unique_families": 8,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_max | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 43,
+          "model": "Qwen3.6 Plus",
+          "creator": "Alibaba",
+          "evidence_tier": "Main",
+          "measurement_score": 76.1502,
+          "raw_method_rank": 39,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -12,
+          "total_shift": -4,
+          "unique_families": 12,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor | qwen:newer_plus | qwen:same_version_max_gt_plus"
+        },
+        {
+          "rank": 44,
+          "model": "Claude Sonnet 4.6 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 82.8721,
+          "raw_method_rank": 26,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -12,
+          "total_shift": -18,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 45,
+          "model": "Claude Opus 4.6 (max)",
+          "creator": "Anthropic",
+          "evidence_tier": "Main",
+          "measurement_score": 74.9407,
+          "raw_method_rank": 40,
+          "coverage_penalty_z": 0.0,
+          "constraint_shift": -11,
+          "total_shift": -5,
+          "unique_families": 16,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 46,
+          "model": "Grok 4.5 (high)",
+          "creator": "SpaceXAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 83.6525,
+          "raw_method_rank": 21,
+          "coverage_penalty_z": 0.36,
+          "constraint_shift": -11,
+          "total_shift": -25,
+          "unique_families": 8,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 47,
+          "model": "GPT-5 Codex (high)",
+          "creator": "OpenAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 77.6686,
+          "raw_method_rank": 37,
+          "coverage_penalty_z": 0.2,
+          "constraint_shift": -11,
+          "total_shift": -10,
+          "unique_families": 10,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 48,
+          "model": "GPT-5.4 nano (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Main",
+          "measurement_score": 78.2555,
+          "raw_method_rank": 35,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -11,
+          "total_shift": -13,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 49,
+          "model": "Grok 4.3 (high)",
+          "creator": "SpaceXAI",
+          "evidence_tier": "Main",
+          "measurement_score": 77.9907,
+          "raw_method_rank": 36,
+          "coverage_penalty_z": 0.24,
+          "constraint_shift": -11,
+          "total_shift": -13,
+          "unique_families": 9,
+          "min_board_tests": 3,
+          "constraint_flags": "fable_rank_one_anchor"
+        },
+        {
+          "rank": 50,
+          "model": "GPT-5.2 Codex (xhigh)",
+          "creator": "OpenAI",
+          "evidence_tier": "Provisional",
+          "measurement_score": 81.3378,
+          "raw_method_rank": 29,
+          "coverage_penalty_z": 0.4,
+          "constraint_shift": -10,
+          "total_shift": -21,
+          "unique_families": 8,
+          "min_board_tests": 2,
+          "constraint_flags": "fable_rank_one_anchor"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "src_models",
+      "label": "生产模型与 benchmark 快照",
+      "path": "docs/data/models.json",
+      "query": {
+        "language": "python/file",
+        "sql": "SELECT * FROM read_json_auto('docs/data/models.json')",
+        "query": "python -B scripts/build_docs_site.py",
+        "description": "修复第一方来源优先级后重建的生产模型、指标和外部 benchmark 快照。",
+        "tables_used": [
+          "docs/data/models.json"
+        ],
+        "metric_definitions": []
+      }
+    },
+    {
+      "id": "src_benchmarks",
+      "label": "外部 benchmark 原始来源记录",
+      "path": "data/benchmarks/benchmark_scores.json",
+      "query": {
+        "language": "python/file",
+        "sql": "SELECT * FROM read_json_auto('data/benchmarks/benchmark_scores.json')",
+        "query": "python -B benchmarks/collect_benchmark_scores.py",
+        "description": "包含第一方发布与其他厂商 comparator 列，供冲突和来源优先级审计。",
+        "tables_used": [
+          "data/benchmarks/benchmark_scores.json"
+        ],
+        "metric_definitions": []
+      }
+    },
+    {
+      "id": "src_measurement",
+      "label": "覆盖感知测量层",
+      "path": "analysis/irt_leaderboard_exploration/irt_leaderboard_analysis.py",
+      "query": {
+        "language": "python/file",
+        "query": "python -B analysis/irt_leaderboard_exploration/irt_leaderboard_analysis.py",
+        "description": "构建五板块响应矩阵并拟合 AIndex、1PL、2PL、稳健秩和 Borda 测量分。",
+        "tables_used": [
+          "analysis/irt_leaderboard_exploration/irt_leaderboard_analysis.py"
+        ],
+        "metric_definitions": []
+      }
+    },
+    {
+      "id": "src_constraints",
+      "label": "产品约束与覆盖校正实现",
+      "path": "analysis/irt_leaderboard_exploration/constrained_ranking_analysis.py",
+      "query": {
+        "language": "python/file",
+        "query": "python -B analysis/irt_leaderboard_exploration/constrained_ranking_analysis.py",
+        "description": "把独立测试家族覆盖惩罚与 Fable、Qwen、Gemini Flash 产品规则作为单独重排层。",
+        "tables_used": [
+          "analysis/irt_leaderboard_exploration/constrained_ranking_analysis.py"
+        ],
+        "metric_definitions": [
+          "Main evidence：每个板块至少 3 项且至少 9 个唯一 benchmark family。",
+          "软覆盖目标：12 个唯一 benchmark family，每少 1 个扣 0.08 个榜内标准差。",
+          "Gemini Flash：至少 15 个 Main-evidence 开源模型排在其前。",
+          "Qwen：只约束明确列出的同产品线相邻版本和同版本 tier 边。"
+        ]
+      }
+    },
+    {
+      "id": "src_constrained_validation",
+      "label": "受约束榜验证摘要",
+      "path": "analysis/irt_leaderboard_exploration/outputs/constrained_validation_summary.json",
+      "query": {
+        "language": "python/file",
+        "sql": "SELECT * FROM read_json_auto('analysis/irt_leaderboard_exploration/outputs/constrained_validation_summary.json')",
+        "query": "python -B analysis/irt_leaderboard_exploration/constrained_ranking_analysis.py",
+        "description": "五套方案的锚点、Qwen 违反数、Gemini Flash 开源模型下限和验收结果。",
+        "tables_used": [
+          "analysis/irt_leaderboard_exploration/outputs/constrained_validation_summary.json"
+        ],
+        "metric_definitions": []
+      }
+    },
+    {
+      "id": "src_constrained_diagnostics",
+      "label": "受约束方案诊断",
+      "path": "analysis/irt_leaderboard_exploration/outputs/constrained_scheme_diagnostics.csv",
+      "query": {
+        "language": "python/file",
+        "sql": "SELECT * FROM read_csv_auto('analysis/irt_leaderboard_exploration/outputs/constrained_scheme_diagnostics.csv', header = true)",
+        "query": "python -B analysis/irt_leaderboard_exploration/constrained_ranking_analysis.py",
+        "description": "各方案约束前后违反数、目标模型名次、相关性、Top 50 重合和最大位移。",
+        "tables_used": [
+          "analysis/irt_leaderboard_exploration/outputs/constrained_scheme_diagnostics.csv"
+        ],
+        "metric_definitions": []
+      }
+    },
+    {
+      "id": "src_constrained_full",
+      "label": "受约束完整榜单",
+      "path": "analysis/irt_leaderboard_exploration/outputs/full_rankings_constrained_schemes.csv",
+      "query": {
+        "language": "python/file",
+        "sql": "SELECT * FROM read_csv_auto('analysis/irt_leaderboard_exploration/outputs/full_rankings_constrained_schemes.csv', header = true)",
+        "query": "python -B analysis/irt_leaderboard_exploration/constrained_ranking_analysis.py",
+        "description": "五套方案全部可排名模型，包含测量分、覆盖惩罚、约束前后名次和证据层级。",
+        "tables_used": [
+          "analysis/irt_leaderboard_exploration/outputs/full_rankings_constrained_schemes.csv"
+        ],
+        "metric_definitions": []
+      }
+    },
+    {
+      "id": "src_constrained_top50",
+      "label": "五套受约束方案 Top 50",
+      "path": "analysis/irt_leaderboard_exploration/outputs/top50_constrained_schemes.csv",
+      "query": {
+        "language": "python/file",
+        "sql": "SELECT * FROM read_csv_auto('analysis/irt_leaderboard_exploration/outputs/top50_constrained_schemes.csv', header = true)",
+        "query": "python -B analysis/irt_leaderboard_exploration/constrained_ranking_analysis.py",
+        "description": "每套方案各 50 行，保留原始测量名次和产品约束位移。",
+        "tables_used": [
+          "analysis/irt_leaderboard_exploration/outputs/top50_constrained_schemes.csv"
+        ],
+        "metric_definitions": []
+      }
+    },
+    {
+      "id": "src_sensitivity",
+      "label": "Gemini Flash 开源下限敏感性",
+      "path": "analysis/irt_leaderboard_exploration/outputs/constraint_sensitivity.csv",
+      "query": {
+        "language": "python/file",
+        "sql": "SELECT * FROM read_csv_auto('analysis/irt_leaderboard_exploration/outputs/constraint_sensitivity.csv', header = true)",
+        "query": "python -B analysis/irt_leaderboard_exploration/constrained_ranking_analysis.py",
+        "description": "比较 5、10、15 个 Main-evidence 开源模型下限对名次和整体连续性的影响。",
+        "tables_used": [
+          "analysis/irt_leaderboard_exploration/outputs/constraint_sensitivity.csv"
+        ],
+        "metric_definitions": []
+      }
+    },
+    {
+      "id": "src_external_sources",
+      "label": "自动更新外部源评估",
+      "path": "analysis/irt_leaderboard_exploration/outputs/external_source_assessment.csv",
+      "query": {
+        "language": "python/file",
+        "sql": "SELECT * FROM read_csv_auto('analysis/irt_leaderboard_exploration/outputs/external_source_assessment.csv', header = true)",
+        "query": "manual endpoint and license audit; see assessment rows",
+        "description": "对 LiveBench、Aider、SWE-bench、LMArena 等的接口、时效、许可和模型映射风险审计。",
+        "tables_used": [
+          "analysis/irt_leaderboard_exploration/outputs/external_source_assessment.csv"
+        ],
+        "metric_definitions": []
+      }
+    }
+  ]
+}

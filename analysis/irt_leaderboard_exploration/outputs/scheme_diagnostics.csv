@@ -1,0 +1,6 @@
+﻿scheme_id,scheme,ranked_models,top50_overlap_with_baseline,spearman_vs_baseline,score_unique_coverage_spearman,score_board_slot_coverage_spearman,top50_median_unique_benchmark_families,top50_median_board_test_slots,top50_models_with_any_board_below_3,hard_floor_eligible_models,lobo_mean_conditional_spearman,lobo_min_conditional_spearman,lobo_mean_top50_retention,lobo_min_top50_retention,lobo_mean_eligible_population_retention,lobo_min_eligible_population_retention
+baseline_aindex,现行 AIndex（基准）,410,50,1.0,0.251039,0.281414,13.0,21.0,16,328,,,,,,
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,328,41,0.985808,0.251239,0.321266,12.0,20.0,13,328,0.997557,0.975092,0.941538,0.76,0.943715,0.396341
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,328,45,0.985397,0.23252,0.308293,12.0,19.5,16,328,0.99843,0.98931,0.95,0.7,0.943715,0.396341
+robust_eb,稳健秩变换 + 贝叶斯式收缩,328,39,0.978614,0.199242,0.269008,10.0,16.5,21,328,0.998521,0.989418,0.943077,0.6,0.943715,0.396341
+borda_breadth,收缩 Borda + 广度优先合成,328,38,0.979305,0.214332,0.287697,10.5,17.5,19,328,0.998351,0.985671,0.941538,0.64,0.943715,0.396341

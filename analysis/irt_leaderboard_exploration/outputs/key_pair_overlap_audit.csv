@@ -1,0 +1,21 @@
+﻿pair,board,benchmark_family,benchmark,left_model,left_value,right_model,right_value,left_minus_right,winner
+sol_vs_opus,coding,swe-bench-pro,SWE-Bench Pro,GPT-5.6 Sol (max),64.6,Claude Opus 5 (max),79.2,-14.6,right
+sol_vs_opus,coding,terminal-bench-v2-1-aa,Terminal-Bench v2.1 (AA),GPT-5.6 Sol (max),88.015,Claude Opus 5 (max),89.1386,-1.1236,right
+sol_vs_opus,coding,scicode-aa,SciCode (AA),GPT-5.6 Sol (max),56.1343,Claude Opus 5 (max),55.6713,0.463,left
+sol_vs_opus,agentic-tool-work,mcp-atlas,MCP-Atlas Public,GPT-5.6 Sol (max),83.6,Claude Opus 5 (max),85.8,-2.2,right
+sol_vs_opus,agentic-tool-work,toolathlon,Toolathlon,GPT-5.6 Sol (max),58.0,Claude Opus 5 (max),80.6,-22.6,right
+sol_vs_opus,agentic-tool-work,aa-lcr,AA-LCR,GPT-5.6 Sol (max),77.6667,Claude Opus 5 (max),75.6667,2.0,left
+sol_vs_opus,hard-reasoning,hle-aa,Humanity's Last Exam (AA),GPT-5.6 Sol (max),49.4903,Claude Opus 5 (max),54.8656,-5.3753,right
+sol_vs_opus,hard-reasoning,critpt-aa,CritPt (AA),GPT-5.6 Sol (max),32.2857,Claude Opus 5 (max),29.1429,3.1428,left
+sol_vs_opus,hard-reasoning,gpqa-diamond-aa,GPQA Diamond (AA),GPT-5.6 Sol (max),94.1414,Claude Opus 5 (max),93.2323,0.9091,left
+sol_vs_opus,knowledge-science,omniscience-aa,AA-Omniscience Accuracy,GPT-5.6 Sol (max),59.4,Claude Opus 5 (max),60.8667,-1.4667,right
+sol_vs_opus,knowledge-science,mmmu-pro-aa,MMMU-Pro (AA),GPT-5.6 Sol (max),83.4104,Claude Opus 5 (max),84.7399,-1.3295,right
+luna_vs_deepseek,coding,terminal-bench-v2-1-aa,Terminal-Bench v2.1 (AA),GPT-5.6 Luna (max),80.8989,DeepSeek V4 Flash 0731 (max),78.6517,2.2472,left
+luna_vs_deepseek,coding,scicode-aa,SciCode (AA),GPT-5.6 Luna (max),52.5463,DeepSeek V4 Flash 0731 (max),49.8843,2.662,left
+luna_vs_deepseek,agentic-tool-work,toolathlon,Toolathlon,GPT-5.6 Luna (max),53.4,DeepSeek V4 Flash 0731 (max),70.3,-16.9,right
+luna_vs_deepseek,agentic-tool-work,aa-lcr,AA-LCR,GPT-5.6 Luna (max),78.3333,DeepSeek V4 Flash 0731 (max),74.3333,4.0,left
+luna_vs_deepseek,agentic-tool-work,automationbench,AutomationBench,GPT-5.6 Luna (max),14.9,DeepSeek V4 Flash 0731 (max),25.1,-10.2,right
+luna_vs_deepseek,hard-reasoning,hle-aa,Humanity's Last Exam (AA),GPT-5.6 Luna (max),39.481,DeepSeek V4 Flash 0731 (max),38.5542,0.9268,left
+luna_vs_deepseek,hard-reasoning,critpt-aa,CritPt (AA),GPT-5.6 Luna (max),20.5714,DeepSeek V4 Flash 0731 (max),16.5714,4.0,left
+luna_vs_deepseek,hard-reasoning,gpqa-diamond-aa,GPQA Diamond (AA),GPT-5.6 Luna (max),91.1111,DeepSeek V4 Flash 0731 (max),90.8081,0.303,left
+luna_vs_deepseek,knowledge-science,omniscience-aa,AA-Omniscience Accuracy,GPT-5.6 Luna (max),42.7333,DeepSeek V4 Flash 0731 (max),40.3833,2.35,left

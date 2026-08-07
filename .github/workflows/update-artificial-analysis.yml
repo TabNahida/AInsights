@@ -26,6 +26,9 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install ranking analysis dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+
       - name: Run tests before update
         run: python -B -m unittest discover -s tests
 
@@ -81,7 +84,7 @@ jobs:
       - name: Commit changed data and site
         id: commit
         run: |
-          git add ArtificialAnalysis/artificialanalysis_raw_scores_wide.csv data/benchmarks/benchmark_scores.json docs/data/models.json docs/data/models.js docs/assets/logos
+          git add ArtificialAnalysis/artificialanalysis_raw_scores_wide.csv data/benchmarks/benchmark_scores.json docs/data/models.json docs/data/models.js docs/assets/logos analysis/irt_leaderboard_exploration/outputs
           if git diff --cached --quiet; then
             echo "No model or benchmark changes detected."
             echo "changed=false" >> "$GITHUB_OUTPUT"

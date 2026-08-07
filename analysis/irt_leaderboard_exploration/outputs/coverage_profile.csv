@@ -1,0 +1,6 @@
+﻿board_id,board,eligible_response_items,canonical_coverage_items,excluded_sparse_items,models,models_ge_1,models_ge_2,models_ge_3,share_ge_2,share_ge_3,median_canonical_tests,median_response_items
+coding,Coding,7,7,0,410,406,400,269,0.97561,0.656098,3.0,3.0
+agentic-tool-work,Agentic/tool work,10,10,1,410,341,328,137,0.8,0.334146,2.0,2.0
+hard-reasoning,Hard reasoning,6,6,2,410,410,404,342,0.985366,0.834146,3.0,3.0
+knowledge-science,Knowledge/science,6,6,1,410,410,406,401,0.990244,0.978049,4.0,4.0
+instruction-context,Instruction/context,5,5,0,410,341,339,302,0.826829,0.736585,3.0,3.0

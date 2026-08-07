@@ -1,0 +1,154 @@
+﻿rank,model,creator,slug,variant_group,evidence_tier,twopl_score,lcb_score_sensitivity,lcb_rank_sensitivity,unique_benchmark_families,board_test_slots_total,min_board_tests,boards_below_main_target,mean_board_se,max_board_se,coding_tests,coding_score,agentic-tool-work_tests,agentic-tool-work_score,hard-reasoning_tests,hard-reasoning_score,knowledge-science_tests,knowledge-science_score,instruction-context_tests,instruction-context_score
+1,GPT-5.6 Sol (max),OpenAI,gpt-5-6-sol,gpt 5 6 sol,Main,97.4221,96.1967,1,17,24,3,0,0.2633,0.3583,3,97.986,9,95.555,3,99.238,5,98.293,4,96.064
+2,Claude Opus 5 (max),Anthropic,claude-opus-5,claude opus 5,Provisional,97.4128,96.1172,2,13,20,2,1,0.2694,0.3885,5,99.281,5,95.323,3,99.176,5,98.222,2,95.106
+3,Claude Fable 5 (with fallback),Anthropic,claude-fable-5,claude fable 5 with fallback,Main,97.2795,95.9739,3,18,25,3,0,0.2638,0.3583,4,98.811,10,95.612,3,99.104,4,98.509,4,94.408
+4,Kimi K3 (max),Kimi,kimi-k3,kimi k3,Provisional,96.9288,95.4387,4,15,21,2,1,0.2701,0.3815,2,97.608,8,95.579,3,98.681,5,97.34,3,95.455
+5,GPT-5.6 Terra (max),OpenAI,gpt-5-6-terra,gpt 5 6 terra,Main,96.6036,95.0918,5,14,21,3,0,0.2658,0.3641,3,97.746,7,94.274,3,98.729,5,96.488,3,95.811
+6,GPT-5.5 (xhigh),OpenAI,gpt-5-5,gpt 5 5,Main,96.3376,94.8058,6,18,25,3,0,0.2629,0.3583,3,96.88,10,92.304,3,98.867,5,97.723,4,95.977
+7,Claude Opus 4.8 (max),Anthropic,claude-opus-4-8,claude opus 4 8,Main,95.4098,93.4453,7,16,23,3,0,0.2654,0.3583,3,97.097,9,93.148,3,98.28,4,96.603,4,91.997
+8,GPT-5.4 (xhigh),OpenAI,gpt-5-4,gpt 5 4,Main,95.2686,93.3502,8,13,20,3,0,0.2663,0.3641,3,95.319,6,90.874,3,98.243,5,96.626,3,95.359
+9,GPT-5.6 Luna (max),OpenAI,gpt-5-6-luna,gpt 5 6 luna,Provisional,94.9548,92.8512,9,13,20,2,1,0.2706,0.3885,3,95.647,7,92.046,3,97.484,5,94.789,2,94.847
+10,Qwen3.8 Max,Alibaba,qwen3-8-max,qwen3 8 max,Main,94.9198,92.785,10,14,21,3,0,0.2694,0.3815,3,96.084,7,91.932,3,98.113,5,95.369,3,93.162
+11,Grok 4.5 (high),SpaceXAI,grok-4-5,grok 4 5,Provisional,94.6701,92.382,12,9,16,2,1,0.2732,0.3885,3,96.196,3,90.749,3,97.667,5,96.964,2,91.877
+12,Gemini 3.1 Pro Preview,Google,gemini-3-1-pro-preview,gemini 3 1 pro preview,Main,94.6389,92.6185,11,16,23,3,0,0.2636,0.3641,4,94.175,8,88.03,3,98.445,5,98.119,3,94.609
+13,Claude Sonnet 5 (max),Anthropic,claude-sonnet-5,claude sonnet 5,Provisional,94.6077,92.3294,13,12,19,2,1,0.2713,0.3885,3,95.74,6,92.207,3,97.228,5,94.72,2,93.185
+14,Gemini 3.5 Flash,Google,gemini-3-5-flash,gemini 3 5 flash,Provisional,94.3794,92.0533,14,9,15,2,2,0.2707,0.3641,2,95.102,2,90.104,3,97.102,5,96.988,3,92.694
+15,Claude Opus 4.7 (max),Anthropic,claude-opus-4-7,claude opus 4 7,Main,94.1709,91.8129,15,16,23,3,0,0.2632,0.3583,4,96.964,7,91.585,3,96.484,5,95.787,4,90.135
+16,Muse Spark 1.2 (xhigh),Meta,muse-spark-1-2,muse spark 1 2,Provisional,93.9775,91.4691,16,7,13,2,3,0.2777,0.3885,2,96.1,2,89.417,3,97.509,4,95.416,2,91.564
+17,Gemini 3.6 Flash,Google,gemini-3-6-flash,gemini 3 6 flash,Main,93.6012,91.0124,18,12,19,3,0,0.2707,0.3815,3,94.419,5,89.349,3,96.533,5,96.725,3,91.092
+18,GLM-5.2 (max),Z AI,glm-5-2,glm 5 2,Main,93.467,91.0338,17,14,21,3,0,0.2672,0.3641,3,94.323,8,89.732,3,97.369,4,91.639,3,94.36
+19,Muse Spark 1.1 (xhigh),Meta,muse-spark-1-1,muse spark 1 1,Provisional,93.4386,90.7584,19,7,13,2,3,0.2777,0.3885,2,95.813,2,88.338,3,97.105,4,95.75,2,90.343
+20,DeepSeek V4 Flash 0731 (max),DeepSeek,deepseek-v4-flash,deepseek v4 flash 0731,Provisional,93.3515,90.6456,20,9,15,2,2,0.2764,0.3885,2,94.453,4,90.277,3,96.854,4,93.676,2,91.565
+21,Qwen3.7 Max,Alibaba,qwen3-7-max,qwen3 7 max,Main,93.0412,90.4198,21,11,18,3,0,0.2689,0.3641,3,92.723,5,88.781,3,96.926,4,93.52,3,93.344
+22,DeepSeek V4 Pro (max),DeepSeek,deepseek-v4-pro,deepseek v4 pro,Main,91.5475,88.6108,22,18,25,3,0,0.263,0.3641,6,91.584,8,85.593,3,95.358,5,93.532,3,91.813
+23,Kimi K2.6,Kimi,kimi-k2-6,kimi k2 6,Provisional,91.3471,88.1759,23,9,15,2,2,0.2707,0.3641,2,90.922,2,86.568,3,94.642,5,93.853,3,90.857
+24,Muse Spark,Meta,muse-spark,muse spark,Provisional,91.254,88.1207,24,9,15,2,2,0.2707,0.3641,2,88.816,2,85.525,3,95.34,5,94.584,3,92.183
+25,Kimi K2.7 Code,Kimi,kimi-k2-7-code,kimi k2 7 code,Provisional,90.0945,86.579,25,9,15,2,1,0.272,0.3641,2,89.563,3,86.001,3,94.298,4,92.178,3,88.542
+26,MiniMax-M3,MiniMax,minimax-m3,minimax m3,Main,89.9707,86.5058,26,12,19,3,0,0.2667,0.3641,3,87.893,5,88.013,3,92.904,5,90.403,3,90.687
+27,Nex-N2-Pro,Nex AGI,nex-n2-pro,nex n2 pro,Provisional,89.2747,85.5499,27,8,14,2,2,0.2729,0.3641,2,87.657,2,86.478,3,93.436,4,90.082,3,88.796
+28,GPT-5.4 mini (xhigh),OpenAI,gpt-5-4-mini,gpt 5 4 mini,Provisional,88.8792,85.1624,28,9,15,2,2,0.2707,0.3641,2,86.928,2,84.569,3,92.14,5,89.681,3,91.182
+29,Qwen3.7 Plus,Alibaba,qwen3-7-plus,qwen3 7 plus,Provisional,88.7967,85.0888,29,9,15,2,2,0.2707,0.3641,2,85.987,2,83.652,3,94.237,5,89.978,3,90.309
+30,MiMo-V2.5-Pro,Xiaomi,mimo-v2-5-pro,mimo v2 5 pro,Provisional,88.725,84.8623,30,8,14,2,2,0.2729,0.3641,2,89.587,2,87.533,3,88.488,4,87.955,3,90.074
+31,Claude Opus 4.6 (max),Anthropic,claude-opus-4-6-adaptive,claude opus 4 6,Main,88.6944,84.5975,32,15,21,3,0,0.2881,0.3583,3,81.229,6,83.89,3,95.671,5,94.23,4,88.871
+32,DeepSeek V4 Flash (max),DeepSeek,deepseek-v4-flash-0420,deepseek v4 flash,Main,88.3738,84.7003,31,18,25,3,0,0.263,0.3641,6,88.162,8,81.099,3,92.676,5,91.312,3,88.835
+33,Grok Build 0.1 0616,SpaceXAI,grok-build-0-1-06-16,grok build 0 1 0616,Provisional,88.2447,84.3343,33,8,14,2,3,0.2756,0.3885,2,83.736,2,80.78,3,94.429,5,94.543,2,88.145
+34,Hy3,Tencent,hy3,hy3,Provisional,88.212,84.1986,34,14,21,2,1,0.2701,0.3885,5,88.058,7,86.085,3,90.875,4,90.782,2,85.33
+35,Agnes 2.5 Pro Alpha,Sapiens AI,agnes-2-5-pro-alpha,agnes 2 5 pro alpha,Provisional,88.0441,84.065,35,8,14,2,2,0.277,0.3885,2,87.486,3,81.904,3,93.65,4,88.67,2,88.698
+36,Claude Sonnet 4.6 (max),Anthropic,claude-sonnet-4-6-adaptive,claude sonnet 4 6,Provisional,87.7569,83.5898,36,9,15,2,2,0.2707,0.3641,2,90.872,2,88.322,3,86.357,5,90.306,3,83.036
+37,Motif 3 (Beta),Motif Technologies,motif-0714,motif 3 beta,Provisional,87.7457,83.5388,38,7,13,2,3,0.2777,0.3885,2,89.934,2,85.489,3,91.895,4,87.405,2,84.114
+38,GPT-5.1 (high),OpenAI,gpt-5-1,gpt 5 1,Provisional,87.428,83.5445,37,10,16,2,2,0.2604,0.3641,2,80.518,2,84.754,4,93.337,5,88.648,3,90.147
+39,Inkling Small,Thinking Machines,inkling-small,inkling small,Main,87.0311,82.9802,39,15,22,3,0,0.2677,0.3815,4,84.643,7,80.384,3,93.285,5,90.494,3,86.62
+40,GPT-5.4 nano (xhigh),OpenAI,gpt-5-4-nano,gpt 5 4 nano,Provisional,86.2225,82.0022,40,9,15,2,2,0.2707,0.3641,2,86.39,2,83.874,3,89.099,5,81.607,3,90.282
+41,Grok 4.3 (high),SpaceXAI,grok-4-3,grok 4 3,Provisional,85.4732,81.2883,41,9,15,2,2,0.2707,0.3641,2,75.069,2,76.449,3,94.037,5,92.484,3,90.239
+42,GLM-5.1,Z AI,glm-5-1,glm 5 1,Provisional,85.4515,80.8973,42,8,14,2,2,0.2729,0.3641,2,85.606,2,82.995,3,87.737,4,85.26,3,85.69
+43,Qwen3.6 Plus,Alibaba,qwen3-6-plus,qwen3 6 plus,Main,85.2498,80.7391,43,12,19,3,0,0.2661,0.3641,5,84.042,3,85.124,3,84.664,5,86.43,3,85.999
+44,Inkling,Thinking Machines,inkling,inkling,Main,85.07,80.5729,44,15,22,3,0,0.2677,0.3815,4,82.818,7,78.971,3,89.517,5,89.991,3,84.289
+45,GPT-5 (high),OpenAI,gpt-5,gpt 5,Provisional,84.0363,79.7532,45,10,16,2,2,0.2604,0.3641,2,69.019,2,79.717,4,93.526,5,87.98,3,91.048
+46,Kimi K2.5,Kimi,kimi-k2-5,kimi k2 5,Provisional,83.6849,78.8386,46,9,15,2,2,0.2707,0.3641,2,79.699,2,78.963,3,86.438,5,90.126,3,83.434
+47,MiMo-V2.5,Xiaomi,mimo-v2-5-0424,mimo v2 5,Provisional,83.5341,78.642,47,9,15,2,2,0.2707,0.3641,2,86.214,2,83.682,3,84.091,5,81.225,3,82.497
+48,Nemotron 3 Ultra,NVIDIA,nvidia-nemotron-3-ultra-550b-a55b,nemotron 3 ultra,Main,82.8722,78.053,48,14,20,3,0,0.267,0.3641,5,80.971,4,78.861,3,84.564,5,83.126,3,86.947
+49,Qwen3.5 397B A17B,Alibaba,qwen3-5-397b-a17b,qwen3 5 397b a17b,Provisional,82.6858,77.6137,49,9,15,2,2,0.2707,0.3641,2,79.194,2,80.912,3,82.317,5,88.845,3,82.306
+50,MiniMax-M2.7,MiniMax,minimax-m2-7,minimax m2 7,Main,81.9715,76.8079,51,12,19,3,0,0.2678,0.3641,4,84.177,5,83.013,3,76.201,4,87.065,3,79.596
+51,GLM-4.7,Z AI,glm-4-7,glm 4 7,Provisional,81.9047,76.8911,50,9,15,2,2,0.2626,0.3641,2,77.38,2,78.314,4,90.205,4,85.553,3,78.418
+52,DeepSeek V3.2,DeepSeek,deepseek-v3-2-reasoning,deepseek v3 2,Provisional,81.0065,75.8773,52,9,15,2,2,0.2626,0.3641,2,74.584,2,79.208,4,88.304,4,82.709,3,80.505
+53,Kimi K2 Thinking,Kimi,kimi-k2-thinking,kimi k2 thinking,Main,80.4461,74.8235,53,14,19,3,0,0.2823,0.3641,4,70.106,3,77.598,4,90.131,5,82.777,3,82.224
+54,Claude 4.5 Sonnet,Anthropic,claude-4-5-sonnet-thinking,claude 4 5 sonnet,Provisional,79.6947,74.3457,54,10,16,2,2,0.2604,0.3641,2,83.028,2,82.301,4,78.653,5,80.926,3,73.724
+55,Qwen3.6 27B,Alibaba,qwen3-6-27b,qwen3 6 27b,Provisional,79.1575,73.5633,55,9,15,2,2,0.2707,0.3641,2,83.223,2,84.769,3,70.999,5,78.958,3,78.164
+56,Ring-2.6-1T,InclusionAI,ring-2-6-1t,ring 2 6 1t,Provisional,78.3207,72.5787,56,8,14,2,2,0.2729,0.3641,2,74.296,2,77.666,3,81.259,4,80.243,3,78.221
+57,KAT-Coder-Pro V2,KwaiKAT,kat-coder-pro-v2,kat coder pro v2,Provisional,78.2325,72.5483,57,8,14,2,2,0.2729,0.3641,2,87.351,2,86.634,3,66.553,4,75.997,3,75.481
+58,Qwen3.5 122B A10B,Alibaba,qwen3-5-122b-a10b,qwen3 5 122b a10b,Provisional,78.1522,72.3958,58,9,15,2,2,0.2707,0.3641,2,76.958,2,80.098,3,72.063,5,83.324,3,78.514
+59,Ling-3.0-flash,InclusionAI,ling-3-0-flash,ling 3 0 flash,Provisional,78.07,72.1109,59,7,13,2,3,0.2777,0.3885,2,81.028,2,80.174,3,76.397,4,78.889,2,73.955
+60,LongCat 2.0,LongCat,longcat-2-0,longcat 2 0,Provisional,77.7551,71.786,60,7,13,2,3,0.2777,0.3885,2,74.534,2,77.687,3,79.708,4,80.84,2,76.082
+61,Gemma 4 31B,Google,gemma-4-31b,gemma 4 31b,Provisional,77.3777,71.5389,61,9,15,2,2,0.2707,0.3641,2,75.179,2,76.87,3,75.15,5,81.376,3,78.389
+62,DeepSeek V3.1 Terminus,DeepSeek,deepseek-v3-1-terminus-reasoning,deepseek v3 1 terminus,Provisional,76.6357,70.8956,63,9,15,2,2,0.2626,0.3641,2,74.452,2,78.579,4,79.624,4,74.389,3,76.199
+63,Gemini 2.5 Pro,Google,gemini-2-5-pro,gemini 2 5 pro,Provisional,76.5204,70.9355,62,10,16,2,2,0.2604,0.3641,2,63.189,2,72.507,4,84.712,5,85.613,3,77.571
+64,MiniMax-M2.5,MiniMax,minimax-m2-5,minimax m2 5,Provisional,76.3973,69.8985,64,10,16,2,1,0.2946,0.3641,4,74.296,2,79.593,3,69.886,4,80.614,3,77.817
+65,Step 3.7 Flash,StepFun,step-3-7-flash,step 3 7 flash,Provisional,75.8326,69.862,65,9,15,2,2,0.2707,0.3641,2,70.18,2,76.035,3,74.315,5,78.816,3,79.99
+66,NVIDIA Nemotron 3 Super,NVIDIA,nvidia-nemotron-3-super-120b-a12b,nvidia nemotron 3 super,Provisional,74.7744,68.7626,66,10,16,2,1,0.2709,0.3641,3,67.953,2,74.234,3,76.32,5,74.305,3,81.325
+67,Gemini 3.5 Flash-Lite,Google,gemini-3-5-flash-lite,gemini 3 5 flash lite,Main,74.5705,68.3809,67,12,19,3,0,0.2707,0.3815,3,79.617,5,74.812,3,66.261,5,82.13,3,70.515
+68,JT-4.1 Flash 236B A21B,China Mobile,jt-4-1-flash-236b-a21b,jt 4 1 flash 236b a21b,Provisional,74.2062,67.8762,68,8,14,2,3,0.2756,0.3885,2,81.791,2,81.046,3,65.774,5,74.703,2,68.322
+69,GPT-5.5 Instant (June 2026),OpenAI,gpt-5-5-instant-06-26,gpt 5 5 instant june 2026,Provisional,73.9193,67.5171,69,7,13,2,3,0.2777,0.3885,2,72.418,2,74.414,3,65.739,4,85.643,2,71.977
+70,MiniMax-M2.1,MiniMax,minimax-m2-1,minimax m2 1,Provisional,73.6452,67.0179,71,11,17,2,1,0.2842,0.3641,4,67.735,2,74.325,4,75.965,4,77.944,3,72.433
+71,Qwen3.6 35B A3B,Alibaba,qwen3-6-35b-a3b,qwen3 6 35b a3b,Provisional,73.5952,67.3024,70,9,15,2,2,0.2707,0.3641,2,71.251,2,78.055,3,68.525,5,76.844,3,73.479
+72,Gemini 3.1 Flash-Lite,Google,gemini-3-1-flash-lite-preview,gemini 3 1 flash lite,Provisional,72.7212,66.4744,72,9,15,2,2,0.2707,0.3641,2,64.893,2,73.405,3,65.218,5,81.622,3,79.159
+73,GLM-4.6,Z AI,glm-4-6-reasoning,glm 4 6,Provisional,71.5928,65.3148,73,9,15,2,2,0.2626,0.3641,2,75.97,2,76.029,4,72.449,4,70.957,3,62.901
+74,Mistral Medium 3.5,Mistral,mistral-medium-3-5,mistral medium 3 5,Provisional,70.073,63.6495,74,9,15,2,2,0.2707,0.3641,2,77.363,2,78.937,3,54.388,5,67.636,3,73.235
+75,Gemma 4 26B A4B,Google,gemma-4-26b-a4b,gemma 4 26b a4b,Provisional,69.7465,63.1374,76,9,15,2,2,0.2707,0.3641,2,69.904,2,72.592,3,62.888,5,72.157,3,71.383
+76,Claude 4.5 Haiku,Anthropic,claude-4-5-haiku-reasoning,claude 4 5 haiku,Provisional,69.5572,63.442,75,10,16,2,2,0.2604,0.3641,2,75.593,2,80.459,4,62.218,5,55.955,3,74.823
+77,gpt-oss-120b (high),OpenAI,gpt-oss-120b,gpt oss 120b,Provisional,68.8947,62.5339,77,9,15,2,2,0.2626,0.3641,2,58.057,2,64.422,4,82.15,4,72.394,3,68.406
+78,Nova 2.0 Pro Preview (medium),Amazon,nova-2-0-pro-reasoning-medium,nova 2 0 pro preview,Provisional,68.3313,61.9391,78,10,16,2,2,0.2604,0.3641,2,64.14,2,67.845,4,71.12,5,65.683,3,73.031
+79,Claude 4 Sonnet,Anthropic,claude-4-sonnet-thinking,claude 4 sonnet,Provisional,67.837,61.424,79,10,16,2,2,0.2604,0.3641,2,67.911,2,75.3,4,60.681,5,64.264,3,71.422
+80,MiniMax-M2,MiniMax,minimax-m2,minimax m2,Provisional,67.5637,60.3796,81,10,15,2,2,0.2896,0.3641,2,60.286,2,71.748,4,65.445,4,66.373,3,74.331
+81,K-EXAONE,LG AI Research,k-exaone,k exaone,Provisional,67.5157,61.0179,80,9,15,2,2,0.2626,0.3641,2,59.525,2,68.801,4,76.106,4,63.821,3,69.797
+82,Qwen3.5 27B,Alibaba,qwen3-5-27b-non-reasoning,qwen3 5 27b,Provisional,67.1272,59.8225,82,13,19,2,1,0.2896,0.3641,5,66.452,2,72.449,3,62.7,6,70.592,3,63.659
+83,Qwen3.5 35B A3B,Alibaba,qwen3-5-35b-a3b-non-reasoning,qwen3 5 35b a3b,Provisional,64.6111,57.6505,84,9,15,2,2,0.2707,0.3641,2,63.194,2,73.202,3,60.068,5,64.175,3,62.715
+84,Qwen3 235B A22B 2507,Alibaba,qwen3-235b-a22b-instruct-2507-reasoning,qwen3 235b a22b 2507,Provisional,64.5615,58.1972,83,9,15,2,2,0.2626,0.3641,2,41.547,2,61.872,4,77.447,4,72.638,3,71.935
+85,Gemma 4 12B,Google,gemma-4-12b,gemma 4 12b,Provisional,63.8621,56.9605,86,9,15,2,2,0.2707,0.3641,2,58.65,2,67.144,3,56.792,5,65.62,3,71.565
+86,Nova 2.0 Lite (high),Amazon,nova-2-0-lite-reasoning,nova 2 0 lite,Provisional,63.6083,57.2087,85,10,16,2,2,0.2604,0.3641,2,44.166,2,59.853,4,80.171,5,65.467,3,70.627
+87,Qwen3.5 9B,Alibaba,qwen3-5-9b,qwen3 5 9b,Provisional,62.8682,55.9691,87,9,15,2,2,0.2707,0.3641,2,51.497,2,69.727,3,59.471,5,62.987,3,71.471
+88,G9v3-39A5B,AI9Stars,g9v3-39a5b,g9v3 39a5b,Provisional,61.8491,54.6412,88,7,13,2,3,0.2777,0.3885,2,59.745,2,68.022,3,53.654,4,61.75,2,66.483
+89,GLM-4.5,Z AI,glm-4.5,glm 4 5,Provisional,60.9371,53.4031,90,12,17,2,1,0.2861,0.3641,3,56.618,2,59.292,4,62.81,5,68.08,3,58.142
+90,Mercury 2,Inception,mercury-2,mercury 2,Provisional,60.6087,53.4369,89,8,14,2,2,0.2729,0.3641,2,59.007,2,58.153,3,58.785,4,68.853,3,58.501
+91,GPT-5 mini (high),OpenAI,gpt-5-mini,gpt 5 mini,Provisional,58.7593,53.3744,91,10,16,2,2,0.2604,0.3641,2,18.228,2,48.181,4,80.832,5,77.698,3,79.152
+92,North Mini Code,Cohere,north-mini-code,north mini code,Provisional,57.9672,50.7616,92,8,14,2,2,0.2729,0.3641,2,65.996,2,60.338,3,51.417,4,61.16,3,51.45
+93,Command A+,Cohere,command-a-plus,command a,Provisional,57.6688,50.5586,93,9,15,2,2,0.2707,0.3641,2,53.612,2,60.244,3,53.572,5,55.015,3,66.279
+94,EXAONE 4.5 33B,LG AI Research,exaone-4-5-33b,exaone 4 5 33b,Provisional,56.7047,49.6046,95,9,15,2,2,0.2707,0.3641,2,43.516,2,60.857,3,56.546,5,60.392,3,63.022
+95,DeepSeek R1 (Jan),DeepSeek,deepseek-r1-0120,deepseek r1 jan,Provisional,56.5416,49.5989,96,9,15,2,2,0.2626,0.3641,2,47.341,2,60.727,4,53.627,4,62.416,3,59.089
+96,MiMo-V2-Flash,Xiaomi,mimo-v2-flash,mimo v2 flash,Provisional,56.3629,49.7214,94,9,15,2,2,0.2626,0.3641,2,75.444,2,71.166,4,49.827,4,43.181,3,45.09
+97,Qwen3 Coder Next,Alibaba,qwen3-coder-next,qwen3 coder next,Provisional,56.2492,49.041,97,8,14,2,2,0.2729,0.3641,2,63.6,2,65.429,3,49.074,4,54.175,3,49.719
+98,Mistral Small 4,Mistral,mistral-small-4,mistral small 4,Provisional,55.9278,48.7195,99,9,15,2,2,0.2707,0.3641,2,51.502,2,58.376,3,51.668,5,61.29,3,57.039
+99,Magistral Medium 1.2,Mistral,magistral-medium-2509,magistral medium 1 2,Provisional,55.388,48.587,100,10,16,2,2,0.2604,0.3641,2,39.88,2,54.423,4,63.798,5,60.305,3,59.722
+100,Trinity Large Thinking,Arcee AI,trinity-large-thinking,trinity large thinking,Provisional,55.2619,48.0302,101,8,14,2,2,0.2729,0.3641,2,49.559,2,52.122,3,56.626,4,67.09,3,51.532
+101,Nemotron Cascade 2 30B A3B,NVIDIA,nemotron-cascade-2-30b-a3b,nemotron cascade 2 30b a3b,Provisional,55.2078,47.9874,102,8,14,2,2,0.2729,0.3641,2,48.52,2,52.671,3,53.345,4,60.631,3,61.26
+102,Qwen3 Next 80B A3B,Alibaba,qwen3-next-80b-a3b-reasoning,qwen3 next 80b a3b,Provisional,55.1161,48.7355,98,9,15,2,2,0.2626,0.3641,2,27.325,2,51.219,4,68.1,4,62.755,3,70.477
+103,GLM-5,Z AI,glm-5-non-reasoning,glm 5,Provisional,55.0156,47.3711,103,12,18,2,1,0.2937,0.3641,2,66.679,6,60.834,3,40.834,4,53.889,3,54.065
+104,K2 Think V2,MBZUAI Institute of Foundation Models,k2-think-v2,k2 think v2,Provisional,52.5483,45.4844,104,8,14,2,2,0.2729,0.3641,2,39.313,2,57.606,3,47.609,4,53.053,3,66.539
+105,HyperNova 60B 2605,Multiverse Computing,hypernova-60b,hypernova 60b 2605,Provisional,52.4618,45.2321,106,8,14,2,2,0.2729,0.3641,2,44.106,2,49.724,3,55.746,4,59.25,3,53.933
+106,gpt-oss-20b (high),OpenAI,gpt-oss-20b,gpt oss 20b,Provisional,52.2292,45.451,105,9,15,2,2,0.2626,0.3641,2,38.666,2,45.31,4,70.672,4,52.476,3,55.905
+107,Qwen3.5 4B,Alibaba,qwen3-5-4b,qwen3 5 4b,Provisional,51.5716,44.6743,107,9,15,2,2,0.2707,0.3641,2,35.633,2,66.49,3,49.142,5,43.839,3,65.143
+108,NVIDIA Nemotron 3 Nano,NVIDIA,nvidia-nemotron-3-nano-30b-a3b-reasoning,nvidia nemotron 3 nano,Main,47.5876,41.4196,108,12,18,3,0,0.2597,0.3641,3,21.927,3,35.433,4,73.073,5,55.967,3,57.094
+109,o3-mini (high),OpenAI,o3-mini-high,o3 mini,Provisional,46.9272,40.3921,109,8,14,2,2,0.2729,0.3641,2,21.188,2,36.118,3,55.681,4,67.061,3,59.597
+110,DeepSeek V3 0324,DeepSeek,deepseek-v3-0324,deepseek v3 0324,Provisional,44.7245,37.9875,110,9,15,2,2,0.2626,0.3641,2,39.765,2,50.835,4,33.826,4,47.731,3,52.333
+111,Solar Pro 3,Upstage,solar-pro-3,solar pro 3,Provisional,44.0933,37.2176,112,8,14,2,2,0.2729,0.3641,2,27.667,2,41.258,3,49.362,4,51.736,3,51.983
+112,Devstral 2,Mistral,devstral-2,devstral 2,Provisional,43.9515,37.408,111,9,15,2,2,0.2626,0.3641,2,57.462,2,56.358,4,26.931,4,37.867,3,43.469
+113,GPT-4.1 mini,OpenAI,gpt-4-1-mini,gpt 4 1 mini,Provisional,43.3514,36.7149,113,10,16,2,2,0.2604,0.3641,2,36.395,2,47.389,4,35.394,5,45.996,3,52.337
+114,Ling 2.6 Flash,InclusionAI,ling-2-6-flash,ling 2 6 flash,Provisional,42.6271,35.6863,114,8,14,2,2,0.2729,0.3641,2,46.054,2,49.82,3,34.856,4,37.458,3,45.507
+115,Mistral Large 3,Mistral,mistral-large-3,mistral large 3,Provisional,41.2369,34.6851,116,10,16,2,2,0.2604,0.3641,2,36.912,2,45.618,4,31.494,5,46.526,3,46.306
+116,DiffusionGemma 26B A4B,Google,diffusiongemma-26b-a4b,diffusiongemma 26b a4b,Provisional,40.5665,33.8654,117,9,15,2,2,0.2707,0.3641,2,36.058,2,32.476,3,45.812,5,54.438,3,35.207
+117,Qwen3 30B A3B 2507,Alibaba,qwen3-30b-a3b-2507-reasoning,qwen3 30b a3b 2507,Provisional,40.13,34.698,115,9,15,2,2,0.2626,0.3641,2,6.669,2,33.12,4,48.437,4,53.666,3,66.823
+118,Llama 4 Maverick,Meta,llama-4-maverick,llama 4 maverick,Provisional,39.4879,33.3348,118,10,16,2,2,0.2604,0.3641,2,26.281,2,46.037,4,23.513,5,48.335,3,56.288
+119,DeepSeek V3 (Dec),DeepSeek,deepseek-v3,deepseek v3 dec,Provisional,38.4311,32.0912,119,9,15,2,2,0.2626,0.3641,2,44.045,2,46.989,4,21.492,4,39.585,3,41.579
+120,Devstral Small 2,Mistral,devstral-small-2,devstral small 2,Provisional,37.9153,31.787,120,10,16,2,2,0.2604,0.3641,2,53.034,2,52.231,4,23.847,5,26.89,3,36.289
+121,Mistral Medium 3.1,Mistral,mistral-medium-3-1,mistral medium 3 1,Provisional,35.8899,29.643,121,10,16,2,2,0.2604,0.3641,2,38.205,2,38.227,4,29.078,5,39.018,3,35.174
+122,Celeris-1,Celeris,celeris-1,celeris 1,Provisional,35.3967,28.881,122,8,14,2,3,0.2771,0.3885,2,23.117,2,40.439,3,37.777,5,32.717,2,43.922
+123,Magistral Small 1.2,Mistral,magistral-small-2509,magistral small 1 2,Provisional,34.0207,28.2915,123,10,16,2,2,0.2604,0.3641,2,18.62,2,23.453,4,55.106,5,43.003,3,33.115
+124,Nemotron 3 Nano Omni 30B A3B Reasoning,NVIDIA,nemotron-3-nano-omni-30b-a3b,nemotron 3 nano omni 30b a3b reasoning,Provisional,33.7636,27.7593,124,9,15,2,2,0.2707,0.3641,2,20.137,2,38.995,3,26.969,5,29.698,3,55.732
+125,Mistral Small 3.1,Mistral,mistral-small-3-1,mistral small 3 1,Provisional,31.3912,25.9983,125,9,15,2,2,0.2626,0.3641,2,47.496,2,47.183,4,7.293,4,27.336,3,32.03
+126,Ministral 3 14B,Mistral,ministral-3-14b,ministral 3 14b,Provisional,29.2981,23.6567,126,10,16,2,2,0.2604,0.3641,2,23.056,2,35.517,4,25.371,5,28.171,3,34.859
+127,Claude 3.5 Haiku,Anthropic,claude-3-5-haiku,claude 3 5 haiku,Provisional,28.4846,22.8001,127,9,15,2,2,0.2707,0.3641,2,26.712,2,36.846,3,19.992,5,20.649,3,39.486
+128,G9v3-3B,AI9Stars,g9v3-3b,g9v3 3b,Provisional,26.6079,21.3348,129,7,13,2,3,0.2777,0.3885,2,12.052,2,37.099,3,22.692,4,14.577,2,50.639
+129,Qwen3 32B,Alibaba,qwen3-32b-instruct-reasoning,qwen3 32b,Provisional,25.341,21.5403,128,10,16,2,1,0.2612,0.3641,3,21.156,2,5.627,4,53.56,4,50.984,3,4.264
+130,Gemma 4 E4B,Google,gemma-4-e4b,gemma 4 e4b,Provisional,24.6669,19.7428,130,9,15,2,2,0.2707,0.3641,2,5.582,2,23.166,3,27.89,5,24.054,3,45.96
+131,Mistral Small 3.2,Mistral,mistral-small-3-2,mistral small 3 2,Provisional,24.4527,19.377,131,10,16,2,2,0.2604,0.3641,2,16.657,2,26.298,4,21.66,5,27.228,3,30.914
+132,Llama 4 Scout,Meta,llama-4-scout,llama 4 scout,Provisional,23.4175,18.7451,133,10,16,2,2,0.2604,0.3641,2,7.432,2,27.372,4,17.394,5,26.804,3,40.573
+133,Ministral 3 8B,Mistral,ministral-3-8b,ministral 3 8b,Provisional,22.9632,18.1927,134,10,16,2,2,0.2604,0.3641,2,10.076,2,27.341,4,22.534,5,20.722,3,35.572
+134,Granite 4.1 30B,IBM,granite-4-1-30b,granite 4 1 30b,Provisional,22.7357,17.8082,135,8,14,2,2,0.2729,0.3641,2,8.341,2,20.17,3,24.978,4,26.268,3,35.562
+135,NVIDIA Nemotron 3 Nano 4B,NVIDIA,nvidia-nemotron-3-nano-4b,nvidia nemotron 3 nano 4b,Provisional,22.5638,17.6983,136,8,14,2,2,0.2729,0.3641,2,7.162,2,22.021,3,27.782,4,20.306,3,37.587
+136,Nanbeige4.1-3B,Nanbeige,nanbeige4-1-3b,nanbeige4 1 3b,Provisional,22.2563,19.2876,132,8,14,2,2,0.2729,0.3641,2,3.601,2,2.048,3,59.595,4,55.352,3,4.196
+137,Llama 3.3 70B,Meta,llama-3-3-instruct-70b,llama 3 3 70b,Provisional,21.7722,17.1125,137,9,15,2,2,0.2626,0.3641,2,14.629,2,23.246,4,10.903,4,29.076,3,32.398
+138,GPT-4.1 nano,OpenAI,gpt-4-1-nano,gpt 4 1 nano,Provisional,21.4059,16.7684,138,10,16,2,2,0.2604,0.3641,2,11.63,2,22.239,4,19.961,5,23.823,3,30.128
+139,Qwen3 14B,Alibaba,qwen3-14b-instruct-reasoning,qwen3 14b,Provisional,19.2076,15.601,139,9,15,2,2,0.2626,0.3641,2,17.742,2,5.377,4,36.564,4,35.832,3,4.594
+140,Granite 4.1 8B,IBM,granite-4-1-8b,granite 4 1 8b,Provisional,18.8645,14.4059,140,8,14,2,2,0.2729,0.3641,2,8.745,2,17.862,3,21.896,4,20.15,3,26.406
+141,Gemma 4 E2B,Google,gemma-4-e2b,gemma 4 e2b,Provisional,16.4863,12.6246,141,9,15,2,2,0.2707,0.3641,2,2.248,2,11.52,3,24.199,5,16.668,3,29.807
+142,Gemma 3 27B,Google,gemma-3-27b,gemma 3 27b,Provisional,15.762,12.0178,143,10,16,2,2,0.2604,0.3641,2,11.094,2,13.874,4,17.464,5,21.419,3,15.219
+143,Qwen3.5 2B,Alibaba,qwen3-5-2b,qwen3 5 2b,Provisional,15.5482,12.106,142,9,15,2,2,0.2707,0.3641,2,0.649,2,24.088,3,17.328,5,3.263,3,36.123
+144,Ministral 3 3B,Mistral,ministral-3-3b,ministral 3 3b,Provisional,12.3681,9.3178,145,10,16,2,2,0.2604,0.3641,2,1.321,2,9.881,4,17.003,5,12.15,3,22.629
+145,Qwen3 8B,Alibaba,qwen3-8b-instruct-reasoning,qwen3 8b,Provisional,11.9325,9.3374,144,9,15,2,2,0.2626,0.3641,2,6.115,2,3.285,4,20.017,4,28.384,3,4.043
+146,Llama 3.1 8B,Meta,llama-3-1-instruct-8b,llama 3 1 8b,Provisional,11.5375,8.6535,146,9,15,2,2,0.2626,0.3641,2,1.975,2,14.335,4,5.593,4,9.847,3,27.647
+147,Gemma 3 12B,Google,gemma-3-12b,gemma 3 12b,Provisional,10.928,8.1326,147,10,16,2,2,0.2604,0.3641,2,1.726,2,6.982,4,14.635,5,14.031,3,18.066
+148,Phi-4 Mini,Microsoft,phi-4-mini,phi 4 mini,Provisional,10.2046,7.5408,148,9,15,2,2,0.2626,0.3641,2,0.88,2,10.884,4,7.692,4,9.708,3,23.0
+149,MiniCPM-V 4.6 1.3B,OpenBMB,minicpm-v4-6-1-3b,minicpm v 4 6 1 3b,Provisional,8.6012,6.2212,149,9,15,2,2,0.2707,0.3641,2,0.072,2,6.759,3,18.897,5,3.222,3,15.217
+150,Granite 4.1 3B,IBM,granite-4-1-3b,granite 4 1 3b,Provisional,8.0764,5.769,150,8,14,2,2,0.2729,0.3641,2,1.189,2,4.454,3,16.089,4,9.283,3,9.963
+151,Qwen3.5 0.8B,Alibaba,qwen3-5-0-8b-non-reasoning,qwen3 5 0 8b,Provisional,7.6979,5.4945,152,9,15,2,2,0.2707,0.3641,2,0.123,2,6.982,3,15.737,5,2.123,3,14.445
+152,Gemma 3 4B,Google,gemma-3-4b,gemma 3 4b,Provisional,7.6633,5.522,151,10,16,2,2,0.2604,0.3641,2,0.502,2,6.297,4,11.146,5,6.448,3,14.45
+153,Gemma 3n E4B,Google,gemma-3n-e4b,gemma 3n e4b,Provisional,4.6067,3.3051,153,10,16,2,2,0.2604,0.3641,2,0.585,2,1.886,4,11.341,5,5.946,3,3.612

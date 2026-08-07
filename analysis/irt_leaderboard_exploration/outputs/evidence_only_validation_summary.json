@@ -1,0 +1,115 @@
+{
+  "method": "benchmark-as-item continuous ridge-regularized 2PL point estimate, five boards equal weight",
+  "rank_policy": "no product/model constraints; no fixed missing-test penalty",
+  "uncertainty_policy": "0.67-SE is applied to theta within each board before CDF transformation and five-board aggregation; the resulting score and rank are sensitivity outputs, not the primary ranking",
+  "protocol_policy": "common AA protocol retained for Terminal-Bench 2.1, HLE, GPQA, AIME, MMMU-Pro, and IFBench; provider-reported same-family values are not row-wise substitutes",
+  "source_model_rows": 581,
+  "exact_config_rows_fitted": 581,
+  "ranked_variant_groups": 153,
+  "main_models": 24,
+  "provisional_models": 129,
+  "main_tests_per_board": 3,
+  "provisional_min_tests_per_board": 2,
+  "shared_variant_score_cells_removed": 695,
+  "configuration_ineligible_score_cells_removed": 0,
+  "derived_external_score_cells_removed": 0,
+  "site_livecodebench_cells_excluded": 369,
+  "variant_scoped_direct_score_cells_retained": 133,
+  "target_models": {
+    "Claude Opus 5": {
+      "rank": 2,
+      "model": "Claude Opus 5 (max)",
+      "creator": "Anthropic",
+      "slug": "claude-opus-5",
+      "variant_group": "claude opus 5",
+      "evidence_tier": "Provisional",
+      "twopl_score": 97.4128,
+      "lcb_score_sensitivity": 96.1172,
+      "lcb_rank_sensitivity": 2,
+      "unique_benchmark_families": 13,
+      "board_test_slots_total": 20,
+      "min_board_tests": 2,
+      "boards_below_main_target": 1,
+      "mean_board_se": 0.2694,
+      "max_board_se": 0.3885,
+      "coding_tests": 5,
+      "coding_score": 99.281,
+      "agentic-tool-work_tests": 5,
+      "agentic-tool-work_score": 95.323,
+      "hard-reasoning_tests": 3,
+      "hard-reasoning_score": 99.176,
+      "knowledge-science_tests": 5,
+      "knowledge-science_score": 98.222,
+      "instruction-context_tests": 2,
+      "instruction-context_score": 95.106
+    },
+    "Qwen3.8 Max": {
+      "rank": 10,
+      "model": "Qwen3.8 Max",
+      "creator": "Alibaba",
+      "slug": "qwen3-8-max",
+      "variant_group": "qwen3 8 max",
+      "evidence_tier": "Main",
+      "twopl_score": 94.9198,
+      "lcb_score_sensitivity": 92.785,
+      "lcb_rank_sensitivity": 10,
+      "unique_benchmark_families": 14,
+      "board_test_slots_total": 21,
+      "min_board_tests": 3,
+      "boards_below_main_target": 0,
+      "mean_board_se": 0.2694,
+      "max_board_se": 0.3815,
+      "coding_tests": 3,
+      "coding_score": 96.084,
+      "agentic-tool-work_tests": 7,
+      "agentic-tool-work_score": 91.932,
+      "hard-reasoning_tests": 3,
+      "hard-reasoning_score": 98.113,
+      "knowledge-science_tests": 5,
+      "knowledge-science_score": 95.369,
+      "instruction-context_tests": 3,
+      "instruction-context_score": 93.162
+    }
+  },
+  "excluded_sparse_items": {
+    "coding": [
+      {
+        "id": "deepswe-v1-1",
+        "label": "DeepSWE v1.1",
+        "n_obs": 6,
+        "reason": "fewer than 8 model observations"
+      }
+    ],
+    "agentic-tool-work": [
+      {
+        "id": "gdpval-wins-ties",
+        "label": "GDPval (wins or ties)",
+        "n_obs": 4,
+        "reason": "fewer than 8 model observations"
+      }
+    ],
+    "hard-reasoning": [
+      {
+        "id": "frontiermath-tier-4",
+        "label": "FrontierMath Tier 4",
+        "n_obs": 4,
+        "reason": "fewer than 8 model observations"
+      },
+      {
+        "id": "frontiermath-tier-1-3",
+        "label": "FrontierMath Tier 1-3",
+        "n_obs": 4,
+        "reason": "fewer than 8 model observations"
+      }
+    ],
+    "knowledge-science": [
+      {
+        "id": "mmmlu",
+        "label": "MMMLU",
+        "n_obs": 7,
+        "reason": "fewer than 8 model observations"
+      }
+    ],
+    "instruction-context": []
+  }
+}

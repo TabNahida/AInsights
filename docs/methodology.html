@@ -4,15 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AInsights Index Methodology - AI Insights Analysis</title>
-    <meta name="description" content="Learn how AInsights Index (AIndex) is calculated, including benchmark weights, best-score ratio normalization, geometric weighted mean scoring, and missing benchmark handling." />
-    <meta name="keywords" content="AInsights Index, AIndex, AI model benchmark, LLM leaderboard, Artificial Analysis" />
+    <meta name="description" content="Learn how AInsights Index combines equal-board core and sparse Rasch evidence ranks, reports 2PL and dense-Rasch checks, handles evidence coverage, and applies its transparent publication order." />
+    <meta name="keywords" content="AInsights Index, AIndex, Rasch, IRT, 2PL, AI model benchmark, LLM leaderboard" />
     <link rel="canonical" href="https://ainsights.tab.homes/methodology.html" />
     <meta property="og:title" content="AInsights Index Methodology - AI Insights Analysis" />
-    <meta property="og:description" content="Learn how AInsights Index (AIndex) is calculated, including benchmark weights, best-score ratio normalization, geometric weighted mean scoring, and missing benchmark handling." />
+    <meta property="og:description" content="A source-backed leaderboard built from equal-board core and sparse Rasch evidence, with 2PL and dense-Rasch sensitivity views." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ainsights.tab.homes/methodology.html" />
     <meta name="twitter:card" content="summary" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"AInsights Index Methodology - AI Insights Analysis","alternateName":["AInsights Index","AIndex"],"url":"https://ainsights.tab.homes/methodology.html","description":"Learn how AInsights Index (AIndex) is calculated, including benchmark weights, best-score ratio normalization, geometric weighted mean scoring, and missing benchmark handling."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"AInsights Index Methodology - AI Insights Analysis","alternateName":["AInsights Index","AIndex"],"url":"https://ainsights.tab.homes/methodology.html","description":"AInsights Index combines equal-board core and sparse Rasch evidence ranks and publishes transparent sensitivity and coverage diagnostics."}</script>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -33,140 +33,177 @@
         <section class="methodology-hero">
           <p class="eyebrow">Methodology</p>
           <h2>AInsights Index Methodology</h2>
-          <p>The default AIndex ranking is calculated from five independent capability boards, with extra emphasis on Coding, Agentic/tool work, and Hard reasoning.</p>
+          <p>The default leaderboard combines the unanchored evidence ranks from two equal-board Rasch models: a stable core item pool and a sparse item pool that admits earlier frontier signals. The two ranks receive exactly the same influence. Scores are derived only from observed benchmark results; evidence coverage is reported separately rather than used as a hidden model correction.</p>
         </section>
 
         <section class="methodology-grid">
           <article class="methodology-card methodology-card-wide">
-            <h3>Capability Boards</h3>
-            <p>AIndex now uses five capability boards instead of a regular-plus-bonus split. Scores are scaled to the current AA Intelligence maximum, and the boards are shown from highest to lowest weight.</p>
-            <div class="methodology-table-wrap">
-              <table class="methodology-weight-table">
-                <thead>
-                  <tr>
-                    <th>Board</th>
-                    <th>Weight</th>
-                    <th>Selection logic</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Coding</td>
-                    <td>40</td>
-                    <td>The largest board prioritizes real software engineering and difficult coding tasks: SWE-Bench Pro/Verified/Multilingual, AA Terminal-Bench v2.1, LiveCodeBench, Terminal-Bench Hard, and SciCode. Sparse benchmarks with fewer than four scored models remain source evidence but are not selected by the default matrix.</td>
-                  </tr>
-                  <tr>
-                    <td>Agentic/tool work</td>
-                    <td>24</td>
-                    <td>Terminal-Bench v2.1, SWE-Bench, BrowseComp, HLE tools, MCP-Atlas, OSWorld, GDPval, Toolathlon, and AA-LCR capture tool, browser, terminal, desktop, and business workflow execution.</td>
-                  </tr>
-                  <tr>
-                    <td>Hard reasoning</td>
-                    <td>20</td>
-                    <td>HLE, FrontierMath, CritPt, GPQA, AIME, and HMMT emphasize difficult problem solving. Sparse abstraction benchmarks with fewer than four scored models are not selected by the default matrix.</td>
-                  </tr>
-                  <tr>
-                    <td>Knowledge/science</td>
-                    <td>8</td>
-                    <td>Omniscience, GPQA, HLE, lower-weight MMLU-Pro, MMLU, MMMU-Pro, and SciCode add scientific and factual breadth.</td>
-                  </tr>
-                  <tr>
-                    <td>Instruction/context</td>
-                    <td>8</td>
-                    <td>IFBench, AA-LCR, CritPt, and CharXiv variants capture instruction following and context behavior.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p>A metric can appear in multiple boards because each board scores an independent capability dimension. For example, Terminal-Bench can reflect both code execution and tool workflow ability, but its weight inside each board only serves that board.</p>
+            <h3>Default Ranking at a Glance</h3>
+            <ol class="methodology-steps">
+              <li>Clean and canonicalize comparable benchmark results, keeping exact model configurations and preventing duplicate source rows from becoming duplicate items.</li>
+              <li>Fit an equal-board continuous 1PL/Rasch model on the <strong>core pool</strong> and another on the broader <strong>sparse pool</strong>.</li>
+              <li>Compute <code>rank_mean = (core_evidence_rank + sparse_evidence_rank) / 2</code>. No named-model term, manual benchmark weight, missing-score imputation, or coverage penalty enters either evidence score.</li>
+              <li>Order equal means by <code>rank_max</code>, then <code>rank_min</code>, then stable model ID. This symmetric tie-break first prefers agreement between the two methods.</li>
+              <li>Apply the explicit publication order only after the evidence ranking is complete. The original evidence rank and any publication movement remain available for audit.</li>
+            </ol>
           </article>
 
           <article class="methodology-card methodology-card-wide">
-            <h3>Metric Weights</h3>
-            <p>Internal weights are normalized within each board. The matrix is ordered by board weight, and each board's metrics are ordered from highest to lowest internal weight.</p>
+            <h3>Capability Boards</h3>
+            <p>The measurement layer retains five capability boards. Every board contributes one fifth of each Rasch evidence score; there is no 40 / 24 / 20 / 8 / 8 weighting in the default ranking.</p>
             <div class="methodology-table-wrap">
               <table class="methodology-weight-table methodology-matrix-table">
                 <thead>
                   <tr>
                     <th>Board</th>
-                    <th>AIndex weight</th>
-                    <th>Benchmark selection</th>
-                    <th>Metrics and internal weights</th>
+                    <th>Share</th>
+                    <th>Focus</th>
+                    <th>Published fields</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>Coding</td>
-                    <td>40</td>
-                    <td>Real repository repair, terminal coding, contest-style generation, and harder coding/science tasks.</td>
-                    <td><span class="methodology-metric-pill"><code>SWE-Bench Pro</code> 1.5</span><span class="methodology-metric-pill"><code>LiveCodeBench</code> 1.2</span><span class="methodology-metric-pill"><code>SWE-bench Verified</code> 1.1</span><span class="methodology-metric-pill"><code>Terminal-Bench Hard</code> 1.0</span><span class="methodology-metric-pill"><code>Terminal-Bench v2.1</code> 0.9</span><span class="methodology-metric-pill"><code>SWE-bench Multilingual</code> 0.8</span><span class="methodology-metric-pill"><code>SciCode</code> 0.8</span></td>
+                    <td>20%</td>
+                    <td>Repository repair, terminal coding, code generation, and difficult software-engineering work.</td>
+                    <td><span class="methodology-metric-pill"><code>coding_score</code></span><span class="methodology-metric-pill"><code>coding_tests</code></span></td>
                   </tr>
                   <tr>
                     <td>Agentic/tool work</td>
-                    <td>24</td>
-                    <td>Tool use, browser research, terminal work, desktop tasks, business task completion, and long-context execution.</td>
-                    <td><span class="methodology-metric-pill"><code>SWE-Bench Pro</code> 1.3</span><span class="methodology-metric-pill"><code>BrowseComp</code> 1.0</span><span class="methodology-metric-pill"><code>HLE w/ tools</code> 1.0</span><span class="methodology-metric-pill"><code>MCP-Atlas Public</code> 0.9</span><span class="methodology-metric-pill"><code>OSWorld-Verified</code> 0.8</span><span class="methodology-metric-pill"><code>GDPval (wins or ties)</code> 0.8</span><span class="methodology-metric-pill"><code>Terminal-Bench Hard</code> 0.8</span><span class="methodology-metric-pill"><code>GDPval-AA Elo</code> 0.7</span><span class="methodology-metric-pill"><code>Toolathlon</code> 0.6</span><span class="methodology-metric-pill"><code>Terminal-Bench v2.1</code> 0.5</span><span class="methodology-metric-pill"><code>AA-LCR</code> 0.5</span></td>
+                    <td>20%</td>
+                    <td>Browser, terminal, desktop, tool-use, and professional workflow execution.</td>
+                    <td><span class="methodology-metric-pill"><code>agentic-tool-work_score</code></span><span class="methodology-metric-pill"><code>agentic-tool-work_tests</code></span></td>
                   </tr>
                   <tr>
                     <td>Hard reasoning</td>
-                    <td>20</td>
-                    <td>High-difficulty general reasoning, math, science QA, contest math, and ARC-style abstraction.</td>
-                    <td><span class="methodology-metric-pill"><code>Humanity's Last Exam</code> 1.3</span><span class="methodology-metric-pill"><code>Humanity's Last Exam</code> 1.2</span><span class="methodology-metric-pill"><code>FrontierMath Tier 4</code> 1.2</span><span class="methodology-metric-pill"><code>CritPt</code> 1.1</span><span class="methodology-metric-pill"><code>FrontierMath Tier 1-3</code> 1.0</span><span class="methodology-metric-pill"><code>GPQA Diamond</code> 0.9</span><span class="methodology-metric-pill"><code>GPQA Diamond</code> 0.8</span><span class="methodology-metric-pill"><code>AIME 2025</code> 0.7</span><span class="methodology-metric-pill"><code>AIME 2025</code> 0.7</span><span class="methodology-metric-pill"><code>AIME 2026</code> 0.3</span><span class="methodology-metric-pill"><code>HMMT Feb 2026</code> 0.3</span></td>
+                    <td>20%</td>
+                    <td>High-difficulty general reasoning, mathematics, science QA, and abstraction.</td>
+                    <td><span class="methodology-metric-pill"><code>hard-reasoning_score</code></span><span class="methodology-metric-pill"><code>hard-reasoning_tests</code></span></td>
                   </tr>
                   <tr>
                     <td>Knowledge/science</td>
-                    <td>8</td>
-                    <td>Scientific and factual breadth across omniscience, GPQA, HLE, multilingual knowledge, multimodal reasoning, and code-adjacent science.</td>
-                    <td><span class="methodology-metric-pill"><code>AA-Omniscience Accuracy</code> 1.0</span><span class="methodology-metric-pill"><code>GPQA Diamond</code> 0.9</span><span class="methodology-metric-pill"><code>Humanity's Last Exam</code> 0.8</span><span class="methodology-metric-pill"><code>MMMLU</code> 0.7</span><span class="methodology-metric-pill"><code>MMMU-Pro</code> 0.7</span><span class="methodology-metric-pill"><code>SciCode</code> 0.5</span><span class="methodology-metric-pill"><code>MMLU-Pro</code> 0.2</span></td>
+                    <td>20%</td>
+                    <td>Factual breadth, scientific knowledge, multilingual knowledge, and multimodal understanding.</td>
+                    <td><span class="methodology-metric-pill"><code>knowledge-science_score</code></span><span class="methodology-metric-pill"><code>knowledge-science_tests</code></span></td>
                   </tr>
                   <tr>
                     <td>Instruction/context</td>
-                    <td>8</td>
-                    <td>Instruction following, long context, critique behavior, and chart/vision understanding with and without tools.</td>
-                    <td><span class="methodology-metric-pill"><code>IFBench</code> 1.0</span><span class="methodology-metric-pill"><code>AA-LCR</code> 0.9</span><span class="methodology-metric-pill"><code>CritPt</code> 0.7</span><span class="methodology-metric-pill"><code>CharXiv Reasoning w/ tools</code> 0.6</span><span class="methodology-metric-pill"><code>CharXiv Reasoning</code> 0.5</span></td>
+                    <td>20%</td>
+                    <td>Instruction following, critique, long-context work, and chart or document understanding.</td>
+                    <td><span class="methodology-metric-pill"><code>instruction-context_score</code></span><span class="methodology-metric-pill"><code>instruction-context_tests</code></span></td>
                   </tr>
                 </tbody>
               </table>
             </div>
+            <p>A canonical benchmark family occupies at most one slot inside a board even when equivalent rows are available from multiple sources. A family may still appear in more than one board when it supplies evidence about more than one capability.</p>
+          </article>
+
+          <article class="methodology-card methodology-card-wide">
+            <h3>Item Pools and Sensitivity Methods</h3>
+            <div class="methodology-table-wrap">
+              <table class="methodology-weight-table methodology-matrix-table">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>Item admission</th>
+                    <th>Role</th>
+                    <th>What changes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Core Rasch</td>
+                    <td>At least 8 independent model families and 3 creators</td>
+                    <td>Half of the default rank</td>
+                    <td>Prioritizes broadly comparable items and stable measurement.</td>
+                  </tr>
+                  <tr>
+                    <td>Sparse Rasch</td>
+                    <td>At least 3 independent model families; one creator is sufficient</td>
+                    <td>Half of the default rank</td>
+                    <td>Adds newer and rarer frontier tests without changing the Rasch model itself.</td>
+                  </tr>
+                  <tr>
+                    <td>Equal-board 2PL</td>
+                    <td>Same pool as Core Rasch</td>
+                    <td>Full Ranking comparison</td>
+                    <td>Learns an anonymous discrimination parameter for each item, with a common ridge toward 1 and bounds of 0.35–2.5.</td>
+                  </tr>
+                  <tr>
+                    <td>Dense Rasch</td>
+                    <td>At least 20 independent model families and 3 creators</td>
+                    <td>Full Ranking comparison</td>
+                    <td>Uses only mature, widely observed items as a conservative sensitivity check.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>2PL and Dense Rasch are displayed alongside the default rank so readers can see whether a result depends on learned item discrimination or on less mature benchmarks. They do not receive a hidden weight in the default ranking.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>Calculation Formula</h3>
-            <p>For a metric <code>m</code>, the normalized metric value is <code>ratio_m = max(raw_m, 0) / best_observed_m</code>. Best observed means the highest score currently present in the dataset for that exact metric key.</p>
-            <p>For each board, AIndex first aggregates available metric ratios with the weighted geometric mean used by the code: <code>exp(sum(weight_m * ln(1 + ratio_m)) / sum(available_weight_m)) - 1</code>.</p>
-            <p>The board metric coverage adjustment is then applied: multiply the board value by <code>(available_internal_weight / total_internal_weight) ^ exponent</code>. The within-board coverage discount exponent is 0.10, including boards with only one available metric.</p>
-            <p>If a board has no available metrics, AIndex inserts a weak prior value of 0.34 for that board. If all five boards are missing, the model receives no default AIndex score.</p>
-            <p>The final board aggregation is another weighted geometric mean: <code>AIndex = AA Intelligence max * (exp((40 * ln(1 + Coding) + 24 * ln(1 + Agentic) + 20 * ln(1 + HardReasoning) + 8 * ln(1 + KnowledgeScience) + 8 * ln(1 + InstructionContext)) / 100) - 1)</code>.</p>
+            <p>Scores that behave like percentages are converted with <code>z_ij = logit(clip(raw_ij / 100, 0.01, 0.99))</code>. Metrics whose scale only supports relative ordering are first converted to within-item empirical percentiles. Each observed model–item cell then has equal influence.</p>
+            <p>Within every board, Core, Sparse, and Dense Rasch fit <code>z_ij = theta_i - difficulty_j + error_ij</code>. After fitting, active model abilities are standardized inside that board and mapped to <code>board_score = 100 × Phi(theta_z)</code>.</p>
+            <p>The five board scores are combined by an unweighted arithmetic mean. Each method creates its own evidence rank from that score; the default consensus then uses <code>rank_mean = (rank_core + rank_sparse) / 2</code> and the deterministic tie-break described above.</p>
+            <p>Equal-board 2PL instead fits <code>z_ij = discrimination_j × theta_i + intercept_j + error_ij</code>. The slope ridge stabilizes item parameters only; there is no named-model coefficient or post-hoc model score adjustment.</p>
+          </article>
+
+          <article class="methodology-card methodology-card-wide">
+            <h3>Evidence Eligibility and Coverage</h3>
+            <p>A model must have at least two canonical benchmark families in every board to enter a method ranking. A model with at least three in every board is labeled <strong>Main</strong>; an otherwise eligible model is labeled <strong>Provisional</strong>. Insufficient evidence means “not ranked,” not a score of zero.</p>
+            <p>Coverage controls eligibility and labels, but it does not modify a qualified model's Rasch score. The leaderboard does not subtract a fixed amount for missing tests, insert a weak prior, or copy results from a lower sibling model.</p>
+            <p>The radar's sixth axis, <code>evidence_coverage_score</code>, is an audit dimension rather than a capability. For each board, Core-pool coverage and Sparse-pool coverage are calculated as <code>observed canonical families / available pool families</code>, capped at 100%; the displayed value is their 50/50 mean followed by an equal mean across all five boards. It never changes a score or rank.</p>
+          </article>
+
+          <article class="methodology-card methodology-card-wide">
+            <h3>Publication Order</h3>
+            <p>Every public method view reserves rank 1 for Claude Fable 5 and rank 2 for GPT-5.6 Sol. Matching uses stable identifiers rather than display text: Fable is located by <code>slug = claude-fable-5</code>, and Sol by its stable product-family identifier.</p>
+            <p>This is a transparent product publication rule, not an empirical IRT result. It is applied only after the evidence ranking is complete. Method scores stay unchanged, the original position is retained as <code>evidence_rank</code>, and every other model preserves its evidence-relative order. In a Custom configuration, the layer runs only when both anchors have observed, calculable results under the current settings; if either is unscored, the evidence order is kept and no missing result is invented.</p>
+          </article>
+
+          <article class="methodology-card methodology-card-wide">
+            <h3>Radar Profile</h3>
+            <p>The first five radar axes are the 50/50 means of the corresponding Core Rasch and Sparse Rasch board scores: Coding, Agentic/tool work, Hard reasoning, Knowledge/science, and Instruction/context. They use the same two evidence views as the default rank.</p>
+            <p>The sixth axis is Evidence coverage. Keeping it visually separate from the five capability values makes sparse evidence visible without turning coverage into a model correction.</p>
+          </article>
+
+          <article class="methodology-card methodology-card-wide">
+            <h3>Metric Weights and Custom Tools</h3>
+            <p>The default leaderboard does not assign custom benchmark weights. Custom Weight is an exploratory calculator and exposes three layers without rewriting source results:</p>
+            <ol class="methodology-steps">
+              <li><strong>Method-rank mixer:</strong> blend Core Rasch, Sparse Rasch, 2PL, and Dense Rasch ranks. A 50 / 50 / 0 / 0 setup reproduces the default evidence blend before the publication layer.</li>
+              <li><strong>Capability mixer:</strong> change the five board shares and compare arithmetic, geometric, or weakest-board-oriented summaries.</li>
+              <li><strong>Benchmark lab:</strong> retain per-benchmark controls, Best score ratio or Raw score, arithmetic or geometric weighted means, coverage gates, and explicit missing-data treatments for sensitivity experiments.</li>
+            </ol>
+            <p>Equalize, normalize-to-100, clear, restore, and configuration export tools make custom calculations reproducible. Custom results remain labeled as user-defined views and follow the visible publication-order rule only when both anchor models are calculable in that configuration.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>AIndex Calculation</h3>
             <ol class="methodology-steps">
-              <li>For each board metric, convert the raw score into a <strong>Best score ratio</strong>: model score divided by the highest score observed for that benchmark.</li>
-              <li>Aggregate available metrics inside each board with a weighted geometric mean, then apply a within-board coverage discount using exponent 0.10, including when only one metric is present in that board.</li>
-              <li>If an entire board is missing, use a weak prior of 0.34 for that board; if all boards are missing, no default AIndex is produced.</li>
-              <li>Aggregate the five board values with board weights 40 / 24 / 20 / 8 / 8 using a geometric weighted mean.</li>
-              <li>Scale the resulting ratio to the current AA Intelligence maximum.</li>
+              <li>Use source-backed, exact-configuration results and collapse equivalent rows into canonical benchmark-family slots.</li>
+              <li>Prepare the Core and Sparse item pools independently, then require sufficient evidence in all five boards.</li>
+              <li>Fit equal-cell Rasch models independently in every board and map standardized abilities to 0–100 board scores.</li>
+              <li>Average the five boards equally to form each method score and its unanchored evidence rank.</li>
+              <li>Average the Core and Sparse evidence ranks, apply the symmetric consistency tie-break, and only then apply the disclosed publication order.</li>
+              <li>Publish 2PL, Dense Rasch, component ranks, board scores, test counts, evidence tier, and coverage alongside the default result.</li>
             </ol>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>Detailed Explanation</h3>
-            <p>AIndex is designed to compare models across different benchmark scales without letting any single raw scoring convention dominate the final leaderboard. A percentage-style benchmark, an Elo-normalized field, and a long-context score can each have different ranges, so AIndex first places every active field on its own best-observed baseline.</p>
-            <p>The board structure is now the primary anchor. It deliberately gives the most weight to coding and agentic tool work, while keeping hard reasoning large enough to distinguish frontier models.</p>
-            <p>Official external benchmark rows are shared across variants of the same model, so a release table attached to a non-reasoning or reasoning tier can still inform the sibling tier instead of creating artificial gaps between variants.</p>
-            <p>For LiveCodeBench only, the site can synthesize a missing regular value from external LiveCodeBench data. The external row is used as a fallback source rather than as a separate default matrix metric. The fit is learned from overlapping models in the current dataset, then clamped to the normal percentage range before scoring. AIndex does not copy metrics from lower same-family models into higher tiers.</p>
-            <p>Highly correlated, saturated, or unevenly covered rows such as MMLU-Pro, AIME 2026, and HMMT remain evidence, but they carry lower internal weight so source coverage does not dominate the board.</p>
-            <p>The weak-prior missing policy is deliberately softer than missing-as-zero, but stricter than ignoring absent boards entirely. It keeps sparse-source models from collapsing while preventing one rich external table from carrying the whole score.</p>
-            <p>The Custom weights panel exposes the same building blocks for comparison: Best score ratio or Raw score, Geometric Weight Mean or regular Weight Mean, available-only scoring, 0.25 coverage discount, sqrt coverage discount, weak prior, missing-as-zero, full-coverage gates, and per-benchmark weights.</p>
+            <p>The Core view answers “what does the broadly comparable evidence say?” The Sparse view asks whether newer, less widely run benchmarks contain an early signal that the mature pool has not absorbed yet. Averaging their ranks gives those questions equal influence while preventing a new benchmark's raw scale from directly overpowering the stable pool.</p>
+            <p>Dense Rasch is deliberately conservative and can lag new capability. 2PL can better reflect items that separate the current population, but its extra discrimination parameters are more sensitive to who was tested. Showing both as comparison columns makes this trade-off inspectable instead of hiding it inside one score.</p>
+            <p>The source data contains aggregate benchmark scores rather than item-level 0/1 responses. These models are therefore benchmark-as-item continuous IRT, or IRT-inspired measurement, not a classical psychometric item bank. Board scores are relative to the current evaluated population and should not be interpreted as absolute probabilities of task success.</p>
           </article>
         </section>
       </section>
     </main>
 
     <footer class="site-footer">
-      Source: <a href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" target="_blank" rel="noreferrer">Artificial Analysis</a>.
-      AInsights Index / AIndex recalculates scores from its public evaluation data.
+      Source: <a href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" target="_blank" rel="noreferrer">Artificial Analysis</a> and linked first-party or public benchmark sources.
+      AInsights Index / AIndex recalculates rankings from source-backed evaluation data and publishes its ordering rule separately from the evidence layer.
     </footer>
   </body>
 </html>

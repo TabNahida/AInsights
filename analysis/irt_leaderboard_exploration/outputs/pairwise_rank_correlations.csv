@@ -1,0 +1,26 @@
+﻿scheme_left,scheme_left_label,scheme_right,scheme_right_label,spearman
+baseline_aindex,现行 AIndex（基准）,baseline_aindex,现行 AIndex（基准）,1.0
+baseline_aindex,现行 AIndex（基准）,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,0.985808
+baseline_aindex,现行 AIndex（基准）,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,0.985397
+baseline_aindex,现行 AIndex（基准）,robust_eb,稳健秩变换 + 贝叶斯式收缩,0.978614
+baseline_aindex,现行 AIndex（基准）,borda_breadth,收缩 Borda + 广度优先合成,0.979305
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,baseline_aindex,现行 AIndex（基准）,0.985808
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,1.0
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,0.996002
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,robust_eb,稳健秩变换 + 贝叶斯式收缩,0.988972
+rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,borda_breadth,收缩 Borda + 广度优先合成,0.990105
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,baseline_aindex,现行 AIndex（基准）,0.985397
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,0.996002
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,1.0
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,robust_eb,稳健秩变换 + 贝叶斯式收缩,0.991598
+twopl_equal,强收缩连续 2PL 近似 + 五板块等权,borda_breadth,收缩 Borda + 广度优先合成,0.994131
+robust_eb,稳健秩变换 + 贝叶斯式收缩,baseline_aindex,现行 AIndex（基准）,0.978614
+robust_eb,稳健秩变换 + 贝叶斯式收缩,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,0.988972
+robust_eb,稳健秩变换 + 贝叶斯式收缩,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,0.991598
+robust_eb,稳健秩变换 + 贝叶斯式收缩,robust_eb,稳健秩变换 + 贝叶斯式收缩,1.0
+robust_eb,稳健秩变换 + 贝叶斯式收缩,borda_breadth,收缩 Borda + 广度优先合成,0.996765
+borda_breadth,收缩 Borda + 广度优先合成,baseline_aindex,现行 AIndex（基准）,0.979305
+borda_breadth,收缩 Borda + 广度优先合成,rasch_business,连续 1PL/Rasch 近似 + 现行板块权重,0.990105
+borda_breadth,收缩 Borda + 广度优先合成,twopl_equal,强收缩连续 2PL 近似 + 五板块等权,0.994131
+borda_breadth,收缩 Borda + 广度优先合成,robust_eb,稳健秩变换 + 贝叶斯式收缩,0.996765
+borda_breadth,收缩 Borda + 广度优先合成,borda_breadth,收缩 Borda + 广度优先合成,1.0
