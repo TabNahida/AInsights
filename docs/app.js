@@ -32,8 +32,8 @@ const copy = {
       benchmarkLab: "逐项 Benchmark",
     },
     customToolDescriptions: {
-      methodRank: "组合四种 IRT 方法的真实证据名次；默认采用等板块 2PL 70% 与稀疏 Rasch 30%。",
-      boardScore: "组合五个能力板块的真实 IRT 分数；默认板块分由等板块 2PL 占 70%、稀疏 Rasch 占 30%。",
+      methodRank: "组合四种旧 IRT 审计方法的真实证据名次；默认等权，仅用于敏感性探索。",
+      boardScore: "组合方案 18 的五个真实能力板块分；默认五板等权，也可切换几何或最弱板块聚合。",
       benchmarkLab: "直接组合原始公开测试成绩，可继续控制归一化、缺失处理与覆盖门槛。",
     },
     customAggregatorTitle: "聚合器",
@@ -48,7 +48,7 @@ const copy = {
       weakest: "最弱板块",
     },
     customMethodWeightsTitle: "IRT 方法名次权重",
-    customMethodWeightsSubtitle: "使用未经过发布层调整的 evidence rank；权重为 0 即不纳入。",
+    customMethodWeightsSubtitle: "使用各 IRT 方法的真实 evidence rank；权重为 0 即不纳入。",
     customBoardWeightsTitle: "能力板块权重",
     customBoardWeightsSubtitle: "每个板块都来自真实测试成绩的 IRT 板块分，不做模型特定修正。",
     customWeightSum: "权重合计 {total}",
@@ -74,10 +74,11 @@ const copy = {
       instructionContext: "指令与上下文",
     },
     evidenceRankLabel: "证据名次",
-    publicationLayerNote: "当 Fable 5 与 GPT-5.6 Sol 在当前 Custom 配置中均有真实可计算结果时，才独立套用 Fable 5 #1、GPT-5.6 Sol #2 的发布层；否则保留证据顺序，不补造缺失成绩。",
     metricWeightsTitle: "测试项数据权重",
     metricWeightsSubtitle: "直接参与当前自定义排名的逐项权重，按已有模型数据量排序",
     metricCoverage: "{count} 个模型",
+    extensionTestCount: "{count} 个扩展观测",
+    scheme18Cap: "动态 cap {cap}",
     metricCoverageFilterLabel: "折叠低覆盖项目",
     metricCoverageFilterAll: "显示全部",
     metricCoverageFilterOption: "少于 {count} 个模型",
@@ -174,7 +175,7 @@ const copy = {
     reasoning: "Reasoning",
     methodologyLink: "AInsights Index 计算方式",
     footerPrefix: "数据来源：",
-    footerSuffix: "。AInsights Index 基于其公开评测数据重新计算。",
+    footerSuffix: "。AIndex 方案 18 使用 AA Core 与已链接的独立 benchmark 扩展来源计算。",
     repository: "仓库",
     rankingItems: "个排名项",
     scorableModels: "个可评分模型",
@@ -183,31 +184,31 @@ const copy = {
     allTiers: "显示全部档位",
     sourceFilter: "来源",
     top20Title: "AInsights Index Top {count}",
-    top20Subtitle: "按等板块 2PL 70% 与稀疏 Rasch 30% 的加权证据名次排序；柱宽表示证据名次百分位",
+    top20Subtitle: "按预计算的方案 18 AIndex score 降序生成名次；数值和柱宽均表示同一个 AIndex 分数（points）",
     latestModelsTitle: "最新模型",
     latestModelsSubtitle: "按发布日期展示最近进入数据集的去重模型",
     fullRanking: "查看完整排名",
     costScatterTitle: "智能 vs 运行成本",
     costScatterSubtitle: "横轴为运行 AA Intelligence Index 的美元成本，使用对数刻度",
     scatterXAxis: "运行 Intelligence Index 的成本（USD，对数）",
-    scatterYAxis: "证据名次百分位",
+    scatterYAxis: "AInsights 能力分",
     attractiveQuadrant: "高分低成本区域",
     noCostData: "没有足够的成本数据可绘制散点图",
-    scoreBandsTitle: "证据名次百分位分布",
-    scoreBandsSubtitle: "去重模型在平均证据名次百分位上的集中区间",
+    scoreBandsTitle: "AInsights 能力分分布",
+    scoreBandsSubtitle: "去重模型在方案 18 AIndex 各分数区间的分布",
     providerChartTitle: "机构覆盖",
     providerChartSubtitle: "按可评分去重模型数量和最高分展示",
     providerModelCount: "模型数量",
-    providerBestScore: "最佳平均名次",
+    providerBestScore: "最高分",
     providerPageTitle: "{provider} 模型概览",
-    providerPageSubtitle: "{count} 个主榜去重模型 · 最佳平均名次 {bestScore}",
+    providerPageSubtitle: "{count} 个主榜去重模型 · 最高分 {bestScore} points",
     providerNotFound: "没有找到这个机构",
     providerSummaryModels: "可评分模型",
-    providerSummaryBest: "最佳平均名次",
-    providerSummaryAverage: "平均证据名次均值",
+    providerSummaryBest: "最高分",
+    providerSummaryAverage: "平均分",
     providerSummaryOpen: "开源模型",
     providerModelsTitle: "模型列表",
-    providerModelsSubtitle: "按主榜发布名次排序，展示平均证据名次、发布日期、来源类型和运行指标",
+    providerModelsSubtitle: "按方案 18 AIndex 名次排序，展示分数（points）、发布日期、来源类型和运行指标",
     comparePageTitle: "模型对比",
     comparePageSubtitle: "选择多个模型，横向查看分数、排名、成本、速度、上下文和各项测试数据",
     comparePickerTitle: "选择模型",
@@ -228,7 +229,7 @@ const copy = {
     compareRemove: "移除",
     compareRows: {
       provider: "供应商",
-      score: "平均证据名次",
+      score: "AInsights 分数",
       rank: "排名",
       source: "来源",
       releaseDate: "发布日期",
@@ -242,24 +243,24 @@ const copy = {
       coverage: "覆盖率",
     },
     sourceExplorerTitle: "测评源地图",
-    sourceExplorerSubtitle: "AA 主数据之外的常用公开测评，用来交叉理解模型强弱项",
+    sourceExplorerSubtitle: "AA Core 与已链接的独立 benchmark 扩展来源，并列展示计分角色与协议",
     detailRankTitle: "排名快照",
     detailRadarSubtitle: "五个 IRT 能力板块加证据覆盖度；外圈为 100 分，橙色为入榜模型平均值",
     detailBenchmarkTitle: "Benchmark Lab 参考项目",
     detailBenchmarkSubtitle: "均衡逐项实验模板中的测试项；它们不作为主榜固定权重。",
     detailExternalTitle: "非参考项目分数",
-    detailExternalSubtitle: "均衡 Benchmark Lab 参考集之外的 AA 子项、官方发布页或其他公开测评；它们不进入默认 IRT 排名",
+    detailExternalSubtitle: "AA 子项、官方发布页及其他公开测评：其中一部分作为方案 18 的只增益扩展项参与计分，其余为排除项或仅用于 Custom Weight",
     detailCostTitle: "Detail",
     detailVariantsTitle: "同模型档位",
     detailSourcesTitle: "外部测评参考",
     radarAverage: "入榜模型平均值",
     radarDataSource: "数据来源",
-    radarSourceText: "AInsights IRT 排行榜 / 真实 benchmark 成绩",
+    radarSourceText: "AIndex 方案 18 / 真实 Core 与列明的扩展 benchmark 成绩",
     radarBasisTitle: "雷达维度口径",
-    radarBasisSubtitle: "五个能力轴直接读取排行榜的 IRT 板块分；证据覆盖轴只反映测试广度，不修正能力分，也不参与排名。",
+    radarBasisSubtitle: "五个能力轴直接读取方案 18 板块分；扩展覆盖轴只反映稀疏证据广度，不修正能力分，也不参与排名。",
     radarCoverage: "{available}/{total} 项测试",
     radarTestCount: "{available} 项测试",
-    radarDualCoverage: "Core {coreAvailable}/{coreTotal} · Sparse {sparseAvailable}/{sparseTotal}",
+    radarDualCoverage: "Core {coreAvailable}/{coreTotal} · 扩展 {extensionAvailable}/{extensionTotal}",
     radarNoData: "该配置暂无完整的排行榜能力数据",
     radarAxes: {
       coding: "代码编程",
@@ -275,7 +276,7 @@ const copy = {
       hardReasoning: "hard-reasoning_score：高难数学、科学与复合推理能力。",
       knowledgeScience: "knowledge-science_score：知识与科学问题表现。",
       instructionContext: "instruction-context_score：指令遵循与长上下文稳定性。",
-      evidenceCoverage: "evidenceCoverageScore：五板块测试覆盖广度，仅作证据充分度参考。",
+      evidenceCoverage: "extensionCoverageScore：五板块扩展测试覆盖广度，仅作证据充分度参考。",
     },
     detailRows: {
       provider: "供应商",
@@ -307,8 +308,12 @@ const copy = {
     benchmarkPickerTitle: "选择测试项",
     benchmarkRankingTitle: "{label} 排名",
     benchmarkRankingSubtitle: "{count} 个模型有分数 · {category}",
-    benchmarkReference: "AInsights 参考项",
-    benchmarkNonReference: "非参考项",
+    benchmarkReference: "AIndex 计分项",
+    benchmarkNonReference: "不进入 AIndex",
+    benchmarkCore: "Core 必做项",
+    benchmarkExtension: "扩展加分项",
+    benchmarkExcluded: "明确排除",
+    benchmarkCustomOnly: "仅 Custom 工具",
     benchmarkSourcesOnly: "来源",
     notAvailable: "暂无",
     homeStats: {
@@ -316,13 +321,13 @@ const copy = {
       topOpen: "开源领先",
       bestValue: "高分低成本",
       modelCount: "去重模型",
-      byScore: "按平均证据名次",
+      byScore: "按 AInsights 分数",
       perRun: "运行成本",
       source: "来源",
     },
     headers: {
       model: "模型",
-      score: "综合分",
+      score: "分数",
       rankMean: "平均证据名次",
       twoplRank: "2PL 名次",
       denseRaschRank: "密集 Rasch 名次",
@@ -363,9 +368,9 @@ const copy = {
     presets: {
       "zhihu-adjusted": {
         label: "AInsights Index",
-        calculation: "rank-mean",
+        calculation: "scheme-18",
         normalization: "none",
-        description: "主榜取等板块 2PL 真实证据名次的 70% 与稀疏项 Rasch 证据名次的 30% 加权平均；同分时依次比较 2PL 名次、稀疏 Rasch 名次和稳定 ID。Fable 5 #1、GPT-5.6 Sol #2 由独立发布层执行，不修改真实成绩。",
+        description: "方案 18：各板 Core 真实百分成绩取不加权几何均值，独立控制的扩展测试只以匿名趋势之上的正残差加分，并受动态统一 cap 限制；五板等分相加。",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -421,8 +426,8 @@ const copy = {
       benchmarkLab: "Benchmark lab",
     },
     customToolDescriptions: {
-      methodRank: "Combine observed evidence ranks from four IRT methods; the default is 70% Equal-board 2PL and 30% Sparse Rasch.",
-      boardScore: "Combine five observed IRT capability scores; each default board is 70% Equal-board 2PL and 30% Sparse Rasch.",
+      methodRank: "Combine observed ranks from four legacy IRT audit methods; the default is equal weights and remains sensitivity-only.",
+      boardScore: "Combine the five observed Scheme 18 board scores; the default is equal boards, with geometric and weakest-board alternatives.",
       benchmarkLab: "Combine raw public benchmark results with optional normalization, missing-data handling, and coverage gates.",
     },
     customAggregatorTitle: "Aggregator",
@@ -437,7 +442,7 @@ const copy = {
       weakest: "Weakest board",
     },
     customMethodWeightsTitle: "IRT method-rank weights",
-    customMethodWeightsSubtitle: "Uses evidence ranks before the publication layer; a zero weight excludes the method.",
+    customMethodWeightsSubtitle: "Uses the observed evidence rank from each IRT method; a zero weight excludes the method.",
     customBoardWeightsTitle: "Capability-board weights",
     customBoardWeightsSubtitle: "Every board is an IRT score based on observed benchmark results, without model-specific score correction.",
     customWeightSum: "Weight total {total}",
@@ -463,10 +468,11 @@ const copy = {
       instructionContext: "Instruction & context",
     },
     evidenceRankLabel: "Evidence rank",
-    publicationLayerNote: "The separate Fable 5 #1 / GPT-5.6 Sol #2 publication layer applies only when both models have observed, calculable results in the current Custom configuration; otherwise the evidence order is preserved and no missing score is invented.",
     metricWeightsTitle: "Evaluation data weights",
     metricWeightsSubtitle: "Fine-grained weights used directly by the custom ranking, sorted by model coverage",
     metricCoverage: "{count} models",
+    extensionTestCount: "{count} extension observations",
+    scheme18Cap: "dynamic cap {cap}",
     metricCoverageFilterLabel: "Collapse low-coverage fields",
     metricCoverageFilterAll: "Show all fields",
     metricCoverageFilterOption: "Fewer than {count} models",
@@ -563,7 +569,7 @@ const copy = {
     reasoning: "Reasoning",
     methodologyLink: "AInsights Index methodology",
     footerPrefix: "Source: ",
-    footerSuffix: ". AInsights Index recalculates the public benchmark data.",
+    footerSuffix: ". Scheme 18 AIndex uses AA Core and linked, independently controlled benchmark extensions.",
     repository: "Repository",
     rankingItems: "ranked items",
     scorableModels: "scorable models",
@@ -572,31 +578,31 @@ const copy = {
     allTiers: "Showing every tier",
     sourceFilter: "Source",
     top20Title: "AInsights Index Top {count}",
-    top20Subtitle: "Ranked by a 70% Equal-board 2PL / 30% Sparse Rasch evidence-rank blend; bar width is evidence-rank percentile",
+    top20Subtitle: "Ranked directly by the precomputed Scheme 18 AIndex score; the value and bar encode the same AIndex points",
     latestModelsTitle: "Latest models",
     latestModelsSubtitle: "Recently released deduplicated models in the dataset",
     fullRanking: "View full ranking",
     costScatterTitle: "Intelligence vs. Cost to Run",
     costScatterSubtitle: "X-axis is the USD cost to run AA Intelligence Index, shown on a log scale",
     scatterXAxis: "Cost to Run Intelligence Index (USD, Log Scale)",
-    scatterYAxis: "Evidence-rank percentile",
+    scatterYAxis: "AInsights points",
     attractiveQuadrant: "High-score low-cost region",
     noCostData: "Not enough cost data to draw the scatter chart",
-    scoreBandsTitle: "Evidence-rank percentile distribution",
-    scoreBandsSubtitle: "Where deduplicated models cluster by mean evidence-rank percentile",
+    scoreBandsTitle: "AInsights point distribution",
+    scoreBandsSubtitle: "Where deduplicated models fall across Scheme 18 AIndex score bands",
     providerChartTitle: "Provider coverage",
     providerChartSubtitle: "Scorable deduped model count and best score by lab",
     providerModelCount: "Model count",
-    providerBestScore: "Best mean rank",
+    providerBestScore: "Highest points",
     providerPageTitle: "{provider} model overview",
-    providerPageSubtitle: "{count} deduplicated ranking models · best mean rank {bestScore}",
+    providerPageSubtitle: "{count} deduplicated ranking models · highest {bestScore} points",
     providerNotFound: "Provider not found",
     providerSummaryModels: "Scorable models",
-    providerSummaryBest: "Best mean rank",
-    providerSummaryAverage: "Average mean evidence rank",
+    providerSummaryBest: "Highest points",
+    providerSummaryAverage: "Average points",
     providerSummaryOpen: "Open models",
     providerModelsTitle: "Model list",
-    providerModelsSubtitle: "Sorted by publication rank with mean evidence rank, release date, source type, and operating metrics",
+    providerModelsSubtitle: "Sorted by Scheme 18 AIndex rank with points, release date, source type, and operating metrics",
     comparePageTitle: "Model comparison",
     comparePageSubtitle: "Choose models and compare scores, ranks, cost, speed, context, and benchmark data side by side",
     comparePickerTitle: "Choose models",
@@ -617,7 +623,7 @@ const copy = {
     compareRemove: "Remove",
     compareRows: {
       provider: "Provider",
-      score: "Mean evidence rank",
+      score: "AInsights points",
       rank: "Rank",
       source: "Source",
       releaseDate: "Release date",
@@ -631,24 +637,24 @@ const copy = {
       coverage: "Coverage",
     },
     sourceExplorerTitle: "Benchmark source map",
-    sourceExplorerSubtitle: "Public evaluation sources to cross-check model strengths beyond AA",
+    sourceExplorerSubtitle: "AA Core and linked, independently controlled benchmark extensions, with scoring roles and protocols shown side by side",
     detailRankTitle: "Rank snapshot",
     detailRadarSubtitle: "Five IRT capability boards plus evidence coverage; the outer ring is 100 and orange is the ranked-model average",
     detailBenchmarkTitle: "Benchmark Lab reference set",
     detailBenchmarkSubtitle: "Benchmarks in the balanced per-item experiment template; these are not fixed primary-ranking weights.",
     detailExternalTitle: "Non-reference benchmark scores",
-    detailExternalSubtitle: "AA submetrics, official release scores, and public evals outside the Balanced Benchmark Lab reference set; they do not enter the default IRT ranking",
+    detailExternalSubtitle: "AA submetrics, official release scores, and other public evaluations: some are only-add Scheme 18 extensions; others are excluded or Custom-only",
     detailCostTitle: "Detail",
     detailVariantsTitle: "Same-model tiers",
     detailSourcesTitle: "External evaluation references",
     radarAverage: "Ranked-model average",
     radarDataSource: "Sources",
-    radarSourceText: "AInsights IRT ranking / observed benchmark results",
+    radarSourceText: "AIndex Scheme 18 / observed Core and listed extension benchmarks",
     radarBasisTitle: "Radar axis basis",
-    radarBasisSubtitle: "The five capability axes read the ranking's IRT board scores directly. Evidence coverage only shows test breadth; it neither adjusts capability scores nor affects rank.",
+    radarBasisSubtitle: "The five capability axes read Scheme 18 board scores directly. Extension coverage only shows sparse-evidence breadth; it neither adjusts capability scores nor affects rank.",
     radarCoverage: "{available}/{total} tests",
     radarTestCount: "{available} tests",
-    radarDualCoverage: "Core {coreAvailable}/{coreTotal} · Sparse {sparseAvailable}/{sparseTotal}",
+    radarDualCoverage: "Core {coreAvailable}/{coreTotal} · Extension {extensionAvailable}/{extensionTotal}",
     radarNoData: "No complete ranking capability profile is available for this configuration",
     radarAxes: {
       coding: "Coding",
@@ -664,7 +670,7 @@ const copy = {
       hardReasoning: "hard-reasoning_score: difficult mathematical, scientific, and compound reasoning.",
       knowledgeScience: "knowledge-science_score: performance on knowledge and science tasks.",
       instructionContext: "instruction-context_score: instruction following and long-context stability.",
-      evidenceCoverage: "evidenceCoverageScore: test breadth across the five boards, shown only as evidence sufficiency.",
+      evidenceCoverage: "extensionCoverageScore: extension-test breadth across the five boards, shown only as evidence sufficiency.",
     },
     detailRows: {
       provider: "Provider",
@@ -696,8 +702,12 @@ const copy = {
     benchmarkPickerTitle: "Choose benchmark",
     benchmarkRankingTitle: "{label} ranking",
     benchmarkRankingSubtitle: "{count} scored models · {category}",
-    benchmarkReference: "AInsights reference",
-    benchmarkNonReference: "Non-reference",
+    benchmarkReference: "AIndex scoring item",
+    benchmarkNonReference: "Not used by AIndex",
+    benchmarkCore: "Required Core",
+    benchmarkExtension: "Only-add extension",
+    benchmarkExcluded: "Explicitly excluded",
+    benchmarkCustomOnly: "Custom tools only",
     benchmarkSourcesOnly: "Sources",
     notAvailable: "N/A",
     homeStats: {
@@ -705,13 +715,13 @@ const copy = {
       topOpen: "Top open",
       bestValue: "High-score low-cost",
       modelCount: "Deduplicated models",
-      byScore: "By mean evidence rank",
+      byScore: "By AInsights points",
       perRun: "run cost",
       source: "Source",
     },
     headers: {
       model: "Model",
-      score: "Score",
+      score: "Points",
       rankMean: "Mean evidence rank",
       twoplRank: "2PL rank",
       denseRaschRank: "Dense Rasch rank",
@@ -752,9 +762,9 @@ const copy = {
     presets: {
       "zhihu-adjusted": {
         label: "AInsights Index",
-        calculation: "rank-mean",
+        calculation: "scheme-18",
         normalization: "none",
-        description: "The primary ranking blends observed evidence ranks with 70% Equal-board 2PL and 30% Sparse-item Rasch, then breaks equal weighted ranks by 2PL rank, Sparse Rasch rank, and stable ID. Fable 5 #1 and GPT-5.6 Sol #2 are applied by a separate publication layer without changing observed scores.",
+        description: "Scheme 18 takes an unweighted geometric mean of each board's real Core percentages, adds only positive residual evidence from independent-controller extensions under one dynamic cap, and sums five equal board contributions.",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -791,10 +801,10 @@ const state = {
   query: "",
   customToolMode: "method-rank",
   customMethodWeights: {
-    rasch: 0,
-    sparseRasch: 30,
-    twopl: 70,
-    denseRasch: 0,
+    rasch: 25,
+    sparseRasch: 25,
+    twopl: 25,
+    denseRasch: 25,
   },
   customMethodAggregator: "mean",
   customBoardWeights: {
@@ -1225,7 +1235,7 @@ function renderStaticControls() {
   els.sourceHeader.textContent = tr("headers.source");
   els.coverageHeader.textContent = tr("headers.coverage");
   els.languageButtons.setAttribute("aria-label", tr("languageLabel"));
-  els.siteFooter.innerHTML = `${escapeHtml(tr("footerPrefix"))}<a href="${escapeHtml(state.data.source.url)}" target="_blank" rel="noreferrer">Artificial Analysis</a> · <a href="${escapeHtml(pageHref("sources"))}">${escapeHtml(tr("sourcesBadge", { count: catalogSources().length }))}</a>${escapeHtml(tr("footerSuffix"))} · <a href="https://github.com/TabNahida/AInsights" target="_blank" rel="noreferrer">${escapeHtml(tr("repository"))}: TabNahida/AInsights</a>`;
+  els.siteFooter.innerHTML = `${escapeHtml(tr("footerPrefix"))}<a href="${escapeHtml(state.data.source.url)}" target="_blank" rel="noreferrer">${escapeHtml(state.data.source.label || "AA Core + benchmark extensions")}</a> · <a href="${escapeHtml(pageHref("sources"))}">${escapeHtml(tr("sourcesBadge", { count: catalogSources().length }))}</a>${escapeHtml(tr("footerSuffix"))} · <a href="https://github.com/TabNahida/AInsights" target="_blank" rel="noreferrer">${escapeHtml(tr("repository"))}: TabNahida/AInsights</a>`;
 
   renderPageButtons();
   renderLanguageButtons();
@@ -1571,7 +1581,7 @@ function render() {
 function renderResults(preset) {
   const scored = scoreModels(preset);
   const homePreset = state.data.presets["zhihu-adjusted"];
-  const homeScored = scoreModels(homePreset, "zhihu-adjusted");
+  const homeScored = scoreModels(homePreset, "zhihu-adjusted", "variant-group");
   const homeRanked = rankRows(dedupeByBestVariant(homeScored));
   const compareRanked = rankRows(homeScored);
   const filtered = scored.filter(matchesQuery).filter(matchesSourceFilter);
@@ -1610,9 +1620,14 @@ function mergeRankedWithUnscored(ranked, scoredUniverse = ranked) {
   return [...ranked, ...unscored];
 }
 
-function scoreModels(preset, presetId = state.presetId) {
+function scoreModels(
+  preset,
+  presetId = state.presetId,
+  rankingGrain = state.dedupe ? "variant-group" : "exact-config",
+) {
   return state.data.models
-    .map((model) => {
+    .map((sourceModel) => {
+      const model = modelForRankingGrain(sourceModel, rankingGrain);
       const result = scoreModel(model, preset, presetId);
       return {
         ...model,
@@ -1620,6 +1635,14 @@ function scoreModels(preset, presetId = state.presetId) {
       };
     })
     .filter((model) => Number.isFinite(model.score));
+}
+
+function modelForRankingGrain(model, rankingGrain) {
+  if (rankingGrain !== "exact-config") return model;
+  return {
+    ...model,
+    rankingProfile: model?.exactRankingProfile || null,
+  };
 }
 
 function scoreModel(model, preset, presetId = state.presetId) {
@@ -1685,10 +1708,14 @@ function scoreModel(model, preset, presetId = state.presetId) {
 
 function scoreModelForPrecomputedRanking(model) {
   const profile = model?.rankingProfile;
-  const rankMean = Number(profile?.evidenceMeanRank);
-  const rankPercentile = Number(profile?.rankPercentile);
-  const publicationRank = Number(profile?.publicationRank);
-  if (!Number.isFinite(rankMean) || !Number.isFinite(rankPercentile) || !Number.isFinite(publicationRank)) {
+  const finalScore = Number(profile?.displayScore);
+  const generatedScoreRank = Number(profile?.publicationRank);
+  if (
+    profile?.displayScore === null
+    || profile?.displayScore === undefined
+    || profile?.displayScore === ""
+    || !Number.isFinite(finalScore)
+  ) {
     return {
       score: null,
       displayScore: null,
@@ -1698,37 +1725,29 @@ function scoreModelForPrecomputedRanking(model) {
       scoreMeta: tr("notAvailable"),
     };
   }
-  const twoplRank = rankingMethodEvidenceRank(model, "twopl");
-  const sparseRank = rankingMethodEvidenceRank(model, "sparseRasch");
-  const familyCount = Number(profile.uniqueBenchmarkFamilies || 0);
+  const extensionTests = Number(profile.extensionTestsTotal || 0);
+  const bonusCap = Number(profile.bonusCap);
   const evidenceTier = String(profile.evidenceTier || "").trim();
   return {
-    score: rankPercentile,
-    displayScore: rankMean,
-    scoreBarValue: rankPercentile,
-    precomputedRanking: true,
-    publicationRank,
-    evidenceRank: Number(profile.evidenceRank),
-    rankMean,
-    rankMin: Number(profile.rankMin),
-    rankMax: Number(profile.rankMax),
-    coverage: familyCount,
-    coverageLabel: [evidenceTier, familyCount ? `${familyCount} families` : ""].filter(Boolean).join(" · ") || tr("notAvailable"),
-    availableWeight: 100,
-    scoreMeta: [
-      Number.isFinite(twoplRank) ? `2PL #${twoplRank}` : "",
-      Number.isFinite(sparseRank) ? `Sparse #${sparseRank}` : "",
+    score: finalScore,
+    displayScore: finalScore,
+    scoreBarValue: finalScore,
+    scoreRank: Number.isInteger(generatedScoreRank) && generatedScoreRank > 0 ? generatedScoreRank : null,
+    isPrecomputedScoreRanking: true,
+    coverage: extensionTests,
+    coverageLabel: [
+      evidenceTier,
+      tr("extensionTestCount", { count: extensionTests }),
     ].filter(Boolean).join(" · "),
+    availableWeight: 100,
+    scoreMeta: Number.isFinite(bonusCap)
+      ? tr("scheme18Cap", { cap: formatNumber(bonusCap) })
+      : "Scheme 18",
   };
 }
 
 function rankingMethodEvidenceRank(model, methodId) {
   const value = Number(model?.rankingProfile?.methods?.[methodId]?.evidenceRank);
-  return Number.isFinite(value) ? value : null;
-}
-
-function rankingMethodPublicationRank(model, methodId) {
-  const value = Number(model?.rankingProfile?.methods?.[methodId]?.publicationRank);
   return Number.isFinite(value) ? value : null;
 }
 
@@ -1958,7 +1977,6 @@ function scoreModelForCustomMethodRanks(model) {
     score: Number.isFinite(rankPercentile) ? clamp(rankPercentile, 0, 100) : null,
     displayScore: rankMean,
     scoreBarValue: rankPercentile,
-    customPublicationRanking: true,
     customMethodRanking: true,
     customRankMax: entries.length ? Math.max(...entries.map((entry) => entry.value)) : null,
     customRankMin: entries.length ? Math.min(...entries.map((entry) => entry.value)) : null,
@@ -1993,7 +2011,6 @@ function scoreModelForCustomBoards(model) {
     score,
     displayScore: score,
     scoreBarValue: score,
-    customPublicationRanking: true,
     coverage: entries.length,
     coverageLabel: `${entries.length}/${customBoardOrder.length}`,
     availableWeight: denominator,
@@ -2017,9 +2034,14 @@ function weightedMedianValue(entries) {
 }
 
 function rankingPopulationSize() {
-  const configured = Number(state.data?.leaderboard?.populationSize);
+  const configured = Number(
+    state.dedupe
+      ? state.data?.leaderboard?.populationSize
+      : state.data?.leaderboard?.exactPopulationSize,
+  );
   if (Number.isFinite(configured) && configured > 1) return configured;
-  const count = (state.data?.models || []).filter((model) => model.rankingProfile).length;
+  const profileKey = state.dedupe ? "rankingProfile" : "exactRankingProfile";
+  const count = (state.data?.models || []).filter((model) => model[profileKey]).length;
   return Math.max(count, 2);
 }
 
@@ -2082,7 +2104,6 @@ function scoreModelForBenchmarkWeights(model) {
   if (!Number.isFinite(score) && penaltyRatio >= 1 && coverageRatio >= minCoverage && Number.isFinite(zeroScore)) score = zeroScore;
   return {
     score,
-    customPublicationRanking: true,
     coverage,
     coverageLabel: `${coverage}/${selected} · ${formatTrimmed(coverageRatio, 0)}%`,
     availableWeight,
@@ -2181,39 +2202,59 @@ function modelDisplayScore(model) {
   return Number.isFinite(model?.displayScore) ? model.displayScore : model?.score;
 }
 
+function formatModelDisplayScore(model) {
+  const value = modelDisplayScore(model);
+  return model?.isPrecomputedScoreRanking && Number.isFinite(value)
+    ? value.toFixed(3)
+    : formatNumber(value);
+}
+
 function modelScoreBarValue(model) {
   const value = Number.isFinite(model?.scoreBarValue) ? model.scoreBarValue : model?.score;
   return clamp(Number(value) || 0, 0, 100);
 }
 
 function rankRows(models) {
-  if (models.length && models.every((model) => model.precomputedRanking)) {
-    return [...models]
-      .sort((a, b) => a.publicationRank - b.publicationRank || a.model.localeCompare(b.model))
-      .map((model) => ({ ...model, rank: model.publicationRank }));
-  }
   const sorted = [...models].sort(compareRankingRows);
+  if (
+    sorted.length
+    && sorted.every((model) => (
+      model.isPrecomputedScoreRanking
+      && Number.isInteger(model.scoreRank)
+      && model.scoreRank > 0
+    ))
+  ) {
+    return sorted.map((model) => ({
+      ...model,
+      rank: model.scoreRank,
+    }));
+  }
   let previousScore = null;
   let currentRank = 0;
-  const evidenceRows = sorted.map((model, index) => {
-    if (model.customPublicationRanking || previousScore === null || model.score !== previousScore) {
+  return sorted.map((model, index) => {
+    if (previousScore === null || model.score !== previousScore) {
       currentRank = index + 1;
       previousScore = model.score;
     }
     return {
       ...model,
       rank: currentRank,
-      ...(model.customPublicationRanking ? { evidenceRank: currentRank } : {}),
     };
   });
-  return evidenceRows.some((model) => model.customPublicationRanking)
-    ? applyCustomPublicationLayer(evidenceRows)
-    : evidenceRows;
 }
 
 function compareRankingRows(a, b) {
   const scoreDifference = b.score - a.score;
   if (scoreDifference) return scoreDifference;
+  if (
+    a.isPrecomputedScoreRanking
+    && b.isPrecomputedScoreRanking
+    && Number.isInteger(a.scoreRank)
+    && Number.isInteger(b.scoreRank)
+  ) {
+    const generatedRankDifference = a.scoreRank - b.scoreRank;
+    if (generatedRankDifference) return generatedRankDifference;
+  }
   if (a.customMethodRanking && b.customMethodRanking) {
     const worstDifference = Number(a.customRankMax) - Number(b.customRankMax);
     if (worstDifference) return worstDifference;
@@ -2223,25 +2264,7 @@ function compareRankingRows(a, b) {
   return String(a.modelKey || a.slug || a.model).localeCompare(String(b.modelKey || b.slug || b.model));
 }
 
-function applyCustomPublicationLayer(evidenceRows) {
-  const fable = evidenceRows.find((model) => model.slug === "claude-fable-5")
-    || evidenceRows.find((model) => /\bfable[ -]?5\b/i.test(`${model.model} ${model.variantGroup}`));
-  const sol = evidenceRows.find((model) => model.variantGroup === "gpt 5 6 sol")
-    || evidenceRows.find((model) => model.slug === "gpt-5-6-sol")
-    || evidenceRows.find((model) => /\bgpt[ -]?5[.-]?6[ -]?sol\b/i.test(`${model.model} ${model.variantGroup}`));
-  if (!fable || !sol) return evidenceRows;
-  const anchors = [fable, sol];
-  const anchorIds = new Set(anchors.map(modelRouteId));
-  return [...anchors, ...evidenceRows.filter((model) => !anchorIds.has(modelRouteId(model)))]
-    .map((model, index) => ({
-      ...model,
-      publicationRank: index + 1,
-      rank: index + 1,
-    }));
-}
-
 function scoreHeaderKeyForPreset(preset) {
-  if (preset?.kind === "precomputed-ranking") return "headers.rankMean";
   if (state.presetId === "custom" && state.customToolMode === "method-rank") return "headers.rankMean";
   return "headers.score";
 }
@@ -2266,7 +2289,7 @@ function renderSummary(filteredCount, visibleCount, scoredCount, preset) {
 
 function resetCustomConfiguration() {
   state.customToolMode = "method-rank";
-  state.customMethodWeights = { rasch: 0, sparseRasch: 30, twopl: 70, denseRasch: 0 };
+  state.customMethodWeights = { rasch: 25, sparseRasch: 25, twopl: 25, denseRasch: 25 };
   state.customMethodAggregator = "mean";
   state.customBoardWeights = Object.fromEntries(customBoardOrder.map((boardId) => [boardId, 20]));
   state.customBoardAggregator = "arithmetic";
@@ -2460,7 +2483,6 @@ function renderSimpleCustomWeights(target, options) {
           </label>
         `).join("")}
       </div>
-      <p class="publication-layer-note">${escapeHtml(tr("publicationLayerNote"))}</p>
     </section>
   `;
   target.querySelectorAll("[data-custom-aggregator]").forEach((button) => {
@@ -2541,7 +2563,6 @@ function renderBenchmarkWeightLab(target) {
       <div class="metric-filter-summary" data-coverage-filter-summary></div>
       <div class="metric-weight-controls" data-weight-controls="metrics"></div>
     </section>
-    <p class="publication-layer-note">${escapeHtml(tr("publicationLayerNote"))}</p>
   `;
   renderCustomWeightPresetControls(target.querySelector("[data-custom-weight-presets]"));
   renderMissingModeControls(target.querySelector("[data-missing-mode-controls]"));
@@ -2632,7 +2653,7 @@ function activeCustomWeights() {
 
 function restoreActiveCustomDefaults() {
   if (state.customToolMode === "method-rank") {
-    state.customMethodWeights = { rasch: 0, sparseRasch: 30, twopl: 70, denseRasch: 0 };
+    state.customMethodWeights = { rasch: 25, sparseRasch: 25, twopl: 25, denseRasch: 25 };
     state.customMethodAggregator = "mean";
   } else if (state.customToolMode === "board-score") {
     state.customBoardWeights = Object.fromEntries(customBoardOrder.map((boardId) => [boardId, 20]));
@@ -2664,7 +2685,6 @@ function exportCustomConfiguration() {
       minCoveragePct: state.customMinCoveragePct,
       weights: state.customWeights,
     },
-    publicationLayer: ["Claude Fable 5", "GPT-5.6 Sol"],
   };
   const json = `${JSON.stringify(payload, null, 2)}\n`;
   if (navigator.clipboard?.writeText) navigator.clipboard.writeText(json).catch(() => {});
@@ -2929,7 +2949,7 @@ function renderLatestModels(models) {
         </span>
       </span>
       <span class="latest-model-meta">
-        <span class="latest-model-score">${renderIcon("trophy")}<b>${escapeHtml(formatNumber(modelDisplayScore(model)))}</b></span>
+        <span class="latest-model-score">${renderIcon("trophy")}<b>${escapeHtml(formatModelDisplayScore(model))}</b></span>
         <span>${escapeHtml(sourceTypeLabel(sourceType(model)))}</span>
       </span>
     </article>
@@ -2945,17 +2965,17 @@ function renderHomeMetrics(models) {
     {
       label: tr("homeStats.leader"),
       model: leader,
-      meta: `${formatNumber(modelDisplayScore(leader))} · ${leader.creator || tr("unknownCreator")}`,
+      meta: `${formatModelDisplayScore(leader)} · ${leader.creator || tr("unknownCreator")}`,
     },
     {
       label: tr("homeStats.topOpen"),
       model: topOpen,
-      meta: topOpen ? `${formatNumber(modelDisplayScore(topOpen))} · ${topOpen.creator || tr("unknownCreator")}` : "—",
+      meta: topOpen ? `${formatModelDisplayScore(topOpen)} · ${topOpen.creator || tr("unknownCreator")}` : "—",
     },
     {
       label: tr("homeStats.bestValue"),
       model: bestValue,
-      meta: bestValue ? `${formatNumber(modelDisplayScore(bestValue))} · ${formatMoney(modelCost(bestValue))} ${tr("homeStats.perRun")}` : "—",
+      meta: bestValue ? `${formatModelDisplayScore(bestValue)} · ${formatMoney(modelCost(bestValue))} ${tr("homeStats.perRun")}` : "—",
     },
     {
       label: tr("homeStats.modelCount"),
@@ -3013,7 +3033,7 @@ function renderTop20Chart(models) {
               </span>
             </span>
             <span class="top-bar-track"><span></span></span>
-            <span class="top-bar-value">${formatNumber(modelDisplayScore(model))}</span>
+            <span class="top-bar-value">${formatModelDisplayScore(model)}</span>
           </article>
         `;
       }).join("")}
@@ -3089,7 +3109,7 @@ function renderCostScatter(models) {
             <g class="scatter-point is-labeled">
               ${placement ? `<path class="scatter-leader" d="${placement.path}"></path>` : ""}
               <circle cx="${x}" cy="${y}" r="5.6" fill="${providerColor(model, index)}"></circle>
-              <title>${escapeHtml(`${model.model} · ${formatNumber(modelDisplayScore(model))} · ${formatMoney(modelCost(model))}`)}</title>
+              <title>${escapeHtml(`${model.model} · ${formatModelDisplayScore(model)} · ${formatMoney(modelCost(model))}`)}</title>
               ${placement ? `<text class="scatter-label" x="${placement.x}" y="${placement.y}" text-anchor="${placement.anchor}">${escapeHtml(scatterLabelText(model.model))}</text>` : ""}
             </g>
           `;
@@ -3151,7 +3171,7 @@ function renderProviderChart(models) {
       </span>
       <span class="provider-row-metric" title="${escapeHtml(tr("providerBestScore"))}" aria-label="${escapeHtml(tr("providerBestScore"))}">
         ${renderIcon("trophy")}
-        <em>${escapeHtml(formatNumber(modelDisplayScore(row.bestModel)))}</em>
+        <em>${escapeHtml(formatModelDisplayScore(row.bestModel))}</em>
       </span>
     </a>
   `).join("");
@@ -3201,97 +3221,66 @@ function renderSourcesPage() {
 function renderMethodologyPage() {
   if (!els.methodologyDetail) return;
   const zh = state.language === "zh-CN";
+  const cap = Number(state.data?.leaderboard?.bonusCap);
+  const capText = Number.isFinite(cap) ? formatNumber(cap) : tr("notAvailable");
   document.title = `${zh ? "AInsights Index 计算方式" : "AInsights Index Methodology"} · ${tr("pageTitle")}`;
   els.methodologyDetail.innerHTML = `
     <section class="methodology-hero">
       <p class="eyebrow">Methodology</p>
       <h2>${escapeHtml(zh ? "AInsights Index 计算方式" : "AInsights Index Methodology")}</h2>
       <p>${escapeHtml(zh
-        ? "主榜以等板块 2PL 真实证据名次的 70% 与稀疏 Rasch 证据名次的 30% 加权；覆盖度只决定入榜资格与证据标签，不修改合格模型的真实 IRT 成绩。"
-        : "The primary ranking blends observed evidence ranks with 70% Equal-board 2PL and 30% Sparse Rasch. Coverage controls eligibility and evidence labels; it does not modify an eligible model's observed IRT score.")}</p>
+        ? "AIndex 采用方案 18：每板由完整 Core 真实成绩给出基础分，列明的独立控制扩展测试只提供非负前沿加分；五板等权，最终只按未经舍入的 final_score 排序。"
+        : "AIndex uses Scheme 18: complete real Core results establish each board's base, listed independent-controller extensions provide non-negative frontier bonuses, five boards are equal, and only the unrounded final_score determines order.")}</p>
     </section>
     <section class="methodology-grid">
       <article class="methodology-card methodology-card-wide">
-        <h3>${escapeHtml(zh ? "默认名次" : "Default rank")}</h3>
-        <p><code>rank_mean = 0.70 × twopl_evidence_rank + 0.30 × sparse_evidence_rank</code></p>
+        <h3>${escapeHtml(zh ? "Core 基础分" : "Core base score")}</h3>
+        <p><code>core = 100 × exp(mean(log(score / 100)))</code></p>
         <p>${escapeHtml(zh
-          ? "先按 rank_mean，再按 2PL 名次、稀疏 Rasch 名次和稳定 ID 排序；所有输入都来自真实 benchmark 成绩。"
-          : "Rows sort by rank_mean, then 2PL rank, Sparse Rasch rank, and stable ID; every input comes from observed benchmark results.")}</p>
+          ? "每板 Core 项必须全部完成，并在真实百分尺度上取不加权几何均值；不填 0、不填 50，也没有测试项特定权重。"
+          : "Every Core item on a board must be complete and enters an unweighted geometric mean on the real percentage scale; there is no 0/50 fill and no item-specific weight.")}</p>
       </article>
       <article class="methodology-card">
-        <h3>Equal-board 2PL / Sparse Rasch</h3>
+        <h3>${escapeHtml(zh ? "匿名趋势" : "Anonymous trend")}</h3>
         <p>${escapeHtml(zh
-          ? "等板块 2PL 在成熟 item pool 上匿名学习测试区分度，占默认名次 70%；Sparse Rasch 接纳覆盖较少但更前沿的早期信号，占 30%。"
-          : "Equal-board 2PL anonymously learns item discrimination on the mature pool and contributes 70% of the default rank. Sparse Rasch admits earlier frontier signals with thinner coverage and contributes 30%.")}</p>
+          ? "每个扩展测试对同板 Core 分拟合 cohort-wide OLS，斜率限制为非负；只保留真实观测高于预测趋势的 r=max(y−ŷ,0)。"
+          : "Each extension fits a cohort-wide OLS trend against the same board's Core score with a non-negative slope; only r=max(y−ŷ,0) above the predicted trend is retained.")}</p>
       </article>
       <article class="methodology-card">
-        <h3>Core Rasch / Dense Rasch</h3>
+        <h3>${escapeHtml(zh ? "动态统一 cap" : "One dynamic cap")}</h3>
         <p>${escapeHtml(zh
-          ? "Core Rasch 与 Dense Rasch 作为敏感性对照；完整排名仍展示 2PL 的独立名次与 Dense Rasch 名次。"
-          : "Core Rasch and Dense Rasch are sensitivity comparisons; Full Ranking still shows the standalone 2PL and Dense Rasch ranks.")}</p>
+          ? `五板全部正残差共同计算 mean + √2 × population SD，Action 每次随数据重算；当前 cap 为 ${capText}。`
+          : `All positive residuals across five boards determine mean + √2 × population SD and are recomputed on every data refresh; the current cap is ${capText}.`)}</p>
       </article>
       <article class="methodology-card methodology-card-wide">
-        <h3>${escapeHtml(zh ? "Item Pool 与敏感性方法" : "Item Pools and Sensitivity Methods")}</h3>
-        <div class="methodology-table-wrap">
-          <table class="methodology-weight-table methodology-matrix-table">
-            <thead><tr><th>${escapeHtml(zh ? "方法" : "Method")}</th><th>${escapeHtml(zh ? "测试准入" : "Item admission")}</th><th>${escapeHtml(zh ? "用途" : "Role")}</th></tr></thead>
-            <tbody>
-              <tr><td>Core Rasch</td><td>${escapeHtml(zh ? "至少 8 个独立模型 family、3 个 creator" : "At least 8 independent model families and 3 creators")}</td><td>${escapeHtml(zh ? "敏感性对照" : "Sensitivity comparison")}</td></tr>
-              <tr><td>Sparse Rasch</td><td>${escapeHtml(zh ? "至少 3 个独立模型 family；1 个 creator 即可" : "At least 3 independent model families; one creator is sufficient")}</td><td>${escapeHtml(zh ? "默认名次 30%" : "30% of the default rank")}</td></tr>
-              <tr><td>Equal-board 2PL</td><td>${escapeHtml(zh ? "与 Core Rasch 使用相同 item pool" : "Same pool as Core Rasch")}</td><td>${escapeHtml(zh ? "默认名次 70%；item discrimination 共同向 1 做 ridge，并限制在 0.35–2.5" : "70% of the default rank; item-discrimination ridge toward 1 with bounds of 0.35–2.5")}</td></tr>
-              <tr><td>Dense Rasch</td><td>${escapeHtml(zh ? "至少 20 个独立模型 family、3 个 creator" : "At least 20 independent model families and 3 creators")}</td><td>${escapeHtml(zh ? "保守敏感性对照" : "Conservative sensitivity comparison")}</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <h3>${escapeHtml(zh ? "扩展聚合与总分" : "Extension aggregation and total")}</h3>
+        <p><code>bonus = min(cap, log(1 + Σ expm1(r)))</code></p>
+        <p><code>board_score = min(100, core + bonus)</code></p>
+        <p><code>final_score = Σ(board_score / 5) = mean(five board_scores)</code></p>
+        <p>${escapeHtml(zh
+          ? "log-sum-exp 对零残差中性，新增任意正证据都不会降分。五板完全等权；榜面 0–100 points 是直接计算分，不是 percentile、mean rank 或 T 分。"
+          : "The log-sum-exp is neutral to zero residuals and any new positive evidence cannot lower a score. Five boards are exactly equal; displayed 0–100 points are direct calculated scores, not a percentile, mean rank, or T score.")}</p>
       </article>
       <article class="methodology-card methodology-card-wide">
-        <h3>${escapeHtml(zh ? "五个等权能力板块" : "Capability Boards")}</h3>
+        <h3>${escapeHtml(zh ? "缺失、去重与协议" : "Missingness, dedupe, and protocols")}</h3>
         <p>${escapeHtml(zh
-          ? "每种 IRT 方法先在五个板块内独立拟合，再对五个板块做等权算术平均；默认榜没有 40 / 24 / 20 / 8 / 8 权重。"
-          : "Each IRT method is fitted independently inside five boards, then the five board scores receive an equal arithmetic mean; the default ranking has no 40 / 24 / 20 / 8 / 8 weighting.")}</p>
-        <div class="methodology-table-wrap">
-          <table class="methodology-weight-table">
-            <thead><tr><th>${escapeHtml(zh ? "板块" : "Board")}</th><th>${escapeHtml(zh ? "方法内占比" : "Share within method")}</th></tr></thead>
-            <tbody>
-              ${customBoardOrder.map((boardId) => `<tr><td>${escapeHtml(customWeightItemLabel(boardId, "board"))}</td><td>20%</td></tr>`).join("")}
-            </tbody>
-          </table>
-        </div>
-      </article>
-      <article class="methodology-card methodology-card-wide">
-        <h3>${escapeHtml(zh ? "计算公式" : "Calculation Formula")}</h3>
-        <p><code>z_ij = theta_i - difficulty_j + error_ij</code></p>
-        <p><code>board_score = 100 × Phi(theta_z)</code></p>
+          ? "扩展缺失保持 absent，bonus 为 0，绝不扣 Core。去重榜可使用系列级外部证据；关闭去重只使用 AA 精确行和 variantScoped 外部结果，并复用去重 cohort 的同一 OLS 参数与 cap。"
+          : "Missing extensions remain absent with zero bonus and never reduce Core. The deduplicated view may use family-level evidence; dedupe-off accepts only AA exact rows and variantScoped external results while reusing the identical OLS parameters and cap from the deduplicated cohort.")}</p>
         <p>${escapeHtml(zh
-          ? "Core、Sparse 与 Dense Rasch 都在各板块拟合连续 Rasch；2PL 在相同成熟 item pool 上匿名学习区分度。每种方法先将五板等权平均得到 evidence rank，再按 2PL 70% / Sparse Rasch 30% 计算 rank_mean；不含命名模型系数或事后模型修正。"
-          : "Core, Sparse, and Dense Rasch fit a continuous Rasch model in each board; 2PL anonymously learns discrimination on the same mature item pool. Each method first averages the five boards equally, then rank_mean blends 70% 2PL and 30% Sparse Rasch evidence ranks, without any named-model coefficient or post-hoc model correction.")}</p>
-      </article>
-      <article class="methodology-card methodology-card-wide">
-        <h3>${escapeHtml(zh ? "证据资格与覆盖" : "Evidence Eligibility and Coverage")}</h3>
-        <p>${escapeHtml(zh
-          ? "每个板块至少需要两个规范化 benchmark family 才能进入某一方法榜；每板至少三个标为 Main，否则合格配置标为 Provisional。证据不足表示不排名，不是按 0 分计算。"
-          : "A configuration needs at least two canonical benchmark families in every board to enter a method ranking. At least three in every board earns Main status; another eligible row is Provisional. Insufficient evidence means not ranked, not a score of zero.")}</p>
-        <p>${escapeHtml(zh
-          ? "覆盖只控制资格和标签，不修改合格模型的真实 IRT 分数；不扣固定缺失分、不插入弱先验，也不从较低同系列模型复制成绩。"
-          : "Coverage controls eligibility and labels; it does not modify a qualified model's observed IRT score. There is no fixed missing-score penalty, weak-prior insertion, or score copying from a lower sibling model.")}</p>
+          ? "扩展 benchmark 的 controller 均不属于被排名模型厂商，但部分 result operator、agent scaffold、prompt 或版本仍是混合/敏感协议；这些限制在 Benchmark 页面逐项披露。"
+          : "Extension benchmark controllers are independent of ranked model vendors, but some result operators, agent scaffolds, prompts, or versions remain mixed or sensitive; the Benchmark page discloses these limits item by item.")}</p>
       </article>
       <article class="methodology-card">
         <h3>${escapeHtml(zh ? "六轴雷达" : "Radar Profile")}</h3>
         <p>${escapeHtml(zh
-          ? "前五轴是等板块 2PL 与 Sparse Rasch 对应板块分的 70/30 加权；第六轴 evidence_coverage_score 按相同 70/30 审计证据广度，永不改变分数或名次。"
-          : "The first five axes blend matching Equal-board 2PL and Sparse Rasch board scores at 70/30. The sixth, evidence_coverage_score, audits evidence breadth with the same 70/30 split and never changes a score or rank.")}</p>
+          ? "前五轴直接读取方案 18 的五个板块分；第六轴是扩展覆盖度，只反映证据广度，永不参与计分。"
+          : "The first five axes directly read Scheme 18 board scores; the sixth is extension coverage, reflecting evidence breadth only and never entering the score.")}</p>
       </article>
       <article class="methodology-card">
-        <h3>${escapeHtml(zh ? "逐项权重与 Custom 工具" : "Metric Weights and Custom Tools")}</h3>
+        <h3>${escapeHtml(zh ? "敏感性与 Custom 工具" : "Sensitivity and Custom Tools")}</h3>
         <p>${escapeHtml(zh
-          ? "默认榜不分配逐项自定义权重。Custom 分别提供四法 evidence rank 混合、五板真实分混合和逐项 Benchmark Lab，并支持等权、归一到 100、清零、恢复与 JSON 导出。"
-          : "The default ranking assigns no custom per-benchmark weights. Custom separately offers a four-method evidence-rank mixer, a five-board score mixer, and a per-benchmark lab, with equalize, normalize-to-100, clear, restore, and JSON export actions.")}</p>
-      </article>
-      <article class="methodology-card methodology-card-wide">
-        <h3>${escapeHtml(zh ? "透明发布顺序" : "Transparent publication order")}</h3>
-        <p>${escapeHtml(zh
-          ? "证据层完成后才发布 Claude Fable 5 #1 与 GPT-5.6 Sol #2。独立保存 evidence_rank、四法证据名次与真实分数，因此发布层不伪装成测量结果；Custom 当前配置只有在两者均有真实可计算结果时才应用该顺序，否则保持证据排序。"
-          : "Only after the evidence layer is complete does publication place Claude Fable 5 #1 and GPT-5.6 Sol #2. evidence_rank, all four method evidence ranks, and observed scores remain separately available; a Custom configuration applies this order only when both models have observed, calculable results, otherwise it keeps the evidence order.")}</p>
+          ? "等板块 2PL、Sparse Rasch、Core Rasch 与 Dense Rasch 只作审计/敏感性。Custom 可独立组合这些方法名次、方案 18 五板分或逐项 benchmark，不会改写主榜。"
+          : "Equal-board 2PL, Sparse Rasch, Core Rasch, and Dense Rasch are audit/sensitivity only. Custom tools can independently combine those ranks, Scheme 18 board scores, or individual benchmarks without rewriting the primary ranking.")}</p>
       </article>
     </section>
   `;
@@ -3438,7 +3427,6 @@ function renderHistogram(models) {
 
 function renderHistogramRow(model) {
   const scoreWidth = modelScoreBarValue(model);
-  const displayScore = modelDisplayScore(model);
   return `
     <div class="histogram-row" data-card-href="${escapeHtml(modelHref(model, "ranking"))}" role="link" tabindex="0" aria-label="${escapeHtml(`${tr("modelDetails")} ${model.model}`)}">
       <div class="histogram-rank">#${model.rank}</div>
@@ -3449,10 +3437,10 @@ function renderHistogramRow(model) {
           <span>${renderProviderTextLink(model.creator, "ranking")} · ${escapeHtml(sourceTypeLabel(sourceType(model)))}</span>
         </div>
       </div>
-      <div class="histogram-track" aria-label="${escapeHtml(tr(scoreHeaderKeyForPreset(state.data.presets[state.presetId])))} ${formatNumber(displayScore)}">
+      <div class="histogram-track" aria-label="${escapeHtml(tr(scoreHeaderKeyForPreset(state.data.presets[state.presetId])))} ${escapeHtml(formatModelDisplayScore(model))}">
         <span class="histogram-fill" style="--value: ${scoreWidth}%"></span>
       </div>
-      <div class="histogram-score">${formatNumber(displayScore)}</div>
+      <div class="histogram-score">${escapeHtml(formatModelDisplayScore(model))}</div>
       ${renderCompareEntry(model, "ranking")}
     </div>
   `;
@@ -3468,7 +3456,6 @@ function renderTable(models) {
 
 function renderRow(model) {
   const scoreWidth = modelScoreBarValue(model);
-  const displayScore = modelDisplayScore(model);
   const reason = model.isReasoning ? `<span class="pill">${escapeHtml(tr("reasoning"))}</span>` : "";
   return `
     <tr data-card-href="${escapeHtml(modelHref(model, "ranking"))}" tabindex="0" aria-label="${escapeHtml(`${tr("modelDetails")} ${model.model}`)}">
@@ -3487,7 +3474,7 @@ function renderRow(model) {
         </div>
       </td>
       <td class="score-cell">
-        <div class="score-value"><span>${formatNumber(displayScore)}</span><span class="muted">${escapeHtml(model.scoreMeta || "")}</span></div>
+        <div class="score-value"><span>${escapeHtml(formatModelDisplayScore(model))}</span><span class="muted">${escapeHtml(model.scoreMeta || "")}</span></div>
         <div class="score-bar" style="--value: ${scoreWidth}%"><span></span></div>
       </td>
       ${renderMethodRankCell(model, "twopl")}
@@ -3502,13 +3489,11 @@ function renderRow(model) {
 }
 
 function renderMethodRankCell(model, methodId) {
-  const publicationRank = rankingMethodPublicationRank(model, methodId);
   const evidenceRank = rankingMethodEvidenceRank(model, methodId);
-  if (!Number.isFinite(publicationRank)) return `<td class="method-rank-col">—</td>`;
+  if (!Number.isFinite(evidenceRank)) return `<td class="method-rank-col">—</td>`;
   return `
     <td class="method-rank-col" title="${escapeHtml(methodRankTitle(evidenceRank))}">
-      #${publicationRank}
-      ${Number.isFinite(evidenceRank) ? `<span class="method-rank-evidence">${escapeHtml(tr("evidenceRankLabel"))} #${evidenceRank}</span>` : ""}
+      #${evidenceRank}
     </td>
   `;
 }
@@ -3541,7 +3526,7 @@ function renderTextRanking(models) {
         <span>#${model.rank}</span>
         <a class="text-model" href="${escapeHtml(modelHref(model))}">${escapeHtml(model.model)}</a>
         ${renderProviderTextLink(creator, "ranking")}
-        <strong>${formatNumber(modelDisplayScore(model))}</strong>
+        <strong>${escapeHtml(formatModelDisplayScore(model))}</strong>
         <span class="text-source">${escapeHtml(source)}</span>
         ${renderCompareEntry(model, "ranking")}
       </div>
@@ -3660,7 +3645,7 @@ function renderRankCards(model) {
   if (state.presetId === "custom") ids.push("custom");
   return ids.map((id) => {
     const ranked = rankForPreset(model, id);
-    const score = ranked ? formatNumber(modelDisplayScore(ranked)) : tr("notAvailable");
+    const score = ranked ? formatModelDisplayScore(ranked) : tr("notAvailable");
     const rank = ranked ? `#${ranked.rank}` : tr("notAvailable");
     return `
       <article class="rank-card">
@@ -3860,7 +3845,7 @@ function radarAxes() {
     },
     {
       id: "evidence-coverage",
-      profileKey: "evidenceCoverageScore",
+      profileKey: "extensionCoverageScore",
       label: tr("radarAxes.evidenceCoverage"),
       note: tr("radarAxisNotes.evidenceCoverage"),
     },
@@ -3903,27 +3888,23 @@ function radarAxisValue(model, axis) {
 
 function radarAxisCoverage(model, axis) {
   if (!axis.boardId) return null;
-  const profile = model?.rankingProfile;
   const board = radarBoardProfile(model, axis.boardId);
-  const available = Number(board?.tests);
-  if (!Number.isFinite(available)) return null;
-  const itemPoolSize = Number(
-    board?.itemPoolSize
-      ?? profile?.boardItemPoolSizesByMethod?.rasch?.[axis.boardId]
-      ?? profile?.boardItemPoolSizes?.[axis.boardId],
-  );
-  const sparseAvailable = Number(board?.sparseTests);
-  const sparseItemPoolSize = Number(
-    board?.sparseItemPoolSize
-      ?? profile?.boardItemPoolSizesByMethod?.sparseRasch?.[axis.boardId],
-  );
+  const coreAvailable = Number(board?.coreTests);
+  const coreTotal = Number(board?.coreItemPoolSize);
+  const extensionAvailable = Number(board?.extensionTests);
+  const extensionTotal = Number(board?.extensionItemPoolSize);
+  if (!Number.isFinite(coreAvailable) || !Number.isFinite(extensionAvailable)) return null;
+  const available = coreAvailable + extensionAvailable;
+  const total = Number.isFinite(coreTotal) && Number.isFinite(extensionTotal)
+    ? coreTotal + extensionTotal
+    : null;
   return {
     available,
-    total: Number.isFinite(itemPoolSize) && itemPoolSize > 0 ? itemPoolSize : null,
-    coreAvailable: available,
-    coreTotal: Number.isFinite(itemPoolSize) && itemPoolSize > 0 ? itemPoolSize : null,
-    sparseAvailable: Number.isFinite(sparseAvailable) ? sparseAvailable : null,
-    sparseTotal: Number.isFinite(sparseItemPoolSize) && sparseItemPoolSize > 0 ? sparseItemPoolSize : null,
+    total,
+    coreAvailable,
+    coreTotal: Number.isFinite(coreTotal) ? coreTotal : null,
+    extensionAvailable,
+    extensionTotal: Number.isFinite(extensionTotal) ? extensionTotal : null,
   };
 }
 
@@ -3931,8 +3912,8 @@ function radarCoverageLabel(coverage) {
   if (!coverage || !Number.isFinite(coverage.available)) return "";
   if (
     Number.isFinite(coverage.coreTotal)
-    && Number.isFinite(coverage.sparseAvailable)
-    && Number.isFinite(coverage.sparseTotal)
+    && Number.isFinite(coverage.extensionAvailable)
+    && Number.isFinite(coverage.extensionTotal)
   ) return tr("radarDualCoverage", coverage);
   if (!Number.isFinite(coverage.total)) return tr("radarTestCount", coverage);
   return tr("radarCoverage", coverage);
@@ -3945,6 +3926,10 @@ function radarHasCompleteProfile(model, axes = radarAxes()) {
 
 function radarProfilePopulation(axes = radarAxes()) {
   return (state.data?.models || [])
+    .map((model) => modelForRankingGrain(
+      model,
+      state.dedupe ? "variant-group" : "exact-config",
+    ))
     .filter((model) => radarHasCompleteProfile(model, axes));
 }
 
@@ -3988,7 +3973,7 @@ function renderDetailPanel(model) {
   return `
     <div class="detail-panel">
       <div class="stat-grid detail-stat-grid">
-        ${renderDetailStat(tr(scoreHeaderKeyForPreset(state.data.presets[state.presetId])), formatNumber(modelDisplayScore(model)), scoreRankMeta(model), "trophy")}
+        ${renderDetailStat(tr(scoreHeaderKeyForPreset(state.data.presets[state.presetId])), formatModelDisplayScore(model), scoreRankMeta(model), "trophy")}
         ${renderDetailStat(tr("headers.speed"), formatSpeed(model.medianOutputSpeed), valueRankMeta(model, (row) => row.medianOutputSpeed, true, "higherBetter"), "gauge")}
         ${renderDetailStat("AA run", formatMoney(modelCost(model)), valueRankMeta(model, modelCost, false, "lowerBetter"), "dollar")}
         ${renderDetailStat(tr("headers.context"), formatTokens(model.contextWindowTokens), valueRankMeta(model, (row) => row.contextWindowTokens, true, "higherBetter"), "database")}
@@ -4127,7 +4112,7 @@ function renderDetailHeroFacts(model) {
   const facts = [
     ["calendar", `${tr("releaseDate")}: ${formatDate(model.releaseDate)}`],
     ["database", sourceTypeLabel(sourceType(model))],
-    ["gauge", `${formatNumber(modelDisplayScore(model))} ${tr(scoreHeaderKeyForPreset(state.data.presets[state.presetId]))}`],
+    ["gauge", `${formatModelDisplayScore(model)} ${tr(scoreHeaderKeyForPreset(state.data.presets[state.presetId]))}`],
   ];
   return facts.map(([icon, label]) => `<span>${renderIcon(icon)}${escapeHtml(label)}</span>`).join("");
 }
@@ -4149,7 +4134,7 @@ function renderSiblingVariants(rows, currentModel) {
     <a class="variant-row${sameModelIdentity(row, currentModel) ? " is-current" : ""}" href="${escapeHtml(modelHref(row, currentModelBackSource()))}">
       <span>${Number.isFinite(row.rank) ? `#${row.rank}` : escapeHtml(tr("notAvailable"))}</span>
       <strong>${escapeHtml(row.model)}</strong>
-      <em>${escapeHtml(formatNumber(modelDisplayScore(row)))}</em>
+      <em>${escapeHtml(formatModelDisplayScore(row))}</em>
     </a>
   `).join("");
 }
@@ -4254,8 +4239,9 @@ function renderBenchmarkPage() {
         <section class="benchmark-ranking-panel">
           <div class="detail-section-head">
             <h2>${escapeHtml(tr("benchmarkRankingTitle", { label: selected.label }))}</h2>
-            <p>${escapeHtml(tr("benchmarkRankingSubtitle", { count: rows.length, category: selected.category || tr("benchmarkNonReference") }))}</p>
+            <p>${escapeHtml(tr("benchmarkRankingSubtitle", { count: rows.length, category: benchmarkRoleLabel(selected) }))}</p>
           </div>
+          ${benchmarkPolicySummary(selected)}
           <div class="benchmark-ranking-list">
             ${rows.length ? rows.map((row) => renderBenchmarkRankingRow(row, selected)).join("") : `<div class="empty">${escapeHtml(tr("notAvailable"))}</div>`}
           </div>
@@ -4265,15 +4251,46 @@ function renderBenchmarkPage() {
   `;
 }
 
+function benchmarkRoleLabel(metric) {
+  const key = {
+    core: "benchmarkCore",
+    extension: "benchmarkExtension",
+    excluded: "benchmarkExcluded",
+    "custom-only": "benchmarkCustomOnly",
+  }[metric?.aindexRole] || "benchmarkCustomOnly";
+  return tr(key);
+}
+
+function benchmarkPolicySummary(metric) {
+  const zh = state.language === "zh-CN";
+  const boards = (metric.aindexBoards || [])
+    .map((boardId) => customWeightItemLabel(boardId, "board"))
+    .join(" · ");
+  const controller = metric.benchmarkController || tr("notAvailable");
+  const operator = metric.resultOperator || tr("notAvailable");
+  const protocol = metric.resultProtocol || tr("notAvailable");
+  const version = metric.versionPin || tr("notAvailable");
+  const reason = metric.scoringReason || "";
+  return `
+    <div class="source-note benchmark-policy-note">
+      <strong>${escapeHtml(benchmarkRoleLabel(metric))}</strong>
+      <p>${escapeHtml(zh ? `板块：${boards || "—"}` : `Boards: ${boards || "—"}`)}</p>
+      <p>${escapeHtml(zh ? `Benchmark controller：${controller}` : `Benchmark controller: ${controller}`)}</p>
+      <p>${escapeHtml(zh ? `结果执行方 / 协议：${operator} / ${protocol}` : `Result operator / protocol: ${operator} / ${protocol}`)}</p>
+      <p>${escapeHtml(zh ? `版本约束：${version}` : `Version pin: ${version}`)}</p>
+      ${reason ? `<p>${escapeHtml(reason)}</p>` : ""}
+    </div>
+  `;
+}
+
 function rankedBenchmarkMetrics() {
-  const defaultWeights = state.data.presets.custom?.weights || {};
   return (state.data.metrics || []).map((metric) => ({
     ...metric,
     coverage: metricGroupCoverageCount([metric]),
-    referenceWeight: Number(defaultWeights[metric.key] || 0),
   })).filter((metric) => metric.coverage > 0)
     .sort((a, b) => (
-      (b.referenceWeight > 0) - (a.referenceWeight > 0)
+      ({ core: 0, extension: 1, excluded: 2, "custom-only": 3 }[a.aindexRole] ?? 4)
+      - ({ core: 0, extension: 1, excluded: 2, "custom-only": 3 }[b.aindexRole] ?? 4)
       || b.coverage - a.coverage
       || a.label.localeCompare(b.label)
     ));
@@ -4289,7 +4306,7 @@ function findBenchmarkMetric(metrics) {
 
 function renderBenchmarkPickerItem(metric, selected) {
   const active = metric.key === selected.key;
-  const kind = metric.referenceWeight > 0 ? tr("benchmarkReference") : tr("benchmarkNonReference");
+  const kind = benchmarkRoleLabel(metric);
   return `
     <a class="benchmark-picker-item${active ? " is-active" : ""}" href="${escapeHtml(benchmarkHref(metric.key))}">
       <span>${escapeHtml(metric.icon || initials(metric.label))}</span>
@@ -4449,7 +4466,7 @@ function renderCompareOption(model) {
       ${renderModelIcon(model)}
       <span>
         <strong>${escapeHtml(model.model)}</strong>
-        <em>${escapeHtml(model.creator || tr("unknownCreator"))} · ${escapeHtml(rankLabel(model))} · ${escapeHtml(formatNumber(modelDisplayScore(model)))}</em>
+        <em>${escapeHtml(model.creator || tr("unknownCreator"))} · ${escapeHtml(rankLabel(model))} · ${escapeHtml(formatModelDisplayScore(model))}</em>
       </span>
       ${renderIcon("plus")}
     </button>
@@ -4483,7 +4500,7 @@ function renderCompareModelCard(model) {
         <button type="button" data-compare-remove="${escapeHtml(modelRouteId(model))}" aria-label="${escapeHtml(`${tr("compareRemove")} ${model.model}`)}">${renderIcon("x")}</button>
       </div>
       <div class="compare-model-facts">
-        <span>${renderIcon("trophy")}<b>${escapeHtml(formatNumber(modelDisplayScore(model)))}</b><em>${escapeHtml(rankLabel(model))}</em></span>
+        <span>${renderIcon("trophy")}<b>${escapeHtml(formatModelDisplayScore(model))}</b><em>${escapeHtml(rankLabel(model))}</em></span>
         <span>${renderIcon("gauge")}<b>${escapeHtml(formatSpeed(model.medianOutputSpeed))}</b><em>${escapeHtml(tr("compareRows.speed"))}</em></span>
         <span>${renderIcon("database")}<b>${escapeHtml(formatTokens(model.contextWindowTokens))}</b><em>${escapeHtml(tr("compareRows.context"))}</em></span>
       </div>
@@ -4548,7 +4565,7 @@ function compareCoreRows(models) {
     {
       label: tr("compareRows.score"),
       iconName: "trophy",
-      values: models.map((model) => compareValue(formatNumber(modelDisplayScore(model)), model.rank ? `#${model.rank}` : "")),
+      values: models.map((model) => compareValue(formatModelDisplayScore(model), model.rank ? `#${model.rank}` : "")),
     },
     {
       label: tr("compareRows.source"),
@@ -4672,7 +4689,7 @@ function formatMetricValue(value, unit = "%") {
 }
 
 function compareOptionLabel(model) {
-  return `${model.model} · ${model.creator || tr("unknownCreator")} · ${formatNumber(modelDisplayScore(model))}`;
+  return `${model.model} · ${model.creator || tr("unknownCreator")} · ${formatModelDisplayScore(model)}`;
 }
 
 function rankLabel(model) {
@@ -4705,6 +4722,7 @@ function renderProviderPage(ranked) {
   const color = providerColor({ creator: provider });
   const best = providerRows[0];
   const averageScore = providerRows.reduce((sum, model) => sum + modelDisplayScore(model), 0) / providerRows.length;
+  const averageScoreLabel = formatNumber(averageScore);
   const openCount = providerRows.filter((model) => sourceType(model) === "open").length;
   document.title = `${provider} · ${tr("pageTitle")}`;
   els.providerDetail.innerHTML = `
@@ -4716,14 +4734,14 @@ function renderProviderPage(ranked) {
           <p>${escapeHtml(tr("providerPageTitle", { provider }))}</p>
           <h2>${escapeHtml(provider)}</h2>
           <div class="model-meta detail-meta">
-            <span>${escapeHtml(tr("providerPageSubtitle", { count: providerRows.length, bestScore: formatNumber(modelDisplayScore(best)) }))}</span>
+            <span>${escapeHtml(tr("providerPageSubtitle", { count: providerRows.length, bestScore: formatModelDisplayScore(best) }))}</span>
           </div>
         </div>
       </div>
       <div class="detail-hero-facts">
         <span>${renderIcon("database")}${escapeHtml(tr("providerSummaryModels"))}: ${providerRows.length}</span>
-        <span>${renderIcon("trophy")}${escapeHtml(tr("providerSummaryBest"))}: ${escapeHtml(formatNumber(modelDisplayScore(best)))}</span>
-        <span>${renderIcon("gauge")}${escapeHtml(tr("providerSummaryAverage"))}: ${escapeHtml(formatNumber(averageScore))}</span>
+        <span>${renderIcon("trophy")}${escapeHtml(tr("providerSummaryBest"))}: ${escapeHtml(formatModelDisplayScore(best))}</span>
+        <span>${renderIcon("gauge")}${escapeHtml(tr("providerSummaryAverage"))}: ${escapeHtml(averageScoreLabel)}</span>
         <span>${renderIcon("code")}${escapeHtml(tr("providerSummaryOpen"))}: ${openCount}</span>
       </div>
     </section>
@@ -4751,7 +4769,7 @@ function renderProviderModelRow(model) {
       </span>
       <span class="provider-model-stat">
         ${renderIcon("trophy")}
-        <b>${escapeHtml(formatNumber(modelDisplayScore(model)))}</b>
+        <b>${escapeHtml(formatModelDisplayScore(model))}</b>
       </span>
       <span class="provider-model-stat">
         ${renderIcon("gauge")}

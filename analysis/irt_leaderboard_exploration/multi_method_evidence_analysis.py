@@ -1,4 +1,4 @@
-"""Multi-method evidence measurement with an explicit publication-order layer.
+"""Multi-method evidence measurement ranked only by observed-score evidence.
 
 All primary methods use the same sanitized model-by-benchmark matrix.  There
 are no product-order constraints, named-model adjustments, model-specific
@@ -6,11 +6,11 @@ weights, or fixed missing-score penalties.  The five boards receive equal
 weight wherever boards are aggregated.  Coverage only controls eligibility
 and the Main/Provisional evidence label.
 
-User-facing candidate rankings are derived from those untouched evidence
-rankings by one transparent publication rule: Claude Fable 5 is first and
-GPT-5.6 Sol is second.  Scores are never changed, the original rank is retained
-as ``evidence_rank``, and every other model keeps its evidence-order position
-relative to the other non-anchor models.
+The primary leaderboard score is the disclosed blend of 80% equal-board 2PL
+score and 20% sparse-item Rasch score.  Rows are ordered by that score alone,
+with a stable identifier used only to make exact score ties deterministic.
+Component ranks and their weighted mean remain audit diagnostics and never
+change the primary order.
 
 The repository contains benchmark-level aggregate scores rather than
 question-level responses, so the Rasch and 2PL methods below are continuous
@@ -33,9 +33,11 @@ from typing import Any
 import numpy as np
 
 try:
+    from . import aindex_scheme18 as scheme18
     from . import evidence_only_ranking_analysis as evidence
     from . import irt_leaderboard_analysis as base
 except ImportError:  # Direct script execution.
+    import aindex_scheme18 as scheme18
     import evidence_only_ranking_analysis as evidence
     import irt_leaderboard_analysis as base
 
@@ -84,9 +86,9 @@ METHOD_LABELS: OrderedDict[str, str] = OrderedDict(
     ]
 )
 
-CONSENSUS_METHOD = "twopl_sparse_70_30_rank_mean"
+CONSENSUS_METHOD = "twopl_sparse_80_20_score"
 CONSENSUS_METHOD_LABEL = (
-    "70% equal-board 2PL and 30% sparse-item Rasch evidence-rank blend"
+    "80% equal-board 2PL and 20% sparse-item Rasch observed-score blend"
 )
 CONSENSUS_COMPONENT_METHODS: tuple[str, str] = (
     "twopl_equal_board",
@@ -94,21 +96,14 @@ CONSENSUS_COMPONENT_METHODS: tuple[str, str] = (
 )
 CONSENSUS_COMPONENT_WEIGHTS: OrderedDict[str, float] = OrderedDict(
     [
-        ("twopl_equal_board", 0.70),
-        ("rasch_sparse_item_sensitivity", 0.30),
+        ("twopl_equal_board", 0.80),
+        ("rasch_sparse_item_sensitivity", 0.20),
     ]
 )
 CONSENSUS_DISPLAY_METHODS: tuple[str, str] = (
     "rasch_equal_board",
     "rasch_dense_item_sensitivity",
 )
-
-PUBLICATION_RULE_ID = "fable5_first_gpt56sol_second_v1"
-REQUIRED_PUBLICATION_ORDER: tuple[tuple[str, str, str], ...] = (
-    ("fable_5", "slug", "claude-fable-5"),
-    ("gpt_5_6_sol", "variant_group", "gpt 5 6 sol"),
-)
-
 
 def prepare_common_matrix(
     models: list[dict[str, Any]],
@@ -417,8 +412,75 @@ def coverage_profile(
     return np.column_stack(board_counts), total_unique
 
 
+def main_evidence_mask(
+    coverage: np.ndarray,
+    board_data: dict[str, dict[str, Any]],
+) -> np.ndarray:
+    """Apply the Main target without requiring more items than a pool contains."""
+
+    targets = np.asarray(
+        [
+            min(MAIN_TESTS_PER_BOARD, len(board_data[board_id]["items"]))
+            for board_id in base.BOARD_ORDER
+        ],
+        dtype=int,
+    )
+    return np.all(coverage >= targets[None, :], axis=1)
+
+
 def competition_ranks(values: np.ndarray) -> np.ndarray:
     return evidence.competition_ranks(values)
+
+
+def choose_evidence_representative(
+    models: list[dict[str, Any]],
+    eligible: np.ndarray,
+    main_evidence: np.ndarray,
+    scores: np.ndarray,
+) -> list[int]:
+    """Choose one family representative without altering any observed score.
+
+    A Main configuration is preferred over a Provisional sibling so a sparse
+    point estimate cannot represent the whole family when a better-evidenced
+    exact configuration exists. Within the preferred tier, the method's own
+    untouched score selects the row; stable text is only a score-tie label.
+    """
+
+    by_group: dict[str, list[int]] = {}
+    for index in np.flatnonzero(eligible):
+        group = str(
+            models[index].get("variantGroup")
+            or models[index].get("slug")
+            or models[index].get("model")
+            or index
+        )
+        by_group.setdefault(group, []).append(int(index))
+
+    selected: list[int] = []
+    for indexes in by_group.values():
+        main_indexes = [index for index in indexes if main_evidence[index]]
+        candidates = main_indexes or indexes
+        best_score = max(float(scores[index]) for index in candidates)
+        tied = [
+            index
+            for index in candidates
+            if math.isclose(
+                float(scores[index]),
+                best_score,
+                rel_tol=0.0,
+                abs_tol=1e-12,
+            )
+        ]
+        selected.append(
+            min(
+                tied,
+                key=lambda index: (
+                    str(models[index].get("slug") or ""),
+                    str(models[index].get("model") or ""),
+                ),
+            )
+        )
+    return selected
 
 
 def method_rows(
@@ -432,8 +494,20 @@ def method_rows(
     eligible: np.ndarray,
     main_evidence: np.ndarray,
     method_scope: str,
+    collapse_variant_groups: bool = True,
+    selected_indexes: list[int] | None = None,
 ) -> list[dict[str, Any]]:
-    selected = evidence.choose_score_best_variant(models, eligible, scores)
+    if selected_indexes is not None:
+        selected = list(selected_indexes)
+    elif collapse_variant_groups:
+        selected = choose_evidence_representative(
+            models,
+            eligible,
+            main_evidence,
+            scores,
+        )
+    else:
+        selected = [int(index) for index in np.flatnonzero(eligible)]
     selected_values = np.asarray([scores[index] for index in selected], dtype=float)
     ranks = competition_ranks(selected_values)
 
@@ -497,20 +571,33 @@ def normalized_rank_percentile(rank: float, population: int) -> float:
     return 100.0 * (population - rank) / (population - 1)
 
 
+def _ranking_by_field(
+    rows: list[dict[str, Any]],
+    *,
+    method: str,
+    field: str,
+) -> dict[str, dict[str, Any]]:
+    indexed: dict[str, dict[str, Any]] = {}
+    for row in rows:
+        identity = str(row.get(field) or "")
+        if not identity:
+            raise ValueError(f"{method} row has no {field}")
+        if identity in indexed:
+            raise ValueError(f"{method} has duplicate {field} {identity!r}")
+        indexed[identity] = row
+    return indexed
+
+
 def _ranking_by_variant_group(
     rows: list[dict[str, Any]],
     *,
     method: str,
 ) -> dict[str, dict[str, Any]]:
-    indexed: dict[str, dict[str, Any]] = {}
-    for row in rows:
-        group = str(row.get("variant_group") or "")
-        if not group:
-            raise ValueError(f"{method} row has no variant_group")
-        if group in indexed:
-            raise ValueError(f"{method} has duplicate variant_group {group!r}")
-        indexed[group] = row
-    return indexed
+    return _ranking_by_field(
+        rows,
+        method=method,
+        field="variant_group",
+    )
 
 
 def _consensus_component(
@@ -540,26 +627,34 @@ def _consensus_component(
     }
 
 
-def build_twopl_sparse_rank_consensus(
+def build_twopl_sparse_score_consensus(
     full_rankings: dict[str, list[dict[str, Any]]],
     *,
     primary_pool_sizes: dict[str, int],
     sparse_pool_sizes: dict[str, int],
+    identity_field: str = "variant_group",
 ) -> list[dict[str, Any]]:
-    """Build the weighted 2PL/Sparse-Rasch consensus before publication ordering.
+    """Build the observed-score 2PL/Sparse-Rasch primary consensus.
 
     The two component populations and selected exact configurations must match
     exactly.  Missing components are not imputed and no fixed rank penalty is
-    introduced.  Equal weighted ranks prefer the higher-weight 2PL component,
-    then Sparse Rasch, then the stable row identifier.
+    introduced.  The weighted component-rank mean is retained only for audit;
+    the weighted observed score is the sole ranking value.  A stable identifier
+    makes exact score ties deterministic without inspecting model names.
     """
 
     twopl_method, sparse_method = CONSENSUS_COMPONENT_METHODS
     twopl_rows = full_rankings[twopl_method]
     sparse_rows = full_rankings[sparse_method]
-    twopl_by_group = _ranking_by_variant_group(twopl_rows, method=twopl_method)
-    sparse_by_group = _ranking_by_variant_group(
-        sparse_rows, method=sparse_method
+    twopl_by_group = _ranking_by_field(
+        twopl_rows,
+        method=twopl_method,
+        field=identity_field,
+    )
+    sparse_by_group = _ranking_by_field(
+        sparse_rows,
+        method=sparse_method,
+        field=identity_field,
     )
     twopl_groups = set(twopl_by_group)
     sparse_groups = set(sparse_by_group)
@@ -573,7 +668,11 @@ def build_twopl_sparse_rank_consensus(
         )
 
     component_maps = {
-        method: _ranking_by_variant_group(full_rankings[method], method=method)
+        method: _ranking_by_field(
+            full_rankings[method],
+            method=method,
+            field=identity_field,
+        )
         for method in (*CONSENSUS_COMPONENT_METHODS, *CONSENSUS_DISPLAY_METHODS)
     }
     component_populations = {
@@ -604,6 +703,9 @@ def build_twopl_sparse_rank_consensus(
         rank_max = max(twopl_rank, sparse_rank)
         twopl_score = float(twopl["score"])
         sparse_score = float(sparse["score"])
+        raw_composite_score = (
+            twopl_weight * twopl_score + sparse_weight * sparse_score
+        )
         evidence_tier = (
             "Main"
             if twopl.get("evidence_tier") == "Main"
@@ -614,25 +716,27 @@ def build_twopl_sparse_rank_consensus(
         row: dict[str, Any] = {
             "method": CONSENSUS_METHOD,
             "method_label": CONSENSUS_METHOD_LABEL,
-            "method_scope": "primary_rank_consensus",
-            # Assigned after the weighted consensus sort below.
+            "method_scope": "primary_score_consensus",
+            # Assigned after the observed-score sort below.
             "rank": 0,
             "model": str(twopl.get("model") or ""),
             "creator": str(twopl.get("creator") or ""),
             "slug": str(twopl.get("slug") or ""),
-            "variant_group": group,
-            "evidence_tier": evidence_tier,
-            "score": base.rounded(
-                twopl_weight * twopl_score + sparse_weight * sparse_score,
-                4,
+            "variant_group": str(twopl.get("variant_group") or ""),
+            "ranking_grain": (
+                "exact_config" if identity_field == "slug" else "variant_group"
             ),
-            "score_role": "diagnostic_weighted_mean_not_ranking_key",
+            "evidence_tier": evidence_tier,
+            "score": base.rounded(raw_composite_score, 4),
+            "_sort_score": raw_composite_score,
+            "score_role": "primary_ranking_key_0_100_weighted_method_score",
             "rank_mean": base.rounded(rank_mean, 4),
             "rank_weighted_mean": base.rounded(rank_mean, 4),
+            "rank_mean_role": "audit_only_not_ranking_key",
             "rank_min": rank_min,
             "rank_max": rank_max,
             "rank_span": rank_max - rank_min,
-            "rank_tie_break_policy": "lower_twopl_rank_then_sparse_rank_then_stable_id",
+            "rank_tie_break_policy": "higher_score_then_stable_id",
             "twopl_rank": twopl_rank,
             "twopl_score": twopl["score"],
             "sparse_rasch_rank": sparse_rank,
@@ -750,9 +854,7 @@ def build_twopl_sparse_rank_consensus(
 
     rows.sort(
         key=lambda row: (
-            float(row["rank_mean"]),
-            int(row["twopl_rank"]),
-            int(row["sparse_rasch_rank"]),
+            -float(row["_sort_score"]),
             ranking_row_id(row),
         )
     )
@@ -760,72 +862,15 @@ def build_twopl_sparse_rank_consensus(
     for position, row in enumerate(rows, start=1):
         row["rank"] = position
         row["rank_percentile"] = base.rounded(
-            normalized_rank_percentile(float(row["rank_mean"]), population),
+            normalized_rank_percentile(float(position), population),
             4,
         )
+        del row["_sort_score"]
     return rows
 
 
-def apply_required_publication_order(
-    evidence_rows: list[dict[str, Any]],
-    *,
-    required_order: tuple[tuple[str, str, str], ...] = REQUIRED_PUBLICATION_ORDER,
-    rule_id: str = PUBLICATION_RULE_ID,
-) -> list[dict[str, Any]]:
-    """Apply the required display order without changing evidence scores.
-
-    Targets are matched only by stable identifiers.  A missing or ambiguous
-    target is a hard failure so no candidate ranking can be emitted without
-    satisfying the publication contract.
-    """
-
-    if any("evidence_rank" in row for row in evidence_rows):
-        raise ValueError("publication order cannot be applied more than once")
-
-    target_indexes: list[int] = []
-    target_by_index: dict[int, str] = {}
-    for target_id, field, expected in required_order:
-        matches = [
-            index
-            for index, row in enumerate(evidence_rows)
-            if str(row.get(field) or "") == expected
-        ]
-        if len(matches) != 1:
-            raise ValueError(
-                f"required publication target {target_id!r} matched "
-                f"{len(matches)} rows via {field}={expected!r}"
-            )
-        index = matches[0]
-        if index in target_by_index:
-            raise ValueError(
-                f"required publication targets {target_by_index[index]!r} and "
-                f"{target_id!r} matched the same row"
-            )
-        target_indexes.append(index)
-        target_by_index[index] = target_id
-
-    target_index_set = set(target_indexes)
-    ordered_indexes = target_indexes + [
-        index
-        for index in range(len(evidence_rows))
-        if index not in target_index_set
-    ]
-    published: list[dict[str, Any]] = []
-    for rank, index in enumerate(ordered_indexes, start=1):
-        source = evidence_rows[index]
-        evidence_rank = int(source["rank"])
-        row = dict(source)
-        row["rank"] = rank
-        row["evidence_rank"] = evidence_rank
-        row["rank_change_due_to_required_order"] = evidence_rank - rank
-        row["publication_order_rule"] = rule_id
-        row["required_order_target"] = target_by_index.get(index, "")
-        published.append(row)
-    return published
-
-
 def ranking_row_id(row: dict[str, Any]) -> str:
-    """Return a stable row identifier for publication-layer validation."""
+    """Return a stable identifier used only to resolve exact score ties."""
 
     slug = str(row.get("slug") or "")
     if slug:
@@ -836,134 +881,102 @@ def ranking_row_id(row: dict[str, Any]) -> str:
     raise ValueError("ranking row has neither slug nor variant_group")
 
 
-def validate_required_publication_rankings(
-    evidence_rankings: dict[str, list[dict[str, Any]]],
-    publication_rankings: dict[str, list[dict[str, Any]]],
-    publication_top50: dict[str, list[dict[str, Any]]],
+def validate_score_ordered_rankings(
+    rankings: dict[str, list[dict[str, Any]]],
+    top_rankings: dict[str, list[dict[str, Any]]],
 ) -> dict[str, Any]:
-    """Prove that every published method satisfies the required-order layer."""
+    """Validate the score-only ordering contract for emitted rankings."""
+
+    if set(rankings) != set(top_rankings):
+        raise ValueError("full-ranking and top-ranking method sets do not match")
 
     method_results: dict[str, dict[str, Any]] = {}
-    methods = list(evidence_rankings)
-    if set(methods) != set(publication_rankings) or set(methods) != set(
-        publication_top50
-    ):
-        raise ValueError("publication validation method sets do not match")
-    for method in methods:
-        evidence_rows = evidence_rankings[method]
-        published_rows = publication_rankings[method]
-        top_rows = publication_top50[method]
-
-        evidence_ids = [ranking_row_id(row) for row in evidence_rows]
-        published_ids = [ranking_row_id(row) for row in published_rows]
-        top_ids = [ranking_row_id(row) for row in top_rows]
-        if len(set(evidence_ids)) != len(evidence_ids):
-            raise ValueError(f"duplicate stable row identifier in {method} evidence")
-        if len(set(published_ids)) != len(published_ids):
-            raise ValueError(f"duplicate stable row identifier in {method} publication")
-
-        evidence_by_id = dict(zip(evidence_ids, evidence_rows, strict=True))
-        published_by_id = dict(zip(published_ids, published_rows, strict=True))
-        same_population = set(evidence_ids) == set(published_ids)
-        scores_unchanged = same_population and all(
-            published_by_id[row_id]["score"] == evidence_by_id[row_id]["score"]
-            for row_id in evidence_ids
-        )
-        evidence_ranks_retained = same_population and all(
-            int(published_by_id[row_id]["evidence_rank"])
-            == int(evidence_by_id[row_id]["rank"])
-            for row_id in evidence_ids
-        )
-
-        anchor_ids: list[str] = []
-        required_ranks: dict[str, int | None] = {}
-        for expected_rank, (target_id, field, expected) in enumerate(
-            REQUIRED_PUBLICATION_ORDER, start=1
-        ):
-            matches = [
-                row
-                for row in published_rows
-                if str(row.get(field) or "") == expected
-            ]
-            required_ranks[target_id] = (
-                int(matches[0]["rank"]) if len(matches) == 1 else None
+    disallowed_fields = {
+        "evidence_rank",
+        "publication_order_rule",
+        "rank_change_due_to_required_order",
+        "required_order_target",
+    }
+    for method, rows in rankings.items():
+        top_rows = top_rankings[method]
+        row_ids = [ranking_row_id(row) for row in rows]
+        display_scores = [float(row["score"]) for row in rows]
+        sort_scores = [
+            (
+                CONSENSUS_COMPONENT_WEIGHTS["twopl_equal_board"]
+                * float(row["twopl_score"])
+                + CONSENSUS_COMPONENT_WEIGHTS[
+                    "rasch_sparse_item_sensitivity"
+                ]
+                * float(row["sparse_rasch_score"])
             )
-            if len(matches) == 1:
-                anchor_ids.append(ranking_row_id(matches[0]))
-
-        anchor_id_set = set(anchor_ids)
-        evidence_other_order = [
-            row_id for row_id in evidence_ids if row_id not in anchor_id_set
+            for row in rows
         ]
-        publication_other_order = [
-            row_id for row_id in published_ids if row_id not in anchor_id_set
-        ]
-        remaining_order_preserved = (
-            evidence_other_order == publication_other_order
+        expected_top_size = min(50, len(rows))
+        sequential_ranks = [int(row["rank"]) for row in rows] == list(
+            range(1, len(rows) + 1)
         )
-        sequential_ranks = [int(row["rank"]) for row in published_rows] == list(
-            range(1, len(published_rows) + 1)
+        scores_non_increasing = all(
+            left >= right
+            for left, right in zip(sort_scores, sort_scores[1:])
         )
-        top50_exact = (
-            len(top_rows) == 50
-            and top_ids == published_ids[:50]
-            and [int(row["rank"]) for row in top_rows] == list(range(1, 51))
+        displayed_scores_non_increasing = all(
+            left >= right
+            for left, right in zip(display_scores, display_scores[1:])
         )
-        required_order_satisfied = all(
-            required_ranks[target_id] == expected_rank
-            for expected_rank, (target_id, _, _) in enumerate(
-                REQUIRED_PUBLICATION_ORDER, start=1
+        stable_tie_order = all(
+            not math.isclose(left_score, right_score, rel_tol=0.0, abs_tol=1e-12)
+            or left_id <= right_id
+            for left_score, right_score, left_id, right_id in zip(
+                sort_scores,
+                sort_scores[1:],
+                row_ids,
+                row_ids[1:],
             )
+        )
+        unique_stable_ids = len(set(row_ids)) == len(row_ids)
+        top_is_prefix = (
+            len(top_rows) == expected_top_size
+            and [ranking_row_id(row) for row in top_rows]
+            == row_ids[:expected_top_size]
+            and [int(row["rank"]) for row in top_rows]
+            == list(range(1, expected_top_size + 1))
+        )
+        has_no_artificial_order_fields = all(
+            disallowed_fields.isdisjoint(row) for row in rows
         )
         passed = all(
             (
-                same_population,
-                scores_unchanged,
-                evidence_ranks_retained,
-                remaining_order_preserved,
                 sequential_ranks,
-                top50_exact,
-                required_order_satisfied,
+                scores_non_increasing,
+                displayed_scores_non_increasing,
+                stable_tie_order,
+                unique_stable_ids,
+                top_is_prefix,
+                has_no_artificial_order_fields,
             )
         )
         method_results[method] = {
             "passed": passed,
-            "top50_rows": len(top_rows),
-            "required_ranks": required_ranks,
-            "same_population": same_population,
-            "scores_unchanged": scores_unchanged,
-            "evidence_ranks_retained": evidence_ranks_retained,
-            "remaining_evidence_order_preserved": remaining_order_preserved,
-            "sequential_publication_ranks": sequential_ranks,
-            "top50_is_full_ranking_prefix": top50_exact,
+            "full_rows": len(rows),
+            "top_rows": len(top_rows),
+            "sequential_ranks": sequential_ranks,
+            "scores_non_increasing": scores_non_increasing,
+            "displayed_scores_non_increasing": displayed_scores_non_increasing,
+            "stable_identifier_orders_exact_score_ties": stable_tie_order,
+            "unique_stable_ids": unique_stable_ids,
+            "top_is_full_ranking_prefix": top_is_prefix,
+            "has_no_artificial_order_fields": has_no_artificial_order_fields,
         }
 
     return {
-        "publication_order_rule": PUBLICATION_RULE_ID,
-        "required_order": [
-            {
-                "rank": rank,
-                "target": target_id,
-                "stable_field": field,
-                "stable_value": expected,
-            }
-            for rank, (target_id, field, expected) in enumerate(
-                REQUIRED_PUBLICATION_ORDER, start=1
-            )
-        ],
+        "ranking_policy": (
+            "descending_unrounded_weighted_component_score_then_stable_id_"
+            "for_exact_ties"
+        ),
         "method_count": len(method_results),
         "all_methods_pass": all(
             result["passed"] for result in method_results.values()
-        ),
-        "all_methods_have_50_rows": all(
-            result["top50_rows"] == 50 for result in method_results.values()
-        ),
-        "all_scores_unchanged": all(
-            result["scores_unchanged"] for result in method_results.values()
-        ),
-        "all_remaining_evidence_order_preserved": all(
-            result["remaining_evidence_order_preserved"]
-            for result in method_results.values()
         ),
         "methods": method_results,
     }
@@ -1274,19 +1287,15 @@ def pairwise_overlap_rows(
     return rows
 
 
-def run_multi_method_analysis_from_payload(
-    payload: dict[str, Any],
-    *,
-    output_dir: Path = DEFAULT_OUTPUT_DIR,
-    write_outputs: bool = False,
+def prepare_method_measurements(
+    models: list[dict[str, Any]],
 ) -> dict[str, Any]:
-    """Analyze an in-memory site payload without reading the generated site file."""
+    """Fit every displayed method for one explicitly scoped model population."""
 
-    models, sanitation = evidence.sanitize_models(payload)
     board_data = prepare_common_matrix(models)
     coverage, unique_families = coverage_profile(board_data)
     eligible = np.all(coverage >= PROVISIONAL_MIN_TESTS_PER_BOARD, axis=1)
-    main_evidence = np.all(coverage >= MAIN_TESTS_PER_BOARD, axis=1)
+    main_evidence = main_evidence_mask(coverage, board_data)
 
     rasch_fits = {
         board_id: fit_unweighted_rasch(board_data[board_id])
@@ -1296,15 +1305,21 @@ def run_multi_method_analysis_from_payload(
         board_id: fit_unweighted_twopl(board_data[board_id])
         for board_id in base.BOARD_ORDER
     }
-    percentile_mean_boards = board_percentile_scores(board_data, reducer="mean")
+    percentile_mean_boards = board_percentile_scores(
+        board_data,
+        reducer="mean",
+    )
     percentile_median_boards = board_percentile_scores(
-        board_data, reducer="median"
+        board_data,
+        reducer="median",
     )
     rasch_boards = {
-        board_id: rasch_fits[board_id]["scores"] for board_id in base.BOARD_ORDER
+        board_id: rasch_fits[board_id]["scores"]
+        for board_id in base.BOARD_ORDER
     }
     twopl_boards = {
-        board_id: twopl_fits[board_id]["scores"] for board_id in base.BOARD_ORDER
+        board_id: twopl_fits[board_id]["scores"]
+        for board_id in base.BOARD_ORDER
     }
     global_scores, global_counts = global_family_percentiles(board_data)
 
@@ -1313,11 +1328,14 @@ def run_multi_method_analysis_from_payload(
         item_min_models=SPARSE_ITEM_MIN_MODELS,
         item_min_creators=1,
     )
-    sparse_coverage, sparse_unique_families = coverage_profile(sparse_board_data)
-    sparse_eligible = np.all(
-        sparse_coverage >= PROVISIONAL_MIN_TESTS_PER_BOARD, axis=1
+    sparse_coverage, sparse_unique_families = coverage_profile(
+        sparse_board_data
     )
-    sparse_main = np.all(sparse_coverage >= MAIN_TESTS_PER_BOARD, axis=1)
+    sparse_eligible = np.all(
+        sparse_coverage >= PROVISIONAL_MIN_TESTS_PER_BOARD,
+        axis=1,
+    )
+    sparse_main = main_evidence_mask(sparse_coverage, sparse_board_data)
     sparse_rasch_boards = {
         board_id: fit_unweighted_rasch(sparse_board_data[board_id])["scores"]
         for board_id in base.BOARD_ORDER
@@ -1330,9 +1348,10 @@ def run_multi_method_analysis_from_payload(
     )
     dense_coverage, dense_unique_families = coverage_profile(dense_board_data)
     dense_eligible = np.all(
-        dense_coverage >= PROVISIONAL_MIN_TESTS_PER_BOARD, axis=1
+        dense_coverage >= PROVISIONAL_MIN_TESTS_PER_BOARD,
+        axis=1,
     )
-    dense_main = np.all(dense_coverage >= MAIN_TESTS_PER_BOARD, axis=1)
+    dense_main = main_evidence_mask(dense_coverage, dense_board_data)
     dense_rasch_boards = {
         board_id: fit_unweighted_rasch(dense_board_data[board_id])["scores"]
         for board_id in base.BOARD_ORDER
@@ -1366,8 +1385,8 @@ def run_multi_method_analysis_from_payload(
         "twopl_equal_board": twopl_boards,
         "percentile_mean_equal_board": percentile_mean_boards,
         "percentile_median_equal_board": percentile_median_boards,
-        # The global method has no board contribution.  These equal-board
-        # means are included only as transparent diagnostics in its rows.
+        # The global method has no board contribution. These equal-board
+        # means remain transparent diagnostics in its rows.
         "global_family_percentile": percentile_mean_boards,
         "rasch_sparse_item_sensitivity": sparse_rasch_boards,
         "rasch_dense_item_sensitivity": dense_rasch_boards,
@@ -1402,6 +1421,78 @@ def run_multi_method_analysis_from_payload(
         "main": dense_main,
         "scope": "sensitivity_item_min_20",
     }
+    return {
+        "board_data": board_data,
+        "coverage": coverage,
+        "unique_families": unique_families,
+        "eligible": eligible,
+        "main_evidence": main_evidence,
+        "global_counts": global_counts,
+        "sparse_board_data": sparse_board_data,
+        "sparse_coverage": sparse_coverage,
+        "sparse_unique_families": sparse_unique_families,
+        "sparse_eligible": sparse_eligible,
+        "sparse_main": sparse_main,
+        "dense_board_data": dense_board_data,
+        "dense_coverage": dense_coverage,
+        "dense_unique_families": dense_unique_families,
+        "dense_eligible": dense_eligible,
+        "dense_main": dense_main,
+        "method_scores": method_scores,
+        "method_board_scores": method_board_scores,
+        "method_profiles": method_profiles,
+    }
+
+
+def run_multi_method_analysis_from_payload(
+    payload: dict[str, Any],
+    *,
+    output_dir: Path = DEFAULT_OUTPUT_DIR,
+    write_outputs: bool = False,
+) -> dict[str, Any]:
+    """Analyze an in-memory site payload without reading the generated site file."""
+
+    models, sanitation = evidence.sanitize_models(payload)
+    measurement = prepare_method_measurements(models)
+    board_data = measurement["board_data"]
+    coverage = measurement["coverage"]
+    unique_families = measurement["unique_families"]
+    eligible = measurement["eligible"]
+    main_evidence = measurement["main_evidence"]
+    global_counts = measurement["global_counts"]
+    sparse_board_data = measurement["sparse_board_data"]
+    sparse_coverage = measurement["sparse_coverage"]
+    sparse_eligible = measurement["sparse_eligible"]
+    dense_board_data = measurement["dense_board_data"]
+    dense_coverage = measurement["dense_coverage"]
+    dense_eligible = measurement["dense_eligible"]
+    method_scores = measurement["method_scores"]
+    method_board_scores = measurement["method_board_scores"]
+    method_profiles = measurement["method_profiles"]
+    representative_methods = (
+        "rasch_equal_board",
+        "twopl_equal_board",
+        "rasch_sparse_item_sensitivity",
+        "rasch_dense_item_sensitivity",
+    )
+    representative_eligible = np.logical_and.reduce(
+        [method_profiles[method]["eligible"] for method in representative_methods]
+    )
+    representative_main = np.logical_and.reduce(
+        [method_profiles[method]["main"] for method in representative_methods]
+    )
+    representative_scores = (
+        CONSENSUS_COMPONENT_WEIGHTS["twopl_equal_board"]
+        * method_scores["twopl_equal_board"]
+        + CONSENSUS_COMPONENT_WEIGHTS["rasch_sparse_item_sensitivity"]
+        * method_scores["rasch_sparse_item_sensitivity"]
+    )
+    representative_indexes = choose_evidence_representative(
+        models,
+        representative_eligible,
+        representative_main,
+        representative_scores,
+    )
 
     full_rankings: dict[str, list[dict[str, Any]]] = {}
     top50: dict[str, list[dict[str, Any]]] = {}
@@ -1417,6 +1508,7 @@ def run_multi_method_analysis_from_payload(
             eligible=profile["eligible"],
             main_evidence=profile["main"],
             method_scope=str(profile["scope"]),
+            selected_indexes=representative_indexes,
         )
         full_rankings[method] = rows
         top50[method] = rows[:50]
@@ -1424,44 +1516,108 @@ def run_multi_method_analysis_from_payload(
     primary_board_item_pool_sizes = board_item_pool_sizes(board_data)
     sparse_board_item_pool_sizes = board_item_pool_sizes(sparse_board_data)
     dense_board_item_pool_sizes = board_item_pool_sizes(dense_board_data)
-    consensus_full_rankings = build_twopl_sparse_rank_consensus(
+    consensus_full_rankings = build_twopl_sparse_score_consensus(
         full_rankings,
         primary_pool_sizes=primary_board_item_pool_sizes,
         sparse_pool_sizes=sparse_board_item_pool_sizes,
     )
     consensus_top50 = consensus_full_rankings[:50]
-    publication_consensus_full_rankings = apply_required_publication_order(
-        consensus_full_rankings
-    )
-    publication_consensus_top50 = publication_consensus_full_rankings[:50]
-    consensus_publication_validation = validate_required_publication_rankings(
+    consensus_score_order_validation = validate_score_ordered_rankings(
         {CONSENSUS_METHOD: consensus_full_rankings},
-        {CONSENSUS_METHOD: publication_consensus_full_rankings},
-        {CONSENSUS_METHOD: publication_consensus_top50},
+        {CONSENSUS_METHOD: consensus_top50},
     )
-    if not consensus_publication_validation["all_methods_pass"]:
+    if not consensus_score_order_validation["all_methods_pass"]:
         raise AssertionError(
-            "the 2PL/Sparse-Rasch rank consensus failed the "
-            "Fable 5 / GPT-5.6 Sol order gate"
+            "the 2PL/Sparse-Rasch consensus failed score-order validation"
         )
 
-    required_order_full_rankings = {
-        method: apply_required_publication_order(full_rankings[method])
-        for method in METHOD_LABELS
-    }
-    required_order_top50 = {
-        method: required_order_full_rankings[method][:50]
-        for method in METHOD_LABELS
-    }
-    required_order_validation = validate_required_publication_rankings(
-        full_rankings,
-        required_order_full_rankings,
-        required_order_top50,
+    # The deduplicated leaderboard above may use a direct family-level result
+    # attached to its source row. The Full Ranking toggle must not attribute
+    # that unscoped result to one effort tier. Refit the exact-config population
+    # using AA exact rows plus only explicitly variant-scoped external results.
+    exact_models, exact_sanitation = evidence.sanitize_models(
+        payload,
+        exact_config_only=True,
     )
-    if not required_order_validation["all_methods_pass"]:
-        raise AssertionError(
-            "a publication candidate failed the Fable 5 / GPT-5.6 Sol order gate"
+    exact_measurement = prepare_method_measurements(exact_models)
+    exact_method_scores = exact_measurement["method_scores"]
+    exact_method_board_scores = exact_measurement["method_board_scores"]
+    exact_method_profiles = exact_measurement["method_profiles"]
+    exact_config_eligible = np.logical_and.reduce(
+        [
+            exact_method_profiles[method]["eligible"]
+            for method in (
+                "rasch_equal_board",
+                "twopl_equal_board",
+                "rasch_sparse_item_sensitivity",
+                "rasch_dense_item_sensitivity",
+            )
+        ]
+    )
+    exact_primary_board_item_pool_sizes = board_item_pool_sizes(
+        exact_measurement["board_data"]
+    )
+    exact_sparse_board_item_pool_sizes = board_item_pool_sizes(
+        exact_measurement["sparse_board_data"]
+    )
+    exact_dense_board_item_pool_sizes = board_item_pool_sizes(
+        exact_measurement["dense_board_data"]
+    )
+    exact_config_full_rankings: dict[str, list[dict[str, Any]]] = {}
+    exact_config_top50: dict[str, list[dict[str, Any]]] = {}
+    for method, scores in exact_method_scores.items():
+        profile = exact_method_profiles[method]
+        rows = method_rows(
+            method=method,
+            models=exact_models,
+            scores=scores,
+            board_scores=exact_method_board_scores[method],
+            coverage=profile["coverage"],
+            unique_families=profile["unique_families"],
+            eligible=exact_config_eligible,
+            main_evidence=profile["main"],
+            method_scope=f"{profile['scope']}_exact_config",
+            collapse_variant_groups=False,
         )
+        exact_config_full_rankings[method] = rows
+        exact_config_top50[method] = rows[:50]
+
+    exact_config_consensus_full_rankings = build_twopl_sparse_score_consensus(
+        exact_config_full_rankings,
+        primary_pool_sizes=exact_primary_board_item_pool_sizes,
+        sparse_pool_sizes=exact_sparse_board_item_pool_sizes,
+        identity_field="slug",
+    )
+    exact_config_consensus_top50 = exact_config_consensus_full_rankings[:50]
+    exact_config_score_order_validation = validate_score_ordered_rankings(
+        {CONSENSUS_METHOD: exact_config_consensus_full_rankings},
+        {CONSENSUS_METHOD: exact_config_consensus_top50},
+    )
+    if not exact_config_score_order_validation["all_methods_pass"]:
+        raise AssertionError(
+            "the exact-config 2PL/Sparse-Rasch consensus failed "
+            "score-order validation"
+        )
+
+    # The legacy four-method analysis above remains the frozen eligibility and
+    # representative-slug audit.  Scheme 18 is now the primary score.  Fit it
+    # on the raw payload rows for the selected deduplicated slugs so legitimate
+    # family-level evidence remains available in the family view.  Apply that
+    # exact same calibration and cap to the already-qualified, exact-config-
+    # sanitized rows; never refit on the larger exact population.
+    scheme18_result = scheme18.run_aindex_scheme18_from_payload(
+        payload,
+        calibration_slugs=[
+            str(row.get("slug") or "") for row in consensus_full_rankings
+        ],
+        exact_config_slugs=[
+            str(row.get("slug") or "")
+            for row in exact_config_consensus_full_rankings
+        ],
+        exact_config_models=exact_models,
+        output_dir=output_dir,
+        write_outputs=write_outputs,
+    )
 
     coverage_rows = direct_source_coverage(
         list(payload.get("models", [])),
@@ -1470,14 +1626,8 @@ def run_multi_method_analysis_from_payload(
         list(payload.get("externalSources", [])),
     )
     target_rows = target_method_rows(full_rankings)
-    required_order_target_rows = target_method_rows(
-        required_order_full_rankings
-    )
     consensus_target_rows = target_method_rows(
         {CONSENSUS_METHOD: consensus_full_rankings}
-    )
-    publication_consensus_target_rows = target_method_rows(
-        {CONSENSUS_METHOD: publication_consensus_full_rankings}
     )
     target_exact_rows = target_exact_config_rows(
         models=models,
@@ -1486,62 +1636,172 @@ def run_multi_method_analysis_from_payload(
     )
     stability_rows = method_stability_rows(full_rankings)
     overlap_rows = pairwise_overlap_rows(models, board_data)
+    exact_config_group_counts: dict[str, int] = {}
+    for row in exact_config_consensus_full_rankings:
+        group = str(row.get("variant_group") or "")
+        exact_config_group_counts[group] = exact_config_group_counts.get(group, 0) + 1
+    group_consensus_by_slug = {
+        str(row.get("slug") or ""): row
+        for row in consensus_full_rankings
+    }
+    exact_consensus_by_slug = {
+        str(row.get("slug") or ""): row
+        for row in exact_config_consensus_full_rankings
+    }
+    group_consensus_slugs = set(group_consensus_by_slug)
+    exact_config_slugs = set(exact_consensus_by_slug)
+    recovered_exact_config_count = len(
+        exact_config_slugs - group_consensus_slugs
+    )
+    deduped_only_config_count = len(
+        group_consensus_slugs - exact_config_slugs
+    )
+    exact_config_visibility_rows: list[dict[str, Any]] = []
+    for exact_row in exact_config_consensus_full_rankings:
+        slug = str(exact_row.get("slug") or "")
+        group = str(exact_row.get("variant_group") or "")
+        group_row = group_consensus_by_slug.get(slug)
+        exact_config_visibility_rows.append(
+            {
+                "variant_group": group,
+                "eligible_exact_configs_in_group": exact_config_group_counts[group],
+                "model": str(exact_row.get("model") or ""),
+                "slug": slug,
+                "selected_in_deduped_ranking": group_row is not None,
+                "recovered_when_dedupe_disabled": group_row is None,
+                "exact_rank": int(exact_row["rank"]),
+                "exact_score": exact_row.get("score"),
+                "exact_rank_mean_audit": exact_row.get("rank_mean"),
+                "deduped_rank": (
+                    int(group_row["rank"]) if group_row is not None else None
+                ),
+                "evidence_tier": str(exact_row.get("evidence_tier") or ""),
+                "unique_benchmark_families": int(
+                    exact_row.get("unique_benchmark_families") or 0
+                ),
+            }
+        )
     summary = {
         "method_count": len(METHOD_LABELS),
         "methods": METHOD_LABELS,
-        "default_consensus_method": CONSENSUS_METHOD,
+        "default_consensus_method": scheme18.METHOD_ID,
+        "default_ranking_method": scheme18.METHOD_ID,
+        "ranked_variant_groups": len(scheme18_result["full_rankings"]),
+        "ranked_exact_config_rows_primary": len(
+            scheme18_result["exact_config_full_rankings"]
+        ),
+        "aindex_scheme18": {
+            "id": scheme18.METHOD_ID,
+            "candidate_id": scheme18.CANDIDATE_ID,
+            "role": "sole primary ranking score",
+            "core_fit": scheme18.CORE_FIT,
+            "extension_aggregator": scheme18.EXTENSION_AGGREGATOR,
+            "extension_pool": "independent_audit",
+            "cap_rule": scheme18.CAP_RULE,
+            "bonus_cap_per_board": scheme18_result["calibration"][
+                "bonus_cap_per_board"
+            ],
+            "board_order": list(scheme18.BOARD_ORDER),
+            "board_points_max": scheme18.BOARD_POINTS,
+            "board_aggregation": (
+                "five symmetric boards; board_points=board_score/5; "
+                "final_score=sum(board_points)"
+            ),
+            "board_items": {
+                board_id: {
+                    "core": list(scheme18.CORE_ITEMS[board_id]),
+                    "extension": list(scheme18.EXTENSION_ITEMS[board_id]),
+                }
+                for board_id in scheme18.BOARD_ORDER
+            },
+            "missing_policy": scheme18_result["calibration"][
+                "missing_policy"
+            ],
+            "fit_apply_policy": scheme18_result["calibration"][
+                "fit_apply_policy"
+            ],
+            "eligibility_and_representative_source": (
+                "legacy four-method common gate and representative slug are "
+                "retained as audit inputs only; they do not enter Scheme 18 "
+                "scores or ordering"
+            ),
+            "score_role": (
+                "unrounded 0-100 additive five-board score is the sole ranking "
+                "key; stable slug/model IDs resolve exact numerical ties only"
+            ),
+            "ranked_variant_groups": len(scheme18_result["full_rankings"]),
+            "ranked_exact_config_rows": len(
+                scheme18_result["exact_config_full_rankings"]
+            ),
+            "exact_reuses_deduplicated_calibration": True,
+            "validation": scheme18_result["validation"],
+        },
         "consensus_method": {
             "id": CONSENSUS_METHOD,
             "label": CONSENSUS_METHOD_LABEL,
+            "role": "audit-only legacy eligibility/representative consensus",
             "component_methods": list(CONSENSUS_COMPONENT_METHODS),
             "component_weights": dict(CONSENSUS_COMPONENT_WEIGHTS),
             "display_methods": list(CONSENSUS_DISPLAY_METHODS),
             "rank_aggregation": (
-                "70% equal-board 2PL evidence rank plus 30% sparse-item "
-                "Rasch evidence rank"
+                "descending 80% equal-board 2PL score plus 20% sparse-item "
+                "Rasch score"
             ),
             "tie_break_policy": (
-                "lower 2PL evidence rank, then lower sparse-item Rasch "
-                "evidence rank, then stable row identifier"
+                "stable row identifier for exact unrounded composite-score ties"
             ),
             "score_role": (
-                "diagnostic 70/30 weighted mean; rank_mean is the ranking key"
+                "legacy 0-100 composite retained only for eligibility, "
+                "representative selection, and sensitivity audit; it does not "
+                "enter the Scheme 18 score or ordering"
+            ),
+            "score_precision_policy": (
+                "rank by the unrounded 80/20 composite, then display score to "
+                "four decimal places"
             ),
             "ranked_variant_groups": len(consensus_full_rankings),
             "board_score_policy": (
-                "70% equal-board 2PL plus 30% sparse-item Rasch board scores"
+                "80% equal-board 2PL plus 20% sparse-item Rasch board scores"
             ),
             "evidence_coverage_policy": (
-                "for each board, 70/30 weighted mean of primary-pool and "
+                "for each board, 80/20 weighted mean of primary-pool and "
                 "sparse-pool observed canonical-family shares; then equal mean "
                 "across five boards"
             ),
         },
         "rank_policy": (
             "no product/model constraints; no named-model corrections; no fixed "
-            "missing-score penalty"
+            "missing-score penalty; score descending is the only ranking rule"
         ),
-        "publication_rank_policy": (
-            "scores remain unchanged; Claude Fable 5 is published at rank 1 and "
-            "GPT-5.6 Sol at rank 2; all other models preserve evidence-relative "
-            "order"
-        ),
-        "publication_order_rule": PUBLICATION_RULE_ID,
         "weight_policy": (
-            "no model-specific or benchmark-specific weights; the primary consensus "
-            "uses the disclosed fixed 70% 2PL / 30% sparse-Rasch method blend; "
-            "observed cells are equal within each fit; 2PL item discrimination is "
-            "estimated anonymously with one common ridge; board methods use exactly "
-            "one-fifth per board; global method gives every canonical family one vote"
+            "the primary Scheme 18 has no model-specific or benchmark-specific "
+            "weights: complete core items enter an unweighted geometric partial-credit "
+            "score, observed independent extensions can add only a capped positive "
+            "residual, and every board contributes exactly one fifth; the legacy "
+            "80% 2PL / 20% sparse-Rasch blend remains audit-only"
         ),
         "coverage_policy": (
-            "at least two canonical families in every board to rank; at least three "
-            "in every board for Main; coverage does not enter the primary score"
+            "the legacy four-method common gate selects qualified rows and one "
+            "representative slug per variant group; Scheme 18 then requires every "
+            "declared core item, while missing extensions remain absent and earn zero "
+            "bonus without an imputed score"
         ),
         "configuration_policy": (
-            "rank evaluated product/configuration rows; Fable with fallback is a real "
-            "product-system configuration and is not presented as a hypothetical pure "
-            "base-model score"
+            "rank evaluated source-backed product/configuration rows; system or "
+            "fallback configurations remain explicitly labeled rather than being "
+            "recast as hypothetical pure base-model scores"
+        ),
+        "variant_group_representative_policy": (
+            "for continuity, the audit layer requires the common four-method gate, "
+            "prefers a configuration that is Main in all four displayed audit "
+            "methods, then selects the highest untouched legacy consensus score "
+            "within that evidence tier; this determines population membership and "
+            "display slug only, never a Scheme 18 score or rank"
+        ),
+        "exact_config_evidence_policy": (
+            "AA exact rows plus direct external results explicitly marked "
+            "variantScoped; family-level external results remain available to the "
+            "deduplicated family ranking but are never attributed to one effort tier"
         ),
         "item_min_variant_groups": ITEM_MIN_MODELS,
         "item_min_creators": 3,
@@ -1555,6 +1815,14 @@ def run_multi_method_analysis_from_payload(
             "rasch_sparse_item_sensitivity": sparse_board_item_pool_sizes,
             "rasch_dense_item_sensitivity": dense_board_item_pool_sizes,
         },
+        "exact_config_board_item_pool_sizes": {
+            "rasch_equal_board": exact_primary_board_item_pool_sizes,
+            "twopl_equal_board": exact_primary_board_item_pool_sizes,
+            "rasch_sparse_item_sensitivity": (
+                exact_sparse_board_item_pool_sizes
+            ),
+            "rasch_dense_item_sensitivity": exact_dense_board_item_pool_sizes,
+        },
         "main_tests_per_board": MAIN_TESTS_PER_BOARD,
         "provisional_min_tests_per_board": PROVISIONAL_MIN_TESTS_PER_BOARD,
         "twopl_slope_ridge": TWOPL_SLOPE_RIDGE,
@@ -1562,23 +1830,43 @@ def run_multi_method_analysis_from_payload(
         "ranked_variant_groups_by_method": {
             method: len(rows) for method, rows in full_rankings.items()
         },
-        "main_exact_config_rows": int(np.sum(main_evidence)),
-        "eligible_exact_config_rows": int(np.sum(eligible)),
-        "sparse_sensitivity_eligible_exact_config_rows": int(
-            np.sum(sparse_eligible)
+        "main_exact_config_rows": int(
+            np.sum(exact_measurement["main_evidence"])
         ),
-        "dense_sensitivity_eligible_exact_config_rows": int(np.sum(dense_eligible)),
+        "eligible_exact_config_rows": int(
+            np.sum(exact_measurement["eligible"])
+        ),
+        "sparse_sensitivity_eligible_exact_config_rows": int(
+            np.sum(exact_measurement["sparse_eligible"])
+        ),
+        "dense_sensitivity_eligible_exact_config_rows": int(
+            np.sum(exact_measurement["dense_eligible"])
+        ),
+        "ranked_exact_config_rows": len(exact_config_consensus_full_rankings),
+        "eligible_exact_configs_hidden_by_group_collapse": (
+            recovered_exact_config_count
+        ),
+        "deduped_configs_not_exact_config_eligible": deduped_only_config_count,
+        "exact_config_population_net_change": (
+            len(exact_config_consensus_full_rankings)
+            - len(consensus_full_rankings)
+        ),
+        "ranked_exact_config_variant_groups": len(exact_config_group_counts),
+        "variant_groups_with_multiple_eligible_exact_configs": sum(
+            count > 1 for count in exact_config_group_counts.values()
+        ),
         "global_family_observation_count_range": {
             "min": int(np.min(global_counts[eligible])),
             "max": int(np.max(global_counts[eligible])),
         },
         **sanitation,
+        "exact_config_sanitation": exact_sanitation,
         "target_models": target_rows,
-        "publication_target_models": required_order_target_rows,
         "consensus_target_models": consensus_target_rows,
-        "publication_consensus_target_models": publication_consensus_target_rows,
-        "required_order_validation": required_order_validation,
-        "consensus_publication_validation": consensus_publication_validation,
+        "consensus_score_order_validation": consensus_score_order_validation,
+        "exact_config_score_order_validation": (
+            exact_config_score_order_validation
+        ),
         "excluded_sparse_items": {
             board_id: board_data[board_id]["excluded_items"]
             for board_id in base.BOARD_ORDER
@@ -1593,15 +1881,10 @@ def run_multi_method_analysis_from_payload(
         combined_full = [
             row for method in METHOD_LABELS for row in full_rankings[method]
         ]
-        required_order_combined_top50 = [
+        exact_config_combined_full = [
             row
             for method in METHOD_LABELS
-            for row in required_order_top50[method]
-        ]
-        required_order_combined_full = [
-            row
-            for method in METHOD_LABELS
-            for row in required_order_full_rankings[method]
+            for row in exact_config_full_rankings[method]
         ]
         base.write_csv(output_dir / "multi_method_top50.csv", combined_top50)
         base.write_csv(output_dir / "multi_method_full_rankings.csv", combined_full)
@@ -1616,44 +1899,37 @@ def run_multi_method_analysis_from_payload(
             consensus_top50,
         )
         base.write_csv(
-            output_dir / f"full_rankings_required_{CONSENSUS_METHOD}.csv",
-            publication_consensus_full_rankings,
+            output_dir / "exact_config_multi_method_full_rankings.csv",
+            exact_config_combined_full,
         )
         base.write_csv(
-            output_dir / f"top50_required_{CONSENSUS_METHOD}.csv",
-            publication_consensus_top50,
+            output_dir / f"full_rankings_exact_config_{CONSENSUS_METHOD}.csv",
+            exact_config_consensus_full_rankings,
         )
         base.write_csv(
-            output_dir / "required_order_multi_method_top50.csv",
-            required_order_combined_top50,
+            output_dir / f"top50_exact_config_{CONSENSUS_METHOD}.csv",
+            exact_config_consensus_top50,
         )
-        base.write_csv(
-            output_dir / "required_order_multi_method_full_rankings.csv",
-            required_order_combined_full,
-        )
-        for method in METHOD_LABELS:
-            base.write_csv(
-                output_dir / f"top50_required_{method}.csv",
-                required_order_top50[method],
-            )
         base.write_csv(output_dir / "target_source_coverage_audit.csv", coverage_rows)
         base.write_csv(
             output_dir / "target_exact_config_comparison.csv", target_exact_rows
         )
         base.write_csv(output_dir / "method_stability.csv", stability_rows)
         base.write_csv(output_dir / "key_pair_overlap_audit.csv", overlap_rows)
+        base.write_csv(
+            output_dir / "exact_config_score_visibility_audit.csv",
+            exact_config_visibility_rows,
+        )
         (output_dir / "multi_method_validation_summary.json").write_text(
             json.dumps(summary, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
         )
-        (output_dir / "required_order_validation_summary.json").write_text(
-            json.dumps(required_order_validation, ensure_ascii=False, indent=2)
-            + "\n",
-            encoding="utf-8",
-        )
-        (output_dir / "consensus_publication_validation_summary.json").write_text(
+        (output_dir / "score_order_validation_summary.json").write_text(
             json.dumps(
-                consensus_publication_validation,
+                {
+                    "variant_group_consensus": consensus_score_order_validation,
+                    "exact_config_consensus": exact_config_score_order_validation,
+                },
                 ensure_ascii=False,
                 indent=2,
             )
@@ -1663,24 +1939,35 @@ def run_multi_method_analysis_from_payload(
 
     return {
         "summary": summary,
+        "aindex_scheme18_full_rankings": scheme18_result["full_rankings"],
+        "aindex_scheme18_top50": scheme18_result["top50"],
+        "exact_config_aindex_scheme18_full_rankings": scheme18_result[
+            "exact_config_full_rankings"
+        ],
+        "exact_config_aindex_scheme18_top50": scheme18_result[
+            "exact_config_top50"
+        ],
+        "aindex_scheme18_calibration": scheme18_result["calibration"],
+        "aindex_scheme18_validation": scheme18_result["validation"],
         "full_rankings": full_rankings,
         "top50": top50,
-        "required_order_full_rankings": required_order_full_rankings,
-        "required_order_top50": required_order_top50,
-        "required_order_validation": required_order_validation,
         "consensus_full_rankings": consensus_full_rankings,
         "consensus_top50": consensus_top50,
-        "publication_consensus_full_rankings": (
-            publication_consensus_full_rankings
+        "consensus_score_order_validation": consensus_score_order_validation,
+        "exact_config_full_rankings": exact_config_full_rankings,
+        "exact_config_top50": exact_config_top50,
+        "exact_config_consensus_full_rankings": (
+            exact_config_consensus_full_rankings
         ),
-        "publication_consensus_top50": publication_consensus_top50,
-        "consensus_publication_validation": (
-            consensus_publication_validation
+        "exact_config_consensus_top50": exact_config_consensus_top50,
+        "exact_config_score_order_validation": (
+            exact_config_score_order_validation
         ),
         "source_coverage": coverage_rows,
         "target_exact_configs": target_exact_rows,
         "method_stability": stability_rows,
         "pairwise_overlap": overlap_rows,
+        "exact_config_visibility": exact_config_visibility_rows,
     }
 
 

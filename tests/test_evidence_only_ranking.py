@@ -13,12 +13,9 @@ from analysis.irt_leaderboard_exploration.multi_method_evidence_analysis import 
     CONSENSUS_COMPONENT_WEIGHTS,
     CONSENSUS_METHOD,
     METHOD_LABELS,
-    PUBLICATION_RULE_ID,
-    apply_required_publication_order,
-    build_twopl_sparse_rank_consensus,
+    build_twopl_sparse_score_consensus,
     equal_board_mean,
     prepare_common_matrix,
-    ranking_row_id,
     run_multi_method_analysis,
 )
 from analysis.irt_leaderboard_exploration import irt_leaderboard_analysis as base
@@ -51,6 +48,7 @@ def consensus_fixture_row(
 
 def consensus_fixture_rankings(
     component_ranks: dict[str, tuple[int, int]],
+    component_scores: dict[str, tuple[float, float]] | None = None,
 ) -> dict[str, list[dict]]:
     rankings = {
         "rasch_equal_board": [],
@@ -60,6 +58,11 @@ def consensus_fixture_rankings(
     }
     for group, (twopl_rank, sparse_rank) in component_ranks.items():
         slug = f"model-{group}"
+        twopl_score, sparse_score = (
+            component_scores[group]
+            if component_scores is not None
+            else (100.0 - twopl_rank, 100.0 - sparse_rank)
+        )
         rankings["rasch_equal_board"].append(
             consensus_fixture_row(
                 "rasch_equal_board", group, slug, twopl_rank
@@ -86,6 +89,17 @@ def consensus_fixture_rankings(
                 sparse_rank,
             )
         )
+        for method in ("rasch_equal_board", "twopl_equal_board"):
+            rankings[method][-1]["score"] = twopl_score
+            for board_id in base.BOARD_ORDER:
+                rankings[method][-1][f"{board_id}_score"] = twopl_score
+        for method in (
+            "rasch_sparse_item_sensitivity",
+            "rasch_dense_item_sensitivity",
+        ):
+            rankings[method][-1]["score"] = sparse_score
+            for board_id in base.BOARD_ORDER:
+                rankings[method][-1][f"{board_id}_score"] = sparse_score
     return rankings
 
 
@@ -189,6 +203,51 @@ class EvidenceOnlyRankingTests(unittest.TestCase):
         self.assertEqual(summary["shared_variant_score_cells_removed"], 1)
         self.assertEqual(summary["derived_external_score_cells_removed"], 1)
 
+    def test_exact_config_sanitizer_removes_unscoped_family_results(self):
+        payload = {
+            "models": [
+                {
+                    "model": "Synthetic",
+                    "scores": {
+                        "benchmark:family": 88.0,
+                        "benchmark:exact": 91.0,
+                    },
+                    "externalBenchmarks": [
+                        {
+                            "metricKey": "benchmark:family",
+                            "variantScoped": False,
+                        },
+                        {
+                            "metricKey": "benchmark:exact",
+                            "variantScoped": True,
+                        },
+                    ],
+                }
+            ]
+        }
+
+        family_models, _ = sanitize_models(payload)
+        exact_models, exact_summary = sanitize_models(
+            payload,
+            exact_config_only=True,
+        )
+
+        self.assertEqual(
+            family_models[0]["scores"]["benchmark:family"],
+            88.0,
+        )
+        self.assertIsNone(
+            exact_models[0]["scores"]["benchmark:family"]
+        )
+        self.assertEqual(
+            exact_models[0]["scores"]["benchmark:exact"],
+            91.0,
+        )
+        self.assertEqual(
+            exact_summary["unscoped_external_score_cells_removed"],
+            1,
+        )
+
 
 class MultiMethodEvidenceRankingTests(unittest.TestCase):
     @classmethod
@@ -202,7 +261,8 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
         )
         self.assertEqual(
             self.result["summary"]["rank_policy"],
-            "no product/model constraints; no named-model corrections; no fixed missing-score penalty",
+            "no product/model constraints; no named-model corrections; no fixed "
+            "missing-score penalty; score descending is the only ranking rule",
         )
         forbidden = {
             "constraint_flags",
@@ -218,21 +278,7 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
             )
         )
 
-    def test_every_published_method_has_fable_first_and_sol_second(self):
-        published = self.result["required_order_top50"]
-        self.assertEqual(set(published), set(METHOD_LABELS))
-        for rows in published.values():
-            self.assertEqual(len(rows), 50)
-            self.assertEqual([row["rank"] for row in rows], list(range(1, 51)))
-            self.assertEqual(rows[0]["slug"], "claude-fable-5")
-            self.assertEqual(rows[1]["variant_group"], "gpt 5 6 sol")
-            self.assertEqual(rows[0]["required_order_target"], "fable_5")
-            self.assertEqual(rows[1]["required_order_target"], "gpt_5_6_sol")
-        validation = self.result["required_order_validation"]
-        self.assertTrue(validation["all_methods_pass"])
-        self.assertTrue(validation["all_methods_have_50_rows"])
-
-    def test_primary_consensus_uses_70_30_rank_mean_and_contiguous_population(self):
+    def test_primary_consensus_uses_80_20_score_and_contiguous_population(self):
         rows = self.result["consensus_full_rankings"]
 
         self.assertEqual(
@@ -244,12 +290,13 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
             [row["rank"] for row in rows],
             list(range(1, len(rows) + 1)),
         )
+        recomputed_scores = []
         for row in rows:
             self.assertEqual(
                 row["rank_mean"],
                 base.rounded(
-                    0.70 * row["twopl_rank"]
-                    + 0.30 * row["sparse_rasch_rank"],
+                    0.80 * row["twopl_rank"]
+                    + 0.20 * row["sparse_rasch_rank"],
                     4,
                 ),
             )
@@ -257,40 +304,71 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
             self.assertEqual(
                 row["score"],
                 base.rounded(
-                    0.70 * row["twopl_score"]
-                    + 0.30 * row["sparse_rasch_score"],
+                    0.80 * row["twopl_score"]
+                    + 0.20 * row["sparse_rasch_score"],
                     4,
                 ),
             )
+            recomputed_scores.append(
+                0.80 * row["twopl_score"]
+                + 0.20 * row["sparse_rasch_score"]
+            )
+            self.assertEqual(
+                row["rank_mean_role"],
+                "audit_only_not_ranking_key",
+            )
+        self.assertTrue(
+            all(
+                left >= right
+                for left, right in zip(
+                    recomputed_scores,
+                    recomputed_scores[1:],
+                )
+            )
+        )
         self.assertEqual(
             self.result["summary"]["default_consensus_method"],
+            "aindex_scheme18",
+        )
+        self.assertEqual(
+            self.result["summary"]["default_ranking_method"],
+            "aindex_scheme18",
+        )
+        self.assertEqual(
             CONSENSUS_METHOD,
+            "twopl_sparse_80_20_score",
         )
 
-    def test_primary_consensus_tie_break_prefers_twopl(self):
+    def test_primary_consensus_ranks_by_score_not_component_rank_mean(self):
         rankings = consensus_fixture_rankings(
             {
-                "a": (1, 8),
-                "b": (4, 1),
-                "c": (2, 6),
-            }
+                "a": (1, 5),
+                "b": (2, 1),
+                "c": (1, 6),
+            },
+            {
+                "a": (91.0, 91.0),
+                "b": (95.0, 95.0),
+                "c": (91.0, 91.0),
+            },
         )
         pool_sizes = {board_id: 4 for board_id in base.BOARD_ORDER}
 
-        rows = build_twopl_sparse_rank_consensus(
+        rows = build_twopl_sparse_score_consensus(
             rankings,
             primary_pool_sizes=pool_sizes,
             sparse_pool_sizes=pool_sizes,
         )
 
-        self.assertEqual([row["rank_mean"] for row in rows], [3.1, 3.1, 3.2])
         self.assertEqual(
             [row["variant_group"] for row in rows],
-            ["a", "b", "c"],
+            ["b", "a", "c"],
         )
+        self.assertEqual([row["score"] for row in rows], [95.0, 91.0, 91.0])
+        self.assertEqual([row["rank_mean"] for row in rows], [1.8, 1.8, 2.0])
         self.assertEqual(
             [row["rank_tie_break_policy"] for row in rows],
-            ["lower_twopl_rank_then_sparse_rank_then_stable_id"] * 3,
+            ["higher_score_then_stable_id"] * 3,
         )
 
     def test_primary_consensus_rejects_exact_configuration_mismatch(self):
@@ -301,45 +379,11 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
         pool_sizes = {board_id: 4 for board_id in base.BOARD_ORDER}
 
         with self.assertRaisesRegex(ValueError, "cannot mix exact configurations"):
-            build_twopl_sparse_rank_consensus(
+            build_twopl_sparse_score_consensus(
                 rankings,
                 primary_pool_sizes=pool_sizes,
                 sparse_pool_sizes=pool_sizes,
             )
-
-    def test_primary_consensus_publication_has_required_order_only(self):
-        evidence_rows = self.result["consensus_full_rankings"]
-        published_rows = self.result["publication_consensus_full_rankings"]
-        evidence_by_id = {
-            ranking_row_id(row): row for row in evidence_rows
-        }
-
-        self.assertEqual(published_rows[0]["slug"], "claude-fable-5")
-        self.assertEqual(published_rows[0]["rank"], 1)
-        self.assertEqual(published_rows[1]["variant_group"], "gpt 5 6 sol")
-        self.assertEqual(published_rows[1]["rank"], 2)
-        for published in published_rows:
-            evidence = evidence_by_id[ranking_row_id(published)]
-            self.assertEqual(published["score"], evidence["score"])
-            self.assertEqual(published["evidence_rank"], evidence["rank"])
-
-        def non_anchor_ids(rows):
-            return [
-                ranking_row_id(row)
-                for row in rows
-                if row["slug"] != "claude-fable-5"
-                and row["variant_group"] != "gpt 5 6 sol"
-            ]
-
-        self.assertEqual(
-            non_anchor_ids(published_rows),
-            non_anchor_ids(evidence_rows),
-        )
-        self.assertTrue(
-            self.result["consensus_publication_validation"][
-                "all_methods_pass"
-            ]
-        )
 
     def test_primary_consensus_exposes_shadow_methods_and_board_scores(self):
         for row in self.result["consensus_full_rankings"]:
@@ -359,14 +403,99 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
                 self.assertEqual(
                     row[f"{board_id}_score"],
                     base.rounded(
-                        0.70 * row[f"{board_id}_twopl_score"]
-                        + 0.30 * row[f"{board_id}_sparse_rasch_score"],
+                        0.80 * row[f"{board_id}_twopl_score"]
+                        + 0.20 * row[f"{board_id}_sparse_rasch_score"],
                         3,
                     ),
                 )
                 self.assertIn(f"{board_id}_rasch_score", row)
                 self.assertIn(f"{board_id}_twopl_score", row)
                 self.assertIn(f"{board_id}_dense_rasch_score", row)
+
+    def test_exact_config_population_exposes_every_eligible_tier(self):
+        rows = self.result["exact_config_consensus_full_rankings"]
+        summary = self.result["summary"]
+        deduped_gpt55 = next(
+            row
+            for row in self.result["consensus_full_rankings"]
+            if row["variant_group"] == "gpt 5 5"
+        )
+
+        self.assertEqual(deduped_gpt55["slug"], "gpt-5-5")
+        self.assertEqual(deduped_gpt55["evidence_tier"], "Main")
+
+        self.assertEqual(len(rows), summary["ranked_exact_config_rows"])
+        self.assertEqual(
+            len(rows) - len(self.result["consensus_full_rankings"]),
+            summary["exact_config_population_net_change"],
+        )
+        self.assertGreater(
+            summary["exact_config_sanitation"][
+                "unscoped_external_score_cells_removed"
+            ],
+            0,
+        )
+        self.assertEqual(len({row["slug"] for row in rows}), len(rows))
+        self.assertTrue(all(row["ranking_grain"] == "exact_config" for row in rows))
+        for method_rows in self.result["exact_config_full_rankings"].values():
+            self.assertEqual(
+                {row["slug"] for row in method_rows},
+                {row["slug"] for row in rows},
+            )
+
+        gpt55 = {
+            row["slug"]: row
+            for row in rows
+            if row["variant_group"] == "gpt 5 5"
+        }
+        self.assertEqual(
+            set(gpt55),
+            {
+                "gpt-5-5",
+                "gpt-5-5-high",
+                "gpt-5-5-medium",
+                "gpt-5-5-low",
+                "gpt-5-5-non-reasoning",
+            },
+        )
+        self.assertLess(
+            gpt55["gpt-5-5"]["rank"],
+            gpt55["gpt-5-5-high"]["rank"],
+        )
+        self.assertGreater(
+            gpt55["gpt-5-5"]["score"],
+            gpt55["gpt-5-5-high"]["score"],
+        )
+        self.assertEqual(
+            [row["rank"] for row in rows],
+            list(range(1, len(rows) + 1)),
+        )
+        self.assertTrue(
+            self.result["exact_config_score_order_validation"][
+                "all_methods_pass"
+            ]
+        )
+        visibility = self.result["exact_config_visibility"]
+        self.assertEqual(len(visibility), len(rows))
+        self.assertEqual(
+            sum(row["recovered_when_dedupe_disabled"] for row in visibility),
+            summary["eligible_exact_configs_hidden_by_group_collapse"],
+        )
+        recovered_gpt55 = {
+            row["slug"]
+            for row in visibility
+            if row["variant_group"] == "gpt 5 5"
+            and row["recovered_when_dedupe_disabled"]
+        }
+        self.assertEqual(
+            recovered_gpt55,
+            {
+                "gpt-5-5-high",
+                "gpt-5-5-medium",
+                "gpt-5-5-low",
+                "gpt-5-5-non-reasoning",
+            },
+        )
 
     def test_primary_consensus_evidence_coverage_formula_and_range(self):
         primary_method = "twopl_equal_board"
@@ -385,7 +514,7 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
                     / pools[sparse_method][board_id]
                 )
                 expected_board = 100.0 * (
-                    0.70 * primary_share + 0.30 * sparse_share
+                    0.80 * primary_share + 0.20 * sparse_share
                 )
                 board_coverages.append(expected_board)
                 self.assertEqual(
@@ -404,129 +533,19 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
             dict(CONSENSUS_COMPONENT_WEIGHTS),
         )
 
-    def test_publication_layer_preserves_scores_and_evidence_ranks(self):
-        for method in METHOD_LABELS:
-            evidence_rows = self.result["full_rankings"][method]
-            published_rows = self.result["required_order_full_rankings"][method]
-            evidence_by_id = {
-                ranking_row_id(row): row for row in evidence_rows
-            }
-            published_by_id = {
-                ranking_row_id(row): row for row in published_rows
-            }
-            self.assertEqual(set(published_by_id), set(evidence_by_id))
-            for row_id, published in published_by_id.items():
-                evidence_row = evidence_by_id[row_id]
-                self.assertEqual(published["score"], evidence_row["score"])
-                self.assertEqual(
-                    published["evidence_rank"], evidence_row["rank"]
-                )
-                self.assertEqual(
-                    published["rank_change_due_to_required_order"],
-                    published["evidence_rank"] - published["rank"],
-                )
-                self.assertEqual(
-                    published["publication_order_rule"], PUBLICATION_RULE_ID
-                )
-
-    def test_publication_layer_preserves_every_other_relative_order(self):
-        for method in METHOD_LABELS:
-            evidence_rows = self.result["full_rankings"][method]
-            published_rows = self.result["required_order_full_rankings"][method]
-
-            def non_anchor_ids(rows):
-                return [
-                    ranking_row_id(row)
-                    for row in rows
-                    if row["slug"] != "claude-fable-5"
-                    and row["variant_group"] != "gpt 5 6 sol"
-                ]
-
-            self.assertEqual(
-                non_anchor_ids(published_rows), non_anchor_ids(evidence_rows)
-            )
-
-    def test_publication_targets_use_stable_ids_not_display_names(self):
-        evidence_rows = [
-            {
-                "rank": 1,
-                "model": "Claude Fable 5 impostor",
-                "slug": "unrelated-first",
-                "variant_group": "unrelated first",
-                "score": 100.0,
-            },
-            {
-                "rank": 2,
-                "model": "GPT-5.6 Sol impostor",
-                "slug": "unrelated-second",
-                "variant_group": "unrelated second",
-                "score": 99.0,
-            },
-            {
-                "rank": 3,
-                "model": "Renamed Sol display label",
-                "slug": "gpt-5-6-sol-xhigh",
-                "variant_group": "gpt 5 6 sol",
-                "score": 98.0,
-            },
-            {
-                "rank": 4,
-                "model": "Renamed Fable display label",
-                "slug": "claude-fable-5",
-                "variant_group": "renamed fable display label",
-                "score": 97.0,
-            },
-        ]
-        original = [dict(row) for row in evidence_rows]
-        published = apply_required_publication_order(evidence_rows)
-
-        self.assertEqual(published[0]["slug"], "claude-fable-5")
-        self.assertEqual(published[1]["variant_group"], "gpt 5 6 sol")
-        self.assertEqual(
-            [row["slug"] for row in published[2:]],
-            ["unrelated-first", "unrelated-second"],
-        )
-        self.assertEqual(evidence_rows, original)
-
-    def test_required_order_files_are_the_validated_publication_outputs(self):
+    def test_score_order_files_are_the_validated_primary_outputs(self):
         with tempfile.TemporaryDirectory() as directory:
             output_dir = Path(directory)
             result = run_multi_method_analysis(output_dir=output_dir)
-
-            with (output_dir / "required_order_multi_method_top50.csv").open(
-                encoding="utf-8-sig", newline=""
-            ) as handle:
-                combined = list(csv.DictReader(handle))
-            self.assertEqual(len(combined), 50 * len(METHOD_LABELS))
-            for method in METHOD_LABELS:
-                rows = [row for row in combined if row["method"] == method]
-                self.assertEqual(len(rows), 50)
-                self.assertEqual(rows[0]["slug"], "claude-fable-5")
-                self.assertEqual(rows[0]["rank"], "1")
-                self.assertEqual(rows[1]["variant_group"], "gpt 5 6 sol")
-                self.assertEqual(rows[1]["rank"], "2")
-                with (
-                    output_dir / f"top50_required_{method}.csv"
-                ).open(encoding="utf-8-sig", newline="") as handle:
-                    per_method_rows = list(csv.DictReader(handle))
-                self.assertEqual(rows, per_method_rows)
-
-            validation = json.loads(
-                (output_dir / "required_order_validation_summary.json").read_text(
-                    encoding="utf-8"
-                )
-            )
-            self.assertTrue(validation["all_methods_pass"])
-            self.assertEqual(validation, result["required_order_validation"])
 
             consensus_paths = {
                 "full": output_dir
                 / f"full_rankings_{CONSENSUS_METHOD}.csv",
                 "top50": output_dir / f"top50_{CONSENSUS_METHOD}.csv",
-                "published_full": output_dir
-                / f"full_rankings_required_{CONSENSUS_METHOD}.csv",
-                "published_top50": output_dir
-                / f"top50_required_{CONSENSUS_METHOD}.csv",
+                "exact_full": output_dir
+                / f"full_rankings_exact_config_{CONSENSUS_METHOD}.csv",
+                "exact_top50": output_dir
+                / f"top50_exact_config_{CONSENSUS_METHOD}.csv",
             }
             consensus_rows = {}
             for key, path in consensus_paths.items():
@@ -536,29 +555,41 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
             self.assertEqual(len(consensus_rows["full"]), expected_population)
             self.assertEqual(len(consensus_rows["top50"]), 50)
             self.assertEqual(
-                len(consensus_rows["published_full"]),
-                expected_population,
+                len(consensus_rows["exact_full"]),
+                len(result["exact_config_consensus_full_rankings"]),
             )
-            self.assertEqual(len(consensus_rows["published_top50"]), 50)
-            self.assertEqual(
-                consensus_rows["published_top50"][0]["slug"],
-                "claude-fable-5",
-            )
-            self.assertEqual(
-                consensus_rows["published_top50"][1]["variant_group"],
-                "gpt 5 6 sol",
-            )
+            self.assertEqual(len(consensus_rows["exact_top50"]), 50)
+            for key in ("full", "exact_full"):
+                rows = consensus_rows[key]
+                self.assertEqual(
+                    [int(row["rank"]) for row in rows],
+                    list(range(1, len(rows) + 1)),
+                )
+                scores = [float(row["score"]) for row in rows]
+                self.assertTrue(
+                    all(left >= right for left, right in zip(scores, scores[1:]))
+                )
+                for row in rows:
+                    self.assertNotIn("publication_order_rule", row)
+                    self.assertNotIn("required_order_target", row)
 
-            consensus_validation = json.loads(
-                (
-                    output_dir
-                    / "consensus_publication_validation_summary.json"
-                ).read_text(encoding="utf-8")
+            validation = json.loads(
+                (output_dir / "score_order_validation_summary.json").read_text(
+                    encoding="utf-8"
+                )
             )
-            self.assertTrue(consensus_validation["all_methods_pass"])
             self.assertEqual(
-                consensus_validation,
-                result["consensus_publication_validation"],
+                validation["variant_group_consensus"],
+                result["consensus_score_order_validation"],
+            )
+            self.assertEqual(
+                validation["exact_config_consensus"],
+                result["exact_config_score_order_validation"],
+            )
+            self.assertTrue(validation["variant_group_consensus"]["all_methods_pass"])
+            self.assertTrue(validation["exact_config_consensus"]["all_methods_pass"])
+            self.assertFalse(
+                (output_dir / "required_order_multi_method_top50.csv").exists()
             )
 
     def test_equal_board_aggregation_is_exact_arithmetic_mean(self):

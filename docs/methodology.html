@@ -4,15 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AInsights Index Methodology - AI Insights Analysis</title>
-    <meta name="description" content="Learn how AInsights Index blends 70% Equal-board 2PL and 30% Sparse Rasch evidence ranks, reports sensitivity checks, handles evidence coverage, and applies its transparent publication order." />
-    <meta name="keywords" content="AInsights Index, AIndex, Rasch, IRT, 2PL, AI model benchmark, LLM leaderboard" />
+    <meta name="description" content="Learn how AIndex Scheme 18 combines complete geometric Core scores with capped positive-residual extension evidence across five equally weighted capability boards." />
+    <meta name="keywords" content="AInsights Index, AIndex, Scheme 18, geometric mean, positive residual, benchmark, LLM leaderboard" />
     <link rel="canonical" href="https://ainsights.tab.homes/methodology.html" />
     <meta property="og:title" content="AInsights Index Methodology - AI Insights Analysis" />
-    <meta property="og:description" content="A source-backed leaderboard built from a 70% Equal-board 2PL and 30% Sparse Rasch evidence-rank blend, with transparent sensitivity views." />
+    <meta property="og:description" content="A source-backed leaderboard using geometric mandatory-Core scores, anonymous OLS residual evidence, a monotone log-sum-exp bonus, and five equal capability boards." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ainsights.tab.homes/methodology.html" />
     <meta name="twitter:card" content="summary" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"AInsights Index Methodology - AI Insights Analysis","alternateName":["AInsights Index","AIndex"],"url":"https://ainsights.tab.homes/methodology.html","description":"AInsights Index blends 70% Equal-board 2PL and 30% Sparse Rasch evidence ranks and publishes transparent sensitivity and coverage diagnostics."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"AInsights Index Methodology - AI Insights Analysis","alternateName":["AInsights Index","AIndex","AIndex Scheme 18"],"url":"https://ainsights.tab.homes/methodology.html","description":"AIndex Scheme 18 calculates five board scores from complete geometric Core results plus capped positive residual evidence from independently controlled extension benchmarks."}</script>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -31,179 +31,152 @@
     <main>
       <section class="methodology-view" id="methodologyView">
         <section class="methodology-hero">
-          <p class="eyebrow">Methodology</p>
+          <p class="eyebrow">Methodology · Scheme 18</p>
           <h2>AInsights Index Methodology</h2>
-          <p>The default leaderboard combines two unanchored evidence ranks: 70% from Equal-board 2PL on the stable core item pool and 30% from Sparse Rasch on a broader pool that admits earlier frontier signals. Scores are derived only from observed benchmark results; evidence coverage is reported separately rather than used as a hidden model correction.</p>
+          <p>AIndex Scheme 18 gives every capability board a direct 0–100 score. A small set of mandatory tests determines a geometric Core score; independently controlled extension tests can only raise that score when they provide positive evidence beyond an anonymous cohort-wide expectation. The final AIndex score is the equal arithmetic mean of the five board scores.</p>
         </section>
 
         <section class="methodology-grid">
           <article class="methodology-card methodology-card-wide">
             <h3>Default Ranking at a Glance</h3>
             <ol class="methodology-steps">
-              <li>Clean and canonicalize comparable benchmark results, keeping exact model configurations and preventing duplicate source rows from becoming duplicate items.</li>
-              <li>Fit an equal-board continuous 2PL model on the <strong>core pool</strong> and a continuous Rasch model on the broader <strong>sparse pool</strong>.</li>
-              <li>Compute <code>rank_mean = 0.70 × twopl_evidence_rank + 0.30 × sparse_evidence_rank</code>. No named-model term, benchmark-specific weight, missing-score imputation, or coverage penalty enters either evidence score.</li>
-              <li>When weighted means are equal, compare the 2PL rank, then the Sparse Rasch rank, then stable model ID. This makes the deterministic tie-break follow the disclosed 70/30 priority.</li>
-              <li>Apply the explicit publication order only after the evidence ranking is complete. The original evidence rank and any publication movement remain available for audit.</li>
+              <li>Canonicalize source-backed, direct 0–100 results and select the default deduplicated model population before fitting.</li>
+              <li>Require every mandatory Core result in each board, then calculate that board's unweighted geometric Core mean.</li>
+              <li>For every eligible extension item, fit one anonymous OLS relationship from Core score to the observed extension result across the current cohort.</li>
+              <li>Keep only positive residuals, combine them with a zero-neutral monotone log-sum-exp function, and cap the increment using the pooled positive-residual <code>mean + sqrt(2) × SD</code>.</li>
+              <li>Calculate <code>board_score = min(100, core_score + capped_bonus)</code>, then average the five board scores equally and sort the unrounded final score descending.</li>
             </ol>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>Capability Boards</h3>
-            <p>The measurement layer retains five capability boards. Every board contributes one fifth of each method's evidence score; there is no 40 / 24 / 20 / 8 / 8 board weighting in the default ranking.</p>
+            <p>Every board contributes exactly one fifth of AIndex. There is no hidden board weighting and no later model-specific adjustment.</p>
             <div class="methodology-table-wrap">
               <table class="methodology-weight-table methodology-matrix-table">
                 <thead>
                   <tr>
                     <th>Board</th>
                     <th>Share</th>
-                    <th>Focus</th>
-                    <th>Published fields</th>
+                    <th>Mandatory Core</th>
+                    <th>Published score</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>Coding</td>
                     <td>20%</td>
-                    <td>Repository repair, terminal coding, code generation, and difficult software-engineering work.</td>
-                    <td><span class="methodology-metric-pill"><code>coding_score</code></span><span class="methodology-metric-pill"><code>coding_tests</code></span></td>
+                    <td>SciCode</td>
+                    <td><code>coding_score</code></td>
                   </tr>
                   <tr>
                     <td>Agentic/tool work</td>
                     <td>20%</td>
-                    <td>Browser, terminal, desktop, tool-use, and professional workflow execution.</td>
-                    <td><span class="methodology-metric-pill"><code>agentic-tool-work_score</code></span><span class="methodology-metric-pill"><code>agentic-tool-work_tests</code></span></td>
+                    <td>AA-LCR</td>
+                    <td><code>agentic-tool-work_score</code></td>
                   </tr>
                   <tr>
                     <td>Hard reasoning</td>
                     <td>20%</td>
-                    <td>High-difficulty general reasoning, mathematics, science QA, and abstraction.</td>
-                    <td><span class="methodology-metric-pill"><code>hard-reasoning_score</code></span><span class="methodology-metric-pill"><code>hard-reasoning_tests</code></span></td>
+                    <td>Humanity's Last Exam, CritPt, GPQA Diamond</td>
+                    <td><code>hard-reasoning_score</code></td>
                   </tr>
                   <tr>
                     <td>Knowledge/science</td>
                     <td>20%</td>
-                    <td>Factual breadth, scientific knowledge, multilingual knowledge, and multimodal understanding.</td>
-                    <td><span class="methodology-metric-pill"><code>knowledge-science_score</code></span><span class="methodology-metric-pill"><code>knowledge-science_tests</code></span></td>
+                    <td>SciCode, Humanity's Last Exam, GPQA Diamond, AA-Omniscience Accuracy</td>
+                    <td><code>knowledge-science_score</code></td>
                   </tr>
                   <tr>
                     <td>Instruction/context</td>
                     <td>20%</td>
-                    <td>Instruction following, critique, long-context work, and chart or document understanding.</td>
-                    <td><span class="methodology-metric-pill"><code>instruction-context_score</code></span><span class="methodology-metric-pill"><code>instruction-context_tests</code></span></td>
+                    <td>CritPt, AA-LCR</td>
+                    <td><code>instruction-context_score</code></td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p>A canonical benchmark family occupies at most one slot inside a board even when equivalent rows are available from multiple sources. A family may still appear in more than one board when it supplies evidence about more than one capability.</p>
+            <p>A canonical benchmark family occupies at most one Core slot within a board. A family may appear in more than one board when the same observed result supplies relevant evidence for multiple capabilities; this creates some cross-board correlation and is disclosed as a limitation.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
-            <h3>Item Pools and Sensitivity Methods</h3>
-            <div class="methodology-table-wrap">
-              <table class="methodology-weight-table methodology-matrix-table">
-                <thead>
-                  <tr>
-                    <th>Method</th>
-                    <th>Item admission</th>
-                    <th>Role</th>
-                    <th>What changes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Core Rasch</td>
-                    <td>At least 8 independent model families and 3 creators</td>
-                    <td>Sensitivity comparison</td>
-                    <td>Prioritizes broadly comparable items and stable measurement.</td>
-                  </tr>
-                  <tr>
-                    <td>Sparse Rasch</td>
-                    <td>At least 3 independent model families; one creator is sufficient</td>
-                    <td>30% of the default rank</td>
-                    <td>Adds newer and rarer frontier tests without changing the Rasch model itself.</td>
-                  </tr>
-                  <tr>
-                    <td>Equal-board 2PL</td>
-                    <td>Same pool as Core Rasch</td>
-                    <td>70% of the default rank</td>
-                    <td>Learns an anonymous discrimination parameter for each item, with a common ridge toward 1 and bounds of 0.35–2.5.</td>
-                  </tr>
-                  <tr>
-                    <td>Dense Rasch</td>
-                    <td>At least 20 independent model families and 3 creators</td>
-                    <td>Full Ranking comparison</td>
-                    <td>Uses only mature, widely observed items as a conservative sensitivity check.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p>Full Ranking displays the standalone 2PL and Dense Rasch ranks alongside the default result. Core Rasch remains available in each model's method profile and Custom mixer as a sensitivity comparison; the only default method weights are the disclosed 70/30 blend.</p>
+            <h3>Core Score</h3>
+            <p>For a board with mandatory results <code>x_1 ... x_k</code>, Scheme 18 uses the unweighted geometric partial-credit score:</p>
+            <p><code>core_score = 100 × exp((1/k) × sum(log(clip(x_j / 100, 10^-6, 1))))</code></p>
+            <p>The formula stays on the native percentage scale. It has no canonical T transformation, fixed 50-point center, percentile conversion, item-specific weight, or named-model coefficient. A low mandatory result has more leverage than it would under an arithmetic mean, so broad Core mastery matters.</p>
+            <p>A model is not scored when a mandatory Core value is missing. Scheme 18 does not manufacture a Core value from a sibling model, prior, cohort mean, or lower-effort configuration.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
-            <h3>Calculation Formula</h3>
-            <p>Scores that behave like percentages are converted with <code>z_ij = logit(clip(raw_ij / 100, 0.01, 0.99))</code>. Metrics whose scale only supports relative ordering are first converted to within-item empirical percentiles. Each observed model–item cell then has equal influence.</p>
-            <p>Within every board, Core, Sparse, and Dense Rasch fit <code>z_ij = theta_i - difficulty_j + error_ij</code>. After fitting, active model abilities are standardized inside that board and mapped to <code>board_score = 100 × Phi(theta_z)</code>.</p>
-            <p>The five board scores are combined by an unweighted arithmetic mean. Each method creates its own evidence rank from that score; the default consensus then uses <code>rank_mean = 0.70 × rank_2pl + 0.30 × rank_sparse</code> and the deterministic tie-break described above.</p>
-            <p>Equal-board 2PL fits <code>z_ij = discrimination_j × theta_i + intercept_j + error_ij</code>. The slope ridge stabilizes item parameters only; there is no named-model coefficient or post-hoc model score adjustment.</p>
+            <h3>Independent Extension Evidence</h3>
+            <p>Extension items must be controlled by an organization that is not a ranked model vendor. Vendor-controlled benchmark families, including GDPval and BrowseComp, are excluded; ITBench remains excluded because its controller is also a ranked model vendor. Equivalent representations of one canonical family cannot create duplicate bonus opportunities inside a board.</p>
+            <p>The extension pool includes independently controlled public benchmarks with sufficient observed coverage. Some reported results still use mixed, vendor-reported, agent-scaffold, prompt, or version-sensitive protocols. Their benchmark ownership is independent, but that does not make every result protocol identical. Sources, operators, versions, and coverage remain visible so this limitation can be audited.</p>
+            <p>Extension evidence is only-add. Missing extension results remain absent, contribute no residual, receive no imputed zero or neutral score, and never reduce the mandatory Core.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
-            <h3>Evidence Eligibility and Coverage</h3>
-            <p>A model must have at least two canonical benchmark families in every board to enter a method ranking. A model with at least three in every board is labeled <strong>Main</strong>; an otherwise eligible model is labeled <strong>Provisional</strong>. Insufficient evidence means “not ranked,” not a score of zero.</p>
-            <p>Coverage controls eligibility and labels, but it does not modify a qualified model's observed IRT score. The leaderboard does not subtract a fixed amount for missing tests, insert a weak prior, or copy results from a lower sibling model.</p>
-            <p>The radar's sixth axis, <code>evidence_coverage_score</code>, is an audit dimension rather than a capability. For each board, 2PL-pool coverage and Sparse-pool coverage are calculated as <code>observed canonical families / available pool families</code>, capped at 100%; the displayed value is their 70/30 blend followed by an equal mean across all five boards. It never changes a score or rank.</p>
+            <h3>Anonymous Positive Residuals</h3>
+            <p>For each extension item <code>j</code>, the current deduplicated cohort supplies all observed pairs of board Core score <code>c_i</code> and extension result <code>y_ij</code>. Scheme 18 fits:</p>
+            <p><code>predicted_ij = clip(alpha_j + max(0, beta_j) × c_i, 0, 100)</code></p>
+            <p><code>positive_residual_ij = max(y_ij - predicted_ij, 0)</code></p>
+            <p>The OLS intercept and non-negative slope are learned anonymously from the complete observed cohort. They are benchmark-level calibration parameters, not corrections for a named model. An extension result at or below its cohort expectation contributes zero rather than a penalty.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
-            <h3>Publication Order</h3>
-            <p>Every public method view reserves rank 1 for Claude Fable 5 and rank 2 for GPT-5.6 Sol. Matching uses stable identifiers rather than display text: Fable is located by <code>slug = claude-fable-5</code>, and Sol by its stable product-family identifier.</p>
-            <p>This is a transparent product publication rule, not an empirical IRT result. It is applied only after the evidence ranking is complete. Method scores stay unchanged, the original position is retained as <code>evidence_rank</code>, and every other model preserves its evidence-relative order. In a Custom configuration, the layer runs only when both anchors have observed, calculable results under the current settings; if either is unscored, the evidence order is kept and no missing result is invented.</p>
+            <h3>Monotone Log-Sum-Exp Bonus and Dynamic Cap</h3>
+            <p>For a model's positive observed residuals in one board, the raw bonus is:</p>
+            <p><code>raw_bonus = log(1 + sum(expm1(positive_residual_j)))</code></p>
+            <p>This form is zero-neutral and monotone: adding a zero residual changes nothing, while adding any positive residual cannot lower the bonus. It allows multiple independent frontier signals to corroborate one another.</p>
+            <p>One symmetric cap is recalculated from all pooled positive extension residuals in the current default cohort:</p>
+            <p><code>cap = mean(pooled_positive_residuals) + sqrt(2) × population_SD(pooled_positive_residuals)</code></p>
+            <p><code>bonus = min(cap, raw_bonus)</code></p>
+            <p>The cap is a data-derived cohort parameter and can change after a data refresh. It is not a hard-coded score for a provider or model. Capping limits repeated corroboration, but models with broader observed extension coverage still have more opportunities to produce a positive residual; extension counts are therefore published alongside scores.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
-            <h3>Radar Profile</h3>
-            <p>The first five radar axes are the 70/30 blends of the corresponding Equal-board 2PL and Sparse Rasch board scores: Coding, Agentic/tool work, Hard reasoning, Knowledge/science, and Instruction/context. They use the same two evidence views as the default rank.</p>
-            <p>The sixth axis is Evidence coverage. Keeping it visually separate from the five capability values makes sparse evidence visible without turning coverage into a model correction.</p>
+            <h3>Board and Final Score</h3>
+            <p><code>board_score_b = min(100, core_score_b + bonus_b)</code></p>
+            <p><code>board_points_b = board_score_b / 5</code></p>
+            <p><code>AIndex = sum(board_points_b) = (1/5) × sum(board_score_b)</code></p>
+            <p>The displayed score, bar length, and rank all use this same quantity. Ranking uses the unrounded AIndex value; stable model ID is used only for an exact numerical tie. No model name, provider, family order, reserved position, mean rank, or post-hoc score calibration can move a row ahead of a higher calculated score.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
-            <h3>Metric Weights and Custom Tools</h3>
-            <p>The default leaderboard does not assign custom benchmark weights. Custom Weight is an exploratory calculator and exposes three layers without rewriting source results:</p>
-            <ol class="methodology-steps">
-              <li><strong>Method-rank mixer:</strong> blend Core Rasch, Sparse Rasch, 2PL, and Dense Rasch ranks. A 0 / 30 / 70 / 0 setup reproduces the default evidence blend before the publication layer.</li>
-              <li><strong>Capability mixer:</strong> change the five board shares and compare arithmetic, geometric, or weakest-board-oriented summaries.</li>
-              <li><strong>Benchmark lab:</strong> retain per-benchmark controls, Best score ratio or Raw score, arithmetic or geometric weighted means, coverage gates, and explicit missing-data treatments for sensitivity experiments.</li>
-            </ol>
-            <p>Equalize, normalize-to-100, clear, restore, and configuration export tools make custom calculations reproducible. Custom results remain labeled as user-defined views and follow the visible publication-order rule only when both anchor models are calculable in that configuration.</p>
+            <h3>Deduplication and Exact Configurations</h3>
+            <p>The default leaderboard first selects one representative exact configuration for each <code>variantGroup</code>, then fits the anonymous extension trends and dynamic cap on that deduplicated cohort. This is also the calibration population used by the published ranking.</p>
+            <p>When Full Ranking shows every eligible tier, exact configurations use their own mandatory results. Only external evidence explicitly scoped to that exact variant with <code>variantScoped</code> may contribute to its extension bonus; family-level evidence is not concentrated onto one effort tier. The production export records the ranking grain and selected exact slug so the join can be audited.</p>
+          </article>
+
+          <article class="methodology-card methodology-card-wide">
+            <h3>Radar and Evidence Coverage</h3>
+            <p>The first five radar axes read the five Scheme 18 board scores directly. The sixth axis is evidence coverage: it reports Core completeness and observed extension breadth but never changes a board score or rank.</p>
+            <p>Coverage is not a missing-data penalty. Core completeness is a scoring eligibility condition; after that condition is met, missing extension cells remain absent and the displayed score is based only on the Core plus observed positive residual evidence.</p>
+          </article>
+
+          <article class="methodology-card methodology-card-wide">
+            <h3>Sensitivity Views and Custom Tools</h3>
+            <p>Equal-board 2PL, Core Rasch, Sparse Rasch, and Dense Rasch remain available as sensitivity views. They do not contribute a fixed percentage to Scheme 18 and cannot override its score order. Full Ranking may display standalone 2PL and Dense Rasch ranks for comparison only.</p>
+            <p>Custom tools can separately explore method ranks, capability-board weights, and per-benchmark calculations. These user-defined views do not reproduce or modify the default AIndex unless they implement the complete Scheme 18 Core, residual, cap, and five-board pipeline.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>AIndex Calculation</h3>
             <ol class="methodology-steps">
-              <li>Use source-backed, exact-configuration results and collapse equivalent rows into canonical benchmark-family slots.</li>
-              <li>Prepare the Core and Sparse item pools independently, then require sufficient evidence in all five boards.</li>
-              <li>Fit equal-cell 2PL on the Core pool and Rasch on the Sparse pool independently in every board, then map standardized abilities to 0–100 board scores.</li>
-              <li>Average the five boards equally to form each method score and its unanchored evidence rank.</li>
-              <li>Blend the 2PL and Sparse evidence ranks at 70/30, apply the 2PL-first deterministic tie-break, and only then apply the disclosed publication order.</li>
-              <li>Publish standalone 2PL, Dense Rasch, component ranks, board scores, test counts, evidence tier, and coverage alongside the default result.</li>
+              <li>Load source-backed direct scores and canonical benchmark policy metadata.</li>
+              <li>Select the default deduplicated population and require every board's mandatory Core.</li>
+              <li>Calculate each Core as an unweighted geometric mean on the native 0–100 scale.</li>
+              <li>Fit one anonymous non-negative-slope OLS trend per extension item and retain only observed positive residuals.</li>
+              <li>Pool positive residuals to derive the dynamic <code>mean + sqrt(2) × SD</code> cap.</li>
+              <li>Apply the monotone log-sum-exp bonus, cap it, and add it to the matching Core without imputing missing extension results.</li>
+              <li>Average the five bounded board scores equally, sort the unrounded AIndex score descending, and publish Core, bonus, coverage, and sensitivity diagnostics.</li>
             </ol>
-          </article>
-
-          <article class="methodology-card methodology-card-wide">
-            <h3>Detailed Explanation</h3>
-            <p>The 2PL view asks which mature-pool items best separate the current evaluated population, while the Sparse view asks whether newer, less widely run benchmarks contain an early signal that the mature pool has not absorbed yet. The 70/30 blend favors discrimination-aware stable evidence while retaining a bounded frontier signal.</p>
-            <p>Dense Rasch is deliberately conservative and can lag new capability. Core Rasch removes learned discrimination and remains a useful sensitivity check because 2PL's additional item parameters are more sensitive to who was tested. Publishing the component ranks makes this trade-off inspectable instead of hiding it inside one score.</p>
-            <p>The source data contains aggregate benchmark scores rather than item-level 0/1 responses. These models are therefore benchmark-as-item continuous IRT, or IRT-inspired measurement, not a classical psychometric item bank. Board scores are relative to the current evaluated population and should not be interpreted as absolute probabilities of task success.</p>
           </article>
         </section>
       </section>
     </main>
 
     <footer class="site-footer">
-      Source: <a href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" target="_blank" rel="noreferrer">Artificial Analysis</a> and linked first-party or public benchmark sources.
-      AInsights Index / AIndex recalculates rankings from source-backed evaluation data and publishes its ordering rule separately from the evidence layer.
+      Source: <a href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" target="_blank" rel="noreferrer">Artificial Analysis</a> and linked independently controlled public benchmark sources.
+      AInsights Index / AIndex recalculates Scheme 18 from observed results and publishes Core, extension, coverage, and sensitivity diagnostics alongside the score order.
     </footer>
   </body>
 </html>

@@ -169,19 +169,31 @@ def derived_external_entry(entry: dict[str, Any]) -> bool:
     )
 
 
-def sanitize_models(payload: dict[str, Any]) -> tuple[list[dict[str, Any]], dict[str, int]]:
+def sanitize_models(
+    payload: dict[str, Any],
+    *,
+    exact_config_only: bool = False,
+) -> tuple[list[dict[str, Any]], dict[str, int]]:
     """Remove copied/derived values while retaining direct exact-variant evidence.
 
     ``variantScoped`` means the direct row belongs only to the evaluated config,
     so it is admissible. A sibling row carrying ``sharedFromVariant`` is not a
     separate observation and is removed. If both metadata rows exist for one
     metric, the direct observation wins and is retained.
+
+    The deduplicated family leaderboard may use a direct family-level external
+    result attached to its source row.  The exact-config leaderboard cannot:
+    when ``exact_config_only`` is true, an external result must also be marked
+    ``variantScoped``.  AA columns remain admissible because every AA row is
+    already an evaluated exact configuration.  This prevents family-level
+    evidence from being asymmetrically attributed to one effort tier.
     """
 
     models: list[dict[str, Any]] = []
     removed_shared = 0
     removed_ineligible = 0
     removed_derived = 0
+    removed_unscoped = 0
     removed_site_livecode = 0
     retained_variant_scoped = 0
     for source_model in payload.get("models", []):
@@ -199,6 +211,10 @@ def sanitize_models(payload: dict[str, Any]) -> tuple[list[dict[str, Any]], dict
                 if not entry.get("sharedFromVariant")
                 and entry.get("evidenceEligible") is not False
                 and not derived_external_entry(entry)
+                and (
+                    not exact_config_only
+                    or entry.get("variantScoped") is True
+                )
             ]
             if direct_observations:
                 if (
@@ -216,6 +232,14 @@ def sanitize_models(payload: dict[str, Any]) -> tuple[list[dict[str, Any]], dict
                 removed_ineligible += 1
             if any(derived_external_entry(entry) for entry in entries):
                 removed_derived += 1
+            if exact_config_only and any(
+                not entry.get("sharedFromVariant")
+                and entry.get("evidenceEligible") is not False
+                and not derived_external_entry(entry)
+                and entry.get("variantScoped") is not True
+                for entry in entries
+            ):
+                removed_unscoped += 1
         if base.finite_number(scores.get("LiveCodeBench")) is not None:
             scores["LiveCodeBench"] = None
             removed_site_livecode += 1
@@ -224,6 +248,7 @@ def sanitize_models(payload: dict[str, Any]) -> tuple[list[dict[str, Any]], dict
         "shared_variant_score_cells_removed": removed_shared,
         "configuration_ineligible_score_cells_removed": removed_ineligible,
         "derived_external_score_cells_removed": removed_derived,
+        "unscoped_external_score_cells_removed": removed_unscoped,
         "site_livecodebench_cells_excluded": removed_site_livecode,
         "variant_scoped_direct_score_cells_retained": retained_variant_scoped,
     }

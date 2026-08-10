@@ -78,13 +78,23 @@ jobs:
       - name: Rebuild docs site data
         run: python scripts/build_docs_site.py
 
+      - name: Validate AIndex Scheme 18 production output
+        run: python -B analysis/irt_leaderboard_exploration/validate_scheme18_production.py --input docs/data/models.json
+
       - name: Run tests after update
         run: python -B -m unittest discover -s tests
 
       - name: Commit changed data and site
         id: commit
         run: |
-          git add ArtificialAnalysis/artificialanalysis_raw_scores_wide.csv data/benchmarks/benchmark_scores.json docs/data/models.json docs/data/models.js docs/assets/logos analysis/irt_leaderboard_exploration/outputs
+          git add ArtificialAnalysis/artificialanalysis_raw_scores_wide.csv
+          git add data/benchmarks/benchmark_scores.json
+          git add docs/data/models.json docs/data/models.js docs/assets/logos
+          git add analysis/irt_leaderboard_exploration/outputs/full_rankings_aindex_scheme18.csv
+          git add analysis/irt_leaderboard_exploration/outputs/top50_aindex_scheme18.csv
+          git add analysis/irt_leaderboard_exploration/outputs/full_rankings_exact_config_aindex_scheme18.csv
+          git add analysis/irt_leaderboard_exploration/outputs/top50_exact_config_aindex_scheme18.csv
+          git add analysis/irt_leaderboard_exploration/outputs/aindex_scheme18_validation_summary.json
           if git diff --cached --quiet; then
             echo "No model or benchmark changes detected."
             echo "changed=false" >> "$GITHUB_OUTPUT"

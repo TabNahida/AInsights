@@ -29,10 +29,16 @@ DEFAULT_RANKING_OUTPUT_DIR = (
     PROJECT_ROOT / "analysis" / "irt_leaderboard_exploration" / "outputs"
 )
 
-PRIMARY_RANKING_METHOD = "twopl_sparse_70_30_rank_mean"
-PRIMARY_COMPONENT_WEIGHTS = {
-    "twopl": 0.70,
-    "sparseRasch": 0.30,
+PRIMARY_RANKING_METHOD = "aindex_scheme18"
+PRIMARY_CANDIDATE_ID = (
+    "v5_partial_credit_geometric_logsumexp_residual_t1_"
+    "independent_audit_mean_plus_sqrt2_sd"
+)
+# Kept only for the historical two-method sensitivity artifact.  These
+# weights never enter the production AIndex score or ordering.
+AUDIT_COMPONENT_WEIGHTS = {
+    "twopl": 0.80,
+    "sparseRasch": 0.20,
 }
 RANKING_METHOD_KEYS = {
     "rasch": "rasch_equal_board",
@@ -511,6 +517,88 @@ def external_metric_key(benchmark_id: str) -> str:
     return f"benchmark:{benchmark_id}"
 
 
+def aindex_metric_policy_metadata(metric_key: str) -> dict[str, Any]:
+    """Expose the frozen Scheme 18 benchmark policy to the static client.
+
+    The role is derived from the policy registry, never from a Custom Weight
+    default.  Conditional items enter Scheme 18 only when the benchmark
+    controller is confirmed independent of every ranked model vendor; mixed
+    operators and protocols remain visible in the returned metadata.
+    """
+
+    from analysis.irt_leaderboard_exploration import v5_benchmark_policy
+
+    policy = next(
+        (
+            candidate
+            for candidate in v5_benchmark_policy.BENCHMARK_POLICIES
+            if candidate.score_key == metric_key
+        ),
+        None,
+    )
+    if policy is None:
+        return {
+            "aindexRole": "custom-only",
+            "aindexBoards": [],
+            "onlyAdd": False,
+            "scoringReason": (
+                "Available to Custom Weight tools but absent from the fixed "
+                "Scheme 18 scoring registry."
+            ),
+        }
+
+    is_core = policy.tier == "core" and policy.publication_eligible
+    is_extension = (
+        policy.tier == "extension"
+        and policy.publication_eligible
+    ) or (
+        policy.tier == "conditional_extension"
+        and policy.exploration_eligible
+        and policy.controller_is_ranked_model_vendor is False
+    )
+    role = "core" if is_core else "extension" if is_extension else "excluded"
+    return {
+        "aindexRole": role,
+        "aindexBoards": list(policy.boards) if role != "excluded" else [],
+        "canonicalBenchmarkFamily": policy.canonical_family,
+        "benchmarkController": policy.benchmark_creator_controller,
+        "controllerIsRankedModelVendor": policy.controller_is_ranked_model_vendor,
+        "resultOperator": policy.result_operator,
+        "resultProtocol": policy.result_protocol,
+        "scoreProvenance": policy.score_provenance,
+        "versionPin": policy.version_pin,
+        "onlyAdd": bool(policy.only_add and role == "extension"),
+        "sourceUrl": policy.source_url,
+        "scoringReason": policy.rationale,
+        "policyTier": policy.tier,
+        "protocolStatus": (
+            "common-core"
+            if role == "core"
+            else "common-partial"
+            if role == "extension" and policy.tier == "extension"
+            else "mixed-or-version-sensitive"
+            if role == "extension"
+            else "not-scored"
+        ),
+    }
+
+
+def metric_payload(
+    key: str,
+    label: str,
+    *,
+    default_weight: float = 0,
+    **extra: Any,
+) -> dict[str, Any]:
+    return {
+        "key": key,
+        "label": label,
+        "defaultWeight": default_weight,
+        **extra,
+        **aindex_metric_policy_metadata(key),
+    }
+
+
 def build_site_payload(
     rows: Iterable[dict[str, Any]],
     external_benchmark_data: dict[str, Any] | None = None,
@@ -531,35 +619,41 @@ def build_site_payload(
         "version": 2,
         "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "source": {
-            "label": "Artificial Analysis Intelligence Evaluations",
+            "label": "Artificial Analysis Core + listed benchmark extensions",
             "url": SOURCE_URL,
             "methodologyUrl": "methodology.html",
             "methodologyNote": (
-                "AInsights Index ranks each evaluated configuration by the arithmetic mean of its "
-                "equal-board Rasch rank and sparse-item Rasch rank. Coverage is an eligibility and "
-                "evidence-tier signal, not a model-specific score correction."
+                "AIndex Scheme 18 takes the unweighted geometric mean of each board's "
+                "complete Core percentages, then adds only positive residual evidence "
+                "from listed independent-controller extension benchmarks under one "
+                "anonymous dynamic cap. Five board scores contribute equally. Missing "
+                "extensions stay absent and never reduce Core. Some extension operators, "
+                "agent stacks, prompts, or versions remain mixed and are disclosed."
             ),
         },
         "defaultPreset": "zhihu-adjusted",
         "defaultDedupe": True,
         "metrics": [
-            {
-                "key": key,
-                "label": key,
-                "defaultWeight": DEFAULT_AINDEX_WEIGHTS.get(key, 0),
-            }
+            metric_payload(
+                key,
+                key,
+                default_weight=DEFAULT_AINDEX_WEIGHTS.get(key, 0),
+            )
             for key in [spec.column for spec in SCORE_SPECS]
         ]
         + [
-            {
-                "key": external_metric_key(benchmark["id"]),
-                "label": benchmark.get("label") or benchmark["id"],
-                "defaultWeight": DEFAULT_AINDEX_WEIGHTS.get(external_metric_key(benchmark["id"]), 0),
-                "source": "benchmark",
-                "category": benchmark.get("category") or "Benchmark",
-                "unit": benchmark.get("unit") or "%",
-                "icon": benchmark.get("icon") or "",
-            }
+            metric_payload(
+                external_metric_key(benchmark["id"]),
+                benchmark.get("label") or benchmark["id"],
+                default_weight=DEFAULT_AINDEX_WEIGHTS.get(
+                    external_metric_key(benchmark["id"]),
+                    0,
+                ),
+                source="benchmark",
+                category=benchmark.get("category") or "Benchmark",
+                unit=benchmark.get("unit") or "%",
+                icon=benchmark.get("icon") or "",
+            )
             for benchmark in external_benchmarks
         ],
         "presets": _presets(),
@@ -1164,53 +1258,88 @@ def attach_irt_ranking_profiles(
     payload: dict[str, Any],
     analysis_result: dict[str, Any],
 ) -> dict[str, Any]:
-    """Attach the precomputed publication ranking to exact selected configs.
+    """Attach Scheme 18 scores and keep legacy IRT methods as audit fields.
 
-    The IRT analysis ranks one exact configuration per ``variantGroup``.  A
-    family rank must never be copied to sibling effort/configuration rows, so
-    this join is deliberately strict on both variant group and selected slug.
+    The scoring analysis owns the unrounded order.  This function performs a
+    strict slug/configuration join and never recalculates, calibrates, or
+    reorders the main score.  Exact-config rows use the same calibration as the
+    deduplicated cohort but their own exact-scoped evidence.
     """
 
-    consensus_rows = _analysis_rows(
-        analysis_result,
-        "publication_consensus_full_rankings",
-        "required_order_consensus_full_rankings",
-        "consensus_publication_full_rankings",
+    scheme_rows = _validated_scheme18_rows(
+        _analysis_rows(
+            analysis_result,
+            "aindex_scheme18_full_rankings",
+            "scheme18_full_rankings",
+        ),
+        ranking_grain="variant_group",
     )
-    if not consensus_rows:
-        raise ValueError("IRT analysis did not return a publication consensus ranking")
+    exact_scheme_rows = _validated_scheme18_rows(
+        _analysis_rows(
+            analysis_result,
+            "exact_config_aindex_scheme18_full_rankings",
+            "aindex_scheme18_exact_config_full_rankings",
+            "exact_config_scheme18_full_rankings",
+        ),
+        ranking_grain="exact_config",
+    )
+    if not scheme_rows:
+        raise ValueError("analysis did not return the Scheme 18 main ranking")
+    if not exact_scheme_rows:
+        raise ValueError("analysis did not return the Scheme 18 exact-config ranking")
+
+    calibration = dict(
+        analysis_result.get("aindex_scheme18_calibration")
+        or analysis_result.get("scheme18_calibration")
+        or {}
+    )
+    candidate_id = str(
+        calibration.get("candidateId")
+        or calibration.get("candidate_id")
+        or scheme_rows[0].get("candidate_id")
+        or ""
+    )
+    if candidate_id != PRIMARY_CANDIDATE_ID:
+        raise ValueError(
+            f"unexpected Scheme 18 candidate id: {candidate_id!r}"
+        )
 
     evidence_methods = analysis_result.get("full_rankings") or {}
-    publication_methods = analysis_result.get("required_order_full_rankings") or {}
+    exact_evidence_methods = analysis_result.get("exact_config_full_rankings") or {}
     for method_id in RANKING_METHOD_KEYS.values():
-        if method_id not in evidence_methods or method_id not in publication_methods:
-            raise ValueError(f"IRT analysis is missing required method {method_id!r}")
+        if method_id not in evidence_methods:
+            raise ValueError(f"analysis is missing audit method {method_id!r}")
+        if method_id not in exact_evidence_methods:
+            raise ValueError(
+                f"analysis is missing exact-config audit method {method_id!r}"
+            )
 
-    evidence_by_method = {
-        method_id: _unique_rows_by_variant_group(evidence_methods[method_id], method_id)
-        for method_id in RANKING_METHOD_KEYS.values()
+    evidence_by_key = {
+        key: _unique_rows_by_variant_group(evidence_methods[method_id], method_id)
+        for key, method_id in RANKING_METHOD_KEYS.items()
     }
-    publication_by_method = {
-        method_id: _unique_rows_by_variant_group(publication_methods[method_id], method_id)
-        for method_id in RANKING_METHOD_KEYS.values()
+    exact_evidence_by_key = {
+        key: _unique_rows_by_field(
+            exact_evidence_methods[method_id],
+            method_id,
+            "slug",
+        )
+        for key, method_id in RANKING_METHOD_KEYS.items()
     }
 
     summary = analysis_result.get("summary") or {}
-    board_item_pool_sizes = _board_item_pool_sizes(summary, consensus_rows)
-    sparse_board_item_pool_sizes = _summary_method_pool_sizes(
-        summary,
-        "rasch_sparse_item_sensitivity",
-    )
-    rasch_board_item_pool_sizes = _summary_method_pool_sizes(
-        summary,
-        "rasch_equal_board",
-    )
-    dense_board_item_pool_sizes = _summary_method_pool_sizes(
-        summary,
-        "rasch_dense_item_sensitivity",
-    )
-    twopl_weight = PRIMARY_COMPONENT_WEIGHTS["twopl"]
-    sparse_weight = PRIMARY_COMPONENT_WEIGHTS["sparseRasch"]
+    audit_pool_sizes = {
+        key: _summary_method_pool_sizes(summary, method_id)
+        for key, method_id in RANKING_METHOD_KEYS.items()
+    }
+    exact_audit_pool_sizes = {
+        key: _summary_method_pool_sizes(
+            summary,
+            method_id,
+            collection_key="exact_config_board_item_pool_sizes",
+        )
+        for key, method_id in RANKING_METHOD_KEYS.items()
+    }
     model_by_slug: dict[str, dict[str, Any]] = {}
     for model in payload.get("models", []):
         slug = str(model.get("slug") or "")
@@ -1220,38 +1349,28 @@ def attach_irt_ranking_profiles(
             raise ValueError(f"duplicate model slug in site payload: {slug!r}")
         model_by_slug[slug] = model
 
-    population_size = len(consensus_rows)
+    population_size = len(scheme_rows)
     attached_slugs: set[str] = set()
     leaderboard_rows: list[dict[str, Any]] = []
-    for consensus in consensus_rows:
-        variant_group_id = str(consensus.get("variant_group") or "")
+    for scheme_row in scheme_rows:
+        variant_group_id = str(scheme_row.get("variant_group") or "")
+        selected_slug = str(scheme_row.get("slug") or "")
         if not variant_group_id:
-            raise ValueError("consensus ranking row has no variant_group")
-
+            raise ValueError("Scheme 18 ranking row has no variant_group")
+        if not selected_slug:
+            raise ValueError("Scheme 18 ranking row has no slug")
         component_rows = {
-            key: evidence_by_method[method_id].get(variant_group_id)
-            for key, method_id in RANKING_METHOD_KEYS.items()
+            key: rows.get(variant_group_id) for key, rows in evidence_by_key.items()
         }
-        published_components = {
-            key: publication_by_method[method_id].get(variant_group_id)
-            for key, method_id in RANKING_METHOD_KEYS.items()
-        }
-        if any(row is None for row in component_rows.values()) or any(
-            row is None for row in published_components.values()
-        ):
+        if any(row is None for row in component_rows.values()):
             raise ValueError(
-                f"consensus group {variant_group_id!r} is missing a component method row"
+                f"Scheme 18 group {variant_group_id!r} is missing an audit row"
             )
-
-        rasch = component_rows["rasch"]
-        sparse = component_rows["sparseRasch"]
-        twopl = component_rows["twopl"]
-        selected_slug = str(consensus.get("slug") or twopl.get("slug") or "")
         for method_key, method_row in component_rows.items():
             method_slug = str(method_row.get("slug") or "")
             if selected_slug != method_slug:
                 raise ValueError(
-                    f"consensus configuration mismatch for {variant_group_id!r}: "
+                    f"Scheme 18 configuration mismatch for {variant_group_id!r}: "
                     f"selected={selected_slug!r}, {method_key}={method_slug!r}"
                 )
         model = model_by_slug.get(selected_slug)
@@ -1265,154 +1384,19 @@ def attach_irt_ranking_profiles(
             raise ValueError(f"ranked slug {selected_slug!r} was attached twice")
         attached_slugs.add(selected_slug)
 
-        boards: dict[str, dict[str, Any]] = {}
-        for board_id in RANKING_BOARD_IDS:
-            twopl_score = _required_number(twopl, f"{board_id}_score")
-            sparse_score = _required_number(sparse, f"{board_id}_score")
-            twopl_tests = int(twopl.get(f"{board_id}_tests") or 0)
-            sparse_tests = int(sparse.get(f"{board_id}_tests") or 0)
-            boards[board_id] = {
-                "score": round(
-                    twopl_weight * twopl_score + sparse_weight * sparse_score,
-                    3,
-                ),
-                "tests": twopl_tests,
-                "sparseTests": sparse_tests,
-                "itemPoolSize": board_item_pool_sizes[board_id],
-                "sparseItemPoolSize": sparse_board_item_pool_sizes[board_id],
-            }
-
-        evidence_coverage_score = _number_or_none(
-            consensus.get("evidence_coverage_score")
+        profile = _scheme18_ranking_profile(
+            scheme_row=scheme_row,
+            audit_rows=component_rows,
+            audit_pool_sizes=audit_pool_sizes,
+            calibration=calibration,
+            ranking_grain="variant_group",
         )
-        if evidence_coverage_score is None:
-            evidence_coverage_score = sum(
-                100.0
-                * (
-                    twopl_weight
-                    * min(
-                        boards[board_id]["tests"]
-                        / board_item_pool_sizes[board_id],
-                        1.0,
-                    )
-                    + sparse_weight
-                    * min(
-                        boards[board_id]["sparseTests"]
-                        / sparse_board_item_pool_sizes[board_id],
-                        1.0,
-                    )
-                )
-                for board_id in RANKING_BOARD_IDS
-            ) / len(RANKING_BOARD_IDS)
-
-        method_profiles: dict[str, dict[str, Any]] = {}
-        for key, method_id in RANKING_METHOD_KEYS.items():
-            evidence_row = component_rows[key]
-            publication_row = published_components[key]
-            method_profiles[key] = {
-                "id": method_id,
-                "publicationRank": int(publication_row["rank"]),
-                "evidenceRank": int(evidence_row["rank"]),
-                "score": _required_number(evidence_row, "score"),
-                "evidenceTier": str(evidence_row.get("evidence_tier") or ""),
-                "boards": {
-                    board_id: {
-                        "score": _required_number(evidence_row, f"{board_id}_score"),
-                        "tests": int(evidence_row.get(f"{board_id}_tests") or 0),
-                    }
-                    for board_id in RANKING_BOARD_IDS
-                },
-            }
-
-        rank_mean = _number_or_none(
-            consensus.get("rank_mean")
-            if consensus.get("rank_mean") is not None
-            else consensus.get("evidence_mean_rank")
-        )
-        if rank_mean is None:
-            rank_mean = (
-                twopl_weight * method_profiles["twopl"]["evidenceRank"]
-                + sparse_weight
-                * method_profiles["sparseRasch"]["evidenceRank"]
-            )
-        component_ranks = [
-            method_profiles["twopl"]["evidenceRank"],
-            method_profiles["sparseRasch"]["evidenceRank"],
-        ]
-        rank_min = min(component_ranks)
-        rank_max = max(component_ranks)
-        display_score = _number_or_none(consensus.get("score"))
-        if display_score is None:
-            display_score = (
-                twopl_weight * method_profiles["twopl"]["score"]
-                + sparse_weight * method_profiles["sparseRasch"]["score"]
-            )
-
-        profile = {
-            "method": PRIMARY_RANKING_METHOD,
-            "publicationRank": int(consensus["rank"]),
-            "evidenceRank": int(
-                consensus.get("evidence_rank")
-                if consensus.get("evidence_rank") is not None
-                else consensus["rank"]
-            ),
-            "evidenceMeanRank": round(rank_mean, 4),
-            "rankMin": rank_min,
-            "rankMax": rank_max,
-            "rankSpan": rank_max - rank_min,
-            "rankPercentile": round(
-                100.0 * (population_size - rank_mean) / max(population_size - 1, 1),
-                4,
-            ),
-            "displayScore": round(display_score, 4),
-            "evidenceTier": str(
-                consensus.get("evidence_tier") or twopl.get("evidence_tier") or ""
-            ),
-            "publicationOrderRule": str(
-                consensus.get("publication_order_rule")
-                or summary.get("publication_order_rule")
-                or ""
-            ),
-            "requiredOrderTarget": str(consensus.get("required_order_target") or ""),
-            "rankChangeDueToRequiredOrder": int(
-                consensus.get("rank_change_due_to_required_order") or 0
-            ),
-            "uniqueBenchmarkFamilies": int(
-                consensus.get("unique_benchmark_families")
-                or twopl.get("unique_benchmark_families")
-                or 0
-            ),
-            "boardTestSlotsTotal": int(
-                consensus.get("board_test_slots_total")
-                or twopl.get("board_test_slots_total")
-                or 0
-            ),
-            "minBoardTests": int(
-                consensus.get("min_board_tests") or twopl.get("min_board_tests") or 0
-            ),
-            "boardsBelowMainTarget": int(
-                consensus.get("boards_below_main_target")
-                or twopl.get("boards_below_main_target")
-                or 0
-            ),
-            "boards": boards,
-            "boardItemPoolSizes": dict(board_item_pool_sizes),
-            "boardItemPoolSizesByMethod": {
-                "rasch": dict(rasch_board_item_pool_sizes),
-                "sparseRasch": dict(sparse_board_item_pool_sizes),
-                "twopl": dict(board_item_pool_sizes),
-                "denseRasch": dict(dense_board_item_pool_sizes),
-            },
-            "componentWeights": dict(PRIMARY_COMPONENT_WEIGHTS),
-            "evidenceCoverageScore": round(evidence_coverage_score, 3),
-            "methods": method_profiles,
-        }
         model["rankingProfile"] = profile
         leaderboard_rows.append(
             {
                 "publicationRank": profile["publicationRank"],
-                "evidenceRank": profile["evidenceRank"],
-                "evidenceMeanRank": profile["evidenceMeanRank"],
+                "displayScore": profile["displayScore"],
+                "scoreFullPrecision": profile["scoreFullPrecision"],
                 "selectedSlug": selected_slug,
                 "variantGroup": variant_group_id,
             }
@@ -1421,12 +1405,98 @@ def attach_irt_ranking_profiles(
     if len(attached_slugs) != population_size:
         raise ValueError("not every consensus row attached to a unique site model")
 
+    exact_population_size = len(exact_scheme_rows)
+    exact_attached_slugs: set[str] = set()
+    exact_leaderboard_rows: list[dict[str, Any]] = []
+    for scheme_row in exact_scheme_rows:
+        selected_slug = str(scheme_row.get("slug") or "")
+        variant_group_id = str(scheme_row.get("variant_group") or "")
+        if not selected_slug or not variant_group_id:
+            raise ValueError("exact Scheme 18 row has no slug or variant_group")
+        if selected_slug in exact_attached_slugs:
+            raise ValueError(
+                f"exact-config slug {selected_slug!r} was attached twice"
+            )
+
+        component_rows = {
+            key: rows.get(selected_slug)
+            for key, rows in exact_evidence_by_key.items()
+        }
+        if any(row is None for row in component_rows.values()):
+            raise ValueError(
+                f"exact-config {selected_slug!r} is missing an audit row"
+            )
+        for method_key, method_row in component_rows.items():
+            method_slug = str(method_row.get("slug") or "")
+            if selected_slug != method_slug:
+                raise ValueError(
+                    f"exact-config consensus mismatch for {selected_slug!r}: "
+                    f"{method_key}={method_slug!r}"
+                )
+
+        model = model_by_slug.get(selected_slug)
+        if model is None:
+            raise ValueError(
+                f"exact-config slug {selected_slug!r} is absent from site payload"
+            )
+        if str(model.get("variantGroup") or "") != variant_group_id:
+            raise ValueError(
+                f"exact-config slug {selected_slug!r} has mismatched variant group"
+            )
+
+        exact_profile = _scheme18_ranking_profile(
+            scheme_row=scheme_row,
+            audit_rows=component_rows,
+            audit_pool_sizes=exact_audit_pool_sizes,
+            calibration=calibration,
+            ranking_grain="exact_config",
+        )
+        model["exactRankingProfile"] = exact_profile
+        exact_attached_slugs.add(selected_slug)
+        exact_leaderboard_rows.append(
+            {
+                "publicationRank": exact_profile["publicationRank"],
+                "displayScore": exact_profile["displayScore"],
+                "scoreFullPrecision": exact_profile["scoreFullPrecision"],
+                "slug": selected_slug,
+                "variantGroup": variant_group_id,
+            }
+        )
+
+    if len(exact_attached_slugs) != exact_population_size:
+        raise ValueError(
+            "not every exact-config consensus row attached to a unique site model"
+        )
+
     payload["leaderboard"] = {
         "defaultMethod": PRIMARY_RANKING_METHOD,
-        "publicationOrderRule": str(summary.get("publication_order_rule") or ""),
+        "candidateId": candidate_id,
         "populationSize": population_size,
+        "exactPopulationSize": exact_population_size,
         "boardOrder": list(RANKING_BOARD_IDS),
-        "boardItemPoolSizes": dict(board_item_pool_sizes),
+        "coreItems": _scheme18_item_registry(calibration, "core"),
+        "extensionItems": _scheme18_item_registry(calibration, "extension"),
+        "bonusCap": _scheme18_cap(calibration),
+        "bonusCapRule": str(
+            calibration.get("bonusCapRule")
+            or calibration.get("bonus_cap_rule")
+            or calibration.get("cap_rule")
+            or "pooled positive residual mean + sqrt(2) population SD"
+        ),
+        "fitPopulation": int(
+            calibration.get("fitPopulation")
+            or calibration.get("fit_population")
+            or calibration.get("population_size")
+            or population_size
+        ),
+        "coreFit": "unweighted geometric mean of direct percentages",
+        "extensionAggregation": "log(1 + sum(expm1(positive residual)))",
+        "missingPolicy": (
+            "Core must be complete; missing extension observations stay absent, "
+            "earn zero bonus, and never reduce Core."
+        ),
+        "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
+        "calibration": calibration,
         "boardItemPoolSizesByMethod": {
             method_id: {
                 board_id: int(size)
@@ -1437,18 +1507,35 @@ def attach_irt_ranking_profiles(
             ).items()
             if isinstance(method_sizes, dict)
         },
+        "exactBoardItemPoolSizesByMethod": {
+            method_id: {
+                board_id: int(size)
+                for board_id, size in method_sizes.items()
+            }
+            for method_id, method_sizes in (
+                summary.get("exact_config_board_item_pool_sizes") or {}
+            ).items()
+            if isinstance(method_sizes, dict)
+        },
         "methods": {
-            "primary": ["twopl_equal_board", "rasch_sparse_item_sensitivity"],
-            "primaryWeights": {
-                "twopl_equal_board": twopl_weight,
-                "rasch_sparse_item_sensitivity": sparse_weight,
-            },
-            "comparison": ["rasch_equal_board", "rasch_dense_item_sensitivity"],
+            "primary": [PRIMARY_RANKING_METHOD],
+            "comparison": list(RANKING_METHOD_KEYS.values()),
+            "comparisonRole": "audit-and-sensitivity-only",
             "labels": dict(summary.get("methods") or {}),
         },
         "rows": leaderboard_rows,
+        "exactRows": exact_leaderboard_rows,
     }
     payload.setdefault("summary", {})["rankedVariantGroups"] = population_size
+    payload.setdefault("summary", {})["rankedExactConfigurations"] = (
+        exact_population_size
+    )
+    payload.setdefault("summary", {})["eligibleExactConfigurationsExposed"] = (
+        int(
+            summary.get("eligible_exact_configs_hidden_by_group_collapse")
+            or 0
+        )
+    )
     return payload
 
 
@@ -1460,17 +1547,199 @@ def _analysis_rows(analysis_result: dict[str, Any], *keys: str) -> list[dict[str
     return []
 
 
+def _scheme18_row_score(row: dict[str, Any]) -> float:
+    value = _number_or_none(
+        row.get("score_full_precision")
+        if row.get("score_full_precision") is not None
+        else row.get("final_score")
+        if row.get("final_score") is not None
+        else row.get("score")
+    )
+    if value is None or not 0.0 <= value <= 100.0:
+        raise ValueError("Scheme 18 row has no valid 0-100 final score")
+    return value
+
+
+def _validated_scheme18_rows(
+    rows: Iterable[dict[str, Any]],
+    *,
+    ranking_grain: str,
+) -> list[dict[str, Any]]:
+    """Validate scorer-owned ordering without silently repairing it."""
+
+    result = [dict(row) for row in rows]
+    if not result:
+        return []
+    seen: set[str] = set()
+    previous_score = math.inf
+    previous_tie_key = ""
+    for position, row in enumerate(result, start=1):
+        candidate_id = str(row.get("candidate_id") or PRIMARY_CANDIDATE_ID)
+        if candidate_id != PRIMARY_CANDIDATE_ID:
+            raise ValueError(f"unexpected Scheme 18 row candidate: {candidate_id!r}")
+        if int(row.get("rank") or 0) != position:
+            raise ValueError("Scheme 18 ranks must be contiguous and pre-sorted")
+        identity = str(
+            row.get("slug")
+            if ranking_grain == "exact_config"
+            else row.get("variant_group")
+            or ""
+        )
+        if not identity or identity in seen:
+            raise ValueError(f"duplicate or missing Scheme 18 identity: {identity!r}")
+        seen.add(identity)
+        score = _scheme18_row_score(row)
+        tie_key = f"{row.get('slug') or ''}\0{row.get('model') or ''}"
+        if score > previous_score + 1e-12:
+            raise ValueError("Scheme 18 rows are not sorted by unrounded score")
+        if math.isclose(score, previous_score, rel_tol=0.0, abs_tol=1e-12):
+            if previous_tie_key and tie_key < previous_tie_key:
+                raise ValueError("Scheme 18 exact ties are not stably ordered")
+        else:
+            previous_tie_key = ""
+        previous_score = score
+        previous_tie_key = tie_key
+    return result
+
+
+def _scheme18_item_registry(
+    calibration: dict[str, Any],
+    tier: str,
+) -> dict[str, list[str]]:
+    candidates = (
+        calibration.get(f"{tier}Items"),
+        calibration.get(f"{tier}_items"),
+        calibration.get(f"{tier}ItemRegistry"),
+    )
+    raw = next((value for value in candidates if isinstance(value, dict)), None)
+    if raw is not None:
+        registry = {
+            board_id: [
+                str(item.get("score_key") or item)
+                if isinstance(item, dict)
+                else str(item)
+                for item in raw.get(board_id, [])
+            ]
+            for board_id in RANKING_BOARD_IDS
+        }
+    else:
+        boards = calibration.get("boards") or {}
+        registry = {
+            board_id: [
+                str(item.get("score_key") or "")
+                for item in (
+                    (boards.get(board_id) or {}).get(f"{tier}_items") or []
+                )
+                if item.get("score_key")
+            ]
+            for board_id in RANKING_BOARD_IDS
+        }
+    if tier == "core" and any(not items for items in registry.values()):
+        raise ValueError("Scheme 18 Core item registry must cover every board")
+    return registry
+
+
+def _scheme18_cap(calibration: dict[str, Any]) -> float:
+    value = _number_or_none(
+        calibration.get("bonusCap")
+        if calibration.get("bonusCap") is not None
+        else calibration.get("bonus_cap")
+        if calibration.get("bonus_cap") is not None
+        else calibration.get("bonus_cap_per_board")
+    )
+    if value is None or value < 0.0:
+        raise ValueError("Scheme 18 calibration has no valid bonus cap")
+    return value
+
+
+def _rank_consensus_rows_by_composite_score(
+    consensus_rows: Iterable[dict[str, Any]],
+    component_rows_by_key: dict[str, dict[str, dict[str, Any]]],
+    *,
+    identity_field: str,
+) -> list[dict[str, Any]]:
+    """Rebuild the historical 80/20 sensitivity order for audit tests.
+
+    This helper is not called by the production AIndex path.  It remains so
+    older artifacts can be reproduced and compared with Scheme 18.
+    """
+
+    twopl_rows = component_rows_by_key["twopl"]
+    sparse_rows = component_rows_by_key["sparseRasch"]
+    twopl_weight = AUDIT_COMPONENT_WEIGHTS["twopl"]
+    sparse_weight = AUDIT_COMPONENT_WEIGHTS["sparseRasch"]
+    legacy_publication_fields = (
+        "publication_order_rule",
+        "required_order_target",
+        "rank_change_due_to_required_order",
+        "evidence_rank",
+        "rank_percentile",
+    )
+
+    ranked: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for source in consensus_rows:
+        identity = str(source.get(identity_field) or "")
+        if not identity:
+            raise ValueError(f"consensus ranking row has no {identity_field}")
+        if identity in seen:
+            raise ValueError(f"consensus ranking has duplicate {identity_field} {identity!r}")
+        seen.add(identity)
+        twopl = twopl_rows.get(identity)
+        sparse = sparse_rows.get(identity)
+        if twopl is None or sparse is None:
+            raise ValueError(
+                f"consensus {identity_field} {identity!r} is missing a primary component row"
+            )
+        twopl_score = _required_number(twopl, "score")
+        sparse_score = _required_number(sparse, "score")
+        if not 0 <= twopl_score <= 100 or not 0 <= sparse_score <= 100:
+            raise ValueError(
+                f"consensus {identity_field} {identity!r} has a method score outside 0–100"
+            )
+        row = dict(source)
+        for field in legacy_publication_fields:
+            row.pop(field, None)
+        row["rank"] = 0
+        raw_score = twopl_weight * twopl_score + sparse_weight * sparse_score
+        row["score"] = round(raw_score, 4)
+        row["score_role"] = "user_facing_0_100_weighted_method_score"
+        row["rank_tie_break_policy"] = "higher_unrounded_score_then_stable_id"
+        row["_raw_score_sort"] = raw_score
+        ranked.append(row)
+
+    ranked.sort(
+        key=lambda row: (
+            -float(row["_raw_score_sort"]),
+            str(row.get("slug") or row.get(identity_field) or ""),
+        )
+    )
+    for position, row in enumerate(ranked, start=1):
+        row["rank"] = position
+        row["score_rank"] = position
+        row.pop("_raw_score_sort", None)
+    return ranked
+
+
 def _unique_rows_by_variant_group(
     rows: Iterable[dict[str, Any]],
     method_id: str,
 ) -> dict[str, dict[str, Any]]:
+    return _unique_rows_by_field(rows, method_id, "variant_group")
+
+
+def _unique_rows_by_field(
+    rows: Iterable[dict[str, Any]],
+    method_id: str,
+    field: str,
+) -> dict[str, dict[str, Any]]:
     result: dict[str, dict[str, Any]] = {}
     for row in rows:
-        key = str(row.get("variant_group") or "")
+        key = str(row.get(field) or "")
         if not key:
-            raise ValueError(f"{method_id} ranking row has no variant_group")
+            raise ValueError(f"{method_id} ranking row has no {field}")
         if key in result:
-            raise ValueError(f"{method_id} has duplicate variant group {key!r}")
+            raise ValueError(f"{method_id} has duplicate {field} {key!r}")
         result[key] = row
     return result
 
@@ -1514,11 +1783,15 @@ def _board_item_pool_sizes(
 def _summary_method_pool_sizes(
     summary: dict[str, Any],
     method_id: str,
+    *,
+    collection_key: str = "board_item_pool_sizes",
 ) -> dict[str, int]:
-    all_sizes = summary.get("board_item_pool_sizes") or {}
+    all_sizes = summary.get(collection_key) or {}
     raw = all_sizes.get(method_id) if isinstance(all_sizes, dict) else None
     if not isinstance(raw, dict):
-        raise ValueError(f"IRT analysis did not report item-pool sizes for {method_id}")
+        raise ValueError(
+            f"IRT analysis did not report {collection_key} sizes for {method_id}"
+        )
     sizes = {board_id: int(raw.get(board_id) or 0) for board_id in RANKING_BOARD_IDS}
     if any(size <= 0 for size in sizes.values()):
         raise ValueError(f"invalid {method_id} board item-pool sizes: {sizes}")
@@ -1530,6 +1803,152 @@ def _required_number(row: dict[str, Any], key: str) -> float:
     if value is None:
         raise ValueError(f"ranking row is missing numeric {key!r}")
     return value
+
+
+def _scheme18_ranking_profile(
+    *,
+    scheme_row: dict[str, Any],
+    audit_rows: dict[str, dict[str, Any]],
+    audit_pool_sizes: dict[str, dict[str, int]],
+    calibration: dict[str, Any],
+    ranking_grain: str,
+) -> dict[str, Any]:
+    """Build one production profile from a scorer-owned Scheme 18 row."""
+
+    core_items = _scheme18_item_registry(calibration, "core")
+    extension_items = _scheme18_item_registry(calibration, "extension")
+    cap = _scheme18_cap(calibration)
+    method_profiles: dict[str, dict[str, Any]] = {}
+    for key, method_id in RANKING_METHOD_KEYS.items():
+        evidence_row = audit_rows[key]
+        audit_rank = int(evidence_row["rank"])
+        method_profiles[key] = {
+            "id": method_id,
+            "role": "audit-and-sensitivity-only",
+            "auditRank": audit_rank,
+            # Compatibility alias consumed by the Custom Method tool.
+            "evidenceRank": audit_rank,
+            "score": _required_number(evidence_row, "score"),
+            "evidenceTier": str(evidence_row.get("evidence_tier") or ""),
+            "boards": {
+                board_id: {
+                    "score": _required_number(evidence_row, f"{board_id}_score"),
+                    "tests": int(evidence_row.get(f"{board_id}_tests") or 0),
+                }
+                for board_id in RANKING_BOARD_IDS
+            },
+        }
+
+    boards: dict[str, dict[str, Any]] = {}
+    extension_coverages: list[float] = []
+    total_tests = 0
+    total_extension_tests = 0
+    for board_id in RANKING_BOARD_IDS:
+        core_score = _required_number(scheme_row, f"{board_id}_core_score")
+        bonus = _required_number(scheme_row, f"{board_id}_extension_bonus")
+        board_score = _required_number(
+            scheme_row,
+            f"{board_id}_score_full_precision"
+            if scheme_row.get(f"{board_id}_score_full_precision") is not None
+            else f"{board_id}_score",
+        )
+        points = _required_number(
+            scheme_row,
+            f"{board_id}_points_full_precision"
+            if scheme_row.get(f"{board_id}_points_full_precision") is not None
+            else f"{board_id}_points",
+        )
+        core_tests = int(
+            scheme_row.get(f"{board_id}_core_tests")
+            or len(core_items[board_id])
+        )
+        extension_tests = int(
+            scheme_row.get(f"{board_id}_extension_tests") or 0
+        )
+        if core_tests != len(core_items[board_id]):
+            raise ValueError(f"Scheme 18 Core is incomplete for {board_id}")
+        # The public audit column is rounded to six decimals while the scorer
+        # applies the cap at full precision.
+        if not 0.0 <= bonus <= cap + 1.0e-6:
+            raise ValueError(f"Scheme 18 bonus is outside cap for {board_id}")
+        if not core_score - 1e-6 <= board_score <= 100.0 + 1e-9:
+            raise ValueError(f"invalid Scheme 18 board score for {board_id}")
+        if not math.isclose(points, board_score / 5.0, abs_tol=1e-10):
+            raise ValueError(f"Scheme 18 board points identity failed for {board_id}")
+        extension_pool_size = len(extension_items[board_id])
+        coverage = (
+            100.0 * extension_tests / extension_pool_size
+            if extension_pool_size
+            else 100.0
+        )
+        extension_coverages.append(coverage)
+        total_tests += core_tests + extension_tests
+        total_extension_tests += extension_tests
+        boards[board_id] = {
+            "coreScore": core_score,
+            "extensionBonus": bonus,
+            "score": board_score,
+            "points": points,
+            "coreTests": core_tests,
+            "extensionTests": extension_tests,
+            "coreItemPoolSize": len(core_items[board_id]),
+            "extensionItemPoolSize": extension_pool_size,
+            "extensionCoverageScore": round(coverage, 3),
+            # Compatibility fields for existing table and radar code.
+            "tests": core_tests + extension_tests,
+            "itemPoolSize": len(core_items[board_id]) + extension_pool_size,
+        }
+
+    final_score = _scheme18_row_score(scheme_row)
+    point_sum = sum(board["points"] for board in boards.values())
+    if not math.isclose(final_score, point_sum, abs_tol=1e-10):
+        raise ValueError("Scheme 18 final score is not the sum of five board points")
+    score_full_precision = str(
+        scheme_row.get("score_full_precision")
+        or format(final_score, ".17g")
+    )
+    extension_coverage = sum(extension_coverages) / len(extension_coverages)
+    return {
+        "method": PRIMARY_RANKING_METHOD,
+        "candidateId": PRIMARY_CANDIDATE_ID,
+        "rankingGrain": ranking_grain,
+        "publicationRank": int(scheme_row["rank"]),
+        "evidenceRank": int(scheme_row["rank"]),
+        "displayScore": round(final_score, 4),
+        "finalScore": final_score,
+        "scoreFullPrecision": score_full_precision,
+        "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
+        "scoreScale": "0-100 equal-additive five-board points",
+        "coreComplete": True,
+        "bonusCap": cap,
+        "bonusCapRule": str(
+            calibration.get("bonusCapRule")
+            or calibration.get("bonus_cap_rule")
+            or calibration.get("cap_rule")
+            or "pooled positive residual mean + sqrt(2) population SD"
+        ),
+        "evidenceTier": str(audit_rows["twopl"].get("evidence_tier") or ""),
+        "boardTestSlotsTotal": total_tests,
+        "extensionTestsTotal": total_extension_tests,
+        "extensionCoverageScore": round(extension_coverage, 3),
+        # The sixth radar axis uses evidence breadth and never affects score.
+        "evidenceCoverageScore": round(extension_coverage, 3),
+        "boards": boards,
+        "coreItems": core_items,
+        "extensionItems": extension_items,
+        "boardItemPoolSizes": {
+            board_id: len(core_items[board_id])
+            for board_id in RANKING_BOARD_IDS
+        },
+        "extensionItemPoolSizes": {
+            board_id: len(extension_items[board_id])
+            for board_id in RANKING_BOARD_IDS
+        },
+        "boardItemPoolSizesByMethod": {
+            key: dict(sizes) for key, sizes in audit_pool_sizes.items()
+        },
+        "methods": method_profiles,
+    }
 
 
 def _attach_external_benchmark_scores_impl(
@@ -1949,19 +2368,17 @@ def _presets() -> dict[str, dict[str, Any]]:
             "id": "zhihu-adjusted",
             "label": "AInsights Index",
             "kind": "precomputed-ranking",
-            "description": "主榜以等板块 2PL 证据名次的 70% 与稀疏项 Rasch 证据名次的 30% 加权排序；测试太少的配置不进入榜单，覆盖度只决定 Main/Provisional 证据标签。Fable 5 第一、GPT-5.6 Sol 第二由透明发布层执行，不改真实分数或证据名次。",
-            "calculation": "weighted-rank-mean",
+            "description": "方案 18：每板 Core 真实百分成绩取不加权几何均值；独立控制的扩展测试只用高于匿名 cohort 趋势的正残差加分，并受每日数据重算的统一动态 cap 限制。五板等分相加；扩展缺失不补值、不扣 Core。",
+            "method": PRIMARY_RANKING_METHOD,
+            "candidateId": PRIMARY_CANDIDATE_ID,
+            "calculation": "geometric-core-positive-residual-logsumexp",
             "normalization": "none",
-            "missingPolicy": "eligibility-gate",
-            "componentMethods": [
-                "twopl_equal_board",
-                "rasch_sparse_item_sensitivity",
-            ],
-            "componentWeights": {
-                "twopl_equal_board": 0.70,
-                "rasch_sparse_item_sensitivity": 0.30,
-            },
+            "missingPolicy": "core-required-extension-absent",
+            "boardAggregation": "equal-additive",
+            "extensionPolicy": "only-add-positive-residual",
+            "bonusCapRule": "pooled positive residual mean + sqrt(2) population SD",
             "comparisonMethods": [
+                "twopl_equal_board",
                 "rasch_equal_board",
                 "rasch_dense_item_sensitivity",
             ],

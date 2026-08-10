@@ -37,14 +37,15 @@ class DocsMarkupTests(unittest.TestCase):
                 "instruction-context",
             ],
         )
-        self.assertIn('profileKey: "evidenceCoverageScore"', radar_source)
+        self.assertIn('profileKey: "extensionCoverageScore"', radar_source)
         self.assertIn("model?.rankingProfile?.boards?.[boardId]", app_js)
         self.assertIn("model?.rankingProfile?.[axis.profileKey]", value_source)
         self.assertNotIn("frontierGroupValue", value_source)
         self.assertNotIn("axis.metrics", radar_source + value_source)
-        self.assertIn("board?.sparseTests", coverage_source)
-        self.assertIn("board?.sparseItemPoolSize", coverage_source)
-        self.assertIn("boardItemPoolSizesByMethod?.sparseRasch", coverage_source)
+        self.assertIn("board?.coreTests", coverage_source)
+        self.assertIn("board?.coreItemPoolSize", coverage_source)
+        self.assertIn("board?.extensionTests", coverage_source)
+        self.assertIn("board?.extensionItemPoolSize", coverage_source)
         self.assertIn('tr("radarDualCoverage", coverage)', coverage_source)
         self.assertIn("function radarHasCompleteProfile(model, axes", app_js)
         self.assertIn(
@@ -140,7 +141,7 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertNotIn("ranked.slice(0, 250)", app_js)
         self.assertNotIn("models.slice(0, 120)", app_js)
 
-    def test_default_ranking_is_precomputed_and_keeps_global_publication_ranks(self):
+    def test_default_ranking_uses_precomputed_scheme18_score_for_value_and_order(self):
         root = Path(__file__).resolve().parents[1]
         app_js = (root / "docs" / "app.js").read_text(encoding="utf-8")
         payload = json.loads(
@@ -152,30 +153,80 @@ class DocsMarkupTests(unittest.TestCase):
             for model in payload["models"]
             if model.get("rankingProfile")
         ]
+        exact_profiles = [
+            model["exactRankingProfile"]
+            for model in payload["models"]
+            if model.get("exactRankingProfile")
+        ]
 
         self.assertEqual(default_preset["kind"], "precomputed-ranking")
         self.assertEqual(len(profiles), payload["leaderboard"]["populationSize"])
-        self.assertEqual(
-            sorted(profile["publicationRank"] for profile in profiles),
-            list(range(1, len(profiles) + 1)),
+        self.assertTrue(
+            all(isinstance(profile.get("displayScore"), (int, float)) for profile in profiles)
         )
+        self.assertEqual(
+            len(exact_profiles),
+            payload["leaderboard"]["exactPopulationSize"],
+        )
+        self.assertGreater(len(exact_profiles), len(profiles))
+        self.assertTrue(
+            all(
+                isinstance(profile.get("displayScore"), (int, float))
+                for profile in exact_profiles
+            )
+        )
+        self.assertIn("function modelForRankingGrain(model, rankingGrain)", app_js)
+        self.assertIn('rankingGrain = state.dedupe ? "variant-group" : "exact-config"', app_js)
+        self.assertIn("rankingProfile: model?.exactRankingProfile || null", app_js)
+        self.assertIn("leaderboard?.exactPopulationSize", app_js)
         self.assertIn('if (preset.kind === "precomputed-ranking")', app_js)
         self.assertIn("function scoreModelForPrecomputedRanking(model)", app_js)
         precomputed_source = app_js.split(
             "function scoreModelForPrecomputedRanking(model)", 1
         )[1].split("\nfunction ", 1)[0]
-        for field in (
-            "displayScore",
-            "publicationRank",
-            "evidenceRank",
-            "evidenceMeanRank",
-        ):
-            self.assertIn(field, precomputed_source)
+        self.assertIn("const finalScore = Number(profile?.displayScore)", precomputed_source)
+        self.assertIn("profile.extensionTestsTotal", precomputed_source)
+        self.assertIn("profile.bonusCap", precomputed_source)
+        self.assertIn("score: finalScore", precomputed_source)
+        self.assertIn("displayScore: finalScore", precomputed_source)
+        self.assertIn("scoreBarValue: finalScore", precomputed_source)
+        self.assertNotIn("evidenceMeanRank", precomputed_source)
+        self.assertNotIn("rankPercentile", precomputed_source)
+        self.assertIn("const generatedScoreRank = Number(profile?.publicationRank)", precomputed_source)
+        self.assertIn("scoreRank:", precomputed_source)
+        self.assertIn("isPrecomputedScoreRanking: true", precomputed_source)
+        self.assertNotIn("scoreIsPercent", app_js)
+        self.assertIn("function formatModelDisplayScore(model)", app_js)
+        display_formatter = app_js.split("function formatModelDisplayScore(model)", 1)[
+            1
+        ].split("\nfunction ", 1)[0]
+        self.assertIn("value.toFixed(3)", display_formatter)
+        self.assertIn("formatNumber(value)", display_formatter)
+        self.assertIn("isPrecomputedScoreRanking", display_formatter)
+        self.assertNotIn("%", display_formatter)
+        score_header_source = app_js.split(
+            "function scoreHeaderKeyForPreset(preset)", 1
+        )[1].split("\nfunction ", 1)[0]
+        self.assertNotIn('preset?.kind === "precomputed-ranking"', score_header_source)
+        self.assertIn('return "headers.score"', score_header_source)
+        self.assertIn('score: "分数"', app_js)
+        self.assertIn('score: "Points"', app_js)
+        self.assertIn('scatterYAxis: "AInsights 能力分"', app_js)
+        self.assertIn('scatterYAxis: "AInsights points"', app_js)
 
         rank_source = app_js.split("function rankRows(models)", 1)[1].split(
             "\nfunction ", 1
         )[0]
-        self.assertIn("publicationRank", rank_source)
+        compare_source = app_js.split("function compareRankingRows(a, b)", 1)[
+            1
+        ].split("\nfunction ", 1)[0]
+        self.assertIn("[...models].sort(compareRankingRows)", rank_source)
+        self.assertIn("rank: model.scoreRank", rank_source)
+        self.assertIn("rank: currentRank", rank_source)
+        self.assertNotIn("publicationRank", rank_source)
+        self.assertIn("b.score - a.score", compare_source)
+        self.assertIn("a.scoreRank - b.scoreRank", compare_source)
+        self.assertIn('tr("scheme18Cap"', precomputed_source)
         render_results_source = app_js.split("function renderResults(preset)", 1)[
             1
         ].split("\nfunction ", 1)[0]
@@ -183,6 +234,19 @@ class DocsMarkupTests(unittest.TestCase):
             render_results_source,
             r"rankRows\(rankingUniverse\).*?filter\(matchesQuery\).*?filter\(matchesSourceFilter\)",
         )
+
+        exact_by_score = {}
+        for profile in exact_profiles:
+            exact_by_score.setdefault(profile["displayScore"], []).append(profile)
+        tied_score_groups = [
+            group for group in exact_by_score.values() if len(group) > 1
+        ]
+        for group in tied_score_groups:
+            ranks = sorted(profile["publicationRank"] for profile in group)
+            self.assertEqual(
+                ranks,
+                list(range(ranks[0], ranks[0] + len(ranks))),
+            )
 
     def test_full_ranking_has_ten_columns_and_sensitivity_ranks(self):
         docs_dir = Path(__file__).resolve().parents[1] / "docs"
@@ -210,6 +274,12 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("twopl", render_row_source)
         self.assertIn("denseRasch", render_row_source)
         self.assertIn("${model.rank}", render_row_source)
+        self.assertIn("model.scoreMeta", render_row_source)
+        method_rank_source = app_js.split("function renderMethodRankCell(model, methodId)", 1)[
+            1
+        ].split("\nfunction ", 1)[0]
+        self.assertIn("rankingMethodEvidenceRank(model, methodId)", method_rank_source)
+        self.assertNotIn("publicationRank", method_rank_source)
 
     def test_custom_lab_exposes_three_separate_tools_and_actions(self):
         app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(
@@ -263,10 +333,11 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("model?.rankingProfile?.boards?.[boardId]?.score", app_js)
         self.assertIn("function scoreModelForCustomMethodRanks(model)", app_js)
         self.assertIn("function scoreModelForCustomBoards(model)", app_js)
-        self.assertIn("rasch: 0", app_js)
-        self.assertIn("sparseRasch: 30", app_js)
-        self.assertIn("twopl: 70", app_js)
-        self.assertIn("denseRasch: 0", app_js)
+        self.assertIn("rasch: 25", app_js)
+        self.assertIn("sparseRasch: 25", app_js)
+        self.assertIn("twopl: 25", app_js)
+        self.assertIn("denseRasch: 25", app_js)
+        self.assertIn("audit/sensitivity only", app_js)
         self.assertIn('customMethodAggregator: "mean"', app_js)
         self.assertIn('customBoardAggregator: "arithmetic"', app_js)
         self.assertIn("customMetricGroups", app_js)
@@ -326,7 +397,7 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("canonicalMetrics", value_source)
         self.assertNotIn("state.customWeightPresetId", value_source)
 
-    def test_all_three_custom_tools_apply_the_publication_order(self):
+    def test_custom_tools_do_not_apply_an_anchor_publication_order(self):
         app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(
             encoding="utf-8"
         )
@@ -338,21 +409,17 @@ class DocsMarkupTests(unittest.TestCase):
             source = app_js.split(f"function {function_name}(model)", 1)[1].split(
                 "\nfunction ", 1
             )[0]
-            self.assertIn("customPublicationRanking: true", source)
+            self.assertNotIn("customPublicationRanking", source)
 
-        publication_source = app_js.split("function applyCustomPublicationLayer(", 1)[
-            1
-        ].split("\nfunction ", 1)[0]
-        self.assertIn('model.slug === "claude-fable-5"', publication_source)
-        self.assertIn('model.variantGroup === "gpt 5 6 sol"', publication_source)
-        self.assertIn("if (!fable || !sol) return evidenceRows;", publication_source)
-        self.assertIn("publicationRank: index + 1", publication_source)
+        self.assertNotIn("function applyCustomPublicationLayer(", app_js)
+        self.assertNotIn("publicationLayerNote", app_js)
+        self.assertNotIn("publicationLayer:", app_js)
+        self.assertNotIn("Fable 5", app_js)
+        self.assertNotIn("GPT-5.6 Sol", app_js)
         benchmark_ui = app_js.split("function renderBenchmarkWeightLab(", 1)[1].split(
             "\nfunction ", 1
         )[0]
-        self.assertIn('tr("publicationLayerNote")', benchmark_ui)
-        self.assertIn("均有真实可计算结果", app_js)
-        self.assertIn("both models have observed, calculable results", app_js)
+        self.assertNotIn("publication-layer-note", benchmark_ui)
 
     def test_unranked_sibling_variants_do_not_render_null_rank(self):
         app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(
@@ -382,42 +449,46 @@ class DocsMarkupTests(unittest.TestCase):
         for section in (
             "Default Ranking at a Glance",
             "Capability Boards",
-            "Item Pools and Sensitivity Methods",
-            "Calculation Formula",
-            "Evidence Eligibility and Coverage",
-            "Publication Order",
-            "Radar Profile",
-            "Metric Weights and Custom Tools",
+            "Core Score",
+            "Independent Extension Evidence",
+            "Anonymous Positive Residuals",
+            "Monotone Log-Sum-Exp Bonus and Dynamic Cap",
+            "Board and Final Score",
+            "Deduplication and Exact Configurations",
+            "Radar and Evidence Coverage",
+            "Sensitivity Views and Custom Tools",
+            "AIndex Calculation",
         ):
             self.assertIn(section, html)
 
-        self.assertIn(
-            "rank_mean = 0.70 × twopl_evidence_rank + 0.30 × sparse_evidence_rank",
-            html,
-        )
+        self.assertIn("core_score", html)
+        self.assertIn("positive_residual", html)
+        self.assertIn("mean + sqrt(2) × SD", html)
+        self.assertIn("variantScoped", html)
         self.assertIn("Core Rasch", html)
         self.assertIn("Sparse Rasch", html)
         self.assertIn("Equal-board 2PL", html)
         self.assertIn("Dense Rasch", html)
         self.assertEqual(html.count("<td>20%</td>"), 5)
-        self.assertIn("at least two canonical benchmark families", html)
-        self.assertIn("at least three in every board", html)
-        self.assertIn("Coverage controls eligibility and labels", html)
-        self.assertIn("it does not modify a qualified model's observed IRT score", html)
-        self.assertIn("Claude Fable 5", html)
-        self.assertIn("GPT-5.6 Sol", html)
-        self.assertIn("evidence_rank", html)
-        self.assertIn("there is no 40 / 24 / 20 / 8 / 8 board weighting", html)
+        self.assertIn("A model is not scored when a mandatory Core value is missing", html)
+        self.assertIn("Missing extension results remain absent", html)
+        self.assertIn("No model name, provider, family order, reserved position", html)
+        self.assertIn("unrounded AIndex value", html)
+        self.assertNotIn("Claude Fable 5", html)
+        self.assertNotIn("GPT-5.6 Sol", html)
         for runtime_term in (
-            "Core Rasch",
-            "Sparse Rasch",
-            "Equal-board 2PL",
-            "Dense Rasch",
-            "rank_mean",
-            "Claude Fable 5",
-            "GPT-5.6 Sol",
+            "Core base score",
+            "Anonymous trend",
+            "One dynamic cap",
+            "Extension aggregation and total",
+            "Missingness, dedupe, and protocols",
+            "Radar Profile",
+            "Sensitivity and Custom Tools",
         ):
             self.assertIn(runtime_term, methodology_source)
+        self.assertNotIn("Transparent publication order", methodology_source)
+        self.assertNotIn("Claude Fable 5", methodology_source)
+        self.assertNotIn("GPT-5.6 Sol", methodology_source)
 
         for obsolete in (
             "Coding 40、Agentic/tool work 24、Hard reasoning 20",

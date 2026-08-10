@@ -1,0 +1,40 @@
+{
+  "variant_group_consensus": {
+    "ranking_policy": "descending_unrounded_weighted_component_score_then_stable_id_for_exact_ties",
+    "method_count": 1,
+    "all_methods_pass": true,
+    "methods": {
+      "twopl_sparse_80_20_score": {
+        "passed": true,
+        "full_rows": 154,
+        "top_rows": 50,
+        "sequential_ranks": true,
+        "scores_non_increasing": true,
+        "displayed_scores_non_increasing": true,
+        "stable_identifier_orders_exact_score_ties": true,
+        "unique_stable_ids": true,
+        "top_is_full_ranking_prefix": true,
+        "has_no_artificial_order_fields": true
+      }
+    }
+  },
+  "exact_config_consensus": {
+    "ranking_policy": "descending_unrounded_weighted_component_score_then_stable_id_for_exact_ties",
+    "method_count": 1,
+    "all_methods_pass": true,
+    "methods": {
+      "twopl_sparse_80_20_score": {
+        "passed": true,
+        "full_rows": 186,
+        "top_rows": 50,
+        "sequential_ranks": true,
+        "scores_non_increasing": true,
+        "displayed_scores_non_increasing": true,
+        "stable_identifier_orders_exact_score_ties": true,
+        "unique_stable_ids": true,
+        "top_is_full_ranking_prefix": true,
+        "has_no_artificial_order_fields": true
+      }
+    }
+  }
+}

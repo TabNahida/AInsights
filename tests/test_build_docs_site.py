@@ -12,6 +12,8 @@ from scripts.build_docs_site import (
     DEFAULT_EXTERNAL_BENCHMARKS_JSON,
     DEFAULT_INPUT_CSV,
     DEFAULT_OUTPUT_JSON,
+    PRIMARY_RANKING_METHOD,
+    _rank_consensus_rows_by_composite_score,
     build_site_payload,
     load_external_benchmarks,
     open_source_type,
@@ -48,53 +50,244 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(len(ranked), payload["leaderboard"]["populationSize"])
         self.assertGreaterEqual(len(ranked), 50)
         self.assertEqual(ranked[0]["slug"], "claude-fable-5")
-        self.assertEqual(ranked[1]["variantGroup"], "gpt 5 6 sol")
-        self.assertEqual(ranked[2]["slug"], "claude-opus-5")
+        self.assertEqual(ranked[1]["slug"], "gpt-5-6-sol")
         self.assertEqual(
             [model["rankingProfile"]["publicationRank"] for model in ranked],
             list(range(1, len(ranked) + 1)),
         )
+        self.assertEqual(
+            [model["rankingProfile"]["displayScore"] for model in ranked],
+            sorted(
+                (model["rankingProfile"]["displayScore"] for model in ranked),
+                reverse=True,
+            ),
+        )
+        self.assertNotIn("publicationOrderRule", payload["leaderboard"])
 
         for model in ranked:
             profile = model["rankingProfile"]
             methods = profile["methods"]
+            self.assertEqual(profile["publicationRank"], profile["evidenceRank"])
+            self.assertNotIn("publicationOrderRule", profile)
+            self.assertNotIn("requiredOrderTarget", profile)
+            self.assertNotIn("rankChangeDueToRequiredOrder", profile)
+            self.assertGreaterEqual(profile["displayScore"], 0)
+            self.assertLessEqual(profile["displayScore"], 100)
             self.assertAlmostEqual(
-                profile["evidenceMeanRank"],
-                0.70 * methods["twopl"]["evidenceRank"]
-                + 0.30 * methods["sparseRasch"]["evidenceRank"],
+                profile["displayScore"],
+                profile["finalScore"],
+                delta=0.00006,
+            )
+            self.assertTrue(profile["coreComplete"])
+            self.assertEqual(profile["candidateId"], payload["leaderboard"]["candidateId"])
+            self.assertEqual(
+                float(profile["scoreFullPrecision"]),
+                profile["finalScore"],
+            )
+            self.assertGreaterEqual(profile["bonusCap"], 0)
+            self.assertAlmostEqual(
+                profile["finalScore"],
+                sum(board["points"] for board in profile["boards"].values()),
+                delta=1e-10,
             )
             self.assertIn("twopl", methods)
             self.assertIn("denseRasch", methods)
-            board_coverages = []
+            self.assertEqual(methods["twopl"]["role"], "audit-and-sensitivity-only")
+            self.assertEqual(methods["denseRasch"]["role"], "audit-and-sensitivity-only")
+            extension_coverages = []
             for board_id, board in profile["boards"].items():
                 self.assertAlmostEqual(
                     board["score"],
-                    0.70 * methods["twopl"]["boards"][board_id]["score"]
-                    + 0.30
-                    * methods["sparseRasch"]["boards"][board_id]["score"],
-                    delta=0.0006,
+                    min(100, board["coreScore"] + board["extensionBonus"]),
+                    delta=2e-6,
                 )
-                board_coverages.append(
-                    100
-                    * (
-                        0.70 * min(board["tests"] / board["itemPoolSize"], 1)
-                        + 0.30
-                        * min(
-                            board["sparseTests"] / board["sparseItemPoolSize"],
-                            1,
-                        )
-                    )
+                self.assertGreaterEqual(board["extensionBonus"], 0)
+                self.assertLessEqual(
+                    board["extensionBonus"],
+                    profile["bonusCap"] + 1e-6,
                 )
+                self.assertEqual(board["coreTests"], board["coreItemPoolSize"])
+                extension_coverages.append(board["extensionCoverageScore"])
             self.assertAlmostEqual(
-                profile["evidenceCoverageScore"],
-                sum(board_coverages) / len(board_coverages),
+                profile["extensionCoverageScore"],
+                sum(extension_coverages) / len(extension_coverages),
                 delta=0.0006,
+            )
+            self.assertEqual(
+                profile["evidenceCoverageScore"],
+                profile["extensionCoverageScore"],
             )
 
         selected_slugs = {model["slug"] for model in ranked}
+        by_slug = {model["slug"]: model for model in payload["models"]}
+        self.assertIn("rankingProfile", by_slug["gpt-5-5"])
+        self.assertNotIn("rankingProfile", by_slug["gpt-5-5-high"])
         for model in payload["models"]:
             if model["slug"] not in selected_slugs:
                 self.assertNotIn("rankingProfile", model)
+
+    def test_generated_site_exposes_independent_exact_config_profiles(self):
+        payload = json.loads(DEFAULT_OUTPUT_JSON.read_text(encoding="utf-8"))
+        exact_ranked = [
+            model
+            for model in payload["models"]
+            if model.get("exactRankingProfile")
+        ]
+        exact_ranked.sort(
+            key=lambda model: model["exactRankingProfile"]["publicationRank"]
+        )
+
+        self.assertEqual(
+            len(exact_ranked),
+            payload["leaderboard"]["exactPopulationSize"],
+        )
+        self.assertGreater(
+            len(exact_ranked),
+            payload["leaderboard"]["populationSize"],
+        )
+        self.assertEqual(
+            [
+                model["exactRankingProfile"]["publicationRank"]
+                for model in exact_ranked
+            ],
+            list(range(1, len(exact_ranked) + 1)),
+        )
+        self.assertEqual(
+            [model["exactRankingProfile"]["displayScore"] for model in exact_ranked],
+            sorted(
+                (
+                    model["exactRankingProfile"]["displayScore"]
+                    for model in exact_ranked
+                ),
+                reverse=True,
+            ),
+        )
+        self.assertTrue(
+            all(
+                model["exactRankingProfile"]["rankingGrain"] == "exact_config"
+                for model in exact_ranked
+            )
+        )
+
+        by_slug = {model["slug"]: model for model in payload["models"]}
+        expected_gpt55 = {
+            "gpt-5-5",
+            "gpt-5-5-high",
+            "gpt-5-5-medium",
+            "gpt-5-5-low",
+            "gpt-5-5-non-reasoning",
+        }
+
+        self.assertTrue(
+            all(by_slug[slug].get("exactRankingProfile") for slug in expected_gpt55)
+        )
+        self.assertNotIn(
+            "exactRankingProfile",
+            by_slug["gpt-5-5-instant-05-26"],
+        )
+        self.assertLess(
+            by_slug["gpt-5-5"]["exactRankingProfile"]["publicationRank"],
+            by_slug["gpt-5-5-high"]["exactRankingProfile"]["publicationRank"],
+        )
+        self.assertGreater(
+            by_slug["gpt-5-5"]["exactRankingProfile"]["displayScore"],
+            by_slug["gpt-5-5-high"]["exactRankingProfile"]["displayScore"],
+        )
+        self.assertNotEqual(
+            payload["leaderboard"]["boardItemPoolSizesByMethod"],
+            payload["leaderboard"]["exactBoardItemPoolSizesByMethod"],
+        )
+        self.assertEqual(
+            {row["slug"] for row in payload["leaderboard"]["exactRows"]},
+            {model["slug"] for model in exact_ranked},
+        )
+
+    def test_primary_contract_is_score_ordered_without_named_rank_override(self):
+        root = Path(__file__).resolve().parents[1]
+        readme = (root / "README.md").read_text(encoding="utf-8")
+        methodology = (root / "docs" / "methodology.html").read_text(
+            encoding="utf-8"
+        )
+        full_rank = (root / "docs" / "full-rank.html").read_text(
+            encoding="utf-8"
+        )
+        analysis_readme = (
+            root / "analysis" / "irt_leaderboard_exploration" / "README.md"
+        ).read_text(encoding="utf-8")
+        current_analysis = analysis_readme.split("## 历史五套实验", 1)[0]
+
+        self.assertEqual(PRIMARY_RANKING_METHOD, "aindex_scheme18")
+        for text in (readme, methodology, current_analysis):
+            self.assertNotIn("发布层", text)
+            self.assertNotIn("reserves rank 1", text)
+        self.assertIn("Scheme 18", methodology)
+        self.assertIn("positive residual", methodology)
+        self.assertIn("dynamic cap", methodology.lower())
+        self.assertIn("0–100", methodology)
+        self.assertIn("sensitivity", methodology.lower())
+        self.assertNotIn("Claude Fable 5", methodology)
+        self.assertNotIn("GPT-5.6 Sol", methodology)
+
+    def test_composite_score_sort_ignores_legacy_named_publication_order(self):
+        consensus_rows = [
+            {
+                "slug": "claude-fable-5",
+                "variant_group": "fable",
+                "rank": 1,
+                "score": 100,
+                "publication_order_rule": "legacy-anchor",
+                "required_order_target": "fable",
+                "rank_change_due_to_required_order": 8,
+            },
+            {
+                "slug": "gpt-5-6-sol",
+                "variant_group": "sol",
+                "rank": 2,
+                "score": 99,
+            },
+            {
+                "slug": "claude-opus-5",
+                "variant_group": "opus",
+                "rank": 3,
+                "score": 98,
+            },
+        ]
+        components = {
+            "twopl": {
+                "fable": {"score": 90.0},
+                "sol": {"score": 92.5},
+                "opus": {"score": 96.0},
+            },
+            "sparseRasch": {
+                "fable": {"score": 100.0},
+                "sol": {"score": 90.0},
+                "opus": {"score": 95.0},
+            },
+        }
+
+        ranked = _rank_consensus_rows_by_composite_score(
+            consensus_rows,
+            components,
+            identity_field="variant_group",
+        )
+
+        self.assertEqual(
+            [row["slug"] for row in ranked],
+            ["claude-opus-5", "claude-fable-5", "gpt-5-6-sol"],
+        )
+        self.assertEqual([row["rank"] for row in ranked], [1, 2, 3])
+        self.assertEqual([row["score"] for row in ranked], [95.8, 92.0, 92.0])
+        self.assertTrue(
+            all(
+                row["rank_tie_break_policy"]
+                == "higher_unrounded_score_then_stable_id"
+                for row in ranked
+            )
+        )
+        for row in ranked:
+            self.assertNotIn("publication_order_rule", row)
+            self.assertNotIn("required_order_target", row)
+            self.assertNotIn("rank_change_due_to_required_order", row)
 
     def test_grok45_official_scores_attach_to_high_variant(self):
         payload = build_site_payload(
@@ -379,21 +572,38 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["label"], "AInsights Index")
         self.assertEqual(
             payload["presets"]["zhihu-adjusted"]["calculation"],
-            "weighted-rank-mean",
+            "geometric-core-positive-residual-logsumexp",
         )
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["normalization"], "none")
-        self.assertEqual(payload["presets"]["zhihu-adjusted"]["missingPolicy"], "eligibility-gate")
         self.assertEqual(
-            payload["presets"]["zhihu-adjusted"]["componentMethods"],
-            ["twopl_equal_board", "rasch_sparse_item_sensitivity"],
+            payload["presets"]["zhihu-adjusted"]["missingPolicy"],
+            "core-required-extension-absent",
         )
         self.assertEqual(
-            payload["presets"]["zhihu-adjusted"]["componentWeights"],
-            {
-                "twopl_equal_board": 0.70,
-                "rasch_sparse_item_sensitivity": 0.30,
-            },
+            payload["presets"]["zhihu-adjusted"]["candidateId"],
+            "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
         )
+        self.assertNotIn("componentMethods", payload["presets"]["zhihu-adjusted"])
+        self.assertNotIn("componentWeights", payload["presets"]["zhihu-adjusted"])
+        metrics_by_key = {metric["key"]: metric for metric in payload["metrics"]}
+        self.assertEqual(metrics_by_key["SciCode"]["aindexRole"], "core")
+        self.assertEqual(
+            metrics_by_key["Terminal-Bench v2.1"]["aindexRole"],
+            "extension",
+        )
+        self.assertEqual(metrics_by_key["GDPval-AA v2"]["aindexRole"], "excluded")
+        for field in (
+            "aindexBoards",
+            "benchmarkController",
+            "resultOperator",
+            "resultProtocol",
+            "scoreProvenance",
+            "versionPin",
+            "onlyAdd",
+            "scoringReason",
+            "protocolStatus",
+        ):
+            self.assertIn(field, metrics_by_key["Terminal-Bench v2.1"])
         self.assertNotIn("groups", payload["presets"]["zhihu-adjusted"])
         self.assertNotIn("weights", payload["presets"]["zhihu-adjusted"])
         self.assertNotIn("displayScale", payload["presets"]["zhihu-adjusted"])
