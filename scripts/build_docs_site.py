@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import csv
 import json
 import math
@@ -24,6 +25,7 @@ DEFAULT_INPUT_CSV = PROJECT_ROOT / "ArtificialAnalysis" / RAW_SCORES_FILENAME
 DEFAULT_OUTPUT_JSON = PROJECT_ROOT / "docs" / "data" / "models.json"
 DEFAULT_OUTPUT_JS = PROJECT_ROOT / "docs" / "data" / "models.js"
 DEFAULT_EXTERNAL_BENCHMARKS_JSON = PROJECT_ROOT / "data" / "benchmarks" / "benchmark_scores.json"
+DEFAULT_PROVIDER_PRICING_JSON = PROJECT_ROOT / "data" / "pricing" / "provider_pricing.json"
 LOCAL_LOGO_DIR = "assets/logos"
 DEFAULT_RANKING_OUTPUT_DIR = (
     PROJECT_ROOT / "analysis" / "irt_leaderboard_exploration" / "outputs"
@@ -513,6 +515,143 @@ def load_external_benchmarks(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def load_provider_pricing(path: Path | None) -> dict[str, Any]:
+    """Load the separately maintained provider/plan pricing catalogue."""
+
+    if path is None or not path.exists():
+        return {
+            "version": 1,
+            "asOf": None,
+            "currency": "USD",
+            "workloadScenario": {},
+            "providers": [],
+            "plans": [],
+            "offers": [],
+            "sources": [],
+        }
+    catalogue = json.loads(path.read_text(encoding="utf-8"))
+    supplement_names = list(catalogue.pop("supplements", []))
+    for supplement_name in supplement_names:
+        supplement_path = (path.parent / str(supplement_name)).resolve()
+        if supplement_path.parent != path.parent.resolve():
+            raise ValueError(
+                f"Provider pricing supplement must stay in {path.parent}: "
+                f"{supplement_name}"
+            )
+        if not supplement_path.exists():
+            raise FileNotFoundError(
+                f"Provider pricing supplement does not exist: {supplement_path}"
+            )
+        supplement = json.loads(supplement_path.read_text(encoding="utf-8"))
+        catalogue = merge_provider_pricing_catalogue(catalogue, supplement)
+    return split_provider_pricing_offers_by_model(catalogue)
+
+
+def split_provider_pricing_offers_by_model(
+    catalogue: dict[str, Any],
+) -> dict[str, Any]:
+    """Normalize every pricing offer to the one-offer/one-model grain.
+
+    Some dated supplements intentionally use multi-model templates to keep the
+    researched source fragment reviewable.  The site catalogue must not retain
+    that mixed grain: model-detail filtering and cheapest-price comparisons
+    both require each loaded row to identify exactly one model.
+    """
+
+    normalized = dict(catalogue)
+    offers: list[dict[str, Any]] = []
+    offer_ids: set[str] = set()
+    for offer in catalogue.get("offers", []):
+        model_slugs = list(dict.fromkeys(offer.get("modelSlugs", [])))
+        rows = model_slugs or [None]
+        for index, model_slug in enumerate(rows):
+            row = copy.deepcopy(offer)
+            if model_slug is not None:
+                row["modelSlugs"] = [model_slug]
+            if index:
+                safe_slug = NON_WORD_RE.sub(
+                    "-", str(model_slug or "").lower()
+                ).strip("-")
+                if not safe_slug:
+                    raise ValueError(
+                        f"Cannot derive a pricing offer id from model slug: {model_slug!r}"
+                    )
+                row["id"] = f"{offer['id']}-{safe_slug}"
+            row_id = row.get("id")
+            if not row_id:
+                raise ValueError("Every provider pricing offer must have an id")
+            if row_id in offer_ids:
+                raise ValueError(
+                    f"Duplicate provider pricing offer id after model split: {row_id}"
+                )
+            offer_ids.add(row_id)
+            offers.append(row)
+    normalized["offers"] = offers
+    return normalized
+
+
+def merge_provider_pricing_catalogue(
+    catalogue: dict[str, Any],
+    supplement: dict[str, Any],
+) -> dict[str, Any]:
+    """Merge a dated provider-pricing supplement by stable row IDs.
+
+    A later supplement replaces rows with the same ID and can explicitly remove
+    obsolete rows.  This keeps the core catalogue readable while allowing each
+    independently researched provider batch to remain source-reviewable.
+    """
+
+    merged = dict(catalogue)
+    removals = supplement.get("remove", {})
+    replace_providers = set(supplement.get("replaceProviders", []))
+    incoming_provider_ids = {
+        row.get("id") for row in supplement.get("providers", [])
+    }
+    if not replace_providers <= incoming_provider_ids:
+        missing = sorted(replace_providers - incoming_provider_ids)
+        raise ValueError(
+            "replaceProviders entries require a replacement provider row: "
+            f"{missing}"
+        )
+    keyed_sections = ("providers", "plans", "offers", "sources")
+    for section in keyed_sections:
+        remove_ids = set(removals.get(section, []))
+        incoming = list(supplement.get(section, []))
+        incoming_ids = [row.get("id") for row in incoming]
+        if any(not row_id for row_id in incoming_ids):
+            raise ValueError(f"Every {section} supplement row must have an id")
+        if len(incoming_ids) != len(set(incoming_ids)):
+            raise ValueError(f"Duplicate {section} ids in provider pricing supplement")
+
+        replacement_by_id = {row["id"]: row for row in incoming}
+        rows: list[dict[str, Any]] = []
+        seen: set[str] = set()
+        for row in merged.get(section, []):
+            row_id = row.get("id")
+            if row_id in remove_ids:
+                continue
+            if section in {"plans", "offers"} and row.get("providerId") in replace_providers:
+                continue
+            rows.append(replacement_by_id.get(row_id, row))
+            seen.add(row_id)
+        rows.extend(row for row in incoming if row["id"] not in seen)
+        merged[section] = rows
+
+    supplement_as_of = supplement.get("asOf") or supplement.get("checkedAt")
+    if supplement_as_of:
+        merged["asOf"] = max(str(merged.get("asOf") or ""), str(supplement_as_of))
+    if supplement.get("exchangeRates"):
+        merged["exchangeRates"] = {
+            **merged.get("exchangeRates", {}),
+            **supplement["exchangeRates"],
+        }
+    for key in supplement.get("removeMetadata", []):
+        merged.pop(key, None)
+    for key, value in supplement.get("metadata", {}).items():
+        merged[key] = value
+    return merged
+
+
 def external_metric_key(benchmark_id: str) -> str:
     return f"benchmark:{benchmark_id}"
 
@@ -602,9 +741,12 @@ def metric_payload(
 def build_site_payload(
     rows: Iterable[dict[str, Any]],
     external_benchmark_data: dict[str, Any] | None = None,
+    provider_pricing_data: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     source_rows = list(rows)
     external_benchmark_data = external_benchmark_data or load_external_benchmarks(DEFAULT_EXTERNAL_BENCHMARKS_JSON)
+    if provider_pricing_data is None:
+        provider_pricing_data = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
     external_benchmarks = external_benchmark_data.get("benchmarks", [])
     metric_keys = [spec.column for spec in SCORE_SPECS] + [
         external_metric_key(benchmark["id"]) for benchmark in external_benchmarks
@@ -663,6 +805,7 @@ def build_site_payload(
         },
         "externalSources": external_sources_payload(external_benchmark_data),
         "externalBenchmarks": external_benchmarks,
+        "providerPricing": provider_pricing_data,
         "models": models,
         "summary": {
             "modelRows": len(models),
@@ -1091,6 +1234,7 @@ def write_site_payload(
     output_js: Path | None = None,
     external_benchmarks_json: Path | None = DEFAULT_EXTERNAL_BENCHMARKS_JSON,
     *,
+    provider_pricing_json: Path | None = DEFAULT_PROVIDER_PRICING_JSON,
     include_irt_ranking: bool | None = None,
     write_analysis_outputs: bool | None = None,
 ) -> dict[str, Any]:
@@ -1099,7 +1243,8 @@ def write_site_payload(
         if external_benchmarks_json is not None
         else {"version": 1, "sources": [], "benchmarks": [], "results": []}
     )
-    payload = build_site_payload(read_csv_rows(input_csv), external_benchmarks)
+    provider_pricing = load_provider_pricing(provider_pricing_json)
+    payload = build_site_payload(read_csv_rows(input_csv), external_benchmarks, provider_pricing)
     is_default_output = output_json.resolve() == DEFAULT_OUTPUT_JSON.resolve()
     should_attach_ranking = (
         is_default_output if include_irt_ranking is None else include_irt_ranking
@@ -1146,6 +1291,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="Benchmark scores JSON to merge into the site payload.",
     )
     parser.add_argument(
+        "--provider-pricing-json",
+        default=str(DEFAULT_PROVIDER_PRICING_JSON),
+        help="Provider and plan pricing JSON to merge into the site payload.",
+    )
+    parser.add_argument(
         "--skip-irt-ranking",
         action="store_true",
         help="Build the raw site payload without attaching the precomputed IRT ranking.",
@@ -1167,6 +1317,9 @@ def main(argv: list[str] | None = None) -> int:
         output_json,
         output_js,
         Path(args.external_benchmarks_json) if args.external_benchmarks_json else None,
+        provider_pricing_json=(
+            Path(args.provider_pricing_json) if args.provider_pricing_json else None
+        ),
         include_irt_ranking=not args.skip_irt_ranking,
         write_analysis_outputs=not args.skip_analysis_outputs,
     )

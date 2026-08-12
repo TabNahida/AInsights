@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "mergeTarget": "data/pricing/provider_pricing.json",
+  "checkedAt": "2026-08-11",
+  "researchScope": "Current MiniMax China Token Plan subscription",
+  "comparisonPolicy": {
+    "rollingWindowsWithoutFixedTokens": "non-comparable",
+    "notes": "Current plans publish rolling-window and Agent allowances, not the retired fixed 1.7B/5.1B/12.5B monthly token quotas."
+  },
+  "replaceProviders": [
+    "minimax"
+  ],
+  "providers": [
+    {
+      "id": "minimax",
+      "name": "MiniMax Token Plan",
+      "category": "token-plan",
+      "url": "https://platform.minimaxi.com/docs/guides/pricing-token-plan",
+      "pricingUrl": "https://platform.minimaxi.com/docs/guides/pricing-token-plan",
+      "region": "CN",
+      "sourceIds": [
+        "minimax-cn-token-plan-official-2026-08-11"
+      ]
+    }
+  ],
+  "plans": [
+    {
+      "id": "minimax-plus",
+      "providerId": "minimax",
+      "name": "Plus",
+      "billingType": "subscription",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceLocal": 49,
+      "monthlyPriceUsd": null,
+      "comparisonClass": "non-comparable",
+      "quotaLabel": "Rolling-window and Agent allowances; no fixed token quota is published",
+      "sourceIds": [
+        "minimax-cn-token-plan-official-2026-08-11"
+      ]
+    },
+    {
+      "id": "minimax-max",
+      "providerId": "minimax",
+      "name": "Max",
+      "billingType": "subscription",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceLocal": 119,
+      "monthlyPriceUsd": null,
+      "comparisonClass": "non-comparable",
+      "quotaLabel": "Rolling-window and Agent allowances; no fixed token quota is published",
+      "sourceIds": [
+        "minimax-cn-token-plan-official-2026-08-11"
+      ]
+    },
+    {
+      "id": "minimax-ultra",
+      "providerId": "minimax",
+      "name": "Ultra",
+      "billingType": "subscription",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceLocal": 469,
+      "monthlyPriceUsd": null,
+      "comparisonClass": "non-comparable",
+      "quotaLabel": "Rolling-window and Agent allowances; no fixed token quota is published",
+      "sourceIds": [
+        "minimax-cn-token-plan-official-2026-08-11"
+      ]
+    }
+  ],
+  "offers": [
+    {
+      "id": "minimax-plus-m3-current",
+      "providerId": "minimax",
+      "planId": "minimax-plus",
+      "modelSlugs": ["minimax-m3"],
+      "providerModelId": "MiniMax-M3",
+      "pricingKind": "non-comparable-subscription",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "notes": "The current plan does not publish a fixed per-model token quota.",
+      "sourceIds": ["minimax-cn-token-plan-official-2026-08-11"]
+    },
+    {
+      "id": "minimax-plus-m2-7-current",
+      "providerId": "minimax",
+      "planId": "minimax-plus",
+      "modelSlugs": ["minimax-m2-7"],
+      "providerModelId": "MiniMax-M2.7",
+      "pricingKind": "non-comparable-subscription",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "notes": "The current plan does not publish a fixed per-model token quota.",
+      "sourceIds": ["minimax-cn-token-plan-official-2026-08-11"]
+    },
+    {
+      "id": "minimax-plus-m2-5-current",
+      "providerId": "minimax",
+      "planId": "minimax-plus",
+      "modelSlugs": ["minimax-m2-5"],
+      "providerModelId": "MiniMax-M2.5",
+      "pricingKind": "non-comparable-subscription",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "notes": "The current plan does not publish a fixed per-model token quota.",
+      "sourceIds": ["minimax-cn-token-plan-official-2026-08-11"]
+    },
+    {
+      "id": "minimax-max-m3-current",
+      "providerId": "minimax",
+      "planId": "minimax-max",
+      "modelSlugs": ["minimax-m3"],
+      "providerModelId": "MiniMax-M3",
+      "pricingKind": "non-comparable-subscription",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "notes": "The current plan does not publish a fixed per-model token quota.",
+      "sourceIds": ["minimax-cn-token-plan-official-2026-08-11"]
+    },
+    {
+      "id": "minimax-max-m2-7-current",
+      "providerId": "minimax",
+      "planId": "minimax-max",
+      "modelSlugs": ["minimax-m2-7"],
+      "providerModelId": "MiniMax-M2.7",
+      "pricingKind": "non-comparable-subscription",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "notes": "The current plan does not publish a fixed per-model token quota.",
+      "sourceIds": ["minimax-cn-token-plan-official-2026-08-11"]
+    },
+    {
+      "id": "minimax-max-m2-5-current",
+      "providerId": "minimax",
+      "planId": "minimax-max",
+      "modelSlugs": ["minimax-m2-5"],
+      "providerModelId": "MiniMax-M2.5",
+      "pricingKind": "non-comparable-subscription",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "notes": "The current plan does not publish a fixed per-model token quota.",
+      "sourceIds": ["minimax-cn-token-plan-official-2026-08-11"]
+    },
+    {
+      "id": "minimax-ultra-m3-current",
+      "providerId": "minimax",
+      "planId": "minimax-ultra",
+      "modelSlugs": ["minimax-m3"],
+      "providerModelId": "MiniMax-M3",
+      "pricingKind": "non-comparable-subscription",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "notes": "The current plan does not publish a fixed per-model token quota.",
+      "sourceIds": ["minimax-cn-token-plan-official-2026-08-11"]
+    },
+    {
+      "id": "minimax-ultra-m2-7-current",
+      "providerId": "minimax",
+      "planId": "minimax-ultra",
+      "modelSlugs": ["minimax-m2-7"],
+      "providerModelId": "MiniMax-M2.7",
+      "pricingKind": "non-comparable-subscription",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "notes": "The current plan does not publish a fixed per-model token quota.",
+      "sourceIds": ["minimax-cn-token-plan-official-2026-08-11"]
+    },
+    {
+      "id": "minimax-ultra-m2-5-current",
+      "providerId": "minimax",
+      "planId": "minimax-ultra",
+      "modelSlugs": ["minimax-m2-5"],
+      "providerModelId": "MiniMax-M2.5",
+      "pricingKind": "non-comparable-subscription",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "notes": "The current plan does not publish a fixed per-model token quota.",
+      "sourceIds": ["minimax-cn-token-plan-official-2026-08-11"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "minimax-cn-token-plan-official-2026-08-11",
+      "title": "MiniMax Token Plan pricing",
+      "publisher": "MiniMax",
+      "url": "https://platform.minimaxi.com/docs/guides/pricing-token-plan",
+      "kind": "official-pricing",
+      "asOf": "2026-08-11",
+      "accessedAt": "2026-08-11",
+      "notes": "Current China plans: Plus ¥49/month, Max ¥119/month, Ultra ¥469/month. The page publishes rolling-window/Agent allowances rather than fixed monthly token quotas."
+    }
+  ]
+}

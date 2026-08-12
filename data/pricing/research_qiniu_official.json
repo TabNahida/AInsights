@@ -1,0 +1,735 @@
+{
+  "schemaVersion": 1,
+  "mergeTarget": "data/pricing/provider_pricing.json",
+  "checkedAt": "2026-08-12",
+  "asOf": "2026-08-12",
+  "researchScope": "Qiniu AI Inference official current model-square PAYG and publicly advertised domestic fusion Token packages",
+  "comparisonPolicy": {
+    "paygRates": "official model-square CNY and USD per-thousand-token metadata converted to per-million-token rates",
+    "contextTiers": "all published input-range pricing rules retained as pricingOverrides",
+    "batchRates": "emitted only when the official row publishes positive batch-input and batch-output prices",
+    "retiredOrMissingPrices": "excluded; zero sentinels, null prices, and retired rows never emit offers",
+    "fusionTokenPackages": "recorded as provider metadata only because Qiniu states that the exact supported-model scope is account/resource-pack specific; no unsupported or N/A model offer is emitted"
+  },
+  "replaceProviders": [
+    "qiniu-ai"
+  ],
+  "providers": [
+    {
+      "id": "qiniu-ai",
+      "name": "七牛云 AI 大模型推理",
+      "category": "aggregator",
+      "url": "https://www.qiniu.com/ai/models",
+      "pricingUrl": "https://www.qiniu.com/ai/models",
+      "region": "CN",
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12",
+        "qiniu-ai-fusion-package-rules-official-2026-08-12",
+        "qiniu-ai-fusion-package-product-official-2026-08-12"
+      ],
+      "unverifiedPerModelTokenPackages": [
+        {
+          "name": "1 亿国产模型融合资源包",
+          "includedBaselineTokens": 100000000,
+          "prepaidPriceLocal": 300,
+          "listPrepaidPriceLocal": 400,
+          "validityMonths": 6,
+          "promotionLabel": "限时折扣"
+        },
+        {
+          "name": "5 亿国产模型融合资源包",
+          "includedBaselineTokens": 500000000,
+          "prepaidPriceLocal": 1400,
+          "listPrepaidPriceLocal": 2000,
+          "validityMonths": 6,
+          "promotionLabel": "限时折扣"
+        },
+        {
+          "name": "10 亿国产模型融合资源包",
+          "includedBaselineTokens": 1000000000,
+          "prepaidPriceLocal": 2800,
+          "listPrepaidPriceLocal": 4000,
+          "validityMonths": 6,
+          "promotionLabel": "限时折扣"
+        }
+      ],
+      "notes": "The public model square exposes exact live per-component prices. Fusion-package cards and deduction formulas are recorded, but their per-model support lists are account-specific, so they intentionally emit no model offers."
+    }
+  ],
+  "plans": [
+    {
+      "id": "qiniu-ai-payg",
+      "providerId": "qiniu-ai",
+      "name": "Online inference PAYG",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "CNY",
+      "comparisonClass": "token-comparable",
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "qiniu-ai-batch-payg",
+      "providerId": "qiniu-ai",
+      "name": "Batch inference PAYG",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "CNY",
+      "comparisonClass": "token-comparable",
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Only exact current mapped models with numeric batch prices emit offers."
+    }
+  ],
+  "offers": [
+    {
+      "id": "qiniu-ai-payg-glm-5-2",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "z-ai/glm-5.2",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 8,
+      "inputPerMillionTokensUsd": 1.15942,
+      "cacheReadPerMillionTokensLocal": 2,
+      "cacheReadPerMillionTokensUsd": 0.28986,
+      "outputPerMillionTokensLocal": 28,
+      "outputPerMillionTokensUsd": 4.05797,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "qiniu-ai-payg-minimax-m3",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "minimax-m3"
+      ],
+      "providerModelId": "minimax/minimax-m3",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.1,
+      "inputPerMillionTokensUsd": 0.30435,
+      "cacheReadPerMillionTokensLocal": 0.42,
+      "cacheReadPerMillionTokensUsd": 0.06087,
+      "outputPerMillionTokensLocal": 8.4,
+      "outputPerMillionTokensUsd": 1.21739,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "reasoningMode": "enabled",
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 512000,
+          "inputPerMillionTokensLocal": 4.2,
+          "inputPerMillionTokensUsd": 0.6087,
+          "cacheReadPerMillionTokensLocal": 0.84,
+          "cacheReadPerMillionTokensUsd": 0.12174,
+          "outputPerMillionTokensLocal": 16.8,
+          "outputPerMillionTokensUsd": 2.43478,
+          "notes": "Official input-length tier from 512,000 prompt tokens."
+        }
+      ]
+    },
+    {
+      "id": "qiniu-ai-payg-kimi-k2-7-code",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "kimi-k2-7-code"
+      ],
+      "providerModelId": "moonshotai/kimi-k2.7-code",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6.5,
+      "inputPerMillionTokensUsd": 0.94203,
+      "cacheReadPerMillionTokensLocal": 1.3,
+      "cacheReadPerMillionTokensUsd": 0.18841,
+      "outputPerMillionTokensLocal": 27,
+      "outputPerMillionTokensUsd": 3.91304,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "qiniu-ai-payg-kimi-k2-6",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "kimi-k2-6"
+      ],
+      "providerModelId": "moonshotai/kimi-k2.6",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6.5,
+      "inputPerMillionTokensUsd": 0.94203,
+      "outputPerMillionTokensLocal": 27,
+      "outputPerMillionTokensUsd": 3.91304,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "cacheReadSupported": false,
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "qiniu-ai-payg-kimi-k2-6-non-reasoning",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "kimi-k2-6-non-reasoning"
+      ],
+      "providerModelId": "moonshotai/kimi-k2.6",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6.5,
+      "inputPerMillionTokensUsd": 0.94203,
+      "outputPerMillionTokensLocal": 27,
+      "outputPerMillionTokensUsd": 3.91304,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "cacheReadSupported": false,
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "qiniu-ai-payg-glm-5",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "z-ai/glm-5",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 4,
+      "inputPerMillionTokensUsd": 0.57971,
+      "outputPerMillionTokensLocal": 18,
+      "outputPerMillionTokensUsd": 2.6087,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "cacheReadSupported": false,
+      "reasoningMode": "enabled",
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 6,
+          "inputPerMillionTokensUsd": 0.86957,
+          "outputPerMillionTokensLocal": 22,
+          "outputPerMillionTokensUsd": 3.18841,
+          "notes": "Official input-length tier from 32,000 prompt tokens."
+        }
+      ]
+    },
+    {
+      "id": "qiniu-ai-payg-minimax-m2-5",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "minimax-m2-5"
+      ],
+      "providerModelId": "minimax/minimax-m2.5",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.1,
+      "inputPerMillionTokensUsd": 0.30435,
+      "outputPerMillionTokensLocal": 8.4,
+      "outputPerMillionTokensUsd": 1.21739,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "cacheReadSupported": false,
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "qiniu-ai-payg-deepseek-v4-pro",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek/deepseek-v4-pro",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 12,
+      "inputPerMillionTokensUsd": 1.73913,
+      "outputPerMillionTokensLocal": 24,
+      "outputPerMillionTokensUsd": 3.47826,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "cacheReadSupported": false,
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "qiniu-ai-payg-deepseek-v4-flash",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek/deepseek-v4-flash",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "inputPerMillionTokensUsd": 0.14493,
+      "outputPerMillionTokensLocal": 2,
+      "outputPerMillionTokensUsd": 0.28986,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "cacheReadSupported": false,
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "qiniu-ai-payg-kimi-k2-5",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "moonshotai/kimi-k2.5",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 4,
+      "inputPerMillionTokensUsd": 0.57971,
+      "outputPerMillionTokensLocal": 21,
+      "outputPerMillionTokensUsd": 3.04348,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "cacheReadSupported": false,
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "qiniu-ai-payg-kimi-k2-5-non-reasoning",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "kimi-k2-5-non-reasoning"
+      ],
+      "providerModelId": "moonshotai/kimi-k2.5",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 4,
+      "inputPerMillionTokensUsd": 0.57971,
+      "outputPerMillionTokensLocal": 21,
+      "outputPerMillionTokensUsd": 3.04348,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "cacheReadSupported": false,
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "qiniu-ai-payg-step-3-7-flash",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "step-3-7-flash"
+      ],
+      "providerModelId": "stepfun/step-3.7-flash",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.35,
+      "inputPerMillionTokensUsd": 0.19565,
+      "cacheReadPerMillionTokensLocal": 0.27,
+      "cacheReadPerMillionTokensUsd": 0.03913,
+      "outputPerMillionTokensLocal": 8.1,
+      "outputPerMillionTokensUsd": 1.17391,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "qiniu-ai-payg-kimi-k3",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "kimi-k3"
+      ],
+      "providerModelId": "moonshotai/kimi-k3",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 20,
+      "inputPerMillionTokensUsd": 2.89855,
+      "cacheReadPerMillionTokensLocal": 2,
+      "cacheReadPerMillionTokensUsd": 0.28986,
+      "outputPerMillionTokensLocal": 100,
+      "outputPerMillionTokensUsd": 14.49275,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "qiniu-ai-payg-qwen3-7-max",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "qwen3-7-max"
+      ],
+      "providerModelId": "qwen/qwen3.7-max",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 12,
+      "inputPerMillionTokensUsd": 1.73913,
+      "cacheReadPerMillionTokensLocal": 2.4,
+      "cacheReadPerMillionTokensUsd": 0.34783,
+      "cacheWritePerMillionTokensLocal": 15,
+      "cacheWritePerMillionTokensUsd": 2.17391,
+      "explicitCacheReadPerMillionTokensLocal": 1.2,
+      "explicitCacheReadPerMillionTokensUsd": 0.17391,
+      "outputPerMillionTokensLocal": 36,
+      "outputPerMillionTokensUsd": 5.21739,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "qiniu-ai-payg-qwen3-6-27b",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "qwen3-6-27b"
+      ],
+      "providerModelId": "qwen/qwen3.6-27b",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.304,
+      "inputPerMillionTokensUsd": 0.33391,
+      "outputPerMillionTokensLocal": 23.04,
+      "outputPerMillionTokensUsd": 3.33913,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "cacheReadSupported": false,
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "qiniu-ai-payg-glm-5-1-non-reasoning",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "glm-5-1-non-reasoning"
+      ],
+      "providerModelId": "z-ai/glm-5.1",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6,
+      "inputPerMillionTokensUsd": 0.86957,
+      "outputPerMillionTokensLocal": 24,
+      "outputPerMillionTokensUsd": 3.47826,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "cacheReadSupported": false,
+      "reasoningMode": "disabled",
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 8,
+          "inputPerMillionTokensUsd": 1.15942,
+          "outputPerMillionTokensLocal": 28,
+          "outputPerMillionTokensUsd": 4.05797,
+          "notes": "Official input-length tier from 32,000 prompt tokens."
+        }
+      ]
+    },
+    {
+      "id": "qiniu-ai-payg-hy3-preview",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "hy3-preview"
+      ],
+      "providerModelId": "tencent/hy3-preview",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.2,
+      "inputPerMillionTokensUsd": 0.17391,
+      "cacheReadPerMillionTokensLocal": 0.4,
+      "cacheReadPerMillionTokensUsd": 0.05797,
+      "outputPerMillionTokensLocal": 4,
+      "outputPerMillionTokensUsd": 0.57971,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "reasoningMode": "enabled",
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 16000,
+          "inputPerMillionTokensLocal": 1.6,
+          "inputPerMillionTokensUsd": 0.23188,
+          "cacheReadPerMillionTokensLocal": 0.6,
+          "cacheReadPerMillionTokensUsd": 0.08696,
+          "outputPerMillionTokensLocal": 6.4,
+          "outputPerMillionTokensUsd": 0.92754,
+          "notes": "Official input-length tier from 16,000 prompt tokens."
+        },
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 2,
+          "inputPerMillionTokensUsd": 0.28986,
+          "cacheReadPerMillionTokensLocal": 0.8,
+          "cacheReadPerMillionTokensUsd": 0.11594,
+          "outputPerMillionTokensLocal": 8,
+          "outputPerMillionTokensUsd": 1.15942,
+          "notes": "Official input-length tier from 32,000 prompt tokens."
+        }
+      ]
+    },
+    {
+      "id": "qiniu-ai-payg-qwen3-6-plus",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "qwen3-6-plus"
+      ],
+      "providerModelId": "qwen/qwen3.6-plus",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2,
+      "inputPerMillionTokensUsd": 0.28986,
+      "cacheReadPerMillionTokensLocal": 0.4,
+      "cacheReadPerMillionTokensUsd": 0.05797,
+      "cacheWritePerMillionTokensLocal": 2.5,
+      "cacheWritePerMillionTokensUsd": 0.36232,
+      "explicitCacheReadPerMillionTokensLocal": 0.2,
+      "explicitCacheReadPerMillionTokensUsd": 0.02899,
+      "outputPerMillionTokensLocal": 12,
+      "outputPerMillionTokensUsd": 1.73913,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "reasoningMode": "enabled",
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 256000,
+          "inputPerMillionTokensLocal": 8,
+          "inputPerMillionTokensUsd": 1.15942,
+          "cacheReadPerMillionTokensLocal": 1.6,
+          "cacheReadPerMillionTokensUsd": 0.23188,
+          "cacheWritePerMillionTokensLocal": 10,
+          "cacheWritePerMillionTokensUsd": 1.44928,
+          "explicitCacheReadPerMillionTokensLocal": 0.8,
+          "explicitCacheReadPerMillionTokensUsd": 0.11594,
+          "outputPerMillionTokensLocal": 48,
+          "outputPerMillionTokensUsd": 6.95652,
+          "notes": "Official input-length tier from 256,000 prompt tokens."
+        }
+      ]
+    },
+    {
+      "id": "qiniu-ai-payg-deepseek-v3",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "deepseek-v3"
+      ],
+      "providerModelId": "deepseek-v3",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2,
+      "inputPerMillionTokensUsd": 0.28986,
+      "outputPerMillionTokensLocal": 8,
+      "outputPerMillionTokensUsd": 1.15942,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "cacheReadSupported": false,
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "qiniu-ai-payg-minimax-m2-7",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "minimax-m2-7"
+      ],
+      "providerModelId": "minimax/minimax-m2.7",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.1,
+      "inputPerMillionTokensUsd": 0.30435,
+      "outputPerMillionTokensLocal": 8.4,
+      "outputPerMillionTokensUsd": 1.21739,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "cacheReadSupported": false,
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "qiniu-ai-payg-qwen3-5-397b-a17b-non-reasoning",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-payg",
+      "modelSlugs": [
+        "qwen3-5-397b-a17b-non-reasoning"
+      ],
+      "providerModelId": "qwen3.5-397b-a17b",
+      "mappingMethod": "official-id-or-alias-plus-capability-audit",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.2,
+      "inputPerMillionTokensUsd": 0.17391,
+      "outputPerMillionTokensLocal": 7.2,
+      "outputPerMillionTokensUsd": 1.04348,
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Current official Qiniu model-square token price. Retired catalogue rows and zero/missing prices are excluded.",
+      "cacheReadSupported": false,
+      "reasoningMode": "disabled",
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 128000,
+          "inputPerMillionTokensLocal": 3,
+          "inputPerMillionTokensUsd": 0.43478,
+          "outputPerMillionTokensLocal": 18,
+          "outputPerMillionTokensUsd": 2.6087,
+          "notes": "Official input-length tier from 128,000 prompt tokens."
+        }
+      ]
+    },
+    {
+      "id": "qiniu-ai-batch-deepseek-v3",
+      "providerId": "qiniu-ai",
+      "planId": "qiniu-ai-batch-payg",
+      "modelSlugs": [
+        "deepseek-v3"
+      ],
+      "providerModelId": "deepseek-v3",
+      "mappingMethod": "official-exact-model-id",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "inputPerMillionTokensUsd": 0.14493,
+      "outputPerMillionTokensLocal": 4,
+      "outputPerMillionTokensUsd": 0.57971,
+      "cacheReadSupported": false,
+      "reasoningMode": "disabled",
+      "sourceIds": [
+        "qiniu-ai-model-square-official-2026-08-12",
+        "qiniu-ai-pricing-doc-official-2026-08-12"
+      ],
+      "notes": "Official batch-input and batch-output price embedded on the current DeepSeek-V3 model row."
+    }
+  ],
+  "sources": [
+    {
+      "id": "qiniu-ai-model-square-official-2026-08-12",
+      "title": "七牛云 AI 模型广场",
+      "publisher": "七牛云",
+      "url": "https://www.qiniu.com/ai/models",
+      "kind": "official-pricing",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Official current model catalogue and embedded CNY/USD token-pricing rules, model aliases, reasoning/cache capability flags, context tiers, retirement dates, and three promoted domestic fusion-package cards."
+    },
+    {
+      "id": "qiniu-ai-pricing-doc-official-2026-08-12",
+      "title": "大模型 Token 价格与计费说明",
+      "publisher": "七牛云",
+      "url": "https://developer.qiniu.com/aitokenapi/12898/ai-token-api-pricing",
+      "kind": "official-pricing-doc",
+      "asOf": "2026-04-29",
+      "accessedAt": "2026-08-12",
+      "notes": "Confirms PAYG billing and directs customers to the live official model square for current per-model prices."
+    },
+    {
+      "id": "qiniu-ai-fusion-package-rules-official-2026-08-12",
+      "title": "AI 大模型融合资源包使用规则",
+      "publisher": "七牛云",
+      "url": "https://developer.qiniu.com/aitokenapi/13167/fusion-resource-package",
+      "kind": "official-product-doc",
+      "asOf": "2026-05-09",
+      "accessedAt": "2026-08-12",
+      "notes": "Defines the DeepSeek-V3.1 input baseline at CNY 0.004/K and per-component proportional deduction. It explicitly says exact supported models and ratios depend on the purchased resource-pack detail."
+    },
+    {
+      "id": "qiniu-ai-fusion-package-product-official-2026-08-12",
+      "title": "AI 国产模型系列资源包",
+      "publisher": "七牛云",
+      "url": "https://qmall.qiniu.com/template/MTMx",
+      "kind": "official-product-page",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Official six-month product template; current model-square cards advertise 100M/500M/1B baseline Tokens at CNY 300/1,400/2,800 against CNY 400/2,000/4,000 list prices."
+    }
+  ]
+}

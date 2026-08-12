@@ -1,0 +1,513 @@
+{
+  "schemaVersion": 1,
+  "mergeTarget": "data/pricing/provider_pricing.json",
+  "checkedAt": "2026-08-12",
+  "asOf": "2026-08-05",
+  "researchScope": "Baidu Qianfan first-party online and batch PAYG model API pricing",
+  "comparisonPolicy": {
+    "onlineRates": "official CNY per thousand-token prices converted to CNY per million tokens",
+    "batchRates": "only models with a published numeric batch price emit batch offers",
+    "contextTiers": "published prompt-length thresholds are retained as pricingOverrides",
+    "unavailablePrices": "omitted; no null or zero sentinel prices are emitted",
+    "unsupportedOrUnmappedModels": "no offer emitted"
+  },
+  "replaceProviders": [
+    "baidu-qianfan-api"
+  ],
+  "providers": [
+    {
+      "id": "baidu-qianfan-api",
+      "name": "百度千帆模型服务 API",
+      "category": "first-party-api",
+      "url": "https://cloud.baidu.com/doc/qianfan/s/rmh4stp0j",
+      "pricingUrl": "https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya",
+      "region": "CN",
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official Model Service PAYG catalogue. Offers are emitted only for exact benchmark mappings with positive numeric prices."
+    }
+  ],
+  "plans": [
+    {
+      "id": "baidu-qianfan-api-online-payg",
+      "providerId": "baidu-qianfan-api",
+      "name": "Online inference PAYG",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "CNY",
+      "comparisonClass": "token-comparable",
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "baidu-qianfan-api-batch-payg",
+      "providerId": "baidu-qianfan-api",
+      "name": "Batch inference PAYG",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "CNY",
+      "comparisonClass": "token-comparable",
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Only DeepSeek V3.2 text and thinking variants have current exact benchmark mappings and numeric batch rates in the official table."
+    }
+  ],
+  "offers": [
+    {
+      "id": "baidu-qianfan-api-online-payg-deepseek-v4-pro",
+      "providerId": "baidu-qianfan-api",
+      "planId": "baidu-qianfan-api-online-payg",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 12,
+      "outputPerMillionTokensLocal": 24,
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official online-inference PAYG rate.",
+      "cacheReadPerMillionTokensLocal": 1,
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-api-online-payg-deepseek-v4-pro-non-reasoning",
+      "providerId": "baidu-qianfan-api",
+      "planId": "baidu-qianfan-api-online-payg",
+      "modelSlugs": [
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 12,
+      "outputPerMillionTokensLocal": 24,
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official online-inference PAYG rate.",
+      "cacheReadPerMillionTokensLocal": 1,
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "baidu-qianfan-api-online-payg-deepseek-v4-flash",
+      "providerId": "baidu-qianfan-api",
+      "planId": "baidu-qianfan-api-online-payg",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 2,
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official online-inference PAYG rate.",
+      "cacheReadPerMillionTokensLocal": 0.2,
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-api-online-payg-deepseek-v4-flash-non-reasoning",
+      "providerId": "baidu-qianfan-api",
+      "planId": "baidu-qianfan-api-online-payg",
+      "modelSlugs": [
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 2,
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official online-inference PAYG rate.",
+      "cacheReadPerMillionTokensLocal": 0.2,
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "baidu-qianfan-api-online-payg-glm-5-2",
+      "providerId": "baidu-qianfan-api",
+      "planId": "baidu-qianfan-api-online-payg",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 8,
+      "outputPerMillionTokensLocal": 28,
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official online-inference PAYG rate.",
+      "cacheReadPerMillionTokensLocal": 2,
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-api-online-payg-glm-5-1",
+      "providerId": "baidu-qianfan-api",
+      "planId": "baidu-qianfan-api-online-payg",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6,
+      "outputPerMillionTokensLocal": 24,
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official online-inference PAYG rate.",
+      "cacheReadPerMillionTokensLocal": 1.3,
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 8,
+          "cacheReadPerMillionTokensLocal": 2,
+          "outputPerMillionTokensLocal": 28,
+          "notes": "Published input length above 32K tier."
+        }
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-api-online-payg-glm-5",
+      "providerId": "baidu-qianfan-api",
+      "planId": "baidu-qianfan-api-online-payg",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 4,
+      "outputPerMillionTokensLocal": 18,
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official online-inference PAYG rate.",
+      "cacheReadPerMillionTokensLocal": 1,
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 6,
+          "cacheReadPerMillionTokensLocal": 1.5,
+          "outputPerMillionTokensLocal": 22,
+          "notes": "Published input length above 32K tier."
+        }
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-api-online-payg-kimi-k2-6",
+      "providerId": "baidu-qianfan-api",
+      "planId": "baidu-qianfan-api-online-payg",
+      "modelSlugs": [
+        "kimi-k2-6"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6.5,
+      "outputPerMillionTokensLocal": 27,
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official online-inference PAYG rate.",
+      "cacheReadPerMillionTokensLocal": 1.1,
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-api-online-payg-kimi-k2-6-non-reasoning",
+      "providerId": "baidu-qianfan-api",
+      "planId": "baidu-qianfan-api-online-payg",
+      "modelSlugs": [
+        "kimi-k2-6-non-reasoning"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6.5,
+      "outputPerMillionTokensLocal": 27,
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official online-inference PAYG rate.",
+      "cacheReadPerMillionTokensLocal": 1.1,
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "baidu-qianfan-api-online-payg-qwen3-5-397b-a17b",
+      "providerId": "baidu-qianfan-api",
+      "planId": "baidu-qianfan-api-online-payg",
+      "modelSlugs": [
+        "qwen3-5-397b-a17b"
+      ],
+      "providerModelId": "qwen3.5-397b-a17b",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.2,
+      "outputPerMillionTokensLocal": 7.2,
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official online-inference PAYG rate.",
+      "cacheReadSupported": false,
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 128000,
+          "inputPerMillionTokensLocal": 3,
+          "outputPerMillionTokensLocal": 18,
+          "notes": "Published input length above 128K tier."
+        }
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-api-online-payg-qwen3-5-122b-a10b",
+      "providerId": "baidu-qianfan-api",
+      "planId": "baidu-qianfan-api-online-payg",
+      "modelSlugs": [
+        "qwen3-5-122b-a10b"
+      ],
+      "providerModelId": "qwen3.5-122b-a10b",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.8,
+      "outputPerMillionTokensLocal": 6.4,
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official online-inference PAYG rate.",
+      "cacheReadSupported": false,
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 128000,
+          "inputPerMillionTokensLocal": 2,
+          "outputPerMillionTokensLocal": 16,
+          "notes": "Published input length above 128K tier."
+        }
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-api-online-payg-qwen3-5-27b",
+      "providerId": "baidu-qianfan-api",
+      "planId": "baidu-qianfan-api-online-payg",
+      "modelSlugs": [
+        "qwen3-5-27b"
+      ],
+      "providerModelId": "qwen3.5-27b",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.6,
+      "outputPerMillionTokensLocal": 4.8,
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official online-inference PAYG rate.",
+      "cacheReadSupported": false,
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 128000,
+          "inputPerMillionTokensLocal": 1.8,
+          "outputPerMillionTokensLocal": 14.4,
+          "notes": "Published input length above 128K tier."
+        }
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-api-online-payg-qwen3-5-35b-a3b",
+      "providerId": "baidu-qianfan-api",
+      "planId": "baidu-qianfan-api-online-payg",
+      "modelSlugs": [
+        "qwen3-5-35b-a3b"
+      ],
+      "providerModelId": "qwen3.5-35b-a3b",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.4,
+      "outputPerMillionTokensLocal": 3.2,
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official online-inference PAYG rate.",
+      "cacheReadSupported": false,
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 128000,
+          "inputPerMillionTokensLocal": 1.6,
+          "outputPerMillionTokensLocal": 12.8,
+          "notes": "Published input length above 128K tier."
+        }
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-api-online-payg-deepseek-v3-2",
+      "providerId": "baidu-qianfan-api",
+      "planId": "baidu-qianfan-api-online-payg",
+      "modelSlugs": [
+        "deepseek-v3-2"
+      ],
+      "providerModelId": "deepseek-v3.2",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2,
+      "outputPerMillionTokensLocal": 3,
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official online-inference PAYG rate.",
+      "cacheReadPerMillionTokensLocal": 0.4,
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 4,
+          "cacheReadPerMillionTokensLocal": 0.4,
+          "outputPerMillionTokensLocal": 6,
+          "notes": "Published input length above 32K tier."
+        }
+      ],
+      "reasoningMode": "disabled",
+      "retirementNotice": "Official pricing page labels DeepSeek V3.2 as 即将下线; no date is published."
+    },
+    {
+      "id": "baidu-qianfan-api-online-payg-deepseek-v3-2-reasoning",
+      "providerId": "baidu-qianfan-api",
+      "planId": "baidu-qianfan-api-online-payg",
+      "modelSlugs": [
+        "deepseek-v3-2-reasoning"
+      ],
+      "providerModelId": "deepseek-v3.2-think",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2,
+      "outputPerMillionTokensLocal": 3,
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official online-inference PAYG rate.",
+      "cacheReadPerMillionTokensLocal": 0.4,
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 4,
+          "cacheReadPerMillionTokensLocal": 0.4,
+          "outputPerMillionTokensLocal": 6,
+          "notes": "Published input length above 32K tier."
+        }
+      ],
+      "reasoningMode": "enabled",
+      "retirementNotice": "Official pricing page labels DeepSeek V3.2 as 即将下线; no date is published."
+    },
+    {
+      "id": "baidu-qianfan-api-batch-payg-deepseek-v3-2",
+      "providerId": "baidu-qianfan-api",
+      "planId": "baidu-qianfan-api-batch-payg",
+      "modelSlugs": [
+        "deepseek-v3-2"
+      ],
+      "providerModelId": "deepseek-v3.2",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.8,
+      "outputPerMillionTokensLocal": 1.2,
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official batch-inference PAYG rate. Cache-hit batch pricing is not published.",
+      "cacheReadSupported": false,
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 1.6,
+          "outputPerMillionTokensLocal": 2.4,
+          "notes": "Published input length above 32K batch tier."
+        }
+      ],
+      "reasoningMode": "disabled",
+      "retirementNotice": "Official pricing page labels DeepSeek V3.2 as 即将下线; no date is published."
+    },
+    {
+      "id": "baidu-qianfan-api-batch-payg-deepseek-v3-2-reasoning",
+      "providerId": "baidu-qianfan-api",
+      "planId": "baidu-qianfan-api-batch-payg",
+      "modelSlugs": [
+        "deepseek-v3-2-reasoning"
+      ],
+      "providerModelId": "deepseek-v3.2-think",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.8,
+      "outputPerMillionTokensLocal": 1.2,
+      "sourceIds": [
+        "baidu-qianfan-api-pricing-official-2026-08-12",
+        "baidu-qianfan-api-model-list-official-2026-08-12"
+      ],
+      "notes": "Official batch-inference PAYG rate. Cache-hit batch pricing is not published.",
+      "cacheReadSupported": false,
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 1.6,
+          "outputPerMillionTokensLocal": 2.4,
+          "notes": "Published input length above 32K batch tier."
+        }
+      ],
+      "reasoningMode": "enabled",
+      "retirementNotice": "Official pricing page labels DeepSeek V3.2 as 即将下线; no date is published."
+    }
+  ],
+  "sources": [
+    {
+      "id": "baidu-qianfan-api-pricing-official-2026-08-12",
+      "title": "百度千帆模型服务计费",
+      "publisher": "百度智能云",
+      "url": "https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya",
+      "kind": "official-pricing",
+      "asOf": "2026-08-05",
+      "accessedAt": "2026-08-12",
+      "notes": "Official online/batch CNY per thousand-token tables for text generation and deep-thinking models, including cache prices and prompt-length tiers."
+    },
+    {
+      "id": "baidu-qianfan-api-model-list-official-2026-08-12",
+      "title": "百度千帆模型列表",
+      "publisher": "百度智能云",
+      "url": "https://cloud.baidu.com/doc/qianfan/s/rmh4stp0j",
+      "kind": "official-model-catalogue",
+      "asOf": "2026-08-06",
+      "accessedAt": "2026-08-12",
+      "notes": "Confirms exact provider model parameters and supported context lengths."
+    }
+  ]
+}

@@ -1,0 +1,2134 @@
+{
+  "schemaVersion": 1,
+  "mergeTarget": "data/pricing/provider_pricing.json",
+  "replaceProviders": [
+    "alibaba-token-plan",
+    "alibaba-token-plan-cn",
+    "alibaba-coding-plan",
+    "alibaba-coding-plan-cn"
+  ],
+  "checkedAt": "2026-08-11",
+  "researchScope": "Alibaba Token Plan and Coding Plan, Global and China",
+  "comparisonPolicy": {
+    "creditsWithoutPerModelFormula": "non-comparable",
+    "callsWithoutTokenQuota": "non-comparable"
+  },
+  "modelsDevSupportSnapshot": "95aaaeb",
+  "providers": [
+    {
+      "id": "alibaba-token-plan",
+      "name": "Alibaba Token Plan",
+      "category": "token-plan",
+      "url": "https://www.alibabacloud.com/help/en/model-studio/token-plan-personal-overview",
+      "pricingUrl": "https://www.alibabacloud.com/help/en/model-studio/token-plan-personal-overview",
+      "region": "Global",
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ]
+    },
+    {
+      "id": "alibaba-token-plan-cn",
+      "name": "百炼 Token Plan（中国）",
+      "category": "token-plan",
+      "url": "https://help.aliyun.com/zh/model-studio/token-plan-personal-overview",
+      "pricingUrl": "https://help.aliyun.com/zh/model-studio/token-plan-personal-overview",
+      "region": "CN",
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ]
+    },
+    {
+      "id": "alibaba-coding-plan",
+      "name": "Alibaba Coding Plan",
+      "category": "coding-subscription",
+      "url": "https://www.alibabacloud.com/help/en/model-studio/coding-plan",
+      "pricingUrl": "https://www.alibabacloud.com/help/en/model-studio/coding-plan",
+      "region": "Global",
+      "sourceIds": [
+        "alibaba-coding-plan-global-official-2026-08-11"
+      ]
+    },
+    {
+      "id": "alibaba-coding-plan-cn",
+      "name": "百炼 Coding Plan（中国）",
+      "category": "coding-subscription",
+      "url": "https://help.aliyun.com/zh/model-studio/coding-plan",
+      "pricingUrl": "https://help.aliyun.com/zh/model-studio/coding-plan",
+      "region": "CN",
+      "sourceIds": [
+        "alibaba-coding-plan-cn-official-2026-08-11"
+      ]
+    }
+  ],
+  "plans": [
+    {
+      "id": "alibaba-token-plan-lite",
+      "providerId": "alibaba-token-plan",
+      "name": "Lite",
+      "billingType": "subscription",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": 6,
+      "weeklyCredits": 2500,
+      "monthlyCreditsEquivalent": 10833.333333,
+      "comparisonClass": "non-comparable",
+      "region": "Global",
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "creditFormulaPublished": false,
+      "notes": "Credits per request vary by model, input/output tokens, reasoning, and tools; the plan cannot be converted to a fixed USD per million tokens.",
+      "costPerIncludedCreditUsd": 0.000553846
+    },
+    {
+      "id": "alibaba-token-plan-standard",
+      "providerId": "alibaba-token-plan",
+      "name": "Standard",
+      "billingType": "subscription",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": 20,
+      "weeklyCredits": 10000,
+      "monthlyCreditsEquivalent": 43333.333333,
+      "comparisonClass": "non-comparable",
+      "region": "Global",
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "creditFormulaPublished": false,
+      "notes": "Credits per request vary by model, input/output tokens, reasoning, and tools; the plan cannot be converted to a fixed USD per million tokens.",
+      "costPerIncludedCreditUsd": 0.000461538
+    },
+    {
+      "id": "alibaba-token-plan-pro",
+      "providerId": "alibaba-token-plan",
+      "name": "Pro",
+      "billingType": "subscription",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": 70,
+      "weeklyCredits": 40000,
+      "monthlyCreditsEquivalent": 173333.333333,
+      "comparisonClass": "non-comparable",
+      "region": "Global",
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "creditFormulaPublished": false,
+      "notes": "Credits per request vary by model, input/output tokens, reasoning, and tools; the plan cannot be converted to a fixed USD per million tokens.",
+      "costPerIncludedCreditUsd": 0.000403846
+    },
+    {
+      "id": "alibaba-token-plan-cn-lite",
+      "providerId": "alibaba-token-plan-cn",
+      "name": "Lite",
+      "billingType": "subscription",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "weeklyCredits": 2500,
+      "monthlyCreditsEquivalent": 10833.333333,
+      "comparisonClass": "non-comparable",
+      "region": "CN",
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "creditFormulaPublished": false,
+      "notes": "Credits per request vary by model, input/output tokens, reasoning, and tools; the plan cannot be converted to a fixed USD per million tokens.",
+      "monthlyPriceLocal": 39,
+      "costPerIncludedCreditLocal": 0.0036,
+      "currentPriceIsLimitedTime": true
+    },
+    {
+      "id": "alibaba-token-plan-cn-standard",
+      "providerId": "alibaba-token-plan-cn",
+      "name": "Standard",
+      "billingType": "subscription",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "weeklyCredits": 10000,
+      "monthlyCreditsEquivalent": 43333.333333,
+      "comparisonClass": "non-comparable",
+      "region": "CN",
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "creditFormulaPublished": false,
+      "notes": "Credits per request vary by model, input/output tokens, reasoning, and tools; the plan cannot be converted to a fixed USD per million tokens.",
+      "monthlyPriceLocal": 139,
+      "costPerIncludedCreditLocal": 0.003207692,
+      "currentPriceIsLimitedTime": true
+    },
+    {
+      "id": "alibaba-token-plan-cn-pro",
+      "providerId": "alibaba-token-plan-cn",
+      "name": "Pro",
+      "billingType": "subscription",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "weeklyCredits": 40000,
+      "monthlyCreditsEquivalent": 173333.333333,
+      "comparisonClass": "non-comparable",
+      "region": "CN",
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "creditFormulaPublished": false,
+      "notes": "Credits per request vary by model, input/output tokens, reasoning, and tools; the plan cannot be converted to a fixed USD per million tokens.",
+      "monthlyPriceLocal": 499,
+      "costPerIncludedCreditLocal": 0.002878846,
+      "currentPriceIsLimitedTime": true
+    },
+    {
+      "id": "alibaba-coding-plan-monthly",
+      "providerId": "alibaba-coding-plan",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "comparisonClass": "non-comparable",
+      "region": "Global",
+      "callsPerFiveHours": 6000,
+      "callsPerWeek": 45000,
+      "callsPerMonth": 90000,
+      "sourceIds": [
+        "alibaba-coding-plan-global-official-2026-08-11"
+      ],
+      "notes": "Published usage is measured in model requests rather than a fixed token quota, so no USD per million tokens value is calculated.",
+      "name": "Coding Plan",
+      "currency": "USD",
+      "monthlyPriceUsd": 50
+    },
+    {
+      "id": "alibaba-coding-plan-cn-monthly",
+      "providerId": "alibaba-coding-plan-cn",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "comparisonClass": "non-comparable",
+      "region": "CN",
+      "callsPerFiveHours": 6000,
+      "callsPerWeek": 45000,
+      "callsPerMonth": 90000,
+      "sourceIds": [
+        "alibaba-coding-plan-cn-official-2026-08-11"
+      ],
+      "notes": "Published usage is measured in model requests rather than a fixed token quota, so no USD per million tokens value is calculated.",
+      "name": "Coding Plan",
+      "currency": "CNY",
+      "monthlyPriceLocal": 200,
+      "monthlyPriceUsd": null,
+      "firstMonthPriceLocal": 39.9,
+      "promotionalFirstMonth": true
+    }
+  ],
+  "offers": [
+    {
+      "id": "alibaba-token-plan-lite-deepseek-v3-2",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-lite",
+      "modelSlugs": [
+        "deepseek-v3-2"
+      ],
+      "providerModelId": "deepseek-v3.2",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-lite-deepseek-v4-flash",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-lite",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-lite-deepseek-v4-pro",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-lite",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-lite-glm-5",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-lite",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-lite-glm-5-1",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-lite",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-lite-glm-5-2",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-lite",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-lite-kimi-k2-5",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-lite",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-lite-kimi-k2-6",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-lite",
+      "modelSlugs": [
+        "kimi-k2-6"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-lite-kimi-k2-7-code",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-lite",
+      "modelSlugs": [
+        "kimi-k2-7-code"
+      ],
+      "providerModelId": "kimi-k2.7-code",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-lite-minimax-m2-5",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-lite",
+      "modelSlugs": [
+        "minimax-m2-5"
+      ],
+      "providerModelId": "MiniMax-M2.5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-lite-qwen3-6-plus",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-lite",
+      "modelSlugs": [
+        "qwen3-6-plus"
+      ],
+      "providerModelId": "qwen3.6-plus",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-lite-qwen3-7-max",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-lite",
+      "modelSlugs": [
+        "qwen3-7-max"
+      ],
+      "providerModelId": "qwen3.7-max",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-lite-qwen3-7-plus",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-lite",
+      "modelSlugs": [
+        "qwen3-7-plus"
+      ],
+      "providerModelId": "qwen3.7-plus",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-lite-qwen3-8-max",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-lite",
+      "modelSlugs": [
+        "qwen3-8-max"
+      ],
+      "providerModelId": "qwen3.8-max",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula.",
+      "offPeakCreditMultiplier": 0.5,
+      "offPeakLocalTime": "22:00-08:00",
+      "offPeakTimeZone": "Asia/Shanghai",
+      "offPeakNotes": "Qwen3.8 Max consumes 50% Credits during the published night window."
+    },
+    {
+      "id": "alibaba-token-plan-standard-deepseek-v3-2",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-standard",
+      "modelSlugs": [
+        "deepseek-v3-2"
+      ],
+      "providerModelId": "deepseek-v3.2",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-standard-deepseek-v4-flash",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-standard",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-standard-deepseek-v4-pro",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-standard",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-standard-glm-5",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-standard",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-standard-glm-5-1",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-standard",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-standard-glm-5-2",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-standard",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-standard-kimi-k2-5",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-standard",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-standard-kimi-k2-6",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-standard",
+      "modelSlugs": [
+        "kimi-k2-6"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-standard-kimi-k2-7-code",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-standard",
+      "modelSlugs": [
+        "kimi-k2-7-code"
+      ],
+      "providerModelId": "kimi-k2.7-code",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-standard-minimax-m2-5",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-standard",
+      "modelSlugs": [
+        "minimax-m2-5"
+      ],
+      "providerModelId": "MiniMax-M2.5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-standard-qwen3-6-plus",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-standard",
+      "modelSlugs": [
+        "qwen3-6-plus"
+      ],
+      "providerModelId": "qwen3.6-plus",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-standard-qwen3-7-max",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-standard",
+      "modelSlugs": [
+        "qwen3-7-max"
+      ],
+      "providerModelId": "qwen3.7-max",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-standard-qwen3-7-plus",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-standard",
+      "modelSlugs": [
+        "qwen3-7-plus"
+      ],
+      "providerModelId": "qwen3.7-plus",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-standard-qwen3-8-max",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-standard",
+      "modelSlugs": [
+        "qwen3-8-max"
+      ],
+      "providerModelId": "qwen3.8-max",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula.",
+      "offPeakCreditMultiplier": 0.5,
+      "offPeakLocalTime": "22:00-08:00",
+      "offPeakTimeZone": "Asia/Shanghai",
+      "offPeakNotes": "Qwen3.8 Max consumes 50% Credits during the published night window."
+    },
+    {
+      "id": "alibaba-token-plan-pro-deepseek-v3-2",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-pro",
+      "modelSlugs": [
+        "deepseek-v3-2"
+      ],
+      "providerModelId": "deepseek-v3.2",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-pro-deepseek-v4-flash",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-pro",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-pro-deepseek-v4-pro",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-pro",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-pro-glm-5",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-pro",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-pro-glm-5-1",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-pro",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-pro-glm-5-2",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-pro",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-pro-kimi-k2-5",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-pro",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-pro-kimi-k2-6",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-pro",
+      "modelSlugs": [
+        "kimi-k2-6"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-pro-kimi-k2-7-code",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-pro",
+      "modelSlugs": [
+        "kimi-k2-7-code"
+      ],
+      "providerModelId": "kimi-k2.7-code",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-pro-minimax-m2-5",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-pro",
+      "modelSlugs": [
+        "minimax-m2-5"
+      ],
+      "providerModelId": "MiniMax-M2.5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-pro-qwen3-6-plus",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-pro",
+      "modelSlugs": [
+        "qwen3-6-plus"
+      ],
+      "providerModelId": "qwen3.6-plus",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-pro-qwen3-7-max",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-pro",
+      "modelSlugs": [
+        "qwen3-7-max"
+      ],
+      "providerModelId": "qwen3.7-max",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-pro-qwen3-7-plus",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-pro",
+      "modelSlugs": [
+        "qwen3-7-plus"
+      ],
+      "providerModelId": "qwen3.7-plus",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-pro-qwen3-8-max",
+      "providerId": "alibaba-token-plan",
+      "planId": "alibaba-token-plan-pro",
+      "modelSlugs": [
+        "qwen3-8-max"
+      ],
+      "providerModelId": "qwen3.8-max",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula.",
+      "offPeakCreditMultiplier": 0.5,
+      "offPeakLocalTime": "22:00-08:00",
+      "offPeakTimeZone": "Asia/Shanghai",
+      "offPeakNotes": "Qwen3.8 Max consumes 50% Credits during the published night window."
+    },
+    {
+      "id": "alibaba-token-plan-cn-lite-deepseek-v3-2",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-lite",
+      "modelSlugs": [
+        "deepseek-v3-2"
+      ],
+      "providerModelId": "deepseek-v3.2",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-lite-deepseek-v4-flash",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-lite",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-lite-deepseek-v4-pro",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-lite",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-lite-glm-5",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-lite",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-lite-glm-5-1",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-lite",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-lite-glm-5-2",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-lite",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-lite-kimi-k2-5",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-lite",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-lite-kimi-k2-6",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-lite",
+      "modelSlugs": [
+        "kimi-k2-6"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-lite-kimi-k2-7-code",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-lite",
+      "modelSlugs": [
+        "kimi-k2-7-code"
+      ],
+      "providerModelId": "kimi-k2.7-code",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-lite-minimax-m2-5",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-lite",
+      "modelSlugs": [
+        "minimax-m2-5"
+      ],
+      "providerModelId": "MiniMax-M2.5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-lite-qwen3-6-plus",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-lite",
+      "modelSlugs": [
+        "qwen3-6-plus"
+      ],
+      "providerModelId": "qwen3.6-plus",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-lite-qwen3-7-max",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-lite",
+      "modelSlugs": [
+        "qwen3-7-max"
+      ],
+      "providerModelId": "qwen3.7-max",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-lite-qwen3-7-plus",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-lite",
+      "modelSlugs": [
+        "qwen3-7-plus"
+      ],
+      "providerModelId": "qwen3.7-plus",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-lite-qwen3-8-max",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-lite",
+      "modelSlugs": [
+        "qwen3-8-max"
+      ],
+      "providerModelId": "qwen3.8-max",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula.",
+      "offPeakCreditMultiplier": 0.5,
+      "offPeakLocalTime": "22:00-08:00",
+      "offPeakTimeZone": "Asia/Shanghai",
+      "offPeakNotes": "Qwen3.8 Max consumes 50% Credits during the published night window."
+    },
+    {
+      "id": "alibaba-token-plan-cn-standard-deepseek-v3-2",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-standard",
+      "modelSlugs": [
+        "deepseek-v3-2"
+      ],
+      "providerModelId": "deepseek-v3.2",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-standard-deepseek-v4-flash",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-standard",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-standard-deepseek-v4-pro",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-standard",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-standard-glm-5",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-standard",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-standard-glm-5-1",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-standard",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-standard-glm-5-2",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-standard",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-standard-kimi-k2-5",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-standard",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-standard-kimi-k2-6",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-standard",
+      "modelSlugs": [
+        "kimi-k2-6"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-standard-kimi-k2-7-code",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-standard",
+      "modelSlugs": [
+        "kimi-k2-7-code"
+      ],
+      "providerModelId": "kimi-k2.7-code",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-standard-minimax-m2-5",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-standard",
+      "modelSlugs": [
+        "minimax-m2-5"
+      ],
+      "providerModelId": "MiniMax-M2.5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-standard-qwen3-6-plus",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-standard",
+      "modelSlugs": [
+        "qwen3-6-plus"
+      ],
+      "providerModelId": "qwen3.6-plus",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-standard-qwen3-7-max",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-standard",
+      "modelSlugs": [
+        "qwen3-7-max"
+      ],
+      "providerModelId": "qwen3.7-max",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-standard-qwen3-7-plus",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-standard",
+      "modelSlugs": [
+        "qwen3-7-plus"
+      ],
+      "providerModelId": "qwen3.7-plus",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-standard-qwen3-8-max",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-standard",
+      "modelSlugs": [
+        "qwen3-8-max"
+      ],
+      "providerModelId": "qwen3.8-max",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula.",
+      "offPeakCreditMultiplier": 0.5,
+      "offPeakLocalTime": "22:00-08:00",
+      "offPeakTimeZone": "Asia/Shanghai",
+      "offPeakNotes": "Qwen3.8 Max consumes 50% Credits during the published night window."
+    },
+    {
+      "id": "alibaba-token-plan-cn-pro-deepseek-v3-2",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-pro",
+      "modelSlugs": [
+        "deepseek-v3-2"
+      ],
+      "providerModelId": "deepseek-v3.2",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-pro-deepseek-v4-flash",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-pro",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-pro-deepseek-v4-pro",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-pro",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-pro-glm-5",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-pro",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-pro-glm-5-1",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-pro",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-pro-glm-5-2",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-pro",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-pro-kimi-k2-5",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-pro",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-pro-kimi-k2-6",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-pro",
+      "modelSlugs": [
+        "kimi-k2-6"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-pro-kimi-k2-7-code",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-pro",
+      "modelSlugs": [
+        "kimi-k2-7-code"
+      ],
+      "providerModelId": "kimi-k2.7-code",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-pro-minimax-m2-5",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-pro",
+      "modelSlugs": [
+        "minimax-m2-5"
+      ],
+      "providerModelId": "MiniMax-M2.5",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-pro-qwen3-6-plus",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-pro",
+      "modelSlugs": [
+        "qwen3-6-plus"
+      ],
+      "providerModelId": "qwen3.6-plus",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-pro-qwen3-7-max",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-pro",
+      "modelSlugs": [
+        "qwen3-7-max"
+      ],
+      "providerModelId": "qwen3.7-max",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-pro-qwen3-7-plus",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-pro",
+      "modelSlugs": [
+        "qwen3-7-plus"
+      ],
+      "providerModelId": "qwen3.7-plus",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula."
+    },
+    {
+      "id": "alibaba-token-plan-cn-pro-qwen3-8-max",
+      "providerId": "alibaba-token-plan-cn",
+      "planId": "alibaba-token-plan-cn-pro",
+      "modelSlugs": [
+        "qwen3-8-max"
+      ],
+      "providerModelId": "qwen3.8-max",
+      "pricingKind": "non-comparable-credit-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-token-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the plan, but Alibaba does not publish a stable model/token-to-Credit conversion formula.",
+      "offPeakCreditMultiplier": 0.5,
+      "offPeakLocalTime": "22:00-08:00",
+      "offPeakTimeZone": "Asia/Shanghai",
+      "offPeakNotes": "Qwen3.8 Max consumes 50% Credits during the published night window."
+    },
+    {
+      "id": "alibaba-coding-plan-monthly-glm-4-7",
+      "providerId": "alibaba-coding-plan",
+      "planId": "alibaba-coding-plan-monthly",
+      "modelSlugs": [
+        "glm-4-7"
+      ],
+      "providerModelId": "glm-4.7",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    },
+    {
+      "id": "alibaba-coding-plan-monthly-glm-5",
+      "providerId": "alibaba-coding-plan",
+      "planId": "alibaba-coding-plan-monthly",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    },
+    {
+      "id": "alibaba-coding-plan-monthly-kimi-k2-5",
+      "providerId": "alibaba-coding-plan",
+      "planId": "alibaba-coding-plan-monthly",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    },
+    {
+      "id": "alibaba-coding-plan-monthly-minimax-m2-5",
+      "providerId": "alibaba-coding-plan",
+      "planId": "alibaba-coding-plan-monthly",
+      "modelSlugs": [
+        "minimax-m2-5"
+      ],
+      "providerModelId": "MiniMax-M2.5",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    },
+    {
+      "id": "alibaba-coding-plan-monthly-qwen3-6-plus",
+      "providerId": "alibaba-coding-plan",
+      "planId": "alibaba-coding-plan-monthly",
+      "modelSlugs": [
+        "qwen3-6-plus"
+      ],
+      "providerModelId": "qwen3.6-plus",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    },
+    {
+      "id": "alibaba-coding-plan-monthly-qwen3-7-max",
+      "providerId": "alibaba-coding-plan",
+      "planId": "alibaba-coding-plan-monthly",
+      "modelSlugs": [
+        "qwen3-7-max"
+      ],
+      "providerModelId": "qwen3.7-max",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    },
+    {
+      "id": "alibaba-coding-plan-monthly-qwen3-7-plus",
+      "providerId": "alibaba-coding-plan",
+      "planId": "alibaba-coding-plan-monthly",
+      "modelSlugs": [
+        "qwen3-7-plus"
+      ],
+      "providerModelId": "qwen3.7-plus",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    },
+    {
+      "id": "alibaba-coding-plan-monthly-qwen3-coder-next",
+      "providerId": "alibaba-coding-plan",
+      "planId": "alibaba-coding-plan-monthly",
+      "modelSlugs": [
+        "qwen3-coder-next"
+      ],
+      "providerModelId": "qwen3-coder-next",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    },
+    {
+      "id": "alibaba-coding-plan-monthly-qwen3-max",
+      "providerId": "alibaba-coding-plan",
+      "planId": "alibaba-coding-plan-monthly",
+      "modelSlugs": [
+        "qwen3-max"
+      ],
+      "providerModelId": "qwen3-max-2026-01-23",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-global-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    },
+    {
+      "id": "alibaba-coding-plan-cn-monthly-glm-4-7",
+      "providerId": "alibaba-coding-plan-cn",
+      "planId": "alibaba-coding-plan-cn-monthly",
+      "modelSlugs": [
+        "glm-4-7"
+      ],
+      "providerModelId": "glm-4.7",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    },
+    {
+      "id": "alibaba-coding-plan-cn-monthly-glm-5",
+      "providerId": "alibaba-coding-plan-cn",
+      "planId": "alibaba-coding-plan-cn-monthly",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    },
+    {
+      "id": "alibaba-coding-plan-cn-monthly-kimi-k2-5",
+      "providerId": "alibaba-coding-plan-cn",
+      "planId": "alibaba-coding-plan-cn-monthly",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    },
+    {
+      "id": "alibaba-coding-plan-cn-monthly-minimax-m2-5",
+      "providerId": "alibaba-coding-plan-cn",
+      "planId": "alibaba-coding-plan-cn-monthly",
+      "modelSlugs": [
+        "minimax-m2-5"
+      ],
+      "providerModelId": "MiniMax-M2.5",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    },
+    {
+      "id": "alibaba-coding-plan-cn-monthly-qwen3-6-plus",
+      "providerId": "alibaba-coding-plan-cn",
+      "planId": "alibaba-coding-plan-cn-monthly",
+      "modelSlugs": [
+        "qwen3-6-plus"
+      ],
+      "providerModelId": "qwen3.6-plus",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    },
+    {
+      "id": "alibaba-coding-plan-cn-monthly-qwen3-7-max",
+      "providerId": "alibaba-coding-plan-cn",
+      "planId": "alibaba-coding-plan-cn-monthly",
+      "modelSlugs": [
+        "qwen3-7-max"
+      ],
+      "providerModelId": "qwen3.7-max",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    },
+    {
+      "id": "alibaba-coding-plan-cn-monthly-qwen3-7-plus",
+      "providerId": "alibaba-coding-plan-cn",
+      "planId": "alibaba-coding-plan-cn-monthly",
+      "modelSlugs": [
+        "qwen3-7-plus"
+      ],
+      "providerModelId": "qwen3.7-plus",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    },
+    {
+      "id": "alibaba-coding-plan-cn-monthly-qwen3-coder-next",
+      "providerId": "alibaba-coding-plan-cn",
+      "planId": "alibaba-coding-plan-cn-monthly",
+      "modelSlugs": [
+        "qwen3-coder-next"
+      ],
+      "providerModelId": "qwen3-coder-next",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    },
+    {
+      "id": "alibaba-coding-plan-cn-monthly-qwen3-max",
+      "providerId": "alibaba-coding-plan-cn",
+      "planId": "alibaba-coding-plan-cn-monthly",
+      "modelSlugs": [
+        "qwen3-max"
+      ],
+      "providerModelId": "qwen3-max-2026-01-23",
+      "pricingKind": "non-comparable-call-plan",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "sourceIds": [
+        "alibaba-coding-plan-cn-official-2026-08-11"
+      ],
+      "notes": "This model is listed for the Coding Plan. Published limits are calls, not tokens, so the effective token price is unavailable."
+    }
+  ],
+  "sources": [
+    {
+      "id": "alibaba-token-plan-global-official-2026-08-11",
+      "title": "Alibaba Cloud Model Studio Token Plan — Personal overview",
+      "publisher": "Alibaba Cloud",
+      "url": "https://www.alibabacloud.com/help/en/model-studio/token-plan-personal-overview",
+      "kind": "official-pricing",
+      "asOf": "2026-08-11",
+      "accessedAt": "2026-08-11",
+      "notes": "Lite $6/month with 2,500 Credits/week; Standard $20 with 10,000; Pro $70 with 40,000. Credits vary dynamically by model and request."
+    },
+    {
+      "id": "alibaba-token-plan-cn-official-2026-08-11",
+      "title": "百炼 Token Plan 个人版套餐说明",
+      "publisher": "阿里云",
+      "url": "https://help.aliyun.com/zh/model-studio/token-plan-personal-overview",
+      "kind": "official-pricing",
+      "asOf": "2026-08-11",
+      "accessedAt": "2026-08-11",
+      "notes": "当前限时价：Lite ¥39/月、2,500 Credits/周；Standard ¥139、10,000；Pro ¥499、40,000。Qwen3.8 Max 公布夜间 Credits 五折。"
+    },
+    {
+      "id": "alibaba-coding-plan-global-official-2026-08-11",
+      "title": "Alibaba Cloud Model Studio Coding Plan",
+      "publisher": "Alibaba Cloud",
+      "url": "https://www.alibabacloud.com/help/en/model-studio/coding-plan",
+      "kind": "official-pricing",
+      "asOf": "2026-08-11",
+      "accessedAt": "2026-08-11",
+      "notes": "$50/month; 6,000 calls/5 hours, 45,000/week, and 90,000/month."
+    },
+    {
+      "id": "alibaba-coding-plan-cn-official-2026-08-11",
+      "title": "百炼 Coding Plan 套餐说明",
+      "publisher": "阿里云",
+      "url": "https://help.aliyun.com/zh/model-studio/coding-plan",
+      "kind": "official-pricing",
+      "asOf": "2026-08-11",
+      "accessedAt": "2026-08-11",
+      "notes": "¥200/month (published first-month promotion ¥39.90); 6,000 calls/5 hours, 45,000/week, and 90,000/month."
+    }
+  ],
+  "supportCounts": {
+    "alibaba-token-plan": 14,
+    "alibaba-token-plan-cn": 14,
+    "alibaba-coding-plan": 9,
+    "alibaba-coding-plan-cn": 9
+  }
+}

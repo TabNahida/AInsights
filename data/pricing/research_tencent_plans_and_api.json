@@ -1,0 +1,4566 @@
+{
+  "schemaVersion": 1,
+  "mergeTarget": "data/pricing/provider_pricing.json",
+  "checkedAt": "2026-08-12",
+  "asOf": "2026-08-12",
+  "researchScope": "Tencent Cloud Coding Plan, personal and enterprise Token Plan, and TokenHub PAYG API",
+  "comparisonPolicy": {
+    "uniformIncludedTokens": "comparable at full quota utilization",
+    "enterprisePoints": "published points per million tokens multiplied by the CNY 0.01 list price per point",
+    "requestQuotasWithoutTokenFormula": "non-comparable support relationship only",
+    "autoRoutingWithoutStableModelMapping": "plan retained without model offers",
+    "discontinuedModels": "omitted",
+    "unsupportedOrUnmappedModels": "no offer emitted"
+  },
+  "replaceProviders": [
+    "tencent-coding-plan",
+    "tencent-token-plan",
+    "tencent-tokenhub"
+  ],
+  "providers": [
+    {
+      "id": "tencent-coding-plan",
+      "name": "腾讯云 Coding Plan",
+      "category": "coding-subscription",
+      "url": "https://cloud.tencent.com/document/product/1823/130092",
+      "pricingUrl": "https://cloud.tencent.com/document/product/1823/130092",
+      "region": "CN",
+      "sourceIds": [
+        "tencent-coding-plan-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Request quotas are published, but Tencent does not publish a request-to-token conversion. Support-only offers are intentionally non-comparable."
+    },
+    {
+      "id": "tencent-token-plan",
+      "name": "腾讯云 Token Plan",
+      "category": "token-plan",
+      "url": "https://cloud.tencent.com/document/product/1823/130060",
+      "pricingUrl": "https://cloud.tencent.com/document/product/1823/130060",
+      "region": "CN / Global",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-token-plan-enterprise-overview-official-2026-08-12",
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-token-plan-enterprise-lite-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Contains personal General/Hy plans and enterprise Professional/Light plans. Personal and Light plans deduct input, cache-hit input, and output tokens 1:1; Professional plans use published per-model point coefficients."
+    },
+    {
+      "id": "tencent-tokenhub",
+      "name": "腾讯云 TokenHub API",
+      "category": "aggregator",
+      "url": "https://cloud.tencent.com/document/product/1823/130050",
+      "pricingUrl": "https://cloud.tencent.com/document/product/1823/130055",
+      "region": "CN / Global",
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Official PAYG rates for Guangzhou, Singapore, and the published Guangzhou batch models. Direct-supply and standard routes remain separate offers."
+    }
+  ],
+  "plans": [
+    {
+      "id": "tencent-coding-plan-lite",
+      "providerId": "tencent-coding-plan",
+      "name": "Lite",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 40,
+      "comparisonClass": "non-comparable",
+      "requestLimitPerFiveHoursApprox": 1200,
+      "requestLimitPerWeekApprox": 9000,
+      "requestLimitPerSubscriptionMonthApprox": 18000,
+      "quotaLabel": "≈1,200 requests / 5h · ≈9,000 / week · ≈18,000 / subscription month",
+      "sourceIds": [
+        "tencent-coding-plan-official-2026-08-12"
+      ],
+      "notes": "No official request-to-token conversion is published."
+    },
+    {
+      "id": "tencent-coding-plan-pro",
+      "providerId": "tencent-coding-plan",
+      "name": "Pro",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 200,
+      "comparisonClass": "non-comparable",
+      "requestLimitPerFiveHoursApprox": 6000,
+      "requestLimitPerWeekApprox": 45000,
+      "requestLimitPerSubscriptionMonthApprox": 90000,
+      "quotaLabel": "≈6,000 requests / 5h · ≈45,000 / week · ≈90,000 / subscription month",
+      "sourceIds": [
+        "tencent-coding-plan-official-2026-08-12"
+      ],
+      "notes": "No official request-to-token conversion is published."
+    },
+    {
+      "id": "tencent-token-plan-personal-general-lite",
+      "providerId": "tencent-token-plan",
+      "name": "Personal General Lite",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 39,
+      "includedMillionTokensPerSubscriptionMonth": 35,
+      "effectiveUniformPerMillionTokensLocal": 1.114285714,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "35M tokens / subscription month · input, cache-hit input, and output deduct 1:1",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12"
+      ],
+      "notes": "Effective rate assumes the full monthly token quota is consumed; unused quota raises the realized price."
+    },
+    {
+      "id": "tencent-token-plan-personal-general-standard",
+      "providerId": "tencent-token-plan",
+      "name": "Personal General Standard",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 99,
+      "includedMillionTokensPerSubscriptionMonth": 100,
+      "effectiveUniformPerMillionTokensLocal": 0.99,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "100M tokens / subscription month · input, cache-hit input, and output deduct 1:1",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12"
+      ],
+      "notes": "Effective rate assumes the full monthly token quota is consumed; unused quota raises the realized price."
+    },
+    {
+      "id": "tencent-token-plan-personal-general-pro",
+      "providerId": "tencent-token-plan",
+      "name": "Personal General Pro",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 299,
+      "includedMillionTokensPerSubscriptionMonth": 320,
+      "effectiveUniformPerMillionTokensLocal": 0.934375,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "320M tokens / subscription month · input, cache-hit input, and output deduct 1:1",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12"
+      ],
+      "notes": "Effective rate assumes the full monthly token quota is consumed; unused quota raises the realized price."
+    },
+    {
+      "id": "tencent-token-plan-personal-general-max",
+      "providerId": "tencent-token-plan",
+      "name": "Personal General Max",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 599,
+      "includedMillionTokensPerSubscriptionMonth": 650,
+      "effectiveUniformPerMillionTokensLocal": 0.921538462,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "650M tokens / subscription month · input, cache-hit input, and output deduct 1:1",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12"
+      ],
+      "notes": "Effective rate assumes the full monthly token quota is consumed; unused quota raises the realized price."
+    },
+    {
+      "id": "tencent-token-plan-personal-hy-lite",
+      "providerId": "tencent-token-plan",
+      "name": "Personal Hy Lite",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 28,
+      "includedMillionTokensPerSubscriptionMonth": 35,
+      "effectiveUniformPerMillionTokensLocal": 0.8,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "35M tokens / subscription month · input, cache-hit input, and output deduct 1:1",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12"
+      ],
+      "notes": "Effective rate assumes the full monthly token quota is consumed; unused quota raises the realized price."
+    },
+    {
+      "id": "tencent-token-plan-personal-hy-standard",
+      "providerId": "tencent-token-plan",
+      "name": "Personal Hy Standard",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 78,
+      "includedMillionTokensPerSubscriptionMonth": 100,
+      "effectiveUniformPerMillionTokensLocal": 0.78,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "100M tokens / subscription month · input, cache-hit input, and output deduct 1:1",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12"
+      ],
+      "notes": "Effective rate assumes the full monthly token quota is consumed; unused quota raises the realized price."
+    },
+    {
+      "id": "tencent-token-plan-personal-hy-pro",
+      "providerId": "tencent-token-plan",
+      "name": "Personal Hy Pro",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 238,
+      "includedMillionTokensPerSubscriptionMonth": 320,
+      "effectiveUniformPerMillionTokensLocal": 0.74375,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "320M tokens / subscription month · input, cache-hit input, and output deduct 1:1",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12"
+      ],
+      "notes": "Effective rate assumes the full monthly token quota is consumed; unused quota raises the realized price."
+    },
+    {
+      "id": "tencent-token-plan-personal-hy-max",
+      "providerId": "tencent-token-plan",
+      "name": "Personal Hy Max",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 468,
+      "includedMillionTokensPerSubscriptionMonth": 650,
+      "effectiveUniformPerMillionTokensLocal": 0.72,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "650M tokens / subscription month · input, cache-hit input, and output deduct 1:1",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12"
+      ],
+      "notes": "Effective rate assumes the full monthly token quota is consumed; unused quota raises the realized price."
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou",
+      "providerId": "tencent-token-plan",
+      "name": "Enterprise Professional · Guangzhou",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 1000,
+      "includedPointsPerMonth": 100000,
+      "pointPriceLocal": 0.01,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Guangzhou",
+      "quotaLabel": "100,000 points minimum · list price CNY 1,000 / month",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12"
+      ],
+      "notes": "Effective rates equal the published points per million tokens multiplied by CNY 0.01 per point."
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-singapore",
+      "providerId": "tencent-token-plan",
+      "name": "Enterprise Professional · Singapore",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 1000,
+      "includedPointsPerMonth": 100000,
+      "pointPriceLocal": 0.01,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Singapore",
+      "quotaLabel": "100,000 points minimum · list price CNY 1,000 / month",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12"
+      ],
+      "notes": "Effective rates equal the published points per million tokens multiplied by CNY 0.01 per point."
+    },
+    {
+      "id": "tencent-token-plan-enterprise-lite-guangzhou",
+      "providerId": "tencent-token-plan",
+      "name": "Enterprise Light · Guangzhou",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 100,
+      "includedMillionTokensPerMonth": 50,
+      "effectiveUniformPerMillionTokensLocal": 2,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Guangzhou",
+      "quotaLabel": "50M tokens / month · Auto routing only · input, cache-hit input, and output deduct 1:1",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-lite-official-2026-08-12"
+      ],
+      "notes": "No model offer is emitted because the plan only exposes Auto routing and does not publish a stable model-to-request mapping."
+    },
+    {
+      "id": "tencent-token-plan-enterprise-lite-singapore",
+      "providerId": "tencent-token-plan",
+      "name": "Enterprise Light · Singapore",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 130,
+      "includedMillionTokensPerMonth": 50,
+      "effectiveUniformPerMillionTokensLocal": 2.6,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Singapore",
+      "quotaLabel": "50M tokens / month · Auto routing only · input, cache-hit input, and output deduct 1:1",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-lite-official-2026-08-12"
+      ],
+      "notes": "No model offer is emitted because the plan only exposes Auto routing and does not publish a stable model-to-request mapping."
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg",
+      "providerId": "tencent-tokenhub",
+      "name": "Guangzhou PAYG",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "token-comparable",
+      "region": "Guangzhou",
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Qwen3.5 Flash/Plus remain listed as unmapped provider models because the benchmark catalogue has no exact Qwen3.5 Flash/Plus slug.",
+      "unmappedSupportedProviderModels": [
+        "qwen3.5-flash",
+        "qwen3.5-plus"
+      ]
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg",
+      "providerId": "tencent-tokenhub",
+      "name": "Singapore PAYG",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "token-comparable",
+      "region": "Singapore",
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "The official Singapore table labels rates in CNY per million tokens. Qwen3.5 Plus remains unmapped because the benchmark catalogue has no exact Qwen3.5 Plus slug.",
+      "unmappedSupportedProviderModels": [
+        "qwen3.5-plus"
+      ]
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-batch",
+      "providerId": "tencent-tokenhub",
+      "name": "Guangzhou Batch",
+      "billingType": "batch",
+      "displayType": "token",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "token-comparable",
+      "region": "Guangzhou",
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ]
+    }
+  ],
+  "offers": [
+    {
+      "id": "tencent-coding-plan-lite-glm-5",
+      "providerId": "tencent-coding-plan",
+      "planId": "tencent-coding-plan-lite",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "request-quota-support",
+      "comparable": false,
+      "supportOnly": true,
+      "sourceIds": [
+        "tencent-coding-plan-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Supported by the plan, but no defensible per-token price can be calculated from request quotas.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-coding-plan-lite-glm-5-non-reasoning",
+      "providerId": "tencent-coding-plan",
+      "planId": "tencent-coding-plan-lite",
+      "modelSlugs": [
+        "glm-5-non-reasoning"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "request-quota-support",
+      "comparable": false,
+      "supportOnly": true,
+      "sourceIds": [
+        "tencent-coding-plan-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Supported by the plan, but no defensible per-token price can be calculated from request quotas.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-coding-plan-lite-kimi-k2-5",
+      "providerId": "tencent-coding-plan",
+      "planId": "tencent-coding-plan-lite",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "request-quota-support",
+      "comparable": false,
+      "supportOnly": true,
+      "sourceIds": [
+        "tencent-coding-plan-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Supported by the plan, but no defensible per-token price can be calculated from request quotas.",
+      "scheduledRemovalDate": "2026-08-31",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-coding-plan-lite-kimi-k2-5-non-reasoning",
+      "providerId": "tencent-coding-plan",
+      "planId": "tencent-coding-plan-lite",
+      "modelSlugs": [
+        "kimi-k2-5-non-reasoning"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "request-quota-support",
+      "comparable": false,
+      "supportOnly": true,
+      "sourceIds": [
+        "tencent-coding-plan-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Supported by the plan, but no defensible per-token price can be calculated from request quotas.",
+      "scheduledRemovalDate": "2026-08-31",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-coding-plan-pro-glm-5",
+      "providerId": "tencent-coding-plan",
+      "planId": "tencent-coding-plan-pro",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "request-quota-support",
+      "comparable": false,
+      "supportOnly": true,
+      "sourceIds": [
+        "tencent-coding-plan-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Supported by the plan, but no defensible per-token price can be calculated from request quotas.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-coding-plan-pro-glm-5-non-reasoning",
+      "providerId": "tencent-coding-plan",
+      "planId": "tencent-coding-plan-pro",
+      "modelSlugs": [
+        "glm-5-non-reasoning"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "request-quota-support",
+      "comparable": false,
+      "supportOnly": true,
+      "sourceIds": [
+        "tencent-coding-plan-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Supported by the plan, but no defensible per-token price can be calculated from request quotas.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-coding-plan-pro-kimi-k2-5",
+      "providerId": "tencent-coding-plan",
+      "planId": "tencent-coding-plan-pro",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "request-quota-support",
+      "comparable": false,
+      "supportOnly": true,
+      "sourceIds": [
+        "tencent-coding-plan-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Supported by the plan, but no defensible per-token price can be calculated from request quotas.",
+      "scheduledRemovalDate": "2026-08-31",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-coding-plan-pro-kimi-k2-5-non-reasoning",
+      "providerId": "tencent-coding-plan",
+      "planId": "tencent-coding-plan-pro",
+      "modelSlugs": [
+        "kimi-k2-5-non-reasoning"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "request-quota-support",
+      "comparable": false,
+      "supportOnly": true,
+      "sourceIds": [
+        "tencent-coding-plan-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Supported by the plan, but no defensible per-token price can be calculated from request quotas.",
+      "scheduledRemovalDate": "2026-08-31",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-lite-deepseek-v4-flash",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-lite",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash-202605",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.114285714,
+      "cacheReadPerMillionTokensLocal": 1.114285714,
+      "outputPerMillionTokensLocal": 1.114285714,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 39 ÷ 35M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-lite-deepseek-v4-flash-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-lite",
+      "modelSlugs": [
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-flash-202605",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.114285714,
+      "cacheReadPerMillionTokensLocal": 1.114285714,
+      "outputPerMillionTokensLocal": 1.114285714,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 39 ÷ 35M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-lite-deepseek-v4-pro",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-lite",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.114285714,
+      "cacheReadPerMillionTokensLocal": 1.114285714,
+      "outputPerMillionTokensLocal": 1.114285714,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 39 ÷ 35M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-lite-deepseek-v4-pro-high",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-lite",
+      "modelSlugs": [
+        "deepseek-v4-pro-high"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.114285714,
+      "cacheReadPerMillionTokensLocal": 1.114285714,
+      "outputPerMillionTokensLocal": 1.114285714,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 39 ÷ 35M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled",
+      "reasoningEffort": "high"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-lite-deepseek-v4-pro-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-lite",
+      "modelSlugs": [
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.114285714,
+      "cacheReadPerMillionTokensLocal": 1.114285714,
+      "outputPerMillionTokensLocal": 1.114285714,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 39 ÷ 35M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-lite-minimax-m2-7",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-lite",
+      "modelSlugs": [
+        "minimax-m2-7"
+      ],
+      "providerModelId": "minimax-m2.7",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.114285714,
+      "cacheReadPerMillionTokensLocal": 1.114285714,
+      "outputPerMillionTokensLocal": 1.114285714,
+      "calculation": "CNY 39 ÷ 35M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token."
+    },
+    {
+      "id": "tencent-token-plan-personal-general-lite-glm-5",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-lite",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.114285714,
+      "cacheReadPerMillionTokensLocal": 1.114285714,
+      "outputPerMillionTokensLocal": 1.114285714,
+      "calculation": "CNY 39 ÷ 35M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-lite-glm-5-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-lite",
+      "modelSlugs": [
+        "glm-5-non-reasoning"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.114285714,
+      "cacheReadPerMillionTokensLocal": 1.114285714,
+      "outputPerMillionTokensLocal": 1.114285714,
+      "calculation": "CNY 39 ÷ 35M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-lite-glm-5-1",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-lite",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.114285714,
+      "cacheReadPerMillionTokensLocal": 1.114285714,
+      "outputPerMillionTokensLocal": 1.114285714,
+      "calculation": "CNY 39 ÷ 35M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-lite-glm-5-1-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-lite",
+      "modelSlugs": [
+        "glm-5-1-non-reasoning"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.114285714,
+      "cacheReadPerMillionTokensLocal": 1.114285714,
+      "outputPerMillionTokensLocal": 1.114285714,
+      "calculation": "CNY 39 ÷ 35M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-lite-glm-5-2",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-lite",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.114285714,
+      "cacheReadPerMillionTokensLocal": 1.114285714,
+      "outputPerMillionTokensLocal": 1.114285714,
+      "calculation": "CNY 39 ÷ 35M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-lite-glm-5-2-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-lite",
+      "modelSlugs": [
+        "glm-5-2-non-reasoning"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.114285714,
+      "cacheReadPerMillionTokensLocal": 1.114285714,
+      "outputPerMillionTokensLocal": 1.114285714,
+      "calculation": "CNY 39 ÷ 35M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-lite-kimi-k2-5",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-lite",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.114285714,
+      "cacheReadPerMillionTokensLocal": 1.114285714,
+      "outputPerMillionTokensLocal": 1.114285714,
+      "scheduledRemovalDate": "2026-08-31",
+      "calculation": "CNY 39 ÷ 35M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-lite-kimi-k2-5-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-lite",
+      "modelSlugs": [
+        "kimi-k2-5-non-reasoning"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.114285714,
+      "cacheReadPerMillionTokensLocal": 1.114285714,
+      "outputPerMillionTokensLocal": 1.114285714,
+      "scheduledRemovalDate": "2026-08-31",
+      "calculation": "CNY 39 ÷ 35M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-standard-deepseek-v4-flash",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-standard",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash-202605",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.99,
+      "cacheReadPerMillionTokensLocal": 0.99,
+      "outputPerMillionTokensLocal": 0.99,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 99 ÷ 100M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-standard-deepseek-v4-flash-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-standard",
+      "modelSlugs": [
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-flash-202605",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.99,
+      "cacheReadPerMillionTokensLocal": 0.99,
+      "outputPerMillionTokensLocal": 0.99,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 99 ÷ 100M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-standard-deepseek-v4-pro",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-standard",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.99,
+      "cacheReadPerMillionTokensLocal": 0.99,
+      "outputPerMillionTokensLocal": 0.99,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 99 ÷ 100M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-standard-deepseek-v4-pro-high",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-standard",
+      "modelSlugs": [
+        "deepseek-v4-pro-high"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.99,
+      "cacheReadPerMillionTokensLocal": 0.99,
+      "outputPerMillionTokensLocal": 0.99,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 99 ÷ 100M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled",
+      "reasoningEffort": "high"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-standard-deepseek-v4-pro-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-standard",
+      "modelSlugs": [
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.99,
+      "cacheReadPerMillionTokensLocal": 0.99,
+      "outputPerMillionTokensLocal": 0.99,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 99 ÷ 100M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-standard-minimax-m2-7",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-standard",
+      "modelSlugs": [
+        "minimax-m2-7"
+      ],
+      "providerModelId": "minimax-m2.7",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.99,
+      "cacheReadPerMillionTokensLocal": 0.99,
+      "outputPerMillionTokensLocal": 0.99,
+      "calculation": "CNY 99 ÷ 100M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token."
+    },
+    {
+      "id": "tencent-token-plan-personal-general-standard-glm-5",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-standard",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.99,
+      "cacheReadPerMillionTokensLocal": 0.99,
+      "outputPerMillionTokensLocal": 0.99,
+      "calculation": "CNY 99 ÷ 100M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-standard-glm-5-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-standard",
+      "modelSlugs": [
+        "glm-5-non-reasoning"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.99,
+      "cacheReadPerMillionTokensLocal": 0.99,
+      "outputPerMillionTokensLocal": 0.99,
+      "calculation": "CNY 99 ÷ 100M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-standard-glm-5-1",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-standard",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.99,
+      "cacheReadPerMillionTokensLocal": 0.99,
+      "outputPerMillionTokensLocal": 0.99,
+      "calculation": "CNY 99 ÷ 100M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-standard-glm-5-1-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-standard",
+      "modelSlugs": [
+        "glm-5-1-non-reasoning"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.99,
+      "cacheReadPerMillionTokensLocal": 0.99,
+      "outputPerMillionTokensLocal": 0.99,
+      "calculation": "CNY 99 ÷ 100M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-standard-glm-5-2",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-standard",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.99,
+      "cacheReadPerMillionTokensLocal": 0.99,
+      "outputPerMillionTokensLocal": 0.99,
+      "calculation": "CNY 99 ÷ 100M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-standard-glm-5-2-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-standard",
+      "modelSlugs": [
+        "glm-5-2-non-reasoning"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.99,
+      "cacheReadPerMillionTokensLocal": 0.99,
+      "outputPerMillionTokensLocal": 0.99,
+      "calculation": "CNY 99 ÷ 100M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-standard-kimi-k2-5",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-standard",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.99,
+      "cacheReadPerMillionTokensLocal": 0.99,
+      "outputPerMillionTokensLocal": 0.99,
+      "scheduledRemovalDate": "2026-08-31",
+      "calculation": "CNY 99 ÷ 100M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-standard-kimi-k2-5-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-standard",
+      "modelSlugs": [
+        "kimi-k2-5-non-reasoning"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.99,
+      "cacheReadPerMillionTokensLocal": 0.99,
+      "outputPerMillionTokensLocal": 0.99,
+      "scheduledRemovalDate": "2026-08-31",
+      "calculation": "CNY 99 ÷ 100M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-pro-deepseek-v4-flash",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-pro",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash-202605",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.934375,
+      "cacheReadPerMillionTokensLocal": 0.934375,
+      "outputPerMillionTokensLocal": 0.934375,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 299 ÷ 320M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-pro-deepseek-v4-flash-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-pro",
+      "modelSlugs": [
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-flash-202605",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.934375,
+      "cacheReadPerMillionTokensLocal": 0.934375,
+      "outputPerMillionTokensLocal": 0.934375,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 299 ÷ 320M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-pro-deepseek-v4-pro",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-pro",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.934375,
+      "cacheReadPerMillionTokensLocal": 0.934375,
+      "outputPerMillionTokensLocal": 0.934375,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 299 ÷ 320M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-pro-deepseek-v4-pro-high",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-pro",
+      "modelSlugs": [
+        "deepseek-v4-pro-high"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.934375,
+      "cacheReadPerMillionTokensLocal": 0.934375,
+      "outputPerMillionTokensLocal": 0.934375,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 299 ÷ 320M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled",
+      "reasoningEffort": "high"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-pro-deepseek-v4-pro-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-pro",
+      "modelSlugs": [
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.934375,
+      "cacheReadPerMillionTokensLocal": 0.934375,
+      "outputPerMillionTokensLocal": 0.934375,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 299 ÷ 320M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-pro-minimax-m2-7",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-pro",
+      "modelSlugs": [
+        "minimax-m2-7"
+      ],
+      "providerModelId": "minimax-m2.7",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.934375,
+      "cacheReadPerMillionTokensLocal": 0.934375,
+      "outputPerMillionTokensLocal": 0.934375,
+      "calculation": "CNY 299 ÷ 320M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token."
+    },
+    {
+      "id": "tencent-token-plan-personal-general-pro-glm-5",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-pro",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.934375,
+      "cacheReadPerMillionTokensLocal": 0.934375,
+      "outputPerMillionTokensLocal": 0.934375,
+      "calculation": "CNY 299 ÷ 320M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-pro-glm-5-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-pro",
+      "modelSlugs": [
+        "glm-5-non-reasoning"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.934375,
+      "cacheReadPerMillionTokensLocal": 0.934375,
+      "outputPerMillionTokensLocal": 0.934375,
+      "calculation": "CNY 299 ÷ 320M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-pro-glm-5-1",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-pro",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.934375,
+      "cacheReadPerMillionTokensLocal": 0.934375,
+      "outputPerMillionTokensLocal": 0.934375,
+      "calculation": "CNY 299 ÷ 320M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-pro-glm-5-1-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-pro",
+      "modelSlugs": [
+        "glm-5-1-non-reasoning"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.934375,
+      "cacheReadPerMillionTokensLocal": 0.934375,
+      "outputPerMillionTokensLocal": 0.934375,
+      "calculation": "CNY 299 ÷ 320M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-pro-glm-5-2",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-pro",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.934375,
+      "cacheReadPerMillionTokensLocal": 0.934375,
+      "outputPerMillionTokensLocal": 0.934375,
+      "calculation": "CNY 299 ÷ 320M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-pro-glm-5-2-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-pro",
+      "modelSlugs": [
+        "glm-5-2-non-reasoning"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.934375,
+      "cacheReadPerMillionTokensLocal": 0.934375,
+      "outputPerMillionTokensLocal": 0.934375,
+      "calculation": "CNY 299 ÷ 320M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-pro-kimi-k2-5",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-pro",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.934375,
+      "cacheReadPerMillionTokensLocal": 0.934375,
+      "outputPerMillionTokensLocal": 0.934375,
+      "scheduledRemovalDate": "2026-08-31",
+      "calculation": "CNY 299 ÷ 320M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-pro-kimi-k2-5-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-pro",
+      "modelSlugs": [
+        "kimi-k2-5-non-reasoning"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.934375,
+      "cacheReadPerMillionTokensLocal": 0.934375,
+      "outputPerMillionTokensLocal": 0.934375,
+      "scheduledRemovalDate": "2026-08-31",
+      "calculation": "CNY 299 ÷ 320M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-max-deepseek-v4-flash",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-max",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash-202605",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.921538462,
+      "cacheReadPerMillionTokensLocal": 0.921538462,
+      "outputPerMillionTokensLocal": 0.921538462,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 599 ÷ 650M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-max-deepseek-v4-flash-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-max",
+      "modelSlugs": [
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-flash-202605",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.921538462,
+      "cacheReadPerMillionTokensLocal": 0.921538462,
+      "outputPerMillionTokensLocal": 0.921538462,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 599 ÷ 650M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-max-deepseek-v4-pro",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-max",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.921538462,
+      "cacheReadPerMillionTokensLocal": 0.921538462,
+      "outputPerMillionTokensLocal": 0.921538462,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 599 ÷ 650M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-max-deepseek-v4-pro-high",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-max",
+      "modelSlugs": [
+        "deepseek-v4-pro-high"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.921538462,
+      "cacheReadPerMillionTokensLocal": 0.921538462,
+      "outputPerMillionTokensLocal": 0.921538462,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 599 ÷ 650M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled",
+      "reasoningEffort": "high"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-max-deepseek-v4-pro-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-max",
+      "modelSlugs": [
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.921538462,
+      "cacheReadPerMillionTokensLocal": 0.921538462,
+      "outputPerMillionTokensLocal": 0.921538462,
+      "routeLabel": "DeepSeek 原厂直供",
+      "calculation": "CNY 599 ÷ 650M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-max-minimax-m2-7",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-max",
+      "modelSlugs": [
+        "minimax-m2-7"
+      ],
+      "providerModelId": "minimax-m2.7",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.921538462,
+      "cacheReadPerMillionTokensLocal": 0.921538462,
+      "outputPerMillionTokensLocal": 0.921538462,
+      "calculation": "CNY 599 ÷ 650M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token."
+    },
+    {
+      "id": "tencent-token-plan-personal-general-max-glm-5",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-max",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.921538462,
+      "cacheReadPerMillionTokensLocal": 0.921538462,
+      "outputPerMillionTokensLocal": 0.921538462,
+      "calculation": "CNY 599 ÷ 650M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-max-glm-5-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-max",
+      "modelSlugs": [
+        "glm-5-non-reasoning"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.921538462,
+      "cacheReadPerMillionTokensLocal": 0.921538462,
+      "outputPerMillionTokensLocal": 0.921538462,
+      "calculation": "CNY 599 ÷ 650M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-max-glm-5-1",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-max",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.921538462,
+      "cacheReadPerMillionTokensLocal": 0.921538462,
+      "outputPerMillionTokensLocal": 0.921538462,
+      "calculation": "CNY 599 ÷ 650M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-max-glm-5-1-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-max",
+      "modelSlugs": [
+        "glm-5-1-non-reasoning"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.921538462,
+      "cacheReadPerMillionTokensLocal": 0.921538462,
+      "outputPerMillionTokensLocal": 0.921538462,
+      "calculation": "CNY 599 ÷ 650M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-max-glm-5-2",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-max",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.921538462,
+      "cacheReadPerMillionTokensLocal": 0.921538462,
+      "outputPerMillionTokensLocal": 0.921538462,
+      "calculation": "CNY 599 ÷ 650M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-max-glm-5-2-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-max",
+      "modelSlugs": [
+        "glm-5-2-non-reasoning"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.921538462,
+      "cacheReadPerMillionTokensLocal": 0.921538462,
+      "outputPerMillionTokensLocal": 0.921538462,
+      "calculation": "CNY 599 ÷ 650M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-max-kimi-k2-5",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-max",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.921538462,
+      "cacheReadPerMillionTokensLocal": 0.921538462,
+      "outputPerMillionTokensLocal": 0.921538462,
+      "scheduledRemovalDate": "2026-08-31",
+      "calculation": "CNY 599 ÷ 650M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-general-max-kimi-k2-5-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-general-max",
+      "modelSlugs": [
+        "kimi-k2-5-non-reasoning"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.921538462,
+      "cacheReadPerMillionTokensLocal": 0.921538462,
+      "outputPerMillionTokensLocal": 0.921538462,
+      "scheduledRemovalDate": "2026-08-31",
+      "calculation": "CNY 599 ÷ 650M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-hy-lite-hy3",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-hy-lite",
+      "modelSlugs": [
+        "hy3"
+      ],
+      "providerModelId": "hy3",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.8,
+      "cacheReadPerMillionTokensLocal": 0.8,
+      "outputPerMillionTokensLocal": 0.8,
+      "calculation": "CNY 28 ÷ 35M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-hy-lite-hy3-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-hy-lite",
+      "modelSlugs": [
+        "hy3-non-reasoning"
+      ],
+      "providerModelId": "hy3",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.8,
+      "cacheReadPerMillionTokensLocal": 0.8,
+      "outputPerMillionTokensLocal": 0.8,
+      "calculation": "CNY 28 ÷ 35M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-hy-lite-hy3-preview",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-hy-lite",
+      "modelSlugs": [
+        "hy3-preview"
+      ],
+      "providerModelId": "hy3-preview",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.8,
+      "cacheReadPerMillionTokensLocal": 0.8,
+      "outputPerMillionTokensLocal": 0.8,
+      "scheduledRemovalDate": "2026-08-31",
+      "calculation": "CNY 28 ÷ 35M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-hy-standard-hy3",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-hy-standard",
+      "modelSlugs": [
+        "hy3"
+      ],
+      "providerModelId": "hy3",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.78,
+      "cacheReadPerMillionTokensLocal": 0.78,
+      "outputPerMillionTokensLocal": 0.78,
+      "calculation": "CNY 78 ÷ 100M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-hy-standard-hy3-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-hy-standard",
+      "modelSlugs": [
+        "hy3-non-reasoning"
+      ],
+      "providerModelId": "hy3",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.78,
+      "cacheReadPerMillionTokensLocal": 0.78,
+      "outputPerMillionTokensLocal": 0.78,
+      "calculation": "CNY 78 ÷ 100M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-hy-standard-hy3-preview",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-hy-standard",
+      "modelSlugs": [
+        "hy3-preview"
+      ],
+      "providerModelId": "hy3-preview",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.78,
+      "cacheReadPerMillionTokensLocal": 0.78,
+      "outputPerMillionTokensLocal": 0.78,
+      "scheduledRemovalDate": "2026-08-31",
+      "calculation": "CNY 78 ÷ 100M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-hy-pro-hy3",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-hy-pro",
+      "modelSlugs": [
+        "hy3"
+      ],
+      "providerModelId": "hy3",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.74375,
+      "cacheReadPerMillionTokensLocal": 0.74375,
+      "outputPerMillionTokensLocal": 0.74375,
+      "calculation": "CNY 238 ÷ 320M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-hy-pro-hy3-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-hy-pro",
+      "modelSlugs": [
+        "hy3-non-reasoning"
+      ],
+      "providerModelId": "hy3",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.74375,
+      "cacheReadPerMillionTokensLocal": 0.74375,
+      "outputPerMillionTokensLocal": 0.74375,
+      "calculation": "CNY 238 ÷ 320M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-hy-pro-hy3-preview",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-hy-pro",
+      "modelSlugs": [
+        "hy3-preview"
+      ],
+      "providerModelId": "hy3-preview",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.74375,
+      "cacheReadPerMillionTokensLocal": 0.74375,
+      "outputPerMillionTokensLocal": 0.74375,
+      "scheduledRemovalDate": "2026-08-31",
+      "calculation": "CNY 238 ÷ 320M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-hy-max-hy3",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-hy-max",
+      "modelSlugs": [
+        "hy3"
+      ],
+      "providerModelId": "hy3",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.72,
+      "cacheReadPerMillionTokensLocal": 0.72,
+      "outputPerMillionTokensLocal": 0.72,
+      "calculation": "CNY 468 ÷ 650M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-hy-max-hy3-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-hy-max",
+      "modelSlugs": [
+        "hy3-non-reasoning"
+      ],
+      "providerModelId": "hy3",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.72,
+      "cacheReadPerMillionTokensLocal": 0.72,
+      "outputPerMillionTokensLocal": 0.72,
+      "calculation": "CNY 468 ÷ 650M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-personal-hy-max-hy3-preview",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-personal-hy-max",
+      "modelSlugs": [
+        "hy3-preview"
+      ],
+      "providerModelId": "hy3-preview",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.72,
+      "cacheReadPerMillionTokensLocal": 0.72,
+      "outputPerMillionTokensLocal": 0.72,
+      "scheduledRemovalDate": "2026-08-31",
+      "calculation": "CNY 468 ÷ 650M included tokens",
+      "sourceIds": [
+        "tencent-token-plan-personal-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full monthly quota utilization; every input, cache-hit input, and output token deducts one included token.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-glm-5-2",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 8,
+      "cacheReadPerMillionTokensLocal": 2,
+      "outputPerMillionTokensLocal": 28,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-glm-5-2-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "glm-5-2-non-reasoning"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 8,
+      "cacheReadPerMillionTokensLocal": 2,
+      "outputPerMillionTokensLocal": 28,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-glm-5",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 4,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 18,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 6,
+          "cacheReadPerMillionTokensLocal": 1.5,
+          "outputPerMillionTokensLocal": 22,
+          "notes": "Published input length 32K+ tier."
+        }
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-glm-5-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "glm-5-non-reasoning"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 4,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 18,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 6,
+          "cacheReadPerMillionTokensLocal": 1.5,
+          "outputPerMillionTokensLocal": 22,
+          "notes": "Published input length 32K+ tier."
+        }
+      ],
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-glm-5-1",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6,
+      "cacheReadPerMillionTokensLocal": 1.3,
+      "outputPerMillionTokensLocal": 24,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 8,
+          "cacheReadPerMillionTokensLocal": 2,
+          "outputPerMillionTokensLocal": 28,
+          "notes": "Published input length 32K+ tier."
+        }
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-glm-5-1-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "glm-5-1-non-reasoning"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6,
+      "cacheReadPerMillionTokensLocal": 1.3,
+      "outputPerMillionTokensLocal": 24,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 8,
+          "cacheReadPerMillionTokensLocal": 2,
+          "outputPerMillionTokensLocal": 28,
+          "notes": "Published input length 32K+ tier."
+        }
+      ],
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-glm-5-turbo",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "glm-5-turbo"
+      ],
+      "providerModelId": "glm-5-turbo",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 5,
+      "cacheReadPerMillionTokensLocal": 1.2,
+      "outputPerMillionTokensLocal": 22,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 7,
+          "cacheReadPerMillionTokensLocal": 1.8,
+          "outputPerMillionTokensLocal": 26,
+          "notes": "Published input length 32K+ tier."
+        }
+      ]
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-kimi-k2-7-code-standard",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "kimi-k2-7-code"
+      ],
+      "providerModelId": "kimi-k2.7-code",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6.5,
+      "cacheReadPerMillionTokensLocal": 1.3,
+      "outputPerMillionTokensLocal": 27,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "standard",
+      "routeLabel": "Standard"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-kimi-k2-7-code-highspeed",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "kimi-k2-7-code"
+      ],
+      "providerModelId": "kimi-k2.7-code-highspeed",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 13,
+      "cacheReadPerMillionTokensLocal": 2.6,
+      "outputPerMillionTokensLocal": 54,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "highspeed",
+      "routeLabel": "HighSpeed"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-kimi-k2-5",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 4,
+      "cacheReadPerMillionTokensLocal": 0.7,
+      "outputPerMillionTokensLocal": 21,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "scheduledRemovalDate": "2026-08-31",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-kimi-k2-5-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "kimi-k2-5-non-reasoning"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 4,
+      "cacheReadPerMillionTokensLocal": 0.7,
+      "outputPerMillionTokensLocal": 21,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "scheduledRemovalDate": "2026-08-31",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-kimi-k2-6",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "kimi-k2-6"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6.5,
+      "cacheReadPerMillionTokensLocal": 1.1,
+      "outputPerMillionTokensLocal": 27,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-kimi-k2-6-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "kimi-k2-6-non-reasoning"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6.5,
+      "cacheReadPerMillionTokensLocal": 1.1,
+      "outputPerMillionTokensLocal": 27,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-minimax-m2-7",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "minimax-m2-7"
+      ],
+      "providerModelId": "minimax-m2.7",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.1,
+      "cacheReadPerMillionTokensLocal": 0.42,
+      "outputPerMillionTokensLocal": 8.4,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool."
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-minimax-m3",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "minimax-m3"
+      ],
+      "providerModelId": "minimax-m3",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.1,
+      "cacheReadPerMillionTokensLocal": 0.42,
+      "outputPerMillionTokensLocal": 8.4,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 512000,
+          "inputPerMillionTokensLocal": 4.2,
+          "cacheReadPerMillionTokensLocal": 0.84,
+          "outputPerMillionTokensLocal": 16.8,
+          "notes": "Published input length 512K+ tier."
+        }
+      ]
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-deepseek-v4-flash-standard",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.2,
+      "outputPerMillionTokensLocal": 2,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-deepseek-v4-flash-non-reasoning-standard",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.2,
+      "outputPerMillionTokensLocal": 2,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-deepseek-v4-flash-original",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash-202605",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.02,
+      "outputPerMillionTokensLocal": 2,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-deepseek-v4-flash-non-reasoning-original",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-flash-202605",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.02,
+      "outputPerMillionTokensLocal": 2,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-deepseek-v4-pro-standard",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 12,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 24,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-deepseek-v4-pro-high-standard",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "deepseek-v4-pro-high"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 12,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 24,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "enabled",
+      "reasoningEffort": "high"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-deepseek-v4-pro-non-reasoning-standard",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 12,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 24,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-deepseek-v4-pro-original",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.025,
+      "outputPerMillionTokensLocal": 6,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-deepseek-v4-pro-high-original",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "deepseek-v4-pro-high"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.025,
+      "outputPerMillionTokensLocal": 6,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "enabled",
+      "reasoningEffort": "high"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-guangzhou-deepseek-v4-pro-non-reasoning-original",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-guangzhou",
+      "modelSlugs": [
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.025,
+      "outputPerMillionTokensLocal": 6,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-singapore-glm-5-2",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-singapore",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 10.254,
+      "cacheReadPerMillionTokensLocal": 1.9044,
+      "outputPerMillionTokensLocal": 32.2282,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-singapore-glm-5-2-non-reasoning",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-singapore",
+      "modelSlugs": [
+        "glm-5-2-non-reasoning"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 10.254,
+      "cacheReadPerMillionTokensLocal": 1.9044,
+      "outputPerMillionTokensLocal": 32.2282,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-singapore-minimax-m3",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-singapore",
+      "modelSlugs": [
+        "minimax-m3"
+      ],
+      "providerModelId": "minimax-m3",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.1,
+      "cacheReadPerMillionTokensLocal": 0.42,
+      "outputPerMillionTokensLocal": 8.4,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 512000,
+          "inputPerMillionTokensLocal": 4.2,
+          "cacheReadPerMillionTokensLocal": 0.84,
+          "outputPerMillionTokensLocal": 16.8,
+          "notes": "Published input length 512K+ tier."
+        }
+      ]
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-singapore-kimi-k2-7-code-standard",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-singapore",
+      "modelSlugs": [
+        "kimi-k2-7-code"
+      ],
+      "providerModelId": "kimi-k2.7-code",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6.5,
+      "cacheReadPerMillionTokensLocal": 1.3,
+      "outputPerMillionTokensLocal": 27,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "standard",
+      "routeLabel": "Standard"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-singapore-kimi-k2-7-code-highspeed",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-singapore",
+      "modelSlugs": [
+        "kimi-k2-7-code"
+      ],
+      "providerModelId": "kimi-k2.7-code-highspeed",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 13,
+      "cacheReadPerMillionTokensLocal": 2.6,
+      "outputPerMillionTokensLocal": 54,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "highspeed",
+      "routeLabel": "HighSpeed"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-singapore-deepseek-v4-flash-standard",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-singapore",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.2,
+      "outputPerMillionTokensLocal": 2,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-singapore-deepseek-v4-flash-non-reasoning-standard",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-singapore",
+      "modelSlugs": [
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.2,
+      "outputPerMillionTokensLocal": 2,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-singapore-deepseek-v4-flash-original",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-singapore",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash-202605",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.02,
+      "outputPerMillionTokensLocal": 2,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-singapore-deepseek-v4-flash-non-reasoning-original",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-singapore",
+      "modelSlugs": [
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-flash-202605",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.02,
+      "outputPerMillionTokensLocal": 2,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-singapore-deepseek-v4-pro-standard",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-singapore",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 12,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 24,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-singapore-deepseek-v4-pro-high-standard",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-singapore",
+      "modelSlugs": [
+        "deepseek-v4-pro-high"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 12,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 24,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "enabled",
+      "reasoningEffort": "high"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-singapore-deepseek-v4-pro-non-reasoning-standard",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-singapore",
+      "modelSlugs": [
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 12,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 24,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-singapore-deepseek-v4-pro-original",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-singapore",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.025,
+      "outputPerMillionTokensLocal": 6,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-singapore-deepseek-v4-pro-high-original",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-singapore",
+      "modelSlugs": [
+        "deepseek-v4-pro-high"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.025,
+      "outputPerMillionTokensLocal": 6,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "enabled",
+      "reasoningEffort": "high"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-singapore-deepseek-v4-pro-non-reasoning-original",
+      "providerId": "tencent-token-plan",
+      "planId": "tencent-token-plan-enterprise-pro-singapore",
+      "modelSlugs": [
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.025,
+      "outputPerMillionTokensLocal": 6,
+      "calculation": "Published points per million tokens × CNY 0.01 per point",
+      "sourceIds": [
+        "tencent-token-plan-enterprise-pro-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "notes": "Normalized at full use of the purchased monthly point pool.",
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-hy3",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "hy3"
+      ],
+      "providerModelId": "hy3",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.25,
+      "outputPerMillionTokensLocal": 4,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-hy3-non-reasoning",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "hy3-non-reasoning"
+      ],
+      "providerModelId": "hy3",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.25,
+      "outputPerMillionTokensLocal": 4,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-hy3-preview",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "hy3-preview"
+      ],
+      "providerModelId": "hy3-preview",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.2,
+      "cacheReadPerMillionTokensLocal": 0.4,
+      "outputPerMillionTokensLocal": 4,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "scheduledRemovalDate": "2026-08-31",
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 16000,
+          "inputPerMillionTokensLocal": 1.6,
+          "cacheReadPerMillionTokensLocal": 0.6,
+          "outputPerMillionTokensLocal": 6.4,
+          "notes": "Published input length [16K, 32K) tier."
+        },
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 2,
+          "cacheReadPerMillionTokensLocal": 0.8,
+          "outputPerMillionTokensLocal": 8,
+          "notes": "Published input length 32K+ tier."
+        }
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-deepseek-v4-flash-standard",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.2,
+      "outputPerMillionTokensLocal": 2,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-deepseek-v4-flash-non-reasoning-standard",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.2,
+      "outputPerMillionTokensLocal": 2,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-deepseek-v4-flash-original",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash-202605",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.02,
+      "outputPerMillionTokensLocal": 2,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-deepseek-v4-flash-non-reasoning-original",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-flash-202605",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.02,
+      "outputPerMillionTokensLocal": 2,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-deepseek-v4-pro-standard",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 12,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 24,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-deepseek-v4-pro-high-standard",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "deepseek-v4-pro-high"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 12,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 24,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "enabled",
+      "reasoningEffort": "high"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-deepseek-v4-pro-non-reasoning-standard",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 12,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 24,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-deepseek-v4-pro-original",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.025,
+      "outputPerMillionTokensLocal": 6,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-deepseek-v4-pro-high-original",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "deepseek-v4-pro-high"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.025,
+      "outputPerMillionTokensLocal": 6,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "enabled",
+      "reasoningEffort": "high"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-deepseek-v4-pro-non-reasoning-original",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.025,
+      "outputPerMillionTokensLocal": 6,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-glm-5-2",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 8,
+      "cacheReadPerMillionTokensLocal": 2,
+      "outputPerMillionTokensLocal": 28,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-glm-5-2-non-reasoning",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "glm-5-2-non-reasoning"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 8,
+      "cacheReadPerMillionTokensLocal": 2,
+      "outputPerMillionTokensLocal": 28,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-glm-5-1",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6,
+      "cacheReadPerMillionTokensLocal": 1.3,
+      "outputPerMillionTokensLocal": 24,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32001,
+          "inputPerMillionTokensLocal": 8,
+          "cacheReadPerMillionTokensLocal": 2,
+          "outputPerMillionTokensLocal": 28,
+          "notes": "Published input length >32K tier."
+        }
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-glm-5-1-non-reasoning",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "glm-5-1-non-reasoning"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6,
+      "cacheReadPerMillionTokensLocal": 1.3,
+      "outputPerMillionTokensLocal": 24,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32001,
+          "inputPerMillionTokensLocal": 8,
+          "cacheReadPerMillionTokensLocal": 2,
+          "outputPerMillionTokensLocal": 28,
+          "notes": "Published input length >32K tier."
+        }
+      ],
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-glm-5v-turbo",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "glm-5v-turbo"
+      ],
+      "providerModelId": "glm-5v-turbo",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 5,
+      "cacheReadPerMillionTokensLocal": 1.2,
+      "outputPerMillionTokensLocal": 22,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32001,
+          "inputPerMillionTokensLocal": 7,
+          "cacheReadPerMillionTokensLocal": 1.8,
+          "outputPerMillionTokensLocal": 26,
+          "notes": "Published input length >32K tier."
+        }
+      ]
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-glm-5-turbo",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "glm-5-turbo"
+      ],
+      "providerModelId": "glm-5-turbo",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 5,
+      "cacheReadPerMillionTokensLocal": 1.2,
+      "outputPerMillionTokensLocal": 22,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32001,
+          "inputPerMillionTokensLocal": 7,
+          "cacheReadPerMillionTokensLocal": 1.8,
+          "outputPerMillionTokensLocal": 26,
+          "notes": "Published input length >32K tier."
+        }
+      ]
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-glm-5",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 4,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 18,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32001,
+          "inputPerMillionTokensLocal": 6,
+          "cacheReadPerMillionTokensLocal": 1.5,
+          "outputPerMillionTokensLocal": 22,
+          "notes": "Published input length >32K tier."
+        }
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-glm-5-non-reasoning",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "glm-5-non-reasoning"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 4,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 18,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32001,
+          "inputPerMillionTokensLocal": 6,
+          "cacheReadPerMillionTokensLocal": 1.5,
+          "outputPerMillionTokensLocal": 22,
+          "notes": "Published input length >32K tier."
+        }
+      ],
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-kimi-k3",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "kimi-k3"
+      ],
+      "providerModelId": "kimi-k3",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 20,
+      "cacheReadPerMillionTokensLocal": 2,
+      "outputPerMillionTokensLocal": 100,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-kimi-k2-7-code-standard",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "kimi-k2-7-code"
+      ],
+      "providerModelId": "kimi-k2.7-code",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6.5,
+      "cacheReadPerMillionTokensLocal": 1.3,
+      "outputPerMillionTokensLocal": 27,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "standard",
+      "routeLabel": "Standard"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-kimi-k2-7-code-highspeed",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "kimi-k2-7-code"
+      ],
+      "providerModelId": "kimi-k2.7-code-highspeed",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 13,
+      "cacheReadPerMillionTokensLocal": 2.6,
+      "outputPerMillionTokensLocal": 54,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "highspeed",
+      "routeLabel": "HighSpeed"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-kimi-k2-6",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "kimi-k2-6"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6.5,
+      "cacheReadPerMillionTokensLocal": 1.1,
+      "outputPerMillionTokensLocal": 27,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-kimi-k2-6-non-reasoning",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "kimi-k2-6-non-reasoning"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6.5,
+      "cacheReadPerMillionTokensLocal": 1.1,
+      "outputPerMillionTokensLocal": 27,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-kimi-k2-5",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 4,
+      "cacheReadPerMillionTokensLocal": 0.7,
+      "outputPerMillionTokensLocal": 21,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "scheduledRemovalDate": "2026-08-31",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-kimi-k2-5-non-reasoning",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "kimi-k2-5-non-reasoning"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 4,
+      "cacheReadPerMillionTokensLocal": 0.7,
+      "outputPerMillionTokensLocal": 21,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "scheduledRemovalDate": "2026-08-31",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-minimax-m3",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "minimax-m3"
+      ],
+      "providerModelId": "minimax-m3",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.1,
+      "cacheReadPerMillionTokensLocal": 0.42,
+      "outputPerMillionTokensLocal": 8.4,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 512001,
+          "inputPerMillionTokensLocal": 4.2,
+          "cacheReadPerMillionTokensLocal": 0.84,
+          "outputPerMillionTokensLocal": 16.8,
+          "notes": "Published input length >512K tier."
+        }
+      ]
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-minimax-m2-7",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "minimax-m2-7"
+      ],
+      "providerModelId": "minimax-m2.7",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.1,
+      "cacheReadPerMillionTokensLocal": 0.42,
+      "outputPerMillionTokensLocal": 8.4,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-mimo-v2-5-pro",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.025,
+      "outputPerMillionTokensLocal": 6,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-payg-mimo-v2-5-pro-non-reasoning",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-payg",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.025,
+      "outputPerMillionTokensLocal": 6,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-hy3",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "hy3"
+      ],
+      "providerModelId": "hy3",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.25,
+      "outputPerMillionTokensLocal": 4,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-hy3-non-reasoning",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "hy3-non-reasoning"
+      ],
+      "providerModelId": "hy3",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.25,
+      "outputPerMillionTokensLocal": 4,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-hy3-preview",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "hy3-preview"
+      ],
+      "providerModelId": "hy3-preview",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.2,
+      "cacheReadPerMillionTokensLocal": 0.4,
+      "outputPerMillionTokensLocal": 4,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "scheduledRemovalDate": "2026-08-31",
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 16000,
+          "inputPerMillionTokensLocal": 1.6,
+          "cacheReadPerMillionTokensLocal": 0.6,
+          "outputPerMillionTokensLocal": 6.4,
+          "notes": "Published input length [16K, 32K) tier."
+        },
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 2,
+          "cacheReadPerMillionTokensLocal": 0.8,
+          "outputPerMillionTokensLocal": 8,
+          "notes": "Published input length 32K+ tier."
+        }
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-deepseek-v4-flash-standard",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.2,
+      "outputPerMillionTokensLocal": 2,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-deepseek-v4-flash-non-reasoning-standard",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.2,
+      "outputPerMillionTokensLocal": 2,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-deepseek-v4-flash-original",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash-202605",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.02,
+      "outputPerMillionTokensLocal": 2,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-deepseek-v4-flash-non-reasoning-original",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-flash-202605",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.02,
+      "outputPerMillionTokensLocal": 2,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-deepseek-v4-pro-standard",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 12,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 24,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-deepseek-v4-pro-high-standard",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "deepseek-v4-pro-high"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 12,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 24,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "enabled",
+      "reasoningEffort": "high"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-deepseek-v4-pro-non-reasoning-standard",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 12,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 24,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "standard",
+      "routeLabel": "Standard",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-deepseek-v4-pro-original",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.025,
+      "outputPerMillionTokensLocal": 6,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-deepseek-v4-pro-high-original",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "deepseek-v4-pro-high"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.025,
+      "outputPerMillionTokensLocal": 6,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "enabled",
+      "reasoningEffort": "high"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-deepseek-v4-pro-non-reasoning-original",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-pro-202606",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.025,
+      "outputPerMillionTokensLocal": 6,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "original",
+      "routeLabel": "原厂直供",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-glm-5-2",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 10.254,
+      "cacheReadPerMillionTokensLocal": 1.9044,
+      "outputPerMillionTokensLocal": 32.2282,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-glm-5-2-non-reasoning",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "glm-5-2-non-reasoning"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 10.254,
+      "cacheReadPerMillionTokensLocal": 1.9044,
+      "outputPerMillionTokensLocal": 32.2282,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-glm-5-1",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 10.254,
+      "cacheReadPerMillionTokensLocal": 1.904,
+      "outputPerMillionTokensLocal": 32.228,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-glm-5-1-non-reasoning",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "glm-5-1-non-reasoning"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 10.254,
+      "cacheReadPerMillionTokensLocal": 1.904,
+      "outputPerMillionTokensLocal": 32.228,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-glm-5v-turbo",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "glm-5v-turbo"
+      ],
+      "providerModelId": "glm-5v-turbo",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 8.79,
+      "cacheReadPerMillionTokensLocal": 1.758,
+      "outputPerMillionTokensLocal": 29.298,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-glm-5-turbo",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "glm-5-turbo"
+      ],
+      "providerModelId": "glm-5-turbo",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 8.79,
+      "cacheReadPerMillionTokensLocal": 1.758,
+      "outputPerMillionTokensLocal": 29.298,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-glm-5",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 7.325,
+      "cacheReadPerMillionTokensLocal": 1.465,
+      "outputPerMillionTokensLocal": 23.439,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-glm-5-non-reasoning",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "glm-5-non-reasoning"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 7.325,
+      "cacheReadPerMillionTokensLocal": 1.465,
+      "outputPerMillionTokensLocal": 23.439,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-kimi-k3",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "kimi-k3"
+      ],
+      "providerModelId": "kimi-k3",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 21.974,
+      "cacheReadPerMillionTokensLocal": 2.197,
+      "outputPerMillionTokensLocal": 109.869,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-kimi-k2-7-code-standard",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "kimi-k2-7-code"
+      ],
+      "providerModelId": "kimi-k2.7-code",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6.5,
+      "cacheReadPerMillionTokensLocal": 1.3,
+      "outputPerMillionTokensLocal": 27,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "standard",
+      "routeLabel": "Standard"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-kimi-k2-7-code-highspeed",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "kimi-k2-7-code"
+      ],
+      "providerModelId": "kimi-k2.7-code-highspeed",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 13,
+      "cacheReadPerMillionTokensLocal": 2.6,
+      "outputPerMillionTokensLocal": 54,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "routeTag": "highspeed",
+      "routeLabel": "HighSpeed"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-kimi-k2-6",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "kimi-k2-6"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6.5,
+      "cacheReadPerMillionTokensLocal": 1.1,
+      "outputPerMillionTokensLocal": 27,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-kimi-k2-6-non-reasoning",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "kimi-k2-6-non-reasoning"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6.5,
+      "cacheReadPerMillionTokensLocal": 1.1,
+      "outputPerMillionTokensLocal": 27,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-kimi-k2-5",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "kimi-k2-5"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 4.395,
+      "cacheReadPerMillionTokensLocal": 0.732,
+      "outputPerMillionTokensLocal": 21.974,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "scheduledRemovalDate": "2026-08-31",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-kimi-k2-5-non-reasoning",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "kimi-k2-5-non-reasoning"
+      ],
+      "providerModelId": "kimi-k2.5",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 4.395,
+      "cacheReadPerMillionTokensLocal": 0.732,
+      "outputPerMillionTokensLocal": 21.974,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "scheduledRemovalDate": "2026-08-31",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-minimax-m3",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "minimax-m3"
+      ],
+      "providerModelId": "minimax-m3",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.1,
+      "cacheReadPerMillionTokensLocal": 0.42,
+      "outputPerMillionTokensLocal": 8.4,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 512001,
+          "inputPerMillionTokensLocal": 4.2,
+          "cacheReadPerMillionTokensLocal": 0.84,
+          "outputPerMillionTokensLocal": 16.8,
+          "notes": "Published input length >512K tier."
+        }
+      ]
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-minimax-m2-7",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "minimax-m2-7"
+      ],
+      "providerModelId": "minimax-m2.7",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.197,
+      "cacheReadPerMillionTokensLocal": 0.439,
+      "outputPerMillionTokensLocal": 8.79,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-mimo-v2-5-pro",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3.1862,
+      "cacheReadPerMillionTokensLocal": 0.0264,
+      "outputPerMillionTokensLocal": 6.3724,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-singapore-payg-mimo-v2-5-pro-non-reasoning",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-singapore-payg",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3.1862,
+      "cacheReadPerMillionTokensLocal": 0.0264,
+      "outputPerMillionTokensLocal": 6.3724,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-batch-glm-5",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-batch",
+      "modelSlugs": [
+        "glm-5"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2,
+      "cacheReadPerMillionTokensLocal": 0.5,
+      "outputPerMillionTokensLocal": 9,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32001,
+          "inputPerMillionTokensLocal": 3,
+          "cacheReadPerMillionTokensLocal": 0.75,
+          "outputPerMillionTokensLocal": 11,
+          "notes": "Published input length >32K batch tier."
+        }
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-batch-glm-5-non-reasoning",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-batch",
+      "modelSlugs": [
+        "glm-5-non-reasoning"
+      ],
+      "providerModelId": "glm-5",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2,
+      "cacheReadPerMillionTokensLocal": 0.5,
+      "outputPerMillionTokensLocal": 9,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32001,
+          "inputPerMillionTokensLocal": 3,
+          "cacheReadPerMillionTokensLocal": 0.75,
+          "outputPerMillionTokensLocal": 11,
+          "notes": "Published input length >32K batch tier."
+        }
+      ],
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-batch-glm-5-1",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-batch",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.65,
+      "outputPerMillionTokensLocal": 12,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32001,
+          "inputPerMillionTokensLocal": 4,
+          "cacheReadPerMillionTokensLocal": 1,
+          "outputPerMillionTokensLocal": 14,
+          "notes": "Published input length >32K batch tier."
+        }
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "tencent-tokenhub-guangzhou-batch-glm-5-1-non-reasoning",
+      "providerId": "tencent-tokenhub",
+      "planId": "tencent-tokenhub-guangzhou-batch",
+      "modelSlugs": [
+        "glm-5-1-non-reasoning"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.65,
+      "outputPerMillionTokensLocal": 12,
+      "sourceIds": [
+        "tencent-tokenhub-pricing-official-2026-08-12",
+        "tencent-tokenhub-models-official-2026-08-12",
+        "tencent-tokenhub-reasoning-official-2026-08-12"
+      ],
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32001,
+          "inputPerMillionTokensLocal": 4,
+          "cacheReadPerMillionTokensLocal": 1,
+          "outputPerMillionTokensLocal": 14,
+          "notes": "Published input length >32K batch tier."
+        }
+      ],
+      "reasoningMode": "disabled"
+    }
+  ],
+  "sources": [
+    {
+      "id": "tencent-coding-plan-official-2026-08-12",
+      "title": "Coding Plan 套餐说明",
+      "publisher": "腾讯云",
+      "url": "https://cloud.tencent.com/document/product/1823/130092",
+      "kind": "official-pricing",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Lite/Pro monthly prices, 5-hour/weekly/monthly request limits, and current supported models."
+    },
+    {
+      "id": "tencent-token-plan-personal-official-2026-08-12",
+      "title": "Token Plan 个人版",
+      "publisher": "腾讯云",
+      "url": "https://cloud.tencent.com/document/product/1823/130060",
+      "kind": "official-pricing",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "General and Hy plan prices, included tokens, current model IDs, and 1:1 token deduction semantics."
+    },
+    {
+      "id": "tencent-token-plan-enterprise-overview-official-2026-08-12",
+      "title": "Token Plan 企业版产品概述",
+      "publisher": "腾讯云",
+      "url": "https://cloud.tencent.com/document/product/1823/131172",
+      "kind": "official-product-doc",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12"
+    },
+    {
+      "id": "tencent-token-plan-enterprise-pro-official-2026-08-12",
+      "title": "Token Plan 企业版专业套餐",
+      "publisher": "腾讯云",
+      "url": "https://cloud.tencent.com/document/product/1823/130659",
+      "kind": "official-pricing",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "CNY 1,000 per 100,000 monthly points and per-model Guangzhou/Singapore point coefficients."
+    },
+    {
+      "id": "tencent-token-plan-enterprise-lite-official-2026-08-12",
+      "title": "Token Plan 企业版轻享套餐",
+      "publisher": "腾讯云",
+      "url": "https://cloud.tencent.com/document/product/1823/131173",
+      "kind": "official-pricing",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Guangzhou/Singapore prices for 50M monthly tokens; Auto routing only."
+    },
+    {
+      "id": "tencent-tokenhub-pricing-official-2026-08-12",
+      "title": "TokenHub 模型价格",
+      "publisher": "腾讯云",
+      "url": "https://cloud.tencent.com/document/product/1823/130055",
+      "kind": "official-pricing",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Guangzhou, Singapore, and batch token rates including context tiers."
+    },
+    {
+      "id": "tencent-tokenhub-models-official-2026-08-12",
+      "title": "TokenHub 模型列表",
+      "publisher": "腾讯云",
+      "url": "https://cloud.tencent.com/document/product/1823/130051",
+      "kind": "official-model-catalog",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12"
+    },
+    {
+      "id": "tencent-tokenhub-reasoning-official-2026-08-12",
+      "title": "TokenHub 深度思考配置",
+      "publisher": "腾讯云",
+      "url": "https://cloud.tencent.com/document/product/1823/131208",
+      "kind": "official-product-doc",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Per-model reasoning enable/disable support and reasoning_effort values."
+    }
+  ]
+}
+

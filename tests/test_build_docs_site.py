@@ -12,10 +12,13 @@ from scripts.build_docs_site import (
     DEFAULT_EXTERNAL_BENCHMARKS_JSON,
     DEFAULT_INPUT_CSV,
     DEFAULT_OUTPUT_JSON,
+    DEFAULT_PROVIDER_PRICING_JSON,
     PRIMARY_RANKING_METHOD,
     _rank_consensus_rows_by_composite_score,
     build_site_payload,
     load_external_benchmarks,
+    load_provider_pricing,
+    merge_provider_pricing_catalogue,
     open_source_type,
     read_csv_rows,
     score_model_for_preset,
@@ -27,6 +30,1173 @@ from scripts.build_docs_site import (
 
 
 class BuildDocsSiteTests(unittest.TestCase):
+    def test_provider_pricing_supplements_replace_append_and_remove_by_id(self):
+        base = {
+            "asOf": "2026-08-10",
+            "providers": [{"id": "keep"}, {"id": "replace", "value": 1}],
+            "plans": [{"id": "remove"}],
+            "offers": [],
+            "sources": [],
+            "exchangeRates": {"EUR": {"usdPerUnit": 1.1}},
+            "stalePricingMethod": {"id": "obsolete-v1"},
+        }
+        supplement = {
+            "checkedAt": "2026-08-11",
+            "providers": [
+                {"id": "replace", "value": 2},
+                {"id": "append", "value": 3},
+            ],
+            "plans": [],
+            "offers": [],
+            "sources": [],
+            "remove": {"plans": ["remove"]},
+            "removeMetadata": ["stalePricingMethod"],
+            "exchangeRates": {"CNY": {"usdPerUnit": 0.14}},
+            "metadata": {"pricingMethodFixture": {"id": "fixture-v1"}},
+        }
+
+        merged = merge_provider_pricing_catalogue(base, supplement)
+
+        self.assertEqual(merged["asOf"], "2026-08-11")
+        self.assertEqual(
+            merged["providers"],
+            [{"id": "keep"}, {"id": "replace", "value": 2}, {"id": "append", "value": 3}],
+        )
+        self.assertEqual(merged["plans"], [])
+        self.assertEqual(set(merged["exchangeRates"]), {"EUR", "CNY"})
+        self.assertNotIn("stalePricingMethod", merged)
+        self.assertEqual(merged["pricingMethodFixture"], {"id": "fixture-v1"})
+
+    def test_provider_pricing_catalogue_references_are_integral_and_unique(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        provider_ids = [provider["id"] for provider in catalogue["providers"]]
+        plan_ids = [plan["id"] for plan in catalogue["plans"]]
+        offer_ids = [offer["id"] for offer in catalogue["offers"]]
+        source_ids = [source["id"] for source in catalogue["sources"]]
+
+        for ids in (provider_ids, plan_ids, offer_ids, source_ids):
+            self.assertEqual(len(ids), len(set(ids)))
+
+        provider_id_set = set(provider_ids)
+        plan_by_id = {plan["id"]: plan for plan in catalogue["plans"]}
+        source_id_set = set(source_ids)
+        exchange_rates = catalogue.get("exchangeRates", {})
+        model_slugs = {
+            model["slug"]
+            for model in json.loads(DEFAULT_OUTPUT_JSON.read_text(encoding="utf-8"))["models"]
+        }
+
+        for provider in catalogue["providers"]:
+            self.assertTrue(set(provider["sourceIds"]) <= source_id_set)
+        for currency, rate in exchange_rates.items():
+            self.assertNotEqual(currency, "USD")
+            self.assertGreater(rate["usdPerUnit"], 0)
+            self.assertGreater(rate["unitsPerUsd"], 0)
+            self.assertIn(rate["sourceId"], source_id_set)
+        for plan in catalogue["plans"]:
+            self.assertIn(plan["providerId"], provider_id_set)
+            self.assertTrue(set(plan["sourceIds"]) <= source_id_set)
+        for offer in catalogue["offers"]:
+            self.assertIn(offer["providerId"], provider_id_set)
+            self.assertIn(offer["planId"], plan_by_id)
+            self.assertEqual(plan_by_id[offer["planId"]]["providerId"], offer["providerId"])
+            self.assertEqual(len(offer["modelSlugs"]), 1)
+            self.assertTrue(set(offer["modelSlugs"]) <= model_slugs)
+            self.assertTrue(set(offer["sourceIds"]) <= source_id_set)
+            token_rate_fields = (
+                "inputPerMillionTokensUsd",
+                "cacheReadPerMillionTokensUsd",
+                "outputPerMillionTokensUsd",
+                "inputPerMillionTokensLocal",
+                "cacheReadPerMillionTokensLocal",
+                "outputPerMillionTokensLocal",
+            )
+            if any(offer.get(field) == 0 for field in token_rate_fields):
+                self.assertTrue(
+                    offer.get("publishedZeroRate"),
+                    f"zero token rate must be explicitly sourced: {offer['id']}",
+                )
+            offer_currency = offer.get("currency") or plan_by_id[offer["planId"]].get(
+                "currency",
+                catalogue["currency"],
+            )
+            local_rate_fields = (
+                "inputPerMillionTokensLocal",
+                "cacheReadPerMillionTokensLocal",
+                "outputPerMillionTokensLocal",
+                "effectiveLocalPerMillionTokens",
+                "effectiveLocalPerMillionIncludedTokens",
+            )
+            has_local_rate = any(offer.get(field) is not None for field in local_rate_fields)
+            if offer.get("comparable") and offer_currency != "USD" and has_local_rate:
+                self.assertIn(offer_currency, exchange_rates)
+            for variant in offer.get("planVariants", []):
+                self.assertIn(variant["planId"], plan_by_id)
+                self.assertEqual(
+                    plan_by_id[variant["planId"]]["providerId"],
+                    offer["providerId"],
+                )
+
+        expanded_offer_ids = offer_ids + [
+            f"{offer['id']}:{variant.get('idSuffix') or variant['planId']}"
+            for offer in catalogue["offers"]
+            for variant in offer.get("planVariants", [])
+        ]
+        self.assertEqual(len(expanded_offer_ids), len(set(expanded_offer_ids)))
+
+    def test_provider_pricing_sources_are_dated_and_linked(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+
+        self.assertEqual(catalogue["asOf"], "2026-08-12")
+        self.assertEqual(catalogue["currency"], "USD")
+        weights = catalogue["workloadScenario"]["weights"]
+        self.assertAlmostEqual(sum(weights.values()), 1)
+        self.assertGreater(weights["input"], 0)
+        self.assertGreater(weights["cacheRead"], 0)
+        self.assertGreater(weights["output"], 0)
+        for source in catalogue["sources"]:
+            self.assertTrue(source["url"].startswith("https://"))
+            self.assertLessEqual(source["asOf"], source["accessedAt"])
+            self.assertLessEqual(source["accessedAt"], catalogue["asOf"])
+            self.assertTrue(source["publisher"])
+            self.assertTrue(source["kind"])
+
+    def test_non_rankable_pricing_classes_are_explicitly_non_comparable(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+
+        for offer in catalogue["offers"]:
+            coverage_mode = str(offer.get("coverageMode", "")).lower()
+            is_unrankable = (
+                offer.get("bestCaseOnly") is True
+                or offer.get("pricingKind") == "estimated-effective-subscription"
+                or any(
+                    marker in coverage_mode
+                    for marker in ("usage-credit", "marginal", "overage")
+                )
+            )
+            if is_unrankable:
+                self.assertFalse(
+                    offer.get("comparable", True),
+                    f"display-only offer must not enter cheapest ranking: {offer['id']}",
+                )
+
+    def test_provider_pricing_requires_explicit_model_slugs_without_family_inheritance(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+
+        for section in ("providers", "plans", "offers"):
+            for row in catalogue[section]:
+                self.assertNotIn("inheritVariantGroupPricing", row)
+
+    def test_models_dev_expansion_is_broad_single_model_and_positive_rate_only(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        imported_providers = [
+            provider
+            for provider in catalogue["providers"]
+            if provider.get("importedFrom") == "models.dev"
+        ]
+        imported_offers = [
+            offer
+            for offer in catalogue["offers"]
+            if offer.get("importedFrom") == "models.dev"
+        ]
+
+        self.assertGreaterEqual(len(catalogue["providers"]), 140)
+        # Official-provider supplements replace a handful of community rows,
+        # while the remaining snapshot still supplies broad aggregator coverage.
+        self.assertGreaterEqual(len(imported_providers), 115)
+        # Exact slug matching intentionally drops ambiguous display-name and
+        # variant-group expansions while preserving broad provider coverage.
+        self.assertGreaterEqual(len(imported_offers), 2_700)
+        self.assertGreaterEqual(
+            len({offer["modelSlugs"][0] for offer in imported_offers}),
+            240,
+        )
+        for offer in imported_offers:
+            self.assertEqual(len(offer["modelSlugs"]), 1)
+            if offer.get("bestCaseOnly"):
+                self.assertFalse(offer["comparable"])
+            else:
+                self.assertTrue(offer["comparable"])
+            self.assertTrue(offer["estimated"])
+            self.assertGreater(offer["inputPerMillionTokensUsd"], 0)
+            self.assertGreater(offer["outputPerMillionTokensUsd"], 0)
+            self.assertNotEqual(offer.get("cacheReadPerMillionTokensUsd"), 0)
+            self.assertIn(
+                offer["mappingMethod"],
+                {"exact-normalized-identifier", "exact-token-multiset"},
+            )
+            self.assertEqual(offer["evidenceKind"], "community-catalog")
+
+        imported_provider_ids = {provider["id"] for provider in imported_providers}
+        self.assertFalse(
+            {
+                "alibaba-token-plan",
+                "alibaba-token-plan-cn",
+                "alibaba-coding-plan",
+                "alibaba-coding-plan-cn",
+                "anthropic-api",
+            }
+            & imported_provider_ids
+        )
+
+    def test_alibaba_token_and_coding_plans_keep_native_units_per_model(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        plans = {plan["id"]: plan for plan in catalogue["plans"]}
+        offers = [
+            offer
+            for offer in catalogue["offers"]
+            if offer["providerId"].startswith("alibaba-token-plan")
+            or offer["providerId"].startswith("alibaba-coding-plan")
+        ]
+
+        expected_token_plans = {
+            "alibaba-token-plan-lite": ("USD", 6, 2_500),
+            "alibaba-token-plan-standard": ("USD", 20, 10_000),
+            "alibaba-token-plan-pro": ("USD", 70, 40_000),
+            "alibaba-token-plan-cn-lite": ("CNY", 39, 2_500),
+            "alibaba-token-plan-cn-standard": ("CNY", 139, 10_000),
+            "alibaba-token-plan-cn-pro": ("CNY", 499, 40_000),
+        }
+        for plan_id, (currency, price, weekly_credits) in expected_token_plans.items():
+            plan = plans[plan_id]
+            self.assertEqual(plan["currency"], currency)
+            self.assertEqual(plan["weeklyCredits"], weekly_credits)
+            monthly_credits = weekly_credits * 52 / 12
+            self.assertAlmostEqual(plan["monthlyCreditsEquivalent"], monthly_credits, places=5)
+            if currency == "USD":
+                self.assertEqual(plan["monthlyPriceUsd"], price)
+                self.assertAlmostEqual(
+                    plan["costPerIncludedCreditUsd"],
+                    price / monthly_credits,
+                    places=8,
+                )
+            else:
+                self.assertEqual(plan["monthlyPriceLocal"], price)
+                self.assertIsNone(plan["monthlyPriceUsd"])
+                self.assertAlmostEqual(
+                    plan["costPerIncludedCreditLocal"],
+                    price / monthly_credits,
+                    places=8,
+                )
+
+        for plan_id in (
+            "alibaba-coding-plan-monthly",
+            "alibaba-coding-plan-cn-monthly",
+        ):
+            plan = plans[plan_id]
+            self.assertEqual(plan["callsPerFiveHours"], 6_000)
+            self.assertEqual(plan["callsPerWeek"], 45_000)
+            self.assertEqual(plan["callsPerMonth"], 90_000)
+
+        self.assertEqual(len(offers), 102)
+        for offer in offers:
+            self.assertEqual(len(offer["modelSlugs"]), 1)
+            self.assertFalse(offer["comparable"])
+            self.assertIsNone(offer["inputPerMillionTokensUsd"])
+            self.assertIsNone(offer["cacheReadPerMillionTokensUsd"])
+            self.assertIsNone(offer["outputPerMillionTokensUsd"])
+            self.assertNotIn("preview", offer["modelSlugs"][0])
+            self.assertNotIn("0420", offer["modelSlugs"][0])
+
+        night_offers = [
+            offer
+            for offer in offers
+            if offer["modelSlugs"] == ["qwen3-8-max"]
+            and offer["providerId"].startswith("alibaba-token-plan")
+        ]
+        self.assertEqual(len(night_offers), 6)
+        for offer in night_offers:
+            self.assertEqual(offer["offPeakCreditMultiplier"], 0.5)
+            self.assertEqual(offer["offPeakLocalTime"], "22:00-08:00")
+
+    def test_zai_v3_offers_use_supported_slugs_and_peak_credit_formula(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        zai_plans = {
+            plan["id"]: plan
+            for plan in catalogue["plans"]
+            if plan["providerId"] == "z-ai"
+        }
+        zai_offers = [
+            offer
+            for offer in catalogue["offers"]
+            if offer["providerId"] == "z-ai"
+        ]
+
+        self.assertNotIn(
+            "glm-5-1",
+            {slug for offer in zai_offers for slug in offer["modelSlugs"]},
+        )
+        comparable = [offer for offer in zai_offers if offer["comparable"]]
+        self.assertEqual(
+            {offer["id"] for offer in comparable},
+            {
+                "zai-lite-glm-5-2-peak",
+                "zai-pro-glm-5-2-peak",
+                "zai-max-glm-5-2-peak",
+            },
+        )
+        for offer in comparable:
+            plan = zai_plans[offer["planId"]]
+            monthly_credits = offer["weeklyCredits"] * 52 / 12
+            usd_per_credit = plan["monthlyPriceUsd"] / monthly_credits
+            self.assertAlmostEqual(
+                offer["inputPerMillionTokensUsd"],
+                usd_per_credit * 690,
+                places=6,
+            )
+            self.assertAlmostEqual(
+                offer["cacheReadPerMillionTokensUsd"],
+                usd_per_credit * 170,
+                places=6,
+            )
+            self.assertAlmostEqual(
+                offer["outputPerMillionTokensUsd"],
+                usd_per_credit * 2400,
+                places=6,
+            )
+            self.assertEqual(offer["offPeakRateMultiplier"], 0.5)
+
+    def test_kimi_cn_plans_use_live_goods_and_verified_model_access(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        expected_prices = {
+            "kimi-code-andante": (49, 468, 39),
+            "kimi-code-moderato": (99, 948, 79),
+            "kimi-code-allegretto": (199, 1908, 159),
+            "kimi-code-allegro": (699, 6708, 559),
+        }
+        kimi_plans = {
+            plan["id"]: plan
+            for plan in catalogue["plans"]
+            if plan["providerId"] == "kimi"
+        }
+
+        self.assertEqual(set(kimi_plans), set(expected_prices))
+        for plan_id, prices in expected_prices.items():
+            plan = kimi_plans[plan_id]
+            self.assertEqual(plan["region"], "CN")
+            self.assertEqual(plan["currency"], "CNY")
+            self.assertIsNone(plan["monthlyPriceUsd"])
+            self.assertEqual(
+                (
+                    plan["monthlyPriceLocal"],
+                    plan["annualTotalLocal"],
+                    plan["annualEquivalentMonthlyLocal"],
+                ),
+                prices,
+            )
+            self.assertEqual(plan["comparisonClass"], "non-comparable")
+
+        kimi_offers = [
+            offer
+            for offer in catalogue["offers"]
+            if offer["providerId"] == "kimi"
+        ]
+        kimi_model_slugs_by_plan = {}
+        for offer in kimi_offers:
+            kimi_model_slugs_by_plan.setdefault(offer["planId"], set()).update(
+                offer["modelSlugs"]
+            )
+        self.assertEqual(
+            kimi_model_slugs_by_plan["kimi-code-andante"],
+            {"kimi-k2-7-code"},
+        )
+        for plan_id in (
+            "kimi-code-moderato",
+            "kimi-code-allegretto",
+            "kimi-code-allegro",
+        ):
+            self.assertEqual(
+                kimi_model_slugs_by_plan[plan_id],
+                {"kimi-k2-7-code", "kimi-k3"},
+            )
+        self.assertFalse(
+            {"kimi-k2-6", "kimi-k2-5"}
+            & {slug for offer in kimi_offers for slug in offer["modelSlugs"]}
+        )
+        self.assertTrue(all(not offer["comparable"] for offer in kimi_offers))
+
+        source = next(
+            source
+            for source in catalogue["sources"]
+            if source["id"] == "kimi-code-pricing"
+        )
+        self.assertEqual(source["httpMethod"], "POST")
+        self.assertEqual(source["kind"], "official-live-api")
+        self.assertTrue(source["url"].endswith("GoodsService/ListGoods"))
+
+    def test_alibaba_token_and_coding_plans_keep_native_credit_and_call_limits(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        plans = {plan["id"]: plan for plan in catalogue["plans"]}
+
+        expected_credits = {
+            "alibaba-token-plan-lite": (6, 2_500),
+            "alibaba-token-plan-standard": (20, 10_000),
+            "alibaba-token-plan-pro": (70, 40_000),
+        }
+        for plan_id, (monthly_price, weekly_credits) in expected_credits.items():
+            plan = plans[plan_id]
+            self.assertEqual(plan["monthlyPriceUsd"], monthly_price)
+            self.assertEqual(plan["weeklyCredits"], weekly_credits)
+            self.assertFalse(plan["creditFormulaPublished"])
+            self.assertEqual(plan["comparisonClass"], "non-comparable")
+
+        expected_cn = {
+            "alibaba-token-plan-cn-lite": (39, 2_500),
+            "alibaba-token-plan-cn-standard": (139, 10_000),
+            "alibaba-token-plan-cn-pro": (499, 40_000),
+        }
+        for plan_id, (monthly_price, weekly_credits) in expected_cn.items():
+            plan = plans[plan_id]
+            self.assertEqual(plan["currency"], "CNY")
+            self.assertEqual(plan["monthlyPriceLocal"], monthly_price)
+            self.assertEqual(plan["weeklyCredits"], weekly_credits)
+
+        for plan_id in (
+            "alibaba-coding-plan-monthly",
+            "alibaba-coding-plan-cn-monthly",
+        ):
+            plan = plans[plan_id]
+            self.assertEqual(plan["callsPerFiveHours"], 6_000)
+            self.assertEqual(plan["callsPerWeek"], 45_000)
+            self.assertEqual(plan["callsPerMonth"], 90_000)
+            self.assertEqual(plan["comparisonClass"], "non-comparable")
+
+        alibaba_plan_offers = [
+            offer
+            for offer in catalogue["offers"]
+            if offer["providerId"].startswith("alibaba-token-plan")
+            or offer["providerId"].startswith("alibaba-coding-plan")
+        ]
+        self.assertEqual(len(alibaba_plan_offers), 102)
+        self.assertTrue(all(len(offer["modelSlugs"]) == 1 for offer in alibaba_plan_offers))
+        self.assertTrue(all(not offer["comparable"] for offer in alibaba_plan_offers))
+
+    def test_openrouter_offers_use_endpoint_routes_and_nullable_cache(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        offers = [
+            offer
+            for offer in catalogue["offers"]
+            if offer["providerId"] == "openrouter"
+        ]
+
+        self.assertGreaterEqual(len(offers), 40)
+        for offer in offers:
+            self.assertTrue(offer["routeProvider"])
+            self.assertTrue(offer["routeTag"])
+            self.assertTrue(offer["routeLabel"])
+            self.assertTrue(offer["providerModelId"])
+        by_id = {offer["id"]: offer for offer in offers}
+        self.assertEqual(by_id["or-gpt-5-6-terra"]["routeTag"], "openai/flex")
+        self.assertEqual(by_id["or-gpt-5-6-terra"]["inputPerMillionTokensUsd"], 0.5)
+        self.assertIsNone(by_id["or-qwen3-6-plus"]["cacheReadPerMillionTokensUsd"])
+
+    def test_openrouter_long_context_overrides_keep_thresholds_and_recomputed_mix(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        offers = {offer["id"]: offer for offer in catalogue["offers"]}
+        expected = {
+            "or-gemini-3-1-pro-preview": (1_048_576, 200_000, 2, 0.2, 9, 1.44),
+            "or-gpt-5-4": (1_050_000, 272_000, 2.5, 0.25, 11.25, 1.8),
+            "or-gpt-5-5": (1_050_000, 272_000, 5, 0.5, 22.5, 3.6),
+            "or-gpt-5-6-luna": (1_050_000, 272_000, 0.1, 0.01, 0.45, 0.072),
+            "or-gpt-5-6-sol": (1_050_000, 272_000, 10, 1, 45, 7.2),
+            "or-gpt-5-6-terra": (1_050_000, 272_000, 1, 0.1, 4.5, 0.72),
+            "or-grok-4-3": (1_000_000, 200_000, 2.5, 0.4, 5, 1.28),
+            "or-grok-4-5": (500_000, 200_000, 4, 0.6, 12, 2.42),
+            "or-grok-build-0-1": (256_000, 200_000, 2, 0.4, 4, 1.08),
+            "or-qwen3-6-plus": (1_000_000, 256_000, 1.3, None, 3.9, 1.56),
+            "or-qwen3-7-plus": (1_000_000, 256_000, 0.96, 0.192, 3.84, 0.7104),
+        }
+
+        for offer_id, values in expected.items():
+            context, threshold, input_rate, cache_rate, output_rate, expected_mix = values
+            offer = offers[offer_id]
+            override = offer["pricingOverrides"][0]
+            self.assertEqual(offer["status"], 0)
+            self.assertTrue(offer["dynamic"])
+            self.assertEqual(offer["contextLength"], context)
+            self.assertEqual(offer["observedAt"], "2026-08-10T10:56:40Z")
+            self.assertEqual(override["minPromptTokens"], threshold)
+            self.assertEqual(override["inputPerMillionTokensUsd"], input_rate)
+            self.assertEqual(override["cacheReadPerMillionTokensUsd"], cache_rate)
+            self.assertEqual(override["outputPerMillionTokensUsd"], output_rate)
+            effective_cache = input_rate if cache_rate is None else cache_rate
+            calculated_mix = 0.2 * input_rate + 0.7 * effective_cache + 0.1 * output_rate
+            self.assertAlmostEqual(calculated_mix, expected_mix)
+
+        self.assertEqual(offers["or-gpt-5-6-sol"]["routeProvider"], "Azure")
+        self.assertEqual(offers["or-gpt-5-6-sol"]["routeTag"], "azure")
+        self.assertEqual(
+            offers["or-gpt-5-6-sol"]["endpointModelId"],
+            "openai/gpt-5.6-sol-20260709",
+        )
+        self.assertEqual(offers["or-qwen3-6-plus"]["quantization"], "fp8")
+        self.assertIsNone(
+            offers["or-qwen3-6-plus"]["pricingOverrides"][0]["cacheReadPerMillionTokensUsd"]
+        )
+
+    def test_official_agnes_and_verified_openrouter_rows_cover_top50_gaps(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        offers = {offer["id"]: offer for offer in catalogue["offers"]}
+        agnes = offers["sapiens-agnes-2-5-pro-alpha"]
+
+        self.assertEqual(agnes["providerId"], "sapiens-ai")
+        self.assertEqual(agnes["planId"], "sapiens-payg")
+        self.assertEqual(agnes["modelSlugs"], ["agnes-2-5-pro-alpha"])
+        self.assertEqual(agnes["contextLength"], 1000000)
+        self.assertEqual(
+            (
+                agnes["inputPerMillionTokensUsd"],
+                agnes["cacheReadPerMillionTokensUsd"],
+                agnes["outputPerMillionTokensUsd"],
+            ),
+            (0.45, 0.0038, 0.9),
+        )
+        self.assertEqual(agnes["effectiveUsdPerMillionTokens"], 0.18266)
+        self.assertTrue(agnes["comparable"])
+
+        expected_openrouter = {
+            "or-nex-n2-pro": ("nex-n2-pro", 0.25, 0.025, 1, 262144),
+            "or-hy3": ("hy3", 0.1288, 0.0322, 0.5336, 262144),
+            "or-inkling-small": ("inkling-small", 0.5, 0.1, 1.2, 524288),
+            "or-inkling": ("inkling", 0.95, 0.16, 4.05, 524288),
+            "or-mimo-v2-5": ("mimo-v2-5-0424", 0.14, 0.0028, 0.28, 1048576),
+        }
+        for offer_id, expected in expected_openrouter.items():
+            offer = offers[offer_id]
+            slug, input_rate, cache_rate, output_rate, context_length = expected
+            self.assertEqual(offer["modelSlugs"], [slug])
+            self.assertEqual(offer["status"], 0)
+            self.assertEqual(offer["observedAt"], "2026-08-10")
+            self.assertTrue(offer["dynamic"])
+            self.assertEqual(offer["contextLength"], context_length)
+            self.assertEqual(
+                (
+                    offer["inputPerMillionTokensUsd"],
+                    offer["cacheReadPerMillionTokensUsd"],
+                    offer["outputPerMillionTokensUsd"],
+                ),
+                (input_rate, cache_rate, output_rate),
+            )
+
+        generated = json.loads(DEFAULT_OUTPUT_JSON.read_text(encoding="utf-8"))
+        top50_slugs = {
+            model["slug"]
+            for model in generated["models"]
+            if 1 <= int(model.get("rankingProfile", {}).get("publicationRank", 0)) <= 50
+        }
+        expected_slugs = {"agnes-2-5-pro-alpha"} | {
+            expected[0] for expected in expected_openrouter.values()
+        }
+        self.assertTrue(expected_slugs <= top50_slugs)
+
+    def test_codex_empirical_multiplier_is_only_rankable_for_measured_model(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        offers = [
+            offer
+            for offer in catalogue["offers"]
+            if offer["providerId"] == "openai-codex"
+        ]
+
+        comparable = [offer for offer in offers if offer["comparable"]]
+        self.assertEqual([offer["modelSlugs"] for offer in comparable], [["gpt-5-6-sol"]])
+        self.assertEqual(comparable[0]["subscriptionMultiplier"], 34.6667)
+        self.assertEqual(comparable[0]["planId"], "codex-pro-20x")
+
+    def test_codex_official_plans_remain_non_comparable_without_token_quotas(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        plans = {
+            plan["id"]: plan
+            for plan in catalogue["plans"]
+            if plan["providerId"] == "openai-codex"
+        }
+        expected_monthly = {
+            "codex-free": 0,
+            "codex-go": 8,
+            "codex-plus": 20,
+            "codex-pro-5x": 100,
+            "codex-pro-20x": 200,
+            "codex-business-annual": 20,
+            "codex-business-monthly": 25,
+            "codex-enterprise": None,
+            "codex-edu": None,
+        }
+        self.assertEqual(
+            {plan_id: plans[plan_id]["monthlyPriceUsd"] for plan_id in expected_monthly},
+            expected_monthly,
+        )
+        self.assertTrue(plans["codex-business-annual"]["annualCommitment"])
+        self.assertTrue(
+            all(
+                plan["comparisonClass"] == "non-comparable"
+                for plan_id, plan in plans.items()
+                if plan_id != "codex-pro-20x"
+            )
+        )
+        plus_offers = [
+            offer
+            for offer in catalogue["offers"]
+            if offer["planId"] == "codex-plus"
+        ]
+        self.assertEqual(
+            {offer["modelSlugs"][0] for offer in plus_offers},
+            {"gpt-5-6-sol", "gpt-5-6-terra", "gpt-5-6-luna"},
+        )
+        self.assertTrue(all(not offer["comparable"] for offer in plus_offers))
+        source = next(
+            source
+            for source in catalogue["sources"]
+            if source["id"] == "openai-codex-official-pricing"
+        )
+        self.assertEqual(source["url"], "https://developers.openai.com/codex/pricing.md")
+
+    def test_openai_api_service_tiers_and_long_context_prices_are_official(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        offers = {
+            offer["id"]: offer
+            for offer in catalogue["offers"]
+            if offer["providerId"] == "openai-api"
+        }
+        official_offer_ids = {
+            f"openai-api-{tier}-{model}"
+            for tier in ("standard", "flex", "batch", "fast")
+            for model in ("sol", "terra", "luna")
+        }
+        self.assertTrue(official_offer_ids <= set(offers))
+        base_standard = {
+            "sol": (5, 0.5, 30),
+            "terra": (2, 0.2, 12),
+            "luna": (0.2, 0.02, 1.2),
+        }
+        base_cache_writes = {"sol": 6.25, "terra": 2.5, "luna": 0.25}
+        for model, standard in base_standard.items():
+            standard_offer = offers[f"openai-api-standard-{model}"]
+            standard_rates = (
+                standard_offer["inputPerMillionTokensUsd"],
+                standard_offer["cacheReadPerMillionTokensUsd"],
+                standard_offer["outputPerMillionTokensUsd"],
+            )
+            self.assertEqual(standard_rates, standard)
+            self.assertEqual(
+                standard_offer["cacheWritePerMillionTokensUsd"],
+                base_cache_writes[model],
+            )
+            for tier in ("flex", "batch"):
+                offer = offers[f"openai-api-{tier}-{model}"]
+                self.assertEqual(
+                    (
+                        offer["inputPerMillionTokensUsd"],
+                        offer["cacheReadPerMillionTokensUsd"],
+                        offer["outputPerMillionTokensUsd"],
+                    ),
+                    tuple(rate / 2 for rate in standard),
+                )
+                self.assertEqual(
+                    offer["cacheWritePerMillionTokensUsd"],
+                    base_cache_writes[model] / 2,
+                )
+            fast = offers[f"openai-api-fast-{model}"]
+            self.assertEqual(
+                (
+                    fast["inputPerMillionTokensUsd"],
+                    fast["cacheReadPerMillionTokensUsd"],
+                    fast["outputPerMillionTokensUsd"],
+                ),
+                tuple(rate * 2 for rate in standard),
+            )
+            self.assertEqual(
+                fast["cacheWritePerMillionTokensUsd"],
+                base_cache_writes[model] * 2,
+            )
+            for tier in ("standard", "flex", "batch", "fast"):
+                override = offers[f"openai-api-{tier}-{model}"]["pricingOverrides"][0]
+                self.assertEqual(override["minPromptTokens"], 272_000)
+                self.assertEqual(
+                    override["cacheWritePerMillionTokensUsd"],
+                    offers[f"openai-api-{tier}-{model}"]["cacheWritePerMillionTokensUsd"] * 2,
+                )
+        source = next(
+            source
+            for source in catalogue["sources"]
+            if source["id"] == "openai-api-official-pricing"
+        )
+        self.assertEqual(
+            source["url"],
+            "https://developers.openai.com/api/docs/pricing.md",
+        )
+
+    def test_anthropic_fable_entitlements_are_not_misread_as_token_discounts(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        offers = {offer["id"]: offer for offer in catalogue["offers"]}
+
+        for offer_id in (
+            "anthropic-pro-fable-5-usage-credits",
+            "anthropic-pro-annual-fable-5-usage-credits",
+        ):
+            offer = offers[offer_id]
+            self.assertEqual(offer["coverageMode"], "usage-credits-only")
+            self.assertEqual(offer["includedWeeklyLimitShare"], 0)
+            self.assertEqual(
+                (
+                    offer["inputPerMillionTokensUsd"],
+                    offer["cacheReadPerMillionTokensUsd"],
+                    offer["outputPerMillionTokensUsd"],
+                ),
+                (10, 1, 50),
+            )
+            self.assertEqual(offer["effectiveUsdPerMillionTokens"], 7.7)
+            self.assertFalse(offer["comparable"])
+
+        for offer_id in (
+            "anthropic-max-5x-fable-5",
+            "anthropic-max-20x-fable-5",
+        ):
+            self.assertNotIn(offer_id, offers)
+
+    def test_anthropic_subscription_calculations_are_removed(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        subscription_calculations = [
+            offer
+            for offer in catalogue["offers"]
+            if offer.get("providerId") == "anthropic"
+            and (
+                offer.get("estimateMethodId")
+                or offer.get("pricingKind") == "estimated-effective-subscription"
+            )
+        ]
+
+        self.assertEqual(subscription_calculations, [])
+        self.assertNotIn("anthropicSubscriptionEstimateMethodology", catalogue)
+        self.assertNotIn(
+            "claude-code-token-quota-estimate-2026-03-27",
+            {source["id"] for source in catalogue["sources"]},
+        )
+
+    def test_anthropic_fragment_contains_no_subscription_estimates(self):
+        fragment = json.loads(
+            DEFAULT_PROVIDER_PRICING_JSON.with_name(
+                "research_anthropic_offers.json"
+            ).read_text(encoding="utf-8")
+        )
+        self.assertEqual(len(fragment["offers"]), 79)
+        self.assertEqual(
+            len({offer["id"] for offer in fragment["offers"]}),
+            len(fragment["offers"]),
+        )
+        self.assertTrue(
+            all(len(offer["modelSlugs"]) == 1 for offer in fragment["offers"])
+        )
+        self.assertNotIn("subscriptionEstimateMethodology", fragment)
+        self.assertNotIn("metadata", fragment)
+        self.assertEqual(
+            fragment["removeMetadata"],
+            ["anthropicSubscriptionEstimateMethodology"],
+        )
+        self.assertFalse(
+            any(
+                offer.get("estimateMethodId")
+                or offer.get("pricingKind") == "estimated-effective-subscription"
+                for offer in fragment["offers"]
+            )
+        )
+        self.assertNotIn(
+            "claude-code-token-quota-estimate-2026-03-27",
+            {source["id"] for source in fragment["sources"]},
+        )
+
+    def test_first_party_fragment_marks_free_rates_and_supplies_inr_fx(self):
+        fragment = json.loads(
+            DEFAULT_PROVIDER_PRICING_JSON.with_name(
+                "research_first_party_model_apis.json"
+            ).read_text(encoding="utf-8")
+        )
+        source_ids = {source["id"] for source in fragment["sources"]}
+        inr = fragment["exchangeRates"]["INR"]
+        self.assertGreater(inr["unitsPerUsd"], 0)
+        self.assertGreater(inr["usdPerUnit"], 0)
+        self.assertAlmostEqual(
+            inr["unitsPerUsd"] * inr["usdPerUnit"],
+            1,
+            places=7,
+        )
+        self.assertIn(inr["sourceId"], source_ids)
+
+        sarvam = [
+            offer
+            for offer in fragment["offers"]
+            if offer["providerId"] == "sarvam-api"
+        ]
+        self.assertEqual(len(sarvam), 2)
+        for offer in sarvam:
+            self.assertTrue(offer["publishedZeroRate"])
+            self.assertEqual(offer["inputPerMillionTokensUsd"], 0)
+            self.assertEqual(offer["outputPerMillionTokensUsd"], 0)
+
+    def test_anthropic_paid_plan_usage_credits_use_standard_api_rates(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        offers = {offer["id"]: offer for offer in catalogue["offers"]}
+        expected = {
+            "anthropic-usage-credits-fable-5": (10, 1, 50, 7.7),
+            "anthropic-usage-credits-opus-5": (5, 0.5, 25, 3.85),
+            "anthropic-usage-credits-sonnet-5": (2, 0.2, 10, 1.54),
+            "anthropic-usage-credits-haiku-4-5": (1, 0.1, 5, 0.77),
+        }
+
+        for offer_id, rates in expected.items():
+            offer = offers[offer_id]
+            self.assertEqual(
+                (
+                    offer["inputPerMillionTokensUsd"],
+                    offer["cacheReadPerMillionTokensUsd"],
+                    offer["outputPerMillionTokensUsd"],
+                    offer["effectiveUsdPerMillionTokens"],
+                ),
+                rates,
+            )
+            self.assertFalse(offer["comparable"])
+            self.assertEqual(offer["coverageMode"], "paid-plan-usage-credits")
+
+    def test_anthropic_first_party_api_tiers_keep_published_fable_rates(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        offers = {offer["id"]: offer for offer in catalogue["offers"]}
+
+        expected = {
+            "anthropic-api-standard-fable-5": (10, 1, 50),
+            "anthropic-api-batch-fable-5": (5, 0.5, 25),
+            "anthropic-api-us-only-fable-5": (11, 1, 55),
+        }
+        for offer_id, rates in expected.items():
+            offer = offers[offer_id]
+            self.assertEqual(
+                (
+                    offer["inputPerMillionTokensUsd"],
+                    offer["cacheReadPerMillionTokensUsd"],
+                    offer["outputPerMillionTokensUsd"],
+                ),
+                rates,
+            )
+            self.assertTrue(offer["comparable"])
+            self.assertEqual(offer["modelSlugs"], ["claude-fable-5"])
+
+        api_provider = next(
+            provider
+            for provider in catalogue["providers"]
+            if provider["id"] == "anthropic-api"
+        )
+        self.assertNotEqual(api_provider.get("importedFrom"), "models.dev")
+
+    def test_cursor_plan_variants_encode_full_pool_rate_multipliers(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        cursor_templates = [
+            offer
+            for offer in catalogue["offers"]
+            if offer["providerId"] == "cursor" and offer.get("planVariants")
+        ]
+
+        self.assertGreaterEqual(len(cursor_templates), 10)
+        for offer in cursor_templates:
+            variants = {variant["planId"]: variant for variant in offer["planVariants"]}
+            self.assertAlmostEqual(variants["cursor-pro-plus"]["rateMultiplier"], 60 / 70)
+            self.assertEqual(variants["cursor-ultra"]["rateMultiplier"], 0.5)
+
+    def test_provider_pricing_zero_rates_are_published_not_missing_sentinels(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        plan_by_id = {plan["id"]: plan for plan in catalogue["plans"]}
+        token_rate_offers = [
+            offer
+            for offer in catalogue["offers"]
+            if offer["pricingKind"] in {"per-token", "effective-subscription"}
+        ]
+
+        for offer in token_rate_offers:
+            plan = plan_by_id[offer["planId"]]
+            currency = offer.get("currency") or plan.get("currency") or catalogue["currency"]
+            input_rate = offer.get("inputPerMillionTokensUsd")
+            output_rate = offer.get("outputPerMillionTokensUsd")
+            cache_rate = offer.get("cacheReadPerMillionTokensUsd")
+            if currency != "USD" and input_rate is None:
+                input_rate = offer.get("inputPerMillionTokensLocal")
+            if currency != "USD" and output_rate is None:
+                output_rate = offer.get("outputPerMillionTokensLocal")
+            if currency != "USD" and cache_rate is None:
+                cache_rate = offer.get("cacheReadPerMillionTokensLocal")
+
+            self.assertIsNotNone(input_rate)
+            self.assertIsNotNone(output_rate)
+            for rate in (input_rate, output_rate, cache_rate):
+                if rate is None:
+                    continue
+                self.assertGreaterEqual(rate, 0)
+                if rate == 0:
+                    self.assertTrue(offer.get("publishedZeroRate"))
+                    self.assertTrue(offer.get("sourceIds"))
+
+        zero_cache_offer_ids = {
+            offer["id"]
+            for offer in token_rate_offers
+            if offer.get("cacheReadPerMillionTokensUsd") == 0
+            or offer.get("cacheReadPerMillionTokensLocal") == 0
+        }
+        # A numeric zero is retained only when the source catalogue publishes
+        # a zero rate.  Unknown cache prices stay null and therefore cannot be
+        # confused with a free cache read.
+        for offer in token_rate_offers:
+            if offer["id"] not in zero_cache_offer_ids:
+                continue
+            self.assertTrue(offer.get("sourceIds"))
+            self.assertTrue(offer["comparable"])
+            self.assertNotEqual(offer.get("importedFrom"), "models.dev")
+        self.assertIsNone(
+            next(
+                offer
+                for offer in token_rate_offers
+                if offer["id"] == "or-qwen3-6-plus"
+            )["cacheReadPerMillionTokensUsd"]
+        )
+        # A finite rate may intentionally be display-only (for example, a
+        # paid-plan overage rate whose prerequisite subscription fee is not
+        # folded into the token price). Non-comparable must therefore remain
+        # independent from whether a rate is present.
+        display_only = next(
+            offer
+            for offer in catalogue["offers"]
+            if offer["id"] == "anthropic-pro-fable-5-usage-credits"
+        )
+        self.assertFalse(display_only["comparable"])
+        self.assertGreater(display_only["inputPerMillionTokensUsd"], 0)
+        self.assertGreater(display_only["outputPerMillionTokensUsd"], 0)
+
+    def test_site_payload_exposes_provider_pricing_at_the_root(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        payload = build_site_payload(
+            [{"model": "Pricing Fixture", "slug": "pricing-fixture"}],
+            provider_pricing_data=catalogue,
+        )
+
+        self.assertIs(payload["providerPricing"], catalogue)
+        self.assertEqual(payload["providerPricing"]["version"], 1)
+
+    def test_generated_site_provider_pricing_matches_source_catalogue(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        generated = json.loads(DEFAULT_OUTPUT_JSON.read_text(encoding="utf-8"))
+
+        self.assertEqual(generated["providerPricing"], catalogue)
+
+    def test_coding_plan_prices_and_usage_fields_keep_their_native_terms(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        plans = {plan["id"]: plan for plan in catalogue["plans"]}
+
+        self.assertEqual(plans["opencode-go"]["firstMonthPriceUsd"], 5)
+        self.assertEqual(plans["cursor-pro-plus"]["includedApiSpendUsd"], 70)
+        self.assertEqual(plans["github-copilot-pro-plus"]["includedAiCredits"], 7000)
+        self.assertEqual(plans["kimi-code-moderato"]["currency"], "CNY")
+        self.assertEqual(plans["kimi-code-moderato"]["monthlyPriceLocal"], 99)
+        self.assertEqual(plans["minimax-ultra"]["currency"], "CNY")
+        self.assertEqual(plans["minimax-ultra"]["monthlyPriceLocal"], 469)
+        self.assertNotIn("includedTokensPerMonth", plans["minimax-ultra"])
+
+    def test_minimax_current_plans_do_not_reuse_retired_fixed_token_quotas(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        plans = {
+            plan["id"]: plan
+            for plan in catalogue["plans"]
+            if plan["providerId"] == "minimax"
+        }
+        expected = {
+            "minimax-plus": 49,
+            "minimax-max": 119,
+            "minimax-ultra": 469,
+        }
+        self.assertEqual(set(plans), set(expected))
+        for plan_id, monthly_price in expected.items():
+            plan = plans[plan_id]
+            self.assertEqual(plan["currency"], "CNY")
+            self.assertEqual(plan["monthlyPriceLocal"], monthly_price)
+            self.assertEqual(plan["comparisonClass"], "non-comparable")
+            self.assertNotIn("includedTokensPerMonth", plan)
+
+        offers = [
+            offer
+            for offer in catalogue["offers"]
+            if offer["providerId"] == "minimax"
+        ]
+        self.assertEqual(len(offers), 9)
+        self.assertEqual(
+            {offer["modelSlugs"][0] for offer in offers},
+            {"minimax-m3", "minimax-m2-7", "minimax-m2-5"},
+        )
+        for offer in offers:
+            self.assertFalse(offer["comparable"])
+            self.assertIsNone(offer["inputPerMillionTokensUsd"])
+            self.assertIsNone(offer["cacheReadPerMillionTokensUsd"])
+            self.assertIsNone(offer["outputPerMillionTokensUsd"])
+
+    def test_google_cli_plans_keep_shared_request_quotas_non_comparable(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        plans = {plan["id"]: plan for plan in catalogue["plans"]}
+        offers = [
+            offer
+            for offer in catalogue["offers"]
+            if offer["providerId"] == "google-gemini-cli"
+        ]
+
+        self.assertEqual(plans["gemini-cli-free"]["maxRequestsPerUserPerDay"], 1_000)
+        self.assertEqual(plans["gemini-cli-google-ai-pro"]["maxRequestsPerUserPerDay"], 1_500)
+        self.assertEqual(plans["gemini-cli-google-ai-ultra"]["maxRequestsPerUserPerDay"], 2_000)
+        self.assertIsNone(plans["gemini-cli-google-ai-pro"]["monthlyPriceUsd"])
+        self.assertIsNone(plans["gemini-cli-google-ai-ultra"]["monthlyPriceUsd"])
+        self.assertEqual(len(offers), 15)
+        self.assertEqual(
+            {offer["planId"] for offer in offers},
+            {
+                "gemini-cli-free",
+                "gemini-cli-google-ai-pro",
+                "gemini-cli-google-ai-ultra",
+            },
+        )
+        for offer in offers:
+            self.assertFalse(offer["comparable"])
+            self.assertEqual(len(offer["modelSlugs"]), 1)
+            self.assertNotIn("planVariants", offer)
+
+    def test_baidu_token_plan_uses_exact_model_support_and_one_to_one_credits(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        plans = {
+            plan["id"]: plan
+            for plan in catalogue["plans"]
+            if plan["providerId"] == "baidu-qianfan-token-plan"
+        }
+        expected = {
+            "baidu-qianfan-token-plan-mini": (4.9, 10, 0.49),
+            "baidu-qianfan-token-plan-lite": (19.9, 42, 19.9 / 42),
+            "baidu-qianfan-token-plan-pro": (99.9, 230, 99.9 / 230),
+            "baidu-qianfan-token-plan-max": (299.9, 700, 299.9 / 700),
+        }
+        self.assertEqual(set(plans), set(expected))
+        for plan_id, (price, included_millions, effective) in expected.items():
+            plan = plans[plan_id]
+            self.assertEqual(plan["monthlyPriceLocal"], price)
+            self.assertEqual(
+                plan["includedMillionTokensPerSubscriptionMonth"],
+                included_millions,
+            )
+            self.assertAlmostEqual(plan["effectiveUniformPerMillionTokensLocal"], effective)
+
+        offers = [
+            offer
+            for offer in catalogue["offers"]
+            if offer["providerId"] == "baidu-qianfan-token-plan"
+        ]
+        self.assertEqual(len(offers), 32)
+        self.assertEqual(
+            {offer["modelSlugs"][0] for offer in offers},
+            {
+                "deepseek-v4-pro",
+                "deepseek-v4-pro-non-reasoning",
+                "deepseek-v4-flash",
+                "deepseek-v4-flash-non-reasoning",
+                "glm-5-2",
+                "glm-5-1",
+                "kimi-k2-6",
+                "kimi-k2-6-non-reasoning",
+            },
+        )
+        for offer in offers:
+            self.assertEqual(len(offer["modelSlugs"]), 1)
+            self.assertTrue(offer["comparable"])
+            plan_rate = plans[offer["planId"]]["effectiveUniformPerMillionTokensLocal"]
+            self.assertAlmostEqual(offer["inputPerMillionTokensLocal"], plan_rate)
+            self.assertAlmostEqual(offer["cacheReadPerMillionTokensLocal"], plan_rate)
+            self.assertAlmostEqual(offer["outputPerMillionTokensLocal"], plan_rate)
+
+    def test_baidu_qianfan_api_keeps_context_tiers_and_exact_batch_rows(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        offers = [
+            offer
+            for offer in catalogue["offers"]
+            if offer["providerId"] == "baidu-qianfan-api"
+        ]
+        self.assertEqual(len(offers), 17)
+        self.assertTrue(all(len(offer["modelSlugs"]) == 1 for offer in offers))
+        self.assertTrue(all(offer["inputPerMillionTokensLocal"] > 0 for offer in offers))
+        self.assertTrue(all(offer["outputPerMillionTokensLocal"] > 0 for offer in offers))
+
+        batch = [offer for offer in offers if offer["planId"].endswith("batch-payg")]
+        self.assertEqual(
+            {offer["modelSlugs"][0] for offer in batch},
+            {"deepseek-v3-2", "deepseek-v3-2-reasoning"},
+        )
+        glm = next(offer for offer in offers if offer["id"].endswith("payg-glm-5-1"))
+        self.assertEqual(glm["pricingOverrides"][0]["minPromptTokens"], 32_000)
+        qwen = next(offer for offer in offers if offer["id"].endswith("qwen3-5-397b-a17b"))
+        self.assertEqual(qwen["pricingOverrides"][0]["minPromptTokens"], 128_000)
+
+    def test_step_and_bigmodel_plans_apply_published_credit_formulas_per_model(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        plans = {plan["id"]: plan for plan in catalogue["plans"]}
+        offers = {offer["id"]: offer for offer in catalogue["offers"]}
+
+        step = offers["stepfun-step-plan-mini-monthly-step-3-7-flash"]
+        self.assertEqual(step["modelSlugs"], ["step-3-7-flash"])
+        self.assertAlmostEqual(step["inputPerMillionTokensLocal"], 1.35 * 49 / 400)
+        self.assertAlmostEqual(step["cacheReadPerMillionTokensLocal"], 0.27 * 49 / 400)
+        self.assertAlmostEqual(step["outputPerMillionTokensLocal"], 8.1 * 49 / 400)
+        self.assertTrue(step["comparable"])
+        self.assertEqual(
+            plans["stepfun-step-plan-max-annual"]["annualEquivalentMonthlyLocal"],
+            555.5,
+        )
+
+        bigmodel = offers["bigmodel-coding-lite-monthly-glm-5-2"]
+        monthly_points = 10_000 * 52 / 12
+        self.assertAlmostEqual(bigmodel["inputPerMillionTokensLocal"], 118 / monthly_points * 690)
+        self.assertAlmostEqual(bigmodel["cacheReadPerMillionTokensLocal"], 118 / monthly_points * 170)
+        self.assertAlmostEqual(bigmodel["outputPerMillionTokensLocal"], 118 / monthly_points * 2_400)
+        self.assertEqual(bigmodel["offPeakCreditMultiplier"], 0.5)
+        self.assertTrue(bigmodel["comparable"])
+
+    def test_china_official_api_rates_preserve_local_currency_and_thresholds(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        plans = {plan["id"]: plan for plan in catalogue["plans"]}
+        offers = {offer["id"]: offer for offer in catalogue["offers"]}
+
+        bailian = offers["bailian-cn-qwen3-8-max"]
+        self.assertEqual(plans[bailian["planId"]]["currency"], "CNY")
+        self.assertEqual(bailian["modelSlugs"], ["qwen3-8-max"])
+        self.assertEqual(bailian["inputPerMillionTokensLocal"], 12)
+        self.assertEqual(bailian["outputPerMillionTokensLocal"], 36)
+
+        deepseek = offers["deepseek-api-v4-flash"]
+        self.assertEqual(
+            (
+                deepseek["inputPerMillionTokensUsd"],
+                deepseek["cacheReadPerMillionTokensUsd"],
+                deepseek["outputPerMillionTokensUsd"],
+            ),
+            (0.14, 0.0028, 0.28),
+        )
+
+        kimi_batch = offers["kimi-cn-batch-k2-7-code"]
+        self.assertEqual(kimi_batch["modelSlugs"], ["kimi-k2-7-code"])
+        self.assertEqual(kimi_batch["inputPerMillionTokensLocal"], 3.9)
+        self.assertEqual(kimi_batch["cacheReadPerMillionTokensLocal"], 0.78)
+        self.assertEqual(kimi_batch["outputPerMillionTokensLocal"], 16.2)
+
+        minimax = offers["minimax-cn-m3"]
+        override = minimax["pricingOverrides"][0]
+        self.assertEqual(override["minPromptTokens"], 512_001)
+        self.assertEqual(override["inputPerMillionTokensLocal"], 4.2)
+        self.assertEqual(override["cacheReadPerMillionTokensLocal"], 0.84)
+        self.assertEqual(override["outputPerMillionTokensLocal"], 16.8)
+
+        self.assertEqual(
+            offers["minimax-cn-m2-7"]["cacheWritePerMillionTokensLocal"],
+            2.625,
+        )
+        self.assertEqual(
+            offers["volcengine-ark-cn-deepseek-v4-pro"]["modelSlugs"],
+            ["deepseek-v4-pro"],
+        )
+
     @staticmethod
     def benchmark_lab_frontier_preset():
         """Legacy board calculator retained only inside the Custom benchmark lab."""
@@ -1464,6 +2634,141 @@ class BuildDocsSiteTests(unittest.TestCase):
         expected = 100 * (available_weight / total_weight) ** 0.25
         self.assertAlmostEqual(score["score"], expected)
         self.assertEqual(score["coverage"], 1)
+
+    def test_additional_china_official_apis_are_exact_and_model_specific(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        offers = {offer["id"]: offer for offer in catalogue["offers"]}
+
+        self.assertNotIn("md-longcat-longcat-2-0", offers)
+        zhipu = [
+            offer
+            for offer in catalogue["offers"]
+            if offer["providerId"] == "zhipu-bigmodel-api-cn"
+        ]
+        self.assertEqual(
+            {offer["modelSlugs"][0] for offer in zhipu},
+            {"glm-5-2", "glm-5-1", "glm-5-turbo", "glm-5", "glm-4-7", "glm-4-5-air"},
+        )
+        for offer in zhipu:
+            self.assertEqual(len(offer["modelSlugs"]), 1)
+            self.assertTrue(offer["comparable"])
+            self.assertGreater(offer["inputPerMillionTokensLocal"], 0)
+            self.assertGreater(offer["outputPerMillionTokensLocal"], 0)
+
+        expected_pack_prices = {
+            "zhipu-bigmodel-pack-glm-5-2-20m-offer": ("glm-5-2", 1.995),
+            "zhipu-bigmodel-pack-glm-5-2-100m-offer": ("glm-5-2", 1.899),
+            "zhipu-bigmodel-pack-glm-4-6v-10m-offer": ("glm-4-6v", 1.6),
+            "zhipu-bigmodel-pack-glm-4-6v-500m-offer": ("glm-4-6v", 1.6),
+        }
+        for offer_id, (slug, price) in expected_pack_prices.items():
+            offer = offers[offer_id]
+            self.assertEqual(offer["modelSlugs"], [slug])
+            self.assertAlmostEqual(offer["inputPerMillionTokensLocal"], price)
+            self.assertAlmostEqual(offer["outputPerMillionTokensLocal"], price)
+
+        longcat = [offer for offer in catalogue["offers"] if offer["providerId"] == "longcat"]
+        self.assertEqual(
+            {offer["id"] for offer in longcat},
+            {
+                "longcat-payg-discounted-longcat-2-0",
+                "longcat-payg-list-longcat-2-0",
+            },
+        )
+        self.assertTrue(all(offer["modelSlugs"] == ["longcat-2-0"] for offer in longcat))
+
+        doubao = offers["volcengine-ark-cn-doubao-seed-code"]
+        self.assertEqual(doubao["modelSlugs"], ["doubao-seed-code"])
+        self.assertEqual(
+            [row["minPromptTokens"] for row in doubao["pricingOverrides"]],
+            [32001, 128001],
+        )
+
+    def test_additional_global_coding_plans_are_single_model_and_display_only(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        provider_ids = {
+            "amazon-q-developer",
+            "augment-code",
+            "sourcegraph-cody",
+            "replit",
+            "devin",
+            "tabnine",
+        }
+        providers = {
+            provider["id"]
+            for provider in catalogue["providers"]
+            if provider["id"] in provider_ids
+        }
+        self.assertEqual(providers, provider_ids)
+
+        offers = [
+            offer
+            for offer in catalogue["offers"]
+            if offer["providerId"] in provider_ids
+        ]
+        self.assertEqual(len(offers), 349)
+        self.assertTrue(all(len(offer["modelSlugs"]) == 1 for offer in offers))
+        self.assertEqual(
+            len({(offer["planId"], offer["modelSlugs"][0]) for offer in offers}),
+            len(offers),
+        )
+        self.assertTrue(all(not offer["comparable"] for offer in offers))
+
+        finite = [
+            offer
+            for offer in offers
+            if any(
+                offer.get(field) is not None
+                for field in (
+                    "inputPerMillionTokensUsd",
+                    "effectiveUsdPerMillionTokens",
+                    "effectiveUsdPerMillionIncludedTokens",
+                )
+            )
+        ]
+        self.assertEqual(len(finite), 261)
+        self.assertTrue(
+            all(
+                offer.get("bestCaseOnly")
+                or offer.get("requiresSubscription")
+                or offer["pricingKind"] in {"per-token-overage", "per-token-plus-service-fee"}
+                for offer in finite
+            )
+        )
+
+    def test_qiniu_and_model_author_apis_keep_exact_published_rates(self):
+        catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
+        offers = {offer["id"]: offer for offer in catalogue["offers"]}
+
+        qiniu = [offer for offer in catalogue["offers"] if offer["providerId"] == "qiniu-ai"]
+        self.assertEqual(len(qiniu), 22)
+        self.assertTrue(all(len(offer["modelSlugs"]) == 1 for offer in qiniu))
+        self.assertEqual(
+            {offer["planId"] for offer in qiniu},
+            {"qiniu-ai-payg", "qiniu-ai-batch-payg"},
+        )
+
+        expected = {
+            "ai21-api-jamba-1-7-large": ("jamba-1-7-large", 2, 8),
+            "upstage-solar-pro-3": ("solar-pro-3", 0.15, 0.6),
+            "upstage-solar-pro-2": ("solar-pro-2", 0.15, 0.6),
+            "upstage-solar-mini": ("solar-mini", 0.15, 0.15),
+            "reka-api-reka-flash": ("reka-flash", 0.8, 2),
+            "inception-mercury-2": ("mercury-2", 0.25, 0.75),
+        }
+        for offer_id, (slug, input_rate, output_rate) in expected.items():
+            offer = offers[offer_id]
+            self.assertEqual(offer["modelSlugs"], [slug])
+            self.assertAlmostEqual(offer["inputPerMillionTokensUsd"], input_rate)
+            self.assertAlmostEqual(offer["outputPerMillionTokensUsd"], output_rate)
+            self.assertTrue(offer["comparable"])
+
+        sarvam = offers["sarvam-api-sarvam-105b"]
+        self.assertEqual(sarvam["modelSlugs"], ["sarvam-105b"])
+        self.assertEqual(sarvam["inputPerMillionTokensUsd"], 0)
+        self.assertEqual(sarvam["outputPerMillionTokensUsd"], 0)
+        self.assertTrue(sarvam["publishedZeroRate"])
+        self.assertTrue(sarvam["comparable"])
 
 
 if __name__ == "__main__":

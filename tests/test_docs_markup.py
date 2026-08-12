@@ -60,6 +60,7 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn('data-page="ranking"', (docs_dir / "full-rank.html").read_text(encoding="utf-8"))
         self.assertIn('data-page="model"', (docs_dir / "model.html").read_text(encoding="utf-8"))
         self.assertIn('data-page="provider"', (docs_dir / "provider.html").read_text(encoding="utf-8"))
+        self.assertIn('data-page="providers"', (docs_dir / "providers.html").read_text(encoding="utf-8"))
         self.assertIn('data-page="compare"', (docs_dir / "compare.html").read_text(encoding="utf-8"))
         self.assertIn('data-page="benchmark"', (docs_dir / "benchmark.html").read_text(encoding="utf-8"))
         self.assertIn('data-page="sources"', (docs_dir / "sources.html").read_text(encoding="utf-8"))
@@ -140,6 +141,42 @@ class DocsMarkupTests(unittest.TestCase):
 
         self.assertNotIn("ranked.slice(0, 250)", app_js)
         self.assertNotIn("models.slice(0, 120)", app_js)
+
+    def test_pricing_cards_support_active_endpoint_and_override_metadata(self):
+        app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(encoding="utf-8")
+        normalized_source = app_js.split("function normalizedCatalogOffer(offer)", 1)[1].split(
+            "function observedModelOffer(model)", 1
+        )[0]
+        render_source = app_js.split("function renderModelPricingOffer(offer)", 1)[1].split(
+            "function renderPricingRate(label", 1
+        )[0]
+
+        self.assertIn("pricingOverrides", normalized_source)
+        self.assertIn("thresholdNotes", normalized_source)
+        self.assertIn("pricingOverrideNotes", normalized_source)
+        self.assertIn("contextLength", normalized_source)
+        self.assertIn("observedAt", normalized_source)
+        self.assertIn("quantization", normalized_source)
+        self.assertIn("offer.status === 0", render_source)
+        self.assertIn("offer.overrideNotes.join", render_source)
+        self.assertIn("function pricingMetadataLines(value", app_js)
+        self.assertIn("function catalogOfferPricingOverrideRows(offer)", app_js)
+        self.assertIn("function renderPricingOverrideRow(override)", app_js)
+        self.assertIn("pricingBlendFromRates(rates)", app_js)
+        self.assertIn("base rates before long-context thresholds", app_js)
+        self.assertIn("plan.annualPriceUsd", app_js)
+        self.assertIn("annualEquivalentMonthlyUsd", app_js)
+        self.assertIn('tr("pricingPerYear")', app_js)
+        cheapest_source = app_js.split("function cheapestPricingOffer(model)", 1)[1].split(
+            "function pricingOfferUnitLabel(offer)", 1
+        )[0]
+        leaderboard_row_source = app_js.split("function renderPriceLeaderboardRow", 1)[1].split(
+            "function formatUnitPrice", 1
+        )[0]
+        self.assertNotIn('effectiveUnit === "mix"', cheapest_source)
+        self.assertIn("pricingOfferUnitLabel(offer)", leaderboard_row_source)
+        self.assertIn('priceIncludedShort: "额度内 $/M"', app_js)
+        self.assertIn('priceIncludedShort: "Included $/M"', app_js)
 
     def test_default_ranking_uses_precomputed_scheme18_score_for_value_and_order(self):
         root = Path(__file__).resolve().parents[1]
@@ -513,7 +550,7 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn('href="methodology.html"', full_rank_html)
         self.assertIn('filename === "methodology.html"', app_utils)
         self.assertIn('if (page === "methodology") return "methodology.html";', app_utils)
-        self.assertIn('const pageOrder = ["home", "ranking", "compare", "benchmarks", "sources", "contribute"];', app_js)
+        self.assertIn('const pageOrder = ["home", "ranking", "compare", "providers", "benchmarks", "sources", "contribute"];', app_js)
 
     def test_sources_page_and_split_scripts_are_present(self):
         docs_dir = Path(__file__).resolve().parents[1] / "docs"
@@ -523,7 +560,10 @@ class DocsMarkupTests(unittest.TestCase):
 
         self.assertIn('id="sourcesLink"', html)
         self.assertIn('id="sourceMetricMap"', html)
-        self.assertIn('<script src="./app-utils.js"></script>', html)
+        self.assertRegex(
+            html,
+            r'<script src="\./app-utils\.js(?:\?[^\"]+)?"></script>',
+        )
         self.assertIn("renderSourcesPage", app_js)
         self.assertIn("catalogSources", app_js)
         self.assertIn("isOfficialModelSource", app_js)
@@ -601,6 +641,180 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn(".provider-detail", css)
         self.assertIn(".detail-provider-link", css)
         self.assertIn(".provider-model-row", css)
+
+    def test_service_provider_pricing_surfaces_are_present(self):
+        docs_dir = Path(__file__).resolve().parents[1] / "docs"
+        index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+        model_html = (docs_dir / "model.html").read_text(encoding="utf-8")
+        providers_html = (docs_dir / "providers.html").read_text(encoding="utf-8")
+        app_js = (docs_dir / "app.js").read_text(encoding="utf-8")
+        app_utils = (docs_dir / "app-utils.js").read_text(encoding="utf-8")
+        css = (docs_dir / "styles.css").read_text(encoding="utf-8")
+
+        self.assertIn("排名模型最低可用价", index_html)
+        self.assertIn('id="modelDetail"', model_html)
+        self.assertIn('data-page="providers"', providers_html)
+        self.assertIn('id="pricingProviderView"', providers_html)
+        self.assertIn('id="pricingProviderDetail"', providers_html)
+        self.assertIn("renderPriceLeaderboards(models)", app_js)
+        self.assertIn("renderModelPricingSection(model)", app_js)
+        self.assertIn("renderPricingProvidersPage(homeRanked)", app_js)
+        self.assertIn("providerPricing", app_js)
+        self.assertIn("offer.cacheReadPerMillionTokensUsd", app_js)
+        self.assertIn("verifiedPricingOffersForModel(model)", app_js)
+        self.assertIn('priceComparableShort: "可比 $/M"', app_js)
+        self.assertIn('priceIncludedShort: "额度内 $/M"', app_js)
+        self.assertIn("pricingOfferUnitLabel(offer)", app_js)
+        self.assertIn("function renderAvailablePricingRate(", app_js)
+        self.assertIn('state.page === "providers"', app_js)
+        self.assertIn('tr("pricingFooter")', app_js)
+        self.assertIn('filename === "providers.html"', app_utils)
+        self.assertIn('if (page === "providers") return "providers.html";', app_utils)
+        self.assertIn(".pricing-offer-scroll", css)
+        self.assertIn("height: 430px", css)
+        self.assertIn(".price-board-grid", css)
+        self.assertIn(".pricing-provider-grid", css)
+        self.assertIn(".pricing-provider-offer-list", css)
+
+        detail_source = app_js.split("function renderModelDetail(", 1)[1].split(
+            "function renderModelPricingSection(model)", 1
+        )[0]
+        self.assertLess(
+            detail_source.index("${renderModelPricingSection(model)}"),
+            detail_source.index('tr("detailBenchmarkTitle")'),
+        )
+
+    def test_provider_pricing_filters_recompute_catalog_only_cards(self):
+        root = Path(__file__).resolve().parents[1]
+        app_js = (root / "docs" / "app.js").read_text(encoding="utf-8")
+        page_source = app_js.split("function renderPricingProvidersPage(ranked)", 1)[1].split(
+            "function pricingProviderComparisonRows(offers", 1
+        )[0]
+        comparison_source = app_js.split(
+            'function pricingProviderComparisonRows(offers, filter = "all", searches = {})', 1
+        )[1].split("function renderPricingProviderStat(", 1)[0]
+        cheapest_source = app_js.split("function cheapestPricingOffer(model)", 1)[1].split(
+            "function pricingOfferUnitLabel(offer)", 1
+        )[0]
+        card_source = app_js.split("function renderPricingProviderCard(row)", 1)[1].split(
+            "function uniquePlansFromOffers(offers)", 1
+        )[0]
+        model_offer_rows_source = app_js.split(
+            "function pricingProviderModelOfferRows(offers)", 1
+        )[1].split("function renderPricingPlanChip(plan)", 1)[0]
+        offer_row_source = app_js.split(
+            "function renderPricingProviderOfferRow(modelOffer)", 1
+        )[1].split(
+            "function renderProviderPage(ranked)", 1
+        )[0]
+        detail_offer_source = app_js.split("function pricingOffersForModel(model)", 1)[1].split(
+            "function cheapestPricingOffer(model)", 1
+        )[0]
+        slug_source = app_js.split("function catalogOfferModelSlugs(offer)", 1)[1].split(
+            "function firstFinite", 1
+        )[0]
+        css = (root / "docs" / "styles.css").read_text(encoding="utf-8")
+        offer_list_css = css.split(".pricing-provider-offer-list {", 1)[1].split("}", 1)[0]
+
+        self.assertIn("normalizedPricingCatalogOffers()", page_source)
+        self.assertIn("function pricingCatalogIndexes()", app_js)
+        self.assertIn("offersByModelSlug", app_js)
+        self.assertNotIn("observedModelOffer", page_source)
+        self.assertIn("pricingProviderComparisonRows(offers, filter, {", page_source)
+        self.assertIn('renderPricingProviderSearch(\n            "provider"', page_source)
+        self.assertIn('renderPricingProviderSearch(\n            "model"', page_source)
+        self.assertIn('data-pricing-provider-search="${escapeHtml(kind)}"', page_source)
+        self.assertIn("state.pricingProviderQuery", page_source)
+        self.assertIn("state.pricingModelQuery", page_source)
+        self.assertIn("visibleProviders.flatMap((row) => row.modelOffers)", page_source)
+        self.assertIn("visibleModelOffers.map((row) => row.modelSlug)", page_source)
+        self.assertIn("visibleModelOffers.filter(({ offer })", page_source)
+        self.assertIn("matchesFilter(catalogPlanType(provider, plan, {}))", comparison_source)
+        self.assertIn(".filter((offer) => matchesFilter(offer.planType))", comparison_source)
+        self.assertIn("pricingProviderModelOfferRows(row.offers)", comparison_source)
+        self.assertIn("pricingModelOfferMatchesSearch(modelOffer, modelQuery)", comparison_source)
+        self.assertIn("providerQuery", comparison_source)
+        self.assertIn("modelQuery", comparison_source)
+        self.assertNotIn('effectiveUnit === "mix"', cheapest_source + comparison_source)
+        self.assertIn("pricingOfferUnitLabel(cheapest)", card_source)
+        self.assertIn("modelOffers.map(renderPricingProviderOfferRow)", card_source)
+        self.assertNotIn(".slice(0, 4)", card_source)
+        self.assertIn(".flatMap((offer) => [...new Set(offer.modelSlugs || [])]", model_offer_rows_source)
+        self.assertIn(
+            ".filter(({ offer }) => Number.isFinite(offer.effectivePrice))",
+            model_offer_rows_source,
+        )
+        self.assertIn("const { offer, modelSlug, model } = modelOffer", offer_row_source)
+        self.assertNotIn('tr("pricingLabels.unavailable")', offer_row_source)
+        self.assertIn("pricingOfferUnitLabel(offer)", offer_row_source)
+        self.assertIn("offer.quotaLabel", offer_row_source)
+        self.assertIn("function pricingQuotaLabel(subject = {}, fallback = {})", app_js)
+        self.assertIn('tr("pricingUsageCreditsOnly")', app_js)
+        self.assertIn('tr("pricingWeeklyLimitShare"', app_js)
+        self.assertIn('tr("pricingWeeklyCredits"', app_js)
+        self.assertIn('tr("pricingCallsPerMonth"', app_js)
+        self.assertIn('tr("pricingOffPeakCredits"', app_js)
+        self.assertIn('offer.evidenceKind === "community-catalog"', app_js)
+        self.assertIn("verifiedPricingOffersForModel(model).filter", detail_offer_source)
+        self.assertIn("Number.isFinite(offer.effectivePrice)", detail_offer_source)
+        self.assertIn("const hasCalculatedPrice = Number.isFinite(calculatedEffective)", app_js)
+        self.assertIn("effectivePrice: hasCalculatedPrice ? calculatedEffective : null", app_js)
+        self.assertIn("...pricingMetadataLines(offer.calculation)", app_js)
+        self.assertIn(
+            'renderAvailablePricingRate(tr("pricingLabels.cache"), offer.rates.cache',
+            app_js,
+        )
+        self.assertIn("catalogOfferSupportsModel(offer, model)", detail_offer_source)
+        self.assertNotIn("observedModelOffer", app_js)
+        self.assertNotIn("variantGroup", slug_source)
+        self.assertNotIn("inheritVariantGroupPricing", slug_source)
+        self.assertIn("return [...new Set(direct)]", slug_source)
+        self.assertIn("height: 320px", offer_list_css)
+        self.assertIn("overflow-y: auto", offer_list_css)
+
+    def test_unpublished_minimax_quota_never_enters_comparable_price_logic(self):
+        root = Path(__file__).resolve().parents[1]
+        from scripts.build_docs_site import load_provider_pricing
+
+        catalogue = load_provider_pricing(root / "data" / "pricing" / "provider_pricing.json")
+        weights = catalogue["workloadScenario"]["weights"]
+        comparable = []
+        for offer in catalogue["offers"]:
+            if offer.get("comparable") is False or "minimax-m3" not in offer.get("modelSlugs", []):
+                continue
+            included = offer.get("effectiveUsdPerMillionIncludedTokens")
+            explicit_mix = offer.get("effectiveUsdPerMillionTokens")
+            if included is not None:
+                comparable.append((float(included), "included", offer["providerId"], offer["id"]))
+                continue
+            if explicit_mix is not None:
+                comparable.append((float(explicit_mix), "mix", offer["providerId"], offer["id"]))
+                continue
+            input_rate = offer.get("inputPerMillionTokensUsd")
+            output_rate = offer.get("outputPerMillionTokensUsd")
+            if input_rate is None or output_rate is None:
+                continue
+            cache_rate = offer.get("cacheReadPerMillionTokensUsd")
+            if cache_rate is None:
+                cache_rate = input_rate
+            mixed = (
+                float(input_rate) * weights["input"]
+                + float(cache_rate) * weights["cacheRead"]
+                + float(output_rate) * weights["output"]
+            )
+            comparable.append((mixed, "mix", offer["providerId"], offer["id"]))
+
+        minimax = [
+            offer
+            for offer in catalogue["offers"]
+            if offer["providerId"] == "minimax" and "minimax-m3" in offer["modelSlugs"]
+        ]
+        self.assertEqual(len(minimax), 3)
+        self.assertTrue(all(not offer["comparable"] for offer in minimax))
+        self.assertTrue(comparable)
+        cheapest = min(comparable)
+        self.assertNotEqual(cheapest[2], "minimax")
+        self.assertGreater(cheapest[0], 0)
 
     def test_provider_back_context_and_compare_page_are_present(self):
         docs_dir = Path(__file__).resolve().parents[1] / "docs"

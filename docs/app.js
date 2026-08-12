@@ -13,6 +13,7 @@ const copy = {
       home: "首页",
       ranking: "完整排名",
       compare: "模型对比",
+      providers: "服务商",
       benchmarks: "测试项",
       sources: "数据源",
       contribute: "贡献",
@@ -188,8 +189,92 @@ const copy = {
     latestModelsTitle: "最新模型",
     latestModelsSubtitle: "按发布日期展示最近进入数据集的去重模型",
     fullRanking: "查看完整排名",
-    costScatterTitle: "智能 vs 运行成本",
-    costScatterSubtitle: "横轴为运行 AA Intelligence Index 的美元成本，使用对数刻度",
+    costScatterTitle: "排名模型最低可用价",
+    costScatterSubtitle: "先固定 AInsights Top 10 / Top 50，再从有明确来源的可比报价中选择每个模型的最低价",
+    priceTop10Title: "Top 10 · 最低价",
+    priceTop10Subtitle: "前十名中有来源报价的模型里，价格最低的 {count} 个",
+    priceTop50Title: "Top 50 · 最低价",
+    priceTop50Subtitle: "前五十名中有来源报价的模型里，价格最低的 {count} 个",
+    priceComparableShort: "可比 $/M",
+    priceMixShort: "Coding Mix",
+    priceIncludedShort: "额度内 $/M",
+    pricingPerMonth: "每月",
+    pricingPerYear: "每年",
+    pricingMonthlyEquivalent: "月均",
+    pricingUsageCreditsOnly: "仅可使用额外 Usage Credits",
+    pricingWeeklyLimitShare: "最多占订阅周额度 {percent}%",
+    pricingWeeklyCredits: "{credits} Credits / 周",
+    pricingPerIncludedCredit: "{price} / 额度 Credit",
+    pricingCallsPerFiveHours: "{calls} 次 / 5 小时",
+    pricingCallsPerWeek: "{calls} 次 / 周",
+    pricingCallsPerMonth: "{calls} 次 / 月",
+    pricingOffPeakCredits: "低峰 {time}：积分消耗 ×{multiplier}",
+    priceListEmpty: "固定排名范围内暂无可比较价格",
+    pricingAsOf: "价格核验于 {date}",
+    pricingViewProviders: "比较全部服务商",
+    pricingMethodNote: "可比 $/M：API 按 Coding Mix（20% 新输入 + 70% 缓存输入 + 10% 输出；无缓存价时按新输入价）；长上下文阈值前展示基础费率，阈值价逐报价列出。Token/Coding Plan 仅在公开逐模型积分公式或固定 Token 额度时按满额使用折算。依据请求范围估算的订阅、标有“最高可得”的权益，以及未折入订阅门槛费的边际/超额费率只在模型详情展示，不进入最低价排名。人民币报价按核验日 ECB 参考汇率换算并保留本币价。",
+    pricingSectionTitle: "实际可用 Token 价格",
+    pricingSectionSubtitle: "仅展示明确支持当前模型且能计算出价格的官方 API、聚合中转、Token Plan 与 Coding Plan；N/A 报价自动隐藏。",
+    pricingNoOffers: "这个模型暂无已收录、明确支持且能计算价格的服务商报价",
+    pricingObserved: "模型 API 参考价",
+    pricingSource: "价格来源",
+    pricingPlanTypes: {
+      all: "全部方案",
+      token: "API / Token",
+      subscription: "Token Plan",
+      coding: "Coding Plan",
+    },
+    pricingLabels: {
+      input: "输入",
+      cache: "缓存",
+      output: "输出",
+      effective: "混合价",
+      included: "包含 Token",
+      monthly: "月费",
+      quota: "额度",
+      unavailable: "不可直接换算",
+      estimate: "估算",
+      displayOnly: "仅展示",
+      official: "官方",
+      aggregator: "聚合",
+      source: "来源",
+      models: "覆盖模型",
+      offers: "报价",
+      regions: "可用区域",
+      billing: "计费",
+      context: "上下文",
+      activeEndpoint: "活跃端点",
+      endpointStatus: "端点状态",
+      dynamicEndpoint: "动态路由",
+      quantization: "量化",
+      observed: "观测于",
+      pricingOverride: "价格覆盖",
+      promptThreshold: "提示词 ≥ {tokens}",
+    },
+    pricingProvidersTitle: "Token 与 Coding 服务商",
+    pricingProvidersSubtitle: "比较官方 API、聚合中转、Token Plan 与 Coding Plan；最低价仅使用有证据、标为可比并明确注明 Coding Mix 或额度内口径的报价。",
+    pricingProvidersStats: {
+      providers: "服务商",
+      plans: "套餐",
+      comparable: "可比报价",
+      models: "已映射模型",
+    },
+    pricingProviderSearchLabel: "搜索 Provider",
+    pricingProviderSearchPlaceholder: "按服务商名称查找",
+    pricingModelSearchLabel: "搜索模型",
+    pricingModelSearchPlaceholder: "按模型名称或 slug 查找",
+    pricingProviderSearchEmpty: "没有符合当前方案类型与搜索条件的服务商",
+    pricingProviderOffers: "模型与报价明细",
+    pricingProviderNoOffers: "当前方案类型暂无已映射的模型报价",
+    pricingFooter: "定价来源：公开官方定价页、聚合服务目录与列明的估算来源。",
+    pricingProviderTypes: {
+      "first-party": "官方服务",
+      "first-party-api": "官方 API",
+      aggregator: "聚合中转",
+      "token-plan": "Token Plan",
+      "coding-subscription": "Coding 订阅",
+      "coding-platform": "Coding 平台",
+    },
     scatterXAxis: "运行 Intelligence Index 的成本（USD，对数）",
     scatterYAxis: "AInsights 能力分",
     attractiveQuadrant: "高分低成本区域",
@@ -407,6 +492,7 @@ const copy = {
       home: "Home",
       ranking: "Full ranking",
       compare: "Compare",
+      providers: "Providers",
       benchmarks: "Benchmarks",
       sources: "Sources",
       contribute: "Contribute",
@@ -582,8 +668,92 @@ const copy = {
     latestModelsTitle: "Latest models",
     latestModelsSubtitle: "Recently released deduplicated models in the dataset",
     fullRanking: "View full ranking",
-    costScatterTitle: "Intelligence vs. Cost to Run",
-    costScatterSubtitle: "X-axis is the USD cost to run AA Intelligence Index, shown on a log scale",
+    costScatterTitle: "Cheapest usable prices for ranked models",
+    costScatterSubtitle: "Freeze the AInsights Top 10 / Top 50 first, then select each model's lowest sourced comparable offer",
+    priceTop10Title: "Top 10 · lowest price",
+    priceTop10Subtitle: "The {count} least expensive models with sourced offers inside the Top 10",
+    priceTop50Title: "Top 50 · lowest price",
+    priceTop50Subtitle: "The {count} least expensive models with sourced offers inside the Top 50",
+    priceComparableShort: "Comparable $/M",
+    priceMixShort: "Coding Mix",
+    priceIncludedShort: "Included $/M",
+    pricingPerMonth: "per month",
+    pricingPerYear: "per year",
+    pricingMonthlyEquivalent: "monthly equivalent",
+    pricingUsageCreditsOnly: "Requires separate Usage Credits",
+    pricingWeeklyLimitShare: "Up to {percent}% of the weekly subscription limit",
+    pricingWeeklyCredits: "{credits} Credits / week",
+    pricingPerIncludedCredit: "{price} / included Credit",
+    pricingCallsPerFiveHours: "{calls} calls / 5 hours",
+    pricingCallsPerWeek: "{calls} calls / week",
+    pricingCallsPerMonth: "{calls} calls / month",
+    pricingOffPeakCredits: "Off-peak {time}: credit usage ×{multiplier}",
+    priceListEmpty: "No comparable prices in this fixed ranking cohort",
+    pricingAsOf: "Prices checked {date}",
+    pricingViewProviders: "Compare all providers",
+    pricingMethodNote: "Comparable $/M: APIs use a Coding Mix of 20% new input + 70% cached input + 10% output (new-input price substitutes for missing cache rates). Listed API prices are base rates before long-context thresholds; threshold rows are shown per offer. Token/Coding Plans are normalized at full utilization only when a per-model credit formula or fixed token quota is public. Request-range subscription estimates, ‘up to’ benefits, and marginal/overage rates that exclude a prerequisite subscription fee are display-only and never enter cheapest-price lists. CNY prices use the checked-date ECB reference cross-rate and retain the local amount.",
+    pricingSectionTitle: "Usable token prices",
+    pricingSectionSubtitle: "Only first-party APIs, aggregators, Token Plans, and Coding Plans that explicitly support this model and have a calculable price are shown. N/A offers are hidden.",
+    pricingNoOffers: "No catalogued provider explicitly supports this model with a calculable price",
+    pricingObserved: "Model API reference",
+    pricingSource: "Pricing source",
+    pricingPlanTypes: {
+      all: "All plans",
+      token: "API / Token",
+      subscription: "Token Plan",
+      coding: "Coding Plan",
+    },
+    pricingLabels: {
+      input: "Input",
+      cache: "Cache",
+      output: "Output",
+      effective: "Blended",
+      included: "Included tokens",
+      monthly: "Monthly",
+      quota: "Quota",
+      unavailable: "Not directly convertible",
+      estimate: "Estimate",
+      displayOnly: "Display only",
+      official: "First-party",
+      aggregator: "Aggregator",
+      source: "Source",
+      models: "Models",
+      offers: "Offers",
+      regions: "Regions",
+      billing: "Billing",
+      context: "Context",
+      activeEndpoint: "Active endpoint",
+      endpointStatus: "Endpoint status",
+      dynamicEndpoint: "Dynamic route",
+      quantization: "Quantization",
+      observed: "Observed",
+      pricingOverride: "Pricing override",
+      promptThreshold: "Prompt ≥ {tokens}",
+    },
+    pricingProvidersTitle: "Token and coding providers",
+    pricingProvidersSubtitle: "Compare first-party APIs, aggregators, Token Plans, and Coding Plans. Cheapest-price lists use only evidenced offers marked comparable and label each as Coding Mix or included-quota pricing.",
+    pricingProvidersStats: {
+      providers: "Providers",
+      plans: "Plans",
+      comparable: "Comparable offers",
+      models: "Mapped models",
+    },
+    pricingProviderSearchLabel: "Search providers",
+    pricingProviderSearchPlaceholder: "Find a provider by name",
+    pricingModelSearchLabel: "Search models",
+    pricingModelSearchPlaceholder: "Find a model by name or slug",
+    pricingProviderSearchEmpty: "No providers match the current plan type and searches",
+    pricingProviderOffers: "Model offer details",
+    pricingProviderNoOffers: "No mapped model offers are available for this plan type",
+    pricingFooter: "Pricing sources: public official pricing pages, aggregator catalogs, and explicitly identified estimate sources.",
+    pricingProviderTypes: {
+      "first-party": "First-party",
+      "first-party-api": "First-party API",
+      aggregator: "Aggregator",
+      "token-plan": "Token plan",
+      "coding-subscription": "Coding subscription",
+      "coding-platform": "Coding platform",
+    },
     scatterXAxis: "Cost to Run Intelligence Index (USD, Log Scale)",
     scatterYAxis: "AInsights points",
     attractiveQuadrant: "High-score low-cost region",
@@ -838,6 +1008,9 @@ const state = {
   compareTouched: false,
   comparePickerOpen: false,
   contributionMode: "score",
+  pricingProviderFilter: "all",
+  pricingProviderQuery: "",
+  pricingModelQuery: "",
   viewMode: "histogram",
   sourceFilter: "all",
   topChartLimit: 20,
@@ -880,6 +1053,8 @@ const els = {
   contributionModelList: document.querySelector("#contributionModelList"),
   providerView: document.querySelector("#providerView"),
   providerDetail: document.querySelector("#providerDetail"),
+  pricingProviderView: document.querySelector("#pricingProviderView"),
+  pricingProviderDetail: document.querySelector("#pricingProviderDetail"),
   compareView: document.querySelector("#compareView"),
   comparePageTitle: document.querySelector("#comparePageTitle"),
   comparePageSubtitle: document.querySelector("#comparePageSubtitle"),
@@ -974,7 +1149,7 @@ const missingModePresets = {
 };
 const metricCoverageFilterOptions = [0, 10, 25, 50, 100, 250];
 const methodologyPageHref = "methodology.html";
-const pageOrder = ["home", "ranking", "compare", "benchmarks", "sources", "contribute"];
+const pageOrder = ["home", "ranking", "compare", "providers", "benchmarks", "sources", "contribute"];
 const viewOrder = ["histogram", "table", "text"];
 const sourceFilterOrder = ["all", "open", "closed", "unknown"];
 const contributionModes = ["score", "model", "benchmark"];
@@ -1235,7 +1410,9 @@ function renderStaticControls() {
   els.sourceHeader.textContent = tr("headers.source");
   els.coverageHeader.textContent = tr("headers.coverage");
   els.languageButtons.setAttribute("aria-label", tr("languageLabel"));
-  els.siteFooter.innerHTML = `${escapeHtml(tr("footerPrefix"))}<a href="${escapeHtml(state.data.source.url)}" target="_blank" rel="noreferrer">${escapeHtml(state.data.source.label || "AA Core + benchmark extensions")}</a> · <a href="${escapeHtml(pageHref("sources"))}">${escapeHtml(tr("sourcesBadge", { count: catalogSources().length }))}</a>${escapeHtml(tr("footerSuffix"))} · <a href="https://github.com/TabNahida/AInsights" target="_blank" rel="noreferrer">${escapeHtml(tr("repository"))}: TabNahida/AInsights</a>`;
+  els.siteFooter.innerHTML = state.page === "providers"
+    ? `${escapeHtml(tr("pricingFooter"))} · <a href="https://github.com/TabNahida/AInsights" target="_blank" rel="noreferrer">${escapeHtml(tr("repository"))}: TabNahida/AInsights</a>`
+    : `${escapeHtml(tr("footerPrefix"))}<a href="${escapeHtml(state.data.source.url)}" target="_blank" rel="noreferrer">${escapeHtml(state.data.source.label || "AA Core + benchmark extensions")}</a> · <a href="${escapeHtml(pageHref("sources"))}">${escapeHtml(tr("sourcesBadge", { count: catalogSources().length }))}</a>${escapeHtml(tr("footerSuffix"))} · <a href="https://github.com/TabNahida/AInsights" target="_blank" rel="noreferrer">${escapeHtml(tr("repository"))}: TabNahida/AInsights</a>`;
 
   renderPageButtons();
   renderLanguageButtons();
@@ -1546,6 +1723,7 @@ function render() {
   els.modelView.hidden = state.page !== "model";
   els.benchmarkView.hidden = state.page !== "benchmarks";
   if (els.providerView) els.providerView.hidden = state.page !== "provider";
+  if (els.pricingProviderView) els.pricingProviderView.hidden = state.page !== "providers";
   if (els.compareView) els.compareView.hidden = state.page !== "compare";
   document.querySelectorAll("#pageButtons button").forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.page === state.page));
@@ -1601,6 +1779,7 @@ function renderResults(preset) {
   if (!els.modelView.hidden) renderModelDetail(allDisplayModels, preset);
   if (!els.benchmarkView.hidden) renderBenchmarkPage();
   if (els.providerView && !els.providerView.hidden) renderProviderPage(homeRanked);
+  if (els.pricingProviderView && !els.pricingProviderView.hidden) renderPricingProvidersPage(homeRanked);
   if (els.compareView && !els.compareView.hidden) renderComparePage(compareDisplayModels);
 }
 
@@ -2914,7 +3093,7 @@ function renderHome(models, displayModels = models) {
   renderHomeMetrics(models);
   renderLatestModels(displayModels);
   renderTop20Chart(models.slice(0, state.topChartLimit));
-  renderCostScatter(models.filter((model) => Number.isFinite(modelCost(model)) && modelCost(model) > 0).slice(0, 28));
+  renderPriceLeaderboards(models);
   renderScoreBands(models);
   renderProviderChart(models);
   renderSourceExplorer(els.sourceExplorer);
@@ -3039,6 +3218,650 @@ function renderTop20Chart(models) {
       }).join("")}
     </div>
   `;
+}
+
+const HOME_PRICE_LIST_LIMIT = 6;
+// `init()` runs before this source location when models.js is already warm in
+// the browser. `var` is intentionally hoisted so the cache is available in
+// that synchronous startup path as well as the async JSON fallback path.
+var pricingCatalogRuntimeCache = null;
+
+function providerPricingCatalog() {
+  return state.data?.providerPricing || {};
+}
+
+function pricingProviders() {
+  return Array.isArray(providerPricingCatalog().providers) ? providerPricingCatalog().providers : [];
+}
+
+function pricingPlans() {
+  return Array.isArray(providerPricingCatalog().plans) ? providerPricingCatalog().plans : [];
+}
+
+function pricingSources() {
+  return Array.isArray(providerPricingCatalog().sources) ? providerPricingCatalog().sources : [];
+}
+
+function pricingCatalogIndexes() {
+  const catalog = providerPricingCatalog();
+  if (!pricingCatalogRuntimeCache || pricingCatalogRuntimeCache.catalog !== catalog) {
+    pricingCatalogRuntimeCache = {
+      catalog,
+      providersById: new Map(pricingProviders().map((provider) => [provider.id, provider])),
+      plansById: new Map(pricingPlans().map((plan) => [plan.id, plan])),
+      sourcesById: new Map(pricingSources().map((source) => [source.id, source])),
+      expandedOffers: null,
+      normalizedLanguage: "",
+      normalizedOffers: null,
+      offersByModelSlug: null,
+    };
+  }
+  return pricingCatalogRuntimeCache;
+}
+
+function expandedPricingCatalogOffers() {
+  const cache = pricingCatalogIndexes();
+  if (cache.expandedOffers) return cache.expandedOffers;
+  const offers = Array.isArray(providerPricingCatalog().offers) ? providerPricingCatalog().offers : [];
+  cache.expandedOffers = offers.flatMap((offer) => {
+    const variants = Array.isArray(offer.planVariants) ? offer.planVariants : [];
+    const expanded = variants.map((variant) => {
+      const multiplier = firstFinite(variant.rateMultiplier, 1);
+      const scaled = (field) => {
+        const explicit = firstFinite(variant[field]);
+        const base = firstFinite(offer[field]);
+        return Number.isFinite(explicit) ? explicit : (Number.isFinite(base) ? base * multiplier : null);
+      };
+      return {
+        ...offer,
+        ...variant,
+        id: `${offer.id}:${variant.idSuffix || variant.planId}`,
+        inputPerMillionTokensUsd: scaled("inputPerMillionTokensUsd"),
+        cacheReadPerMillionTokensUsd: scaled("cacheReadPerMillionTokensUsd"),
+        outputPerMillionTokensUsd: scaled("outputPerMillionTokensUsd"),
+        effectiveUsdPerMillionTokens: scaled("effectiveUsdPerMillionTokens"),
+        planVariants: undefined,
+      };
+    });
+    return [{ ...offer, planVariants: undefined }, ...expanded];
+  });
+  return cache.expandedOffers;
+}
+
+function pricingProviderById(providerId) {
+  return pricingCatalogIndexes().providersById.get(providerId) || null;
+}
+
+function pricingPlanById(planId) {
+  return pricingCatalogIndexes().plansById.get(planId) || null;
+}
+
+function pricingSourceById(sourceId) {
+  return pricingCatalogIndexes().sourcesById.get(sourceId) || null;
+}
+
+function catalogOfferModelSlugs(offer) {
+  const direct = offer.modelSlugs || offer.appliesTo?.slugs || [];
+  return [...new Set(direct)];
+}
+
+function firstFinite(...values) {
+  for (const value of values) {
+    const numeric = Number(value);
+    if (value !== null && value !== "" && Number.isFinite(numeric)) return numeric;
+  }
+  return null;
+}
+
+function pricingCurrencyFor(offer = {}, fallback = {}) {
+  const plan = pricingPlanById(offer.planId || fallback.planId) || {};
+  return String(
+    offer.currency
+      || fallback.currency
+      || plan.currency
+      || providerPricingCatalog().currency
+      || "USD",
+  ).toUpperCase();
+}
+
+function pricingExchangeRate(currency) {
+  const normalized = String(currency || "USD").toUpperCase();
+  if (normalized === "USD") return { currency: normalized, usdPerUnit: 1 };
+  const entry = providerPricingCatalog().exchangeRates?.[normalized] || {};
+  return {
+    currency: normalized,
+    usdPerUnit: firstFinite(entry.usdPerUnit),
+    unitsPerUsd: firstFinite(entry.unitsPerUsd),
+    asOf: entry.asOf || "",
+    sourceId: entry.sourceId || "",
+  };
+}
+
+function pricingUsdFromLocal(value, currency) {
+  const local = firstFinite(value);
+  const rate = pricingExchangeRate(currency).usdPerUnit;
+  return Number.isFinite(local) && Number.isFinite(rate) ? local * rate : null;
+}
+
+function catalogOfferLocalRates(offer, fallback = {}) {
+  const currency = pricingCurrencyFor(offer, fallback);
+  if (currency === "USD") return { input: null, cache: null, output: null };
+  const rates = offer.localRates || offer.rates || offer.rate || {};
+  return {
+    input: firstFinite(offer.inputPerMillionTokensLocal, rates.input),
+    cache: firstFinite(
+      offer.cacheReadPerMillionTokensLocal,
+      offer.cacheHitPerMillionTokensLocal,
+      rates.cache,
+      rates.cachedInput,
+    ),
+    output: firstFinite(offer.outputPerMillionTokensLocal, rates.output),
+  };
+}
+
+function catalogOfferRates(offer, fallback = {}) {
+  const rates = offer.rates || offer.rate || {};
+  const currency = pricingCurrencyFor(offer, fallback);
+  const genericRatesAreUsd = currency === "USD" || String(rates.currency || "").toUpperCase() === "USD";
+  const localRates = catalogOfferLocalRates(offer, fallback);
+  const resolved = (usdValue, localValue) => (
+    Number.isFinite(usdValue) ? usdValue : pricingUsdFromLocal(localValue, currency)
+  );
+  const inputUsd = firstFinite(
+    offer.inputPerMillionTokensUsd,
+    rates.inputPerMillionTokensUsd,
+    genericRatesAreUsd ? rates.input : null,
+  );
+  const cacheUsd = firstFinite(
+    offer.cacheReadPerMillionTokensUsd,
+    offer.cacheHitPerMillionTokensUsd,
+    offer.cachedInputPerMillionTokensUsd,
+    rates.cacheHitPerMillionTokensUsd,
+    rates.cachedInputPerMillionTokensUsd,
+    genericRatesAreUsd ? rates.cachedInput : null,
+    genericRatesAreUsd ? rates.cache : null,
+  );
+  const outputUsd = firstFinite(
+    offer.outputPerMillionTokensUsd,
+    rates.outputPerMillionTokensUsd,
+    genericRatesAreUsd ? rates.output : null,
+  );
+  return {
+    input: resolved(inputUsd, localRates.input),
+    cache: resolved(cacheUsd, localRates.cache),
+    output: resolved(outputUsd, localRates.output),
+  };
+}
+
+function pricingScenarioWeights() {
+  const scenario = providerPricingCatalog().workloadScenario || {};
+  const weights = scenario.weights || scenario.tokenWeights || {};
+  const input = firstFinite(weights.input, weights.newInput, scenario.inputWeight, 0.2);
+  const cache = firstFinite(weights.cache, weights.cacheRead, weights.cachedInput, scenario.cacheWeight, 0.7);
+  const output = firstFinite(weights.output, scenario.outputWeight, 0.1);
+  const total = Math.max((input || 0) + (cache || 0) + (output || 0), 1e-9);
+  return { input: input / total, cache: cache / total, output: output / total };
+}
+
+function pricingBlendFromRates(rates) {
+  if (!Number.isFinite(rates.input) || !Number.isFinite(rates.output)) return null;
+  const weights = pricingScenarioWeights();
+  const cache = Number.isFinite(rates.cache) ? rates.cache : rates.input;
+  return rates.input * weights.input + cache * weights.cache + rates.output * weights.output;
+}
+
+function catalogPlanType(provider, plan, offer) {
+  const raw = plan.type || plan.displayType || plan.billingType || offer.planType || offer.pricingKind || "token";
+  const providerType = String(provider.category || provider.type || "").toLowerCase();
+  if (String(raw).toLowerCase() === "subscription" && providerType.includes("coding")) return "coding";
+  return raw;
+}
+
+function humanizePricingMetadataKey(key) {
+  return String(key || "")
+    .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
+    .replace(/[_-]+/g, " ")
+    .trim()
+    .replace(/^./, (character) => character.toUpperCase());
+}
+
+function pricingMetadataLines(value, prefix = "") {
+  if (value === null || value === undefined || value === "") return [];
+  if (Array.isArray(value)) {
+    return value.flatMap((item) => pricingMetadataLines(item, prefix));
+  }
+  if (typeof value === "object") {
+    return Object.entries(value).flatMap(([key, item]) => {
+      const label = prefix
+        ? `${prefix} · ${humanizePricingMetadataKey(key)}`
+        : humanizePricingMetadataKey(key);
+      return pricingMetadataLines(item, label);
+    });
+  }
+  const text = typeof value === "boolean" ? (value ? "true" : "false") : String(value);
+  return [prefix ? `${prefix}: ${text}` : text];
+}
+
+function pricingQuotaLabel(subject = {}, fallback = {}) {
+  const subjectExplicit = subject.quotaLabel
+    || subject.quota?.label
+    || subject.billing?.quotaLabel;
+  if (subjectExplicit) return subjectExplicit;
+
+  const coverageMode = String(subject.coverageMode || fallback.coverageMode || "").toLowerCase();
+  if (coverageMode.includes("usage-credits")) return tr("pricingUsageCreditsOnly");
+  const weeklyShare = firstFinite(
+    subject.includedWeeklyLimitPercent,
+    fallback.includedWeeklyLimitPercent,
+    Number.isFinite(firstFinite(subject.includedWeeklyLimitShare))
+      ? firstFinite(subject.includedWeeklyLimitShare) * 100
+      : null,
+    Number.isFinite(firstFinite(fallback.includedWeeklyLimitShare))
+      ? firstFinite(fallback.includedWeeklyLimitShare) * 100
+      : null,
+  );
+  if (Number.isFinite(weeklyShare) && weeklyShare > 0) {
+    return tr("pricingWeeklyLimitShare", { percent: compactNumber(weeklyShare) });
+  }
+
+  const fallbackExplicit = fallback.quotaLabel
+    || fallback.quota?.label
+    || fallback.billing?.quotaLabel;
+  if (fallbackExplicit) return fallbackExplicit;
+
+  const parts = [];
+  const weeklyCredits = firstFinite(subject.weeklyCredits, fallback.weeklyCredits);
+  if (Number.isFinite(weeklyCredits)) {
+    parts.push(tr("pricingWeeklyCredits", { credits: compactNumber(weeklyCredits) }));
+  }
+  const creditCurrency = pricingCurrencyFor(subject, fallback);
+  const localCreditCost = firstFinite(
+    subject.costPerIncludedCreditLocal,
+    fallback.costPerIncludedCreditLocal,
+  );
+  const usdCreditCost = firstFinite(
+    subject.costPerIncludedCreditUsd,
+    fallback.costPerIncludedCreditUsd,
+  );
+  const creditCost = Number.isFinite(localCreditCost) && creditCurrency !== "USD"
+    ? formatLocalPrice(localCreditCost, creditCurrency)
+    : (Number.isFinite(usdCreditCost) ? formatUnitPrice(usdCreditCost) : "");
+  if (creditCost) parts.push(tr("pricingPerIncludedCredit", { price: creditCost }));
+
+  const callsPerFiveHours = firstFinite(
+    subject.callsPerFiveHours,
+    fallback.callsPerFiveHours,
+  );
+  const callsPerWeek = firstFinite(subject.callsPerWeek, fallback.callsPerWeek);
+  const callsPerMonth = firstFinite(subject.callsPerMonth, fallback.callsPerMonth);
+  if (Number.isFinite(callsPerFiveHours)) {
+    parts.push(tr("pricingCallsPerFiveHours", { calls: compactNumber(callsPerFiveHours) }));
+  }
+  if (Number.isFinite(callsPerWeek)) {
+    parts.push(tr("pricingCallsPerWeek", { calls: compactNumber(callsPerWeek) }));
+  }
+  if (Number.isFinite(callsPerMonth)) {
+    parts.push(tr("pricingCallsPerMonth", { calls: compactNumber(callsPerMonth) }));
+  }
+
+  const offPeakCreditMultiplier = firstFinite(
+    subject.offPeakCreditMultiplier,
+    fallback.offPeakCreditMultiplier,
+  );
+  const offPeakLocalTime = subject.offPeakLocalTime || fallback.offPeakLocalTime || "";
+  if (Number.isFinite(offPeakCreditMultiplier) && offPeakLocalTime) {
+    parts.push(tr("pricingOffPeakCredits", {
+      time: offPeakLocalTime,
+      multiplier: compactNumber(offPeakCreditMultiplier),
+    }));
+  }
+
+  return parts.join(" · ")
+    || pricingIncludedTokenLabel(
+      subject.includedTokensPerMonth || fallback.includedTokensPerMonth,
+    );
+}
+
+function catalogOfferPricingOverrideRows(offer) {
+  const overrides = offer.pricingOverrides ?? offer.endpoint?.pricingOverrides;
+  const rows = Array.isArray(overrides)
+    ? overrides
+    : (Array.isArray(overrides?.rows) ? overrides.rows : []);
+  return rows.flatMap((row) => {
+    if (!row || typeof row !== "object") return [];
+    const minPromptTokens = firstFinite(
+      row.minPromptTokens,
+      row.thresholdTokens,
+      row.minInputTokens,
+      row.condition?.minPromptTokens,
+    );
+    const fallback = { planId: offer.planId, currency: pricingCurrencyFor(offer) };
+    const rates = catalogOfferRates(row, fallback);
+    const localRates = catalogOfferLocalRates(row, fallback);
+    if (!Number.isFinite(minPromptTokens) || !Number.isFinite(rates.input) || !Number.isFinite(rates.output)) return [];
+    return [{
+      minPromptTokens,
+      rates,
+      localRates,
+      currency: fallback.currency,
+      effectivePrice: pricingBlendFromRates(rates),
+      localEffectivePrice: pricingBlendFromRates(localRates),
+      note: row.note || row.notes || row.thresholdNote || "",
+    }];
+  });
+}
+
+function catalogOfferOverrideNotes(offer) {
+  const explicitNotes = [
+    ...pricingMetadataLines(offer.thresholdNotes || offer.endpoint?.thresholdNotes),
+    ...pricingMetadataLines(offer.pricingOverrideNotes || offer.endpoint?.pricingOverrideNotes),
+  ];
+  const overrides = catalogOfferPricingOverrideRows(offer).length
+    ? []
+    : pricingMetadataLines(offer.pricingOverrides ?? offer.endpoint?.pricingOverrides);
+  return [...new Set([...explicitNotes, ...overrides])];
+}
+
+function normalizedCatalogOffer(offer) {
+  const provider = pricingProviderById(offer.providerId) || {};
+  const plan = pricingPlanById(offer.planId) || {};
+  const rates = catalogOfferRates(offer);
+  const currency = pricingCurrencyFor(offer);
+  const localRates = catalogOfferLocalRates(offer);
+  const sourceIds = [
+    ...(Array.isArray(offer.sourceIds) ? offer.sourceIds : []),
+    ...(Array.isArray(plan.sourceIds) ? plan.sourceIds : []),
+  ];
+  const source = pricingSourceById(sourceIds[0]) || {};
+  const basePlanName = offer.planName || plan.name || tr("pricingObserved");
+  const planName = offer.routeLabel ? `${basePlanName} · ${offer.routeLabel}` : basePlanName;
+  const endpointSourceUrl = provider.id === "openrouter" && offer.providerModelId
+    ? `https://openrouter.ai/api/v1/models/${offer.providerModelId}/endpoints`
+    : "";
+  const explicitEffectiveUsd = firstFinite(
+    offer.effectiveUsdPerMillionTokens,
+    offer.effectiveUsdPerMillionIncludedTokens,
+    offer.normalizedUsdPerMillionTokens,
+    offer.effectivePriceUsdPerMillionTokens,
+    offer.effectivePrice?.usdPerMillionTokens,
+    (offer.effectivePrices || []).find((row) => row.scenarioId === providerPricingCatalog().displayScenarioId)?.usdPerMillionTokens,
+  );
+  const explicitEffectiveLocal = firstFinite(
+    offer.effectiveLocalPerMillionTokens,
+    offer.effectiveLocalPerMillionIncludedTokens,
+  );
+  const explicitEffective = Number.isFinite(explicitEffectiveUsd)
+    ? explicitEffectiveUsd
+    : pricingUsdFromLocal(explicitEffectiveLocal, currency);
+  const monthlyLocal = currency === "USD" ? null : firstFinite(
+    offer.monthlyPriceLocal,
+    plan.monthlyPriceLocal,
+    plan.billing?.monthlyLocal,
+  );
+  const annualLocal = currency === "USD" ? null : firstFinite(
+    offer.annualPriceLocal,
+    offer.annualTotalLocal,
+    plan.annualPriceLocal,
+    plan.annualTotalLocal,
+    plan.billing?.annualLocal,
+  );
+  const monthlyEquivalentLocal = currency === "USD" ? null : firstFinite(
+    offer.annualEquivalentMonthlyLocal,
+    offer.quarterlyEquivalentMonthlyLocal,
+    plan.annualEquivalentMonthlyLocal,
+    plan.quarterlyEquivalentMonthlyLocal,
+  );
+  const monthlyUsdPublished = firstFinite(
+    offer.monthlyUsd,
+    plan.monthlyUsd,
+    plan.monthlyPriceUsd,
+    plan.billing?.monthlyUsd,
+    plan.billing?.amount,
+  );
+  const annualUsdPublished = firstFinite(
+    offer.annualUsd,
+    offer.annualPriceUsd,
+    plan.annualUsd,
+    plan.annualPriceUsd,
+    plan.billing?.annualUsd,
+  );
+  const monthlyEquivalentUsdPublished = firstFinite(
+    offer.annualEquivalentMonthlyUsd,
+    plan.annualEquivalentMonthlyUsd,
+  );
+  const calculatedEffective = Number.isFinite(explicitEffective)
+    ? explicitEffective
+    : pricingBlendFromRates(rates);
+  const hasCalculatedPrice = Number.isFinite(calculatedEffective);
+  const note = [...new Set([
+    ...pricingMetadataLines(offer.note || offer.notes),
+    ...pricingMetadataLines(offer.calculation),
+    ...pricingMetadataLines(plan.note || plan.notes),
+  ])].join(" · ");
+  const comparable = offer.comparable !== false
+    && offer.availability?.status !== "expired"
+    && hasCalculatedPrice;
+  return {
+    id: offer.id,
+    providerId: offer.providerId || provider.id || "unknown",
+    providerName: provider.name || offer.providerName || tr("unknownCreator"),
+    providerType: provider.type || provider.category || "aggregator",
+    planId: offer.planId || plan.id || "unknown-plan",
+    planName,
+    planType: catalogPlanType(provider, plan, offer),
+    currency,
+    rates,
+    localRates,
+    effectivePrice: hasCalculatedPrice ? calculatedEffective : null,
+    localEffectivePrice: Number.isFinite(explicitEffectiveLocal)
+      ? explicitEffectiveLocal
+      : pricingBlendFromRates(localRates),
+    effectiveUnit: Number.isFinite(firstFinite(
+      offer.effectiveUsdPerMillionIncludedTokens,
+      offer.effectiveLocalPerMillionIncludedTokens,
+    )) ? "included" : "mix",
+    comparable,
+    estimated: Boolean(
+      offer.estimated
+      || offer.confidence === "estimated"
+      || offer.pricingKind === "estimated"
+      || source.kind === "third-party-analysis"
+      || offer.evidenceKind === "community-catalog"
+      || String(source.kind || "").startsWith("community-catalog")
+    ),
+    monthlyLocal,
+    annualLocal,
+    monthlyEquivalentLocal,
+    monthlyUsd: Number.isFinite(monthlyUsdPublished)
+      ? monthlyUsdPublished
+      : pricingUsdFromLocal(monthlyLocal, currency),
+    annualUsd: Number.isFinite(annualUsdPublished)
+      ? annualUsdPublished
+      : pricingUsdFromLocal(annualLocal, currency),
+    monthlyEquivalentUsd: Number.isFinite(monthlyEquivalentUsdPublished)
+      ? monthlyEquivalentUsdPublished
+      : pricingUsdFromLocal(monthlyEquivalentLocal, currency),
+    quotaLabel: pricingQuotaLabel(offer, plan),
+    status: offer.status ?? offer.endpoint?.status ?? offer.availability?.status ?? null,
+    quantization: offer.quantization || offer.endpoint?.quantization || "",
+    contextLength: firstFinite(
+      offer.contextLength,
+      offer.contextWindow,
+      offer.endpoint?.contextLength,
+      offer.endpoint?.contextWindow,
+    ),
+    observedAt: offer.observedAt || offer.endpoint?.observedAt || "",
+    dynamic: offer.dynamic ?? offer.endpoint?.dynamic ?? false,
+    pricingOverrides: offer.pricingOverrides ?? offer.endpoint?.pricingOverrides ?? null,
+    thresholdNotes: offer.thresholdNotes ?? offer.endpoint?.thresholdNotes ?? null,
+    pricingOverrideNotes: offer.pricingOverrideNotes ?? offer.endpoint?.pricingOverrideNotes ?? null,
+    pricingOverrideRows: catalogOfferPricingOverrideRows(offer),
+    overrideNotes: catalogOfferOverrideNotes(offer),
+    note,
+    sourceUrl: offer.sourceUrl || endpointSourceUrl || source.url || plan.sourceUrl || provider.pricingUrl || provider.url || "",
+    sourceLabel: source.label || source.title || source.name || offer.sourceLabel || provider.name || tr("pricingSource"),
+    modelSlugs: catalogOfferModelSlugs(offer),
+  };
+}
+
+function pricingOffersForModel(model) {
+  return verifiedPricingOffersForModel(model).filter((offer) => (
+    Number.isFinite(offer.effectivePrice)
+  ));
+}
+
+function normalizedPricingCatalogOffers() {
+  const cache = pricingCatalogIndexes();
+  if (cache.normalizedOffers && cache.normalizedLanguage === state.language) {
+    return cache.normalizedOffers;
+  }
+  const normalizedOffers = expandedPricingCatalogOffers().map(normalizedCatalogOffer);
+  const offersByModelSlug = new Map();
+  normalizedOffers.forEach((offer) => {
+    offer.modelSlugs.forEach((modelSlug) => {
+      if (!offersByModelSlug.has(modelSlug)) offersByModelSlug.set(modelSlug, []);
+      offersByModelSlug.get(modelSlug).push(offer);
+    });
+  });
+  offersByModelSlug.forEach((offers) => offers.sort((a, b) => (
+    (Number.isFinite(a.effectivePrice) ? a.effectivePrice : Infinity)
+      - (Number.isFinite(b.effectivePrice) ? b.effectivePrice : Infinity)
+    || a.providerName.localeCompare(b.providerName)
+    || a.planName.localeCompare(b.planName)
+  )));
+  cache.normalizedLanguage = state.language;
+  cache.normalizedOffers = normalizedOffers;
+  cache.offersByModelSlug = offersByModelSlug;
+  return normalizedOffers;
+}
+
+function verifiedPricingOffersForModel(model) {
+  normalizedPricingCatalogOffers();
+  if (!model?.slug) return [];
+  return pricingCatalogIndexes().offersByModelSlug.get(model.slug) || [];
+}
+
+function catalogOfferSupportsModel(offer, model) {
+  if (!model?.slug) return false;
+  return catalogOfferModelSlugs(offer).includes(model.slug);
+}
+
+function cheapestPricingOffer(model) {
+  return verifiedPricingOffersForModel(model).find((offer) => (
+    offer.comparable && Number.isFinite(offer.effectivePrice)
+  )) || null;
+}
+
+function pricingOfferUnitLabel(offer) {
+  return tr(offer?.effectiveUnit === "included" ? "priceIncludedShort" : "priceMixShort");
+}
+
+function priceLeaderboardRows(models, cohortSize) {
+  return models.slice(0, cohortSize)
+    .map((model) => ({ model, offer: cheapestPricingOffer(model) }))
+    .filter((row) => row.offer)
+    .sort((a, b) => a.offer.effectivePrice - b.offer.effectivePrice
+      || (a.model.rank || Infinity) - (b.model.rank || Infinity)
+      || a.model.slug.localeCompare(b.model.slug))
+    .slice(0, HOME_PRICE_LIST_LIMIT);
+}
+
+function renderPriceLeaderboards(models) {
+  if (!els.costScatter) return;
+  const top10 = priceLeaderboardRows(models, 10);
+  const top50 = priceLeaderboardRows(models, 50);
+  const asOf = providerPricingCatalog().asOf || providerPricingCatalog().updatedAt || state.data.generatedAt;
+  els.costScatter.innerHTML = `
+    <div class="price-board-grid">
+      ${renderPriceLeaderboardColumn("priceTop10Title", "priceTop10Subtitle", top10)}
+      ${renderPriceLeaderboardColumn("priceTop50Title", "priceTop50Subtitle", top50)}
+    </div>
+    <div class="price-board-foot">
+      <span>${renderIcon("sliders")}${escapeHtml(tr("pricingMethodNote"))}</span>
+      <span>${escapeHtml(tr("pricingAsOf", { date: formatDate(asOf) }))}</span>
+      <a href="${escapeHtml(pageHref("providers"))}">${escapeHtml(tr("pricingViewProviders"))}${renderIcon("arrowRight")}</a>
+    </div>
+  `;
+}
+
+function renderPriceLeaderboardColumn(titleKey, subtitleKey, rows) {
+  return `
+    <section class="price-board-column">
+      <div class="price-board-heading">
+        <div>
+          <h3>${escapeHtml(tr(titleKey))}</h3>
+          <p>${escapeHtml(tr(subtitleKey, { count: HOME_PRICE_LIST_LIMIT }))}</p>
+        </div>
+        <span>${escapeHtml(tr("priceComparableShort"))}</span>
+      </div>
+      <div class="price-board-list">
+        ${rows.length ? rows.map(renderPriceLeaderboardRow).join("") : `<div class="empty">${escapeHtml(tr("priceListEmpty"))}</div>`}
+      </div>
+    </section>
+  `;
+}
+
+function renderPriceLeaderboardRow({ model, offer }) {
+  const estimateLabel = offer.estimated ? ` · ${tr("pricingLabels.estimate")}` : "";
+  return `
+    <article class="price-board-row">
+      <span class="price-board-rank">#${escapeHtml(model.rank)}</span>
+      ${renderModelIcon(model)}
+      <span class="price-board-model">
+        <a href="${escapeHtml(modelHref(model, "home"))}">${escapeHtml(model.model)}</a>
+        <em>${escapeHtml(offer.providerName)} · ${escapeHtml(offer.planName)}${escapeHtml(estimateLabel)}</em>
+      </span>
+      <strong>${escapeHtml(formatUnitPrice(offer.effectivePrice))}<small>${escapeHtml(pricingOfferUnitLabel(offer))}</small></strong>
+    </article>
+  `;
+}
+
+function formatUnitPrice(value) {
+  if (!Number.isFinite(value)) return tr("notAvailable");
+  const absolute = Math.abs(value);
+  const digits = absolute < 0.01 ? 6 : absolute < 1 ? 4 : 2;
+  return `$${value.toLocaleString("en-US", { maximumFractionDigits: digits, minimumFractionDigits: 0 })}`;
+}
+
+function formatLocalPrice(value, currency) {
+  if (!Number.isFinite(value)) return tr("notAvailable");
+  const normalized = String(currency || "").toUpperCase();
+  const symbol = { CNY: "¥", EUR: "€", GBP: "£", INR: "₹", JPY: "¥", KRW: "₩" }[normalized]
+    || `${normalized} `;
+  const absolute = Math.abs(value);
+  const digits = absolute < 0.01 ? 6 : absolute < 1 ? 4 : absolute < 100 ? 2 : 0;
+  return `${symbol}${value.toLocaleString("en-US", {
+    maximumFractionDigits: digits,
+    minimumFractionDigits: 0,
+  })}`;
+}
+
+function formatBillingPrice(usdValue, localValue, currency) {
+  const normalized = String(currency || "USD").toUpperCase();
+  if (normalized !== "USD" && Number.isFinite(localValue)) {
+    const local = formatLocalPrice(localValue, normalized);
+    return Number.isFinite(usdValue) ? `${local} (~${formatUnitPrice(usdValue)})` : local;
+  }
+  return formatUnitPrice(usdValue);
+}
+
+function pricingLocalUnitLabel(value, currency) {
+  const normalized = String(currency || "USD").toUpperCase();
+  return normalized !== "USD" && Number.isFinite(value)
+    ? `${formatLocalPrice(value, normalized)} / 1M`
+    : "";
+}
+
+function formatRateWithLocal(usdValue, localValue, currency) {
+  const local = pricingLocalUnitLabel(localValue, currency);
+  return `${formatUnitPrice(usdValue)}${local ? ` (${local})` : ""}`;
+}
+
+function pricingIncludedTokenLabel(value) {
+  const tokens = Number(value);
+  return Number.isFinite(tokens) && tokens > 0
+    ? `${compactNumber(tokens)} ${tr("table.tokens")} · ${tr("pricingPerMonth")}`
+    : "";
 }
 
 function renderCostScatter(models) {
@@ -3603,6 +4426,8 @@ function renderModelDetail(ranked, preset) {
       </section>
     </section>
 
+    ${renderModelPricingSection(model)}
+
     <section class="detail-section">
       <div class="detail-section-head">
         <h2>${escapeHtml(tr("detailBenchmarkTitle"))}</h2>
@@ -3631,6 +4456,126 @@ function renderModelDetail(ranked, preset) {
       ${renderRadarBasisNotes()}
     </section>
   `;
+}
+
+function renderModelPricingSection(model) {
+  const offers = pricingOffersForModel(model);
+  const asOf = providerPricingCatalog().asOf || providerPricingCatalog().updatedAt || state.data.generatedAt;
+  return `
+    <section class="detail-section model-pricing-section">
+      <div class="detail-section-head pricing-section-head">
+        <div>
+          <h2>${escapeHtml(tr("pricingSectionTitle"))}</h2>
+          <p>${escapeHtml(tr("pricingSectionSubtitle"))}</p>
+        </div>
+        <span class="pricing-as-of">${escapeHtml(tr("pricingAsOf", { date: formatDate(asOf) }))}</span>
+      </div>
+      <div class="pricing-offer-scroll" tabindex="0" aria-label="${escapeHtml(tr("pricingSectionTitle"))}">
+        ${offers.length ? offers.map(renderModelPricingOffer).join("") : `<div class="empty">${escapeHtml(tr("pricingNoOffers"))}</div>`}
+      </div>
+      <div class="pricing-method-strip">
+        ${renderIcon("sliders")}
+        <span>${escapeHtml(tr("pricingMethodNote"))}</span>
+        <a href="${escapeHtml(pageHref("providers"))}">${escapeHtml(tr("pricingViewProviders"))}${renderIcon("arrowRight")}</a>
+      </div>
+    </section>
+  `;
+}
+
+function renderModelPricingOffer(offer) {
+  const type = pricingPlanTypeGroup(offer.planType);
+  const planLabel = tr(`pricingPlanTypes.${type}`);
+  const meta = [];
+  if (Number.isFinite(offer.monthlyUsd) || Number.isFinite(offer.monthlyLocal)) {
+    meta.push(`${tr("pricingLabels.monthly")} ${formatBillingPrice(offer.monthlyUsd, offer.monthlyLocal, offer.currency)}`);
+  }
+  if (Number.isFinite(offer.annualUsd) || Number.isFinite(offer.annualLocal)) {
+    meta.push(`${formatBillingPrice(offer.annualUsd, offer.annualLocal, offer.currency)} ${tr("pricingPerYear")}`);
+  }
+  if (Number.isFinite(offer.monthlyEquivalentUsd) || Number.isFinite(offer.monthlyEquivalentLocal)) {
+    meta.push(`${tr("pricingMonthlyEquivalent")} ${formatBillingPrice(offer.monthlyEquivalentUsd, offer.monthlyEquivalentLocal, offer.currency)}`);
+  }
+  if (offer.quotaLabel) meta.push(offer.quotaLabel);
+  if (offer.estimated) meta.push(tr("pricingLabels.estimate"));
+  if (!offer.comparable && Number.isFinite(offer.effectivePrice)) {
+    meta.push(tr("pricingLabels.displayOnly"));
+  }
+  if (Number.isFinite(offer.contextLength)) {
+    meta.push(`${tr("pricingLabels.context")} ${compactNumber(offer.contextLength)} ${tr("table.tokens")}`);
+  }
+  if (offer.status === 0 || String(offer.status).toLowerCase() === "active") {
+    meta.push(tr("pricingLabels.activeEndpoint"));
+  } else if (offer.status !== null && offer.status !== undefined && offer.status !== "") {
+    meta.push(`${tr("pricingLabels.endpointStatus")} ${offer.status}`);
+  }
+  if (offer.dynamic) meta.push(tr("pricingLabels.dynamicEndpoint"));
+  if (offer.quantization) meta.push(`${tr("pricingLabels.quantization")} ${String(offer.quantization).toUpperCase()}`);
+  if (offer.observedAt) meta.push(`${tr("pricingLabels.observed")} ${formatDate(offer.observedAt)}`);
+  const source = offer.sourceUrl
+    ? `<a href="${escapeHtml(offer.sourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(offer.sourceLabel)}${renderIcon("arrowUpRight")}</a>`
+    : `<span>${escapeHtml(offer.sourceLabel || tr("pricingSource"))}</span>`;
+  return `
+    <article class="pricing-offer-card${offer.comparable ? "" : " is-unpriced"}">
+      <div class="pricing-offer-main">
+        <span class="pricing-provider-mark">${escapeHtml(initials(offer.providerName))}</span>
+        <span>
+          <strong>${escapeHtml(offer.providerName)}</strong>
+          <em>${escapeHtml(offer.planName)}</em>
+        </span>
+        <span class="pricing-plan-pill is-${escapeHtml(type)}">${escapeHtml(planLabel)}</span>
+      </div>
+      <div class="pricing-rate-grid">
+        ${renderAvailablePricingRate(tr("pricingLabels.input"), offer.rates.input, false, offer.localRates.input, offer.currency)}
+        ${renderAvailablePricingRate(tr("pricingLabels.cache"), offer.rates.cache, false, offer.localRates.cache, offer.currency)}
+        ${renderAvailablePricingRate(tr("pricingLabels.output"), offer.rates.output, false, offer.localRates.output, offer.currency)}
+        ${renderAvailablePricingRate(pricingOfferUnitLabel(offer), offer.effectivePrice, true, offer.localEffectivePrice, offer.currency)}
+      </div>
+      <div class="pricing-offer-meta">
+        <span>${escapeHtml(meta.join(" · ") || pricingOfferUnitLabel(offer))}</span>
+        ${source}
+      </div>
+      ${offer.note ? `<p class="pricing-offer-note">${escapeHtml(offer.note)}</p>` : ""}
+      ${(offer.pricingOverrideRows || []).map(renderPricingOverrideRow).join("")}
+      ${offer.overrideNotes?.length ? `<p class="pricing-offer-note is-override"><strong>${escapeHtml(tr("pricingLabels.pricingOverride"))}:</strong> ${escapeHtml(offer.overrideNotes.join(" · "))}</p>` : ""}
+    </article>
+  `;
+}
+
+function renderPricingOverrideRow(override) {
+  const threshold = tr("pricingLabels.promptThreshold", {
+    tokens: `${compactNumber(override.minPromptTokens)} ${tr("table.tokens")}`,
+  });
+  const rates = [
+    [tr("pricingLabels.input"), override.rates.input, override.localRates?.input],
+    [tr("pricingLabels.cache"), override.rates.cache, override.localRates?.cache],
+    [tr("pricingLabels.output"), override.rates.output, override.localRates?.output],
+    [tr("pricingLabels.effective"), override.effectivePrice, override.localEffectivePrice],
+  ].filter(([, value, localValue]) => Number.isFinite(value) || Number.isFinite(localValue))
+    .map(([label, value, localValue]) => `${label} ${formatRateWithLocal(value, localValue, override.currency)}`);
+  return `<p class="pricing-offer-note is-override"><strong>${escapeHtml(threshold)}:</strong> ${escapeHtml(rates.join(" · "))}${override.note ? ` · ${escapeHtml(override.note)}` : ""}</p>`;
+}
+
+function renderAvailablePricingRate(label, value, effective = false, localValue = null, currency = "USD") {
+  if (!Number.isFinite(value) && !Number.isFinite(localValue)) return "";
+  return renderPricingRate(label, value, effective, localValue, currency);
+}
+
+function renderPricingRate(label, value, effective = false, localValue = null, currency = "USD") {
+  const local = pricingLocalUnitLabel(localValue, currency);
+  return `
+    <span class="pricing-rate${effective ? " is-effective" : ""}">
+      <em>${escapeHtml(label)}</em>
+      <strong>${escapeHtml(formatUnitPrice(value))}</strong>
+      <small>${escapeHtml(`${tr("table.perMillion")}${local ? ` · ${local}` : ""}`)}</small>
+    </span>
+  `;
+}
+
+function pricingPlanTypeGroup(value) {
+  const type = String(value || "").toLowerCase();
+  if (type.includes("coding")) return "coding";
+  if (type.includes("subscription") || type.includes("plan") || type.includes("quota")) return "subscription";
+  return "token";
 }
 
 function renderRankCards(model) {
@@ -4706,6 +5651,356 @@ function renderCompareEntry(model) {
   `;
 }
 
+function renderPricingProvidersPage(ranked) {
+  if (!els.pricingProviderDetail) return;
+  document.title = `${tr("pricingProvidersTitle")} · ${tr("pageTitle")}`;
+  const catalog = providerPricingCatalog();
+  const offers = normalizedPricingCatalogOffers();
+  const filter = state.pricingProviderFilter;
+  const providerQuery = state.pricingProviderQuery || "";
+  const modelQuery = state.pricingModelQuery || "";
+  const visibleProviders = pricingProviderComparisonRows(offers, filter, {
+    providerQuery,
+    modelQuery,
+  });
+  const visibleModelOffers = visibleProviders.flatMap((row) => row.modelOffers);
+  const mappedModels = new Set(visibleModelOffers.map((row) => row.modelSlug));
+  const comparableCount = visibleModelOffers.filter(({ offer }) => (
+    offer.comparable && Number.isFinite(offer.effectivePrice)
+  )).length;
+  const planCount = new Set(visibleProviders.flatMap((row) => [
+    ...row.plans.map((plan) => plan.id),
+    ...row.offers.map((offer) => offer.planId),
+  ])).size;
+  const asOf = catalog.asOf || catalog.updatedAt || state.data.generatedAt;
+
+  els.pricingProviderDetail.innerHTML = `
+    <section class="pricing-provider-hero">
+      <div>
+        <p class="eyebrow">AInsights Providers</p>
+        <h2>${escapeHtml(tr("pricingProvidersTitle"))}</h2>
+        <p>${escapeHtml(tr("pricingProvidersSubtitle"))}</p>
+      </div>
+      <span>${escapeHtml(tr("pricingAsOf", { date: formatDate(asOf) }))}</span>
+    </section>
+
+    <section class="pricing-provider-stats" aria-label="${escapeHtml(tr("pricingProvidersTitle"))}">
+      ${renderPricingProviderStat("network", tr("pricingProvidersStats.providers"), visibleProviders.length)}
+      ${renderPricingProviderStat("database", tr("pricingProvidersStats.plans"), planCount)}
+      ${renderPricingProviderStat("dollar", tr("pricingProvidersStats.comparable"), comparableCount)}
+      ${renderPricingProviderStat("code", tr("pricingProvidersStats.models"), mappedModels.size)}
+    </section>
+
+    <section class="pricing-provider-controls">
+      <div class="pricing-provider-control-row">
+        <div class="segmented-control" role="group" aria-label="${escapeHtml(tr("pricingProvidersTitle"))}">
+          ${["all", "token", "subscription", "coding"].map((type) => `
+            <button type="button" data-pricing-provider-filter="${escapeHtml(type)}" aria-pressed="${type === filter}">${escapeHtml(tr(`pricingPlanTypes.${type}`))}</button>
+          `).join("")}
+        </div>
+        <div class="pricing-provider-searches">
+          ${renderPricingProviderSearch(
+            "provider",
+            tr("pricingProviderSearchLabel"),
+            tr("pricingProviderSearchPlaceholder"),
+            providerQuery,
+          )}
+          ${renderPricingProviderSearch(
+            "model",
+            tr("pricingModelSearchLabel"),
+            tr("pricingModelSearchPlaceholder"),
+            modelQuery,
+          )}
+        </div>
+      </div>
+      <p>${escapeHtml(tr("pricingMethodNote"))}</p>
+    </section>
+
+    <section class="pricing-provider-grid">
+      ${visibleProviders.length
+        ? visibleProviders.map(renderPricingProviderCard).join("")
+        : `<p class="pricing-provider-search-empty">${escapeHtml(tr("pricingProviderSearchEmpty"))}</p>`}
+    </section>
+  `;
+
+  els.pricingProviderDetail.querySelectorAll("[data-pricing-provider-filter]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.pricingProviderFilter = button.dataset.pricingProviderFilter || "all";
+      renderPricingProvidersPage(ranked);
+    });
+  });
+  els.pricingProviderDetail.querySelectorAll("[data-pricing-provider-search]").forEach((input) => {
+    input.addEventListener("input", () => {
+      const kind = input.dataset.pricingProviderSearch;
+      const key = kind === "model" ? "pricingModelQuery" : "pricingProviderQuery";
+      const selectionStart = input.selectionStart;
+      const selectionEnd = input.selectionEnd;
+      state[key] = input.value;
+      renderPricingProvidersPage(ranked);
+      const nextInput = els.pricingProviderDetail.querySelector(`[data-pricing-provider-search="${kind}"]`);
+      nextInput?.focus({ preventScroll: true });
+      if (nextInput && Number.isInteger(selectionStart) && Number.isInteger(selectionEnd)) {
+        nextInput.setSelectionRange(selectionStart, selectionEnd);
+      }
+    });
+  });
+}
+
+function renderPricingProviderSearch(kind, label, placeholder, value) {
+  return `
+    <label class="pricing-provider-search">
+      <span>${escapeHtml(label)}</span>
+      <input
+        type="search"
+        value="${escapeHtml(value)}"
+        placeholder="${escapeHtml(placeholder)}"
+        data-pricing-provider-search="${escapeHtml(kind)}"
+        autocomplete="off"
+      />
+    </label>
+  `;
+}
+
+function pricingSearchText(value) {
+  return String(value || "").trim().toLocaleLowerCase();
+}
+
+function pricingProviderComparisonRows(offers, filter = "all", searches = {}) {
+  const providerQuery = pricingSearchText(searches.providerQuery);
+  const modelQuery = pricingSearchText(searches.modelQuery);
+  const rows = new Map();
+  const matchesFilter = (planType) => (
+    filter === "all" || pricingPlanTypeGroup(planType) === filter
+  );
+  const ensure = (providerId, fallback = {}) => {
+    if (!rows.has(providerId)) {
+      const provider = pricingProviderById(providerId) || fallback;
+      rows.set(providerId, {
+        provider: {
+          id: providerId,
+          name: provider.name || fallback.name || tr("unknownCreator"),
+          type: provider.type || provider.category || fallback.type || "aggregator",
+          regions: provider.regions || [],
+          pricingUrl: provider.pricingUrl || provider.url || "",
+          note: provider.note || provider.notes || "",
+        },
+        plans: pricingPlans().filter((plan) => (
+          plan.providerId === providerId
+          && matchesFilter(catalogPlanType(provider, plan, {}))
+        )),
+        offers: [],
+      });
+    }
+    return rows.get(providerId);
+  };
+  pricingProviders().forEach((provider) => ensure(provider.id, provider));
+  offers
+    .filter((offer) => matchesFilter(offer.planType))
+    .forEach((offer) => ensure(offer.providerId, {
+      name: offer.providerName,
+      type: offer.providerType,
+    }).offers.push(offer));
+
+  return [...rows.values()]
+    .filter((row) => row.plans.length || row.offers.length)
+    .filter((row) => {
+      if (!providerQuery) return true;
+      return pricingSearchText([
+        row.provider.name,
+        row.provider.id,
+        row.provider.type,
+      ].join(" ")).includes(providerQuery);
+    })
+    .map((row) => {
+      const allModelOffers = pricingProviderModelOfferRows(row.offers);
+      const modelOffers = modelQuery
+        ? allModelOffers.filter((modelOffer) => pricingModelOfferMatchesSearch(modelOffer, modelQuery))
+        : allModelOffers;
+      const visiblePlanIds = new Set(modelOffers.map(({ offer }) => offer.planId));
+      const visibleOffers = modelQuery
+        ? row.offers.filter((offer) => visiblePlanIds.has(offer.planId))
+        : row.offers;
+      const visiblePlans = modelQuery
+        ? row.plans.filter((plan) => visiblePlanIds.has(plan.id))
+        : row.plans;
+      const cheapestModelOffer = modelOffers
+        .filter(({ offer }) => (
+          offer.comparable
+          && Number.isFinite(offer.effectivePrice)
+        ))
+        .sort((a, b) => (
+          a.offer.effectivePrice - b.offer.effectivePrice
+          || a.offer.id.localeCompare(b.offer.id)
+          || a.modelSlug.localeCompare(b.modelSlug)
+        ))[0] || null;
+      return {
+        ...row,
+        plans: visiblePlans,
+        offers: visibleOffers,
+        modelOffers,
+        cheapest: cheapestModelOffer?.offer || null,
+        mappedModels: new Set(modelOffers.map((modelOffer) => modelOffer.modelSlug)).size,
+      };
+    })
+    .filter((row) => !modelQuery || row.modelOffers.length)
+    .sort((a, b) => (
+      (a.cheapest ? 0 : 1) - (b.cheapest ? 0 : 1)
+      || (a.cheapest?.effectivePrice ?? Infinity) - (b.cheapest?.effectivePrice ?? Infinity)
+      || a.provider.name.localeCompare(b.provider.name)
+    ));
+}
+
+function pricingModelOfferMatchesSearch(modelOffer, query) {
+  const { model, modelSlug } = modelOffer;
+  return pricingSearchText([
+    model?.model,
+    model?.creator,
+    model?.variantGroup,
+    modelSlug,
+  ].join(" ")).includes(query);
+}
+
+function renderPricingProviderStat(icon, label, value) {
+  return `
+    <article>
+      ${renderIcon(icon)}
+      <span>${escapeHtml(label)}</span>
+      <strong>${escapeHtml(compactNumber(value))}</strong>
+    </article>
+  `;
+}
+
+function renderPricingProviderCard(row) {
+  const { provider, plans, offers, modelOffers, cheapest, mappedModels } = row;
+  const typeLabel = lookup(copy[state.language]?.pricingProviderTypes || {}, provider.type)
+    || lookup(copy[DEFAULT_LANGUAGE]?.pricingProviderTypes || {}, provider.type)
+    || provider.type;
+  const planRows = plans.length ? plans : uniquePlansFromOffers(offers);
+  const sourceUrl = provider.pricingUrl || offers.find((offer) => offer.sourceUrl)?.sourceUrl || "";
+  const cheapestMeta = cheapest
+    ? `${pricingOfferUnitLabel(cheapest)}${cheapest.estimated ? ` · ${tr("pricingLabels.estimate")}` : ""}`
+    : "";
+  return `
+    <article class="pricing-provider-card">
+      <header>
+        <span class="pricing-provider-mark">${escapeHtml(initials(provider.name))}</span>
+        <span>
+          <h3>${escapeHtml(provider.name)}</h3>
+          <em>${escapeHtml(typeLabel)}</em>
+        </span>
+        ${sourceUrl ? `<a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(`${provider.name} ${tr("pricingSource")}`)}">${renderIcon("arrowUpRight")}</a>` : ""}
+      </header>
+      <div class="pricing-provider-summary">
+        <span><em>${escapeHtml(tr("pricingLabels.models"))}</em><strong>${escapeHtml(compactNumber(mappedModels))}</strong></span>
+        <span><em>${escapeHtml(tr("priceComparableShort"))}</em><strong>${escapeHtml(cheapest ? formatUnitPrice(cheapest.effectivePrice) : "—")}</strong>${cheapestMeta ? `<small>${escapeHtml(cheapestMeta)}</small>` : ""}</span>
+        <span><em>${escapeHtml(tr("pricingLabels.offers"))}</em><strong>${escapeHtml(compactNumber(modelOffers.length))}</strong></span>
+      </div>
+      <div class="pricing-provider-plans">
+        ${planRows.map(renderPricingPlanChip).join("")}
+      </div>
+      <div class="pricing-provider-offers">
+        <h4>${escapeHtml(tr("pricingProviderOffers"))}</h4>
+        <div class="pricing-provider-offer-list" tabindex="0" aria-label="${escapeHtml(`${provider.name} ${tr("pricingProviderOffers")}`)}">
+          ${modelOffers.length ? modelOffers.map(renderPricingProviderOfferRow).join("") : `<p>${escapeHtml(tr("pricingProviderNoOffers"))}</p>`}
+        </div>
+      </div>
+      ${provider.note ? `<p class="pricing-provider-note">${escapeHtml(provider.note)}</p>` : ""}
+    </article>
+  `;
+}
+
+function uniquePlansFromOffers(offers) {
+  const seen = new Set();
+  return offers.map((offer) => ({
+    id: offer.planId,
+    name: offer.planName,
+    type: offer.planType,
+    currency: offer.currency,
+    monthlyUsd: offer.monthlyUsd,
+    monthlyPriceLocal: offer.monthlyLocal,
+    annualPriceUsd: offer.annualUsd,
+    annualPriceLocal: offer.annualLocal,
+    annualEquivalentMonthlyUsd: offer.monthlyEquivalentUsd,
+    annualEquivalentMonthlyLocal: offer.monthlyEquivalentLocal,
+    quotaLabel: offer.quotaLabel,
+  })).filter((plan) => {
+    if (seen.has(plan.id)) return false;
+    seen.add(plan.id);
+    return true;
+  });
+}
+
+function pricingProviderModelOfferRows(offers) {
+  const modelBySlug = new Map((state.data?.models || []).map((model) => [model.slug, model]));
+  return offers
+    .flatMap((offer) => [...new Set(offer.modelSlugs || [])].map((modelSlug) => ({
+      offer,
+      modelSlug,
+      model: modelBySlug.get(modelSlug) || null,
+    })))
+    .filter(({ offer }) => Number.isFinite(offer.effectivePrice))
+    .sort((a, b) => (
+      (a.model?.rank ?? Infinity) - (b.model?.rank ?? Infinity)
+      || (a.model?.model || a.modelSlug).localeCompare(b.model?.model || b.modelSlug)
+      || (Number.isFinite(a.offer.effectivePrice) ? a.offer.effectivePrice : Infinity)
+        - (Number.isFinite(b.offer.effectivePrice) ? b.offer.effectivePrice : Infinity)
+      || a.offer.planName.localeCompare(b.offer.planName)
+      || a.offer.id.localeCompare(b.offer.id)
+    ));
+}
+
+function renderPricingPlanChip(plan) {
+  const currency = pricingCurrencyFor({}, { currency: plan.currency });
+  const monthlyLocal = currency === "USD" ? null : firstFinite(plan.monthlyPriceLocal, plan.billing?.monthlyLocal);
+  const annualLocal = currency === "USD" ? null : firstFinite(plan.annualPriceLocal, plan.annualTotalLocal, plan.billing?.annualLocal);
+  const monthlyEquivalentLocal = currency === "USD" ? null : firstFinite(
+    plan.annualEquivalentMonthlyLocal,
+    plan.quarterlyEquivalentMonthlyLocal,
+  );
+  const monthlyPublished = firstFinite(plan.monthlyUsd, plan.monthlyPriceUsd, plan.billing?.monthlyUsd, plan.billing?.amount);
+  const annualPublished = firstFinite(plan.annualUsd, plan.annualPriceUsd, plan.billing?.annualUsd);
+  const monthlyEquivalentPublished = firstFinite(plan.annualEquivalentMonthlyUsd);
+  const monthly = Number.isFinite(monthlyPublished) ? monthlyPublished : pricingUsdFromLocal(monthlyLocal, currency);
+  const annual = Number.isFinite(annualPublished) ? annualPublished : pricingUsdFromLocal(annualLocal, currency);
+  const monthlyEquivalent = Number.isFinite(monthlyEquivalentPublished)
+    ? monthlyEquivalentPublished
+    : pricingUsdFromLocal(monthlyEquivalentLocal, currency);
+  const meta = [
+    Number.isFinite(monthly) || Number.isFinite(monthlyLocal)
+      ? `${formatBillingPrice(monthly, monthlyLocal, currency)} ${tr("pricingPerMonth")}` : "",
+    Number.isFinite(annual) || Number.isFinite(annualLocal)
+      ? `${formatBillingPrice(annual, annualLocal, currency)} ${tr("pricingPerYear")}` : "",
+    Number.isFinite(monthlyEquivalent) || Number.isFinite(monthlyEquivalentLocal)
+      ? `${tr("pricingMonthlyEquivalent")} ${formatBillingPrice(monthlyEquivalent, monthlyEquivalentLocal, currency)}` : "",
+    pricingQuotaLabel(plan),
+  ].filter(Boolean).join(" · ");
+  return `
+    <span class="pricing-plan-chip">
+      <strong>${escapeHtml(plan.name || plan.id)}</strong>
+      <em>${escapeHtml(meta || tr(`pricingPlanTypes.${pricingPlanTypeGroup(plan.type || plan.billingType)}`))}</em>
+    </span>
+  `;
+}
+
+function renderPricingProviderOfferRow(modelOffer) {
+  const { offer, modelSlug, model } = modelOffer;
+  const modelLabel = model?.model || modelSlug || tr("notAvailable");
+  const priceUnit = pricingOfferUnitLabel(offer);
+  const localUnit = pricingLocalUnitLabel(offer.localEffectivePrice, offer.currency);
+  const estimate = offer.estimated ? ` · ${tr("pricingLabels.estimate")}` : "";
+  const displayOnly = !offer.comparable && Number.isFinite(offer.effectivePrice)
+    ? ` · ${tr("pricingLabels.displayOnly")}`
+    : "";
+  const entitlement = offer.quotaLabel ? ` · ${offer.quotaLabel}` : "";
+  const offerMeta = `${offer.planName}${estimate}${displayOnly}${entitlement}`;
+  return `
+    <span class="pricing-provider-offer-row">
+      <span><strong>${escapeHtml(modelLabel)}</strong><em title="${escapeHtml(offerMeta)}">${escapeHtml(offerMeta)}</em></span>
+      <b>${escapeHtml(formatUnitPrice(offer.effectivePrice))}<small>${escapeHtml(`${priceUnit}${localUnit ? ` · ${localUnit}` : ""}`)}</small></b>
+    </span>
+  `;
+}
+
 function renderProviderPage(ranked) {
   if (!els.providerDetail) return;
   const providerRows = providerRowsForRoute(ranked);
@@ -4803,6 +6098,7 @@ function renderIcon(name) {
     arrowRight: '<path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>',
     arrowDown: '<path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path>',
     arrowUp: '<path d="M12 19V5"></path><path d="m5 12 7-7 7 7"></path>',
+    arrowUpRight: '<path d="M7 17 17 7"></path><path d="M7 7h10v10"></path>',
     audio: '<path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle>',
     brain: '<path d="M8 13a4 4 0 0 1-2-7.5A4 4 0 0 1 13 4a4 4 0 0 1 7 2.5A4 4 0 0 1 18 14"></path><path d="M8 13v3a4 4 0 0 0 4 4h1"></path><path d="M16 13v7"></path>',
     calendar: '<path d="M8 2v4"></path><path d="M16 2v4"></path><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M3 10h18"></path>',

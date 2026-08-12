@@ -1,0 +1,1801 @@
+{
+  "schemaVersion": 1,
+  "mergeTarget": "data/pricing/provider_pricing.json",
+  "checkedAt": "2026-08-12",
+  "researchScope": "Anthropic paid-plan Usage Credits and first-party Claude API pricing; subscription effective-token calculations intentionally omitted",
+  "comparisonPolicy": {
+    "subscriptionWithoutFixedTokenQuota": "not converted into token prices",
+    "paidPlanUsageCredits": "exact marginal rate, display-only because a paid-plan prerequisite fee is excluded",
+    "fixedPerTokenApi": "comparable",
+    "notes": "Anthropic does not publish fixed token quotas for Claude subscriptions, so subscription prices are not converted into effective token prices. Paid-plan Usage Credits retain their exact standard-API marginal rates for display, but are excluded from rankings because the prerequisite subscription fee is separate."
+  },
+  "replaceProviders": [
+    "anthropic",
+    "anthropic-api"
+  ],
+  "providers": [
+    {
+      "id": "anthropic",
+      "name": "Anthropic / Claude plans",
+      "category": "coding-subscription",
+      "url": "https://claude.com/pricing",
+      "sourceIds": [
+        "anthropic-individual-pricing-2026-08-11",
+        "anthropic-pro-plan-usage-2026-08-12",
+        "anthropic-max-plan-usage-2026-08-12",
+        "anthropic-usage-credits-2026-08-12",
+        "anthropic-fable-plan-entitlement-2026-08-12",
+        "anthropic-claude-code-changelog-2026-08-10"
+      ]
+    },
+    {
+      "id": "anthropic-api",
+      "name": "Anthropic API",
+      "category": "first-party-api",
+      "url": "https://claude.com/pricing#api",
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    }
+  ],
+  "plans": [
+    {
+      "id": "anthropic-free",
+      "providerId": "anthropic",
+      "name": "Free",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "USD",
+      "monthlyPriceUsd": 0,
+      "comparisonClass": "non-comparable",
+      "quotaLabel": "Usage limit is not published as a fixed token quota",
+      "sourceIds": [
+        "anthropic-individual-pricing-2026-08-11",
+        "anthropic-pro-plan-usage-2026-08-12"
+      ]
+    },
+    {
+      "id": "anthropic-pro",
+      "providerId": "anthropic",
+      "name": "Pro Monthly",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "USD",
+      "monthlyPriceUsd": 20,
+      "comparisonClass": "non-comparable",
+      "quotaLabel": "Relative usage limit; no fixed token quota. Fable 5 requires usage credits.",
+      "sourceIds": [
+        "anthropic-individual-pricing-2026-08-11",
+        "anthropic-pro-plan-usage-2026-08-12"
+      ]
+    },
+    {
+      "id": "anthropic-pro-annual",
+      "providerId": "anthropic",
+      "name": "Pro Annual",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "USD",
+      "annualPriceUsd": 200,
+      "annualEquivalentMonthlyUsd": 16.6667,
+      "annualCommitment": true,
+      "comparisonClass": "non-comparable",
+      "quotaLabel": "$200 billed up front; displayed as $17/month. Fable 5 requires usage credits.",
+      "sourceIds": [
+        "anthropic-individual-pricing-2026-08-11",
+        "anthropic-pro-plan-usage-2026-08-12"
+      ]
+    },
+    {
+      "id": "anthropic-max-5x",
+      "providerId": "anthropic",
+      "name": "Max 5x",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "USD",
+      "monthlyPriceUsd": 100,
+      "comparisonClass": "non-comparable",
+      "quotaLabel": "5x Pro relative usage; Fable 5 included up to 50% of the weekly usage limit",
+      "sourceIds": [
+        "anthropic-individual-pricing-2026-08-11",
+        "anthropic-max-plan-usage-2026-08-12",
+        "anthropic-fable-plan-entitlement-2026-08-12"
+      ]
+    },
+    {
+      "id": "anthropic-max-20x",
+      "providerId": "anthropic",
+      "name": "Max 20x",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "USD",
+      "monthlyPriceUsd": 200,
+      "comparisonClass": "non-comparable",
+      "quotaLabel": "20x Pro relative usage; Fable 5 included up to 50% of the weekly usage limit",
+      "sourceIds": [
+        "anthropic-individual-pricing-2026-08-11",
+        "anthropic-max-plan-usage-2026-08-12",
+        "anthropic-fable-plan-entitlement-2026-08-12"
+      ]
+    },
+    {
+      "id": "anthropic-usage-credits",
+      "providerId": "anthropic",
+      "name": "Paid-plan Usage Credits",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "non-comparable",
+      "quotaLabel": "Opt-in usage beyond included limits; Fable 5 on Pro uses credits from the first token; billed separately at standard API rates",
+      "sourceIds": [
+        "anthropic-usage-credits-2026-08-12",
+        "anthropic-fable-plan-entitlement-2026-08-12",
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard",
+      "providerId": "anthropic-api",
+      "name": "Standard",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "token-comparable",
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch",
+      "providerId": "anthropic-api",
+      "name": "Batch",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "token-comparable",
+      "discountMultiplier": 0.5,
+      "quotaLabel": "50% off Standard input, output, and 5-minute prompt-cache rates",
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-fast",
+      "providerId": "anthropic-api",
+      "name": "Fast",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "token-comparable",
+      "priceMultiplier": 2,
+      "speedMultiplierMax": 2.5,
+      "quotaLabel": "Opus 5 only; up to 2.5x faster at 2x Standard pricing",
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11",
+        "anthropic-claude-code-changelog-2026-08-10"
+      ]
+    },
+    {
+      "id": "anthropic-api-us-only",
+      "providerId": "anthropic-api",
+      "name": "US-only inference",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "token-comparable",
+      "inputOutputMultiplier": 1.1,
+      "cacheMultiplier": 1,
+      "quotaLabel": "1.1x Standard input and output rates; prompt-cache rates unchanged",
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    }
+  ],
+  "offers": [
+    {
+      "id": "anthropic-free-sonnet-5",
+      "providerId": "anthropic",
+      "planId": "anthropic-free",
+      "modelSlugs": [
+        "claude-sonnet-5"
+      ],
+      "pricingKind": "non-comparable-subscription",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "supportEvidence": "The official individual-plan comparison marks the Sonnet family available on Free.",
+      "sourceIds": [
+        "anthropic-individual-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-free-sonnet-5-claude-sonnet-5-non-reasoning",
+      "providerId": "anthropic",
+      "planId": "anthropic-free",
+      "modelSlugs": [
+        "claude-sonnet-5-non-reasoning"
+      ],
+      "pricingKind": "non-comparable-subscription",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "supportEvidence": "The official individual-plan comparison marks the Sonnet family available on Free.",
+      "sourceIds": [
+        "anthropic-individual-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-free-haiku-4-5",
+      "providerId": "anthropic",
+      "planId": "anthropic-free",
+      "modelSlugs": [
+        "claude-4-5-haiku"
+      ],
+      "pricingKind": "non-comparable-subscription",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "supportEvidence": "The official individual-plan comparison marks the Haiku family available on Free.",
+      "sourceIds": [
+        "anthropic-individual-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-free-haiku-4-5-claude-4-5-haiku-reasoning",
+      "providerId": "anthropic",
+      "planId": "anthropic-free",
+      "modelSlugs": [
+        "claude-4-5-haiku-reasoning"
+      ],
+      "pricingKind": "non-comparable-subscription",
+      "comparable": false,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "supportEvidence": "The official individual-plan comparison marks the Haiku family available on Free.",
+      "sourceIds": [
+        "anthropic-individual-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-pro-fable-5-usage-credits",
+      "providerId": "anthropic",
+      "planId": "anthropic-pro",
+      "modelSlugs": [
+        "claude-fable-5"
+      ],
+      "pricingKind": "per-token-overage",
+      "comparable": false,
+      "effectiveUsdPerMillionTokens": 7.7,
+      "coverageMode": "usage-credits-only",
+      "includedWeeklyLimitShare": 0,
+      "inputPerMillionTokensUsd": 10,
+      "cacheReadPerMillionTokensUsd": 1,
+      "outputPerMillionTokensUsd": 50,
+      "notes": "Fable 5 is supported on Pro only through separately enabled usage credits at standard API rates; the $20 subscription fee buys no included Fable tokens and is not folded into this per-token overage price.",
+      "sourceIds": [
+        "anthropic-individual-pricing-2026-08-11",
+        "anthropic-fable-plan-entitlement-2026-08-12",
+        "anthropic-usage-credits-2026-08-12",
+        "anthropic-api-pricing-2026-08-11",
+        "anthropic-claude-code-changelog-2026-08-10"
+      ]
+    },
+    {
+      "id": "anthropic-pro-annual-fable-5-usage-credits",
+      "providerId": "anthropic",
+      "planId": "anthropic-pro-annual",
+      "modelSlugs": [
+        "claude-fable-5"
+      ],
+      "pricingKind": "per-token-overage",
+      "comparable": false,
+      "effectiveUsdPerMillionTokens": 7.7,
+      "coverageMode": "usage-credits-only",
+      "includedWeeklyLimitShare": 0,
+      "inputPerMillionTokensUsd": 10,
+      "cacheReadPerMillionTokensUsd": 1,
+      "outputPerMillionTokensUsd": 50,
+      "notes": "Annual billing changes the subscription fee, not the Fable entitlement: Fable still uses separately purchased Usage Credits at standard API rates, so the annual fee is not folded into this overage price.",
+      "sourceIds": [
+        "anthropic-individual-pricing-2026-08-11",
+        "anthropic-fable-plan-entitlement-2026-08-12",
+        "anthropic-usage-credits-2026-08-12",
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-usage-credits-fable-5",
+      "providerId": "anthropic",
+      "planId": "anthropic-usage-credits",
+      "modelSlugs": [
+        "claude-fable-5"
+      ],
+      "pricingKind": "per-token",
+      "comparable": false,
+      "coverageMode": "paid-plan-usage-credits",
+      "effectiveUsdPerMillionTokens": 7.7,
+      "inputPerMillionTokensUsd": 10,
+      "cacheWritePerMillionTokensUsd": 12.5,
+      "cacheReadPerMillionTokensUsd": 1,
+      "outputPerMillionTokensUsd": 50,
+      "notes": "Exact opt-in Usage Credits rate. On Pro this applies from the first Fable token; on Max it applies after the included Fable or plan limit is exhausted. Subscription fees are separate.",
+      "sourceIds": [
+        "anthropic-usage-credits-2026-08-12",
+        "anthropic-fable-plan-entitlement-2026-08-12",
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-usage-credits-opus-5",
+      "providerId": "anthropic",
+      "planId": "anthropic-usage-credits",
+      "modelSlugs": [
+        "claude-opus-5"
+      ],
+      "pricingKind": "per-token",
+      "comparable": false,
+      "coverageMode": "paid-plan-usage-credits",
+      "effectiveUsdPerMillionTokens": 3.85,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "notes": "Exact opt-in Usage Credits rate after the paid plan's included limit is exhausted; subscription fees are separate.",
+      "sourceIds": [
+        "anthropic-usage-credits-2026-08-12",
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-usage-credits-opus-5-claude-opus-5-low",
+      "providerId": "anthropic",
+      "planId": "anthropic-usage-credits",
+      "modelSlugs": [
+        "claude-opus-5-low"
+      ],
+      "pricingKind": "per-token",
+      "comparable": false,
+      "coverageMode": "paid-plan-usage-credits",
+      "effectiveUsdPerMillionTokens": 3.85,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "notes": "Exact opt-in Usage Credits rate after the paid plan's included limit is exhausted; subscription fees are separate.",
+      "sourceIds": [
+        "anthropic-usage-credits-2026-08-12",
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-usage-credits-opus-5-claude-opus-5-medium",
+      "providerId": "anthropic",
+      "planId": "anthropic-usage-credits",
+      "modelSlugs": [
+        "claude-opus-5-medium"
+      ],
+      "pricingKind": "per-token",
+      "comparable": false,
+      "coverageMode": "paid-plan-usage-credits",
+      "effectiveUsdPerMillionTokens": 3.85,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "notes": "Exact opt-in Usage Credits rate after the paid plan's included limit is exhausted; subscription fees are separate.",
+      "sourceIds": [
+        "anthropic-usage-credits-2026-08-12",
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-usage-credits-opus-5-claude-opus-5-high",
+      "providerId": "anthropic",
+      "planId": "anthropic-usage-credits",
+      "modelSlugs": [
+        "claude-opus-5-high"
+      ],
+      "pricingKind": "per-token",
+      "comparable": false,
+      "coverageMode": "paid-plan-usage-credits",
+      "effectiveUsdPerMillionTokens": 3.85,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "notes": "Exact opt-in Usage Credits rate after the paid plan's included limit is exhausted; subscription fees are separate.",
+      "sourceIds": [
+        "anthropic-usage-credits-2026-08-12",
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-usage-credits-opus-5-claude-opus-5-xhigh",
+      "providerId": "anthropic",
+      "planId": "anthropic-usage-credits",
+      "modelSlugs": [
+        "claude-opus-5-xhigh"
+      ],
+      "pricingKind": "per-token",
+      "comparable": false,
+      "coverageMode": "paid-plan-usage-credits",
+      "effectiveUsdPerMillionTokens": 3.85,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "notes": "Exact opt-in Usage Credits rate after the paid plan's included limit is exhausted; subscription fees are separate.",
+      "sourceIds": [
+        "anthropic-usage-credits-2026-08-12",
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-usage-credits-sonnet-5",
+      "providerId": "anthropic",
+      "planId": "anthropic-usage-credits",
+      "modelSlugs": [
+        "claude-sonnet-5"
+      ],
+      "pricingKind": "per-token",
+      "comparable": false,
+      "coverageMode": "paid-plan-usage-credits",
+      "effectiveUsdPerMillionTokens": 1.54,
+      "inputPerMillionTokensUsd": 2,
+      "cacheWritePerMillionTokensUsd": 2.5,
+      "cacheReadPerMillionTokensUsd": 0.2,
+      "outputPerMillionTokensUsd": 10,
+      "notes": "Exact opt-in Usage Credits rate after the paid plan's included limit is exhausted; subscription fees are separate.",
+      "sourceIds": [
+        "anthropic-usage-credits-2026-08-12",
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-usage-credits-sonnet-5-claude-sonnet-5-non-reasoning",
+      "providerId": "anthropic",
+      "planId": "anthropic-usage-credits",
+      "modelSlugs": [
+        "claude-sonnet-5-non-reasoning"
+      ],
+      "pricingKind": "per-token",
+      "comparable": false,
+      "coverageMode": "paid-plan-usage-credits",
+      "effectiveUsdPerMillionTokens": 1.54,
+      "inputPerMillionTokensUsd": 2,
+      "cacheWritePerMillionTokensUsd": 2.5,
+      "cacheReadPerMillionTokensUsd": 0.2,
+      "outputPerMillionTokensUsd": 10,
+      "notes": "Exact opt-in Usage Credits rate after the paid plan's included limit is exhausted; subscription fees are separate.",
+      "sourceIds": [
+        "anthropic-usage-credits-2026-08-12",
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-usage-credits-haiku-4-5",
+      "providerId": "anthropic",
+      "planId": "anthropic-usage-credits",
+      "modelSlugs": [
+        "claude-4-5-haiku"
+      ],
+      "pricingKind": "per-token",
+      "comparable": false,
+      "coverageMode": "paid-plan-usage-credits",
+      "effectiveUsdPerMillionTokens": 0.77,
+      "inputPerMillionTokensUsd": 1,
+      "cacheWritePerMillionTokensUsd": 1.25,
+      "cacheReadPerMillionTokensUsd": 0.1,
+      "outputPerMillionTokensUsd": 5,
+      "notes": "Exact opt-in Usage Credits rate after the paid plan's included limit is exhausted; subscription fees are separate.",
+      "sourceIds": [
+        "anthropic-usage-credits-2026-08-12",
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-usage-credits-haiku-4-5-claude-4-5-haiku-reasoning",
+      "providerId": "anthropic",
+      "planId": "anthropic-usage-credits",
+      "modelSlugs": [
+        "claude-4-5-haiku-reasoning"
+      ],
+      "pricingKind": "per-token",
+      "comparable": false,
+      "coverageMode": "paid-plan-usage-credits",
+      "effectiveUsdPerMillionTokens": 0.77,
+      "inputPerMillionTokensUsd": 1,
+      "cacheWritePerMillionTokensUsd": 1.25,
+      "cacheReadPerMillionTokensUsd": 0.1,
+      "outputPerMillionTokensUsd": 5,
+      "notes": "Exact opt-in Usage Credits rate after the paid plan's included limit is exhausted; subscription fees are separate.",
+      "sourceIds": [
+        "anthropic-usage-credits-2026-08-12",
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-fable-5",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-fable-5"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 10,
+      "cacheWritePerMillionTokensUsd": 12.5,
+      "cacheReadPerMillionTokensUsd": 1,
+      "outputPerMillionTokensUsd": 50,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-opus-5",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-opus-5"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-opus-5-claude-opus-5-low",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-opus-5-low"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-opus-5-claude-opus-5-medium",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-opus-5-medium"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-opus-5-claude-opus-5-high",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-opus-5-high"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-opus-5-claude-opus-5-xhigh",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-opus-5-xhigh"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-sonnet-5",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-sonnet-5"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 2,
+      "cacheWritePerMillionTokensUsd": 2.5,
+      "cacheReadPerMillionTokensUsd": 0.2,
+      "outputPerMillionTokensUsd": 10,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-sonnet-5-claude-sonnet-5-non-reasoning",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-sonnet-5-non-reasoning"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 2,
+      "cacheWritePerMillionTokensUsd": 2.5,
+      "cacheReadPerMillionTokensUsd": 0.2,
+      "outputPerMillionTokensUsd": 10,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-haiku-4-5",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-4-5-haiku"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 1,
+      "cacheWritePerMillionTokensUsd": 1.25,
+      "cacheReadPerMillionTokensUsd": 0.1,
+      "outputPerMillionTokensUsd": 5,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-haiku-4-5-claude-4-5-haiku-reasoning",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-4-5-haiku-reasoning"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 1,
+      "cacheWritePerMillionTokensUsd": 1.25,
+      "cacheReadPerMillionTokensUsd": 0.1,
+      "outputPerMillionTokensUsd": 5,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-opus-4-8",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-opus-4-8"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-sonnet-4-6",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-sonnet-4-6"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 3,
+      "cacheWritePerMillionTokensUsd": 3.75,
+      "cacheReadPerMillionTokensUsd": 0.3,
+      "outputPerMillionTokensUsd": 15,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-sonnet-4-6-claude-sonnet-4-6-adaptive",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-sonnet-4-6-adaptive"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 3,
+      "cacheWritePerMillionTokensUsd": 3.75,
+      "cacheReadPerMillionTokensUsd": 0.3,
+      "outputPerMillionTokensUsd": 15,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-sonnet-4-6-claude-sonnet-4-6-non-reasoning-low-effort",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-sonnet-4-6-non-reasoning-low-effort"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 3,
+      "cacheWritePerMillionTokensUsd": 3.75,
+      "cacheReadPerMillionTokensUsd": 0.3,
+      "outputPerMillionTokensUsd": 15,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-opus-4-7",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-opus-4-7"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-opus-4-7-claude-opus-4-7-non-reasoning",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-opus-4-7-non-reasoning"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-opus-4-6",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-opus-4-6"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-opus-4-6-claude-opus-4-6-adaptive",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-opus-4-6-adaptive"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-sonnet-4-5",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-4-5-sonnet"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 3,
+      "cacheWritePerMillionTokensUsd": 3.75,
+      "cacheReadPerMillionTokensUsd": 0.3,
+      "outputPerMillionTokensUsd": 15,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-sonnet-4-5-claude-4-5-sonnet-thinking",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-4-5-sonnet-thinking"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 3,
+      "cacheWritePerMillionTokensUsd": 3.75,
+      "cacheReadPerMillionTokensUsd": 0.3,
+      "outputPerMillionTokensUsd": 15,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-opus-4-5",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-opus-4-5"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-opus-4-5-claude-opus-4-5-thinking",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-opus-4-5-thinking"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-opus-4-1",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-4-1-opus"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 15,
+      "cacheWritePerMillionTokensUsd": 18.75,
+      "cacheReadPerMillionTokensUsd": 1.5,
+      "outputPerMillionTokensUsd": 75,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-standard-opus-4-1-claude-4-1-opus-thinking",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-standard",
+      "modelSlugs": [
+        "claude-4-1-opus-thinking"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 15,
+      "cacheWritePerMillionTokensUsd": 18.75,
+      "cacheReadPerMillionTokensUsd": 1.5,
+      "outputPerMillionTokensUsd": 75,
+      "promptCacheTtlMinutes": 5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-fable-5",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-fable-5"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 25,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-opus-5",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-opus-5"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 2.5,
+      "cacheWritePerMillionTokensUsd": 3.125,
+      "cacheReadPerMillionTokensUsd": 0.25,
+      "outputPerMillionTokensUsd": 12.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "notes": "The official UI rounds the cache-write display to $3.13/MTok; 3.125 is retained as the exact 50% rate.",
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-opus-5-claude-opus-5-low",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-opus-5-low"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 2.5,
+      "cacheWritePerMillionTokensUsd": 3.125,
+      "cacheReadPerMillionTokensUsd": 0.25,
+      "outputPerMillionTokensUsd": 12.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "notes": "The official UI rounds the cache-write display to $3.13/MTok; 3.125 is retained as the exact 50% rate.",
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-opus-5-claude-opus-5-medium",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-opus-5-medium"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 2.5,
+      "cacheWritePerMillionTokensUsd": 3.125,
+      "cacheReadPerMillionTokensUsd": 0.25,
+      "outputPerMillionTokensUsd": 12.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "notes": "The official UI rounds the cache-write display to $3.13/MTok; 3.125 is retained as the exact 50% rate.",
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-opus-5-claude-opus-5-high",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-opus-5-high"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 2.5,
+      "cacheWritePerMillionTokensUsd": 3.125,
+      "cacheReadPerMillionTokensUsd": 0.25,
+      "outputPerMillionTokensUsd": 12.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "notes": "The official UI rounds the cache-write display to $3.13/MTok; 3.125 is retained as the exact 50% rate.",
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-opus-5-claude-opus-5-xhigh",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-opus-5-xhigh"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 2.5,
+      "cacheWritePerMillionTokensUsd": 3.125,
+      "cacheReadPerMillionTokensUsd": 0.25,
+      "outputPerMillionTokensUsd": 12.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "notes": "The official UI rounds the cache-write display to $3.13/MTok; 3.125 is retained as the exact 50% rate.",
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-sonnet-5",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-sonnet-5"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 1,
+      "cacheWritePerMillionTokensUsd": 1.25,
+      "cacheReadPerMillionTokensUsd": 0.1,
+      "outputPerMillionTokensUsd": 5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-sonnet-5-claude-sonnet-5-non-reasoning",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-sonnet-5-non-reasoning"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 1,
+      "cacheWritePerMillionTokensUsd": 1.25,
+      "cacheReadPerMillionTokensUsd": 0.1,
+      "outputPerMillionTokensUsd": 5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-haiku-4-5",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-4-5-haiku"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.5,
+      "cacheWritePerMillionTokensUsd": 0.625,
+      "cacheReadPerMillionTokensUsd": 0.05,
+      "outputPerMillionTokensUsd": 2.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "notes": "The official UI rounds the cache-write display to $0.63/MTok; 0.625 is retained as the exact 50% rate.",
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-haiku-4-5-claude-4-5-haiku-reasoning",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-4-5-haiku-reasoning"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.5,
+      "cacheWritePerMillionTokensUsd": 0.625,
+      "cacheReadPerMillionTokensUsd": 0.05,
+      "outputPerMillionTokensUsd": 2.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "notes": "The official UI rounds the cache-write display to $0.63/MTok; 0.625 is retained as the exact 50% rate.",
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-opus-4-8",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-opus-4-8"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 2.5,
+      "cacheWritePerMillionTokensUsd": 3.125,
+      "cacheReadPerMillionTokensUsd": 0.25,
+      "outputPerMillionTokensUsd": 12.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-sonnet-4-6",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-sonnet-4-6"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 1.5,
+      "cacheWritePerMillionTokensUsd": 1.875,
+      "cacheReadPerMillionTokensUsd": 0.15,
+      "outputPerMillionTokensUsd": 7.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-sonnet-4-6-claude-sonnet-4-6-adaptive",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-sonnet-4-6-adaptive"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 1.5,
+      "cacheWritePerMillionTokensUsd": 1.875,
+      "cacheReadPerMillionTokensUsd": 0.15,
+      "outputPerMillionTokensUsd": 7.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-sonnet-4-6-claude-sonnet-4-6-non-reasoning-low-effort",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-sonnet-4-6-non-reasoning-low-effort"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 1.5,
+      "cacheWritePerMillionTokensUsd": 1.875,
+      "cacheReadPerMillionTokensUsd": 0.15,
+      "outputPerMillionTokensUsd": 7.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-opus-4-7",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-opus-4-7"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 2.5,
+      "cacheWritePerMillionTokensUsd": 3.125,
+      "cacheReadPerMillionTokensUsd": 0.25,
+      "outputPerMillionTokensUsd": 12.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-opus-4-7-claude-opus-4-7-non-reasoning",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-opus-4-7-non-reasoning"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 2.5,
+      "cacheWritePerMillionTokensUsd": 3.125,
+      "cacheReadPerMillionTokensUsd": 0.25,
+      "outputPerMillionTokensUsd": 12.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-opus-4-6",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-opus-4-6"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 2.5,
+      "cacheWritePerMillionTokensUsd": 3.125,
+      "cacheReadPerMillionTokensUsd": 0.25,
+      "outputPerMillionTokensUsd": 12.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-opus-4-6-claude-opus-4-6-adaptive",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-opus-4-6-adaptive"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 2.5,
+      "cacheWritePerMillionTokensUsd": 3.125,
+      "cacheReadPerMillionTokensUsd": 0.25,
+      "outputPerMillionTokensUsd": 12.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-sonnet-4-5",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-4-5-sonnet"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 1.5,
+      "cacheWritePerMillionTokensUsd": 1.875,
+      "cacheReadPerMillionTokensUsd": 0.15,
+      "outputPerMillionTokensUsd": 7.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-sonnet-4-5-claude-4-5-sonnet-thinking",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-4-5-sonnet-thinking"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 1.5,
+      "cacheWritePerMillionTokensUsd": 1.875,
+      "cacheReadPerMillionTokensUsd": 0.15,
+      "outputPerMillionTokensUsd": 7.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-opus-4-5",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-opus-4-5"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 2.5,
+      "cacheWritePerMillionTokensUsd": 3.125,
+      "cacheReadPerMillionTokensUsd": 0.25,
+      "outputPerMillionTokensUsd": 12.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-opus-4-5-claude-opus-4-5-thinking",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-opus-4-5-thinking"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 2.5,
+      "cacheWritePerMillionTokensUsd": 3.125,
+      "cacheReadPerMillionTokensUsd": 0.25,
+      "outputPerMillionTokensUsd": 12.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-opus-4-1",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-4-1-opus"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 7.5,
+      "cacheWritePerMillionTokensUsd": 9.375,
+      "cacheReadPerMillionTokensUsd": 0.75,
+      "outputPerMillionTokensUsd": 37.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-batch-opus-4-1-claude-4-1-opus-thinking",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-batch",
+      "modelSlugs": [
+        "claude-4-1-opus-thinking"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 7.5,
+      "cacheWritePerMillionTokensUsd": 9.375,
+      "cacheReadPerMillionTokensUsd": 0.75,
+      "outputPerMillionTokensUsd": 37.5,
+      "promptCacheTtlMinutes": 5,
+      "derivedFromStandardMultiplier": 0.5,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-fast-opus-5",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-fast",
+      "modelSlugs": [
+        "claude-opus-5"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 10,
+      "cacheWritePerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": 50,
+      "priceMultiplier": 2,
+      "speedMultiplierMax": 2.5,
+      "notes": "The official pricing page and Claude Code changelog explicitly publish $10 input and $50 output per MTok. Fast-mode prompt-cache prices are not encoded because the visible first-party sources do not list them separately.",
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11",
+        "anthropic-claude-code-changelog-2026-08-10"
+      ]
+    },
+    {
+      "id": "anthropic-api-fast-opus-5-claude-opus-5-low",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-fast",
+      "modelSlugs": [
+        "claude-opus-5-low"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 10,
+      "cacheWritePerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": 50,
+      "priceMultiplier": 2,
+      "speedMultiplierMax": 2.5,
+      "notes": "The official pricing page and Claude Code changelog explicitly publish $10 input and $50 output per MTok. Fast-mode prompt-cache prices are not encoded because the visible first-party sources do not list them separately.",
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11",
+        "anthropic-claude-code-changelog-2026-08-10"
+      ]
+    },
+    {
+      "id": "anthropic-api-fast-opus-5-claude-opus-5-medium",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-fast",
+      "modelSlugs": [
+        "claude-opus-5-medium"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 10,
+      "cacheWritePerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": 50,
+      "priceMultiplier": 2,
+      "speedMultiplierMax": 2.5,
+      "notes": "The official pricing page and Claude Code changelog explicitly publish $10 input and $50 output per MTok. Fast-mode prompt-cache prices are not encoded because the visible first-party sources do not list them separately.",
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11",
+        "anthropic-claude-code-changelog-2026-08-10"
+      ]
+    },
+    {
+      "id": "anthropic-api-fast-opus-5-claude-opus-5-high",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-fast",
+      "modelSlugs": [
+        "claude-opus-5-high"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 10,
+      "cacheWritePerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": 50,
+      "priceMultiplier": 2,
+      "speedMultiplierMax": 2.5,
+      "notes": "The official pricing page and Claude Code changelog explicitly publish $10 input and $50 output per MTok. Fast-mode prompt-cache prices are not encoded because the visible first-party sources do not list them separately.",
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11",
+        "anthropic-claude-code-changelog-2026-08-10"
+      ]
+    },
+    {
+      "id": "anthropic-api-fast-opus-5-claude-opus-5-xhigh",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-fast",
+      "modelSlugs": [
+        "claude-opus-5-xhigh"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 10,
+      "cacheWritePerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": 50,
+      "priceMultiplier": 2,
+      "speedMultiplierMax": 2.5,
+      "notes": "The official pricing page and Claude Code changelog explicitly publish $10 input and $50 output per MTok. Fast-mode prompt-cache prices are not encoded because the visible first-party sources do not list them separately.",
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11",
+        "anthropic-claude-code-changelog-2026-08-10"
+      ]
+    },
+    {
+      "id": "anthropic-api-us-only-fable-5",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-us-only",
+      "modelSlugs": [
+        "claude-fable-5"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 11,
+      "cacheWritePerMillionTokensUsd": 12.5,
+      "cacheReadPerMillionTokensUsd": 1,
+      "outputPerMillionTokensUsd": 55,
+      "inputOutputMultiplier": 1.1,
+      "cacheMultiplier": 1,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-us-only-opus-5",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-us-only",
+      "modelSlugs": [
+        "claude-opus-5"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5.5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 27.5,
+      "inputOutputMultiplier": 1.1,
+      "cacheMultiplier": 1,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-us-only-opus-5-claude-opus-5-low",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-us-only",
+      "modelSlugs": [
+        "claude-opus-5-low"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5.5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 27.5,
+      "inputOutputMultiplier": 1.1,
+      "cacheMultiplier": 1,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-us-only-opus-5-claude-opus-5-medium",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-us-only",
+      "modelSlugs": [
+        "claude-opus-5-medium"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5.5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 27.5,
+      "inputOutputMultiplier": 1.1,
+      "cacheMultiplier": 1,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-us-only-opus-5-claude-opus-5-high",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-us-only",
+      "modelSlugs": [
+        "claude-opus-5-high"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5.5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 27.5,
+      "inputOutputMultiplier": 1.1,
+      "cacheMultiplier": 1,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-us-only-opus-5-claude-opus-5-xhigh",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-us-only",
+      "modelSlugs": [
+        "claude-opus-5-xhigh"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 5.5,
+      "cacheWritePerMillionTokensUsd": 6.25,
+      "cacheReadPerMillionTokensUsd": 0.5,
+      "outputPerMillionTokensUsd": 27.5,
+      "inputOutputMultiplier": 1.1,
+      "cacheMultiplier": 1,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-us-only-sonnet-5",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-us-only",
+      "modelSlugs": [
+        "claude-sonnet-5"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 2.2,
+      "cacheWritePerMillionTokensUsd": 2.5,
+      "cacheReadPerMillionTokensUsd": 0.2,
+      "outputPerMillionTokensUsd": 11,
+      "inputOutputMultiplier": 1.1,
+      "cacheMultiplier": 1,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-us-only-sonnet-5-claude-sonnet-5-non-reasoning",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-us-only",
+      "modelSlugs": [
+        "claude-sonnet-5-non-reasoning"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 2.2,
+      "cacheWritePerMillionTokensUsd": 2.5,
+      "cacheReadPerMillionTokensUsd": 0.2,
+      "outputPerMillionTokensUsd": 11,
+      "inputOutputMultiplier": 1.1,
+      "cacheMultiplier": 1,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-us-only-haiku-4-5",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-us-only",
+      "modelSlugs": [
+        "claude-4-5-haiku"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 1.1,
+      "cacheWritePerMillionTokensUsd": 1.25,
+      "cacheReadPerMillionTokensUsd": 0.1,
+      "outputPerMillionTokensUsd": 5.5,
+      "inputOutputMultiplier": 1.1,
+      "cacheMultiplier": 1,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "anthropic-api-us-only-haiku-4-5-claude-4-5-haiku-reasoning",
+      "providerId": "anthropic-api",
+      "planId": "anthropic-api-us-only",
+      "modelSlugs": [
+        "claude-4-5-haiku-reasoning"
+      ],
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 1.1,
+      "cacheWritePerMillionTokensUsd": 1.25,
+      "cacheReadPerMillionTokensUsd": 0.1,
+      "outputPerMillionTokensUsd": 5.5,
+      "inputOutputMultiplier": 1.1,
+      "cacheMultiplier": 1,
+      "sourceIds": [
+        "anthropic-api-pricing-2026-08-11"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "anthropic-individual-pricing-2026-08-11",
+      "title": "Claude plans and pricing — Individual",
+      "publisher": "Anthropic",
+      "url": "https://claude.com/pricing",
+      "kind": "official-pricing",
+      "asOf": "2026-08-11",
+      "accessedAt": "2026-08-11",
+      "notes": "Official plan cards show Free $0, Pro $20 monthly or $200 annually, and Max from $100. The model comparison has columns Free, Pro, Max 5x, and Max 20x. Its Fable tooltip states: Claude Fable 5 is included on Max plans at 50% of the weekly usage limit; Pro users can access Fable via usage credits. Free does not include Fable or Opus, while Sonnet and Haiku are marked available."
+    },
+    {
+      "id": "anthropic-pro-plan-usage-2026-08-12",
+      "title": "What is the Pro plan?",
+      "publisher": "Anthropic",
+      "url": "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan",
+      "kind": "official-plan-documentation",
+      "asOf": "2026-06-10",
+      "accessedAt": "2026-08-12",
+      "notes": "Official documentation confirms $20 monthly pricing, $200 annual billing, a five-hour session reset, a shared all-model weekly limit, and that message capacity varies with message/file/conversation length, model, and feature. It does not publish a fixed token quota."
+    },
+    {
+      "id": "anthropic-max-plan-usage-2026-08-12",
+      "title": "What is the Max plan?",
+      "publisher": "Anthropic",
+      "url": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan",
+      "kind": "official-plan-documentation",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Official documentation confirms Max 5x at $100/month and Max 20x at $200/month, with five and twenty times Pro usage per session respectively, five-hour resets, and an unpublished shared weekly limit."
+    },
+    {
+      "id": "anthropic-usage-credits-2026-08-12",
+      "title": "Manage usage credits for paid Claude plans",
+      "publisher": "Anthropic",
+      "url": "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans",
+      "kind": "official-billing-documentation",
+      "asOf": "2026-08-11",
+      "accessedAt": "2026-08-12",
+      "notes": "Official documentation says Pro, Max 5x, and Max 20x users can opt into separately charged Usage Credits; subsequent usage is billed at standard API rates and does not change the five-hour included-limit reset."
+    },
+    {
+      "id": "anthropic-fable-plan-entitlement-2026-08-12",
+      "title": "Claude Fable 5 on your plan",
+      "publisher": "Anthropic",
+      "url": "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan",
+      "kind": "official-plan-documentation",
+      "asOf": "2026-07-20",
+      "accessedAt": "2026-08-12",
+      "notes": "Starting July 20, 2026, Max plans include Fable 5 for up to 50% of the ordinary weekly usage limit at no extra charge; the 50% is not extra quota and Fable consumes the shared limit faster. Pro has no included Fable allowance and uses Usage Credits from the first token."
+    },
+    {
+      "id": "anthropic-api-pricing-2026-08-11",
+      "title": "Claude plans and pricing — API",
+      "publisher": "Anthropic",
+      "url": "https://claude.com/pricing#api",
+      "kind": "official-pricing",
+      "asOf": "2026-08-11",
+      "accessedAt": "2026-08-11",
+      "notes": "Official Standard input/output and five-minute prompt-cache write/read prices for latest and legacy models. The official Batch toggle displays 50% prices for all four token categories. The page states US-only inference is 1.1x for input and output tokens and Fast mode for Opus 5 is up to 2.5x faster at 2x Standard pricing."
+    },
+    {
+      "id": "anthropic-claude-code-changelog-2026-08-10",
+      "title": "Claude Code official release feed",
+      "publisher": "Anthropic",
+      "url": "https://github.com/anthropics/claude-code/blob/main/feed.xml",
+      "kind": "official-changelog",
+      "asOf": "2026-08-10",
+      "accessedAt": "2026-08-11",
+      "notes": "v2.1.227 confirms Max users can be wrongly prompted to enable usage credits for Fable, v2.1.219 says some plans include Fable and publishes Opus 5 Fast mode at $10/$50 per MTok, and v2.1.208 names the Fable 5 usage-credits consent flow."
+    }
+  ],
+  "mergeNotes": [
+    "The existing provider id anthropic can be updated in place; add anthropic-api as a separate first-party API provider so subscriptions and API token plans remain independently filterable.",
+    "Paid-plan included-usage offers carry finite effectiveUsdPerMillionTokens values only as a clearly identified daily-window scenario; estimated=true and comparable=false are mandatory so these values are displayed but never enter cheapest-price rankings.",
+    "Paid-plan Usage Credits are a separate exact PAYG plan at standard API rates. They must not be blended with the monthly subscription fee or presented as included quota.",
+    "Do not merge Fable 5 into the generic Pro or Max model array without preserving coverageMode and includedWeeklyLimitShare; otherwise the UI will imply the same entitlement as Opus/Sonnet/Haiku.",
+    "Only latest-model US-only offers are included because the 1.1x statement is presented with the latest-model section; legacy US-only availability is not asserted.",
+    "Effort/reasoning benchmark variants share the canonical model token rate and are explicitly listed in modelSlugs so strict model-detail filtering still finds the offer.",
+    "Retired or older Claude families not shown on the current official pricing page are intentionally omitted."
+  ],
+  "removeMetadata": [
+    "anthropicSubscriptionEstimateMethodology"
+  ]
+}

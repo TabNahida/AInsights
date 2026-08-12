@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "mergeTarget": "data/pricing/provider_pricing.json",
+  "checkedAt": "2026-08-11",
+  "asOf": "2026-08-11",
+  "researchScope": "Official China-facing PAYG APIs plus MiniMax international PAYG",
+  "comparisonPolicy": {
+    "fixedTokenRates": "comparable",
+    "missingCacheRate": "null; the site comparison mix may substitute the published input rate",
+    "contextTierWithoutVerifiedThreshold": "omitted"
+  },
+  "replaceProviders": [
+    "alibaba-api-cn",
+    "deepseek",
+    "moonshot-api-cn",
+    "minimax-api-cn",
+    "minimax-api",
+    "stepfun",
+    "siliconflow-cn",
+    "volcengine-ark-cn"
+  ],
+  "providers": [
+    {
+      "id": "alibaba-api-cn",
+      "name": "阿里云百炼 Model Studio",
+      "category": "aggregator",
+      "url": "https://help.aliyun.com/zh/model-studio/model-pricing",
+      "pricingUrl": "https://help.aliyun.com/zh/model-studio/model-pricing",
+      "region": "CN",
+      "sourceIds": ["bailian-model-pricing-2026-08-11"]
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek API",
+      "category": "first-party-api",
+      "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "pricingUrl": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "sourceIds": ["deepseek-api-pricing-2026-08-11"]
+    },
+    {
+      "id": "moonshot-api-cn",
+      "name": "Kimi API（中国）",
+      "category": "first-party-api",
+      "url": "https://platform.kimi.com/docs/pricing/",
+      "pricingUrl": "https://platform.kimi.com/docs/pricing/",
+      "region": "CN",
+      "sourceIds": [
+        "kimi-k3-pricing-2026-08-11",
+        "kimi-k27-code-pricing-2026-08-11",
+        "kimi-k26-pricing-2026-08-11",
+        "kimi-k25-pricing-2026-08-11",
+        "kimi-batch-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "minimax-api-cn",
+      "name": "MiniMax API（中国）",
+      "category": "first-party-api",
+      "url": "https://platform.minimaxi.com/docs/guides/pricing-paygo.md",
+      "pricingUrl": "https://platform.minimaxi.com/docs/guides/pricing-paygo.md",
+      "region": "CN",
+      "sourceIds": ["minimax-cn-paygo-pricing-2026-08-11"]
+    },
+    {
+      "id": "minimax-api",
+      "name": "MiniMax API（国际）",
+      "category": "first-party-api",
+      "url": "https://platform.minimax.io/docs/guides/pricing-paygo.md",
+      "pricingUrl": "https://platform.minimax.io/docs/guides/pricing-paygo.md",
+      "region": "Global",
+      "sourceIds": ["minimax-global-paygo-pricing-2026-08-11"]
+    },
+    {
+      "id": "stepfun",
+      "name": "StepFun API（中国）",
+      "category": "first-party-api",
+      "url": "https://platform.stepfun.com/docs/zh/guides/pricing/details.md",
+      "pricingUrl": "https://platform.stepfun.com/docs/zh/guides/pricing/details.md",
+      "region": "CN",
+      "sourceIds": ["stepfun-cn-pricing-2026-08-11"]
+    },
+    {
+      "id": "siliconflow-cn",
+      "name": "SiliconFlow（中国）",
+      "category": "aggregator",
+      "url": "https://siliconflow.cn/pricing",
+      "pricingUrl": "https://siliconflow.cn/pricing",
+      "region": "CN",
+      "sourceIds": ["siliconflow-cn-pricing-2026-08-11"]
+    },
+    {
+      "id": "volcengine-ark-cn",
+      "name": "火山方舟",
+      "category": "aggregator",
+      "url": "https://www.volcengine.com/docs/82379/1544106",
+      "pricingUrl": "https://www.volcengine.com/docs/82379/1544106",
+      "region": "CN",
+      "sourceIds": ["volcengine-ark-pricing-2026-08-11"]
+    }
+  ],
+  "plans": [
+    {"id": "alibaba-api-cn-payg", "providerId": "alibaba-api-cn", "name": "华北 2（北京）PAYG", "billingType": "payg", "displayType": "token", "currency": "CNY", "monthlyPriceUsd": null, "comparisonClass": "token-comparable", "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "deepseek-payg", "providerId": "deepseek", "name": "Standard PAYG", "billingType": "payg", "displayType": "token", "currency": "USD", "monthlyPriceUsd": null, "comparisonClass": "token-comparable", "sourceIds": ["deepseek-api-pricing-2026-08-11"]},
+    {"id": "moonshot-api-cn-payg", "providerId": "moonshot-api-cn", "name": "Standard", "billingType": "payg", "displayType": "token", "currency": "CNY", "monthlyPriceUsd": null, "comparisonClass": "token-comparable", "sourceIds": ["kimi-k3-pricing-2026-08-11", "kimi-k27-code-pricing-2026-08-11", "kimi-k26-pricing-2026-08-11", "kimi-k25-pricing-2026-08-11"]},
+    {"id": "moonshot-api-cn-highspeed", "providerId": "moonshot-api-cn", "name": "Highspeed", "billingType": "payg", "displayType": "token", "currency": "CNY", "monthlyPriceUsd": null, "comparisonClass": "token-comparable", "sourceIds": ["kimi-k27-code-pricing-2026-08-11"]},
+    {"id": "moonshot-api-cn-batch", "providerId": "moonshot-api-cn", "name": "Batch（标准价 60%）", "billingType": "payg", "displayType": "token", "currency": "CNY", "monthlyPriceUsd": null, "comparisonClass": "token-comparable", "discountMultiplier": 0.6, "sourceIds": ["kimi-batch-pricing-2026-08-11"]},
+    {"id": "minimax-api-cn-payg", "providerId": "minimax-api-cn", "name": "Standard PAYG", "billingType": "payg", "displayType": "token", "currency": "CNY", "monthlyPriceUsd": null, "comparisonClass": "token-comparable", "sourceIds": ["minimax-cn-paygo-pricing-2026-08-11"]},
+    {"id": "minimax-api-payg", "providerId": "minimax-api", "name": "Standard PAYG", "billingType": "payg", "displayType": "token", "currency": "USD", "monthlyPriceUsd": null, "comparisonClass": "token-comparable", "sourceIds": ["minimax-global-paygo-pricing-2026-08-11"]},
+    {"id": "stepfun-payg", "providerId": "stepfun", "name": "Standard PAYG", "billingType": "payg", "displayType": "token", "currency": "CNY", "monthlyPriceUsd": null, "comparisonClass": "token-comparable", "sourceIds": ["stepfun-cn-pricing-2026-08-11"]},
+    {"id": "siliconflow-cn-payg", "providerId": "siliconflow-cn", "name": "Standard PAYG", "billingType": "payg", "displayType": "token", "currency": "CNY", "monthlyPriceUsd": null, "comparisonClass": "token-comparable", "sourceIds": ["siliconflow-cn-pricing-2026-08-11"]},
+    {"id": "volcengine-ark-cn-payg", "providerId": "volcengine-ark-cn", "name": "Standard PAYG", "billingType": "payg", "displayType": "token", "currency": "CNY", "monthlyPriceUsd": null, "comparisonClass": "token-comparable", "sourceIds": ["volcengine-ark-pricing-2026-08-11"]}
+  ],
+  "offers": [
+    {"id": "bailian-cn-qwen3-8-max", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["qwen3-8-max"], "providerModelId": "qwen3.8-max", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 12, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 36, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "bailian-cn-qwen3-7-max", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["qwen3-7-max"], "providerModelId": "qwen3.7-max", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 6, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 18, "currentDisplayedPrice": true, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "bailian-cn-qwen3-7-plus", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["qwen3-7-plus"], "providerModelId": "qwen3.7-plus", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 1.6, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 6.4, "currentDisplayedPrice": true, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "bailian-cn-qwen3-6-plus", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["qwen3-6-plus"], "providerModelId": "qwen3.6-plus", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 2, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 12, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "bailian-cn-qwen3-coder-next", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["qwen3-coder-next"], "providerModelId": "qwen3-coder-next", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 1, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 4, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "bailian-cn-deepseek-v4-pro", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["deepseek-v4-pro"], "providerModelId": "deepseek-v4-pro", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 12, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 24, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "bailian-cn-deepseek-v4-flash", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["deepseek-v4-flash"], "providerModelId": "deepseek-v4-flash", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 1, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 2, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "bailian-cn-deepseek-v3-2", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["deepseek-v3-2"], "providerModelId": "deepseek-v3.2", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 2, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 3, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "bailian-cn-deepseek-r1", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["deepseek-r1"], "providerModelId": "deepseek-r1", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 4, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 16, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "bailian-cn-kimi-k3", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["kimi-k3"], "providerModelId": "kimi-k3", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 20, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 100, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "bailian-cn-kimi-k2-7-code", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["kimi-k2-7-code"], "providerModelId": "kimi-k2.7-code", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 6.5, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 27, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "bailian-cn-kimi-k2-6", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["kimi-k2-6"], "providerModelId": "kimi-k2.6", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 6.5, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 27, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "bailian-cn-kimi-k2-5", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["kimi-k2-5"], "providerModelId": "kimi-k2.5", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 4, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 21, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "bailian-cn-glm-5-2", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["glm-5-2"], "providerModelId": "glm-5.2", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 8, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 28, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "bailian-cn-minimax-m3", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["minimax-m3"], "providerModelId": "MiniMax-M3", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 4.2, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 16.8, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "bailian-cn-minimax-m2-7", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["minimax-m2-7"], "providerModelId": "MiniMax-M2.7", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 2.1, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 8.4, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "bailian-cn-minimax-m2-5", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["minimax-m2-5"], "providerModelId": "MiniMax-M2.5", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 2.1, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 8.4, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+    {"id": "bailian-cn-step-3-7-flash", "providerId": "alibaba-api-cn", "planId": "alibaba-api-cn-payg", "modelSlugs": ["step-3-7-flash"], "providerModelId": "stepfun/step-3.7-flash", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 1.35, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 8.1, "sourceIds": ["bailian-model-pricing-2026-08-11"]},
+
+    {"id": "deepseek-api-v4-flash", "providerId": "deepseek", "planId": "deepseek-payg", "modelSlugs": ["deepseek-v4-flash"], "providerModelId": "deepseek-v4-flash", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensUsd": 0.14, "cacheReadPerMillionTokensUsd": 0.0028, "outputPerMillionTokensUsd": 0.28, "sourceIds": ["deepseek-api-pricing-2026-08-11"]},
+    {"id": "deepseek-api-v4-pro", "providerId": "deepseek", "planId": "deepseek-payg", "modelSlugs": ["deepseek-v4-pro"], "providerModelId": "deepseek-v4-pro", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensUsd": 0.435, "cacheReadPerMillionTokensUsd": 0.003625, "outputPerMillionTokensUsd": 0.87, "sourceIds": ["deepseek-api-pricing-2026-08-11"]},
+
+    {"id": "kimi-cn-standard-k3", "providerId": "moonshot-api-cn", "planId": "moonshot-api-cn-payg", "modelSlugs": ["kimi-k3"], "providerModelId": "kimi-k3", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 20, "cacheReadPerMillionTokensLocal": 2, "outputPerMillionTokensLocal": 100, "sourceIds": ["kimi-k3-pricing-2026-08-11"]},
+    {"id": "kimi-cn-standard-k2-7-code", "providerId": "moonshot-api-cn", "planId": "moonshot-api-cn-payg", "modelSlugs": ["kimi-k2-7-code"], "providerModelId": "kimi-k2.7-code", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 6.5, "cacheReadPerMillionTokensLocal": 1.3, "outputPerMillionTokensLocal": 27, "sourceIds": ["kimi-k27-code-pricing-2026-08-11"]},
+    {"id": "kimi-cn-standard-k2-6", "providerId": "moonshot-api-cn", "planId": "moonshot-api-cn-payg", "modelSlugs": ["kimi-k2-6"], "providerModelId": "kimi-k2.6", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 6.5, "cacheReadPerMillionTokensLocal": 1.1, "outputPerMillionTokensLocal": 27, "sourceIds": ["kimi-k26-pricing-2026-08-11"]},
+    {"id": "kimi-cn-standard-k2-5", "providerId": "moonshot-api-cn", "planId": "moonshot-api-cn-payg", "modelSlugs": ["kimi-k2-5"], "providerModelId": "kimi-k2.5", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 4, "cacheReadPerMillionTokensLocal": 0.7, "outputPerMillionTokensLocal": 21, "sourceIds": ["kimi-k25-pricing-2026-08-11"]},
+    {"id": "kimi-cn-highspeed-k2-7-code", "providerId": "moonshot-api-cn", "planId": "moonshot-api-cn-highspeed", "modelSlugs": ["kimi-k2-7-code"], "providerModelId": "kimi-k2.7-code", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 13, "cacheReadPerMillionTokensLocal": 2.6, "outputPerMillionTokensLocal": 54, "sourceIds": ["kimi-k27-code-pricing-2026-08-11"]},
+    {"id": "kimi-cn-batch-k3", "providerId": "moonshot-api-cn", "planId": "moonshot-api-cn-batch", "modelSlugs": ["kimi-k3"], "providerModelId": "kimi-k3", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 12, "cacheReadPerMillionTokensLocal": 1.2, "outputPerMillionTokensLocal": 60, "derivedFromStandardMultiplier": 0.6, "sourceIds": ["kimi-k3-pricing-2026-08-11", "kimi-batch-pricing-2026-08-11"]},
+    {"id": "kimi-cn-batch-k2-7-code", "providerId": "moonshot-api-cn", "planId": "moonshot-api-cn-batch", "modelSlugs": ["kimi-k2-7-code"], "providerModelId": "kimi-k2.7-code", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 3.9, "cacheReadPerMillionTokensLocal": 0.78, "outputPerMillionTokensLocal": 16.2, "derivedFromStandardMultiplier": 0.6, "sourceIds": ["kimi-k27-code-pricing-2026-08-11", "kimi-batch-pricing-2026-08-11"]},
+    {"id": "kimi-cn-batch-k2-6", "providerId": "moonshot-api-cn", "planId": "moonshot-api-cn-batch", "modelSlugs": ["kimi-k2-6"], "providerModelId": "kimi-k2.6", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 3.9, "cacheReadPerMillionTokensLocal": 0.66, "outputPerMillionTokensLocal": 16.2, "derivedFromStandardMultiplier": 0.6, "sourceIds": ["kimi-k26-pricing-2026-08-11", "kimi-batch-pricing-2026-08-11"]},
+    {"id": "kimi-cn-batch-k2-5", "providerId": "moonshot-api-cn", "planId": "moonshot-api-cn-batch", "modelSlugs": ["kimi-k2-5"], "providerModelId": "kimi-k2.5", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 2.4, "cacheReadPerMillionTokensLocal": 0.42, "outputPerMillionTokensLocal": 12.6, "derivedFromStandardMultiplier": 0.6, "sourceIds": ["kimi-k25-pricing-2026-08-11", "kimi-batch-pricing-2026-08-11"]},
+
+    {"id": "minimax-cn-m3", "providerId": "minimax-api-cn", "planId": "minimax-api-cn-payg", "modelSlugs": ["minimax-m3"], "providerModelId": "MiniMax-M3", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 2.1, "cacheReadPerMillionTokensLocal": 0.42, "outputPerMillionTokensLocal": 8.4, "pricingOverrides": [{"minPromptTokens": 512001, "inputPerMillionTokensLocal": 4.2, "cacheReadPerMillionTokensLocal": 0.84, "outputPerMillionTokensLocal": 16.8, "notes": "Published >512K context tier."}], "sourceIds": ["minimax-cn-paygo-pricing-2026-08-11"]},
+    {"id": "minimax-cn-m2-7", "providerId": "minimax-api-cn", "planId": "minimax-api-cn-payg", "modelSlugs": ["minimax-m2-7"], "providerModelId": "MiniMax-M2.7", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 2.1, "cacheReadPerMillionTokensLocal": 0.42, "cacheWritePerMillionTokensLocal": 2.625, "outputPerMillionTokensLocal": 8.4, "sourceIds": ["minimax-cn-paygo-pricing-2026-08-11"]},
+    {"id": "minimax-cn-m2-5", "providerId": "minimax-api-cn", "planId": "minimax-api-cn-payg", "modelSlugs": ["minimax-m2-5"], "providerModelId": "MiniMax-M2.5", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 2.1, "cacheReadPerMillionTokensLocal": 0.21, "cacheWritePerMillionTokensLocal": 2.625, "outputPerMillionTokensLocal": 8.4, "sourceIds": ["minimax-cn-paygo-pricing-2026-08-11"]},
+    {"id": "minimax-global-m3", "providerId": "minimax-api", "planId": "minimax-api-payg", "modelSlugs": ["minimax-m3"], "providerModelId": "MiniMax-M3", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensUsd": 0.3, "cacheReadPerMillionTokensUsd": 0.06, "outputPerMillionTokensUsd": 1.2, "pricingOverrides": [{"minPromptTokens": 512001, "inputPerMillionTokensUsd": 0.6, "cacheReadPerMillionTokensUsd": 0.12, "outputPerMillionTokensUsd": 2.4, "notes": "Published >512K context tier."}], "sourceIds": ["minimax-global-paygo-pricing-2026-08-11"]},
+    {"id": "minimax-global-m2-7", "providerId": "minimax-api", "planId": "minimax-api-payg", "modelSlugs": ["minimax-m2-7"], "providerModelId": "MiniMax-M2.7", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensUsd": 0.3, "cacheReadPerMillionTokensUsd": 0.06, "cacheWritePerMillionTokensUsd": 0.375, "outputPerMillionTokensUsd": 1.2, "sourceIds": ["minimax-global-paygo-pricing-2026-08-11"]},
+
+    {"id": "stepfun-cn-step-3-7-flash", "providerId": "stepfun", "planId": "stepfun-payg", "modelSlugs": ["step-3-7-flash"], "providerModelId": "step-3.7-flash", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 1.35, "cacheReadPerMillionTokensLocal": 0.27, "outputPerMillionTokensLocal": 8.1, "sourceIds": ["stepfun-cn-pricing-2026-08-11"]},
+    {"id": "stepfun-cn-step-3-5-flash", "providerId": "stepfun", "planId": "stepfun-payg", "modelSlugs": ["step-3-5-flash"], "providerModelId": "step-3.5-flash", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 0.7, "cacheReadPerMillionTokensLocal": 0.14, "outputPerMillionTokensLocal": 2.1, "sourceIds": ["stepfun-cn-pricing-2026-08-11"]},
+
+    {"id": "siliconflow-cn-glm-5-2", "providerId": "siliconflow-cn", "planId": "siliconflow-cn-payg", "modelSlugs": ["glm-5-2"], "providerModelId": "GLM-5.2", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 8, "cacheReadPerMillionTokensLocal": 2, "outputPerMillionTokensLocal": 28, "sourceIds": ["siliconflow-cn-pricing-2026-08-11"]},
+    {"id": "siliconflow-cn-kimi-k2-7-code", "providerId": "siliconflow-cn", "planId": "siliconflow-cn-payg", "modelSlugs": ["kimi-k2-7-code"], "providerModelId": "Kimi-K2.7-Code", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 6.5, "cacheReadPerMillionTokensLocal": 1.3, "outputPerMillionTokensLocal": 27, "sourceIds": ["siliconflow-cn-pricing-2026-08-11"]},
+    {"id": "siliconflow-cn-kimi-k2-6", "providerId": "siliconflow-cn", "planId": "siliconflow-cn-payg", "modelSlugs": ["kimi-k2-6"], "providerModelId": "Kimi-K2.6", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 6.5, "cacheReadPerMillionTokensLocal": 1.1, "outputPerMillionTokensLocal": 27, "sourceIds": ["siliconflow-cn-pricing-2026-08-11"]},
+    {"id": "siliconflow-cn-deepseek-v4-pro", "providerId": "siliconflow-cn", "planId": "siliconflow-cn-payg", "modelSlugs": ["deepseek-v4-pro"], "providerModelId": "DeepSeek-V4-Pro", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 12, "cacheReadPerMillionTokensLocal": 1, "outputPerMillionTokensLocal": 24, "sourceIds": ["siliconflow-cn-pricing-2026-08-11"]},
+    {"id": "siliconflow-cn-deepseek-v4-flash", "providerId": "siliconflow-cn", "planId": "siliconflow-cn-payg", "modelSlugs": ["deepseek-v4-flash"], "providerModelId": "DeepSeek-V4-Flash", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 1, "cacheReadPerMillionTokensLocal": 0.02, "outputPerMillionTokensLocal": 2, "sourceIds": ["siliconflow-cn-pricing-2026-08-11"]},
+    {"id": "siliconflow-cn-deepseek-v3-2", "providerId": "siliconflow-cn", "planId": "siliconflow-cn-payg", "modelSlugs": ["deepseek-v3-2"], "providerModelId": "DeepSeek-V3.2", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 4, "cacheReadPerMillionTokensLocal": 0.4, "outputPerMillionTokensLocal": 6, "sourceIds": ["siliconflow-cn-pricing-2026-08-11"]},
+    {"id": "siliconflow-cn-minimax-m2-5", "providerId": "siliconflow-cn", "planId": "siliconflow-cn-payg", "modelSlugs": ["minimax-m2-5"], "providerModelId": "MiniMax-M2.5", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 2.1, "cacheReadPerMillionTokensLocal": 0.21, "outputPerMillionTokensLocal": 8.4, "sourceIds": ["siliconflow-cn-pricing-2026-08-11"]},
+    {"id": "siliconflow-cn-step-3-5-flash", "providerId": "siliconflow-cn", "planId": "siliconflow-cn-payg", "modelSlugs": ["step-3-5-flash"], "providerModelId": "step-3.5-flash", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 0.7, "cacheReadPerMillionTokensLocal": null, "outputPerMillionTokensLocal": 2.1, "sourceIds": ["siliconflow-cn-pricing-2026-08-11"]},
+
+    {"id": "volcengine-ark-cn-glm-5-2", "providerId": "volcengine-ark-cn", "planId": "volcengine-ark-cn-payg", "modelSlugs": ["glm-5-2"], "providerModelId": "GLM-5.2", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 8, "cacheReadPerMillionTokensLocal": 2, "outputPerMillionTokensLocal": 28, "sourceIds": ["volcengine-ark-pricing-2026-08-11"]},
+    {"id": "volcengine-ark-cn-deepseek-v4-pro", "providerId": "volcengine-ark-cn", "planId": "volcengine-ark-cn-payg", "modelSlugs": ["deepseek-v4-pro"], "providerModelId": "DeepSeek-V4-Pro", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 12, "cacheReadPerMillionTokensLocal": 1, "outputPerMillionTokensLocal": 24, "sourceIds": ["volcengine-ark-pricing-2026-08-11"]},
+    {"id": "volcengine-ark-cn-deepseek-v4-flash", "providerId": "volcengine-ark-cn", "planId": "volcengine-ark-cn-payg", "modelSlugs": ["deepseek-v4-flash"], "providerModelId": "DeepSeek-V4-Flash", "pricingKind": "per-token", "comparable": true, "inputPerMillionTokensLocal": 1, "cacheReadPerMillionTokensLocal": 0.2, "outputPerMillionTokensLocal": 2, "sourceIds": ["volcengine-ark-pricing-2026-08-11"]}
+  ],
+  "sources": [
+    {"id": "bailian-model-pricing-2026-08-11", "title": "阿里云百炼模型价格", "publisher": "阿里云", "url": "https://help.aliyun.com/zh/model-studio/model-pricing", "kind": "official-pricing", "asOf": "2026-08-11", "accessedAt": "2026-08-11", "notes": "华北 2（北京）公开 PAYG 价格；标为 current 的促销/当前价按页面原样保留。"},
+    {"id": "deepseek-api-pricing-2026-08-11", "title": "DeepSeek API pricing", "publisher": "DeepSeek", "url": "https://api-docs.deepseek.com/quick_start/pricing/", "kind": "official-pricing", "asOf": "2026-08-11", "accessedAt": "2026-08-11"},
+    {"id": "kimi-k3-pricing-2026-08-11", "title": "Kimi K3 pricing", "publisher": "Moonshot AI", "url": "https://platform.kimi.com/docs/pricing/chat-k3.md", "kind": "official-pricing", "asOf": "2026-08-11", "accessedAt": "2026-08-11"},
+    {"id": "kimi-k27-code-pricing-2026-08-11", "title": "Kimi K2.7 Code pricing", "publisher": "Moonshot AI", "url": "https://platform.kimi.com/docs/pricing/chat-k27-code.md", "kind": "official-pricing", "asOf": "2026-08-11", "accessedAt": "2026-08-11"},
+    {"id": "kimi-k26-pricing-2026-08-11", "title": "Kimi K2.6 pricing", "publisher": "Moonshot AI", "url": "https://platform.kimi.com/docs/pricing/chat-k26.md", "kind": "official-pricing", "asOf": "2026-08-11", "accessedAt": "2026-08-11"},
+    {"id": "kimi-k25-pricing-2026-08-11", "title": "Kimi K2.5 pricing", "publisher": "Moonshot AI", "url": "https://platform.kimi.com/docs/pricing/chat-k25.md", "kind": "official-pricing", "asOf": "2026-08-11", "accessedAt": "2026-08-11"},
+    {"id": "kimi-batch-pricing-2026-08-11", "title": "Kimi Batch pricing", "publisher": "Moonshot AI", "url": "https://platform.kimi.com/docs/pricing/batch.md", "kind": "official-pricing", "asOf": "2026-08-11", "accessedAt": "2026-08-11", "notes": "Batch token rates are 60% of the corresponding standard model rates."},
+    {"id": "minimax-cn-paygo-pricing-2026-08-11", "title": "MiniMax 中国按量付费价格", "publisher": "MiniMax", "url": "https://platform.minimaxi.com/docs/guides/pricing-paygo.md", "kind": "official-pricing", "asOf": "2026-08-11", "accessedAt": "2026-08-11"},
+    {"id": "minimax-global-paygo-pricing-2026-08-11", "title": "MiniMax international pay-as-you-go pricing", "publisher": "MiniMax", "url": "https://platform.minimax.io/docs/guides/pricing-paygo.md", "kind": "official-pricing", "asOf": "2026-08-11", "accessedAt": "2026-08-11"},
+    {"id": "stepfun-cn-pricing-2026-08-11", "title": "阶跃星辰模型定价", "publisher": "StepFun", "url": "https://platform.stepfun.com/docs/zh/guides/pricing/details.md", "kind": "official-pricing", "asOf": "2026-08-11", "accessedAt": "2026-08-11"},
+    {"id": "siliconflow-cn-pricing-2026-08-11", "title": "SiliconFlow 模型定价", "publisher": "SiliconFlow", "url": "https://siliconflow.cn/pricing", "kind": "official-pricing", "asOf": "2026-08-11", "accessedAt": "2026-08-11"},
+    {"id": "volcengine-ark-pricing-2026-08-11", "title": "火山方舟模型推理定价", "publisher": "火山引擎", "url": "https://www.volcengine.com/docs/82379/1544106", "kind": "official-pricing", "asOf": "2026-08-11", "accessedAt": "2026-08-11"}
+  ]
+}

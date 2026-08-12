@@ -1,0 +1,546 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-08-12",
+  "scope": "Verified model-author first-party public APIs; one offer per exact AInsights model slug.",
+  "providers": [
+    {
+      "id": "ai21-api",
+      "name": "AI21 Labs API",
+      "category": "first-party-api",
+      "url": "https://www.ai21.com/",
+      "pricingUrl": "https://www.ai21.com/pricing/",
+      "sourceIds": [
+        "ai21-api-pricing-2026-08-12",
+        "ai21-jamba-models-2026-08-12"
+      ],
+      "notes": "Model-author API. Jamba Large pricing is linked to the official current 1.7 API version documented by AI21."
+    },
+    {
+      "id": "upstage",
+      "name": "Upstage API",
+      "category": "first-party-api",
+      "url": "https://console.upstage.ai/",
+      "pricingUrl": "https://www.upstage.ai/pricing/api",
+      "sourceIds": [
+        "upstage-api-pricing-2026-08-12",
+        "upstage-api-models-2026-08-12"
+      ],
+      "notes": "Model-author API; replaces the community-imported Upstage provider classification when merged."
+    },
+    {
+      "id": "reka-api",
+      "name": "Reka API",
+      "category": "first-party-api",
+      "url": "https://reka.ai/",
+      "pricingUrl": "https://docs.reka.ai/pricing",
+      "sourceIds": [
+        "reka-api-pricing-2026-08-12",
+        "reka-api-models-2026-08-12"
+      ]
+    },
+    {
+      "id": "inception",
+      "name": "Inception API",
+      "category": "first-party-api",
+      "url": "https://www.inceptionlabs.ai/",
+      "pricingUrl": "https://www.inceptionlabs.ai/models",
+      "sourceIds": [
+        "inception-api-models-pricing-2026-08-12"
+      ],
+      "notes": "Model-author API; replaces the community-imported Inception provider classification when merged."
+    },
+    {
+      "id": "sarvam-api",
+      "name": "Sarvam AI API",
+      "category": "first-party-api",
+      "url": "https://www.sarvam.ai/",
+      "pricingUrl": "https://www.sarvam.ai/api-pricing",
+      "sourceIds": [
+        "sarvam-api-pricing-2026-08-12",
+        "sarvam-api-models-2026-08-12"
+      ],
+      "notes": "Official pricing currently marks the listed chat LLMs free per token."
+    }
+  ],
+  "plans": [
+    {
+      "id": "ai21-api-payg",
+      "providerId": "ai21-api",
+      "name": "AI21 Platform PAYG",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "token-comparable",
+      "quotaLabel": "$10 seven-day trial credit, then usage-based billing",
+      "sourceIds": [
+        "ai21-api-pricing-2026-08-12",
+        "ai21-jamba-models-2026-08-12"
+      ]
+    },
+    {
+      "id": "upstage-payg",
+      "providerId": "upstage",
+      "name": "Upstage Console PAYG",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "token-comparable",
+      "quotaLabel": "Usage-based API pricing; published prices exclude 10% VAT",
+      "sourceIds": [
+        "upstage-api-pricing-2026-08-12",
+        "upstage-api-models-2026-08-12"
+      ]
+    },
+    {
+      "id": "reka-api-payg",
+      "providerId": "reka-api",
+      "name": "Reka Chat PAYG",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "token-comparable",
+      "quotaLabel": "Pay as you go",
+      "sourceIds": [
+        "reka-api-pricing-2026-08-12",
+        "reka-api-models-2026-08-12"
+      ]
+    },
+    {
+      "id": "inception-payg",
+      "providerId": "inception",
+      "name": "Inception Developer PAYG",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "token-comparable",
+      "quotaLabel": "Usage-based developer API; official page also advertises a free-token allowance",
+      "sourceIds": [
+        "inception-api-models-pricing-2026-08-12"
+      ]
+    },
+    {
+      "id": "sarvam-api-payg",
+      "providerId": "sarvam-api",
+      "name": "Sarvam Starter PAYG",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "INR",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "token-comparable",
+      "quotaLabel": "Pay as you go; Sarvam 105B and 30B are currently free per token",
+      "sourceIds": [
+        "sarvam-api-pricing-2026-08-12",
+        "sarvam-api-models-2026-08-12"
+      ]
+    }
+  ],
+  "offers": [
+    {
+      "id": "ai21-api-jamba-1-7-large",
+      "providerId": "ai21-api",
+      "planId": "ai21-api-payg",
+      "modelSlugs": [
+        "jamba-1-7-large"
+      ],
+      "providerModelId": "jamba-large-1.7",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "checkedAt": "2026-08-12",
+      "inputPerMillionTokensUsd": 2,
+      "cacheReadPerMillionTokensUsd": null,
+      "cacheWritePerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": 8,
+      "sourceIds": [
+        "ai21-api-pricing-2026-08-12",
+        "ai21-jamba-models-2026-08-12"
+      ],
+      "contextLength": 256000,
+      "notes": "Official pricing lists Jamba Large at $2 input / $8 output per million tokens; official model docs map jamba-large-1.7 to the current 1.7 snapshot."
+    },
+    {
+      "id": "upstage-solar-pro-3",
+      "providerId": "upstage",
+      "planId": "upstage-payg",
+      "modelSlugs": [
+        "solar-pro-3"
+      ],
+      "providerModelId": "solar-pro-3",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "checkedAt": "2026-08-12",
+      "inputPerMillionTokensUsd": 0.15,
+      "cacheReadPerMillionTokensUsd": 0.015,
+      "cacheWritePerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": 0.6,
+      "sourceIds": [
+        "upstage-api-pricing-2026-08-12",
+        "upstage-api-models-2026-08-12"
+      ],
+      "notes": "Official list price excluding 10% VAT."
+    },
+    {
+      "id": "upstage-solar-pro-2",
+      "providerId": "upstage",
+      "planId": "upstage-payg",
+      "modelSlugs": [
+        "solar-pro-2"
+      ],
+      "providerModelId": "solar-pro-2",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "checkedAt": "2026-08-12",
+      "inputPerMillionTokensUsd": 0.15,
+      "cacheReadPerMillionTokensUsd": 0.015,
+      "cacheWritePerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": 0.6,
+      "sourceIds": [
+        "upstage-api-pricing-2026-08-12",
+        "upstage-api-models-2026-08-12"
+      ],
+      "notes": "Official list price excluding 10% VAT. The consolidated Solar Pro 2 API model supports chat and reasoning modes; preview/reasoning-only AInsights aliases are not inferred."
+    },
+    {
+      "id": "upstage-solar-mini",
+      "providerId": "upstage",
+      "planId": "upstage-payg",
+      "modelSlugs": [
+        "solar-mini"
+      ],
+      "providerModelId": "solar-mini",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "checkedAt": "2026-08-12",
+      "inputPerMillionTokensUsd": 0.15,
+      "cacheReadPerMillionTokensUsd": null,
+      "cacheWritePerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": 0.15,
+      "sourceIds": [
+        "upstage-api-pricing-2026-08-12",
+        "upstage-api-models-2026-08-12"
+      ],
+      "notes": "The official card publishes one $0.15 per-million-token rate without input/output differentiation; the same rate is recorded for both categories. Price excludes 10% VAT."
+    },
+    {
+      "id": "reka-api-reka-flash",
+      "providerId": "reka-api",
+      "planId": "reka-api-payg",
+      "modelSlugs": [
+        "reka-flash"
+      ],
+      "providerModelId": "reka-flash",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "checkedAt": "2026-08-12",
+      "inputPerMillionTokensUsd": 0.8,
+      "cacheReadPerMillionTokensUsd": null,
+      "cacheWritePerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": 2,
+      "sourceIds": [
+        "reka-api-pricing-2026-08-12",
+        "reka-api-models-2026-08-12"
+      ],
+      "notes": "Reka's public baseline-model documentation names reka-flash and the pricing page publishes $0.80 input / $2 output per million tokens."
+    },
+    {
+      "id": "inception-mercury-2",
+      "providerId": "inception",
+      "planId": "inception-payg",
+      "modelSlugs": [
+        "mercury-2"
+      ],
+      "providerModelId": "mercury-2",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "checkedAt": "2026-08-12",
+      "inputPerMillionTokensUsd": 0.25,
+      "cacheReadPerMillionTokensUsd": 0.025,
+      "cacheWritePerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": 0.75,
+      "sourceIds": [
+        "inception-api-models-pricing-2026-08-12"
+      ],
+      "contextLength": 128000,
+      "notes": "Official Inception models page publishes input, cached-input, and output rates and shows the mercury-2 API request ID."
+    },
+    {
+      "id": "sarvam-api-sarvam-105b",
+      "providerId": "sarvam-api",
+      "planId": "sarvam-api-payg",
+      "modelSlugs": [
+        "sarvam-105b"
+      ],
+      "providerModelId": "sarvam-105b",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "checkedAt": "2026-08-12",
+      "inputPerMillionTokensUsd": 0,
+      "cacheReadPerMillionTokensUsd": null,
+      "cacheWritePerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": 0,
+      "sourceIds": [
+        "sarvam-api-pricing-2026-08-12",
+        "sarvam-api-models-2026-08-12"
+      ],
+      "inputPerMillionTokensLocal": 0,
+      "cacheReadPerMillionTokensLocal": null,
+      "outputPerMillionTokensLocal": 0,
+      "currency": "INR",
+      "publishedZeroRate": true,
+      "supportStatus": "active",
+      "notes": "Official pricing says 'Free per token'; the official model page lists sarvam-105b as an active API model."
+    },
+    {
+      "id": "sarvam-api-sarvam-30b",
+      "providerId": "sarvam-api",
+      "planId": "sarvam-api-payg",
+      "modelSlugs": [
+        "sarvam-30b"
+      ],
+      "providerModelId": "sarvam-30b",
+      "pricingKind": "per-token",
+      "comparable": false,
+      "checkedAt": "2026-08-12",
+      "inputPerMillionTokensUsd": 0,
+      "cacheReadPerMillionTokensUsd": null,
+      "cacheWritePerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": 0,
+      "sourceIds": [
+        "sarvam-api-pricing-2026-08-12",
+        "sarvam-api-models-2026-08-12"
+      ],
+      "inputPerMillionTokensLocal": 0,
+      "cacheReadPerMillionTokensLocal": null,
+      "outputPerMillionTokensLocal": 0,
+      "currency": "INR",
+      "publishedZeroRate": true,
+      "supportStatus": "deprecated",
+      "availability": {
+        "status": "deprecated",
+        "note": "Official model docs recommend migration to Sarvam 105B."
+      },
+      "notes": "Official pricing still says 'Free per token', but official model docs mark Sarvam 30B deprecated and being phased out; it is excluded from cheapest-price ranking."
+    }
+  ],
+  "sources": [
+    {
+      "id": "ai21-api-pricing-2026-08-12",
+      "title": "AI21 pricing — Foundation Models",
+      "publisher": "AI21 Labs",
+      "url": "https://www.ai21.com/pricing/",
+      "kind": "official-pricing",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Publishes Jamba Mini at $0.20/$0.40 and Jamba Large at $2/$8 per million input/output tokens. Only Large maps to an exact current AInsights version slug."
+    },
+    {
+      "id": "ai21-jamba-models-2026-08-12",
+      "title": "AI21 Jamba foundation models",
+      "publisher": "AI21 Labs",
+      "url": "https://docs.ai21.com/docs/jamba-foundation-models",
+      "kind": "official-model-list",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Identifies Jamba Large 1.7 as the current Large API version, Jamba Mini 2 as the current Mini version, and older Mini/Large versions as deprecated."
+    },
+    {
+      "id": "upstage-api-pricing-2026-08-12",
+      "title": "Upstage API pricing",
+      "publisher": "Upstage",
+      "url": "https://www.upstage.ai/pricing/api",
+      "kind": "official-pricing",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Publishes Solar Pro 3 and Solar Pro 2 input/cached-input/output rates, a single Solar Mini token rate, and states prices exclude 10% VAT."
+    },
+    {
+      "id": "upstage-api-models-2026-08-12",
+      "title": "Upstage Console model documentation",
+      "publisher": "Upstage",
+      "url": "https://console.upstage.ai/docs/models",
+      "kind": "official-model-list",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Official model pages confirm Solar Pro 3, Solar Pro 2, and Solar Mini as Console API models."
+    },
+    {
+      "id": "reka-api-pricing-2026-08-12",
+      "title": "Reka API pricing",
+      "publisher": "Reka AI",
+      "url": "https://docs.reka.ai/pricing",
+      "kind": "official-pricing",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Publishes Reka Flash at $0.80 input and $2 output per million tokens."
+    },
+    {
+      "id": "reka-api-models-2026-08-12",
+      "title": "Reka Chat models",
+      "publisher": "Reka AI",
+      "url": "https://docs.reka.ai/chat/models",
+      "kind": "official-model-list",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Names reka-flash as an always-available public baseline API model and shows the exact ID."
+    },
+    {
+      "id": "inception-api-models-pricing-2026-08-12",
+      "title": "Inception models and API pricing",
+      "publisher": "Inception",
+      "url": "https://www.inceptionlabs.ai/models",
+      "kind": "official-pricing",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Publishes Mercury 2 at $0.25 input, $0.025 cached input, and $0.75 output per million tokens and shows model='mercury-2'."
+    },
+    {
+      "id": "sarvam-api-pricing-2026-08-12",
+      "title": "Sarvam AI API pricing",
+      "publisher": "Sarvam AI",
+      "url": "https://www.sarvam.ai/api-pricing",
+      "kind": "official-pricing",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Lists Sarvam 105B and Sarvam 30B chat LLM usage as free per token."
+    },
+    {
+      "id": "sarvam-api-models-2026-08-12",
+      "title": "Sarvam AI model selection guide",
+      "publisher": "Sarvam AI",
+      "url": "https://docs.sarvam.ai/api/getting-started/models",
+      "kind": "official-model-list",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Confirms sarvam-105b as active, Sarvam 30B as deprecated/being phased out, and Sarvam-M as no longer available through the API."
+    },
+    {
+      "id": "ecb-reference-fx-inr-2026-08-10",
+      "title": "ECB reference exchange rates — INR and USD against EUR",
+      "publisher": "European Central Bank",
+      "url": "https://data-api.ecb.europa.eu/service/data/EXR/D.INR+USD.EUR.SP00.A?startPeriod=2026-08-10&endPeriod=2026-08-10&format=csvdata",
+      "kind": "official-reference-data",
+      "asOf": "2026-08-10",
+      "accessedAt": "2026-08-12",
+      "notes": "INR/EUR 110.1228 and USD/EUR 1.1555 on 2026-08-10 imply 95.303158806 INR per USD; used only to normalize local-currency prices for cross-provider comparison."
+    }
+  ],
+  "exchangeRates": {
+    "INR": {
+      "unitsPerUsd": 95.303158806,
+      "usdPerUnit": 0.010492832,
+      "asOf": "2026-08-10",
+      "sourceId": "ecb-reference-fx-inr-2026-08-10",
+      "notes": "Cross rate from ECB INR/EUR 110.1228 and USD/EUR 1.1555 reference rates."
+    }
+  },
+  "exclusions": [
+    {
+      "creator": "Cohere",
+      "modelSlugs": [
+        "north-mini-code",
+        "command-a",
+        "tiny-aya-global",
+        "command-a-plus",
+        "command-r-plus-04-2024",
+        "command-r-03-2024"
+      ],
+      "reason": "The official pricing page does not publish per-token rates for the live A/A+/North/Tiny Aya slugs. The two exact Command R slugs with public legacy rates were deprecated on 2025-09-15, so they are not emitted as usable current API offers.",
+      "sourceUrls": [
+        "https://cohere.com/pricing",
+        "https://docs.cohere.com/docs/models"
+      ]
+    },
+    {
+      "creator": "AI21 Labs",
+      "modelSlugs": [
+        "jamba-1-7-mini",
+        "jamba-reasoning-3b",
+        "jamba-1-5-mini",
+        "jamba-1-5-large",
+        "jamba-1-6-large",
+        "jamba-1-6-mini"
+      ],
+      "reason": "Current Jamba Mini pricing applies to Mini 2, for which AInsights has no exact slug; Mini 1.7 and all 1.5/1.6 rows are deprecated. Jamba 3B has no hosted API endpoint in the official model table.",
+      "sourceUrls": [
+        "https://www.ai21.com/pricing/",
+        "https://docs.ai21.com/docs/jamba-foundation-models"
+      ]
+    },
+    {
+      "creator": "Upstage",
+      "modelSlugs": [
+        "solar-open-100b-reasoning",
+        "solar-pro-2-preview-reasoning",
+        "solar-pro-2-reasoning",
+        "solar-pro-2-preview"
+      ],
+      "reason": "Official API pricing identifies the consolidated Solar Pro 2 model but not separate preview/reasoning API IDs or prices. Solar Open is not given a public hosted token price.",
+      "sourceUrls": [
+        "https://www.upstage.ai/pricing/api",
+        "https://console.upstage.ai/docs/models"
+      ]
+    },
+    {
+      "creator": "Liquid AI",
+      "modelSlugs": [
+        "lfm2-24b-a2b",
+        "lfm2-8b-a1b",
+        "lfm2-2-6b",
+        "lfm2-5-1-2b-thinking",
+        "lfm2-5-vl-1-6b",
+        "lfm2-5-1-2b-instruct",
+        "lfm2-5-8b-a1b",
+        "lfm-40b",
+        "lfm2-1-2b"
+      ],
+      "reason": "Liquid's official pricing page covers the LFM Open License and self-hosted commercial licensing, not a public Liquid-hosted per-token API.",
+      "sourceUrls": [
+        "https://www.liquid.ai/pricing"
+      ]
+    },
+    {
+      "creator": "Reka AI",
+      "modelSlugs": [
+        "reka-flash-3"
+      ],
+      "reason": "Official public API docs price and identify reka-flash, not the separate Reka Flash 3 slug; no alias is inferred.",
+      "sourceUrls": [
+        "https://docs.reka.ai/pricing",
+        "https://docs.reka.ai/chat/models"
+      ]
+    },
+    {
+      "creator": "Sarvam",
+      "modelSlugs": [
+        "sarvam-m-reasoning"
+      ],
+      "reason": "Official model docs say Sarvam-M is deprecated and no longer available through the API.",
+      "sourceUrls": [
+        "https://docs.sarvam.ai/api/getting-started/models"
+      ]
+    },
+    {
+      "creator": "Additional audited gaps",
+      "modelSlugs": [
+        "hermes-4-llama-3-1-405b",
+        "hermes-4-llama-3-1-70b",
+        "trinity-large-thinking",
+        "intellect-3"
+      ],
+      "reason": "Nous Research, Arcee AI, and Prime Intellect expose products or inference surfaces, but no directly verifiable official public per-model token price was found for these exact author-model slugs. Aggregator prices are intentionally not substituted.",
+      "sourceUrls": [
+        "https://portal.nousresearch.com/",
+        "https://docs.arcee.ai/",
+        "https://docs.primeintellect.ai/api-reference/inference-models"
+      ]
+    }
+  ],
+  "mergeNotes": [
+    "Upstage and Inception reuse their existing provider ids so an official fragment merge replaces, rather than duplicates, their community-imported aggregator slices.",
+    "Zero-dollar Sarvam rates are literal official 'Free per token' prices. Sarvam 30B remains finite but non-comparable because it is deprecated.",
+    "No offer is inferred from an aggregator, an open-weight license, an alias without official evidence, or a generic model-family price that cannot be tied to an exact current slug."
+  ]
+}

@@ -1,0 +1,1446 @@
+{
+  "checkedAt": "2026-08-11",
+  "replaceProviders": [
+    "stepfun-step-plan",
+    "bigmodel-coding-plan",
+    "volcengine-agent-plan"
+  ],
+  "providers": [
+    {
+      "id": "stepfun-step-plan",
+      "name": "StepFun Step Plan",
+      "category": "token-plan",
+      "url": "https://platform.stepfun.com/docs/zh/step-plan/overview.md",
+      "pricingUrl": "https://platform.stepfun.com/docs/zh/step-plan/overview.md",
+      "region": "China",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ]
+    },
+    {
+      "id": "bigmodel-coding-plan",
+      "name": "BigModel Coding Plan V3",
+      "category": "coding-subscription",
+      "url": "https://docs.bigmodel.cn/cn/coding-plan/overview.md",
+      "pricingUrl": "https://docs.bigmodel.cn/cn/coding-plan/overview.md",
+      "region": "China",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ]
+    },
+    {
+      "id": "volcengine-agent-plan",
+      "name": "Volcengine Ark Agent Plan",
+      "category": "coding-subscription",
+      "url": "https://www.volcengine.com/docs/82379/2366394",
+      "pricingUrl": "https://www.volcengine.com/docs/82379/2366394",
+      "region": "China",
+      "sourceIds": [
+        "volcengine-agent-plan-official-2026-08-11"
+      ],
+      "notes": "Packages are shown without model token prices until the full AFP coefficient table is verified."
+    }
+  ],
+  "plans": [
+    {
+      "id": "stepfun-step-plan-mini-monthly",
+      "providerId": "stepfun-step-plan",
+      "name": "Mini Monthly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceLocal": 49,
+      "includedMillionCreditsPerMonth": 400,
+      "creditFaceValueLocalPerMillion": 1,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "400M Credits / month · 1M Credits = CNY 1",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ]
+    },
+    {
+      "id": "stepfun-step-plan-mini-quarterly",
+      "providerId": "stepfun-step-plan",
+      "name": "Mini Quarterly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "quarterlyPriceLocal": 129,
+      "includedMillionCreditsPerMonth": 400,
+      "creditFaceValueLocalPerMillion": 1,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "400M Credits / month · 1M Credits = CNY 1",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "quarterlyEquivalentMonthlyLocal": 43.0
+    },
+    {
+      "id": "stepfun-step-plan-mini-annual",
+      "providerId": "stepfun-step-plan",
+      "name": "Mini Annual",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "annualPriceLocal": 456,
+      "includedMillionCreditsPerMonth": 400,
+      "creditFaceValueLocalPerMillion": 1,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "400M Credits / month · 1M Credits = CNY 1",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "annualEquivalentMonthlyLocal": 38.0
+    },
+    {
+      "id": "stepfun-step-plan-plus-monthly",
+      "providerId": "stepfun-step-plan",
+      "name": "Plus Monthly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceLocal": 99,
+      "includedMillionCreditsPerMonth": 1600,
+      "creditFaceValueLocalPerMillion": 1,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "1,600M Credits / month · 1M Credits = CNY 1",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ]
+    },
+    {
+      "id": "stepfun-step-plan-plus-quarterly",
+      "providerId": "stepfun-step-plan",
+      "name": "Plus Quarterly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "quarterlyPriceLocal": 269,
+      "includedMillionCreditsPerMonth": 1600,
+      "creditFaceValueLocalPerMillion": 1,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "1,600M Credits / month · 1M Credits = CNY 1",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "quarterlyEquivalentMonthlyLocal": 89.666667
+    },
+    {
+      "id": "stepfun-step-plan-plus-annual",
+      "providerId": "stepfun-step-plan",
+      "name": "Plus Annual",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "annualPriceLocal": 936,
+      "includedMillionCreditsPerMonth": 1600,
+      "creditFaceValueLocalPerMillion": 1,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "1,600M Credits / month · 1M Credits = CNY 1",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "annualEquivalentMonthlyLocal": 78.0
+    },
+    {
+      "id": "stepfun-step-plan-pro-monthly",
+      "providerId": "stepfun-step-plan",
+      "name": "Pro Monthly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceLocal": 199,
+      "includedMillionCreditsPerMonth": 8000,
+      "creditFaceValueLocalPerMillion": 1,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "8,000M Credits / month · 1M Credits = CNY 1",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ]
+    },
+    {
+      "id": "stepfun-step-plan-pro-quarterly",
+      "providerId": "stepfun-step-plan",
+      "name": "Pro Quarterly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "quarterlyPriceLocal": 539,
+      "includedMillionCreditsPerMonth": 8000,
+      "creditFaceValueLocalPerMillion": 1,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "8,000M Credits / month · 1M Credits = CNY 1",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "quarterlyEquivalentMonthlyLocal": 179.666667
+    },
+    {
+      "id": "stepfun-step-plan-pro-annual",
+      "providerId": "stepfun-step-plan",
+      "name": "Pro Annual",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "annualPriceLocal": 1860,
+      "includedMillionCreditsPerMonth": 8000,
+      "creditFaceValueLocalPerMillion": 1,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "8,000M Credits / month · 1M Credits = CNY 1",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "annualEquivalentMonthlyLocal": 155.0
+    },
+    {
+      "id": "stepfun-step-plan-max-monthly",
+      "providerId": "stepfun-step-plan",
+      "name": "Max Monthly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceLocal": 699,
+      "includedMillionCreditsPerMonth": 40000,
+      "creditFaceValueLocalPerMillion": 1,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "40,000M Credits / month · 1M Credits = CNY 1",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ]
+    },
+    {
+      "id": "stepfun-step-plan-max-quarterly",
+      "providerId": "stepfun-step-plan",
+      "name": "Max Quarterly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "quarterlyPriceLocal": 1889,
+      "includedMillionCreditsPerMonth": 40000,
+      "creditFaceValueLocalPerMillion": 1,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "40,000M Credits / month · 1M Credits = CNY 1",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "quarterlyEquivalentMonthlyLocal": 629.666667
+    },
+    {
+      "id": "stepfun-step-plan-max-annual",
+      "providerId": "stepfun-step-plan",
+      "name": "Max Annual",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "annualPriceLocal": 6666,
+      "includedMillionCreditsPerMonth": 40000,
+      "creditFaceValueLocalPerMillion": 1,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "40,000M Credits / month · 1M Credits = CNY 1",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "annualEquivalentMonthlyLocal": 555.5
+    },
+    {
+      "id": "bigmodel-coding-lite-monthly",
+      "providerId": "bigmodel-coding-plan",
+      "name": "Lite Monthly",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "CNY",
+      "includedPointsPerFiveHours": 2000,
+      "weeklyPoints": 10000,
+      "monthlyPointsEquivalent": 43333.333333,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "2,000 points / 5h · 10,000 / week",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "monthlyPriceLocal": 118
+    },
+    {
+      "id": "bigmodel-coding-lite-quarterly",
+      "providerId": "bigmodel-coding-plan",
+      "name": "Lite Quarterly",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "CNY",
+      "includedPointsPerFiveHours": 2000,
+      "weeklyPoints": 10000,
+      "monthlyPointsEquivalent": 43333.333333,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "2,000 points / 5h · 10,000 / week",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "quarterlyEquivalentMonthlyLocal": 94.4,
+      "quarterlyPriceLocal": 283.2
+    },
+    {
+      "id": "bigmodel-coding-lite-annual",
+      "providerId": "bigmodel-coding-plan",
+      "name": "Lite Annual",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "CNY",
+      "includedPointsPerFiveHours": 2000,
+      "weeklyPoints": 10000,
+      "monthlyPointsEquivalent": 43333.333333,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "2,000 points / 5h · 10,000 / week",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "annualEquivalentMonthlyLocal": 82.6,
+      "annualPriceLocal": 991.2
+    },
+    {
+      "id": "bigmodel-coding-pro-monthly",
+      "providerId": "bigmodel-coding-plan",
+      "name": "Pro Monthly",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "CNY",
+      "includedPointsPerFiveHours": 12000,
+      "weeklyPoints": 60000,
+      "monthlyPointsEquivalent": 260000.0,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "12,000 points / 5h · 60,000 / week",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "monthlyPriceLocal": 538
+    },
+    {
+      "id": "bigmodel-coding-pro-quarterly",
+      "providerId": "bigmodel-coding-plan",
+      "name": "Pro Quarterly",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "CNY",
+      "includedPointsPerFiveHours": 12000,
+      "weeklyPoints": 60000,
+      "monthlyPointsEquivalent": 260000.0,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "12,000 points / 5h · 60,000 / week",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "quarterlyEquivalentMonthlyLocal": 430.4,
+      "quarterlyPriceLocal": 1291.2
+    },
+    {
+      "id": "bigmodel-coding-pro-annual",
+      "providerId": "bigmodel-coding-plan",
+      "name": "Pro Annual",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "CNY",
+      "includedPointsPerFiveHours": 12000,
+      "weeklyPoints": 60000,
+      "monthlyPointsEquivalent": 260000.0,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "12,000 points / 5h · 60,000 / week",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "annualEquivalentMonthlyLocal": 376.6,
+      "annualPriceLocal": 4519.2
+    },
+    {
+      "id": "bigmodel-coding-max-monthly",
+      "providerId": "bigmodel-coding-plan",
+      "name": "Max Monthly",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "CNY",
+      "includedPointsPerFiveHours": 28000,
+      "weeklyPoints": 140000,
+      "monthlyPointsEquivalent": 606666.666667,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "28,000 points / 5h · 140,000 / week",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "monthlyPriceLocal": 1078
+    },
+    {
+      "id": "bigmodel-coding-max-quarterly",
+      "providerId": "bigmodel-coding-plan",
+      "name": "Max Quarterly",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "CNY",
+      "includedPointsPerFiveHours": 28000,
+      "weeklyPoints": 140000,
+      "monthlyPointsEquivalent": 606666.666667,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "28,000 points / 5h · 140,000 / week",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "quarterlyEquivalentMonthlyLocal": 862.4,
+      "quarterlyPriceLocal": 2587.2
+    },
+    {
+      "id": "bigmodel-coding-max-annual",
+      "providerId": "bigmodel-coding-plan",
+      "name": "Max Annual",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "CNY",
+      "includedPointsPerFiveHours": 28000,
+      "weeklyPoints": 140000,
+      "monthlyPointsEquivalent": 606666.666667,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "28,000 points / 5h · 140,000 / week",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "annualEquivalentMonthlyLocal": 754.6,
+      "annualPriceLocal": 9055.2
+    },
+    {
+      "id": "volcengine-agent-small",
+      "providerId": "volcengine-agent-plan",
+      "name": "Small",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "CNY",
+      "monthlyPriceLocal": 40,
+      "includedAfp": 20000,
+      "comparisonClass": "non-comparable",
+      "quotaLabel": "20,000 AFP",
+      "sourceIds": [
+        "volcengine-agent-plan-official-2026-08-11"
+      ]
+    },
+    {
+      "id": "volcengine-agent-medium",
+      "providerId": "volcengine-agent-plan",
+      "name": "Medium",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "CNY",
+      "monthlyPriceLocal": 200,
+      "includedAfp": 100000,
+      "comparisonClass": "non-comparable",
+      "quotaLabel": "100,000 AFP",
+      "sourceIds": [
+        "volcengine-agent-plan-official-2026-08-11"
+      ]
+    },
+    {
+      "id": "volcengine-agent-large",
+      "providerId": "volcengine-agent-plan",
+      "name": "Large",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "CNY",
+      "monthlyPriceLocal": 500,
+      "includedAfp": 250000,
+      "comparisonClass": "non-comparable",
+      "quotaLabel": "250,000 AFP",
+      "sourceIds": [
+        "volcengine-agent-plan-official-2026-08-11"
+      ]
+    },
+    {
+      "id": "volcengine-agent-max",
+      "providerId": "volcengine-agent-plan",
+      "name": "Max",
+      "billingType": "subscription",
+      "displayType": "coding",
+      "currency": "CNY",
+      "monthlyPriceLocal": 1000,
+      "includedAfp": 500000,
+      "comparisonClass": "non-comparable",
+      "quotaLabel": "500,000 AFP",
+      "sourceIds": [
+        "volcengine-agent-plan-official-2026-08-11"
+      ]
+    }
+  ],
+  "offers": [
+    {
+      "id": "stepfun-step-plan-mini-monthly-step-3-7-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-mini-monthly",
+      "modelSlugs": [
+        "step-3-7-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.165375,
+      "cacheReadPerMillionTokensLocal": 0.033075,
+      "outputPerMillionTokensLocal": 0.99225,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-mini-monthly-step-3-5-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-mini-monthly",
+      "modelSlugs": [
+        "step-3-5-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.08575,
+      "cacheReadPerMillionTokensLocal": 0.01715,
+      "outputPerMillionTokensLocal": 0.25725,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-mini-quarterly-step-3-7-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-mini-quarterly",
+      "modelSlugs": [
+        "step-3-7-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.145125,
+      "cacheReadPerMillionTokensLocal": 0.029025,
+      "outputPerMillionTokensLocal": 0.87075,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-mini-quarterly-step-3-5-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-mini-quarterly",
+      "modelSlugs": [
+        "step-3-5-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.07525,
+      "cacheReadPerMillionTokensLocal": 0.01505,
+      "outputPerMillionTokensLocal": 0.22575,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-mini-annual-step-3-7-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-mini-annual",
+      "modelSlugs": [
+        "step-3-7-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.12825,
+      "cacheReadPerMillionTokensLocal": 0.02565,
+      "outputPerMillionTokensLocal": 0.7695,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-mini-annual-step-3-5-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-mini-annual",
+      "modelSlugs": [
+        "step-3-5-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.0665,
+      "cacheReadPerMillionTokensLocal": 0.0133,
+      "outputPerMillionTokensLocal": 0.1995,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-plus-monthly-step-3-7-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-plus-monthly",
+      "modelSlugs": [
+        "step-3-7-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.08353125,
+      "cacheReadPerMillionTokensLocal": 0.01670625,
+      "outputPerMillionTokensLocal": 0.5011875,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-plus-monthly-step-3-5-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-plus-monthly",
+      "modelSlugs": [
+        "step-3-5-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.0433125,
+      "cacheReadPerMillionTokensLocal": 0.0086625,
+      "outputPerMillionTokensLocal": 0.1299375,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-plus-quarterly-step-3-7-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-plus-quarterly",
+      "modelSlugs": [
+        "step-3-7-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.07565625,
+      "cacheReadPerMillionTokensLocal": 0.01513125,
+      "outputPerMillionTokensLocal": 0.4539375,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-plus-quarterly-step-3-5-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-plus-quarterly",
+      "modelSlugs": [
+        "step-3-5-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.039229167,
+      "cacheReadPerMillionTokensLocal": 0.007845833,
+      "outputPerMillionTokensLocal": 0.1176875,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-plus-annual-step-3-7-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-plus-annual",
+      "modelSlugs": [
+        "step-3-7-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.0658125,
+      "cacheReadPerMillionTokensLocal": 0.0131625,
+      "outputPerMillionTokensLocal": 0.394875,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-plus-annual-step-3-5-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-plus-annual",
+      "modelSlugs": [
+        "step-3-5-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.034125,
+      "cacheReadPerMillionTokensLocal": 0.006825,
+      "outputPerMillionTokensLocal": 0.102375,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-pro-monthly-step-3-7-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-pro-monthly",
+      "modelSlugs": [
+        "step-3-7-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.03358125,
+      "cacheReadPerMillionTokensLocal": 0.00671625,
+      "outputPerMillionTokensLocal": 0.2014875,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-pro-monthly-step-3-5-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-pro-monthly",
+      "modelSlugs": [
+        "step-3-5-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.0174125,
+      "cacheReadPerMillionTokensLocal": 0.0034825,
+      "outputPerMillionTokensLocal": 0.0522375,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-pro-quarterly-step-3-7-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-pro-quarterly",
+      "modelSlugs": [
+        "step-3-7-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.03031875,
+      "cacheReadPerMillionTokensLocal": 0.00606375,
+      "outputPerMillionTokensLocal": 0.1819125,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-pro-quarterly-step-3-5-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-pro-quarterly",
+      "modelSlugs": [
+        "step-3-5-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.015720833,
+      "cacheReadPerMillionTokensLocal": 0.003144167,
+      "outputPerMillionTokensLocal": 0.0471625,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-pro-annual-step-3-7-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-pro-annual",
+      "modelSlugs": [
+        "step-3-7-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.02615625,
+      "cacheReadPerMillionTokensLocal": 0.00523125,
+      "outputPerMillionTokensLocal": 0.1569375,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-pro-annual-step-3-5-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-pro-annual",
+      "modelSlugs": [
+        "step-3-5-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.0135625,
+      "cacheReadPerMillionTokensLocal": 0.0027125,
+      "outputPerMillionTokensLocal": 0.0406875,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-max-monthly-step-3-7-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-max-monthly",
+      "modelSlugs": [
+        "step-3-7-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.02359125,
+      "cacheReadPerMillionTokensLocal": 0.00471825,
+      "outputPerMillionTokensLocal": 0.1415475,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-max-monthly-step-3-5-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-max-monthly",
+      "modelSlugs": [
+        "step-3-5-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.0122325,
+      "cacheReadPerMillionTokensLocal": 0.0024465,
+      "outputPerMillionTokensLocal": 0.0366975,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-max-quarterly-step-3-7-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-max-quarterly",
+      "modelSlugs": [
+        "step-3-7-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.02125125,
+      "cacheReadPerMillionTokensLocal": 0.00425025,
+      "outputPerMillionTokensLocal": 0.1275075,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-max-quarterly-step-3-5-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-max-quarterly",
+      "modelSlugs": [
+        "step-3-5-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.011019167,
+      "cacheReadPerMillionTokensLocal": 0.002203833,
+      "outputPerMillionTokensLocal": 0.0330575,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-max-annual-step-3-7-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-max-annual",
+      "modelSlugs": [
+        "step-3-7-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.018748125,
+      "cacheReadPerMillionTokensLocal": 0.003749625,
+      "outputPerMillionTokensLocal": 0.11248875,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "stepfun-step-plan-max-annual-step-3-5-flash",
+      "providerId": "stepfun-step-plan",
+      "planId": "stepfun-step-plan-max-annual",
+      "modelSlugs": [
+        "step-3-5-flash"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.00972125,
+      "cacheReadPerMillionTokensLocal": 0.00194425,
+      "outputPerMillionTokensLocal": 0.02916375,
+      "calculation": "PAYG rate × (monthly-equivalent plan price ÷ monthly Credit face value)",
+      "sourceIds": [
+        "stepfun-step-plan-official-2026-08-11",
+        "stepfun-payg-official-2026-08-11"
+      ],
+      "notes": "Normalized at full monthly Credit utilization; unused Credits and rolling-window constraints can raise the realized price."
+    },
+    {
+      "id": "bigmodel-coding-lite-monthly-glm-5-2",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-lite-monthly",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 1.878923077,
+      "cacheReadPerMillionTokensLocal": 0.462923077,
+      "outputPerMillionTokensLocal": 6.535384615,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    },
+    {
+      "id": "bigmodel-coding-lite-monthly-glm-4-7",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-lite-monthly",
+      "modelSlugs": [
+        "glm-4-7"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 1.252615385,
+      "cacheReadPerMillionTokensLocal": 0.326769231,
+      "outputPerMillionTokensLocal": 4.356923077,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    },
+    {
+      "id": "bigmodel-coding-lite-quarterly-glm-5-2",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-lite-quarterly",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 1.503138462,
+      "cacheReadPerMillionTokensLocal": 0.370338462,
+      "outputPerMillionTokensLocal": 5.228307692,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    },
+    {
+      "id": "bigmodel-coding-lite-quarterly-glm-4-7",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-lite-quarterly",
+      "modelSlugs": [
+        "glm-4-7"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 1.002092308,
+      "cacheReadPerMillionTokensLocal": 0.261415385,
+      "outputPerMillionTokensLocal": 3.485538462,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    },
+    {
+      "id": "bigmodel-coding-lite-annual-glm-5-2",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-lite-annual",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 1.315246154,
+      "cacheReadPerMillionTokensLocal": 0.324046154,
+      "outputPerMillionTokensLocal": 4.574769231,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    },
+    {
+      "id": "bigmodel-coding-lite-annual-glm-4-7",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-lite-annual",
+      "modelSlugs": [
+        "glm-4-7"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.876830769,
+      "cacheReadPerMillionTokensLocal": 0.228738462,
+      "outputPerMillionTokensLocal": 3.049846154,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    },
+    {
+      "id": "bigmodel-coding-pro-monthly-glm-5-2",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-pro-monthly",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 1.427769231,
+      "cacheReadPerMillionTokensLocal": 0.351769231,
+      "outputPerMillionTokensLocal": 4.966153846,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    },
+    {
+      "id": "bigmodel-coding-pro-monthly-glm-4-7",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-pro-monthly",
+      "modelSlugs": [
+        "glm-4-7"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.951846154,
+      "cacheReadPerMillionTokensLocal": 0.248307692,
+      "outputPerMillionTokensLocal": 3.310769231,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    },
+    {
+      "id": "bigmodel-coding-pro-quarterly-glm-5-2",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-pro-quarterly",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 1.142215385,
+      "cacheReadPerMillionTokensLocal": 0.281415385,
+      "outputPerMillionTokensLocal": 3.972923077,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    },
+    {
+      "id": "bigmodel-coding-pro-quarterly-glm-4-7",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-pro-quarterly",
+      "modelSlugs": [
+        "glm-4-7"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.761476923,
+      "cacheReadPerMillionTokensLocal": 0.198646154,
+      "outputPerMillionTokensLocal": 2.648615385,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    },
+    {
+      "id": "bigmodel-coding-pro-annual-glm-5-2",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-pro-annual",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.999438462,
+      "cacheReadPerMillionTokensLocal": 0.246238462,
+      "outputPerMillionTokensLocal": 3.476307692,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    },
+    {
+      "id": "bigmodel-coding-pro-annual-glm-4-7",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-pro-annual",
+      "modelSlugs": [
+        "glm-4-7"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.666292308,
+      "cacheReadPerMillionTokensLocal": 0.173815385,
+      "outputPerMillionTokensLocal": 2.317538462,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    },
+    {
+      "id": "bigmodel-coding-max-monthly-glm-5-2",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-max-monthly",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 1.226076923,
+      "cacheReadPerMillionTokensLocal": 0.302076923,
+      "outputPerMillionTokensLocal": 4.264615385,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    },
+    {
+      "id": "bigmodel-coding-max-monthly-glm-4-7",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-max-monthly",
+      "modelSlugs": [
+        "glm-4-7"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.817384615,
+      "cacheReadPerMillionTokensLocal": 0.213230769,
+      "outputPerMillionTokensLocal": 2.843076923,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    },
+    {
+      "id": "bigmodel-coding-max-quarterly-glm-5-2",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-max-quarterly",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.980861538,
+      "cacheReadPerMillionTokensLocal": 0.241661538,
+      "outputPerMillionTokensLocal": 3.411692308,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    },
+    {
+      "id": "bigmodel-coding-max-quarterly-glm-4-7",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-max-quarterly",
+      "modelSlugs": [
+        "glm-4-7"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.653907692,
+      "cacheReadPerMillionTokensLocal": 0.170584615,
+      "outputPerMillionTokensLocal": 2.274461538,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    },
+    {
+      "id": "bigmodel-coding-max-annual-glm-5-2",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-max-annual",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.858253846,
+      "cacheReadPerMillionTokensLocal": 0.211453846,
+      "outputPerMillionTokensLocal": 2.985230769,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    },
+    {
+      "id": "bigmodel-coding-max-annual-glm-4-7",
+      "providerId": "bigmodel-coding-plan",
+      "planId": "bigmodel-coding-max-annual",
+      "modelSlugs": [
+        "glm-4-7"
+      ],
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": null,
+      "cacheReadPerMillionTokensUsd": null,
+      "outputPerMillionTokensUsd": null,
+      "inputPerMillionTokensLocal": 0.572169231,
+      "cacheReadPerMillionTokensLocal": 0.149261538,
+      "outputPerMillionTokensLocal": 1.990153846,
+      "offPeakCreditMultiplier": 0.5,
+      "calculation": "monthly plan price ÷ (weekly points × 52/12) × 100 × model coefficient",
+      "sourceIds": [
+        "bigmodel-coding-plan-v3-official-2026-08-11"
+      ],
+      "notes": "Normalized at full weekly-point utilization. Published off-peak point consumption is 50%; the base comparison does not assume off-peak-only use."
+    }
+  ],
+  "sources": [
+    {
+      "id": "stepfun-step-plan-official-2026-08-11",
+      "title": "Step Plan pricing and Credit rules",
+      "publisher": "StepFun",
+      "url": "https://platform.stepfun.com/docs/zh/step-plan/overview.md",
+      "kind": "official-pricing",
+      "asOf": "2026-08-11",
+      "accessedAt": "2026-08-11",
+      "notes": "Official monthly, quarterly, and annual prices, included Credits, and the rule that 1M Credits equals CNY 1 of PAYG value."
+    },
+    {
+      "id": "stepfun-payg-official-2026-08-11",
+      "title": "StepFun model PAYG pricing",
+      "publisher": "StepFun",
+      "url": "https://platform.stepfun.com/docs/zh/guides/pricing/details.md",
+      "kind": "official-pricing",
+      "asOf": "2026-08-11",
+      "accessedAt": "2026-08-11",
+      "notes": "Official CNY rates per million tokens used with the Step Plan discount factor."
+    },
+    {
+      "id": "bigmodel-coding-plan-v3-official-2026-08-11",
+      "title": "BigModel Coding Plan V3 pricing, limits, and point coefficients",
+      "publisher": "Zhipu AI BigModel",
+      "url": "https://docs.bigmodel.cn/cn/coding-plan/overview.md",
+      "kind": "official-pricing",
+      "asOf": "2026-08-11",
+      "accessedAt": "2026-08-11",
+      "notes": "Official plan prices, rolling point limits, and per-model input/cache/output point coefficients."
+    },
+    {
+      "id": "volcengine-agent-plan-official-2026-08-11",
+      "title": "Volcengine Ark Agent Plan",
+      "publisher": "Volcengine",
+      "url": "https://www.volcengine.com/docs/82379/2366394",
+      "kind": "official-pricing",
+      "asOf": "2026-08-11",
+      "accessedAt": "2026-08-11",
+      "notes": "Official AFP package prices. The full per-model AFP coefficient table was not sufficiently verified, so these plans have no token-price offers."
+    }
+  ]
+}

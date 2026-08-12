@@ -1,0 +1,1032 @@
+{
+  "schemaVersion": 1,
+  "mergeTarget": "data/pricing/provider_pricing.json",
+  "checkedAt": "2026-08-12",
+  "asOf": "2026-08-12",
+  "researchScope": "Baidu Qianfan Token Plan Personal current first-purchase promotion and exact official supported-model list",
+  "comparisonPolicy": {
+    "tokenPlanRates": "current advertised first-purchase price divided by the included monthly Token quota",
+    "listRates": "repeatable list/renewal price is retained separately on every plan and offer",
+    "tokenDeduction": "input, output, and cache-hit tokens deduct at the same 1:1 rate with no model multiplier",
+    "promotionScope": "official page labels the cards as limited-time 50% off and says first purchase; no promotion end date is published",
+    "unsupportedOrUnmappedModels": "no offer emitted; DeepSeek-V4-Flash-0731 and ERNIE 5.1 remain provider metadata because the benchmark catalogue has no exact slug"
+  },
+  "replaceProviders": [
+    "baidu-qianfan-token-plan"
+  ],
+  "providers": [
+    {
+      "id": "baidu-qianfan-token-plan",
+      "name": "百度千帆 Token Plan 个人版",
+      "category": "token-plan",
+      "url": "https://cloud.baidu.com/doc/qianfan/s/Dmrabu8b6",
+      "pricingUrl": "https://cloud.baidu.com/product/codingplan.html",
+      "region": "CN",
+      "endpoint": "https://qianfan.baidubce.com/v2/tokenplan/personal",
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "unmappedProviderModels": [
+        {
+          "providerModelId": "deepseek-v4-flash-0731",
+          "reason": "No exact benchmark catalogue slug."
+        },
+        {
+          "providerModelId": "ernie-5.1",
+          "reason": "No exact benchmark catalogue slug; official Token Plan page marks 2026-08-20 removal."
+        }
+      ],
+      "notes": "Four monthly tiers share one Token pool across supported models. Only exact benchmark mappings with positive numeric prices emit offers."
+    }
+  ],
+  "plans": [
+    {
+      "id": "baidu-qianfan-token-plan-mini",
+      "providerId": "baidu-qianfan-token-plan",
+      "name": "Mini · first-purchase promo",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 4.9,
+      "listMonthlyPriceLocal": 9.9,
+      "includedMillionTokensPerSubscriptionMonth": 10,
+      "effectiveUniformPerMillionTokensLocal": 0.49,
+      "listEffectiveUniformPerMillionTokensLocal": 0.99,
+      "comparisonClass": "effective-token-comparable",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "promotionEndDateKnown": false,
+      "quotaLabel": "10M tokens / month · input, output, and cache-hit tokens deduct 1:1",
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12"
+      ],
+      "notes": "Comparable rate uses the current official first-purchase card price. List/renewal price is retained separately; full quota utilization is assumed."
+    },
+    {
+      "id": "baidu-qianfan-token-plan-lite",
+      "providerId": "baidu-qianfan-token-plan",
+      "name": "Lite · first-purchase promo",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 19.9,
+      "listMonthlyPriceLocal": 40,
+      "includedMillionTokensPerSubscriptionMonth": 42,
+      "effectiveUniformPerMillionTokensLocal": 0.473809524,
+      "listEffectiveUniformPerMillionTokensLocal": 0.952380952,
+      "comparisonClass": "effective-token-comparable",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "promotionEndDateKnown": false,
+      "quotaLabel": "42M tokens / month · input, output, and cache-hit tokens deduct 1:1",
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12"
+      ],
+      "notes": "Comparable rate uses the current official first-purchase card price. List/renewal price is retained separately; full quota utilization is assumed."
+    },
+    {
+      "id": "baidu-qianfan-token-plan-pro",
+      "providerId": "baidu-qianfan-token-plan",
+      "name": "Pro · first-purchase promo",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 99.9,
+      "listMonthlyPriceLocal": 200,
+      "includedMillionTokensPerSubscriptionMonth": 230,
+      "effectiveUniformPerMillionTokensLocal": 0.434347826,
+      "listEffectiveUniformPerMillionTokensLocal": 0.869565217,
+      "comparisonClass": "effective-token-comparable",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "promotionEndDateKnown": false,
+      "quotaLabel": "230M tokens / month · input, output, and cache-hit tokens deduct 1:1",
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12"
+      ],
+      "notes": "Comparable rate uses the current official first-purchase card price. List/renewal price is retained separately; full quota utilization is assumed."
+    },
+    {
+      "id": "baidu-qianfan-token-plan-max",
+      "providerId": "baidu-qianfan-token-plan",
+      "name": "Max · first-purchase promo",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "monthlyPriceLocal": 299.9,
+      "listMonthlyPriceLocal": 600,
+      "includedMillionTokensPerSubscriptionMonth": 700,
+      "effectiveUniformPerMillionTokensLocal": 0.428428571,
+      "listEffectiveUniformPerMillionTokensLocal": 0.857142857,
+      "comparisonClass": "effective-token-comparable",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "promotionEndDateKnown": false,
+      "quotaLabel": "700M tokens / month · input, output, and cache-hit tokens deduct 1:1",
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12"
+      ],
+      "notes": "Comparable rate uses the current official first-purchase card price. List/renewal price is retained separately; full quota utilization is assumed."
+    }
+  ],
+  "offers": [
+    {
+      "id": "baidu-qianfan-token-plan-mini-deepseek-v4-pro",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-mini",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.49,
+      "cacheReadPerMillionTokensLocal": 0.49,
+      "outputPerMillionTokensLocal": 0.49,
+      "listInputPerMillionTokensLocal": 0.99,
+      "listCacheReadPerMillionTokensLocal": 0.99,
+      "listOutputPerMillionTokensLocal": 0.99,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 4.9 ÷ 10M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-mini-deepseek-v4-pro-non-reasoning",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-mini",
+      "modelSlugs": [
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.49,
+      "cacheReadPerMillionTokensLocal": 0.49,
+      "outputPerMillionTokensLocal": 0.49,
+      "listInputPerMillionTokensLocal": 0.99,
+      "listCacheReadPerMillionTokensLocal": 0.99,
+      "listOutputPerMillionTokensLocal": 0.99,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 4.9 ÷ 10M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-mini-deepseek-v4-flash",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-mini",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.49,
+      "cacheReadPerMillionTokensLocal": 0.49,
+      "outputPerMillionTokensLocal": 0.49,
+      "listInputPerMillionTokensLocal": 0.99,
+      "listCacheReadPerMillionTokensLocal": 0.99,
+      "listOutputPerMillionTokensLocal": 0.99,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 4.9 ÷ 10M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-mini-deepseek-v4-flash-non-reasoning",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-mini",
+      "modelSlugs": [
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.49,
+      "cacheReadPerMillionTokensLocal": 0.49,
+      "outputPerMillionTokensLocal": 0.49,
+      "listInputPerMillionTokensLocal": 0.99,
+      "listCacheReadPerMillionTokensLocal": 0.99,
+      "listOutputPerMillionTokensLocal": 0.99,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 4.9 ÷ 10M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-mini-glm-5-2",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-mini",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.49,
+      "cacheReadPerMillionTokensLocal": 0.49,
+      "outputPerMillionTokensLocal": 0.49,
+      "listInputPerMillionTokensLocal": 0.99,
+      "listCacheReadPerMillionTokensLocal": 0.99,
+      "listOutputPerMillionTokensLocal": 0.99,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 4.9 ÷ 10M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately."
+    },
+    {
+      "id": "baidu-qianfan-token-plan-mini-glm-5-1",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-mini",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.49,
+      "cacheReadPerMillionTokensLocal": 0.49,
+      "outputPerMillionTokensLocal": 0.49,
+      "listInputPerMillionTokensLocal": 0.99,
+      "listCacheReadPerMillionTokensLocal": 0.99,
+      "listOutputPerMillionTokensLocal": 0.99,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 4.9 ÷ 10M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately."
+    },
+    {
+      "id": "baidu-qianfan-token-plan-mini-kimi-k2-6",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-mini",
+      "modelSlugs": [
+        "kimi-k2-6"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.49,
+      "cacheReadPerMillionTokensLocal": 0.49,
+      "outputPerMillionTokensLocal": 0.49,
+      "listInputPerMillionTokensLocal": 0.99,
+      "listCacheReadPerMillionTokensLocal": 0.99,
+      "listOutputPerMillionTokensLocal": 0.99,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 4.9 ÷ 10M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-mini-kimi-k2-6-non-reasoning",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-mini",
+      "modelSlugs": [
+        "kimi-k2-6-non-reasoning"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.49,
+      "cacheReadPerMillionTokensLocal": 0.49,
+      "outputPerMillionTokensLocal": 0.49,
+      "listInputPerMillionTokensLocal": 0.99,
+      "listCacheReadPerMillionTokensLocal": 0.99,
+      "listOutputPerMillionTokensLocal": 0.99,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 4.9 ÷ 10M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-lite-deepseek-v4-pro",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-lite",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.473809524,
+      "cacheReadPerMillionTokensLocal": 0.473809524,
+      "outputPerMillionTokensLocal": 0.473809524,
+      "listInputPerMillionTokensLocal": 0.952380952,
+      "listCacheReadPerMillionTokensLocal": 0.952380952,
+      "listOutputPerMillionTokensLocal": 0.952380952,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 19.9 ÷ 42M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-lite-deepseek-v4-pro-non-reasoning",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-lite",
+      "modelSlugs": [
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.473809524,
+      "cacheReadPerMillionTokensLocal": 0.473809524,
+      "outputPerMillionTokensLocal": 0.473809524,
+      "listInputPerMillionTokensLocal": 0.952380952,
+      "listCacheReadPerMillionTokensLocal": 0.952380952,
+      "listOutputPerMillionTokensLocal": 0.952380952,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 19.9 ÷ 42M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-lite-deepseek-v4-flash",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-lite",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.473809524,
+      "cacheReadPerMillionTokensLocal": 0.473809524,
+      "outputPerMillionTokensLocal": 0.473809524,
+      "listInputPerMillionTokensLocal": 0.952380952,
+      "listCacheReadPerMillionTokensLocal": 0.952380952,
+      "listOutputPerMillionTokensLocal": 0.952380952,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 19.9 ÷ 42M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-lite-deepseek-v4-flash-non-reasoning",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-lite",
+      "modelSlugs": [
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.473809524,
+      "cacheReadPerMillionTokensLocal": 0.473809524,
+      "outputPerMillionTokensLocal": 0.473809524,
+      "listInputPerMillionTokensLocal": 0.952380952,
+      "listCacheReadPerMillionTokensLocal": 0.952380952,
+      "listOutputPerMillionTokensLocal": 0.952380952,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 19.9 ÷ 42M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-lite-glm-5-2",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-lite",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.473809524,
+      "cacheReadPerMillionTokensLocal": 0.473809524,
+      "outputPerMillionTokensLocal": 0.473809524,
+      "listInputPerMillionTokensLocal": 0.952380952,
+      "listCacheReadPerMillionTokensLocal": 0.952380952,
+      "listOutputPerMillionTokensLocal": 0.952380952,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 19.9 ÷ 42M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately."
+    },
+    {
+      "id": "baidu-qianfan-token-plan-lite-glm-5-1",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-lite",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.473809524,
+      "cacheReadPerMillionTokensLocal": 0.473809524,
+      "outputPerMillionTokensLocal": 0.473809524,
+      "listInputPerMillionTokensLocal": 0.952380952,
+      "listCacheReadPerMillionTokensLocal": 0.952380952,
+      "listOutputPerMillionTokensLocal": 0.952380952,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 19.9 ÷ 42M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately."
+    },
+    {
+      "id": "baidu-qianfan-token-plan-lite-kimi-k2-6",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-lite",
+      "modelSlugs": [
+        "kimi-k2-6"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.473809524,
+      "cacheReadPerMillionTokensLocal": 0.473809524,
+      "outputPerMillionTokensLocal": 0.473809524,
+      "listInputPerMillionTokensLocal": 0.952380952,
+      "listCacheReadPerMillionTokensLocal": 0.952380952,
+      "listOutputPerMillionTokensLocal": 0.952380952,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 19.9 ÷ 42M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-lite-kimi-k2-6-non-reasoning",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-lite",
+      "modelSlugs": [
+        "kimi-k2-6-non-reasoning"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.473809524,
+      "cacheReadPerMillionTokensLocal": 0.473809524,
+      "outputPerMillionTokensLocal": 0.473809524,
+      "listInputPerMillionTokensLocal": 0.952380952,
+      "listCacheReadPerMillionTokensLocal": 0.952380952,
+      "listOutputPerMillionTokensLocal": 0.952380952,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 19.9 ÷ 42M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-pro-deepseek-v4-pro",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-pro",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.434347826,
+      "cacheReadPerMillionTokensLocal": 0.434347826,
+      "outputPerMillionTokensLocal": 0.434347826,
+      "listInputPerMillionTokensLocal": 0.869565217,
+      "listCacheReadPerMillionTokensLocal": 0.869565217,
+      "listOutputPerMillionTokensLocal": 0.869565217,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 99.9 ÷ 230M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-pro-deepseek-v4-pro-non-reasoning",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-pro",
+      "modelSlugs": [
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.434347826,
+      "cacheReadPerMillionTokensLocal": 0.434347826,
+      "outputPerMillionTokensLocal": 0.434347826,
+      "listInputPerMillionTokensLocal": 0.869565217,
+      "listCacheReadPerMillionTokensLocal": 0.869565217,
+      "listOutputPerMillionTokensLocal": 0.869565217,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 99.9 ÷ 230M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-pro-deepseek-v4-flash",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-pro",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.434347826,
+      "cacheReadPerMillionTokensLocal": 0.434347826,
+      "outputPerMillionTokensLocal": 0.434347826,
+      "listInputPerMillionTokensLocal": 0.869565217,
+      "listCacheReadPerMillionTokensLocal": 0.869565217,
+      "listOutputPerMillionTokensLocal": 0.869565217,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 99.9 ÷ 230M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-pro-deepseek-v4-flash-non-reasoning",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-pro",
+      "modelSlugs": [
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.434347826,
+      "cacheReadPerMillionTokensLocal": 0.434347826,
+      "outputPerMillionTokensLocal": 0.434347826,
+      "listInputPerMillionTokensLocal": 0.869565217,
+      "listCacheReadPerMillionTokensLocal": 0.869565217,
+      "listOutputPerMillionTokensLocal": 0.869565217,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 99.9 ÷ 230M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-pro-glm-5-2",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-pro",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.434347826,
+      "cacheReadPerMillionTokensLocal": 0.434347826,
+      "outputPerMillionTokensLocal": 0.434347826,
+      "listInputPerMillionTokensLocal": 0.869565217,
+      "listCacheReadPerMillionTokensLocal": 0.869565217,
+      "listOutputPerMillionTokensLocal": 0.869565217,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 99.9 ÷ 230M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately."
+    },
+    {
+      "id": "baidu-qianfan-token-plan-pro-glm-5-1",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-pro",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.434347826,
+      "cacheReadPerMillionTokensLocal": 0.434347826,
+      "outputPerMillionTokensLocal": 0.434347826,
+      "listInputPerMillionTokensLocal": 0.869565217,
+      "listCacheReadPerMillionTokensLocal": 0.869565217,
+      "listOutputPerMillionTokensLocal": 0.869565217,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 99.9 ÷ 230M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately."
+    },
+    {
+      "id": "baidu-qianfan-token-plan-pro-kimi-k2-6",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-pro",
+      "modelSlugs": [
+        "kimi-k2-6"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.434347826,
+      "cacheReadPerMillionTokensLocal": 0.434347826,
+      "outputPerMillionTokensLocal": 0.434347826,
+      "listInputPerMillionTokensLocal": 0.869565217,
+      "listCacheReadPerMillionTokensLocal": 0.869565217,
+      "listOutputPerMillionTokensLocal": 0.869565217,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 99.9 ÷ 230M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-pro-kimi-k2-6-non-reasoning",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-pro",
+      "modelSlugs": [
+        "kimi-k2-6-non-reasoning"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.434347826,
+      "cacheReadPerMillionTokensLocal": 0.434347826,
+      "outputPerMillionTokensLocal": 0.434347826,
+      "listInputPerMillionTokensLocal": 0.869565217,
+      "listCacheReadPerMillionTokensLocal": 0.869565217,
+      "listOutputPerMillionTokensLocal": 0.869565217,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 99.9 ÷ 230M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-max-deepseek-v4-pro",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-max",
+      "modelSlugs": [
+        "deepseek-v4-pro"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.428428571,
+      "cacheReadPerMillionTokensLocal": 0.428428571,
+      "outputPerMillionTokensLocal": 0.428428571,
+      "listInputPerMillionTokensLocal": 0.857142857,
+      "listCacheReadPerMillionTokensLocal": 0.857142857,
+      "listOutputPerMillionTokensLocal": 0.857142857,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 299.9 ÷ 700M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-max-deepseek-v4-pro-non-reasoning",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-max",
+      "modelSlugs": [
+        "deepseek-v4-pro-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.428428571,
+      "cacheReadPerMillionTokensLocal": 0.428428571,
+      "outputPerMillionTokensLocal": 0.428428571,
+      "listInputPerMillionTokensLocal": 0.857142857,
+      "listCacheReadPerMillionTokensLocal": 0.857142857,
+      "listOutputPerMillionTokensLocal": 0.857142857,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 299.9 ÷ 700M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-max-deepseek-v4-flash",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-max",
+      "modelSlugs": [
+        "deepseek-v4-flash"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.428428571,
+      "cacheReadPerMillionTokensLocal": 0.428428571,
+      "outputPerMillionTokensLocal": 0.428428571,
+      "listInputPerMillionTokensLocal": 0.857142857,
+      "listCacheReadPerMillionTokensLocal": 0.857142857,
+      "listOutputPerMillionTokensLocal": 0.857142857,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 299.9 ÷ 700M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-max-deepseek-v4-flash-non-reasoning",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-max",
+      "modelSlugs": [
+        "deepseek-v4-flash-non-reasoning"
+      ],
+      "providerModelId": "deepseek-v4-flash",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.428428571,
+      "cacheReadPerMillionTokensLocal": 0.428428571,
+      "outputPerMillionTokensLocal": 0.428428571,
+      "listInputPerMillionTokensLocal": 0.857142857,
+      "listCacheReadPerMillionTokensLocal": 0.857142857,
+      "listOutputPerMillionTokensLocal": 0.857142857,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 299.9 ÷ 700M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-max-glm-5-2",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-max",
+      "modelSlugs": [
+        "glm-5-2"
+      ],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.428428571,
+      "cacheReadPerMillionTokensLocal": 0.428428571,
+      "outputPerMillionTokensLocal": 0.428428571,
+      "listInputPerMillionTokensLocal": 0.857142857,
+      "listCacheReadPerMillionTokensLocal": 0.857142857,
+      "listOutputPerMillionTokensLocal": 0.857142857,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 299.9 ÷ 700M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately."
+    },
+    {
+      "id": "baidu-qianfan-token-plan-max-glm-5-1",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-max",
+      "modelSlugs": [
+        "glm-5-1"
+      ],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.428428571,
+      "cacheReadPerMillionTokensLocal": 0.428428571,
+      "outputPerMillionTokensLocal": 0.428428571,
+      "listInputPerMillionTokensLocal": 0.857142857,
+      "listCacheReadPerMillionTokensLocal": 0.857142857,
+      "listOutputPerMillionTokensLocal": 0.857142857,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 299.9 ÷ 700M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately."
+    },
+    {
+      "id": "baidu-qianfan-token-plan-max-kimi-k2-6",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-max",
+      "modelSlugs": [
+        "kimi-k2-6"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.428428571,
+      "cacheReadPerMillionTokensLocal": 0.428428571,
+      "outputPerMillionTokensLocal": 0.428428571,
+      "listInputPerMillionTokensLocal": 0.857142857,
+      "listCacheReadPerMillionTokensLocal": 0.857142857,
+      "listOutputPerMillionTokensLocal": 0.857142857,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 299.9 ÷ 700M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "baidu-qianfan-token-plan-max-kimi-k2-6-non-reasoning",
+      "providerId": "baidu-qianfan-token-plan",
+      "planId": "baidu-qianfan-token-plan-max",
+      "modelSlugs": [
+        "kimi-k2-6-non-reasoning"
+      ],
+      "providerModelId": "kimi-k2.6",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.428428571,
+      "cacheReadPerMillionTokensLocal": 0.428428571,
+      "outputPerMillionTokensLocal": 0.428428571,
+      "listInputPerMillionTokensLocal": 0.857142857,
+      "listCacheReadPerMillionTokensLocal": 0.857142857,
+      "listOutputPerMillionTokensLocal": 0.857142857,
+      "sourceIds": [
+        "baidu-qianfan-token-plan-product-official-2026-08-12",
+        "baidu-qianfan-token-plan-doc-official-2026-08-12",
+        "baidu-qianfan-model-list-official-2026-08-12"
+      ],
+      "calculation": "CNY 299.9 ÷ 700M included tokens",
+      "advertisedDiscountMultiplier": 0.5,
+      "firstPurchaseDiscountApplies": true,
+      "notes": "Normalized at full monthly quota utilization. Current advertised price is limited to first purchase; list/renewal rate is stored separately.",
+      "reasoningMode": "disabled"
+    }
+  ],
+  "sources": [
+    {
+      "id": "baidu-qianfan-token-plan-product-official-2026-08-12",
+      "title": "百度千帆 Token Plan 个人版产品与限时价格",
+      "publisher": "百度智能云",
+      "url": "https://cloud.baidu.com/product/codingplan.html",
+      "kind": "official-pricing",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Current Mini/Lite/Pro/Max cards show CNY 4.9/19.9/99.9/299.9 first-purchase prices against CNY 9.9/40/200/600 list prices, with 10M/42M/230M/700M monthly Tokens. The page explicitly says no model multiplier and identical deduction for input, output, and cache-hit tokens."
+    },
+    {
+      "id": "baidu-qianfan-token-plan-doc-official-2026-08-12",
+      "title": "Token Plan 个人版",
+      "publisher": "百度智能云",
+      "url": "https://cloud.baidu.com/doc/qianfan/s/Dmrabu8b6",
+      "kind": "official-product-doc",
+      "asOf": "2026-08-11",
+      "accessedAt": "2026-08-12",
+      "notes": "Exact Token Plan model parameters: deepseek-v4-pro, deepseek-v4-flash, deepseek-v4-flash-0731, glm-5.2, glm-5.1, kimi-k2.6, and ernie-5.1; documents dedicated OpenAI and Anthropic-compatible endpoints."
+    },
+    {
+      "id": "baidu-qianfan-model-list-official-2026-08-12",
+      "title": "百度千帆模型列表",
+      "publisher": "百度智能云",
+      "url": "https://cloud.baidu.com/doc/qianfan/s/rmh4stp0j",
+      "kind": "official-model-catalogue",
+      "asOf": "2026-08-06",
+      "accessedAt": "2026-08-12",
+      "notes": "Confirms provider model IDs. DeepSeek V4 Pro/Flash are listed for both text generation and deep thinking; Kimi K2.6 supports thinking and non-thinking modes per the Token Plan description."
+    }
+  ]
+}

@@ -1,0 +1,626 @@
+{
+  "schemaVersion": 1,
+  "mergeTarget": "data/pricing/provider_pricing.json",
+  "checkedAt": "2026-08-12",
+  "asOf": "2026-08-12",
+  "researchScope": "Additional China and Asia first-party API and model-specific Token Pack coverage: Zhipu BigModel, LongCat, and Volcengine Doubao Seed Code",
+  "comparisonPolicy": {
+    "officialOnly": "only first-party pricing pages and first-party documentation are used",
+    "exactMappings": "offers are emitted only when the official provider model name has an exact benchmark-catalogue counterpart",
+    "positivePrices": "unsupported, zero-sentinel, missing-price, and N/A rows are omitted",
+    "contextTiers": "published prompt and output-length thresholds are retained as pricingOverrides",
+    "tokenPacks": "model-specific prepaid pack prices are normalized at full quota utilization; packs without a public numeric price and quota are not emitted"
+  },
+  "replaceProviders": [
+    "longcat",
+    "volcengine-ark-cn"
+  ],
+  "providers": [
+    {
+      "id": "zhipu-bigmodel-api-cn",
+      "name": "智谱 BigModel API（中国）",
+      "category": "first-party-api",
+      "url": "https://open.bigmodel.cn/",
+      "pricingUrl": "https://open.bigmodel.cn/pricing",
+      "region": "CN",
+      "sourceIds": [
+        "zhipu-bigmodel-pricing-official-2026-08-12",
+        "zhipu-bigmodel-model-docs-official-2026-08-12"
+      ],
+      "notes": "Official mainland-China BigModel API rates. The separate Z.AI global USD endpoint is intentionally left as a distinct provider."
+    },
+    {
+      "id": "zhipu-bigmodel-token-pack-cn",
+      "name": "智谱 BigModel 模型资源包",
+      "category": "token-plan",
+      "url": "https://open.bigmodel.cn/special_area",
+      "pricingUrl": "https://open.bigmodel.cn/special_area",
+      "region": "CN",
+      "sourceIds": [
+        "zhipu-bigmodel-special-area-official-2026-08-12",
+        "zhipu-bigmodel-model-docs-official-2026-08-12"
+      ],
+      "notes": "Current official model-specific prepaid packs. Only products with an exact catalogue model, positive numeric price, and public token quota emit offers."
+    },
+    {
+      "id": "longcat",
+      "name": "LongCat API",
+      "category": "first-party-api",
+      "url": "https://longcat.chat/platform/docs/",
+      "pricingUrl": "https://longcat.chat/platform/docs/pricing/long-cat-2.0",
+      "region": "CN / Global",
+      "sourceIds": [
+        "longcat-api-pricing-official-2026-08-12",
+        "longcat-token-pack-rules-official-2026-08-12"
+      ],
+      "unpricedTokenPack": {
+        "publiclyConfirmed": true,
+        "validityDays": 30,
+        "cacheHitsConsumeQuota": false,
+        "notes": "The public FAQ confirms Token Pack mechanics but does not expose a stable public numeric pack catalogue. No N/A or guessed pack offer is emitted."
+      },
+      "notes": "Replaces the Models.dev snapshot with current first-party USD and CNY rates, including the separately published limited-time discount."
+    },
+    {
+      "id": "volcengine-ark-cn",
+      "name": "火山方舟",
+      "category": "aggregator",
+      "url": "https://www.volcengine.com/docs/82379/1544106",
+      "pricingUrl": "https://www.volcengine.com/docs/82379/1544106",
+      "region": "CN",
+      "sourceIds": [
+        "volcengine-ark-pricing-2026-08-11"
+      ],
+      "notes": "Expanded official slice retaining the previously mapped GLM and DeepSeek offers and adding the exact Doubao Seed Code model."
+    }
+  ],
+  "plans": [
+    {
+      "id": "zhipu-bigmodel-api-cn-payg",
+      "providerId": "zhipu-bigmodel-api-cn",
+      "name": "Online inference PAYG",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "CNY",
+      "comparisonClass": "token-comparable",
+      "sourceIds": [
+        "zhipu-bigmodel-pricing-official-2026-08-12",
+        "zhipu-bigmodel-model-docs-official-2026-08-12"
+      ],
+      "notes": "Official current CNY per-million-token table; the page labels these rates effective through 2026-08-31."
+    },
+    {
+      "id": "zhipu-bigmodel-pack-glm-5-2-20m",
+      "providerId": "zhipu-bigmodel-token-pack-cn",
+      "name": "GLM-5.2 · 20M tokens",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "prepaidPriceLocal": 39.9,
+      "listPrepaidPriceLocal": 80,
+      "includedMillionTokens": 20,
+      "validityMonths": 3,
+      "purchaseLimit": 1,
+      "effectiveUniformPerMillionTokensLocal": 1.995,
+      "listEffectiveUniformPerMillionTokensLocal": 4,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "20M GLM-5.2 tokens · valid 3 months",
+      "sourceIds": [
+        "zhipu-bigmodel-special-area-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "zhipu-bigmodel-pack-glm-5-2-100m",
+      "providerId": "zhipu-bigmodel-token-pack-cn",
+      "name": "GLM-5.2 尊享包 · 100M tokens",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "prepaidPriceLocal": 189.9,
+      "listPrepaidPriceLocal": 380,
+      "includedMillionTokens": 100,
+      "validityMonths": 3,
+      "purchaseLimit": 1,
+      "effectiveUniformPerMillionTokensLocal": 1.899,
+      "listEffectiveUniformPerMillionTokensLocal": 3.8,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "100M GLM-5.2 tokens · valid 3 months",
+      "sourceIds": [
+        "zhipu-bigmodel-special-area-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "zhipu-bigmodel-pack-glm-4-6v-10m",
+      "providerId": "zhipu-bigmodel-token-pack-cn",
+      "name": "GLM-4.6V · 10M tokens",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "prepaidPriceLocal": 16,
+      "listPrepaidPriceLocal": 20,
+      "includedMillionTokens": 10,
+      "validityMonths": 3,
+      "purchaseLimit": 3,
+      "effectiveUniformPerMillionTokensLocal": 1.6,
+      "listEffectiveUniformPerMillionTokensLocal": 2,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "10M GLM-4.6V tokens · valid 3 months",
+      "sourceIds": [
+        "zhipu-bigmodel-special-area-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "zhipu-bigmodel-pack-glm-4-6v-500m",
+      "providerId": "zhipu-bigmodel-token-pack-cn",
+      "name": "GLM-4.6V · 500M tokens",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "prepaidPriceLocal": 800,
+      "listPrepaidPriceLocal": 1000,
+      "includedMillionTokens": 500,
+      "validityMonths": 4,
+      "purchaseLimit": 3,
+      "effectiveUniformPerMillionTokensLocal": 1.6,
+      "listEffectiveUniformPerMillionTokensLocal": 2,
+      "comparisonClass": "effective-token-comparable",
+      "quotaLabel": "500M GLM-4.6V tokens · valid 4 months",
+      "sourceIds": [
+        "zhipu-bigmodel-special-area-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "longcat-payg-discounted",
+      "providerId": "longcat",
+      "name": "PAYG · limited-time discount",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "CNY",
+      "comparisonClass": "token-comparable",
+      "promotionEndDateKnown": false,
+      "sourceIds": [
+        "longcat-api-pricing-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "longcat-payg-list",
+      "providerId": "longcat",
+      "name": "PAYG · published list price",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "CNY",
+      "comparisonClass": "token-comparable",
+      "sourceIds": [
+        "longcat-api-pricing-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "volcengine-ark-cn-payg",
+      "providerId": "volcengine-ark-cn",
+      "name": "Standard PAYG",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "token-comparable",
+      "sourceIds": [
+        "volcengine-ark-pricing-2026-08-11"
+      ]
+    }
+  ],
+  "offers": [
+    {
+      "id": "zhipu-bigmodel-api-cn-glm-5-2",
+      "providerId": "zhipu-bigmodel-api-cn",
+      "planId": "zhipu-bigmodel-api-cn-payg",
+      "modelSlugs": ["glm-5-2"],
+      "providerModelId": "glm-5.2",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 8,
+      "cacheReadPerMillionTokensLocal": 2,
+      "outputPerMillionTokensLocal": 28,
+      "priceValidThrough": "2026-08-31",
+      "sourceIds": [
+        "zhipu-bigmodel-pricing-official-2026-08-12",
+        "zhipu-bigmodel-model-docs-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "zhipu-bigmodel-api-cn-glm-5-1",
+      "providerId": "zhipu-bigmodel-api-cn",
+      "planId": "zhipu-bigmodel-api-cn-payg",
+      "modelSlugs": ["glm-5-1"],
+      "providerModelId": "glm-5.1",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 6,
+      "cacheReadPerMillionTokensLocal": 1.3,
+      "outputPerMillionTokensLocal": 24,
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 8,
+          "cacheReadPerMillionTokensLocal": 2,
+          "outputPerMillionTokensLocal": 28,
+          "notes": "Official prompt-length tier from 32K tokens."
+        }
+      ],
+      "priceValidThrough": "2026-08-31",
+      "sourceIds": [
+        "zhipu-bigmodel-pricing-official-2026-08-12",
+        "zhipu-bigmodel-model-docs-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "zhipu-bigmodel-api-cn-glm-5-turbo",
+      "providerId": "zhipu-bigmodel-api-cn",
+      "planId": "zhipu-bigmodel-api-cn-payg",
+      "modelSlugs": ["glm-5-turbo"],
+      "providerModelId": "glm-5-turbo",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 5,
+      "cacheReadPerMillionTokensLocal": 1.2,
+      "outputPerMillionTokensLocal": 22,
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 7,
+          "cacheReadPerMillionTokensLocal": 1.8,
+          "outputPerMillionTokensLocal": 26,
+          "notes": "Official prompt-length tier from 32K tokens."
+        }
+      ],
+      "priceValidThrough": "2026-08-31",
+      "sourceIds": [
+        "zhipu-bigmodel-pricing-official-2026-08-12",
+        "zhipu-bigmodel-model-docs-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "zhipu-bigmodel-api-cn-glm-5",
+      "providerId": "zhipu-bigmodel-api-cn",
+      "planId": "zhipu-bigmodel-api-cn-payg",
+      "modelSlugs": ["glm-5"],
+      "providerModelId": "glm-5",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 4,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 18,
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 6,
+          "cacheReadPerMillionTokensLocal": 1.5,
+          "outputPerMillionTokensLocal": 22,
+          "notes": "Official prompt-length tier from 32K tokens."
+        }
+      ],
+      "priceValidThrough": "2026-08-31",
+      "sourceIds": [
+        "zhipu-bigmodel-pricing-official-2026-08-12",
+        "zhipu-bigmodel-model-docs-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "zhipu-bigmodel-api-cn-glm-4-7",
+      "providerId": "zhipu-bigmodel-api-cn",
+      "planId": "zhipu-bigmodel-api-cn-payg",
+      "modelSlugs": ["glm-4-7"],
+      "providerModelId": "glm-4.7",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2,
+      "cacheReadPerMillionTokensLocal": 0.4,
+      "outputPerMillionTokensLocal": 8,
+      "pricingOverrides": [
+        {
+          "minOutputTokens": 200,
+          "inputPerMillionTokensLocal": 3,
+          "cacheReadPerMillionTokensLocal": 0.6,
+          "outputPerMillionTokensLocal": 14,
+          "notes": "Official short-prompt tier when generated output reaches 200 tokens."
+        },
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 4,
+          "cacheReadPerMillionTokensLocal": 0.8,
+          "outputPerMillionTokensLocal": 16,
+          "notes": "Official prompt-length tier from 32K to 200K tokens."
+        }
+      ],
+      "priceValidThrough": "2026-08-31",
+      "sourceIds": [
+        "zhipu-bigmodel-pricing-official-2026-08-12",
+        "zhipu-bigmodel-model-docs-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "zhipu-bigmodel-api-cn-glm-4-5-air",
+      "providerId": "zhipu-bigmodel-api-cn",
+      "planId": "zhipu-bigmodel-api-cn-payg",
+      "modelSlugs": ["glm-4-5-air"],
+      "providerModelId": "glm-4.5-air",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.8,
+      "cacheReadPerMillionTokensLocal": 0.16,
+      "outputPerMillionTokensLocal": 2,
+      "pricingOverrides": [
+        {
+          "minOutputTokens": 200,
+          "inputPerMillionTokensLocal": 0.8,
+          "cacheReadPerMillionTokensLocal": 0.16,
+          "outputPerMillionTokensLocal": 6,
+          "notes": "Official short-prompt tier when generated output reaches 200 tokens."
+        },
+        {
+          "minPromptTokens": 32000,
+          "inputPerMillionTokensLocal": 1.2,
+          "cacheReadPerMillionTokensLocal": 0.24,
+          "outputPerMillionTokensLocal": 8,
+          "notes": "Official prompt-length tier from 32K to 128K tokens."
+        }
+      ],
+      "promotionLabel": "限时 5 折",
+      "priceValidThrough": "2026-08-31",
+      "sourceIds": [
+        "zhipu-bigmodel-pricing-official-2026-08-12",
+        "zhipu-bigmodel-model-docs-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "zhipu-bigmodel-pack-glm-5-2-20m-offer",
+      "providerId": "zhipu-bigmodel-token-pack-cn",
+      "planId": "zhipu-bigmodel-pack-glm-5-2-20m",
+      "modelSlugs": ["glm-5-2"],
+      "providerModelId": "GLM-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.995,
+      "outputPerMillionTokensLocal": 1.995,
+      "listInputPerMillionTokensLocal": 4,
+      "listOutputPerMillionTokensLocal": 4,
+      "calculation": "CNY 39.9 / 20M included model tokens",
+      "notes": "Normalized at full use of the prepaid quota. The public product card does not publish a separate cache multiplier, so no cache rate is asserted.",
+      "sourceIds": [
+        "zhipu-bigmodel-special-area-official-2026-08-12",
+        "zhipu-bigmodel-model-docs-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "zhipu-bigmodel-pack-glm-5-2-100m-offer",
+      "providerId": "zhipu-bigmodel-token-pack-cn",
+      "planId": "zhipu-bigmodel-pack-glm-5-2-100m",
+      "modelSlugs": ["glm-5-2"],
+      "providerModelId": "GLM-5.2",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.899,
+      "outputPerMillionTokensLocal": 1.899,
+      "listInputPerMillionTokensLocal": 3.8,
+      "listOutputPerMillionTokensLocal": 3.8,
+      "calculation": "CNY 189.9 / 100M included model tokens",
+      "notes": "Normalized at full use of the prepaid quota. The public product card does not publish a separate cache multiplier, so no cache rate is asserted.",
+      "sourceIds": [
+        "zhipu-bigmodel-special-area-official-2026-08-12",
+        "zhipu-bigmodel-model-docs-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "zhipu-bigmodel-pack-glm-4-6v-10m-offer",
+      "providerId": "zhipu-bigmodel-token-pack-cn",
+      "planId": "zhipu-bigmodel-pack-glm-4-6v-10m",
+      "modelSlugs": ["glm-4-6v"],
+      "providerModelId": "GLM-4.6V",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.6,
+      "outputPerMillionTokensLocal": 1.6,
+      "listInputPerMillionTokensLocal": 2,
+      "listOutputPerMillionTokensLocal": 2,
+      "calculation": "CNY 16 / 10M included model tokens",
+      "notes": "Normalized at full use of the prepaid quota. The public product card does not publish a separate cache multiplier, so no cache rate is asserted.",
+      "sourceIds": [
+        "zhipu-bigmodel-special-area-official-2026-08-12",
+        "zhipu-bigmodel-model-docs-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "zhipu-bigmodel-pack-glm-4-6v-500m-offer",
+      "providerId": "zhipu-bigmodel-token-pack-cn",
+      "planId": "zhipu-bigmodel-pack-glm-4-6v-500m",
+      "modelSlugs": ["glm-4-6v"],
+      "providerModelId": "GLM-4.6V",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.6,
+      "outputPerMillionTokensLocal": 1.6,
+      "listInputPerMillionTokensLocal": 2,
+      "listOutputPerMillionTokensLocal": 2,
+      "calculation": "CNY 800 / 500M included model tokens",
+      "notes": "Normalized at full use of the prepaid quota. The public product card does not publish a separate cache multiplier, so no cache rate is asserted.",
+      "sourceIds": [
+        "zhipu-bigmodel-special-area-official-2026-08-12",
+        "zhipu-bigmodel-model-docs-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "longcat-payg-discounted-longcat-2-0",
+      "providerId": "longcat",
+      "planId": "longcat-payg-discounted",
+      "modelSlugs": ["longcat-2-0"],
+      "providerModelId": "LongCat-2.0",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.3,
+      "cacheReadPerMillionTokensUsd": 0.006,
+      "outputPerMillionTokensUsd": 1.2,
+      "inputPerMillionTokensLocal": 2,
+      "cacheReadPerMillionTokensLocal": 0.04,
+      "outputPerMillionTokensLocal": 8,
+      "promotionLabel": "limited-time discount",
+      "sourceIds": [
+        "longcat-api-pricing-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "longcat-payg-list-longcat-2-0",
+      "providerId": "longcat",
+      "planId": "longcat-payg-list",
+      "modelSlugs": ["longcat-2-0"],
+      "providerModelId": "LongCat-2.0",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.75,
+      "cacheReadPerMillionTokensUsd": 0.015,
+      "outputPerMillionTokensUsd": 2.95,
+      "inputPerMillionTokensLocal": 5,
+      "cacheReadPerMillionTokensLocal": 0.1,
+      "outputPerMillionTokensLocal": 20,
+      "sourceIds": [
+        "longcat-api-pricing-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "volcengine-ark-cn-glm-5-2",
+      "providerId": "volcengine-ark-cn",
+      "planId": "volcengine-ark-cn-payg",
+      "modelSlugs": ["glm-5-2"],
+      "providerModelId": "GLM-5.2",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 8,
+      "cacheReadPerMillionTokensLocal": 2,
+      "outputPerMillionTokensLocal": 28,
+      "sourceIds": [
+        "volcengine-ark-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "volcengine-ark-cn-deepseek-v4-pro",
+      "providerId": "volcengine-ark-cn",
+      "planId": "volcengine-ark-cn-payg",
+      "modelSlugs": ["deepseek-v4-pro"],
+      "providerModelId": "DeepSeek-V4-Pro",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 12,
+      "cacheReadPerMillionTokensLocal": 1,
+      "outputPerMillionTokensLocal": 24,
+      "sourceIds": [
+        "volcengine-ark-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "volcengine-ark-cn-deepseek-v4-flash",
+      "providerId": "volcengine-ark-cn",
+      "planId": "volcengine-ark-cn-payg",
+      "modelSlugs": ["deepseek-v4-flash"],
+      "providerModelId": "DeepSeek-V4-Flash",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.2,
+      "outputPerMillionTokensLocal": 2,
+      "sourceIds": [
+        "volcengine-ark-pricing-2026-08-11"
+      ]
+    },
+    {
+      "id": "volcengine-ark-cn-doubao-seed-code",
+      "providerId": "volcengine-ark-cn",
+      "planId": "volcengine-ark-cn-payg",
+      "modelSlugs": ["doubao-seed-code"],
+      "providerModelId": "doubao-seed-code",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1.2,
+      "cacheReadPerMillionTokensLocal": 0.24,
+      "outputPerMillionTokensLocal": 8,
+      "pricingOverrides": [
+        {
+          "minPromptTokens": 32001,
+          "inputPerMillionTokensLocal": 1.4,
+          "cacheReadPerMillionTokensLocal": 0.24,
+          "outputPerMillionTokensLocal": 12,
+          "notes": "Official prompt-length tier above 32K through 128K tokens."
+        },
+        {
+          "minPromptTokens": 128001,
+          "inputPerMillionTokensLocal": 9.6,
+          "cacheReadPerMillionTokensLocal": 1.92,
+          "outputPerMillionTokensLocal": 48,
+          "notes": "Official prompt-length tier above 128K through 256K tokens."
+        }
+      ],
+      "sourceIds": [
+        "volcengine-ark-pricing-2026-08-11"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "zhipu-bigmodel-pricing-official-2026-08-12",
+      "title": "智谱 BigModel 产品定价",
+      "publisher": "智谱 AI",
+      "url": "https://open.bigmodel.cn/pricing",
+      "kind": "official-pricing",
+      "asOf": "2026-08-11",
+      "accessedAt": "2026-08-12",
+      "notes": "Official CNY-per-million-token table embedded in the first-party pricing application, including prompt/output tiers and cache-hit rates."
+    },
+    {
+      "id": "zhipu-bigmodel-model-docs-official-2026-08-12",
+      "title": "智谱 GLM 模型文档",
+      "publisher": "智谱 AI",
+      "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-5",
+      "kind": "official-model-catalogue",
+      "asOf": "2026-08-11",
+      "accessedAt": "2026-08-12",
+      "notes": "Confirms the current GLM model family and official provider naming used for exact catalogue mapping."
+    },
+    {
+      "id": "zhipu-bigmodel-special-area-official-2026-08-12",
+      "title": "智谱 BigModel 大模型特惠资源包",
+      "publisher": "智谱 AI",
+      "url": "https://open.bigmodel.cn/special_area",
+      "kind": "official-pricing",
+      "asOf": "2026-08-11",
+      "accessedAt": "2026-08-12",
+      "notes": "Official model-specific product cards expose product name, token quota, validity, current price, list price, and purchase limit."
+    },
+    {
+      "id": "longcat-api-pricing-official-2026-08-12",
+      "title": "LongCat-2.0 Models & Pricing",
+      "publisher": "LongCat / Meituan",
+      "url": "https://longcat.chat/platform/docs/pricing/long-cat-2.0",
+      "kind": "official-pricing",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Publishes both current limited-time discounted and list USD/CNY rates for uncached input, cached input, and output."
+    },
+    {
+      "id": "longcat-token-pack-rules-official-2026-08-12",
+      "title": "LongCat Token Pack FAQ",
+      "publisher": "LongCat / Meituan",
+      "url": "https://longcat.chat/platform/docs/token-pack",
+      "kind": "official-pricing-rules",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Confirms 30-day validity, flash-sale scheduling, and that cache hits do not consume Token Pack quota; the public page does not publish stable numeric pack sizes and prices."
+    },
+    {
+      "id": "volcengine-ark-pricing-2026-08-11",
+      "title": "火山方舟模型推理定价",
+      "publisher": "火山引擎",
+      "url": "https://www.volcengine.com/docs/82379/1544106",
+      "kind": "official-pricing",
+      "asOf": "2026-08-11",
+      "accessedAt": "2026-08-12",
+      "notes": "Official Ark inference price table. The Doubao Seed Code row publishes three prompt-length tiers with uncached input, cache-hit input, and output prices."
+    }
+  ]
+}

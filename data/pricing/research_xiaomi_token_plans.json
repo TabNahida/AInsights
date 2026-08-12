@@ -1,0 +1,2559 @@
+{
+  "schemaVersion": 1,
+  "mergeTarget": "data/pricing/provider_pricing.json",
+  "checkedAt": "2026-08-12",
+  "asOf": "2026-08-12",
+  "researchScope": "Xiaomi MiMo first-party PAYG API and China/Singapore/Europe Token Plan",
+  "comparisonPolicy": {
+    "paygRates": "direct official per-token rates",
+    "tokenPlanRates": "plan price divided by included Credits, multiplied by the published model Credits per token",
+    "annualPlans": "annual price and annual Credits; already reflects the advertised 0.88 annual multiplier",
+    "firstPurchaseDiscount": "stored as metadata; base comparable rate remains the repeatable list-price rate",
+    "offPeakDiscount": "stored as 0.8 Credit-consumption metadata; base comparable rate remains the all-hours rate",
+    "unsupportedOrUnmappedModels": "no offer emitted"
+  },
+  "replaceProviders": [
+    "xiaomi",
+    "xiaomi-token-plan-cn",
+    "xiaomi-token-plan-sgp",
+    "xiaomi-token-plan-ams"
+  ],
+  "providers": [
+    {
+      "id": "xiaomi",
+      "name": "Xiaomi MiMo API",
+      "category": "first-party-api",
+      "url": "https://mimo.mi.com/docs/zh-CN/quick-start/summary/model",
+      "pricingUrl": "https://mimo.mi.com/docs/zh-CN/price/pay-as-you-go",
+      "region": "CN / Global",
+      "sourceIds": [
+        "xiaomi-mimo-payg-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "notes": "Current official PAYG catalogue. Deprecated MiMo V2 models retired on 2026-06-30 are omitted."
+    },
+    {
+      "id": "xiaomi-token-plan-cn",
+      "name": "Xiaomi MiMo Token Plan（中国）",
+      "category": "token-plan",
+      "url": "https://mimo.mi.com/docs/zh-CN/tokenplan/Token%20Plan/subscription",
+      "pricingUrl": "https://mimo.mi.com/docs/zh-CN/price/token-plan",
+      "region": "CN",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "xiaomi-token-plan-sgp",
+      "name": "Xiaomi MiMo Token Plan（新加坡）",
+      "category": "token-plan",
+      "url": "https://mimo.mi.com/docs/zh-CN/tokenplan/Token%20Plan/subscription",
+      "pricingUrl": "https://mimo.mi.com/docs/zh-CN/price/token-plan",
+      "region": "Singapore",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "xiaomi-token-plan-ams",
+      "name": "Xiaomi MiMo Token Plan（欧洲）",
+      "category": "token-plan",
+      "url": "https://mimo.mi.com/docs/zh-CN/tokenplan/Token%20Plan/subscription",
+      "pricingUrl": "https://mimo.mi.com/docs/zh-CN/price/token-plan",
+      "region": "Europe",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ]
+    }
+  ],
+  "plans": [
+    {
+      "id": "xiaomi-cn-payg",
+      "providerId": "xiaomi",
+      "name": "China PAYG",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "token-comparable",
+      "region": "CN",
+      "sourceIds": [
+        "xiaomi-mimo-payg-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "xiaomi-global-payg",
+      "providerId": "xiaomi",
+      "name": "Global PAYG",
+      "billingType": "payg",
+      "displayType": "token",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "token-comparable",
+      "region": "Global",
+      "sourceIds": [
+        "xiaomi-mimo-payg-official-2026-08-12"
+      ]
+    },
+    {
+      "id": "xiaomi-token-plan-cn-monthly-lite",
+      "providerId": "xiaomi-token-plan-cn",
+      "name": "Lite Monthly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "effective-token-comparable",
+      "region": "CN",
+      "endpoint": "https://token-plan-cn.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "4.1B Credits / month · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "monthlyPriceLocal": 39,
+      "includedCreditsPerMonth": 4100000000,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": true
+    },
+    {
+      "id": "xiaomi-token-plan-cn-annual-lite",
+      "providerId": "xiaomi-token-plan-cn",
+      "name": "Lite Annual",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "effective-token-comparable",
+      "region": "CN",
+      "endpoint": "https://token-plan-cn.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "49.2B Credits / year · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "annualPriceLocal": 411.84,
+      "annualEquivalentMonthlyLocal": 34.32,
+      "includedCreditsPerYear": 49200000000,
+      "annualDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": false
+    },
+    {
+      "id": "xiaomi-token-plan-cn-monthly-standard",
+      "providerId": "xiaomi-token-plan-cn",
+      "name": "Standard Monthly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "effective-token-comparable",
+      "region": "CN",
+      "endpoint": "https://token-plan-cn.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "11B Credits / month · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "monthlyPriceLocal": 99,
+      "includedCreditsPerMonth": 11000000000,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": true
+    },
+    {
+      "id": "xiaomi-token-plan-cn-annual-standard",
+      "providerId": "xiaomi-token-plan-cn",
+      "name": "Standard Annual",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "effective-token-comparable",
+      "region": "CN",
+      "endpoint": "https://token-plan-cn.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "132B Credits / year · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "annualPriceLocal": 1045.44,
+      "annualEquivalentMonthlyLocal": 87.12,
+      "includedCreditsPerYear": 132000000000,
+      "annualDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": false
+    },
+    {
+      "id": "xiaomi-token-plan-cn-monthly-pro",
+      "providerId": "xiaomi-token-plan-cn",
+      "name": "Pro Monthly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "effective-token-comparable",
+      "region": "CN",
+      "endpoint": "https://token-plan-cn.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "38B Credits / month · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "monthlyPriceLocal": 329,
+      "includedCreditsPerMonth": 38000000000,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": true
+    },
+    {
+      "id": "xiaomi-token-plan-cn-annual-pro",
+      "providerId": "xiaomi-token-plan-cn",
+      "name": "Pro Annual",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "effective-token-comparable",
+      "region": "CN",
+      "endpoint": "https://token-plan-cn.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "456B Credits / year · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "annualPriceLocal": 3474.24,
+      "annualEquivalentMonthlyLocal": 289.52,
+      "includedCreditsPerYear": 456000000000,
+      "annualDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": false
+    },
+    {
+      "id": "xiaomi-token-plan-cn-monthly-max",
+      "providerId": "xiaomi-token-plan-cn",
+      "name": "Max Monthly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "effective-token-comparable",
+      "region": "CN",
+      "endpoint": "https://token-plan-cn.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "82B Credits / month · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "monthlyPriceLocal": 659,
+      "includedCreditsPerMonth": 82000000000,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": true
+    },
+    {
+      "id": "xiaomi-token-plan-cn-annual-max",
+      "providerId": "xiaomi-token-plan-cn",
+      "name": "Max Annual",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "CNY",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "effective-token-comparable",
+      "region": "CN",
+      "endpoint": "https://token-plan-cn.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "984B Credits / year · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "annualPriceLocal": 6959.04,
+      "annualEquivalentMonthlyLocal": 579.92,
+      "includedCreditsPerYear": 984000000000,
+      "annualDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": false
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-monthly-lite",
+      "providerId": "xiaomi-token-plan-sgp",
+      "name": "Lite Monthly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": 6,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Singapore",
+      "endpoint": "https://token-plan-sgp.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "4.1B Credits / month · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "includedCreditsPerMonth": 4100000000,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": true
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-annual-lite",
+      "providerId": "xiaomi-token-plan-sgp",
+      "name": "Lite Annual",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Singapore",
+      "endpoint": "https://token-plan-sgp.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "49.2B Credits / year · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "annualPriceUsd": 63.36,
+      "annualEquivalentMonthlyUsd": 5.28,
+      "includedCreditsPerYear": 49200000000,
+      "annualDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": false
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-monthly-standard",
+      "providerId": "xiaomi-token-plan-sgp",
+      "name": "Standard Monthly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": 16,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Singapore",
+      "endpoint": "https://token-plan-sgp.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "11B Credits / month · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "includedCreditsPerMonth": 11000000000,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": true
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-annual-standard",
+      "providerId": "xiaomi-token-plan-sgp",
+      "name": "Standard Annual",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Singapore",
+      "endpoint": "https://token-plan-sgp.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "132B Credits / year · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "annualPriceUsd": 168.96,
+      "annualEquivalentMonthlyUsd": 14.08,
+      "includedCreditsPerYear": 132000000000,
+      "annualDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": false
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-monthly-pro",
+      "providerId": "xiaomi-token-plan-sgp",
+      "name": "Pro Monthly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": 50,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Singapore",
+      "endpoint": "https://token-plan-sgp.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "38B Credits / month · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "includedCreditsPerMonth": 38000000000,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": true
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-annual-pro",
+      "providerId": "xiaomi-token-plan-sgp",
+      "name": "Pro Annual",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Singapore",
+      "endpoint": "https://token-plan-sgp.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "456B Credits / year · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "annualPriceUsd": 528,
+      "annualEquivalentMonthlyUsd": 44,
+      "includedCreditsPerYear": 456000000000,
+      "annualDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": false
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-monthly-max",
+      "providerId": "xiaomi-token-plan-sgp",
+      "name": "Max Monthly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": 100,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Singapore",
+      "endpoint": "https://token-plan-sgp.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "82B Credits / month · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "includedCreditsPerMonth": 82000000000,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": true
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-annual-max",
+      "providerId": "xiaomi-token-plan-sgp",
+      "name": "Max Annual",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Singapore",
+      "endpoint": "https://token-plan-sgp.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "984B Credits / year · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "annualPriceUsd": 1056,
+      "annualEquivalentMonthlyUsd": 88,
+      "includedCreditsPerYear": 984000000000,
+      "annualDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": false
+    },
+    {
+      "id": "xiaomi-token-plan-ams-monthly-lite",
+      "providerId": "xiaomi-token-plan-ams",
+      "name": "Lite Monthly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": 6,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Europe",
+      "endpoint": "https://token-plan-ams.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "4.1B Credits / month · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "includedCreditsPerMonth": 4100000000,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": true
+    },
+    {
+      "id": "xiaomi-token-plan-ams-annual-lite",
+      "providerId": "xiaomi-token-plan-ams",
+      "name": "Lite Annual",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Europe",
+      "endpoint": "https://token-plan-ams.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "49.2B Credits / year · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "annualPriceUsd": 63.36,
+      "annualEquivalentMonthlyUsd": 5.28,
+      "includedCreditsPerYear": 49200000000,
+      "annualDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": false
+    },
+    {
+      "id": "xiaomi-token-plan-ams-monthly-standard",
+      "providerId": "xiaomi-token-plan-ams",
+      "name": "Standard Monthly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": 16,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Europe",
+      "endpoint": "https://token-plan-ams.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "11B Credits / month · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "includedCreditsPerMonth": 11000000000,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": true
+    },
+    {
+      "id": "xiaomi-token-plan-ams-annual-standard",
+      "providerId": "xiaomi-token-plan-ams",
+      "name": "Standard Annual",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Europe",
+      "endpoint": "https://token-plan-ams.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "132B Credits / year · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "annualPriceUsd": 168.96,
+      "annualEquivalentMonthlyUsd": 14.08,
+      "includedCreditsPerYear": 132000000000,
+      "annualDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": false
+    },
+    {
+      "id": "xiaomi-token-plan-ams-monthly-pro",
+      "providerId": "xiaomi-token-plan-ams",
+      "name": "Pro Monthly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": 50,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Europe",
+      "endpoint": "https://token-plan-ams.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "38B Credits / month · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "includedCreditsPerMonth": 38000000000,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": true
+    },
+    {
+      "id": "xiaomi-token-plan-ams-annual-pro",
+      "providerId": "xiaomi-token-plan-ams",
+      "name": "Pro Annual",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Europe",
+      "endpoint": "https://token-plan-ams.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "456B Credits / year · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "annualPriceUsd": 528,
+      "annualEquivalentMonthlyUsd": 44,
+      "includedCreditsPerYear": 456000000000,
+      "annualDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": false
+    },
+    {
+      "id": "xiaomi-token-plan-ams-monthly-max",
+      "providerId": "xiaomi-token-plan-ams",
+      "name": "Max Monthly",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": 100,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Europe",
+      "endpoint": "https://token-plan-ams.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "82B Credits / month · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "includedCreditsPerMonth": 82000000000,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": true
+    },
+    {
+      "id": "xiaomi-token-plan-ams-annual-max",
+      "providerId": "xiaomi-token-plan-ams",
+      "name": "Max Annual",
+      "billingType": "token-plan",
+      "displayType": "token-plan",
+      "currency": "USD",
+      "monthlyPriceUsd": null,
+      "comparisonClass": "effective-token-comparable",
+      "region": "Europe",
+      "endpoint": "https://token-plan-ams.xiaomimimo.com/v1",
+      "offPeakCreditMultiplier": 0.8,
+      "offPeakLocalTime": "00:00–08:00 China Standard Time (UTC+08:00)",
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "quotaLabel": "984B Credits / year · off-peak credit consumption 0.8×",
+      "notes": "TTS models are temporarily free; ASR consumes 30M Credits per input hour. Only benchmark-mapped language models emit offers.",
+      "annualPriceUsd": 1056,
+      "annualEquivalentMonthlyUsd": 88,
+      "includedCreditsPerYear": 984000000000,
+      "annualDiscountMultiplier": 0.88,
+      "firstPurchaseDiscountApplies": false
+    }
+  ],
+  "offers": [
+    {
+      "id": "xiaomi-cn-payg-mimo-v2-5-pro",
+      "providerId": "xiaomi",
+      "planId": "xiaomi-cn-payg",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.025,
+      "outputPerMillionTokensLocal": 6,
+      "sourceIds": [
+        "xiaomi-mimo-payg-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-cn-payg-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi",
+      "planId": "xiaomi-cn-payg",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 3,
+      "cacheReadPerMillionTokensLocal": 0.025,
+      "outputPerMillionTokensLocal": 6,
+      "sourceIds": [
+        "xiaomi-mimo-payg-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-cn-payg-mimo-v2-5-0424",
+      "providerId": "xiaomi",
+      "planId": "xiaomi-cn-payg",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 1,
+      "cacheReadPerMillionTokensLocal": 0.02,
+      "outputPerMillionTokensLocal": 2,
+      "sourceIds": [
+        "xiaomi-mimo-payg-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-global-payg-mimo-v2-5-pro",
+      "providerId": "xiaomi",
+      "planId": "xiaomi-global-payg",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.435,
+      "cacheReadPerMillionTokensUsd": 0.0036,
+      "outputPerMillionTokensUsd": 0.87,
+      "sourceIds": [
+        "xiaomi-mimo-payg-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-global-payg-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi",
+      "planId": "xiaomi-global-payg",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.435,
+      "cacheReadPerMillionTokensUsd": 0.0036,
+      "outputPerMillionTokensUsd": 0.87,
+      "sourceIds": [
+        "xiaomi-mimo-payg-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-global-payg-mimo-v2-5-0424",
+      "providerId": "xiaomi",
+      "planId": "xiaomi-global-payg",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "per-token",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.14,
+      "cacheReadPerMillionTokensUsd": 0.0028,
+      "outputPerMillionTokensUsd": 0.28,
+      "sourceIds": [
+        "xiaomi-mimo-payg-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-monthly-lite-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-monthly-lite",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.853658537,
+      "cacheReadPerMillionTokensLocal": 0.023780488,
+      "outputPerMillionTokensLocal": 5.707317073,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 39 ÷ 4,100,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-monthly-lite-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-monthly-lite",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.853658537,
+      "cacheReadPerMillionTokensLocal": 0.023780488,
+      "outputPerMillionTokensLocal": 5.707317073,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 39 ÷ 4,100,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-monthly-lite-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-monthly-lite",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.951219512,
+      "cacheReadPerMillionTokensLocal": 0.01902439,
+      "outputPerMillionTokensLocal": 1.902439024,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 39 ÷ 4,100,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-annual-lite-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-annual-lite",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.511219512,
+      "cacheReadPerMillionTokensLocal": 0.020926829,
+      "outputPerMillionTokensLocal": 5.022439024,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 411.84 ÷ 49,200,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-annual-lite-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-annual-lite",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.511219512,
+      "cacheReadPerMillionTokensLocal": 0.020926829,
+      "outputPerMillionTokensLocal": 5.022439024,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 411.84 ÷ 49,200,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-annual-lite-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-annual-lite",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.837073171,
+      "cacheReadPerMillionTokensLocal": 0.016741463,
+      "outputPerMillionTokensLocal": 1.674146341,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 411.84 ÷ 49,200,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-monthly-standard-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-monthly-standard",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.7,
+      "cacheReadPerMillionTokensLocal": 0.0225,
+      "outputPerMillionTokensLocal": 5.4,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 99 ÷ 11,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-monthly-standard-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-monthly-standard",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.7,
+      "cacheReadPerMillionTokensLocal": 0.0225,
+      "outputPerMillionTokensLocal": 5.4,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 99 ÷ 11,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-monthly-standard-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-monthly-standard",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.9,
+      "cacheReadPerMillionTokensLocal": 0.018,
+      "outputPerMillionTokensLocal": 1.8,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 99 ÷ 11,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-annual-standard-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-annual-standard",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.376,
+      "cacheReadPerMillionTokensLocal": 0.0198,
+      "outputPerMillionTokensLocal": 4.752,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 1045.44 ÷ 132,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-annual-standard-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-annual-standard",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.376,
+      "cacheReadPerMillionTokensLocal": 0.0198,
+      "outputPerMillionTokensLocal": 4.752,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 1045.44 ÷ 132,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-annual-standard-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-annual-standard",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.792,
+      "cacheReadPerMillionTokensLocal": 0.01584,
+      "outputPerMillionTokensLocal": 1.584,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 1045.44 ÷ 132,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-monthly-pro-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-monthly-pro",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.597368421,
+      "cacheReadPerMillionTokensLocal": 0.021644737,
+      "outputPerMillionTokensLocal": 5.194736842,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 329 ÷ 38,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-monthly-pro-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-monthly-pro",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.597368421,
+      "cacheReadPerMillionTokensLocal": 0.021644737,
+      "outputPerMillionTokensLocal": 5.194736842,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 329 ÷ 38,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-monthly-pro-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-monthly-pro",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.865789474,
+      "cacheReadPerMillionTokensLocal": 0.017315789,
+      "outputPerMillionTokensLocal": 1.731578947,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 329 ÷ 38,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-annual-pro-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-annual-pro",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.285684211,
+      "cacheReadPerMillionTokensLocal": 0.019047368,
+      "outputPerMillionTokensLocal": 4.571368421,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 3474.24 ÷ 456,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-annual-pro-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-annual-pro",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.285684211,
+      "cacheReadPerMillionTokensLocal": 0.019047368,
+      "outputPerMillionTokensLocal": 4.571368421,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 3474.24 ÷ 456,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-annual-pro-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-annual-pro",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.761894737,
+      "cacheReadPerMillionTokensLocal": 0.015237895,
+      "outputPerMillionTokensLocal": 1.523789474,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 3474.24 ÷ 456,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-monthly-max-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-monthly-max",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.41097561,
+      "cacheReadPerMillionTokensLocal": 0.020091463,
+      "outputPerMillionTokensLocal": 4.82195122,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 659 ÷ 82,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-monthly-max-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-monthly-max",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.41097561,
+      "cacheReadPerMillionTokensLocal": 0.020091463,
+      "outputPerMillionTokensLocal": 4.82195122,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 659 ÷ 82,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-monthly-max-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-monthly-max",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.803658537,
+      "cacheReadPerMillionTokensLocal": 0.016073171,
+      "outputPerMillionTokensLocal": 1.607317073,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 659 ÷ 82,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-annual-max-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-annual-max",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.121658537,
+      "cacheReadPerMillionTokensLocal": 0.017680488,
+      "outputPerMillionTokensLocal": 4.243317073,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 6959.04 ÷ 984,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-annual-max-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-annual-max",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 2.121658537,
+      "cacheReadPerMillionTokensLocal": 0.017680488,
+      "outputPerMillionTokensLocal": 4.243317073,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 6959.04 ÷ 984,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-cn-annual-max-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-cn",
+      "planId": "xiaomi-token-plan-cn-annual-max",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensLocal": 0.707219512,
+      "cacheReadPerMillionTokensLocal": 0.01414439,
+      "outputPerMillionTokensLocal": 1.414439024,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "CNY 6959.04 ÷ 984,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-monthly-lite-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-monthly-lite",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.43902439,
+      "cacheReadPerMillionTokensUsd": 0.003658537,
+      "outputPerMillionTokensUsd": 0.87804878,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 6 ÷ 4,100,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-monthly-lite-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-monthly-lite",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.43902439,
+      "cacheReadPerMillionTokensUsd": 0.003658537,
+      "outputPerMillionTokensUsd": 0.87804878,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 6 ÷ 4,100,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-monthly-lite-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-monthly-lite",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.146341463,
+      "cacheReadPerMillionTokensUsd": 0.002926829,
+      "outputPerMillionTokensUsd": 0.292682927,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 6 ÷ 4,100,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-annual-lite-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-annual-lite",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.386341463,
+      "cacheReadPerMillionTokensUsd": 0.003219512,
+      "outputPerMillionTokensUsd": 0.772682927,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 63.36 ÷ 49,200,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-annual-lite-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-annual-lite",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.386341463,
+      "cacheReadPerMillionTokensUsd": 0.003219512,
+      "outputPerMillionTokensUsd": 0.772682927,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 63.36 ÷ 49,200,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-annual-lite-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-annual-lite",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.128780488,
+      "cacheReadPerMillionTokensUsd": 0.00257561,
+      "outputPerMillionTokensUsd": 0.257560976,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 63.36 ÷ 49,200,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-monthly-standard-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-monthly-standard",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.436363636,
+      "cacheReadPerMillionTokensUsd": 0.003636364,
+      "outputPerMillionTokensUsd": 0.872727273,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 16 ÷ 11,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-monthly-standard-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-monthly-standard",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.436363636,
+      "cacheReadPerMillionTokensUsd": 0.003636364,
+      "outputPerMillionTokensUsd": 0.872727273,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 16 ÷ 11,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-monthly-standard-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-monthly-standard",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.145454545,
+      "cacheReadPerMillionTokensUsd": 0.002909091,
+      "outputPerMillionTokensUsd": 0.290909091,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 16 ÷ 11,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-annual-standard-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-annual-standard",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.384,
+      "cacheReadPerMillionTokensUsd": 0.0032,
+      "outputPerMillionTokensUsd": 0.768,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 168.96 ÷ 132,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-annual-standard-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-annual-standard",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.384,
+      "cacheReadPerMillionTokensUsd": 0.0032,
+      "outputPerMillionTokensUsd": 0.768,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 168.96 ÷ 132,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-annual-standard-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-annual-standard",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.128,
+      "cacheReadPerMillionTokensUsd": 0.00256,
+      "outputPerMillionTokensUsd": 0.256,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 168.96 ÷ 132,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-monthly-pro-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-monthly-pro",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.394736842,
+      "cacheReadPerMillionTokensUsd": 0.003289474,
+      "outputPerMillionTokensUsd": 0.789473684,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 50 ÷ 38,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-monthly-pro-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-monthly-pro",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.394736842,
+      "cacheReadPerMillionTokensUsd": 0.003289474,
+      "outputPerMillionTokensUsd": 0.789473684,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 50 ÷ 38,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-monthly-pro-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-monthly-pro",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.131578947,
+      "cacheReadPerMillionTokensUsd": 0.002631579,
+      "outputPerMillionTokensUsd": 0.263157895,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 50 ÷ 38,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-annual-pro-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-annual-pro",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.347368421,
+      "cacheReadPerMillionTokensUsd": 0.002894737,
+      "outputPerMillionTokensUsd": 0.694736842,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 528 ÷ 456,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-annual-pro-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-annual-pro",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.347368421,
+      "cacheReadPerMillionTokensUsd": 0.002894737,
+      "outputPerMillionTokensUsd": 0.694736842,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 528 ÷ 456,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-annual-pro-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-annual-pro",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.115789474,
+      "cacheReadPerMillionTokensUsd": 0.002315789,
+      "outputPerMillionTokensUsd": 0.231578947,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 528 ÷ 456,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-monthly-max-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-monthly-max",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.365853659,
+      "cacheReadPerMillionTokensUsd": 0.00304878,
+      "outputPerMillionTokensUsd": 0.731707317,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 100 ÷ 82,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-monthly-max-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-monthly-max",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.365853659,
+      "cacheReadPerMillionTokensUsd": 0.00304878,
+      "outputPerMillionTokensUsd": 0.731707317,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 100 ÷ 82,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-monthly-max-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-monthly-max",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.12195122,
+      "cacheReadPerMillionTokensUsd": 0.002439024,
+      "outputPerMillionTokensUsd": 0.243902439,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 100 ÷ 82,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-annual-max-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-annual-max",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.32195122,
+      "cacheReadPerMillionTokensUsd": 0.002682927,
+      "outputPerMillionTokensUsd": 0.643902439,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 1056 ÷ 984,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-annual-max-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-annual-max",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.32195122,
+      "cacheReadPerMillionTokensUsd": 0.002682927,
+      "outputPerMillionTokensUsd": 0.643902439,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 1056 ÷ 984,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-sgp-annual-max-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-sgp",
+      "planId": "xiaomi-token-plan-sgp-annual-max",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.107317073,
+      "cacheReadPerMillionTokensUsd": 0.002146341,
+      "outputPerMillionTokensUsd": 0.214634146,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 1056 ÷ 984,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-monthly-lite-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-monthly-lite",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.43902439,
+      "cacheReadPerMillionTokensUsd": 0.003658537,
+      "outputPerMillionTokensUsd": 0.87804878,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 6 ÷ 4,100,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-monthly-lite-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-monthly-lite",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.43902439,
+      "cacheReadPerMillionTokensUsd": 0.003658537,
+      "outputPerMillionTokensUsd": 0.87804878,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 6 ÷ 4,100,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-monthly-lite-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-monthly-lite",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.146341463,
+      "cacheReadPerMillionTokensUsd": 0.002926829,
+      "outputPerMillionTokensUsd": 0.292682927,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 6 ÷ 4,100,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-annual-lite-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-annual-lite",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.386341463,
+      "cacheReadPerMillionTokensUsd": 0.003219512,
+      "outputPerMillionTokensUsd": 0.772682927,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 63.36 ÷ 49,200,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-annual-lite-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-annual-lite",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.386341463,
+      "cacheReadPerMillionTokensUsd": 0.003219512,
+      "outputPerMillionTokensUsd": 0.772682927,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 63.36 ÷ 49,200,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-annual-lite-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-annual-lite",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.128780488,
+      "cacheReadPerMillionTokensUsd": 0.00257561,
+      "outputPerMillionTokensUsd": 0.257560976,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 63.36 ÷ 49,200,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-monthly-standard-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-monthly-standard",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.436363636,
+      "cacheReadPerMillionTokensUsd": 0.003636364,
+      "outputPerMillionTokensUsd": 0.872727273,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 16 ÷ 11,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-monthly-standard-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-monthly-standard",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.436363636,
+      "cacheReadPerMillionTokensUsd": 0.003636364,
+      "outputPerMillionTokensUsd": 0.872727273,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 16 ÷ 11,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-monthly-standard-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-monthly-standard",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.145454545,
+      "cacheReadPerMillionTokensUsd": 0.002909091,
+      "outputPerMillionTokensUsd": 0.290909091,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 16 ÷ 11,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-annual-standard-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-annual-standard",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.384,
+      "cacheReadPerMillionTokensUsd": 0.0032,
+      "outputPerMillionTokensUsd": 0.768,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 168.96 ÷ 132,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-annual-standard-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-annual-standard",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.384,
+      "cacheReadPerMillionTokensUsd": 0.0032,
+      "outputPerMillionTokensUsd": 0.768,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 168.96 ÷ 132,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-annual-standard-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-annual-standard",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.128,
+      "cacheReadPerMillionTokensUsd": 0.00256,
+      "outputPerMillionTokensUsd": 0.256,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 168.96 ÷ 132,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-monthly-pro-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-monthly-pro",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.394736842,
+      "cacheReadPerMillionTokensUsd": 0.003289474,
+      "outputPerMillionTokensUsd": 0.789473684,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 50 ÷ 38,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-monthly-pro-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-monthly-pro",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.394736842,
+      "cacheReadPerMillionTokensUsd": 0.003289474,
+      "outputPerMillionTokensUsd": 0.789473684,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 50 ÷ 38,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-monthly-pro-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-monthly-pro",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.131578947,
+      "cacheReadPerMillionTokensUsd": 0.002631579,
+      "outputPerMillionTokensUsd": 0.263157895,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 50 ÷ 38,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-annual-pro-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-annual-pro",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.347368421,
+      "cacheReadPerMillionTokensUsd": 0.002894737,
+      "outputPerMillionTokensUsd": 0.694736842,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 528 ÷ 456,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-annual-pro-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-annual-pro",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.347368421,
+      "cacheReadPerMillionTokensUsd": 0.002894737,
+      "outputPerMillionTokensUsd": 0.694736842,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 528 ÷ 456,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-annual-pro-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-annual-pro",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.115789474,
+      "cacheReadPerMillionTokensUsd": 0.002315789,
+      "outputPerMillionTokensUsd": 0.231578947,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 528 ÷ 456,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-monthly-max-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-monthly-max",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.365853659,
+      "cacheReadPerMillionTokensUsd": 0.00304878,
+      "outputPerMillionTokensUsd": 0.731707317,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 100 ÷ 82,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-monthly-max-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-monthly-max",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.365853659,
+      "cacheReadPerMillionTokensUsd": 0.00304878,
+      "outputPerMillionTokensUsd": 0.731707317,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 100 ÷ 82,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-monthly-max-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-monthly-max",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.12195122,
+      "cacheReadPerMillionTokensUsd": 0.002439024,
+      "outputPerMillionTokensUsd": 0.243902439,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 100 ÷ 82,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "firstPurchaseDiscountMultiplier": 0.88,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; first monthly purchase is advertised at 88% of list price.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-annual-max-mimo-v2-5-pro",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-annual-max",
+      "modelSlugs": [
+        "mimo-v2-5-pro"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.32195122,
+      "cacheReadPerMillionTokensUsd": 0.002682927,
+      "outputPerMillionTokensUsd": 0.643902439,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 1056 ÷ 984,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-annual-max-mimo-v2-5-pro-non-reasoning",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-annual-max",
+      "modelSlugs": [
+        "mimo-v2-5-pro-non-reasoning"
+      ],
+      "providerModelId": "mimo-v2.5-pro",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.32195122,
+      "cacheReadPerMillionTokensUsd": 0.002682927,
+      "outputPerMillionTokensUsd": 0.643902439,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 1056 ÷ 984,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "disabled"
+    },
+    {
+      "id": "xiaomi-token-plan-ams-annual-max-mimo-v2-5-0424",
+      "providerId": "xiaomi-token-plan-ams",
+      "planId": "xiaomi-token-plan-ams-annual-max",
+      "modelSlugs": [
+        "mimo-v2-5-0424"
+      ],
+      "providerModelId": "mimo-v2.5",
+      "pricingKind": "effective-subscription",
+      "comparable": true,
+      "inputPerMillionTokensUsd": 0.107317073,
+      "cacheReadPerMillionTokensUsd": 0.002146341,
+      "outputPerMillionTokensUsd": 0.214634146,
+      "sourceIds": [
+        "xiaomi-mimo-token-plan-official-2026-08-12",
+        "xiaomi-mimo-token-plan-access-official-2026-08-12",
+        "xiaomi-mimo-api-official-2026-08-12"
+      ],
+      "calculation": "USD 1056 ÷ 984,000,000,000 Credits × published Credits/token × 1,000,000",
+      "offPeakCreditMultiplier": 0.8,
+      "notes": "Normalized at full Credit utilization. Off-peak requests consume 0.8× Credits; annual price already includes the advertised 0.88 multiplier.",
+      "reasoningMode": "enabled"
+    }
+  ],
+  "sources": [
+    {
+      "id": "xiaomi-mimo-payg-official-2026-08-12",
+      "title": "MiMo 按量计费 API",
+      "publisher": "Xiaomi MiMo",
+      "url": "https://mimo.mi.com/docs/zh-CN/price/pay-as-you-go",
+      "kind": "official-pricing",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Official China CNY and global USD token prices for MiMo V2.5 Pro and MiMo V2.5."
+    },
+    {
+      "id": "xiaomi-mimo-token-plan-official-2026-08-12",
+      "title": "Xiaomi MiMo Token Plan 定价与 Credits 规则",
+      "publisher": "Xiaomi MiMo",
+      "url": "https://mimo.mi.com/docs/zh-CN/price/token-plan",
+      "kind": "official-pricing",
+      "asOf": "2026-07-15",
+      "accessedAt": "2026-08-12",
+      "notes": "Four monthly and annual tiers, CNY/USD prices, included Credits, per-model Credit coefficients, 88% first-purchase/annual discounts, and 0.8× off-peak Credit consumption."
+    },
+    {
+      "id": "xiaomi-mimo-token-plan-access-official-2026-08-12",
+      "title": "Xiaomi MiMo Token Plan 订阅与地区端点",
+      "publisher": "Xiaomi MiMo",
+      "url": "https://mimo.mi.com/docs/zh-CN/tokenplan/Token%20Plan/subscription",
+      "kind": "official-product-doc",
+      "asOf": "2026-07-15",
+      "accessedAt": "2026-08-12",
+      "notes": "China, Singapore, and Europe OpenAI/Anthropic-compatible Token Plan endpoints."
+    },
+    {
+      "id": "xiaomi-mimo-api-official-2026-08-12",
+      "title": "Xiaomi MiMo OpenAI 兼容 API",
+      "publisher": "Xiaomi MiMo",
+      "url": "https://mimo.mi.com/docs/zh-CN/api/chat/openai-api",
+      "kind": "official-api-doc",
+      "asOf": "2026-08-12",
+      "accessedAt": "2026-08-12",
+      "notes": "Documents the thinking object used to select reasoning behavior."
+    }
+  ]
+}
