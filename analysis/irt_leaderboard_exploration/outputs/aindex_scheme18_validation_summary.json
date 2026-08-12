@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_scheme18",
   "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
-  "calibration_population_size": 155,
-  "bonus_cap_per_board": 23.404500891343226,
+  "calibration_population_size": 156,
+  "bonus_cap_per_board": 23.636273545995863,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 155,
-    "unique_slugs": 155,
-    "unique_variant_groups": 155,
+    "row_count": 156,
+    "unique_slugs": 156,
+    "unique_variant_groups": 156,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 187,
-    "unique_slugs": 187,
-    "unique_variant_groups": 147,
+    "row_count": 188,
+    "unique_slugs": 188,
+    "unique_variant_groups": 148,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -32,10 +32,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 23.404500891343226,
-    "pooled_positive_residual_count": 439,
-    "pooled_positive_residual_mean": 9.835348457416229,
-    "pooled_positive_residual_population_sd": 9.594839700983723,
+    "bonus_cap_per_board": 23.636273545995863,
+    "pooled_positive_residual_count": 426,
+    "pooled_positive_residual_mean": 10.00143438291639,
+    "pooled_positive_residual_population_sd": 9.641287232601405,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -44,7 +44,7 @@
       "instruction-context"
     ],
     "board_points_max": 20.0,
-    "population_size": 155,
+    "population_size": 156,
     "population_slugs": [
       "g9v3-39a5b",
       "g9v3-3b",
@@ -163,6 +163,7 @@
       "nemotron-3-nano-omni-30b-a3b",
       "nvidia-nemotron-3-super-120b-a12b",
       "nvidia-nemotron-3-ultra-550b-a55b",
+      "nemotron-3-5-lightning",
       "nemotron-cascade-2-30b-a3b",
       "nanbeige4-1-3b",
       "nex-n2-pro",
@@ -320,6 +321,7 @@
       "nemotron 3 nano omni 30b a3b",
       "nemotron 3 super",
       "nemotron 3 ultra",
+      "nemotron 3 5 lightning",
       "nemotron cascade 2 30b a3b",
       "nanbeige4 1 3b",
       "nex n2 pro",
@@ -376,9 +378,9 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 144,
-            "slope": 1.7234087409895427,
-            "intercept": -26.515645274737977
+            "observed_count": 145,
+            "slope": 1.724184827532931,
+            "intercept": -26.569041886382543
           },
           {
             "item_id": "swe-bench-pro",
@@ -416,9 +418,9 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 144,
-            "slope": 0.950631594666081,
-            "intercept": -13.116770504601185
+            "observed_count": 145,
+            "slope": 0.9501825022871173,
+            "intercept": -13.197468526526848
           },
           {
             "item_id": "tau2-bench-telecom-aa",
@@ -434,9 +436,9 @@
             "score_key": "τ³-Banking",
             "canonical_family": "tau3-banking",
             "enabled": true,
-            "observed_count": 143,
-            "slope": 0.3436842476692793,
-            "intercept": -3.913637488053423
+            "observed_count": 108,
+            "slope": 0.36862713375557127,
+            "intercept": -4.830689587132262
           },
           {
             "item_id": "apex-agents-aa",
@@ -558,7 +560,7 @@
             "canonical_family": "mmlu-pro",
             "enabled": true,
             "observed_count": 17,
-            "slope": 0.3506692753526563,
+            "slope": 0.35066927535265635,
             "intercept": 69.94089160588177
           }
         ],
@@ -585,7 +587,7 @@
             "canonical_family": "charxiv-no-tools",
             "enabled": true,
             "observed_count": 12,
-            "slope": 0.2631907702243505,
+            "slope": 0.26319077022435045,
             "intercept": 72.74070658816342
           }
         ],
@@ -600,16 +602,16 @@
     "independent_of_production_scoring_module": true,
     "exact_reuses_serialized_deduplicated_calibration": true,
     "calibration": {
-      "population_size": 155,
-      "cap": 23.404500891343226,
-      "serialized_cap": 23.404500891343226,
+      "population_size": 156,
+      "cap": 23.636273545995863,
+      "serialized_cap": 23.636273545995863,
       "cap_error": 0.0,
       "passed": true,
       "failures": []
     },
     "variant_group": {
-      "row_count": 155,
-      "maximum_numeric_error": 2.842170943040401e-14,
+      "row_count": 156,
+      "maximum_numeric_error": 1.4210854715202004e-14,
       "passed": true,
       "failures": []
     },
@@ -620,8 +622,8 @@
       "failures": []
     },
     "exact_config": {
-      "row_count": 187,
-      "maximum_numeric_error": 2.842170943040401e-14,
+      "row_count": 188,
+      "maximum_numeric_error": 1.4210854715202004e-14,
       "passed": true,
       "failures": []
     },
