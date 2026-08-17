@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_scheme18",
   "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
-  "calibration_population_size": 156,
-  "bonus_cap_per_board": 23.636273545995863,
+  "calibration_population_size": 167,
+  "bonus_cap_per_board": 23.670087950603403,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 156,
-    "unique_slugs": 156,
-    "unique_variant_groups": 156,
+    "row_count": 167,
+    "unique_slugs": 167,
+    "unique_variant_groups": 167,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 188,
-    "unique_slugs": 188,
-    "unique_variant_groups": 148,
+    "row_count": 199,
+    "unique_slugs": 199,
+    "unique_variant_groups": 157,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -32,10 +32,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 23.636273545995863,
-    "pooled_positive_residual_count": 426,
-    "pooled_positive_residual_mean": 10.00143438291639,
-    "pooled_positive_residual_population_sd": 9.641287232601405,
+    "bonus_cap_per_board": 23.670087950603403,
+    "pooled_positive_residual_count": 457,
+    "pooled_positive_residual_mean": 9.916534905725463,
+    "pooled_positive_residual_population_sd": 9.725230623442078,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -44,7 +44,7 @@
       "instruction-context"
     ],
     "board_points_max": 20.0,
-    "population_size": 156,
+    "population_size": 167,
     "population_slugs": [
       "g9v3-39a5b",
       "g9v3-3b",
@@ -54,9 +54,10 @@
       "qwen3-32b-instruct-reasoning",
       "qwen3-8b-instruct-reasoning",
       "qwen3-coder-next",
+      "qwen3-max-thinking",
       "qwen3-next-80b-a3b-reasoning",
       "qwen3-5-0-8b-non-reasoning",
-      "qwen3-5-122b-a10b",
+      "qwen3-5-122b-a10b-non-reasoning",
       "qwen3-5-27b-non-reasoning",
       "qwen3-5-2b",
       "qwen3-5-35b-a3b-non-reasoning",
@@ -68,6 +69,7 @@
       "qwen3-6-plus",
       "qwen3-7-max",
       "qwen3-7-plus",
+      "qwen3-8-2-4t-a95b",
       "qwen3-8-max",
       "nova-2-0-lite-reasoning",
       "nova-2-0-pro-reasoning-medium",
@@ -94,6 +96,7 @@
       "deepseek-v3-2-reasoning",
       "deepseek-v4-flash-0420",
       "deepseek-v4-flash",
+      "deepseek-v4-pro-0424",
       "deepseek-v4-pro",
       "diffusiongemma-26b-a4b",
       "gemini-2-5-pro",
@@ -102,6 +105,7 @@
       "gemini-3-5-flash",
       "gemini-3-5-flash-lite",
       "gemini-3-6-flash",
+      "gemini-3-7-flash",
       "gemma-3-12b",
       "gemma-3-27b",
       "gemma-3-4b",
@@ -127,6 +131,7 @@
       "kat-coder-pro-v2",
       "exaone-4-5-33b",
       "k-exaone",
+      "k-exaone-2-0-0803",
       "longcat-2-0",
       "k2-think-v2",
       "llama-3-1-instruct-8b",
@@ -156,6 +161,7 @@
       "mistral-small-3-1",
       "mistral-small-3-2",
       "mistral-small-4",
+      "motif-3",
       "motif-0714",
       "hypernova-60b",
       "nvidia-nemotron-3-nano-30b-a3b-reasoning",
@@ -184,21 +190,26 @@
       "gpt-oss-20b",
       "o3-mini-high",
       "minicpm-v4-6-1-3b",
+      "a-x-k2",
       "agnes-2-5-pro-alpha",
       "grok-4-3",
       "grok-4-5",
+      "grok-4-6",
       "grok-build-0-1-06-16",
       "step-3-7-flash",
       "hy3",
       "inkling",
       "inkling-small",
+      "solar-open2-250b",
       "solar-pro-3",
+      "solar-pro4",
       "mimo-v2-flash",
       "mimo-v2-5-0424",
       "mimo-v2-5-pro",
       "glm-4.5",
       "glm-4-6",
       "glm-4-7",
+      "glm-4-7-flash-non-reasoning",
       "glm-5-non-reasoning",
       "glm-5-1",
       "glm-5-2"
@@ -212,6 +223,7 @@
       "qwen3 32b",
       "qwen3 8b",
       "qwen3 coder next",
+      "qwen3 max thinking",
       "qwen3 next 80b a3b",
       "qwen3 5 0 8b",
       "qwen3 5 122b a10b",
@@ -226,6 +238,7 @@
       "qwen3 6 plus",
       "qwen3 7 max",
       "qwen3 7 plus",
+      "qwen3 8 2 4t a95b",
       "qwen3 8 max",
       "nova 2 0 lite",
       "nova 2 0 pro preview",
@@ -253,6 +266,7 @@
       "deepseek v4 flash",
       "deepseek v4 flash 0731",
       "deepseek v4 pro",
+      "deepseek v4 pro 0813",
       "diffusiongemma 26b a4b",
       "gemini 2 5 pro",
       "gemini 3 1 flash lite",
@@ -260,6 +274,7 @@
       "gemini 3 5 flash",
       "gemini 3 5 flash lite",
       "gemini 3 6 flash",
+      "gemini 3 7 flash",
       "gemma 3 12b",
       "gemma 3 27b",
       "gemma 3 4b",
@@ -285,6 +300,7 @@
       "kat coder pro v2",
       "exaone 4 5 33b",
       "k exaone",
+      "k exaone 2 0",
       "longcat 2 0",
       "k2 think v2",
       "llama 3 1 8b",
@@ -314,6 +330,7 @@
       "mistral small 3 1",
       "mistral small 3 2",
       "mistral small 4",
+      "motif 3",
       "motif 3 beta",
       "hypernova 60b 2605",
       "nemotron 3 nano",
@@ -342,21 +359,26 @@
       "gpt oss 20b",
       "o3 mini",
       "minicpm v 4 6 1 3b",
+      "a x k2",
       "agnes 2 5 pro alpha",
       "grok 4 3",
       "grok 4 5",
+      "grok 4 6",
       "grok build 0 1 0616",
       "step 3 7 flash",
       "hy3",
       "inkling",
       "inkling small",
+      "solar open2 250b",
       "solar pro 3",
+      "solar pro 4",
       "mimo v2 flash",
       "mimo v2 5",
       "mimo v2 5 pro",
       "glm 4 5",
       "glm 4 6",
       "glm 4 7",
+      "glm 4 7 flash",
       "glm 5",
       "glm 5 1",
       "glm 5 2"
@@ -378,27 +400,27 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 145,
-            "slope": 1.724184827532931,
-            "intercept": -26.569041886382543
+            "observed_count": 154,
+            "slope": 1.7716690423961041,
+            "intercept": -27.596894926902188
           },
           {
             "item_id": "swe-bench-pro",
             "score_key": "benchmark:swe-bench-pro",
             "canonical_family": "swe-bench-pro",
             "enabled": true,
-            "observed_count": 37,
-            "slope": 0.4087909661190195,
-            "intercept": 39.540912262673
+            "observed_count": 38,
+            "slope": 0.4090287865943596,
+            "intercept": 39.51561814682
           },
           {
             "item_id": "livecodebench",
             "score_key": "benchmark:livecodebench",
             "canonical_family": "livecodebench",
             "enabled": true,
-            "observed_count": 19,
-            "slope": 0.6382649440983166,
-            "intercept": 55.44079162003151
+            "observed_count": 23,
+            "slope": 0.6680586740723169,
+            "intercept": 54.77592098554429
           }
         ],
         "core_item_count": 1,
@@ -418,27 +440,27 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 145,
-            "slope": 0.9501825022871173,
-            "intercept": -13.197468526526848
+            "observed_count": 154,
+            "slope": 0.9782885405321713,
+            "intercept": -14.005686059664363
           },
           {
             "item_id": "tau2-bench-telecom-aa",
             "score_key": "τ²-Bench Telecom",
             "canonical_family": "tau2-bench",
             "enabled": true,
-            "observed_count": 128,
-            "slope": 0.9040663250452052,
-            "intercept": 17.32488963572424
+            "observed_count": 130,
+            "slope": 0.8788620326336228,
+            "intercept": 19.041632669103265
           },
           {
             "item_id": "tau3-banking-aa",
             "score_key": "τ³-Banking",
             "canonical_family": "tau3-banking",
             "enabled": true,
-            "observed_count": 108,
-            "slope": 0.36862713375557127,
-            "intercept": -4.830689587132262
+            "observed_count": 123,
+            "slope": 0.39081333312577704,
+            "intercept": -5.7858890508847445
           },
           {
             "item_id": "apex-agents-aa",
@@ -454,9 +476,9 @@
             "score_key": "benchmark:swe-bench-pro",
             "canonical_family": "swe-bench-pro",
             "enabled": true,
-            "observed_count": 37,
-            "slope": 0.4084089092477487,
-            "intercept": 29.259694477179046
+            "observed_count": 38,
+            "slope": 0.4081227486311975,
+            "intercept": 29.284598812785863
           },
           {
             "item_id": "hle-tools",
@@ -464,8 +486,8 @@
             "canonical_family": "hle-tools",
             "enabled": true,
             "observed_count": 26,
-            "slope": 0.5608393000868787,
-            "intercept": 10.753330180356308
+            "slope": 0.5459652308368622,
+            "intercept": 11.531625634443628
           },
           {
             "item_id": "mcp-atlas",
@@ -473,17 +495,17 @@
             "canonical_family": "mcp-atlas",
             "enabled": true,
             "observed_count": 22,
-            "slope": 0.4022786223366519,
-            "intercept": 46.06733853905325
+            "slope": 0.37854315530748966,
+            "intercept": 47.47282774726642
           },
           {
             "item_id": "osworld-verified",
             "score_key": "benchmark:osworld-verified",
             "canonical_family": "osworld-verified",
             "enabled": true,
-            "observed_count": 10,
-            "slope": 0.5831728291548193,
-            "intercept": 34.70876868172662
+            "observed_count": 14,
+            "slope": 1.2290604210378122,
+            "intercept": -14.690319070609931
           }
         ],
         "core_item_count": 1,
@@ -550,18 +572,18 @@
             "score_key": "MMMU-Pro",
             "canonical_family": "mmmu-pro",
             "enabled": true,
-            "observed_count": 82,
-            "slope": 0.8086128535579872,
-            "intercept": 38.12964812465243
+            "observed_count": 83,
+            "slope": 0.8034592602037193,
+            "intercept": 38.297530557480606
           },
           {
             "item_id": "mmlu-pro",
             "score_key": "benchmark:mmlu-pro",
             "canonical_family": "mmlu-pro",
             "enabled": true,
-            "observed_count": 17,
-            "slope": 0.35066927535265635,
-            "intercept": 69.94089160588177
+            "observed_count": 22,
+            "slope": 0.5894542305568227,
+            "intercept": 61.8578030424585
           }
         ],
         "core_item_count": 4,
@@ -586,9 +608,9 @@
             "score_key": "benchmark:charxiv-no-tools",
             "canonical_family": "charxiv-no-tools",
             "enabled": true,
-            "observed_count": 12,
-            "slope": 0.26319077022435045,
-            "intercept": 72.74070658816342
+            "observed_count": 10,
+            "slope": 0.6703672536093832,
+            "intercept": 60.51411405017676
           }
         ],
         "core_item_count": 2,
@@ -602,15 +624,15 @@
     "independent_of_production_scoring_module": true,
     "exact_reuses_serialized_deduplicated_calibration": true,
     "calibration": {
-      "population_size": 156,
-      "cap": 23.636273545995863,
-      "serialized_cap": 23.636273545995863,
+      "population_size": 167,
+      "cap": 23.670087950603403,
+      "serialized_cap": 23.670087950603403,
       "cap_error": 0.0,
       "passed": true,
       "failures": []
     },
     "variant_group": {
-      "row_count": 156,
+      "row_count": 167,
       "maximum_numeric_error": 1.4210854715202004e-14,
       "passed": true,
       "failures": []
@@ -622,7 +644,7 @@
       "failures": []
     },
     "exact_config": {
-      "row_count": 188,
+      "row_count": 199,
       "maximum_numeric_error": 1.4210854715202004e-14,
       "passed": true,
       "failures": []
@@ -634,12 +656,12 @@
       "failures": []
     },
     "exact_config_sanitation": {
-      "shared_variant_score_cells_removed": 695,
+      "shared_variant_score_cells_removed": 435,
       "configuration_ineligible_score_cells_removed": 0,
       "derived_external_score_cells_removed": 0,
-      "unscoped_external_score_cells_removed": 904,
-      "site_livecodebench_cells_excluded": 369,
-      "variant_scoped_direct_score_cells_retained": 133
+      "unscoped_external_score_cells_removed": 762,
+      "site_livecodebench_cells_excluded": 375,
+      "variant_scoped_direct_score_cells_retained": 402
     },
     "review_parity": {
       "requested": false,

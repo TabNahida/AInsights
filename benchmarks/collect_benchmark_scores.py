@@ -12,18 +12,26 @@ import argparse
 import json
 import re
 import sys
+import unicodedata
 from datetime import datetime, timezone
 from http.client import IncompleteRead
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
+from urllib.parse import parse_qs, urlsplit
 from urllib.request import Request, urlopen
 from uuid import uuid4
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT_JSON = PROJECT_ROOT / "data" / "benchmarks" / "benchmark_scores.json"
+DEFAULT_OFFICIAL_MODEL_CARDS_JSON = (
+    PROJECT_ROOT / "data" / "benchmarks" / "official_model_cards.json"
+)
+DEFAULT_OFFICIAL_VENDOR_PAGES_JSON = (
+    PROJECT_ROOT / "data" / "benchmarks" / "official_vendor_pages.json"
+)
 OPENAI_GPT55_URL = "https://openai.com/index/introducing-gpt-5-5/"
 OPENAI_GPT56_URL = "https://openai.com/index/gpt-5-6/"
 ANTHROPIC_OPUS47_URL = "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416"
@@ -67,9 +75,16 @@ QWEN38_MAX_ARTICLE_API_URL = (
     "https://qwen.ai/api/v2/article/retrieval"
     "?language=en-US&path=qwen3.8&type=qwen_ai"
 )
+QWEN38_27B_HF_URL = "https://huggingface.co/Qwen/Qwen3.8-27B"
+QWEN38_27B_HF_RAW_URL = f"{QWEN38_27B_HF_URL}/raw/main/README.md"
 DEEPSEEK_V4_PRO_URL = "https://api-docs.deepseek.com/news/news260424"
 DEEPSEEK_V4_FLASH_0731_URL = "https://api-docs.deepseek.com/updates/"
+DEEPSEEK_V4_PRO_0813_URL = "https://api-docs.deepseek.com/news/news260813"
+DEEPSEEK_V4_PRO_0813_HF_URL = "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813"
+DEEPSEEK_V4_PRO_0813_HF_RAW_URL = f"{DEEPSEEK_V4_PRO_0813_HF_URL}/raw/main/README.md"
 KIMI_K3_URL = "https://www.kimi.com/blog/kimi-k3"
+KIMI_K3_HF_URL = "https://huggingface.co/moonshotai/Kimi-K3"
+KIMI_K3_HF_RAW_URL = f"{KIMI_K3_HF_URL}/raw/main/README.md"
 KIMI_K26_URL = "https://www.kimi.com/blog/kimi-k2-6"
 KIMI_K27_CODE_URL = "https://www.kimi.com/resources/kimi-k2-7-code"
 KIMI_K27_CODE_HF_URL = "https://huggingface.co/moonshotai/Kimi-K2.7-Code"
@@ -80,6 +95,8 @@ KIMI_K2_0905_URL = "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905"
 GLM51_URL = "https://docs.z.ai/guides/llm/glm-5.1"
 GLM52_URL = "https://docs.z.ai/guides/llm/glm-5.2"
 GLM52_HF_URL = "https://huggingface.co/zai-org/GLM-5.2"
+GLM53_URL = "https://z.ai/blog/glm-5.3"
+GLM53_DOC_URL = "https://docs.z.ai/guides/llm/glm-5.3.md"
 GLM47_URL = "https://docs.z.ai/guides/llm/glm-4.7"
 GLM46_URL = "https://docs.z.ai/guides/llm/glm-4.6"
 GLM45_URL = "https://z.ai/blog/glm-4.5"
@@ -256,6 +273,14 @@ MODEL_ALIASES = {
         "qwen3.8-max",
         "qwen3-8-max",
     ],
+    "Qwen3.8 27B": [
+        "Qwen3.8 27B",
+        "Qwen3.8 27B (xhigh)",
+        "Qwen3.8-27B",
+        "Qwen/Qwen3.8-27B",
+        "qwen3-8-27b",
+        "qwen3-8-27b-xhigh",
+    ],
     "Qwen3 235B [R]": [
         "Qwen3 235B [R]",
         "Qwen3-235B-A22B",
@@ -317,6 +342,14 @@ MODEL_ALIASES = {
         "qwen2-72b-instruct",
     ],
     "DeepSeek V4 Pro (Max)": ["DeepSeek V4 Pro (Max)", "DeepSeek-V4-Pro Max", "DS-V4-Pro Max", "deepseek-v4-pro"],
+    "DeepSeek V4 Pro 0813 (Max)": [
+        "DeepSeek V4 Pro 0813 (Max)",
+        "DeepSeek V4 Pro 0813 (max) [R]",
+        "DeepSeek-V4-Pro-0813",
+        "deepseek-ai/DeepSeek-V4-Pro-0813",
+        "deepseek-v4-pro-0813",
+        "deepseek-v4-pro-0813-max",
+    ],
     "DeepSeek V4 Pro (High)": ["DeepSeek V4 Pro (High)", "DeepSeek-V4-Pro High", "deepseek-v4-pro-high"],
     "DeepSeek V4 Pro": ["DeepSeek V4 Pro", "DeepSeek-V4-Pro Non-Think", "deepseek-v4-pro-non-reasoning"],
     "DeepSeek V4 Flash (Max)": ["DeepSeek V4 Flash (Max)", "DeepSeek-V4-Flash Max", "deepseek-v4-flash-0420"],
@@ -336,6 +369,14 @@ MODEL_ALIASES = {
     "Kimi K2 0905": ["Kimi K2 0905", "Kimi-K2-Instruct-0905", "moonshotai/Kimi-K2-Instruct-0905"],
     "Kimi K2": ["Kimi K2", "Kimi-K2", "Kimi-K2-Instruct"],
     "GLM-5.1": ["GLM-5.1", "GLM 5.1", "zai-org/GLM-5.1", "glm-5-1"],
+    "GLM-5.3": [
+        "GLM-5.3",
+        "GLM-5.3 (max)",
+        "GLM-5.3 (max) [R]",
+        "GLM 5.3",
+        "glm-5-3",
+        "glm-5-3-max",
+    ],
     "GLM-5.2": [
         "GLM-5.2",
         "GLM 5.2",
@@ -523,6 +564,27 @@ BENCHMARKS = [
         "unit": "%",
         "icon": "OS",
         "openaiLabel": "OSWorld-Verified",
+    },
+    {
+        "id": "webarena-verified",
+        "label": "WebArena-Verified",
+        "category": "Computer use",
+        "unit": "%",
+        "icon": "WEB",
+    },
+    {
+        "id": "androidworld",
+        "label": "AndroidWorld",
+        "category": "Computer use",
+        "unit": "%",
+        "icon": "AND",
+    },
+    {
+        "id": "recreationbench",
+        "label": "RecreationBench",
+        "category": "Computer use",
+        "unit": "%",
+        "icon": "REC",
     },
     {
         "id": "toolathlon",
@@ -768,6 +830,20 @@ BENCHMARKS = [
         "icon": "WEB",
     },
     {
+        "id": "qwen-swebench",
+        "label": "QwenSWEBench",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "QSWE",
+    },
+    {
+        "id": "coworkbench",
+        "label": "CoWorkBench",
+        "category": "Professional work",
+        "unit": "%",
+        "icon": "COW",
+    },
+    {
         "id": "claw-eval",
         "label": "Claw-Eval Avg",
         "category": "Agentic coding",
@@ -936,6 +1012,34 @@ BENCHMARKS = [
         "icon": "CX+",
     },
     {
+        "id": "claw-eval-mm-pass3",
+        "label": "ClawEval-MM pass@3",
+        "category": "Multimodal tool use",
+        "unit": "%",
+        "icon": "CLAW",
+    },
+    {
+        "id": "claw-eval-mm-average",
+        "label": "ClawEval-MM average",
+        "category": "Multimodal tool use",
+        "unit": "%",
+        "icon": "CLAW",
+    },
+    {
+        "id": "swe-mm",
+        "label": "SWE-MM",
+        "category": "Multimodal coding",
+        "unit": "%",
+        "icon": "SWE-MM",
+    },
+    {
+        "id": "vision2web",
+        "label": "Vision2Web",
+        "category": "Multimodal coding",
+        "unit": "%",
+        "icon": "V2W",
+    },
+    {
         "id": "mrcr-v2-128k",
         "label": "MRCR v2 128K",
         "category": "Long context",
@@ -1034,6 +1138,13 @@ BENCHMARKS = [
         "icon": "BABY",
     },
     {
+        "id": "babyvision",
+        "label": "BabyVision",
+        "category": "Multimodal reasoning",
+        "unit": "%",
+        "icon": "BABY",
+    },
+    {
         "id": "zerobench-pass5",
         "label": "ZeroBench pass@5",
         "category": "Multimodal reasoning",
@@ -1067,6 +1178,20 @@ BENCHMARKS = [
         "category": "Visual perception",
         "unit": "%",
         "icon": "PERC",
+    },
+    {
+        "id": "realworldqa",
+        "label": "RealWorldQA",
+        "category": "Visual perception",
+        "unit": "%",
+        "icon": "RWQA",
+    },
+    {
+        "id": "erqa",
+        "label": "ERQA",
+        "category": "Embodied intelligence",
+        "unit": "%",
+        "icon": "ERQA",
     },
     {
         "id": "v-star-python",
@@ -1403,6 +1528,132 @@ BENCHMARKS = [
         "category": "Abstract reasoning",
         "unit": "%",
         "icon": "ARC3",
+    },
+    {
+        "id": "terminal-bench-3",
+        "label": "Terminal-Bench 3.0",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "TERM3",
+    },
+    {
+        "id": "programbench-almost-solved",
+        "label": "ProgramBench Almost Solved",
+        "category": "Coding",
+        "unit": "%",
+        "icon": "PROG",
+    },
+    {
+        "id": "swe-marathon-v1-1",
+        "label": "SWE-Marathon v1.1",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "SWEM",
+    },
+    {
+        "id": "exploitgym-2h",
+        "label": "ExploitGym 2h",
+        "category": "Cybersecurity",
+        "unit": "score",
+        "icon": "EXG",
+    },
+    {
+        "id": "exploitgym-6h",
+        "label": "ExploitGym 6h",
+        "category": "Cybersecurity",
+        "unit": "score",
+        "icon": "EXG",
+    },
+    {
+        "id": "agents-last-exam-cli",
+        "label": "Agents' Last Exam (CLI)",
+        "category": "Agentic reasoning",
+        "unit": "%",
+        "icon": "ALE",
+    },
+    {
+        "id": "gdpval-aa-v2-elo",
+        "label": "GDPval-AA v2 Elo",
+        "category": "Professional work",
+        "unit": "Elo",
+        "icon": "GDP",
+    },
+    {
+        "id": "automationbench-v1-0-6",
+        "label": "AutomationBench v1.0.6",
+        "category": "Tool use",
+        "unit": "%",
+        "icon": "AUTO",
+    },
+    {
+        "id": "dsbench-fullstack",
+        "label": "DSBench-FullStack",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "DSB",
+    },
+    {
+        "id": "dsbench-hard",
+        "label": "DSBench-Hard",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "DSB",
+    },
+    {
+        "id": "research-rubrics",
+        "label": "ResearchRubrics",
+        "category": "Agentic search",
+        "unit": "%",
+        "icon": "RR",
+    },
+    {
+        "id": "saas-bench",
+        "label": "SaaS-Bench",
+        "category": "Professional work",
+        "unit": "%",
+        "icon": "SAAS",
+    },
+    {
+        "id": "harvey-lab-aa",
+        "label": "Harvey Lab-AA",
+        "category": "Legal",
+        "unit": "%",
+        "icon": "LAW",
+    },
+    {
+        "id": "corpfin-v2",
+        "label": "CorpFin v2",
+        "category": "Finance",
+        "unit": "%",
+        "icon": "FIN",
+    },
+    {
+        "id": "finance-agent-v2",
+        "label": "Finance Agent v2",
+        "category": "Finance",
+        "unit": "%",
+        "icon": "FIN",
+    },
+    {
+        "id": "legal-research-bench",
+        "label": "Legal Research Bench",
+        "category": "Legal",
+        "unit": "%",
+        "icon": "LAW",
+    },
+    {
+        "id": "video-mme-sub",
+        "label": "Video-MME (with subtitles)",
+        "category": "Video understanding",
+        "unit": "%",
+        "icon": "VID",
+    },
+    {
+        "id": "mmvu",
+        "label": "MMVU",
+        "category": "Multimodal reasoning",
+        "unit": "%",
+        "icon": "MMVU",
     },
 ]
 
@@ -2408,6 +2659,198 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
         },
     },
     {
+        "id": "qwen-qwen3-8-27b-card",
+        "label": "Qwen3.8-27B official model card",
+        "url": QWEN38_27B_HF_URL,
+        "rawUrl": QWEN38_27B_HF_RAW_URL,
+        "modelId": "Qwen/Qwen3.8-27B",
+        "organization": "Qwen",
+        "category": "Official model card",
+        "modelAliases": MODEL_ALIASES["Qwen3.8 27B"],
+        "variantScoped": True,
+        "effort": "xhigh",
+        "configurationConfidence": "inferred",
+        "addModelIfMissing": True,
+        "modelMetadata": {
+            "model": "Qwen3.8 27B (xhigh)",
+            "displayName": "Qwen3.8 27B (xhigh)",
+            "modelKey": "Qwen3.8 27B (xhigh) [R]",
+            "slug": "qwen3-8-27b-xhigh",
+            "creator": "Alibaba",
+            "releaseDate": "2026-08-05",
+            "modelUrl": QWEN38_27B_HF_URL,
+            "contextWindowTokens": 262144,
+            "openSourceCategorization": "permissive",
+            "isReasoning": True,
+            "inputModalities": ["Text", "Image", "Video"],
+            "outputModalities": ["Text"],
+            "modelDetails": {
+                "parameters": "27B",
+                "license": "Apache-2.0",
+                "reasoningModes": ["thinking", "non-thinking"],
+                "contextNote": "262,144 native context; extendable to 1,000,000 tokens.",
+            },
+        },
+        "note": (
+            "Qwen's official Hugging Face model card for the dense 27B Qwen3.8 model. "
+            "Only the Qwen3.8-27B column is ingested. The card states that thinking is "
+            "enabled by default and xhigh is the default reasoning effort. Multi-value "
+            "rows retain their published semantics (Score rather than Pass@1, average "
+            "rather than Pass@3, and without/with Code Interpreter as separate results)."
+        ),
+        "columns": {"Qwen3.8-27B": "Qwen3.8 27B"},
+        "rowLabels": {
+            "Terminal Bench 2.1 (Terminus)": "terminal-bench-2-1",
+            "SWE-bench Pro": "swe-bench-pro",
+            "NL2Repo-Bench": "nl2repo",
+            "DeepSWE 1.1": "deepswe-v1-1",
+            "QwenSWEBench": "qwen-swebench",
+            "CoWorkBench": "coworkbench",
+            "JobBench": "job-bench",
+            "Agents' Last Exam": "agents-last-exam",
+            "IFBench": "ifbench",
+            "GPQA Diamond": "gpqa-diamond",
+            "HLE": "hle",
+            "LiveCodeBench v6": "livecodebench",
+            "OSWorld-Verified": "osworld-verified",
+            "WebArena-Verified": "webarena-verified",
+            "AndroidWorld": "androidworld",
+            "RecreationBench": "recreationbench",
+            "ClawEval-MM": "claw-eval-mm-pass3",
+            "SWE-MM": "swe-mm",
+            "Vision2Web": "vision2web",
+            "MathVision": "mathvision",
+            "BabyVision": "babyvision",
+            "CharXiv (RQ)": "charxiv-no-tools",
+            "OmniDocBench 1.5": "omnidocbench",
+            "RealWorldQA": "realworldqa",
+            "ERQA": "erqa",
+        },
+        "compositeRows": {
+            "agents-last-exam": [
+                {"benchmarkId": "agents-last-exam", "component": 1},
+            ],
+            "claw-eval-mm-pass3": [
+                {"benchmarkId": "claw-eval-mm-pass3", "component": 0},
+                {"benchmarkId": "claw-eval-mm-average", "component": 1},
+            ],
+            "mathvision": [
+                {"benchmarkId": "mathvision", "component": 0},
+                {"benchmarkId": "mathvision-python", "component": 1},
+            ],
+            "babyvision": [
+                {"benchmarkId": "babyvision", "component": 0},
+                {"benchmarkId": "babyvision-python", "component": 1},
+            ],
+            "charxiv-no-tools": [
+                {"benchmarkId": "charxiv-no-tools", "component": 0},
+                {"benchmarkId": "charxiv-tools", "component": 1},
+            ],
+        },
+        "scoreSelections": {
+            "agents-last-exam": "Score (second value after Pass@1)",
+            "claw-eval-mm-pass3": "Pass@3 (first value)",
+            "claw-eval-mm-average": "average score (second value)",
+            "mathvision": "without Code Interpreter (first value)",
+            "mathvision-python": "with Code Interpreter (second value)",
+            "babyvision": "without Code Interpreter (first value)",
+            "babyvision-python": "with Code Interpreter (second value)",
+            "charxiv-no-tools": "without Code Interpreter (first value)",
+            "charxiv-tools": "with Code Interpreter (second value)",
+        },
+        "scores": {
+            "Qwen3.8 27B": {
+                "terminal-bench-2-1": 73.0,
+                "swe-bench-pro": 61.7,
+                "nl2repo": 42.3,
+                "deepswe-v1-1": 42.2,
+                "qwen-swebench": 79.0,
+                "coworkbench": 70.7,
+                "job-bench": 33.4,
+                "agents-last-exam": 42.9,
+                "ifbench": 79.5,
+                "gpqa-diamond": 89.2,
+                "hle": 30.8,
+                "livecodebench": 90.3,
+                "osworld-verified": 84.3,
+                "webarena-verified": 64.8,
+                "androidworld": 81.9,
+                "recreationbench": 47.1,
+                "claw-eval-mm-pass3": 57.4,
+                "claw-eval-mm-average": 56.9,
+                "swe-mm": 38.6,
+                "vision2web": 62.9,
+                "mathvision": 90.0,
+                "mathvision-python": 94.6,
+                "babyvision": 65.7,
+                "babyvision-python": 85.6,
+                "charxiv-no-tools": 83.7,
+                "charxiv-tools": 90.2,
+                "omnidocbench": 91.1,
+                "realworldqa": 85.9,
+                "erqa": 65.5,
+            }
+        },
+    },
+    {
+        "id": "deepseek-v4-pro-0813-card",
+        "label": "DeepSeek-V4-Pro-0813 official model card",
+        "url": DEEPSEEK_V4_PRO_0813_URL,
+        "rawUrl": DEEPSEEK_V4_PRO_0813_HF_RAW_URL,
+        "modelId": "deepseek-ai/DeepSeek-V4-Pro-0813",
+        "organization": "deepseek-ai",
+        "category": "Official model release",
+        "modelAliases": MODEL_ALIASES["DeepSeek V4 Pro 0813 (Max)"],
+        "variantScoped": True,
+        "effort": "max",
+        "configurationConfidence": "declared",
+        "note": (
+            "DeepSeek's August 13 production V4-Pro release. The official announcement "
+            "is the primary URL and the verified deepseek-ai Hugging Face model card is "
+            "the machine-readable benchmark source. Public code-agent rows use the minimal "
+            "DeepSeek Harness at max effort, temperature 1.0, and top_p 0.95; DSBench rows "
+            "are explicitly marked internal by the card."
+        ),
+        "columns": {"DeepSeek-V4-Pro-0813": "DeepSeek V4 Pro 0813 (Max)"},
+        "rowLabels": {
+            "HLE (wo / w tools)": "hle",
+            "Terminal Bench 2.1": "terminal-bench-2-1",
+            "NL2Repo": "nl2repo",
+            "Cybergym": "cybergym",
+            "DeepSWE": "deepswe",
+            "Toolathlon-Verified": "toolathlon",
+            "Agents' Last Exam": "agents-last-exam",
+            "AutomationBench (Public)": "automationbench",
+            "DSBench-FullStack": "dsbench-fullstack",
+            "DSBench-Hard": "dsbench-hard",
+        },
+        "compositeRows": {
+            "hle": [
+                {"benchmarkId": "hle", "component": 0},
+                {"benchmarkId": "hle-tools", "component": 1},
+            ],
+        },
+        "scoreSelections": {
+            "hle": "without tools (first value)",
+            "hle-tools": "with tools (second value)",
+        },
+        "scores": {
+            "DeepSeek V4 Pro 0813 (Max)": {
+                "hle": 42.7,
+                "hle-tools": 60.0,
+                "terminal-bench-2-1": 87.9,
+                "nl2repo": 61.5,
+                "cybergym": 83.3,
+                "deepswe": 62.7,
+                "toolathlon": 74.1,
+                "agents-last-exam": 25.7,
+                "automationbench": 31.8,
+                "dsbench-fullstack": 71.1,
+                "dsbench-hard": 67.2,
+            }
+        },
+    },
+    {
         "id": "deepseek-v4-pro-card",
         "label": "DeepSeek-V4 official release",
         "url": DEEPSEEK_V4_PRO_URL,
@@ -2625,46 +3068,74 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
         "id": "kimi-k3-release",
         "label": "Kimi K3 official release evaluations",
         "url": KIMI_K3_URL,
-        "rawUrl": KIMI_K3_URL,
+        "rawUrl": KIMI_K3_HF_RAW_URL,
+        "modelId": "moonshotai/Kimi-K3",
+        "organization": "moonshotai",
         "category": "Official release",
         "modelAliases": MODEL_ALIASES["Kimi K3"],
+        "variantScoped": True,
+        "effort": "max",
+        "configurationConfidence": "declared",
         "note": (
-            "Moonshot AI Kimi K3 release table covering six frontier models across coding, agentic, "
-            "reasoning, knowledge, and vision benchmarks. Kimi K3 uses max reasoning; comparator "
-            "scores mix KimiCode, Claude Code, Codex, and cited official leaderboards as documented "
-            "in the page footnotes, so harness-sensitive rows should not be treated as pure model-only tests."
+            "Moonshot AI Kimi K3 release with the verified moonshotai Hugging Face model card "
+            "as the machine-readable source. The card is newer than the launch blog snapshot and "
+            "updates GDPval-AA v2, Toolathlon, JobBench, APEX-Agents, and other rows. Kimi K3 "
+            "uses max reasoning; only its own column is ingested so comparator rows cannot "
+            "inherit Kimi's effort or configuration metadata."
         ),
-        "columns": {
-            "Kimi K3 (max)": "Kimi K3",
-            "Claude Fable 5 (max, with fallback)": "Claude Fable 5",
-            "GPT 5.6 Sol (max)": "GPT-5.6 Sol",
-            "Claude Opus 4.8 (max)": "Claude Opus 4.8",
-            "GPT 5.5 (xhigh)": "GPT-5.5",
-            "GLM-5.2 (max)": "GLM-5.2 (max)",
-        },
+        "columns": {"Kimi K3 (max)": "Kimi K3"},
         "rowLabels": {
+            "GPQA Diamond": "gpqa-diamond",
+            "CritPt": "critpt",
+            "AA-LCR": "aa-lcr",
+            "HLE-Full": "hle",
             "DeepSWE": "deepswe",
             "Program Bench": "programbench",
+            "ProgramBench": "programbench",
             "Terminal Bench 2.1": "terminal-bench-2-1",
+            "Terminal-Bench 2.1": "terminal-bench-2-1",
+            "FrontierSWE": "frontierswe-dominance",
             "FrontierSWE Dominance": "frontierswe-dominance",
             "SWE Marathon": "swe-marathon",
+            "SWE-Marathon": "swe-marathon",
+            "PostTrainBench": "posttrainbench",
             "PostTrain Bench": "posttrainbench",
+            "MLS-Bench-Lite": "mls-bench-lite",
             "MLS Bench": "mls-bench-lite",
+            "SciCode": "scicode",
+            "Kimi Code Bench 2.0": "kimi-code-bench-v2",
             "Kimi Code Bench 2.0 (Internal)": "kimi-code-bench-v2",
-            "GDPval-AA v2 (Elo-score)": "gdpval-aa-elo",
+            "GDPval-AA v2 (Elo)": "gdpval-aa-v2-elo",
+            "GDPval-AA v2 (Elo-score)": "gdpval-aa-v2-elo",
             "BrowseComp": "browsecomp",
+            "DeepSearchQA (F1)": "deepsearchqa-f1",
             "DeepSearchQA (f1-score)": "deepsearchqa-f1",
+            "ResearchRubrics": "research-rubrics",
             "Toolathlon-Verified": "toolathlon",
+            "MCPMark-Verified": "mcp-mark-verified",
+            "MCP-Atlas": "mcp-atlas",
             "MCP Atlas": "mcp-atlas",
+            "AutomationBench": "automationbench",
             "Automation Bench": "automationbench",
+            "JobBench": "job-bench",
             "Job Bench": "job-bench",
             "AA-Briefcase (Elo-score)": "aa-briefcase-elo",
+            "AA-Briefcase (Elo)": "aa-briefcase-elo",
+            "Agents' Last Exam": "agents-last-exam",
             "APEX-Agents": "apex-agents",
+            "OfficeQA Pro": "officeqa-pro",
             "Office QA Pro": "officeqa-pro",
             "SpreadsheetBench 2": "spreadsheetbench-2",
+            "OSWorld-Verified": "osworld-verified",
+            "OSWorld 2.0": "osworld-2",
+            "SaaS-Bench": "saas-bench",
+            "τ³-Banking": "tau3-banking",
+            "Harvey Lab-AA": "harvey-lab-aa",
+            "CorpFin v2": "corpfin-v2",
+            "Finance Agent v2": "finance-agent-v2",
+            "Legal Research Bench": "legal-research-bench",
             "DECK-Bench (Internal)": "deck-bench-internal",
             "GPQA-Diamond": "gpqa-diamond",
-            "HLE-Full": "hle",
             "HLE-Full w/ tools": "hle-tools",
             "MMMU-Pro": "mmmu-pro",
             "MMMU-Pro w/ python": "mmmu-pro-python",
@@ -2678,9 +3149,38 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
             "WorldVQA ForceAnswer": "worldvqa-forceanswer",
             "OmniDocBench": "omnidocbench",
             "PerceptionBench": "perceptionbench",
+            "Video-MME (w. sub)": "video-mme-sub",
+            "MMVU": "mmvu",
+        },
+        "compositeRows": {
+            "hle": [
+                {"benchmarkId": "hle", "component": 0},
+                {"benchmarkId": "hle-tools", "component": 1},
+            ],
+            "mmmu-pro": [
+                {"benchmarkId": "mmmu-pro", "component": 0},
+                {"benchmarkId": "mmmu-pro-python", "component": 1},
+            ],
+            "charxiv-no-tools": [
+                {"benchmarkId": "charxiv-no-tools", "component": 0},
+                {"benchmarkId": "charxiv-tools", "component": 1},
+            ],
+            "mathvision": [
+                {"benchmarkId": "mathvision", "component": 0},
+                {"benchmarkId": "mathvision-python", "component": 1},
+            ],
+            "zerobench-pass5": [
+                {"benchmarkId": "zerobench-pass5", "component": 0},
+                {"benchmarkId": "zerobench-python-pass5", "component": 1},
+            ],
         },
         "scores": {
             "Kimi K3": {
+                "gpqa-diamond": 93.5,
+                "critpt": 23.4,
+                "aa-lcr": 74.7,
+                "hle": 43.5,
+                "hle-tools": 56.0,
                 "deepswe": 67.5,
                 "programbench": 77.8,
                 "terminal-bench-2-1": 88.3,
@@ -2688,22 +3188,35 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
                 "swe-marathon": 42.0,
                 "posttrainbench": 36.6,
                 "mls-bench-lite": 48.3,
+                "scicode": 58.7,
                 "kimi-code-bench-v2": 72.9,
-                "gdpval-aa-elo": 1668,
                 "browsecomp": 91.2,
                 "deepsearchqa-f1": 95.0,
-                "toolathlon": 73.2,
+                "research-rubrics": 76.2,
+                "gdpval-aa-v2-elo": 1686,
+                "toolathlon": 76.5,
+                "mcp-mark-verified": 94.5,
                 "mcp-atlas": 84.2,
                 "automationbench": 30.8,
-                "job-bench": 52.9,
+                "job-bench": 54.3,
                 "aa-briefcase-elo": 1548,
-                "apex-agents": 37.6,
+                "agents-last-exam": 28.3,
+                "apex-agents": 41.0,
                 "officeqa-pro": 63.3,
                 "spreadsheetbench-2": 34.8,
-                "deck-bench-internal": 73.5,
-                "gpqa-diamond": 93.5,
-                "hle": 43.5,
-                "hle-tools": 56.0,
+                "osworld-verified": 84.8,
+                "osworld-2": 58.3,
+                "saas-bench": 60.1,
+                "tau3-banking": 33.4,
+                "harvey-lab-aa": 94.6,
+                "corpfin-v2": 71.6,
+                "finance-agent-v2": 54.4,
+                "legal-research-bench": 44.2,
+                "worldvqa-forceanswer": 51.0,
+                "omnidocbench": 91.1,
+                "perceptionbench": 58.5,
+                "video-mme-sub": 90.0,
+                "mmvu": 82.1,
                 "mmmu-pro": 81.6,
                 "mmmu-pro-python": 83.4,
                 "charxiv-no-tools": 84.8,
@@ -2713,45 +3226,6 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
                 "babyvision-python": 85.7,
                 "zerobench-pass5": 23.0,
                 "zerobench-python-pass5": 41.0,
-                "worldvqa-forceanswer": 51.0,
-                "omnidocbench": 91.1,
-                "perceptionbench": 58.5,
-            },
-            "GPT-5.5": {
-                "deepswe": 67.0,
-                "programbench": 70.8,
-                "terminal-bench-2-1": 83.4,
-                "frontierswe-dominance": 64.9,
-                "swe-marathon": 14.0,
-                "posttrainbench": 28.4,
-                "mls-bench-lite": 35.5,
-                "kimi-code-bench-v2": 69.0,
-                "gdpval-aa-elo": 1494,
-                "browsecomp": 84.4,
-                "toolathlon": 73.5,
-                "mcp-atlas": 82.8,
-                "automationbench": 22.7,
-                "job-bench": 38.3,
-                "aa-briefcase-elo": 1158,
-                "apex-agents": 38.5,
-                "officeqa-pro": 60.9,
-                "spreadsheetbench-2": 29.05,
-                "deck-bench-internal": 68.2,
-                "gpqa-diamond": 93.5,
-                "hle": 41.4,
-                "hle-tools": 52.2,
-                "mmmu-pro": 81.2,
-                "mmmu-pro-python": 83.2,
-                "charxiv-no-tools": 84.1,
-                "charxiv-tools": 89.0,
-                "mathvision": 92.2,
-                "mathvision-python": 96.8,
-                "babyvision-python": 83.6,
-                "zerobench-pass5": 22.0,
-                "zerobench-python-pass5": 41.0,
-                "worldvqa-forceanswer": 38.5,
-                "omnidocbench": 89.4,
-                "perceptionbench": 55.8,
             },
         },
     },
@@ -2980,6 +3454,85 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
                 "swe-bench-verified": 68.0,
                 "terminal-bench": 40.5,
                 "tau2-bench-weighted": 75.9,
+            }
+        },
+    },
+    {
+        "id": "zai-glm-5-3-release",
+        "label": "GLM-5.3 official release evaluations",
+        "url": GLM53_URL,
+        "rawUrl": GLM53_DOC_URL,
+        "category": "Official release",
+        "modelAliases": MODEL_ALIASES["GLM-5.3"],
+        "variantScoped": True,
+        "effort": "max",
+        "configurationConfidence": "model-card-default",
+        "addModelIfMissing": True,
+        "modelMetadata": {
+            "model": "GLM-5.3 (max)",
+            "displayName": "GLM-5.3 (max)",
+            "modelKey": "GLM-5.3 (max) [R]",
+            "slug": "glm-5-3-max",
+            "creator": "Z AI",
+            "modelUrl": GLM53_URL,
+            "isReasoning": True,
+            "inputModalities": ["Text"],
+            "outputModalities": ["Text"],
+        },
+        "note": (
+            "Z.ai's official GLM-5.3 blog benchmark dataset, cross-checked against the "
+            "official docs page. GLM-5.3 is published in the Coding Plan before its "
+            "open-weight Hugging Face release. Versioned benchmark rows remain distinct "
+            "from older Terminal-Bench, SWE-Marathon, AutomationBench, and GDPval rows."
+        ),
+        "columns": {"GLM-5.3": "GLM-5.3"},
+        "rowLabels": {
+            "Terminal-Bench 2.1": "terminal-bench-2-1",
+            "Terminal-Bench 3.0": "terminal-bench-3",
+            "DeepSWE v1.1": "deepswe-v1-1",
+            "NL2Repo": "nl2repo",
+            "ProgramBench (Almost Solved)": "programbench-almost-solved",
+            "FrontierSWE": "frontierswe-dominance",
+            "SWE-Marathon v1.1": "swe-marathon-v1-1",
+            "PostTrainBench": "posttrainbench",
+            "CyberGym": "cybergym",
+            "ExploitGym (2h / 6h)": "exploitgym-2h",
+            "ExploitBench": "exploitbench",
+            "Toolathlon Verified": "toolathlon",
+            "AutomationBench v1.0.6": "automationbench-v1-0-6",
+            "Agents' Last Exam (CLI)": "agents-last-exam-cli",
+            "HLE w/ tools": "hle-tools",
+            "GDPval-AA v2": "gdpval-aa-v2-elo",
+        },
+        "compositeRows": {
+            "exploitgym-2h": [
+                {"benchmarkId": "exploitgym-2h", "component": 0},
+                {"benchmarkId": "exploitgym-6h", "component": 1},
+            ],
+        },
+        "scoreSelections": {
+            "exploitgym-2h": "2-hour budget (first value)",
+            "exploitgym-6h": "6-hour budget (second value)",
+        },
+        "scores": {
+            "GLM-5.3": {
+                "terminal-bench-2-1": 88.2,
+                "terminal-bench-3": 28.3,
+                "deepswe-v1-1": 66.9,
+                "nl2repo": 58.0,
+                "programbench-almost-solved": 19.0,
+                "frontierswe-dominance": 78.1,
+                "swe-marathon-v1-1": 42.5,
+                "posttrainbench": 39.8,
+                "cybergym": 84.5,
+                "exploitgym-2h": 105,
+                "exploitgym-6h": 130,
+                "exploitbench": 54.4,
+                "toolathlon": 73.0,
+                "automationbench-v1-0-6": 48.2,
+                "agents-last-exam-cli": 28.5,
+                "hle-tools": 62.5,
+                "gdpval-aa-v2-elo": 1769,
             }
         },
     },
@@ -3961,6 +4514,357 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
 ]
 
 
+DISCOVERED_CANONICAL_ROW_LABELS = {
+    "GDPval-AA v2": "gdpval-aa-v2-elo",
+    "Tau² Bench": "tau2-bench-weighted",
+}
+
+
+def discovered_model_card_specs(
+    manifest: dict[str, Any],
+    curated_specs: list[dict[str, Any]] | None = None,
+) -> list[dict[str, Any]]:
+    """Turn the discovery manifest into conservative generic source specs.
+
+    Curated specs win whenever a model is already known. Generic specs ingest
+    only benchmark labels already declared by this collector; a new benchmark
+    therefore remains reference-only until its meaning and version are reviewed.
+    """
+
+    curated_specs = curated_specs if curated_specs is not None else OFFICIAL_SOURCE_SPECS
+
+    def match_key(value: Any) -> str:
+        return re.sub(r"[^a-z0-9]+", " ", str(value or "").lower()).strip()
+
+    known_aliases: set[str] = set()
+    known_urls: set[str] = set()
+    known_source_ids: set[str] = set()
+    row_labels = {
+        str(benchmark["label"]): str(benchmark["id"])
+        for benchmark in BENCHMARKS
+        if benchmark.get("label") and benchmark.get("id")
+    }
+    for spec in curated_specs:
+        known_source_ids.add(str(spec.get("id") or ""))
+        known_urls.update(
+            str(url)
+            for url in (spec.get("url"), spec.get("rawUrl"))
+            if url
+        )
+        alias_values = [
+            spec.get("modelId"),
+            *(spec.get("modelAliases") or []),
+            *(spec.get("modelKeys") or []),
+            *(spec.get("columns") or {}).keys(),
+            *(spec.get("columns") or {}).values(),
+            *(spec.get("scores") or {}).keys(),
+        ]
+        known_aliases.update(key for value in alias_values if (key := match_key(value)))
+        for label, benchmark_id in (spec.get("rowLabels") or {}).items():
+            if label and benchmark_id:
+                row_labels.setdefault(str(label), str(benchmark_id))
+    row_labels.update(DISCOVERED_CANONICAL_ROW_LABELS)
+
+    specs: list[dict[str, Any]] = []
+    for model in manifest.get("models", []):
+        if not isinstance(model, dict):
+            continue
+        model_id = str(model.get("modelId") or "").strip()
+        name = str(model.get("name") or model_id.rsplit("/", 1)[-1]).strip()
+        display_name = str(model.get("displayName") or name).strip()
+        url = str(model.get("url") or "").strip()
+        raw_url = str(model.get("rawUrl") or "").strip()
+        aliases = [
+            str(alias).strip()
+            for alias in (model.get("aliases") or [display_name, name, model_id])
+            if str(alias).strip()
+        ]
+        alias_keys = {key for alias in aliases if (key := match_key(alias))}
+        if not model_id or not url or not raw_url:
+            continue
+        if url in known_urls or raw_url in known_urls or alias_keys & known_aliases:
+            continue
+
+        source_slug = re.sub(r"[^a-z0-9]+", "-", model_id.lower()).strip("-")
+        source_id = f"hf-{source_slug}-card"
+        if source_id in known_source_ids:
+            continue
+        column_aliases = []
+        for alias in (name, display_name, re.sub(r"[-_.]+", " ", name)):
+            if alias and alias not in column_aliases:
+                column_aliases.append(alias)
+
+        specs.append(
+            {
+                "id": source_id,
+                "label": f"{display_name} official model card",
+                "url": url,
+                "rawUrl": raw_url,
+                "modelId": model_id,
+                "organization": model.get("organization") or "",
+                "createdAt": model.get("createdAt") or "",
+                "lastModified": model.get("lastModified") or "",
+                "revision": model.get("revision") or "",
+                "tags": [
+                    str(tag)
+                    for tag in (model.get("tags") or [])
+                    if isinstance(tag, str) and tag.strip()
+                ],
+                "category": "Official model card",
+                "autoDiscovered": True,
+                "scoreStatus": "reference",
+                "modelAliases": aliases,
+                "variantScoped": True,
+                "exactBenchmarkLabelsOnly": True,
+                "configurationConfidence": "model-card-default",
+                "note": (
+                    "Automatically discovered in a verified first-party Hugging Face "
+                    "organization. Only previously reviewed benchmark labels are ingested; "
+                    "unrecognized rows remain quarantined as reference-only metadata."
+                ),
+                "columns": {alias: display_name for alias in column_aliases},
+                "rowLabels": row_labels,
+                "modelResultOverrides": {
+                    display_name: {"modelAliases": aliases, "variantScoped": True}
+                },
+                "compositeRows": {
+                    "agents-last-exam": [
+                        {"benchmarkId": "agents-last-exam", "component": 1},
+                    ],
+                    "claw-eval-mm-pass3": [
+                        {"benchmarkId": "claw-eval-mm-pass3", "component": 0},
+                        {"benchmarkId": "claw-eval-mm-average", "component": 1},
+                    ],
+                    "mathvision": [
+                        {"benchmarkId": "mathvision", "component": 0},
+                        {"benchmarkId": "mathvision-python", "component": 1},
+                    ],
+                    "babyvision": [
+                        {"benchmarkId": "babyvision", "component": 0},
+                        {"benchmarkId": "babyvision-python", "component": 1},
+                    ],
+                    "charxiv-no-tools": [
+                        {"benchmarkId": "charxiv-no-tools", "component": 0},
+                        {"benchmarkId": "charxiv-tools", "component": 1},
+                    ],
+                },
+            }
+        )
+        known_source_ids.add(source_id)
+        known_urls.update({url, raw_url})
+        known_aliases.update(alias_keys)
+    return specs
+
+
+def load_discovered_model_card_specs(
+    manifest_path: Path = DEFAULT_OFFICIAL_MODEL_CARDS_JSON,
+) -> list[dict[str, Any]]:
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return []
+    if not isinstance(manifest, dict):
+        return []
+    return discovered_model_card_specs(manifest)
+
+
+VENDOR_PAGE_DISCOVERY_SOURCES = {
+    "qwen-article-json": {"vendor": "qwen", "host": "qwen.ai", "creator": "Alibaba"},
+    "glm-docs-llms": {"vendor": "glm", "host": "docs.z.ai", "creator": "Z AI"},
+    "kimi-blog-sitemap": {"vendor": "kimi", "host": "www.kimi.com", "creator": "Kimi"},
+    "deepseek-api-docs-sitemap": {
+        "vendor": "deepseek",
+        "host": "api-docs.deepseek.com",
+        "creator": "DeepSeek",
+    },
+}
+
+
+def discovered_vendor_page_specs(
+    manifest: dict[str, Any],
+    curated_specs: list[dict[str, Any]] | None = None,
+) -> list[dict[str, Any]]:
+    """Turn verified first-party release pages into conservative source specs.
+
+    The discovery script constrains URL shapes; this consumer independently
+    pins each source key to its expected HTTPS host. Curated sources take
+    precedence, and generic sources only ingest benchmark labels that the
+    collector already knows how to interpret.
+    """
+
+    curated_specs = curated_specs if curated_specs is not None else OFFICIAL_SOURCE_SPECS
+
+    def match_key(value: Any) -> str:
+        return re.sub(r"[^a-z0-9]+", " ", str(value or "").lower()).strip()
+
+    def valid_url(value: str, expected_host: str) -> bool:
+        try:
+            parsed = urlsplit(value)
+            port = parsed.port
+        except ValueError:
+            return False
+        return bool(
+            parsed.scheme == "https"
+            and parsed.hostname == expected_host
+            and port is None
+            and parsed.username is None
+            and parsed.password is None
+            and not parsed.fragment
+        )
+
+    known_aliases: set[str] = set()
+    known_urls: set[str] = set()
+    known_source_ids: set[str] = set()
+    row_labels = {
+        str(benchmark["label"]): str(benchmark["id"])
+        for benchmark in BENCHMARKS
+        if benchmark.get("label") and benchmark.get("id")
+    }
+    for spec in curated_specs:
+        known_source_ids.add(str(spec.get("id") or ""))
+        known_urls.update(
+            str(source_url)
+            for source_url in (spec.get("url"), spec.get("rawUrl"))
+            if source_url
+        )
+        alias_values = [
+            spec.get("modelId"),
+            *(spec.get("modelAliases") or []),
+            *(spec.get("modelKeys") or []),
+            *(spec.get("columns") or {}).keys(),
+            *(spec.get("columns") or {}).values(),
+            *(spec.get("scores") or {}).keys(),
+        ]
+        known_aliases.update(key for value in alias_values if (key := match_key(value)))
+        for label, benchmark_id in (spec.get("rowLabels") or {}).items():
+            if label and benchmark_id:
+                row_labels.setdefault(str(label), str(benchmark_id))
+    row_labels.update(DISCOVERED_CANONICAL_ROW_LABELS)
+
+    specs: list[dict[str, Any]] = []
+    for page in manifest.get("pages", []):
+        if not isinstance(page, dict):
+            continue
+        source_key = str(page.get("sourceKey") or "")
+        source_config = VENDOR_PAGE_DISCOVERY_SOURCES.get(source_key)
+        if not source_config or page.get("vendor") != source_config["vendor"]:
+            continue
+        url = str(page.get("url") or "").strip()
+        raw_url = str(page.get("rawUrl") or "").strip()
+        if not valid_url(url, source_config["host"]) or not valid_url(
+            raw_url, source_config["host"]
+        ):
+            continue
+
+        name = str(page.get("name") or "").strip()
+        display_name = str(page.get("displayName") or name).strip()
+        aliases = []
+        for alias in [display_name, name, *(page.get("aliases") or [])]:
+            alias = str(alias or "").strip()
+            if alias and alias not in aliases:
+                aliases.append(alias)
+        alias_keys = {key for alias in aliases if (key := match_key(alias))}
+        if (
+            not name
+            or not display_name
+            or url in known_urls
+            or raw_url in known_urls
+            or alias_keys & known_aliases
+        ):
+            continue
+
+        metadata = page.get("sourceMetadata")
+        metadata = metadata if isinstance(metadata, dict) else {}
+        parsed_url = urlsplit(url)
+        query_id = parse_qs(parsed_url.query).get("id", [""])[0]
+        identity = str(metadata.get("path") or query_id or parsed_url.path.rsplit("/", 1)[-1])
+        identity_slug = re.sub(r"[^a-z0-9]+", "-", identity.lower()).strip("-")
+        name_slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+        source_id = f"official-{source_config['vendor']}-{identity_slug or name_slug}-page"
+        if source_id in known_source_ids:
+            continue
+
+        release_date = str(metadata.get("publishedAt") or "")[:10]
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", release_date):
+            release_date = ""
+        model_metadata: dict[str, Any] = {
+            "model": display_name,
+            "displayName": display_name,
+            "modelKey": display_name,
+            "slug": name_slug,
+            "creator": source_config["creator"],
+            "modelUrl": url,
+        }
+        if release_date:
+            model_metadata["releaseDate"] = release_date
+
+        spec: dict[str, Any] = {
+            "id": source_id,
+            "label": f"{display_name} automatically discovered official release",
+            "url": url,
+            "rawUrl": raw_url,
+            "vendor": source_config["vendor"],
+            "discoverySourceKey": source_key,
+            "category": "Official release",
+            "autoDiscoveredVendorPage": True,
+            "scoreStatus": "reference",
+            "modelAliases": aliases,
+            "variantScoped": True,
+            "exactBenchmarkLabelsOnly": True,
+            "allowAttachedFootnoteLabels": source_key == "qwen-article-json",
+            "configurationConfidence": "release-page-default",
+            "addModelIfMissing": True,
+            "modelMetadata": model_metadata,
+            "note": (
+                "Automatically discovered from a pinned first-party vendor index. "
+                "Only previously reviewed benchmark labels are ingested; unrecognized "
+                "rows remain quarantined as reference-only metadata."
+            ),
+            "columns": {alias: display_name for alias in aliases},
+            "rowLabels": row_labels,
+            "modelResultOverrides": {
+                display_name: {"modelAliases": aliases, "variantScoped": True}
+            },
+        }
+        if source_key == "qwen-article-json":
+            article_path = str(metadata.get("path") or query_id)
+            if not article_path:
+                continue
+            spec.update(
+                {
+                    "requestHeaders": {"Accept": "application/json"},
+                    "requestIdHeader": "X-Request-Id",
+                    "jsonArticlesPath": ["data", "articles"],
+                    "jsonArticleSelector": {"path": article_path},
+                    "jsonArticleContentKey": "content",
+                }
+            )
+
+        specs.append(spec)
+        known_source_ids.add(source_id)
+        known_urls.update({url, raw_url})
+        known_aliases.update(alias_keys)
+    return specs
+
+
+def load_discovered_vendor_page_specs(
+    manifest_path: Path = DEFAULT_OFFICIAL_VENDOR_PAGES_JSON,
+) -> list[dict[str, Any]]:
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return []
+    if not isinstance(manifest, dict):
+        return []
+    return discovered_vendor_page_specs(manifest)
+
+
+# First-party release pages win over a simultaneously discovered Hugging Face
+# card for the same model; both remain eligible when explicitly curated.
+OFFICIAL_SOURCE_SPECS.extend(load_discovered_vendor_page_specs())
+OFFICIAL_SOURCE_SPECS.extend(load_discovered_model_card_specs())
+
+
 class _VisibleTextParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__()
@@ -4197,6 +5101,7 @@ def build_payload(
             "id": spec["id"],
             "label": spec["label"],
             "url": spec["url"],
+            "rawUrl": spec.get("rawUrl") or spec["url"],
             "category": spec.get("category") or "Official model card",
             "collectionStatus": source_statuses.get(spec["id"], "seeded-official-values"),
             "note": spec.get("note") or "",
@@ -4208,6 +5113,7 @@ def build_payload(
             "modelAliases",
             "modelKeys",
             "variantScoped",
+            "exactBenchmarkLabelsOnly",
             "modelScoreEligible",
             "evidenceEligible",
             "systemScore",
@@ -4220,6 +5126,18 @@ def build_payload(
             "fallbackRate",
             "productEvidenceEligible",
             "pureModelEligible",
+            "modelId",
+            "organization",
+            "createdAt",
+            "lastModified",
+            "revision",
+            "tags",
+            "autoDiscovered",
+            "autoDiscoveredVendorPage",
+            "vendor",
+            "discoverySourceKey",
+            "addModelIfMissing",
+            "modelMetadata",
         ):
             if key in spec and spec[key] is not None:
                 official_source[key] = spec[key]
@@ -4355,6 +5273,13 @@ def parse_markdown_source_scores(text: str, spec: dict[str, Any]) -> list[dict[s
         _normalize_label(label): benchmark_id
         for label, benchmark_id in spec.get("rowLabels", {}).items()
     }
+    if spec.get("exactBenchmarkLabelsOnly"):
+        benchmark_by_key.update(
+            {
+                _normalize_label(label): benchmark_id
+                for label, benchmark_id in DISCOVERED_CANONICAL_ROW_LABELS.items()
+            }
+        )
     results: list[dict[str, Any]] = []
     for table in html_tables(text) + markdown_tables(text) + embedded_sheet_tables(text):
         if not table:
@@ -4370,7 +5295,12 @@ def parse_markdown_source_scores(text: str, spec: dict[str, Any]) -> list[dict[s
         for row in table[1:]:
             if not row:
                 continue
-            benchmark_id = _benchmark_id_from_row(row, benchmark_by_key)
+            benchmark_id = _benchmark_id_from_row(
+                row,
+                benchmark_by_key,
+                allow_fuzzy=not bool(spec.get("exactBenchmarkLabelsOnly")),
+                allow_attached_footnote=bool(spec.get("allowAttachedFootnoteLabels")),
+            )
             if not benchmark_id:
                 continue
             for index, model_name in column_indexes.items():
@@ -4523,7 +5453,13 @@ def dedupe_result_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return list(deduped.values())
 
 
-def _benchmark_id_from_row(row: list[str], benchmark_by_key: dict[str, str]) -> str | None:
+def _benchmark_id_from_row(
+    row: list[str],
+    benchmark_by_key: dict[str, str],
+    *,
+    allow_fuzzy: bool = True,
+    allow_attached_footnote: bool = False,
+) -> str | None:
     normalized_cells = [_normalize_label(cell) for cell in row[:2]]
     combined_key = _normalize_label(" ".join(row[:2]))
     exact_candidates = [
@@ -4534,6 +5470,14 @@ def _benchmark_id_from_row(row: list[str], benchmark_by_key: dict[str, str]) -> 
     for key in exact_candidates:
         if key in benchmark_by_key:
             return benchmark_by_key[key]
+    if allow_attached_footnote:
+        reviewed_keys = sorted(benchmark_by_key, key=len, reverse=True)
+        for key in exact_candidates:
+            for benchmark_key in reviewed_keys:
+                if re.fullmatch(rf"{re.escape(benchmark_key)} ?\d{{1,2}}", key):
+                    return benchmark_by_key[benchmark_key]
+    if not allow_fuzzy:
+        return None
     fuzzy_candidates = [
         combined_key,
         normalized_cells[0] if normalized_cells else "",
@@ -4634,9 +5578,12 @@ def _numeric_cell(cell: str) -> float | None:
 def _numeric_cell_values(cell: str) -> list[float]:
     """Return all numeric components from a slash-valued score cell."""
 
+    # HTML model cards often render labels such as ``Pass@1 20.4 Score 42.9``.
+    # The number in Pass@N describes the metric and is not itself a score.
+    cell = re.sub(r"\bpass\s*@\s*\d+\b", " ", cell or "", flags=re.IGNORECASE)
     return [
         float(match.group(0).replace(",", ""))
-        for match in re.finditer(r"-?\d+(?:,\d{3})*(?:\.\d+)?", cell or "")
+        for match in re.finditer(r"-?\d+(?:,\d{3})*(?:\.\d+)?", cell)
     ]
 
 
@@ -4655,6 +5602,26 @@ def retain_previous_results_on_blocked_refresh(
     for row in previous_payload.get("results", []):
         previous_rows_by_source.setdefault(str(row.get("sourceId") or ""), []).append(row)
 
+    previous_sources_by_id = {
+        str(source.get("id") or ""): source
+        for source in previous_payload.get("sources", [])
+        if isinstance(source, dict)
+    }
+
+    allowed_models_by_source: dict[str, set[str]] = {}
+    for spec in OFFICIAL_SOURCE_SPECS:
+        allowed_models = {
+            str(model)
+            for model in [
+                *(spec.get("columns") or {}).values(),
+                *(spec.get("scores") or {}).keys(),
+                *(spec.get("modelResultOverrides") or {}).keys(),
+            ]
+            if str(model or "").strip()
+        }
+        if allowed_models:
+            allowed_models_by_source[str(spec.get("id") or "")] = allowed_models
+
     merged_results: list[dict[str, Any]] = []
     source_ids: set[str] = set()
     for source in payload.get("sources", []):
@@ -4662,11 +5629,83 @@ def retain_previous_results_on_blocked_refresh(
         source_ids.add(source_id)
         current_rows = current_rows_by_source.get(source_id, [])
         previous_rows = previous_rows_by_source.get(source_id, [])
+        allowed_models = allowed_models_by_source.get(source_id)
+        if allowed_models is not None:
+            previous_rows = [
+                row for row in previous_rows if str(row.get("model") or "") in allowed_models
+            ]
         status = str(source.get("collectionStatus") or "")
-        if "refresh blocked:" in status and previous_rows:
-            current_rows = merge_result_rows(current_rows, previous_rows)
-            blocked_reason = status[status.index("refresh blocked:") :]
-            source["collectionStatus"] = f"stale-retained; {blocked_reason}"
+        previous_source = previous_sources_by_id.get(source_id, {})
+        benchmark_label_policy_changed = source.get(
+            "exactBenchmarkLabelsOnly"
+        ) != previous_source.get("exactBenchmarkLabelsOnly")
+        refresh_failed = (
+            "refresh blocked:" in status
+            or "no parseable benchmark table found" in status
+        )
+        parsed_regressed = (
+            bool(
+                source.get("autoDiscovered")
+                or source.get("autoDiscoveredVendorPage")
+            )
+            and bool(current_rows)
+            and len(current_rows) < len(previous_rows)
+            and not benchmark_label_policy_changed
+        )
+        if previous_rows and (refresh_failed or parsed_regressed):
+            parsed_count = len(current_rows)
+            if refresh_failed:
+                current_by_key = {
+                    (row.get("model"), row.get("benchmarkId")): row
+                    for row in current_rows
+                }
+                enriched_previous_rows = []
+                for previous_row in previous_rows:
+                    retained_row = dict(previous_row)
+                    current_row = current_by_key.get(
+                        (previous_row.get("model"), previous_row.get("benchmarkId"))
+                    )
+                    if current_row:
+                        retained_value = retained_row.get("value")
+                        retained_row.update(
+                            {
+                                key: value
+                                for key, value in current_row.items()
+                                if key != "value"
+                            }
+                        )
+                        retained_row["value"] = retained_value
+                    for key in (
+                        "variantScoped",
+                        "modelScoreEligible",
+                        "evidenceEligible",
+                        "systemScore",
+                        "effort",
+                        "configurationConfidence",
+                        "composite",
+                        "compositeModelResult",
+                        "fallbackConfigured",
+                        "fallbackObserved",
+                        "fallbackRate",
+                        "productEvidenceEligible",
+                        "pureModelEligible",
+                    ):
+                        if key not in retained_row and key in source:
+                            retained_row[key] = source[key]
+                    enriched_previous_rows.append(retained_row)
+                current_rows = merge_result_rows(current_rows, enriched_previous_rows)
+                reason = (
+                    status[status.index("refresh blocked:") :]
+                    if "refresh blocked:" in status
+                    else "no parseable benchmark table found"
+                )
+            else:
+                current_rows = merge_result_rows(previous_rows, current_rows)
+                reason = (
+                    f"parsed score count regressed from {len(previous_rows)} "
+                    f"to {parsed_count}"
+                )
+            source["collectionStatus"] = f"stale-retained; {reason}"
         merged_results.extend(current_rows)
 
     for source_id, rows in current_rows_by_source.items():
@@ -4729,7 +5768,8 @@ def _next_percent_values(tokens: list[str], count: int) -> list[float | None]:
 
 
 def _normalize_label(value: str) -> str:
-    return re.sub(r"[^a-z0-9]+", " ", value.lower()).strip()
+    normalized = unicodedata.normalize("NFKC", value).casefold().replace("τ", "tau")
+    return re.sub(r"[^a-z0-9]+", " ", normalized).strip()
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:

@@ -390,6 +390,13 @@ PROVIDER_LOGO_SLUGS = {
     "xAI": "xai",
     "Z AI": "zai",
 }
+OFFICIAL_ORGANIZATION_CREATORS = {
+    "deepseek-ai": "DeepSeek",
+    "moonshot ai": "Kimi",
+    "moonshotai": "Kimi",
+    "qwen": "Alibaba",
+    "zai-org": "Z AI",
+}
 MODEL_DETAIL_OVERRIDES = {
     "minimax-m3": {
         "inputModalities": ["Text", "Image", "Video"],
@@ -752,6 +759,7 @@ def build_site_payload(
         external_metric_key(benchmark["id"]) for benchmark in external_benchmarks
     ]
     models = [_model_payload(row, metric_keys) for row in source_rows]
+    add_external_models_if_missing(models, external_benchmark_data, metric_keys)
     attach_external_benchmark_scores(models, external_benchmark_data)
     apply_metric_fallbacks(models, AINDEX_METRIC_FALLBACKS)
     baselines = metric_baselines(models, metric_keys)
@@ -1386,6 +1394,246 @@ def external_sources_payload(external_benchmark_data: dict[str, Any]) -> list[di
             }
         )
     return sources
+
+
+def add_external_models_if_missing(
+    models: list[dict[str, Any]],
+    external_benchmark_data: dict[str, Any],
+    metric_keys: list[str],
+) -> None:
+    """Add official-source models that have scores but no AA row.
+
+    A source must opt in explicitly with ``addModelIfMissing`` or be an
+    automatically discovered first-party source.  In both cases, the source
+    must contain at least one numeric, model-owned result.  This keeps
+    reference-only discoveries and competitor columns from silently creating
+    site models.
+    """
+
+    results_by_source: dict[str, list[dict[str, Any]]] = {}
+    for result in external_benchmark_data.get("results", []):
+        source_id = str(result.get("sourceId") or "")
+        if source_id:
+            results_by_source.setdefault(source_id, []).append(result)
+
+    for source in external_benchmark_data.get("sources", []):
+        if not _source_can_add_external_model(source):
+            continue
+        source_id = str(source.get("id") or "")
+        if not source_id:
+            continue
+        owned_results = [
+            result
+            for result in results_by_source.get(source_id, [])
+            if _usable_external_model_result(result)
+            and _result_belongs_to_source_model(result, source)
+        ]
+        if not owned_results:
+            continue
+
+        exact_aliases = _external_model_exact_aliases(source)
+        lookup_aliases = exact_aliases or _external_source_model_aliases(source)
+        if not lookup_aliases or find_external_benchmark_model(models, lookup_aliases):
+            continue
+
+        model = _external_model_payload(source, metric_keys)
+        if model is not None:
+            models.append(model)
+
+
+def _source_can_add_external_model(source: dict[str, Any]) -> bool:
+    if _bool_or_none(source.get("addModelIfMissing")) is True:
+        return True
+    if _bool_or_none(source.get("autoDiscovered")) is not True:
+        return False
+    if "official" not in str(source.get("category") or "").lower():
+        return False
+    metadata = source.get("modelMetadata") or {}
+    return bool(
+        source.get("modelId")
+        or source.get("organization")
+        or source.get("vendor")
+        or metadata.get("creator")
+    )
+
+
+def _usable_external_model_result(result: dict[str, Any]) -> bool:
+    return (
+        result.get("modelScoreEligible") is not False
+        and bool(result.get("benchmarkId"))
+        and _number_or_none(result.get("value")) is not None
+    )
+
+
+def _result_belongs_to_source_model(
+    result: dict[str, Any],
+    source: dict[str, Any],
+) -> bool:
+    source_keys = {
+        key
+        for alias in _external_source_model_aliases(source)
+        if (key := _match_key(alias))
+    }
+    result_keys = {
+        key
+        for alias in [result.get("model"), *(result.get("modelAliases") or [])]
+        if (key := _match_key(alias))
+    }
+    return bool(source_keys & result_keys)
+
+
+def _external_model_exact_aliases(source: dict[str, Any]) -> list[str]:
+    metadata = source.get("modelMetadata") or {}
+    exact = _dedupe_strings(
+        [
+            metadata.get("slug"),
+            metadata.get("modelKey"),
+            metadata.get("model"),
+        ]
+    )
+    if exact:
+        return exact
+    return _dedupe_strings(
+        [metadata.get("displayName"), *(metadata.get("aliases") or [])]
+    )
+
+
+def _external_source_model_aliases(source: dict[str, Any]) -> list[str]:
+    metadata = source.get("modelMetadata") or {}
+    return _dedupe_strings(
+        [
+            *_external_model_exact_aliases(source),
+            metadata.get("displayName"),
+            *(metadata.get("aliases") or []),
+            *(source.get("modelKeys") or []),
+            source.get("modelId"),
+            *(source.get("modelAliases") or []),
+        ]
+    )
+
+
+def _dedupe_strings(values: Iterable[Any]) -> list[str]:
+    output: list[str] = []
+    seen: set[str] = set()
+    for value in values:
+        text = str(value or "").strip()
+        key = _match_key(text)
+        if not text or not key or key in seen:
+            continue
+        seen.add(key)
+        output.append(text)
+    return output
+
+
+def _external_model_payload(
+    source: dict[str, Any],
+    metric_keys: list[str],
+) -> dict[str, Any] | None:
+    metadata = dict(source.get("modelMetadata") or {})
+    aliases = _external_source_model_aliases(source)
+    model = str(
+        metadata.get("model")
+        or metadata.get("displayName")
+        or next(iter(source.get("modelAliases") or []), "")
+        or str(source.get("modelId") or "").rsplit("/", 1)[-1]
+    ).strip()
+    if not model:
+        return None
+    slug = str(metadata.get("slug") or "").strip() or re.sub(
+        r"-+",
+        "-",
+        re.sub(r"[^a-z0-9]+", "-", model.lower()),
+    ).strip("-")
+    if not slug:
+        return None
+
+    organization = str(
+        metadata.get("creator")
+        or source.get("organization")
+        or source.get("vendor")
+        or ""
+    ).strip()
+    creator = OFFICIAL_ORGANIZATION_CREATORS.get(
+        organization.lower(),
+        organization,
+    )
+    release_date = str(
+        metadata.get("releaseDate") or source.get("createdAt") or ""
+    ).strip()
+    if "T" in release_date:
+        release_date = release_date.split("T", 1)[0]
+    is_reasoning = _bool_or_none(metadata.get("isReasoning"))
+    if is_reasoning is None:
+        effort = str(source.get("effort") or "").strip().lower()
+        is_reasoning = bool(
+            effort
+            and effort not in {"none", "off", "non-reasoning", "non-thinking"}
+        ) or str(metadata.get("modelKey") or "").rstrip().endswith("[R]")
+
+    row = {
+        "model_key": metadata.get("modelKey") or model,
+        "model": model,
+        "is_reasoning": "true" if is_reasoning else "false",
+        "slug": slug,
+        "creator": creator,
+        "release_date": release_date,
+        "model_url": metadata.get("modelUrl") or source.get("url") or "",
+        "context_window_tokens": metadata.get("contextWindowTokens"),
+        "open_source_categorization": _external_open_source_category(
+            metadata,
+            source,
+        ),
+        "creator_logo_small_url": metadata.get("creatorLogoSmallUrl") or "",
+        "creator_color": metadata.get("creatorColor") or "",
+    }
+    payload = _model_payload(row, metric_keys)
+    payload["externalOnly"] = True
+    payload["externalModelSourceId"] = str(source.get("id") or "")
+    payload["externalModelAliases"] = aliases
+
+    details = dict(payload.get("modelDetails") or {})
+    details.update(dict(metadata.get("modelDetails") or {}))
+    input_modalities = metadata.get("inputModalities")
+    output_modalities = metadata.get("outputModalities")
+    if isinstance(input_modalities, list) or isinstance(output_modalities, list):
+        modality_details = dict(details.get("modalities") or {})
+        if isinstance(input_modalities, list):
+            input_flags = modality_flags_from_list(input_modalities)
+            payload["inputModalities"] = modality_labels(input_flags, [])
+            modality_details["input"] = input_flags
+        if isinstance(output_modalities, list):
+            output_flags = modality_flags_from_list(output_modalities)
+            payload["outputModalities"] = modality_labels(output_flags, [])
+            modality_details["output"] = output_flags
+        details["modalities"] = modality_details
+    if details:
+        payload["modelDetails"] = details
+    return payload
+
+
+def _external_open_source_category(
+    metadata: dict[str, Any],
+    source: dict[str, Any],
+) -> str:
+    explicit = str(metadata.get("openSourceCategorization") or "").strip()
+    if explicit:
+        return explicit
+    tags = [str(tag).lower() for tag in (source.get("tags") or [])]
+    permissive_licenses = {
+        "apache-2.0",
+        "bsd-2-clause",
+        "bsd-3-clause",
+        "mit",
+    }
+    for tag in tags:
+        if not tag.startswith("license:"):
+            continue
+        return (
+            "permissive"
+            if tag.partition(":")[2] in permissive_licenses
+            else "open-weights"
+        )
+    return ""
 
 
 def attach_external_benchmark_scores(
@@ -2122,11 +2370,20 @@ def _attach_external_benchmark_scores_impl(
         benchmark_id = result.get("benchmarkId")
         if value is None or not benchmark_id:
             continue
-        model = find_external_benchmark_model(models, result.get("modelAliases") or [result.get("model")])
+        source = sources_by_id.get(str(result.get("sourceId") or ""), {})
+        result_aliases = result.get("modelAliases") or [result.get("model")]
+        if _result_belongs_to_source_model(result, source):
+            # Explicit metadata identifies the exact effort/configuration.  Put
+            # those aliases first so a broad family alias cannot capture an
+            # xhigh/max result on an existing low/non-reasoning sibling.
+            result_aliases = [
+                *_external_model_exact_aliases(source),
+                *result_aliases,
+            ]
+        model = find_external_benchmark_model(models, result_aliases)
         if model is None:
             continue
         key = external_metric_key(str(benchmark_id))
-        source = sources_by_id.get(str(result.get("sourceId") or ""), {})
         priority = external_result_priority(result, source, ordinal)
         selection_key = (id(model), key)
         current = selected.get(selection_key)
@@ -2138,6 +2395,12 @@ def _attach_external_benchmark_scores_impl(
     ):
         model = model_by_identity[model_identity]
         benchmark_id = result.get("benchmarkId")
+        source = sources_by_id.get(str(result.get("sourceId") or ""), {})
+        raw_variant_scoped = (
+            result.get("variantScoped")
+            if "variantScoped" in result
+            else source.get("variantScoped")
+        )
         model["scores"][key] = value
         entry = {
             "benchmarkId": benchmark_id,
@@ -2146,13 +2409,18 @@ def _attach_external_benchmark_scores_impl(
             "value": value,
             "unit": result.get("unit") or "%",
             "sourceId": result.get("sourceId") or "",
-            "sourceLabel": result.get("sourceLabel") or "",
-            "sourceUrl": result.get("sourceUrl") or "",
-            "variantScoped": bool(result.get("variantScoped")),
+            "sourceLabel": result.get("sourceLabel") or source.get("label") or "",
+            "sourceUrl": result.get("sourceUrl") or source.get("url") or "",
+            "variantScoped": _bool_or_none(raw_variant_scoped) is True,
             "evidenceEligible": result.get("evidenceEligible") is not False,
-            "effort": result.get("effort") or "",
+            "effort": result.get("effort") or source.get("effort") or "",
             "systemScore": bool(result.get("systemScore")),
             "configurationNote": result.get("configurationNote") or "",
+            "configurationConfidence": (
+                result.get("configurationConfidence")
+                or source.get("configurationConfidence")
+                or ""
+            ),
         }
         for metadata_key in (
             "derived",
@@ -2253,6 +2521,11 @@ def apply_metric_fallbacks(
         lower_bound = _number_or_none(spec.get("min"))
         upper_bound = _number_or_none(spec.get("max"))
         for model in models:
+            # External-only rows intentionally have no Artificial Analysis
+            # observations.  A benchmark-to-AA regression must not make an
+            # official model-card row look as though AA evaluated it.
+            if model.get("externalOnly"):
+                continue
             scores = model.get("scores", {})
             if _number_or_none(scores.get(target_key)) is not None:
                 continue

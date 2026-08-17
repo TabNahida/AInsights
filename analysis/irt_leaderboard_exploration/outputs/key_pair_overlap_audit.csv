@@ -2,7 +2,6 @@
 sol_vs_opus,coding,swe-bench-pro,SWE-Bench Pro,GPT-5.6 Sol (max),64.6,Claude Opus 5 (max),79.2,-14.6,right
 sol_vs_opus,coding,terminal-bench-v2-1-aa,Terminal-Bench v2.1 (AA),GPT-5.6 Sol (max),88.015,Claude Opus 5 (max),89.1386,-1.1236,right
 sol_vs_opus,coding,scicode-aa,SciCode (AA),GPT-5.6 Sol (max),56.1343,Claude Opus 5 (max),55.6713,0.463,left
-sol_vs_opus,agentic-tool-work,mcp-atlas,MCP-Atlas Public,GPT-5.6 Sol (max),83.6,Claude Opus 5 (max),85.8,-2.2,right
 sol_vs_opus,agentic-tool-work,toolathlon,Toolathlon,GPT-5.6 Sol (max),58.0,Claude Opus 5 (max),80.6,-22.6,right
 sol_vs_opus,agentic-tool-work,aa-lcr,AA-LCR,GPT-5.6 Sol (max),77.6667,Claude Opus 5 (max),75.6667,2.0,left
 sol_vs_opus,hard-reasoning,hle-aa,Humanity's Last Exam (AA),GPT-5.6 Sol (max),49.4903,Claude Opus 5 (max),54.8656,-5.3753,right

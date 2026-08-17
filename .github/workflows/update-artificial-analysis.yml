@@ -35,45 +35,17 @@ jobs:
       - name: Fetch latest Artificial Analysis data
         run: python ArtificialAnalysis/scrape_artificial_analysis.py --output-dir ArtificialAnalysis
 
+      - name: Discover official vendor model cards
+        run: python benchmarks/discover_official_model_cards.py --output-json data/benchmarks/official_model_cards.json
+
+      - name: Discover official vendor release pages
+        run: python benchmarks/discover_official_vendor_pages.py --output-json data/benchmarks/official_vendor_pages.json
+
       - name: Fetch benchmark data
         run: python benchmarks/collect_benchmark_scores.py --output-json data/benchmarks/benchmark_scores.json
 
       - name: Validate official benchmark source policy
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          top_vendor_source_ids = {
-              "openai-gpt-5-6-release",
-              "anthropic-claude-opus-4-7-release",
-              "qwen-qwen3-6-27b-card",
-              "qwen-qwen3-6-plus-release",
-              "qwen-qwen3-6-max-preview-release",
-              "deepseek-v4-pro-card",
-              "kimi-k3-release",
-              "kimi-k2-6-card",
-              "kimi-k2-thinking-card",
-              "kimi-k2-5-card",
-              "zai-glm-5-1-card",
-              "google-gemini-3-1-pro-card",
-              "google-gemma-4-card",
-              "xiaomi-mimo-v2-5-release",
-              "xai-grok-4-1-fast-release",
-              "nvidia-nemotron-3-ultra-report",
-          }
-          payload = json.loads(Path("data/benchmarks/benchmark_scores.json").read_text(encoding="utf-8"))
-          bad_sources = [
-              source
-              for source in payload.get("sources", [])
-              if source.get("id") in top_vendor_source_ids
-              and "huggingface.co" in source.get("url", "")
-          ]
-          if bad_sources:
-              details = ", ".join(f"{source['id']} -> {source['url']}" for source in bad_sources)
-              raise SystemExit(f"Top-vendor official benchmark sources must not use Hugging Face as primary URL: {details}")
-          print(f"Validated {len(top_vendor_source_ids)} top-vendor official source ids.")
-          PY
+        run: python benchmarks/validate_official_sources.py
 
       - name: Rebuild docs site data
         run: python scripts/build_docs_site.py
@@ -88,6 +60,8 @@ jobs:
         id: commit
         run: |
           git add ArtificialAnalysis/artificialanalysis_raw_scores_wide.csv
+          git add data/benchmarks/official_model_cards.json
+          git add data/benchmarks/official_vendor_pages.json
           git add data/benchmarks/benchmark_scores.json
           git add docs/data/models.json docs/data/models.js docs/assets/logos
           git add analysis/irt_leaderboard_exploration/outputs/full_rankings_aindex_scheme18.csv
@@ -95,6 +69,32 @@ jobs:
           git add analysis/irt_leaderboard_exploration/outputs/full_rankings_exact_config_aindex_scheme18.csv
           git add analysis/irt_leaderboard_exploration/outputs/top50_exact_config_aindex_scheme18.csv
           git add analysis/irt_leaderboard_exploration/outputs/aindex_scheme18_validation_summary.json
+          git add analysis/irt_leaderboard_exploration/outputs/exact_config_multi_method_full_rankings.csv
+          git add analysis/irt_leaderboard_exploration/outputs/exact_config_score_visibility_audit.csv
+          git add analysis/irt_leaderboard_exploration/outputs/full_rankings_exact_config_twopl_sparse_80_20_score.csv
+          git add analysis/irt_leaderboard_exploration/outputs/full_rankings_twopl_sparse_80_20_score.csv
+          git add analysis/irt_leaderboard_exploration/outputs/key_pair_overlap_audit.csv
+          git add analysis/irt_leaderboard_exploration/outputs/method_stability.csv
+          git add analysis/irt_leaderboard_exploration/outputs/multi_method_full_rankings.csv
+          git add analysis/irt_leaderboard_exploration/outputs/multi_method_top50.csv
+          git add analysis/irt_leaderboard_exploration/outputs/multi_method_validation_summary.json
+          git add analysis/irt_leaderboard_exploration/outputs/score_order_validation_summary.json
+          git add analysis/irt_leaderboard_exploration/outputs/target_exact_config_comparison.csv
+          git add analysis/irt_leaderboard_exploration/outputs/target_source_coverage_audit.csv
+          git add analysis/irt_leaderboard_exploration/outputs/top50_exact_config_twopl_sparse_80_20_score.csv
+          git add analysis/irt_leaderboard_exploration/outputs/top50_global_family_percentile.csv
+          git add analysis/irt_leaderboard_exploration/outputs/top50_percentile_mean_equal_board.csv
+          git add analysis/irt_leaderboard_exploration/outputs/top50_percentile_median_equal_board.csv
+          git add analysis/irt_leaderboard_exploration/outputs/top50_rasch_dense_item_sensitivity.csv
+          git add analysis/irt_leaderboard_exploration/outputs/top50_rasch_equal_board.csv
+          git add analysis/irt_leaderboard_exploration/outputs/top50_rasch_sparse_item_sensitivity.csv
+          git add analysis/irt_leaderboard_exploration/outputs/top50_twopl_equal_board.csv
+          git add analysis/irt_leaderboard_exploration/outputs/top50_twopl_sparse_80_20_score.csv
+          if ! git diff --quiet; then
+            echo "::error::The update produced tracked changes outside the reviewed commit list."
+            git status --short
+            exit 1
+          fi
           if git diff --cached --quiet; then
             echo "No model or benchmark changes detected."
             echo "changed=false" >> "$GITHUB_OUTPUT"

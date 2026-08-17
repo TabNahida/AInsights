@@ -11,9 +11,19 @@ Missing extension results stay absent: they are never filled with 0 or a neutral
 ```powershell
 python -m pip install -r requirements.txt
 python ArtificialAnalysis\scrape_artificial_analysis.py --output-dir ArtificialAnalysis
+python benchmarks\discover_official_model_cards.py --output-json data\benchmarks\official_model_cards.json
+python benchmarks\discover_official_vendor_pages.py --output-json data\benchmarks\official_vendor_pages.json
 python benchmarks\collect_benchmark_scores.py --output-json data\benchmarks\benchmark_scores.json
+python benchmarks\validate_official_sources.py
 python scripts\build_docs_site.py
 python -B analysis\irt_leaderboard_exploration\validate_scheme18_production.py --input docs\data\models.json
 ```
+
+The scheduled workflow runs this pipeline daily. Discovery watches the verified
+`Qwen`, `zai-org`, `moonshotai`, and `deepseek-ai` Hugging Face organizations as
+well as pinned Qwen, Z.ai, Kimi, and DeepSeek first-party release indexes. It
+preserves previously discovered cards and pages during transient outages and
+feeds new candidates into the benchmark collector. Curated source specifications
+remain authoritative for versioned or multi-value benchmark semantics.
 
 The static ranking site lives in `docs/` and reads `docs/data/models.json`. The detailed calculation is documented in `docs/methodology.html`; reproducible analysis outputs live in `analysis/irt_leaderboard_exploration/outputs/`.

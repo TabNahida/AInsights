@@ -10601,7 +10601,7 @@
       "providerId": "alibaba-token-plan",
       "planId": "alibaba-token-plan-lite",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "non-comparable-credit-plan",
@@ -10619,7 +10619,7 @@
       "providerId": "alibaba-token-plan",
       "planId": "alibaba-token-plan-lite",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "non-comparable-credit-plan",
@@ -11055,7 +11055,7 @@
       "providerId": "alibaba-token-plan",
       "planId": "alibaba-token-plan-standard",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "non-comparable-credit-plan",
@@ -11073,7 +11073,7 @@
       "providerId": "alibaba-token-plan",
       "planId": "alibaba-token-plan-standard",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "non-comparable-credit-plan",
@@ -11509,7 +11509,7 @@
       "providerId": "alibaba-token-plan",
       "planId": "alibaba-token-plan-pro",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "non-comparable-credit-plan",
@@ -11527,7 +11527,7 @@
       "providerId": "alibaba-token-plan",
       "planId": "alibaba-token-plan-pro",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "non-comparable-credit-plan",
@@ -11963,7 +11963,7 @@
       "providerId": "alibaba-token-plan-cn",
       "planId": "alibaba-token-plan-cn-lite",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "non-comparable-credit-plan",
@@ -11981,7 +11981,7 @@
       "providerId": "alibaba-token-plan-cn",
       "planId": "alibaba-token-plan-cn-lite",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "non-comparable-credit-plan",
@@ -12417,7 +12417,7 @@
       "providerId": "alibaba-token-plan-cn",
       "planId": "alibaba-token-plan-cn-standard",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "non-comparable-credit-plan",
@@ -12435,7 +12435,7 @@
       "providerId": "alibaba-token-plan-cn",
       "planId": "alibaba-token-plan-cn-standard",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "non-comparable-credit-plan",
@@ -12871,7 +12871,7 @@
       "providerId": "alibaba-token-plan-cn",
       "planId": "alibaba-token-plan-cn-pro",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "non-comparable-credit-plan",
@@ -12889,7 +12889,7 @@
       "providerId": "alibaba-token-plan-cn",
       "planId": "alibaba-token-plan-cn-pro",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "non-comparable-credit-plan",

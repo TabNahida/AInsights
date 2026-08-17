@@ -11,8 +11,8 @@
   },
   "default_consensus_method": "aindex_scheme18",
   "default_ranking_method": "aindex_scheme18",
-  "ranked_variant_groups": 154,
-  "ranked_exact_config_rows_primary": 186,
+  "ranked_variant_groups": 167,
+  "ranked_exact_config_rows_primary": 199,
   "aindex_scheme18": {
     "id": "aindex_scheme18",
     "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
@@ -21,7 +21,7 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 23.431476818987107,
+    "bonus_cap_per_board": 23.670087950603403,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -93,30 +93,30 @@
     "fit_apply_policy": "fit OLS trends and shared cap once on the deduplicated population; apply unchanged to exact configurations",
     "eligibility_and_representative_source": "legacy four-method common gate and representative slug are retained as audit inputs only; they do not enter Scheme 18 scores or ordering",
     "score_role": "unrounded 0-100 additive five-board score is the sole ranking key; stable slug/model IDs resolve exact numerical ties only",
-    "ranked_variant_groups": 154,
-    "ranked_exact_config_rows": 186,
+    "ranked_variant_groups": 167,
+    "ranked_exact_config_rows": 199,
     "exact_reuses_deduplicated_calibration": true,
     "validation": {
       "method_id": "aindex_scheme18",
       "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
-      "calibration_population_size": 154,
-      "bonus_cap_per_board": 23.431476818987107,
+      "calibration_population_size": 167,
+      "bonus_cap_per_board": 23.670087950603403,
       "cap_rule": "mean_plus_sqrt2_sd",
       "exact_reuses_deduplicated_calibration": true,
       "variant_group": {
         "ranking_grain": "variant_group",
-        "row_count": 154,
-        "unique_slugs": 154,
-        "unique_variant_groups": 154,
+        "row_count": 167,
+        "unique_slugs": 167,
+        "unique_variant_groups": 167,
         "max_final_score_identity_error": 0.0,
         "passed": true,
         "failures": []
       },
       "exact_config": {
         "ranking_grain": "exact_config",
-        "row_count": 186,
-        "unique_slugs": 186,
-        "unique_variant_groups": 146,
+        "row_count": 199,
+        "unique_slugs": 199,
+        "unique_variant_groups": 157,
         "max_final_score_identity_error": 0.0,
         "passed": true,
         "failures": []
@@ -144,7 +144,7 @@
     "tie_break_policy": "stable row identifier for exact unrounded composite-score ties",
     "score_role": "legacy 0-100 composite retained only for eligibility, representative selection, and sensitivity audit; it does not enter the Scheme 18 score or ordering",
     "score_precision_policy": "rank by the unrounded 80/20 composite, then display score to four decimal places",
-    "ranked_variant_groups": 154,
+    "ranked_variant_groups": 167,
     "board_score_policy": "80% equal-board 2PL plus 20% sparse-item Rasch board scores",
     "evidence_coverage_policy": "for each board, 80/20 weighted mean of primary-pool and sparse-pool observed canonical-family shares; then equal mean across five boards"
   },
@@ -162,17 +162,17 @@
   "dense_sensitivity_item_min_creators": 3,
   "board_item_pool_sizes": {
     "rasch_equal_board": {
-      "coding": 6,
+      "coding": 7,
       "agentic-tool-work": 10,
       "hard-reasoning": 4,
-      "knowledge-science": 6,
+      "knowledge-science": 7,
       "instruction-context": 4
     },
     "twopl_equal_board": {
-      "coding": 6,
+      "coding": 7,
       "agentic-tool-work": 10,
       "hard-reasoning": 4,
-      "knowledge-science": 6,
+      "knowledge-science": 7,
       "instruction-context": 4
     },
     "rasch_sparse_item_sensitivity": {
@@ -193,24 +193,24 @@
   "exact_config_board_item_pool_sizes": {
     "rasch_equal_board": {
       "coding": 2,
-      "agentic-tool-work": 2,
+      "agentic-tool-work": 4,
       "hard-reasoning": 4,
       "knowledge-science": 5,
       "instruction-context": 3
     },
     "twopl_equal_board": {
       "coding": 2,
-      "agentic-tool-work": 2,
+      "agentic-tool-work": 4,
       "hard-reasoning": 4,
       "knowledge-science": 5,
       "instruction-context": 3
     },
     "rasch_sparse_item_sensitivity": {
-      "coding": 4,
-      "agentic-tool-work": 7,
+      "coding": 6,
+      "agentic-tool-work": 10,
       "hard-reasoning": 4,
-      "knowledge-science": 5,
-      "instruction-context": 3
+      "knowledge-science": 7,
+      "instruction-context": 4
     },
     "rasch_dense_item_sensitivity": {
       "coding": 2,
@@ -223,398 +223,398 @@
   "main_tests_per_board": 3,
   "provisional_min_tests_per_board": 2,
   "twopl_slope_ridge": 8.0,
-  "source_model_rows": 582,
+  "source_model_rows": 597,
   "ranked_variant_groups_by_method": {
-    "rasch_equal_board": 154,
-    "twopl_equal_board": 154,
-    "percentile_mean_equal_board": 154,
-    "percentile_median_equal_board": 154,
-    "global_family_percentile": 154,
-    "rasch_sparse_item_sensitivity": 154,
-    "rasch_dense_item_sensitivity": 154
+    "rasch_equal_board": 167,
+    "twopl_equal_board": 167,
+    "percentile_mean_equal_board": 167,
+    "percentile_median_equal_board": 167,
+    "global_family_percentile": 167,
+    "rasch_sparse_item_sensitivity": 167,
+    "rasch_dense_item_sensitivity": 167
   },
-  "main_exact_config_rows": 147,
-  "eligible_exact_config_rows": 186,
-  "sparse_sensitivity_eligible_exact_config_rows": 186,
-  "dense_sensitivity_eligible_exact_config_rows": 186,
-  "ranked_exact_config_rows": 186,
-  "eligible_exact_configs_hidden_by_group_collapse": 43,
-  "deduped_configs_not_exact_config_eligible": 11,
+  "main_exact_config_rows": 8,
+  "eligible_exact_config_rows": 199,
+  "sparse_sensitivity_eligible_exact_config_rows": 201,
+  "dense_sensitivity_eligible_exact_config_rows": 199,
+  "ranked_exact_config_rows": 199,
+  "eligible_exact_configs_hidden_by_group_collapse": 45,
+  "deduped_configs_not_exact_config_eligible": 13,
   "exact_config_population_net_change": 32,
-  "ranked_exact_config_variant_groups": 146,
-  "variant_groups_with_multiple_eligible_exact_configs": 21,
+  "ranked_exact_config_variant_groups": 157,
+  "variant_groups_with_multiple_eligible_exact_configs": 22,
   "global_family_observation_count_range": {
     "min": 7,
     "max": 18
   },
-  "shared_variant_score_cells_removed": 695,
+  "shared_variant_score_cells_removed": 435,
   "configuration_ineligible_score_cells_removed": 0,
   "derived_external_score_cells_removed": 0,
   "unscoped_external_score_cells_removed": 0,
-  "site_livecodebench_cells_excluded": 369,
-  "variant_scoped_direct_score_cells_retained": 133,
+  "site_livecodebench_cells_excluded": 375,
+  "variant_scoped_direct_score_cells_retained": 402,
   "exact_config_sanitation": {
-    "shared_variant_score_cells_removed": 695,
+    "shared_variant_score_cells_removed": 435,
     "configuration_ineligible_score_cells_removed": 0,
     "derived_external_score_cells_removed": 0,
-    "unscoped_external_score_cells_removed": 904,
-    "site_livecodebench_cells_excluded": 369,
-    "variant_scoped_direct_score_cells_retained": 133
+    "unscoped_external_score_cells_removed": 762,
+    "site_livecodebench_cells_excluded": 375,
+    "variant_scoped_direct_score_cells_retained": 402
   },
   "target_models": {
     "rasch_equal_board": {
       "fable_5": {
         "rank": 2,
         "model": "Claude Fable 5 (with fallback)",
-        "score": 97.1824,
+        "score": 96.6851,
         "evidence_tier": "Main",
-        "board_test_slots_total": 25
+        "board_test_slots_total": 22
       },
       "gpt_5_6_sol": {
-        "rank": 4,
+        "rank": 3,
         "model": "GPT-5.6 Sol (max)",
-        "score": 96.5193,
+        "score": 96.3746,
         "evidence_tier": "Main",
-        "board_test_slots_total": 24
+        "board_test_slots_total": 22
       },
       "gpt_5_6_terra": {
-        "rank": 7,
+        "rank": 8,
         "model": "GPT-5.6 Terra (max)",
-        "score": 95.5911,
+        "score": 95.2688,
         "evidence_tier": "Main",
-        "board_test_slots_total": 21
+        "board_test_slots_total": 22
       },
       "gpt_5_6_luna": {
-        "rank": 15,
+        "rank": 14,
         "model": "GPT-5.6 Luna (max)",
-        "score": 94.5953,
+        "score": 94.2835,
         "evidence_tier": "Provisional",
-        "board_test_slots_total": 20
+        "board_test_slots_total": 21
       },
       "claude_opus_5": {
         "rank": 1,
         "model": "Claude Opus 5 (max)",
-        "score": 97.646,
+        "score": 97.3517,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 20
       },
       "deepseek_v4_flash_0731": {
-        "rank": 14,
+        "rank": 18,
         "model": "DeepSeek V4 Flash 0731 (max)",
-        "score": 94.7014,
+        "score": 94.1258,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 15
       },
       "qwen3_8_max": {
-        "rank": 8,
+        "rank": 13,
         "model": "Qwen3.8 Max",
-        "score": 95.2618,
+        "score": 94.5542,
         "evidence_tier": "Main",
-        "board_test_slots_total": 21
+        "board_test_slots_total": 22
       }
     },
     "twopl_equal_board": {
       "fable_5": {
-        "rank": 1,
+        "rank": 2,
         "model": "Claude Fable 5 (with fallback)",
-        "score": 95.8675,
+        "score": 95.406,
         "evidence_tier": "Main",
-        "board_test_slots_total": 25
+        "board_test_slots_total": 22
       },
       "gpt_5_6_sol": {
         "rank": 3,
         "model": "GPT-5.6 Sol (max)",
-        "score": 95.2386,
+        "score": 95.117,
         "evidence_tier": "Main",
-        "board_test_slots_total": 24
+        "board_test_slots_total": 22
       },
       "gpt_5_6_terra": {
-        "rank": 5,
+        "rank": 6,
         "model": "GPT-5.6 Terra (max)",
-        "score": 94.3656,
+        "score": 94.1439,
         "evidence_tier": "Main",
-        "board_test_slots_total": 21
+        "board_test_slots_total": 22
       },
       "gpt_5_6_luna": {
-        "rank": 15,
+        "rank": 16,
         "model": "GPT-5.6 Luna (max)",
-        "score": 92.7557,
+        "score": 92.5113,
         "evidence_tier": "Provisional",
-        "board_test_slots_total": 20
+        "board_test_slots_total": 21
       },
       "claude_opus_5": {
-        "rank": 2,
+        "rank": 1,
         "model": "Claude Opus 5 (max)",
-        "score": 95.8306,
+        "score": 95.5608,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 20
       },
       "deepseek_v4_flash_0731": {
-        "rank": 16,
+        "rank": 20,
         "model": "DeepSeek V4 Flash 0731 (max)",
-        "score": 92.3452,
+        "score": 91.8513,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 15
       },
       "qwen3_8_max": {
-        "rank": 8,
+        "rank": 10,
         "model": "Qwen3.8 Max",
-        "score": 93.5449,
+        "score": 92.9507,
         "evidence_tier": "Main",
-        "board_test_slots_total": 21
+        "board_test_slots_total": 22
       }
     },
     "percentile_mean_equal_board": {
       "fable_5": {
-        "rank": 4,
+        "rank": 9,
         "model": "Claude Fable 5 (with fallback)",
-        "score": 94.4925,
+        "score": 93.603,
         "evidence_tier": "Main",
-        "board_test_slots_total": 25
+        "board_test_slots_total": 22
       },
       "gpt_5_6_sol": {
-        "rank": 7,
+        "rank": 6,
         "model": "GPT-5.6 Sol (max)",
-        "score": 93.1459,
+        "score": 93.9598,
         "evidence_tier": "Main",
-        "board_test_slots_total": 24
+        "board_test_slots_total": 22
       },
       "gpt_5_6_terra": {
-        "rank": 10,
+        "rank": 14,
         "model": "GPT-5.6 Terra (max)",
-        "score": 90.7405,
+        "score": 89.9712,
         "evidence_tier": "Main",
-        "board_test_slots_total": 21
+        "board_test_slots_total": 22
       },
       "gpt_5_6_luna": {
-        "rank": 15,
+        "rank": 23,
         "model": "GPT-5.6 Luna (max)",
-        "score": 87.0498,
+        "score": 85.7862,
         "evidence_tier": "Provisional",
-        "board_test_slots_total": 20
+        "board_test_slots_total": 21
       },
       "claude_opus_5": {
         "rank": 1,
         "model": "Claude Opus 5 (max)",
-        "score": 97.8188,
+        "score": 97.6517,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 20
       },
       "deepseek_v4_flash_0731": {
-        "rank": 12,
+        "rank": 18,
         "model": "DeepSeek V4 Flash 0731 (max)",
-        "score": 89.6441,
+        "score": 88.1366,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 15
       },
       "qwen3_8_max": {
-        "rank": 9,
+        "rank": 15,
         "model": "Qwen3.8 Max",
-        "score": 92.5389,
+        "score": 89.7407,
         "evidence_tier": "Main",
-        "board_test_slots_total": 21
+        "board_test_slots_total": 22
       }
     },
     "percentile_median_equal_board": {
       "fable_5": {
-        "rank": 3,
+        "rank": 4,
         "model": "Claude Fable 5 (with fallback)",
-        "score": 96.8142,
+        "score": 96.5644,
         "evidence_tier": "Main",
-        "board_test_slots_total": 25
+        "board_test_slots_total": 22
       },
       "gpt_5_6_sol": {
-        "rank": 4,
+        "rank": 5,
         "model": "GPT-5.6 Sol (max)",
-        "score": 96.2159,
+        "score": 95.6594,
         "evidence_tier": "Main",
-        "board_test_slots_total": 24
+        "board_test_slots_total": 22
       },
       "gpt_5_6_terra": {
-        "rank": 8,
+        "rank": 13,
         "model": "GPT-5.6 Terra (max)",
-        "score": 93.9818,
+        "score": 92.5033,
         "evidence_tier": "Main",
-        "board_test_slots_total": 21
+        "board_test_slots_total": 22
       },
       "gpt_5_6_luna": {
-        "rank": 20,
+        "rank": 24,
         "model": "GPT-5.6 Luna (max)",
-        "score": 87.4564,
+        "score": 86.5018,
         "evidence_tier": "Provisional",
-        "board_test_slots_total": 20
+        "board_test_slots_total": 21
       },
       "claude_opus_5": {
         "rank": 1,
         "model": "Claude Opus 5 (max)",
-        "score": 98.1617,
+        "score": 97.9404,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 20
       },
       "deepseek_v4_flash_0731": {
-        "rank": 12,
+        "rank": 18,
         "model": "DeepSeek V4 Flash 0731 (max)",
-        "score": 90.752,
+        "score": 89.4043,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 15
       },
       "qwen3_8_max": {
         "rank": 10,
         "model": "Qwen3.8 Max",
-        "score": 93.0698,
+        "score": 93.4234,
         "evidence_tier": "Main",
-        "board_test_slots_total": 21
+        "board_test_slots_total": 22
       }
     },
     "global_family_percentile": {
       "fable_5": {
-        "rank": 9,
+        "rank": 12,
         "model": "Claude Fable 5 (with fallback)",
-        "score": 90.3148,
+        "score": 89.2622,
         "evidence_tier": "Main",
-        "board_test_slots_total": 25
+        "board_test_slots_total": 22
       },
       "gpt_5_6_sol": {
         "rank": 10,
         "model": "GPT-5.6 Sol (max)",
-        "score": 89.3657,
+        "score": 90.2763,
         "evidence_tier": "Main",
-        "board_test_slots_total": 24
+        "board_test_slots_total": 22
       },
       "gpt_5_6_terra": {
-        "rank": 17,
+        "rank": 20,
         "model": "GPT-5.6 Terra (max)",
-        "score": 84.1509,
+        "score": 83.6902,
         "evidence_tier": "Main",
-        "board_test_slots_total": 21
+        "board_test_slots_total": 22
       },
       "gpt_5_6_luna": {
-        "rank": 33,
+        "rank": 40,
         "model": "GPT-5.6 Luna (max)",
-        "score": 77.7559,
+        "score": 76.7647,
         "evidence_tier": "Provisional",
-        "board_test_slots_total": 20
+        "board_test_slots_total": 21
       },
       "claude_opus_5": {
         "rank": 1,
         "model": "Claude Opus 5 (max)",
-        "score": 98.1076,
+        "score": 97.9705,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 20
       },
       "deepseek_v4_flash_0731": {
-        "rank": 11,
+        "rank": 17,
         "model": "DeepSeek V4 Flash 0731 (max)",
-        "score": 87.554,
+        "score": 85.2651,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 15
       },
       "qwen3_8_max": {
-        "rank": 7,
+        "rank": 16,
         "model": "Qwen3.8 Max",
-        "score": 91.064,
+        "score": 86.8297,
         "evidence_tier": "Main",
-        "board_test_slots_total": 21
+        "board_test_slots_total": 22
       }
     },
     "rasch_sparse_item_sensitivity": {
       "fable_5": {
         "rank": 2,
         "model": "Claude Fable 5 (with fallback)",
-        "score": 97.1841,
+        "score": 96.6847,
         "evidence_tier": "Main",
-        "board_test_slots_total": 25
+        "board_test_slots_total": 22
       },
       "gpt_5_6_sol": {
-        "rank": 4,
+        "rank": 3,
         "model": "GPT-5.6 Sol (max)",
-        "score": 96.6381,
+        "score": 96.3735,
         "evidence_tier": "Main",
-        "board_test_slots_total": 25
+        "board_test_slots_total": 22
       },
       "gpt_5_6_terra": {
-        "rank": 6,
+        "rank": 8,
         "model": "GPT-5.6 Terra (max)",
-        "score": 95.6821,
+        "score": 95.2675,
         "evidence_tier": "Main",
         "board_test_slots_total": 22
       },
       "gpt_5_6_luna": {
-        "rank": 12,
+        "rank": 14,
         "model": "GPT-5.6 Luna (max)",
-        "score": 94.7735,
+        "score": 94.282,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 21
       },
       "claude_opus_5": {
         "rank": 1,
         "model": "Claude Opus 5 (max)",
-        "score": 97.6473,
+        "score": 97.3513,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 20
       },
       "deepseek_v4_flash_0731": {
-        "rank": 15,
+        "rank": 18,
         "model": "DeepSeek V4 Flash 0731 (max)",
-        "score": 94.7056,
+        "score": 94.1256,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 15
       },
       "qwen3_8_max": {
-        "rank": 9,
+        "rank": 13,
         "model": "Qwen3.8 Max",
-        "score": 95.1526,
+        "score": 94.5548,
         "evidence_tier": "Main",
         "board_test_slots_total": 22
       }
     },
     "rasch_dense_item_sensitivity": {
       "fable_5": {
-        "rank": 3,
+        "rank": 5,
         "model": "Claude Fable 5 (with fallback)",
-        "score": 96.5589,
+        "score": 96.207,
         "evidence_tier": "Main",
-        "board_test_slots_total": 21
+        "board_test_slots_total": 19
       },
       "gpt_5_6_sol": {
-        "rank": 4,
+        "rank": 6,
         "model": "GPT-5.6 Sol (max)",
-        "score": 96.1997,
+        "score": 95.8943,
         "evidence_tier": "Main",
-        "board_test_slots_total": 21
+        "board_test_slots_total": 19
       },
       "gpt_5_6_terra": {
-        "rank": 7,
+        "rank": 9,
         "model": "GPT-5.6 Terra (max)",
-        "score": 95.5466,
+        "score": 95.0637,
         "evidence_tier": "Main",
         "board_test_slots_total": 19
       },
       "gpt_5_6_luna": {
-        "rank": 14,
+        "rank": 18,
         "model": "GPT-5.6 Luna (max)",
-        "score": 94.5126,
+        "score": 93.9655,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 18
       },
       "claude_opus_5": {
         "rank": 1,
         "model": "Claude Opus 5 (max)",
-        "score": 97.6661,
+        "score": 97.3862,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 19
       },
       "deepseek_v4_flash_0731": {
-        "rank": 13,
+        "rank": 17,
         "model": "DeepSeek V4 Flash 0731 (max)",
-        "score": 94.5468,
+        "score": 93.9727,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 14
       },
       "qwen3_8_max": {
-        "rank": 9,
+        "rank": 13,
         "model": "Qwen3.8 Max",
-        "score": 95.0499,
+        "score": 94.5297,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 18
       }
@@ -625,51 +625,51 @@
       "fable_5": {
         "rank": 2,
         "model": "Claude Fable 5 (with fallback)",
-        "score": 96.1308,
+        "score": 95.6617,
         "evidence_tier": "Main",
-        "board_test_slots_total": 25
+        "board_test_slots_total": 22
       },
       "gpt_5_6_sol": {
         "rank": 3,
         "model": "GPT-5.6 Sol (max)",
-        "score": 95.5185,
+        "score": 95.3683,
         "evidence_tier": "Main",
-        "board_test_slots_total": 24
+        "board_test_slots_total": 22
       },
       "gpt_5_6_terra": {
-        "rank": 5,
+        "rank": 7,
         "model": "GPT-5.6 Terra (max)",
-        "score": 94.6289,
+        "score": 94.3686,
         "evidence_tier": "Main",
-        "board_test_slots_total": 21
+        "board_test_slots_total": 22
       },
       "gpt_5_6_luna": {
-        "rank": 14,
+        "rank": 16,
         "model": "GPT-5.6 Luna (max)",
-        "score": 93.1593,
+        "score": 92.8654,
         "evidence_tier": "Provisional",
-        "board_test_slots_total": 20
+        "board_test_slots_total": 21
       },
       "claude_opus_5": {
         "rank": 1,
         "model": "Claude Opus 5 (max)",
-        "score": 96.1939,
+        "score": 95.9189,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 20
       },
       "deepseek_v4_flash_0731": {
-        "rank": 16,
+        "rank": 20,
         "model": "DeepSeek V4 Flash 0731 (max)",
-        "score": 92.8173,
+        "score": 92.3062,
         "evidence_tier": "Provisional",
         "board_test_slots_total": 15
       },
       "qwen3_8_max": {
-        "rank": 8,
+        "rank": 11,
         "model": "Qwen3.8 Max",
-        "score": 93.8664,
+        "score": 93.2715,
         "evidence_tier": "Main",
-        "board_test_slots_total": 21
+        "board_test_slots_total": 22
       }
     }
   },
@@ -680,7 +680,7 @@
     "methods": {
       "twopl_sparse_80_20_score": {
         "passed": true,
-        "full_rows": 154,
+        "full_rows": 167,
         "top_rows": 50,
         "sequential_ranks": true,
         "scores_non_increasing": true,
@@ -699,7 +699,7 @@
     "methods": {
       "twopl_sparse_80_20_score": {
         "passed": true,
-        "full_rows": 186,
+        "full_rows": 199,
         "top_rows": 50,
         "sequential_ranks": true,
         "scores_non_increasing": true,
@@ -712,14 +712,7 @@
     }
   },
   "excluded_sparse_items": {
-    "coding": [
-      {
-        "id": "deepswe-v1-1",
-        "label": "DeepSWE v1.1",
-        "n_obs": 6,
-        "reason": "fewer than 8 model observations"
-      }
-    ],
+    "coding": [],
     "agentic-tool-work": [
       {
         "id": "gdpval-wins-ties",
@@ -742,14 +735,7 @@
         "reason": "fewer than 8 model observations"
       }
     ],
-    "knowledge-science": [
-      {
-        "id": "mmmlu",
-        "label": "MMMLU",
-        "n_obs": 7,
-        "reason": "fewer than 8 model observations"
-      }
-    ],
+    "knowledge-science": [],
     "instruction-context": []
   }
 }

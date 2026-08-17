@@ -6,6 +6,7 @@ import sys
 import tempfile
 from pathlib import Path
 
+from ArtificialAnalysis.scrape_artificial_analysis import SCORE_SPECS
 from scripts.build_docs_site import (
     AINDEX_GROUPS,
     DEFAULT_AINDEX_WEIGHTS,
@@ -15,6 +16,7 @@ from scripts.build_docs_site import (
     DEFAULT_PROVIDER_PRICING_JSON,
     PRIMARY_RANKING_METHOD,
     _rank_consensus_rows_by_composite_score,
+    apply_metric_fallbacks,
     build_site_payload,
     load_external_benchmarks,
     load_provider_pricing,
@@ -1091,7 +1093,7 @@ class BuildDocsSiteTests(unittest.TestCase):
             {offer["modelSlugs"][0] for offer in offers},
             {
                 "deepseek-v4-pro",
-                "deepseek-v4-pro-non-reasoning",
+                "deepseek-v4-pro-0424-non-reasoning",
                 "deepseek-v4-flash",
                 "deepseek-v4-flash-non-reasoning",
                 "glm-5-2",
@@ -1909,6 +1911,212 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(model["modelIcon"]["color"], "#1f1f1f")
         self.assertEqual(payload["externalSources"][-1]["scoreStatus"], "benchmark")
         self.assertIn("benchmark:terminal-bench-2", payload["externalSources"][-1]["relatedMetrics"])
+
+    def test_opted_in_external_model_is_added_without_aa_data_or_variant_leak(self):
+        payload = build_site_payload(
+            [
+                {
+                    "model_key": "Qwen3.8 27B",
+                    "model": "Qwen3.8 27B",
+                    "is_reasoning": "false",
+                    "slug": "qwen3-8-27b-non-reasoning",
+                    "creator": "Alibaba",
+                    "AA Intelligence Index": "40",
+                }
+            ],
+            {
+                "version": 1,
+                "sources": [
+                    {
+                        "id": "qwen-27b-card",
+                        "category": "Official model card",
+                        "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+                        "addModelIfMissing": True,
+                        "variantScoped": True,
+                        "effort": "xhigh",
+                        "modelAliases": [
+                            "Qwen3.8 27B",
+                            "Qwen3.8 27B (xhigh)",
+                            "qwen3-8-27b-xhigh",
+                        ],
+                        "modelMetadata": {
+                            "displayName": "Qwen3.8 27B",
+                            "modelKey": "Qwen3.8 27B (xhigh) [R]",
+                            "model": "Qwen3.8 27B (xhigh)",
+                            "slug": "qwen3-8-27b-xhigh",
+                            "creator": "Alibaba",
+                            "releaseDate": "2026-08-05",
+                            "modelUrl": "https://huggingface.co/Qwen/Qwen3.8-27B",
+                            "contextWindowTokens": 262144,
+                            "openSourceCategorization": "permissive",
+                            "isReasoning": True,
+                            "inputModalities": ["Text", "Image", "Video"],
+                            "outputModalities": ["Text"],
+                            "modelDetails": {
+                                "parameters": "27B",
+                                "license": "Apache-2.0",
+                                "contextNote": "Native 262,144; extendable to 1,000,000 tokens.",
+                            },
+                        },
+                    }
+                ],
+                "benchmarks": [{"id": "swe-bench-pro", "label": "SWE-Bench Pro"}],
+                "results": [
+                    {
+                        "benchmarkId": "swe-bench-pro",
+                        "model": "Qwen3.8 27B",
+                        # The broad alias deliberately comes first. Exact
+                        # source metadata must still select the xhigh row.
+                        "modelAliases": [
+                            "Qwen3.8 27B",
+                            "Qwen3.8 27B (xhigh)",
+                            "qwen3-8-27b-xhigh",
+                        ],
+                        "value": 61.7,
+                        "sourceId": "qwen-27b-card",
+                    }
+                ],
+            },
+            {},
+        )
+
+        low = next(model for model in payload["models"] if not model.get("externalOnly"))
+        qwen = next(model for model in payload["models"] if model.get("externalOnly"))
+        self.assertEqual(qwen["model"], "Qwen3.8 27B (xhigh)")
+        self.assertEqual(qwen["slug"], "qwen3-8-27b-xhigh")
+        self.assertEqual(qwen["variantGroup"], low["variantGroup"])
+        self.assertTrue(qwen["isReasoning"])
+        self.assertEqual(qwen["releaseDate"], "2026-08-05")
+        self.assertEqual(qwen["contextWindowTokens"], 262144)
+        self.assertEqual(qwen["inputModalities"], ["Text", "Image", "Video"])
+        self.assertEqual(qwen["outputModalities"], ["Text"])
+        self.assertEqual(qwen["modelDetails"]["parameters"], "27B")
+        self.assertEqual(qwen["scores"]["benchmark:swe-bench-pro"], 61.7)
+        self.assertIsNone(low["scores"]["benchmark:swe-bench-pro"])
+        self.assertTrue(qwen["externalBenchmarks"][0]["variantScoped"])
+        self.assertEqual(qwen["externalBenchmarks"][0]["effort"], "xhigh")
+        self.assertTrue(all(value is None for value in qwen["aa"].values()))
+        self.assertTrue(
+            all(
+                qwen["scores"][spec.column] is None
+                for spec in SCORE_SPECS
+            )
+        )
+        self.assertIsNone(qwen["aaCostUsd"])
+        self.assertIsNone(qwen["medianOutputSpeed"])
+        self.assertTrue(all(value is None for value in qwen["pricing"].values()))
+
+    def test_first_party_auto_discovery_adds_only_models_with_owned_scores(self):
+        external_data = {
+            "version": 1,
+            "sources": [
+                {
+                    "id": "future-card",
+                    "category": "Official model card",
+                    "autoDiscovered": True,
+                    "organization": "Qwen",
+                    "modelId": "Qwen/Qwen4-Next",
+                    "modelAliases": ["Qwen4 Next", "Qwen/Qwen4-Next", "qwen4-next"],
+                    "createdAt": "2026-09-01T12:00:00Z",
+                    "url": "https://huggingface.co/Qwen/Qwen4-Next",
+                    "tags": ["license:apache-2.0"],
+                },
+                {
+                    "id": "reference-only-card",
+                    "category": "Official model card",
+                    "autoDiscovered": True,
+                    "organization": "Qwen",
+                    "modelId": "Qwen/Qwen4-Reference",
+                    "modelAliases": ["Qwen4 Reference"],
+                },
+            ],
+            "benchmarks": [{"id": "hle", "label": "HLE"}],
+            "results": [
+                {
+                    "benchmarkId": "hle",
+                    "model": "Qwen4 Next",
+                    "modelAliases": ["Qwen4 Next", "Qwen/Qwen4-Next"],
+                    "value": 50.0,
+                    "sourceId": "future-card",
+                }
+            ],
+        }
+
+        payload = build_site_payload([], external_data, {})
+
+        self.assertEqual(len(payload["models"]), 1)
+        model = payload["models"][0]
+        self.assertEqual(model["model"], "Qwen4 Next")
+        self.assertEqual(model["slug"], "qwen4-next")
+        self.assertEqual(model["creator"], "Alibaba")
+        self.assertEqual(model["releaseDate"], "2026-09-01")
+        self.assertEqual(model["modelUrl"], "https://huggingface.co/Qwen/Qwen4-Next")
+        self.assertEqual(model["openSourceType"], "open")
+        self.assertEqual(model["scores"]["benchmark:hle"], 50.0)
+        self.assertTrue(model["externalOnly"])
+
+    def test_external_model_opt_in_does_not_turn_comparator_rows_into_target_scores(self):
+        payload = build_site_payload(
+            [],
+            {
+                "version": 1,
+                "sources": [
+                    {
+                        "id": "target-release",
+                        "category": "Official release",
+                        "addModelIfMissing": True,
+                        "modelAliases": ["Target 2"],
+                        "modelMetadata": {
+                            "model": "Target 2 (max)",
+                            "slug": "target-2-max",
+                            "creator": "Target Lab",
+                        },
+                    }
+                ],
+                "benchmarks": [{"id": "hle", "label": "HLE"}],
+                "results": [
+                    {
+                        "benchmarkId": "hle",
+                        "model": "Competitor 3",
+                        "modelAliases": ["Competitor 3"],
+                        "value": 50.0,
+                        "sourceId": "target-release",
+                    }
+                ],
+            },
+            {},
+        )
+
+        self.assertEqual(payload["models"], [])
+
+    def test_metric_fallbacks_do_not_fabricate_aa_scores_for_external_only_models(self):
+        models = [
+            {"scores": {"benchmark:livecodebench": 10, "LiveCodeBench": 20}},
+            {"scores": {"benchmark:livecodebench": 20, "LiveCodeBench": 40}},
+            {
+                "externalOnly": True,
+                "scores": {
+                    "benchmark:livecodebench": 30,
+                    "LiveCodeBench": None,
+                },
+            },
+        ]
+
+        apply_metric_fallbacks(
+            models,
+            [
+                {
+                    "type": "linear-fit",
+                    "source": "benchmark:livecodebench",
+                    "target": "LiveCodeBench",
+                    "minimumPairs": 2,
+                    "min": 0,
+                    "max": 100,
+                }
+            ],
+        )
+
+        self.assertIsNone(models[-1]["scores"]["LiveCodeBench"])
 
     def test_first_party_score_beats_later_vendor_comparator(self):
         payload = build_site_payload(

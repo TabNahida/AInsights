@@ -642,9 +642,9 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
             "Claude Fable 5 (with fallback)": (14, 7),
             "Claude Opus 5 (max)": (7, 5),
             "DeepSeek V4 Flash 0731 (max)": (7, 2),
-            "GPT-5.6 Sol (max)": (37, 5),
-            "GPT-5.6 Terra (max)": (37, 5),
-            "GPT-5.6 Luna (max)": (37, 5),
+            "GPT-5.6 Sol (max)": (37, 6),
+            "GPT-5.6 Terra (max)": (37, 6),
+            "GPT-5.6 Luna (max)": (37, 6),
         }
         for model, (stored, used) in expected.items():
             self.assertEqual(by_model[model]["first_party_direct_rows"], stored)

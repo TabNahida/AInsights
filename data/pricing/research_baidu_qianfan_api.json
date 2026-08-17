@@ -84,7 +84,7 @@
       "providerId": "baidu-qianfan-api",
       "planId": "baidu-qianfan-api-online-payg",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "per-token",

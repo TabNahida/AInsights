@@ -8,6 +8,8 @@ from benchmarks.collect_benchmark_scores import (
     OFFICIAL_SOURCE_SPECS,
     build_payload,
     collect_official_sources,
+    discovered_model_card_specs,
+    discovered_vendor_page_specs,
     fetch_official_source_text,
     parse_markdown_source_scores,
     parse_openai_scores,
@@ -154,6 +156,198 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         )
 
         self.assertEqual(rows, [])
+
+    def test_qwen38_27b_card_parses_labeled_composite_cells(self):
+        spec = next(
+            source
+            for source in OFFICIAL_SOURCE_SPECS
+            if source["id"] == "qwen-qwen3-8-27b-card"
+        )
+        html = """
+        <table>
+          <tr><th></th><th>Qwen3.8-27B</th></tr>
+          <tr><td>Agents' Last Exam</td><td>Pass@1 20.4 Score 42.9</td></tr>
+          <tr><td>ClawEval-MM</td><td>Pass@3 57.4 Average 56.9</td></tr>
+          <tr><td>MathVision</td><td>Without CI 90.0 With CI 94.6</td></tr>
+        </table>
+        """
+
+        rows = parse_markdown_source_scores(html, spec)
+        values = {row["benchmarkId"]: row["value"] for row in rows}
+
+        self.assertEqual(values["agents-last-exam"], 42.9)
+        self.assertEqual(values["claw-eval-mm-pass3"], 57.4)
+        self.assertEqual(values["claw-eval-mm-average"], 56.9)
+        self.assertEqual(values["mathvision"], 90.0)
+        self.assertEqual(values["mathvision-python"], 94.6)
+
+    def test_discovered_future_vendor_card_uses_reviewed_benchmarks_only(self):
+        manifest = {
+            "models": [
+                {
+                    "vendor": "glm",
+                    "organization": "zai-org",
+                    "modelId": "zai-org/GLM-6",
+                    "name": "GLM-6",
+                    "displayName": "GLM-6",
+                    "url": "https://huggingface.co/zai-org/GLM-6",
+                    "rawUrl": "https://huggingface.co/zai-org/GLM-6/raw/abc/README.md",
+                    "createdAt": "2027-01-01T00:00:00Z",
+                    "lastModified": "2027-01-01T00:00:00Z",
+                    "revision": "abc",
+                    "tags": ["eval-results", "license:apache-2.0"],
+                    "aliases": ["GLM-6", "zai-org/GLM-6", "glm-6"],
+                }
+            ]
+        }
+
+        specs = discovered_model_card_specs(manifest)
+
+        self.assertEqual(len(specs), 1)
+        spec = specs[0]
+        self.assertEqual(spec["id"], "hf-zai-org-glm-6-card")
+        self.assertTrue(spec["autoDiscovered"])
+        self.assertTrue(spec["variantScoped"])
+        self.assertTrue(spec["exactBenchmarkLabelsOnly"])
+        self.assertEqual(spec["tags"], ["eval-results", "license:apache-2.0"])
+        rows = parse_markdown_source_scores(
+            """
+            | Benchmark | GLM-6 |
+            | --- | ---: |
+            | GPQA Diamond | 95.0 |
+            | τ-Bench | 63.0 |
+            | τ-Bench Airline | 64.0 |
+            | τ²-Bench Airline | 65.0 |
+            | GDPval-AA v2 | 1666 |
+            | SuperGPQA | 71.4 |
+            | VitaBench | 76.2 |
+            | LVBench | 82.1 |
+            | Brand New Unreviewed Eval | 99.0 |
+            """,
+            spec,
+        )
+        self.assertEqual(
+            [(row["benchmarkId"], row["value"]) for row in rows],
+            [
+                ("gpqa-diamond", 95.0),
+                ("tau-bench", 63.0),
+                ("tau-bench-airline", 64.0),
+                ("tau2-bench-airline", 65.0),
+                ("gdpval-aa-v2-elo", 1666.0),
+            ],
+        )
+
+    def test_discovered_future_vendor_pages_become_conservative_source_specs(self):
+        manifest = {
+            "pages": [
+                {
+                    "vendor": "qwen",
+                    "name": "Qwen4-Max",
+                    "displayName": "Qwen4 Max",
+                    "url": "https://qwen.ai/blog?id=qwen4",
+                    "rawUrl": (
+                        "https://qwen.ai/api/v2/article/retrieval?"
+                        "language=en-US&path=qwen4&type=qwen_ai"
+                    ),
+                    "aliases": ["Qwen4 Max", "Qwen4-Max", "qwen4-max"],
+                    "sourceKey": "qwen-article-json",
+                    "sourceMetadata": {
+                        "path": "qwen4",
+                        "publishedAt": "2027-01-02T03:04:05+08:00",
+                    },
+                },
+                {
+                    "vendor": "glm",
+                    "name": "GLM-6",
+                    "displayName": "GLM-6",
+                    "url": "https://docs.z.ai/guides/llm/glm-6",
+                    "rawUrl": "https://docs.z.ai/guides/llm/glm-6.md",
+                    "aliases": ["GLM-6", "glm-6"],
+                    "sourceKey": "glm-docs-llms",
+                },
+                {
+                    "vendor": "kimi",
+                    "name": "Kimi K4",
+                    "displayName": "Kimi K4",
+                    "url": "https://www.kimi.com/blog/kimi-k4",
+                    "rawUrl": "https://www.kimi.com/blog/kimi-k4",
+                    "aliases": ["Kimi K4", "kimi-k4"],
+                    "sourceKey": "kimi-blog-sitemap",
+                },
+                {
+                    "vendor": "deepseek",
+                    "name": "DeepSeek-V5",
+                    "displayName": "DeepSeek V5",
+                    "url": "https://api-docs.deepseek.com/news/news270101",
+                    "rawUrl": "https://api-docs.deepseek.com/news/news270101",
+                    "aliases": ["DeepSeek V5", "DeepSeek-V5", "deepseek-v5"],
+                    "sourceKey": "deepseek-api-docs-sitemap",
+                },
+            ]
+        }
+
+        specs = discovered_vendor_page_specs(manifest, curated_specs=[])
+
+        self.assertEqual(len(specs), 4)
+        self.assertTrue(all(spec["autoDiscoveredVendorPage"] for spec in specs))
+        self.assertTrue(all(spec["addModelIfMissing"] for spec in specs))
+        self.assertTrue(all(spec["exactBenchmarkLabelsOnly"] for spec in specs))
+        qwen = next(spec for spec in specs if spec["vendor"] == "qwen")
+        self.assertEqual(qwen["jsonArticleSelector"], {"path": "qwen4"})
+        self.assertTrue(qwen["allowAttachedFootnoteLabels"])
+        self.assertEqual(qwen["modelMetadata"]["releaseDate"], "2027-01-02")
+        self.assertEqual(qwen["modelMetadata"]["creator"], "Alibaba")
+        qwen_rows = parse_markdown_source_scores(
+            """
+            | Benchmark | Qwen4 Max |
+            | --- | ---: |
+            | Tau² Bench 4 | 82.1 |
+            | Vita Bench | 40.9 |
+            """,
+            qwen,
+        )
+        self.assertEqual(
+            [(row["benchmarkId"], row["value"]) for row in qwen_rows],
+            [("tau2-bench-weighted", 82.1)],
+        )
+
+        glm = next(spec for spec in specs if spec["vendor"] == "glm")
+        rows = parse_markdown_source_scores(
+            """
+            | Benchmark | GLM-6 |
+            | --- | ---: |
+            | GPQA Diamond | 95.0 |
+            | SuperGPQA | 71.4 |
+            | VitaBench | 76.2 |
+            | LVBench | 82.1 |
+            | Brand New Unreviewed Eval | 99.0 |
+            """,
+            glm,
+        )
+        self.assertEqual(
+            [(row["benchmarkId"], row["value"]) for row in rows],
+            [("gpqa-diamond", 95.0)],
+        )
+
+    def test_discovered_vendor_page_rejects_unpinned_host(self):
+        specs = discovered_vendor_page_specs(
+            {
+                "pages": [
+                    {
+                        "vendor": "glm",
+                        "name": "GLM-99",
+                        "displayName": "GLM-99",
+                        "url": "https://docs.z.ai.evil.example/guides/llm/glm-99",
+                        "rawUrl": "https://docs.z.ai.evil.example/guides/llm/glm-99.md",
+                        "aliases": ["GLM-99"],
+                        "sourceKey": "glm-docs-llms",
+                    }
+                ]
+            },
+            curated_specs=[],
+        )
+
+        self.assertEqual(specs, [])
 
     def test_parse_markdown_source_scores_falls_back_to_plain_text_rows(self):
         text = """
@@ -308,6 +502,7 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
                 {
                     "id": "official-source",
                     "collectionStatus": "seeded-official-values; refresh blocked: URLError",
+                    "effort": "max",
                 },
                 {"id": "fresh-source", "collectionStatus": "refreshed"},
             ],
@@ -334,9 +529,167 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
 
         self.assertEqual(result_values[("official-source", "seed")], 3)
         self.assertEqual(result_values[("official-source", "extra")], 4)
+        self.assertEqual(
+            next(
+                row
+                for row in retained["results"]
+                if row["sourceId"] == "official-source"
+                and row["benchmarkId"] == "seed"
+            )["effort"],
+            "max",
+        )
         self.assertNotIn(("fresh-source", "stale"), result_values)
         self.assertEqual(statuses["official-source"], "stale-retained; refresh blocked: URLError")
         self.assertEqual(statuses["fresh-source"], "refreshed")
+
+    def test_kimi_blocked_refresh_does_not_restore_removed_comparator_rows(self):
+        current = {
+            "sources": [
+                {
+                    "id": "kimi-k3-release",
+                    "collectionStatus": "reference-only; refresh blocked: URLError",
+                }
+            ],
+            "results": [
+                {
+                    "sourceId": "kimi-k3-release",
+                    "model": "Kimi K3",
+                    "benchmarkId": "browsecomp",
+                    "value": 91.2,
+                }
+            ],
+        }
+        previous = {
+            "sources": [{"id": "kimi-k3-release", "collectionStatus": "refreshed"}],
+            "results": [
+                {
+                    "sourceId": "kimi-k3-release",
+                    "model": "Kimi K3",
+                    "benchmarkId": "browsecomp",
+                    "value": 90.0,
+                },
+                {
+                    "sourceId": "kimi-k3-release",
+                    "model": "GPT-5.5",
+                    "benchmarkId": "browsecomp",
+                    "value": 84.4,
+                    "effort": "max",
+                },
+            ],
+        }
+
+        retained = retain_previous_results_on_blocked_refresh(current, previous)
+
+        self.assertEqual(
+            {(row["model"], row["benchmarkId"]) for row in retained["results"]},
+            {("Kimi K3", "browsecomp")},
+        )
+
+    def test_exact_label_policy_migration_drops_previous_fuzzy_matches(self):
+        current = {
+            "sources": [
+                {
+                    "id": "auto-source",
+                    "collectionStatus": "refreshed",
+                    "autoDiscoveredVendorPage": True,
+                    "exactBenchmarkLabelsOnly": True,
+                }
+            ],
+            "results": [
+                {
+                    "sourceId": "auto-source",
+                    "model": "Model A",
+                    "benchmarkId": "gpqa-diamond",
+                    "value": 90.3,
+                }
+            ],
+        }
+        previous = {
+            "sources": [
+                {
+                    "id": "auto-source",
+                    "collectionStatus": "refreshed",
+                    "autoDiscoveredVendorPage": True,
+                }
+            ],
+            "results": [
+                {
+                    "sourceId": "auto-source",
+                    "model": "Model A",
+                    "benchmarkId": "gpqa-diamond",
+                    "value": 71.4,
+                },
+                {
+                    "sourceId": "auto-source",
+                    "model": "Model A",
+                    "benchmarkId": "tau-bench",
+                    "value": 76.2,
+                },
+            ],
+        }
+
+        retained = retain_previous_results_on_blocked_refresh(current, previous)
+
+        self.assertEqual(
+            [(row["benchmarkId"], row["value"]) for row in retained["results"]],
+            [("gpqa-diamond", 90.3)],
+        )
+        self.assertEqual(retained["sources"][0]["collectionStatus"], "refreshed")
+
+    def test_regressed_auto_refresh_keeps_new_values_and_missing_old_rows(self):
+        current = {
+            "sources": [
+                {
+                    "id": "auto-source",
+                    "collectionStatus": "refreshed",
+                    "autoDiscoveredVendorPage": True,
+                    "exactBenchmarkLabelsOnly": True,
+                }
+            ],
+            "results": [
+                {
+                    "sourceId": "auto-source",
+                    "model": "Model A",
+                    "benchmarkId": "gpqa-diamond",
+                    "value": 90.3,
+                }
+            ],
+        }
+        previous = {
+            "sources": [
+                {
+                    "id": "auto-source",
+                    "collectionStatus": "refreshed",
+                    "autoDiscoveredVendorPage": True,
+                    "exactBenchmarkLabelsOnly": True,
+                }
+            ],
+            "results": [
+                {
+                    "sourceId": "auto-source",
+                    "model": "Model A",
+                    "benchmarkId": "gpqa-diamond",
+                    "value": 89.0,
+                },
+                {
+                    "sourceId": "auto-source",
+                    "model": "Model A",
+                    "benchmarkId": "tau-bench",
+                    "value": 63.0,
+                },
+            ],
+        }
+
+        retained = retain_previous_results_on_blocked_refresh(current, previous)
+        values = {
+            row["benchmarkId"]: row["value"] for row in retained["results"]
+        }
+
+        self.assertEqual(values, {"gpqa-diamond": 90.3, "tau-bench": 63.0})
+        self.assertIn(
+            "parsed score count regressed from 2 to 1",
+            retained["sources"][0]["collectionStatus"],
+        )
 
     def test_incomplete_official_response_falls_back_to_seeded_results(self):
         with patch(
@@ -408,6 +761,49 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertIn("deepseek-v4-flash-0420", old_flash_max["modelAliases"])
         self.assertNotIn("deepseek-v4-flash", old_flash_max["modelAliases"])
 
+    def test_build_payload_includes_glm53_and_deepseek_v4_pro_0813(self):
+        payload = build_payload({}, "seeded")
+        sources = {source["id"]: source for source in payload["sources"]}
+        results = {
+            (row["sourceId"], row["benchmarkId"]): row
+            for row in payload["results"]
+            if row["sourceId"]
+            in {"zai-glm-5-3-release", "deepseek-v4-pro-0813-card"}
+        }
+
+        self.assertEqual(
+            sources["zai-glm-5-3-release"]["url"],
+            "https://z.ai/blog/glm-5.3",
+        )
+        self.assertEqual(
+            results[("zai-glm-5-3-release", "terminal-bench-3")]["value"],
+            28.3,
+        )
+        self.assertEqual(
+            results[("zai-glm-5-3-release", "gdpval-aa-v2-elo")]["value"],
+            1769,
+        )
+        self.assertTrue(
+            results[("zai-glm-5-3-release", "deepswe-v1-1")]["variantScoped"]
+        )
+
+        deepseek = results[("deepseek-v4-pro-0813-card", "terminal-bench-2-1")]
+        self.assertEqual(deepseek["value"], 87.9)
+        self.assertEqual(deepseek["effort"], "max")
+        self.assertTrue(deepseek["variantScoped"])
+        self.assertEqual(
+            results[("deepseek-v4-pro-0813-card", "hle-tools")]["value"],
+            60.0,
+        )
+        self.assertEqual(
+            results[("deepseek-v4-pro-0813-card", "dsbench-hard")]["value"],
+            67.2,
+        )
+        self.assertEqual(
+            sources["deepseek-v4-pro-0813-card"]["rawUrl"],
+            "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813/raw/main/README.md",
+        )
+
     def test_build_payload_includes_hy3_public_official_scores(self):
         payload = build_payload({}, "seeded")
         sources = {source["id"]: source for source in payload["sources"]}
@@ -451,7 +847,7 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             if row["sourceId"] == "zai-glm-5-2-card" and row["benchmarkId"] == "hle"
         )
 
-        self.assertEqual(specs["kimi-k3-release"]["columns"]["GLM-5.2 (max)"], "GLM-5.2 (max)")
+        self.assertNotIn("GLM-5.2 (max)", specs["kimi-k3-release"]["columns"])
         self.assertEqual(specs["zai-glm-5-2-card"]["columns"]["GLM-5.2"], "GLM-5.2 (max)")
         self.assertEqual(
             specs["zai-glm-5-2-card"]["columns"]["DeepSeek-V4-Pro"],
@@ -472,7 +868,9 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             "qwen-qwen2-5-max-release",
             "qwen-qwen3-6-27b-card",
             "qwen-qwen3-6-plus-release",
+            "qwen-qwen3-8-max-release",
             "deepseek-v4-pro-card",
+            "deepseek-v4-pro-0813-card",
             "deepseek-v4-flash-0731-update",
             "tencent-hy3-repository",
             "kimi-k3-release",
@@ -483,6 +881,7 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             "zai-glm-4-6-card",
             "zai-glm-5-1-card",
             "zai-glm-5-2-card",
+            "zai-glm-5-3-release",
             "minimax-m3-release",
             "minimax-m2-7-report",
             "minimax-m2-5-release",
@@ -515,11 +914,28 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
 
         kimi_0905 = sources["kimi-k2-0905-card"]
         g9v3 = sources["ai9stars-g9v3-3b-card"]
+        qwen38_27b = sources["qwen-qwen3-8-27b-card"]
 
         self.assertEqual(kimi_0905["category"], "Official model card")
         self.assertEqual(kimi_0905["url"], "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905")
         self.assertEqual(g9v3["category"], "Official model card")
         self.assertEqual(g9v3["url"], "https://huggingface.co/ai9stars/G9v3-3B")
+        self.assertEqual(qwen38_27b["category"], "Official model card")
+        self.assertEqual(
+            qwen38_27b["url"],
+            "https://huggingface.co/Qwen/Qwen3.8-27B",
+        )
+        self.assertEqual(qwen38_27b["organization"], "Qwen")
+        self.assertTrue(qwen38_27b["addModelIfMissing"])
+        self.assertEqual(
+            qwen38_27b["modelMetadata"]["modelKey"],
+            "Qwen3.8 27B (xhigh) [R]",
+        )
+        self.assertEqual(
+            sources["zai-glm-5-3-release"]["modelMetadata"]["modelKey"],
+            "GLM-5.3 (max) [R]",
+        )
+        self.assertEqual(sources["zai-glm-5-3-release"]["effort"], "max")
 
     def test_reference_only_model_cards_keep_model_aliases(self):
         payload = build_payload({}, "seeded")
@@ -636,6 +1052,7 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             by_source.setdefault(row["sourceId"], {})[row["benchmarkId"]] = row
 
         qwen = by_source["qwen-qwen3-8-max-release"]
+        qwen27 = by_source["qwen-qwen3-8-27b-card"]
         opus = by_source["anthropic-claude-opus-5-system-card"]
 
         self.assertEqual(
@@ -648,6 +1065,20 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertEqual(qwen["charxiv-tools"]["value"], 93.5)
         self.assertIn("partial", qwen["osworld-2"]["scoreSelection"])
         self.assertIn("qwen3-8-max", qwen["swe-bench-pro"]["modelAliases"])
+
+        self.assertEqual(
+            sources["qwen-qwen3-8-27b-card"]["url"],
+            "https://huggingface.co/Qwen/Qwen3.8-27B",
+        )
+        self.assertEqual(qwen27["terminal-bench-2-1"]["value"], 73.0)
+        self.assertEqual(qwen27["swe-bench-pro"]["value"], 61.7)
+        self.assertEqual(qwen27["agents-last-exam"]["value"], 42.9)
+        self.assertEqual(qwen27["claw-eval-mm-average"]["value"], 56.9)
+        self.assertEqual(qwen27["mathvision-python"]["value"], 94.6)
+        self.assertEqual(qwen27["erqa"]["value"], 65.5)
+        self.assertTrue(qwen27["swe-bench-pro"]["variantScoped"])
+        self.assertEqual(qwen27["swe-bench-pro"]["effort"], "xhigh")
+        self.assertIn("qwen3-8-27b", qwen27["swe-bench-pro"]["modelAliases"])
 
         self.assertEqual(opus["swe-bench-verified"]["value"], 96.0)
         self.assertEqual(opus["swe-bench-pro"]["value"], 79.2)
@@ -892,10 +1323,21 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             sources["kimi-k3-release"]["url"],
             "https://www.kimi.com/blog/kimi-k3",
         )
+        self.assertEqual(
+            sources["kimi-k3-release"]["rawUrl"],
+            "https://huggingface.co/moonshotai/Kimi-K3/raw/main/README.md",
+        )
         self.assertEqual(results[("Kimi K3", "terminal-bench-2-1")]["value"], 88.3)
         self.assertEqual(results[("Kimi K3", "browsecomp")]["value"], 91.2)
-        self.assertEqual(results[("GPT-5.5", "terminal-bench-2-1")]["value"], 83.4)
+        self.assertEqual(results[("Kimi K3", "gdpval-aa-v2-elo")]["value"], 1686)
+        self.assertEqual(results[("Kimi K3", "toolathlon")]["value"], 76.5)
+        self.assertEqual(results[("Kimi K3", "job-bench")]["value"], 54.3)
+        self.assertEqual(results[("Kimi K3", "apex-agents")]["value"], 41.0)
         self.assertIn("kimi-k3", results[("Kimi K3", "browsecomp")]["modelAliases"])
+        self.assertTrue(results[("Kimi K3", "browsecomp")]["variantScoped"])
+        self.assertEqual(len(results), 50)
+        self.assertEqual({model for model, _benchmark in results}, {"Kimi K3"})
+        self.assertTrue(all(row["effort"] == "max" for row in results.values()))
 
         benchmark_ids = {benchmark["id"] for benchmark in payload["benchmarks"]}
         self.assertTrue(

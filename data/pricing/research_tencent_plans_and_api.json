@@ -599,7 +599,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-personal-general-lite",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro-202606",
       "pricingKind": "effective-subscription",
@@ -622,7 +622,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-personal-general-lite",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro-202606",
       "pricingKind": "effective-subscription",
@@ -900,7 +900,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-personal-general-standard",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro-202606",
       "pricingKind": "effective-subscription",
@@ -923,7 +923,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-personal-general-standard",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro-202606",
       "pricingKind": "effective-subscription",
@@ -1201,7 +1201,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-personal-general-pro",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro-202606",
       "pricingKind": "effective-subscription",
@@ -1224,7 +1224,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-personal-general-pro",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro-202606",
       "pricingKind": "effective-subscription",
@@ -1502,7 +1502,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-personal-general-max",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro-202606",
       "pricingKind": "effective-subscription",
@@ -1525,7 +1525,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-personal-general-max",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro-202606",
       "pricingKind": "effective-subscription",
@@ -2478,7 +2478,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-enterprise-pro-guangzhou",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "effective-subscription",
@@ -2502,7 +2502,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-enterprise-pro-guangzhou",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "effective-subscription",
@@ -2548,7 +2548,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-enterprise-pro-guangzhou",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro-202606",
       "pricingKind": "effective-subscription",
@@ -2572,7 +2572,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-enterprise-pro-guangzhou",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro-202606",
       "pricingKind": "effective-subscription",
@@ -2825,7 +2825,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-enterprise-pro-singapore",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "effective-subscription",
@@ -2849,7 +2849,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-enterprise-pro-singapore",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "effective-subscription",
@@ -2895,7 +2895,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-enterprise-pro-singapore",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro-202606",
       "pricingKind": "effective-subscription",
@@ -2919,7 +2919,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-enterprise-pro-singapore",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro-202606",
       "pricingKind": "effective-subscription",
@@ -3129,7 +3129,7 @@
       "providerId": "tencent-tokenhub",
       "planId": "tencent-tokenhub-guangzhou-payg",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "per-token",
@@ -3152,7 +3152,7 @@
       "providerId": "tencent-tokenhub",
       "planId": "tencent-tokenhub-guangzhou-payg",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "per-token",
@@ -3196,7 +3196,7 @@
       "providerId": "tencent-tokenhub",
       "planId": "tencent-tokenhub-guangzhou-payg",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro-202606",
       "pricingKind": "per-token",
@@ -3219,7 +3219,7 @@
       "providerId": "tencent-tokenhub",
       "planId": "tencent-tokenhub-guangzhou-payg",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro-202606",
       "pricingKind": "per-token",
@@ -3870,7 +3870,7 @@
       "providerId": "tencent-tokenhub",
       "planId": "tencent-tokenhub-singapore-payg",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "per-token",
@@ -3893,7 +3893,7 @@
       "providerId": "tencent-tokenhub",
       "planId": "tencent-tokenhub-singapore-payg",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro",
       "pricingKind": "per-token",
@@ -3937,7 +3937,7 @@
       "providerId": "tencent-tokenhub",
       "planId": "tencent-tokenhub-singapore-payg",
       "modelSlugs": [
-        "deepseek-v4-pro-high"
+        "deepseek-v4-pro-0424-high"
       ],
       "providerModelId": "deepseek-v4-pro-202606",
       "pricingKind": "per-token",
@@ -3960,7 +3960,7 @@
       "providerId": "tencent-tokenhub",
       "planId": "tencent-tokenhub-singapore-payg",
       "modelSlugs": [
-        "deepseek-v4-pro-non-reasoning"
+        "deepseek-v4-pro-0424-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-pro-202606",
       "pricingKind": "per-token",
