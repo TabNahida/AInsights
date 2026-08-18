@@ -1,1 +1,2 @@
+cryptography>=44.0,<47
 numpy>=2.0,<3

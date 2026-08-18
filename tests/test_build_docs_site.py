@@ -7,6 +7,7 @@ import tempfile
 from pathlib import Path
 
 from ArtificialAnalysis.scrape_artificial_analysis import SCORE_SPECS
+from benchmarks.collect_benchmark_scores import build_payload as build_benchmark_payload
 from scripts.build_docs_site import (
     AINDEX_GROUPS,
     DEFAULT_AINDEX_WEIGHTS,
@@ -21,6 +22,7 @@ from scripts.build_docs_site import (
     load_external_benchmarks,
     load_provider_pricing,
     merge_provider_pricing_catalogue,
+    models_asset_version,
     open_source_type,
     read_csv_rows,
     score_model_for_preset,
@@ -1912,89 +1914,113 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(payload["externalSources"][-1]["scoreStatus"], "benchmark")
         self.assertIn("benchmark:terminal-bench-2", payload["externalSources"][-1]["relatedMetrics"])
 
-    def test_opted_in_external_model_is_added_without_aa_data_or_variant_leak(self):
+    @staticmethod
+    def _qwen38_27b_external_payload():
+        collected = build_benchmark_payload({}, "seeded")
+        source_id = "qwen-qwen3-8-27b-card"
+        source = next(
+            source for source in collected["sources"] if source["id"] == source_id
+        )
+        results = [
+            result
+            for result in collected["results"]
+            if result["sourceId"] == source_id
+        ]
+        benchmark_ids = {result["benchmarkId"] for result in results}
+        return {
+            "version": collected["version"],
+            "sources": [source],
+            "benchmarks": [
+                benchmark
+                for benchmark in collected["benchmarks"]
+                if benchmark["id"] in benchmark_ids
+            ],
+            "results": results,
+        }
+
+    def test_qwen38_official_card_attaches_to_canonical_aa_model(self):
         payload = build_site_payload(
             [
                 {
-                    "model_key": "Qwen3.8 27B",
+                    "model_key": "Qwen3.8 27B [R]",
                     "model": "Qwen3.8 27B",
-                    "is_reasoning": "false",
-                    "slug": "qwen3-8-27b-non-reasoning",
+                    "is_reasoning": "true",
+                    "slug": "qwen3-8-27b",
                     "creator": "Alibaba",
-                    "AA Intelligence Index": "40",
+                    "AA Intelligence Index": "52.0247",
                 }
             ],
-            {
-                "version": 1,
-                "sources": [
-                    {
-                        "id": "qwen-27b-card",
-                        "category": "Official model card",
-                        "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
-                        "addModelIfMissing": True,
-                        "variantScoped": True,
-                        "effort": "xhigh",
-                        "modelAliases": [
-                            "Qwen3.8 27B",
-                            "Qwen3.8 27B (xhigh)",
-                            "qwen3-8-27b-xhigh",
-                        ],
-                        "modelMetadata": {
-                            "displayName": "Qwen3.8 27B",
-                            "modelKey": "Qwen3.8 27B (xhigh) [R]",
-                            "model": "Qwen3.8 27B (xhigh)",
-                            "slug": "qwen3-8-27b-xhigh",
-                            "creator": "Alibaba",
-                            "releaseDate": "2026-08-05",
-                            "modelUrl": "https://huggingface.co/Qwen/Qwen3.8-27B",
-                            "contextWindowTokens": 262144,
-                            "openSourceCategorization": "permissive",
-                            "isReasoning": True,
-                            "inputModalities": ["Text", "Image", "Video"],
-                            "outputModalities": ["Text"],
-                            "modelDetails": {
-                                "parameters": "27B",
-                                "license": "Apache-2.0",
-                                "contextNote": "Native 262,144; extendable to 1,000,000 tokens.",
-                            },
-                        },
-                    }
-                ],
-                "benchmarks": [{"id": "swe-bench-pro", "label": "SWE-Bench Pro"}],
-                "results": [
-                    {
-                        "benchmarkId": "swe-bench-pro",
-                        "model": "Qwen3.8 27B",
-                        # The broad alias deliberately comes first. Exact
-                        # source metadata must still select the xhigh row.
-                        "modelAliases": [
-                            "Qwen3.8 27B",
-                            "Qwen3.8 27B (xhigh)",
-                            "qwen3-8-27b-xhigh",
-                        ],
-                        "value": 61.7,
-                        "sourceId": "qwen-27b-card",
-                    }
-                ],
-            },
+            self._qwen38_27b_external_payload(),
             {},
         )
 
-        low = next(model for model in payload["models"] if not model.get("externalOnly"))
-        qwen = next(model for model in payload["models"] if model.get("externalOnly"))
-        self.assertEqual(qwen["model"], "Qwen3.8 27B (xhigh)")
-        self.assertEqual(qwen["slug"], "qwen3-8-27b-xhigh")
-        self.assertEqual(qwen["variantGroup"], low["variantGroup"])
+        self.assertEqual(len(payload["models"]), 1)
+        qwen = payload["models"][0]
+        official_results = [
+            result
+            for result in qwen["externalBenchmarks"]
+            if result["sourceId"] == "qwen-qwen3-8-27b-card"
+        ]
+
+        self.assertEqual(qwen["modelKey"], "Qwen3.8 27B [R]")
+        self.assertEqual(qwen["model"], "Qwen3.8 27B")
+        self.assertEqual(qwen["slug"], "qwen3-8-27b")
+        self.assertFalse(qwen.get("externalOnly", False))
+        self.assertTrue(qwen["isReasoning"])
+        self.assertEqual(qwen["aa"]["aa-intelligence"], 52.0247)
+        self.assertEqual(qwen["modelUrl"], "https://huggingface.co/Qwen/Qwen3.8-27B")
+        self.assertEqual(qwen["contextWindowTokens"], 262144)
+        self.assertEqual(qwen["inputModalities"], ["Text", "Image", "Video"])
+        self.assertEqual(qwen["outputModalities"], ["Text"])
+        self.assertEqual(qwen["modelDetails"]["parameters"], "27B")
+        self.assertEqual(qwen["modelDetails"]["license"], "Apache-2.0")
+        self.assertEqual(qwen["officialModelSourceId"], "qwen-qwen3-8-27b-card")
+        self.assertEqual(len(official_results), 29)
+        self.assertEqual(len({result["benchmarkId"] for result in official_results}), 29)
+        self.assertEqual(qwen["scores"]["benchmark:swe-bench-pro"], 61.7)
+        self.assertTrue(all(result["effort"] == "xhigh" for result in official_results))
+
+    def test_qwen38_official_card_adds_single_external_fallback_without_aa_model(self):
+        payload = build_site_payload(
+            [
+                {
+                    "model_key": "Model A",
+                    "model": "Model A",
+                    "is_reasoning": "false",
+                    "slug": "model-a",
+                    "creator": "Lab A",
+                    "AA Intelligence Index": "40",
+                }
+            ],
+            self._qwen38_27b_external_payload(),
+            {},
+        )
+
+        qwen_models = [
+            model for model in payload["models"] if model["slug"] == "qwen3-8-27b"
+        ]
+        self.assertEqual(len(qwen_models), 1)
+        qwen = qwen_models[0]
+        official_results = [
+            result
+            for result in qwen["externalBenchmarks"]
+            if result["sourceId"] == "qwen-qwen3-8-27b-card"
+        ]
+
+        self.assertEqual(qwen["modelKey"], "Qwen3.8 27B [R]")
+        self.assertEqual(qwen["model"], "Qwen3.8 27B")
+        self.assertTrue(qwen["externalOnly"])
         self.assertTrue(qwen["isReasoning"])
         self.assertEqual(qwen["releaseDate"], "2026-08-05")
         self.assertEqual(qwen["contextWindowTokens"], 262144)
         self.assertEqual(qwen["inputModalities"], ["Text", "Image", "Video"])
         self.assertEqual(qwen["outputModalities"], ["Text"])
         self.assertEqual(qwen["modelDetails"]["parameters"], "27B")
+        self.assertEqual(len(official_results), 29)
+        self.assertEqual(len({result["benchmarkId"] for result in official_results}), 29)
         self.assertEqual(qwen["scores"]["benchmark:swe-bench-pro"], 61.7)
-        self.assertIsNone(low["scores"]["benchmark:swe-bench-pro"])
-        self.assertTrue(qwen["externalBenchmarks"][0]["variantScoped"])
-        self.assertEqual(qwen["externalBenchmarks"][0]["effort"], "xhigh")
+        self.assertTrue(all(result["variantScoped"] for result in official_results))
+        self.assertTrue(all(result["effort"] == "xhigh" for result in official_results))
         self.assertTrue(all(value is None for value in qwen["aa"].values()))
         self.assertTrue(
             all(
@@ -2276,6 +2302,66 @@ class BuildDocsSiteTests(unittest.TestCase):
             content = output_js.read_text(encoding="utf-8")
             self.assertTrue(content.startswith("window.AINSIGHTS_MODELS_DATA = "))
             self.assertIn('"modelRows": 1', content)
+
+    def test_write_site_payload_refreshes_models_asset_key_in_every_site_page(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp = Path(tmpdir)
+            docs_dir = tmp / "docs"
+            data_dir = docs_dir / "data"
+            data_dir.mkdir(parents=True)
+            input_csv = tmp / "raw.csv"
+            output_json = data_dir / "models.json"
+            output_js = data_dir / "models.js"
+            input_csv.write_text(
+                "model_key,model,is_reasoning,slug,creator,AA Intelligence Index,GDPval-AA v2\n"
+                "Model A,Model A,false,model-a,Lab A,50,80\n",
+                encoding="utf-8",
+            )
+            app_pages = (
+                "index.html",
+                "full-rank.html",
+                "model.html",
+                "provider.html",
+                "providers.html",
+                "compare.html",
+                "benchmark.html",
+                "sources.html",
+                "contribute.html",
+            )
+            for name in app_pages:
+                (docs_dir / name).write_text(
+                    '<script src="./data/models.js?v=stale"></script>\n'
+                    '<script src="./app.js?v=keep-this"></script>\n',
+                    encoding="utf-8",
+                )
+            untouched = docs_dir / "methodology.html"
+            untouched.write_text("<main>No model payload</main>\n", encoding="utf-8")
+
+            write_site_payload(
+                input_csv,
+                output_json,
+                output_js,
+                external_benchmarks_json=None,
+                provider_pricing_json=None,
+                include_irt_ranking=False,
+                site_html_dir=docs_dir,
+            )
+
+            version = models_asset_version(output_json.read_text(encoding="utf-8"))
+            self.assertEqual(
+                version,
+                models_asset_version(output_json.read_text(encoding="utf-8")),
+            )
+            self.assertNotEqual(version, models_asset_version('{"different": true}'))
+            for name in app_pages:
+                content = (docs_dir / name).read_text(encoding="utf-8")
+                self.assertIn(f'./data/models.js?v={version}', content)
+                self.assertIn('./app.js?v=keep-this', content)
+                self.assertNotIn("v=stale", content)
+            self.assertEqual(
+                untouched.read_text(encoding="utf-8"),
+                "<main>No model payload</main>\n",
+            )
 
     def test_custom_benchmark_lab_can_use_frontier_capability_boards(self):
         payload = build_site_payload(

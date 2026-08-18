@@ -14,6 +14,7 @@ class UpdateWorkflowTests(unittest.TestCase):
         self.assertIn("name: Update model and benchmark data", workflow)
         self.assertIn('cron: "0 1 * * *"', workflow)
         self.assertIn("python ArtificialAnalysis/scrape_artificial_analysis.py", workflow)
+        self.assertIn("--output-dir ArtificialAnalysis --allow-stale", workflow)
         self.assertIn("python benchmarks/discover_official_model_cards.py", workflow)
         self.assertIn("python benchmarks/discover_official_vendor_pages.py", workflow)
         self.assertIn("python benchmarks/collect_benchmark_scores.py", workflow)
@@ -30,6 +31,19 @@ class UpdateWorkflowTests(unittest.TestCase):
         self.assertIn("data/benchmarks/official_vendor_pages.json", workflow)
         self.assertIn("docs/data/models.json", workflow)
         self.assertIn("docs/data/models.js", workflow)
+        generated_html = (
+            "index.html",
+            "full-rank.html",
+            "sources.html",
+            "contribute.html",
+            "providers.html",
+            "compare.html",
+            "provider.html",
+            "benchmark.html",
+            "model.html",
+        )
+        for filename in generated_html:
+            self.assertRegex(workflow, rf"git add [^\n]*docs/{filename}(?:\s|$)")
         scheme18_outputs = (
             "full_rankings_aindex_scheme18.csv",
             "top50_aindex_scheme18.csv",

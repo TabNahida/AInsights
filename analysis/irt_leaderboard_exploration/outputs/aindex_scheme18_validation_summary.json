@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_scheme18",
   "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
-  "calibration_population_size": 167,
-  "bonus_cap_per_board": 23.670087950603403,
+  "calibration_population_size": 168,
+  "bonus_cap_per_board": 23.621288444273493,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 167,
-    "unique_slugs": 167,
-    "unique_variant_groups": 167,
+    "row_count": 168,
+    "unique_slugs": 168,
+    "unique_variant_groups": 168,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 199,
-    "unique_slugs": 199,
-    "unique_variant_groups": 157,
+    "row_count": 200,
+    "unique_slugs": 200,
+    "unique_variant_groups": 158,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -32,10 +32,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 23.670087950603403,
-    "pooled_positive_residual_count": 457,
-    "pooled_positive_residual_mean": 9.916534905725463,
-    "pooled_positive_residual_population_sd": 9.725230623442078,
+    "bonus_cap_per_board": 23.621288444273493,
+    "pooled_positive_residual_count": 463,
+    "pooled_positive_residual_mean": 9.88443540039226,
+    "pooled_positive_residual_population_sd": 9.713421939491486,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -44,7 +44,7 @@
       "instruction-context"
     ],
     "board_points_max": 20.0,
-    "population_size": 167,
+    "population_size": 168,
     "population_slugs": [
       "g9v3-39a5b",
       "g9v3-3b",
@@ -70,6 +70,7 @@
       "qwen3-7-max",
       "qwen3-7-plus",
       "qwen3-8-2-4t-a95b",
+      "qwen3-8-27b",
       "qwen3-8-max",
       "nova-2-0-lite-reasoning",
       "nova-2-0-pro-reasoning-medium",
@@ -239,6 +240,7 @@
       "qwen3 7 max",
       "qwen3 7 plus",
       "qwen3 8 2 4t a95b",
+      "qwen3 8 27b",
       "qwen3 8 max",
       "nova 2 0 lite",
       "nova 2 0 pro preview",
@@ -400,27 +402,27 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 154,
-            "slope": 1.7716690423961041,
-            "intercept": -27.596894926902188
+            "observed_count": 155,
+            "slope": 1.7796559911053893,
+            "intercept": -27.71386896864079
           },
           {
             "item_id": "swe-bench-pro",
             "score_key": "benchmark:swe-bench-pro",
             "canonical_family": "swe-bench-pro",
             "enabled": true,
-            "observed_count": 38,
-            "slope": 0.4090287865943596,
-            "intercept": 39.51561814682
+            "observed_count": 39,
+            "slope": 0.40650719275432784,
+            "intercept": 39.73458490005083
           },
           {
             "item_id": "livecodebench",
             "score_key": "benchmark:livecodebench",
             "canonical_family": "livecodebench",
             "enabled": true,
-            "observed_count": 23,
-            "slope": 0.6680586740723169,
-            "intercept": 54.77592098554429
+            "observed_count": 24,
+            "slope": 0.6885441239725169,
+            "intercept": 54.27037910019905
           }
         ],
         "core_item_count": 1,
@@ -440,9 +442,9 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 154,
-            "slope": 0.9782885405321713,
-            "intercept": -14.005686059664363
+            "observed_count": 155,
+            "slope": 0.9830682795728674,
+            "intercept": -14.146752958499242
           },
           {
             "item_id": "tau2-bench-telecom-aa",
@@ -458,9 +460,9 @@
             "score_key": "τ³-Banking",
             "canonical_family": "tau3-banking",
             "enabled": true,
-            "observed_count": 123,
-            "slope": 0.39081333312577704,
-            "intercept": -5.7858890508847445
+            "observed_count": 125,
+            "slope": 0.3982348917223084,
+            "intercept": -6.027236355443627
           },
           {
             "item_id": "apex-agents-aa",
@@ -476,9 +478,9 @@
             "score_key": "benchmark:swe-bench-pro",
             "canonical_family": "swe-bench-pro",
             "enabled": true,
-            "observed_count": 38,
-            "slope": 0.4081227486311975,
-            "intercept": 29.284598812785863
+            "observed_count": 39,
+            "slope": 0.41035350096091505,
+            "intercept": 29.144907713352943
           },
           {
             "item_id": "hle-tools",
@@ -503,9 +505,9 @@
             "score_key": "benchmark:osworld-verified",
             "canonical_family": "osworld-verified",
             "enabled": true,
-            "observed_count": 14,
-            "slope": 1.2290604210378122,
-            "intercept": -14.690319070609931
+            "observed_count": 15,
+            "slope": 1.2533816048978368,
+            "intercept": -16.21911156080732
           }
         ],
         "core_item_count": 1,
@@ -572,9 +574,9 @@
             "score_key": "MMMU-Pro",
             "canonical_family": "mmmu-pro",
             "enabled": true,
-            "observed_count": 83,
-            "slope": 0.8034592602037193,
-            "intercept": 38.297530557480606
+            "observed_count": 84,
+            "slope": 0.80479047993735,
+            "intercept": 38.33862028440839
           },
           {
             "item_id": "mmlu-pro",
@@ -608,9 +610,9 @@
             "score_key": "benchmark:charxiv-no-tools",
             "canonical_family": "charxiv-no-tools",
             "enabled": true,
-            "observed_count": 10,
-            "slope": 0.6703672536093832,
-            "intercept": 60.51411405017676
+            "observed_count": 11,
+            "slope": 0.6539478000195372,
+            "intercept": 61.76379562600238
           }
         ],
         "core_item_count": 2,
@@ -624,15 +626,15 @@
     "independent_of_production_scoring_module": true,
     "exact_reuses_serialized_deduplicated_calibration": true,
     "calibration": {
-      "population_size": 167,
-      "cap": 23.670087950603403,
-      "serialized_cap": 23.670087950603403,
+      "population_size": 168,
+      "cap": 23.621288444273493,
+      "serialized_cap": 23.621288444273493,
       "cap_error": 0.0,
       "passed": true,
       "failures": []
     },
     "variant_group": {
-      "row_count": 167,
+      "row_count": 168,
       "maximum_numeric_error": 1.4210854715202004e-14,
       "passed": true,
       "failures": []
@@ -644,7 +646,7 @@
       "failures": []
     },
     "exact_config": {
-      "row_count": 199,
+      "row_count": 200,
       "maximum_numeric_error": 1.4210854715202004e-14,
       "passed": true,
       "failures": []
@@ -656,11 +658,11 @@
       "failures": []
     },
     "exact_config_sanitation": {
-      "shared_variant_score_cells_removed": 435,
+      "shared_variant_score_cells_removed": 459,
       "configuration_ineligible_score_cells_removed": 0,
       "derived_external_score_cells_removed": 0,
-      "unscoped_external_score_cells_removed": 762,
-      "site_livecodebench_cells_excluded": 375,
+      "unscoped_external_score_cells_removed": 770,
+      "site_livecodebench_cells_excluded": 378,
       "variant_scoped_direct_score_cells_retained": 402
     },
     "review_parity": {

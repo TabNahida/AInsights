@@ -33,7 +33,7 @@ jobs:
         run: python -B -m unittest discover -s tests
 
       - name: Fetch latest Artificial Analysis data
-        run: python ArtificialAnalysis/scrape_artificial_analysis.py --output-dir ArtificialAnalysis
+        run: python ArtificialAnalysis/scrape_artificial_analysis.py --output-dir ArtificialAnalysis --allow-stale
 
       - name: Discover official vendor model cards
         run: python benchmarks/discover_official_model_cards.py --output-json data/benchmarks/official_model_cards.json
@@ -64,6 +64,8 @@ jobs:
           git add data/benchmarks/official_vendor_pages.json
           git add data/benchmarks/benchmark_scores.json
           git add docs/data/models.json docs/data/models.js docs/assets/logos
+          git add docs/index.html docs/full-rank.html docs/sources.html docs/contribute.html
+          git add docs/providers.html docs/compare.html docs/provider.html docs/benchmark.html docs/model.html
           git add analysis/irt_leaderboard_exploration/outputs/full_rankings_aindex_scheme18.csv
           git add analysis/irt_leaderboard_exploration/outputs/top50_aindex_scheme18.csv
           git add analysis/irt_leaderboard_exploration/outputs/full_rankings_exact_config_aindex_scheme18.csv

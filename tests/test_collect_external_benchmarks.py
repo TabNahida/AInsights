@@ -927,10 +927,24 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         )
         self.assertEqual(qwen38_27b["organization"], "Qwen")
         self.assertTrue(qwen38_27b["addModelIfMissing"])
+        self.assertEqual(qwen38_27b["effort"], "xhigh")
+        self.assertEqual(
+            qwen38_27b["modelMetadata"]["model"],
+            "Qwen3.8 27B",
+        )
+        self.assertEqual(
+            qwen38_27b["modelMetadata"]["displayName"],
+            "Qwen3.8 27B",
+        )
         self.assertEqual(
             qwen38_27b["modelMetadata"]["modelKey"],
-            "Qwen3.8 27B (xhigh) [R]",
+            "Qwen3.8 27B [R]",
         )
+        self.assertEqual(
+            qwen38_27b["modelMetadata"]["slug"],
+            "qwen3-8-27b",
+        )
+        self.assertIn("xhigh is the default reasoning effort", qwen38_27b["note"])
         self.assertEqual(
             sources["zai-glm-5-3-release"]["modelMetadata"]["modelKey"],
             "GLM-5.3 (max) [R]",

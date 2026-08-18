@@ -180,6 +180,7 @@ const copy = {
     repository: "仓库",
     rankingItems: "个排名项",
     scorableModels: "个可评分模型",
+    unrankedSearchResults: "个未排名目录匹配",
     removedPrefix: "已去除",
     removedSuffix: "个重复档位",
     allTiers: "显示全部档位",
@@ -286,14 +287,14 @@ const copy = {
     providerModelCount: "模型数量",
     providerBestScore: "最高分",
     providerPageTitle: "{provider} 模型概览",
-    providerPageSubtitle: "{count} 个主榜去重模型 · 最高分 {bestScore} points",
+    providerPageSubtitle: "{count} 个去重目录模型 · 已排名最高分 {bestScore} points",
     providerNotFound: "没有找到这个机构",
-    providerSummaryModels: "可评分模型",
+    providerSummaryModels: "目录模型",
     providerSummaryBest: "最高分",
     providerSummaryAverage: "平均分",
     providerSummaryOpen: "开源模型",
     providerModelsTitle: "模型列表",
-    providerModelsSubtitle: "按方案 18 AIndex 名次排序，展示分数（points）、发布日期、来源类型和运行指标",
+    providerModelsSubtitle: "已排名模型按方案 18 AIndex 名次优先，未排名模型明确标为暂无分数",
     comparePageTitle: "模型对比",
     comparePageSubtitle: "选择多个模型，横向查看分数、排名、成本、速度、上下文和各项测试数据",
     comparePickerTitle: "选择模型",
@@ -401,6 +402,7 @@ const copy = {
     benchmarkCustomOnly: "仅 Custom 工具",
     benchmarkSourcesOnly: "来源",
     notAvailable: "暂无",
+    unranked: "未排名",
     homeStats: {
       leader: "领先模型",
       topOpen: "开源领先",
@@ -659,6 +661,7 @@ const copy = {
     repository: "Repository",
     rankingItems: "ranked items",
     scorableModels: "scorable models",
+    unrankedSearchResults: "unranked catalog matches",
     removedPrefix: "Removed",
     removedSuffix: "duplicate tiers",
     allTiers: "Showing every tier",
@@ -765,14 +768,14 @@ const copy = {
     providerModelCount: "Model count",
     providerBestScore: "Highest points",
     providerPageTitle: "{provider} model overview",
-    providerPageSubtitle: "{count} deduplicated ranking models · highest {bestScore} points",
+    providerPageSubtitle: "{count} deduplicated catalog models · highest ranked score {bestScore} points",
     providerNotFound: "Provider not found",
-    providerSummaryModels: "Scorable models",
+    providerSummaryModels: "Catalog models",
     providerSummaryBest: "Highest points",
     providerSummaryAverage: "Average points",
     providerSummaryOpen: "Open models",
     providerModelsTitle: "Model list",
-    providerModelsSubtitle: "Sorted by Scheme 18 AIndex rank with points, release date, source type, and operating metrics",
+    providerModelsSubtitle: "Ranked models come first by Scheme 18 AIndex; unranked catalog models are clearly marked N/A",
     comparePageTitle: "Model comparison",
     comparePageSubtitle: "Choose models and compare scores, ranks, cost, speed, context, and benchmark data side by side",
     comparePickerTitle: "Choose models",
@@ -880,6 +883,7 @@ const copy = {
     benchmarkCustomOnly: "Custom tools only",
     benchmarkSourcesOnly: "Sources",
     notAvailable: "N/A",
+    unranked: "Unranked",
     homeStats: {
       leader: "Leader",
       topOpen: "Top open",
@@ -1765,38 +1769,68 @@ function renderResults(preset) {
   const filtered = scored.filter(matchesQuery).filter(matchesSourceFilter);
   const rankingUniverse = state.dedupe ? dedupeByBestVariant(scored) : scored;
   const ranked = rankRows(rankingUniverse).filter(matchesQuery).filter(matchesSourceFilter);
+  const unrankedMatches = state.query
+    ? unrankedCatalogModels(scored, {
+      dedupe: state.dedupe,
+      representedModels: rankingUniverse,
+    }).filter(matchesQuery).filter(matchesSourceFilter)
+    : [];
   const allRanked = rankRows(scored);
-  const homeDisplayModels = mergeRankedWithUnscored(homeRanked, homeScored);
+  const homeDisplayModels = mergeRankedWithUnscored(homeRanked, homeScored, { dedupe: true });
   const compareDisplayModels = mergeRankedWithUnscored(compareRanked, homeScored);
   const allDisplayModels = mergeRankedWithUnscored(allRanked, scored);
 
   if (!els.homeView.hidden) renderHome(homeRanked, homeDisplayModels);
   if (!els.rankingView.hidden) {
     els.scoreHeader.textContent = tr(scoreHeaderKeyForPreset(preset));
-    renderSummary(filtered.length, ranked.length, scored.length, preset);
-    renderRankings(ranked);
+    renderSummary(filtered.length, ranked.length, scored.length, preset, unrankedMatches.length);
+    renderRankings([...ranked, ...unrankedMatches]);
   }
   if (!els.modelView.hidden) renderModelDetail(allDisplayModels, preset);
   if (!els.benchmarkView.hidden) renderBenchmarkPage();
-  if (els.providerView && !els.providerView.hidden) renderProviderPage(homeRanked);
+  if (els.providerView && !els.providerView.hidden) renderProviderPage(homeDisplayModels);
   if (els.pricingProviderView && !els.pricingProviderView.hidden) renderPricingProvidersPage(homeRanked);
   if (els.compareView && !els.compareView.hidden) renderComparePage(compareDisplayModels);
 }
 
-function mergeRankedWithUnscored(ranked, scoredUniverse = ranked) {
+function mergeRankedWithUnscored(ranked, scoredUniverse = ranked, options = {}) {
+  return [
+    ...ranked,
+    ...unrankedCatalogModels(scoredUniverse, {
+      ...options,
+      representedModels: ranked,
+    }),
+  ];
+}
+
+function unrankedCatalogModels(scoredUniverse, options = {}) {
   const scoredIds = new Set(scoredUniverse.map(modelRouteId));
-  const unscored = state.data.models
-    .filter((model) => !scoredIds.has(modelRouteId(model)))
-    .map((model) => ({
-      ...model,
-      score: null,
-      rank: null,
-      coverage: 0,
-      coverageLabel: tr("notAvailable"),
-      availableWeight: 0,
-      scoreMeta: tr("notAvailable"),
-    }));
-  return [...ranked, ...unscored];
+  let unranked = state.data.models.filter((model) => !scoredIds.has(modelRouteId(model)));
+  if (options.dedupe) {
+    const representedGroups = new Set(
+      (options.representedModels || []).map((model) => model.variantGroup).filter(Boolean),
+    );
+    const bestByGroup = new Map();
+    for (const model of unranked) {
+      if (representedGroups.has(model.variantGroup)) continue;
+      const group = model.variantGroup || modelRouteId(model);
+      const current = bestByGroup.get(group);
+      if (!current || Number(model.variantPriority || 0) > Number(current.variantPriority || 0)) {
+        bestByGroup.set(group, model);
+      }
+    }
+    unranked = [...bestByGroup.values()];
+  }
+  return unranked.map((model) => ({
+    ...model,
+    score: null,
+    displayScore: null,
+    rank: null,
+    coverage: 0,
+    coverageLabel: tr("notAvailable"),
+    availableWeight: 0,
+    scoreMeta: tr("notAvailable"),
+  }));
 }
 
 function scoreModels(
@@ -2348,7 +2382,10 @@ function aaIntelligenceScoreBaseline() {
 
 function matchesQuery(model) {
   if (!state.query) return true;
-  const haystack = `${model.model} ${model.creator} ${model.slug}`.toLowerCase();
+  const aliases = Array.isArray(model.externalModelAliases)
+    ? model.externalModelAliases.join(" ")
+    : "";
+  const haystack = `${model.model} ${model.modelKey || ""} ${model.creator} ${model.slug} ${aliases}`.toLowerCase();
   return haystack.includes(state.query);
 }
 
@@ -2383,6 +2420,7 @@ function modelDisplayScore(model) {
 
 function formatModelDisplayScore(model) {
   const value = modelDisplayScore(model);
+  if (!Number.isFinite(value)) return tr("notAvailable");
   return model?.isPrecomputedScoreRanking && Number.isFinite(value)
     ? value.toFixed(3)
     : formatNumber(value);
@@ -2452,7 +2490,7 @@ function methodRankTitle(evidenceRank) {
   return Number.isFinite(evidenceRank) ? `${tr("evidenceRankLabel")} #${evidenceRank}` : tr("notAvailable");
 }
 
-function renderSummary(filteredCount, visibleCount, scoredCount, preset) {
+function renderSummary(filteredCount, visibleCount, scoredCount, preset, unrankedCount = 0) {
   const removed = filteredCount - visibleCount;
   const dedupeLabel = state.dedupe
     ? `${escapeHtml(tr("removedPrefix"))} <strong>${removed}</strong> ${escapeHtml(tr("removedSuffix"))}`
@@ -2460,6 +2498,7 @@ function renderSummary(filteredCount, visibleCount, scoredCount, preset) {
   els.summaryRow.innerHTML = `
     <span><strong>${visibleCount}</strong> ${escapeHtml(tr("rankingItems"))}</span>
     <span><strong>${scoredCount}</strong> ${escapeHtml(tr("scorableModels"))}</span>
+    ${unrankedCount > 0 ? `<span><strong>${unrankedCount}</strong> ${escapeHtml(tr("unrankedSearchResults"))}</span>` : ""}
     <span>${dedupeLabel}</span>
     <span>${escapeHtml(tr("sourceFilter"))}: <strong>${escapeHtml(tr(`sourceFilters.${state.sourceFilter}`))}</strong></span>
     <a href="${escapeHtml(methodologyPageHref)}">${escapeHtml(tr("methodologyLink"))}</a>
@@ -4252,7 +4291,7 @@ function renderHistogramRow(model) {
   const scoreWidth = modelScoreBarValue(model);
   return `
     <div class="histogram-row" data-card-href="${escapeHtml(modelHref(model, "ranking"))}" role="link" tabindex="0" aria-label="${escapeHtml(`${tr("modelDetails")} ${model.model}`)}">
-      <div class="histogram-rank">#${model.rank}</div>
+      <div class="histogram-rank">${escapeHtml(rankLabel(model))}</div>
       <div class="histogram-model">
         ${renderModelIcon(model)}
         <div class="histogram-label">
@@ -4282,7 +4321,7 @@ function renderRow(model) {
   const reason = model.isReasoning ? `<span class="pill">${escapeHtml(tr("reasoning"))}</span>` : "";
   return `
     <tr data-card-href="${escapeHtml(modelHref(model, "ranking"))}" tabindex="0" aria-label="${escapeHtml(`${tr("modelDetails")} ${model.model}`)}">
-      <td class="rank-col">${model.rank}</td>
+      <td class="rank-col">${escapeHtml(rankLabel(model))}</td>
       <td>
         <div class="model-main">
           <div class="model-heading">
@@ -4346,7 +4385,7 @@ function renderTextRanking(models) {
     const creator = model.creator || tr("unknownCreator");
     return `
       <div class="text-ranking-row" data-card-href="${escapeHtml(modelHref(model, "ranking"))}" role="link" tabindex="0" aria-label="${escapeHtml(`${tr("modelDetails")} ${model.model}`)}">
-        <span>#${model.rank}</span>
+        <span>${escapeHtml(rankLabel(model))}</span>
         <a class="text-model" href="${escapeHtml(modelHref(model))}">${escapeHtml(model.model)}</a>
         ${renderProviderTextLink(creator, "ranking")}
         <strong>${escapeHtml(formatModelDisplayScore(model))}</strong>
@@ -5638,7 +5677,7 @@ function compareOptionLabel(model) {
 }
 
 function rankLabel(model) {
-  return model?.rank ? `#${model.rank}` : tr("notAvailable");
+  return Number.isFinite(model?.rank) ? `#${model.rank}` : tr("unranked");
 }
 
 function renderCompareEntry(model) {
@@ -6015,9 +6054,14 @@ function renderProviderPage(ranked) {
 
   const provider = providerRows[0].creator || tr("unknownCreator");
   const color = providerColor({ creator: provider });
-  const best = providerRows[0];
-  const averageScore = providerRows.reduce((sum, model) => sum + modelDisplayScore(model), 0) / providerRows.length;
-  const averageScoreLabel = formatNumber(averageScore);
+  const rankedProviderRows = providerRows.filter((model) => (
+    Number.isFinite(model.rank) && Number.isFinite(modelDisplayScore(model))
+  ));
+  const best = rankedProviderRows[0] || providerRows[0];
+  const averageScore = rankedProviderRows.length
+    ? rankedProviderRows.reduce((sum, model) => sum + modelDisplayScore(model), 0) / rankedProviderRows.length
+    : null;
+  const averageScoreLabel = Number.isFinite(averageScore) ? formatNumber(averageScore) : tr("notAvailable");
   const openCount = providerRows.filter((model) => sourceType(model) === "open").length;
   document.title = `${provider} · ${tr("pageTitle")}`;
   els.providerDetail.innerHTML = `
@@ -6056,7 +6100,7 @@ function renderProviderPage(ranked) {
 function renderProviderModelRow(model) {
   return `
     <a class="provider-model-row" href="${escapeHtml(modelHref(model, "provider", { providerId: providerRouteId(model.creator || tr("unknownCreator")), providerSource: currentProviderBackSource() }))}">
-      <span class="rank-number">#${escapeHtml(model.rank)}</span>
+      <span class="rank-number">${escapeHtml(rankLabel(model))}</span>
       ${renderModelIcon(model)}
       <span class="provider-model-copy">
         <strong>${escapeHtml(model.model)}</strong>
@@ -6083,7 +6127,7 @@ function providerRowsForRoute(ranked) {
   const routeId = state.providerId || new URLSearchParams(location.search).get("id") || "";
   return ranked
     .filter((model) => providerRouteId(model.creator || tr("unknownCreator")) === routeId)
-    .sort((a, b) => (a.rank || Infinity) - (b.rank || Infinity)
+    .sort((a, b) => (Number.isFinite(a.rank) ? a.rank : Infinity) - (Number.isFinite(b.rank) ? b.rank : Infinity)
       || (parsedReleaseTime(b.releaseDate) || 0) - (parsedReleaseTime(a.releaseDate) || 0)
       || a.model.localeCompare(b.model));
 }

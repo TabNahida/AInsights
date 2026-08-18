@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import copy
 import csv
+import hashlib
 import json
 import math
 import re
@@ -760,6 +761,7 @@ def build_site_payload(
     ]
     models = [_model_payload(row, metric_keys) for row in source_rows]
     add_external_models_if_missing(models, external_benchmark_data, metric_keys)
+    enrich_models_from_official_metadata(models, external_benchmark_data)
     attach_external_benchmark_scores(models, external_benchmark_data)
     apply_metric_fallbacks(models, AINDEX_METRIC_FALLBACKS)
     baselines = metric_baselines(models, metric_keys)
@@ -1245,6 +1247,7 @@ def write_site_payload(
     provider_pricing_json: Path | None = DEFAULT_PROVIDER_PRICING_JSON,
     include_irt_ranking: bool | None = None,
     write_analysis_outputs: bool | None = None,
+    site_html_dir: Path | None = None,
 ) -> dict[str, Any]:
     external_benchmarks = (
         load_external_benchmarks(external_benchmarks_json)
@@ -1282,7 +1285,47 @@ def write_site_payload(
             "window.AINSIGHTS_MODELS_DATA = " + payload_text + ";\n",
             encoding="utf-8",
         )
+        html_dir = site_html_dir
+        if (
+            html_dir is None
+            and is_default_output
+            and output_js.resolve() == DEFAULT_OUTPUT_JS.resolve()
+        ):
+            html_dir = DEFAULT_OUTPUT_JSON.parent.parent
+        if html_dir is not None:
+            refresh_models_asset_versions(
+                html_dir,
+                models_asset_version(payload_text),
+            )
     return payload
+
+
+def models_asset_version(payload_text: str) -> str:
+    """Return the stable cache key for one serialized models payload."""
+
+    return hashlib.sha256(payload_text.encode("utf-8")).hexdigest()[:12]
+
+
+def refresh_models_asset_versions(html_dir: Path, version: str) -> list[Path]:
+    """Update every local models.js script URL without rewriting unrelated HTML."""
+
+    if not re.fullmatch(r"[a-f0-9]{12}", version):
+        raise ValueError(f"invalid models asset version: {version!r}")
+    pattern = re.compile(r"(\./data/models\.js\?v=)[^\"'\s>]+")
+    updated_paths: list[Path] = []
+    for html_path in sorted(html_dir.glob("*.html")):
+        with html_path.open("r", encoding="utf-8", newline="") as handle:
+            original = handle.read()
+        updated, replacements = pattern.subn(
+            lambda match: f"{match.group(1)}{version}",
+            original,
+        )
+        if replacements == 0 or updated == original:
+            continue
+        with html_path.open("w", encoding="utf-8", newline="") as handle:
+            handle.write(updated)
+        updated_paths.append(html_path)
+    return updated_paths
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -1439,6 +1482,72 @@ def add_external_models_if_missing(
         model = _external_model_payload(source, metric_keys)
         if model is not None:
             models.append(model)
+
+
+def enrich_models_from_official_metadata(
+    models: list[dict[str, Any]],
+    external_benchmark_data: dict[str, Any],
+) -> None:
+    """Apply curated first-party model-card metadata to a matching AA row.
+
+    Official benchmark sources may predate an Artificial Analysis row. Once AA
+    adds the model, keep the single canonical AA identity while retaining the
+    model card's authoritative URL, context, modalities, and published details.
+    """
+
+    for source in external_benchmark_data.get("sources", []):
+        metadata = source.get("modelMetadata")
+        if not isinstance(metadata, dict) or not metadata:
+            continue
+        aliases = _external_model_exact_aliases(source)
+        model = find_external_benchmark_model(models, aliases)
+        if model is None:
+            continue
+
+        model_url = str(metadata.get("modelUrl") or source.get("url") or "").strip()
+        if model_url:
+            model["modelUrl"] = model_url
+
+        context_tokens = _number_or_none(metadata.get("contextWindowTokens"))
+        if context_tokens is not None:
+            model["contextWindowTokens"] = context_tokens
+
+        category = _external_open_source_category(metadata, source)
+        if category:
+            model["openSourceCategorization"] = category
+            model["openSourceType"] = open_source_type(category)
+
+        if not model.get("releaseDate"):
+            release_date = str(
+                metadata.get("releaseDate") or source.get("createdAt") or ""
+            ).strip()
+            model["releaseDate"] = release_date.split("T", 1)[0]
+
+        details = dict(model.get("modelDetails") or {})
+        details.update(dict(metadata.get("modelDetails") or {}))
+        modality_details = dict(details.get("modalities") or {})
+        for metadata_key, payload_key, direction in (
+            ("inputModalities", "inputModalities", "input"),
+            ("outputModalities", "outputModalities", "output"),
+        ):
+            values = metadata.get(metadata_key)
+            if not isinstance(values, list):
+                continue
+            flags = modality_flags_from_list(values)
+            model[payload_key] = modality_labels(flags, [])
+            modality_details[direction] = flags
+        if modality_details:
+            details["modalities"] = modality_details
+        if details:
+            model["modelDetails"] = details
+
+        model["externalModelAliases"] = _dedupe_strings(
+            [
+                *(model.get("externalModelAliases") or []),
+                *_external_source_model_aliases(source),
+            ]
+        )
+        model["officialModelSourceId"] = str(source.get("id") or "")
 
 
 def _source_can_add_external_model(source: dict[str, Any]) -> bool:

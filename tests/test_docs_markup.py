@@ -1,4 +1,5 @@
 import json
+import hashlib
 import re
 import unittest
 from pathlib import Path
@@ -66,6 +67,22 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn('data-page="sources"', (docs_dir / "sources.html").read_text(encoding="utf-8"))
         self.assertIn('data-page="contribute"', (docs_dir / "contribute.html").read_text(encoding="utf-8"))
         self.assertIn('data-page="methodology"', (docs_dir / "methodology.html").read_text(encoding="utf-8"))
+
+    def test_model_payload_cache_key_matches_generated_content_on_every_app_page(self):
+        root = Path(__file__).resolve().parents[1]
+        docs_dir = root / "docs"
+        payload_text = (docs_dir / "data" / "models.json").read_text(encoding="utf-8")
+        expected = hashlib.sha256(payload_text.encode("utf-8")).hexdigest()[:12]
+        app_pages = []
+        for path in docs_dir.glob("*.html"):
+            html = path.read_text(encoding="utf-8")
+            if "./data/models.js?v=" not in html:
+                continue
+            app_pages.append(path.name)
+            self.assertIn(f'./data/models.js?v={expected}', html, path.name)
+            self.assertNotIn("models.js?v=20260812-pricing3", html, path.name)
+
+        self.assertGreaterEqual(len(app_pages), 9)
 
     def test_page_title_and_footer_name_source(self):
         html = (Path(__file__).resolve().parents[1] / "docs" / "index.html").read_text(encoding="utf-8")
@@ -310,7 +327,7 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertEqual(render_row_source.count("${renderMethodRankCell("), 2)
         self.assertIn("twopl", render_row_source)
         self.assertIn("denseRasch", render_row_source)
-        self.assertIn("${model.rank}", render_row_source)
+        self.assertIn("rankLabel(model)", render_row_source)
         self.assertIn("model.scoreMeta", render_row_source)
         method_rank_source = app_js.split("function renderMethodRankCell(model, methodId)", 1)[
             1
@@ -469,6 +486,66 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("Number.isFinite(row.rank)", sibling_source)
         self.assertIn('escapeHtml(tr("notAvailable"))', sibling_source)
         self.assertNotIn("<span>#${row.rank}</span>", sibling_source)
+
+    def test_external_only_catalog_models_are_searchable_without_becoming_ranked(self):
+        root = Path(__file__).resolve().parents[1]
+        app_js = (root / "docs" / "app.js").read_text(encoding="utf-8")
+        payload = json.loads((root / "docs" / "data" / "models.json").read_text(encoding="utf-8"))
+        catalog_model = next(model for model in payload["models"] if model.get("externalOnly"))
+        render_source = app_js.split("function renderResults(preset)", 1)[1].split(
+            "function mergeRankedWithUnscored", 1
+        )[0]
+        score_source = app_js.split("function scoreModels(", 1)[1].split(
+            "function modelForRankingGrain", 1
+        )[0]
+        query_source = app_js.split("function matchesQuery(model)", 1)[1].split(
+            "function matchesSourceFilter", 1
+        )[0]
+        provider_source = app_js.split("function renderProviderPage(ranked)", 1)[1].split(
+            "function renderProviderModelRow", 1
+        )[0]
+        unranked_source = app_js.split("function unrankedCatalogModels", 1)[1].split(
+            "function scoreModels", 1
+        )[0]
+
+        self.assertTrue(catalog_model["externalOnly"])
+        self.assertNotIn("rankingProfile", catalog_model)
+        self.assertIsNone(catalog_model["aa"]["aa-intelligence"])
+        self.assertGreaterEqual(len(catalog_model["externalBenchmarks"]), 1)
+        self.assertIn("unrankedCatalogModels(scored", render_source)
+        self.assertIn(".filter(matchesQuery).filter(matchesSourceFilter)", render_source)
+        self.assertIn("renderRankings([...ranked, ...unrankedMatches])", render_source)
+        self.assertIn("renderProviderPage(homeDisplayModels)", render_source)
+        self.assertIn(
+            "mergeRankedWithUnscored(homeRanked, homeScored, { dedupe: true })",
+            render_source,
+        )
+        self.assertIn("ranked.length, scored.length, preset, unrankedMatches.length", render_source)
+        self.assertIn(".filter((model) => Number.isFinite(model.score))", score_source)
+        self.assertIn("model.externalModelAliases", query_source)
+        self.assertIn("rankedProviderRows", provider_source)
+        self.assertIn("rankedProviderRows.length", provider_source)
+        self.assertIn("representedGroups", unranked_source)
+        self.assertIn("if (representedGroups.has(model.variantGroup)) continue", unranked_source)
+        self.assertIn('return Number.isFinite(model?.rank) ? `#${model.rank}` : tr("unranked")', app_js)
+        self.assertNotIn("score: 0", unranked_source)
+
+    def test_unranked_ranking_and_provider_rows_use_explicit_labels(self):
+        app_js = (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(
+            encoding="utf-8"
+        )
+        for start, end in (
+            ("function renderHistogramRow(model)", "function renderTable"),
+            ("function renderRow(model)", "function renderMethodRankCell"),
+            ("function renderTextRanking(models)", "function renderModelDetail"),
+            ("function renderProviderModelRow(model)", "function providerRowsForRoute"),
+        ):
+            source = app_js.split(start, 1)[1].split(end, 1)[0]
+            self.assertIn("rankLabel(model)", source)
+            self.assertNotIn("#${model.rank}", source)
+
+        self.assertIn('unranked: "未排名"', app_js)
+        self.assertIn('unranked: "Unranked"', app_js)
 
     def test_methodology_page_is_linked_from_ranking_not_navigation(self):
         docs_dir = Path(__file__).resolve().parents[1] / "docs"

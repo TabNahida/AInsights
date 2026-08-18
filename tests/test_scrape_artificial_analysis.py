@@ -1,15 +1,61 @@
+import gzip
+import hashlib
+import io
+import json
 import unittest
 import tempfile
+from contextlib import redirect_stderr
 from pathlib import Path
 from unittest.mock import patch
 
+from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+
 from ArtificialAnalysis import scrape_artificial_analysis as scraper
 from ArtificialAnalysis.scrape_artificial_analysis import (
+    DataManifest,
     build_raw_scores_rows,
     download_creator_logos,
+    extract_data_manifests,
     extract_default_data,
+    fetch_manifest_payload,
+    fetch_rich_manifest_model_rows,
+    merge_manifest_rows_with_prior,
+    normalize_manifest_model_row,
+    validate_raw_scores_csv,
     write_raw_scores_csv,
+    write_raw_scores_csv_atomically,
 )
+
+
+def _model_rows(count, *, prefix="model", score_offset=0):
+    return [
+        {
+            "short_name": f"Model {index}",
+            "slug": f"{prefix}-{index}",
+            "intelligence_index": score_offset + index + 1,
+        }
+        for index in range(count)
+    ]
+
+
+def _write_valid_snapshot(path: Path, *, count=None, prefix="model", score_offset=0):
+    count = scraper.MINIMUM_MODEL_ROWS if count is None else count
+    write_raw_scores_csv(
+        build_raw_scores_rows(
+            _model_rows(count, prefix=prefix, score_offset=score_offset)
+        ),
+        path,
+    )
+
+
+def _flight_html(text: str) -> str:
+    return f"<script>self.__next_f.push([1,{json.dumps(text)}])</script>"
+
+
+def _encrypted_manifest(payload, key: bytes) -> bytes:
+    compressed = gzip.compress(json.dumps(payload).encode("utf-8"))
+    iv = hashlib.sha256(key).digest()[:12]
+    return AESGCM(key).encrypt(iv, compressed, None)
 
 
 class ArtificialAnalysisScraperTests(unittest.TestCase):
@@ -24,6 +70,243 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
         rows = extract_default_data(html)
 
         self.assertEqual(rows, [{"short_name": "Model A", "slug": "model-a", "intelligence_index": 42.5}])
+
+    def test_extracts_all_encrypted_data_manifest_references(self):
+        key_a = "11" * 32
+        key_b = "22" * 32
+        html = _flight_html(
+            "prefix "
+            + json.dumps({"manifest": {"path": "/data/one.txt", "key": key_a}})
+            + " middle "
+            + json.dumps({"manifest": {"path": "/data/two.txt", "key": key_b}})
+        )
+
+        manifests = extract_data_manifests(html)
+
+        self.assertEqual(
+            manifests,
+            [
+                DataManifest(path="/data/one.txt", key=key_a),
+                DataManifest(path="/data/two.txt", key=key_b),
+            ],
+        )
+
+    def test_fetch_manifest_decrypts_aes_gcm_gzip_json(self):
+        key = bytes(range(32))
+        payload = {"models": [{"slug": "model-a"}], "fallbackPriceByModelSlug": {}}
+        ciphertext = _encrypted_manifest(payload, key)
+
+        class FakeResponse:
+            headers = {"Content-Length": str(len(ciphertext))}
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+            def read(self, limit=-1):
+                return ciphertext if limit < 0 else ciphertext[:limit]
+
+        manifest = DataManifest(path="/data/models.txt", key=key.hex())
+        with patch.object(scraper, "urlopen", return_value=FakeResponse()) as mocked:
+            result = fetch_manifest_payload(
+                manifest,
+                "https://artificialanalysis.ai/models",
+                timeout=5,
+            )
+
+        self.assertEqual(result, payload)
+        self.assertEqual(mocked.call_args.args[0].full_url, "https://artificialanalysis.ai/data/models.txt")
+
+    def test_manifest_rejects_cross_origin_url_and_invalid_key(self):
+        valid_key = "11" * 32
+        with self.assertRaisesRegex(ValueError, "same artificialanalysis.ai origin"):
+            fetch_manifest_payload(
+                DataManifest(path="https://example.com/data/models.txt", key=valid_key),
+                "https://artificialanalysis.ai/models",
+            )
+        with self.assertRaisesRegex(ValueError, "64 hexadecimal"):
+            fetch_manifest_payload(
+                DataManifest(path="/data/models.txt", key="not-a-key"),
+                "https://artificialanalysis.ai/models",
+            )
+
+    def test_manifest_enforces_ciphertext_size_limit(self):
+        key = bytes(range(32))
+        ciphertext = _encrypted_manifest({"models": []}, key)
+
+        class FakeResponse:
+            headers = {"Content-Length": str(len(ciphertext))}
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+        with (
+            patch.object(scraper, "MAX_MANIFEST_CIPHERTEXT_BYTES", len(ciphertext) - 1),
+            patch.object(scraper, "urlopen", return_value=FakeResponse()),
+            self.assertRaisesRegex(ValueError, "exceeds the allowed size limit"),
+        ):
+            fetch_manifest_payload(
+                DataManifest(path="/data/models.txt", key=key.hex()),
+                "https://artificialanalysis.ai/models",
+            )
+
+    def test_rich_manifest_selection_skips_non_model_payload(self):
+        key_a = "11" * 32
+        key_b = "22" * 32
+        html = _flight_html(
+            json.dumps({"manifest": {"path": "/data/one.txt", "key": key_a}})
+            + json.dumps({"manifest": {"path": "/data/two.txt", "key": key_b}})
+        )
+        rich_rows = [
+            {
+                "slug": f"model-{index}",
+                "shortName": f"Model {index}",
+                "creator": {"name": "Lab"},
+                "contextWindowTokens": 1000,
+            }
+            for index in range(scraper.MINIMUM_MODEL_ROWS)
+        ]
+
+        with patch.object(
+            scraper,
+            "fetch_manifest_payload",
+            side_effect=[{"notModels": []}, {"models": rich_rows}],
+        ):
+            result = fetch_rich_manifest_model_rows(
+                html,
+                "https://artificialanalysis.ai/models",
+            )
+
+        self.assertEqual(result, rich_rows)
+
+    def test_normalizes_rich_manifest_scores_without_double_scaling(self):
+        source = {
+            "slug": "qwen3-8-27b",
+            "name": "Qwen3.8 27B",
+            "shortName": "Qwen3.8 27B",
+            "isReasoning": True,
+            "releaseDate": "2026-08-14",
+            "modelWeightsSourceUrl": "https://huggingface.co/Qwen/Qwen3.8-27B",
+            "contextWindowTokens": 256000,
+            "openSourceCategorization": "permissive",
+            "creator": {
+                "name": "Alibaba",
+                "slug": "alibaba",
+                "color": "#ff7018",
+                "logo": "/img/logos/alibaba_small.svg",
+            },
+            "intelligenceIndex": 52.0246606497206,
+            "agenticIndex": 50.877412371134,
+            "intelligenceIndexCost": {
+                "total": 1042.4279677945385,
+                "input": 363.86623579453845,
+                "output": 678.561732,
+                "reasoning": 564.53049,
+                "answer": 114.031242,
+            },
+            "gdpvalNormalized": 0.522955,
+            "tauBanking": 0.480412371134021,
+            "omniscienceBreakdown": {
+                "accuracy": 0.15583333333333332,
+                "hallucinationRate": 0.30286278381046394,
+            },
+            "inputModalityText": True,
+            "outputModalityText": True,
+        }
+
+        output = build_raw_scores_rows([normalize_manifest_model_row(source)])[0]
+
+        self.assertEqual(output["model_key"], "Qwen3.8 27B [R]")
+        self.assertEqual(output["model_url"], "https://huggingface.co/Qwen/Qwen3.8-27B")
+        self.assertEqual(output["context_window_tokens"], 256000.0)
+        self.assertEqual(output["open_source_categorization"], "permissive")
+        self.assertEqual(output["AA Intelligence Index"], 52.0247)
+        self.assertEqual(output["AA Agentic Index"], 50.8774)
+        self.assertEqual(output["AA Intelligence Index Cost (USD)"], 1042.428)
+        self.assertEqual(output["AA Intelligence Index Input Cost (USD)"], 363.8662)
+        self.assertEqual(output["AA Intelligence Index Output Cost (USD)"], 678.5617)
+        self.assertEqual(output["AA Intelligence Index Reasoning Cost (USD)"], 564.5305)
+        self.assertEqual(output["AA Intelligence Index Answer Cost (USD)"], 114.0312)
+        self.assertEqual(output["GDPval-AA"], 52.2955)
+        self.assertEqual(output["τ³-Banking"], 48.0412)
+        self.assertEqual(output["AA-Omniscience Accuracy"], 15.5833)
+        self.assertEqual(output["AA-Omniscience Non-Hallucination Rate"], 69.7137)
+
+    def test_manifest_merge_preserves_columns_absent_from_new_schema(self):
+        source = {
+            "slug": "model-0",
+            "shortName": "Renamed Model",
+            "isReasoning": False,
+            "intelligenceIndex": 42,
+            "price1mInputTokens": None,
+            "gdpvalNormalized": 0.0,
+            "gpqa": None,
+        }
+        candidate = build_raw_scores_rows([normalize_manifest_model_row(source)])
+        prior = {column: "" for column in scraper.raw_scores_fieldnames()}
+        prior.update(
+            {
+                "slug": "model-0",
+                "model": "Old Model",
+                "model_key": "Old Model",
+                "model_url": "/models/model-0",
+                "context_window_tokens": "128000",
+                "Input Price Per 1M Tokens (USD)": "1.25",
+                "AA Coding Index": "31",
+                "AA Intelligence Index": "40",
+                "GDPval-AA v2": "40",
+                "GDPval-AA v2_rank": "1",
+                "GDPval-AA": "-13.064",
+                "GPQA Diamond": "90",
+                "GPQA Diamond_rank": "1",
+            }
+        )
+
+        merged = merge_manifest_rows_with_prior(candidate, [source], [prior])[0]
+
+        self.assertEqual(merged["model"], "Renamed Model")
+        self.assertEqual(merged["AA Intelligence Index"], 42.0)
+        self.assertEqual(merged["model_url"], "/models/model-0")
+        self.assertEqual(merged["context_window_tokens"], "128000")
+        self.assertEqual(merged["Input Price Per 1M Tokens (USD)"], "1.25")
+        self.assertEqual(merged["AA Coding Index"], "31")
+        self.assertEqual(merged["GDPval-AA v2"], "40")
+        self.assertEqual(merged["GDPval-AA v2_rank"], "1")
+        self.assertEqual(merged["GDPval-AA"], 0.0)
+        self.assertEqual(merged["GDPval-AA_rank"], 1)
+        self.assertEqual(merged["GPQA Diamond"], "")
+        self.assertEqual(merged["GPQA Diamond_rank"], "")
+
+    def test_manifest_merge_keeps_ranks_computed_from_unrounded_values(self):
+        sources = [
+            {
+                "slug": "model-a",
+                "shortName": "Model A",
+                "gdpvalNormalized": 0.5000004,
+            },
+            {
+                "slug": "model-b",
+                "shortName": "Model B",
+                "gdpvalNormalized": 0.5000003,
+            },
+        ]
+        candidates = build_raw_scores_rows(
+            [normalize_manifest_model_row(row) for row in sources]
+        )
+        priors = [
+            {"slug": "model-a"},
+            {"slug": "model-b"},
+        ]
+
+        merged = merge_manifest_rows_with_prior(candidates, sources, priors)
+
+        self.assertEqual([row["GDPval-AA"] for row in merged], [50.0, 50.0])
+        self.assertEqual([row["GDPval-AA_rank"] for row in merged], [1, 2])
 
     def test_build_raw_scores_rows_formats_scores_and_ranks(self):
         rows = [
@@ -187,6 +470,209 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
             content = output.read_bytes()
             self.assertIn(b"\n", content)
             self.assertNotIn(b"\r\n", content)
+
+    def test_atomic_write_validates_and_replaces_existing_snapshot(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output = Path(tmpdir) / scraper.RAW_SCORES_FILENAME
+            _write_valid_snapshot(output)
+            replacement_rows = build_raw_scores_rows(
+                _model_rows(scraper.MINIMUM_MODEL_ROWS, score_offset=100)
+            )
+            real_replace = scraper.os.replace
+
+            with patch.object(scraper.os, "replace", wraps=real_replace) as mocked_replace:
+                write_raw_scores_csv_atomically(replacement_rows, output)
+
+            self.assertEqual(mocked_replace.call_count, 1)
+            validated = validate_raw_scores_csv(output)
+            self.assertEqual(float(validated[0]["AA Intelligence Index"]), 101.0)
+            self.assertEqual(list(output.parent.glob(f".{output.name}.*.tmp")), [])
+
+    def test_atomic_write_failure_preserves_existing_snapshot_and_cleans_temp(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output = Path(tmpdir) / scraper.RAW_SCORES_FILENAME
+            _write_valid_snapshot(output)
+            original = output.read_bytes()
+            replacement_rows = build_raw_scores_rows(
+                _model_rows(scraper.MINIMUM_MODEL_ROWS, score_offset=100)
+            )
+
+            with patch.object(scraper.os, "replace", side_effect=OSError("replace failed")):
+                with self.assertRaisesRegex(OSError, "replace failed"):
+                    write_raw_scores_csv_atomically(replacement_rows, output)
+
+            self.assertEqual(output.read_bytes(), original)
+            self.assertEqual(list(output.parent.glob(f".{output.name}.*.tmp")), [])
+
+    def test_raw_json_atomic_write_failure_preserves_existing_file(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output = Path(tmpdir) / "raw.json"
+            output.write_text('{"status":"old"}', encoding="utf-8")
+
+            with patch.object(scraper.os, "replace", side_effect=OSError("replace failed")):
+                with self.assertRaisesRegex(OSError, "replace failed"):
+                    scraper._write_text_atomically(output, '{"status":"new"}')
+
+            self.assertEqual(output.read_text(encoding="utf-8"), '{"status":"old"}')
+            self.assertEqual(list(output.parent.glob(f".{output.name}.*.tmp")), [])
+
+    def test_atomic_write_rejects_large_row_loss_and_preserves_prior_snapshot(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output = Path(tmpdir) / scraper.RAW_SCORES_FILENAME
+            _write_valid_snapshot(output, count=100)
+            original = output.read_bytes()
+            candidate = build_raw_scores_rows(_model_rows(75))
+
+            with self.assertRaisesRegex(ValueError, "lost too many rows"):
+                write_raw_scores_csv_atomically(candidate, output)
+
+            self.assertEqual(output.read_bytes(), original)
+
+    def test_allow_stale_keeps_valid_snapshot_when_live_refresh_fails(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output = Path(tmpdir) / scraper.RAW_SCORES_FILENAME
+            _write_valid_snapshot(output)
+            original = output.read_bytes()
+            stderr = io.StringIO()
+
+            with patch.object(scraper, "fetch_html", side_effect=ValueError("payload changed")):
+                with redirect_stderr(stderr):
+                    result = scraper.main(
+                        ["--output-dir", tmpdir, "--skip-logos", "--allow-stale"]
+                    )
+
+            self.assertEqual(result, 0)
+            self.assertEqual(output.read_bytes(), original)
+            self.assertIn("warning: Artificial Analysis refresh failed", stderr.getvalue())
+            self.assertIn("keeping the validated prior snapshot", stderr.getvalue())
+
+    def test_default_mode_remains_strict_when_live_refresh_fails(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output = Path(tmpdir) / scraper.RAW_SCORES_FILENAME
+            _write_valid_snapshot(output)
+            original = output.read_bytes()
+            stderr = io.StringIO()
+
+            with patch.object(scraper, "fetch_html", side_effect=ValueError("payload changed")):
+                with redirect_stderr(stderr):
+                    result = scraper.main(["--output-dir", tmpdir, "--skip-logos"])
+
+            self.assertEqual(result, 1)
+            self.assertEqual(output.read_bytes(), original)
+            self.assertIn("error: Could not load Artificial Analysis model rows", stderr.getvalue())
+
+    def test_allow_stale_fails_when_existing_snapshot_is_invalid(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output = Path(tmpdir) / scraper.RAW_SCORES_FILENAME
+            output.write_text("not,a,valid,snapshot\n", encoding="utf-8")
+            stderr = io.StringIO()
+
+            with patch.object(scraper, "fetch_html", side_effect=ValueError("payload changed")):
+                with redirect_stderr(stderr):
+                    result = scraper.main(
+                        ["--output-dir", tmpdir, "--skip-logos", "--allow-stale"]
+                    )
+
+            self.assertEqual(result, 1)
+            self.assertIn("is not a valid fallback", stderr.getvalue())
+
+    def test_logo_failure_is_best_effort_after_successful_csv_refresh(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            stderr = io.StringIO()
+            rows = _model_rows(scraper.MINIMUM_MODEL_ROWS)
+
+            with (
+                patch.object(scraper, "fetch_html", return_value="page"),
+                patch.object(scraper, "extract_default_data", return_value=rows),
+                patch.object(
+                    scraper,
+                    "download_creator_logos",
+                    side_effect=OSError("logo CDN unavailable"),
+                ),
+                redirect_stderr(stderr),
+            ):
+                result = scraper.main(
+                    [
+                        "--output-dir",
+                        tmpdir,
+                        "--logo-output-dir",
+                        str(Path(tmpdir) / "logos"),
+                    ]
+                )
+
+            self.assertEqual(result, 0)
+            output = Path(tmpdir) / scraper.RAW_SCORES_FILENAME
+            self.assertEqual(len(validate_raw_scores_csv(output)), scraper.MINIMUM_MODEL_ROWS)
+            self.assertIn("warning: Could not refresh provider logos", stderr.getvalue())
+
+    def test_invalid_manifest_candidate_falls_back_to_valid_legacy_payload(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            rich_rows = [
+                {
+                    "slug": f"rich-{index}",
+                    "shortName": f"Rich {index}",
+                    "creator": {"name": "Rich Lab"},
+                    "contextWindowTokens": 1000,
+                }
+                for index in range(scraper.MINIMUM_MODEL_ROWS)
+            ]
+            legacy_rows = _model_rows(
+                scraper.MINIMUM_MODEL_ROWS,
+                prefix="legacy",
+            )
+
+            with (
+                patch.object(scraper, "fetch_html", return_value="page"),
+                patch.object(
+                    scraper,
+                    "fetch_rich_manifest_model_rows",
+                    return_value=rich_rows,
+                ),
+                patch.object(
+                    scraper,
+                    "extract_default_data",
+                    return_value=legacy_rows,
+                ),
+            ):
+                result = scraper.main(
+                    ["--output-dir", tmpdir, "--skip-logos"]
+                )
+
+            self.assertEqual(result, 0)
+            output = Path(tmpdir) / scraper.RAW_SCORES_FILENAME
+            validated = validate_raw_scores_csv(output)
+            self.assertEqual(validated[0]["slug"], "legacy-0")
+
+    def test_allow_stale_does_not_mask_atomic_replace_failure(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output = Path(tmpdir) / scraper.RAW_SCORES_FILENAME
+            _write_valid_snapshot(output)
+            original = output.read_bytes()
+            stderr = io.StringIO()
+
+            with (
+                patch.object(scraper, "fetch_html", return_value="page"),
+                patch.object(
+                    scraper,
+                    "fetch_rich_manifest_model_rows",
+                    side_effect=ValueError("no manifest"),
+                ),
+                patch.object(
+                    scraper,
+                    "extract_default_data",
+                    return_value=_model_rows(scraper.MINIMUM_MODEL_ROWS),
+                ),
+                patch.object(scraper.os, "replace", side_effect=OSError("disk failure")),
+                redirect_stderr(stderr),
+            ):
+                result = scraper.main(
+                    ["--output-dir", tmpdir, "--skip-logos", "--allow-stale"]
+                )
+
+            self.assertEqual(result, 1)
+            self.assertEqual(output.read_bytes(), original)
+            self.assertIn("error: disk failure", stderr.getvalue())
+            self.assertNotIn("keeping the validated prior snapshot", stderr.getvalue())
 
 
 if __name__ == "__main__":

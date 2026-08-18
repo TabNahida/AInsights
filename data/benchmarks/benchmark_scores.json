@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T03:33:32+00:00",
+  "generatedAt": "2026-08-18T03:21:52+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
@@ -246,10 +246,10 @@
       "organization": "Qwen",
       "addModelIfMissing": true,
       "modelMetadata": {
-        "model": "Qwen3.8 27B (xhigh)",
-        "displayName": "Qwen3.8 27B (xhigh)",
-        "modelKey": "Qwen3.8 27B (xhigh) [R]",
-        "slug": "qwen3-8-27b-xhigh",
+        "model": "Qwen3.8 27B",
+        "displayName": "Qwen3.8 27B",
+        "modelKey": "Qwen3.8 27B [R]",
+        "slug": "qwen3-8-27b",
         "creator": "Alibaba",
         "releaseDate": "2026-08-05",
         "modelUrl": "https://huggingface.co/Qwen/Qwen3.8-27B",
