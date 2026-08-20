@@ -332,10 +332,10 @@
       "name": "Kimi-K3",
       "displayName": "Kimi K3",
       "url": "https://huggingface.co/moonshotai/Kimi-K3",
-      "rawUrl": "https://huggingface.co/moonshotai/Kimi-K3/raw/9f62e4e9fffbd0a83ddd60e1c209d828994b3569/README.md",
+      "rawUrl": "https://huggingface.co/moonshotai/Kimi-K3/raw/a590ce090cb049c93a33dfe8c208ec652aa20503/README.md",
       "createdAt": "2026-06-13T06:42:57.000Z",
-      "lastModified": "2026-07-27T16:29:18.000Z",
-      "revision": "9f62e4e9fffbd0a83ddd60e1c209d828994b3569",
+      "lastModified": "2026-08-20T04:57:37.000Z",
+      "revision": "a590ce090cb049c93a33dfe8c208ec652aa20503",
       "pipelineTag": "image-text-to-text",
       "tags": [
         "eval-results",

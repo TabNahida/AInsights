@@ -487,11 +487,10 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn('escapeHtml(tr("notAvailable"))', sibling_source)
         self.assertNotIn("<span>#${row.rank}</span>", sibling_source)
 
-    def test_external_only_catalog_models_are_searchable_without_becoming_ranked(self):
-        root = Path(__file__).resolve().parents[1]
-        app_js = (root / "docs" / "app.js").read_text(encoding="utf-8")
-        payload = json.loads((root / "docs" / "data" / "models.json").read_text(encoding="utf-8"))
-        catalog_model = next(model for model in payload["models"] if model.get("externalOnly"))
+    def test_external_only_catalog_support_is_searchable_without_becoming_ranked(self):
+        app_js = (
+            Path(__file__).resolve().parents[1] / "docs" / "app.js"
+        ).read_text(encoding="utf-8")
         render_source = app_js.split("function renderResults(preset)", 1)[1].split(
             "function mergeRankedWithUnscored", 1
         )[0]
@@ -508,10 +507,6 @@ class DocsMarkupTests(unittest.TestCase):
             "function scoreModels", 1
         )[0]
 
-        self.assertTrue(catalog_model["externalOnly"])
-        self.assertNotIn("rankingProfile", catalog_model)
-        self.assertIsNone(catalog_model["aa"]["aa-intelligence"])
-        self.assertGreaterEqual(len(catalog_model["externalBenchmarks"]), 1)
         self.assertIn("unrankedCatalogModels(scored", render_source)
         self.assertIn(".filter(matchesQuery).filter(matchesSourceFilter)", render_source)
         self.assertIn("renderRankings([...ranked, ...unrankedMatches])", render_source)

@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_scheme18",
   "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
-  "calibration_population_size": 168,
-  "bonus_cap_per_board": 23.621288444273493,
+  "calibration_population_size": 169,
+  "bonus_cap_per_board": 23.545927626482204,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 168,
-    "unique_slugs": 168,
-    "unique_variant_groups": 168,
+    "row_count": 169,
+    "unique_slugs": 169,
+    "unique_variant_groups": 169,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 200,
-    "unique_slugs": 200,
-    "unique_variant_groups": 158,
+    "row_count": 201,
+    "unique_slugs": 201,
+    "unique_variant_groups": 159,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -32,10 +32,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 23.621288444273493,
-    "pooled_positive_residual_count": 463,
-    "pooled_positive_residual_mean": 9.88443540039226,
-    "pooled_positive_residual_population_sd": 9.713421939491486,
+    "bonus_cap_per_board": 23.545927626482204,
+    "pooled_positive_residual_count": 468,
+    "pooled_positive_residual_mean": 9.832820597833287,
+    "pooled_positive_residual_population_sd": 9.696630971094555,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -44,7 +44,7 @@
       "instruction-context"
     ],
     "board_points_max": 20.0,
-    "population_size": 168,
+    "population_size": 169,
     "population_slugs": [
       "g9v3-39a5b",
       "g9v3-3b",
@@ -213,7 +213,8 @@
       "glm-4-7-flash-non-reasoning",
       "glm-5-non-reasoning",
       "glm-5-1",
-      "glm-5-2"
+      "glm-5-2",
+      "glm-5-3"
     ],
     "population_variant_groups": [
       "g9v3 39a5b",
@@ -383,7 +384,8 @@
       "glm 4 7 flash",
       "glm 5",
       "glm 5 1",
-      "glm 5 2"
+      "glm 5 2",
+      "glm 5 3"
     ],
     "missing_policy": "core must be complete; missing extension is absent and earns zero bonus; no value is imputed",
     "fit_apply_policy": "fit OLS trends and shared cap once on the deduplicated population; apply unchanged to exact configurations",
@@ -402,9 +404,9 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 155,
-            "slope": 1.7796559911053893,
-            "intercept": -27.71386896864079
+            "observed_count": 156,
+            "slope": 1.7880923297383695,
+            "intercept": -27.885505504630054
           },
           {
             "item_id": "swe-bench-pro",
@@ -442,9 +444,9 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 155,
-            "slope": 0.9830682795728674,
-            "intercept": -14.146752958499242
+            "observed_count": 156,
+            "slope": 0.9887065799934424,
+            "intercept": -14.28863127330041
           },
           {
             "item_id": "tau2-bench-telecom-aa",
@@ -460,9 +462,9 @@
             "score_key": "τ³-Banking",
             "canonical_family": "tau3-banking",
             "enabled": true,
-            "observed_count": 125,
-            "slope": 0.3982348917223084,
-            "intercept": -6.027236355443627
+            "observed_count": 127,
+            "slope": 0.40600745618674305,
+            "intercept": -6.250129259734923
           },
           {
             "item_id": "apex-agents-aa",
@@ -487,9 +489,9 @@
             "score_key": "benchmark:hle-tools",
             "canonical_family": "hle-tools",
             "enabled": true,
-            "observed_count": 26,
-            "slope": 0.5459652308368622,
-            "intercept": 11.531625634443628
+            "observed_count": 27,
+            "slope": 0.5623910012780232,
+            "intercept": 10.742434568012705
           },
           {
             "item_id": "mcp-atlas",
@@ -626,15 +628,15 @@
     "independent_of_production_scoring_module": true,
     "exact_reuses_serialized_deduplicated_calibration": true,
     "calibration": {
-      "population_size": 168,
-      "cap": 23.621288444273493,
-      "serialized_cap": 23.621288444273493,
+      "population_size": 169,
+      "cap": 23.545927626482204,
+      "serialized_cap": 23.545927626482204,
       "cap_error": 0.0,
       "passed": true,
       "failures": []
     },
     "variant_group": {
-      "row_count": 168,
+      "row_count": 169,
       "maximum_numeric_error": 1.4210854715202004e-14,
       "passed": true,
       "failures": []
@@ -646,7 +648,7 @@
       "failures": []
     },
     "exact_config": {
-      "row_count": 200,
+      "row_count": 201,
       "maximum_numeric_error": 1.4210854715202004e-14,
       "passed": true,
       "failures": []

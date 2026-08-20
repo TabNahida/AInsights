@@ -13,6 +13,8 @@ class UpdateWorkflowTests(unittest.TestCase):
 
         self.assertIn("name: Update model and benchmark data", workflow)
         self.assertIn('cron: "0 1 * * *"', workflow)
+        self.assertIn("uses: actions/checkout@v7", workflow)
+        self.assertIn("uses: actions/setup-python@v7", workflow)
         self.assertIn("python ArtificialAnalysis/scrape_artificial_analysis.py", workflow)
         self.assertIn("--output-dir ArtificialAnalysis --allow-stale", workflow)
         self.assertIn("python benchmarks/discover_official_model_cards.py", workflow)
