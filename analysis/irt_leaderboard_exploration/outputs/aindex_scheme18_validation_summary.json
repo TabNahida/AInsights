@@ -2,7 +2,7 @@
   "method_id": "aindex_scheme18",
   "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
   "calibration_population_size": 169,
-  "bonus_cap_per_board": 23.545927626482204,
+  "bonus_cap_per_board": 23.5459276264822,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
@@ -32,10 +32,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 23.545927626482204,
+    "bonus_cap_per_board": 23.5459276264822,
     "pooled_positive_residual_count": 468,
     "pooled_positive_residual_mean": 9.832820597833287,
-    "pooled_positive_residual_population_sd": 9.696630971094555,
+    "pooled_positive_residual_population_sd": 9.696630971094553,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -405,8 +405,8 @@
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
             "observed_count": 156,
-            "slope": 1.7880923297383695,
-            "intercept": -27.885505504630054
+            "slope": 1.78809232973837,
+            "intercept": -27.885505504630068
           },
           {
             "item_id": "swe-bench-pro",
@@ -414,8 +414,8 @@
             "canonical_family": "swe-bench-pro",
             "enabled": true,
             "observed_count": 39,
-            "slope": 0.40650719275432784,
-            "intercept": 39.73458490005083
+            "slope": 0.4065071927543279,
+            "intercept": 39.73458490005082
           },
           {
             "item_id": "livecodebench",
@@ -463,8 +463,8 @@
             "canonical_family": "tau3-banking",
             "enabled": true,
             "observed_count": 127,
-            "slope": 0.40600745618674305,
-            "intercept": -6.250129259734923
+            "slope": 0.406007456186743,
+            "intercept": -6.250129259734919
           },
           {
             "item_id": "apex-agents-aa",
@@ -586,7 +586,7 @@
             "canonical_family": "mmlu-pro",
             "enabled": true,
             "observed_count": 22,
-            "slope": 0.5894542305568227,
+            "slope": 0.5894542305568224,
             "intercept": 61.8578030424585
           }
         ],
@@ -629,8 +629,8 @@
     "exact_reuses_serialized_deduplicated_calibration": true,
     "calibration": {
       "population_size": 169,
-      "cap": 23.545927626482204,
-      "serialized_cap": 23.545927626482204,
+      "cap": 23.5459276264822,
+      "serialized_cap": 23.5459276264822,
       "cap_error": 0.0,
       "passed": true,
       "failures": []

@@ -21,7 +21,7 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 23.545927626482204,
+    "bonus_cap_per_board": 23.5459276264822,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -100,7 +100,7 @@
       "method_id": "aindex_scheme18",
       "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
       "calibration_population_size": 169,
-      "bonus_cap_per_board": 23.545927626482204,
+      "bonus_cap_per_board": 23.5459276264822,
       "cap_rule": "mean_plus_sqrt2_sd",
       "exact_reuses_deduplicated_calibration": true,
       "variant_group": {

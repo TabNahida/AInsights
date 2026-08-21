@@ -1,6 +1,6 @@
 window.AINSIGHTS_MODELS_DATA = {
   "version": 2,
-  "generatedAt": "2026-08-20T15:19:08+00:00",
+  "generatedAt": "2026-08-21T02:24:09+00:00",
   "source": {
     "label": "Artificial Analysis Core + listed benchmark extensions",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -5948,26 +5948,6 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelKeys": []
     },
     {
-      "id": "official-deepseek-news251201-page",
-      "label": "DeepSeek V3.2 automatically discovered official release",
-      "icon": "DV2",
-      "url": "https://api-docs.deepseek.com/news/news251201",
-      "category": "Official release",
-      "coverage": "3 model references",
-      "focus": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "defaultWeight": 0,
-      "relatedMetrics": [],
-      "benchmarkIds": [],
-      "modelAliases": [
-        "DeepSeek V3.2",
-        "DeepSeek-V3.2",
-        "deepseek-v3-2"
-      ],
-      "modelKeys": []
-    },
-    {
       "id": "official-deepseek-news250929-page",
       "label": "DeepSeek V3.2 Exp automatically discovered official release",
       "icon": "DV2",
@@ -6501,6 +6481,28 @@ window.AINSIGHTS_MODELS_DATA = {
         "zai-org/GLM-4.1V-9B-Thinking",
         "GLM 4 1V 9B Thinking",
         "glm-4-1v-9b-thinking"
+      ],
+      "modelKeys": []
+    },
+    {
+      "id": "hf-deepseek-ai-deepseek-v3-2-card",
+      "label": "DeepSeek V3.2 official model card",
+      "icon": "DV2",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2",
+      "category": "Official model card",
+      "coverage": "5 model references",
+      "focus": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "defaultWeight": 0,
+      "relatedMetrics": [],
+      "benchmarkIds": [],
+      "modelAliases": [
+        "DeepSeek V3.2",
+        "DeepSeek-V3.2",
+        "deepseek-ai/DeepSeek-V3.2",
+        "DeepSeek V3 2",
+        "deepseek-v3-2"
       ],
       "modelKeys": []
     },
@@ -133383,7 +133385,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 94.9177,
+      "medianOutputSpeed": 91.9171,
       "aa": {
         "aa-intelligence": 6.7623,
         "aa-coding": null,
@@ -133638,7 +133640,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 212.4062,
+      "medianOutputSpeed": 217.762,
       "aa": {
         "aa-intelligence": 51.9636,
         "aa-coding": null,
@@ -133881,12 +133883,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 21,
         "evidenceRank": 21,
         "displayScore": 57.652,
-        "finalScore": 57.652012781691205,
-        "scoreFullPrecision": "57.652012781691205",
+        "finalScore": 57.6520127816912,
+        "scoreFullPrecision": "57.652012781691198",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -133897,8 +133899,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 53.125,
             "extensionBonus": 11.5448,
-            "score": 64.66980048727919,
-            "points": 12.933960097455838,
+            "score": 64.66980048727916,
+            "points": 12.933960097455833,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -134184,12 +134186,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 33,
         "evidenceRank": 33,
         "displayScore": 57.652,
-        "finalScore": 57.652012781691205,
-        "scoreFullPrecision": "57.652012781691205",
+        "finalScore": 57.6520127816912,
+        "scoreFullPrecision": "57.652012781691198",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -134200,8 +134202,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 53.125,
             "extensionBonus": 11.5448,
-            "score": 64.66980048727919,
-            "points": 12.933960097455838,
+            "score": 64.66980048727916,
+            "points": 12.933960097455833,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -134501,7 +134503,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 64.3154,
+      "medianOutputSpeed": 64.4612,
       "aa": {
         "aa-intelligence": 42.8797,
         "aa-coding": null,
@@ -134849,7 +134851,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 19,
@@ -134899,7 +134901,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 43.185036,
             "extensionBonus": 0.0,
-            "score": 43.18503550306387,
+            "score": 43.18503550306388,
             "points": 8.637007100612776,
             "coreTests": 4,
             "extensionTests": 1,
@@ -135152,7 +135154,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -135202,7 +135204,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 43.185036,
             "extensionBonus": 0.0,
-            "score": 43.18503550306387,
+            "score": 43.18503550306388,
             "points": 8.637007100612776,
             "coreTests": 4,
             "extensionTests": 0,
@@ -135718,7 +135720,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/inceptionlabs_small.svg",
         "color": "#021B30"
       },
-      "medianOutputSpeed": 1128.6479,
+      "medianOutputSpeed": 1161.496,
       "aa": {
         "aa-intelligence": 21.8961,
         "aa-coding": null,
@@ -135963,7 +135965,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -136266,7 +136268,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -136578,7 +136580,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 48.3761,
+      "medianOutputSpeed": 48.6394,
       "aa": {
         "aa-intelligence": 31.3418,
         "aa-coding": null,
@@ -137346,7 +137348,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 144.5462,
+      "medianOutputSpeed": 150.6882,
       "aa": {
         "aa-intelligence": 28.1822,
         "aa-coding": null,
@@ -137961,7 +137963,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 19,
@@ -137972,7 +137974,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 35.6481,
             "extensionBonus": 11.334412,
-            "score": 46.982512376739635,
+            "score": 46.98251237673963,
             "points": 9.396502475347926,
             "coreTests": 1,
             "extensionTests": 2,
@@ -138264,7 +138266,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 19,
@@ -138275,7 +138277,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 35.6481,
             "extensionBonus": 11.334412,
-            "score": 46.982512376739635,
+            "score": 46.98251237673963,
             "points": 9.396502475347926,
             "coreTests": 1,
             "extensionTests": 2,
@@ -138576,7 +138578,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 116.0668,
+      "medianOutputSpeed": 125.0831,
       "aa": {
         "aa-intelligence": 13.195,
         "aa-coding": null,
@@ -138833,7 +138835,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 168.1663,
+      "medianOutputSpeed": 179.7236,
       "aa": {
         "aa-intelligence": 35.782,
         "aa-coding": null,
@@ -139336,7 +139338,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -139639,7 +139641,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -141984,7 +141986,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -141995,8 +141997,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 56.3657,
             "extensionBonus": 7.24823,
-            "score": 63.61392967429605,
-            "points": 12.72278593485921,
+            "score": 63.613929674296024,
+            "points": 12.722785934859205,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -142287,7 +142289,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -142298,8 +142300,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 56.3657,
             "extensionBonus": 7.24823,
-            "score": 63.61392967429605,
-            "points": 12.72278593485921,
+            "score": 63.613929674296024,
+            "points": 12.722785934859205,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -142599,7 +142601,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 136.0387,
+      "medianOutputSpeed": 137.5567,
       "aa": {
         "aa-intelligence": 33.8546,
         "aa-coding": null,
@@ -142845,7 +142847,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -143157,7 +143159,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 106.9563,
+      "medianOutputSpeed": 108.9169,
       "aa": {
         "aa-intelligence": 14.7253,
         "aa-coding": null,
@@ -143403,7 +143405,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -143706,7 +143708,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -144018,7 +144020,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 155.5703,
+      "medianOutputSpeed": 156.5447,
       "aa": {
         "aa-intelligence": 7.8062,
         "aa-coding": null,
@@ -144529,7 +144531,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 216.9809,
+      "medianOutputSpeed": 213.1395,
       "aa": {
         "aa-intelligence": 15.7002,
         "aa-coding": null,
@@ -144774,7 +144776,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -144837,7 +144839,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 3.464015,
             "extensionBonus": 0.0,
-            "score": 3.4640150115148183,
+            "score": 3.464015011514818,
             "points": 0.6928030023029637,
             "coreTests": 2,
             "extensionTests": 0,
@@ -145077,7 +145079,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -145140,7 +145142,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 3.464015,
             "extensionBonus": 0.0,
-            "score": 3.4640150115148183,
+            "score": 3.464015011514818,
             "points": 0.6928030023029637,
             "coreTests": 2,
             "extensionTests": 0,
@@ -145901,7 +145903,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 57.9922,
+      "medianOutputSpeed": 63.9063,
       "aa": {
         "aa-intelligence": 50.7315,
         "aa-coding": null,
@@ -146147,7 +146149,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -146459,7 +146461,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 61.3879,
+      "medianOutputSpeed": 65.069,
       "aa": {
         "aa-intelligence": 18.1828,
         "aa-coding": null,
@@ -146713,7 +146715,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 375.177,
+      "medianOutputSpeed": 392.1955,
       "aa": {
         "aa-intelligence": 37.4387,
         "aa-coding": null,
@@ -147106,7 +147108,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 19,
@@ -147409,7 +147411,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -148220,12 +148222,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 185,
         "evidenceRank": 185,
         "displayScore": 11.2281,
-        "finalScore": 11.22809121858555,
-        "scoreFullPrecision": "11.228091218585551",
+        "finalScore": 11.228091218585549,
+        "scoreFullPrecision": "11.228091218585549",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -148249,8 +148251,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 15.0,
             "extensionBonus": 23.545928,
-            "score": 38.545927626482204,
-            "points": 7.709185525296441,
+            "score": 38.5459276264822,
+            "points": 7.709185525296439,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -148262,8 +148264,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.060126,
             "extensionBonus": 0.0,
-            "score": 0.06012602572881665,
-            "points": 0.01202520514576333,
+            "score": 0.06012602572881664,
+            "points": 0.012025205145763327,
             "coreTests": 3,
             "extensionTests": 0,
             "coreItemPoolSize": 3,
@@ -148537,7 +148539,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 39.812,
+      "medianOutputSpeed": 41.7222,
       "aa": {
         "aa-intelligence": 19.2418,
         "aa-coding": null,
@@ -148782,7 +148784,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -149085,7 +149087,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -149897,7 +149899,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -149908,8 +149910,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 40.625,
             "extensionBonus": 0.188055,
-            "score": 40.8130546090088,
-            "points": 8.162610921801761,
+            "score": 40.81305460900879,
+            "points": 8.162610921801758,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -150200,7 +150202,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -150211,8 +150213,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 40.625,
             "extensionBonus": 0.188055,
-            "score": 40.8130546090088,
-            "points": 8.162610921801761,
+            "score": 40.81305460900879,
+            "points": 8.162610921801758,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -150512,7 +150514,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 93.1475,
+      "medianOutputSpeed": 91.0622,
       "aa": {
         "aa-intelligence": 4.8032,
         "aa-coding": null,
@@ -150770,7 +150772,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 63.0047,
+      "medianOutputSpeed": 65.1079,
       "aa": {
         "aa-intelligence": 40.65,
         "aa-coding": null,
@@ -151016,7 +151018,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -151319,7 +151321,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -151631,7 +151633,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 127.3148,
+      "medianOutputSpeed": 133.98,
       "aa": {
         "aa-intelligence": 22.1156,
         "aa-coding": null,
@@ -151872,12 +151874,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 75,
         "evidenceRank": 75,
         "displayScore": 35.7657,
-        "finalScore": 35.765665617204476,
-        "scoreFullPrecision": "35.765665617204476",
+        "finalScore": 35.76566561720447,
+        "scoreFullPrecision": "35.765665617204469",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -151914,8 +151916,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.090381,
             "extensionBonus": 23.545928,
-            "score": 23.636308672035746,
-            "points": 4.727261734407149,
+            "score": 23.636308672035742,
+            "points": 4.727261734407148,
             "coreTests": 3,
             "extensionTests": 1,
             "coreItemPoolSize": 3,
@@ -152175,12 +152177,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 101,
         "evidenceRank": 101,
         "displayScore": 35.7657,
-        "finalScore": 35.765665617204476,
-        "scoreFullPrecision": "35.765665617204476",
+        "finalScore": 35.76566561720447,
+        "scoreFullPrecision": "35.765665617204469",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -152217,8 +152219,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.090381,
             "extensionBonus": 23.545928,
-            "score": 23.636308672035746,
-            "points": 4.727261734407149,
+            "score": 23.636308672035742,
+            "points": 4.727261734407148,
             "coreTests": 3,
             "extensionTests": 1,
             "coreItemPoolSize": 3,
@@ -152492,7 +152494,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/thinking_machines.svg",
         "color": "#676767"
       },
-      "medianOutputSpeed": 70.139,
+      "medianOutputSpeed": 77.6497,
       "aa": {
         "aa-intelligence": 42.2948,
         "aa-coding": null,
@@ -153092,7 +153094,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 20,
@@ -153395,7 +153397,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -153707,7 +153709,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 51.4022,
+      "medianOutputSpeed": 48.0507,
       "aa": {
         "aa-intelligence": 45.1382,
         "aa-coding": null,
@@ -153728,7 +153730,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "GDPval-AA v2": 34.519,
         "τ³-Banking": 23.299,
         "Terminal-Bench v2.1": 65.9176,
-        "GDPval-AA": 34.5705,
+        "GDPval-AA": 34.583,
         "Terminal-Bench Hard": 43.9394,
         "τ²-Bench Telecom": 95.9064,
         "AA-LCR": 76.6667,
@@ -154329,7 +154331,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -154886,7 +154888,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -155189,7 +155191,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -156009,7 +156011,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 80.8075,
+      "medianOutputSpeed": 82.7868,
       "aa": {
         "aa-intelligence": 34.2621,
         "aa-coding": null,
@@ -156494,7 +156496,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 21,
@@ -156797,7 +156799,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -157363,7 +157365,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 40.0057,
+      "medianOutputSpeed": 39.6279,
       "aa": {
         "aa-intelligence": 35.4381,
         "aa-coding": null,
@@ -157963,7 +157965,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 18,
@@ -158784,7 +158786,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 99.1127,
+      "medianOutputSpeed": 102.5139,
       "aa": {
         "aa-intelligence": 34.4741,
         "aa-coding": null,
@@ -159206,7 +159208,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -159518,7 +159520,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 133.0156,
+      "medianOutputSpeed": 140.1326,
       "aa": {
         "aa-intelligence": 12.3478,
         "aa-coding": null,
@@ -159773,7 +159775,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 55.3422,
+      "medianOutputSpeed": 61.3135,
       "aa": {
         "aa-intelligence": 62.5205,
         "aa-coding": null,
@@ -160019,7 +160021,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -160586,7 +160588,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 65.7579,
+      "medianOutputSpeed": 71.85,
       "aa": {
         "aa-intelligence": null,
         "aa-coding": null,
@@ -161710,7 +161712,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 133.758,
+      "medianOutputSpeed": 133.3903,
       "aa": {
         "aa-intelligence": 14.3991,
         "aa-coding": null,
@@ -162458,7 +162460,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 112.9205,
+      "medianOutputSpeed": 117.5713,
       "aa": {
         "aa-intelligence": 31.0956,
         "aa-coding": null,
@@ -163215,7 +163217,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -163518,7 +163520,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -164689,7 +164691,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/stepfun_small.svg",
         "color": "#017AFF"
       },
-      "medianOutputSpeed": 212.8151,
+      "medianOutputSpeed": 211.9463,
       "aa": {
         "aa-intelligence": 26.5182,
         "aa-coding": null,
@@ -165197,7 +165199,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/upstage_small.svg",
         "color": "#7c59f5"
       },
-      "medianOutputSpeed": 46.8918,
+      "medianOutputSpeed": 43.6456,
       "aa": {
         "aa-intelligence": 41.6373,
         "aa-coding": null,
@@ -165437,12 +165439,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 54,
         "evidenceRank": 54,
         "displayScore": 41.0957,
-        "finalScore": 41.09567744719029,
-        "scoreFullPrecision": "41.09567744719029",
+        "finalScore": 41.09567744719028,
+        "scoreFullPrecision": "41.095677447190283",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -165453,8 +165455,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 43.6343,
             "extensionBonus": 7.166748,
-            "score": 50.80104836112712,
-            "points": 10.160209672225426,
+            "score": 50.801048361127116,
+            "points": 10.160209672225424,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -165740,12 +165742,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 80,
         "evidenceRank": 80,
         "displayScore": 41.0957,
-        "finalScore": 41.09567744719029,
-        "scoreFullPrecision": "41.09567744719029",
+        "finalScore": 41.09567744719028,
+        "scoreFullPrecision": "41.095677447190283",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -165756,8 +165758,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 43.6343,
             "extensionBonus": 7.166748,
-            "score": 50.80104836112712,
-            "points": 10.160209672225426,
+            "score": 50.801048361127116,
+            "points": 10.160209672225424,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -166733,7 +166735,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -166770,8 +166772,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.100478,
             "extensionBonus": 23.545928,
-            "score": 23.646405633104894,
-            "points": 4.729281126620979,
+            "score": 23.64640563310489,
+            "points": 4.729281126620978,
             "coreTests": 3,
             "extensionTests": 1,
             "coreItemPoolSize": 3,
@@ -166783,8 +166785,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 30.699333,
             "extensionBonus": 4.646345,
-            "score": 35.345678264929475,
-            "points": 7.069135652985895,
+            "score": 35.34567826492949,
+            "points": 7.0691356529858975,
             "coreTests": 4,
             "extensionTests": 1,
             "coreItemPoolSize": 4,
@@ -167348,7 +167350,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 268.1044,
+      "medianOutputSpeed": 277.0352,
       "aa": {
         "aa-intelligence": 6.6856,
         "aa-coding": null,
@@ -167605,7 +167607,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nousresearch_small.jpg",
         "color": "#006fa8"
       },
-      "medianOutputSpeed": 33.3589,
+      "medianOutputSpeed": 32.6803,
       "aa": {
         "aa-intelligence": 4.7756,
         "aa-coding": null,
@@ -167859,7 +167861,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/cohere_small.svg",
         "color": "#D18EE2"
       },
-      "medianOutputSpeed": 25.9638,
+      "medianOutputSpeed": 27.0543,
       "aa": {
         "aa-intelligence": 20.169,
         "aa-coding": null,
@@ -168104,7 +168106,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -168407,7 +168409,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -169684,7 +169686,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 22,
@@ -169695,8 +169697,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 56.1343,
             "extensionBonus": 11.781894,
-            "score": 67.9161942393975,
-            "points": 13.5832388478795,
+            "score": 67.91619423939747,
+            "points": 13.583238847879493,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -169987,7 +169989,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -169998,8 +170000,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 56.1343,
             "extensionBonus": 11.781894,
-            "score": 67.9161942393975,
-            "points": 13.5832388478795,
+            "score": 67.91619423939747,
+            "points": 13.583238847879493,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -170299,7 +170301,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 134.2241,
+      "medianOutputSpeed": 143.1809,
       "aa": {
         "aa-intelligence": 3.2222,
         "aa-coding": null,
@@ -171317,7 +171319,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 57.4792,
+      "medianOutputSpeed": 60.4957,
       "aa": {
         "aa-intelligence": 52.4569,
         "aa-coding": null,
@@ -171563,7 +171565,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -171574,8 +171576,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 48.0324,
             "extensionBonus": 18.403639,
-            "score": 66.4360394857048,
-            "points": 13.28720789714096,
+            "score": 66.43603948570478,
+            "points": 13.287207897140956,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -171875,7 +171877,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 85.1855,
+      "medianOutputSpeed": 87.0799,
       "aa": {
         "aa-intelligence": 20.6142,
         "aa-coding": null,
@@ -172422,12 +172424,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 132,
         "evidenceRank": 132,
         "displayScore": 28.3564,
-        "finalScore": 28.356397779324055,
-        "scoreFullPrecision": "28.356397779324055",
+        "finalScore": 28.356397779324052,
+        "scoreFullPrecision": "28.356397779324052",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 18,
@@ -172451,8 +172453,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 45.0,
             "extensionBonus": 23.545928,
-            "score": 68.54592762648221,
-            "points": 13.709185525296443,
+            "score": 68.5459276264822,
+            "points": 13.709185525296439,
             "coreTests": 1,
             "extensionTests": 3,
             "coreItemPoolSize": 1,
@@ -172739,7 +172741,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 109.6267,
+      "medianOutputSpeed": 110.8795,
       "aa": {
         "aa-intelligence": 1.7061,
         "aa-coding": null,
@@ -172993,7 +172995,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 223.0612,
+      "medianOutputSpeed": 231.4189,
       "aa": {
         "aa-intelligence": 20.3379,
         "aa-coding": null,
@@ -173496,7 +173498,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -173799,7 +173801,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -174111,7 +174113,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 131.509,
+      "medianOutputSpeed": 133.4005,
       "aa": {
         "aa-intelligence": 32.8466,
         "aa-coding": null,
@@ -174357,7 +174359,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -174669,7 +174671,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 54.2984,
+      "medianOutputSpeed": 58.4994,
       "aa": {
         "aa-intelligence": 38.0434,
         "aa-coding": null,
@@ -174915,7 +174917,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -175218,7 +175220,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -175871,7 +175873,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nousresearch_small.jpg",
         "color": "#006fa8"
       },
-      "medianOutputSpeed": 70.158,
+      "medianOutputSpeed": 72.4169,
       "aa": {
         "aa-intelligence": 6.6574,
         "aa-coding": null,
@@ -176125,7 +176127,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 207.3219,
+      "medianOutputSpeed": 201.6308,
       "aa": {
         "aa-intelligence": 7.1701,
         "aa-coding": null,
@@ -176620,7 +176622,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 78.0066,
+      "medianOutputSpeed": 92.3773,
       "aa": {
         "aa-intelligence": 55.2612,
         "aa-coding": null,
@@ -176963,7 +176965,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 19,
@@ -177266,7 +177268,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -178089,7 +178091,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 145.2891,
+      "medianOutputSpeed": 157.4755,
       "aa": {
         "aa-intelligence": 14.8668,
         "aa-coding": null,
@@ -178335,7 +178337,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -178385,8 +178387,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 16.723762,
             "extensionBonus": 0.0,
-            "score": 16.723761817961407,
-            "points": 3.3447523635922813,
+            "score": 16.723761817961403,
+            "points": 3.3447523635922805,
             "coreTests": 4,
             "extensionTests": 0,
             "coreItemPoolSize": 4,
@@ -178638,7 +178640,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -178688,8 +178690,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 16.723762,
             "extensionBonus": 0.0,
-            "score": 16.723761817961407,
-            "points": 3.3447523635922813,
+            "score": 16.723761817961403,
+            "points": 3.3447523635922805,
             "coreTests": 4,
             "extensionTests": 0,
             "coreItemPoolSize": 4,
@@ -178950,7 +178952,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 52.6937,
+      "medianOutputSpeed": 57.8133,
       "aa": {
         "aa-intelligence": 41.8728,
         "aa-coding": null,
@@ -179205,7 +179207,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 194.8499,
+      "medianOutputSpeed": 201.2563,
       "aa": {
         "aa-intelligence": 13.7544,
         "aa-coding": null,
@@ -179459,7 +179461,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 66.0463,
+      "medianOutputSpeed": 77.1333,
       "aa": {
         "aa-intelligence": 8.5144,
         "aa-coding": null,
@@ -179713,7 +179715,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 97.9608,
+      "medianOutputSpeed": 103.503,
       "aa": {
         "aa-intelligence": 46.7559,
         "aa-coding": null,
@@ -179959,7 +179961,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -179970,8 +179972,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 49.6528,
             "extensionBonus": 11.386315,
-            "score": 61.03911467459674,
-            "points": 12.207822934919347,
+            "score": 61.039114674596725,
+            "points": 12.207822934919346,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -180271,7 +180273,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 140.8446,
+      "medianOutputSpeed": 143.1843,
       "aa": {
         "aa-intelligence": 25.911,
         "aa-coding": null,
@@ -180519,7 +180521,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -180822,7 +180824,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -181134,7 +181136,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 94.6215,
+      "medianOutputSpeed": 107.9618,
       "aa": {
         "aa-intelligence": 32.0883,
         "aa-coding": null,
@@ -181556,7 +181558,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -181868,7 +181870,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 96.7993,
+      "medianOutputSpeed": 108.4552,
       "aa": {
         "aa-intelligence": 45.3969,
         "aa-coding": null,
@@ -182323,7 +182325,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 19,
@@ -182626,7 +182628,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -183449,7 +183451,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 83.4006,
+      "medianOutputSpeed": 84.5771,
       "aa": {
         "aa-intelligence": 25.7971,
         "aa-coding": null,
@@ -183695,7 +183697,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -183732,7 +183734,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.121126,
             "extensionBonus": 23.545928,
-            "score": 23.667053362849142,
+            "score": 23.66705336284914,
             "points": 4.733410672569828,
             "coreTests": 3,
             "extensionTests": 1,
@@ -183998,7 +184000,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -184035,7 +184037,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.121126,
             "extensionBonus": 23.545928,
-            "score": 23.667053362849142,
+            "score": 23.66705336284914,
             "points": 4.733410672569828,
             "coreTests": 3,
             "extensionTests": 1,
@@ -184310,7 +184312,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 316.2551,
+      "medianOutputSpeed": 327.2426,
       "aa": {
         "aa-intelligence": 23.6326,
         "aa-coding": null,
@@ -184555,7 +184557,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -184858,7 +184860,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -186435,7 +186437,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -186738,7 +186740,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -187050,7 +187052,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 89.4302,
+      "medianOutputSpeed": 85.6264,
       "aa": {
         "aa-intelligence": 23.2843,
         "aa-coding": null,
@@ -187560,7 +187562,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 14.5132,
+      "medianOutputSpeed": 14.5379,
       "aa": {
         "aa-intelligence": 1.3106,
         "aa-coding": null,
@@ -188068,7 +188070,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 76.1789,
+      "medianOutputSpeed": 81.0213,
       "aa": {
         "aa-intelligence": 21.7904,
         "aa-coding": null,
@@ -188315,7 +188317,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -188618,7 +188620,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -188930,7 +188932,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 206.8597,
+      "medianOutputSpeed": 206.0891,
       "aa": {
         "aa-intelligence": 19.2196,
         "aa-coding": null,
@@ -189439,7 +189441,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 43.9758,
+      "medianOutputSpeed": 47.3099,
       "aa": {
         "aa-intelligence": 36.8012,
         "aa-coding": null,
@@ -190189,12 +190191,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 165,
         "evidenceRank": 165,
         "displayScore": 7.7955,
-        "finalScore": 7.795492044428961,
-        "scoreFullPrecision": "7.7954920444289613",
+        "finalScore": 7.79549204442896,
+        "scoreFullPrecision": "7.7954920444289604",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -190244,8 +190246,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 12.736039,
             "extensionBonus": 0.0,
-            "score": 12.736039036624822,
-            "points": 2.5472078073249644,
+            "score": 12.736039036624819,
+            "points": 2.5472078073249635,
             "coreTests": 4,
             "extensionTests": 1,
             "coreItemPoolSize": 4,
@@ -190492,12 +190494,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 196,
         "evidenceRank": 196,
         "displayScore": 7.7955,
-        "finalScore": 7.795492044428961,
-        "scoreFullPrecision": "7.7954920444289613",
+        "finalScore": 7.79549204442896,
+        "scoreFullPrecision": "7.7954920444289604",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -190547,8 +190549,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 12.736039,
             "extensionBonus": 0.0,
-            "score": 12.736039036624822,
-            "points": 2.5472078073249644,
+            "score": 12.736039036624819,
+            "points": 2.5472078073249635,
             "coreTests": 4,
             "extensionTests": 1,
             "coreItemPoolSize": 4,
@@ -190809,7 +190811,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 167.9998,
+      "medianOutputSpeed": 167.4551,
       "aa": {
         "aa-intelligence": 7.1601,
         "aa-coding": null,
@@ -191063,7 +191065,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/cohere_small.svg",
         "color": "#D18EE2"
       },
-      "medianOutputSpeed": 212.5895,
+      "medianOutputSpeed": 211.2682,
       "aa": {
         "aa-intelligence": 22.7702,
         "aa-coding": null,
@@ -191309,7 +191311,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -191612,7 +191614,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -192178,7 +192180,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 44.7389,
+      "medianOutputSpeed": 52.9168,
       "aa": {
         "aa-intelligence": 43.8608,
         "aa-coding": null,
@@ -192963,12 +192965,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 145,
         "evidenceRank": 145,
         "displayScore": 14.5882,
-        "finalScore": 14.588242243906162,
-        "scoreFullPrecision": "14.588242243906162",
+        "finalScore": 14.588242243906164,
+        "scoreFullPrecision": "14.588242243906164",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 13,
@@ -192979,8 +192981,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 17.7083,
             "extensionBonus": 2.21393,
-            "score": 19.922230101924082,
-            "points": 3.9844460203848167,
+            "score": 19.922230101924093,
+            "points": 3.984446020384819,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -193266,12 +193268,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 175,
         "evidenceRank": 175,
         "displayScore": 14.5882,
-        "finalScore": 14.588242243906162,
-        "scoreFullPrecision": "14.588242243906162",
+        "finalScore": 14.588242243906164,
+        "scoreFullPrecision": "14.588242243906164",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 13,
@@ -193282,8 +193284,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 17.7083,
             "extensionBonus": 2.21393,
-            "score": 19.922230101924082,
-            "points": 3.9844460203848167,
+            "score": 19.922230101924093,
+            "points": 3.984446020384819,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -193838,7 +193840,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 24.0427,
+      "medianOutputSpeed": 21.8609,
       "aa": {
         "aa-intelligence": 16.1231,
         "aa-coding": null,
@@ -194390,7 +194392,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 19,
@@ -194401,8 +194403,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 18.287,
             "extensionBonus": 16.534961,
-            "score": 34.82196107070449,
-            "points": 6.964392214140898,
+            "score": 34.821961070704496,
+            "points": 6.9643922141409,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -194702,7 +194704,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 83.51,
+      "medianOutputSpeed": 83.9547,
       "aa": {
         "aa-intelligence": 32.7327,
         "aa-coding": null,
@@ -195182,7 +195184,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 60.2448,
+      "medianOutputSpeed": 60.9859,
       "aa": {
         "aa-intelligence": 18.3627,
         "aa-coding": null,
@@ -196191,7 +196193,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -196215,7 +196217,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 35.3333,
             "extensionBonus": 13.063171,
-            "score": 48.39647147324315,
+            "score": 48.396471473243146,
             "points": 9.67929429464863,
             "coreTests": 1,
             "extensionTests": 3,
@@ -196494,7 +196496,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -196518,7 +196520,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 35.3333,
             "extensionBonus": 13.063171,
-            "score": 48.39647147324315,
+            "score": 48.396471473243146,
             "points": 9.67929429464863,
             "coreTests": 1,
             "extensionTests": 3,
@@ -197060,7 +197062,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 280.9459,
+      "medianOutputSpeed": 297.1137,
       "aa": {
         "aa-intelligence": 4.4157,
         "aa-coding": null,
@@ -197568,7 +197570,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 108.2592,
+      "medianOutputSpeed": 107.2295,
       "aa": {
         "aa-intelligence": 6.0345,
         "aa-coding": null,
@@ -198126,7 +198128,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 144.2121,
+      "medianOutputSpeed": 153.5835,
       "aa": {
         "aa-intelligence": 3.2493,
         "aa-coding": null,
@@ -198634,7 +198636,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 132.8961,
+      "medianOutputSpeed": 128.4643,
       "aa": {
         "aa-intelligence": 15.2252,
         "aa-coding": null,
@@ -198879,7 +198881,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -198929,8 +198931,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 25.388848,
             "extensionBonus": 0.0,
-            "score": 25.38884823524694,
-            "points": 5.077769647049388,
+            "score": 25.388848235246936,
+            "points": 5.077769647049387,
             "coreTests": 4,
             "extensionTests": 0,
             "coreItemPoolSize": 4,
@@ -198942,8 +198944,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 6.900721,
             "extensionBonus": 0.0,
-            "score": 6.900721149271282,
-            "points": 1.3801442298542566,
+            "score": 6.900721149271281,
+            "points": 1.3801442298542563,
             "coreTests": 2,
             "extensionTests": 0,
             "coreItemPoolSize": 2,
@@ -199182,7 +199184,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -199232,8 +199234,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 25.388848,
             "extensionBonus": 0.0,
-            "score": 25.38884823524694,
-            "points": 5.077769647049388,
+            "score": 25.388848235246936,
+            "points": 5.077769647049387,
             "coreTests": 4,
             "extensionTests": 0,
             "coreItemPoolSize": 4,
@@ -199245,8 +199247,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 6.900721,
             "extensionBonus": 0.0,
-            "score": 6.900721149271282,
-            "points": 1.3801442298542566,
+            "score": 6.900721149271281,
+            "points": 1.3801442298542563,
             "coreTests": 2,
             "extensionTests": 0,
             "coreItemPoolSize": 2,
@@ -199909,7 +199911,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 170.4255,
+      "medianOutputSpeed": 176.8888,
       "aa": {
         "aa-intelligence": 30.4823,
         "aa-coding": null,
@@ -200418,7 +200420,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 56.4146,
+      "medianOutputSpeed": 58.5096,
       "aa": {
         "aa-intelligence": 31.3256,
         "aa-coding": null,
@@ -200890,7 +200892,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 20,
@@ -201193,7 +201195,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -201505,7 +201507,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nex_small.svg",
         "color": "#0351bc"
       },
-      "medianOutputSpeed": 137.5943,
+      "medianOutputSpeed": 139.736,
       "aa": {
         "aa-intelligence": 41.7432,
         "aa-coding": null,
@@ -201751,7 +201753,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -202054,7 +202056,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -202366,7 +202368,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 134.6084,
+      "medianOutputSpeed": 141.7905,
       "aa": {
         "aa-intelligence": 19.6117,
         "aa-coding": null,
@@ -202621,7 +202623,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/cohere_small.svg",
         "color": "#D18EE2"
       },
-      "medianOutputSpeed": 56.7272,
+      "medianOutputSpeed": 68.1728,
       "aa": {
         "aa-intelligence": 7.4634,
         "aa-coding": null,
@@ -202875,7 +202877,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/liquidai_small.svg",
         "color": "#000000"
       },
-      "medianOutputSpeed": 273.5606,
+      "medianOutputSpeed": 301.5114,
       "aa": {
         "aa-intelligence": 1.0,
         "aa-coding": null,
@@ -203130,7 +203132,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 106.5209,
+      "medianOutputSpeed": 105.8119,
       "aa": {
         "aa-intelligence": 8.2443,
         "aa-coding": null,
@@ -204150,7 +204152,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 102.8566,
+      "medianOutputSpeed": 102.3207,
       "aa": {
         "aa-intelligence": 9.1695,
         "aa-coding": null,
@@ -205011,7 +205013,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 149.201,
+      "medianOutputSpeed": 154.8492,
       "aa": {
         "aa-intelligence": 19.7078,
         "aa-coding": null,
@@ -205252,12 +205254,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 119,
         "evidenceRank": 119,
         "displayScore": 24.6185,
-        "finalScore": 24.61854806395601,
-        "scoreFullPrecision": "24.618548063956009",
+        "finalScore": 24.618548063956005,
+        "scoreFullPrecision": "24.618548063956005",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -205281,8 +205283,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 47.3333,
             "extensionBonus": 0.0,
-            "score": 47.3333,
-            "points": 9.466660000000001,
+            "score": 47.333299999999994,
+            "points": 9.46666,
             "coreTests": 1,
             "extensionTests": 3,
             "coreItemPoolSize": 1,
@@ -205555,12 +205557,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 148,
         "evidenceRank": 148,
         "displayScore": 24.6185,
-        "finalScore": 24.61854806395601,
-        "scoreFullPrecision": "24.618548063956009",
+        "finalScore": 24.618548063956005,
+        "scoreFullPrecision": "24.618548063956005",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -205584,8 +205586,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 47.3333,
             "extensionBonus": 0.0,
-            "score": 47.3333,
-            "points": 9.466660000000001,
+            "score": 47.333299999999994,
+            "points": 9.46666,
             "coreTests": 1,
             "extensionTests": 3,
             "coreItemPoolSize": 1,
@@ -206371,12 +206373,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 163,
         "evidenceRank": 163,
         "displayScore": 8.4645,
-        "finalScore": 8.464469474271466,
-        "scoreFullPrecision": "8.4644694742714659",
+        "finalScore": 8.464469474271464,
+        "scoreFullPrecision": "8.4644694742714641",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -206400,8 +206402,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 9.0,
             "extensionBonus": 23.545928,
-            "score": 32.545927626482204,
-            "points": 6.5091855252964415,
+            "score": 32.5459276264822,
+            "points": 6.509185525296439,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -206674,12 +206676,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 194,
         "evidenceRank": 194,
         "displayScore": 8.4645,
-        "finalScore": 8.464469474271466,
-        "scoreFullPrecision": "8.4644694742714659",
+        "finalScore": 8.464469474271464,
+        "scoreFullPrecision": "8.4644694742714641",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -206703,8 +206705,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 9.0,
             "extensionBonus": 23.545928,
-            "score": 32.545927626482204,
-            "points": 6.5091855252964415,
+            "score": 32.5459276264822,
+            "points": 6.509185525296439,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -206991,7 +206993,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 54.44,
+      "medianOutputSpeed": 64.5508,
       "aa": {
         "aa-intelligence": 40.5541,
         "aa-coding": null,
@@ -207467,7 +207469,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 48.3344,
+      "medianOutputSpeed": 51.7588,
       "aa": {
         "aa-intelligence": 35.573,
         "aa-coding": null,
@@ -208233,7 +208235,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 147.4937,
+      "medianOutputSpeed": 158.6135,
       "aa": {
         "aa-intelligence": 52.3181,
         "aa-coding": null,
@@ -209072,7 +209074,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 18,
@@ -209375,7 +209377,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 18,
@@ -209687,7 +209689,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 58.5087,
+      "medianOutputSpeed": 78.1565,
       "aa": {
         "aa-intelligence": 10.9013,
         "aa-coding": null,
@@ -210443,7 +210445,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -210746,7 +210748,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -211654,7 +211656,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 39.7951,
+      "medianOutputSpeed": 43.8852,
       "aa": {
         "aa-intelligence": 38.7724,
         "aa-coding": null,
@@ -212148,7 +212150,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 153.0313,
+      "medianOutputSpeed": 160.5251,
       "aa": {
         "aa-intelligence": 10.6577,
         "aa-coding": null,
@@ -212394,7 +212396,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -212697,7 +212699,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -213258,7 +213260,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -213561,7 +213563,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -213873,7 +213875,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 41.2307,
+      "medianOutputSpeed": 40.7247,
       "aa": {
         "aa-intelligence": 19.6544,
         "aa-coding": null,
@@ -214954,7 +214956,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 58.4873,
+      "medianOutputSpeed": 57.7439,
       "aa": {
         "aa-intelligence": 10.4438,
         "aa-coding": null,
@@ -215199,7 +215201,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -215249,8 +215251,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 19.065904,
             "extensionBonus": 0.0,
-            "score": 19.065904332780818,
-            "points": 3.8131808665561637,
+            "score": 19.065904332780814,
+            "points": 3.813180866556163,
             "coreTests": 4,
             "extensionTests": 0,
             "coreItemPoolSize": 4,
@@ -215502,7 +215504,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -215552,8 +215554,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 19.065904,
             "extensionBonus": 0.0,
-            "score": 19.065904332780818,
-            "points": 3.8131808665561637,
+            "score": 19.065904332780814,
+            "points": 3.813180866556163,
             "coreTests": 4,
             "extensionTests": 0,
             "coreItemPoolSize": 4,
@@ -216322,7 +216324,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 54.2631,
+      "medianOutputSpeed": 56.4832,
       "aa": {
         "aa-intelligence": 6.5089,
         "aa-coding": null,
@@ -216576,7 +216578,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 153.9916,
+      "medianOutputSpeed": 155.6384,
       "aa": {
         "aa-intelligence": 29.9073,
         "aa-coding": null,
@@ -217690,7 +217692,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 80.4103,
+      "medianOutputSpeed": 89.8117,
       "aa": {
         "aa-intelligence": 35.3127,
         "aa-coding": null,
@@ -217936,7 +217938,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -218239,7 +218241,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -218797,7 +218799,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -219100,7 +219102,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -219412,7 +219414,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 90.1242,
+      "medianOutputSpeed": 94.7055,
       "aa": {
         "aa-intelligence": 28.2629,
         "aa-coding": null,
@@ -219838,7 +219840,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 83.1776,
+      "medianOutputSpeed": 84.1827,
       "aa": {
         "aa-intelligence": 43.3436,
         "aa-coding": null,
@@ -220683,7 +220685,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 27.7707,
+      "medianOutputSpeed": 26.8118,
       "aa": {
         "aa-intelligence": 9.8094,
         "aa-coding": null,
@@ -221191,7 +221193,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 61.9276,
+      "medianOutputSpeed": 64.8893,
       "aa": {
         "aa-intelligence": 38.8714,
         "aa-coding": null,
@@ -221565,7 +221567,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 18,
@@ -221868,7 +221870,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -222689,7 +222691,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 100.8084,
+      "medianOutputSpeed": 113.4103,
       "aa": {
         "aa-intelligence": 37.4661,
         "aa-coding": null,
@@ -222935,7 +222937,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -223238,7 +223240,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -223550,7 +223552,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 198.7673,
+      "medianOutputSpeed": 211.0048,
       "aa": {
         "aa-intelligence": 46.6725,
         "aa-coding": null,
@@ -224308,7 +224310,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -224345,8 +224347,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 6.635856,
             "extensionBonus": 0.0,
-            "score": 6.635855621096984,
-            "points": 1.3271711242193966,
+            "score": 6.635855621096982,
+            "points": 1.3271711242193964,
             "coreTests": 3,
             "extensionTests": 0,
             "coreItemPoolSize": 3,
@@ -224611,7 +224613,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -224648,8 +224650,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 6.635856,
             "extensionBonus": 0.0,
-            "score": 6.635855621096984,
-            "points": 1.3271711242193966,
+            "score": 6.635855621096982,
+            "points": 1.3271711242193964,
             "coreTests": 3,
             "extensionTests": 0,
             "coreItemPoolSize": 3,
@@ -224923,7 +224925,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 82.1947,
+      "medianOutputSpeed": 82.6343,
       "aa": {
         "aa-intelligence": 29.961,
         "aa-coding": null,
@@ -225394,7 +225396,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -225444,8 +225446,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 28.675245,
             "extensionBonus": 8.836857,
-            "score": 37.51210256247349,
-            "points": 7.502420512494698,
+            "score": 37.512102562473494,
+            "points": 7.502420512494699,
             "coreTests": 4,
             "extensionTests": 2,
             "coreItemPoolSize": 4,
@@ -225960,7 +225962,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 38.3855,
+      "medianOutputSpeed": 36.939,
       "aa": {
         "aa-intelligence": 48.2515,
         "aa-coding": null,
@@ -226206,7 +226208,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -226269,8 +226271,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 15.556455,
             "extensionBonus": 0.0,
-            "score": 15.556455251759637,
-            "points": 3.1112910503519275,
+            "score": 15.556455251759635,
+            "points": 3.111291050351927,
             "coreTests": 2,
             "extensionTests": 0,
             "coreItemPoolSize": 2,
@@ -226772,7 +226774,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 109.1324,
+      "medianOutputSpeed": 108.5381,
       "aa": {
         "aa-intelligence": 9.9012,
         "aa-coding": null,
@@ -227906,7 +227908,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 89.5486,
+      "medianOutputSpeed": 95.1462,
       "aa": {
         "aa-intelligence": 40.177,
         "aa-coding": null,
@@ -228332,7 +228334,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 40.6853,
+      "medianOutputSpeed": 45.2331,
       "aa": {
         "aa-intelligence": 44.9314,
         "aa-coding": null,
@@ -228803,7 +228805,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 20,
@@ -228866,8 +228868,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 30.569162,
             "extensionBonus": 0.0,
-            "score": 30.569161709474468,
-            "points": 6.113832341894894,
+            "score": 30.569161709474464,
+            "points": 6.113832341894892,
             "coreTests": 2,
             "extensionTests": 1,
             "coreItemPoolSize": 2,
@@ -231146,7 +231148,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -231157,8 +231159,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 43.6343,
             "extensionBonus": 1.548748,
-            "score": 45.18304836112712,
-            "points": 9.036609672225424,
+            "score": 45.18304836112711,
+            "points": 9.036609672225422,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -231449,7 +231451,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -231460,8 +231462,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 43.6343,
             "extensionBonus": 1.548748,
-            "score": 45.18304836112712,
-            "points": 9.036609672225424,
+            "score": 45.18304836112711,
+            "points": 9.036609672225422,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -232007,7 +232009,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -232573,7 +232575,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 339.243,
+      "medianOutputSpeed": 345.2231,
       "aa": {
         "aa-intelligence": 25.6076,
         "aa-coding": null,
@@ -232821,7 +232823,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -233124,7 +233126,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -234453,7 +234455,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 56.9055,
+      "medianOutputSpeed": 55.456,
       "aa": {
         "aa-intelligence": 12.4743,
         "aa-coding": null,
@@ -235207,7 +235209,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -235510,7 +235512,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -236442,7 +236444,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 19,
@@ -236453,8 +236455,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 43.75,
             "extensionBonus": 11.454281,
-            "score": 55.20428105839443,
-            "points": 11.040856211678886,
+            "score": 55.204281058394415,
+            "points": 11.040856211678884,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -236740,12 +236742,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 67,
         "evidenceRank": 67,
         "displayScore": 44.6196,
-        "finalScore": 44.61964817787128,
-        "scoreFullPrecision": "44.619648177871277",
+        "finalScore": 44.61964817787126,
+        "scoreFullPrecision": "44.619648177871262",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -236756,8 +236758,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 43.75,
             "extensionBonus": 11.454266,
-            "score": 55.204266078576396,
-            "points": 11.040853215715279,
+            "score": 55.20426607857638,
+            "points": 11.040853215715277,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -237312,7 +237314,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 59.9266,
+      "medianOutputSpeed": 60.1345,
       "aa": {
         "aa-intelligence": 19.4292,
         "aa-coding": null,
@@ -237566,7 +237568,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 126.4298,
+      "medianOutputSpeed": 138.8651,
       "aa": {
         "aa-intelligence": 38.3185,
         "aa-coding": null,
@@ -238100,7 +238102,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 18,
@@ -238403,7 +238405,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -239035,7 +239037,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/longcat_small.svg",
         "color": "#2adb65"
       },
-      "medianOutputSpeed": 42.1574,
+      "medianOutputSpeed": 42.2063,
       "aa": {
         "aa-intelligence": 33.9693,
         "aa-coding": null,
@@ -239280,7 +239282,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -239583,7 +239585,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -240151,7 +240153,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/bytedance_small.svg",
         "color": "#3c8bff"
       },
-      "medianOutputSpeed": 24.7121,
+      "medianOutputSpeed": 24.3743,
       "aa": {
         "aa-intelligence": 18.5493,
         "aa-coding": null,
@@ -240915,7 +240917,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 46.9031,
+      "medianOutputSpeed": 39.9288,
       "aa": {
         "aa-intelligence": 16.6592,
         "aa-coding": null,
@@ -241544,7 +241546,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -241847,7 +241849,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -242667,7 +242669,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 73.7924,
+      "medianOutputSpeed": 74.6278,
       "aa": {
         "aa-intelligence": 43.7458,
         "aa-coding": null,
@@ -243291,7 +243293,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -243603,7 +243605,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 26.0072,
+      "medianOutputSpeed": 23.5788,
       "aa": {
         "aa-intelligence": 4.9309,
         "aa-coding": null,
@@ -243857,7 +243859,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 147.4939,
+      "medianOutputSpeed": 148.5185,
       "aa": {
         "aa-intelligence": 14.5734,
         "aa-coding": null,
@@ -244102,7 +244104,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -244405,7 +244407,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -244971,7 +244973,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 44.9479,
+      "medianOutputSpeed": 44.9098,
       "aa": {
         "aa-intelligence": 58.0774,
         "aa-coding": null,
@@ -245655,12 +245657,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 10,
         "evidenceRank": 10,
         "displayScore": 60.4612,
-        "finalScore": 60.46122655667991,
-        "scoreFullPrecision": "60.461226556679911",
+        "finalScore": 60.461226556679904,
+        "scoreFullPrecision": "60.461226556679904",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 20,
@@ -245671,8 +245673,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 52.8935,
             "extensionBonus": 14.580742,
-            "score": 67.47424188874999,
-            "points": 13.494848377749998,
+            "score": 67.47424188874996,
+            "points": 13.49484837774999,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -245958,12 +245960,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 20,
         "evidenceRank": 20,
         "displayScore": 60.1768,
-        "finalScore": 60.176819424357404,
-        "scoreFullPrecision": "60.176819424357404",
+        "finalScore": 60.1768194243574,
+        "scoreFullPrecision": "60.176819424357397",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -245974,8 +245976,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 52.8935,
             "extensionBonus": 14.580444,
-            "score": 67.4739438616136,
-            "points": 13.494788772322723,
+            "score": 67.47394386161358,
+            "points": 13.494788772322716,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -246275,7 +246277,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 118.5039,
+      "medianOutputSpeed": 127.0185,
       "aa": {
         "aa-intelligence": 36.9152,
         "aa-coding": null,
@@ -246530,7 +246532,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 81.0912,
+      "medianOutputSpeed": 88.1104,
       "aa": {
         "aa-intelligence": 34.5655,
         "aa-coding": null,
@@ -247294,7 +247296,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 32.6078,
+      "medianOutputSpeed": 28.6893,
       "aa": {
         "aa-intelligence": 2.9525,
         "aa-coding": null,
@@ -248598,7 +248600,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 159.0294,
+      "medianOutputSpeed": 163.9335,
       "aa": {
         "aa-intelligence": 20.7998,
         "aa-coding": null,
@@ -248844,7 +248846,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -248881,7 +248883,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 6.459572,
             "extensionBonus": 23.545928,
-            "score": 30.005500078476725,
+            "score": 30.00550007847672,
             "points": 6.001100015695345,
             "coreTests": 3,
             "extensionTests": 1,
@@ -249147,7 +249149,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -249184,7 +249186,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 6.459572,
             "extensionBonus": 23.545928,
-            "score": 30.005500078476725,
+            "score": 30.00550007847672,
             "points": 6.001100015695345,
             "coreTests": 3,
             "extensionTests": 1,
@@ -249716,7 +249718,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 137.4042,
+      "medianOutputSpeed": 139.7585,
       "aa": {
         "aa-intelligence": 25.6685,
         "aa-coding": null,
@@ -250202,7 +250204,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 18,
@@ -250505,7 +250507,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -250817,7 +250819,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 84.3182,
+      "medianOutputSpeed": 89.4802,
       "aa": {
         "aa-intelligence": 22.1908,
         "aa-coding": null,
@@ -251072,7 +251074,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 27.783,
+      "medianOutputSpeed": 28.6377,
       "aa": {
         "aa-intelligence": 20.3704,
         "aa-coding": null,
@@ -251319,7 +251321,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -251382,7 +251384,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 0.00781,
             "extensionBonus": 0.0,
-            "score": 0.00781024967590665,
+            "score": 0.007810249675906649,
             "points": 0.00156204993518133,
             "coreTests": 2,
             "extensionTests": 0,
@@ -251622,7 +251624,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -251685,7 +251687,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 0.00781,
             "extensionBonus": 0.0,
-            "score": 0.00781024967590665,
+            "score": 0.007810249675906649,
             "points": 0.00156204993518133,
             "coreTests": 2,
             "extensionTests": 0,
@@ -252188,7 +252190,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 40.5877,
+      "medianOutputSpeed": 40.5178,
       "aa": {
         "aa-intelligence": 23.9574,
         "aa-coding": null,
@@ -252761,7 +252763,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 142.767,
+      "medianOutputSpeed": 147.1038,
       "aa": {
         "aa-intelligence": 24.5542,
         "aa-coding": null,
@@ -253233,7 +253235,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 20,
@@ -253244,8 +253246,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 1.2731,
             "extensionBonus": 23.545928,
-            "score": 24.819027626482203,
-            "points": 4.963805525296441,
+            "score": 24.8190276264822,
+            "points": 4.96380552529644,
             "coreTests": 1,
             "extensionTests": 3,
             "coreItemPoolSize": 1,
@@ -253536,7 +253538,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -253547,8 +253549,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 1.2731,
             "extensionBonus": 23.545928,
-            "score": 24.819027626482203,
-            "points": 4.963805525296441,
+            "score": 24.8190276264822,
+            "points": 4.96380552529644,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -253848,7 +253850,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 210.4731,
+      "medianOutputSpeed": 209.8944,
       "aa": {
         "aa-intelligence": 7.0738,
         "aa-coding": null,
@@ -254089,12 +254091,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 160,
         "evidenceRank": 160,
         "displayScore": 9.4913,
-        "finalScore": 9.491321719278206,
-        "scoreFullPrecision": "9.491321719278206",
+        "finalScore": 9.491321719278204,
+        "scoreFullPrecision": "9.4913217192782042",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -254118,8 +254120,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 16.0,
             "extensionBonus": 4.49631,
-            "score": 20.496309960747034,
-            "points": 4.0992619921494065,
+            "score": 20.49630996074703,
+            "points": 4.099261992149406,
             "coreTests": 1,
             "extensionTests": 3,
             "coreItemPoolSize": 1,
@@ -254392,12 +254394,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 191,
         "evidenceRank": 191,
         "displayScore": 9.4913,
-        "finalScore": 9.491321719278206,
-        "scoreFullPrecision": "9.491321719278206",
+        "finalScore": 9.491321719278204,
+        "scoreFullPrecision": "9.4913217192782042",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -254421,8 +254423,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 16.0,
             "extensionBonus": 4.49631,
-            "score": 20.496309960747034,
-            "points": 4.0992619921494065,
+            "score": 20.49630996074703,
+            "points": 4.099261992149406,
             "coreTests": 1,
             "extensionTests": 3,
             "coreItemPoolSize": 1,
@@ -255220,7 +255222,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 206.3866,
+      "medianOutputSpeed": 209.3527,
       "aa": {
         "aa-intelligence": 46.7122,
         "aa-coding": null,
@@ -255674,7 +255676,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 19,
@@ -255685,8 +255687,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 48.8426,
             "extensionBonus": 15.082228,
-            "score": 63.92482757240607,
-            "points": 12.784965514481215,
+            "score": 63.92482757240606,
+            "points": 12.784965514481211,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -255724,7 +255726,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 48.831357,
             "extensionBonus": 0.0,
-            "score": 48.83135676535832,
+            "score": 48.831356765358315,
             "points": 9.766271353071664,
             "coreTests": 4,
             "extensionTests": 0,
@@ -255977,7 +255979,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -255988,8 +255990,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 48.8426,
             "extensionBonus": 15.082227,
-            "score": 63.92482708015078,
-            "points": 12.784965416030154,
+            "score": 63.92482708015076,
+            "points": 12.784965416030152,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -256027,7 +256029,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 48.831357,
             "extensionBonus": 0.0,
-            "score": 48.83135676535832,
+            "score": 48.831356765358315,
             "points": 9.766271353071664,
             "coreTests": 4,
             "extensionTests": 0,
@@ -256289,7 +256291,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 50.4074,
+      "medianOutputSpeed": 51.0701,
       "aa": {
         "aa-intelligence": 29.2968,
         "aa-coding": null,
@@ -256688,7 +256690,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -256699,8 +256701,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 38.4259,
             "extensionBonus": 8.614648,
-            "score": 47.04054845133645,
-            "points": 9.40810969026729,
+            "score": 47.040548451336434,
+            "points": 9.408109690267286,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -257254,7 +257256,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 209.8019,
+      "medianOutputSpeed": 228.1407,
       "aa": {
         "aa-intelligence": 14.1888,
         "aa-coding": null,
@@ -257765,7 +257767,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 77.4043,
+      "medianOutputSpeed": 81.2832,
       "aa": {
         "aa-intelligence": 51.4223,
         "aa-coding": null,
@@ -258505,7 +258507,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -258817,7 +258819,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nousresearch_small.jpg",
         "color": "#006fa8"
       },
-      "medianOutputSpeed": 80.0692,
+      "medianOutputSpeed": 73.4547,
       "aa": {
         "aa-intelligence": 9.8517,
         "aa-coding": null,
@@ -259071,7 +259073,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/stepfun_small.svg",
         "color": "#017AFF"
       },
-      "medianOutputSpeed": 108.142,
+      "medianOutputSpeed": 122.4261,
       "aa": {
         "aa-intelligence": 30.8992,
         "aa-coding": null,
@@ -259317,7 +259319,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -259620,7 +259622,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -259921,7 +259923,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "slug": "deepseek-v3-2",
       "creator": "DeepSeek",
       "releaseDate": "2025-12-01",
-      "modelUrl": "https://api-docs.deepseek.com/news/news251201",
+      "modelUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "permissive",
       "openSourceType": "open",
@@ -260164,11 +260166,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      },
-      "externalModelAliases": [
-        "deepseek-v3-2"
-      ],
-      "officialModelSourceId": "official-deepseek-news251201-page"
+      }
     },
     {
       "modelKey": "Qwen3 VL 32B",
@@ -260190,7 +260188,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 67.1197,
+      "medianOutputSpeed": 65.7325,
       "aa": {
         "aa-intelligence": 10.9868,
         "aa-coding": null,
@@ -260445,7 +260443,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 72.4531,
+      "medianOutputSpeed": 74.9404,
       "aa": {
         "aa-intelligence": 26.5359,
         "aa-coding": null,
@@ -261067,7 +261065,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 18,
@@ -261370,7 +261368,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -261682,7 +261680,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 77.0633,
+      "medianOutputSpeed": 80.3598,
       "aa": {
         "aa-intelligence": 31.9418,
         "aa-coding": null,
@@ -262317,7 +262315,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 75.5049,
+      "medianOutputSpeed": 94.9858,
       "aa": {
         "aa-intelligence": 8.8007,
         "aa-coding": null,
@@ -262572,7 +262570,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 72.7171,
+      "medianOutputSpeed": 73.0235,
       "aa": {
         "aa-intelligence": 55.5729,
         "aa-coding": null,
@@ -262818,7 +262816,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -263130,7 +263128,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 67.3783,
+      "medianOutputSpeed": 69.9598,
       "aa": {
         "aa-intelligence": 35.7538,
         "aa-coding": null,
@@ -263870,7 +263868,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -264182,7 +264180,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 258.1232,
+      "medianOutputSpeed": 266.8937,
       "aa": {
         "aa-intelligence": 19.2253,
         "aa-coding": null,
@@ -264440,7 +264438,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 92.7573,
+      "medianOutputSpeed": 88.9349,
       "aa": {
         "aa-intelligence": 34.4587,
         "aa-coding": null,
@@ -264890,7 +264888,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 18,
@@ -265193,7 +265191,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -265505,7 +265503,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 173.0369,
+      "medianOutputSpeed": 177.2017,
       "aa": {
         "aa-intelligence": 18.0077,
         "aa-coding": null,
@@ -265760,7 +265758,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 139.9837,
+      "medianOutputSpeed": 144.0778,
       "aa": {
         "aa-intelligence": 11.4605,
         "aa-coding": null,
@@ -266006,7 +266004,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -266030,7 +266028,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 18.0,
             "extensionBonus": 3.528689,
-            "score": 21.528689470741302,
+            "score": 21.5286894707413,
             "points": 4.30573789414826,
             "coreTests": 1,
             "extensionTests": 3,
@@ -266309,7 +266307,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -266333,7 +266331,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 18.0,
             "extensionBonus": 3.528689,
-            "score": 21.528689470741302,
+            "score": 21.5286894707413,
             "points": 4.30573789414826,
             "coreTests": 1,
             "extensionTests": 3,
@@ -266621,7 +266619,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 76.1078,
+      "medianOutputSpeed": 76.1898,
       "aa": {
         "aa-intelligence": 20.3801,
         "aa-coding": null,
@@ -266990,7 +266988,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 56.1755,
+      "medianOutputSpeed": 59.8302,
       "aa": {
         "aa-intelligence": 61.4751,
         "aa-coding": null,
@@ -267253,7 +267251,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -267811,7 +267809,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -267835,7 +267833,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 25.0,
             "extensionBonus": 2.697843,
-            "score": 27.697842855066348,
+            "score": 27.697842855066344,
             "points": 5.53956857101327,
             "coreTests": 1,
             "extensionTests": 3,
@@ -267874,8 +267872,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 0.005,
             "extensionBonus": 0.0,
-            "score": 0.004999999999999996,
-            "points": 0.0009999999999999992,
+            "score": 0.004999999999999995,
+            "points": 0.000999999999999999,
             "coreTests": 2,
             "extensionTests": 0,
             "coreItemPoolSize": 2,
@@ -268114,7 +268112,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -268138,7 +268136,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 25.0,
             "extensionBonus": 2.697843,
-            "score": 27.697842855066348,
+            "score": 27.697842855066344,
             "points": 5.53956857101327,
             "coreTests": 1,
             "extensionTests": 3,
@@ -268177,8 +268175,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 0.005,
             "extensionBonus": 0.0,
-            "score": 0.004999999999999996,
-            "points": 0.0009999999999999992,
+            "score": 0.004999999999999995,
+            "points": 0.000999999999999999,
             "coreTests": 2,
             "extensionTests": 0,
             "coreItemPoolSize": 2,
@@ -268671,7 +268669,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -268974,7 +268972,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -269797,7 +269795,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/thinking_machines.svg",
         "color": "#676767"
       },
-      "medianOutputSpeed": 70.2814,
+      "medianOutputSpeed": 87.2806,
       "aa": {
         "aa-intelligence": 41.1807,
         "aa-coding": null,
@@ -270397,7 +270395,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 20,
@@ -270700,7 +270698,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -270724,8 +270722,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 69.3333,
             "extensionBonus": 0.794541,
-            "score": 70.12784135064108,
-            "points": 14.025568270128215,
+            "score": 70.12784135064106,
+            "points": 14.025568270128213,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -271012,7 +271010,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 126.0251,
+      "medianOutputSpeed": 128.8481,
       "aa": {
         "aa-intelligence": 9.6393,
         "aa-coding": null,
@@ -271258,7 +271256,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -271561,7 +271559,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -271873,7 +271871,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 74.7132,
+      "medianOutputSpeed": 89.2133,
       "aa": {
         "aa-intelligence": 7.4254,
         "aa-coding": null,
@@ -272127,7 +272125,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 131.1041,
+      "medianOutputSpeed": 131.4259,
       "aa": {
         "aa-intelligence": 7.3981,
         "aa-coding": null,
@@ -272372,7 +272370,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -272675,7 +272673,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -273845,7 +273843,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -274148,7 +274146,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -275271,7 +275269,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 31.804,
+      "medianOutputSpeed": 30.7221,
       "aa": {
         "aa-intelligence": 7.6879,
         "aa-coding": null,
@@ -275526,7 +275524,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 155.89,
+      "medianOutputSpeed": 155.0106,
       "aa": {
         "aa-intelligence": 11.7836,
         "aa-coding": null,
@@ -275781,7 +275779,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 247.0913,
+      "medianOutputSpeed": 250.2197,
       "aa": {
         "aa-intelligence": 14.538,
         "aa-coding": null,
@@ -276282,7 +276280,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 19,
@@ -276585,7 +276583,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -277660,7 +277658,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 210.7387,
+      "medianOutputSpeed": 219.0124,
       "aa": {
         "aa-intelligence": 51.5819,
         "aa-coding": null,
@@ -278069,7 +278067,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 19,
@@ -278372,7 +278370,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -278684,7 +278682,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 193.2349,
+      "medianOutputSpeed": 198.7664,
       "aa": {
         "aa-intelligence": 27.9382,
         "aa-coding": null,
@@ -279195,7 +279193,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 58.3062,
+      "medianOutputSpeed": 63.6566,
       "aa": {
         "aa-intelligence": 55.7589,
         "aa-coding": null,
@@ -279517,12 +279515,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 16,
         "evidenceRank": 16,
         "displayScore": 58.9262,
-        "finalScore": 58.92624202425698,
-        "scoreFullPrecision": "58.926242024256979",
+        "finalScore": 58.926242024256965,
+        "scoreFullPrecision": "58.926242024256965",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -279572,8 +279570,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 57.687783,
             "extensionBonus": 0.0,
-            "score": 57.68778295024162,
-            "points": 11.537556590048323,
+            "score": 57.687782950241605,
+            "points": 11.53755659004832,
             "coreTests": 4,
             "extensionTests": 1,
             "coreItemPoolSize": 4,
@@ -279820,12 +279818,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 26,
         "evidenceRank": 26,
         "displayScore": 58.9262,
-        "finalScore": 58.92623241207161,
-        "scoreFullPrecision": "58.926232412071613",
+        "finalScore": 58.9262324120716,
+        "scoreFullPrecision": "58.926232412071599",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -279875,8 +279873,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 57.687783,
             "extensionBonus": 0.0,
-            "score": 57.68778295024162,
-            "points": 11.537556590048323,
+            "score": 57.687782950241605,
+            "points": 11.53755659004832,
             "coreTests": 4,
             "extensionTests": 1,
             "coreItemPoolSize": 4,
@@ -280391,7 +280389,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 59.2474,
+      "medianOutputSpeed": 58.3454,
       "aa": {
         "aa-intelligence": 24.4536,
         "aa-coding": null,
@@ -280902,7 +280900,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 152.2714,
+      "medianOutputSpeed": 155.9103,
       "aa": {
         "aa-intelligence": 4.3308,
         "aa-coding": null,
@@ -281156,7 +281154,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 64.6726,
+      "medianOutputSpeed": 65.0338,
       "aa": {
         "aa-intelligence": 41.878,
         "aa-coding": null,
@@ -281402,7 +281400,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -281714,7 +281712,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 205.882,
+      "medianOutputSpeed": 209.0269,
       "aa": {
         "aa-intelligence": 38.742,
         "aa-coding": null,
@@ -282216,7 +282214,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -282240,8 +282238,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 1e-06,
             "extensionBonus": 2.739728,
-            "score": 2.7397285796783217,
-            "points": 0.5479457159356643,
+            "score": 2.7397285796783213,
+            "points": 0.5479457159356642,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -282519,7 +282517,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -282543,8 +282541,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 1e-06,
             "extensionBonus": 2.739728,
-            "score": 2.7397285796783217,
-            "points": 0.5479457159356643,
+            "score": 2.7397285796783213,
+            "points": 0.5479457159356642,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -283076,7 +283074,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -283139,8 +283137,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 19.76049,
             "extensionBonus": 0.0,
-            "score": 19.7604902821261,
-            "points": 3.95209805642522,
+            "score": 19.760490282126103,
+            "points": 3.9520980564252204,
             "coreTests": 2,
             "extensionTests": 0,
             "coreItemPoolSize": 2,
@@ -283379,7 +283377,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -283442,8 +283440,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 19.76049,
             "extensionBonus": 0.0,
-            "score": 19.7604902821261,
-            "points": 3.95209805642522,
+            "score": 19.760490282126103,
+            "points": 3.9520980564252204,
             "coreTests": 2,
             "extensionTests": 0,
             "coreItemPoolSize": 2,
@@ -283691,7 +283689,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 167.0203,
+      "medianOutputSpeed": 172.1592,
       "aa": {
         "aa-intelligence": 24.5184,
         "aa-coding": null,
@@ -283931,12 +283929,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 121,
         "evidenceRank": 121,
         "displayScore": 23.586,
-        "finalScore": 23.586016012338927,
-        "scoreFullPrecision": "23.586016012338927",
+        "finalScore": 23.58601601233893,
+        "scoreFullPrecision": "23.586016012338931",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -283947,8 +283945,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 24.1898,
             "extensionBonus": 12.34731,
-            "score": 36.53710966672484,
-            "points": 7.307421933344967,
+            "score": 36.537109666724845,
+            "points": 7.30742193334497,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -283986,8 +283984,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 19.374791,
             "extensionBonus": 0.0,
-            "score": 19.374791448240053,
-            "points": 3.8749582896480104,
+            "score": 19.37479144824005,
+            "points": 3.87495828964801,
             "coreTests": 4,
             "extensionTests": 0,
             "coreItemPoolSize": 4,
@@ -284234,12 +284232,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 152,
         "evidenceRank": 152,
         "displayScore": 23.586,
-        "finalScore": 23.586016012338927,
-        "scoreFullPrecision": "23.586016012338927",
+        "finalScore": 23.58601601233893,
+        "scoreFullPrecision": "23.586016012338931",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -284250,8 +284248,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 24.1898,
             "extensionBonus": 12.34731,
-            "score": 36.53710966672484,
-            "points": 7.307421933344967,
+            "score": 36.537109666724845,
+            "points": 7.30742193334497,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -284289,8 +284287,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 19.374791,
             "extensionBonus": 0.0,
-            "score": 19.374791448240053,
-            "points": 3.8749582896480104,
+            "score": 19.37479144824005,
+            "points": 3.87495828964801,
             "coreTests": 4,
             "extensionTests": 0,
             "coreItemPoolSize": 4,
@@ -284551,7 +284549,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 138.9038,
+      "medianOutputSpeed": 140.983,
       "aa": {
         "aa-intelligence": 8.9085,
         "aa-coding": null,
@@ -284805,7 +284803,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 74.1272,
+      "medianOutputSpeed": 79.6743,
       "aa": {
         "aa-intelligence": 31.8771,
         "aa-coding": null,
@@ -285060,7 +285058,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/celeris.svg",
         "color": "#ff8a75"
       },
-      "medianOutputSpeed": 1794.5044,
+      "medianOutputSpeed": 1932.0005,
       "aa": {
         "aa-intelligence": 12.353,
         "aa-coding": null,
@@ -285323,7 +285321,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -285360,8 +285358,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.075481,
             "extensionBonus": 0.0,
-            "score": 0.0754810035080652,
-            "points": 0.01509620070161304,
+            "score": 0.07548100350806519,
+            "points": 0.015096200701613039,
             "coreTests": 3,
             "extensionTests": 0,
             "coreItemPoolSize": 3,
@@ -285373,8 +285371,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 17.68668,
             "extensionBonus": 3.616709,
-            "score": 21.303388660831438,
-            "points": 4.260677732166288,
+            "score": 21.303388660831434,
+            "points": 4.260677732166287,
             "coreTests": 4,
             "extensionTests": 1,
             "coreItemPoolSize": 4,
@@ -285621,12 +285619,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 174,
         "evidenceRank": 174,
         "displayScore": 15.5791,
-        "finalScore": 15.579139017356292,
-        "scoreFullPrecision": "15.579139017356292",
+        "finalScore": 15.57913901735629,
+        "scoreFullPrecision": "15.57913901735629",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -285663,8 +285661,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.075481,
             "extensionBonus": 0.0,
-            "score": 0.0754810035080652,
-            "points": 0.01509620070161304,
+            "score": 0.07548100350806519,
+            "points": 0.015096200701613039,
             "coreTests": 3,
             "extensionTests": 0,
             "coreItemPoolSize": 3,
@@ -285676,8 +285674,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 17.68668,
             "extensionBonus": 0.0,
-            "score": 17.686680131032098,
-            "points": 3.5373360262064195,
+            "score": 17.686680131032094,
+            "points": 3.5373360262064186,
             "coreTests": 4,
             "extensionTests": 0,
             "coreItemPoolSize": 4,
@@ -286364,7 +286362,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -287184,7 +287182,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 103.5177,
+      "medianOutputSpeed": 103.2006,
       "aa": {
         "aa-intelligence": 50.1131,
         "aa-coding": null,
@@ -287430,7 +287428,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -287441,8 +287439,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 50.1157,
             "extensionBonus": 13.929407,
-            "score": 64.04510673516086,
-            "points": 12.809021347032171,
+            "score": 64.04510673516084,
+            "points": 12.80902134703217,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -287742,7 +287740,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 105.3729,
+      "medianOutputSpeed": 98.6834,
       "aa": {
         "aa-intelligence": 27.0983,
         "aa-coding": null,
@@ -288434,7 +288432,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -288737,7 +288735,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -290056,7 +290054,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -290093,8 +290091,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.082523,
             "extensionBonus": 23.545928,
-            "score": 23.628451099334402,
-            "points": 4.72569021986688,
+            "score": 23.6284510993344,
+            "points": 4.7256902198668795,
             "coreTests": 3,
             "extensionTests": 1,
             "coreItemPoolSize": 3,
@@ -290359,7 +290357,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -290396,8 +290394,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.082523,
             "extensionBonus": 23.545928,
-            "score": 23.628451099334402,
-            "points": 4.72569021986688,
+            "score": 23.6284510993344,
+            "points": 4.7256902198668795,
             "coreTests": 3,
             "extensionTests": 1,
             "coreItemPoolSize": 3,
@@ -290671,7 +290669,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 113.7886,
+      "medianOutputSpeed": 115.8589,
       "aa": {
         "aa-intelligence": 6.4209,
         "aa-coding": null,
@@ -290916,7 +290914,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -291219,7 +291217,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -291531,7 +291529,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 77.3328,
+      "medianOutputSpeed": 81.1051,
       "aa": {
         "aa-intelligence": 53.1977,
         "aa-coding": null,
@@ -291955,7 +291953,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -292258,7 +292256,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -293081,7 +293079,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 157.6163,
+      "medianOutputSpeed": 154.7995,
       "aa": {
         "aa-intelligence": 26.0528,
         "aa-coding": null,
@@ -293591,7 +293589,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 122.0888,
+      "medianOutputSpeed": 133.3419,
       "aa": {
         "aa-intelligence": 18.0471,
         "aa-coding": null,
@@ -293837,7 +293835,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -294140,7 +294138,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -294452,7 +294450,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 122.0323,
+      "medianOutputSpeed": 130.1338,
       "aa": {
         "aa-intelligence": 32.1291,
         "aa-coding": null,
@@ -294937,7 +294935,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -295249,7 +295247,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 156.7984,
+      "medianOutputSpeed": 157.4386,
       "aa": {
         "aa-intelligence": 50.0587,
         "aa-coding": null,
@@ -295495,7 +295493,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -296318,7 +296316,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 90.0892,
+      "medianOutputSpeed": 90.3488,
       "aa": {
         "aa-intelligence": 9.6138,
         "aa-coding": null,
@@ -296572,7 +296570,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 175.4463,
+      "medianOutputSpeed": 173.4774,
       "aa": {
         "aa-intelligence": 30.8432,
         "aa-coding": null,
@@ -297552,7 +297550,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -298377,7 +298375,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 67.7719,
+      "medianOutputSpeed": 71.3688,
       "aa": {
         "aa-intelligence": 57.3317,
         "aa-coding": null,
@@ -298623,7 +298621,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -299189,7 +299187,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 95.4036,
+      "medianOutputSpeed": 90.7997,
       "aa": {
         "aa-intelligence": 9.4486,
         "aa-coding": null,
@@ -299444,7 +299442,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 54.2879,
+      "medianOutputSpeed": 58.4629,
       "aa": {
         "aa-intelligence": 37.7025,
         "aa-coding": null,
@@ -299930,7 +299928,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -300490,7 +300488,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -300793,7 +300791,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -301359,7 +301357,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 37.6128,
+      "medianOutputSpeed": 37.6743,
       "aa": {
         "aa-intelligence": 43.0245,
         "aa-coding": null,
@@ -301703,7 +301701,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -302006,7 +302004,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -302573,7 +302571,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/sapiens.svg",
         "color": "#1521a9"
       },
-      "medianOutputSpeed": 129.3805,
+      "medianOutputSpeed": 128.1789,
       "aa": {
         "aa-intelligence": 39.7073,
         "aa-coding": null,
@@ -302997,7 +302995,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -303300,7 +303298,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -303612,7 +303610,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 44.8438,
+      "medianOutputSpeed": 44.7838,
       "aa": {
         "aa-intelligence": 57.7043,
         "aa-coding": null,
@@ -303857,7 +303855,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -303868,8 +303866,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 51.6204,
             "extensionBonus": 17.605964,
-            "score": 69.22636420660353,
-            "points": 13.845272841320707,
+            "score": 69.2263642066035,
+            "points": 13.845272841320702,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -304160,7 +304158,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -304171,8 +304169,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 51.6204,
             "extensionBonus": 17.605964,
-            "score": 69.22636420660353,
-            "points": 13.845272841320707,
+            "score": 69.2263642066035,
+            "points": 13.845272841320702,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -304726,7 +304724,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 156.5787,
+      "medianOutputSpeed": 160.533,
       "aa": {
         "aa-intelligence": 19.2365,
         "aa-coding": null,
@@ -305735,7 +305733,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -306038,7 +306036,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -306350,7 +306348,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 104.3243,
+      "medianOutputSpeed": 110.7104,
       "aa": {
         "aa-intelligence": 25.007,
         "aa-coding": null,
@@ -306596,7 +306594,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -306908,7 +306906,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 43.363,
+      "medianOutputSpeed": 47.3107,
       "aa": {
         "aa-intelligence": 37.3918,
         "aa-coding": null,
@@ -307149,12 +307147,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 68,
         "evidenceRank": 68,
         "displayScore": 37.3452,
-        "finalScore": 37.34519090173391,
-        "scoreFullPrecision": "37.345190901733908",
+        "finalScore": 37.3451909017339,
+        "scoreFullPrecision": "37.345190901733901",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -307165,8 +307163,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 44.6759,
             "extensionBonus": 3.806071,
-            "score": 48.481971390471635,
-            "points": 9.696394278094328,
+            "score": 48.48197139047162,
+            "points": 9.696394278094324,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -307452,12 +307450,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 93,
         "evidenceRank": 93,
         "displayScore": 37.3452,
-        "finalScore": 37.34519090173391,
-        "scoreFullPrecision": "37.345190901733908",
+        "finalScore": 37.3451909017339,
+        "scoreFullPrecision": "37.345190901733901",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -307468,8 +307466,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 44.6759,
             "extensionBonus": 3.806071,
-            "score": 48.481971390471635,
-            "points": 9.696394278094328,
+            "score": 48.48197139047162,
+            "points": 9.696394278094324,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -307769,7 +307767,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 40.4721,
+      "medianOutputSpeed": 46.447,
       "aa": {
         "aa-intelligence": 29.9268,
         "aa-coding": null,
@@ -308269,7 +308267,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -308572,7 +308570,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -308884,7 +308882,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 100.3254,
+      "medianOutputSpeed": 101.2644,
       "aa": {
         "aa-intelligence": 14.2167,
         "aa-coding": null,
@@ -309124,12 +309122,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 131,
         "evidenceRank": 131,
         "displayScore": 20.4779,
-        "finalScore": 20.477925806546445,
-        "scoreFullPrecision": "20.477925806546445",
+        "finalScore": 20.47792580654644,
+        "scoreFullPrecision": "20.477925806546441",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -309153,8 +309151,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 28.0,
             "extensionBonus": 23.545928,
-            "score": 51.54592762648221,
-            "points": 10.309185525296444,
+            "score": 51.545927626482204,
+            "points": 10.30918552529644,
             "coreTests": 1,
             "extensionTests": 3,
             "coreItemPoolSize": 1,
@@ -309427,12 +309425,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 161,
         "evidenceRank": 161,
         "displayScore": 20.4779,
-        "finalScore": 20.477925806546445,
-        "scoreFullPrecision": "20.477925806546445",
+        "finalScore": 20.47792580654644,
+        "scoreFullPrecision": "20.477925806546441",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -309456,8 +309454,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 28.0,
             "extensionBonus": 23.545928,
-            "score": 51.54592762648221,
-            "points": 10.309185525296444,
+            "score": 51.545927626482204,
+            "points": 10.30918552529644,
             "coreTests": 1,
             "extensionTests": 3,
             "coreItemPoolSize": 1,
@@ -309744,7 +309742,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 97.6661,
+      "medianOutputSpeed": 95.802,
       "aa": {
         "aa-intelligence": 14.4766,
         "aa-coding": null,
@@ -309990,7 +309988,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -310293,7 +310291,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -310859,7 +310857,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 64.482,
+      "medianOutputSpeed": 64.6122,
       "aa": {
         "aa-intelligence": 36.2616,
         "aa-coding": null,
@@ -311723,7 +311721,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 55.2094,
+      "medianOutputSpeed": 59.137,
       "aa": {
         "aa-intelligence": 23.3764,
         "aa-coding": null,
@@ -312113,7 +312111,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 15,
@@ -312425,7 +312423,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 127.9951,
+      "medianOutputSpeed": 134.9237,
       "aa": {
         "aa-intelligence": 37.9469,
         "aa-coding": null,
@@ -312671,7 +312669,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -312974,7 +312972,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -313795,7 +313793,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 112.176,
+      "medianOutputSpeed": 111.4311,
       "aa": {
         "aa-intelligence": 8.9736,
         "aa-coding": null,
@@ -314041,7 +314039,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -314344,7 +314342,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -314656,7 +314654,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 83.4834,
+      "medianOutputSpeed": 83.7059,
       "aa": {
         "aa-intelligence": 9.2624,
         "aa-coding": null,
@@ -314901,7 +314899,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -315204,7 +315202,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -315761,7 +315759,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -316064,7 +316062,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -316630,7 +316628,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 61.0804,
+      "medianOutputSpeed": 62.2057,
       "aa": {
         "aa-intelligence": 57.3304,
         "aa-coding": null,
@@ -317224,12 +317222,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 7,
         "evidenceRank": 7,
         "displayScore": 61.9596,
-        "finalScore": 61.95964099854695,
-        "scoreFullPrecision": "61.959640998546952",
+        "finalScore": 61.959640998546945,
+        "scoreFullPrecision": "61.959640998546945",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 19,
@@ -317253,8 +317251,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 73.0,
             "extensionBonus": 23.545928,
-            "score": 96.54592762648221,
-            "points": 19.309185525296442,
+            "score": 96.5459276264822,
+            "points": 19.30918552529644,
             "coreTests": 1,
             "extensionTests": 6,
             "coreItemPoolSize": 1,
@@ -317527,12 +317525,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 14,
         "evidenceRank": 14,
         "displayScore": 61.9596,
-        "finalScore": 61.95962055458198,
-        "scoreFullPrecision": "61.959620554581981",
+        "finalScore": 61.959620554581974,
+        "scoreFullPrecision": "61.959620554581974",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -317556,8 +317554,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 73.0,
             "extensionBonus": 23.545928,
-            "score": 96.54592762648221,
-            "points": 19.309185525296442,
+            "score": 96.5459276264822,
+            "points": 19.30918552529644,
             "coreTests": 1,
             "extensionTests": 3,
             "coreItemPoolSize": 1,
@@ -317844,7 +317842,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 74.9512,
+      "medianOutputSpeed": 76.9166,
       "aa": {
         "aa-intelligence": null,
         "aa-coding": null,
@@ -318202,7 +318200,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 101.0177,
+      "medianOutputSpeed": 105.632,
       "aa": {
         "aa-intelligence": 34.6189,
         "aa-coding": null,
@@ -318448,7 +318446,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -318459,8 +318457,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 44.5602,
             "extensionBonus": 4.387554,
-            "score": 48.94775367302236,
-            "points": 9.789550734604472,
+            "score": 48.94775367302235,
+            "points": 9.78955073460447,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -319684,7 +319682,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 38.2138,
+      "medianOutputSpeed": 36.5608,
       "aa": {
         "aa-intelligence": 8.2903,
         "aa-coding": null,
@@ -319929,7 +319927,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -320232,7 +320230,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -320798,7 +320796,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 103.9514,
+      "medianOutputSpeed": 106.9102,
       "aa": {
         "aa-intelligence": 52.7732,
         "aa-coding": null,
@@ -321044,7 +321042,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -321055,8 +321053,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 51.6204,
             "extensionBonus": 15.733264,
-            "score": 67.35366420660353,
-            "points": 13.470732841320705,
+            "score": 67.3536642066035,
+            "points": 13.4707328413207,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -321855,7 +321853,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -321866,8 +321864,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 16.4352,
             "extensionBonus": 2.24315,
-            "score": 18.678350446914006,
-            "points": 3.7356700893828014,
+            "score": 18.67835044691401,
+            "points": 3.735670089382802,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -322158,7 +322156,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -322169,8 +322167,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 16.4352,
             "extensionBonus": 2.24315,
-            "score": 18.678350446914006,
-            "points": 3.7356700893828014,
+            "score": 18.67835044691401,
+            "points": 3.735670089382802,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -322470,7 +322468,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 90.2704,
+      "medianOutputSpeed": 86.2684,
       "aa": {
         "aa-intelligence": 14.8207,
         "aa-coding": null,
@@ -322716,7 +322714,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -323019,7 +323017,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -323576,7 +323574,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -323879,7 +323877,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -324699,7 +324697,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 95.5928,
+      "medianOutputSpeed": 104.5893,
       "aa": {
         "aa-intelligence": 14.4117,
         "aa-coding": null,
@@ -324940,12 +324938,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 162,
         "evidenceRank": 162,
         "displayScore": 20.1979,
-        "finalScore": 20.19787402925675,
-        "scoreFullPrecision": "20.197874029256749",
+        "finalScore": 20.197874029256745,
+        "scoreFullPrecision": "20.197874029256745",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -324969,8 +324967,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 30.6667,
             "extensionBonus": 23.545928,
-            "score": 54.2126276264822,
-            "points": 10.842525525296441,
+            "score": 54.212627626482195,
+            "points": 10.84252552529644,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -326005,12 +326003,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 36,
         "evidenceRank": 36,
         "displayScore": 48.0639,
-        "finalScore": 48.063907870426306,
-        "scoreFullPrecision": "48.063907870426306",
+        "finalScore": 48.06390787042629,
+        "scoreFullPrecision": "48.063907870426291",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 13,
@@ -326060,8 +326058,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 42.512806,
             "extensionBonus": 0.0,
-            "score": 42.51280553023255,
-            "points": 8.50256110604651,
+            "score": 42.51280553023254,
+            "points": 8.502561106046507,
             "coreTests": 4,
             "extensionTests": 0,
             "coreItemPoolSize": 4,
@@ -326308,12 +326306,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 56,
         "evidenceRank": 56,
         "displayScore": 48.0639,
-        "finalScore": 48.063907870426306,
-        "scoreFullPrecision": "48.063907870426306",
+        "finalScore": 48.06390787042629,
+        "scoreFullPrecision": "48.063907870426291",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 13,
@@ -326363,8 +326361,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "knowledge-science": {
             "coreScore": 42.512806,
             "extensionBonus": 0.0,
-            "score": 42.51280553023255,
-            "points": 8.50256110604651,
+            "score": 42.51280553023254,
+            "points": 8.502561106046507,
             "coreTests": 4,
             "extensionTests": 0,
             "coreItemPoolSize": 4,
@@ -327389,7 +327387,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 44.7165,
+      "medianOutputSpeed": 43.418,
       "aa": {
         "aa-intelligence": 36.0227,
         "aa-coding": null,
@@ -327790,7 +327788,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -328102,7 +328100,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 94.7353,
+      "medianOutputSpeed": 100.4286,
       "aa": {
         "aa-intelligence": 29.8919,
         "aa-coding": null,
@@ -328348,7 +328346,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -328385,8 +328383,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.088674,
             "extensionBonus": 23.545928,
-            "score": 23.634601272207068,
-            "points": 4.7269202544414135,
+            "score": 23.634601272207064,
+            "points": 4.726920254441413,
             "coreTests": 3,
             "extensionTests": 1,
             "coreItemPoolSize": 3,
@@ -328651,7 +328649,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -328688,8 +328686,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.088674,
             "extensionBonus": 23.545928,
-            "score": 23.634601272207068,
-            "points": 4.7269202544414135,
+            "score": 23.634601272207064,
+            "points": 4.726920254441413,
             "coreTests": 3,
             "extensionTests": 1,
             "coreItemPoolSize": 3,
@@ -329464,7 +329462,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -330277,7 +330275,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -330580,7 +330578,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -331138,7 +331136,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -331162,8 +331160,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 1e-06,
             "extensionBonus": 0.851899,
-            "score": 0.8519002091854937,
-            "points": 0.17038004183709873,
+            "score": 0.8519002091854938,
+            "points": 0.17038004183709876,
             "coreTests": 1,
             "extensionTests": 3,
             "coreItemPoolSize": 1,
@@ -331441,7 +331439,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -331465,8 +331463,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 1e-06,
             "extensionBonus": 0.851899,
-            "score": 0.8519002091854937,
-            "points": 0.17038004183709873,
+            "score": 0.8519002091854938,
+            "points": 0.17038004183709876,
             "coreTests": 1,
             "extensionTests": 3,
             "coreItemPoolSize": 1,
@@ -331753,7 +331751,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 56.6904,
+      "medianOutputSpeed": 56.1999,
       "aa": {
         "aa-intelligence": 20.9085,
         "aa-coding": null,
@@ -332267,7 +332265,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 56.3539,
+      "medianOutputSpeed": 55.3594,
       "aa": {
         "aa-intelligence": 39.3746,
         "aa-coding": null,
@@ -332983,7 +332981,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 24,
@@ -332994,7 +332992,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 45.4861,
             "extensionBonus": 7.627585,
-            "score": 53.113685218951574,
+            "score": 53.11368521895157,
             "points": 10.622737043790314,
             "coreTests": 1,
             "extensionTests": 3,
@@ -333286,7 +333284,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 24,
@@ -333297,7 +333295,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 45.4861,
             "extensionBonus": 7.627585,
-            "score": 53.113685218951574,
+            "score": 53.11368521895157,
             "points": 10.622737043790314,
             "coreTests": 1,
             "extensionTests": 3,
@@ -333598,7 +333596,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 136.7569,
+      "medianOutputSpeed": 136.4074,
       "aa": {
         "aa-intelligence": 53.1231,
         "aa-coding": null,
@@ -334005,7 +334003,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 20,
@@ -334308,7 +334306,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -335129,7 +335127,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/reka_small.svg",
         "color": "#172136"
       },
-      "medianOutputSpeed": 55.1788,
+      "medianOutputSpeed": 55.7597,
       "aa": {
         "aa-intelligence": 6.0285,
         "aa-coding": null,
@@ -335386,7 +335384,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 140.4994,
+      "medianOutputSpeed": 137.6276,
       "aa": {
         "aa-intelligence": 46.9604,
         "aa-coding": null,
@@ -335632,7 +335630,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -336198,7 +336196,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 150.2256,
+      "medianOutputSpeed": 148.5226,
       "aa": {
         "aa-intelligence": 4.2459,
         "aa-coding": null,
@@ -338711,7 +338709,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -338722,8 +338720,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 17.0139,
             "extensionBonus": 1.208381,
-            "score": 18.222281415694408,
-            "points": 3.6444562831388816,
+            "score": 18.222281415694415,
+            "points": 3.644456283138883,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -339014,7 +339012,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -339025,8 +339023,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 17.0139,
             "extensionBonus": 1.208381,
-            "score": 18.222281415694408,
-            "points": 3.6444562831388816,
+            "score": 18.222281415694415,
+            "points": 3.644456283138883,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -339326,7 +339324,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 174.9832,
+      "medianOutputSpeed": 184.0666,
       "aa": {
         "aa-intelligence": 16.7664,
         "aa-coding": null,
@@ -340344,7 +340342,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 100.4184,
+      "medianOutputSpeed": 100.2417,
       "aa": {
         "aa-intelligence": 11.4453,
         "aa-coding": null,
@@ -340670,7 +340668,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -340973,7 +340971,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -342020,7 +342018,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 20,
@@ -342323,7 +342321,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 20,
@@ -342875,12 +342873,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 34,
         "evidenceRank": 34,
         "displayScore": 49.4633,
-        "finalScore": 49.46333547168307,
-        "scoreFullPrecision": "49.463335471683067",
+        "finalScore": 49.46333547168305,
+        "scoreFullPrecision": "49.463335471683052",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -342891,8 +342889,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 40.625,
             "extensionBonus": 23.545928,
-            "score": 64.17092762648221,
-            "points": 12.834185525296443,
+            "score": 64.1709276264822,
+            "points": 12.834185525296439,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -342917,8 +342915,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 27.267881,
             "extensionBonus": 0.0,
-            "score": 27.26788098543343,
-            "points": 5.4535761970866865,
+            "score": 27.267880985433422,
+            "points": 5.453576197086684,
             "coreTests": 3,
             "extensionTests": 0,
             "coreItemPoolSize": 3,
@@ -343178,12 +343176,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 51,
         "evidenceRank": 51,
         "displayScore": 49.4633,
-        "finalScore": 49.46333547168307,
-        "scoreFullPrecision": "49.463335471683067",
+        "finalScore": 49.46333547168305,
+        "scoreFullPrecision": "49.463335471683052",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -343194,8 +343192,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 40.625,
             "extensionBonus": 23.545928,
-            "score": 64.17092762648221,
-            "points": 12.834185525296443,
+            "score": 64.1709276264822,
+            "points": 12.834185525296439,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -343220,8 +343218,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 27.267881,
             "extensionBonus": 0.0,
-            "score": 27.26788098543343,
-            "points": 5.4535761970866865,
+            "score": 27.267880985433422,
+            "points": 5.453576197086684,
             "coreTests": 3,
             "extensionTests": 0,
             "coreItemPoolSize": 3,
@@ -344101,7 +344099,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -344404,7 +344402,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -344716,7 +344714,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 74.6325,
+      "medianOutputSpeed": 77.1452,
       "aa": {
         "aa-intelligence": 54.6668,
         "aa-coding": null,
@@ -345456,7 +345454,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -346022,7 +346020,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 380.7486,
+      "medianOutputSpeed": 389.5042,
       "aa": {
         "aa-intelligence": 56.0301,
         "aa-coding": null,
@@ -346265,12 +346263,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 9,
         "evidenceRank": 9,
         "displayScore": 60.8449,
-        "finalScore": 60.844884361830346,
-        "scoreFullPrecision": "60.844884361830346",
+        "finalScore": 60.84488436183034,
+        "scoreFullPrecision": "60.844884361830339",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -346281,8 +346279,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 56.8287,
             "extensionBonus": 12.038343,
-            "score": 68.86704292562717,
-            "points": 13.773408585125434,
+            "score": 68.86704292562715,
+            "points": 13.77340858512543,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -346568,12 +346566,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 17,
         "evidenceRank": 17,
         "displayScore": 60.8449,
-        "finalScore": 60.844884361830346,
-        "scoreFullPrecision": "60.844884361830346",
+        "finalScore": 60.84488436183034,
+        "scoreFullPrecision": "60.844884361830339",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -346584,8 +346582,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 56.8287,
             "extensionBonus": 12.038343,
-            "score": 68.86704292562717,
-            "points": 13.773408585125434,
+            "score": 68.86704292562715,
+            "points": 13.77340858512543,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -346885,7 +346883,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/tencent_small.svg",
         "color": "#5CB9FF"
       },
-      "medianOutputSpeed": 71.6006,
+      "medianOutputSpeed": 73.0164,
       "aa": {
         "aa-intelligence": 42.2135,
         "aa-coding": null,
@@ -347355,7 +347353,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 18,
@@ -347658,7 +347656,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -348224,7 +348222,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 38.9855,
+      "medianOutputSpeed": 38.6887,
       "aa": {
         "aa-intelligence": 4.7616,
         "aa-coding": null,
@@ -351328,7 +351326,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/arcee_small.svg",
         "color": "#008c8d"
       },
-      "medianOutputSpeed": 198.9411,
+      "medianOutputSpeed": 206.4595,
       "aa": {
         "aa-intelligence": 18.658,
         "aa-coding": null,
@@ -351573,7 +351571,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -351584,8 +351582,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 36.1111,
             "extensionBonus": 0.0,
-            "score": 36.1111,
-            "points": 7.22222,
+            "score": 36.11109999999999,
+            "points": 7.222219999999998,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -351876,7 +351874,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -351887,8 +351885,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 36.1111,
             "extensionBonus": 0.0,
-            "score": 36.1111,
-            "points": 7.22222,
+            "score": 36.11109999999999,
+            "points": 7.222219999999998,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -352682,12 +352680,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 129,
         "evidenceRank": 129,
         "displayScore": 20.6878,
-        "finalScore": 20.68775186316383,
-        "scoreFullPrecision": "20.687751863163829",
+        "finalScore": 20.687751863163825,
+        "scoreFullPrecision": "20.687751863163825",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -352711,8 +352709,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 31.0,
             "extensionBonus": 23.545928,
-            "score": 54.545927626482204,
-            "points": 10.909185525296442,
+            "score": 54.5459276264822,
+            "points": 10.909185525296438,
             "coreTests": 1,
             "extensionTests": 3,
             "coreItemPoolSize": 1,
@@ -352985,12 +352983,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 159,
         "evidenceRank": 159,
         "displayScore": 20.6878,
-        "finalScore": 20.68775186316383,
-        "scoreFullPrecision": "20.687751863163829",
+        "finalScore": 20.687751863163825,
+        "scoreFullPrecision": "20.687751863163825",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -353014,8 +353012,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 31.0,
             "extensionBonus": 23.545928,
-            "score": 54.545927626482204,
-            "points": 10.909185525296442,
+            "score": 54.5459276264822,
+            "points": 10.909185525296438,
             "coreTests": 1,
             "extensionTests": 3,
             "coreItemPoolSize": 1,
@@ -353302,7 +353300,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 57.6133,
+      "medianOutputSpeed": 61.795,
       "aa": {
         "aa-intelligence": 63.0532,
         "aa-coding": null,
@@ -353661,7 +353659,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 18,
@@ -353964,7 +353962,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 18,
@@ -354276,7 +354274,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 99.8468,
+      "medianOutputSpeed": 97.3028,
       "aa": {
         "aa-intelligence": 9.5002,
         "aa-coding": null,
@@ -354836,7 +354834,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 69.1883,
+      "medianOutputSpeed": 73.6784,
       "aa": {
         "aa-intelligence": null,
         "aa-coding": null,
@@ -355194,7 +355192,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 45.4371,
+      "medianOutputSpeed": 43.5177,
       "aa": {
         "aa-intelligence": 30.0518,
         "aa-coding": null,
@@ -355586,7 +355584,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 17,
@@ -355623,8 +355621,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 8.402477,
             "extensionBonus": 0.0,
-            "score": 8.40247654164557,
-            "points": 1.6804953083291139,
+            "score": 8.402476541645568,
+            "points": 1.6804953083291136,
             "coreTests": 3,
             "extensionTests": 0,
             "coreItemPoolSize": 3,
@@ -355898,7 +355896,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 174.5154,
+      "medianOutputSpeed": 183.3406,
       "aa": {
         "aa-intelligence": 40.9386,
         "aa-coding": null,
@@ -356144,7 +356142,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -356447,7 +356445,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -356759,7 +356757,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 123.2452,
+      "medianOutputSpeed": 130.1072,
       "aa": {
         "aa-intelligence": 47.7383,
         "aa-coding": null,
@@ -357568,7 +357566,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 21,
@@ -357871,7 +357869,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -358183,7 +358181,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 60.972,
+      "medianOutputSpeed": 62.5719,
       "aa": {
         "aa-intelligence": 13.4507,
         "aa-coding": null,
@@ -358518,7 +358516,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 88.5896,
+      "medianOutputSpeed": 86.9936,
       "aa": {
         "aa-intelligence": 14.3025,
         "aa-coding": null,
@@ -359285,7 +359283,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 111.0427,
+      "medianOutputSpeed": 111.8376,
       "aa": {
         "aa-intelligence": 56.5756,
         "aa-coding": null,
@@ -360124,7 +360122,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 19,
@@ -360427,7 +360425,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 19,
@@ -360995,7 +360993,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 113.9337,
+      "medianOutputSpeed": 116.1034,
       "aa": {
         "aa-intelligence": 33.487,
         "aa-coding": null,
@@ -361385,7 +361383,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 16,
@@ -361951,7 +361949,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 76.0985,
+      "medianOutputSpeed": 78.7652,
       "aa": {
         "aa-intelligence": 45.2683,
         "aa-coding": null,
@@ -362565,7 +362563,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 22,
@@ -362576,7 +362574,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 50.0,
             "extensionBonus": 4.892639,
-            "score": 54.89263927145501,
+            "score": 54.892639271455,
             "points": 10.978527854291,
             "coreTests": 1,
             "extensionTests": 3,
@@ -362602,8 +362600,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 34.992661,
             "extensionBonus": 0.0,
-            "score": 34.99266110118799,
-            "points": 6.998532220237598,
+            "score": 34.992661101187984,
+            "points": 6.998532220237597,
             "coreTests": 3,
             "extensionTests": 0,
             "coreItemPoolSize": 3,
@@ -362863,12 +362861,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 45,
         "evidenceRank": 45,
         "displayScore": 50.976,
-        "finalScore": 50.97595006771358,
-        "scoreFullPrecision": "50.975950067713583",
+        "finalScore": 50.975950067713576,
+        "scoreFullPrecision": "50.975950067713576",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -362879,8 +362877,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 50.0,
             "extensionBonus": 2.525789,
-            "score": 52.52578901771158,
-            "points": 10.505157803542316,
+            "score": 52.52578901771157,
+            "points": 10.505157803542312,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -362905,8 +362903,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 34.992661,
             "extensionBonus": 0.0,
-            "score": 34.99266110118799,
-            "points": 6.998532220237598,
+            "score": 34.992661101187984,
+            "points": 6.998532220237597,
             "coreTests": 3,
             "extensionTests": 0,
             "coreItemPoolSize": 3,
@@ -363180,7 +363178,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 103.5678,
+      "medianOutputSpeed": 102.9259,
       "aa": {
         "aa-intelligence": 8.4634,
         "aa-coding": null,
@@ -364020,7 +364018,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -364323,7 +364321,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -364635,7 +364633,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 164.6955,
+      "medianOutputSpeed": 172.3725,
       "aa": {
         "aa-intelligence": 17.7946,
         "aa-coding": null,
@@ -364890,7 +364888,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 92.4862,
+      "medianOutputSpeed": 96.262,
       "aa": {
         "aa-intelligence": 24.1417,
         "aa-coding": null,
@@ -365145,7 +365143,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 88.8377,
+      "medianOutputSpeed": 87.5237,
       "aa": {
         "aa-intelligence": 31.6293,
         "aa-coding": null,
@@ -365400,7 +365398,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 64.2882,
+      "medianOutputSpeed": 65.0598,
       "aa": {
         "aa-intelligence": 17.3432,
         "aa-coding": null,
@@ -365902,7 +365900,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -366205,7 +366203,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -366517,7 +366515,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 146.3594,
+      "medianOutputSpeed": 151.3507,
       "aa": {
         "aa-intelligence": 29.2328,
         "aa-coding": null,
@@ -366763,7 +366761,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -367066,7 +367064,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -368143,7 +368141,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 116.7878,
+      "medianOutputSpeed": 117.5513,
       "aa": {
         "aa-intelligence": 37.9549,
         "aa-coding": null,
@@ -369903,7 +369901,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -369914,8 +369912,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 51.6204,
             "extensionBonus": 1.126564,
-            "score": 52.74696420660353,
-            "points": 10.549392841320705,
+            "score": 52.7469642066035,
+            "points": 10.549392841320701,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -370215,7 +370213,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/stepfun_small.svg",
         "color": "#017AFF"
       },
-      "medianOutputSpeed": 217.4389,
+      "medianOutputSpeed": 213.7745,
       "aa": {
         "aa-intelligence": 25.9983,
         "aa-coding": null,
@@ -370469,7 +370467,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 96.8759,
+      "medianOutputSpeed": 99.5365,
       "aa": {
         "aa-intelligence": 15.6178,
         "aa-coding": null,
@@ -370811,7 +370809,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 12,
@@ -371377,7 +371375,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 204.9549,
+      "medianOutputSpeed": 206.7713,
       "aa": {
         "aa-intelligence": 16.8672,
         "aa-coding": null,
@@ -371622,7 +371620,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -371659,7 +371657,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.098395,
             "extensionBonus": 23.545928,
-            "score": 23.644322834435513,
+            "score": 23.64432283443551,
             "points": 4.728864566887102,
             "coreTests": 3,
             "extensionTests": 1,
@@ -371925,7 +371923,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -371962,7 +371960,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.098395,
             "extensionBonus": 23.545928,
-            "score": 23.644322834435513,
+            "score": 23.64432283443551,
             "points": 4.728864566887102,
             "coreTests": 3,
             "extensionTests": 1,
@@ -372237,7 +372235,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 65.5619,
+      "medianOutputSpeed": 66.0765,
       "aa": {
         "aa-intelligence": 60.923,
         "aa-coding": null,
@@ -372483,7 +372481,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -372507,8 +372505,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 75.0,
             "extensionBonus": 23.545928,
-            "score": 98.54592762648221,
-            "points": 19.709185525296444,
+            "score": 98.5459276264822,
+            "points": 19.709185525296437,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -372786,7 +372784,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -372810,8 +372808,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 75.0,
             "extensionBonus": 23.545928,
-            "score": 98.54592762648221,
-            "points": 19.709185525296444,
+            "score": 98.5459276264822,
+            "points": 19.709185525296437,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -373098,7 +373096,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 155.5209,
+      "medianOutputSpeed": 164.5979,
       "aa": {
         "aa-intelligence": 14.9256,
         "aa-coding": null,
@@ -373343,7 +373341,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -373380,8 +373378,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.073392,
             "extensionBonus": 23.545928,
-            "score": 23.619319289521105,
-            "points": 4.723863857904221,
+            "score": 23.6193192895211,
+            "points": 4.72386385790422,
             "coreTests": 3,
             "extensionTests": 1,
             "coreItemPoolSize": 3,
@@ -374672,7 +374670,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 97.6524,
+      "medianOutputSpeed": 100.6832,
       "aa": {
         "aa-intelligence": 41.2961,
         "aa-coding": null,
@@ -374918,7 +374916,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -375485,7 +375483,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 35.2665,
+      "medianOutputSpeed": 34.762,
       "aa": {
         "aa-intelligence": 29.695,
         "aa-coding": null,
@@ -375852,7 +375850,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 18,
@@ -376155,7 +376153,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -376467,7 +376465,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 74.0791,
+      "medianOutputSpeed": 74.7333,
       "aa": {
         "aa-intelligence": 62.0727,
         "aa-coding": null,
@@ -376983,7 +376981,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 19,
@@ -377286,7 +377284,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 19,
@@ -378124,7 +378122,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -378427,7 +378425,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -378739,7 +378737,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 109.6897,
+      "medianOutputSpeed": 107.4242,
       "aa": {
         "aa-intelligence": 13.3514,
         "aa-coding": null,
@@ -378994,7 +378992,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 131.8731,
+      "medianOutputSpeed": 135.2854,
       "aa": {
         "aa-intelligence": 17.7168,
         "aa-coding": null,
@@ -379240,7 +379238,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -379543,7 +379541,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -380618,7 +380616,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 75.457,
+      "medianOutputSpeed": 71.1978,
       "aa": {
         "aa-intelligence": 22.2511,
         "aa-coding": null,
@@ -380978,7 +380976,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -381290,7 +381288,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 89.4711,
+      "medianOutputSpeed": 95.0845,
       "aa": {
         "aa-intelligence": 20.6963,
         "aa-coding": null,
@@ -382310,7 +382308,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 64.6499,
+      "medianOutputSpeed": 68.3086,
       "aa": {
         "aa-intelligence": 16.9032,
         "aa-coding": null,
@@ -382819,7 +382817,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 88.8565,
+      "medianOutputSpeed": 88.4017,
       "aa": {
         "aa-intelligence": 18.1296,
         "aa-coding": null,
@@ -383573,7 +383571,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -383876,7 +383874,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -384188,7 +384186,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 152.7628,
+      "medianOutputSpeed": 154.5595,
       "aa": {
         "aa-intelligence": 39.7139,
         "aa-coding": null,
@@ -384434,7 +384432,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -384445,8 +384443,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 46.875,
             "extensionBonus": 4.742878,
-            "score": 51.61787754814399,
-            "points": 10.323575509628798,
+            "score": 51.61787754814397,
+            "points": 10.323575509628794,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -384737,7 +384735,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -384748,8 +384746,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 46.875,
             "extensionBonus": 4.742878,
-            "score": 51.61787754814399,
-            "points": 10.323575509628798,
+            "score": 51.61787754814397,
+            "points": 10.323575509628794,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -385049,7 +385047,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 62.6235,
+      "medianOutputSpeed": 73.6913,
       "aa": {
         "aa-intelligence": 42.5708,
         "aa-coding": null,
@@ -385398,7 +385396,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -385409,8 +385407,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 48.6111,
             "extensionBonus": 16.24527,
-            "score": 64.8563704544852,
-            "points": 12.97127409089704,
+            "score": 64.85637045448519,
+            "points": 12.971274090897037,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -385422,8 +385420,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 66.0,
             "extensionBonus": 23.545928,
-            "score": 89.54592762648221,
-            "points": 17.909185525296444,
+            "score": 89.5459276264822,
+            "points": 17.90918552529644,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -385710,7 +385708,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 46.4916,
+      "medianOutputSpeed": 47.144,
       "aa": {
         "aa-intelligence": 14.3662,
         "aa-coding": null,
@@ -385965,7 +385963,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 225.4022,
+      "medianOutputSpeed": 279.2014,
       "aa": {
         "aa-intelligence": 53.199,
         "aa-coding": null,
@@ -386213,7 +386211,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -386276,8 +386274,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 35.094473,
             "extensionBonus": 0.0,
-            "score": 35.0944729062854,
-            "points": 7.018894581257079,
+            "score": 35.09447290628539,
+            "points": 7.0188945812570775,
             "coreTests": 2,
             "extensionTests": 0,
             "coreItemPoolSize": 2,
@@ -386516,7 +386514,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -386579,8 +386577,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 35.094473,
             "extensionBonus": 0.0,
-            "score": 35.0944729062854,
-            "points": 7.018894581257079,
+            "score": 35.09447290628539,
+            "points": 7.0188945812570775,
             "coreTests": 2,
             "extensionTests": 0,
             "coreItemPoolSize": 2,
@@ -387073,7 +387071,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -387376,7 +387374,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -387942,7 +387940,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 58.0173,
+      "medianOutputSpeed": 56.5072,
       "aa": {
         "aa-intelligence": 12.1813,
         "aa-coding": null,
@@ -388310,7 +388308,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -388613,7 +388611,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -389395,7 +389393,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 21,
@@ -389406,8 +389404,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 44.9074,
             "extensionBonus": 9.434395,
-            "score": 54.34179484935065,
-            "points": 10.86835896987013,
+            "score": 54.34179484935064,
+            "points": 10.868358969870128,
             "coreTests": 1,
             "extensionTests": 3,
             "coreItemPoolSize": 1,
@@ -389698,7 +389696,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -389709,8 +389707,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 44.9074,
             "extensionBonus": 9.384728,
-            "score": 54.292128016137205,
-            "points": 10.85842560322744,
+            "score": 54.29212801613719,
+            "points": 10.858425603227438,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -390265,7 +390263,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 69.602,
+      "medianOutputSpeed": 70.8837,
       "aa": {
         "aa-intelligence": 60.9299,
         "aa-coding": null,
@@ -391104,7 +391102,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 18,
@@ -391115,8 +391113,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 56.1343,
             "extensionBonus": 15.527195,
-            "score": 71.66149545640481,
-            "points": 14.33229909128096,
+            "score": 71.66149545640478,
+            "points": 14.332299091280957,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -391167,8 +391165,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 50.075181,
             "extensionBonus": 0.0,
-            "score": 50.075181239711966,
-            "points": 10.015036247942394,
+            "score": 50.07518123971195,
+            "points": 10.01503624794239,
             "coreTests": 2,
             "extensionTests": 0,
             "coreItemPoolSize": 2,
@@ -391407,7 +391405,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 18,
@@ -391418,8 +391416,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 56.1343,
             "extensionBonus": 15.527195,
-            "score": 71.66149545640481,
-            "points": 14.33229909128096,
+            "score": 71.66149545640478,
+            "points": 14.332299091280957,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -391470,8 +391468,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 50.075181,
             "extensionBonus": 0.0,
-            "score": 50.075181239711966,
-            "points": 10.015036247942394,
+            "score": 50.07518123971195,
+            "points": 10.01503624794239,
             "coreTests": 2,
             "extensionTests": 0,
             "coreItemPoolSize": 2,
@@ -391973,7 +391971,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 70.7233,
+      "medianOutputSpeed": 72.1455,
       "aa": {
         "aa-intelligence": 59.009,
         "aa-coding": null,
@@ -392219,7 +392217,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -392531,7 +392529,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 90.4628,
+      "medianOutputSpeed": 91.8336,
       "aa": {
         "aa-intelligence": 13.6322,
         "aa-coding": null,
@@ -393547,7 +393545,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 138.9179,
+      "medianOutputSpeed": 142.8732,
       "aa": {
         "aa-intelligence": 26.8449,
         "aa-coding": null,
@@ -393788,12 +393786,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 142,
         "evidenceRank": 142,
         "displayScore": 25.8643,
-        "finalScore": 25.864328506495934,
-        "scoreFullPrecision": "25.864328506495934",
+        "finalScore": 25.86432850649593,
+        "scoreFullPrecision": "25.86432850649593",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -393817,8 +393815,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "agentic-tool-work": {
             "coreScore": 38.6667,
             "extensionBonus": 15.009911,
-            "score": 53.67661063954258,
-            "points": 10.735322127908516,
+            "score": 53.676610639542574,
+            "points": 10.735322127908514,
             "coreTests": 1,
             "extensionTests": 2,
             "coreItemPoolSize": 1,
@@ -394105,7 +394103,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 134.6191,
+      "medianOutputSpeed": 144.5363,
       "aa": {
         "aa-intelligence": 30.3922,
         "aa-coding": null,
@@ -394351,7 +394349,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -394362,8 +394360,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 39.5833,
             "extensionBonus": 7.66871,
-            "score": 47.252010388897254,
-            "points": 9.45040207777945,
+            "score": 47.25201038889724,
+            "points": 9.450402077779449,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -394654,7 +394652,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -394665,8 +394663,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 39.5833,
             "extensionBonus": 7.66871,
-            "score": 47.252010388897254,
-            "points": 9.45040207777945,
+            "score": 47.25201038889724,
+            "points": 9.450402077779449,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -395474,7 +395472,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 321.3735,
+      "medianOutputSpeed": 351.9097,
       "aa": {
         "aa-intelligence": 50.9423,
         "aa-coding": null,
@@ -395722,7 +395720,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -396289,7 +396287,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 110.577,
+      "medianOutputSpeed": 108.8657,
       "aa": {
         "aa-intelligence": 10.4861,
         "aa-coding": null,
@@ -397052,7 +397050,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 54.2013,
+      "medianOutputSpeed": 63.2758,
       "aa": {
         "aa-intelligence": 48.3663,
         "aa-coding": null,
@@ -397293,12 +397291,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 39,
         "evidenceRank": 39,
         "displayScore": 46.7139,
-        "finalScore": 46.713858298001135,
-        "scoreFullPrecision": "46.713858298001135",
+        "finalScore": 46.71385829800113,
+        "scoreFullPrecision": "46.713858298001128",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -397309,8 +397307,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 46.7593,
             "extensionBonus": 15.43656,
-            "score": 62.195859830694715,
-            "points": 12.439171966138943,
+            "score": 62.1958598306947,
+            "points": 12.43917196613894,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -397596,12 +397594,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 59,
         "evidenceRank": 59,
         "displayScore": 46.7139,
-        "finalScore": 46.713858298001135,
-        "scoreFullPrecision": "46.713858298001135",
+        "finalScore": 46.71385829800113,
+        "scoreFullPrecision": "46.713858298001128",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -397612,8 +397610,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 46.7593,
             "extensionBonus": 15.43656,
-            "score": 62.195859830694715,
-            "points": 12.439171966138943,
+            "score": 62.1958598306947,
+            "points": 12.43917196613894,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -398936,7 +398934,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 164.0091,
+      "medianOutputSpeed": 162.6039,
       "aa": {
         "aa-intelligence": 20.14,
         "aa-coding": null,
@@ -399191,7 +399189,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 85.2357,
+      "medianOutputSpeed": 97.1834,
       "aa": {
         "aa-intelligence": 12.4013,
         "aa-coding": null,
@@ -399445,7 +399443,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/liquidai_small.svg",
         "color": "#000000"
       },
-      "medianOutputSpeed": 340.1041,
+      "medianOutputSpeed": 339.6296,
       "aa": {
         "aa-intelligence": 8.1367,
         "aa-coding": null,
@@ -400520,7 +400518,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -400823,7 +400821,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -402066,7 +402064,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 31.9578,
+      "medianOutputSpeed": 31.4949,
       "aa": {
         "aa-intelligence": 12.7181,
         "aa-coding": null,
@@ -402320,7 +402318,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 139.3301,
+      "medianOutputSpeed": 150.854,
       "aa": {
         "aa-intelligence": 6.6929,
         "aa-coding": null,
@@ -402574,7 +402572,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 128.389,
+      "medianOutputSpeed": 128.3683,
       "aa": {
         "aa-intelligence": 34.8147,
         "aa-coding": null,
@@ -403126,7 +403124,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -403137,7 +403135,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 36.1111,
             "extensionBonus": 15.000925,
-            "score": 51.11202457621482,
+            "score": 51.11202457621483,
             "points": 10.222404915242965,
             "coreTests": 1,
             "extensionTests": 1,
@@ -403947,7 +403945,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 91.3018,
+      "medianOutputSpeed": 93.665,
       "aa": {
         "aa-intelligence": 8.4314,
         "aa-coding": null,
@@ -404202,7 +404200,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 51.0441,
+      "medianOutputSpeed": 54.2596,
       "aa": {
         "aa-intelligence": 54.9641,
         "aa-coding": null,
@@ -404721,7 +404719,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 22,
@@ -404784,8 +404782,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 30.066586,
             "extensionBonus": 0.674227,
-            "score": 30.740812641480908,
-            "points": 6.148162528296182,
+            "score": 30.740812641480904,
+            "points": 6.14816252829618,
             "coreTests": 2,
             "extensionTests": 1,
             "coreItemPoolSize": 2,
@@ -405024,7 +405022,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -405087,7 +405085,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "instruction-context": {
             "coreScore": 30.066586,
             "extensionBonus": 0.0,
-            "score": 30.066586104844028,
+            "score": 30.066586104844024,
             "points": 6.013317220968805,
             "coreTests": 2,
             "extensionTests": 0,
@@ -405845,7 +405843,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 333.237,
+      "medianOutputSpeed": 342.4315,
       "aa": {
         "aa-intelligence": 53.4167,
         "aa-coding": null,
@@ -406088,12 +406086,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 39,
         "evidenceRank": 39,
         "displayScore": 54.384,
-        "finalScore": 54.38400140204,
-        "scoreFullPrecision": "54.384001402039999",
+        "finalScore": 54.384001402039985,
+        "scoreFullPrecision": "54.384001402039985",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -406104,8 +406102,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 57.8704,
             "extensionBonus": 2.685087,
-            "score": 60.55548714573872,
-            "points": 12.111097429147744,
+            "score": 60.55548714573869,
+            "points": 12.111097429147737,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -406405,7 +406403,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 136.8262,
+      "medianOutputSpeed": 138.7724,
       "aa": {
         "aa-intelligence": 31.6634,
         "aa-coding": null,
@@ -406650,7 +406648,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -406953,7 +406951,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -407766,7 +407764,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -408069,7 +408067,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -408889,7 +408887,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 59.9835,
+      "medianOutputSpeed": 59.923,
       "aa": {
         "aa-intelligence": 6.7796,
         "aa-coding": null,
@@ -409143,7 +409141,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/microsoft_small.svg",
         "color": "#0078D5"
       },
-      "medianOutputSpeed": 39.2588,
+      "medianOutputSpeed": 39.3491,
       "aa": {
         "aa-intelligence": 4.5542,
         "aa-coding": null,
@@ -409397,7 +409395,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 174.3274,
+      "medianOutputSpeed": 179.2137,
       "aa": {
         "aa-intelligence": 24.322,
         "aa-coding": null,
@@ -410012,7 +410010,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 19,
@@ -410315,7 +410313,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 19,
@@ -410627,7 +410625,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 69.7703,
+      "medianOutputSpeed": 74.6877,
       "aa": {
         "aa-intelligence": null,
         "aa-coding": null,
@@ -410985,7 +410983,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 151.1635,
+      "medianOutputSpeed": 152.6824,
       "aa": {
         "aa-intelligence": 24.1264,
         "aa-coding": null,
@@ -411230,7 +411228,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -411533,7 +411531,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 17,
@@ -411845,7 +411843,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 47.4509,
+      "medianOutputSpeed": 56.0599,
       "aa": {
         "aa-intelligence": 33.1814,
         "aa-coding": null,
@@ -412299,7 +412297,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -412336,7 +412334,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.079841,
             "extensionBonus": 0.0,
-            "score": 0.0798414224450992,
+            "score": 0.07984142244509919,
             "points": 0.015968284489019838,
             "coreTests": 3,
             "extensionTests": 0,
@@ -412865,7 +412863,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 44.2382,
+      "medianOutputSpeed": 46.1904,
       "aa": {
         "aa-intelligence": 35.1082,
         "aa-coding": null,
@@ -413375,7 +413373,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 106.3789,
+      "medianOutputSpeed": 103.1933,
       "aa": {
         "aa-intelligence": 6.5599,
         "aa-coding": null,
@@ -413732,7 +413730,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 56.4902,
+      "medianOutputSpeed": 55.3319,
       "aa": {
         "aa-intelligence": 40.4881,
         "aa-coding": null,
@@ -414060,7 +414058,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 18,
@@ -414363,7 +414361,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -414675,7 +414673,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 124.2011,
+      "medianOutputSpeed": 131.5041,
       "aa": {
         "aa-intelligence": 19.7601,
         "aa-coding": null,
@@ -414921,7 +414919,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -415233,7 +415231,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 344.4052,
+      "medianOutputSpeed": 362.5825,
       "aa": {
         "aa-intelligence": 11.3512,
         "aa-coding": null,
@@ -415745,7 +415743,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 67.7602,
+      "medianOutputSpeed": 66.6238,
       "aa": {
         "aa-intelligence": 19.8887,
         "aa-coding": null,
@@ -415990,7 +415988,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -416027,7 +416025,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.107879,
             "extensionBonus": 23.545928,
-            "score": 23.653806811442788,
+            "score": 23.653806811442784,
             "points": 4.730761362288558,
             "coreTests": 3,
             "extensionTests": 1,
@@ -416293,7 +416291,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -416330,7 +416328,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "hard-reasoning": {
             "coreScore": 0.107879,
             "extensionBonus": 23.545928,
-            "score": 23.653806811442788,
+            "score": 23.653806811442784,
             "points": 4.730761362288558,
             "coreTests": 3,
             "extensionTests": 1,
@@ -416859,7 +416857,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 96.0105,
+      "medianOutputSpeed": 101.5058,
       "aa": {
         "aa-intelligence": 28.9249,
         "aa-coding": null,
@@ -417169,7 +417167,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 13,
@@ -417180,8 +417178,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 36.1111,
             "extensionBonus": 0.0,
-            "score": 36.1111,
-            "points": 7.22222,
+            "score": 36.11109999999999,
+            "points": 7.222219999999998,
             "coreTests": 1,
             "extensionTests": 0,
             "coreItemPoolSize": 1,
@@ -418269,7 +418267,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Main",
         "boardTestSlotsTotal": 20,
@@ -418572,7 +418570,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 16,
@@ -418884,7 +418882,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 39.342,
+      "medianOutputSpeed": 40.5977,
       "aa": {
         "aa-intelligence": 59.6995,
         "aa-coding": null,
@@ -419931,7 +419929,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 20,
@@ -420234,7 +420232,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 20,
@@ -421821,7 +421819,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 171.4767,
+      "medianOutputSpeed": 174.3228,
       "aa": {
         "aa-intelligence": 19.2403,
         "aa-coding": null,
@@ -422076,7 +422074,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kwaikat_small.svg",
         "color": "#489034"
       },
-      "medianOutputSpeed": 105.9719,
+      "medianOutputSpeed": 103.5812,
       "aa": {
         "aa-intelligence": 33.7297,
         "aa-coding": null,
@@ -422321,7 +422319,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -422624,7 +422622,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -422936,7 +422934,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 119.5288,
+      "medianOutputSpeed": 131.8047,
       "aa": {
         "aa-intelligence": 21.2936,
         "aa-coding": null,
@@ -423185,7 +423183,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -423488,7 +423486,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -424566,7 +424564,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 116.0067,
+      "medianOutputSpeed": 131.6934,
       "aa": {
         "aa-intelligence": 36.3281,
         "aa-coding": null,
@@ -424821,7 +424819,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 119.6718,
+      "medianOutputSpeed": 133.0107,
       "aa": {
         "aa-intelligence": 51.7666,
         "aa-coding": null,
@@ -425179,7 +425177,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -425190,8 +425188,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 49.8843,
             "extensionBonus": 17.339471,
-            "score": 67.22377130026231,
-            "points": 13.444754260052465,
+            "score": 67.2237713002623,
+            "points": 13.44475426005246,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -425482,7 +425480,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 14,
@@ -425493,8 +425491,8 @@ window.AINSIGHTS_MODELS_DATA = {
           "coding": {
             "coreScore": 49.8843,
             "extensionBonus": 17.339471,
-            "score": 67.22377130026231,
-            "points": 13.444754260052465,
+            "score": 67.2237713002623,
+            "points": 13.44475426005246,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -425794,7 +425792,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 112.7876,
+      "medianOutputSpeed": 116.0515,
       "aa": {
         "aa-intelligence": 22.164,
         "aa-coding": null,
@@ -426042,7 +426040,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -426345,7 +426343,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -426657,7 +426655,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 55.464,
+      "medianOutputSpeed": 60.268,
       "aa": {
         "aa-intelligence": 58.6355,
         "aa-coding": null,
@@ -426903,7 +426901,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 equal-additive five-board points",
         "coreComplete": true,
-        "bonusCap": 23.545927626482204,
+        "bonusCap": 23.5459276264822,
         "bonusCapRule": "mean_plus_sqrt2_sd",
         "evidenceTier": "Provisional",
         "boardTestSlotsTotal": 15,
@@ -427215,7 +427213,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 76.8378,
+      "medianOutputSpeed": 77.3866,
       "aa": {
         "aa-intelligence": 22.8792,
         "aa-coding": null,
@@ -427779,7 +427777,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "benchmark:charxiv-no-tools"
       ]
     },
-    "bonusCap": 23.545927626482204,
+    "bonusCap": 23.5459276264822,
     "bonusCapRule": "mean_plus_sqrt2_sd",
     "fitPopulation": 169,
     "coreFit": "unweighted geometric mean of direct percentages",
@@ -427794,10 +427792,10 @@ window.AINSIGHTS_MODELS_DATA = {
       "extension_aggregator": "logsumexp_residual_t1",
       "extension_pool": "independent_audit",
       "cap_rule": "mean_plus_sqrt2_sd",
-      "bonus_cap_per_board": 23.545927626482204,
+      "bonus_cap_per_board": 23.5459276264822,
       "pooled_positive_residual_count": 468,
       "pooled_positive_residual_mean": 9.832820597833287,
-      "pooled_positive_residual_population_sd": 9.696630971094555,
+      "pooled_positive_residual_population_sd": 9.696630971094553,
       "board_order": [
         "coding",
         "agentic-tool-work",
@@ -428167,8 +428165,8 @@ window.AINSIGHTS_MODELS_DATA = {
               "canonical_family": "terminal-bench-v2-1",
               "enabled": true,
               "observed_count": 156,
-              "slope": 1.7880923297383695,
-              "intercept": -27.885505504630054
+              "slope": 1.78809232973837,
+              "intercept": -27.885505504630068
             },
             {
               "item_id": "swe-bench-pro",
@@ -428176,8 +428174,8 @@ window.AINSIGHTS_MODELS_DATA = {
               "canonical_family": "swe-bench-pro",
               "enabled": true,
               "observed_count": 39,
-              "slope": 0.40650719275432784,
-              "intercept": 39.73458490005083
+              "slope": 0.4065071927543279,
+              "intercept": 39.73458490005082
             },
             {
               "item_id": "livecodebench",
@@ -428225,8 +428223,8 @@ window.AINSIGHTS_MODELS_DATA = {
               "canonical_family": "tau3-banking",
               "enabled": true,
               "observed_count": 127,
-              "slope": 0.40600745618674305,
-              "intercept": -6.250129259734923
+              "slope": 0.406007456186743,
+              "intercept": -6.250129259734919
             },
             {
               "item_id": "apex-agents-aa",
@@ -428348,7 +428346,7 @@ window.AINSIGHTS_MODELS_DATA = {
               "canonical_family": "mmlu-pro",
               "enabled": true,
               "observed_count": 22,
-              "slope": 0.5894542305568227,
+              "slope": 0.5894542305568224,
               "intercept": 61.8578030424585
             }
           ],
@@ -428511,7 +428509,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 7,
         "displayScore": 61.9596,
-        "scoreFullPrecision": "61.959640998546952",
+        "scoreFullPrecision": "61.959640998546945",
         "selectedSlug": "claude-opus-4-8",
         "variantGroup": "claude opus 4 8"
       },
@@ -428525,14 +428523,14 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 9,
         "displayScore": 60.8449,
-        "scoreFullPrecision": "60.844884361830346",
+        "scoreFullPrecision": "60.844884361830339",
         "selectedSlug": "gemini-3-7-flash",
         "variantGroup": "gemini 3 7 flash"
       },
       {
         "publicationRank": 10,
         "displayScore": 60.4612,
-        "scoreFullPrecision": "60.461226556679911",
+        "scoreFullPrecision": "60.461226556679904",
         "selectedSlug": "qwen3-8-max",
         "variantGroup": "qwen3 8 max"
       },
@@ -428574,7 +428572,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 16,
         "displayScore": 58.9262,
-        "scoreFullPrecision": "58.926242024256979",
+        "scoreFullPrecision": "58.926242024256965",
         "selectedSlug": "grok-4-5",
         "variantGroup": "grok 4 5"
       },
@@ -428609,7 +428607,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 21,
         "displayScore": 57.652,
-        "scoreFullPrecision": "57.652012781691205",
+        "scoreFullPrecision": "57.652012781691198",
         "selectedSlug": "gemini-3-5-flash",
         "variantGroup": "gemini 3 5 flash"
       },
@@ -428700,7 +428698,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 34,
         "displayScore": 49.4633,
-        "scoreFullPrecision": "49.463335471683067",
+        "scoreFullPrecision": "49.463335471683052",
         "selectedSlug": "motif-3",
         "variantGroup": "motif 3"
       },
@@ -428714,7 +428712,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 36,
         "displayScore": 48.0639,
-        "scoreFullPrecision": "48.063907870426306",
+        "scoreFullPrecision": "48.063907870426291",
         "selectedSlug": "motif-0714",
         "variantGroup": "motif 3 beta"
       },
@@ -428735,7 +428733,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 39,
         "displayScore": 46.7139,
-        "scoreFullPrecision": "46.713858298001135",
+        "scoreFullPrecision": "46.713858298001128",
         "selectedSlug": "claude-sonnet-4-6-adaptive",
         "variantGroup": "claude sonnet 4 6"
       },
@@ -428840,7 +428838,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 54,
         "displayScore": 41.0957,
-        "scoreFullPrecision": "41.09567744719029",
+        "scoreFullPrecision": "41.095677447190283",
         "selectedSlug": "solar-pro4",
         "variantGroup": "solar pro 4"
       },
@@ -428938,7 +428936,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 68,
         "displayScore": 37.3452,
-        "scoreFullPrecision": "37.345190901733908",
+        "scoreFullPrecision": "37.345190901733901",
         "selectedSlug": "claude-4-5-sonnet-thinking",
         "variantGroup": "claude 4 5 sonnet"
       },
@@ -428987,7 +428985,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 75,
         "displayScore": 35.7657,
-        "scoreFullPrecision": "35.765665617204476",
+        "scoreFullPrecision": "35.765665617204469",
         "selectedSlug": "nova-2-0-pro-reasoning-medium",
         "variantGroup": "nova 2 0 pro preview"
       },
@@ -429295,7 +429293,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 119,
         "displayScore": 24.6185,
-        "scoreFullPrecision": "24.618548063956009",
+        "scoreFullPrecision": "24.618548063956005",
         "selectedSlug": "mistral-small-4",
         "variantGroup": "mistral small 4"
       },
@@ -429309,7 +429307,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 121,
         "displayScore": 23.586,
-        "scoreFullPrecision": "23.586016012338927",
+        "scoreFullPrecision": "23.586016012338931",
         "selectedSlug": "ling-3-0-tiny",
         "variantGroup": "ling 3 0 tiny"
       },
@@ -429365,7 +429363,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 129,
         "displayScore": 20.6878,
-        "scoreFullPrecision": "20.687751863163829",
+        "scoreFullPrecision": "20.687751863163825",
         "selectedSlug": "solar-pro-3",
         "variantGroup": "solar pro 3"
       },
@@ -429379,7 +429377,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 131,
         "displayScore": 20.4779,
-        "scoreFullPrecision": "20.477925806546445",
+        "scoreFullPrecision": "20.477925806546441",
         "selectedSlug": "ling-2-6-flash",
         "variantGroup": "ling 2 6 flash"
       },
@@ -429477,7 +429475,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 145,
         "displayScore": 14.5882,
-        "scoreFullPrecision": "14.588242243906162",
+        "scoreFullPrecision": "14.588242243906164",
         "selectedSlug": "g9v3-3b",
         "variantGroup": "g9v3 3b"
       },
@@ -429582,7 +429580,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 160,
         "displayScore": 9.4913,
-        "scoreFullPrecision": "9.491321719278206",
+        "scoreFullPrecision": "9.4913217192782042",
         "selectedSlug": "ministral-3-3b",
         "variantGroup": "ministral 3 3b"
       },
@@ -429603,7 +429601,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 163,
         "displayScore": 8.4645,
-        "scoreFullPrecision": "8.4644694742714659",
+        "scoreFullPrecision": "8.4644694742714641",
         "selectedSlug": "qwen3-5-0-8b-non-reasoning",
         "variantGroup": "qwen3 5 0 8b"
       },
@@ -429617,7 +429615,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 165,
         "displayScore": 7.7955,
-        "scoreFullPrecision": "7.7954920444289613",
+        "scoreFullPrecision": "7.7954920444289604",
         "selectedSlug": "gemma-3-12b",
         "variantGroup": "gemma 3 12b"
       },
@@ -429745,7 +429743,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 14,
         "displayScore": 61.9596,
-        "scoreFullPrecision": "61.959620554581981",
+        "scoreFullPrecision": "61.959620554581974",
         "slug": "claude-opus-4-8",
         "variantGroup": "claude opus 4 8"
       },
@@ -429766,7 +429764,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 17,
         "displayScore": 60.8449,
-        "scoreFullPrecision": "60.844884361830346",
+        "scoreFullPrecision": "60.844884361830339",
         "slug": "gemini-3-7-flash",
         "variantGroup": "gemini 3 7 flash"
       },
@@ -429787,7 +429785,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 20,
         "displayScore": 60.1768,
-        "scoreFullPrecision": "60.176819424357404",
+        "scoreFullPrecision": "60.176819424357397",
         "slug": "qwen3-8-max",
         "variantGroup": "qwen3 8 max"
       },
@@ -429829,7 +429827,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 26,
         "displayScore": 58.9262,
-        "scoreFullPrecision": "58.926232412071613",
+        "scoreFullPrecision": "58.926232412071599",
         "slug": "grok-4-5",
         "variantGroup": "grok 4 5"
       },
@@ -429878,7 +429876,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 33,
         "displayScore": 57.652,
-        "scoreFullPrecision": "57.652012781691205",
+        "scoreFullPrecision": "57.652012781691198",
         "slug": "gemini-3-5-flash",
         "variantGroup": "gemini 3 5 flash"
       },
@@ -429920,7 +429918,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 39,
         "displayScore": 54.384,
-        "scoreFullPrecision": "54.384001402039999",
+        "scoreFullPrecision": "54.384001402039985",
         "slug": "gemini-3-7-flash-medium",
         "variantGroup": "gemini 3 7 flash"
       },
@@ -429962,7 +429960,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 45,
         "displayScore": 50.976,
-        "scoreFullPrecision": "50.975950067713583",
+        "scoreFullPrecision": "50.975950067713576",
         "slug": "deepseek-v4-pro-0424",
         "variantGroup": "deepseek v4 pro"
       },
@@ -430004,7 +430002,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 51,
         "displayScore": 49.4633,
-        "scoreFullPrecision": "49.463335471683067",
+        "scoreFullPrecision": "49.463335471683052",
         "slug": "motif-3",
         "variantGroup": "motif 3"
       },
@@ -430039,7 +430037,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 56,
         "displayScore": 48.0639,
-        "scoreFullPrecision": "48.063907870426306",
+        "scoreFullPrecision": "48.063907870426291",
         "slug": "motif-0714",
         "variantGroup": "motif 3 beta"
       },
@@ -430060,7 +430058,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 59,
         "displayScore": 46.7139,
-        "scoreFullPrecision": "46.713858298001135",
+        "scoreFullPrecision": "46.713858298001128",
         "slug": "claude-sonnet-4-6-adaptive",
         "variantGroup": "claude sonnet 4 6"
       },
@@ -430116,7 +430114,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 67,
         "displayScore": 44.6196,
-        "scoreFullPrecision": "44.619648177871277",
+        "scoreFullPrecision": "44.619648177871262",
         "slug": "glm-5-1",
         "variantGroup": "glm 5 1"
       },
@@ -430207,7 +430205,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 80,
         "displayScore": 41.0957,
-        "scoreFullPrecision": "41.09567744719029",
+        "scoreFullPrecision": "41.095677447190283",
         "slug": "solar-pro4",
         "variantGroup": "solar pro 4"
       },
@@ -430298,7 +430296,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 93,
         "displayScore": 37.3452,
-        "scoreFullPrecision": "37.345190901733908",
+        "scoreFullPrecision": "37.345190901733901",
         "slug": "claude-4-5-sonnet-thinking",
         "variantGroup": "claude 4 5 sonnet"
       },
@@ -430354,7 +430352,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 101,
         "displayScore": 35.7657,
-        "scoreFullPrecision": "35.765665617204476",
+        "scoreFullPrecision": "35.765665617204469",
         "slug": "nova-2-0-pro-reasoning-medium",
         "variantGroup": "nova 2 0 pro preview"
       },
@@ -430571,7 +430569,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 132,
         "displayScore": 28.3564,
-        "scoreFullPrecision": "28.356397779324055",
+        "scoreFullPrecision": "28.356397779324052",
         "slug": "qwen3-5-9b-non-reasoning",
         "variantGroup": "qwen3 5 9b"
       },
@@ -430641,7 +430639,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 142,
         "displayScore": 25.8643,
-        "scoreFullPrecision": "25.864328506495934",
+        "scoreFullPrecision": "25.86432850649593",
         "slug": "gpt-5-6-luna-non-reasoning",
         "variantGroup": "gpt 5 6 luna"
       },
@@ -430683,7 +430681,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 148,
         "displayScore": 24.6185,
-        "scoreFullPrecision": "24.618548063956009",
+        "scoreFullPrecision": "24.618548063956005",
         "slug": "mistral-small-4",
         "variantGroup": "mistral small 4"
       },
@@ -430711,7 +430709,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 152,
         "displayScore": 23.586,
-        "scoreFullPrecision": "23.586016012338927",
+        "scoreFullPrecision": "23.586016012338931",
         "slug": "ling-3-0-tiny",
         "variantGroup": "ling 3 0 tiny"
       },
@@ -430760,7 +430758,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 159,
         "displayScore": 20.6878,
-        "scoreFullPrecision": "20.687751863163829",
+        "scoreFullPrecision": "20.687751863163825",
         "slug": "solar-pro-3",
         "variantGroup": "solar pro 3"
       },
@@ -430774,14 +430772,14 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 161,
         "displayScore": 20.4779,
-        "scoreFullPrecision": "20.477925806546445",
+        "scoreFullPrecision": "20.477925806546441",
         "slug": "ling-2-6-flash",
         "variantGroup": "ling 2 6 flash"
       },
       {
         "publicationRank": 162,
         "displayScore": 20.1979,
-        "scoreFullPrecision": "20.197874029256749",
+        "scoreFullPrecision": "20.197874029256745",
         "slug": "nova-2-0-pro",
         "variantGroup": "nova 2 0 pro preview"
       },
@@ -430865,14 +430863,14 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 174,
         "displayScore": 15.5791,
-        "scoreFullPrecision": "15.579139017356292",
+        "scoreFullPrecision": "15.57913901735629",
         "slug": "celeris-1",
         "variantGroup": "celeris 1"
       },
       {
         "publicationRank": 175,
         "displayScore": 14.5882,
-        "scoreFullPrecision": "14.588242243906162",
+        "scoreFullPrecision": "14.588242243906164",
         "slug": "g9v3-3b",
         "variantGroup": "g9v3 3b"
       },
@@ -430942,7 +430940,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 185,
         "displayScore": 11.2281,
-        "scoreFullPrecision": "11.228091218585551",
+        "scoreFullPrecision": "11.228091218585549",
         "slug": "qwen3-5-2b-non-reasoning",
         "variantGroup": "qwen3 5 2b"
       },
@@ -430984,7 +430982,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 191,
         "displayScore": 9.4913,
-        "scoreFullPrecision": "9.491321719278206",
+        "scoreFullPrecision": "9.4913217192782042",
         "slug": "ministral-3-3b",
         "variantGroup": "ministral 3 3b"
       },
@@ -431005,7 +431003,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 194,
         "displayScore": 8.4645,
-        "scoreFullPrecision": "8.4644694742714659",
+        "scoreFullPrecision": "8.4644694742714641",
         "slug": "qwen3-5-0-8b-non-reasoning",
         "variantGroup": "qwen3 5 0 8b"
       },
@@ -431019,7 +431017,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 196,
         "displayScore": 7.7955,
-        "scoreFullPrecision": "7.7954920444289613",
+        "scoreFullPrecision": "7.7954920444289604",
         "slug": "gemma-3-12b",
         "variantGroup": "gemma 3 12b"
       },

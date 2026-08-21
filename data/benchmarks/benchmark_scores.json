@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-20T15:18:23+00:00",
+  "generatedAt": "2026-08-21T02:24:06+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
       "label": "OpenAI GPT-5.5 launch evaluations",
       "url": "https://openai.com/index/introducing-gpt-5-5/",
       "category": "Official model release",
-      "collectionStatus": "partial-refresh; seeded 162 benchmark rows",
+      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
       "note": "Official OpenAI table covering GPT-5.5, GPT-5.4, GPT-5.5 Pro, GPT-5.4 Pro, Claude Opus 4.7, and Gemini 3.1 Pro."
     },
     {
@@ -16,7 +16,7 @@
       "url": "https://openai.com/index/gpt-5-6/",
       "rawUrl": "https://openai.com/index/gpt-5-6/",
       "category": "Official model release",
-      "collectionStatus": "refreshed",
+      "collectionStatus": "seeded-official-values; refresh blocked: HTTPError",
       "note": "OpenAI official GPT-5.6 release tables covering Sol, Terra, and Luna across professional work, coding, science, computer use, cybersecurity, reasoning, tool use, and long-context evaluations. The release appendix labels the single-agent columns only by model tier, while the surrounding AA index values and separately reported Sol Ultra rows support mapping these columns to max effort. The mapping is therefore exact-variant scoped but marked as configuration-inferred and must not be broadcast to other effort settings.",
       "modelAliases": [
         "GPT-5.6 Sol (max)",
@@ -1224,36 +1224,6 @@
       }
     },
     {
-      "id": "official-deepseek-news251201-page",
-      "label": "DeepSeek V3.2 automatically discovered official release",
-      "url": "https://api-docs.deepseek.com/news/news251201",
-      "rawUrl": "https://api-docs.deepseek.com/news/news251201",
-      "category": "Official release",
-      "collectionStatus": "reference-only; no parseable benchmark table found",
-      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "modelAliases": [
-        "DeepSeek V3.2",
-        "DeepSeek-V3.2",
-        "deepseek-v3-2"
-      ],
-      "variantScoped": true,
-      "exactBenchmarkLabelsOnly": true,
-      "configurationConfidence": "release-page-default",
-      "autoDiscoveredVendorPage": true,
-      "vendor": "deepseek",
-      "discoverySourceKey": "deepseek-api-docs-sitemap",
-      "addModelIfMissing": true,
-      "modelMetadata": {
-        "model": "DeepSeek V3.2",
-        "displayName": "DeepSeek V3.2",
-        "modelKey": "DeepSeek V3.2",
-        "slug": "deepseek-v3-2",
-        "creator": "DeepSeek",
-        "modelUrl": "https://api-docs.deepseek.com/news/news251201"
-      }
-    },
-    {
       "id": "official-deepseek-news250929-page",
       "label": "DeepSeek V3.2 Exp automatically discovered official release",
       "url": "https://api-docs.deepseek.com/news/news250929",
@@ -1644,6 +1614,38 @@
       "tags": [
         "base_model:finetune:zai-org/GLM-4-9B-0414",
         "base_model:zai-org/GLM-4-9B-0414",
+        "license:mit"
+      ],
+      "autoDiscovered": true
+    },
+    {
+      "id": "hf-deepseek-ai-deepseek-v3-2-card",
+      "label": "DeepSeek V3.2 official model card",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2",
+      "rawUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2/raw/a7e62ac04ecb2c0a54d736dc46601c5606cf10a6/README.md",
+      "category": "Official model card",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
+      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "DeepSeek V3.2",
+        "DeepSeek-V3.2",
+        "deepseek-ai/DeepSeek-V3.2",
+        "DeepSeek V3 2",
+        "deepseek-v3-2"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "model-card-default",
+      "modelId": "deepseek-ai/DeepSeek-V3.2",
+      "organization": "deepseek-ai",
+      "createdAt": "2025-12-01T02:34:49.000Z",
+      "lastModified": "2025-12-01T11:04:59.000Z",
+      "revision": "a7e62ac04ecb2c0a54d736dc46601c5606cf10a6",
+      "tags": [
+        "base_model:deepseek-ai/DeepSeek-V3.2-Exp-Base",
+        "base_model:finetune:deepseek-ai/DeepSeek-V3.2-Exp-Base",
+        "eval-results",
         "license:mit"
       ],
       "autoDiscovered": true

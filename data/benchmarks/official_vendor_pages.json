@@ -576,20 +576,6 @@
     },
     {
       "vendor": "deepseek",
-      "name": "DeepSeek-V3.2",
-      "displayName": "DeepSeek V3.2",
-      "url": "https://api-docs.deepseek.com/news/news251201",
-      "rawUrl": "https://api-docs.deepseek.com/news/news251201",
-      "aliases": [
-        "DeepSeek V3.2",
-        "DeepSeek-V3.2",
-        "deepseek-v3-2"
-      ],
-      "sourceKey": "deepseek-api-docs-sitemap",
-      "title": "DeepSeek-V3.2 Release"
-    },
-    {
-      "vendor": "deepseek",
       "name": "DeepSeek-V3.2-Exp",
       "displayName": "DeepSeek V3.2 Exp",
       "url": "https://api-docs.deepseek.com/news/news250929",
