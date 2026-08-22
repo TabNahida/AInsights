@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_scheme18",
   "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
-  "calibration_population_size": 169,
-  "bonus_cap_per_board": 23.5459276264822,
+  "calibration_population_size": 170,
+  "bonus_cap_per_board": 23.493316702778166,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 169,
-    "unique_slugs": 169,
-    "unique_variant_groups": 169,
+    "row_count": 170,
+    "unique_slugs": 170,
+    "unique_variant_groups": 170,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 201,
-    "unique_slugs": 201,
-    "unique_variant_groups": 159,
+    "row_count": 207,
+    "unique_slugs": 207,
+    "unique_variant_groups": 160,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -32,10 +32,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 23.5459276264822,
-    "pooled_positive_residual_count": 468,
-    "pooled_positive_residual_mean": 9.832820597833287,
-    "pooled_positive_residual_population_sd": 9.696630971094553,
+    "bonus_cap_per_board": 23.493316702778166,
+    "pooled_positive_residual_count": 471,
+    "pooled_positive_residual_mean": 9.798312392594644,
+    "pooled_positive_residual_population_sd": 9.683830416109764,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -44,7 +44,7 @@
       "instruction-context"
     ],
     "board_points_max": 20.0,
-    "population_size": 169,
+    "population_size": 170,
     "population_slugs": [
       "g9v3-39a5b",
       "g9v3-3b",
@@ -133,6 +133,7 @@
       "exaone-4-5-33b",
       "k-exaone",
       "k-exaone-2-0-0803",
+      "lfm2-5-2-6b",
       "longcat-2-0",
       "k2-think-v2",
       "llama-3-1-instruct-8b",
@@ -304,6 +305,7 @@
       "exaone 4 5 33b",
       "k exaone",
       "k exaone 2 0",
+      "lfm2 5 2 6b",
       "longcat 2 0",
       "k2 think v2",
       "llama 3 1 8b",
@@ -404,9 +406,9 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 156,
-            "slope": 1.78809232973837,
-            "intercept": -27.885505504630068
+            "observed_count": 157,
+            "slope": 1.7820361916923244,
+            "intercept": -27.61496864015958
           },
           {
             "item_id": "swe-bench-pro",
@@ -444,9 +446,9 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 156,
-            "slope": 0.9887065799934424,
-            "intercept": -14.28863127330041
+            "observed_count": 157,
+            "slope": 0.9815429770964839,
+            "intercept": -13.817008400482678
           },
           {
             "item_id": "tau2-bench-telecom-aa",
@@ -462,9 +464,9 @@
             "score_key": "τ³-Banking",
             "canonical_family": "tau3-banking",
             "enabled": true,
-            "observed_count": 127,
-            "slope": 0.406007456186743,
-            "intercept": -6.250129259734919
+            "observed_count": 128,
+            "slope": 0.39674355242859155,
+            "intercept": -5.624700586248633
           },
           {
             "item_id": "apex-agents-aa",
@@ -628,15 +630,15 @@
     "independent_of_production_scoring_module": true,
     "exact_reuses_serialized_deduplicated_calibration": true,
     "calibration": {
-      "population_size": 169,
-      "cap": 23.5459276264822,
-      "serialized_cap": 23.5459276264822,
+      "population_size": 170,
+      "cap": 23.493316702778166,
+      "serialized_cap": 23.493316702778166,
       "cap_error": 0.0,
       "passed": true,
       "failures": []
     },
     "variant_group": {
-      "row_count": 169,
+      "row_count": 170,
       "maximum_numeric_error": 1.4210854715202004e-14,
       "passed": true,
       "failures": []
@@ -648,7 +650,7 @@
       "failures": []
     },
     "exact_config": {
-      "row_count": 201,
+      "row_count": 207,
       "maximum_numeric_error": 1.4210854715202004e-14,
       "passed": true,
       "failures": []

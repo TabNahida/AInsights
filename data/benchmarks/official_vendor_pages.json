@@ -576,6 +576,20 @@
     },
     {
       "vendor": "deepseek",
+      "name": "DeepSeek-V3.2",
+      "displayName": "DeepSeek V3.2",
+      "url": "https://api-docs.deepseek.com/news/news251201",
+      "rawUrl": "https://api-docs.deepseek.com/news/news251201",
+      "aliases": [
+        "DeepSeek V3.2",
+        "DeepSeek-V3.2",
+        "deepseek-v3-2"
+      ],
+      "sourceKey": "deepseek-api-docs-sitemap",
+      "title": "DeepSeek-V3.2 Release"
+    },
+    {
+      "vendor": "deepseek",
       "name": "DeepSeek-V3.2-Exp",
       "displayName": "DeepSeek V3.2 Exp",
       "url": "https://api-docs.deepseek.com/news/news250929",
@@ -601,6 +615,20 @@
       ],
       "sourceKey": "deepseek-api-docs-sitemap",
       "title": "DeepSeek V4 Preview Release"
+    },
+    {
+      "vendor": "deepseek",
+      "name": "DeepSeek-V4-Flash-Vision-Exp",
+      "displayName": "DeepSeek V4 Flash Vision Exp",
+      "url": "https://api-docs.deepseek.com/news/news260821",
+      "rawUrl": "https://api-docs.deepseek.com/news/news260821",
+      "aliases": [
+        "DeepSeek V4 Flash Vision Exp",
+        "DeepSeek-V4-Flash-Vision-Exp",
+        "deepseek-v4-flash-vision-exp"
+      ],
+      "sourceKey": "deepseek-api-docs-sitemap",
+      "title": "DeepSeek-V4-Flash-Vision-Exp Release: Multimodal API Now Live"
     },
     {
       "vendor": "deepseek",

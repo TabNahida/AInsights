@@ -778,6 +778,7 @@
       "revision": "72e1d3230f6c080a530b0a1d46f8eb4602340597",
       "pipelineTag": "text-generation",
       "tags": [
+        "eval-results",
         "license:mit"
       ],
       "aliases": [

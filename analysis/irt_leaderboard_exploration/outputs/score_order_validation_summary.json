@@ -6,7 +6,7 @@
     "methods": {
       "twopl_sparse_80_20_score": {
         "passed": true,
-        "full_rows": 169,
+        "full_rows": 170,
         "top_rows": 50,
         "sequential_ranks": true,
         "scores_non_increasing": true,
@@ -25,7 +25,7 @@
     "methods": {
       "twopl_sparse_80_20_score": {
         "passed": true,
-        "full_rows": 201,
+        "full_rows": 207,
         "top_rows": 50,
         "sequential_ranks": true,
         "scores_non_increasing": true,
