@@ -416,8 +416,8 @@
             "canonical_family": "swe-bench-pro",
             "enabled": true,
             "observed_count": 39,
-            "slope": 0.40650719275432784,
-            "intercept": 39.73458490005083
+            "slope": 0.4065071927543279,
+            "intercept": 39.73458490005082
           },
           {
             "item_id": "livecodebench",
@@ -588,7 +588,7 @@
             "canonical_family": "mmlu-pro",
             "enabled": true,
             "observed_count": 22,
-            "slope": 0.5894542305568226,
+            "slope": 0.5894542305568224,
             "intercept": 61.8578030424585
           }
         ],
@@ -667,7 +667,7 @@
       "derived_external_score_cells_removed": 0,
       "unscoped_external_score_cells_removed": 770,
       "site_livecodebench_cells_excluded": 378,
-      "variant_scoped_direct_score_cells_retained": 402
+      "variant_scoped_direct_score_cells_retained": 405
     },
     "review_parity": {
       "requested": false,

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-23T02:24:58+00:00",
+  "generatedAt": "2026-08-24T02:23:31+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
@@ -984,36 +984,6 @@
       }
     },
     {
-      "id": "official-deepseek-news250120-page",
-      "label": "DeepSeek R1 automatically discovered official release",
-      "url": "https://api-docs.deepseek.com/news/news250120",
-      "rawUrl": "https://api-docs.deepseek.com/news/news250120",
-      "category": "Official release",
-      "collectionStatus": "reference-only; no parseable benchmark table found",
-      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "modelAliases": [
-        "DeepSeek R1",
-        "DeepSeek-R1",
-        "deepseek-r1"
-      ],
-      "variantScoped": true,
-      "exactBenchmarkLabelsOnly": true,
-      "configurationConfidence": "release-page-default",
-      "autoDiscoveredVendorPage": true,
-      "vendor": "deepseek",
-      "discoverySourceKey": "deepseek-api-docs-sitemap",
-      "addModelIfMissing": true,
-      "modelMetadata": {
-        "model": "DeepSeek R1",
-        "displayName": "DeepSeek R1",
-        "modelKey": "DeepSeek R1",
-        "slug": "deepseek-r1",
-        "creator": "DeepSeek",
-        "modelUrl": "https://api-docs.deepseek.com/news/news250120"
-      }
-    },
-    {
       "id": "official-deepseek-news250528-page",
       "label": "DeepSeek R1 0528 automatically discovered official release",
       "url": "https://api-docs.deepseek.com/news/news250528",
@@ -1705,6 +1675,35 @@
       "tags": [
         "base_model:deepseek-ai/DeepSeek-V3.2-Exp-Base",
         "base_model:finetune:deepseek-ai/DeepSeek-V3.2-Exp-Base",
+        "eval-results",
+        "license:mit"
+      ],
+      "autoDiscovered": true
+    },
+    {
+      "id": "hf-deepseek-ai-deepseek-r1-card",
+      "label": "DeepSeek R1 official model card",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1",
+      "rawUrl": "https://huggingface.co/deepseek-ai/DeepSeek-R1/raw/56d4cbbb4d29f4355bab4b9a39ccb717a14ad5ad/README.md",
+      "category": "Official model card",
+      "collectionStatus": "refreshed",
+      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "DeepSeek R1",
+        "DeepSeek-R1",
+        "deepseek-ai/DeepSeek-R1",
+        "deepseek-r1"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "model-card-default",
+      "modelId": "deepseek-ai/DeepSeek-R1",
+      "organization": "deepseek-ai",
+      "createdAt": "2025-01-20T03:46:07.000Z",
+      "lastModified": "2025-03-27T04:01:59.000Z",
+      "revision": "56d4cbbb4d29f4355bab4b9a39ccb717a14ad5ad",
+      "tags": [
         "eval-results",
         "license:mit"
       ],
@@ -23883,6 +23882,60 @@
       "sourceId": "hf-zai-org-glm-4-7-flash-card",
       "sourceUrl": "https://huggingface.co/zai-org/GLM-4.7-Flash",
       "sourceLabel": "GLM-4.7-Flash official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "DeepSeek R1",
+      "modelAliases": [
+        "DeepSeek R1",
+        "DeepSeek-R1",
+        "deepseek-ai/DeepSeek-R1",
+        "deepseek-r1"
+      ],
+      "value": 84.0,
+      "unit": "%",
+      "sourceId": "hf-deepseek-ai-deepseek-r1-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-R1",
+      "sourceLabel": "DeepSeek R1 official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "DeepSeek R1",
+      "modelAliases": [
+        "DeepSeek R1",
+        "DeepSeek-R1",
+        "deepseek-ai/DeepSeek-R1",
+        "deepseek-r1"
+      ],
+      "value": 71.5,
+      "unit": "%",
+      "sourceId": "hf-deepseek-ai-deepseek-r1-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-R1",
+      "sourceLabel": "DeepSeek R1 official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "DeepSeek R1",
+      "modelAliases": [
+        "DeepSeek R1",
+        "DeepSeek-R1",
+        "deepseek-ai/DeepSeek-R1",
+        "deepseek-r1"
+      ],
+      "value": 49.2,
+      "unit": "%",
+      "sourceId": "hf-deepseek-ai-deepseek-r1-card",
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-R1",
+      "sourceLabel": "DeepSeek R1 official model card",
       "variantScoped": true,
       "configurationConfidence": "model-card-default"
     }
