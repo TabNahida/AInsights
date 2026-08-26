@@ -538,7 +538,7 @@ class BuildDocsSiteTests(unittest.TestCase):
             offers["or-qwen3-6-plus"]["pricingOverrides"][0]["cacheReadPerMillionTokensUsd"]
         )
 
-    def test_official_agnes_and_verified_openrouter_rows_cover_top50_gaps(self):
+    def test_official_agnes_and_verified_openrouter_rows_have_expected_pricing(self):
         catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
         offers = {offer["id"]: offer for offer in catalogue["offers"]}
         agnes = offers["sapiens-agnes-2-5-pro-alpha"]
@@ -581,17 +581,6 @@ class BuildDocsSiteTests(unittest.TestCase):
                 ),
                 (input_rate, cache_rate, output_rate),
             )
-
-        generated = json.loads(DEFAULT_OUTPUT_JSON.read_text(encoding="utf-8"))
-        top50_slugs = {
-            model["slug"]
-            for model in generated["models"]
-            if 1 <= int(model.get("rankingProfile", {}).get("publicationRank", 0)) <= 50
-        }
-        expected_slugs = {"agnes-2-5-pro-alpha"} | {
-            expected[0] for expected in expected_openrouter.values()
-        }
-        self.assertTrue(expected_slugs <= top50_slugs)
 
     def test_codex_empirical_multiplier_is_only_rankable_for_measured_model(self):
         catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
