@@ -297,6 +297,33 @@
     },
     {
       "vendor": "qwen",
+      "name": "Qwen3.8-Flash-Next",
+      "displayName": "Qwen3.8 Flash Next",
+      "url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
+      "rawUrl": "https://qwen.ai/api/v2/article/retrieval?language=en-US&path=qwen3.8-flash-next&type=qwen_ai",
+      "aliases": [
+        "Qwen3.8 Flash Next",
+        "Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "sourceKey": "qwen-article-json",
+      "title": "Qwen3.8-Flash-Next: A New Architecture, Towards Ultimate Cost-Efficiency",
+      "sourceMetadata": {
+        "articleId": "8865c9dc-9833-4aa3-8c74-81c244bec7b0",
+        "path": "qwen3.8-flash-next",
+        "type": "qwen_ai",
+        "language": "en-US",
+        "publishedAt": "2026-08-26T20:30:00+08:00",
+        "author": "QwenTeam",
+        "tags": [
+          "Open-Source"
+        ],
+        "readTime": 12,
+        "wordCount": 2350
+      }
+    },
+    {
+      "vendor": "qwen",
       "name": "Qwen3.8-Max",
       "displayName": "Qwen3.8 Max",
       "url": "https://qwen.ai/blog?id=qwen3.8",
@@ -321,104 +348,6 @@
         "readTime": 25,
         "wordCount": 5068
       }
-    },
-    {
-      "vendor": "glm",
-      "name": "GLM-4-32B-0414-128K",
-      "displayName": "GLM 4 32B 0414 128K",
-      "url": "https://docs.z.ai/guides/llm/glm-4-32b-0414-128k",
-      "rawUrl": "https://docs.z.ai/guides/llm/glm-4-32b-0414-128k.md",
-      "aliases": [
-        "GLM 4 32B 0414 128K",
-        "GLM-4-32B-0414-128K",
-        "glm-4-32b-0414-128k"
-      ],
-      "sourceKey": "glm-docs-llms",
-      "title": "GLM-4-32B-0414-128K"
-    },
-    {
-      "vendor": "glm",
-      "name": "GLM-4.5",
-      "displayName": "GLM 4.5",
-      "url": "https://docs.z.ai/guides/llm/glm-4.5",
-      "rawUrl": "https://docs.z.ai/guides/llm/glm-4.5.md",
-      "aliases": [
-        "GLM 4.5",
-        "GLM-4.5",
-        "glm-4-5"
-      ],
-      "sourceKey": "glm-docs-llms",
-      "title": "GLM-4.5"
-    },
-    {
-      "vendor": "glm",
-      "name": "GLM-4.6",
-      "displayName": "GLM 4.6",
-      "url": "https://docs.z.ai/guides/llm/glm-4.6",
-      "rawUrl": "https://docs.z.ai/guides/llm/glm-4.6.md",
-      "aliases": [
-        "GLM 4.6",
-        "GLM-4.6",
-        "glm-4-6"
-      ],
-      "sourceKey": "glm-docs-llms",
-      "title": "GLM-4.6"
-    },
-    {
-      "vendor": "glm",
-      "name": "GLM-4.7",
-      "displayName": "GLM 4.7",
-      "url": "https://docs.z.ai/guides/llm/glm-4.7",
-      "rawUrl": "https://docs.z.ai/guides/llm/glm-4.7.md",
-      "aliases": [
-        "GLM 4.7",
-        "GLM-4.7",
-        "glm-4-7"
-      ],
-      "sourceKey": "glm-docs-llms",
-      "title": "GLM-4.7"
-    },
-    {
-      "vendor": "glm",
-      "name": "GLM-5",
-      "displayName": "GLM 5",
-      "url": "https://docs.z.ai/guides/llm/glm-5",
-      "rawUrl": "https://docs.z.ai/guides/llm/glm-5.md",
-      "aliases": [
-        "GLM 5",
-        "GLM-5",
-        "glm-5"
-      ],
-      "sourceKey": "glm-docs-llms",
-      "title": "GLM-5"
-    },
-    {
-      "vendor": "glm",
-      "name": "GLM-5-Turbo",
-      "displayName": "GLM 5 Turbo",
-      "url": "https://docs.z.ai/guides/llm/glm-5-turbo",
-      "rawUrl": "https://docs.z.ai/guides/llm/glm-5-turbo.md",
-      "aliases": [
-        "GLM 5 Turbo",
-        "GLM-5-Turbo",
-        "glm-5-turbo"
-      ],
-      "sourceKey": "glm-docs-llms",
-      "title": "GLM-5-Turbo"
-    },
-    {
-      "vendor": "glm",
-      "name": "GLM-5.1",
-      "displayName": "GLM 5.1",
-      "url": "https://docs.z.ai/guides/llm/glm-5.1",
-      "rawUrl": "https://docs.z.ai/guides/llm/glm-5.1.md",
-      "aliases": [
-        "GLM 5.1",
-        "GLM-5.1",
-        "glm-5-1"
-      ],
-      "sourceKey": "glm-docs-llms",
-      "title": "GLM-5.1"
     },
     {
       "vendor": "glm",
@@ -503,20 +432,6 @@
       ],
       "sourceKey": "deepseek-api-docs-sitemap",
       "title": "🚀 DeepSeek V2.5: The Grand Finale 🎉"
-    },
-    {
-      "vendor": "deepseek",
-      "name": "DeepSeek-V3",
-      "displayName": "DeepSeek V3",
-      "url": "https://api-docs.deepseek.com/news/news1226",
-      "rawUrl": "https://api-docs.deepseek.com/news/news1226",
-      "aliases": [
-        "DeepSeek V3",
-        "DeepSeek-V3",
-        "deepseek-v3"
-      ],
-      "sourceKey": "deepseek-api-docs-sitemap",
-      "title": "🚀 Introducing DeepSeek-V3"
     },
     {
       "vendor": "deepseek",

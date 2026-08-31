@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T02:23:31+00:00",
+  "generatedAt": "2026-08-31T09:40:40+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
@@ -924,63 +924,34 @@
       }
     },
     {
-      "id": "official-glm-glm-4-32b-0414-128k-page",
-      "label": "GLM 4 32B 0414 128K automatically discovered official release",
-      "url": "https://docs.z.ai/guides/llm/glm-4-32b-0414-128k",
-      "rawUrl": "https://docs.z.ai/guides/llm/glm-4-32b-0414-128k.md",
+      "id": "official-qwen-qwen3-8-flash-next-page",
+      "label": "Qwen3.8 Flash Next automatically discovered official release",
+      "url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
+      "rawUrl": "https://qwen.ai/api/v2/article/retrieval?language=en-US&path=qwen3.8-flash-next&type=qwen_ai",
       "category": "Official release",
       "collectionStatus": "reference-only; no parseable benchmark table found",
       "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
       "scoreStatus": "reference",
       "modelAliases": [
-        "GLM 4 32B 0414 128K",
-        "GLM-4-32B-0414-128K",
-        "glm-4-32b-0414-128k"
+        "Qwen3.8 Flash Next",
+        "Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
       ],
       "variantScoped": true,
       "exactBenchmarkLabelsOnly": true,
       "configurationConfidence": "release-page-default",
       "autoDiscoveredVendorPage": true,
-      "vendor": "glm",
-      "discoverySourceKey": "glm-docs-llms",
+      "vendor": "qwen",
+      "discoverySourceKey": "qwen-article-json",
       "addModelIfMissing": true,
       "modelMetadata": {
-        "model": "GLM 4 32B 0414 128K",
-        "displayName": "GLM 4 32B 0414 128K",
-        "modelKey": "GLM 4 32B 0414 128K",
-        "slug": "glm-4-32b-0414-128k",
-        "creator": "Z AI",
-        "modelUrl": "https://docs.z.ai/guides/llm/glm-4-32b-0414-128k"
-      }
-    },
-    {
-      "id": "official-glm-glm-5-turbo-page",
-      "label": "GLM 5 Turbo automatically discovered official release",
-      "url": "https://docs.z.ai/guides/llm/glm-5-turbo",
-      "rawUrl": "https://docs.z.ai/guides/llm/glm-5-turbo.md",
-      "category": "Official release",
-      "collectionStatus": "reference-only; no parseable benchmark table found",
-      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "modelAliases": [
-        "GLM 5 Turbo",
-        "GLM-5-Turbo",
-        "glm-5-turbo"
-      ],
-      "variantScoped": true,
-      "exactBenchmarkLabelsOnly": true,
-      "configurationConfidence": "release-page-default",
-      "autoDiscoveredVendorPage": true,
-      "vendor": "glm",
-      "discoverySourceKey": "glm-docs-llms",
-      "addModelIfMissing": true,
-      "modelMetadata": {
-        "model": "GLM 5 Turbo",
-        "displayName": "GLM 5 Turbo",
-        "modelKey": "GLM 5 Turbo",
-        "slug": "glm-5-turbo",
-        "creator": "Z AI",
-        "modelUrl": "https://docs.z.ai/guides/llm/glm-5-turbo"
+        "model": "Qwen3.8 Flash Next",
+        "displayName": "Qwen3.8 Flash Next",
+        "modelKey": "Qwen3.8 Flash Next",
+        "slug": "qwen3-8-flash-next",
+        "creator": "Alibaba",
+        "modelUrl": "https://qwen.ai/blog?id=qwen3.8-flash-next",
+        "releaseDate": "2026-08-26"
       }
     },
     {
@@ -1071,36 +1042,6 @@
         "slug": "deepseek-v2-5",
         "creator": "DeepSeek",
         "modelUrl": "https://api-docs.deepseek.com/news/news0905"
-      }
-    },
-    {
-      "id": "official-deepseek-news1226-page",
-      "label": "DeepSeek V3 automatically discovered official release",
-      "url": "https://api-docs.deepseek.com/news/news1226",
-      "rawUrl": "https://api-docs.deepseek.com/news/news1226",
-      "category": "Official release",
-      "collectionStatus": "reference-only; no parseable benchmark table found",
-      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "modelAliases": [
-        "DeepSeek V3",
-        "DeepSeek-V3",
-        "deepseek-v3"
-      ],
-      "variantScoped": true,
-      "exactBenchmarkLabelsOnly": true,
-      "configurationConfidence": "release-page-default",
-      "autoDiscoveredVendorPage": true,
-      "vendor": "deepseek",
-      "discoverySourceKey": "deepseek-api-docs-sitemap",
-      "addModelIfMissing": true,
-      "modelMetadata": {
-        "model": "DeepSeek V3",
-        "displayName": "DeepSeek V3",
-        "modelKey": "DeepSeek V3",
-        "slug": "deepseek-v3",
-        "creator": "DeepSeek",
-        "modelUrl": "https://api-docs.deepseek.com/news/news1226"
       }
     },
     {
@@ -1504,6 +1445,91 @@
       "autoDiscovered": true
     },
     {
+      "id": "hf-zai-org-glm-5-3-flash-bf16-card",
+      "label": "GLM-5.3-Flash-BF16 official model card",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash-BF16",
+      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3-Flash-BF16/raw/f12e0fe1f6b2ea274c11a569582edfd99d993c5e/README.md",
+      "category": "Official model card",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
+      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "GLM-5.3-Flash-BF16",
+        "zai-org/GLM-5.3-Flash-BF16",
+        "GLM 5 3 Flash BF16",
+        "glm-5-3-flash-bf16"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "model-card-default",
+      "modelId": "zai-org/GLM-5.3-Flash-BF16",
+      "organization": "zai-org",
+      "createdAt": "2026-08-25T06:45:05.000Z",
+      "lastModified": "2026-08-27T10:34:18.000Z",
+      "revision": "f12e0fe1f6b2ea274c11a569582edfd99d993c5e",
+      "tags": [
+        "license:mit"
+      ],
+      "autoDiscovered": true
+    },
+    {
+      "id": "hf-zai-org-glm-5-3-bf16-card",
+      "label": "GLM-5.3-BF16 official model card",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-BF16",
+      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3-BF16/raw/304b8051cfb2b260b61ce0cbe330e02a98e73639/README.md",
+      "category": "Official model card",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
+      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "GLM-5.3-BF16",
+        "zai-org/GLM-5.3-BF16",
+        "GLM 5 3 BF16",
+        "glm-5-3-bf16"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "model-card-default",
+      "modelId": "zai-org/GLM-5.3-BF16",
+      "organization": "zai-org",
+      "createdAt": "2026-08-25T06:43:55.000Z",
+      "lastModified": "2026-08-28T13:46:13.000Z",
+      "revision": "304b8051cfb2b260b61ce0cbe330e02a98e73639",
+      "tags": [
+        "license:other"
+      ],
+      "autoDiscovered": true
+    },
+    {
+      "id": "hf-zai-org-glm-5-3-flash-card",
+      "label": "GLM-5.3-Flash official model card",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/04c4e9e95c5da8862dced7e5056455116f83a7e0/README.md",
+      "category": "Official model card",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
+      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "GLM-5.3-Flash",
+        "zai-org/GLM-5.3-Flash",
+        "GLM 5 3 Flash",
+        "glm-5-3-flash"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "model-card-default",
+      "modelId": "zai-org/GLM-5.3-Flash",
+      "organization": "zai-org",
+      "createdAt": "2026-08-25T06:43:14.000Z",
+      "lastModified": "2026-08-27T10:33:43.000Z",
+      "revision": "04c4e9e95c5da8862dced7e5056455116f83a7e0",
+      "tags": [
+        "eval-results",
+        "license:mit"
+      ],
+      "autoDiscovered": true
+    },
+    {
       "id": "hf-zai-org-glm-4-7-flash-card",
       "label": "GLM-4.7-Flash official model card",
       "url": "https://huggingface.co/zai-org/GLM-4.7-Flash",
@@ -1584,66 +1610,7 @@
       "lastModified": "2025-12-09T18:06:43.000Z",
       "revision": "411bb4d77144a3f03accbf4b780f5acb8b7cde4e",
       "tags": [
-        "license:mit"
-      ],
-      "autoDiscovered": true
-    },
-    {
-      "id": "hf-zai-org-glm-4-5v-card",
-      "label": "GLM-4.5V official model card",
-      "url": "https://huggingface.co/zai-org/GLM-4.5V",
-      "rawUrl": "https://huggingface.co/zai-org/GLM-4.5V/raw/ed47433b37111465ec527affaaddceff371bca04/README.md",
-      "category": "Official model card",
-      "collectionStatus": "reference-only; no parseable benchmark table found",
-      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "modelAliases": [
-        "GLM-4.5V",
-        "zai-org/GLM-4.5V",
-        "GLM 4 5V",
-        "glm-4-5v"
-      ],
-      "variantScoped": true,
-      "exactBenchmarkLabelsOnly": true,
-      "configurationConfidence": "model-card-default",
-      "modelId": "zai-org/GLM-4.5V",
-      "organization": "zai-org",
-      "createdAt": "2025-08-10T13:55:30.000Z",
-      "lastModified": "2025-10-25T13:20:10.000Z",
-      "revision": "ed47433b37111465ec527affaaddceff371bca04",
-      "tags": [
-        "base_model:finetune:zai-org/GLM-4.5-Air-Base",
-        "base_model:zai-org/GLM-4.5-Air-Base",
-        "license:mit"
-      ],
-      "autoDiscovered": true
-    },
-    {
-      "id": "hf-zai-org-glm-4-1v-9b-thinking-card",
-      "label": "GLM-4.1V-9B-Thinking official model card",
-      "url": "https://huggingface.co/zai-org/GLM-4.1V-9B-Thinking",
-      "rawUrl": "https://huggingface.co/zai-org/GLM-4.1V-9B-Thinking/raw/3c1471e51dc811b589d4d12b1c1c7c1c941267c2/README.md",
-      "category": "Official model card",
-      "collectionStatus": "reference-only; no parseable benchmark table found",
-      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "modelAliases": [
-        "GLM-4.1V-9B-Thinking",
-        "zai-org/GLM-4.1V-9B-Thinking",
-        "GLM 4 1V 9B Thinking",
-        "glm-4-1v-9b-thinking"
-      ],
-      "variantScoped": true,
-      "exactBenchmarkLabelsOnly": true,
-      "configurationConfidence": "model-card-default",
-      "modelId": "zai-org/GLM-4.1V-9B-Thinking",
-      "organization": "zai-org",
-      "createdAt": "2025-06-28T14:24:10.000Z",
-      "lastModified": "2026-07-22T11:38:50.000Z",
-      "revision": "3c1471e51dc811b589d4d12b1c1c7c1c941267c2",
-      "tags": [
-        "base_model:finetune:zai-org/GLM-4-9B-0414",
-        "base_model:zai-org/GLM-4-9B-0414",
+        "eval-results",
         "license:mit"
       ],
       "autoDiscovered": true

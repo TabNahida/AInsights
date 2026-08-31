@@ -30,6 +30,30 @@
     {
       "vendor": "qwen",
       "organization": "Qwen",
+      "modelId": "Qwen/Qwen3.8-Flash-Next",
+      "name": "Qwen3.8-Flash-Next",
+      "displayName": "Qwen3.8 Flash-Next",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "rawUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next/raw/de4b8e4d43b917e7706784d8bb445c9af86a3540/README.md",
+      "createdAt": "2026-08-24T08:24:59.000Z",
+      "lastModified": "2026-08-27T05:03:36.000Z",
+      "revision": "de4b8e4d43b917e7706784d8bb445c9af86a3540",
+      "pipelineTag": "image-text-to-text",
+      "tags": [
+        "eval-results",
+        "license:other"
+      ],
+      "aliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen/Qwen3.8-Flash-Next",
+        "Qwen3 8 Flash Next",
+        "qwen3-8-flash-next"
+      ]
+    },
+    {
+      "vendor": "qwen",
+      "organization": "Qwen",
       "modelId": "Qwen/Qwen3.8-2.4T-A95B",
       "name": "Qwen3.8-2.4T-A95B",
       "displayName": "Qwen3.8 2.4T-A95B",
@@ -302,30 +326,6 @@
       ]
     },
     {
-      "vendor": "qwen",
-      "organization": "Qwen",
-      "modelId": "Qwen/Qwen3.5-397B-A17B",
-      "name": "Qwen3.5-397B-A17B",
-      "displayName": "Qwen3.5 397B-A17B",
-      "url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B",
-      "rawUrl": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B/raw/8472618112abcbd45acbcdc58436aff4233c23f7/README.md",
-      "createdAt": "2026-02-16T04:55:12.000Z",
-      "lastModified": "2026-04-24T05:51:23.000Z",
-      "revision": "8472618112abcbd45acbcdc58436aff4233c23f7",
-      "pipelineTag": "image-text-to-text",
-      "tags": [
-        "eval-results",
-        "license:apache-2.0"
-      ],
-      "aliases": [
-        "Qwen3.5 397B-A17B",
-        "Qwen3.5-397B-A17B",
-        "Qwen/Qwen3.5-397B-A17B",
-        "Qwen3 5 397B A17B",
-        "qwen3-5-397b-a17b"
-      ]
-    },
-    {
       "vendor": "kimi",
       "organization": "moonshotai",
       "modelId": "moonshotai/Kimi-K3",
@@ -492,6 +492,96 @@
     {
       "vendor": "glm",
       "organization": "zai-org",
+      "modelId": "zai-org/GLM-5.3-Flash-BF16",
+      "name": "GLM-5.3-Flash-BF16",
+      "displayName": "GLM-5.3-Flash-BF16",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash-BF16",
+      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3-Flash-BF16/raw/f12e0fe1f6b2ea274c11a569582edfd99d993c5e/README.md",
+      "createdAt": "2026-08-25T06:45:05.000Z",
+      "lastModified": "2026-08-27T10:34:18.000Z",
+      "revision": "f12e0fe1f6b2ea274c11a569582edfd99d993c5e",
+      "pipelineTag": "text-generation",
+      "tags": [
+        "license:mit"
+      ],
+      "aliases": [
+        "GLM-5.3-Flash-BF16",
+        "zai-org/GLM-5.3-Flash-BF16",
+        "GLM 5 3 Flash BF16",
+        "glm-5-3-flash-bf16"
+      ]
+    },
+    {
+      "vendor": "glm",
+      "organization": "zai-org",
+      "modelId": "zai-org/GLM-5.3-BF16",
+      "name": "GLM-5.3-BF16",
+      "displayName": "GLM-5.3-BF16",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-BF16",
+      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3-BF16/raw/304b8051cfb2b260b61ce0cbe330e02a98e73639/README.md",
+      "createdAt": "2026-08-25T06:43:55.000Z",
+      "lastModified": "2026-08-28T13:46:13.000Z",
+      "revision": "304b8051cfb2b260b61ce0cbe330e02a98e73639",
+      "pipelineTag": "text-generation",
+      "tags": [
+        "license:other"
+      ],
+      "aliases": [
+        "GLM-5.3-BF16",
+        "zai-org/GLM-5.3-BF16",
+        "GLM 5 3 BF16",
+        "glm-5-3-bf16"
+      ]
+    },
+    {
+      "vendor": "glm",
+      "organization": "zai-org",
+      "modelId": "zai-org/GLM-5.3-Flash",
+      "name": "GLM-5.3-Flash",
+      "displayName": "GLM-5.3-Flash",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/04c4e9e95c5da8862dced7e5056455116f83a7e0/README.md",
+      "createdAt": "2026-08-25T06:43:14.000Z",
+      "lastModified": "2026-08-27T10:33:43.000Z",
+      "revision": "04c4e9e95c5da8862dced7e5056455116f83a7e0",
+      "pipelineTag": "text-generation",
+      "tags": [
+        "eval-results",
+        "license:mit"
+      ],
+      "aliases": [
+        "GLM-5.3-Flash",
+        "zai-org/GLM-5.3-Flash",
+        "GLM 5 3 Flash",
+        "glm-5-3-flash"
+      ]
+    },
+    {
+      "vendor": "glm",
+      "organization": "zai-org",
+      "modelId": "zai-org/GLM-5.3",
+      "name": "GLM-5.3",
+      "displayName": "GLM-5.3",
+      "url": "https://huggingface.co/zai-org/GLM-5.3",
+      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3/raw/e0b07fd2751b42d5efa199cc02c2b271deadc516/README.md",
+      "createdAt": "2026-08-25T06:42:50.000Z",
+      "lastModified": "2026-08-29T09:51:13.000Z",
+      "revision": "e0b07fd2751b42d5efa199cc02c2b271deadc516",
+      "pipelineTag": "text-generation",
+      "tags": [
+        "eval-results",
+        "license:other"
+      ],
+      "aliases": [
+        "GLM-5.3",
+        "zai-org/GLM-5.3",
+        "GLM 5 3",
+        "glm-5-3"
+      ]
+    },
+    {
+      "vendor": "glm",
+      "organization": "zai-org",
       "modelId": "zai-org/GLM-5.2",
       "name": "GLM-5.2",
       "displayName": "GLM-5.2",
@@ -639,6 +729,7 @@
       "revision": "411bb4d77144a3f03accbf4b780f5acb8b7cde4e",
       "pipelineTag": "image-text-to-text",
       "tags": [
+        "eval-results",
         "license:mit"
       ],
       "aliases": [
@@ -669,100 +760,6 @@
         "zai-org/GLM-4.6",
         "GLM 4 6",
         "glm-4-6"
-      ]
-    },
-    {
-      "vendor": "glm",
-      "organization": "zai-org",
-      "modelId": "zai-org/GLM-4.5V",
-      "name": "GLM-4.5V",
-      "displayName": "GLM-4.5V",
-      "url": "https://huggingface.co/zai-org/GLM-4.5V",
-      "rawUrl": "https://huggingface.co/zai-org/GLM-4.5V/raw/ed47433b37111465ec527affaaddceff371bca04/README.md",
-      "createdAt": "2025-08-10T13:55:30.000Z",
-      "lastModified": "2025-10-25T13:20:10.000Z",
-      "revision": "ed47433b37111465ec527affaaddceff371bca04",
-      "pipelineTag": "image-text-to-text",
-      "tags": [
-        "base_model:finetune:zai-org/GLM-4.5-Air-Base",
-        "base_model:zai-org/GLM-4.5-Air-Base",
-        "license:mit"
-      ],
-      "aliases": [
-        "GLM-4.5V",
-        "zai-org/GLM-4.5V",
-        "GLM 4 5V",
-        "glm-4-5v"
-      ]
-    },
-    {
-      "vendor": "glm",
-      "organization": "zai-org",
-      "modelId": "zai-org/GLM-4.5-Air",
-      "name": "GLM-4.5-Air",
-      "displayName": "GLM-4.5-Air",
-      "url": "https://huggingface.co/zai-org/GLM-4.5-Air",
-      "rawUrl": "https://huggingface.co/zai-org/GLM-4.5-Air/raw/a24ceef6ce4f3536971efe9b778bdaa1bab18daa/README.md",
-      "createdAt": "2025-07-20T03:25:55.000Z",
-      "lastModified": "2025-08-11T13:25:37.000Z",
-      "revision": "a24ceef6ce4f3536971efe9b778bdaa1bab18daa",
-      "pipelineTag": "text-generation",
-      "tags": [
-        "eval-results",
-        "license:mit"
-      ],
-      "aliases": [
-        "GLM-4.5-Air",
-        "zai-org/GLM-4.5-Air",
-        "GLM 4 5 Air",
-        "glm-4-5-air"
-      ]
-    },
-    {
-      "vendor": "glm",
-      "organization": "zai-org",
-      "modelId": "zai-org/GLM-4.5",
-      "name": "GLM-4.5",
-      "displayName": "GLM-4.5",
-      "url": "https://huggingface.co/zai-org/GLM-4.5",
-      "rawUrl": "https://huggingface.co/zai-org/GLM-4.5/raw/cbb2c7cfb52fa128a9660cb1a7a78e017899e115/README.md",
-      "createdAt": "2025-07-20T03:25:36.000Z",
-      "lastModified": "2025-08-11T13:27:03.000Z",
-      "revision": "cbb2c7cfb52fa128a9660cb1a7a78e017899e115",
-      "pipelineTag": "text-generation",
-      "tags": [
-        "eval-results",
-        "license:mit"
-      ],
-      "aliases": [
-        "GLM-4.5",
-        "zai-org/GLM-4.5",
-        "GLM 4 5",
-        "glm-4-5"
-      ]
-    },
-    {
-      "vendor": "glm",
-      "organization": "zai-org",
-      "modelId": "zai-org/GLM-4.1V-9B-Thinking",
-      "name": "GLM-4.1V-9B-Thinking",
-      "displayName": "GLM-4.1V-9B-Thinking",
-      "url": "https://huggingface.co/zai-org/GLM-4.1V-9B-Thinking",
-      "rawUrl": "https://huggingface.co/zai-org/GLM-4.1V-9B-Thinking/raw/3c1471e51dc811b589d4d12b1c1c7c1c941267c2/README.md",
-      "createdAt": "2025-06-28T14:24:10.000Z",
-      "lastModified": "2026-07-22T11:38:50.000Z",
-      "revision": "3c1471e51dc811b589d4d12b1c1c7c1c941267c2",
-      "pipelineTag": "image-text-to-text",
-      "tags": [
-        "base_model:finetune:zai-org/GLM-4-9B-0414",
-        "base_model:zai-org/GLM-4-9B-0414",
-        "license:mit"
-      ],
-      "aliases": [
-        "GLM-4.1V-9B-Thinking",
-        "zai-org/GLM-4.1V-9B-Thinking",
-        "GLM 4 1V 9B Thinking",
-        "glm-4-1v-9b-thinking"
       ]
     },
     {
