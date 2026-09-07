@@ -435,6 +435,20 @@
     },
     {
       "vendor": "deepseek",
+      "name": "DeepSeek-V3",
+      "displayName": "DeepSeek V3",
+      "url": "https://api-docs.deepseek.com/news/news1226",
+      "rawUrl": "https://api-docs.deepseek.com/news/news1226",
+      "aliases": [
+        "DeepSeek V3",
+        "DeepSeek-V3",
+        "deepseek-v3"
+      ],
+      "sourceKey": "deepseek-api-docs-sitemap",
+      "title": "🚀 Introducing DeepSeek-V3"
+    },
+    {
+      "vendor": "deepseek",
       "name": "DeepSeek-V3-0324",
       "displayName": "DeepSeek V3 0324",
       "url": "https://api-docs.deepseek.com/news/news250325",

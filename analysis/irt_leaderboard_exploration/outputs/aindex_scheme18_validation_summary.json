@@ -667,7 +667,7 @@
       "derived_external_score_cells_removed": 0,
       "unscoped_external_score_cells_removed": 770,
       "site_livecodebench_cells_excluded": 378,
-      "variant_scoped_direct_score_cells_retained": 405
+      "variant_scoped_direct_score_cells_retained": 402
     },
     "review_parity": {
       "requested": false,

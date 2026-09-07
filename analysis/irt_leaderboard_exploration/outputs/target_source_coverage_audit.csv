@@ -5,7 +5,6 @@ Claude Fable 5 (with fallback),claude-fable-5,Anthropic,14,14,7,7,anthropic-clau
 Claude Opus 5 (high),claude-opus-5-high,Anthropic,1,1,0,1,anthropic-claude-opus-5-release
 Claude Opus 5 (max),claude-opus-5,Anthropic,7,7,5,2,anthropic-claude-opus-5-system-card
 Claude Sonnet 5 (max),claude-sonnet-5,Anthropic,6,6,4,2,anthropic-claude-sonnet-5-release
-DeepSeek R1 0528,deepseek-r1,DeepSeek,3,3,2,1,hf-deepseek-ai-deepseek-r1-card
 DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,DeepSeek,7,7,2,5,deepseek-v4-flash-0731-update
 DeepSeek V4 Pro 0813 (max),deepseek-v4-pro,DeepSeek,11,11,3,8,deepseek-v4-pro-0813-card
 GLM-4.7-Flash,glm-4-7-flash-non-reasoning,Z AI,6,6,2,4,hf-zai-org-glm-4-7-flash-card
