@@ -2477,11 +2477,13 @@ def _attach_external_benchmark_scores_impl(
         tuple[int, str],
         tuple[tuple[int, int, int, int], dict[str, Any], float],
     ] = {}
+    reference_selected: dict[
+        tuple[int, str, str],
+        tuple[tuple[int, int, int, int], dict[str, Any], float],
+    ] = {}
     model_by_identity = {id(model): model for model in models}
 
     for ordinal, result in enumerate(external_benchmark_data.get("results", [])):
-        if result.get("modelScoreEligible") is False:
-            continue
         value = _number_or_none(result.get("value"))
         benchmark_id = result.get("benchmarkId")
         if value is None or not benchmark_id:
@@ -2501,13 +2503,34 @@ def _attach_external_benchmark_scores_impl(
             continue
         key = external_metric_key(str(benchmark_id))
         priority = external_result_priority(result, source, ordinal)
+        if result.get("modelScoreEligible") is False:
+            if _bool_or_none(source.get("displayReferenceScores")) is not True:
+                continue
+            reference_key = (
+                id(model),
+                key,
+                str(result.get("sourceId") or ""),
+            )
+            current = reference_selected.get(reference_key)
+            if current is None or priority > current[0]:
+                reference_selected[reference_key] = (priority, result, value)
+            continue
         selection_key = (id(model), key)
         current = selected.get(selection_key)
         if current is None or priority > current[0]:
             selected[selection_key] = (priority, result, value)
 
-    for (model_identity, key), (_, result, value) in sorted(
-        selected.items(), key=lambda entry: entry[1][0][-1]
+    attached = [
+        (model_identity, key, priority, result, value, True)
+        for (model_identity, key), (priority, result, value) in selected.items()
+    ]
+    attached.extend(
+        (model_identity, key, priority, result, value, False)
+        for (model_identity, key, _source_id), (priority, result, value)
+        in reference_selected.items()
+    )
+    for model_identity, key, _, result, value, score_eligible in sorted(
+        attached, key=lambda entry: entry[2][-1]
     ):
         model = model_by_identity[model_identity]
         benchmark_id = result.get("benchmarkId")
@@ -2517,7 +2540,8 @@ def _attach_external_benchmark_scores_impl(
             if "variantScoped" in result
             else source.get("variantScoped")
         )
-        model["scores"][key] = value
+        if score_eligible:
+            model["scores"][key] = value
         entry = {
             "benchmarkId": benchmark_id,
             "metricKey": key,
@@ -2528,6 +2552,7 @@ def _attach_external_benchmark_scores_impl(
             "sourceLabel": result.get("sourceLabel") or source.get("label") or "",
             "sourceUrl": result.get("sourceUrl") or source.get("url") or "",
             "variantScoped": _bool_or_none(raw_variant_scoped) is True,
+            "modelScoreEligible": score_eligible,
             "evidenceEligible": result.get("evidenceEligible") is not False,
             "effort": result.get("effort") or source.get("effort") or "",
             "systemScore": bool(result.get("systemScore")),
@@ -2538,6 +2563,8 @@ def _attach_external_benchmark_scores_impl(
                 or ""
             ),
         }
+        if not score_eligible:
+            entry["displayOnly"] = True
         for metadata_key in (
             "derived",
             "estimated",
@@ -2668,7 +2695,10 @@ def share_external_benchmarks_with_variants(models: list[dict[str, Any]]) -> Non
         benchmark_scores: dict[str, float] = {}
         for sibling in siblings:
             for entry in sibling.get("externalBenchmarks", []):
-                if entry.get("variantScoped"):
+                if (
+                    entry.get("variantScoped")
+                    or entry.get("modelScoreEligible") is False
+                ):
                     continue
                 key = str(entry.get("metricKey") or "")
                 value = _number_or_none(entry.get("value"))

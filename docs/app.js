@@ -336,6 +336,9 @@ const copy = {
     detailBenchmarkSubtitle: "均衡逐项实验模板中的测试项；它们不作为主榜固定权重。",
     detailExternalTitle: "非参考项目分数",
     detailExternalSubtitle: "AA 子项、官方发布页及其他公开测评：其中一部分作为方案 18 的只增益扩展项参与计分，其余为排除项或仅用于 Custom Weight",
+    detailReferenceOnlyTitle: "官网参考分数（不参与排名）",
+    detailReferenceOnlySubtitle: "官网已公布、但无法可靠归属到当前具体推理档位或评分口径的结果；仅展示原始证据，不写入模型分数。",
+    benchmarkReferenceOnly: "仅供参考 · 不参与排名",
     detailCostTitle: "Detail",
     detailVariantsTitle: "同模型档位",
     detailSourcesTitle: "外部测评参考",
@@ -817,6 +820,9 @@ const copy = {
     detailBenchmarkSubtitle: "Benchmarks in the balanced per-item experiment template; these are not fixed primary-ranking weights.",
     detailExternalTitle: "Non-reference benchmark scores",
     detailExternalSubtitle: "AA submetrics, official release scores, and other public evaluations: some are only-add Scheme 18 extensions; others are excluded or Custom-only",
+    detailReferenceOnlyTitle: "Official reference scores (not ranked)",
+    detailReferenceOnlySubtitle: "Published first-party results that cannot be assigned reliably to this exact effort tier or scoring protocol. They are displayed as evidence and never written to model scores.",
+    benchmarkReferenceOnly: "Reference only · not ranked",
     detailCostTitle: "Detail",
     detailVariantsTitle: "Same-model tiers",
     detailSourcesTitle: "External evaluation references",
@@ -4414,6 +4420,8 @@ function renderModelDetail(ranked, preset) {
   const siblingRows = ranked.filter((row) => row.variantGroup === model.variantGroup);
   const referenceRows = benchmarkProfileRows(model, { reference: true });
   const nonReferenceRows = benchmarkProfileRows(model, { reference: false });
+  const referenceOnlyRows = benchmarkEvidenceRows(model)
+    .filter((row) => row.modelScoreEligible === false);
   const providerName = model.creator || tr("unknownCreator");
 
   els.modelDetail.innerHTML = `
@@ -4476,6 +4484,18 @@ function renderModelDetail(ranked, preset) {
         ${referenceRows.length ? referenceRows.map(renderBenchmarkRow).join("") : `<div class="empty">${escapeHtml(tr("noBenchmarks"))}</div>`}
       </div>
     </section>
+
+    ${referenceOnlyRows.length ? `
+      <section class="detail-section">
+        <div class="detail-section-head">
+          <h2>${escapeHtml(tr("detailReferenceOnlyTitle"))}</h2>
+          <p>${escapeHtml(tr("detailReferenceOnlySubtitle"))}</p>
+        </div>
+        <div class="benchmark-evidence-list">
+          ${referenceOnlyRows.map(renderBenchmarkEvidenceRow).join("")}
+        </div>
+      </section>
+    ` : ""}
 
     <section class="detail-section">
       <div class="detail-section-head">
@@ -5189,7 +5209,7 @@ function renderBenchmarkEvidenceRow(row) {
       <span class="benchmark-evidence-icon">${escapeHtml(icon)}</span>
       <span class="benchmark-evidence-copy">
         <strong>${escapeHtml(row.label)}</strong>
-        <em>${escapeHtml(metric.category || source)} · ${escapeHtml(source)}</em>
+        <em>${escapeHtml(metric.category || source)} · ${escapeHtml(source)}${row.modelScoreEligible === false ? ` · ${escapeHtml(tr("benchmarkReferenceOnly"))}` : ""}</em>
       </span>
       <span class="benchmark-evidence-track"><span style="--value: ${valueWidth}%"></span></span>
       <b>${escapeHtml(value)}</b>

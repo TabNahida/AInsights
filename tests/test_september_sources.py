@@ -54,6 +54,15 @@ class SeptemberSourceTests(unittest.TestCase):
         attach_external_benchmark_scores(models, {"results": rows, "sources": [source]})
         self.assertEqual(models[0]["scores"], {"benchmark:deepswe-v1-1": 73.7})
         self.assertEqual(models[1]["scores"], {})
+        self.assertEqual(len(models[0]["externalBenchmarks"]), 15)
+        self.assertEqual(models[1]["externalBenchmarks"], [])
+        reference_rows = [
+            row for row in models[0]["externalBenchmarks"]
+            if row["modelScoreEligible"] is False
+        ]
+        self.assertEqual(len(reference_rows), 14)
+        self.assertTrue(all(row["displayOnly"] for row in reference_rows))
+        self.assertNotIn("benchmark:hle-verified-1811", models[0]["scores"])
 
 
 if __name__ == "__main__":

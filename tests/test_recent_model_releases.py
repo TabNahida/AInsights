@@ -87,6 +87,61 @@ class RecentModelReleaseTests(unittest.TestCase):
             self.assertFalse(row["evidenceEligible"])
             self.assertNotIn("effort", row)
 
+    def test_recent_release_metadata_and_reference_scores_reach_model_payload(self):
+        collected = build_payload({}, "seeded")
+        source_ids = {
+            "openai-gpt-6-astra-release",
+            "anthropic-claude-fable-5-1-system-card",
+            "google-gemini-3-8-flash-card",
+            "zai-glm-5-3-flash-release",
+        }
+        external = {
+            "sources": [
+                spec for spec in collected["sources"]
+                if spec["id"] in source_ids
+            ],
+            "benchmarks": collected["benchmarks"],
+            "results": [
+                row for row in collected["results"]
+                if row["sourceId"] in source_ids
+            ],
+        }
+        aa_rows = [
+            {"model": "GPT-6 Astra (max)", "slug": "gpt-6-astra", "creator": "OpenAI"},
+            {"model": "Claude Fable 5.1 (max with fallback)", "slug": "claude-fable-5-1", "creator": "Anthropic"},
+            {"model": "Gemini 3.8 Flash (high)", "slug": "gemini-3-8-flash", "creator": "Google"},
+            {"model": "Gemini 3.8 Flash (low)", "slug": "gemini-3-8-flash-low", "creator": "Google"},
+            {"model": "GLM-5.3-Flash", "slug": "glm-5-3-flash", "creator": "Z AI"},
+        ]
+        payload = build_site_payload(aa_rows, external, {})
+        by_slug = {model["slug"]: model for model in payload["models"]}
+
+        astra = by_slug["gpt-6-astra"]
+        self.assertEqual(astra["modelUrl"], "https://openai.com/index/gpt-6-astra/")
+        self.assertEqual(astra["officialModelSourceId"], "openai-gpt-6-astra-release")
+        self.assertEqual(len(astra["externalBenchmarks"]), 25)
+        self.assertTrue(all(not row["modelScoreEligible"] for row in astra["externalBenchmarks"]))
+        self.assertTrue(all(astra["scores"].get(row["metricKey"]) is None for row in astra["externalBenchmarks"]))
+
+        fable = by_slug["claude-fable-5-1"]
+        self.assertEqual(fable["modelUrl"], "https://www.anthropic.com/claude-fable-and-mythos-5-1")
+        self.assertEqual(fable["officialModelSourceId"], "anthropic-claude-fable-5-1-system-card")
+
+        gemini = by_slug["gemini-3-8-flash"]
+        self.assertEqual(gemini["officialModelSourceId"], "google-gemini-3-8-flash-card")
+        self.assertEqual(gemini["inputModalities"], ["Text", "Image", "Audio", "Video"])
+        self.assertEqual(len(gemini["externalBenchmarks"]), 15)
+        self.assertEqual(
+            sum(row["modelScoreEligible"] for row in gemini["externalBenchmarks"]),
+            1,
+        )
+        self.assertEqual(by_slug["gemini-3-8-flash-low"]["externalBenchmarks"], [])
+
+        glm = by_slug["glm-5-3-flash"]
+        self.assertEqual(glm["modelUrl"], "https://docs.z.ai/guides/llm/glm-5.3-flash")
+        self.assertEqual(glm["officialModelSourceId"], "zai-glm-5-3-flash-release")
+        self.assertEqual(len(glm["externalBenchmarks"]), 6)
+
     def test_flash_next_preserves_composite_metrics_and_does_not_alias_hosted_flash(self):
         spec = source("qwen-qwen3-8-flash-next-card")
         html = """
