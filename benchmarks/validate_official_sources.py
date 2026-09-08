@@ -21,6 +21,9 @@ DEFAULT_VENDOR_MANIFEST_JSON = (
 VERIFIED_HF_ORGANIZATIONS = {"Qwen", "zai-org", "moonshotai", "deepseek-ai"}
 
 PRIMARY_VENDOR_SOURCE_URLS = {
+    "openai-gpt-6-astra-release": "https://openai.com/index/gpt-6-astra/",
+    "zai-glm-5-3-flash-release": "https://docs.z.ai/guides/llm/glm-5.3-flash",
+    "deepseek-v4-flash-vision-exp-card": "https://api-docs.deepseek.com/news/news260821",
     "qwen-qwen3-release": "https://qwen.ai/blog?id=qwen3",
     "qwen-qwen2-release": "https://qwen.ai/blog?id=qwen2",
     "qwen-qwen2-5-release": "https://qwen.ai/blog?id=qwen2.5",
@@ -45,6 +48,9 @@ PRIMARY_VENDOR_SOURCE_URLS = {
 }
 
 PRIMARY_VENDOR_SOURCE_RAW_URLS = {
+    "openai-gpt-6-astra-release": "https://openai.com/index/gpt-6-astra/",
+    "zai-glm-5-3-flash-release": "https://docs.z.ai/guides/llm/glm-5.3-flash.md",
+    "deepseek-v4-flash-vision-exp-card": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp/raw/main/README.md",
     "qwen-qwen3-release": "https://qwen.ai/blog?id=qwen3",
     "qwen-qwen2-release": "https://qwenlm.github.io/blog/qwen2/",
     "qwen-qwen2-5-release": "https://qwen.ai/blog?id=qwen2.5",
@@ -76,16 +82,20 @@ PRIMARY_VENDOR_SOURCE_RAW_URLS = {
 PRIMARY_VENDOR_PAGE_SOURCE_IDS = set(PRIMARY_VENDOR_SOURCE_URLS)
 
 OFFICIAL_HF_SOURCE_ORGS = {
+    "qwen-qwen3-8-flash-next-card": "Qwen",
     "qwen-qwen3-8-27b-card": "Qwen",
     "kimi-k2-0905-card": "moonshotai",
 }
 
 OFFICIAL_HF_SOURCE_MODELS = {
+    "qwen-qwen3-8-flash-next-card": "Qwen3.8-Flash-Next",
     "qwen-qwen3-8-27b-card": "Qwen3.8-27B",
     "kimi-k2-0905-card": "Kimi-K2-Instruct-0905",
 }
 
 EXPLICIT_HF_RAW_SOURCES = {
+    "qwen-qwen3-8-flash-next-card": ("Qwen", "Qwen3.8-Flash-Next", "readme"),
+    "deepseek-v4-flash-vision-exp-card": ("deepseek-ai", "DeepSeek-V4-Flash-Vision-Exp", "readme"),
     "qwen-qwen3-8-27b-card": ("Qwen", "Qwen3.8-27B", "readme"),
     "kimi-k2-0905-card": ("moonshotai", "Kimi-K2-Instruct-0905", "page"),
     "kimi-k3-release": ("moonshotai", "Kimi-K3", "readme"),

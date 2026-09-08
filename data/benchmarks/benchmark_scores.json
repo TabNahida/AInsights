@@ -1,14 +1,141 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T08:14:25+00:00",
+  "generatedAt": "2026-09-08T12:30:35+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
       "label": "OpenAI GPT-5.5 launch evaluations",
       "url": "https://openai.com/index/introducing-gpt-5-5/",
       "category": "Official model release",
-      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
+      "collectionStatus": "partial-refresh; seeded 182 benchmark rows",
       "note": "Official OpenAI table covering GPT-5.5, GPT-5.4, GPT-5.5 Pro, GPT-5.4 Pro, Claude Opus 4.7, and Gemini 3.1 Pro."
+    },
+    {
+      "id": "openai-gpt-6-astra-release",
+      "label": "OpenAI GPT-6 Astra official release evaluations",
+      "url": "https://openai.com/index/gpt-6-astra/",
+      "rawUrl": "https://openai.com/index/gpt-6-astra/",
+      "category": "Official model release",
+      "collectionStatus": "refreshed",
+      "note": "OpenAI's September 3, 2026 release appendix explicitly reports the maximum score at any effort. These are source-library results, not evidence for a particular max, xhigh, or lower-effort variant. Only OpenAI's Astra column is ingested. OSWorld's offline subset, Terminal-Bench 4.0, and the new June-August ExploitBench set remain separate from earlier evaluations. BenchCAD uses tools; ExploitGym was run without the six-hour time limit.",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "id": "qwen-qwen3-8-flash-next-card",
+      "label": "Qwen3.8-Flash-Next official model card",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "rawUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next/raw/main/README.md",
+      "category": "Official model card",
+      "collectionStatus": "refreshed",
+      "note": "Qwen's August 26, 2026 open-weight release, with thinking and xhigh effort enabled by default. The hosted Qwen3.8-Flash is a separate product and is not an alias. Only the Flash-Next column is retained. Composite cells preserve Score versus Pass@1, average versus Pass@3, OSWorld partial versus binary, and with/without Code Interpreter. SWE-bench Pro uses Qwen's refined task set.",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default",
+      "modelId": "Qwen/Qwen3.8-Flash-Next",
+      "organization": "Qwen",
+      "addModelIfMissing": true,
+      "modelMetadata": {
+        "model": "Qwen3.8-Flash-Next",
+        "displayName": "Qwen3.8-Flash-Next",
+        "modelKey": "Qwen3.8-Flash-Next [R]",
+        "slug": "qwen3-8-flash-next",
+        "creator": "Alibaba",
+        "releaseDate": "2026-08-26",
+        "modelUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+        "contextWindowTokens": 262144,
+        "openSourceCategorization": "commercial-license",
+        "isReasoning": true,
+        "inputModalities": [
+          "Text",
+          "Image",
+          "Video"
+        ],
+        "outputModalities": [
+          "Text"
+        ],
+        "modelDetails": {
+          "parameters": "125B plus 51B n-gram embedding and 4B MTP; 6B active",
+          "license": "Qwen Community License 1.0",
+          "contextNote": "262,144 native context; extendable to 1,000,000 tokens."
+        }
+      }
+    },
+    {
+      "id": "zai-glm-5-3-flash-release",
+      "label": "GLM-5.3-Flash official release evaluations",
+      "url": "https://docs.z.ai/guides/llm/glm-5.3-flash",
+      "rawUrl": "https://docs.z.ai/guides/llm/glm-5.3-flash.md",
+      "category": "Official release",
+      "collectionStatus": "stale-retained; no parseable benchmark table found",
+      "note": "Six first-party scores transcribed from the GLM-5.3-Flash benchmark chart at https://raw.githubusercontent.com/zai-org/GLM-5/refs/heads/main/resources/bench_53.png, cross-checked against the official documentation. The model card requires default max effort for benchmark reproduction. AutomationBench is v1.0.6. The chart does not qualify Agents' Last Exam's score metric, so that row remains reference-only rather than being equated with a composite Score.",
+      "modelAliases": [
+        "GLM-5.3-Flash",
+        "GLM-5.3-Flash (max)",
+        "GLM 5.3 Flash",
+        "zai-org/GLM-5.3-Flash",
+        "glm-5-3-flash"
+      ],
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "model-card-default",
+      "modelId": "zai-org/GLM-5.3-Flash"
+    },
+    {
+      "id": "deepseek-v4-flash-vision-exp-card",
+      "label": "DeepSeek-V4-Flash-Vision-Exp official model card",
+      "url": "https://api-docs.deepseek.com/news/news260821",
+      "rawUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp/raw/main/README.md",
+      "category": "Official model card",
+      "collectionStatus": "refreshed",
+      "note": "DeepSeek's experimental multimodal API was released August 21, 2026 and the MIT-licensed weights were published August 31. Only its own model column is retained from the official model card. Text-agent evaluations use DeepSeek Harness minimal mode at max effort. The card does not specify an effort level for the multimodal rows; those remain reference-only.",
+      "modelAliases": [
+        "DeepSeek V4 Flash Vision Exp (max)",
+        "DeepSeek-V4-Flash-Vision-Exp",
+        "DeepSeek V4 Flash Vision (max)",
+        "DeepSeek V4 Flash Vision (Reasoning, Max Effort)",
+        "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+        "deepseek-v4-flash-vision",
+        "deepseek-v4-flash-vision-exp"
+      ],
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "explicit",
+      "modelId": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+      "organization": "deepseek-ai",
+      "modelMetadata": {
+        "slug": "deepseek-v4-flash-vision",
+        "modelUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+        "contextWindowTokens": 1048576,
+        "openSourceCategorization": "permissive",
+        "inputModalities": [
+          "Text",
+          "Image"
+        ],
+        "outputModalities": [
+          "Text"
+        ],
+        "modelDetails": {
+          "license": "MIT",
+          "licenseUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp/blob/main/LICENSE",
+          "configUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp/blob/main/config.json",
+          "contextNote": "Published config supports 1,048,576 tokens with YaRN factor 16 over 65,536 original positions."
+        }
+      }
     },
     {
       "id": "openai-gpt-5-6-release",
@@ -16,7 +143,7 @@
       "url": "https://openai.com/index/gpt-5-6/",
       "rawUrl": "https://openai.com/index/gpt-5-6/",
       "category": "Official model release",
-      "collectionStatus": "seeded-official-values; refresh blocked: HTTPError",
+      "collectionStatus": "refreshed",
       "note": "OpenAI official GPT-5.6 release tables covering Sol, Terra, and Luna across professional work, coding, science, computer use, cybersecurity, reasoning, tool use, and long-context evaluations. The release appendix labels the single-agent columns only by model tier, while the surrounding AA index values and separately reported Sol Ultra rows support mapping these columns to max effort. The mapping is therefore exact-variant scoped but marked as configuration-inferred and must not be broadcast to other effort settings.",
       "modelAliases": [
         "GPT-5.6 Sol (max)",
@@ -740,6 +867,55 @@
       "note": "NVIDIA Research technical report for Nemotron 3 Ultra. The PDF is kept as the official source and seed rows preserve the published benchmark table."
     },
     {
+      "id": "anthropic-claude-fable-5-1-system-card",
+      "label": "Anthropic Claude Fable 5.1 and Mythos 5.1 System Card",
+      "url": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "rawUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "category": "Official system card",
+      "collectionStatus": "stale-retained; no parseable benchmark table found",
+      "note": "September 1, 2026 System Card, Table 8.1.A and sections 8.2, 8.3, 8.6-8.8, 8.14.3. Values are the Fable 5.1 product with production safeguards/fallback, adaptive thinking at max effort; Mythos 5.1 values are excluded. Terminal-Bench 4.0 uses the precise 55.8% from section 8.6 instead of the rounded table value. OSWorld uses the August task release plus subsequent and Anthropic task/grader fixes; partial and strict scores are distinct and cannot be compared with earlier releases. CursorBench 3.2.0 is independently measured by Cursor.",
+      "modelAliases": [
+        "Claude Fable 5.1 (max with fallback)",
+        "claude-fable-5-1"
+      ],
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "id": "google-gemini-3-8-flash-card",
+      "label": "Google DeepMind Gemini 3.8 Flash model card",
+      "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "rawUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "category": "Official model card",
+      "collectionStatus": "stale-retained; no parseable benchmark table found",
+      "note": "September 2, 2026 official evaluation chart, read together with https://deepmind.google/models/evals-methodology/gemini-3-8-flash/. Only the Gemini 3.8 Flash column is transcribed. The source mixes default API settings, public leaderboard maxima, and third-party measurements, so only DeepSWE (explicitly high thinking) is eligible for an exact configuration. OSWorld is partial credit, maximum over three runs before the August 8 patch. HLE-Verified uses 1,811 items and is separate from original HLE; LVBench's agentic and static values are separate. Pricing shown is introductory through December 31, 2026.",
+      "modelAliases": [
+        "Gemini 3.8 Flash",
+        "gemini-3-8-flash"
+      ],
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "id": "google-gemini-3-7-flash-comparison",
+      "label": "Google DeepMind Gemini 3.7 Flash comparison evaluations",
+      "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "rawUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "category": "Official model card",
+      "collectionStatus": "stale-retained; no parseable benchmark table found",
+      "note": "Gemini 3.7 Flash column in Google's September 2, 2026 comparison chart. Stored as reference evidence because the chart combines unspecified effort settings and public leaderboard maxima. Benchmark versions and the pre-August 8 OSWorld patch/best-of-three protocol remain separate.",
+      "modelAliases": [
+        "Gemini 3.7 Flash",
+        "gemini-3-7-flash"
+      ],
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
       "id": "official-qwen-qwen3-coder-next-page",
       "label": "Qwen3 Coder Next automatically discovered official release",
       "url": "https://qwen.ai/blog?id=qwen3-coder-next",
@@ -924,34 +1100,33 @@
       }
     },
     {
-      "id": "official-qwen-qwen3-8-flash-next-page",
-      "label": "Qwen3.8 Flash Next automatically discovered official release",
-      "url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
-      "rawUrl": "https://qwen.ai/api/v2/article/retrieval?language=en-US&path=qwen3.8-flash-next&type=qwen_ai",
+      "id": "official-deepseek-news250120-page",
+      "label": "DeepSeek R1 automatically discovered official release",
+      "url": "https://api-docs.deepseek.com/news/news250120",
+      "rawUrl": "https://api-docs.deepseek.com/news/news250120",
       "category": "Official release",
       "collectionStatus": "reference-only; no parseable benchmark table found",
       "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
       "scoreStatus": "reference",
       "modelAliases": [
-        "Qwen3.8 Flash Next",
-        "Qwen3.8-Flash-Next",
-        "qwen3-8-flash-next"
+        "DeepSeek R1",
+        "DeepSeek-R1",
+        "deepseek-r1"
       ],
       "variantScoped": true,
       "exactBenchmarkLabelsOnly": true,
       "configurationConfidence": "release-page-default",
       "autoDiscoveredVendorPage": true,
-      "vendor": "qwen",
-      "discoverySourceKey": "qwen-article-json",
+      "vendor": "deepseek",
+      "discoverySourceKey": "deepseek-api-docs-sitemap",
       "addModelIfMissing": true,
       "modelMetadata": {
-        "model": "Qwen3.8 Flash Next",
-        "displayName": "Qwen3.8 Flash Next",
-        "modelKey": "Qwen3.8 Flash Next",
-        "slug": "qwen3-8-flash-next",
-        "creator": "Alibaba",
-        "modelUrl": "https://qwen.ai/blog?id=qwen3.8-flash-next",
-        "releaseDate": "2026-08-26"
+        "model": "DeepSeek R1",
+        "displayName": "DeepSeek R1",
+        "modelKey": "DeepSeek R1",
+        "slug": "deepseek-r1",
+        "creator": "DeepSeek",
+        "modelUrl": "https://api-docs.deepseek.com/news/news250120"
       }
     },
     {
@@ -1222,36 +1397,6 @@
         "slug": "deepseek-v3-2-exp",
         "creator": "DeepSeek",
         "modelUrl": "https://api-docs.deepseek.com/news/news250929"
-      }
-    },
-    {
-      "id": "official-deepseek-news260821-page",
-      "label": "DeepSeek V4 Flash Vision Exp automatically discovered official release",
-      "url": "https://api-docs.deepseek.com/news/news260821",
-      "rawUrl": "https://api-docs.deepseek.com/news/news260821",
-      "category": "Official release",
-      "collectionStatus": "reference-only; no parseable benchmark table found",
-      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "modelAliases": [
-        "DeepSeek V4 Flash Vision Exp",
-        "DeepSeek-V4-Flash-Vision-Exp",
-        "deepseek-v4-flash-vision-exp"
-      ],
-      "variantScoped": true,
-      "exactBenchmarkLabelsOnly": true,
-      "configurationConfidence": "release-page-default",
-      "autoDiscoveredVendorPage": true,
-      "vendor": "deepseek",
-      "discoverySourceKey": "deepseek-api-docs-sitemap",
-      "addModelIfMissing": true,
-      "modelMetadata": {
-        "model": "DeepSeek V4 Flash Vision Exp",
-        "displayName": "DeepSeek V4 Flash Vision Exp",
-        "modelKey": "DeepSeek V4 Flash Vision Exp",
-        "slug": "deepseek-v4-flash-vision-exp",
-        "creator": "DeepSeek",
-        "modelUrl": "https://api-docs.deepseek.com/news/news260821"
       }
     },
     {
@@ -1527,35 +1672,6 @@
       "revision": "9d2398f478cab2de883137db3a36ad2c96205e24",
       "tags": [
         "license:other"
-      ],
-      "autoDiscovered": true
-    },
-    {
-      "id": "hf-zai-org-glm-5-3-flash-card",
-      "label": "GLM-5.3-Flash official model card",
-      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
-      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/690b705278a3a58e538fcb37c2ca8b5f9511213c/README.md",
-      "category": "Official model card",
-      "collectionStatus": "reference-only; no parseable benchmark table found",
-      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "modelAliases": [
-        "GLM-5.3-Flash",
-        "zai-org/GLM-5.3-Flash",
-        "GLM 5 3 Flash",
-        "glm-5-3-flash"
-      ],
-      "variantScoped": true,
-      "exactBenchmarkLabelsOnly": true,
-      "configurationConfidence": "model-card-default",
-      "modelId": "zai-org/GLM-5.3-Flash",
-      "organization": "zai-org",
-      "createdAt": "2026-08-25T06:43:14.000Z",
-      "lastModified": "2026-09-04T06:45:04.000Z",
-      "revision": "690b705278a3a58e538fcb37c2ca8b5f9511213c",
-      "tags": [
-        "eval-results",
-        "license:mit"
       ],
       "autoDiscovered": true
     },
@@ -2882,6 +2998,146 @@
       "category": "Multimodal reasoning",
       "unit": "%",
       "icon": "MMVU"
+    },
+    {
+      "id": "arc-agi-1",
+      "label": "ARC-AGI-1",
+      "category": "Abstract reasoning",
+      "unit": "%",
+      "icon": "ARC"
+    },
+    {
+      "id": "terminal-bench-4",
+      "label": "Terminal-Bench 4.0",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "TERM"
+    },
+    {
+      "id": "terminal-bench-science-0-1",
+      "label": "Terminal-Bench Science 0.1",
+      "category": "Scientific reasoning",
+      "unit": "%",
+      "icon": "SCI"
+    },
+    {
+      "id": "osworld-2-offline-2026-08-08-partial",
+      "label": "OSWorld 2.0 Offline (2026-08-08, partial)",
+      "category": "Computer use",
+      "unit": "%",
+      "icon": "OS"
+    },
+    {
+      "id": "screenspot-pro-no-tools",
+      "label": "ScreenSpot-Pro (no tools)",
+      "category": "Computer use",
+      "unit": "%",
+      "icon": "GUI"
+    },
+    {
+      "id": "frontiercode-v1-1-extended",
+      "label": "FrontierCode v1.1 Extended (score)",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "CODE"
+    },
+    {
+      "id": "exploitbench-2026-06-08",
+      "label": "ExploitBench (June-August 2026)",
+      "category": "Cybersecurity",
+      "unit": "%",
+      "icon": "CYB"
+    },
+    {
+      "id": "sre-bench",
+      "label": "SRE-Bench",
+      "category": "Cybersecurity",
+      "unit": "%",
+      "icon": "SRE"
+    },
+    {
+      "id": "apexbench-pass1",
+      "label": "ApexBench (Pass@1)",
+      "category": "Agentic reasoning",
+      "unit": "%",
+      "icon": "APEX"
+    },
+    {
+      "id": "chartography",
+      "label": "Chartography",
+      "category": "Multimodal reasoning",
+      "unit": "%",
+      "icon": "CHART"
+    },
+    {
+      "id": "lvbench",
+      "label": "LVBench",
+      "category": "Video understanding",
+      "unit": "%",
+      "icon": "VID"
+    },
+    {
+      "id": "swe-bench-multimodal",
+      "label": "SWE-bench Multimodal",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "SWE"
+    },
+    {
+      "id": "cursorbench-3-2-0",
+      "label": "CursorBench 3.2.0",
+      "category": "Agentic coding",
+      "unit": "%",
+      "icon": "CUR"
+    },
+    {
+      "id": "osworld-2-aug2026-anthropic-partial",
+      "label": "OSWorld 2.0 (Aug 2026 + Anthropic fixes, partial)",
+      "category": "Computer use",
+      "unit": "%",
+      "icon": "OS2"
+    },
+    {
+      "id": "osworld-2-aug2026-anthropic-strict",
+      "label": "OSWorld 2.0 (Aug 2026 + Anthropic fixes, strict)",
+      "category": "Computer use",
+      "unit": "%",
+      "icon": "OS2"
+    },
+    {
+      "id": "osworld-2-pre0808-best3-partial",
+      "label": "OSWorld 2.0 (pre-Aug 8 patch, best of 3 partial)",
+      "category": "Computer use",
+      "unit": "%",
+      "icon": "OS2"
+    },
+    {
+      "id": "hle-verified-1811",
+      "label": "HLE-Verified (1,811 items)",
+      "category": "Academic reasoning",
+      "unit": "%",
+      "icon": "HLEV"
+    },
+    {
+      "id": "lvbench-agentic",
+      "label": "LVBench (agentic)",
+      "category": "Video understanding",
+      "unit": "%",
+      "icon": "LV"
+    },
+    {
+      "id": "lvbench-static",
+      "label": "LVBench (static)",
+      "category": "Video understanding",
+      "unit": "%",
+      "icon": "LV"
+    },
+    {
+      "id": "labbench2",
+      "label": "LABBench2",
+      "category": "Biology",
+      "unit": "%",
+      "icon": "LAB"
     }
   ],
   "results": [
@@ -3579,6 +3835,1325 @@
       "sourceId": "openai-gpt-5-5",
       "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/",
       "sourceLabel": "OpenAI GPT-5.5 launch evaluations"
+    },
+    {
+      "benchmarkId": "agents-last-exam",
+      "benchmarkLabel": "Agents' Last Exam",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 59.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "osworld-2-offline-2026-08-08-partial",
+      "benchmarkLabel": "OSWorld 2.0 Offline (2026-08-08, partial)",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 72.6,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "screenspot-pro-no-tools",
+      "benchmarkLabel": "ScreenSpot-Pro (no tools)",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 92.7,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "automationbench",
+      "benchmarkLabel": "AutomationBench",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 41.4,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "benchcad-python",
+      "benchmarkLabel": "BenchCAD (Python tool)",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 95.9,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 91.5,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "terminal-bench-4",
+      "benchmarkLabel": "Terminal-Bench 4.0",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 57.9,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 74.1,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "frontiercode-v1-1-extended",
+      "benchmarkLabel": "FrontierCode v1.1 Extended (score)",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 64.5,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "frontiercode-v1-1-main",
+      "benchmarkLabel": "FrontierCode v1.1 Main",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 53.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "terminal-bench-science-0-1",
+      "benchmarkLabel": "Terminal-Bench Science 0.1",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 64.6,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "frontiermath-tier-4-v2",
+      "benchmarkLabel": "FrontierMath Tier 4 (v2)",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 97.6,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 96.0,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 57.2,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "healthbench-professional",
+      "benchmarkLabel": "HealthBench Professional",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 63.4,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "exploitbench",
+      "benchmarkLabel": "ExploitBench",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 100.0,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "exploitgym",
+      "benchmarkLabel": "ExploitGym",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 42.4,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "exploitbench-2026-06-08",
+      "benchmarkLabel": "ExploitBench (June-August 2026)",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 39.0,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "sre-bench",
+      "benchmarkLabel": "SRE-Bench",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 88.0,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "sec-bench-pro",
+      "benchmarkLabel": "SEC-Bench Pro",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 85.4,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "openai-mrcr-v2-256k-512k",
+      "benchmarkLabel": "OpenAI MRCR v2 8-needle 256K-512K",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 100.0,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "openai-mrcr-v2-512k-1m",
+      "benchmarkLabel": "OpenAI MRCR v2 8-needle 512K-1M",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 96.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "arc-agi-3",
+      "benchmarkLabel": "ARC-AGI-3",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 99.9,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "arc-agi-2",
+      "benchmarkLabel": "ARC-AGI-2",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 95.0,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "arc-agi-1",
+      "benchmarkLabel": "ARC-AGI-1",
+      "model": "GPT-6 Astra",
+      "modelAliases": [
+        "GPT-6 Astra",
+        "gpt-6-astra"
+      ],
+      "value": 98.5,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-astra-release",
+      "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+      "sourceLabel": "OpenAI GPT-6 Astra official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 58.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 62.5,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 81.0,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "nl2repo",
+      "benchmarkLabel": "NL2Repo",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 48.1,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "coworkbench",
+      "benchmarkLabel": "CoWorkBench",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 73.9,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "job-bench",
+      "benchmarkLabel": "Job Bench",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 55.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "agents-last-exam",
+      "benchmarkLabel": "Agents' Last Exam",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 51.2,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default",
+      "scoreSelection": "Score (second value after Pass@1)"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 73.5,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "ifbench",
+      "benchmarkLabel": "IFBench",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 81.3,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 91.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 35.9,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 91.9,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "claw-eval-mm-pass3",
+      "benchmarkLabel": "ClawEval-MM pass@3",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 64.4,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default",
+      "scoreSelection": "Pass@3 (first value)"
+    },
+    {
+      "benchmarkId": "claw-eval-mm-average",
+      "benchmarkLabel": "ClawEval-MM average",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 60.4,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default",
+      "scoreSelection": "average score (second value)"
+    },
+    {
+      "benchmarkId": "recreationbench",
+      "benchmarkLabel": "RecreationBench",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 49.9,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "androidworld",
+      "benchmarkLabel": "AndroidWorld",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 84.5,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "osworld-2",
+      "benchmarkLabel": "OSWorld 2.0",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 52.3,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default",
+      "scoreSelection": "partial (second value after binary)"
+    },
+    {
+      "benchmarkId": "vision2web",
+      "benchmarkLabel": "Vision2Web",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 64.0,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "erqa",
+      "benchmarkLabel": "ERQA",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 72.3,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "lvbench",
+      "benchmarkLabel": "LVBench",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 76.6,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "realworldqa",
+      "benchmarkLabel": "RealWorldQA",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 88.5,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "mathvision",
+      "benchmarkLabel": "MathVision",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 90.6,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default",
+      "scoreSelection": "without Code Interpreter (first value)"
+    },
+    {
+      "benchmarkId": "mathvision-python",
+      "benchmarkLabel": "MathVision w/ Python",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 95.7,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default",
+      "scoreSelection": "with Code Interpreter (second value)"
+    },
+    {
+      "benchmarkId": "charxiv-no-tools",
+      "benchmarkLabel": "CharXiv Reasoning",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 84.6,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default",
+      "scoreSelection": "without Code Interpreter (first value)"
+    },
+    {
+      "benchmarkId": "charxiv-tools",
+      "benchmarkLabel": "CharXiv Reasoning w/ tools",
+      "model": "Qwen3.8 Flash-Next",
+      "modelAliases": [
+        "Qwen3.8 Flash-Next",
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next",
+        "qwen3-8-flash-next"
+      ],
+      "value": 90.6,
+      "unit": "%",
+      "sourceId": "qwen-qwen3-8-flash-next-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "sourceLabel": "Qwen3.8-Flash-Next official model card",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "model-card-default",
+      "scoreSelection": "with Code Interpreter (second value)"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "GLM-5.3-Flash",
+      "modelAliases": [
+        "GLM-5.3-Flash",
+        "GLM-5.3-Flash (max)",
+        "GLM 5.3 Flash",
+        "zai-org/GLM-5.3-Flash",
+        "glm-5-3-flash"
+      ],
+      "value": 84.3,
+      "unit": "%",
+      "sourceId": "zai-glm-5-3-flash-release",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.3-flash",
+      "sourceLabel": "GLM-5.3-Flash official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "GLM-5.3-Flash",
+      "modelAliases": [
+        "GLM-5.3-Flash",
+        "GLM-5.3-Flash (max)",
+        "GLM 5.3 Flash",
+        "zai-org/GLM-5.3-Flash",
+        "glm-5-3-flash"
+      ],
+      "value": 63.4,
+      "unit": "%",
+      "sourceId": "zai-glm-5-3-flash-release",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.3-flash",
+      "sourceLabel": "GLM-5.3-Flash official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "agents-last-exam",
+      "benchmarkLabel": "Agents' Last Exam",
+      "model": "GLM-5.3-Flash",
+      "modelAliases": [
+        "GLM-5.3-Flash",
+        "GLM-5.3-Flash (max)",
+        "GLM 5.3 Flash",
+        "zai-org/GLM-5.3-Flash",
+        "glm-5-3-flash"
+      ],
+      "value": 26.3,
+      "unit": "%",
+      "sourceId": "zai-glm-5-3-flash-release",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.3-flash",
+      "sourceLabel": "GLM-5.3-Flash official release evaluations",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "effort": "max",
+      "configurationNote": "The source chart does not distinguish Pass@1 from Score.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "automationbench-v1-0-6",
+      "benchmarkLabel": "AutomationBench v1.0.6",
+      "model": "GLM-5.3-Flash",
+      "modelAliases": [
+        "GLM-5.3-Flash",
+        "GLM-5.3-Flash (max)",
+        "GLM 5.3 Flash",
+        "zai-org/GLM-5.3-Flash",
+        "glm-5-3-flash"
+      ],
+      "value": 48.8,
+      "unit": "%",
+      "sourceId": "zai-glm-5-3-flash-release",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.3-flash",
+      "sourceLabel": "GLM-5.3-Flash official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "GLM-5.3-Flash",
+      "modelAliases": [
+        "GLM-5.3-Flash",
+        "GLM-5.3-Flash (max)",
+        "GLM 5.3 Flash",
+        "zai-org/GLM-5.3-Flash",
+        "glm-5-3-flash"
+      ],
+      "value": 55.3,
+      "unit": "%",
+      "sourceId": "zai-glm-5-3-flash-release",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.3-flash",
+      "sourceLabel": "GLM-5.3-Flash official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "gdpval-aa-v2-elo",
+      "benchmarkLabel": "GDPval-AA v2 Elo",
+      "model": "GLM-5.3-Flash",
+      "modelAliases": [
+        "GLM-5.3-Flash",
+        "GLM-5.3-Flash (max)",
+        "GLM 5.3 Flash",
+        "zai-org/GLM-5.3-Flash",
+        "glm-5-3-flash"
+      ],
+      "value": 1773,
+      "unit": "Elo",
+      "sourceId": "zai-glm-5-3-flash-release",
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5.3-flash",
+      "sourceLabel": "GLM-5.3-Flash official release evaluations",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "DeepSeek V4 Flash Vision Exp (max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash Vision Exp (max)",
+        "DeepSeek-V4-Flash-Vision-Exp",
+        "DeepSeek V4 Flash Vision (max)",
+        "DeepSeek V4 Flash Vision (Reasoning, Max Effort)",
+        "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+        "deepseek-v4-flash-vision",
+        "deepseek-v4-flash-vision-exp"
+      ],
+      "value": 83.9,
+      "unit": "%",
+      "sourceId": "deepseek-v4-flash-vision-exp-card",
+      "sourceUrl": "https://api-docs.deepseek.com/news/news260821",
+      "sourceLabel": "DeepSeek-V4-Flash-Vision-Exp official model card",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "nl2repo",
+      "benchmarkLabel": "NL2Repo",
+      "model": "DeepSeek V4 Flash Vision Exp (max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash Vision Exp (max)",
+        "DeepSeek-V4-Flash-Vision-Exp",
+        "DeepSeek V4 Flash Vision (max)",
+        "DeepSeek V4 Flash Vision (Reasoning, Max Effort)",
+        "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+        "deepseek-v4-flash-vision",
+        "deepseek-v4-flash-vision-exp"
+      ],
+      "value": 57.7,
+      "unit": "%",
+      "sourceId": "deepseek-v4-flash-vision-exp-card",
+      "sourceUrl": "https://api-docs.deepseek.com/news/news260821",
+      "sourceLabel": "DeepSeek-V4-Flash-Vision-Exp official model card",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "cybergym",
+      "benchmarkLabel": "CyberGym",
+      "model": "DeepSeek V4 Flash Vision Exp (max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash Vision Exp (max)",
+        "DeepSeek-V4-Flash-Vision-Exp",
+        "DeepSeek V4 Flash Vision (max)",
+        "DeepSeek V4 Flash Vision (Reasoning, Max Effort)",
+        "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+        "deepseek-v4-flash-vision",
+        "deepseek-v4-flash-vision-exp"
+      ],
+      "value": 75.3,
+      "unit": "%",
+      "sourceId": "deepseek-v4-flash-vision-exp-card",
+      "sourceUrl": "https://api-docs.deepseek.com/news/news260821",
+      "sourceLabel": "DeepSeek-V4-Flash-Vision-Exp official model card",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "DeepSeek V4 Flash Vision Exp (max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash Vision Exp (max)",
+        "DeepSeek-V4-Flash-Vision-Exp",
+        "DeepSeek V4 Flash Vision (max)",
+        "DeepSeek V4 Flash Vision (Reasoning, Max Effort)",
+        "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+        "deepseek-v4-flash-vision",
+        "deepseek-v4-flash-vision-exp"
+      ],
+      "value": 59.3,
+      "unit": "%",
+      "sourceId": "deepseek-v4-flash-vision-exp-card",
+      "sourceUrl": "https://api-docs.deepseek.com/news/news260821",
+      "sourceLabel": "DeepSeek-V4-Flash-Vision-Exp official model card",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "toolathlon",
+      "benchmarkLabel": "Toolathlon",
+      "model": "DeepSeek V4 Flash Vision Exp (max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash Vision Exp (max)",
+        "DeepSeek-V4-Flash-Vision-Exp",
+        "DeepSeek V4 Flash Vision (max)",
+        "DeepSeek V4 Flash Vision (Reasoning, Max Effort)",
+        "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+        "deepseek-v4-flash-vision",
+        "deepseek-v4-flash-vision-exp"
+      ],
+      "value": 75.9,
+      "unit": "%",
+      "sourceId": "deepseek-v4-flash-vision-exp-card",
+      "sourceUrl": "https://api-docs.deepseek.com/news/news260821",
+      "sourceLabel": "DeepSeek-V4-Flash-Vision-Exp official model card",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "dsbench-hard",
+      "benchmarkLabel": "DSBench-Hard",
+      "model": "DeepSeek V4 Flash Vision Exp (max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash Vision Exp (max)",
+        "DeepSeek-V4-Flash-Vision-Exp",
+        "DeepSeek V4 Flash Vision (max)",
+        "DeepSeek V4 Flash Vision (Reasoning, Max Effort)",
+        "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+        "deepseek-v4-flash-vision",
+        "deepseek-v4-flash-vision-exp"
+      ],
+      "value": 63.6,
+      "unit": "%",
+      "sourceId": "deepseek-v4-flash-vision-exp-card",
+      "sourceUrl": "https://api-docs.deepseek.com/news/news260821",
+      "sourceLabel": "DeepSeek-V4-Flash-Vision-Exp official model card",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "automationbench",
+      "benchmarkLabel": "AutomationBench",
+      "model": "DeepSeek V4 Flash Vision Exp (max)",
+      "modelAliases": [
+        "DeepSeek V4 Flash Vision Exp (max)",
+        "DeepSeek-V4-Flash-Vision-Exp",
+        "DeepSeek V4 Flash Vision (max)",
+        "DeepSeek V4 Flash Vision (Reasoning, Max Effort)",
+        "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+        "deepseek-v4-flash-vision",
+        "deepseek-v4-flash-vision-exp"
+      ],
+      "value": 25.7,
+      "unit": "%",
+      "sourceId": "deepseek-v4-flash-vision-exp-card",
+      "sourceUrl": "https://api-docs.deepseek.com/news/news260821",
+      "sourceLabel": "DeepSeek-V4-Flash-Vision-Exp official model card",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "apexbench-pass1",
+      "benchmarkLabel": "ApexBench (Pass@1)",
+      "model": "DeepSeek V4 Flash Vision Exp",
+      "modelAliases": [
+        "DeepSeek V4 Flash Vision Exp",
+        "DeepSeek-V4-Flash-Vision-Exp",
+        "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp"
+      ],
+      "value": 36.5,
+      "unit": "%",
+      "sourceId": "deepseek-v4-flash-vision-exp-card",
+      "sourceUrl": "https://api-docs.deepseek.com/news/news260821",
+      "sourceLabel": "DeepSeek-V4-Flash-Vision-Exp official model card",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "effort": null,
+      "configurationNote": "The model card's max-effort statement covers text-agent benchmarks only.",
+      "configurationConfidence": "unspecified"
+    },
+    {
+      "benchmarkId": "agents-last-exam",
+      "benchmarkLabel": "Agents' Last Exam",
+      "model": "DeepSeek V4 Flash Vision Exp",
+      "modelAliases": [
+        "DeepSeek V4 Flash Vision Exp",
+        "DeepSeek-V4-Flash-Vision-Exp",
+        "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp"
+      ],
+      "value": 27.3,
+      "unit": "%",
+      "sourceId": "deepseek-v4-flash-vision-exp-card",
+      "sourceUrl": "https://api-docs.deepseek.com/news/news260821",
+      "sourceLabel": "DeepSeek-V4-Flash-Vision-Exp official model card",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "effort": null,
+      "configurationNote": "The model card's max-effort statement covers text-agent benchmarks only.",
+      "configurationConfidence": "unspecified"
+    },
+    {
+      "benchmarkId": "chartography",
+      "benchmarkLabel": "Chartography",
+      "model": "DeepSeek V4 Flash Vision Exp",
+      "modelAliases": [
+        "DeepSeek V4 Flash Vision Exp",
+        "DeepSeek-V4-Flash-Vision-Exp",
+        "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp"
+      ],
+      "value": 64.3,
+      "unit": "%",
+      "sourceId": "deepseek-v4-flash-vision-exp-card",
+      "sourceUrl": "https://api-docs.deepseek.com/news/news260821",
+      "sourceLabel": "DeepSeek-V4-Flash-Vision-Exp official model card",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "effort": null,
+      "configurationNote": "The model card's max-effort statement covers text-agent benchmarks only.",
+      "configurationConfidence": "unspecified"
+    },
+    {
+      "benchmarkId": "zerobench-pass5",
+      "benchmarkLabel": "ZeroBench pass@5",
+      "model": "DeepSeek V4 Flash Vision Exp",
+      "modelAliases": [
+        "DeepSeek V4 Flash Vision Exp",
+        "DeepSeek-V4-Flash-Vision-Exp",
+        "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp"
+      ],
+      "value": 35.0,
+      "unit": "%",
+      "sourceId": "deepseek-v4-flash-vision-exp-card",
+      "sourceUrl": "https://api-docs.deepseek.com/news/news260821",
+      "sourceLabel": "DeepSeek-V4-Flash-Vision-Exp official model card",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "effort": null,
+      "configurationNote": "The model card's max-effort statement covers text-agent benchmarks only.",
+      "configurationConfidence": "unspecified"
     },
     {
       "benchmarkId": "agents-last-exam",
@@ -20862,6 +22437,745 @@
       "sourceLabel": "NVIDIA Nemotron 3 Ultra technical report"
     },
     {
+      "benchmarkId": "swe-bench-pro",
+      "benchmarkLabel": "SWE-Bench Pro",
+      "model": "Claude Fable 5.1 (max with fallback)",
+      "modelAliases": [
+        "Claude Fable 5.1 (max with fallback)",
+        "claude-fable-5-1"
+      ],
+      "value": 81.2,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-1-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5.1 and Mythos 5.1 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "Claude Fable 5.1 (max with fallback)",
+      "modelAliases": [
+        "Claude Fable 5.1 (max with fallback)",
+        "claude-fable-5-1"
+      ],
+      "value": 89.1,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-1-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5.1 and Mythos 5.1 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "swe-bench-multimodal",
+      "benchmarkLabel": "SWE-bench Multimodal",
+      "model": "Claude Fable 5.1 (max with fallback)",
+      "modelAliases": [
+        "Claude Fable 5.1 (max with fallback)",
+        "claude-fable-5-1"
+      ],
+      "value": 54.7,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-1-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5.1 and Mythos 5.1 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "Claude Fable 5.1 (max with fallback)",
+      "modelAliases": [
+        "Claude Fable 5.1 (max with fallback)",
+        "claude-fable-5-1"
+      ],
+      "value": 67.4,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-1-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5.1 and Mythos 5.1 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "terminal-bench-4",
+      "benchmarkLabel": "Terminal-Bench 4.0",
+      "model": "Claude Fable 5.1 (max with fallback)",
+      "modelAliases": [
+        "Claude Fable 5.1 (max with fallback)",
+        "claude-fable-5-1"
+      ],
+      "value": 55.8,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-1-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5.1 and Mythos 5.1 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "terminal-bench-science-0-1",
+      "benchmarkLabel": "Terminal-Bench Science 0.1",
+      "model": "Claude Fable 5.1 (max with fallback)",
+      "modelAliases": [
+        "Claude Fable 5.1 (max with fallback)",
+        "claude-fable-5-1"
+      ],
+      "value": 52.6,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-1-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5.1 and Mythos 5.1 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "cursorbench-3-2-0",
+      "benchmarkLabel": "CursorBench 3.2.0",
+      "model": "Claude Fable 5.1 (max with fallback)",
+      "modelAliases": [
+        "Claude Fable 5.1 (max with fallback)",
+        "claude-fable-5-1"
+      ],
+      "value": 73.4,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-1-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5.1 and Mythos 5.1 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "Claude Fable 5.1 (max with fallback)",
+      "modelAliases": [
+        "Claude Fable 5.1 (max with fallback)",
+        "claude-fable-5-1"
+      ],
+      "value": 60.9,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-1-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5.1 and Mythos 5.1 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "Claude Fable 5.1 (max with fallback)",
+      "modelAliases": [
+        "Claude Fable 5.1 (max with fallback)",
+        "claude-fable-5-1"
+      ],
+      "value": 65.0,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-1-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5.1 and Mythos 5.1 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "osworld-2-aug2026-anthropic-partial",
+      "benchmarkLabel": "OSWorld 2.0 (Aug 2026 + Anthropic fixes, partial)",
+      "model": "Claude Fable 5.1 (max with fallback)",
+      "modelAliases": [
+        "Claude Fable 5.1 (max with fallback)",
+        "claude-fable-5-1"
+      ],
+      "value": 77.9,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-1-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5.1 and Mythos 5.1 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "osworld-2-aug2026-anthropic-strict",
+      "benchmarkLabel": "OSWorld 2.0 (Aug 2026 + Anthropic fixes, strict)",
+      "model": "Claude Fable 5.1 (max with fallback)",
+      "modelAliases": [
+        "Claude Fable 5.1 (max with fallback)",
+        "claude-fable-5-1"
+      ],
+      "value": 41.7,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-1-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5.1 and Mythos 5.1 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "gdpval-aa-v2-elo",
+      "benchmarkLabel": "GDPval-AA v2 Elo",
+      "model": "Claude Fable 5.1 (max with fallback)",
+      "modelAliases": [
+        "Claude Fable 5.1 (max with fallback)",
+        "claude-fable-5-1"
+      ],
+      "value": 1853,
+      "unit": "Elo",
+      "sourceId": "anthropic-claude-fable-5-1-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5.1 and Mythos 5.1 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "automationbench",
+      "benchmarkLabel": "AutomationBench",
+      "model": "Claude Fable 5.1 (max with fallback)",
+      "modelAliases": [
+        "Claude Fable 5.1 (max with fallback)",
+        "claude-fable-5-1"
+      ],
+      "value": 31.4,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-1-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5.1 and Mythos 5.1 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "arc-agi-1",
+      "benchmarkLabel": "ARC-AGI-1",
+      "model": "Claude Fable 5.1 (max with fallback)",
+      "modelAliases": [
+        "Claude Fable 5.1 (max with fallback)",
+        "claude-fable-5-1"
+      ],
+      "value": 97.5,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-1-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5.1 and Mythos 5.1 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "arc-agi-2",
+      "benchmarkLabel": "ARC-AGI-2",
+      "model": "Claude Fable 5.1 (max with fallback)",
+      "modelAliases": [
+        "Claude Fable 5.1 (max with fallback)",
+        "claude-fable-5-1"
+      ],
+      "value": 90.0,
+      "unit": "%",
+      "sourceId": "anthropic-claude-fable-5-1-system-card",
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Claude Fable 5.1 and Mythos 5.1 System Card",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "Gemini 3.8 Flash (high)",
+      "modelAliases": [
+        "Gemini 3.8 Flash (high)",
+        "gemini-3-8-flash"
+      ],
+      "value": 73.7,
+      "unit": "%",
+      "sourceId": "google-gemini-3-8-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.8 Flash model card",
+      "variantScoped": true,
+      "modelScoreEligible": true,
+      "evidenceEligible": true,
+      "effort": "high",
+      "configurationNote": "Self-computed with mini-swe agent and high thinking (methodology, p. 2)."
+    },
+    {
+      "benchmarkId": "gdpval-aa-v2-elo",
+      "benchmarkLabel": "GDPval-AA v2 Elo",
+      "model": "Gemini 3.8 Flash",
+      "modelAliases": [
+        "Gemini 3.8 Flash"
+      ],
+      "value": 1545,
+      "unit": "Elo",
+      "sourceId": "google-gemini-3-8-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.8 Flash model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "finance-agent-v2",
+      "benchmarkLabel": "Finance Agent v2",
+      "model": "Gemini 3.8 Flash",
+      "modelAliases": [
+        "Gemini 3.8 Flash"
+      ],
+      "value": 61.4,
+      "unit": "%",
+      "sourceId": "google-gemini-3-8-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.8 Flash model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "legal-agent-benchmark",
+      "benchmarkLabel": "Legal Agent Benchmark",
+      "model": "Gemini 3.8 Flash",
+      "modelAliases": [
+        "Gemini 3.8 Flash"
+      ],
+      "value": 10.0,
+      "unit": "%",
+      "sourceId": "google-gemini-3-8-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.8 Flash model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Gemini 3.8 Flash",
+      "modelAliases": [
+        "Gemini 3.8 Flash"
+      ],
+      "value": 89.4,
+      "unit": "%",
+      "sourceId": "google-gemini-3-8-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.8 Flash model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "terminal-bench-4",
+      "benchmarkLabel": "Terminal-Bench 4.0",
+      "model": "Gemini 3.8 Flash",
+      "modelAliases": [
+        "Gemini 3.8 Flash"
+      ],
+      "value": 19.1,
+      "unit": "%",
+      "sourceId": "google-gemini-3-8-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.8 Flash model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "gdp-pdf",
+      "benchmarkLabel": "GDP.pdf",
+      "model": "Gemini 3.8 Flash",
+      "modelAliases": [
+        "Gemini 3.8 Flash"
+      ],
+      "value": 35.0,
+      "unit": "%",
+      "sourceId": "google-gemini-3-8-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.8 Flash model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "charxiv-no-tools",
+      "benchmarkLabel": "CharXiv Reasoning",
+      "model": "Gemini 3.8 Flash",
+      "modelAliases": [
+        "Gemini 3.8 Flash"
+      ],
+      "value": 86.2,
+      "unit": "%",
+      "sourceId": "google-gemini-3-8-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.8 Flash model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "lvbench-agentic",
+      "benchmarkLabel": "LVBench (agentic)",
+      "model": "Gemini 3.8 Flash",
+      "modelAliases": [
+        "Gemini 3.8 Flash"
+      ],
+      "value": 87.8,
+      "unit": "%",
+      "sourceId": "google-gemini-3-8-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.8 Flash model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "lvbench-static",
+      "benchmarkLabel": "LVBench (static)",
+      "model": "Gemini 3.8 Flash",
+      "modelAliases": [
+        "Gemini 3.8 Flash"
+      ],
+      "value": 87.1,
+      "unit": "%",
+      "sourceId": "google-gemini-3-8-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.8 Flash model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "hle-verified-1811",
+      "benchmarkLabel": "HLE-Verified (1,811 items)",
+      "model": "Gemini 3.8 Flash",
+      "modelAliases": [
+        "Gemini 3.8 Flash"
+      ],
+      "value": 54.9,
+      "unit": "%",
+      "sourceId": "google-gemini-3-8-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.8 Flash model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "osworld-2-pre0808-best3-partial",
+      "benchmarkLabel": "OSWorld 2.0 (pre-Aug 8 patch, best of 3 partial)",
+      "model": "Gemini 3.8 Flash",
+      "modelAliases": [
+        "Gemini 3.8 Flash"
+      ],
+      "value": 59.0,
+      "unit": "%",
+      "sourceId": "google-gemini-3-8-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.8 Flash model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "biomysterybench-human-solved",
+      "benchmarkLabel": "BioMysteryBench human solved",
+      "model": "Gemini 3.8 Flash",
+      "modelAliases": [
+        "Gemini 3.8 Flash"
+      ],
+      "value": 88.8,
+      "unit": "%",
+      "sourceId": "google-gemini-3-8-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.8 Flash model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "biomysterybench-hard",
+      "benchmarkLabel": "BioMysteryBench hard",
+      "model": "Gemini 3.8 Flash",
+      "modelAliases": [
+        "Gemini 3.8 Flash"
+      ],
+      "value": 56.5,
+      "unit": "%",
+      "sourceId": "google-gemini-3-8-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.8 Flash model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "labbench2",
+      "benchmarkLabel": "LABBench2",
+      "model": "Gemini 3.8 Flash",
+      "modelAliases": [
+        "Gemini 3.8 Flash"
+      ],
+      "value": 86.2,
+      "unit": "%",
+      "sourceId": "google-gemini-3-8-flash-card",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.8 Flash model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "Gemini 3.7 Flash",
+      "modelAliases": [
+        "Gemini 3.7 Flash"
+      ],
+      "value": 65.3,
+      "unit": "%",
+      "sourceId": "google-gemini-3-7-flash-comparison",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.7 Flash comparison evaluations",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "gdpval-aa-v2-elo",
+      "benchmarkLabel": "GDPval-AA v2 Elo",
+      "model": "Gemini 3.7 Flash",
+      "modelAliases": [
+        "Gemini 3.7 Flash"
+      ],
+      "value": 1482,
+      "unit": "Elo",
+      "sourceId": "google-gemini-3-7-flash-comparison",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.7 Flash comparison evaluations",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "finance-agent-v2",
+      "benchmarkLabel": "Finance Agent v2",
+      "model": "Gemini 3.7 Flash",
+      "modelAliases": [
+        "Gemini 3.7 Flash"
+      ],
+      "value": 59.0,
+      "unit": "%",
+      "sourceId": "google-gemini-3-7-flash-comparison",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.7 Flash comparison evaluations",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "legal-agent-benchmark",
+      "benchmarkLabel": "Legal Agent Benchmark",
+      "model": "Gemini 3.7 Flash",
+      "modelAliases": [
+        "Gemini 3.7 Flash"
+      ],
+      "value": 8.8,
+      "unit": "%",
+      "sourceId": "google-gemini-3-7-flash-comparison",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.7 Flash comparison evaluations",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "Gemini 3.7 Flash",
+      "modelAliases": [
+        "Gemini 3.7 Flash"
+      ],
+      "value": 85.8,
+      "unit": "%",
+      "sourceId": "google-gemini-3-7-flash-comparison",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.7 Flash comparison evaluations",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "terminal-bench-4",
+      "benchmarkLabel": "Terminal-Bench 4.0",
+      "model": "Gemini 3.7 Flash",
+      "modelAliases": [
+        "Gemini 3.7 Flash"
+      ],
+      "value": 11.2,
+      "unit": "%",
+      "sourceId": "google-gemini-3-7-flash-comparison",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.7 Flash comparison evaluations",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "gdp-pdf",
+      "benchmarkLabel": "GDP.pdf",
+      "model": "Gemini 3.7 Flash",
+      "modelAliases": [
+        "Gemini 3.7 Flash"
+      ],
+      "value": 34.0,
+      "unit": "%",
+      "sourceId": "google-gemini-3-7-flash-comparison",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.7 Flash comparison evaluations",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "charxiv-no-tools",
+      "benchmarkLabel": "CharXiv Reasoning",
+      "model": "Gemini 3.7 Flash",
+      "modelAliases": [
+        "Gemini 3.7 Flash"
+      ],
+      "value": 84.5,
+      "unit": "%",
+      "sourceId": "google-gemini-3-7-flash-comparison",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.7 Flash comparison evaluations",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "lvbench-static",
+      "benchmarkLabel": "LVBench (static)",
+      "model": "Gemini 3.7 Flash",
+      "modelAliases": [
+        "Gemini 3.7 Flash"
+      ],
+      "value": 85.4,
+      "unit": "%",
+      "sourceId": "google-gemini-3-7-flash-comparison",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.7 Flash comparison evaluations",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "hle-verified-1811",
+      "benchmarkLabel": "HLE-Verified (1,811 items)",
+      "model": "Gemini 3.7 Flash",
+      "modelAliases": [
+        "Gemini 3.7 Flash"
+      ],
+      "value": 53.6,
+      "unit": "%",
+      "sourceId": "google-gemini-3-7-flash-comparison",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.7 Flash comparison evaluations",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "osworld-2-pre0808-best3-partial",
+      "benchmarkLabel": "OSWorld 2.0 (pre-Aug 8 patch, best of 3 partial)",
+      "model": "Gemini 3.7 Flash",
+      "modelAliases": [
+        "Gemini 3.7 Flash"
+      ],
+      "value": 50.6,
+      "unit": "%",
+      "sourceId": "google-gemini-3-7-flash-comparison",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.7 Flash comparison evaluations",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "biomysterybench-human-solved",
+      "benchmarkLabel": "BioMysteryBench human solved",
+      "model": "Gemini 3.7 Flash",
+      "modelAliases": [
+        "Gemini 3.7 Flash"
+      ],
+      "value": 87.1,
+      "unit": "%",
+      "sourceId": "google-gemini-3-7-flash-comparison",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.7 Flash comparison evaluations",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "biomysterybench-hard",
+      "benchmarkLabel": "BioMysteryBench hard",
+      "model": "Gemini 3.7 Flash",
+      "modelAliases": [
+        "Gemini 3.7 Flash"
+      ],
+      "value": 43.5,
+      "unit": "%",
+      "sourceId": "google-gemini-3-7-flash-comparison",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.7 Flash comparison evaluations",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "labbench2",
+      "benchmarkLabel": "LABBench2",
+      "model": "Gemini 3.7 Flash",
+      "modelAliases": [
+        "Gemini 3.7 Flash"
+      ],
+      "value": 82.1,
+      "unit": "%",
+      "sourceId": "google-gemini-3-7-flash-comparison",
+      "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sourceLabel": "Google DeepMind Gemini 3.7 Flash comparison evaluations",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
       "benchmarkId": "mmlu-pro",
       "benchmarkLabel": "MMLU-Pro",
       "model": "Qwen3 Max Thinking",
@@ -21542,6 +23856,23 @@
       "configurationConfidence": "release-page-default"
     },
     {
+      "benchmarkId": "lvbench",
+      "benchmarkLabel": "LVBench",
+      "model": "Qwen3.7 Plus",
+      "modelAliases": [
+        "Qwen3.7 Plus",
+        "Qwen3.7-Plus",
+        "qwen3-7-plus"
+      ],
+      "value": 76.2,
+      "unit": "%",
+      "sourceId": "official-qwen-qwen3-7-plus-page",
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.7-plus",
+      "sourceLabel": "Qwen3.7 Plus automatically discovered official release",
+      "variantScoped": true,
+      "configurationConfidence": "release-page-default"
+    },
+    {
       "benchmarkId": "mmlu-pro",
       "benchmarkLabel": "MMLU-Pro",
       "model": "Qwen3.5 0.8B",
@@ -21819,6 +24150,25 @@
         "qwen3-5-0-8b"
       ],
       "value": 34.5,
+      "unit": "%",
+      "sourceId": "hf-qwen-qwen3-5-0-8b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-0.8B",
+      "sourceLabel": "Qwen3.5 0.8B official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "lvbench",
+      "benchmarkLabel": "LVBench",
+      "model": "Qwen3.5 0.8B",
+      "modelAliases": [
+        "Qwen3.5 0.8B",
+        "Qwen3.5-0.8B",
+        "Qwen/Qwen3.5-0.8B",
+        "Qwen3 5 0 8B",
+        "qwen3-5-0-8b"
+      ],
+      "value": 45.1,
       "unit": "%",
       "sourceId": "hf-qwen-qwen3-5-0-8b-card",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-0.8B",
@@ -22123,6 +24473,25 @@
         "qwen3-5-2b"
       ],
       "value": 43.8,
+      "unit": "%",
+      "sourceId": "hf-qwen-qwen3-5-2b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-2B",
+      "sourceLabel": "Qwen3.5 2B official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "lvbench",
+      "benchmarkLabel": "LVBench",
+      "model": "Qwen3.5 2B",
+      "modelAliases": [
+        "Qwen3.5 2B",
+        "Qwen3.5-2B",
+        "Qwen/Qwen3.5-2B",
+        "Qwen3 5 2B",
+        "qwen3-5-2b"
+      ],
+      "value": 57.1,
       "unit": "%",
       "sourceId": "hf-qwen-qwen3-5-2b-card",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-2B",
@@ -22446,6 +24815,25 @@
         "qwen3-5-4b"
       ],
       "value": 54.0,
+      "unit": "%",
+      "sourceId": "hf-qwen-qwen3-5-4b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-4B",
+      "sourceLabel": "Qwen3.5 4B official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "lvbench",
+      "benchmarkLabel": "LVBench",
+      "model": "Qwen3.5 4B",
+      "modelAliases": [
+        "Qwen3.5 4B",
+        "Qwen3.5-4B",
+        "Qwen/Qwen3.5-4B",
+        "Qwen3 5 4B",
+        "qwen3-5-4b"
+      ],
+      "value": 66.4,
       "unit": "%",
       "sourceId": "hf-qwen-qwen3-5-4b-card",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-4B",
@@ -22807,6 +25195,25 @@
         "qwen3-5-9b"
       ],
       "value": 55.5,
+      "unit": "%",
+      "sourceId": "hf-qwen-qwen3-5-9b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-9B",
+      "sourceLabel": "Qwen3.5 9B official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "lvbench",
+      "benchmarkLabel": "LVBench",
+      "model": "Qwen3.5 9B",
+      "modelAliases": [
+        "Qwen3.5 9B",
+        "Qwen3.5-9B",
+        "Qwen/Qwen3.5-9B",
+        "Qwen3 5 9B",
+        "qwen3-5-9b"
+      ],
+      "value": 70.0,
       "unit": "%",
       "sourceId": "hf-qwen-qwen3-5-9b-card",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-9B",
@@ -23252,6 +25659,25 @@
       "configurationConfidence": "model-card-default"
     },
     {
+      "benchmarkId": "lvbench",
+      "benchmarkLabel": "LVBench",
+      "model": "Qwen3.5 122B-A10B",
+      "modelAliases": [
+        "Qwen3.5 122B-A10B",
+        "Qwen3.5-122B-A10B",
+        "Qwen/Qwen3.5-122B-A10B",
+        "Qwen3 5 122B A10B",
+        "qwen3-5-122b-a10b"
+      ],
+      "value": 74.4,
+      "unit": "%",
+      "sourceId": "hf-qwen-qwen3-5-122b-a10b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-122B-A10B",
+      "sourceLabel": "Qwen3.5 122B-A10B official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
       "benchmarkId": "mmvu",
       "benchmarkLabel": "MMVU",
       "model": "Qwen3.5 122B-A10B",
@@ -23681,6 +26107,25 @@
         "qwen3-5-35b-a3b"
       ],
       "value": 64.8,
+      "unit": "%",
+      "sourceId": "hf-qwen-qwen3-5-35b-a3b-card",
+      "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B",
+      "sourceLabel": "Qwen3.5 35B-A3B official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "lvbench",
+      "benchmarkLabel": "LVBench",
+      "model": "Qwen3.5 35B-A3B",
+      "modelAliases": [
+        "Qwen3.5 35B-A3B",
+        "Qwen3.5-35B-A3B",
+        "Qwen/Qwen3.5-35B-A3B",
+        "Qwen3 5 35B A3B",
+        "qwen3-5-35b-a3b"
+      ],
+      "value": 71.4,
       "unit": "%",
       "sourceId": "hf-qwen-qwen3-5-35b-a3b-card",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B",

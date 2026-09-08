@@ -221,7 +221,7 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             | GDPval-AA v2 | 1666 |
             | SuperGPQA | 71.4 |
             | VitaBench | 76.2 |
-            | LVBench | 82.1 |
+            | LVBench v99 (unreviewed) | 82.1 |
             | Brand New Unreviewed Eval | 99.0 |
             """,
             spec,
@@ -319,7 +319,7 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
             | GPQA Diamond | 95.0 |
             | SuperGPQA | 71.4 |
             | VitaBench | 76.2 |
-            | LVBench | 82.1 |
+            | LVBench v99 (unreviewed) | 82.1 |
             | Brand New Unreviewed Eval | 99.0 |
             """,
             glm,

@@ -10,6 +10,7 @@ record.
 from __future__ import annotations
 
 import ast
+import copy
 import csv
 import inspect
 import json
@@ -207,6 +208,89 @@ class AIndexScheme18FormulaTests(unittest.TestCase):
             ["model-a", "model-b", "stable-a", "stable-b"],
         )
         self.assertEqual([row["rank"] for row in ranked], [1, 2, 3, 4])
+
+
+class AIndexScheme18CoreEligibilityTests(unittest.TestCase):
+    @staticmethod
+    def complete_models():
+        core_keys = {key for keys in scheme18.CORE_ITEMS.values() for key in keys}
+        extension_keys = {key for keys in scheme18.EXTENSION_ITEMS.values() for key in keys}
+        return [
+            {
+                "slug": f"model-{index}",
+                "model": f"Model {index}",
+                "creator": f"Lab {index}",
+                "variantGroup": f"group-{index}",
+                "scores": {
+                    **{key: 10 * (index + 1) for key in extension_keys},
+                    **{key: 50.0 for key in core_keys},
+                },
+            }
+            for index in range(6)
+        ]
+
+    def test_missing_core_excludes_only_affected_rows_without_changing_calibration(self):
+        models = self.complete_models()
+        baseline = scheme18.fit_calibration(models)
+        missing_key = scheme18.CORE_ITEMS["coding"][0]
+        withdrawn = copy.deepcopy(models[0])
+        withdrawn.update(slug="withdrawn-model", model="Withdrawn Model", variantGroup="withdrawn-group")
+        withdrawn["scores"][missing_key] = None
+        models.append(withdrawn)
+        payload = {"models": models}
+        original = copy.deepcopy(payload)
+        exact_models = copy.deepcopy(models)
+        exact_missing_key = scheme18.CORE_ITEMS["hard-reasoning"][0]
+        del exact_models[0]["scores"][exact_missing_key]
+        slugs = [model["slug"] for model in models]
+
+        with mock.patch.object(scheme18, "fit_calibration", wraps=scheme18.fit_calibration) as fit:
+            result = scheme18.run_aindex_scheme18_from_payload(
+                payload,
+                calibration_slugs=slugs,
+                exact_config_slugs=slugs,
+                exact_config_models=exact_models,
+            )
+
+        self.assertEqual(fit.call_count, 1)
+        self.assertEqual(result["calibration"], baseline)
+        self.assertEqual({row["slug"] for row in result["full_rankings"]}, set(slugs[:-1]))
+        self.assertEqual(
+            {row["slug"] for row in result["exact_config_full_rankings"]},
+            set(slugs[1:-1]),
+        )
+        self.assertEqual(payload, original)
+        audit = result["validation"]["core_eligibility"]
+        self.assertEqual(audit["variant_group"]["requested_count"], 7)
+        self.assertEqual(audit["variant_group"]["eligible_count"], 6)
+        self.assertEqual(audit["variant_group"]["excluded_models"], [
+            {"slug": "withdrawn-model", "missing_core": {
+                "coding": [missing_key], "knowledge-science": [missing_key],
+            }},
+        ])
+        self.assertEqual(audit["exact_config"]["excluded_count"], 2)
+        self.assertTrue(result["validation"]["passed"])
+
+    def test_zero_core_remains_eligible_and_invalid_scale_still_fails(self):
+        models = self.complete_models()
+        key = scheme18.CORE_ITEMS["coding"][0]
+        models[0]["scores"][key] = 0.0
+        eligible, audit = scheme18._core_eligible_models(models)
+        self.assertEqual(len(eligible), 6)
+        self.assertEqual(audit["excluded_count"], 0)
+        models[0]["scores"][key] = 101.0
+        with self.assertRaisesRegex(AssertionError, "outside the direct 0--100"):
+            scheme18._core_eligible_models(models)
+
+    def test_no_complete_calibration_population_fails_without_imputation(self):
+        models = self.complete_models()
+        for model in models:
+            model["scores"][scheme18.CORE_ITEMS["coding"][0]] = None
+        with self.assertRaisesRegex(AssertionError, "calibration population is empty"):
+            scheme18.run_aindex_scheme18_from_payload(
+                {"models": models},
+                calibration_slugs=[model["slug"] for model in models],
+            )
 
 
 class AIndexScheme18ReviewedSnapshotTests(unittest.TestCase):

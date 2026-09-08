@@ -575,6 +575,13 @@ MINIMUM_CANDIDATE_ROW_RATIO = 0.8
 MINIMUM_PRIOR_SLUG_OVERLAP = 0.7
 MINIMUM_GUARDED_COLUMN_COVERAGE_RATIO = 0.8
 
+# A disappearing benchmark score must be corroborated by its dedicated AA
+# evaluation page before it can reduce the coverage baseline. Keep this list
+# explicit: unknown schema changes still fail the ordinary coverage guard.
+SCORE_WITHDRAWAL_SOURCES = {
+    "scicode": ("SciCode", f"{AA_BASE_URL}/evaluations/scicode"),
+}
+
 
 MANIFEST_SCORE_KEYS = {
     "gdpval": "GDPval-AA",
@@ -920,6 +927,8 @@ def validate_raw_scores_csv(path: Path) -> list[dict[str, str]]:
 def _validate_candidate_against_prior(
     candidate_rows: list[dict[str, str]],
     prior_rows: list[dict[str, str]],
+    *,
+    confirmed_score_removals: dict[str, set[str]] | None = None,
 ) -> None:
     minimum_rows = math.ceil(len(prior_rows) * MINIMUM_CANDIDATE_ROW_RATIO)
     if len(candidate_rows) < minimum_rows:
@@ -949,12 +958,20 @@ def _validate_candidate_against_prior(
         *[spec.column for spec in SCORE_SPECS],
     ]
     for column in guarded_columns:
-        prior_count = sum(bool(str(row.get(column) or "").strip()) for row in prior_rows)
+        prior_scored_slugs = {
+            row["slug"] for row in prior_rows if _has_value(row.get(column))
+        }
+        candidate_scored_slugs = {
+            row["slug"] for row in candidate_rows if _has_value(row.get(column))
+        }
+        # Only previously scored rows still present with a blank score can be
+        # withdrawn. Row loss and unrelated column loss retain their guards.
+        confirmed = (confirmed_score_removals or {}).get(column, set())
+        removed = confirmed & prior_scored_slugs & (candidate_slugs - candidate_scored_slugs)
+        prior_count = len(prior_scored_slugs) - len(removed)
         if prior_count == 0:
             continue
-        candidate_count = sum(
-            bool(str(row.get(column) or "").strip()) for row in candidate_rows
-        )
+        candidate_count = len(candidate_scored_slugs)
         minimum_count = math.ceil(
             prior_count * MINIMUM_GUARDED_COLUMN_COVERAGE_RATIO
         )
@@ -966,7 +983,95 @@ def _validate_candidate_against_prior(
             )
 
 
-def write_raw_scores_csv_atomically(rows: list[dict[str, Any]], path: Path) -> None:
+def _has_value(value: Any) -> bool:
+    return value is not None and str(value).strip() != ""
+
+
+def confirm_manifest_score_removals(
+    candidate_rows: list[dict[str, Any]],
+    manifest_rows: list[dict[str, Any]],
+    prior_rows: list[dict[str, str]],
+    *,
+    timeout: float = 30,
+) -> dict[str, set[str]]:
+    """Corroborate large explicit-null score withdrawals against evaluation pages.
+
+    A missing key, missing model, malformed value, or conflicting live score is
+    not evidence of withdrawal. The complete model catalogue and every value of
+    this metric must agree across both authenticated public manifests.
+    """
+
+    manifest_by_slug = {row["slug"]: row for row in manifest_rows}
+    candidate_by_slug = {row["slug"]: row for row in candidate_rows}
+    confirmed: dict[str, set[str]] = {}
+    for source_key, (column, url) in SCORE_WITHDRAWAL_SOURCES.items():
+        prior_scored = {row["slug"] for row in prior_rows if _has_value(row.get(column))}
+        candidate_count = sum(_has_value(row.get(column)) for row in candidate_rows)
+        if candidate_count >= math.ceil(
+            len(prior_scored) * MINIMUM_GUARDED_COLUMN_COVERAGE_RATIO
+        ):
+            continue
+        withdrawals = {
+            slug
+            for slug in prior_scored & candidate_by_slug.keys() & manifest_by_slug.keys()
+            if not _has_value(candidate_by_slug[slug].get(column))
+            and source_key in manifest_by_slug[slug]
+            and manifest_by_slug[slug][source_key] is None
+        }
+        if not withdrawals:
+            continue
+
+        html = fetch_html(url, timeout=timeout)
+        errors: list[str] = []
+        for manifest in extract_data_manifests(html):
+            try:
+                payload = fetch_manifest_payload(manifest, url, timeout=timeout)
+                rows = payload.get("models")
+                if not isinstance(rows, list) or not all(
+                    isinstance(row, dict)
+                    and isinstance(row.get("slug"), str)
+                    and source_key in row
+                    for row in rows
+                ):
+                    raise ValueError("evaluation manifest has no complete score rows")
+                by_slug = {row["slug"]: row for row in rows}
+                if (
+                    len(by_slug) != len(rows)
+                    or len(manifest_by_slug) != len(manifest_rows)
+                    or by_slug.keys() != manifest_by_slug.keys()
+                ):
+                    raise ValueError("evaluation model catalogue differs from the models page")
+                for slug, source in manifest_by_slug.items():
+                    if source_key not in source:
+                        raise ValueError(f"models page omits {source_key!r} for {slug!r}")
+                    primary, secondary = source[source_key], by_slug[slug][source_key]
+                    if primary is None and secondary is None:
+                        continue
+                    primary_number, secondary_number = _as_float(primary), _as_float(secondary)
+                    if (
+                        primary_number is None
+                        or secondary_number is None
+                        or not math.isclose(primary_number, secondary_number, rel_tol=1e-12)
+                    ):
+                        raise ValueError(f"evaluation score disagrees for {slug!r}")
+                confirmed[column] = withdrawals
+                break
+            except (OSError, ValueError) as exc:
+                errors.append(str(exc))
+        else:
+            raise ValueError(
+                f"Could not corroborate {column!r} score withdrawals at {url}: "
+                + "; ".join(errors)
+            )
+    return confirmed
+
+
+def write_raw_scores_csv_atomically(
+    rows: list[dict[str, Any]],
+    path: Path,
+    *,
+    confirmed_score_removals: dict[str, set[str]] | None = None,
+) -> None:
     """Validate a candidate snapshot before atomically replacing the current CSV."""
 
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -987,7 +1092,11 @@ def write_raw_scores_csv_atomically(rows: list[dict[str, Any]], path: Path) -> N
             except (OSError, ValueError, csv.Error):
                 prior_rows = []
             if prior_rows:
-                _validate_candidate_against_prior(candidate_rows, prior_rows)
+                _validate_candidate_against_prior(
+                    candidate_rows,
+                    prior_rows,
+                    confirmed_score_removals=confirmed_score_removals,
+                )
 
         os.replace(temporary_path, path)
     finally:
@@ -1023,6 +1132,7 @@ def run(args: argparse.Namespace) -> tuple[Path, int, int]:
 
     if model_rows is not None and manifest_rows is not None:
         raw_score_rows = build_raw_scores_rows(model_rows)
+        prior_rows = []
         if raw_scores_path.exists():
             try:
                 prior_rows = validate_raw_scores_csv(raw_scores_path)
@@ -1035,11 +1145,31 @@ def run(args: argparse.Namespace) -> tuple[Path, int, int]:
                     prior_rows,
                 )
         try:
-            write_raw_scores_csv_atomically(raw_score_rows, raw_scores_path)
-        except ValueError as exc:
+            confirmed_removals = confirm_manifest_score_removals(
+                raw_score_rows, manifest_rows, prior_rows, timeout=args.timeout
+            )
+        except (OSError, ValueError) as exc:
             manifest_error = exc
             manifest_rows = None
             model_rows = None
+        else:
+            try:
+                write_raw_scores_csv_atomically(
+                    raw_score_rows,
+                    raw_scores_path,
+                    confirmed_score_removals=confirmed_removals,
+                )
+            except ValueError as exc:
+                manifest_error = exc
+                manifest_rows = None
+                model_rows = None
+            else:
+                for column, slugs in confirmed_removals.items():
+                    _emit_warning(
+                        f"{column}: {len(slugs)} previously published scores are now null "
+                        "on both the models and dedicated evaluation pages; cleared those "
+                        "scores and ranks after corroborating the complete live catalogue."
+                    )
 
     if model_rows is None:
         try:

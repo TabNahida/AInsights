@@ -1,29 +1,253 @@
 {
   "method_id": "aindex_scheme18",
   "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
-  "calibration_population_size": 170,
-  "bonus_cap_per_board": 23.493316702778166,
+  "calibration_population_size": 121,
+  "bonus_cap_per_board": 19.845225781507455,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 170,
-    "unique_slugs": 170,
-    "unique_variant_groups": 170,
+    "row_count": 121,
+    "unique_slugs": 121,
+    "unique_variant_groups": 121,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 207,
-    "unique_slugs": 207,
-    "unique_variant_groups": 160,
+    "row_count": 162,
+    "unique_slugs": 162,
+    "unique_variant_groups": 121,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "passed": true,
+  "core_eligibility": {
+    "variant_group": {
+      "requested_count": 140,
+      "eligible_count": 121,
+      "excluded_count": 19,
+      "excluded_models": [
+        {
+          "slug": "gpt-5-4",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "claude-opus-4-7",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "claude-opus-4-6-adaptive",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "qwen3-6-plus",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "kimi-k2-5",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "qwen3-max-thinking",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "minimax-m2-5",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "qwen3-5-27b",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "kimi-k2-thinking",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "glm-4-7",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "minimax-m2-1",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "qwen3-5-35b-a3b",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "gemma-4-26b-a4b",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "glm-4-6-reasoning",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "qwen3-5-9b",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "glm-4.5",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "qwen3-5-4b",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "gemma-4-e4b",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "gemma-4-e2b",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        }
+      ]
+    },
+    "exact_config": {
+      "requested_count": 162,
+      "eligible_count": 162,
+      "excluded_count": 0,
+      "excluded_models": []
+    }
+  },
   "calibration": {
     "method_id": "aindex_scheme18",
     "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
@@ -32,10 +256,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 23.493316702778166,
-    "pooled_positive_residual_count": 471,
-    "pooled_positive_residual_mean": 9.798312392594644,
-    "pooled_positive_residual_population_sd": 9.683830416109764,
+    "bonus_cap_per_board": 19.845225781507455,
+    "pooled_positive_residual_count": 358,
+    "pooled_positive_residual_mean": 8.709411735084435,
+    "pooled_positive_residual_population_sd": 7.874209626258124,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -44,62 +268,47 @@
       "instruction-context"
     ],
     "board_points_max": 20.0,
-    "population_size": 170,
+    "population_size": 121,
     "population_slugs": [
       "g9v3-39a5b",
-      "g9v3-3b",
       "qwen3-14b-instruct-reasoning",
       "qwen3-235b-a22b-instruct-2507-reasoning",
       "qwen3-30b-a3b-2507-reasoning",
       "qwen3-32b-instruct-reasoning",
       "qwen3-8b-instruct-reasoning",
       "qwen3-coder-next",
-      "qwen3-max-thinking",
-      "qwen3-next-80b-a3b-reasoning",
-      "qwen3-5-0-8b-non-reasoning",
-      "qwen3-5-122b-a10b-non-reasoning",
-      "qwen3-5-27b-non-reasoning",
-      "qwen3-5-2b",
-      "qwen3-5-35b-a3b-non-reasoning",
+      "qwen3-5-122b-a10b",
       "qwen3-5-397b-a17b",
-      "qwen3-5-4b",
-      "qwen3-5-9b",
-      "qwen3-6-27b-non-reasoning",
-      "qwen3-6-35b-a3b-non-reasoning",
-      "qwen3-6-plus",
+      "qwen3-6-27b",
+      "qwen3-6-35b-a3b",
       "qwen3-7-max",
       "qwen3-7-plus",
       "qwen3-8-2-4t-a95b",
       "qwen3-8-27b",
       "qwen3-8-max",
-      "nova-2-0-lite-reasoning",
-      "nova-2-0-pro-reasoning-medium",
-      "claude-3-5-haiku",
-      "claude-4-sonnet-thinking",
+      "qwen3-8-flash-next",
       "claude-4-5-haiku-reasoning",
       "claude-4-5-sonnet-thinking",
       "claude-fable-5",
-      "claude-opus-4-6-adaptive",
-      "claude-opus-4-7",
+      "claude-fable-5-1",
       "claude-opus-4-8",
       "claude-opus-5",
       "claude-sonnet-4-6-adaptive",
       "claude-sonnet-5",
+      "apodex-1-1",
       "trinity-large-thinking",
       "celeris-1",
-      "jt-4-1-flash-236b-a21b",
       "command-a-plus",
       "north-mini-code",
       "deepseek-r1-0120",
       "deepseek-v3",
       "deepseek-v3-0324",
       "deepseek-v3-1-terminus-reasoning",
-      "deepseek-v3-2-reasoning",
       "deepseek-v4-flash-0420",
       "deepseek-v4-flash",
+      "deepseek-v4-flash-vision",
       "deepseek-v4-pro-0424",
       "deepseek-v4-pro",
-      "diffusiongemma-26b-a4b",
       "gemini-2-5-pro",
       "gemini-3-1-flash-lite-preview",
       "gemini-3-1-pro-preview",
@@ -107,80 +316,50 @@
       "gemini-3-5-flash-lite",
       "gemini-3-6-flash",
       "gemini-3-7-flash",
+      "gemini-3-8-flash",
       "gemma-3-12b",
       "gemma-3-27b",
-      "gemma-3-4b",
-      "gemma-3n-e4b",
-      "gemma-4-12b",
-      "gemma-4-26b-a4b",
       "gemma-4-31b",
-      "gemma-4-e2b",
-      "gemma-4-e4b",
-      "granite-4-1-30b",
-      "granite-4-1-3b",
-      "granite-4-1-8b",
+      "granite-4-2-30b",
+      "granite-4-2-3b",
+      "granite-4-2-8b",
       "mercury-2",
-      "ling-2-6-flash",
       "ling-3-0-flash",
       "ling-3-0-tiny",
       "ring-2-6-1t",
-      "kimi-k2-thinking",
-      "kimi-k2-5-non-reasoning",
-      "kimi-k2-6-non-reasoning",
+      "kimi-k2-6",
       "kimi-k2-7-code",
       "kimi-k3",
-      "kat-coder-pro-v2",
-      "exaone-4-5-33b",
-      "k-exaone",
       "k-exaone-2-0-0803",
       "lfm2-5-2-6b",
       "longcat-2-0",
-      "k2-think-v2",
-      "llama-3-1-instruct-8b",
-      "llama-3-3-instruct-70b",
+      "k2-horizon-375b-a23b",
       "llama-4-maverick",
       "llama-4-scout",
       "muse-glimmer",
-      "muse-spark",
       "muse-spark-1-1",
       "muse-spark-1-2",
-      "phi-4-mini",
-      "minimax-m2",
-      "minimax-m2-1",
-      "minimax-m2-5",
+      "muse-spark-1-3-xhigh",
       "minimax-m2-7",
       "minimax-m3",
       "devstral-2",
       "devstral-small-2",
-      "magistral-medium-2509",
-      "magistral-small-2509",
       "ministral-3-14b",
       "ministral-3-3b",
       "ministral-3-8b",
       "mistral-large-3",
-      "mistral-medium-3-1",
       "mistral-medium-3-5",
       "mistral-small-3-1",
       "mistral-small-3-2",
       "mistral-small-4",
       "motif-3",
-      "motif-0714",
-      "hypernova-60b",
+      "quasar-438b",
       "nvidia-nemotron-3-nano-30b-a3b-reasoning",
-      "nvidia-nemotron-3-nano-4b",
-      "nemotron-3-nano-omni-30b-a3b",
       "nvidia-nemotron-3-super-120b-a12b",
       "nvidia-nemotron-3-ultra-550b-a55b",
       "nemotron-3-5-lightning",
-      "nemotron-cascade-2-30b-a3b",
-      "nanbeige4-1-3b",
       "nex-n2-pro",
-      "gpt-4-1-mini",
-      "gpt-4-1-nano",
-      "gpt-5",
       "gpt-5-mini",
-      "gpt-5-1",
-      "gpt-5-4",
       "gpt-5-4-mini",
       "gpt-5-4-nano",
       "gpt-5-5",
@@ -188,16 +367,17 @@
       "gpt-5-6-luna",
       "gpt-5-6-sol",
       "gpt-5-6-terra",
+      "gpt-6-astra-xhigh",
       "gpt-oss-120b",
       "gpt-oss-20b",
       "o3-mini-high",
-      "minicpm-v4-6-1-3b",
+      "minicpm5-2b",
       "a-x-k2",
       "agnes-2-5-pro-alpha",
+      "agnes-2-5-pro-beta",
       "grok-4-3",
       "grok-4-5",
       "grok-4-6",
-      "grok-build-0-1-06-16",
       "step-3-7-flash",
       "hy3",
       "inkling",
@@ -205,73 +385,53 @@
       "solar-open2-250b",
       "solar-pro-3",
       "solar-pro4",
-      "mimo-v2-flash",
       "mimo-v2-5-0424",
       "mimo-v2-5-pro",
-      "glm-4.5",
-      "glm-4-6",
-      "glm-4-7",
-      "glm-4-7-flash-non-reasoning",
-      "glm-5-non-reasoning",
       "glm-5-1",
       "glm-5-2",
-      "glm-5-3"
+      "glm-5-3",
+      "glm-5-3-flash"
     ],
     "population_variant_groups": [
       "g9v3 39a5b",
-      "g9v3 3b",
       "qwen3 14b",
       "qwen3 235b a22b 2507",
       "qwen3 30b a3b 2507",
       "qwen3 32b",
       "qwen3 8b",
       "qwen3 coder next",
-      "qwen3 max thinking",
-      "qwen3 next 80b a3b",
-      "qwen3 5 0 8b",
       "qwen3 5 122b a10b",
-      "qwen3 5 27b",
-      "qwen3 5 2b",
-      "qwen3 5 35b a3b",
       "qwen3 5 397b a17b",
-      "qwen3 5 4b",
-      "qwen3 5 9b",
       "qwen3 6 27b",
       "qwen3 6 35b a3b",
-      "qwen3 6 plus",
       "qwen3 7 max",
       "qwen3 7 plus",
       "qwen3 8 2 4t a95b",
       "qwen3 8 27b",
       "qwen3 8 max",
-      "nova 2 0 lite",
-      "nova 2 0 pro preview",
-      "claude 3 5 haiku",
-      "claude 4 sonnet",
+      "qwen3 8 flash next",
       "claude 4 5 haiku",
       "claude 4 5 sonnet",
       "claude fable 5 with fallback",
-      "claude opus 4 6",
-      "claude opus 4 7",
+      "claude fable 5 1 with fallback",
       "claude opus 4 8",
       "claude opus 5",
       "claude sonnet 4 6",
       "claude sonnet 5",
+      "apodex 1 1",
       "trinity large thinking",
       "celeris 1",
-      "jt 4 1 flash 236b a21b",
       "command a",
       "north mini code",
       "deepseek r1 jan",
       "deepseek v3 dec",
       "deepseek v3 0324",
       "deepseek v3 1 terminus",
-      "deepseek v3 2",
       "deepseek v4 flash",
       "deepseek v4 flash 0731",
+      "deepseek v4 flash vision",
       "deepseek v4 pro",
       "deepseek v4 pro 0813",
-      "diffusiongemma 26b a4b",
       "gemini 2 5 pro",
       "gemini 3 1 flash lite",
       "gemini 3 1 pro preview",
@@ -279,80 +439,50 @@
       "gemini 3 5 flash lite",
       "gemini 3 6 flash",
       "gemini 3 7 flash",
+      "gemini 3 8 flash",
       "gemma 3 12b",
       "gemma 3 27b",
-      "gemma 3 4b",
-      "gemma 3n e4b",
-      "gemma 4 12b",
-      "gemma 4 26b a4b",
       "gemma 4 31b",
-      "gemma 4 e2b",
-      "gemma 4 e4b",
-      "granite 4 1 30b",
-      "granite 4 1 3b",
-      "granite 4 1 8b",
+      "granite 4 2 30b",
+      "granite 4 2 3b",
+      "granite 4 2 8b",
       "mercury 2",
-      "ling 2 6 flash",
       "ling 3 0 flash",
       "ling 3 0 tiny",
       "ring 2 6 1t",
-      "kimi k2 thinking",
-      "kimi k2 5",
       "kimi k2 6",
       "kimi k2 7 code",
       "kimi k3",
-      "kat coder pro v2",
-      "exaone 4 5 33b",
-      "k exaone",
       "k exaone 2 0",
       "lfm2 5 2 6b",
       "longcat 2 0",
-      "k2 think v2",
-      "llama 3 1 8b",
-      "llama 3 3 70b",
+      "k2 horizon 375b a23b",
       "llama 4 maverick",
       "llama 4 scout",
       "muse glimmer",
-      "muse spark",
       "muse spark 1 1",
       "muse spark 1 2",
-      "phi 4 mini",
-      "minimax m2",
-      "minimax m2 1",
-      "minimax m2 5",
+      "muse spark 1 3",
       "minimax m2 7",
       "minimax m3",
       "devstral 2",
       "devstral small 2",
-      "magistral medium 1 2",
-      "magistral small 1 2",
       "ministral 3 14b",
       "ministral 3 3b",
       "ministral 3 8b",
       "mistral large 3",
-      "mistral medium 3 1",
       "mistral medium 3 5",
       "mistral small 3 1",
       "mistral small 3 2",
       "mistral small 4",
       "motif 3",
-      "motif 3 beta",
-      "hypernova 60b 2605",
+      "quasar 438b",
       "nemotron 3 nano",
-      "nemotron 3 nano 4b",
-      "nemotron 3 nano omni 30b a3b",
       "nemotron 3 super",
       "nemotron 3 ultra",
       "nemotron 3 5 lightning",
-      "nemotron cascade 2 30b a3b",
-      "nanbeige4 1 3b",
       "nex n2 pro",
-      "gpt 4 1 mini",
-      "gpt 4 1 nano",
-      "gpt 5",
       "gpt 5 mini",
-      "gpt 5 1",
-      "gpt 5 4",
       "gpt 5 4 mini",
       "gpt 5 4 nano",
       "gpt 5 5",
@@ -360,16 +490,17 @@
       "gpt 5 6 luna",
       "gpt 5 6 sol",
       "gpt 5 6 terra",
+      "gpt 6 astra",
       "gpt oss 120b",
       "gpt oss 20b",
       "o3 mini",
-      "minicpm v 4 6 1 3b",
+      "minicpm5 2b",
       "a x k2",
       "agnes 2 5 pro alpha",
+      "agnes 2 5 pro beta",
       "grok 4 3",
       "grok 4 5",
       "grok 4 6",
-      "grok build 0 1 0616",
       "step 3 7 flash",
       "hy3",
       "inkling",
@@ -377,17 +508,12 @@
       "solar open2 250b",
       "solar pro 3",
       "solar pro 4",
-      "mimo v2 flash",
       "mimo v2 5",
       "mimo v2 5 pro",
-      "glm 4 5",
-      "glm 4 6",
-      "glm 4 7",
-      "glm 4 7 flash",
-      "glm 5",
       "glm 5 1",
       "glm 5 2",
-      "glm 5 3"
+      "glm 5 3",
+      "glm 5 3 flash"
     ],
     "missing_policy": "core must be complete; missing extension is absent and earns zero bonus; no value is imputed",
     "fit_apply_policy": "fit OLS trends and shared cap once on the deduplicated population; apply unchanged to exact configurations",
@@ -406,27 +532,27 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 157,
-            "slope": 1.7820361916923244,
-            "intercept": -27.61496864015958
+            "observed_count": 121,
+            "slope": 2.315728456585634,
+            "intercept": -50.91783034524007
           },
           {
             "item_id": "swe-bench-pro",
             "score_key": "benchmark:swe-bench-pro",
             "canonical_family": "swe-bench-pro",
             "enabled": true,
-            "observed_count": 39,
-            "slope": 0.4065071927543279,
-            "intercept": 39.73458490005082
+            "observed_count": 33,
+            "slope": 1.0492548243299713,
+            "intercept": 6.720922207694173
           },
           {
             "item_id": "livecodebench",
             "score_key": "benchmark:livecodebench",
             "canonical_family": "livecodebench",
             "enabled": true,
-            "observed_count": 24,
-            "slope": 0.6885441239725169,
-            "intercept": 54.27037910019905
+            "observed_count": 16,
+            "slope": 0.3201612766114788,
+            "intercept": 65.82231197922313
           }
         ],
         "core_item_count": 1,
@@ -446,72 +572,72 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 157,
-            "slope": 0.9815429770964839,
-            "intercept": -13.817008400482678
+            "observed_count": 121,
+            "slope": 1.0451200833696417,
+            "intercept": -17.78790960917707
           },
           {
             "item_id": "tau2-bench-telecom-aa",
             "score_key": "τ²-Bench Telecom",
             "canonical_family": "tau2-bench",
             "enabled": true,
-            "observed_count": 130,
-            "slope": 0.8788620326336228,
-            "intercept": 19.041632669103265
+            "observed_count": 71,
+            "slope": 0.9387780274064941,
+            "intercept": 10.65238951869432
           },
           {
             "item_id": "tau3-banking-aa",
             "score_key": "τ³-Banking",
             "canonical_family": "tau3-banking",
             "enabled": true,
-            "observed_count": 128,
-            "slope": 0.39674355242859155,
-            "intercept": -5.624700586248633
+            "observed_count": 121,
+            "slope": 0.43634018027021415,
+            "intercept": -7.076314311793091
           },
           {
             "item_id": "apex-agents-aa",
             "score_key": "APEX-Agents-AA",
             "canonical_family": "apex-agents",
             "enabled": true,
-            "observed_count": 24,
-            "slope": 0.9019043029443479,
-            "intercept": -41.37166125588391
+            "observed_count": 23,
+            "slope": 0.7780590783771013,
+            "intercept": -35.17542713179563
           },
           {
             "item_id": "swe-bench-pro",
             "score_key": "benchmark:swe-bench-pro",
             "canonical_family": "swe-bench-pro",
             "enabled": true,
-            "observed_count": 39,
-            "slope": 0.41035350096091505,
-            "intercept": 29.144907713352943
+            "observed_count": 33,
+            "slope": 1.1231503800909692,
+            "intercept": -28.690809871032606
           },
           {
             "item_id": "hle-tools",
             "score_key": "benchmark:hle-tools",
             "canonical_family": "hle-tools",
             "enabled": true,
-            "observed_count": 27,
-            "slope": 0.5623910012780232,
-            "intercept": 10.742434568012705
+            "observed_count": 21,
+            "slope": 0.888675833408881,
+            "intercept": -17.41793562381946
           },
           {
             "item_id": "mcp-atlas",
             "score_key": "benchmark:mcp-atlas",
             "canonical_family": "mcp-atlas",
             "enabled": true,
-            "observed_count": 22,
-            "slope": 0.37854315530748966,
-            "intercept": 47.47282774726642
+            "observed_count": 20,
+            "slope": 0.3855064276902523,
+            "intercept": 44.83859264046613
           },
           {
             "item_id": "osworld-verified",
             "score_key": "benchmark:osworld-verified",
             "canonical_family": "osworld-verified",
             "enabled": true,
-            "observed_count": 15,
-            "slope": 1.2533816048978368,
-            "intercept": -16.21911156080732
+            "observed_count": 10,
+            "slope": 1.0212663146486258,
+            "intercept": -4.1855482221566405
           }
         ],
         "core_item_count": 1,
@@ -541,9 +667,9 @@
             "score_key": "AIME 2025",
             "canonical_family": "aime-2025",
             "enabled": true,
-            "observed_count": 53,
-            "slope": 3.2865518238556755,
-            "intercept": 41.561460933049695
+            "observed_count": 28,
+            "slope": 4.140890430442017,
+            "intercept": 37.683572079809515
           }
         ],
         "core_item_count": 3,
@@ -578,18 +704,18 @@
             "score_key": "MMMU-Pro",
             "canonical_family": "mmmu-pro",
             "enabled": true,
-            "observed_count": 84,
-            "slope": 0.80479047993735,
-            "intercept": 38.33862028440839
+            "observed_count": 57,
+            "slope": 0.7703981195130124,
+            "intercept": 39.706895973052966
           },
           {
             "item_id": "mmlu-pro",
             "score_key": "benchmark:mmlu-pro",
             "canonical_family": "mmlu-pro",
             "enabled": true,
-            "observed_count": 22,
-            "slope": 0.5894542305568224,
-            "intercept": 61.8578030424585
+            "observed_count": 15,
+            "slope": 0.16786404522972148,
+            "intercept": 76.80376697055829
           }
         ],
         "core_item_count": 4,
@@ -614,9 +740,9 @@
             "score_key": "benchmark:charxiv-no-tools",
             "canonical_family": "charxiv-no-tools",
             "enabled": true,
-            "observed_count": 11,
-            "slope": 0.6539478000195372,
-            "intercept": 61.76379562600238
+            "observed_count": 8,
+            "slope": 0.2934103323726511,
+            "intercept": 74.46219250128733
           }
         ],
         "core_item_count": 2,
@@ -630,15 +756,15 @@
     "independent_of_production_scoring_module": true,
     "exact_reuses_serialized_deduplicated_calibration": true,
     "calibration": {
-      "population_size": 170,
-      "cap": 23.493316702778166,
-      "serialized_cap": 23.493316702778166,
+      "population_size": 121,
+      "cap": 19.845225781507455,
+      "serialized_cap": 19.845225781507455,
       "cap_error": 0.0,
       "passed": true,
       "failures": []
     },
     "variant_group": {
-      "row_count": 170,
+      "row_count": 121,
       "maximum_numeric_error": 1.4210854715202004e-14,
       "passed": true,
       "failures": []
@@ -650,7 +776,7 @@
       "failures": []
     },
     "exact_config": {
-      "row_count": 207,
+      "row_count": 162,
       "maximum_numeric_error": 1.4210854715202004e-14,
       "passed": true,
       "failures": []
@@ -662,12 +788,12 @@
       "failures": []
     },
     "exact_config_sanitation": {
-      "shared_variant_score_cells_removed": 459,
+      "shared_variant_score_cells_removed": 481,
       "configuration_ineligible_score_cells_removed": 0,
       "derived_external_score_cells_removed": 0,
-      "unscoped_external_score_cells_removed": 770,
-      "site_livecodebench_cells_excluded": 378,
-      "variant_scoped_direct_score_cells_retained": 402
+      "unscoped_external_score_cells_removed": 767,
+      "site_livecodebench_cells_excluded": 381,
+      "variant_scoped_direct_score_cells_retained": 462
     },
     "review_parity": {
       "requested": false,

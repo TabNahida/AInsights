@@ -8,6 +8,7 @@ from pathlib import Path
 
 from ArtificialAnalysis.scrape_artificial_analysis import SCORE_SPECS
 from benchmarks.collect_benchmark_scores import build_payload as build_benchmark_payload
+from analysis.irt_leaderboard_exploration.v5_benchmark_policy import BENCHMARK_POLICIES
 from scripts.build_docs_site import (
     AINDEX_GROUPS,
     DEFAULT_AINDEX_WEIGHTS,
@@ -1212,8 +1213,11 @@ class BuildDocsSiteTests(unittest.TestCase):
 
         self.assertEqual(len(ranked), payload["leaderboard"]["populationSize"])
         self.assertGreaterEqual(len(ranked), 50)
-        self.assertEqual(ranked[0]["slug"], "claude-fable-5")
-        self.assertEqual(ranked[1]["slug"], "gpt-5-6-sol")
+        # Live releases may change the leading model and the selected variant.
+        # The contract is one representative per group, ordered by evidence.
+        self.assertEqual(len({model["variantGroup"] for model in ranked}), len(ranked))
+        scores = [model["rankingProfile"]["finalScore"] for model in ranked]
+        self.assertEqual(scores, sorted(scores, reverse=True))
         self.assertEqual(
             [model["rankingProfile"]["publicationRank"] for model in ranked],
             list(range(1, len(ranked) + 1)),
@@ -1332,30 +1336,22 @@ class BuildDocsSiteTests(unittest.TestCase):
             )
         )
 
-        by_slug = {model["slug"]: model for model in payload["models"]}
-        expected_gpt55 = {
-            "gpt-5-5",
-            "gpt-5-5-high",
-            "gpt-5-5-medium",
-            "gpt-5-5-low",
-            "gpt-5-5-non-reasoning",
+        # A tier can lose eligibility when AA withdraws a mandatory score.
+        # Check the publication policy against the live catalogue, rather than
+        # requiring a frozen list of GPT tiers to keep scores indefinitely.
+        core_keys = {
+            policy.score_key for policy in BENCHMARK_POLICIES
+            if policy.tier == "core" and policy.publication_eligible
         }
-
-        self.assertTrue(
-            all(by_slug[slug].get("exactRankingProfile") for slug in expected_gpt55)
-        )
-        self.assertNotIn(
-            "exactRankingProfile",
-            by_slug["gpt-5-5-instant-05-26"],
-        )
-        self.assertLess(
-            by_slug["gpt-5-5"]["exactRankingProfile"]["publicationRank"],
-            by_slug["gpt-5-5-high"]["exactRankingProfile"]["publicationRank"],
-        )
-        self.assertGreater(
-            by_slug["gpt-5-5"]["exactRankingProfile"]["displayScore"],
-            by_slug["gpt-5-5-high"]["exactRankingProfile"]["displayScore"],
-        )
+        for model in payload["models"]:
+            complete_core = all(
+                isinstance(model["scores"].get(key), (int, float))
+                and math.isfinite(model["scores"][key])
+                for key in core_keys
+            )
+            if not complete_core:
+                self.assertFalse(model.get("exactRankingProfile"), model["slug"])
+        self.assertTrue(any(not model.get("rankingProfile") for model in exact_ranked))
         self.assertNotEqual(
             payload["leaderboard"]["boardItemPoolSizesByMethod"],
             payload["leaderboard"]["exactBoardItemPoolSizesByMethod"],
@@ -1660,6 +1656,28 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertGreater(variant_priority("GPT-5.5 (high)", "gpt-5-5-high"), variant_priority("GPT-5.5", "gpt-5-5"))
         self.assertGreater(variant_priority("Claude Opus 4.8 (max)", "claude-opus-4-8-max"), variant_priority("Claude Opus 4.8 (xhigh)", "claude-opus-4-8-xhigh"))
         self.assertLess(variant_priority("Claude Opus 4.7 (Non-reasoning, high)", "claude-opus-4-7-non-reasoning"), variant_priority("Claude Opus 4.7", "claude-opus-4-7"))
+
+    def test_fallback_effort_tiers_share_family_but_preserve_product_identity(self):
+        for effort in ("max", "xhigh", "high", "medium", "low"):
+            with self.subTest(effort=effort):
+                name = f"Claude Fable 5.1 ({effort} with fallback)"
+                self.assertEqual(variant_group(name), "claude fable 5 1 with fallback")
+                self.assertEqual(
+                    variant_priority(name),
+                    variant_priority(f"Claude Fable 5.1 ({effort})"),
+                )
+        self.assertEqual(
+            variant_group("Claude Fable 5.1 (max with fallback)"),
+            variant_group("Claude Fable 5.1 (with fallback)"),
+        )
+        self.assertNotEqual(
+            variant_group("Claude Fable 5.1 (max with fallback)"),
+            variant_group("Claude Fable 5.1 (max)"),
+        )
+        self.assertNotEqual(
+            variant_group("Claude Fable 5.1 (max with fallback)"),
+            variant_group("Claude Fable 5 (with fallback)"),
+        )
 
     def test_opus_non_reasoning_tier_dedupes_with_reasoning_tier(self):
         payload = build_site_payload(read_csv_rows(DEFAULT_INPUT_CSV))

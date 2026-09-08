@@ -379,6 +379,20 @@
     },
     {
       "vendor": "deepseek",
+      "name": "DeepSeek-R1",
+      "displayName": "DeepSeek R1",
+      "url": "https://api-docs.deepseek.com/news/news250120",
+      "rawUrl": "https://api-docs.deepseek.com/news/news250120",
+      "aliases": [
+        "DeepSeek R1",
+        "DeepSeek-R1",
+        "deepseek-r1"
+      ],
+      "sourceKey": "deepseek-api-docs-sitemap",
+      "title": "DeepSeek-R1 Release"
+    },
+    {
+      "vendor": "deepseek",
       "name": "DeepSeek-R1-0528",
       "displayName": "DeepSeek R1 0528",
       "url": "https://api-docs.deepseek.com/news/news250528",

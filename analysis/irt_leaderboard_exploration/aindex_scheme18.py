@@ -701,6 +701,39 @@ def _models_for_slugs(
     return [by_slug[slug] for slug in requested]
 
 
+def _core_eligible_models(
+    models: Sequence[Mapping[str, Any]],
+) -> tuple[list[Mapping[str, Any]], dict[str, Any]]:
+    """Apply the complete-Core publication gate to the requested population.
+
+    Legacy eligibility may survive a withdrawn Core observation. Keep those
+    models in the source catalogue, but omit them from calibration and ranking
+    without filling observations or selecting a different representative.
+    """
+
+    eligible: list[Mapping[str, Any]] = []
+    excluded: list[dict[str, Any]] = []
+    for model in models:
+        missing = {
+            board_id: [
+                key for key in CORE_ITEMS[board_id]
+                if score_value(model, key) is None
+            ]
+            for board_id in BOARD_ORDER
+        }
+        missing = {board_id: keys for board_id, keys in missing.items() if keys}
+        if missing:
+            excluded.append({"slug": str(model.get("slug") or ""), "missing_core": missing})
+        else:
+            eligible.append(model)
+    return eligible, {
+        "requested_count": len(models),
+        "eligible_count": len(eligible),
+        "excluded_count": len(excluded),
+        "excluded_models": excluded,
+    }
+
+
 def write_csv(path: Path, rows: Sequence[Mapping[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     if not rows:
@@ -736,6 +769,7 @@ def run_aindex_scheme18_from_payload(
         calibration_slugs,
         label="calibration",
     )
+    calibration_models, calibration_eligibility = _core_eligible_models(calibration_models)
     calibration = fit_calibration(calibration_models)
     full_rankings = rank_rows(
         score_models(
@@ -755,6 +789,7 @@ def run_aindex_scheme18_from_payload(
         exact_config_slugs,
         label="exact-config",
     )
+    exact_models, exact_eligibility = _core_eligible_models(exact_models)
     exact_config_full_rankings = rank_rows(
         score_models(
             exact_models,
@@ -767,6 +802,10 @@ def run_aindex_scheme18_from_payload(
         exact_config_full_rankings,
         calibration,
     )
+    validation["core_eligibility"] = {
+        "variant_group": calibration_eligibility,
+        "exact_config": exact_eligibility,
+    }
     if not validation["passed"]:
         raise AssertionError("Scheme 18 production validation failed")
 

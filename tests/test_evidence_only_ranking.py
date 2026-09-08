@@ -1,5 +1,6 @@
 import csv
 import json
+import math
 import tempfile
 import unittest
 from pathlib import Path
@@ -13,8 +14,12 @@ from analysis.irt_leaderboard_exploration.multi_method_evidence_analysis import 
     CONSENSUS_COMPONENT_WEIGHTS,
     CONSENSUS_METHOD,
     METHOD_LABELS,
+    ITEM_MIN_MODELS,
+    SPARSE_ITEM_MIN_MODELS,
+    DENSE_ITEM_MIN_MODELS,
     build_twopl_sparse_score_consensus,
     equal_board_mean,
+    pairwise_overlap_rows,
     prepare_common_matrix,
     run_multi_method_analysis,
 )
@@ -249,6 +254,47 @@ class EvidenceOnlyRankingTests(unittest.TestCase):
         )
 
 
+class PairwiseOverlapAuditTests(unittest.TestCase):
+    def test_new_shared_measurements_extend_the_audit_without_fixed_win_counts(self):
+        models = [
+            {"model": "GPT-5.6 Sol (max)"},
+            {"model": "Claude Opus 5 (max)"},
+            {"model": "GPT-5.6 Luna (max)"},
+            {"model": "DeepSeek V4 Flash 0731 (max)"},
+        ]
+        boards = {
+            board_id: {"items": [], "raw": np.empty((4, 0))}
+            for board_id in base.BOARD_ORDER
+        }
+        boards["coding"] = {
+            "items": [
+                {"id": "shared-tie"},
+                {"id": "shared-left"},
+                {"id": "new-release"},
+            ],
+            "raw": np.asarray(
+                [[90, 80, 60], [85, 75, np.nan], [50, 80, 70], [50, 75, np.nan]],
+                dtype=float,
+            ),
+        }
+        boards["hard-reasoning"] = {
+            "items": [{"id": "duplicate-protocol", "family": "shared-left"}],
+            "raw": np.asarray([[99], [98], [97], [96]], dtype=float),
+        }
+
+        def luna_rows():
+            return [
+                (row["benchmark_family"], row["left_minus_right"], row["winner"])
+                for row in pairwise_overlap_rows(models, boards)
+                if row["pair"] == "luna_vs_deepseek"
+            ]
+
+        expected = [("shared-tie", 0.0, "tie"), ("shared-left", 5.0, "left")]
+        self.assertEqual(luna_rows(), expected)
+        boards["coding"]["raw"][3, 2] = 90
+        self.assertEqual(luna_rows(), expected + [("new-release", -20.0, "right")])
+
+
 class MultiMethodEvidenceRankingTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -421,9 +467,6 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
             if row["variant_group"] == "gpt 5 5"
         )
 
-        self.assertEqual(deduped_gpt55["slug"], "gpt-5-5")
-        self.assertEqual(deduped_gpt55["evidence_tier"], "Main")
-
         self.assertEqual(len(rows), summary["ranked_exact_config_rows"])
         self.assertEqual(
             len(rows) - len(self.result["consensus_full_rankings"]),
@@ -448,24 +491,29 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
             for row in rows
             if row["variant_group"] == "gpt 5 5"
         }
-        self.assertEqual(
-            set(gpt55),
-            {
-                "gpt-5-5",
-                "gpt-5-5-high",
-                "gpt-5-5-medium",
-                "gpt-5-5-low",
-                "gpt-5-5-non-reasoning",
-            },
-        )
-        self.assertLess(
-            gpt55["gpt-5-5"]["rank"],
-            gpt55["gpt-5-5-high"]["rank"],
-        )
-        self.assertGreater(
-            gpt55["gpt-5-5"]["score"],
-            gpt55["gpt-5-5-high"]["score"],
-        )
+        payload = json.loads(DEFAULT_INPUT.read_text(encoding="utf-8"))
+        exact_models, _ = sanitize_models(payload, exact_config_only=True)
+        # Derive population eligibility from observed measurements in each
+        # reviewed item pool, without assuming particular tiers stay complete.
+        eligible = np.ones(len(exact_models), dtype=bool)
+        for min_models, min_creators in (
+            (ITEM_MIN_MODELS, 3), (SPARSE_ITEM_MIN_MODELS, 1),
+            (DENSE_ITEM_MIN_MODELS, 3),
+        ):
+            boards = prepare_common_matrix(
+                exact_models, item_min_models=min_models, item_min_creators=min_creators,
+            )
+            for board in boards.values():
+                eligible &= np.sum(np.isfinite(board["raw"]), axis=1) >= 2
+        expected_slugs = {
+            model["slug"] for model, include in zip(exact_models, eligible) if include
+        }
+        self.assertEqual({row["slug"] for row in rows}, expected_slugs)
+        expected_gpt55 = {
+            model["slug"] for model in exact_models
+            if model["variantGroup"] == "gpt 5 5" and model["slug"] in expected_slugs
+        }
+        self.assertEqual(set(gpt55), expected_gpt55)
         self.assertEqual(
             [row["rank"] for row in rows],
             list(range(1, len(rows) + 1)),
@@ -489,12 +537,7 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
         }
         self.assertEqual(
             recovered_gpt55,
-            {
-                "gpt-5-5-high",
-                "gpt-5-5-medium",
-                "gpt-5-5-low",
-                "gpt-5-5-non-reasoning",
-            },
+            expected_gpt55 - {deduped_gpt55["slug"]},
         )
 
     def test_primary_consensus_evidence_coverage_formula_and_range(self):
@@ -624,15 +667,29 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
         self.assertTrue(all(row["model"] == "GPT-5.6 Sol (max)" for row in sol_rows))
         self.assertTrue(all(row["slug"] == "gpt-5-6-sol" for row in sol_rows))
 
-    def test_pairwise_overlap_audit_reproduces_luna_deepseek_closeness(self):
+    def test_pairwise_overlap_audit_reports_current_luna_deepseek_measurements(self):
         rows = [
             row
             for row in self.result["pairwise_overlap"]
             if row["pair"] == "luna_vs_deepseek"
         ]
-        self.assertEqual(len(rows), 9)
-        self.assertEqual(sum(row["winner"] == "left" for row in rows), 7)
-        self.assertEqual(sum(row["winner"] == "right" for row in rows), 2)
+        self.assertTrue(rows)
+        self.assertEqual(len({row["benchmark_family"] for row in rows}), len(rows))
+        for row in rows:
+            self.assertEqual(row["left_model"], "GPT-5.6 Luna (max)")
+            self.assertEqual(row["right_model"], "DeepSeek V4 Flash 0731 (max)")
+            self.assertTrue(math.isfinite(row["left_value"]))
+            self.assertTrue(math.isfinite(row["right_value"]))
+            self.assertIn(row["board"], base.BOARD_ORDER)
+            delta = row["left_minus_right"]
+            self.assertAlmostEqual(
+                delta, row["left_value"] - row["right_value"], delta=0.00011
+            )
+            self.assertIn(row["winner"], {"left", "right", "tie"})
+            # Values are serialized to four decimals; sub-rounding deltas may
+            # legitimately retain a non-tie winner from the raw observations.
+            if delta != 0:
+                self.assertEqual(row["winner"], "left" if delta > 0 else "right")
 
     def test_first_party_source_coverage_distinguishes_stored_from_used_rows(self):
         by_model = {

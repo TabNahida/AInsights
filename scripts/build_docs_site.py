@@ -504,6 +504,10 @@ STRENGTH_SUFFIX_RE = re.compile(
     r"\s*\((?:(?:x?high|medium|low|max|min|minimal|default|fast|thinking|non[- ]reasoning|reasoning)(?:\s*,\s*|\s+)*)+\)\s*$",
     re.IGNORECASE,
 )
+FALLBACK_STRENGTH_SUFFIX_RE = re.compile(
+    r"\s*\((x?high|medium|low|max|min|minimal|default|fast|thinking|non[- ]reasoning|reasoning)\s+with fallback\)\s*$",
+    re.IGNORECASE,
+)
 SLUG_SUFFIX_RE = re.compile(
     r"-(?:x?high|medium|low|max|min|minimal|default|fast|thinking|non-reasoning|reasoning)$",
     re.IGNORECASE,
@@ -826,7 +830,10 @@ def build_site_payload(
 
 
 def variant_group(model: str, slug: str = "") -> str:
-    base = STRENGTH_SUFFIX_RE.sub("", model or "").strip()
+    # Effort changes do not create a separate model family, but a fallback
+    # product remains distinct from a hypothetical pure model configuration.
+    base = FALLBACK_STRENGTH_SUFFIX_RE.sub(" (with fallback)", model or "")
+    base = STRENGTH_SUFFIX_RE.sub("", base).strip()
     if not base and slug:
         base = SLUG_SUFFIX_RE.sub("", slug).replace("-", " ")
     normalized = NON_WORD_RE.sub(" ", base.lower()).strip()
@@ -2987,6 +2994,7 @@ def _variant_suffix(model: str, slug: str) -> str | None:
 
 
 def _normalize_variant_suffix(value: str) -> str:
+    value = re.sub(r"\s+with fallback$", "", value, flags=re.IGNORECASE)
     normalized = re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
     if normalized in {"x-high", "extra-high", "extra-high-reasoning"}:
         return "xhigh"

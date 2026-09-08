@@ -58,6 +58,26 @@ def _encrypted_manifest(payload, key: bytes) -> bytes:
     return AESGCM(key).encrypt(iv, compressed, None)
 
 
+def _scicode_refresh_fixture():
+    prior_models = _model_rows(50)
+    for index, row in enumerate(prior_models):
+        row["scicode"] = 0.8 - index / 100
+    sources = [
+        {
+            "slug": row["slug"],
+            "shortName": row["short_name"],
+            "creator": {"name": "Lab"},
+            "contextWindowTokens": 128000,
+            "intelligenceIndex": row["intelligence_index"],
+            "scicode": None if index < 40 else row["scicode"],
+        }
+        for index, row in enumerate(prior_models)
+    ]
+    sources[-1]["scicode"] = 0  # A published zero is a score, not a withdrawal.
+    sources.append({**sources[-2], "slug": "new-model", "shortName": "New Model", "scicode": 0.99})
+    return sources, build_raw_scores_rows(prior_models)
+
+
 class ArtificialAnalysisScraperTests(unittest.TestCase):
     def test_extract_default_data_from_next_flight_chunks(self):
         html = (
@@ -527,6 +547,131 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
                 write_raw_scores_csv_atomically(candidate, output)
 
             self.assertEqual(output.read_bytes(), original)
+
+    def test_large_score_loss_requires_corroboration_before_replacing_snapshot(self):
+        sources, prior = _scicode_refresh_fixture()
+        candidates = build_raw_scores_rows([normalize_manifest_model_row(row) for row in sources])
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output = Path(tmpdir) / scraper.RAW_SCORES_FILENAME
+            write_raw_scores_csv(prior, output)
+            original = output.read_bytes()
+
+            with self.assertRaisesRegex(ValueError, "lost too much 'SciCode' coverage"):
+                write_raw_scores_csv_atomically(candidates, output)
+
+            self.assertEqual(output.read_bytes(), original)
+
+    def test_corroborated_withdrawals_refresh_new_models_and_clear_scores_and_ranks(self):
+        sources, prior = _scicode_refresh_fixture()
+        stderr = io.StringIO()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output = Path(tmpdir) / scraper.RAW_SCORES_FILENAME
+            write_raw_scores_csv(prior, output)
+            with (
+                patch.object(scraper, "fetch_html", return_value="page") as fetch_html,
+                patch.object(scraper, "fetch_rich_manifest_model_rows", return_value=sources),
+                patch.object(scraper, "extract_data_manifests", return_value=[DataManifest("/data/eval", "11" * 32)]),
+                patch.object(scraper, "fetch_manifest_payload", return_value={"models": list(reversed(sources))}),
+                redirect_stderr(stderr),
+            ):
+                result = scraper.main(["--output-dir", tmpdir, "--skip-logos"])
+
+            self.assertEqual(result, 0)
+            self.assertEqual(fetch_html.call_count, 2)
+            self.assertEqual(fetch_html.call_args.args[0], "https://artificialanalysis.ai/evaluations/scicode")
+            by_slug = {row["slug"]: row for row in validate_raw_scores_csv(output)}
+            self.assertEqual(len(by_slug), 51)
+            for index in range(40):
+                self.assertEqual(by_slug[f"model-{index}"]["SciCode"], "")
+                self.assertEqual(by_slug[f"model-{index}"]["SciCode_rank"], "")
+            self.assertEqual(by_slug["new-model"]["SciCode"], "99.0")
+            self.assertEqual(by_slug["new-model"]["SciCode_rank"], "1")
+            self.assertEqual(by_slug["model-40"]["SciCode_rank"], "2")
+            self.assertEqual(by_slug["model-49"]["SciCode"], "0.0")
+            self.assertEqual(by_slug["model-49"]["SciCode_rank"], "11")
+            self.assertIn("40 previously published scores are now null", stderr.getvalue())
+
+    def test_withdrawal_corroboration_rejects_incomplete_or_conflicting_evaluation(self):
+        for fault in ("missing model", "duplicate model", "missing key", "score conflict", "malformed score", "changed retained score"):
+            with self.subTest(fault=fault):
+                sources, prior = _scicode_refresh_fixture()
+                candidates = build_raw_scores_rows([normalize_manifest_model_row(row) for row in sources])
+                secondary = [dict(row) for row in sources]
+                if fault == "missing model":
+                    secondary.pop()
+                elif fault == "duplicate model":
+                    secondary.append(dict(secondary[0]))
+                elif fault == "missing key":
+                    del secondary[0]["scicode"]
+                elif fault == "score conflict":
+                    secondary[0]["scicode"] = 0.8
+                elif fault == "malformed score":
+                    secondary[0]["scicode"] = "not scored"
+                else:
+                    secondary[-1]["scicode"] = 0.5
+
+                with (
+                    patch.object(scraper, "fetch_html", return_value="page"),
+                    patch.object(scraper, "extract_data_manifests", return_value=[DataManifest("/data/eval", "11" * 32)]),
+                    patch.object(scraper, "fetch_manifest_payload", return_value={"models": secondary}),
+                    self.assertRaisesRegex(ValueError, "Could not corroborate 'SciCode'"),
+                ):
+                    scraper.confirm_manifest_score_removals(candidates, sources, prior)
+
+    def test_missing_manifest_score_keys_do_not_authorize_withdrawals(self):
+        sources, prior = _scicode_refresh_fixture()
+        for row in sources[:40]:
+            del row["scicode"]
+        candidates = build_raw_scores_rows([normalize_manifest_model_row(row) for row in sources])
+        with patch.object(scraper, "fetch_html") as fetch_html:
+            confirmed = scraper.confirm_manifest_score_removals(candidates, sources, prior)
+        self.assertEqual(confirmed, {})
+        fetch_html.assert_not_called()
+        with self.assertRaisesRegex(ValueError, "lost too much 'SciCode' coverage"):
+            scraper._validate_candidate_against_prior(candidates, prior, confirmed_score_removals=confirmed)
+
+    def test_withdrawal_corroboration_unavailable_keeps_valid_prior_with_allow_stale(self):
+        sources, prior = _scicode_refresh_fixture()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output = Path(tmpdir) / scraper.RAW_SCORES_FILENAME
+            write_raw_scores_csv(prior, output)
+            original = output.read_bytes()
+            stderr = io.StringIO()
+            with (
+                patch.object(scraper, "fetch_html", side_effect=["models page", OSError("evaluation unavailable"), "legacy page"]),
+                patch.object(scraper, "fetch_rich_manifest_model_rows", return_value=sources),
+                patch.object(scraper, "extract_default_data", side_effect=ValueError("no legacy rows")),
+                redirect_stderr(stderr),
+            ):
+                result = scraper.main(["--output-dir", tmpdir, "--skip-logos", "--allow-stale"])
+            self.assertEqual(result, 0)
+            self.assertEqual(output.read_bytes(), original)
+            self.assertIn("evaluation unavailable", stderr.getvalue())
+            self.assertIn("keeping the validated prior snapshot", stderr.getvalue())
+
+    def test_confirmed_withdrawals_do_not_weaken_remaining_score_or_other_column_guards(self):
+        sources, prior = _scicode_refresh_fixture()
+        candidates = build_raw_scores_rows([normalize_manifest_model_row(row) for row in sources])
+        confirmed = {"SciCode": {f"model-{index}" for index in range(40)}}
+        for row in candidates[40:50]:
+            row["SciCode"] = ""
+        with self.assertRaisesRegex(ValueError, "lost too much 'SciCode' coverage"):
+            scraper._validate_candidate_against_prior(candidates, prior, confirmed_score_removals=confirmed)
+
+        candidates = build_raw_scores_rows([normalize_manifest_model_row(row) for row in sources])
+        for row in prior:
+            row["GPQA Diamond"] = "80"
+        with self.assertRaisesRegex(ValueError, "lost too much 'GPQA Diamond' coverage"):
+            scraper._validate_candidate_against_prior(candidates, prior, confirmed_score_removals=confirmed)
+
+    def test_normal_coverage_does_not_fetch_withdrawal_verification_page(self):
+        sources, prior = _scicode_refresh_fixture()
+        for row in sources:
+            row["scicode"] = 0
+        candidates = build_raw_scores_rows([normalize_manifest_model_row(row) for row in sources])
+        with patch.object(scraper, "fetch_html") as fetch_html:
+            self.assertEqual(scraper.confirm_manifest_score_removals(candidates, sources, prior), {})
+        fetch_html.assert_not_called()
 
     def test_allow_stale_keeps_valid_snapshot_when_live_refresh_fails(self):
         with tempfile.TemporaryDirectory() as tmpdir:

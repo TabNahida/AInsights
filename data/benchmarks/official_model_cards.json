@@ -540,10 +540,10 @@
       "name": "GLM-5.3-Flash",
       "displayName": "GLM-5.3-Flash",
       "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
-      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/690b705278a3a58e538fcb37c2ca8b5f9511213c/README.md",
+      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/eb9eb208eb0d988989d07a6a12d0fdeb5f52574a/README.md",
       "createdAt": "2026-08-25T06:43:14.000Z",
-      "lastModified": "2026-09-04T06:45:04.000Z",
-      "revision": "690b705278a3a58e538fcb37c2ca8b5f9511213c",
+      "lastModified": "2026-09-07T12:13:47.000Z",
+      "revision": "eb9eb208eb0d988989d07a6a12d0fdeb5f52574a",
       "pipelineTag": "image-text-to-text",
       "tags": [
         "eval-results",

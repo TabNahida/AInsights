@@ -19,11 +19,28 @@ python scripts\build_docs_site.py
 python -B analysis\irt_leaderboard_exploration\validate_scheme18_production.py --input docs\data\models.json
 ```
 
-The scheduled workflow runs this pipeline daily. Discovery watches the verified
+The daily workflow refreshes Artificial Analysis and rebuilds the site; a separate
+Monday workflow discovers and refreshes external benchmark sources. Discovery watches the verified
 `Qwen`, `zai-org`, `moonshotai`, and `deepseek-ai` Hugging Face organizations as
 well as pinned Qwen, Z.ai, Kimi, and DeepSeek first-party release indexes. It
 preserves previously discovered cards and pages during transient outages and
 feeds new candidates into the benchmark collector. Curated source specifications
 remain authoritative for versioned or multi-value benchmark semantics.
+
+The AA scraper validates row and score coverage before atomically replacing the
+snapshot. A large SciCode withdrawal is accepted only when the models page and
+the dedicated SciCode evaluation page agree on the complete model catalogue and
+every score/null. Confirmed withdrawn scores and ranks stay blank. Models missing
+a required Core observation remain in the catalogue but are excluded from
+Scheme 18 calibration and ranking, with missing items recorded in its validation
+summary. Other unexpected coverage losses still fail validation. The daily workflow's
+`--allow-stale` option can retain a validated snapshot during upstream outages;
+check its warning annotations before treating a green run as a fresh import.
+
+September 2026 sources include GPT-6 Astra, Claude Fable 5.1, Gemini 3.8 Flash,
+Qwen3.8-Flash-Next, GLM-5.3-Flash, and DeepSeek V4 Flash Vision. Official results
+reported as best across unspecified effort settings remain reference evidence;
+they are not assigned to a particular reasoning configuration. Versioned
+Terminal-Bench, OSWorld, HLE-Verified, and CursorBench results remain distinct.
 
 The static ranking site lives in `docs/` and reads `docs/data/models.json`. The detailed calculation is documented in `docs/methodology.html`; reproducible analysis outputs live in `analysis/irt_leaderboard_exploration/outputs/`.

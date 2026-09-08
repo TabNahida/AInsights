@@ -114,6 +114,22 @@ NVIDIA_NEMOTRON3_SUPER_URL = "https://research.nvidia.com/labs/nemotron/files/NV
 NVIDIA_NEMOTRON3_ULTRA_URL = "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf"
 
 MODEL_ALIASES = {
+    "GPT-6 Astra": ["GPT-6 Astra", "gpt-6-astra"],
+    "Qwen3.8 Flash-Next": [
+        "Qwen3.8 Flash-Next", "Qwen3.8-Flash-Next", "Qwen3.8 Flash-Next (xhigh)",
+        "Qwen/Qwen3.8-Flash-Next", "qwen3-8-flash-next",
+    ],
+    "GLM-5.3-Flash": [
+        "GLM-5.3-Flash", "GLM-5.3-Flash (max)", "GLM 5.3 Flash",
+        "zai-org/GLM-5.3-Flash", "glm-5-3-flash",
+    ],
+    "DeepSeek V4 Flash Vision Exp (max)": [
+        "DeepSeek V4 Flash Vision Exp (max)", "DeepSeek-V4-Flash-Vision-Exp",
+        "DeepSeek V4 Flash Vision (max)",
+        "DeepSeek V4 Flash Vision (Reasoning, Max Effort)",
+        "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp", "deepseek-v4-flash-vision",
+        "deepseek-v4-flash-vision-exp",
+    ],
     "GPT-5.6 Sol": [
         "GPT-5.6 Sol",
         "GPT-5.6 Sol (max)",
@@ -1657,6 +1673,20 @@ BENCHMARKS = [
     },
 ]
 
+BENCHMARKS.extend([
+    {"id": "arc-agi-1", "label": "ARC-AGI-1", "category": "Abstract reasoning", "unit": "%", "icon": "ARC"},
+    {"id": "terminal-bench-4", "label": "Terminal-Bench 4.0", "category": "Agentic coding", "unit": "%", "icon": "TERM"},
+    {"id": "terminal-bench-science-0-1", "label": "Terminal-Bench Science 0.1", "category": "Scientific reasoning", "unit": "%", "icon": "SCI"},
+    {"id": "osworld-2-offline-2026-08-08-partial", "label": "OSWorld 2.0 Offline (2026-08-08, partial)", "category": "Computer use", "unit": "%", "icon": "OS"},
+    {"id": "screenspot-pro-no-tools", "label": "ScreenSpot-Pro (no tools)", "category": "Computer use", "unit": "%", "icon": "GUI"},
+    {"id": "frontiercode-v1-1-extended", "label": "FrontierCode v1.1 Extended (score)", "category": "Agentic coding", "unit": "%", "icon": "CODE"},
+    {"id": "exploitbench-2026-06-08", "label": "ExploitBench (June-August 2026)", "category": "Cybersecurity", "unit": "%", "icon": "CYB"},
+    {"id": "sre-bench", "label": "SRE-Bench", "category": "Cybersecurity", "unit": "%", "icon": "SRE"},
+    {"id": "apexbench-pass1", "label": "ApexBench (Pass@1)", "category": "Agentic reasoning", "unit": "%", "icon": "APEX"},
+    {"id": "chartography", "label": "Chartography", "category": "Multimodal reasoning", "unit": "%", "icon": "CHART"},
+    {"id": "lvbench", "label": "LVBench", "category": "Video understanding", "unit": "%", "icon": "VID"},
+])
+
 SEED_OPENAI_VALUES = {
     "swe-bench-pro": [58.6, 57.7, None, None, 64.3, 54.2],
     "terminal-bench-2": [82.7, 75.1, None, None, 69.4, 68.5],
@@ -1671,6 +1701,296 @@ SEED_OPENAI_VALUES = {
 }
 
 OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
+    {
+        "id": "openai-gpt-6-astra-release",
+        "label": "OpenAI GPT-6 Astra official release evaluations",
+        "url": "https://openai.com/index/gpt-6-astra/",
+        "rawUrl": "https://openai.com/index/gpt-6-astra/",
+        "category": "Official model release",
+        "modelAliases": MODEL_ALIASES["GPT-6 Astra"],
+        "variantScoped": True,
+        "modelScoreEligible": False,
+        "evidenceEligible": False,
+        "configurationConfidence": "best-across-efforts",
+        "exactBenchmarkLabelsOnly": True,
+        "note": (
+            "OpenAI's September 3, 2026 release appendix explicitly reports the maximum "
+            "score at any effort. These are source-library results, not evidence for a "
+            "particular max, xhigh, or lower-effort variant. Only OpenAI's Astra column "
+            "is ingested. OSWorld's offline subset, Terminal-Bench 4.0, and the new "
+            "June-August ExploitBench set remain separate from earlier evaluations. "
+            "BenchCAD uses tools; ExploitGym was run without the six-hour time limit."
+        ),
+        "columns": {"GPT-6 Astra": "GPT-6 Astra"},
+        "rowLabels": {
+            "Agents' Last Exam": "agents-last-exam",
+            "OSWorld 2.0 (v2026.08.08, offline set, partial score)": "osworld-2-offline-2026-08-08-partial",
+            "ScreenSpot-Pro (no tools)": "screenspot-pro-no-tools",
+            "AutomationBench": "automationbench",
+            "BenchCAD": "benchcad-python",
+            "BrowseComp": "browsecomp",
+            "Terminal-Bench 4.0": "terminal-bench-4",
+            "DeepSWE v1.1": "deepswe-v1-1",
+            "FrontierCode 1.1 Extended (score)": "frontiercode-v1-1-extended",
+            "FrontierCode 1.1 Main (score)": "frontiercode-v1-1-main",
+            "Terminal-Bench Science 0.1": "terminal-bench-science-0-1",
+            "FrontierMath Tier 4 (v2)": "frontiermath-tier-4-v2",
+            "GPQA Diamond": "gpqa-diamond",
+            "Humanity's Last Exam (w/ tools)": "hle-tools",
+            "HealthBench Professional (length-adjusted)": "healthbench-professional",
+            "ExploitBench": "exploitbench",
+            "ExploitGym": "exploitgym",
+            "ExploitBench (June-Aug 2026)": "exploitbench-2026-06-08",
+            "SRE-Bench": "sre-bench",
+            "SEC-Bench Pro": "sec-bench-pro",
+            "OpenAI MRCR v2 8-needle 256K-512K": "openai-mrcr-v2-256k-512k",
+            "OpenAI MRCR v2 8-needle 512K-1M": "openai-mrcr-v2-512k-1m",
+            "ARC-AGI-3": "arc-agi-3",
+            "ARC-AGI-2": "arc-agi-2",
+            "ARC-AGI-1": "arc-agi-1",
+        },
+        "scores": {
+            "GPT-6 Astra": {
+                "agents-last-exam": 59.3,
+                "osworld-2-offline-2026-08-08-partial": 72.6,
+                "screenspot-pro-no-tools": 92.7,
+                "automationbench": 41.4,
+                "benchcad-python": 95.9,
+                "browsecomp": 91.5,
+                "terminal-bench-4": 57.9,
+                "deepswe-v1-1": 74.1,
+                "frontiercode-v1-1-extended": 64.5,
+                "frontiercode-v1-1-main": 53.3,
+                "terminal-bench-science-0-1": 64.6,
+                "frontiermath-tier-4-v2": 97.6,
+                "gpqa-diamond": 96.0,
+                "hle-tools": 57.2,
+                "healthbench-professional": 63.4,
+                "exploitbench": 100.0,
+                "exploitgym": 42.4,
+                "exploitbench-2026-06-08": 39.0,
+                "sre-bench": 88.0,
+                "sec-bench-pro": 85.4,
+                "openai-mrcr-v2-256k-512k": 100.0,
+                "openai-mrcr-v2-512k-1m": 96.3,
+                "arc-agi-3": 99.9,
+                "arc-agi-2": 95.0,
+                "arc-agi-1": 98.5,
+            }
+        },
+    },
+    {
+        "id": "qwen-qwen3-8-flash-next-card",
+        "label": "Qwen3.8-Flash-Next official model card",
+        "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+        "rawUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next/raw/main/README.md",
+        "modelId": "Qwen/Qwen3.8-Flash-Next",
+        "organization": "Qwen",
+        "category": "Official model card",
+        "modelAliases": MODEL_ALIASES["Qwen3.8 Flash-Next"],
+        "variantScoped": True,
+        "effort": "xhigh",
+        "configurationConfidence": "model-card-default",
+        "addModelIfMissing": True,
+        "modelMetadata": {
+            "model": "Qwen3.8-Flash-Next",
+            "displayName": "Qwen3.8-Flash-Next",
+            "modelKey": "Qwen3.8-Flash-Next [R]",
+            "slug": "qwen3-8-flash-next",
+            "creator": "Alibaba",
+            "releaseDate": "2026-08-26",
+            "modelUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+            "contextWindowTokens": 262144,
+            "openSourceCategorization": "commercial-license",
+            "isReasoning": True,
+            "inputModalities": ["Text", "Image", "Video"],
+            "outputModalities": ["Text"],
+            "modelDetails": {
+                "parameters": "125B plus 51B n-gram embedding and 4B MTP; 6B active",
+                "license": "Qwen Community License 1.0",
+                "contextNote": "262,144 native context; extendable to 1,000,000 tokens.",
+            },
+        },
+        "note": (
+            "Qwen's August 26, 2026 open-weight release, with thinking and xhigh effort "
+            "enabled by default. The hosted Qwen3.8-Flash is a separate product and is "
+            "not an alias. Only the Flash-Next column is retained. Composite cells preserve "
+            "Score versus Pass@1, average versus Pass@3, OSWorld partial versus binary, "
+            "and with/without Code Interpreter. SWE-bench Pro uses Qwen's refined task set."
+        ),
+        "columns": {"Qwen3.8-Flash-Next": "Qwen3.8 Flash-Next"},
+        "rowLabels": {
+            "DeepSWE 1.1": "deepswe-v1-1",
+            "SWE-bench Pro": "swe-bench-pro",
+            "SWE-bench Multilingual": "swe-bench-multilingual",
+            "NL2Repo-Bench": "nl2repo",
+            "CoWorkBench": "coworkbench",
+            "JobBench": "job-bench",
+            "Agents' Last Exam": "agents-last-exam",
+            "Toolathlon Verified (Pass@1)": "toolathlon",
+            "IFBench": "ifbench",
+            "GPQA Diamond": "gpqa-diamond",
+            "HLE": "hle",
+            "LiveCodeBench v6": "livecodebench",
+            "ClawEval-MM": "claw-eval-mm-pass3",
+            "RecreationBench": "recreationbench",
+            "AndroidWorld": "androidworld",
+            "OSWorld 2.0": "osworld-2",
+            "Vision2Web": "vision2web",
+            "ERQA": "erqa",
+            "LVBench": "lvbench",
+            "RealWorldQA": "realworldqa",
+            "MathVision": "mathvision",
+            "CharXiv (RQ)": "charxiv-no-tools",
+        },
+        "compositeRows": {
+            "agents-last-exam": [{"benchmarkId": "agents-last-exam", "component": 1}],
+            "claw-eval-mm-pass3": [
+                {"benchmarkId": "claw-eval-mm-pass3", "component": 0},
+                {"benchmarkId": "claw-eval-mm-average", "component": 1},
+            ],
+            "osworld-2": [{"benchmarkId": "osworld-2", "component": 1}],
+            "mathvision": [
+                {"benchmarkId": "mathvision", "component": 0},
+                {"benchmarkId": "mathvision-python", "component": 1},
+            ],
+            "charxiv-no-tools": [
+                {"benchmarkId": "charxiv-no-tools", "component": 0},
+                {"benchmarkId": "charxiv-tools", "component": 1},
+            ],
+        },
+        "scoreSelections": {
+            "agents-last-exam": "Score (second value after Pass@1)",
+            "claw-eval-mm-pass3": "Pass@3 (first value)",
+            "claw-eval-mm-average": "average score (second value)",
+            "osworld-2": "partial (second value after binary)",
+            "mathvision": "without Code Interpreter (first value)",
+            "mathvision-python": "with Code Interpreter (second value)",
+            "charxiv-no-tools": "without Code Interpreter (first value)",
+            "charxiv-tools": "with Code Interpreter (second value)",
+        },
+        "scores": {
+            "Qwen3.8 Flash-Next": {
+                "deepswe-v1-1": 58.7, "swe-bench-pro": 62.5,
+                "swe-bench-multilingual": 81.0, "nl2repo": 48.1,
+                "coworkbench": 73.9, "job-bench": 55.7,
+                "agents-last-exam": 51.2, "toolathlon": 73.5,
+                "ifbench": 81.3, "gpqa-diamond": 91.7, "hle": 35.9,
+                "livecodebench": 91.9, "claw-eval-mm-pass3": 64.4,
+                "claw-eval-mm-average": 60.4, "recreationbench": 49.9,
+                "androidworld": 84.5, "osworld-2": 52.3, "vision2web": 64.0,
+                "erqa": 72.3, "lvbench": 76.6, "realworldqa": 88.5,
+                "mathvision": 90.6, "mathvision-python": 95.7,
+                "charxiv-no-tools": 84.6, "charxiv-tools": 90.6,
+            }
+        },
+    },
+    {
+        "id": "zai-glm-5-3-flash-release",
+        "label": "GLM-5.3-Flash official release evaluations",
+        "url": "https://docs.z.ai/guides/llm/glm-5.3-flash",
+        "rawUrl": "https://docs.z.ai/guides/llm/glm-5.3-flash.md",
+        "modelId": "zai-org/GLM-5.3-Flash",
+        "category": "Official release",
+        "modelAliases": MODEL_ALIASES["GLM-5.3-Flash"],
+        "variantScoped": True,
+        "effort": "max",
+        "configurationConfidence": "model-card-default",
+        "note": (
+            "Six first-party scores transcribed from the GLM-5.3-Flash benchmark chart "
+            "at https://raw.githubusercontent.com/zai-org/GLM-5/refs/heads/main/resources/bench_53.png, "
+            "cross-checked against the official documentation. The model card requires "
+            "default max effort for benchmark reproduction. AutomationBench is v1.0.6. "
+            "The chart does not qualify Agents' Last Exam's score metric, so that row "
+            "remains reference-only rather than being equated with a composite Score."
+        ),
+        "columns": {"GLM-5.3-Flash": "GLM-5.3-Flash"},
+        "rowLabels": {
+            "Terminal Bench 2.1": "terminal-bench-2-1",
+            "DeepSWE v1.1": "deepswe-v1-1",
+            "Agents' Last Exam": "agents-last-exam",
+            "AutomationBench v1.0.6": "automationbench-v1-0-6",
+            "HLE w/ Tools": "hle-tools",
+            "GDPval-AA v2": "gdpval-aa-v2-elo",
+        },
+        "scores": {"GLM-5.3-Flash": {
+            "terminal-bench-2-1": 84.3, "deepswe-v1-1": 63.4,
+            "agents-last-exam": 26.3, "automationbench-v1-0-6": 48.8,
+            "hle-tools": 55.3, "gdpval-aa-v2-elo": 1773,
+        }},
+        "resultOverrides": {"agents-last-exam": {
+            "modelScoreEligible": False, "evidenceEligible": False,
+            "configurationNote": "The source chart does not distinguish Pass@1 from Score.",
+        }},
+    },
+    {
+        "id": "deepseek-v4-flash-vision-exp-card",
+        "label": "DeepSeek-V4-Flash-Vision-Exp official model card",
+        "url": "https://api-docs.deepseek.com/news/news260821",
+        "rawUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp/raw/main/README.md",
+        "modelId": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+        "organization": "deepseek-ai",
+        "category": "Official model card",
+        "modelAliases": MODEL_ALIASES["DeepSeek V4 Flash Vision Exp (max)"],
+        "modelMetadata": {
+            "slug": "deepseek-v4-flash-vision",
+            "modelUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+            "contextWindowTokens": 1048576,
+            "openSourceCategorization": "permissive",
+            "inputModalities": ["Text", "Image"],
+            "outputModalities": ["Text"],
+            "modelDetails": {
+                "license": "MIT",
+                "licenseUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp/blob/main/LICENSE",
+                "configUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp/blob/main/config.json",
+                "contextNote": (
+                    "Published config supports 1,048,576 tokens with YaRN factor 16 "
+                    "over 65,536 original positions."
+                ),
+            },
+        },
+        "variantScoped": True,
+        "effort": "max",
+        "configurationConfidence": "explicit",
+        "note": (
+            "DeepSeek's experimental multimodal API was released August 21, 2026 and "
+            "the MIT-licensed weights were published August 31. Only its own model "
+            "column is retained from the official model card. Text-agent evaluations "
+            "use DeepSeek Harness minimal mode at max effort. The card does not specify "
+            "an effort level for the multimodal rows; those remain reference-only."
+        ),
+        "columns": {"DeepSeek-V4-Flash-Vision-Exp": "DeepSeek V4 Flash Vision Exp (max)"},
+        "rowLabels": {
+            "Terminal Bench 2.1": "terminal-bench-2-1",
+            "NL2Repo": "nl2repo", "Cybergym": "cybergym",
+            "DeepSWE": "deepswe-v1-1", "Toolathlon-Verified": "toolathlon",
+            "DSBench-Hard": "dsbench-hard", "AutomationBench (Public)": "automationbench",
+            "ApexBench (Pass@1)": "apexbench-pass1",
+            "Agents' Last Exam": "agents-last-exam",
+            "Chartography": "chartography", "ZeroBench (Pass@5)": "zerobench-pass5",
+        },
+        "scores": {"DeepSeek V4 Flash Vision Exp (max)": {
+            "terminal-bench-2-1": 83.9, "nl2repo": 57.7, "cybergym": 75.3,
+            "deepswe-v1-1": 59.3, "toolathlon": 75.9, "dsbench-hard": 63.6,
+            "automationbench": 25.7, "apexbench-pass1": 36.5,
+            "agents-last-exam": 27.3, "chartography": 64.3, "zerobench-pass5": 35.0,
+        }},
+        "resultOverrides": {
+            benchmark: {
+                "model": "DeepSeek V4 Flash Vision Exp",
+                "modelAliases": [
+                    "DeepSeek V4 Flash Vision Exp",
+                    "DeepSeek-V4-Flash-Vision-Exp",
+                    "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+                ],
+                "modelScoreEligible": False, "evidenceEligible": False,
+                "configurationConfidence": "unspecified",
+                "effort": None,
+                "configurationNote": "The model card's max-effort statement covers text-agent benchmarks only.",
+            }
+            for benchmark in ("apexbench-pass1", "agents-last-exam", "chartography", "zerobench-pass5")
+        },
+    },
     {
         "id": "openai-gpt-5-6-release",
         "label": "OpenAI GPT-5.6 official release evaluations",
@@ -4512,6 +4832,149 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
         },
     },
 ]
+
+
+# September release tables keep versioned evaluations and effort settings explicit.
+MODEL_ALIASES.update({
+    "Claude Fable 5.1 (max with fallback)": [
+        "Claude Fable 5.1 (max with fallback)", "claude-fable-5-1",
+    ],
+    "Gemini 3.8 Flash (high)": ["Gemini 3.8 Flash (high)", "gemini-3-8-flash"],
+})
+
+BENCHMARKS.extend([
+    {"id": "swe-bench-multimodal", "label": "SWE-bench Multimodal", "category": "Agentic coding", "unit": "%", "icon": "SWE"},
+    {"id": "cursorbench-3-2-0", "label": "CursorBench 3.2.0", "category": "Agentic coding", "unit": "%", "icon": "CUR"},
+    {"id": "osworld-2-aug2026-anthropic-partial", "label": "OSWorld 2.0 (Aug 2026 + Anthropic fixes, partial)", "category": "Computer use", "unit": "%", "icon": "OS2"},
+    {"id": "osworld-2-aug2026-anthropic-strict", "label": "OSWorld 2.0 (Aug 2026 + Anthropic fixes, strict)", "category": "Computer use", "unit": "%", "icon": "OS2"},
+    {"id": "osworld-2-pre0808-best3-partial", "label": "OSWorld 2.0 (pre-Aug 8 patch, best of 3 partial)", "category": "Computer use", "unit": "%", "icon": "OS2"},
+    {"id": "hle-verified-1811", "label": "HLE-Verified (1,811 items)", "category": "Academic reasoning", "unit": "%", "icon": "HLEV"},
+    {"id": "lvbench-agentic", "label": "LVBench (agentic)", "category": "Video understanding", "unit": "%", "icon": "LV"},
+    {"id": "lvbench-static", "label": "LVBench (static)", "category": "Video understanding", "unit": "%", "icon": "LV"},
+    {"id": "labbench2", "label": "LABBench2", "category": "Biology", "unit": "%", "icon": "LAB"},
+])
+
+OFFICIAL_SOURCE_SPECS.extend([
+    {
+        "id": "anthropic-claude-fable-5-1-system-card",
+        "label": "Anthropic Claude Fable 5.1 and Mythos 5.1 System Card",
+        "url": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+        "rawUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+        "category": "Official system card",
+        "modelAliases": MODEL_ALIASES["Claude Fable 5.1 (max with fallback)"],
+        "variantScoped": True,
+        "effort": "max",
+        "systemScore": True,
+        "fallbackConfigured": True,
+        "productEvidenceEligible": True,
+        "pureModelEligible": False,
+        "note": (
+            "September 1, 2026 System Card, Table 8.1.A and sections 8.2, 8.3, 8.6-8.8, "
+            "8.14.3. Values are the Fable 5.1 product with production safeguards/fallback, "
+            "adaptive thinking at max effort; Mythos 5.1 values are excluded. Terminal-Bench "
+            "4.0 uses the precise 55.8% from section 8.6 instead of the rounded table value. "
+            "OSWorld uses the August task release plus subsequent and Anthropic task/grader "
+            "fixes; partial and strict scores are distinct and cannot be compared with earlier "
+            "releases. CursorBench 3.2.0 is independently measured by Cursor."
+        ),
+        "scores": {"Claude Fable 5.1 (max with fallback)": {
+            "swe-bench-pro": 81.2,
+            "swe-bench-multilingual": 89.1,
+            "swe-bench-multimodal": 54.7,
+            "deepswe-v1-1": 67.4,
+            "terminal-bench-4": 55.8,
+            "terminal-bench-science-0-1": 52.6,
+            "cursorbench-3-2-0": 73.4,
+            "hle": 60.9,
+            "hle-tools": 65.0,
+            "osworld-2-aug2026-anthropic-partial": 77.9,
+            "osworld-2-aug2026-anthropic-strict": 41.7,
+            "gdpval-aa-v2-elo": 1853,
+            "automationbench": 31.4,
+            "arc-agi-1": 97.5,
+            "arc-agi-2": 90.0,
+        }},
+    },
+    {
+        "id": "google-gemini-3-8-flash-card",
+        "label": "Google DeepMind Gemini 3.8 Flash model card",
+        "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+        "rawUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+        "category": "Official model card",
+        "modelAliases": ["Gemini 3.8 Flash", "gemini-3-8-flash"],
+        "modelScoreEligible": False,
+        "evidenceEligible": False,
+        "note": (
+            "September 2, 2026 official evaluation chart, read together with "
+            "https://deepmind.google/models/evals-methodology/gemini-3-8-flash/. "
+            "Only the Gemini 3.8 Flash column is transcribed. The source mixes default "
+            "API settings, public leaderboard maxima, and third-party measurements, so "
+            "only DeepSWE (explicitly high thinking) is eligible for an exact configuration. "
+            "OSWorld is partial credit, maximum over three runs before the August 8 patch. "
+            "HLE-Verified uses 1,811 items and is separate from original HLE; LVBench's "
+            "agentic and static values are separate. Pricing shown is introductory through "
+            "December 31, 2026."
+        ),
+        "scores": {"Gemini 3.8 Flash": {
+            "deepswe-v1-1": 73.7,
+            "gdpval-aa-v2-elo": 1545,
+            "finance-agent-v2": 61.4,
+            "legal-agent-benchmark": 10.0,
+            "terminal-bench-2-1": 89.4,
+            "terminal-bench-4": 19.1,
+            "gdp-pdf": 35.0,
+            "charxiv-no-tools": 86.2,
+            "lvbench-agentic": 87.8,
+            "lvbench-static": 87.1,
+            "hle-verified-1811": 54.9,
+            "osworld-2-pre0808-best3-partial": 59.0,
+            "biomysterybench-human-solved": 88.8,
+            "biomysterybench-hard": 56.5,
+            "labbench2": 86.2,
+        }},
+        "resultOverrides": {"deepswe-v1-1": {
+            "model": "Gemini 3.8 Flash (high)",
+            "modelAliases": MODEL_ALIASES["Gemini 3.8 Flash (high)"],
+            "effort": "high",
+            "variantScoped": True,
+            "modelScoreEligible": True,
+            "evidenceEligible": True,
+            "configurationNote": "Self-computed with mini-swe agent and high thinking (methodology, p. 2).",
+        }},
+    },
+    {
+        "id": "google-gemini-3-7-flash-comparison",
+        "label": "Google DeepMind Gemini 3.7 Flash comparison evaluations",
+        "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+        "rawUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+        "category": "Official model card",
+        "modelAliases": ["Gemini 3.7 Flash", "gemini-3-7-flash"],
+        "modelScoreEligible": False,
+        "evidenceEligible": False,
+        "note": (
+            "Gemini 3.7 Flash column in Google's September 2, 2026 comparison chart. "
+            "Stored as reference evidence because the chart combines unspecified effort "
+            "settings and public leaderboard maxima. Benchmark versions and the "
+            "pre-August 8 OSWorld patch/best-of-three protocol remain separate."
+        ),
+        "scores": {"Gemini 3.7 Flash": {
+            "deepswe-v1-1": 65.3,
+            "gdpval-aa-v2-elo": 1482,
+            "finance-agent-v2": 59.0,
+            "legal-agent-benchmark": 8.8,
+            "terminal-bench-2-1": 85.8,
+            "terminal-bench-4": 11.2,
+            "gdp-pdf": 34.0,
+            "charxiv-no-tools": 84.5,
+            "lvbench-static": 85.4,
+            "hle-verified-1811": 53.6,
+            "osworld-2-pre0808-best3-partial": 50.6,
+            "biomysterybench-human-solved": 87.1,
+            "biomysterybench-hard": 43.5,
+            "labbench2": 82.1,
+        }},
+    },
+])
 
 
 DISCOVERED_CANONICAL_ROW_LABELS = {
