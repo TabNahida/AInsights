@@ -533,8 +533,8 @@
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
             "observed_count": 121,
-            "slope": 2.315728456585634,
-            "intercept": -50.91783034524007
+            "slope": 2.3157284565856338,
+            "intercept": -50.91783034524004
           },
           {
             "item_id": "swe-bench-pro",
@@ -551,7 +551,7 @@
             "canonical_family": "livecodebench",
             "enabled": true,
             "observed_count": 16,
-            "slope": 0.3201612766114788,
+            "slope": 0.32016127661147875,
             "intercept": 65.82231197922313
           }
         ],
