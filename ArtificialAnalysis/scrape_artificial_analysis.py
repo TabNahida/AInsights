@@ -456,6 +456,11 @@ def _gdpval_score(row: dict[str, Any], key: str = "gdpval") -> float | None:
     return None if value is None else (value - 500) / 2000 * 100
 
 
+def _bounded_elo_score(row: dict[str, Any], key: str) -> float | None:
+    value = _gdpval_score(row, key)
+    return None if value is None else min(100.0, max(0.0, value))
+
+
 def _omniscience_total_percent(row: dict[str, Any], key: str) -> float | None:
     breakdown = _dict_or_empty(row.get("omniscience_breakdown"))
     total = _dict_or_empty(breakdown.get("total"))
@@ -493,7 +498,12 @@ def _http_headers() -> dict[str, str]:
 
 
 SCORE_SPECS = [
-    ScoreSpec("GDPval-AA v2", lambda row: _gdpval_score(row, "gdpval_v2")),
+    ScoreSpec("AA-Briefcase", lambda row: _bounded_elo_score(row, "briefcase_elo")),
+    ScoreSpec("AutomationBench-AA", lambda row: _percent(row, "automation_bench_partial_score")),
+    ScoreSpec("Terminal-Bench v4.0", lambda row: _percent(row, "terminalbench_v4_0")),
+    ScoreSpec("GDP.pdf", lambda row: _percent(row, "gdp_pdf_all_pass")),
+    ScoreSpec("AA-LCR v1.1", lambda row: _percent(row, "lcr_v1_1")),
+    ScoreSpec("GDPval-AA v2", lambda row: _bounded_elo_score(row, "gdpval_v2")),
     ScoreSpec("τ³-Banking", lambda row: _percent(row, "tau_banking")),
     ScoreSpec("Terminal-Bench v2.1", lambda row: _percent(row, "terminalbench_v2_1")),
     ScoreSpec("GDPval-AA", _gdpval_score),
@@ -569,6 +579,13 @@ AA_PRESET_COLUMNS = [
 ]
 
 
+# Only this exact prior schema may be migrated; arbitrary missing columns must
+# still fail validation. New observations stay blank in a stale prior snapshot.
+V43_ADDED_SCORE_COLUMNS = frozenset({
+    "AA-Briefcase", "AutomationBench-AA", "Terminal-Bench v4.0", "GDP.pdf", "AA-LCR v1.1",
+})
+
+
 MINIMUM_MODEL_ROWS = 50
 MINIMUM_INTELLIGENCE_INDEX_COVERAGE = 0.5
 MINIMUM_CANDIDATE_ROW_RATIO = 0.8
@@ -584,8 +601,14 @@ SCORE_WITHDRAWAL_SOURCES = {
 
 
 MANIFEST_SCORE_KEYS = {
-    "gdpval": "GDPval-AA",
-    "gdpvalNormalized": "GDPval-AA",
+    # The current manifest's unversioned GDPval keys mean v2 (human Elo anchor).
+    "gdpval": "GDPval-AA v2",
+    "gdpvalNormalized": "GDPval-AA v2",
+    "briefcaseElo": "AA-Briefcase",
+    "briefcaseBreakdown": "AA-Briefcase",
+    "automationBenchPartialScore": "AutomationBench-AA",
+    "terminalbenchV40": "Terminal-Bench v4.0",
+    "gdpPdfAllPass": "GDP.pdf",
     "tauBanking": "τ³-Banking",
     "terminalbenchV21": "Terminal-Bench v2.1",
     "terminalbenchHard": "Terminal-Bench Hard",
@@ -643,6 +666,9 @@ def normalize_manifest_model_row(row: dict[str, Any]) -> dict[str, Any]:
         "agenticIndex": "agentic_index",
         "tauBanking": "tau_banking",
         "terminalbenchV21": "terminalbench_v2_1",
+        "terminalbenchV40": "terminalbench_v4_0",
+        "automationBenchPartialScore": "automation_bench_partial_score",
+        "gdpPdfAllPass": "gdp_pdf_all_pass",
         "terminalbenchHard": "terminalbench_hard",
         "tau2": "tau2",
         "lcr": "lcr",
@@ -703,9 +729,22 @@ def normalize_manifest_model_row(row: dict[str, Any]) -> dict[str, Any]:
 
     if "gdpvalNormalized" in row:
         value = _as_float(row["gdpvalNormalized"])
-        normalized["gdpval"] = None if value is None else value * 2000 + 500
+        normalized["gdpval_v2"] = None if value is None else value * 2000 + 500
     elif "gdpval" in row:
-        normalized["gdpval"] = row["gdpval"]
+        normalized["gdpval_v2"] = row["gdpval"]
+
+    # Models-page and evaluation-page manifests expose different Elo shapes.
+    if "briefcaseElo" in row:
+        normalized["briefcase_elo"] = row["briefcaseElo"]
+    elif "briefcaseBreakdown" in row:
+        breakdown = _dict_or_empty(row["briefcaseBreakdown"])
+        overall = _dict_or_empty(breakdown.get("overall"))
+        normalized["briefcase_elo"] = overall.get("elo", breakdown.get("elo"))
+
+    # AA retained the lcr API key for v1.1. Keep the existing scoring key as a
+    # compatibility alias while publishing the explicit current version too.
+    if "lcr" in row:
+        normalized["lcr_v1_1"] = row["lcr"]
 
     for source_key in ("itBenchSre", "itbenchSre"):
         if source_key in row:
@@ -790,6 +829,9 @@ def _manifest_explicit_raw_columns(row: dict[str, Any]) -> set[str]:
             columns.add(score_column)
             columns.add(f"{score_column}_rank")
 
+    if "lcr" in row:
+        columns.update({"AA-LCR v1.1", "AA-LCR v1.1_rank"})
+
     breakdown = row.get("omniscienceBreakdown")
     if isinstance(breakdown, dict):
         if "accuracy" in breakdown:
@@ -847,7 +889,9 @@ def raw_scores_fieldnames() -> list[str]:
     )
 
 
-def validate_raw_scores_csv(path: Path) -> list[dict[str, str]]:
+def validate_raw_scores_csv(
+    path: Path, *, allow_prior_schema: bool = False,
+) -> list[dict[str, str]]:
     """Read and validate a complete Artificial Analysis CSV snapshot."""
 
     if not path.is_file():
@@ -856,12 +900,20 @@ def validate_raw_scores_csv(path: Path) -> list[dict[str, str]]:
     with path.open(newline="", encoding="utf-8-sig") as handle:
         reader = csv.DictReader(handle)
         expected = raw_scores_fieldnames()
-        if reader.fieldnames != expected:
+        added_columns = V43_ADDED_SCORE_COLUMNS | {
+            f"{column}_rank" for column in V43_ADDED_SCORE_COLUMNS
+        }
+        prior_schema = [column for column in expected if column not in added_columns]
+        is_prior_schema = allow_prior_schema and reader.fieldnames == prior_schema
+        if reader.fieldnames != expected and not is_prior_schema:
             raise ValueError(
                 "Artificial Analysis snapshot has an unexpected CSV schema "
                 f"({len(reader.fieldnames or [])} columns; expected {len(expected)})."
             )
         rows = list(reader)
+        if is_prior_schema:
+            for row in rows:
+                row.update({column: "" for column in added_columns})
 
     if len(rows) < MINIMUM_MODEL_ROWS:
         raise ValueError(
@@ -1088,7 +1140,7 @@ def write_raw_scores_csv_atomically(
 
         if path.exists():
             try:
-                prior_rows = validate_raw_scores_csv(path)
+                prior_rows = validate_raw_scores_csv(path, allow_prior_schema=True)
             except (OSError, ValueError, csv.Error):
                 prior_rows = []
             if prior_rows:
@@ -1135,7 +1187,7 @@ def run(args: argparse.Namespace) -> tuple[Path, int, int]:
         prior_rows = []
         if raw_scores_path.exists():
             try:
-                prior_rows = validate_raw_scores_csv(raw_scores_path)
+                prior_rows = validate_raw_scores_csv(raw_scores_path, allow_prior_schema=True)
             except (OSError, ValueError, csv.Error):
                 prior_rows = []
             if prior_rows:
@@ -1260,7 +1312,7 @@ def main(argv: list[str] | None = None) -> int:
         raw_scores_path = Path(args.output_dir) / RAW_SCORES_FILENAME
         if args.allow_stale:
             try:
-                stale_rows = validate_raw_scores_csv(raw_scores_path)
+                stale_rows = validate_raw_scores_csv(raw_scores_path, allow_prior_schema=True)
             except Exception as stale_exc:
                 print(
                     f"error: Artificial Analysis refresh failed ({exc}); the existing snapshot "

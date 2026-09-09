@@ -1,3 +1,4 @@
+import csv
 import gzip
 import hashlib
 import io
@@ -252,7 +253,8 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
         self.assertEqual(output["AA Intelligence Index Output Cost (USD)"], 678.5617)
         self.assertEqual(output["AA Intelligence Index Reasoning Cost (USD)"], 564.5305)
         self.assertEqual(output["AA Intelligence Index Answer Cost (USD)"], 114.0312)
-        self.assertEqual(output["GDPval-AA"], 52.2955)
+        self.assertEqual(output["GDPval-AA v2"], 52.2955)
+        self.assertEqual(output["GDPval-AA"], "")
         self.assertEqual(output["τ³-Banking"], 48.0412)
         self.assertEqual(output["AA-Omniscience Accuracy"], 15.5833)
         self.assertEqual(output["AA-Omniscience Non-Hallucination Rate"], 69.7137)
@@ -295,10 +297,9 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
         self.assertEqual(merged["context_window_tokens"], "128000")
         self.assertEqual(merged["Input Price Per 1M Tokens (USD)"], "1.25")
         self.assertEqual(merged["AA Coding Index"], "31")
-        self.assertEqual(merged["GDPval-AA v2"], "40")
-        self.assertEqual(merged["GDPval-AA v2_rank"], "1")
-        self.assertEqual(merged["GDPval-AA"], 0.0)
-        self.assertEqual(merged["GDPval-AA_rank"], 1)
+        self.assertEqual(merged["GDPval-AA v2"], 0.0)
+        self.assertEqual(merged["GDPval-AA v2_rank"], 1)
+        self.assertEqual(merged["GDPval-AA"], "-13.064")
         self.assertEqual(merged["GPQA Diamond"], "")
         self.assertEqual(merged["GPQA Diamond_rank"], "")
 
@@ -325,8 +326,122 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
 
         merged = merge_manifest_rows_with_prior(candidates, sources, priors)
 
-        self.assertEqual([row["GDPval-AA"] for row in merged], [50.0, 50.0])
-        self.assertEqual([row["GDPval-AA_rank"] for row in merged], [1, 2])
+        self.assertEqual([row["GDPval-AA v2"] for row in merged], [50.0, 50.0])
+        self.assertEqual([row["GDPval-AA v2_rank"] for row in merged], [1, 2])
+
+    def test_v43_manifest_scores_units_versions_and_ranks(self):
+        sources = [
+            {
+                "slug": "model-a", "shortName": "Model A",
+                "briefcaseBreakdown": {"overall": {"elo": 1500}, "rubricPassRate": 0.9},
+                "automationBenchPartialScore": 0.42,
+                "terminalbenchV40": 0.52, "terminalbenchV21": 0.91,
+                "gdpPdfAllPass": 0.262, "lcr": 0.853333333333333,
+                "gdpval": 1763.64,
+            },
+            {
+                "slug": "model-b", "shortName": "Model B",
+                "briefcaseBreakdown": {"overall": {"elo": 279.6}},
+                "automationBenchPartialScore": 0,
+                "terminalbenchV40": 0, "gdpPdfAllPass": 0, "lcr": 0,
+                "gdpvalNormalized": 0, "gdpval": 1000,
+            },
+            {"slug": "model-c", "shortName": "Model C"},
+        ]
+        rows = build_raw_scores_rows([normalize_manifest_model_row(r) for r in sources])
+        expected = {
+            "AA-Briefcase": 50, "AutomationBench-AA": 42,
+            "Terminal-Bench v4.0": 52, "GDP.pdf": 26.2,
+            "AA-LCR v1.1": 85.3333, "GDPval-AA v2": 63.182,
+        }
+        for key, value in expected.items():
+            with self.subTest(key=key):
+                self.assertEqual(rows[0][key], value)
+                self.assertEqual(rows[0][key + "_rank"], 1)
+                self.assertEqual(rows[1][key], 0)
+                self.assertEqual(rows[1][key + "_rank"], 2)
+                self.assertEqual(rows[2][key], "")
+                self.assertEqual(rows[2][key + "_rank"], "")
+        self.assertEqual(rows[0]["Terminal-Bench v2.1"], 91)
+        self.assertEqual(rows[0]["AA-LCR"], rows[0]["AA-LCR v1.1"])
+
+    def test_briefcase_supports_evaluation_shapes_and_explicit_null(self):
+        for source, expected in [
+            ({"briefcaseElo": 1600}, 55),
+            ({"briefcaseBreakdown": {"elo": 3000}}, 100),
+            ({"briefcaseElo": None, "briefcaseBreakdown": {"elo": 1600}}, ""),
+            ({"briefcaseBreakdown": None}, ""),
+            ({"briefcaseBreakdown": {"rubricPassRate": 0.8}}, ""),
+        ]:
+            with self.subTest(source=source):
+                row = build_raw_scores_rows([normalize_manifest_model_row(source)])[0]
+                self.assertEqual(row["AA-Briefcase"], expected)
+
+    def test_v43_explicit_nulls_clear_prior_scores_and_ranks(self):
+        source = {
+            "slug": "model-a", "shortName": "Model A",
+            "briefcaseBreakdown": None, "automationBenchPartialScore": None,
+            "terminalbenchV40": None, "gdpPdfAllPass": None, "lcr": None,
+            "gdpvalNormalized": None, "gdpval": 1600,
+        }
+        keys = scraper.V43_ADDED_SCORE_COLUMNS | {"GDPval-AA v2"}
+        prior = {"slug": "model-a", "Terminal-Bench v2.1": "91", "GDPval-AA": "40"}
+        for key in keys:
+            prior.update({key: "80", key + "_rank": "1"})
+        candidates = build_raw_scores_rows([normalize_manifest_model_row(source)])
+        row = merge_manifest_rows_with_prior(candidates, [source], [prior])[0]
+        for key in keys:
+            self.assertEqual(row[key], "")
+            self.assertEqual(row[key + "_rank"], "")
+        self.assertEqual(row["Terminal-Bench v2.1"], "91")
+        self.assertEqual(row["GDPval-AA"], "40")
+
+    def test_prior_schema_migration_retains_coverage_guards_and_legacy_fields(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / scraper.RAW_SCORES_FILENAME
+            rows = build_raw_scores_rows(_model_rows(100))
+            for row in rows:
+                row["GDPval-AA"] = 40
+            added = scraper.V43_ADDED_SCORE_COLUMNS
+            fields = [k for k in scraper.raw_scores_fieldnames()
+                      if k not in added and k.removesuffix("_rank") not in added]
+            with path.open("w", newline="", encoding="utf-8-sig") as handle:
+                writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore")
+                writer.writeheader()
+                writer.writerows(rows)
+            original = path.read_bytes()
+            with self.assertRaisesRegex(ValueError, "unexpected CSV schema"):
+                validate_raw_scores_csv(path)
+            prior = validate_raw_scores_csv(path, allow_prior_schema=True)
+            self.assertEqual(prior[0]["AA-Briefcase"], "")
+            with self.assertRaisesRegex(ValueError, "lost too many rows"):
+                write_raw_scores_csv_atomically(rows[:75], path)
+            self.assertEqual(path.read_bytes(), original)
+            sources = [
+                {"slug": r["slug"], "shortName": r["model"], "creator": {},
+                 "contextWindowTokens": 1000, "intelligenceIndex": r["AA Intelligence Index"],
+                 "briefcaseBreakdown": {"overall": {"elo": 1500}}, "gdpval": 1700}
+                for r in rows
+            ]
+            with (
+                patch.object(scraper, "fetch_html", return_value="page"),
+                patch.object(scraper, "fetch_rich_manifest_model_rows", return_value=sources),
+            ):
+                self.assertEqual(scraper.main(["--output-dir", tmpdir, "--skip-logos"]), 0)
+            migrated = validate_raw_scores_csv(path)
+            self.assertEqual(migrated[0]["AA-Briefcase"], "50.0")
+            self.assertEqual(migrated[0]["GDPval-AA v2"], "60.0")
+            self.assertEqual(migrated[0]["GDPval-AA"], "40")
+
+    def test_prior_schema_compatibility_rejects_unrelated_missing_columns(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "scores.csv"
+            fields = [k for k in scraper.raw_scores_fieldnames() if k != "SciCode"]
+            with path.open("w", newline="", encoding="utf-8-sig") as handle:
+                writer = csv.DictWriter(handle, fieldnames=fields)
+                writer.writeheader()
+            with self.assertRaisesRegex(ValueError, "unexpected CSV schema"):
+                validate_raw_scores_csv(path, allow_prior_schema=True)
 
     def test_build_raw_scores_rows_formats_scores_and_ranks(self):
         rows = [

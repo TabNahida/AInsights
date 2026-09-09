@@ -27,6 +27,23 @@ preserves previously discovered cards and pages during transient outages and
 feeds new candidates into the benchmark collector. Curated source specifications
 remain authoritative for versioned or multi-value benchmark semantics.
 
+The AA import covers the [Intelligence Index v4.3 suite](https://artificialanalysis.ai/methodology/intelligence-benchmarking),
+including AA-Briefcase, AutomationBench-AA, Terminal-Bench v4.0, GDP.pdf, and an
+explicit AA-LCR v1.1 column. AA-Briefcase and GDPval-AA v2 use the bounded
+`100 * clamp((Elo - 500) / 2000, 0, 1)` scale; these are Elo-derived points,
+not task pass percentages. The import uses the published current Elo/normalized
+fields, not the frozen-at-entry Elo values used internally by AA's composite.
+AutomationBench-AA uses objective completion with guardrail failures, GDP.pdf
+uses all-pass (not mean criterion pass rate), and the other new task scores are
+converted from fractions to percentages. Current unversioned `gdpval` manifest
+fields update **GDPval-AA v2**; the legacy GDPval-AA column is retained only as
+historical data. AA-LCR remains a compatibility alias for the current `lcr`
+field (v1.1), while Terminal-Bench v2.1 and v4.0 remain separate observations.
+SciCode's upstream v1.0.1 regrading continues through the existing `scicode` field.
+The exact pre-v4.3 CSV schema is accepted for migration without disabling row
+or score coverage validation. Adding these data columns makes them available
+to the site; it does not add new Core or extension items to AIndex Scheme 18.
+
 The AA scraper validates row and score coverage before atomically replacing the
 snapshot. A large SciCode withdrawal is accepted only when the models page and
 the dedicated SciCode evaluation page agree on the complete model catalogue and
