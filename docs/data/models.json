@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-11T17:20:28+00:00",
+  "generatedAt": "2026-09-11T17:24:26+00:00",
   "source": {
     "label": "Artificial Analysis Core + listed benchmark extensions",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -135222,7 +135222,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.4818823862925257,
+            "extensionBonus": 0.48188238629252567,
             "score": 36.08188238629253,
             "points": 13.350296482928236,
             "coreTests": 2,
@@ -135604,7 +135604,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.4818823862925257,
+            "extensionBonus": 0.48188238629252567,
             "score": 36.08188238629253,
             "points": 13.350296482928236,
             "coreTests": 2,
@@ -248701,7 +248701,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.7147523662777361,
+            "extensionBonus": 0.714752366277736,
             "score": 8.958202366277735,
             "points": 0.8062382129649961,
             "coreTests": 2,
@@ -249083,7 +249083,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.7147523662777361,
+            "extensionBonus": 0.714752366277736,
             "score": 8.958202366277735,
             "points": 0.8062382129649961,
             "coreTests": 2,
@@ -295213,7 +295213,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.1298198920259779,
+            "extensionBonus": 0.12981989202597788,
             "score": 25.413169892025977,
             "points": 9.402872860049612,
             "coreTests": 2,
@@ -295595,7 +295595,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.1298198920259779,
+            "extensionBonus": 0.12981989202597788,
             "score": 25.413169892025977,
             "points": 9.402872860049612,
             "coreTests": 2,
@@ -351218,7 +351218,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.4321219315166403,
+            "extensionBonus": 0.43212193151664025,
             "score": 6.69562193151664,
             "points": 0.6026059738364976,
             "coreTests": 2,
@@ -351600,7 +351600,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.4321219315166403,
+            "extensionBonus": 0.43212193151664025,
             "score": 6.69562193151664,
             "points": 0.6026059738364976,
             "coreTests": 2,
@@ -423186,7 +423186,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.40657354376577354,
+            "extensionBonus": 0.4065735437657736,
             "score": 14.139923543765773,
             "points": 5.2317717111933355,
             "coreTests": 2,
@@ -423568,7 +423568,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.40657354376577354,
+            "extensionBonus": 0.4065735437657736,
             "score": 14.139923543765773,
             "points": 5.2317717111933355,
             "coreTests": 2,
@@ -448520,7 +448520,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.8826462362800526,
+            "extensionBonus": 0.8826462362800527,
             "score": 36.29099623628005,
             "points": 13.427668607423618,
             "coreTests": 2,
