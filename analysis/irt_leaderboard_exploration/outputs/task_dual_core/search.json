@@ -1,0 +1,7130 @@
+{
+  "structures_considered": 270,
+  "invalid_core_structures": 200,
+  "valid_core_structures": 70,
+  "evaluated_core_structures": 63,
+  "evaluated_core_weight_combinations": 23144688,
+  "ineligible_structures": 7,
+  "weight_vectors": 367376,
+  "weight_range": [
+    9,
+    40
+  ],
+  "weight_step": 1,
+  "minimum_population": 100,
+  "minimum_item_coverage": 100,
+  "minimum_margin": 0.05,
+  "passing_combinations": 0,
+  "distinct_core_combinations": 0,
+  "core_options": {
+    "coding": [
+      [
+        "Terminal-Bench v4.0",
+        "SciCode"
+      ]
+    ],
+    "agentic-tool-work": [
+      [
+        "AutomationBench-AA",
+        "τ³-Banking"
+      ],
+      [
+        "AutomationBench-AA",
+        "AA-Briefcase"
+      ],
+      [
+        "AutomationBench-AA",
+        "GDPval-AA v2"
+      ],
+      [
+        "AutomationBench-AA",
+        "τ²-Bench Telecom"
+      ],
+      [
+        "τ³-Banking",
+        "AA-Briefcase"
+      ],
+      [
+        "τ³-Banking",
+        "GDPval-AA v2"
+      ],
+      [
+        "τ³-Banking",
+        "τ²-Bench Telecom"
+      ],
+      [
+        "AA-Briefcase",
+        "GDPval-AA v2"
+      ],
+      [
+        "AA-Briefcase",
+        "τ²-Bench Telecom"
+      ],
+      [
+        "GDPval-AA v2",
+        "τ²-Bench Telecom"
+      ]
+    ],
+    "hard-reasoning": [
+      [
+        "CritPt",
+        "Humanity's Last Exam"
+      ],
+      [
+        "CritPt",
+        "AA-LCR v1.1"
+      ],
+      [
+        "Humanity's Last Exam",
+        "AA-LCR v1.1"
+      ]
+    ],
+    "knowledge-science": [
+      [
+        "AA-Omniscience Accuracy",
+        "Humanity's Last Exam"
+      ],
+      [
+        "AA-Omniscience Accuracy",
+        "MMMU-Pro"
+      ],
+      [
+        "AA-Omniscience Accuracy",
+        "GDP.pdf"
+      ]
+    ],
+    "instruction-context": [
+      [
+        "AA-LCR v1.1",
+        "GDP.pdf"
+      ],
+      [
+        "AA-LCR v1.1",
+        "IFBench"
+      ],
+      [
+        "GDP.pdf",
+        "IFBench"
+      ]
+    ]
+  },
+  "candidates": [],
+  "structures": [
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "population": 115,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -0.01494807149777479,
+            "domain_differences": [
+              2.125282005245218,
+              7.20141966692826,
+              1.2242499999999978,
+              -41.12265,
+              -0.06670000000000442
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.7966019999999984,
+            "domain_differences": [
+              2.2990000000000066,
+              5.149799999999999,
+              2.837950000000003,
+              -44.4773,
+              0.033350000000005764
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -1.4822336489509278,
+        "weights": [
+          9.0,
+          36.8733637259934,
+          14.2572606678488,
+          9.0,
+          30.8693756061578
+        ],
+        "binding": [
+          {
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -1.4822336489509211
+          },
+          {
+            "higher": "gpt-5-6-sol",
+            "lower": "claude-opus-5",
+            "margin": -1.4822336489509278
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -1.4822336489509202
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 112,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.1434769586874859,
+            "domain_differences": [
+              3.494723835905944,
+              4.3562641886588835,
+              2.4172999999999973,
+              -39.18665000000001,
+              3.0
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.7246019999999987,
+            "domain_differences": [
+              2.2990000000000066,
+              5.149799999999999,
+              2.837950000000003,
+              -44.4773,
+              0.8333500000000029
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -0.7246019999999981,
+        "weights": [
+          9.0,
+          40.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -0.7246019999999981
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 108,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -0.2249450714977744,
+            "domain_differences": [
+              2.125282005245218,
+              7.20141966692826,
+              1.2242499999999978,
+              -41.12265,
+              -2.4000000000000004
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.206476958687486,
+            "domain_differences": [
+              3.494723835905944,
+              4.3562641886588835,
+              2.4172999999999973,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.871603499999999,
+            "domain_differences": [
+              2.2990000000000066,
+              5.149799999999999,
+              2.837950000000003,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -0.8716034999999984,
+        "weights": [
+          9.0,
+          40.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -0.8716034999999984
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GDP.pdf"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 113,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -1.773161970277163,
+            "domain_differences": [
+              0.8664444218068326,
+              -1.7625552026642026,
+              1.1775999999999982,
+              2.125,
+              -32.56799999999999
+            ],
+            "maximizing_weights": [
+              9.0,
+              9.0,
+              33.0,
+              40.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -1.773161970277163,
+        "weights": [
+          9.0,
+          9.0,
+          33.0,
+          40.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -1.773161970277163
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "Humanity's Last Exam"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 111,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -2.2687821995170436,
+            "domain_differences": [
+              0.8664444218068326,
+              -1.7625552026642026,
+              0.7381500000000045,
+              -1.7688499999999934,
+              -28.234700000000004
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -2.268782199517043,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -2.268782199517043
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 108,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -0.21513057149777445,
+            "domain_differences": [
+              2.125282005245218,
+              7.20141966692826,
+              1.3332999999999942,
+              -41.12265,
+              -2.4000000000000004
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.1283209586874858,
+            "domain_differences": [
+              3.494723835905944,
+              4.3562641886588835,
+              3.2856999999999985,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.8259809999999977,
+            "domain_differences": [
+              2.2990000000000066,
+              5.149799999999999,
+              2.9762000000000057,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -0.8834119046500712,
+        "weights": [
+          17.48064156084964,
+          40.0,
+          24.51935843915036,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "margin": -0.8834119046500712
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -0.8834119046500712
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "Humanity's Last Exam",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 108,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -1.1188064999999978,
+            "domain_differences": [
+              2.2990000000000066,
+              5.149799999999999,
+              1.5284500000000065,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -1.1422605358532696,
+        "weights": [
+          32.24317406088183,
+          40.0,
+          9.0,
+          9.0,
+          9.756825939118176
+        ],
+        "binding": [
+          {
+            "higher": "gpt-5-6-sol",
+            "lower": "claude-opus-5",
+            "margin": -1.1422605358532691
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -1.1422605358532696
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "AA-Briefcase"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "population": 111,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -1.2832918107339244,
+            "domain_differences": [
+              2.125282005245218,
+              4.030560318837885,
+              1.2242499999999978,
+              -41.12265,
+              -0.06670000000000442
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -2.020634377885881,
+        "weights": [
+          9.0,
+          27.479471395986117,
+          32.372846687161,
+          9.0,
+          22.147681916852882
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": -2.0206343778858806
+          },
+          {
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -2.020634377885881
+          },
+          {
+            "higher": "gpt-5-6-sol",
+            "lower": "claude-opus-5",
+            "margin": -2.0206343778858797
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "AA-Briefcase"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 109,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -1.0173674919927784,
+            "domain_differences": [
+              2.125282005245218,
+              4.030560318837885,
+              1.2242499999999978,
+              -41.12265,
+              2.333299999999994
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              9.0,
+              9.0,
+              33.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.6561767143138638,
+            "domain_differences": [
+              3.494723835905944,
+              2.946391681375104,
+              2.4172999999999973,
+              -39.18665000000001,
+              3.0
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              9.0,
+              33.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -1.0592499244700941,
+        "weights": [
+          29.134042983487436,
+          40.0,
+          9.0,
+          9.0,
+          12.865957016512564
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": -1.0592499244700937
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "margin": -1.0592499244700941
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "AA-Briefcase"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 107,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -1.4937444734498118,
+            "domain_differences": [
+              2.125282005245218,
+              4.029421162048166,
+              1.2242499999999978,
+              -41.12265,
+              -2.4000000000000004
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.7324186325244461,
+            "domain_differences": [
+              3.494723835905944,
+              2.945252524585385,
+              2.4172999999999973,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              40.0,
+              33.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -1.611299935044201,
+        "weights": [
+          19.953242403149105,
+          40.0,
+          22.046757596850895,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": -1.6112999350442008
+          },
+          {
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -1.611299935044201
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "AA-Briefcase"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GDP.pdf"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 111,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -1.6041856940937547,
+            "domain_differences": [
+              0.8664444218068326,
+              0.11495897715144565,
+              1.1775999999999982,
+              2.125,
+              -32.56799999999999
+            ],
+            "maximizing_weights": [
+              9.0,
+              9.0,
+              33.0,
+              40.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -1.6041856940937547,
+        "weights": [
+          9.0,
+          9.0,
+          33.0,
+          40.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -1.6041856940937547
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "AA-Briefcase"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "Humanity's Last Exam"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 109,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -2.0998059233336352,
+            "domain_differences": [
+              0.8664444218068326,
+              0.11495897715144565,
+              0.7381500000000045,
+              -1.7688499999999934,
+              -28.234700000000004
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -2.099805923333635,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -2.099805923333635
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "AA-Briefcase"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 107,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -1.4839299734498124,
+            "domain_differences": [
+              2.125282005245218,
+              4.029421162048166,
+              1.3332999999999942,
+              -41.12265,
+              -2.4000000000000004
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.5725552384249386,
+            "domain_differences": [
+              3.494723835905944,
+              2.945252524585385,
+              3.2856999999999985,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -1.561068775427188,
+        "weights": [
+          23.26003097715701,
+          40.0,
+          18.73996902284299,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": -1.561068775427188
+          },
+          {
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -1.561068775427188
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "AA-Briefcase"
+        ],
+        "hard-reasoning": [
+          "Humanity's Last Exam",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 107,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -0.5730341360520393,
+            "domain_differences": [
+              2.125282005245218,
+              4.029421162048166,
+              4.557549999999992,
+              -41.12265,
+              -2.4000000000000004
+            ],
+            "maximizing_weights": [
+              9.0,
+              33.0,
+              40.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -0.5730341360520391,
+        "weights": [
+          9.0,
+          33.0,
+          40.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": -0.5730341360520391
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "population": 115,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [],
+        "available": true,
+        "best_minimum_margin": -1.2378294161419428,
+        "weights": [
+          9.0,
+          23.593834156091386,
+          25.44794758686201,
+          9.0,
+          32.958218257046596
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": -1.237829416141942
+          },
+          {
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -1.2378294161419423
+          },
+          {
+            "higher": "gpt-5-6-sol",
+            "lower": "claude-opus-5",
+            "margin": -1.2378294161419428
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 112,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.5648720014610137,
+            "domain_differences": [
+              3.494723835905944,
+              3.2620604975048764,
+              2.4172999999999973,
+              -39.18665000000001,
+              3.0
+            ],
+            "maximizing_weights": [
+              40.0,
+              33.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -0.6562969693323554,
+        "weights": [
+          32.25732562538949,
+          30.18240768791904,
+          16.84903308269455,
+          9.0,
+          11.71123360399692
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "margin": -0.6562969693323536
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "margin": -0.6562969693323554
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-opus-5",
+            "margin": -0.6562969693323532
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -0.656296969332355
+          },
+          {
+            "higher": "gpt-5-6-sol",
+            "lower": "claude-opus-5",
+            "margin": -0.6562969693323513
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 108,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.6279545067515875,
+            "domain_differences": [
+              3.494723835905944,
+              3.2618104814728355,
+              2.4172999999999973,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              40.0,
+              33.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -0.7180595037730076,
+        "weights": [
+          27.45029889173293,
+          38.79688169227902,
+          12.473365506467587,
+          9.0,
+          12.279453909520463
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "margin": -0.7180595037730005
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "margin": -0.7180595037730076
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-opus-5",
+            "margin": -0.7180595037730004
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -0.7180595037730068
+          },
+          {
+            "higher": "gpt-5-6-sol",
+            "lower": "claude-opus-5",
+            "margin": -0.7180595037730034
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GDP.pdf"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 113,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -1.9442896176106155,
+            "domain_differences": [
+              0.8664444218068326,
+              -3.6639735063692314,
+              1.1775999999999982,
+              2.125,
+              -32.56799999999999
+            ],
+            "maximizing_weights": [
+              9.0,
+              9.0,
+              33.0,
+              40.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -1.9442896176106157,
+        "weights": [
+          9.0,
+          9.0,
+          33.0,
+          40.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -1.9442896176106157
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "Humanity's Last Exam"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 111,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -2.439909846850496,
+            "domain_differences": [
+              0.8664444218068326,
+              -3.6639735063692314,
+              0.7381500000000045,
+              -1.7688499999999934,
+              -28.234700000000004
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -2.439909846850496,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -2.439909846850496
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 108,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.5440650223050681,
+            "domain_differences": [
+              3.494723835905944,
+              3.2618104814728355,
+              3.2856999999999985,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -0.5651248403943793,
+        "weights": [
+          32.136480076138234,
+          28.35236619343493,
+          21.511153730426837,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": -0.5651248403943768
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "margin": -0.5651248403943772
+          },
+          {
+            "higher": "gpt-5-6-sol",
+            "lower": "claude-opus-5",
+            "margin": -0.5651248403943793
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "Humanity's Last Exam",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 108,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [],
+        "available": true,
+        "best_minimum_margin": -0.4883671876389401,
+        "weights": [
+          24.42093180000308,
+          31.869870647858253,
+          24.00067177264154,
+          9.0,
+          10.708525779497137
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-opus-5",
+            "margin": -0.48836718763893117
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -0.4883671876389401
+          },
+          {
+            "higher": "gpt-5-6-sol",
+            "lower": "claude-opus-5",
+            "margin": -0.48836718763892384
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -0.48836718763893183
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "population": 110,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -2.9104099551781024,
+            "domain_differences": [
+              11.431882005245207,
+              -58.480702858624284,
+              3.533549999999998,
+              -37.788549999999994,
+              0.16664999999999708
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -2.5477940213454335,
+            "domain_differences": [
+              2.9917264270520505,
+              -54.48221769073615,
+              2.401849999999996,
+              0.9416500000000028,
+              2.6000000000000014
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              9.0,
+              33.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -2.863137197901914,
+            "domain_differences": [
+              2.125282005245218,
+              -4.5578999999999965,
+              1.2242499999999978,
+              -41.12265,
+              -0.06670000000000442
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -1.044021999999998,
+            "domain_differences": [
+              2.2990000000000066,
+              4.53125,
+              2.837950000000003,
+              -44.4773,
+              0.033350000000005764
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -2.9104099551781033,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "margin": -2.9104099551781033
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 109,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -6.1347994551781015,
+            "domain_differences": [
+              11.431882005245207,
+              -58.480702858624284,
+              3.533549999999998,
+              -37.788549999999994,
+              -35.6599
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-terra",
+            "maximum_margin": -2.1960639580680903,
+            "domain_differences": [
+              14.746282005245213,
+              -54.57449177962414,
+              7.966499999999996,
+              -30.13015,
+              -34.445600000000006
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -5.550473021345434,
+            "domain_differences": [
+              2.9917264270520505,
+              -54.48221769073615,
+              2.401849999999996,
+              0.9416500000000028,
+              -30.234699999999997
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -2.3664039382690807,
+            "domain_differences": [
+              2.125282005245218,
+              -4.5578999999999965,
+              1.2242499999999978,
+              -41.12265,
+              2.333299999999994
+            ],
+            "maximizing_weights": [
+              33.0,
+              9.0,
+              9.0,
+              9.0,
+              40.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.7952484656376231,
+            "domain_differences": [
+              3.494723835905944,
+              1.4011500000000012,
+              2.4172999999999973,
+              -39.18665000000001,
+              3.0
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              9.0,
+              33.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -3.2417102572761873,
+            "domain_differences": [
+              9.306599999999989,
+              -53.92280285862429,
+              2.3093000000000004,
+              3.3341000000000065,
+              -37.993199999999995
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.9720219999999984,
+            "domain_differences": [
+              2.2990000000000066,
+              4.53125,
+              2.837950000000003,
+              -44.4773,
+              0.8333500000000029
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -6.134799455178103,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "margin": -6.134799455178103
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 107,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -6.239797955178102,
+            "domain_differences": [
+              11.431882005245207,
+              -58.480702858624284,
+              3.533549999999998,
+              -37.788549999999994,
+              -36.82655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-terra",
+            "maximum_margin": -2.20206245806809,
+            "domain_differences": [
+              14.746282005245213,
+              -54.57449177962414,
+              7.966499999999996,
+              -30.13015,
+              -34.51225
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -5.5864730213454346,
+            "domain_differences": [
+              2.9917264270520505,
+              -54.48221769073615,
+              2.401849999999996,
+              0.9416500000000028,
+              -30.634700000000002
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -3.0731341979019136,
+            "domain_differences": [
+              2.125282005245218,
+              -4.5578999999999965,
+              1.2242499999999978,
+              -41.12265,
+              -2.4000000000000004
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.9980964656376239,
+            "domain_differences": [
+              3.494723835905944,
+              1.4011500000000012,
+              2.4172999999999973,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -2.920711757276188,
+            "domain_differences": [
+              9.306599999999989,
+              -53.92280285862429,
+              2.3093000000000004,
+              3.3341000000000065,
+              -34.42655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -1.1190234999999986,
+            "domain_differences": [
+              2.2990000000000066,
+              4.53125,
+              2.837950000000003,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -6.239797955178103,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "margin": -6.239797955178103
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GDP.pdf"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 110,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -5.451473021345435,
+            "domain_differences": [
+              2.9917264270520505,
+              -54.48221769073615,
+              2.401849999999996,
+              2.041650000000004,
+              -30.234699999999997
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -2.4263314551781026,
+            "domain_differences": [
+              11.431882005245207,
+              -58.480702858624284,
+              3.533549999999998,
+              3.416650000000004,
+              -35.6599
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -6.107720594203638,
+            "domain_differences": [
+              0.8664444218068326,
+              -49.92431769073615,
+              1.1775999999999982,
+              2.125,
+              -32.56799999999999
+            ],
+            "maximizing_weights": [
+              9.0,
+              9.0,
+              33.0,
+              40.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -3.1869632572761897,
+            "domain_differences": [
+              9.306599999999989,
+              -53.92280285862429,
+              2.3093000000000004,
+              3.5,
+              -37.993199999999995
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -6.107720594203639,
+        "weights": [
+          9.0,
+          9.0,
+          33.0,
+          40.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -6.107720594203639
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "Humanity's Last Exam"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 108,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -5.362625021345433,
+            "domain_differences": [
+              2.9917264270520505,
+              -54.48221769073615,
+              2.0714499999999987,
+              2.77205,
+              -30.634700000000002
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -1.1777674551781019,
+            "domain_differences": [
+              11.431882005245207,
+              -58.480702858624284,
+              -0.6190500000000014,
+              8.7359,
+              -36.82655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -6.603340823443518,
+            "domain_differences": [
+              0.8664444218068326,
+              -49.92431769073615,
+              0.7381500000000045,
+              -1.7688499999999934,
+              -28.234700000000004
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -3.0201632572761876,
+            "domain_differences": [
+              9.306599999999989,
+              -53.92280285862429,
+              -1.9523499999999956,
+              4.195000000000007,
+              -34.42655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -6.603340823443518,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -6.603340823443518
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 107,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -7.610155955178102,
+            "domain_differences": [
+              11.431882005245207,
+              -58.480702858624284,
+              -0.6190500000000014,
+              -37.788549999999994,
+              -36.82655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-terra",
+            "maximum_margin": -4.4931534580680905,
+            "domain_differences": [
+              14.746282005245213,
+              -54.57449177962414,
+              1.0237999999999943,
+              -30.13015,
+              -34.51225
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-5",
+            "maximum_margin": -0.5729481169700363,
+            "domain_differences": [
+              24.694732005245214,
+              -51.942321322979126,
+              1.7856999999999985,
+              -35.30055000000001,
+              -35.42515
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -5.695505021345435,
+            "domain_differences": [
+              2.9917264270520505,
+              -54.48221769073615,
+              2.0714499999999987,
+              0.9416500000000028,
+              -30.634700000000002
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -3.037147697901915,
+            "domain_differences": [
+              2.125282005245218,
+              -4.5578999999999965,
+              1.3332999999999942,
+              -41.12265,
+              -2.4000000000000004
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.7115244656376234,
+            "domain_differences": [
+              3.494723835905944,
+              1.4011500000000012,
+              3.2856999999999985,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -3.3042602572761877,
+            "domain_differences": [
+              9.306599999999989,
+              -53.92280285862429,
+              -1.9523499999999956,
+              3.3341000000000065,
+              -34.42655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -1.0734009999999974,
+            "domain_differences": [
+              2.2990000000000066,
+              4.53125,
+              2.9762000000000057,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -7.610155955178103,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "margin": -7.610155955178103
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "Humanity's Last Exam",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 107,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -5.595522455178101,
+            "domain_differences": [
+              11.431882005245207,
+              -58.480702858624284,
+              5.485900000000001,
+              -37.788549999999994,
+              -36.82655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-terra",
+            "maximum_margin": -1.7699274580680895,
+            "domain_differences": [
+              14.746282005245213,
+              -54.57449177962414,
+              9.275999999999996,
+              -30.13015,
+              -34.51225
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -5.256344371239078,
+            "domain_differences": [
+              2.9917264270520505,
+              -54.48221769073615,
+              3.3303999999999974,
+              0.9416500000000028,
+              -30.634700000000002
+            ],
+            "maximizing_weights": [
+              33.0,
+              9.0,
+              40.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -1.802886438269081,
+            "domain_differences": [
+              2.125282005245218,
+              -4.5578999999999965,
+              4.557549999999992,
+              -41.12265,
+              -2.4000000000000004
+            ],
+            "maximizing_weights": [
+              33.0,
+              9.0,
+              40.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": 0.01220386584896346,
+            "domain_differences": [
+              3.494723835905944,
+              1.4011500000000012,
+              5.131600000000006,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              33.0,
+              9.0,
+              40.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -3.0449972572761874,
+            "domain_differences": [
+              9.306599999999989,
+              -53.92280285862429,
+              0.9283500000000089,
+              3.3341000000000065,
+              -34.42655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -1.3662264999999976,
+            "domain_differences": [
+              2.2990000000000066,
+              4.53125,
+              1.5284500000000065,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -5.595522455178102,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "margin": -5.595522455178102
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "AA-Briefcase"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "population": 115,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": 0.008198000000001215,
+            "domain_differences": [
+              2.2990000000000066,
+              7.1617999999999995,
+              2.837950000000003,
+              -44.4773,
+              0.033350000000005764
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -1.2572209664345904,
+        "weights": [
+          9.0,
+          24.5598199537676,
+          27.124885832955133,
+          9.0,
+          30.315294213277266
+        ],
+        "binding": [
+          {
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -1.2572209664345892
+          },
+          {
+            "higher": "gpt-5-6-sol",
+            "lower": "claude-opus-5",
+            "margin": -1.2572209664345848
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -1.2572209664345904
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "AA-Briefcase"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 114,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.41875663180878975,
+            "domain_differences": [
+              3.494723835905944,
+              3.668065005855624,
+              2.4172999999999973,
+              -39.18665000000001,
+              3.0
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -0.6395597722864413,
+        "weights": [
+          28.165759898072505,
+          26.12583250023377,
+          26.882022393814815,
+          9.0,
+          9.826385207878907
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "margin": -0.6395597722864403
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-opus-5",
+            "margin": -0.6395597722864407
+          },
+          {
+            "higher": "gpt-5-6-sol",
+            "lower": "claude-opus-5",
+            "margin": -0.6395597722864313
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -0.6395597722864413
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "AA-Briefcase"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 110,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.48175663180878986,
+            "domain_differences": [
+              3.494723835905944,
+              3.668065005855624,
+              2.4172999999999973,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.06680349999999936,
+            "domain_differences": [
+              2.2990000000000066,
+              7.1617999999999995,
+              2.837950000000003,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -0.6108533017008192,
+        "weights": [
+          30.72542283186726,
+          31.827667351895048,
+          17.42375858701849,
+          9.0,
+          11.023151229219199
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "margin": -0.6108533017008118
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-opus-5",
+            "margin": -0.6108533017008114
+          },
+          {
+            "higher": "gpt-5-6-sol",
+            "lower": "claude-opus-5",
+            "margin": -0.6108533017008192
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -0.6108533017008115
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "AA-Briefcase"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GDP.pdf"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 113,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -2.0996955055106525,
+            "domain_differences": [
+              0.8664444218068326,
+              -5.39070559414742,
+              1.1775999999999982,
+              2.125,
+              -32.56799999999999
+            ],
+            "maximizing_weights": [
+              9.0,
+              9.0,
+              33.0,
+              40.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -2.0996955055106525,
+        "weights": [
+          9.0,
+          9.0,
+          33.0,
+          40.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -2.0996955055106525
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "AA-Briefcase"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "Humanity's Last Exam"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 111,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -2.5953157347505327,
+            "domain_differences": [
+              0.8664444218068326,
+              -5.39070559414742,
+              0.7381500000000045,
+              -1.7688499999999934,
+              -28.234700000000004
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -2.5953157347505327,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -2.5953157347505327
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "AA-Briefcase"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 110,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.4036006318087897,
+            "domain_differences": [
+              3.494723835905944,
+              3.668065005855624,
+              3.2856999999999985,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.02118099999999817,
+            "domain_differences": [
+              2.2990000000000066,
+              7.1617999999999995,
+              2.9762000000000057,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -0.4953826761253608,
+        "weights": [
+          27.13826987879048,
+          31.605282097998014,
+          23.256448023211505,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "margin": -0.4953826761253607
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-opus-5",
+            "margin": -0.49538267612536024
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -0.4953826761253608
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "AA-Briefcase"
+        ],
+        "hard-reasoning": [
+          "Humanity's Last Exam",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 110,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.31400649999999775,
+            "domain_differences": [
+              2.2990000000000066,
+              7.1617999999999995,
+              1.5284500000000065,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -0.7950917969479422,
+        "weights": [
+          29.979517894338805,
+          32.35386749817517,
+          18.503713673765322,
+          9.0,
+          10.162900933720703
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-opus-5",
+            "margin": -0.795091796947938
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -0.7950917969479422
+          },
+          {
+            "higher": "gpt-5-6-sol",
+            "lower": "claude-opus-5",
+            "margin": -0.7950917969479417
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -0.7950917969479375
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "population": 121,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.27440199999999754,
+            "domain_differences": [
+              2.2990000000000066,
+              6.455300000000001,
+              2.837950000000003,
+              -44.4773,
+              0.033350000000005764
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -1.482183382082508,
+        "weights": [
+          9.0,
+          29.257624954258148,
+          14.533501111299625,
+          9.0,
+          38.208873934442224
+        ],
+        "binding": [
+          {
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -1.4821833820825057
+          },
+          {
+            "higher": "gpt-5-6-sol",
+            "lower": "claude-opus-5",
+            "margin": -1.482183382082508
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -1.4821833820825052
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 121,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.4289385493801137,
+            "domain_differences": [
+              3.494723835905944,
+              3.6426102119273125,
+              2.4172999999999973,
+              -39.18665000000001,
+              3.0
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.2024019999999978,
+            "domain_differences": [
+              2.2990000000000066,
+              6.455300000000001,
+              2.837950000000003,
+              -44.4773,
+              0.8333500000000029
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -1.0385555857300224,
+        "weights": [
+          23.02543333565973,
+          18.97456666434027,
+          40.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-opus-5",
+            "margin": -1.0385555857300224
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -1.0385555857300217
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 111,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.49193854938011383,
+            "domain_differences": [
+              3.494723835905944,
+              3.6426102119273125,
+              2.4172999999999973,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.3494034999999981,
+            "domain_differences": [
+              2.2990000000000066,
+              6.455300000000001,
+              2.837950000000003,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -1.0563894884537883,
+        "weights": [
+          19.917678908014114,
+          22.082321091985886,
+          40.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-opus-5",
+            "margin": -1.0563894884537883
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -1.0563894884537874
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GDP.pdf"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 121,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -2.4674129205882203,
+            "domain_differences": [
+              0.8664444218068326,
+              -9.47645465056484,
+              1.1775999999999982,
+              2.125,
+              -32.56799999999999
+            ],
+            "maximizing_weights": [
+              9.0,
+              9.0,
+              33.0,
+              40.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -2.4674129205882203,
+        "weights": [
+          9.0,
+          9.0,
+          33.0,
+          40.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -2.4674129205882203
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "Humanity's Last Exam"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 111,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -2.963033149828101,
+            "domain_differences": [
+              0.8664444218068326,
+              -9.47645465056484,
+              0.7381500000000045,
+              -1.7688499999999934,
+              -28.234700000000004
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -2.9630331498281004,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -2.9630331498281004
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 111,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.41378254938011366,
+            "domain_differences": [
+              3.494723835905944,
+              3.6426102119273125,
+              3.2856999999999985,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.30378099999999697,
+            "domain_differences": [
+              2.2990000000000066,
+              6.455300000000001,
+              2.9762000000000057,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -1.0224473992227125,
+        "weights": [
+          31.22979692494994,
+          23.670310872152136,
+          27.099892202897927,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "margin": -1.0224473992227114
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-opus-5",
+            "margin": -1.0224473992227125
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -1.0224473992227117
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "Humanity's Last Exam",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 111,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.5966064999999965,
+            "domain_differences": [
+              2.2990000000000066,
+              6.455300000000001,
+              1.5284500000000065,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -1.3460559203181028,
+        "weights": [
+          40.0,
+          24.3224614128723,
+          16.347077961466752,
+          9.0,
+          10.330460625660947
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-opus-5",
+            "margin": -1.3460559203180993
+          },
+          {
+            "higher": "gpt-5-6-sol",
+            "lower": "claude-opus-5",
+            "margin": -1.3460559203181028
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -1.3460559203180988
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "population": 115,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -1.3461961979019172,
+            "domain_differences": [
+              11.431882005245207,
+              -41.10055,
+              3.533549999999998,
+              -37.788549999999994,
+              0.16664999999999708
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -1.670355429179179,
+            "domain_differences": [
+              2.9917264270520505,
+              -44.7329,
+              2.401849999999996,
+              0.9416500000000028,
+              2.6000000000000014
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              9.0,
+              33.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -1.7408759382690782,
+            "domain_differences": [
+              2.125282005245218,
+              2.8866000000000014,
+              1.2242499999999978,
+              -41.12265,
+              -0.06670000000000442
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -2.0504359999999964,
+            "domain_differences": [
+              2.2990000000000066,
+              0.618549999999999,
+              2.837950000000003,
+              -44.4773,
+              0.033350000000005764
+            ],
+            "maximizing_weights": [
+              33.0,
+              9.0,
+              40.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -2.1769430545944997,
+        "weights": [
+          40.0,
+          9.973870924138387,
+          32.02612907586161,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "margin": -2.1769430545944997
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": -2.1769430545944988
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 111,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -4.570585697901917,
+            "domain_differences": [
+              11.431882005245207,
+              -41.10055,
+              3.533549999999998,
+              -37.788549999999994,
+              -35.6599
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-terra",
+            "maximum_margin": -1.6359882927329028,
+            "domain_differences": [
+              14.746282005245213,
+              -48.351428831455394,
+              7.966499999999996,
+              -30.13015,
+              -34.445600000000006
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -4.67303442917918,
+            "domain_differences": [
+              2.9917264270520505,
+              -44.7329,
+              2.401849999999996,
+              0.9416500000000028,
+              -30.234699999999997
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -1.4749516195279317,
+            "domain_differences": [
+              2.125282005245218,
+              2.8866000000000014,
+              1.2242499999999978,
+              -41.12265,
+              2.333299999999994
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              9.0,
+              9.0,
+              33.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.689394965637623,
+            "domain_differences": [
+              3.494723835905944,
+              2.577300000000001,
+              2.4172999999999973,
+              -39.18665000000001,
+              3.0
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              9.0,
+              33.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -2.3475015000000017,
+            "domain_differences": [
+              9.306599999999989,
+              -43.98715,
+              2.3093000000000004,
+              3.3341000000000065,
+              -37.993199999999995
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -1.9784359999999968,
+            "domain_differences": [
+              2.2990000000000066,
+              0.618549999999999,
+              2.837950000000003,
+              -44.4773,
+              0.8333500000000029
+            ],
+            "maximizing_weights": [
+              33.0,
+              9.0,
+              40.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -4.673034429179181,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "margin": -4.673034429179181
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 107,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -4.675584197901917,
+            "domain_differences": [
+              11.431882005245207,
+              -41.10055,
+              3.533549999999998,
+              -37.788549999999994,
+              -36.82655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-terra",
+            "maximum_margin": -1.6419867927329022,
+            "domain_differences": [
+              14.746282005245213,
+              -48.351428831455394,
+              7.966499999999996,
+              -30.13015,
+              -34.51225
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -4.709034429179181,
+            "domain_differences": [
+              2.9917264270520505,
+              -44.7329,
+              2.401849999999996,
+              0.9416500000000028,
+              -30.634700000000002
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -1.9508729382690777,
+            "domain_differences": [
+              2.125282005245218,
+              2.8866000000000014,
+              1.2242499999999978,
+              -41.12265,
+              -2.4000000000000004
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.853842965637623,
+            "domain_differences": [
+              3.494723835905944,
+              2.577300000000001,
+              2.4172999999999973,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              40.0,
+              33.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -2.026503000000002,
+            "domain_differences": [
+              9.306599999999989,
+              -43.98715,
+              2.3093000000000004,
+              3.3341000000000065,
+              -34.42655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -2.125437499999997,
+            "domain_differences": [
+              2.2990000000000066,
+              0.618549999999999,
+              2.837950000000003,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              33.0,
+              9.0,
+              40.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -4.709034429179182,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "margin": -4.709034429179182
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GDP.pdf"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 113,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -4.57403442917918,
+            "domain_differences": [
+              2.9917264270520505,
+              -44.7329,
+              2.401849999999996,
+              2.041650000000004,
+              -30.234699999999997
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -0.8621176979019174,
+            "domain_differences": [
+              11.431882005245207,
+              -41.10055,
+              3.533549999999998,
+              3.416650000000004,
+              -35.6599
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -5.900287002037385,
+            "domain_differences": [
+              0.8664444218068326,
+              -47.6195,
+              1.1775999999999982,
+              2.125,
+              -32.56799999999999
+            ],
+            "maximizing_weights": [
+              9.0,
+              9.0,
+              33.0,
+              40.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -2.2927545000000036,
+            "domain_differences": [
+              9.306599999999989,
+              -43.98715,
+              2.3093000000000004,
+              3.5,
+              -37.993199999999995
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -5.900287002037385,
+        "weights": [
+          9.0,
+          9.0,
+          33.0,
+          40.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -5.900287002037385
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "Humanity's Last Exam"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 111,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -4.48518642917918,
+            "domain_differences": [
+              2.9917264270520505,
+              -44.7329,
+              2.0714499999999987,
+              2.77205,
+              -30.634700000000002
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -6.395907231277265,
+            "domain_differences": [
+              0.8664444218068326,
+              -47.6195,
+              0.7381500000000045,
+              -1.7688499999999934,
+              -28.234700000000004
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -2.1259545000000015,
+            "domain_differences": [
+              9.306599999999989,
+              -43.98715,
+              -1.9523499999999956,
+              4.195000000000007,
+              -34.42655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -6.395907231277265,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -6.395907231277265
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 107,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -6.045942197901917,
+            "domain_differences": [
+              11.431882005245207,
+              -41.10055,
+              -0.6190500000000014,
+              -37.788549999999994,
+              -36.82655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-terra",
+            "maximum_margin": -3.933077792732903,
+            "domain_differences": [
+              14.746282005245213,
+              -48.351428831455394,
+              1.0237999999999943,
+              -30.13015,
+              -34.51225
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-5",
+            "maximum_margin": -0.17718373499349696,
+            "domain_differences": [
+              24.694732005245214,
+              -47.544939301017564,
+              1.7856999999999985,
+              -35.30055000000001,
+              -35.42515
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -4.81806642917918,
+            "domain_differences": [
+              2.9917264270520505,
+              -44.7329,
+              2.0714499999999987,
+              0.9416500000000028,
+              -30.634700000000002
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -1.9410584382690783,
+            "domain_differences": [
+              2.125282005245218,
+              2.8866000000000014,
+              1.3332999999999942,
+              -41.12265,
+              -2.4000000000000004
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.6056709656376233,
+            "domain_differences": [
+              3.494723835905944,
+              2.577300000000001,
+              3.2856999999999985,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -2.410051500000002,
+            "domain_differences": [
+              9.306599999999989,
+              -43.98715,
+              -1.9523499999999956,
+              3.3341000000000065,
+              -34.42655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -2.070137499999996,
+            "domain_differences": [
+              2.2990000000000066,
+              0.618549999999999,
+              2.9762000000000057,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              33.0,
+              9.0,
+              40.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -6.045942197901917,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "margin": -6.045942197901917
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "Humanity's Last Exam",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 107,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -4.031308697901916,
+            "domain_differences": [
+              11.431882005245207,
+              -41.10055,
+              5.485900000000001,
+              -37.788549999999994,
+              -36.82655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-terra",
+            "maximum_margin": -1.2098517927329022,
+            "domain_differences": [
+              14.746282005245213,
+              -48.351428831455394,
+              9.275999999999996,
+              -30.13015,
+              -34.51225
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -4.378905779072824,
+            "domain_differences": [
+              2.9917264270520505,
+              -44.7329,
+              3.3303999999999974,
+              0.9416500000000028,
+              -30.634700000000002
+            ],
+            "maximizing_weights": [
+              33.0,
+              9.0,
+              40.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -0.950165119527933,
+            "domain_differences": [
+              2.125282005245218,
+              2.8866000000000014,
+              4.557549999999992,
+              -41.12265,
+              -2.4000000000000004
+            ],
+            "maximizing_weights": [
+              9.0,
+              33.0,
+              40.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -2.1507885000000018,
+            "domain_differences": [
+              9.306599999999989,
+              -43.98715,
+              0.9283500000000089,
+              3.3341000000000065,
+              -34.42655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -2.5952989999999954,
+            "domain_differences": [
+              2.2990000000000066,
+              0.618549999999999,
+              1.5284500000000065,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -4.382603729137464,
+        "weights": [
+          34.0918921226863,
+          9.0,
+          38.9081078773137,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "margin": -4.382603729137464
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "margin": -4.382603729137464
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AA-Briefcase",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "population": 115,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.32535530572326915,
+            "domain_differences": [
+              2.2990000000000066,
+              6.327916735691822,
+              2.837950000000003,
+              -44.4773,
+              0.033350000000005764
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -1.513100724980815,
+        "weights": [
+          9.0,
+          23.72571585227489,
+          27.175649189799884,
+          9.0,
+          31.098634957925228
+        ],
+        "binding": [
+          {
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -1.5131007249808122
+          },
+          {
+            "higher": "gpt-5-6-sol",
+            "lower": "claude-opus-5",
+            "margin": -1.513100724980815
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -1.5131007249808122
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AA-Briefcase",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 114,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.679727730541008,
+            "domain_differences": [
+              3.494723835905944,
+              2.6847137232957223,
+              2.4172999999999973,
+              -39.18665000000001,
+              3.0
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              9.0,
+              33.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.25335530572326936,
+            "domain_differences": [
+              2.2990000000000066,
+              6.327916735691822,
+              2.837950000000003,
+              -44.4773,
+              0.8333500000000029
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -0.9560998876428825,
+        "weights": [
+          24.055220462025495,
+          22.188813867983566,
+          35.75596566999094,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "margin": -0.9560998876428823
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-opus-5",
+            "margin": -0.9560998876428821
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -0.9560998876428825
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AA-Briefcase",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 110,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.8183964369500347,
+            "domain_differences": [
+              3.494723835905944,
+              2.6847137232957223,
+              2.4172999999999973,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              40.0,
+              33.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.30542893326655607,
+            "domain_differences": [
+              2.2990000000000066,
+              6.565236416833606,
+              2.837950000000003,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -0.9613205277910427,
+        "weights": [
+          28.506754556940802,
+          26.37963962479229,
+          25.929144826473472,
+          9.0,
+          10.184460991793433
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "margin": -0.96132052779104
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-opus-5",
+            "margin": -0.9613205277910405
+          },
+          {
+            "higher": "gpt-5-6-sol",
+            "lower": "claude-opus-5",
+            "margin": -0.9613205277910427
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -0.96132052779104
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AA-Briefcase",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GDP.pdf"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 113,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -2.2696714920320114,
+            "domain_differences": [
+              0.8664444218068326,
+              -7.27932766660696,
+              1.1775999999999982,
+              2.125,
+              -32.56799999999999
+            ],
+            "maximizing_weights": [
+              9.0,
+              9.0,
+              33.0,
+              40.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -2.2696714920320114,
+        "weights": [
+          9.0,
+          9.0,
+          33.0,
+          40.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -2.2696714920320114
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AA-Briefcase",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "Humanity's Last Exam"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 111,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -2.7652917212718915,
+            "domain_differences": [
+              0.8664444218068326,
+              -7.27932766660696,
+              0.7381500000000045,
+              -1.7688499999999934,
+              -28.234700000000004
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -2.7652917212718915,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -2.7652917212718915
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AA-Briefcase",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 110,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.5960037305410083,
+            "domain_differences": [
+              3.494723835905944,
+              2.6847137232957223,
+              3.2856999999999985,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.25980643326655484,
+            "domain_differences": [
+              2.2990000000000066,
+              6.565236416833606,
+              2.9762000000000057,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -0.8515296627226598,
+        "weights": [
+          27.250595707744253,
+          26.956660759205516,
+          27.79274353305023,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "margin": -0.8515296627226595
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-opus-5",
+            "margin": -0.8515296627226562
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -0.8515296627226598
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AA-Briefcase",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "Humanity's Last Exam",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 110,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.5526319332665544,
+            "domain_differences": [
+              2.2990000000000066,
+              6.565236416833606,
+              1.5284500000000065,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -1.1846493258124766,
+        "weights": [
+          35.42468673062791,
+          27.896416712047195,
+          16.915097585862036,
+          9.0,
+          10.763798971462856
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-opus-5",
+            "margin": -1.1846493258124757
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -1.1846493258124762
+          },
+          {
+            "higher": "gpt-5-6-sol",
+            "lower": "claude-opus-5",
+            "margin": -1.184649325812476
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "margin": -1.1846493258124766
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AA-Briefcase",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "population": 110,
+      "missing_targets": [
+        "qwen3-8-flash-next"
+      ],
+      "status": "ineligible",
+      "target_exclusions": [
+        {
+          "slug": "qwen3-8-flash-next",
+          "model": "Qwen3.8-Flash-Next",
+          "missing_core_count": 3,
+          "missing_core_items": "Terminal-Bench v4.0; AA-Briefcase; τ²-Bench Telecom",
+          "empty_boards": "agentic-tool-work",
+          "reason": "board_missing_both"
+        }
+      ]
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AA-Briefcase",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 107,
+      "missing_targets": [
+        "qwen3-8-flash-next"
+      ],
+      "status": "ineligible",
+      "target_exclusions": [
+        {
+          "slug": "qwen3-8-flash-next",
+          "model": "Qwen3.8-Flash-Next",
+          "missing_core_count": 4,
+          "missing_core_items": "Terminal-Bench v4.0; AA-Briefcase; τ²-Bench Telecom; IFBench",
+          "empty_boards": "agentic-tool-work",
+          "reason": "board_missing_both; missing_at_least_four"
+        }
+      ]
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AA-Briefcase",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 105,
+      "missing_targets": [
+        "qwen3-8-flash-next"
+      ],
+      "status": "ineligible",
+      "target_exclusions": [
+        {
+          "slug": "qwen3-8-flash-next",
+          "model": "Qwen3.8-Flash-Next",
+          "missing_core_count": 4,
+          "missing_core_items": "Terminal-Bench v4.0; AA-Briefcase; τ²-Bench Telecom; IFBench",
+          "empty_boards": "agentic-tool-work",
+          "reason": "board_missing_both; missing_at_least_four"
+        }
+      ]
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AA-Briefcase",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GDP.pdf"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 110,
+      "missing_targets": [
+        "qwen3-8-flash-next"
+      ],
+      "status": "ineligible",
+      "target_exclusions": [
+        {
+          "slug": "qwen3-8-flash-next",
+          "model": "Qwen3.8-Flash-Next",
+          "missing_core_count": 4,
+          "missing_core_items": "Terminal-Bench v4.0; AA-Briefcase; τ²-Bench Telecom; IFBench",
+          "empty_boards": "agentic-tool-work",
+          "reason": "board_missing_both; missing_at_least_four"
+        }
+      ]
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AA-Briefcase",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "Humanity's Last Exam"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 108,
+      "missing_targets": [
+        "qwen3-8-flash-next"
+      ],
+      "status": "ineligible",
+      "target_exclusions": [
+        {
+          "slug": "qwen3-8-flash-next",
+          "model": "Qwen3.8-Flash-Next",
+          "missing_core_count": 4,
+          "missing_core_items": "Terminal-Bench v4.0; AA-Briefcase; τ²-Bench Telecom; IFBench",
+          "empty_boards": "agentic-tool-work",
+          "reason": "board_missing_both; missing_at_least_four"
+        }
+      ]
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AA-Briefcase",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 105,
+      "missing_targets": [
+        "qwen3-8-flash-next"
+      ],
+      "status": "ineligible",
+      "target_exclusions": [
+        {
+          "slug": "qwen3-8-flash-next",
+          "model": "Qwen3.8-Flash-Next",
+          "missing_core_count": 4,
+          "missing_core_items": "Terminal-Bench v4.0; AA-Briefcase; τ²-Bench Telecom; IFBench",
+          "empty_boards": "agentic-tool-work",
+          "reason": "board_missing_both; missing_at_least_four"
+        }
+      ]
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AA-Briefcase",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "Humanity's Last Exam",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 105,
+      "missing_targets": [
+        "qwen3-8-flash-next"
+      ],
+      "status": "ineligible",
+      "target_exclusions": [
+        {
+          "slug": "qwen3-8-flash-next",
+          "model": "Qwen3.8-Flash-Next",
+          "missing_core_count": 4,
+          "missing_core_items": "Terminal-Bench v4.0; AA-Briefcase; τ²-Bench Telecom; IFBench",
+          "empty_boards": "agentic-tool-work",
+          "reason": "board_missing_both; missing_at_least_four"
+        }
+      ]
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "GDPval-AA v2",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "population": 115,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -2.708101028292856,
+            "domain_differences": [
+              11.431882005245207,
+              -56.23282589323265,
+              3.533549999999998,
+              -37.788549999999994,
+              0.16664999999999708
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -2.728475611953048,
+            "domain_differences": [
+              2.9917264270520505,
+              -56.48979091970964,
+              2.401849999999996,
+              0.9416500000000028,
+              2.6000000000000014
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              9.0,
+              33.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -1.061115938269078,
+            "domain_differences": [
+              2.125282005245218,
+              4.586000000000002,
+              1.2242499999999978,
+              -41.12265,
+              -0.06670000000000442
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": 0.02825486584895998,
+            "domain_differences": [
+              3.494723835905944,
+              0.713750000000001,
+              2.4172999999999973,
+              -39.18665000000001,
+              5.299999999999997
+            ],
+            "maximizing_weights": [
+              33.0,
+              9.0,
+              9.0,
+              9.0,
+              40.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -0.4219628303909411,
+            "domain_differences": [
+              9.306599999999989,
+              -60.818825893232656,
+              2.3093000000000004,
+              3.3341000000000065,
+              0.2333500000000015
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.5218219999999971,
+            "domain_differences": [
+              2.2990000000000066,
+              5.836750000000002,
+              2.837950000000003,
+              -44.4773,
+              0.033350000000005764
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -2.7722559439673913,
+        "weights": [
+          40.0,
+          9.0,
+          31.09454050685988,
+          9.0,
+          10.905459493140121
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "margin": -2.77225594396739
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "margin": -2.7722559439673913
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "GDPval-AA v2",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 111,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -5.932490528292856,
+            "domain_differences": [
+              11.431882005245207,
+              -56.23282589323265,
+              3.533549999999998,
+              -37.788549999999994,
+              -35.6599
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-terra",
+            "maximum_margin": -1.9797832529799246,
+            "domain_differences": [
+              14.746282005245213,
+              -52.17137283420008,
+              7.966499999999996,
+              -30.13015,
+              -34.445600000000006
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -5.731154611953048,
+            "domain_differences": [
+              2.9917264270520505,
+              -56.48979091970964,
+              2.401849999999996,
+              0.9416500000000028,
+              -30.234699999999997
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -0.7951916195279319,
+            "domain_differences": [
+              2.125282005245218,
+              4.586000000000002,
+              1.2242499999999978,
+              -41.12265,
+              2.333299999999994
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              9.0,
+              9.0,
+              33.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.8571144656376231,
+            "domain_differences": [
+              3.494723835905944,
+              0.713750000000001,
+              2.4172999999999973,
+              -39.18665000000001,
+              3.0
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              9.0,
+              33.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -3.8623523303909404,
+            "domain_differences": [
+              9.306599999999989,
+              -60.818825893232656,
+              2.3093000000000004,
+              3.3341000000000065,
+              -37.993199999999995
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.44982199999999745,
+            "domain_differences": [
+              2.2990000000000066,
+              5.836750000000002,
+              2.837950000000003,
+              -44.4773,
+              0.8333500000000029
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -5.932490528292855,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "margin": -5.932490528292855
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "GDPval-AA v2",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 107,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -6.037489028292855,
+            "domain_differences": [
+              11.431882005245207,
+              -56.23282589323265,
+              3.533549999999998,
+              -37.788549999999994,
+              -36.82655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-terra",
+            "maximum_margin": -1.985781752979924,
+            "domain_differences": [
+              14.746282005245213,
+              -52.17137283420008,
+              7.966499999999996,
+              -30.13015,
+              -34.51225
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -5.767154611953049,
+            "domain_differences": [
+              2.9917264270520505,
+              -56.48979091970964,
+              2.401849999999996,
+              0.9416500000000028,
+              -30.634700000000002
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -1.2711129382690778,
+            "domain_differences": [
+              2.125282005245218,
+              4.586000000000002,
+              1.2242499999999978,
+              -41.12265,
+              -2.4000000000000004
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -1.0599624656376239,
+            "domain_differences": [
+              3.494723835905944,
+              0.713750000000001,
+              2.4172999999999973,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -3.541353830390941,
+            "domain_differences": [
+              9.306599999999989,
+              -60.818825893232656,
+              2.3093000000000004,
+              3.3341000000000065,
+              -34.42655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.5968234999999977,
+            "domain_differences": [
+              2.2990000000000066,
+              5.836750000000002,
+              2.837950000000003,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -6.037489028292855,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "margin": -6.037489028292855
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "GDPval-AA v2",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GDP.pdf"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "population": 113,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -5.632154611953049,
+            "domain_differences": [
+              2.9917264270520505,
+              -56.48979091970964,
+              2.401849999999996,
+              2.041650000000004,
+              -30.234699999999997
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -2.1406106119134996,
+            "domain_differences": [
+              11.431882005245207,
+              -55.30602682235091,
+              3.533549999999998,
+              3.416650000000004,
+              -35.6599
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -7.111353184811253,
+            "domain_differences": [
+              0.8664444218068326,
+              -61.07579091970965,
+              1.1775999999999982,
+              2.125,
+              -32.56799999999999
+            ],
+            "maximizing_weights": [
+              9.0,
+              9.0,
+              33.0,
+              40.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -3.724193414011586,
+            "domain_differences": [
+              9.306599999999989,
+              -59.892026822350914,
+              2.3093000000000004,
+              3.5,
+              -37.993199999999995
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -7.111353184811253,
+        "weights": [
+          9.0,
+          9.0,
+          33.0,
+          40.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -7.111353184811253
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "GDPval-AA v2",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "Humanity's Last Exam"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 111,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -5.543306611953048,
+            "domain_differences": [
+              2.9917264270520505,
+              -56.48979091970964,
+              2.0714499999999987,
+              2.77205,
+              -30.634700000000002
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -1.1584962180013525,
+            "domain_differences": [
+              11.431882005245207,
+              -58.26657800110484,
+              -0.6190500000000014,
+              8.7359,
+              -36.82655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "maximum_margin": -7.606973414051133,
+            "domain_differences": [
+              0.8664444218068326,
+              -61.07579091970965,
+              0.7381500000000045,
+              -1.7688499999999934,
+              -28.234700000000004
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -3.8238430200994378,
+            "domain_differences": [
+              9.306599999999989,
+              -62.852578001104845,
+              -1.9523499999999956,
+              4.195000000000007,
+              -34.42655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -7.606973414051133,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -7.606973414051133
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "GDPval-AA v2",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 107,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -7.590884718001353,
+            "domain_differences": [
+              11.431882005245207,
+              -58.26657800110484,
+              -0.6190500000000014,
+              -37.788549999999994,
+              -36.82655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-terra",
+            "maximum_margin": -4.276872752979925,
+            "domain_differences": [
+              14.746282005245213,
+              -52.17137283420008,
+              1.0237999999999943,
+              -30.13015,
+              -34.51225
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-5",
+            "maximum_margin": -0.5839772375586779,
+            "domain_differences": [
+              24.694732005245214,
+              -52.06486710729735,
+              1.7856999999999985,
+              -35.30055000000001,
+              -35.42515
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -5.876186611953049,
+            "domain_differences": [
+              2.9917264270520505,
+              -56.48979091970964,
+              2.0714499999999987,
+              0.9416500000000028,
+              -30.634700000000002
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -1.2612984382690777,
+            "domain_differences": [
+              2.125282005245218,
+              4.586000000000002,
+              1.3332999999999942,
+              -41.12265,
+              -2.4000000000000004
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.7733904656376234,
+            "domain_differences": [
+              3.494723835905944,
+              0.713750000000001,
+              3.2856999999999985,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -4.107940020099438,
+            "domain_differences": [
+              9.306599999999989,
+              -62.852578001104845,
+              -1.9523499999999956,
+              3.3341000000000065,
+              -34.42655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.551200999999997,
+            "domain_differences": [
+              2.2990000000000066,
+              5.836750000000002,
+              2.9762000000000057,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -7.5908847180013534,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "margin": -7.5908847180013534
+          }
+        ]
+      }
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "GDPval-AA v2",
+          "τ²-Bench Telecom"
+        ],
+        "hard-reasoning": [
+          "Humanity's Last Exam",
+          "AA-LCR v1.1"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "GDP.pdf",
+          "IFBench"
+        ]
+      },
+      "population": 107,
+      "missing_targets": [],
+      "status": "evaluated",
+      "passing_weights": 0,
+      "continuous": {
+        "individually_impossible": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -5.576251218001351,
+            "domain_differences": [
+              11.431882005245207,
+              -58.26657800110484,
+              5.485900000000001,
+              -37.788549999999994,
+              -36.82655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-terra",
+            "maximum_margin": -1.5536467529799238,
+            "domain_differences": [
+              14.746282005245213,
+              -52.17137283420008,
+              9.275999999999996,
+              -30.13015,
+              -34.51225
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "maximum_margin": -5.437025961846693,
+            "domain_differences": [
+              2.9917264270520505,
+              -56.48979091970964,
+              3.3303999999999974,
+              0.9416500000000028,
+              -30.634700000000002
+            ],
+            "maximizing_weights": [
+              33.0,
+              9.0,
+              40.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "maximum_margin": -0.38737161952793236,
+            "domain_differences": [
+              2.125282005245218,
+              4.586000000000002,
+              4.557549999999992,
+              -41.12265,
+              -2.4000000000000004
+            ],
+            "maximizing_weights": [
+              9.0,
+              40.0,
+              33.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "claude-opus-5",
+            "maximum_margin": -0.04966213415103653,
+            "domain_differences": [
+              3.494723835905944,
+              0.713750000000001,
+              5.131600000000006,
+              -39.18665000000001,
+              2.299999999999999
+            ],
+            "maximizing_weights": [
+              33.0,
+              9.0,
+              40.0,
+              9.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "gpt-6-astra",
+            "lower": "gpt-5-6-sol",
+            "maximum_margin": -3.8486770200994376,
+            "domain_differences": [
+              9.306599999999989,
+              -62.852578001104845,
+              0.9283500000000089,
+              3.3341000000000065,
+              -34.42655
+            ],
+            "maximizing_weights": [
+              40.0,
+              9.0,
+              9.0,
+              33.0,
+              9.0
+            ]
+          },
+          {
+            "higher": "grok-4-6-xhigh",
+            "lower": "grok-4-5",
+            "maximum_margin": -0.8440264999999961,
+            "domain_differences": [
+              2.2990000000000066,
+              5.836750000000002,
+              1.5284500000000065,
+              -44.4773,
+              -0.8000000000000007
+            ],
+            "maximizing_weights": [
+              33.0,
+              40.0,
+              9.0,
+              9.0,
+              9.0
+            ]
+          }
+        ],
+        "available": true,
+        "best_minimum_margin": -5.576251218001353,
+        "weights": [
+          40.0,
+          9.0,
+          33.0,
+          9.0,
+          9.0
+        ],
+        "binding": [
+          {
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-5-6-sol",
+            "margin": -5.576251218001353
+          }
+        ]
+      }
+    }
+  ],
+  "common_selection_rejections": []
+}

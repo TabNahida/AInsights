@@ -174,6 +174,160 @@ analysis/irt_leaderboard_exploration/irt_leaderboard_exploration.ipynb
 
 Qwen3.8-Max、GPT-5.6、Claude Opus 5 与 Fable 5 System Card 已纳入同一来源库。Qwen 使用官方 article-retrieval JSON API 获取文章表格，并对 `Pass / Score`、`without / with Code Interpreter`、`binary / partial` 等复合单元格做显式语义选值；当前在线解析值与审计 seed 必须一致。GPT-5.6 官方成绩按 exact configuration 绑定，禁止向其他 effort 广播。Fable 新闻图的 higher-of-two 结果保留在来源库但不作为可拆分配置的 Core；榜单使用可映射到具体配置的 System Card 成绩。图片/PDF 表无法可靠解析时继续使用已审计、带来源和版本说明的 seed。
 
+## 2026-09-09 Core 小规模候选实验
+
+运行 `python -B analysis/irt_leaderboard_exploration/core_variants.py`，查看
+`outputs/core_variants/REPORT.md`。A/B/C 分别比较 Banking、AutomationBench
+和增加 GDP.pdf 的 Core；D 与 B 使用同一 Core，但将旧版 Terminal 成绩先
+换算到 v4 尺度再折扣。参数集中在 `core_variants.py` 的 `VARIANTS`。
+
+实验保留五板等权、几何 Core 和正残差加分，固定每组配置后才检查完整性，
+并输出覆盖清单、全量排名、缺项清单和共同人群排名。旧版回退只读取同一
+配置；v4 实测零分不会触发回退。扩展中剔除新 Core 和 Terminal 版本重复项。
+这些文件是试算产物，未接入生产评分或每日 Action 的自动生成路径。
+
+后续按用户指定排序偏好筛选的 E/F/G 见
+`outputs/preference_core_variants/REPORT.md`；运行
+`python -B analysis/irt_leaderboard_exploration/preference_core_variants.py`
+可复现 Core／权重搜索和逐项约束审计。模型偏好只在评分后检查，不作为模型
+加减分或排序覆盖；这些试算未替换生产榜。测试仅验证计算和审计机制，
+不要求未来每日快照必须继续符合本轮命名模型的顺序。
+
+## 2026-09-11 十套双 Core 组合实验
+
+本节保留此前的结构对照。当前结果见“两个单 Core 领域的混合方案”；
+未满足全部排序偏好的结构对照不再作为本轮推荐。
+
+运行 `python -B analysis/irt_leaderboard_exploration/dual_core_variants.py`，生成：
+
+- [十套方案完整说明](outputs/dual_core_variants/SCHEMES.md)：每套十个 Core、权重、调整公式、缺测与扩展规则、实际算例、覆盖及旧排序偏好审计。
+- [独立 Top30 对比](outputs/dual_core_variants/TOP30_COMPARISON.md)：跨方案名次矩阵、十套完整 Top30、共同入榜模型的对比。
+- `outputs/dual_core_variants/top30_all.csv`：十套 Top30，共 300 行；各套另有全榜、剔除原因及共同人口 CSV。
+- `outputs/dual_core_variants/run.json`：输入 SHA-256、Terminal 版本换算参数、校准值及数值验证结果。
+
+五领域各占 20%，每领域恰好两项不同家族 Core；两项调整分各占该领域基础分的 50%，
+即每项向总基础分贡献调整分 × 10%。单项缺测保留缺测标记，计算时其固定份额为零，
+不重新分配权重；任一领域双缺，或十项累计缺至少四项，即剔除。真实零分视为已观测。
+Terminal 优先 v4，同配置旧版先换算尺度，再对 v2.1／Hard 分别乘 0.95／0.90。
+扩展拟合与加分只在本领域两项 Core 都有观测时进行，Core 家族不重复作为扩展加分。
+
+按用户最新选择，这十套优先比较 Core 结构，五领域始终等权，逐项披露旧模型排序偏好是否满足。
+本轮沿用 2026-09-08 的冻结输入；每套入榜人口与扩展校准可能不同，另以 112 个共同模型重算作参照。
+这些结果是候选实验，未替换生产方案 18 或每日 Action 的评分路径。
+
+验证命令：`python -B -m unittest discover -s tests -p '*core_variants.py' -v`。
+
+## 2026-09-11 先筛选的双 Core 方案（此前六条标准）
+
+此前采用六条标准和旧版 Terminal 回退的冻结结果保留在：
+
+- [通过筛选的十套完整说明](outputs/filtered_dual_core_variants/SCHEMES.md)。
+- [通过筛选的十套 Top30 对比](outputs/filtered_dual_core_variants/TOP30_COMPARISON.md)。
+
+先要求 Fable 5.1 第一、GPT-6 Astra 第二、Kimi K3 高于 Gemini 3.8 Flash、
+GPT-5.5 高于 Muse Spark 1.3，以及 Qwen3.8 Max／2.4T A95B 分别高于 Flash-Next；
+六条分差均须严格大于 0.05 分。入选方案在全量及共同入榜人群中都必须通过，
+否则脚本在写出排名和文档前终止。该筛选仅用于当前候选实验，不是每日 Action 的命名模型名次断言。
+
+双 Core 的固定半份、领域双缺剔除、累计缺至少四项剔除、同配置 Terminal 回退及完整领域扩展规则继续保留。
+领域权重仍限制 10%–40%，总和 100%；步长从 5 个百分点细化为 1 个百分点，未放宽分差门槛。
+当前搜索 240 种组合，其中 160 种满足十个不同测试家族要求，144 种通过入榜人口／目标可用性预筛，
+总计检查 39,164,544 个 Core／权重组合，65 个通过全量筛选。它们只有两种不同 Core 结构，
+各选五个不同权重方案，共十套；所有十套在 127 个共同模型上也通过。
+
+`search.json` 保存搜索边界及全部通过组合，`run.json` 保存输入哈希、校准、各项筛选和权重敏感性。
+20 种正负 1 个百分点转移包含越过搜索范围的压力测试，不是额外入选条件。
+通过偏好意味着适合本次用户约束，不构成模型能力的独立验证；正式方案 18 尚未切换。
+
+## 2026-09-11 仅用 Terminal v4 的九条筛选方案（历史候选）
+
+运行 `python -B analysis/irt_leaderboard_exploration/filtered_dual_core_variants.py`，查看：
+
+- [新版十套完整说明](outputs/filtered_dual_core_v4/SCHEMES.md)。
+- [新版十套 Top30 对比](outputs/filtered_dual_core_v4/TOP30_COMPARISON.md)。
+- [排名异常审计](outputs/filtered_dual_core_v4/RANKING_AUDIT.md)：GPT-5 mini、Claude 4.5 Sonnet 的分项贡献，以及 Gemini 3 Flash 的正常缺测处理。
+
+Terminal 只用同一固定配置的 v4.0 实测，无成绩记缺项，实测零分仍有效。
+v2.1 与 Hard 不进入本轮 Core、回退、扩展或版本映射拟合。Gemini 3 Flash
+（模型组 `gemini 3 flash`）已撤销人工排除，和 Gemini 3.8 Flash 一样按统一规则处理。
+本快照的固定代表配置缺 Terminal v4、SciCode、AutomationBench-AA、GDP.pdf，
+因此仍因编程领域双缺、累计缺四项而未入榜；没有额外扣分或固定名次。
+`user_exclusions.csv` 现为空，`excluded_*.csv` 列出正常双 Core 缺测剔除。
+
+在此前六条偏好上新增 GPT-5.6 Sol > Claude Opus 5、GPT-5.6 Terra > Muse Spark 1.3、
+Grok 4.6 > Grok 4.5。九条均须有超过 0.05 分的分差，全量和共同集合都必须通过。
+目标配置仍由预先固定的 variantPriority 决定，不借其他推理档位的成绩；Grok 4.6 使用 xhigh。
+
+原 10%–40% 权重范围检查 19,310,296 组后零通过，因此将搜索下限小幅扩至 9%，
+上限仍为 40%，步长 1 个百分点。9%–40% 范围检查 26,083,696 组，30 组通过，
+仅有一种合格 Core 结构，从中选十组权重，均有 112 个入榜模型。这个下限变化是显式的搜索参数调整，
+九条排序标准、分差门槛、每领域双 Core 各半、领域双缺或总缺至少四项剔除规则保持不变。
+`search.json` 与 `run.json` 同时保留原范围零通过的记录和新范围参数。
+
+本轮已确认明显的覆盖偏差：AIME 2025 单项占总分 15%–20%，旧模型有高分、
+多数关注的新旗舰缺测计零。例如方案 05 中，GPT-5 mini 与 Claude 4.5 Sonnet
+分别由 AIME 获得 18.13、17.60 分，而 GPT-5.6 Sol／Terra、GPT-5.5、Kimi K3 此项贡献为零。
+逐项复算未发现本地成绩映射、加权求和或排序错误，但通过九条指定顺序不足以证明全榜合理。
+当前十套只保留为方法对照，不宜直接选作正式综合能力榜；审计详见上方文档。
+这仍是基于 2026-09-08 快照的候选实验，未修改正式方案 18 或每日 Action。
+
+## 2026-09-11 任务与高难测试双 Core 下一轮（上一轮结果）
+
+运行 `python -B analysis/irt_leaderboard_exploration/task_core_variants.py`，生成：
+
+- [本轮筛选结果与冲突诊断](outputs/task_dual_core/SEARCH_REPORT.md)。
+- [Core 质量、近期覆盖和分数分布](outputs/task_dual_core/CORE_QUALITY.md)。
+- [本轮 Top30 状态](outputs/task_dual_core/TOP30_COMPARISON.md)：当前没有合格方案，不展示不合格榜单。
+
+本轮从 Core 禁止 AIME 全年度／别名及同类短题数学家族、LiveCodeBench、GPQA。
+旧实验保留以便追溯；新的准入在 `task_core_variants.py` 中集中校验，不靠型号专属扣分。
+扩展政策不变，AIME 仍可作为受完整领域、正残差和动态封顶限制的扩展项。
+Terminal 仅 v4、九条指定顺序、严格大于 0.05 的分差、9%–40% 权重以及双 Core 缺测门槛均保留。
+
+候选池扩展为 270 种配对，70 种满足十个不同家族要求；每项都有至少 100 个固定代表配置的成绩。
+7 种因目标模型触发缺测门槛退出，63 种进入搜索；每种枚举 367,376 组权重，
+总计检查 23,144,688 组，**零组通过**。额外的连续权重线性规划也全部无解，
+全局最优最小分差为 −0.488367 分；仅细化步长不能解决本候选池中的条件冲突。
+该结果限定于当前 Core 池及冻结快照，不表示任何可能的评分体系均无解。
+
+Core 质量审计按发布日期选择匿名近期群体（2026-03-12 至 2026-09-08，闭区间，124 个固定代表）；
+AIME、LiveCodeBench 在该群体都没有观测，GPQA 在 14 个关注配置上全部达到 90 分以上。
+这分别说明覆盖断层和前沿高分集中，不能据此认定刷分或污染。
+
+新脚本不会写正式站点或 Action。整数权重搜索只需项目现有 NumPy；可选的连续权重诊断使用 SciPy，
+未安装时明确跳过该诊断，整数搜索照常完整执行。`run.json` 保存源哈希与规则，
+`search.json` 保存逐结构资格、完整通过集和连续诊断。
+
+## 2026-09-11 两个单 Core 领域的混合方案（当前候选）
+
+按用户选择，本轮固定两个领域各一项 Core、三个领域各两项，共八项；单项承担领域基础分100%，
+双项仍各50%。唯一Core缺测即领域全缺剔除；双Core缺一项保持半份计零；未配置的第二项不算缺测，
+累计缺至少四项规则保留。AIME、LiveCodeBench、GPQA不进入Core，Terminal仍仅v4，无人工排除。
+
+运行 `python -B analysis/irt_leaderboard_exploration/mixed_core_variants.py`：
+
+- [十套方案完整解释](outputs/mixed_core/SCHEMES.md)。
+- [独立 Top30 对比](outputs/mixed_core/TOP30_COMPARISON.md)。
+- [搜索范围、选择过程](outputs/mixed_core/SEARCH_REPORT.md)。
+- [Core质量与覆盖](outputs/mixed_core/CORE_QUALITY.md)。
+
+本轮考察2,295种配对；1,165种家族不重复，498种满足资格条件后搜索182,953,248组Core／权重组合。
+21种结构的18,834组权重通过全量九条标准；最终选出十种不同结构，各一套权重，
+均在全量及107个共同模型重算后通过九条标准。每领域权重仍为9%–40%，1个百分点步长，严格分差>0.05。
+每结构先保留最接近等权16组与最小分差最大16组（去重），再择不同结构并复核共同人群；
+完整合格权重保存在`passing_weights.npz`，不将有限选择池说成穷举所有十方案组合。
+
+方案01以CritPt、Omniscience分别作为推理和知识单Core，编程保留Terminal v4＋SciCode，
+Agent保留Automation＋Banking，上下文保留LCR＋GDP.pdf；可作为理解新规则的起点。
+十套中GPT-5 mini自然排31–57，Claude 4.5 Sonnet排47–55，无模型专属降权。
+Gemini 3 Flash仍按正常编程全缺规则不入榜。
+
+实现另外封住了SciCode单Core会使旧Terminal扩展重新出现的路径：无论Terminal是否被选作Core，
+v2.1／Hard均不得进入扩展。其他扩展规则不变，但会随Core及合格人群重新拟合。
+全双Core配置经冻结数据与原引擎逐字段等价验证；十套全榜与共同集合还独立核对了原始成绩、
+固定份额、缺测、总分和排序，见`independent_validation.json`。
+这些方案依然是按指定顺序筛选的实验，未修改正式方案18、站点和每日Action。
+
 ## 生产限制与后续工作
 
 1. 扩展池中部分成绩仍混合 result operator、agent scaffold、prompt、采样或版本；benchmark 控制方独立并不消除这些协议差异。

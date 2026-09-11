@@ -1,0 +1,1225 @@
+{
+  "core_combinations": 240,
+  "valid_core_combinations": 160,
+  "skipped_core_combinations": 89,
+  "weight_vectors": 367376,
+  "weight_range": [
+    9,
+    40
+  ],
+  "weight_step": 1,
+  "weight_grid_percent": "9%–40%，1 个百分点步长，五领域合计 100%",
+  "evaluated_core_weight_combinations": 26083696,
+  "passing_combinations": 30,
+  "distinct_core_combinations": 1,
+  "coarse_5pp_passing_combinations": 0,
+  "minimum_population": 100,
+  "minimum_margin": 0.05,
+  "core_options": {
+    "coding": [
+      [
+        "Terminal-Bench v4.0",
+        "SciCode"
+      ],
+      [
+        "Terminal-Bench v4.0",
+        "LiveCodeBench"
+      ]
+    ],
+    "agentic-tool-work": [
+      [
+        "AutomationBench-AA",
+        "τ³-Banking"
+      ],
+      [
+        "AutomationBench-AA",
+        "AA-Briefcase"
+      ],
+      [
+        "τ³-Banking",
+        "AA-Briefcase"
+      ],
+      [
+        "AutomationBench-AA",
+        "GDPval-AA v2"
+      ],
+      [
+        "τ²-Bench Telecom",
+        "τ³-Banking"
+      ]
+    ],
+    "hard-reasoning": [
+      [
+        "CritPt",
+        "Humanity's Last Exam"
+      ],
+      [
+        "CritPt",
+        "GPQA Diamond"
+      ],
+      [
+        "Humanity's Last Exam",
+        "GPQA Diamond"
+      ],
+      [
+        "CritPt",
+        "AIME 2025"
+      ]
+    ],
+    "knowledge-science": [
+      [
+        "AA-Omniscience Accuracy",
+        "GPQA Diamond"
+      ],
+      [
+        "AA-Omniscience Accuracy",
+        "MMMU-Pro"
+      ],
+      [
+        "AA-Omniscience Accuracy",
+        "Humanity's Last Exam"
+      ]
+    ],
+    "instruction-context": [
+      [
+        "AA-LCR v1.1",
+        "GDP.pdf"
+      ],
+      [
+        "AA-LCR v1.1",
+        "IFBench"
+      ]
+    ]
+  },
+  "candidates": [
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        30,
+        30,
+        22
+      ],
+      "population": 112,
+      "minimum_margin": 0.07974949999999836,
+      "distance_from_equal": 44,
+      "sensitivity_passing": 7,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        30,
+        31,
+        21
+      ],
+      "population": 112,
+      "minimum_margin": 0.05763600000000224,
+      "distance_from_equal": 44,
+      "sensitivity_passing": 5,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        31,
+        30,
+        21
+      ],
+      "population": 112,
+      "minimum_margin": 0.11151199999999761,
+      "distance_from_equal": 44,
+      "sensitivity_passing": 12,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        31,
+        31,
+        20
+      ],
+      "population": 112,
+      "minimum_margin": 0.060597499999992976,
+      "distance_from_equal": 44,
+      "sensitivity_passing": 6,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        32,
+        29,
+        21
+      ],
+      "population": 112,
+      "minimum_margin": 0.05110750000000763,
+      "distance_from_equal": 44,
+      "sensitivity_passing": 10,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        32,
+        30,
+        20
+      ],
+      "population": 112,
+      "minimum_margin": 0.1299810000000008,
+      "distance_from_equal": 44,
+      "sensitivity_passing": 14,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        33,
+        29,
+        20
+      ],
+      "population": 112,
+      "minimum_margin": 0.08287000000000688,
+      "distance_from_equal": 44,
+      "sensitivity_passing": 12,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        33,
+        30,
+        19
+      ],
+      "population": 112,
+      "minimum_margin": 0.11402850000000342,
+      "distance_from_equal": 46,
+      "sensitivity_passing": 16,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        34,
+        29,
+        19
+      ],
+      "population": 112,
+      "minimum_margin": 0.11463250000000613,
+      "distance_from_equal": 46,
+      "sensitivity_passing": 13,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        34,
+        30,
+        18
+      ],
+      "population": 112,
+      "minimum_margin": 0.09807599999999894,
+      "distance_from_equal": 48,
+      "sensitivity_passing": 14,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        35,
+        28,
+        19
+      ],
+      "population": 112,
+      "minimum_margin": 0.05422800000000194,
+      "distance_from_equal": 46,
+      "sensitivity_passing": 11,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        35,
+        29,
+        18
+      ],
+      "population": 112,
+      "minimum_margin": 0.1463950000000125,
+      "distance_from_equal": 48,
+      "sensitivity_passing": 15,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        35,
+        30,
+        17
+      ],
+      "population": 112,
+      "minimum_margin": 0.08212350000000157,
+      "distance_from_equal": 50,
+      "sensitivity_passing": 12,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        36,
+        28,
+        18
+      ],
+      "population": 112,
+      "minimum_margin": 0.08599050000000119,
+      "distance_from_equal": 48,
+      "sensitivity_passing": 12,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        36,
+        29,
+        17
+      ],
+      "population": 112,
+      "minimum_margin": 0.13853327171522523,
+      "distance_from_equal": 50,
+      "sensitivity_passing": 15,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        36,
+        30,
+        16
+      ],
+      "population": 112,
+      "minimum_margin": 0.0661710000000042,
+      "distance_from_equal": 52,
+      "sensitivity_passing": 8,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        37,
+        28,
+        17
+      ],
+      "population": 112,
+      "minimum_margin": 0.11775300000000755,
+      "distance_from_equal": 50,
+      "sensitivity_passing": 13,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        37,
+        29,
+        16
+      ],
+      "population": 112,
+      "minimum_margin": 0.10291377171522242,
+      "distance_from_equal": 52,
+      "sensitivity_passing": 13,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        38,
+        27,
+        17
+      ],
+      "population": 112,
+      "minimum_margin": 0.057348500000003355,
+      "distance_from_equal": 50,
+      "sensitivity_passing": 11,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        38,
+        28,
+        16
+      ],
+      "population": 112,
+      "minimum_margin": 0.12141577171522044,
+      "distance_from_equal": 52,
+      "sensitivity_passing": 14,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        38,
+        29,
+        15
+      ],
+      "population": 112,
+      "minimum_margin": 0.06729427171521962,
+      "distance_from_equal": 54,
+      "sensitivity_passing": 10,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        39,
+        27,
+        16
+      ],
+      "population": 112,
+      "minimum_margin": 0.0891110000000026,
+      "distance_from_equal": 52,
+      "sensitivity_passing": 12,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        39,
+        28,
+        15
+      ],
+      "population": 112,
+      "minimum_margin": 0.08579627171521764,
+      "distance_from_equal": 54,
+      "sensitivity_passing": 13,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        40,
+        27,
+        15
+      ],
+      "population": 112,
+      "minimum_margin": 0.10429827171522277,
+      "distance_from_equal": 54,
+      "sensitivity_passing": 13,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        9,
+        40,
+        28,
+        14
+      ],
+      "population": 112,
+      "minimum_margin": 0.050176771715221946,
+      "distance_from_equal": 56,
+      "sensitivity_passing": 10,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        10,
+        32,
+        30,
+        19
+      ],
+      "population": 112,
+      "minimum_margin": 0.05311200000000582,
+      "distance_from_equal": 44,
+      "sensitivity_passing": 8,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        10,
+        33,
+        30,
+        18
+      ],
+      "population": 112,
+      "minimum_margin": 0.0692304999999962,
+      "distance_from_equal": 46,
+      "sensitivity_passing": 7,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        9,
+        10,
+        35,
+        29,
+        17
+      ],
+      "population": 112,
+      "minimum_margin": 0.056232500000007235,
+      "distance_from_equal": 48,
+      "sensitivity_passing": 7,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        10,
+        9,
+        32,
+        30,
+        19
+      ],
+      "population": 112,
+      "minimum_margin": 0.05512749999999755,
+      "distance_from_equal": 44,
+      "sensitivity_passing": 6,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    },
+    {
+      "core": {
+        "coding": [
+          "Terminal-Bench v4.0",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        10,
+        9,
+        33,
+        30,
+        18
+      ],
+      "population": 112,
+      "minimum_margin": 0.05147550000000223,
+      "distance_from_equal": 46,
+      "sensitivity_passing": 6,
+      "sensitivity_total": 20,
+      "missing_core_total": 100
+    }
+  ],
+  "previous_range_search": {
+    "core_combinations": 240,
+    "valid_core_combinations": 160,
+    "skipped_core_combinations": 89,
+    "weight_vectors": 271976,
+    "weight_range": [
+      10,
+      40
+    ],
+    "weight_step": 1,
+    "weight_grid_percent": "10%–40%，1 个百分点步长，五领域合计 100%",
+    "evaluated_core_weight_combinations": 19310296,
+    "passing_combinations": 0,
+    "distinct_core_combinations": 0,
+    "coarse_5pp_passing_combinations": 0,
+    "minimum_population": 100,
+    "minimum_margin": 0.05
+  },
+  "range_change_reason": "原 10%–40% 范围未能给出十套九条全过的方案；只将下限细化到 9%，上限 40%、九条偏好、0.05 分差和全部计分规则保持不变"
+}

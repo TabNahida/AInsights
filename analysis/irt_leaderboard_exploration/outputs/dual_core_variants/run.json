@@ -1,0 +1,6024 @@
+{
+  "source_generated_at": "2026-09-08T23:56:02+00:00",
+  "experiment_date": "2026-09-11",
+  "source_hashes": {
+    "docs\\data\\models.json": "fa3eec5528773d4a4955f7d32343877a53d9a0c4e5a88c60a06d3c1eee67bb39",
+    "ArtificialAnalysis\\artificialanalysis_raw_scores_wide.csv": "67533b295c55c0f95228260931fb14edf7b16a1b67be668635899aa04b0d2f98"
+  },
+  "input_model_count": 644,
+  "representative_count": 471,
+  "common_population": 112,
+  "selection": "ten distinct Core configurations, five equal boards; preferences audited without optimizing rank order",
+  "variants": {
+    "dc01": {
+      "label": "01 最新任务基线",
+      "purpose": "采用当前任务型、科学推理与知识测试，作为其他九套的共同参照。",
+      "tradeoff": "两项上下文均偏文档理解；GDP.pdf 覆盖较新，较旧模型可能单缺该项。",
+      "core": {
+        "coding": [
+          "Terminal-Bench effective",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "fallback": "calibrated"
+    },
+    "dc02": {
+      "label": "02 Banking＋知识工作",
+      "purpose": "把 Agent 的 Automation 换成 Briefcase，比较银行操作与长流程知识工作交付。",
+      "tradeoff": "Briefcase 为 Elo 换算分，非任务通过率；缺该项保留半份惩罚，例如 Flash-Next。",
+      "core": {
+        "coding": [
+          "Terminal-Bench effective",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking",
+          "AA-Briefcase"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "fallback": "calibrated"
+    },
+    "dc03": {
+      "label": "03 自动化＋知识工作",
+      "purpose": "把 Agent 的 Banking 换成 Briefcase，强调 SaaS 自动化及工作成果交付。",
+      "tradeoff": "两项都是较新测试，老模型常同时缺失而被领域门槛剔除；Briefcase 是 Elo 换算分。",
+      "core": {
+        "coding": [
+          "Terminal-Bench effective",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "AA-Briefcase"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "fallback": "calibrated"
+    },
+    "dc04": {
+      "label": "04 自动化＋职业任务",
+      "purpose": "把 Banking 换成 GDPval v2，观察职业任务能力对 Agent 板块的影响。",
+      "tradeoff": "GDPval v2 是 Elo 换算分，任务由 OpenAI 控制；这是本轮显式实验，不代表采用原独立基准准入政策。",
+      "core": {
+        "coding": [
+          "Terminal-Bench effective",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "GDPval-AA v2"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "fallback": "calibrated"
+    },
+    "dc05": {
+      "label": "05 指令遵循对照",
+      "purpose": "上下文用 LCR＋IFBench，将 PDF 问答替换为指令遵循测试。",
+      "tradeoff": "不少最新模型缺 IFBench，其指令／上下文基础分最多只获得 LCR 的半份。",
+      "core": {
+        "coding": [
+          "Terminal-Bench effective",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "weights": [
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "fallback": "calibrated"
+    },
+    "dc06": {
+      "label": "06 算法编程对照",
+      "purpose": "用 LiveCodeBench 替代 SciCode，比较算法代码能力与终端任务能力。",
+      "tradeoff": "当前新旗舰多缺 LiveCodeBench，编程基础分因此只获得 Terminal 的半份；不会用网站拟合补值。",
+      "core": {
+        "coding": [
+          "Terminal-Bench effective",
+          "LiveCodeBench"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "fallback": "calibrated"
+    },
+    "dc07": {
+      "label": "07 算法＋指令双替换",
+      "purpose": "同时采用 LiveCodeBench 和 IFBench，检验两项历史高覆盖测试共同进入 Core 的影响。",
+      "tradeoff": "不少新模型会累计缺两项，仍可入榜但两个领域各损失半份；这是缺测规则的压力对照。",
+      "core": {
+        "coding": [
+          "Terminal-Bench effective",
+          "LiveCodeBench"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "IFBench"
+        ]
+      },
+      "weights": [
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "fallback": "calibrated"
+    },
+    "dc08": {
+      "label": "08 数学竞赛对照",
+      "purpose": "推理用 CritPt＋AIME 2025，将广域 HLE 替换为数学竞赛。",
+      "tradeoff": "AIME 2025 的旧模型覆盖较多，新模型缺测较多；推理板块单缺时只计 CritPt 的半份。",
+      "core": {
+        "coding": [
+          "Terminal-Bench effective",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "fallback": "calibrated"
+    },
+    "dc09": {
+      "label": "09 多模态知识对照",
+      "purpose": "知识用 Omniscience Accuracy＋MMMU-Pro，加入图像与跨学科理解。",
+      "tradeoff": "不同模型的图像能力与测评覆盖不同，缺 MMMU-Pro 不自动视为低能力，但会产生明确的半份分数损失。",
+      "core": {
+        "coding": [
+          "Terminal-Bench effective",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "MMMU-Pro"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "fallback": "calibrated"
+    },
+    "dc10": {
+      "label": "10 电信＋银行覆盖对照",
+      "purpose": "Agent 用 Telecom＋Banking，观察较高历史覆盖能保留多少模型。",
+      "tradeoff": "新旗舰通常缺 Telecom，旧模型则可能缺新版文档或科学编程结果；较广入榜不代表证据同样完整。",
+      "core": {
+        "coding": [
+          "Terminal-Bench effective",
+          "SciCode"
+        ],
+        "agentic-tool-work": [
+          "τ²-Bench Telecom",
+          "τ³-Banking"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "Humanity's Last Exam"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy",
+          "GPQA Diamond"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ]
+      },
+      "weights": [
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "fallback": "calibrated"
+    }
+  },
+  "terminal_maps": {
+    "Terminal-Bench v2.1": {
+      "enabled": true,
+      "pairs": 102,
+      "slope": 0.2685220665295378,
+      "intercept": -6.199443864001481,
+      "median_old": 52.621750000000006,
+      "median_v4": 0.5051,
+      "median_gap": 46.25465,
+      "in_sample_mae": 6.056274117345375,
+      "fraction_discounted_old_above_observed_v4": 0.9803921568627451
+    },
+    "Terminal-Bench Hard": {
+      "enabled": true,
+      "pairs": 65,
+      "slope": 0.2779547422819615,
+      "intercept": -4.502315118252364,
+      "median_old": 27.2727,
+      "median_v4": 0.0,
+      "median_gap": 26.010099999999994,
+      "in_sample_mae": 3.9377803375758518,
+      "fraction_discounted_old_above_observed_v4": 0.9846153846153847
+    }
+  },
+  "coverage": [
+    {
+      "benchmark": "GPQA Diamond",
+      "configurations": 612,
+      "variant_groups": 445,
+      "creators": 58,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 445
+    },
+    {
+      "benchmark": "Humanity's Last Exam",
+      "configurations": 607,
+      "variant_groups": 437,
+      "creators": 58,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 437
+    },
+    {
+      "benchmark": "Terminal-Bench effective",
+      "configurations": 528,
+      "variant_groups": 362,
+      "creators": 55,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "合成版本槽位：优先 v4；同配置旧版先尺度换算再折扣，不是独立的直接观测测试",
+      "fixed_representatives": 362
+    },
+    {
+      "benchmark": "CritPt",
+      "configurations": 520,
+      "variant_groups": 357,
+      "creators": 55,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 357
+    },
+    {
+      "benchmark": "AA-Omniscience Accuracy",
+      "configurations": 519,
+      "variant_groups": 354,
+      "creators": 55,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 354
+    },
+    {
+      "benchmark": "AA-Omniscience Non-Hallucination Rate",
+      "configurations": 519,
+      "variant_groups": 354,
+      "creators": 55,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "同一 Omniscience 家族的另一指标",
+      "fixed_representatives": 354
+    },
+    {
+      "benchmark": "AA-LCR",
+      "configurations": 516,
+      "variant_groups": 357,
+      "creators": 54,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "当前 AA-LCR v1.1 的兼容别名，不重复计权",
+      "fixed_representatives": 354
+    },
+    {
+      "benchmark": "AA-LCR v1.1",
+      "configurations": 516,
+      "variant_groups": 357,
+      "creators": 54,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 354
+    },
+    {
+      "benchmark": "IFBench",
+      "configurations": 450,
+      "variant_groups": 321,
+      "creators": 49,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 321
+    },
+    {
+      "benchmark": "τ²-Bench Telecom",
+      "configurations": 440,
+      "variant_groups": 313,
+      "creators": 48,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 313
+    },
+    {
+      "benchmark": "Terminal-Bench Hard",
+      "configurations": 432,
+      "variant_groups": 305,
+      "creators": 48,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 305
+    },
+    {
+      "benchmark": "LiveCodeBench",
+      "configurations": 343,
+      "variant_groups": 269,
+      "creators": 40,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 269
+    },
+    {
+      "benchmark": "AIME 2025",
+      "configurations": 270,
+      "variant_groups": 199,
+      "creators": 36,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 199
+    },
+    {
+      "benchmark": "MMMU-Pro",
+      "configurations": 258,
+      "variant_groups": 152,
+      "creators": 28,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 147
+    },
+    {
+      "benchmark": "GDPval-AA",
+      "configurations": 239,
+      "variant_groups": 174,
+      "creators": 40,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "历史留存列，不作为新 Core",
+      "fixed_representatives": 170
+    },
+    {
+      "benchmark": "GDPval-AA v2",
+      "configurations": 239,
+      "variant_groups": 174,
+      "creators": 40,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "Elo 换算分，非原生通过率",
+      "fixed_representatives": 170
+    },
+    {
+      "benchmark": "Terminal-Bench v2.1",
+      "configurations": 236,
+      "variant_groups": 176,
+      "creators": 40,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 172
+    },
+    {
+      "benchmark": "τ³-Banking",
+      "configurations": 204,
+      "variant_groups": 149,
+      "creators": 36,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 145
+    },
+    {
+      "benchmark": "SciCode",
+      "configurations": 167,
+      "variant_groups": 122,
+      "creators": 35,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 121
+    },
+    {
+      "benchmark": "AA-Briefcase",
+      "configurations": 159,
+      "variant_groups": 113,
+      "creators": 28,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "Elo 换算分，非原生通过率",
+      "fixed_representatives": 112
+    },
+    {
+      "benchmark": "AutomationBench-AA",
+      "configurations": 153,
+      "variant_groups": 111,
+      "creators": 27,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 110
+    },
+    {
+      "benchmark": "GDP.pdf",
+      "configurations": 147,
+      "variant_groups": 110,
+      "creators": 26,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 109
+    },
+    {
+      "benchmark": "Terminal-Bench v4.0",
+      "configurations": 142,
+      "variant_groups": 103,
+      "creators": 26,
+      "at_least_100_configurations": true,
+      "at_least_100_groups": true,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 102
+    },
+    {
+      "benchmark": "ITBench-AA",
+      "configurations": 33,
+      "variant_groups": 31,
+      "creators": 13,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 30
+    },
+    {
+      "benchmark": "APEX-Agents-AA",
+      "configurations": 30,
+      "variant_groups": 30,
+      "creators": 13,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 30
+    },
+    {
+      "benchmark": "benchmark:gpqa-diamond",
+      "configurations": 15,
+      "variant_groups": 15,
+      "creators": 4,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 14
+    },
+    {
+      "benchmark": "benchmark:deepswe-v1-1",
+      "configurations": 10,
+      "variant_groups": 10,
+      "creators": 6,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 9
+    },
+    {
+      "benchmark": "benchmark:ifbench",
+      "configurations": 10,
+      "variant_groups": 10,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 9
+    },
+    {
+      "benchmark": "benchmark:terminal-bench-2-1",
+      "configurations": 10,
+      "variant_groups": 10,
+      "creators": 6,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 9
+    },
+    {
+      "benchmark": "benchmark:toolathlon",
+      "configurations": 10,
+      "variant_groups": 10,
+      "creators": 6,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 10
+    },
+    {
+      "benchmark": "benchmark:erqa",
+      "configurations": 9,
+      "variant_groups": 9,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 8
+    },
+    {
+      "benchmark": "benchmark:realworldqa",
+      "configurations": 9,
+      "variant_groups": 9,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 8
+    },
+    {
+      "benchmark": "benchmark:swe-bench-pro",
+      "configurations": 9,
+      "variant_groups": 9,
+      "creators": 3,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 8
+    },
+    {
+      "benchmark": "benchmark:aa-lcr",
+      "configurations": 8,
+      "variant_groups": 8,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 8
+    },
+    {
+      "benchmark": "benchmark:automationbench",
+      "configurations": 8,
+      "variant_groups": 8,
+      "creators": 4,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 8
+    },
+    {
+      "benchmark": "benchmark:bfcl-v4",
+      "configurations": 8,
+      "variant_groups": 8,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 8
+    },
+    {
+      "benchmark": "benchmark:hle",
+      "configurations": 8,
+      "variant_groups": 8,
+      "creators": 5,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 7
+    },
+    {
+      "benchmark": "benchmark:livecodebench",
+      "configurations": 8,
+      "variant_groups": 8,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 7
+    },
+    {
+      "benchmark": "benchmark:lvbench",
+      "configurations": 8,
+      "variant_groups": 8,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 8
+    },
+    {
+      "benchmark": "benchmark:mmlu-pro",
+      "configurations": 8,
+      "variant_groups": 8,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 8
+    },
+    {
+      "benchmark": "benchmark:mmmu-pro",
+      "configurations": 8,
+      "variant_groups": 8,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 8
+    },
+    {
+      "benchmark": "benchmark:osworld-verified",
+      "configurations": 8,
+      "variant_groups": 8,
+      "creators": 3,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 7
+    },
+    {
+      "benchmark": "benchmark:tau2-bench-weighted",
+      "configurations": 8,
+      "variant_groups": 8,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 8
+    },
+    {
+      "benchmark": "benchmark:agents-last-exam",
+      "configurations": 7,
+      "variant_groups": 7,
+      "creators": 4,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 6
+    },
+    {
+      "benchmark": "benchmark:androidworld",
+      "configurations": 7,
+      "variant_groups": 7,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 6
+    },
+    {
+      "benchmark": "benchmark:browsecomp",
+      "configurations": 7,
+      "variant_groups": 7,
+      "creators": 4,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 7
+    },
+    {
+      "benchmark": "benchmark:mmlu-prox",
+      "configurations": 7,
+      "variant_groups": 7,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 7
+    },
+    {
+      "benchmark": "benchmark:mmmlu",
+      "configurations": 7,
+      "variant_groups": 7,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 7
+    },
+    {
+      "benchmark": "benchmark:mmvu",
+      "configurations": 7,
+      "variant_groups": 7,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 7
+    },
+    {
+      "benchmark": "benchmark:swe-bench-verified",
+      "configurations": 7,
+      "variant_groups": 7,
+      "creators": 3,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 7
+    },
+    {
+      "benchmark": "benchmark:wmt24-plusplus",
+      "configurations": 7,
+      "variant_groups": 7,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 7
+    },
+    {
+      "benchmark": "benchmark:babyvision",
+      "configurations": 6,
+      "variant_groups": 6,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 5
+    },
+    {
+      "benchmark": "benchmark:babyvision-python",
+      "configurations": 6,
+      "variant_groups": 6,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 5
+    },
+    {
+      "benchmark": "benchmark:charxiv-no-tools",
+      "configurations": 6,
+      "variant_groups": 6,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 5
+    },
+    {
+      "benchmark": "benchmark:hle-tools",
+      "configurations": 6,
+      "variant_groups": 6,
+      "creators": 5,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 6
+    },
+    {
+      "benchmark": "benchmark:longbench-v2-1m",
+      "configurations": 6,
+      "variant_groups": 6,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 6
+    },
+    {
+      "benchmark": "benchmark:nl2repo",
+      "configurations": 6,
+      "variant_groups": 6,
+      "creators": 3,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 5
+    },
+    {
+      "benchmark": "benchmark:charxiv-tools",
+      "configurations": 5,
+      "variant_groups": 5,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 4
+    },
+    {
+      "benchmark": "benchmark:osworld-2",
+      "configurations": 5,
+      "variant_groups": 5,
+      "creators": 3,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 5
+    },
+    {
+      "benchmark": "benchmark:arc-agi-3",
+      "configurations": 4,
+      "variant_groups": 4,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:exploitbench",
+      "configurations": 4,
+      "variant_groups": 4,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 4
+    },
+    {
+      "benchmark": "benchmark:gdp-pdf",
+      "configurations": 4,
+      "variant_groups": 4,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 4
+    },
+    {
+      "benchmark": "benchmark:gdpval-aa-elo",
+      "configurations": 4,
+      "variant_groups": 4,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 4
+    },
+    {
+      "benchmark": "benchmark:gdpval-aa-v2-elo",
+      "configurations": 4,
+      "variant_groups": 4,
+      "creators": 3,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 4
+    },
+    {
+      "benchmark": "benchmark:mathvision",
+      "configurations": 4,
+      "variant_groups": 4,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:mcp-atlas",
+      "configurations": 4,
+      "variant_groups": 4,
+      "creators": 3,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 4
+    },
+    {
+      "benchmark": "benchmark:swe-bench-multilingual",
+      "configurations": 4,
+      "variant_groups": 4,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 4
+    },
+    {
+      "benchmark": "benchmark:benchcad",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:benchcad-python",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:big-finance-bench",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:capture-the-flag",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:claw-eval-mm-pass3",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 2
+    },
+    {
+      "benchmark": "benchmark:coworkbench",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 2
+    },
+    {
+      "benchmark": "benchmark:cybergym",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:exploitgym",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:frontiermath-tier-1-3-v2",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:frontiermath-tier-4-v2",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:genebench-pro",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:graphwalks-bfs-1m-f1",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:graphwalks-bfs-256k-f1",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:healthbench-professional",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:internal-research-debugging",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:job-bench",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 2
+    },
+    {
+      "benchmark": "benchmark:kernelgen-1p",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:lifescibench",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:management-consulting-internal",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:mathvision-python",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 2
+    },
+    {
+      "benchmark": "benchmark:medchembench-internal",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:mmmu-pro-no-tools",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:mmmu-pro-tools",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:nanogpt",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:officeqa-pro",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:openai-mrcr-v2-256k-512k",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:openai-mrcr-v2-512k-1m",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:posttrainbench-lite",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:rsi-index",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:sec-bench-pro",
+      "configurations": 3,
+      "variant_groups": 3,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 3
+    },
+    {
+      "benchmark": "benchmark:aa-briefcase-elo",
+      "configurations": 2,
+      "variant_groups": 2,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 2
+    },
+    {
+      "benchmark": "benchmark:automationbench-v1-0-6",
+      "configurations": 2,
+      "variant_groups": 2,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 2
+    },
+    {
+      "benchmark": "benchmark:claw-eval-mm-average",
+      "configurations": 2,
+      "variant_groups": 2,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:codeforces-elo",
+      "configurations": 2,
+      "variant_groups": 2,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 2
+    },
+    {
+      "benchmark": "benchmark:critpt",
+      "configurations": 2,
+      "variant_groups": 2,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 2
+    },
+    {
+      "benchmark": "benchmark:deepswe",
+      "configurations": 2,
+      "variant_groups": 2,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 2
+    },
+    {
+      "benchmark": "benchmark:dsbench-hard",
+      "configurations": 2,
+      "variant_groups": 2,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 2
+    },
+    {
+      "benchmark": "benchmark:frontierswe-dominance",
+      "configurations": 2,
+      "variant_groups": 2,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 2
+    },
+    {
+      "benchmark": "benchmark:imoanswerbench",
+      "configurations": 2,
+      "variant_groups": 2,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 2
+    },
+    {
+      "benchmark": "benchmark:omnidocbench",
+      "configurations": 2,
+      "variant_groups": 2,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:posttrainbench",
+      "configurations": 2,
+      "variant_groups": 2,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 2
+    },
+    {
+      "benchmark": "benchmark:recreationbench",
+      "configurations": 2,
+      "variant_groups": 2,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:scicode",
+      "configurations": 2,
+      "variant_groups": 2,
+      "creators": 2,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 2
+    },
+    {
+      "benchmark": "benchmark:terminal-bench-2",
+      "configurations": 2,
+      "variant_groups": 2,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 2
+    },
+    {
+      "benchmark": "benchmark:vision2web",
+      "configurations": 2,
+      "variant_groups": 2,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:agents-last-exam-cli",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:aime-2025",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:apex-agents",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:arc-agi-1",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:arc-agi-2",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:blueprint-bench-2",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:corpfin-v2",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:cursorbench-3-2-0",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:deepsearchqa-f1",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:dsbench-fullstack",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:exploitgym-2h",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:exploitgym-6h",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:finance-agent-v2",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:frontiercode-diamond",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:frontiercode-v1-1-main",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:harvey-lab-aa",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:kimi-code-bench-v2",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:legal-agent-benchmark",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:legal-research-bench",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:mcp-mark-verified",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:mls-bench-lite",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:mmmu-pro-python",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:mrcr-v2-128k",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:osworld-2-aug2026-anthropic-partial",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:osworld-2-aug2026-anthropic-strict",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:perceptionbench",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:programbench",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:programbench-almost-solved",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:qwen-swebench",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 0
+    },
+    {
+      "benchmark": "benchmark:research-rubrics",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:saas-bench",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:skillsbench",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:spreadsheetbench-2",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:swe-bench-multimodal",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:swe-marathon",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:swe-marathon-v1-1",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:swe-mm",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 0
+    },
+    {
+      "benchmark": "benchmark:tau3-banking",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:terminal-bench-3",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:terminal-bench-4",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:terminal-bench-science-0-1",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:video-mme-sub",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:webarena-verified",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 0
+    },
+    {
+      "benchmark": "benchmark:worldvqa-forceanswer",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:zerobench-pass5",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    },
+    {
+      "benchmark": "benchmark:zerobench-python-pass5",
+      "configurations": 1,
+      "variant_groups": 1,
+      "creators": 1,
+      "at_least_100_configurations": false,
+      "at_least_100_groups": false,
+      "note": "直接观测；外部项目仅计确切配置、非复制、非推算成绩",
+      "fixed_representatives": 1
+    }
+  ],
+  "rule": {
+    "items_per_board": 2,
+    "items_total": 10,
+    "item_share": 0.5,
+    "missing_contribution": 0,
+    "exclude_at_missing": 4,
+    "exclude_empty_board": true,
+    "renormalize_missing": false,
+    "weights": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "bonus_requires_complete_board": true
+  },
+  "results": {
+    "dc01": {
+      "calibration": {
+        "cap": 28.82712260629608,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "SciCode"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro",
+              "benchmark:livecodebench"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.6887607237632383,
+                "intercept": 39.192605723506716
+              },
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 121
+          },
+          "agentic-tool-work": {
+            "core": [
+              "AutomationBench-AA",
+              "τ³-Banking"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 71,
+                "slope": 1.4615957145561476,
+                "intercept": 44.444327740587894
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.7676854609022367,
+                "intercept": 5.124970921047723
+              },
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.41351102802063316,
+                "intercept": 50.311661019566046
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.25720148901836337,
+                "intercept": 46.19927268478735
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 110
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 41,
+                "slope": 4.780284316087142,
+                "intercept": 28.798843209748625
+              }
+            ],
+            "complete_core_models": 144
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 74,
+                "slope": 0.890061424336859,
+                "intercept": 20.411864966228165
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 144
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "GDP.pdf"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 108
+          }
+        },
+        "population": 144,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -3.4128899999999973,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": 2.3293726218490534,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": 0.6617159588989594,
+            "passed": true
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": -0.0987700000000018,
+            "passed": false
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -3.4128899999999973,
+            "passed": false
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 2.6934999107250235,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 1.0003378117746777,
+            "passed": true
+          }
+        ]
+      },
+      "missing_distribution": {
+        "0": 105,
+        "2": 10,
+        "3": 22,
+        "1": 7
+      },
+      "common_calibration": {
+        "cap": 28.700285616514975,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "SciCode"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro",
+              "benchmark:livecodebench"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.6887607237632383,
+                "intercept": 39.192605723506716
+              },
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 111
+          },
+          "agentic-tool-work": {
+            "core": [
+              "AutomationBench-AA",
+              "τ³-Banking"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 71,
+                "slope": 1.4615957145561476,
+                "intercept": 44.444327740587894
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.7676854609022367,
+                "intercept": 5.124970921047723
+              },
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.41351102802063316,
+                "intercept": 50.311661019566046
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.25720148901836337,
+                "intercept": 46.19927268478735
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 110
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 30,
+                "slope": 7.774465266300725,
+                "intercept": 18.04764541804508
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 54,
+                "slope": 0.8475474254331542,
+                "intercept": 23.0534324095089
+              },
+              {
+                "enabled": false,
+                "observed_count": 2,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "GDP.pdf"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 107
+          }
+        },
+        "population": 112,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "common_preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -3.4128899999999973,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": 2.3293726218490534,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": 0.6617159588989594,
+            "passed": true
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": -0.0987700000000018,
+            "passed": false
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -3.4128899999999973,
+            "passed": false
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 2.726465690614944,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 1.0319891607580942,
+            "passed": true
+          }
+        ]
+      }
+    },
+    "dc02": {
+      "calibration": {
+        "cap": 27.213335681975707,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "SciCode"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro",
+              "benchmark:livecodebench"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.6887607237632383,
+                "intercept": 39.192605723506716
+              },
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 121
+          },
+          "agentic-tool-work": {
+            "core": [
+              "τ³-Banking",
+              "AA-Briefcase"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 69,
+                "slope": 1.5973960150036113,
+                "intercept": 45.763851053524576
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.8715274217325559,
+                "intercept": 5.295662136899978
+              },
+              {
+                "enabled": true,
+                "observed_count": 7,
+                "slope": 0.6944871444152406,
+                "intercept": 41.028235073672946
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.2903892972032061,
+                "intercept": 45.968140370697995
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 108
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 42,
+                "slope": 4.64065738088951,
+                "intercept": 29.271450391603977
+              }
+            ],
+            "complete_core_models": 148
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 76,
+                "slope": 0.8827471682886733,
+                "intercept": 20.71907773277148
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 148
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "GDP.pdf"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 108
+          }
+        },
+        "population": 148,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -4.313618449720522,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "margin": 2.7727140153292638,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -0.06391411939767977,
+            "passed": false
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": 1.541790000000006,
+            "passed": true
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -4.313618449720522,
+            "passed": false
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 7.806241458007342,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 5.534922885366491,
+            "passed": true
+          }
+        ]
+      },
+      "missing_distribution": {
+        "0": 102,
+        "1": 10,
+        "2": 11,
+        "3": 25
+      },
+      "common_calibration": {
+        "cap": 27.01397756260082,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "SciCode"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro",
+              "benchmark:livecodebench"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.6887607237632383,
+                "intercept": 39.192605723506716
+              },
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 111
+          },
+          "agentic-tool-work": {
+            "core": [
+              "τ³-Banking",
+              "AA-Briefcase"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 67,
+                "slope": 1.65201470151092,
+                "intercept": 45.14287979267037
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.8715274217325559,
+                "intercept": 5.295662136899978
+              },
+              {
+                "enabled": true,
+                "observed_count": 7,
+                "slope": 0.6944871444152406,
+                "intercept": 41.028235073672946
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.2903892972032061,
+                "intercept": 45.968140370697995
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 106
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 30,
+                "slope": 7.774465266300725,
+                "intercept": 18.04764541804508
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 54,
+                "slope": 0.8475474254331542,
+                "intercept": 23.0534324095089
+              },
+              {
+                "enabled": false,
+                "observed_count": 2,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "GDP.pdf"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 107
+          }
+        },
+        "population": 112,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "common_preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -4.313618449720522,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "margin": 2.7727140153292638,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -0.06391411939767977,
+            "passed": false
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": 1.541790000000006,
+            "passed": true
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -4.313618449720522,
+            "passed": false
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 7.833535690614937,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 5.5905791607580895,
+            "passed": true
+          }
+        ]
+      }
+    },
+    "dc03": {
+      "calibration": {
+        "cap": 23.200796983711918,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "SciCode"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro",
+              "benchmark:livecodebench"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.6887607237632383,
+                "intercept": 39.192605723506716
+              },
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 111
+          },
+          "agentic-tool-work": {
+            "core": [
+              "AutomationBench-AA",
+              "AA-Briefcase"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "τ³-Banking",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 67,
+                "slope": 1.261203579766272,
+                "intercept": 51.6687932927064
+              },
+              {
+                "enabled": true,
+                "observed_count": 104,
+                "slope": 0.6542459181042442,
+                "intercept": 8.3821335972809
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.6566529369594415,
+                "intercept": 9.549272634039735
+              },
+              {
+                "enabled": true,
+                "observed_count": 7,
+                "slope": 0.5163186396297692,
+                "intercept": 44.845699004254804
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.4169603074433122,
+                "intercept": 37.17882239629708
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 104
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 31,
+                "slope": 6.325425935396377,
+                "intercept": 23.197617807940482
+              }
+            ],
+            "complete_core_models": 118
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 57,
+                "slope": 0.8349232447789212,
+                "intercept": 23.587363764662747
+              },
+              {
+                "enabled": false,
+                "observed_count": 2,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 118
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "GDP.pdf"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 107
+          }
+        },
+        "population": 118,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -4.647513922352104,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": 1.6952007522309742,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": 1.0372187948620848,
+            "passed": true
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": 0.6226704987730116,
+            "passed": true
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -4.647513922352104,
+            "passed": false
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 9.043895799481987,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 6.63523224627987,
+            "passed": true
+          }
+        ]
+      },
+      "missing_distribution": {
+        "0": 100,
+        "1": 11,
+        "3": 7
+      },
+      "common_calibration": {
+        "cap": 23.074102221893163,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "SciCode"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro",
+              "benchmark:livecodebench"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.6887607237632383,
+                "intercept": 39.192605723506716
+              },
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 111
+          },
+          "agentic-tool-work": {
+            "core": [
+              "AutomationBench-AA",
+              "AA-Briefcase"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "τ³-Banking",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 67,
+                "slope": 1.261203579766272,
+                "intercept": 51.6687932927064
+              },
+              {
+                "enabled": true,
+                "observed_count": 104,
+                "slope": 0.6542459181042442,
+                "intercept": 8.3821335972809
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.6566529369594415,
+                "intercept": 9.549272634039735
+              },
+              {
+                "enabled": true,
+                "observed_count": 7,
+                "slope": 0.5163186396297692,
+                "intercept": 44.845699004254804
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.4169603074433122,
+                "intercept": 37.17882239629708
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 104
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 30,
+                "slope": 7.774465266300725,
+                "intercept": 18.04764541804508
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 54,
+                "slope": 0.8475474254331542,
+                "intercept": 23.0534324095089
+              },
+              {
+                "enabled": false,
+                "observed_count": 2,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "GDP.pdf"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 107
+          }
+        },
+        "population": 112,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "common_preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -4.647513922352104,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": 1.6952007522309742,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": 1.0372187948620848,
+            "passed": true
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": 0.6226704987730116,
+            "passed": true
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -4.647513922352104,
+            "passed": false
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 9.03410688356088,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 6.675925693389658,
+            "passed": true
+          }
+        ]
+      }
+    },
+    "dc04": {
+      "calibration": {
+        "cap": 22.46853278350899,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "SciCode"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro",
+              "benchmark:livecodebench"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.6887607237632383,
+                "intercept": 39.192605723506716
+              },
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 121
+          },
+          "agentic-tool-work": {
+            "core": [
+              "AutomationBench-AA",
+              "GDPval-AA v2"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "τ³-Banking",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 71,
+                "slope": 1.376714712969152,
+                "intercept": 43.674203907753466
+              },
+              {
+                "enabled": true,
+                "observed_count": 110,
+                "slope": 0.6578630079019016,
+                "intercept": 5.492038833988554
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.6877001484160878,
+                "intercept": 4.867813701046483
+              },
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.4075755571532021,
+                "intercept": 47.859370384467745
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.5137422975977051,
+                "intercept": 29.89967423796098
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 110
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 46,
+                "slope": 5.507019957020151,
+                "intercept": 26.41830826237424
+              }
+            ],
+            "complete_core_models": 168
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 84,
+                "slope": 0.8470110848261673,
+                "intercept": 23.17054657740737
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.9120088675237139,
+                "intercept": 37.86576507054452
+              }
+            ],
+            "complete_core_models": 168
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "GDP.pdf"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 108
+          }
+        },
+        "population": 168,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -4.382198290052756,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": 2.5695008108423636,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": 0.28143229815795223,
+            "passed": true
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": 0.31813768250934515,
+            "passed": true
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -4.382198290052756,
+            "passed": false
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 3.7338646999670217,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 1.2976360201479196,
+            "passed": true
+          }
+        ]
+      },
+      "missing_distribution": {
+        "0": 105,
+        "2": 10,
+        "1": 7,
+        "3": 46
+      },
+      "common_calibration": {
+        "cap": 21.585764590621267,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "SciCode"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro",
+              "benchmark:livecodebench"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.6887607237632383,
+                "intercept": 39.192605723506716
+              },
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 111
+          },
+          "agentic-tool-work": {
+            "core": [
+              "AutomationBench-AA",
+              "GDPval-AA v2"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "τ³-Banking",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 71,
+                "slope": 1.376714712969152,
+                "intercept": 43.674203907753466
+              },
+              {
+                "enabled": true,
+                "observed_count": 110,
+                "slope": 0.6578630079019016,
+                "intercept": 5.492038833988554
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.6877001484160878,
+                "intercept": 4.867813701046483
+              },
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.4075755571532021,
+                "intercept": 47.859370384467745
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.5137422975977051,
+                "intercept": 29.89967423796098
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 110
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 30,
+                "slope": 7.774465266300725,
+                "intercept": 18.04764541804508
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 54,
+                "slope": 0.8475474254331542,
+                "intercept": 23.0534324095089
+              },
+              {
+                "enabled": false,
+                "observed_count": 2,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "GDP.pdf"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 107
+          }
+        },
+        "population": 112,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "common_preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -4.382198290052756,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": 2.5695008108423636,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": 0.28143229815795223,
+            "passed": true
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": 0.31813768250934515,
+            "passed": true
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -4.382198290052756,
+            "passed": false
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 3.73344881609696,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 1.2804788891680374,
+            "passed": true
+          }
+        ]
+      }
+    },
+    "dc05": {
+      "calibration": {
+        "cap": 28.82712260629608,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "SciCode"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro",
+              "benchmark:livecodebench"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.6887607237632383,
+                "intercept": 39.192605723506716
+              },
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 121
+          },
+          "agentic-tool-work": {
+            "core": [
+              "AutomationBench-AA",
+              "τ³-Banking"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 71,
+                "slope": 1.4615957145561476,
+                "intercept": 44.444327740587894
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.7676854609022367,
+                "intercept": 5.124970921047723
+              },
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.41351102802063316,
+                "intercept": 50.311661019566046
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.25720148901836337,
+                "intercept": 46.19927268478735
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 110
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 41,
+                "slope": 4.780284316087142,
+                "intercept": 28.798843209748625
+              }
+            ],
+            "complete_core_models": 144
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 74,
+                "slope": 0.890061424336859,
+                "intercept": 20.411864966228165
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 144
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "IFBench"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 1,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 92
+          }
+        },
+        "population": 144,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -6.38522404110104,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "margin": -3.5758514192519897,
+            "passed": false
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -6.38522404110104,
+            "passed": false
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": -0.19877000000000322,
+            "passed": false
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": 4.712140000000005,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 2.2334999107250226,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 1.0003378117746777,
+            "passed": true
+          }
+        ]
+      },
+      "missing_distribution": {
+        "0": 69,
+        "1": 42,
+        "2": 32,
+        "3": 1
+      },
+      "common_calibration": {
+        "cap": 28.700285616514975,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "SciCode"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro",
+              "benchmark:livecodebench"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.6887607237632383,
+                "intercept": 39.192605723506716
+              },
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 111
+          },
+          "agentic-tool-work": {
+            "core": [
+              "AutomationBench-AA",
+              "τ³-Banking"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 71,
+                "slope": 1.4615957145561476,
+                "intercept": 44.444327740587894
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.7676854609022367,
+                "intercept": 5.124970921047723
+              },
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.41351102802063316,
+                "intercept": 50.311661019566046
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.25720148901836337,
+                "intercept": 46.19927268478735
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 110
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 30,
+                "slope": 7.774465266300725,
+                "intercept": 18.04764541804508
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 54,
+                "slope": 0.8475474254331542,
+                "intercept": 23.0534324095089
+              },
+              {
+                "enabled": false,
+                "observed_count": 2,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "IFBench"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 1,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 70
+          }
+        },
+        "population": 112,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "common_preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -6.38522404110104,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "margin": -3.5758514192519897,
+            "passed": false
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -6.38522404110104,
+            "passed": false
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": -0.19877000000000322,
+            "passed": false
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": 4.712140000000005,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 2.266465690614943,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 1.0319891607580942,
+            "passed": true
+          }
+        ]
+      }
+    },
+    "dc06": {
+      "calibration": {
+        "cap": 29.515831514827504,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "LiveCodeBench"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 0,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 42
+          },
+          "agentic-tool-work": {
+            "core": [
+              "AutomationBench-AA",
+              "τ³-Banking"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 71,
+                "slope": 1.4615957145561476,
+                "intercept": 44.444327740587894
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.7676854609022367,
+                "intercept": 5.124970921047723
+              },
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.41351102802063316,
+                "intercept": 50.311661019566046
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.25720148901836337,
+                "intercept": 46.19927268478735
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 110
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 41,
+                "slope": 4.780284316087142,
+                "intercept": 28.798843209748625
+              }
+            ],
+            "complete_core_models": 144
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 74,
+                "slope": 0.890061424336859,
+                "intercept": 20.411864966228165
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 144
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "GDP.pdf"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 108
+          }
+        },
+        "population": 144,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -3.1119599999999963,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": 1.1957339333856538,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": 2.15144895946716,
+            "passed": true
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": -0.3881200000000007,
+            "passed": false
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -3.1119599999999963,
+            "passed": false
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 2.4972393389323955,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 0.7230572399820474,
+            "passed": true
+          }
+        ]
+      },
+      "missing_distribution": {
+        "1": 78,
+        "2": 17,
+        "0": 29,
+        "3": 20
+      },
+      "common_calibration": {
+        "cap": 29.50681200310663,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "LiveCodeBench"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 0,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 31
+          },
+          "agentic-tool-work": {
+            "core": [
+              "AutomationBench-AA",
+              "τ³-Banking"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 71,
+                "slope": 1.4615957145561476,
+                "intercept": 44.444327740587894
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.7676854609022367,
+                "intercept": 5.124970921047723
+              },
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.41351102802063316,
+                "intercept": 50.311661019566046
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.25720148901836337,
+                "intercept": 46.19927268478735
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 110
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 30,
+                "slope": 7.774465266300725,
+                "intercept": 18.04764541804508
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 54,
+                "slope": 0.8475474254331542,
+                "intercept": 23.0534324095089
+              },
+              {
+                "enabled": false,
+                "observed_count": 2,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "GDP.pdf"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 107
+          }
+        },
+        "population": 112,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "common_preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -3.1119599999999963,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": 1.1957339333856538,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": 2.15144895946716,
+            "passed": true
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": -0.3881200000000007,
+            "passed": false
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -3.1119599999999963,
+            "passed": false
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 2.530205118822316,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 0.7547085889654639,
+            "passed": true
+          }
+        ]
+      }
+    },
+    "dc07": {
+      "calibration": {
+        "cap": 29.515831514827504,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "LiveCodeBench"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 0,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 42
+          },
+          "agentic-tool-work": {
+            "core": [
+              "AutomationBench-AA",
+              "τ³-Banking"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 71,
+                "slope": 1.4615957145561476,
+                "intercept": 44.444327740587894
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.7676854609022367,
+                "intercept": 5.124970921047723
+              },
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.41351102802063316,
+                "intercept": 50.311661019566046
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.25720148901836337,
+                "intercept": 46.19927268478735
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 110
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 41,
+                "slope": 4.780284316087142,
+                "intercept": 28.798843209748625
+              }
+            ],
+            "complete_core_models": 144
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 74,
+                "slope": 0.890061424336859,
+                "intercept": 20.411864966228165
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 144
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "IFBench"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 1,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 92
+          }
+        },
+        "population": 144,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -4.895491040532846,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "margin": -3.2197571071471884,
+            "passed": false
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -4.895491040532846,
+            "passed": false
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": -0.4881200000000021,
+            "passed": false
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": 5.013070000000006,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 2.0372393389323946,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 0.7230572399820474,
+            "passed": true
+          }
+        ]
+      },
+      "missing_distribution": {
+        "1": 52,
+        "2": 50,
+        "0": 30,
+        "3": 12
+      },
+      "common_calibration": {
+        "cap": 29.50681200310663,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "LiveCodeBench"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 0,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 31
+          },
+          "agentic-tool-work": {
+            "core": [
+              "AutomationBench-AA",
+              "τ³-Banking"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 71,
+                "slope": 1.4615957145561476,
+                "intercept": 44.444327740587894
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.7676854609022367,
+                "intercept": 5.124970921047723
+              },
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.41351102802063316,
+                "intercept": 50.311661019566046
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.25720148901836337,
+                "intercept": 46.19927268478735
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 110
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 30,
+                "slope": 7.774465266300725,
+                "intercept": 18.04764541804508
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 54,
+                "slope": 0.8475474254331542,
+                "intercept": 23.0534324095089
+              },
+              {
+                "enabled": false,
+                "observed_count": 2,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "IFBench"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 1,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 70
+          }
+        },
+        "population": 112,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "common_preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -4.895491040532846,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "margin": -3.2197571071471884,
+            "passed": false
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -4.895491040532846,
+            "passed": false
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": -0.4881200000000021,
+            "passed": false
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": 5.013070000000006,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 2.070205118822315,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 0.7547085889654639,
+            "passed": true
+          }
+        ]
+      }
+    },
+    "dc08": {
+      "calibration": {
+        "cap": 27.472211944894468,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "SciCode"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro",
+              "benchmark:livecodebench"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.6887607237632383,
+                "intercept": 39.192605723506716
+              },
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 121
+          },
+          "agentic-tool-work": {
+            "core": [
+              "AutomationBench-AA",
+              "τ³-Banking"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 71,
+                "slope": 1.4615957145561476,
+                "intercept": 44.444327740587894
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.7676854609022367,
+                "intercept": 5.124970921047723
+              },
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.41351102802063316,
+                "intercept": 50.311661019566046
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.25720148901836337,
+                "intercept": 46.19927268478735
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 110
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "AIME 2025"
+            ],
+            "extensions": [],
+            "trends": [],
+            "complete_core_models": 41
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 66,
+                "slope": 0.9124044659252731,
+                "intercept": 19.114046051824083
+              },
+              {
+                "enabled": false,
+                "observed_count": 2,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 133
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "GDP.pdf"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 108
+          }
+        },
+        "population": 133,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -3.1209500000000006,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": 1.884522621849051,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": 0.7404859588989581,
+            "passed": true
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": -0.006090000000007478,
+            "passed": false
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -3.1209500000000006,
+            "passed": false
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 2.1757148928469476,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 0.5615725905030189,
+            "passed": true
+          }
+        ]
+      },
+      "missing_distribution": {
+        "1": 78,
+        "0": 28,
+        "3": 20,
+        "2": 7
+      },
+      "common_calibration": {
+        "cap": 28.430405851855102,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "SciCode"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro",
+              "benchmark:livecodebench"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.6887607237632383,
+                "intercept": 39.192605723506716
+              },
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 111
+          },
+          "agentic-tool-work": {
+            "core": [
+              "AutomationBench-AA",
+              "τ³-Banking"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 71,
+                "slope": 1.4615957145561476,
+                "intercept": 44.444327740587894
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.7676854609022367,
+                "intercept": 5.124970921047723
+              },
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.41351102802063316,
+                "intercept": 50.311661019566046
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.25720148901836337,
+                "intercept": 46.19927268478735
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 110
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "AIME 2025"
+            ],
+            "extensions": [],
+            "trends": [],
+            "complete_core_models": 30
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 54,
+                "slope": 0.8475474254331542,
+                "intercept": 23.0534324095089
+              },
+              {
+                "enabled": false,
+                "observed_count": 2,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "GDP.pdf"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 107
+          }
+        },
+        "population": 112,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "common_preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -3.1209500000000006,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": 1.884522621849051,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": 0.7404859588989581,
+            "passed": true
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": -0.006090000000007478,
+            "passed": false
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": -3.1209500000000006,
+            "passed": false
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 2.22600569061494,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 0.5917691607580906,
+            "passed": true
+          }
+        ]
+      }
+    },
+    "dc09": {
+      "calibration": {
+        "cap": 32.87429609297179,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "SciCode"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro",
+              "benchmark:livecodebench"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.6887607237632383,
+                "intercept": 39.192605723506716
+              },
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 121
+          },
+          "agentic-tool-work": {
+            "core": [
+              "AutomationBench-AA",
+              "τ³-Banking"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 71,
+                "slope": 1.4615957145561476,
+                "intercept": 44.444327740587894
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.7676854609022367,
+                "intercept": 5.124970921047723
+              },
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.41351102802063316,
+                "intercept": 50.311661019566046
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.25720148901836337,
+                "intercept": 46.19927268478735
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 110
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 39,
+                "slope": 4.760202472145829,
+                "intercept": 28.480653073566543
+              }
+            ],
+            "complete_core_models": 139
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "MMMU-Pro"
+            ],
+            "extensions": [
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 74
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "GDP.pdf"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 108
+          }
+        },
+        "population": 139,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -6.126167378150946,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": -6.126167378150946,
+            "passed": false
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-opus-5",
+            "margin": 1.40679997989848,
+            "passed": false
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": -0.4357300000000066,
+            "passed": false
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": 4.57555,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 3.088922439770066,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": -5.624357560229939,
+            "passed": false
+          }
+        ]
+      },
+      "missing_distribution": {
+        "0": 52,
+        "1": 54,
+        "3": 23,
+        "2": 10
+      },
+      "common_calibration": {
+        "cap": 31.637397638257045,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "SciCode"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro",
+              "benchmark:livecodebench"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.6887607237632383,
+                "intercept": 39.192605723506716
+              },
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 111
+          },
+          "agentic-tool-work": {
+            "core": [
+              "AutomationBench-AA",
+              "τ³-Banking"
+            ],
+            "extensions": [
+              "τ²-Bench Telecom",
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 71,
+                "slope": 1.4615957145561476,
+                "intercept": 44.444327740587894
+              },
+              {
+                "enabled": true,
+                "observed_count": 21,
+                "slope": 0.7676854609022367,
+                "intercept": 5.124970921047723
+              },
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.41351102802063316,
+                "intercept": 50.311661019566046
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 0.25720148901836337,
+                "intercept": 46.19927268478735
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 110
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 30,
+                "slope": 7.774465266300725,
+                "intercept": 18.04764541804508
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "MMMU-Pro"
+            ],
+            "extensions": [
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 2,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 54
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "GDP.pdf"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 107
+          }
+        },
+        "population": 112,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "common_preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -6.126167378150946,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": -6.126167378150946,
+            "passed": false
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-opus-5",
+            "margin": 1.40679997989848,
+            "passed": false
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": -0.4357300000000066,
+            "passed": false
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": 4.57555,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 3.088922439770066,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": -5.624357560229939,
+            "passed": false
+          }
+        ]
+      }
+    },
+    "dc10": {
+      "calibration": {
+        "cap": 27.061643818982603,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "SciCode"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro",
+              "benchmark:livecodebench"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.6887607237632383,
+                "intercept": 39.192605723506716
+              },
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 121
+          },
+          "agentic-tool-work": {
+            "core": [
+              "τ²-Bench Telecom",
+              "τ³-Banking"
+            ],
+            "extensions": [
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 23,
+                "slope": 0.8545688947601587,
+                "intercept": -23.891902121599486
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 0,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 2,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": true,
+                "observed_count": 5,
+                "slope": 2.259049614594602,
+                "intercept": -65.23153739682277
+              }
+            ],
+            "complete_core_models": 93
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 160,
+                "slope": 4.706818385495676,
+                "intercept": 30.271701181389773
+              }
+            ],
+            "complete_core_models": 332
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 133,
+                "slope": 0.8978985603340707,
+                "intercept": 19.787023416583104
+              },
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.8775241251976356,
+                "intercept": 38.61350150939239
+              }
+            ],
+            "complete_core_models": 332
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "GDP.pdf"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 108
+          }
+        },
+        "population": 332,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -8.509673000568199,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "margin": -7.043264312104796,
+            "passed": false
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -8.509673000568199,
+            "passed": false
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": 0.06694000000000244,
+            "passed": true
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": 7.992482889177019,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 3.3550429171014287,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 0.8330154324486116,
+            "passed": true
+          }
+        ]
+      },
+      "missing_distribution": {
+        "0": 68,
+        "1": 43,
+        "2": 32,
+        "3": 189
+      },
+      "common_calibration": {
+        "cap": 18.77183574584768,
+        "boards": {
+          "coding": {
+            "core": [
+              "Terminal-Bench effective",
+              "SciCode"
+            ],
+            "extensions": [
+              "benchmark:swe-bench-pro",
+              "benchmark:livecodebench"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 8,
+                "slope": 0.6887607237632383,
+                "intercept": 39.192605723506716
+              },
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 111
+          },
+          "agentic-tool-work": {
+            "core": [
+              "τ²-Bench Telecom",
+              "τ³-Banking"
+            ],
+            "extensions": [
+              "APEX-Agents-AA",
+              "benchmark:swe-bench-pro",
+              "benchmark:hle-tools",
+              "benchmark:mcp-atlas",
+              "benchmark:osworld-verified"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 19,
+                "slope": 0.8680508766865014,
+                "intercept": -24.13840489006661
+              },
+              {
+                "enabled": false,
+                "observed_count": 4,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 0,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 2,
+                "slope": null,
+                "intercept": null
+              },
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 71
+          },
+          "hard-reasoning": {
+            "core": [
+              "CritPt",
+              "Humanity's Last Exam"
+            ],
+            "extensions": [
+              "AIME 2025"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 30,
+                "slope": 7.774465266300725,
+                "intercept": 18.04764541804508
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "knowledge-science": {
+            "core": [
+              "AA-Omniscience Accuracy",
+              "GPQA Diamond"
+            ],
+            "extensions": [
+              "MMMU-Pro",
+              "benchmark:mmlu-pro"
+            ],
+            "trends": [
+              {
+                "enabled": true,
+                "observed_count": 54,
+                "slope": 0.8475474254331542,
+                "intercept": 23.0534324095089
+              },
+              {
+                "enabled": false,
+                "observed_count": 2,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 112
+          },
+          "instruction-context": {
+            "core": [
+              "AA-LCR v1.1",
+              "GDP.pdf"
+            ],
+            "extensions": [
+              "benchmark:charxiv-no-tools"
+            ],
+            "trends": [
+              {
+                "enabled": false,
+                "observed_count": 3,
+                "slope": null,
+                "intercept": null
+              }
+            ],
+            "complete_core_models": 107
+          }
+        },
+        "population": 112,
+        "extension_policy": "fit and award extension bonuses only on boards with both Core items observed"
+      },
+      "common_preference_audit": {
+        "passed": false,
+        "missing_targets": [],
+        "minimum_margin": -8.509673000568199,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "claude-fable-5",
+            "margin": -7.043264312104796,
+            "passed": false
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": -8.509673000568199,
+            "passed": false
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": 0.06694000000000244,
+            "passed": true
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": 7.8627040296004935,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 3.3940856906149435,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 0.898079160758094,
+            "passed": true
+          }
+        ]
+      }
+    }
+  },
+  "validation": {
+    "dc01": {
+      "passed": true,
+      "errors": [],
+      "row_count": 144,
+      "common": {
+        "passed": true,
+        "errors": [],
+        "row_count": 112
+      }
+    },
+    "dc02": {
+      "passed": true,
+      "errors": [],
+      "row_count": 148,
+      "common": {
+        "passed": true,
+        "errors": [],
+        "row_count": 112
+      }
+    },
+    "dc03": {
+      "passed": true,
+      "errors": [],
+      "row_count": 118,
+      "common": {
+        "passed": true,
+        "errors": [],
+        "row_count": 112
+      }
+    },
+    "dc04": {
+      "passed": true,
+      "errors": [],
+      "row_count": 168,
+      "common": {
+        "passed": true,
+        "errors": [],
+        "row_count": 112
+      }
+    },
+    "dc05": {
+      "passed": true,
+      "errors": [],
+      "row_count": 144,
+      "common": {
+        "passed": true,
+        "errors": [],
+        "row_count": 112
+      }
+    },
+    "dc06": {
+      "passed": true,
+      "errors": [],
+      "row_count": 144,
+      "common": {
+        "passed": true,
+        "errors": [],
+        "row_count": 112
+      }
+    },
+    "dc07": {
+      "passed": true,
+      "errors": [],
+      "row_count": 144,
+      "common": {
+        "passed": true,
+        "errors": [],
+        "row_count": 112
+      }
+    },
+    "dc08": {
+      "passed": true,
+      "errors": [],
+      "row_count": 133,
+      "common": {
+        "passed": true,
+        "errors": [],
+        "row_count": 112
+      }
+    },
+    "dc09": {
+      "passed": true,
+      "errors": [],
+      "row_count": 139,
+      "common": {
+        "passed": true,
+        "errors": [],
+        "row_count": 112
+      }
+    },
+    "dc10": {
+      "passed": true,
+      "errors": [],
+      "row_count": 332,
+      "common": {
+        "passed": true,
+        "errors": [],
+        "row_count": 112
+      }
+    }
+  }
+}

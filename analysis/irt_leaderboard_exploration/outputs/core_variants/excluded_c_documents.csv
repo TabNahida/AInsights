@@ -1,0 +1,367 @@
+slug,missing_core
+claude-opus-4-6-adaptive,AutomationBench-AA; GDP.pdf
+claude-opus-4-7,AutomationBench-AA; GDP.pdf
+qwen-2-5-max,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+qwen3-6-max,AutomationBench-AA; GDP.pdf
+qwen3-max,AutomationBench-AA; GDP.pdf
+gpt-5-2,AutomationBench-AA; GDP.pdf
+gpt-5-2-codex,AutomationBench-AA; GDP.pdf
+gpt-5-3-codex,AutomationBench-AA; GDP.pdf
+gpt-5-4,AutomationBench-AA; GDP.pdf
+gpt-5-4-pro,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+gpt-5-5-pro,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+gemini-3-pro,AutomationBench-AA; GDP.pdf
+gpt-5,AutomationBench-AA; GDP.pdf
+gpt-5-1,AutomationBench-AA; GDP.pdf
+gpt-5-1-codex,AutomationBench-AA; GDP.pdf
+gpt-5-1-codex-mini,AutomationBench-AA; GDP.pdf
+gpt-5-codex,AutomationBench-AA; GDP.pdf
+gpt-5-nano,AutomationBench-AA; GDP.pdf
+grok-3-mini-reasoning,AutomationBench-AA; GDP.pdf
+hypernova-60b,AutomationBench-AA; GDP.pdf
+k2-v2,AutomationBench-AA; GDP.pdf
+nova-2-0-lite-reasoning,AutomationBench-AA; GDP.pdf
+o4-mini,AutomationBench-AA; GDP.pdf
+sarvam-105b,AutomationBench-AA; GDP.pdf
+sarvam-30b,AutomationBench-AA; GDP.pdf
+QwQ-32B-Preview,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+a-x-k2,AutomationBench-AA; GDP.pdf
+agnes-2-5-pro-alpha,GDP.pdf
+agnes-2-5-pro-beta,AutomationBench-AA; GDP.pdf
+apertus-70b-instruct,AutomationBench-AA; GDP.pdf
+apertus-8b-instruct,AutomationBench-AA; GDP.pdf
+apodex-1-1,AutomationBench-AA; GDP.pdf
+apriel-v1-5-15b-thinker,AutomationBench-AA; GDP.pdf
+apriel-v1-6-15b-thinker,AA-LCR v1.1; AutomationBench-AA; GDP.pdf
+arctic-instruct,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+claude-2,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Humanity's Last Exam; Terminal-Bench effective
+claude-21,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+claude-3-5-haiku,AutomationBench-AA; GDP.pdf
+claude-3-7-sonnet-thinking,AA-LCR v1.1; AutomationBench-AA; GDP.pdf
+claude-3-haiku,AutomationBench-AA; GDP.pdf
+claude-3-opus,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+claude-3-sonnet,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+claude-35-sonnet,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+claude-35-sonnet-june-24,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+claude-4-1-opus-thinking,AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf
+claude-4-opus-thinking,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf
+claude-4-sonnet-thinking,AutomationBench-AA; GDP.pdf
+claude-instant,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+claude-opus-4-5-thinking,AutomationBench-AA; GDP.pdf
+cogito-v2-1-reasoning,AutomationBench-AA; GDP.pdf
+command-a,AutomationBench-AA; GDP.pdf
+command-r-03-2024,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+command-r-plus-04-2024,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+dbrx,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+deephermes-3-llama-3-1-8b-preview,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+deephermes-3-mistral-24b-preview,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+deepseek-coder-v2,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+deepseek-coder-v2-lite,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+deepseek-llm-67b-chat,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+deepseek-r1,AutomationBench-AA; GDP.pdf
+deepseek-r1-distill-llama-70b,AutomationBench-AA; GDP.pdf
+deepseek-r1-distill-llama-8b,AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Humanity's Last Exam; Terminal-Bench effective
+deepseek-r1-distill-qwen-1-5b,AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+deepseek-r1-distill-qwen-14b,AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+deepseek-r1-distill-qwen-32b,AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+deepseek-r1-qwen3-8b,AutomationBench-AA; GDP.pdf
+deepseek-v2,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+deepseek-v2-5,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Humanity's Last Exam; Terminal-Bench effective
+deepseek-v2-5-sep-2024,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+deepseek-v3-1-reasoning,AutomationBench-AA; GDP.pdf
+deepseek-v3-2-reasoning,AutomationBench-AA; GDP.pdf
+deepseek-v3-2-reasoning-0925,AutomationBench-AA; GDP.pdf
+deepseek-v3-2-speciale,AutomationBench-AA; GDP.pdf
+devstral-small,AutomationBench-AA; GDP.pdf
+devstral-small-2505,AutomationBench-AA; GDP.pdf
+diffusiongemma-26b-a4b,AutomationBench-AA; GDP.pdf
+doubao-seed-code,AutomationBench-AA; GDP.pdf
+ernie-4-5-300b-a47b,AA-LCR v1.1; AutomationBench-AA; GDP.pdf
+ernie-5-0-thinking-preview,AA-LCR v1.1; AutomationBench-AA; GDP.pdf
+exaone-4-0-1-2b-reasoning,AutomationBench-AA; GDP.pdf
+exaone-4-0-32b-reasoning,AA-LCR v1.1; AutomationBench-AA; GDP.pdf
+exaone-4-5-33b,AutomationBench-AA; GDP.pdf
+falcon-h1r-7b,AutomationBench-AA; GDP.pdf
+g9v3-39a5b,AutomationBench-AA; GDP.pdf
+g9v3-3b,AutomationBench-AA; GDP.pdf
+gemini-1-0-pro,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gemini-1-0-ultra,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+gemini-1-5-flash,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gemini-1-5-flash-8b,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gemini-1-5-flash-may-2024,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gemini-1-5-pro,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gemini-1-5-pro-may-2024,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gemini-2-0-flash,AutomationBench-AA; GDP.pdf
+gemini-2-0-flash-experimental,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gemini-2-0-flash-lite-001,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gemini-2-0-flash-lite-preview,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gemini-2-0-flash-thinking-exp-0121,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gemini-2-0-flash-thinking-exp-1219,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+gemini-2-0-pro-experimental-02-05,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gemini-2-5-flash-lite-preview-09-2025-reasoning,AutomationBench-AA; GDP.pdf
+gemini-2-5-flash-lite-reasoning,AutomationBench-AA; GDP.pdf
+gemini-2-5-flash-preview-09-2025-reasoning,AutomationBench-AA; GDP.pdf
+gemini-2-5-flash-reasoning,AutomationBench-AA; GDP.pdf
+gemini-2-5-flash-reasoning-04-2025,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gemini-2-5-pro-03-25,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gemini-2-5-pro-05-06,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gemini-3-deep-think,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+gemini-3-flash-reasoning,AutomationBench-AA; GDP.pdf
+gemma-3-1b,AutomationBench-AA; GDP.pdf
+gemma-3-270m,AutomationBench-AA; GDP.pdf
+gemma-3-4b,AutomationBench-AA; GDP.pdf
+gemma-3n-e2b,AutomationBench-AA; GDP.pdf
+gemma-3n-e4b,AutomationBench-AA; GDP.pdf
+gemma-3n-e4b-preview-0520,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gemma-4-12b,AutomationBench-AA; GDP.pdf
+gemma-4-26b-a4b,AutomationBench-AA; GDP.pdf
+gemma-4-e2b,AutomationBench-AA; GDP.pdf
+gemma-4-e4b,AutomationBench-AA; GDP.pdf
+glm-4-5-air,AutomationBench-AA; GDP.pdf
+glm-4-5v-reasoning,AutomationBench-AA; GDP.pdf
+glm-4-6-reasoning,AutomationBench-AA; GDP.pdf
+glm-4-6v-reasoning,AutomationBench-AA; GDP.pdf
+glm-4-7,AutomationBench-AA; GDP.pdf
+glm-4-7-flash,AutomationBench-AA; GDP.pdf
+glm-4.5,AutomationBench-AA; GDP.pdf
+glm-5,AutomationBench-AA; GDP.pdf
+glm-5-turbo,AutomationBench-AA; GDP.pdf
+glm-5v-turbo,AutomationBench-AA; GDP.pdf
+gpt-3-5-turbo-0613,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+gpt-35-turbo,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Humanity's Last Exam; Terminal-Bench effective
+gpt-4,AA-LCR v1.1; AutomationBench-AA; GDP.pdf; Humanity's Last Exam; Terminal-Bench effective
+gpt-4-1,AutomationBench-AA; GDP.pdf
+gpt-4-1-mini,AutomationBench-AA; GDP.pdf
+gpt-4-1-nano,AutomationBench-AA; GDP.pdf
+gpt-4-5,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+gpt-4-turbo,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Terminal-Bench effective
+gpt-4o,AutomationBench-AA; GDP.pdf
+gpt-4o-2024-05-13,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gpt-4o-2024-08-06,AutomationBench-AA; GDP.pdf
+gpt-4o-chatgpt,AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gpt-4o-chatgpt-03-25,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+gpt-4o-mini,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf
+gpt-4o-mini-realtime-dec-2024,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+gpt-4o-realtime-dec-2024,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+gpt-5-5-instant-05-26,AutomationBench-AA; GDP.pdf
+gpt-5-chatgpt,AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf
+granite-3-3-8b-instruct,AA-LCR v1.1; AutomationBench-AA; GDP.pdf
+granite-4-0-350m,AutomationBench-AA; GDP.pdf
+granite-4-0-h-350m,AutomationBench-AA; GDP.pdf
+granite-4-0-h-nano-1b,AutomationBench-AA; GDP.pdf
+granite-4-0-h-small,AutomationBench-AA; GDP.pdf
+granite-4-0-micro,AutomationBench-AA; GDP.pdf
+granite-4-0-nano-1b,AutomationBench-AA; GDP.pdf
+granite-4-1-30b,AutomationBench-AA; GDP.pdf
+granite-4-1-3b,AutomationBench-AA; GDP.pdf
+granite-4-1-8b,AutomationBench-AA; GDP.pdf
+granite-4-2-30b,AutomationBench-AA
+grok-1,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+grok-2-1212,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+grok-3,AutomationBench-AA; GDP.pdf
+grok-3-reasoning,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+grok-4,AutomationBench-AA; GDP.pdf
+grok-4-1-fast-reasoning,AutomationBench-AA; GDP.pdf
+grok-4-20,AutomationBench-AA; GDP.pdf
+grok-4-20-0309,AutomationBench-AA; GDP.pdf
+grok-4-fast-reasoning,AutomationBench-AA; GDP.pdf
+grok-beta,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+grok-build-0-1-06-16,AutomationBench-AA; GDP.pdf
+grok-code-fast-1,AutomationBench-AA; GDP.pdf
+hermes-3-llama-3-1-70b,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+hermes-4-llama-3-1-405b-reasoning,AutomationBench-AA; GDP.pdf
+hermes-4-llama-3-1-70b-reasoning,AutomationBench-AA; GDP.pdf
+hy3-preview,AutomationBench-AA; GDP.pdf
+hyperclova-x-seed-think-32b,AutomationBench-AA; GDP.pdf
+intellect-3,AutomationBench-AA; GDP.pdf
+jamba-1-5-large,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+jamba-1-5-mini,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+jamba-1-6-large,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+jamba-1-6-mini,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+jamba-1-7-large,AutomationBench-AA; GDP.pdf
+jamba-1-7-mini,AutomationBench-AA; GDP.pdf
+jamba-reasoning-3b,AutomationBench-AA; GDP.pdf
+jt-35b-flash,AutomationBench-AA; GDP.pdf
+jt-4-1-flash-236b-a21b,AutomationBench-AA; GDP.pdf
+jt-mini,AutomationBench-AA; GDP.pdf
+k-exaone,AutomationBench-AA; GDP.pdf
+k-exaone-2-0-0803,AutomationBench-AA; GDP.pdf
+k2-horizon-375b-a23b,AutomationBench-AA
+k2-think-v2,AutomationBench-AA; GDP.pdf
+kat-coder-pro-v1,AutomationBench-AA; GDP.pdf
+kat-coder-pro-v2,AutomationBench-AA; GDP.pdf
+kimi-k2,AutomationBench-AA; GDP.pdf
+kimi-k2-0905,AutomationBench-AA; GDP.pdf
+kimi-k2-5,AutomationBench-AA; GDP.pdf
+kimi-k2-thinking,AutomationBench-AA; GDP.pdf
+kimi-linear-48b-a3b-instruct,AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf
+lfm-40b,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+lfm2-1-2b,AutomationBench-AA; GDP.pdf
+lfm2-2-6b,AutomationBench-AA; GDP.pdf
+lfm2-24b-a2b,AutomationBench-AA; GDP.pdf
+lfm2-5-1-2b-instruct,AutomationBench-AA; GDP.pdf
+lfm2-5-1-2b-thinking,AutomationBench-AA; GDP.pdf
+lfm2-5-2-6b,AutomationBench-AA; GDP.pdf
+lfm2-5-8b-a1b,AutomationBench-AA; GDP.pdf
+lfm2-5-vl-1-6b,AutomationBench-AA; GDP.pdf
+lfm2-8b-a1b,AA-LCR v1.1; AutomationBench-AA; GDP.pdf
+ling-1t,AutomationBench-AA; GDP.pdf
+ling-2-6-1t,AutomationBench-AA; GDP.pdf
+ling-2-6-flash,AutomationBench-AA; GDP.pdf
+ling-3-0-flash,AutomationBench-AA
+ling-flash-2-0,AutomationBench-AA; GDP.pdf
+ling-mini-2-0,AA-LCR v1.1; AutomationBench-AA; GDP.pdf
+llama-2-chat-13b,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+llama-2-chat-70b,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+llama-2-chat-7b,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+llama-3-1-instruct-405b,AutomationBench-AA; GDP.pdf
+llama-3-1-instruct-70b,AA-LCR v1.1; AutomationBench-AA; GDP.pdf
+llama-3-1-instruct-8b,AutomationBench-AA; GDP.pdf
+llama-3-1-nemotron-instruct-70b,AutomationBench-AA; GDP.pdf
+llama-3-1-nemotron-nano-4b-reasoning,AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+llama-3-1-nemotron-ultra-253b-v1-reasoning,AA-LCR v1.1; AutomationBench-AA; GDP.pdf
+llama-3-2-instruct-11b-vision,AutomationBench-AA; GDP.pdf
+llama-3-2-instruct-1b,AutomationBench-AA; GDP.pdf
+llama-3-2-instruct-3b,AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+llama-3-2-instruct-90b-vision,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+llama-3-3-instruct-70b,AutomationBench-AA; GDP.pdf
+llama-3-3-nemotron-super-49b-reasoning,AutomationBench-AA; GDP.pdf
+llama-3-instruct-70b,AutomationBench-AA; GDP.pdf
+llama-3-instruct-8b,AutomationBench-AA; GDP.pdf
+llama-65b,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+llama-nemotron-super-49b-v1-5-reasoning,AA-LCR v1.1; AutomationBench-AA; GDP.pdf
+longcat-flash-lite,AutomationBench-AA; GDP.pdf
+magistral-medium-2509,AutomationBench-AA; GDP.pdf
+magistral-small,AutomationBench-AA; GDP.pdf
+magistral-small-2509,GDP.pdf
+mi-dm-k-2-5-pro-dec28,AutomationBench-AA; GDP.pdf
+midm-250-pro-rsnsft,AutomationBench-AA; GDP.pdf
+mimo-v2-0206,AutomationBench-AA; GDP.pdf
+mimo-v2-flash-reasoning,AutomationBench-AA; GDP.pdf
+mimo-v2-omni,AutomationBench-AA; GDP.pdf
+mimo-v2-omni-0327,AutomationBench-AA; GDP.pdf
+mimo-v2-pro,AutomationBench-AA; GDP.pdf
+minicpm-v4-6-1-3b,AutomationBench-AA; GDP.pdf
+minicpm5-1b,AutomationBench-AA; GDP.pdf
+minicpm5-2b,GDP.pdf
+minimax-m1-40k,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf
+minimax-m1-80k,AutomationBench-AA; GDP.pdf
+minimax-m2,AutomationBench-AA; GDP.pdf
+minimax-m2-1,AutomationBench-AA; GDP.pdf
+minimax-m2-5,AutomationBench-AA; GDP.pdf
+mistral-7b-instruct,AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+mistral-8x22b-instruct,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+mistral-large,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+mistral-large-2,AA-LCR v1.1; AutomationBench-AA; GDP.pdf
+mistral-large-2407,AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+mistral-medium-3,AutomationBench-AA; GDP.pdf
+mistral-medium-3-1,AA-LCR v1.1
+mistral-saba,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+mistral-small,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+mistral-small-2402,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+mistral-small-3,AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+mixtral-8x7b-instruct,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+molmo-7b-d,AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf
+molmo2-8b,AutomationBench-AA; GDP.pdf
+motif-0714,AutomationBench-AA; GDP.pdf
+motif-2-12-7b,AutomationBench-AA; GDP.pdf
+motif-3,AutomationBench-AA; GDP.pdf
+muse-spark,AutomationBench-AA; GDP.pdf
+nanbeige4-1-3b,AutomationBench-AA; GDP.pdf
+nemotron-3-nano-omni-30b-a3b,AutomationBench-AA; GDP.pdf
+nemotron-cascade-2-30b-a3b,AutomationBench-AA; GDP.pdf
+north-mini-code,GDP.pdf
+nova-lite,AutomationBench-AA; GDP.pdf
+nova-micro,AutomationBench-AA; GDP.pdf
+nova-premier,AutomationBench-AA; GDP.pdf
+nova-pro,AutomationBench-AA; GDP.pdf
+nvidia-nemotron-3-nano-4b,AutomationBench-AA; GDP.pdf
+nvidia-nemotron-nano-12b-v2-vl-reasoning,AutomationBench-AA; GDP.pdf
+nvidia-nemotron-nano-9b-v2-reasoning,AutomationBench-AA; GDP.pdf
+o1,AutomationBench-AA; GDP.pdf
+o1-mini,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+o1-preview,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Humanity's Last Exam; Terminal-Bench effective
+o1-pro,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+o3,AutomationBench-AA; GDP.pdf
+o3-pro,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Humanity's Last Exam; Terminal-Bench effective
+olmo-2-32b,AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf
+olmo-2-7b,AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf
+olmo-3-1-32b-instruct,AutomationBench-AA; GDP.pdf
+olmo-3-1-32b-think,AutomationBench-AA; GDP.pdf
+olmo-3-32b-think,AutomationBench-AA; GDP.pdf
+olmo-3-7b-instruct,AutomationBench-AA; GDP.pdf
+olmo-3-7b-think,AutomationBench-AA; GDP.pdf
+openchat-35,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+palm-2,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+phi-3-mini,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf
+phi-4,AutomationBench-AA; GDP.pdf
+phi-4-mini,AutomationBench-AA; GDP.pdf
+phi-4-multimodal,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+pixtral-large-2411,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+qwen-chat-14b,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+qwen-chat-72b,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+qwen-turbo,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+qwen1.5-110b-chat,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Humanity's Last Exam; Terminal-Bench effective
+qwen2-5-72b-instruct,AA-LCR v1.1; AutomationBench-AA; GDP.pdf
+qwen2-5-coder-32b-instruct,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+qwen2-5-coder-7b-instruct,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+qwen2-72b-instruct,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+qwen2.5-32b-instruct,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+qwen3-0.6b-instruct-reasoning,AutomationBench-AA; GDP.pdf
+qwen3-1.7b-instruct-reasoning,AutomationBench-AA; GDP.pdf
+qwen3-235b-a22b-instruct-reasoning,AutomationBench-AA; GDP.pdf
+qwen3-30b-a3b-instruct-reasoning,AutomationBench-AA; GDP.pdf
+qwen3-4b-2507-instruct-reasoning,AutomationBench-AA; GDP.pdf
+qwen3-4b-instruct-reasoning,AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+qwen3-5-0-8b,AutomationBench-AA; GDP.pdf
+qwen3-5-27b,AutomationBench-AA; GDP.pdf
+qwen3-5-2b,AutomationBench-AA; GDP.pdf
+qwen3-5-35b-a3b,AutomationBench-AA; GDP.pdf
+qwen3-5-4b,AutomationBench-AA; GDP.pdf
+qwen3-5-9b,AutomationBench-AA; GDP.pdf
+qwen3-5-omni-flash,AutomationBench-AA; GDP.pdf
+qwen3-5-omni-plus,AutomationBench-AA; GDP.pdf
+qwen3-6-plus,AutomationBench-AA; GDP.pdf
+qwen3-coder-30b-a3b-instruct,AutomationBench-AA; GDP.pdf
+qwen3-coder-480b-a35b-instruct,AutomationBench-AA; GDP.pdf
+qwen3-max-preview,AutomationBench-AA; GDP.pdf
+qwen3-max-thinking,AutomationBench-AA; GDP.pdf
+qwen3-max-thinking-preview,AutomationBench-AA; GDP.pdf
+qwen3-next-80b-a3b-instruct,AutomationBench-AA; GDP.pdf
+qwen3-omni-30b-a3b-instruct,AutomationBench-AA; GDP.pdf
+qwen3-vl-235b-a22b-instruct,AutomationBench-AA; GDP.pdf
+qwen3-vl-30b-a3b-instruct,AA-LCR v1.1; AutomationBench-AA; GDP.pdf
+qwen3-vl-32b-instruct,AA-LCR v1.1; AutomationBench-AA; GDP.pdf
+qwen3-vl-4b-instruct,AutomationBench-AA; GDP.pdf
+qwen3-vl-8b-instruct,AutomationBench-AA; GDP.pdf
+qwq-32b,AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+r1-1776,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+reka-flash,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+reka-flash-3,AutomationBench-AA; GDP.pdf
+ring-1t,AutomationBench-AA; GDP.pdf
+ring-flash-2-0,AutomationBench-AA; GDP.pdf
+sarvam-m-reasoning,AutomationBench-AA; GDP.pdf
+seed-oss-36b-instruct,AutomationBench-AA; GDP.pdf
+solar-mini,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+solar-open-100b-reasoning,AutomationBench-AA; GDP.pdf
+solar-open2-250b,AutomationBench-AA; GDP.pdf
+solar-pro-2-preview-reasoning,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+solar-pro-2-reasoning,AutomationBench-AA; GDP.pdf
+sonar,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+sonar-pro,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+sonar-reasoning,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Humanity's Last Exam; Terminal-Bench effective
+sonar-reasoning-pro,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; GPQA Diamond; Humanity's Last Exam; Terminal-Bench effective
+step-3-5-flash,AutomationBench-AA; GDP.pdf
+step-3-5-flash-0202,AutomationBench-AA; GDP.pdf
+step-3-7-flash,AutomationBench-AA; GDP.pdf
+step-3-vl-10b,AutomationBench-AA; GDP.pdf
+tiny-aya-global,AutomationBench-AA; GDP.pdf
+tri-21b-think-preview,AutomationBench-AA; GDP.pdf
+tri-21b-think-v0-5,AutomationBench-AA; GDP.pdf
+tulu3-405b,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+devstral-medium,AutomationBench-AA; GDP.pdf
+magistral-medium,AutomationBench-AA; GDP.pdf
+mistral-medium,AA-LCR v1.1; AA-Omniscience Accuracy; AutomationBench-AA; GDP.pdf; Terminal-Bench effective
+nova-2-0-omni-reasoning-medium,AutomationBench-AA; GDP.pdf
+nova-2-0-pro-reasoning-medium,AutomationBench-AA; GDP.pdf
+qwen3-235b-a22b-instruct-2507,AutomationBench-AA; GDP.pdf

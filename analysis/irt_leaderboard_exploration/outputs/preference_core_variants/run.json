@@ -1,0 +1,1500 @@
+{
+  "selection": "explicit user ranking preferences; no model-specific score terms",
+  "input_sha256": {
+    "docs\\data\\models.json": "fa3eec5528773d4a4955f7d32343877a53d9a0c4e5a88c60a06d3c1eee67bb39",
+    "ArtificialAnalysis\\artificialanalysis_raw_scores_wide.csv": "67533b295c55c0f95228260931fb14edf7b16a1b67be668635899aa04b0d2f98"
+  },
+  "targets": [
+    "claude-fable-5-1",
+    "gpt-6-astra",
+    "kimi-k3",
+    "gemini-3-8-flash",
+    "gpt-5-5",
+    "muse-spark-1-3",
+    "qwen3-8-max",
+    "qwen3-8-2-4t-a95b",
+    "qwen3-8-flash-next"
+  ],
+  "variants": {
+    "e_small_change": {
+      "label": "E 权重小改",
+      "fallback": "calibrated",
+      "core": {
+        "coding": [
+          "Terminal-Bench effective"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "GPQA Diamond"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA",
+          "τ³-Banking"
+        ]
+      },
+      "weights": [
+        10,
+        20,
+        25,
+        25,
+        20
+      ]
+    },
+    "f_broad": {
+      "label": "F 广覆盖",
+      "fallback": "calibrated",
+      "core": {
+        "coding": [
+          "Terminal-Bench effective"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "GPQA Diamond"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking"
+        ]
+      },
+      "weights": [
+        15,
+        10,
+        25,
+        25,
+        25
+      ]
+    },
+    "g_scientific_coding": {
+      "label": "G 科学编程",
+      "fallback": "calibrated",
+      "core": {
+        "coding": [
+          "Terminal-Bench effective",
+          "SciCode"
+        ],
+        "hard-reasoning": [
+          "CritPt",
+          "GPQA Diamond"
+        ],
+        "knowledge-science": [
+          "AA-Omniscience Accuracy"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA"
+        ]
+      },
+      "weights": [
+        10,
+        15,
+        30,
+        25,
+        20
+      ]
+    }
+  },
+  "terminal_maps": {
+    "Terminal-Bench v2.1": {
+      "enabled": true,
+      "pairs": 102,
+      "slope": 0.2685220665295378,
+      "intercept": -6.199443864001481,
+      "median_old": 52.621750000000006,
+      "median_v4": 0.5051,
+      "median_gap": 46.25465,
+      "in_sample_mae": 6.056274117345375,
+      "fraction_discounted_old_above_observed_v4": 0.9803921568627451
+    },
+    "Terminal-Bench Hard": {
+      "enabled": true,
+      "pairs": 65,
+      "slope": 0.2779547422819615,
+      "intercept": -4.502315118252364,
+      "median_old": 27.2727,
+      "median_v4": 0.0,
+      "median_gap": 26.010099999999994,
+      "in_sample_mae": 3.9377803375758518,
+      "fraction_discounted_old_above_observed_v4": 0.9846153846153847
+    }
+  },
+  "common_population": 108,
+  "results": {
+    "e_small_change": {
+      "audit": {
+        "passed": true,
+        "missing_targets": [],
+        "minimum_margin": 0.23571649839414022,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": 2.7858543653821997,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": 0.40384479642196425,
+            "passed": true
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": 0.23571649839414022,
+            "passed": true
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": 0.3063507933074945,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 4.0126440925987055,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 1.24189263354463,
+            "passed": true
+          }
+        ]
+      },
+      "calibration": {
+        "cap": 31.824645515118913,
+        "population": 109,
+        "extensions": {
+          "coding": [
+            "benchmark:swe-bench-pro",
+            "benchmark:livecodebench"
+          ],
+          "agentic-tool-work": [
+            "τ²-Bench Telecom",
+            "APEX-Agents-AA",
+            "benchmark:swe-bench-pro",
+            "benchmark:hle-tools",
+            "benchmark:mcp-atlas",
+            "benchmark:osworld-verified"
+          ],
+          "hard-reasoning": [
+            "AIME 2025"
+          ],
+          "knowledge-science": [
+            "MMMU-Pro",
+            "benchmark:mmlu-pro"
+          ],
+          "instruction-context": [
+            "benchmark:charxiv-no-tools"
+          ]
+        },
+        "trends": {
+          "coding": [
+            {
+              "enabled": true,
+              "observed_count": 8,
+              "slope": 0.4266056632583156,
+              "intercept": 55.70731684612302
+            },
+            {
+              "enabled": false,
+              "observed_count": 3,
+              "slope": null,
+              "intercept": null
+            }
+          ],
+          "agentic-tool-work": [
+            {
+              "enabled": true,
+              "observed_count": 70,
+              "slope": 1.4109895962708536,
+              "intercept": 46.883258880074045
+            },
+            {
+              "enabled": true,
+              "observed_count": 21,
+              "slope": 0.7498144010253923,
+              "intercept": 6.398109480394691
+            },
+            {
+              "enabled": true,
+              "observed_count": 8,
+              "slope": 0.4224725121204723,
+              "intercept": 50.14858301895904
+            },
+            {
+              "enabled": true,
+              "observed_count": 5,
+              "slope": 0.2378726792951244,
+              "intercept": 47.32291894375135
+            },
+            {
+              "enabled": false,
+              "observed_count": 4,
+              "slope": null,
+              "intercept": null
+            },
+            {
+              "enabled": false,
+              "observed_count": 4,
+              "slope": null,
+              "intercept": null
+            }
+          ],
+          "hard-reasoning": [
+            {
+              "enabled": true,
+              "observed_count": 29,
+              "slope": 4.807979221241737,
+              "intercept": 38.5860718723665
+            }
+          ],
+          "knowledge-science": [
+            {
+              "enabled": true,
+              "observed_count": 53,
+              "slope": 0.6448732375455246,
+              "intercept": 50.351110029941225
+            },
+            {
+              "enabled": false,
+              "observed_count": 2,
+              "slope": null,
+              "intercept": null
+            }
+          ],
+          "instruction-context": [
+            {
+              "enabled": false,
+              "observed_count": 3,
+              "slope": null,
+              "intercept": null
+            }
+          ]
+        }
+      },
+      "sensitivity": {
+        "passing": 19,
+        "total": 20,
+        "checks": [
+          {
+            "from": "coding",
+            "to": "agentic-tool-work",
+            "passed": true,
+            "minimum_margin": 0.2711007884421335
+          },
+          {
+            "from": "coding",
+            "to": "hard-reasoning",
+            "passed": true,
+            "minimum_margin": 0.3366333365055283
+          },
+          {
+            "from": "coding",
+            "to": "knowledge-science",
+            "passed": true,
+            "minimum_margin": 0.2357993863934098
+          },
+          {
+            "from": "coding",
+            "to": "instruction-context",
+            "passed": true,
+            "minimum_margin": 0.2824545881687044
+          },
+          {
+            "from": "agentic-tool-work",
+            "to": "coding",
+            "passed": true,
+            "minimum_margin": 0.16639961635873846
+          },
+          {
+            "from": "agentic-tool-work",
+            "to": "hard-reasoning",
+            "passed": true,
+            "minimum_margin": 0.28788708266690577
+          },
+          {
+            "from": "agentic-tool-work",
+            "to": "knowledge-science",
+            "passed": true,
+            "minimum_margin": 0.16648250435800804
+          },
+          {
+            "from": "agentic-tool-work",
+            "to": "instruction-context",
+            "passed": true,
+            "minimum_margin": 0.31044061635873277
+          },
+          {
+            "from": "hard-reasoning",
+            "to": "coding",
+            "passed": true,
+            "minimum_margin": 0.0978000346444503
+          },
+          {
+            "from": "hard-reasoning",
+            "to": "agentic-tool-work",
+            "passed": true,
+            "minimum_margin": 0.1733993759810133
+          },
+          {
+            "from": "hard-reasoning",
+            "to": "knowledge-science",
+            "passed": true,
+            "minimum_margin": 0.11431192008524249
+          },
+          {
+            "from": "hard-reasoning",
+            "to": "instruction-context",
+            "passed": true,
+            "minimum_margin": 0.2582700320859672
+          },
+          {
+            "from": "knowledge-science",
+            "to": "coding",
+            "passed": false,
+            "minimum_margin": -0.024184206692503096
+          },
+          {
+            "from": "knowledge-science",
+            "to": "agentic-tool-work",
+            "passed": true,
+            "minimum_margin": 0.05141513464405989
+          },
+          {
+            "from": "knowledge-science",
+            "to": "hard-reasoning",
+            "passed": true,
+            "minimum_margin": 0.1843665519705482
+          },
+          {
+            "from": "knowledge-science",
+            "to": "instruction-context",
+            "passed": true,
+            "minimum_margin": 0.17601679330750386
+          },
+          {
+            "from": "instruction-context",
+            "to": "coding",
+            "passed": true,
+            "minimum_margin": 0.0916754983941388
+          },
+          {
+            "from": "instruction-context",
+            "to": "agentic-tool-work",
+            "passed": true,
+            "minimum_margin": 0.16099238042954056
+          },
+          {
+            "from": "instruction-context",
+            "to": "hard-reasoning",
+            "passed": true,
+            "minimum_margin": 0.2131629647023061
+          },
+          {
+            "from": "instruction-context",
+            "to": "knowledge-science",
+            "passed": true,
+            "minimum_margin": 0.09175838639340128
+          }
+        ]
+      },
+      "common_audit": {
+        "passed": true,
+        "missing_targets": [],
+        "minimum_margin": 0.22103964796666276,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": 2.7858543653821997,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": 0.40384479642196425,
+            "passed": true
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": 0.22103964796666276,
+            "passed": true
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": 0.3063507933074945,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 4.022997150599679,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 1.2696140206449655,
+            "passed": true
+          }
+        ]
+      },
+      "common_calibration": {
+        "cap": 31.835206311979043,
+        "population": 108,
+        "extensions": {
+          "coding": [
+            "benchmark:swe-bench-pro",
+            "benchmark:livecodebench"
+          ],
+          "agentic-tool-work": [
+            "τ²-Bench Telecom",
+            "APEX-Agents-AA",
+            "benchmark:swe-bench-pro",
+            "benchmark:hle-tools",
+            "benchmark:mcp-atlas",
+            "benchmark:osworld-verified"
+          ],
+          "hard-reasoning": [
+            "AIME 2025"
+          ],
+          "knowledge-science": [
+            "MMMU-Pro",
+            "benchmark:mmlu-pro"
+          ],
+          "instruction-context": [
+            "benchmark:charxiv-no-tools"
+          ]
+        },
+        "trends": {
+          "coding": [
+            {
+              "enabled": true,
+              "observed_count": 8,
+              "slope": 0.4266056632583156,
+              "intercept": 55.70731684612302
+            },
+            {
+              "enabled": false,
+              "observed_count": 3,
+              "slope": null,
+              "intercept": null
+            }
+          ],
+          "agentic-tool-work": [
+            {
+              "enabled": true,
+              "observed_count": 69,
+              "slope": 1.3928963325854589,
+              "intercept": 47.392399201198685
+            },
+            {
+              "enabled": true,
+              "observed_count": 21,
+              "slope": 0.7498144010253923,
+              "intercept": 6.398109480394691
+            },
+            {
+              "enabled": true,
+              "observed_count": 8,
+              "slope": 0.4224725121204723,
+              "intercept": 50.14858301895904
+            },
+            {
+              "enabled": true,
+              "observed_count": 5,
+              "slope": 0.2378726792951244,
+              "intercept": 47.32291894375135
+            },
+            {
+              "enabled": false,
+              "observed_count": 4,
+              "slope": null,
+              "intercept": null
+            },
+            {
+              "enabled": false,
+              "observed_count": 4,
+              "slope": null,
+              "intercept": null
+            }
+          ],
+          "hard-reasoning": [
+            {
+              "enabled": true,
+              "observed_count": 28,
+              "slope": 4.750795106465022,
+              "intercept": 38.00343722873008
+            }
+          ],
+          "knowledge-science": [
+            {
+              "enabled": true,
+              "observed_count": 52,
+              "slope": 0.6392389202660808,
+              "intercept": 50.600036351688956
+            },
+            {
+              "enabled": false,
+              "observed_count": 2,
+              "slope": null,
+              "intercept": null
+            }
+          ],
+          "instruction-context": [
+            {
+              "enabled": false,
+              "observed_count": 3,
+              "slope": null,
+              "intercept": null
+            }
+          ]
+        }
+      }
+    },
+    "f_broad": {
+      "audit": {
+        "passed": true,
+        "missing_targets": [],
+        "minimum_margin": 0.3911716577043052,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": 2.505644101604574,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": 0.6190861632273794,
+            "passed": true
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": 0.3911716577043052,
+            "passed": true
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": 0.5094089665762027,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 4.543328313433449,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 0.5877027321750603,
+            "passed": true
+          }
+        ]
+      },
+      "calibration": {
+        "cap": 31.363341692558855,
+        "population": 143,
+        "extensions": {
+          "coding": [
+            "benchmark:swe-bench-pro",
+            "benchmark:livecodebench"
+          ],
+          "agentic-tool-work": [
+            "τ²-Bench Telecom",
+            "APEX-Agents-AA",
+            "benchmark:swe-bench-pro",
+            "benchmark:hle-tools",
+            "benchmark:mcp-atlas",
+            "benchmark:osworld-verified"
+          ],
+          "hard-reasoning": [
+            "AIME 2025"
+          ],
+          "knowledge-science": [
+            "MMMU-Pro",
+            "benchmark:mmlu-pro"
+          ],
+          "instruction-context": [
+            "benchmark:charxiv-no-tools"
+          ]
+        },
+        "trends": {
+          "coding": [
+            {
+              "enabled": true,
+              "observed_count": 8,
+              "slope": 0.4266056632583156,
+              "intercept": 55.70731684612302
+            },
+            {
+              "enabled": true,
+              "observed_count": 5,
+              "slope": 1.2362637225188826,
+              "intercept": 71.57297587379085
+            }
+          ],
+          "agentic-tool-work": [
+            {
+              "enabled": true,
+              "observed_count": 92,
+              "slope": 1.70898695888204,
+              "intercept": 41.28582695046202
+            },
+            {
+              "enabled": true,
+              "observed_count": 26,
+              "slope": 1.009565343069592,
+              "intercept": -0.044880993913658074
+            },
+            {
+              "enabled": true,
+              "observed_count": 8,
+              "slope": 0.5165893475257385,
+              "intercept": 49.141787674710386
+            },
+            {
+              "enabled": true,
+              "observed_count": 5,
+              "slope": 0.18034226987256635,
+              "intercept": 51.453099613047634
+            },
+            {
+              "enabled": false,
+              "observed_count": 4,
+              "slope": null,
+              "intercept": null
+            },
+            {
+              "enabled": true,
+              "observed_count": 6,
+              "slope": 1.1793986952568776,
+              "intercept": 37.387852586351435
+            }
+          ],
+          "hard-reasoning": [
+            {
+              "enabled": true,
+              "observed_count": 40,
+              "slope": 3.208949676244302,
+              "intercept": 41.17708502193676
+            }
+          ],
+          "knowledge-science": [
+            {
+              "enabled": true,
+              "observed_count": 73,
+              "slope": 0.6890885007944573,
+              "intercept": 48.40756696336756
+            },
+            {
+              "enabled": false,
+              "observed_count": 4,
+              "slope": null,
+              "intercept": null
+            }
+          ],
+          "instruction-context": [
+            {
+              "enabled": false,
+              "observed_count": 3,
+              "slope": null,
+              "intercept": null
+            }
+          ]
+        }
+      },
+      "sensitivity": {
+        "passing": 20,
+        "total": 20,
+        "checks": [
+          {
+            "from": "coding",
+            "to": "agentic-tool-work",
+            "passed": true,
+            "minimum_margin": 0.4358173880748879
+          },
+          {
+            "from": "coding",
+            "to": "hard-reasoning",
+            "passed": true,
+            "minimum_margin": 0.5126591240124796
+          },
+          {
+            "from": "coding",
+            "to": "knowledge-science",
+            "passed": true,
+            "minimum_margin": 0.39171165770430605
+          },
+          {
+            "from": "coding",
+            "to": "instruction-context",
+            "passed": true,
+            "minimum_margin": 0.49769595497411245
+          },
+          {
+            "from": "agentic-tool-work",
+            "to": "coding",
+            "passed": true,
+            "minimum_margin": 0.3101556577043141
+          },
+          {
+            "from": "agentic-tool-work",
+            "to": "hard-reasoning",
+            "passed": true,
+            "minimum_margin": 0.4316431240124814
+          },
+          {
+            "from": "agentic-tool-work",
+            "to": "knowledge-science",
+            "passed": true,
+            "minimum_margin": 0.31069565770430785
+          },
+          {
+            "from": "agentic-tool-work",
+            "to": "instruction-context",
+            "passed": true,
+            "minimum_margin": 0.4541966577043013
+          },
+          {
+            "from": "hard-reasoning",
+            "to": "coding",
+            "passed": true,
+            "minimum_margin": 0.26968419139613786
+          },
+          {
+            "from": "hard-reasoning",
+            "to": "agentic-tool-work",
+            "passed": true,
+            "minimum_margin": 0.35070019139613606
+          },
+          {
+            "from": "hard-reasoning",
+            "to": "knowledge-science",
+            "passed": true,
+            "minimum_margin": 0.27022419139613874
+          },
+          {
+            "from": "hard-reasoning",
+            "to": "instruction-context",
+            "passed": true,
+            "minimum_margin": 0.4137251913961393
+          },
+          {
+            "from": "knowledge-science",
+            "to": "coding",
+            "passed": true,
+            "minimum_margin": 0.17887396657620513
+          },
+          {
+            "from": "knowledge-science",
+            "to": "agentic-tool-work",
+            "passed": true,
+            "minimum_margin": 0.25027796657620627
+          },
+          {
+            "from": "knowledge-science",
+            "to": "hard-reasoning",
+            "passed": true,
+            "minimum_margin": 0.3874247252392564
+          },
+          {
+            "from": "knowledge-science",
+            "to": "instruction-context",
+            "passed": true,
+            "minimum_margin": 0.379074966576205
+          },
+          {
+            "from": "instruction-context",
+            "to": "coding",
+            "passed": true,
+            "minimum_margin": 0.24713065770431086
+          },
+          {
+            "from": "instruction-context",
+            "to": "agentic-tool-work",
+            "passed": true,
+            "minimum_margin": 0.32814665770430906
+          },
+          {
+            "from": "instruction-context",
+            "to": "hard-reasoning",
+            "passed": true,
+            "minimum_margin": 0.3686181240124782
+          },
+          {
+            "from": "instruction-context",
+            "to": "knowledge-science",
+            "passed": true,
+            "minimum_margin": 0.24767065770431174
+          }
+        ]
+      },
+      "common_audit": {
+        "passed": true,
+        "missing_targets": [],
+        "minimum_margin": 0.3650670072585456,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": 2.505644101604574,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": 0.619104504573265,
+            "passed": true
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": 0.3650670072585456,
+            "passed": true
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": 0.5094089665762027,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 4.701170160091557,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 0.8967346409563177,
+            "passed": true
+          }
+        ]
+      },
+      "common_calibration": {
+        "cap": 32.51212344513745,
+        "population": 108,
+        "extensions": {
+          "coding": [
+            "benchmark:swe-bench-pro",
+            "benchmark:livecodebench"
+          ],
+          "agentic-tool-work": [
+            "τ²-Bench Telecom",
+            "APEX-Agents-AA",
+            "benchmark:swe-bench-pro",
+            "benchmark:hle-tools",
+            "benchmark:mcp-atlas",
+            "benchmark:osworld-verified"
+          ],
+          "hard-reasoning": [
+            "AIME 2025"
+          ],
+          "knowledge-science": [
+            "MMMU-Pro",
+            "benchmark:mmlu-pro"
+          ],
+          "instruction-context": [
+            "benchmark:charxiv-no-tools"
+          ]
+        },
+        "trends": {
+          "coding": [
+            {
+              "enabled": true,
+              "observed_count": 8,
+              "slope": 0.4266056632583156,
+              "intercept": 55.70731684612302
+            },
+            {
+              "enabled": false,
+              "observed_count": 3,
+              "slope": null,
+              "intercept": null
+            }
+          ],
+          "agentic-tool-work": [
+            {
+              "enabled": true,
+              "observed_count": 69,
+              "slope": 1.7944280839174813,
+              "intercept": 38.06278989068326
+            },
+            {
+              "enabled": true,
+              "observed_count": 21,
+              "slope": 1.0517567366147487,
+              "intercept": -1.307409393348074
+            },
+            {
+              "enabled": true,
+              "observed_count": 8,
+              "slope": 0.5165893475257385,
+              "intercept": 49.141787674710386
+            },
+            {
+              "enabled": true,
+              "observed_count": 5,
+              "slope": 0.18034226987256635,
+              "intercept": 51.453099613047634
+            },
+            {
+              "enabled": false,
+              "observed_count": 4,
+              "slope": null,
+              "intercept": null
+            },
+            {
+              "enabled": false,
+              "observed_count": 4,
+              "slope": null,
+              "intercept": null
+            }
+          ],
+          "hard-reasoning": [
+            {
+              "enabled": true,
+              "observed_count": 28,
+              "slope": 4.750795106465022,
+              "intercept": 38.00343722873008
+            }
+          ],
+          "knowledge-science": [
+            {
+              "enabled": true,
+              "observed_count": 52,
+              "slope": 0.6392389202660808,
+              "intercept": 50.600036351688956
+            },
+            {
+              "enabled": false,
+              "observed_count": 2,
+              "slope": null,
+              "intercept": null
+            }
+          ],
+          "instruction-context": [
+            {
+              "enabled": false,
+              "observed_count": 3,
+              "slope": null,
+              "intercept": null
+            }
+          ]
+        }
+      }
+    },
+    "g_scientific_coding": {
+      "audit": {
+        "passed": true,
+        "missing_targets": [],
+        "minimum_margin": 0.5766712202554132,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": 1.8305350786176575,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": 0.8313659841195715,
+            "passed": true
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": 0.6612519782667263,
+            "passed": true
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": 0.5766712202554132,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 5.104733186242235,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 2.0371820955558917,
+            "passed": true
+          }
+        ]
+      },
+      "calibration": {
+        "cap": 27.282504490263484,
+        "population": 108,
+        "extensions": {
+          "coding": [
+            "benchmark:swe-bench-pro",
+            "benchmark:livecodebench"
+          ],
+          "agentic-tool-work": [
+            "τ²-Bench Telecom",
+            "τ³-Banking",
+            "APEX-Agents-AA",
+            "benchmark:swe-bench-pro",
+            "benchmark:hle-tools",
+            "benchmark:mcp-atlas",
+            "benchmark:osworld-verified"
+          ],
+          "hard-reasoning": [
+            "AIME 2025"
+          ],
+          "knowledge-science": [
+            "MMMU-Pro",
+            "benchmark:mmlu-pro"
+          ],
+          "instruction-context": [
+            "benchmark:charxiv-no-tools"
+          ]
+        },
+        "trends": {
+          "coding": [
+            {
+              "enabled": true,
+              "observed_count": 8,
+              "slope": 0.45101071586184854,
+              "intercept": 51.26571615449261
+            },
+            {
+              "enabled": false,
+              "observed_count": 3,
+              "slope": null,
+              "intercept": null
+            }
+          ],
+          "agentic-tool-work": [
+            {
+              "enabled": true,
+              "observed_count": 69,
+              "slope": 1.074977706447242,
+              "intercept": 51.450601855032644
+            },
+            {
+              "enabled": true,
+              "observed_count": 108,
+              "slope": 0.5773758030117574,
+              "intercept": 8.685500017618972
+            },
+            {
+              "enabled": true,
+              "observed_count": 21,
+              "slope": 0.5364649074586285,
+              "intercept": 10.43233460412608
+            },
+            {
+              "enabled": true,
+              "observed_count": 8,
+              "slope": 0.32505467024751283,
+              "intercept": 52.10848837168911
+            },
+            {
+              "enabled": true,
+              "observed_count": 5,
+              "slope": 0.3947697265025808,
+              "intercept": 36.31603921863261
+            },
+            {
+              "enabled": false,
+              "observed_count": 4,
+              "slope": null,
+              "intercept": null
+            },
+            {
+              "enabled": false,
+              "observed_count": 4,
+              "slope": null,
+              "intercept": null
+            }
+          ],
+          "hard-reasoning": [
+            {
+              "enabled": true,
+              "observed_count": 28,
+              "slope": 4.750795106465022,
+              "intercept": 38.00343722873008
+            }
+          ],
+          "knowledge-science": [
+            {
+              "enabled": true,
+              "observed_count": 52,
+              "slope": 0.6392389202660808,
+              "intercept": 50.600036351688956
+            },
+            {
+              "enabled": false,
+              "observed_count": 2,
+              "slope": null,
+              "intercept": null
+            }
+          ],
+          "instruction-context": [
+            {
+              "enabled": false,
+              "observed_count": 3,
+              "slope": null,
+              "intercept": null
+            }
+          ]
+        }
+      },
+      "sensitivity": {
+        "passing": 20,
+        "total": 20,
+        "checks": [
+          {
+            "from": "coding",
+            "to": "agentic-tool-work",
+            "passed": true,
+            "minimum_margin": 0.5759578808826262
+          },
+          {
+            "from": "coding",
+            "to": "hard-reasoning",
+            "passed": true,
+            "minimum_margin": 0.7552118368802354
+          },
+          {
+            "from": "coding",
+            "to": "knowledge-science",
+            "passed": true,
+            "minimum_margin": 0.6498555699497288
+          },
+          {
+            "from": "coding",
+            "to": "instruction-context",
+            "passed": true,
+            "minimum_margin": 0.746862078217184
+          },
+          {
+            "from": "agentic-tool-work",
+            "to": "coding",
+            "passed": true,
+            "minimum_margin": 0.5773845596282001
+          },
+          {
+            "from": "agentic-tool-work",
+            "to": "hard-reasoning",
+            "passed": true,
+            "minimum_margin": 0.7087267501431853
+          },
+          {
+            "from": "agentic-tool-work",
+            "to": "knowledge-science",
+            "passed": true,
+            "minimum_margin": 0.5867350978171899
+          },
+          {
+            "from": "agentic-tool-work",
+            "to": "instruction-context",
+            "passed": true,
+            "minimum_margin": 0.7312802838350123
+          },
+          {
+            "from": "hard-reasoning",
+            "to": "coding",
+            "passed": true,
+            "minimum_margin": 0.39813060363059805
+          },
+          {
+            "from": "hard-reasoning",
+            "to": "agentic-tool-work",
+            "passed": true,
+            "minimum_margin": 0.3974172642578111
+          },
+          {
+            "from": "hard-reasoning",
+            "to": "knowledge-science",
+            "passed": true,
+            "minimum_margin": 0.5392603259407167
+          },
+          {
+            "from": "hard-reasoning",
+            "to": "instruction-context",
+            "passed": true,
+            "minimum_margin": 0.5683214615923688
+          },
+          {
+            "from": "knowledge-science",
+            "to": "coding",
+            "passed": true,
+            "minimum_margin": 0.27614636229364464
+          },
+          {
+            "from": "knowledge-science",
+            "to": "agentic-tool-work",
+            "passed": true,
+            "minimum_margin": 0.2754330229208577
+          },
+          {
+            "from": "knowledge-science",
+            "to": "hard-reasoning",
+            "passed": true,
+            "minimum_margin": 0.45468697891845977
+          },
+          {
+            "from": "knowledge-science",
+            "to": "instruction-context",
+            "passed": true,
+            "minimum_margin": 0.44633722025542255
+          },
+          {
+            "from": "instruction-context",
+            "to": "coding",
+            "passed": true,
+            "minimum_margin": 0.4064803622936495
+          },
+          {
+            "from": "instruction-context",
+            "to": "agentic-tool-work",
+            "passed": true,
+            "minimum_margin": 0.4057670229208554
+          },
+          {
+            "from": "instruction-context",
+            "to": "hard-reasoning",
+            "passed": true,
+            "minimum_margin": 0.5850209789184646
+          },
+          {
+            "from": "instruction-context",
+            "to": "knowledge-science",
+            "passed": true,
+            "minimum_margin": 0.5167067922488897
+          }
+        ]
+      },
+      "common_audit": {
+        "passed": true,
+        "missing_targets": [],
+        "minimum_margin": 0.5766712202554132,
+        "checks": [
+          {
+            "condition": "claude-fable-5-1 rank=1",
+            "higher": "claude-fable-5-1",
+            "lower": "gpt-6-astra",
+            "margin": 1.8305350786176575,
+            "passed": true
+          },
+          {
+            "condition": "gpt-6-astra rank=2",
+            "higher": "gpt-6-astra",
+            "lower": "claude-fable-5",
+            "margin": 0.8313659841195715,
+            "passed": true
+          },
+          {
+            "condition": "kimi-k3 > gemini-3-8-flash",
+            "higher": "kimi-k3",
+            "lower": "gemini-3-8-flash",
+            "margin": 0.6612519782667263,
+            "passed": true
+          },
+          {
+            "condition": "gpt-5-5 > muse-spark-1-3",
+            "higher": "gpt-5-5",
+            "lower": "muse-spark-1-3",
+            "margin": 0.5766712202554132,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-max > qwen3-8-flash-next",
+            "higher": "qwen3-8-max",
+            "lower": "qwen3-8-flash-next",
+            "margin": 5.104733186242235,
+            "passed": true
+          },
+          {
+            "condition": "qwen3-8-2-4t-a95b > qwen3-8-flash-next",
+            "higher": "qwen3-8-2-4t-a95b",
+            "lower": "qwen3-8-flash-next",
+            "margin": 2.0371820955558917,
+            "passed": true
+          }
+        ]
+      },
+      "common_calibration": {
+        "cap": 27.282504490263484,
+        "population": 108,
+        "extensions": {
+          "coding": [
+            "benchmark:swe-bench-pro",
+            "benchmark:livecodebench"
+          ],
+          "agentic-tool-work": [
+            "τ²-Bench Telecom",
+            "τ³-Banking",
+            "APEX-Agents-AA",
+            "benchmark:swe-bench-pro",
+            "benchmark:hle-tools",
+            "benchmark:mcp-atlas",
+            "benchmark:osworld-verified"
+          ],
+          "hard-reasoning": [
+            "AIME 2025"
+          ],
+          "knowledge-science": [
+            "MMMU-Pro",
+            "benchmark:mmlu-pro"
+          ],
+          "instruction-context": [
+            "benchmark:charxiv-no-tools"
+          ]
+        },
+        "trends": {
+          "coding": [
+            {
+              "enabled": true,
+              "observed_count": 8,
+              "slope": 0.45101071586184854,
+              "intercept": 51.26571615449261
+            },
+            {
+              "enabled": false,
+              "observed_count": 3,
+              "slope": null,
+              "intercept": null
+            }
+          ],
+          "agentic-tool-work": [
+            {
+              "enabled": true,
+              "observed_count": 69,
+              "slope": 1.074977706447242,
+              "intercept": 51.450601855032644
+            },
+            {
+              "enabled": true,
+              "observed_count": 108,
+              "slope": 0.5773758030117574,
+              "intercept": 8.685500017618972
+            },
+            {
+              "enabled": true,
+              "observed_count": 21,
+              "slope": 0.5364649074586285,
+              "intercept": 10.43233460412608
+            },
+            {
+              "enabled": true,
+              "observed_count": 8,
+              "slope": 0.32505467024751283,
+              "intercept": 52.10848837168911
+            },
+            {
+              "enabled": true,
+              "observed_count": 5,
+              "slope": 0.3947697265025808,
+              "intercept": 36.31603921863261
+            },
+            {
+              "enabled": false,
+              "observed_count": 4,
+              "slope": null,
+              "intercept": null
+            },
+            {
+              "enabled": false,
+              "observed_count": 4,
+              "slope": null,
+              "intercept": null
+            }
+          ],
+          "hard-reasoning": [
+            {
+              "enabled": true,
+              "observed_count": 28,
+              "slope": 4.750795106465022,
+              "intercept": 38.00343722873008
+            }
+          ],
+          "knowledge-science": [
+            {
+              "enabled": true,
+              "observed_count": 52,
+              "slope": 0.6392389202660808,
+              "intercept": 50.600036351688956
+            },
+            {
+              "enabled": false,
+              "observed_count": 2,
+              "slope": null,
+              "intercept": null
+            }
+          ],
+          "instruction-context": [
+            {
+              "enabled": false,
+              "observed_count": 3,
+              "slope": null,
+              "intercept": null
+            }
+          ]
+        }
+      }
+    }
+  }
+}

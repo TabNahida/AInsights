@@ -1,0 +1,121 @@
+variant,population,condition,higher,lower,margin,passed
+fc01,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.4357340673634766,True
+fc01,full,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.533887940301156,True
+fc01,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.18098000000000525,True
+fc01,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.05512077513974134,True
+fc01,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.119097458311003,True
+fc01,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,1.99088217538187,True
+fc01,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.4357340673634766,True
+fc01,common,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.533887940301156,True
+fc01,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.18098000000000525,True
+fc01,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.05512077513974134,True
+fc01,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.119959834840671,True
+fc01,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,1.8567202611436855,True
+fc02,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.2777525673634713,True
+fc02,full,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.4612419403011643,True
+fc02,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.22960550000000524,True
+fc02,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.19153227513974258,True
+fc02,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.444493115429054,True
+fc02,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,2.6370073537196106,True
+fc02,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.2777525673634713,True
+fc02,common,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.4612419403011643,True
+fc02,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.22960550000000524,True
+fc02,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.19153227513974258,True
+fc02,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.445290813719012,True
+fc02,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,2.512907583049298,True
+fc03,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.30863606736348,True
+fc03,full,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.4599014403011594,True
+fc03,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.1761745000000019,True
+fc03,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.22017427513974042,True
+fc03,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.401250396389706,True
+fc03,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,2.517188127607021,True
+fc03,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.30863606736348,True
+fc03,common,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.4599014403011594,True
+fc03,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.1761745000000019,True
+fc03,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.22017427513974042,True
+fc03,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.402069654092898,True
+fc03,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,2.389734309080751,True
+fc04,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.4282305396766475,True
+fc04,full,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.36703438435969105,True
+fc04,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.14402099999999507,True
+fc04,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.14537985265371134,True
+fc04,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.621496677350358,True
+fc04,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,2.688170401494446,True
+fc04,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.4282305396766475,True
+fc04,common,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.36703438435969105,True
+fc04,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.14402099999999507,True
+fc04,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.14537985265371134,True
+fc04,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.622337494466791,True
+fc04,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,2.557362535112226,True
+fc05,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.3675185673634687,True
+fc05,full,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.49141844030116744,True
+fc05,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.1706010000000049,True
+fc05,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.1535287751397334,True
+fc05,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.27415017735035,True
+fc05,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,2.2745114014944434,True
+fc05,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.3675185673634687,True
+fc05,common,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.49141844030116744,True
+fc05,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.1706010000000049,True
+fc05,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.1535287751397334,True
+fc05,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.2749909944667905,True
+fc05,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,2.1437035351122233,True
+fc06,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,0.8566972231317678,True
+fc06,full,gpt-6-astra rank=2,gpt-6-astra,gemini-3-flash-reasoning,0.9781635031097338,True
+fc06,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.12164100000000388,True
+fc06,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.11341877513973486,True
+fc06,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.009145708570472,True
+fc06,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,1.759348249215904,True
+fc06,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,0.8566972231317678,True
+fc06,common,gpt-6-astra rank=2,gpt-6-astra,gemini-3-flash-reasoning,0.9781635031097338,True
+fc06,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.12164100000000388,True
+fc06,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.11341877513973486,True
+fc06,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.009145708570472,True
+fc06,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,1.759348249215904,True
+fc07,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,0.8473642231317697,True
+fc07,full,gpt-6-astra rank=2,gpt-6-astra,gemini-3-flash-reasoning,0.44054450310972726,True
+fc07,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.10568849999999941,True
+fc07,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.14518127513974122,True
+fc07,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.03709820857047,True
+fc07,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,1.8003007492159,True
+fc07,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,0.8473642231317697,True
+fc07,common,gpt-6-astra rank=2,gpt-6-astra,gemini-3-flash-reasoning,0.44054450310972726,True
+fc07,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.10568849999999941,True
+fc07,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.14518127513974122,True
+fc07,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.03709820857047,True
+fc07,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,1.8003007492159,True
+fc08,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,0.8660302231317729,True
+fc08,full,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,1.3129524405852635,True
+fc08,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.13759350000000126,True
+fc08,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.08165627513974272,True
+fc08,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,4.981193208570474,True
+fc08,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,1.718395749215901,True
+fc08,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,0.8660302231317729,True
+fc08,common,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,1.3129524405852635,True
+fc08,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.13759350000000126,True
+fc08,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.08165627513974272,True
+fc08,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,4.981193208570474,True
+fc08,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,1.718395749215901,True
+fc09,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,0.9669586954449514,True
+fc09,full,gpt-6-astra rank=2,gpt-6-astra,gemini-3-flash-reasoning,1.087238503109731,True
+fc09,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.07353500000000679,True
+fc09,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.07038685265371214,True
+fc09,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.2573660489443625,True
+fc09,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,1.967928975247375,True
+fc09,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,0.9669586954449514,True
+fc09,common,gpt-6-astra rank=2,gpt-6-astra,gemini-3-flash-reasoning,1.087238503109731,True
+fc09,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.07353500000000679,True
+fc09,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.07038685265371214,True
+fc09,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.2573660489443625,True
+fc09,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,1.967928975247375,True
+fc10,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,0.9062467231317726,True
+fc10,full,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,1.3225644405852606,True
+fc10,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.1001150000000024,True
+fc10,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.0785357751397413,True
+fc10,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,4.910019548944369,True
+fc10,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,1.5542699752473794,True
+fc10,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,0.9062467231317726,True
+fc10,common,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,1.3225644405852606,True
+fc10,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.1001150000000024,True
+fc10,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.0785357751397413,True
+fc10,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,4.910019548944369,True
+fc10,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,1.5542699752473794,True

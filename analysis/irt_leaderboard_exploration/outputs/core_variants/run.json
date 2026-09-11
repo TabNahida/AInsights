@@ -1,0 +1,1074 @@
+{
+  "input_sha256": {
+    "docs\\data\\models.json": "fa3eec5528773d4a4955f7d32343877a53d9a0c4e5a88c60a06d3c1eee67bb39",
+    "ArtificialAnalysis\\artificialanalysis_raw_scores_wide.csv": "67533b295c55c0f95228260931fb14edf7b16a1b67be668635899aa04b0d2f98"
+  },
+  "models": 644,
+  "representatives": 471,
+  "common_population": 105,
+  "variants": {
+    "a_broad": {
+      "label": "A 广覆盖",
+      "fallback": "discount",
+      "core": {
+        "coding": [
+          "Terminal-Bench effective"
+        ],
+        "hard-reasoning": [
+          "Humanity's Last Exam",
+          "GPQA Diamond"
+        ],
+        "knowledge-science": [
+          "GPQA Diamond",
+          "AA-Omniscience Accuracy"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1"
+        ],
+        "agentic-tool-work": [
+          "τ³-Banking"
+        ]
+      }
+    },
+    "b_automation": {
+      "label": "B 工作流",
+      "fallback": "discount",
+      "core": {
+        "coding": [
+          "Terminal-Bench effective"
+        ],
+        "hard-reasoning": [
+          "Humanity's Last Exam",
+          "GPQA Diamond"
+        ],
+        "knowledge-science": [
+          "GPQA Diamond",
+          "AA-Omniscience Accuracy"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA"
+        ]
+      }
+    },
+    "c_documents": {
+      "label": "C 工作流＋文档",
+      "fallback": "discount",
+      "core": {
+        "coding": [
+          "Terminal-Bench effective"
+        ],
+        "hard-reasoning": [
+          "Humanity's Last Exam",
+          "GPQA Diamond"
+        ],
+        "knowledge-science": [
+          "GPQA Diamond",
+          "AA-Omniscience Accuracy"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1",
+          "GDP.pdf"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA"
+        ]
+      }
+    },
+    "d_calibrated": {
+      "label": "D 工作流＋版本换算",
+      "fallback": "calibrated",
+      "core": {
+        "coding": [
+          "Terminal-Bench effective"
+        ],
+        "hard-reasoning": [
+          "Humanity's Last Exam",
+          "GPQA Diamond"
+        ],
+        "knowledge-science": [
+          "GPQA Diamond",
+          "AA-Omniscience Accuracy"
+        ],
+        "instruction-context": [
+          "AA-LCR v1.1"
+        ],
+        "agentic-tool-work": [
+          "AutomationBench-AA"
+        ]
+      }
+    }
+  },
+  "fallback_factors": {
+    "Terminal-Bench v2.1": 0.95,
+    "Terminal-Bench Hard": 0.9
+  },
+  "terminal_maps": {
+    "Terminal-Bench v2.1": {
+      "enabled": true,
+      "pairs": 102,
+      "slope": 0.2685220665295378,
+      "intercept": -6.199443864001481,
+      "median_old": 52.621750000000006,
+      "median_v4": 0.5051,
+      "median_gap": 46.25465,
+      "in_sample_mae": 6.056274117345375,
+      "fraction_discounted_old_above_observed_v4": 0.9803921568627451
+    },
+    "Terminal-Bench Hard": {
+      "enabled": true,
+      "pairs": 65,
+      "slope": 0.2779547422819615,
+      "intercept": -4.502315118252364,
+      "median_old": 27.2727,
+      "median_v4": 0.0,
+      "median_gap": 26.010099999999994,
+      "in_sample_mae": 3.9377803375758518,
+      "fraction_discounted_old_above_observed_v4": 0.9846153846153847
+    }
+  },
+  "calibrations": {
+    "a_broad": {
+      "cap": 29.58523629721803,
+      "population": 143,
+      "extensions": {
+        "coding": [
+          "benchmark:swe-bench-pro",
+          "benchmark:livecodebench"
+        ],
+        "agentic-tool-work": [
+          "τ²-Bench Telecom",
+          "APEX-Agents-AA",
+          "benchmark:swe-bench-pro",
+          "benchmark:hle-tools",
+          "benchmark:mcp-atlas",
+          "benchmark:osworld-verified"
+        ],
+        "hard-reasoning": [
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "MMMU-Pro",
+          "benchmark:mmlu-pro"
+        ],
+        "instruction-context": [
+          "benchmark:charxiv-no-tools"
+        ]
+      },
+      "trends": {
+        "coding": [
+          {
+            "enabled": true,
+            "observed_count": 8,
+            "slope": 0.14854757755942574,
+            "intercept": 63.08532260579517
+          },
+          {
+            "enabled": true,
+            "observed_count": 5,
+            "slope": 0.10903568102675881,
+            "intercept": 73.41279441449502
+          }
+        ],
+        "agentic-tool-work": [
+          {
+            "enabled": true,
+            "observed_count": 92,
+            "slope": 1.70898695888204,
+            "intercept": 41.28582695046202
+          },
+          {
+            "enabled": true,
+            "observed_count": 26,
+            "slope": 1.009565343069592,
+            "intercept": -0.044880993913658074
+          },
+          {
+            "enabled": true,
+            "observed_count": 8,
+            "slope": 0.5165893475257385,
+            "intercept": 49.141787674710386
+          },
+          {
+            "enabled": true,
+            "observed_count": 5,
+            "slope": 0.18034226987256635,
+            "intercept": 51.453099613047634
+          },
+          {
+            "enabled": false,
+            "observed_count": 4,
+            "slope": null,
+            "intercept": null
+          },
+          {
+            "enabled": true,
+            "observed_count": 6,
+            "slope": 1.1793986952568776,
+            "intercept": 37.387852586351435
+          }
+        ],
+        "hard-reasoning": [
+          {
+            "enabled": true,
+            "observed_count": 40,
+            "slope": 2.158437618743572,
+            "intercept": 1.890478700605506
+          }
+        ],
+        "knowledge-science": [
+          {
+            "enabled": true,
+            "observed_count": 73,
+            "slope": 0.7506769413416247,
+            "intercept": 33.01965888932119
+          },
+          {
+            "enabled": false,
+            "observed_count": 4,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "instruction-context": [
+          {
+            "enabled": false,
+            "observed_count": 3,
+            "slope": null,
+            "intercept": null
+          }
+        ]
+      }
+    },
+    "b_automation": {
+      "cap": 25.37582004706455,
+      "population": 109,
+      "extensions": {
+        "coding": [
+          "benchmark:swe-bench-pro",
+          "benchmark:livecodebench"
+        ],
+        "agentic-tool-work": [
+          "τ²-Bench Telecom",
+          "τ³-Banking",
+          "APEX-Agents-AA",
+          "benchmark:swe-bench-pro",
+          "benchmark:hle-tools",
+          "benchmark:mcp-atlas",
+          "benchmark:osworld-verified"
+        ],
+        "hard-reasoning": [
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "MMMU-Pro",
+          "benchmark:mmlu-pro"
+        ],
+        "instruction-context": [
+          "benchmark:charxiv-no-tools"
+        ]
+      },
+      "trends": {
+        "coding": [
+          {
+            "enabled": true,
+            "observed_count": 8,
+            "slope": 0.14854757755942574,
+            "intercept": 63.08532260579517
+          },
+          {
+            "enabled": false,
+            "observed_count": 3,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "agentic-tool-work": [
+          {
+            "enabled": true,
+            "observed_count": 70,
+            "slope": 1.089503397179666,
+            "intercept": 50.94487338609659
+          },
+          {
+            "enabled": true,
+            "observed_count": 109,
+            "slope": 0.5789016772233888,
+            "intercept": 8.615210120570044
+          },
+          {
+            "enabled": true,
+            "observed_count": 21,
+            "slope": 0.5364649074586285,
+            "intercept": 10.43233460412608
+          },
+          {
+            "enabled": true,
+            "observed_count": 8,
+            "slope": 0.32505467024751283,
+            "intercept": 52.10848837168911
+          },
+          {
+            "enabled": true,
+            "observed_count": 5,
+            "slope": 0.3947697265025808,
+            "intercept": 36.31603921863261
+          },
+          {
+            "enabled": false,
+            "observed_count": 4,
+            "slope": null,
+            "intercept": null
+          },
+          {
+            "enabled": false,
+            "observed_count": 4,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "hard-reasoning": [
+          {
+            "enabled": true,
+            "observed_count": 29,
+            "slope": 2.679918001441162,
+            "intercept": -7.808033389599402
+          }
+        ],
+        "knowledge-science": [
+          {
+            "enabled": true,
+            "observed_count": 53,
+            "slope": 0.7066065776693087,
+            "intercept": 35.576424351207244
+          },
+          {
+            "enabled": false,
+            "observed_count": 2,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "instruction-context": [
+          {
+            "enabled": false,
+            "observed_count": 3,
+            "slope": null,
+            "intercept": null
+          }
+        ]
+      }
+    },
+    "c_documents": {
+      "cap": 24.81203837889924,
+      "population": 105,
+      "extensions": {
+        "coding": [
+          "benchmark:swe-bench-pro",
+          "benchmark:livecodebench"
+        ],
+        "agentic-tool-work": [
+          "τ²-Bench Telecom",
+          "τ³-Banking",
+          "APEX-Agents-AA",
+          "benchmark:swe-bench-pro",
+          "benchmark:hle-tools",
+          "benchmark:mcp-atlas",
+          "benchmark:osworld-verified"
+        ],
+        "hard-reasoning": [
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "MMMU-Pro",
+          "benchmark:mmlu-pro"
+        ],
+        "instruction-context": [
+          "benchmark:charxiv-no-tools"
+        ]
+      },
+      "trends": {
+        "coding": [
+          {
+            "enabled": true,
+            "observed_count": 8,
+            "slope": 0.14854757755942574,
+            "intercept": 63.08532260579517
+          },
+          {
+            "enabled": false,
+            "observed_count": 3,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "agentic-tool-work": [
+          {
+            "enabled": true,
+            "observed_count": 68,
+            "slope": 1.066208743619901,
+            "intercept": 51.78248713526682
+          },
+          {
+            "enabled": true,
+            "observed_count": 105,
+            "slope": 0.5860114316835499,
+            "intercept": 8.60615816179711
+          },
+          {
+            "enabled": true,
+            "observed_count": 21,
+            "slope": 0.5364649074586285,
+            "intercept": 10.43233460412608
+          },
+          {
+            "enabled": true,
+            "observed_count": 8,
+            "slope": 0.32505467024751283,
+            "intercept": 52.10848837168911
+          },
+          {
+            "enabled": true,
+            "observed_count": 5,
+            "slope": 0.3947697265025808,
+            "intercept": 36.31603921863261
+          },
+          {
+            "enabled": false,
+            "observed_count": 4,
+            "slope": null,
+            "intercept": null
+          },
+          {
+            "enabled": false,
+            "observed_count": 4,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "hard-reasoning": [
+          {
+            "enabled": true,
+            "observed_count": 28,
+            "slope": 2.701902657879138,
+            "intercept": -9.47390264648115
+          }
+        ],
+        "knowledge-science": [
+          {
+            "enabled": true,
+            "observed_count": 52,
+            "slope": 0.7047355838479863,
+            "intercept": 35.693200947407064
+          },
+          {
+            "enabled": false,
+            "observed_count": 2,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "instruction-context": [
+          {
+            "enabled": false,
+            "observed_count": 3,
+            "slope": null,
+            "intercept": null
+          }
+        ]
+      }
+    },
+    "d_calibrated": {
+      "cap": 25.1606440393737,
+      "population": 109,
+      "extensions": {
+        "coding": [
+          "benchmark:swe-bench-pro",
+          "benchmark:livecodebench"
+        ],
+        "agentic-tool-work": [
+          "τ²-Bench Telecom",
+          "τ³-Banking",
+          "APEX-Agents-AA",
+          "benchmark:swe-bench-pro",
+          "benchmark:hle-tools",
+          "benchmark:mcp-atlas",
+          "benchmark:osworld-verified"
+        ],
+        "hard-reasoning": [
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "MMMU-Pro",
+          "benchmark:mmlu-pro"
+        ],
+        "instruction-context": [
+          "benchmark:charxiv-no-tools"
+        ]
+      },
+      "trends": {
+        "coding": [
+          {
+            "enabled": true,
+            "observed_count": 8,
+            "slope": 0.4266056632583156,
+            "intercept": 55.70731684612302
+          },
+          {
+            "enabled": false,
+            "observed_count": 3,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "agentic-tool-work": [
+          {
+            "enabled": true,
+            "observed_count": 70,
+            "slope": 1.089503397179666,
+            "intercept": 50.94487338609659
+          },
+          {
+            "enabled": true,
+            "observed_count": 109,
+            "slope": 0.5789016772233888,
+            "intercept": 8.615210120570044
+          },
+          {
+            "enabled": true,
+            "observed_count": 21,
+            "slope": 0.5364649074586285,
+            "intercept": 10.43233460412608
+          },
+          {
+            "enabled": true,
+            "observed_count": 8,
+            "slope": 0.32505467024751283,
+            "intercept": 52.10848837168911
+          },
+          {
+            "enabled": true,
+            "observed_count": 5,
+            "slope": 0.3947697265025808,
+            "intercept": 36.31603921863261
+          },
+          {
+            "enabled": false,
+            "observed_count": 4,
+            "slope": null,
+            "intercept": null
+          },
+          {
+            "enabled": false,
+            "observed_count": 4,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "hard-reasoning": [
+          {
+            "enabled": true,
+            "observed_count": 29,
+            "slope": 2.679918001441162,
+            "intercept": -7.808033389599402
+          }
+        ],
+        "knowledge-science": [
+          {
+            "enabled": true,
+            "observed_count": 53,
+            "slope": 0.7066065776693087,
+            "intercept": 35.576424351207244
+          },
+          {
+            "enabled": false,
+            "observed_count": 2,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "instruction-context": [
+          {
+            "enabled": false,
+            "observed_count": 3,
+            "slope": null,
+            "intercept": null
+          }
+        ]
+      }
+    }
+  },
+  "common_calibrations": {
+    "a_broad": {
+      "cap": 29.290305875145087,
+      "population": 105,
+      "extensions": {
+        "coding": [
+          "benchmark:swe-bench-pro",
+          "benchmark:livecodebench"
+        ],
+        "agentic-tool-work": [
+          "τ²-Bench Telecom",
+          "APEX-Agents-AA",
+          "benchmark:swe-bench-pro",
+          "benchmark:hle-tools",
+          "benchmark:mcp-atlas",
+          "benchmark:osworld-verified"
+        ],
+        "hard-reasoning": [
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "MMMU-Pro",
+          "benchmark:mmlu-pro"
+        ],
+        "instruction-context": [
+          "benchmark:charxiv-no-tools"
+        ]
+      },
+      "trends": {
+        "coding": [
+          {
+            "enabled": true,
+            "observed_count": 8,
+            "slope": 0.14854757755942574,
+            "intercept": 63.08532260579517
+          },
+          {
+            "enabled": false,
+            "observed_count": 3,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "agentic-tool-work": [
+          {
+            "enabled": true,
+            "observed_count": 68,
+            "slope": 1.7819818467849058,
+            "intercept": 38.420825964406276
+          },
+          {
+            "enabled": true,
+            "observed_count": 21,
+            "slope": 1.0517567366147487,
+            "intercept": -1.307409393348074
+          },
+          {
+            "enabled": true,
+            "observed_count": 8,
+            "slope": 0.5165893475257385,
+            "intercept": 49.141787674710386
+          },
+          {
+            "enabled": true,
+            "observed_count": 5,
+            "slope": 0.18034226987256635,
+            "intercept": 51.453099613047634
+          },
+          {
+            "enabled": false,
+            "observed_count": 4,
+            "slope": null,
+            "intercept": null
+          },
+          {
+            "enabled": false,
+            "observed_count": 4,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "hard-reasoning": [
+          {
+            "enabled": true,
+            "observed_count": 28,
+            "slope": 2.701902657879138,
+            "intercept": -9.47390264648115
+          }
+        ],
+        "knowledge-science": [
+          {
+            "enabled": true,
+            "observed_count": 52,
+            "slope": 0.7047355838479863,
+            "intercept": 35.693200947407064
+          },
+          {
+            "enabled": false,
+            "observed_count": 2,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "instruction-context": [
+          {
+            "enabled": false,
+            "observed_count": 3,
+            "slope": null,
+            "intercept": null
+          }
+        ]
+      }
+    },
+    "b_automation": {
+      "cap": 24.81203837889924,
+      "population": 105,
+      "extensions": {
+        "coding": [
+          "benchmark:swe-bench-pro",
+          "benchmark:livecodebench"
+        ],
+        "agentic-tool-work": [
+          "τ²-Bench Telecom",
+          "τ³-Banking",
+          "APEX-Agents-AA",
+          "benchmark:swe-bench-pro",
+          "benchmark:hle-tools",
+          "benchmark:mcp-atlas",
+          "benchmark:osworld-verified"
+        ],
+        "hard-reasoning": [
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "MMMU-Pro",
+          "benchmark:mmlu-pro"
+        ],
+        "instruction-context": [
+          "benchmark:charxiv-no-tools"
+        ]
+      },
+      "trends": {
+        "coding": [
+          {
+            "enabled": true,
+            "observed_count": 8,
+            "slope": 0.14854757755942574,
+            "intercept": 63.08532260579517
+          },
+          {
+            "enabled": false,
+            "observed_count": 3,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "agentic-tool-work": [
+          {
+            "enabled": true,
+            "observed_count": 68,
+            "slope": 1.066208743619901,
+            "intercept": 51.78248713526682
+          },
+          {
+            "enabled": true,
+            "observed_count": 105,
+            "slope": 0.5860114316835499,
+            "intercept": 8.60615816179711
+          },
+          {
+            "enabled": true,
+            "observed_count": 21,
+            "slope": 0.5364649074586285,
+            "intercept": 10.43233460412608
+          },
+          {
+            "enabled": true,
+            "observed_count": 8,
+            "slope": 0.32505467024751283,
+            "intercept": 52.10848837168911
+          },
+          {
+            "enabled": true,
+            "observed_count": 5,
+            "slope": 0.3947697265025808,
+            "intercept": 36.31603921863261
+          },
+          {
+            "enabled": false,
+            "observed_count": 4,
+            "slope": null,
+            "intercept": null
+          },
+          {
+            "enabled": false,
+            "observed_count": 4,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "hard-reasoning": [
+          {
+            "enabled": true,
+            "observed_count": 28,
+            "slope": 2.701902657879138,
+            "intercept": -9.47390264648115
+          }
+        ],
+        "knowledge-science": [
+          {
+            "enabled": true,
+            "observed_count": 52,
+            "slope": 0.7047355838479863,
+            "intercept": 35.693200947407064
+          },
+          {
+            "enabled": false,
+            "observed_count": 2,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "instruction-context": [
+          {
+            "enabled": false,
+            "observed_count": 3,
+            "slope": null,
+            "intercept": null
+          }
+        ]
+      }
+    },
+    "c_documents": {
+      "cap": 24.81203837889924,
+      "population": 105,
+      "extensions": {
+        "coding": [
+          "benchmark:swe-bench-pro",
+          "benchmark:livecodebench"
+        ],
+        "agentic-tool-work": [
+          "τ²-Bench Telecom",
+          "τ³-Banking",
+          "APEX-Agents-AA",
+          "benchmark:swe-bench-pro",
+          "benchmark:hle-tools",
+          "benchmark:mcp-atlas",
+          "benchmark:osworld-verified"
+        ],
+        "hard-reasoning": [
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "MMMU-Pro",
+          "benchmark:mmlu-pro"
+        ],
+        "instruction-context": [
+          "benchmark:charxiv-no-tools"
+        ]
+      },
+      "trends": {
+        "coding": [
+          {
+            "enabled": true,
+            "observed_count": 8,
+            "slope": 0.14854757755942574,
+            "intercept": 63.08532260579517
+          },
+          {
+            "enabled": false,
+            "observed_count": 3,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "agentic-tool-work": [
+          {
+            "enabled": true,
+            "observed_count": 68,
+            "slope": 1.066208743619901,
+            "intercept": 51.78248713526682
+          },
+          {
+            "enabled": true,
+            "observed_count": 105,
+            "slope": 0.5860114316835499,
+            "intercept": 8.60615816179711
+          },
+          {
+            "enabled": true,
+            "observed_count": 21,
+            "slope": 0.5364649074586285,
+            "intercept": 10.43233460412608
+          },
+          {
+            "enabled": true,
+            "observed_count": 8,
+            "slope": 0.32505467024751283,
+            "intercept": 52.10848837168911
+          },
+          {
+            "enabled": true,
+            "observed_count": 5,
+            "slope": 0.3947697265025808,
+            "intercept": 36.31603921863261
+          },
+          {
+            "enabled": false,
+            "observed_count": 4,
+            "slope": null,
+            "intercept": null
+          },
+          {
+            "enabled": false,
+            "observed_count": 4,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "hard-reasoning": [
+          {
+            "enabled": true,
+            "observed_count": 28,
+            "slope": 2.701902657879138,
+            "intercept": -9.47390264648115
+          }
+        ],
+        "knowledge-science": [
+          {
+            "enabled": true,
+            "observed_count": 52,
+            "slope": 0.7047355838479863,
+            "intercept": 35.693200947407064
+          },
+          {
+            "enabled": false,
+            "observed_count": 2,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "instruction-context": [
+          {
+            "enabled": false,
+            "observed_count": 3,
+            "slope": null,
+            "intercept": null
+          }
+        ]
+      }
+    },
+    "d_calibrated": {
+      "cap": 24.595092112483538,
+      "population": 105,
+      "extensions": {
+        "coding": [
+          "benchmark:swe-bench-pro",
+          "benchmark:livecodebench"
+        ],
+        "agentic-tool-work": [
+          "τ²-Bench Telecom",
+          "τ³-Banking",
+          "APEX-Agents-AA",
+          "benchmark:swe-bench-pro",
+          "benchmark:hle-tools",
+          "benchmark:mcp-atlas",
+          "benchmark:osworld-verified"
+        ],
+        "hard-reasoning": [
+          "AIME 2025"
+        ],
+        "knowledge-science": [
+          "MMMU-Pro",
+          "benchmark:mmlu-pro"
+        ],
+        "instruction-context": [
+          "benchmark:charxiv-no-tools"
+        ]
+      },
+      "trends": {
+        "coding": [
+          {
+            "enabled": true,
+            "observed_count": 8,
+            "slope": 0.4266056632583156,
+            "intercept": 55.70731684612302
+          },
+          {
+            "enabled": false,
+            "observed_count": 3,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "agentic-tool-work": [
+          {
+            "enabled": true,
+            "observed_count": 68,
+            "slope": 1.066208743619901,
+            "intercept": 51.78248713526682
+          },
+          {
+            "enabled": true,
+            "observed_count": 105,
+            "slope": 0.5860114316835499,
+            "intercept": 8.60615816179711
+          },
+          {
+            "enabled": true,
+            "observed_count": 21,
+            "slope": 0.5364649074586285,
+            "intercept": 10.43233460412608
+          },
+          {
+            "enabled": true,
+            "observed_count": 8,
+            "slope": 0.32505467024751283,
+            "intercept": 52.10848837168911
+          },
+          {
+            "enabled": true,
+            "observed_count": 5,
+            "slope": 0.3947697265025808,
+            "intercept": 36.31603921863261
+          },
+          {
+            "enabled": false,
+            "observed_count": 4,
+            "slope": null,
+            "intercept": null
+          },
+          {
+            "enabled": false,
+            "observed_count": 4,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "hard-reasoning": [
+          {
+            "enabled": true,
+            "observed_count": 28,
+            "slope": 2.701902657879138,
+            "intercept": -9.47390264648115
+          }
+        ],
+        "knowledge-science": [
+          {
+            "enabled": true,
+            "observed_count": 52,
+            "slope": 0.7047355838479863,
+            "intercept": 35.693200947407064
+          },
+          {
+            "enabled": false,
+            "observed_count": 2,
+            "slope": null,
+            "intercept": null
+          }
+        ],
+        "instruction-context": [
+          {
+            "enabled": false,
+            "observed_count": 3,
+            "slope": null,
+            "intercept": null
+          }
+        ]
+      }
+    }
+  }
+}

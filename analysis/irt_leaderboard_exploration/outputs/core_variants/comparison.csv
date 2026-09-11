@@ -1,0 +1,472 @@
+model,slug,variant_group,a_broad_rank,a_broad_score,b_automation_rank,b_automation_score,c_documents_rank,c_documents_score,d_calibrated_rank,d_calibrated_score
+Claude Fable 5.1 (max with fallback),claude-fable-5-1,claude fable 5 1 with fallback,1,71.30561613428301,1,74.15145970134256,1,66.54124993138832,1,72.7341334073423
+Claude Opus 4.6 (max),claude-opus-4-6-adaptive,claude opus 4 6,,,,,,,,
+Claude Opus 4.7 (max),claude-opus-4-7,claude opus 4 7,7,64.26636893156345,,,,,,
+Claude Opus 4.8 (max),claude-opus-4-8,claude opus 4 8,29,53.51168405985802,22,55.78500405985803,18,48.66784076902948,18,55.78500405985803
+Claude Opus 5 (max),claude-opus-5,claude opus 5,2,66.88075282580004,3,69.8576294502274,4,62.27007641898591,4,68.60882303964583
+Claude Sonnet 4.6 (max),claude-sonnet-4-6-adaptive,claude sonnet 4 6,57,46.292714039255195,41,46.26245494525537,38,37.34625976090762,39,46.26245494525537
+Claude Sonnet 5 (max),claude-sonnet-5,claude sonnet 5,38,51.04031452596831,31,52.39235984786342,32,42.52222057807552,27,52.39235984786342
+DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,deepseek v4 flash 0731,42,50.17913441479344,29,53.09639441479344,30,43.08364121003595,25,53.09639441479344
+DeepSeek V4 Flash (max),deepseek-v4-flash-0420,deepseek v4 flash,62,44.3713379870892,40,46.3241539992116,40,37.08709938493312,38,46.3241539992116
+DeepSeek V4 Flash Vision (max),deepseek-v4-flash-vision,deepseek v4 flash vision,43,49.98743982846058,32,52.26238107848582,34,42.17822864199623,28,52.26238107848582
+DeepSeek V4 Pro 0813 (max),deepseek-v4-pro,deepseek v4 pro 0813,32,52.93640343294402,20,56.338886580689184,23,46.324662850489965,16,56.338886580689184
+DeepSeek V4 Pro (max),deepseek-v4-pro-0424,deepseek v4 pro,52,48.47310298356755,30,53.01698943804434,29,44.40989249376074,26,53.01698943804434
+GLM-5.2 (max),glm-5-2,glm 5 2,12,58.86613173191818,10,61.06563066188118,12,51.07223120242011,33,49.06077008432545
+GLM-5.3 (max),glm-5-3,glm 5 3,13,58.36933994495637,8,61.492966817827366,11,51.44863779206221,7,61.492966817827366
+GPT-5.6 Luna (max),gpt-5-6-luna,gpt 5 6 luna,41,50.648944036820936,26,53.57310931626394,24,45.801913702514355,21,53.98053860593109
+GPT-5.6 Sol (max),gpt-5-6-sol,gpt 5 6 sol,8,62.25321389284389,6,65.59018195684465,6,58.266476292485336,5,65.59018195684465
+GPT-5.6 Terra (max),gpt-5-6-terra,gpt 5 6 terra,16,57.47478229678132,9,61.36354229678132,8,53.68990773854988,8,61.36354229678132
+GPT-6 Astra (max),gpt-6-astra,gpt 6 astra,5,66.24439034399704,2,71.65407034399703,2,65.52206565484428,2,71.65407034399703
+Kimi K3 (max),kimi-k3,kimi k3,20,56.043164038530875,14,59.22785452704916,13,50.24673567488905,11,59.22785452704916
+Muse Spark 1.3 (max),muse-spark-1-3,muse spark 1 3,10,59.638134654853054,7,62.787486572123925,7,55.50447873181386,6,62.787486572123925
+Quasar 438B (max),quasar-438b,quasar 438b,95,35.33871148486806,64,35.62552122356807,67,24.387278559638837,64,35.62552122356807
+Qwen2.5 Max,qwen-2-5-max,qwen2 5 max,,,,,,,,
+Qwen3.6 Max Preview,qwen3-6-max,qwen3 6 max preview,,,,,,,,
+Qwen3.7 Max,qwen3-7-max,qwen3 7 max,55,47.322849863583826,37,47.40236580558941,41,36.754951362252,34,47.40236580558941
+Qwen3.8 Max,qwen3-8-max,qwen3 8 max,23,54.87663497039445,18,57.26755040652994,16,49.485384676840816,15,57.26755040652994
+Qwen3 Max,qwen3-max,qwen3 max,,,,,,,,
+GPT-5.2 (xhigh),gpt-5-2,gpt 5 2,,,,,,,,
+GPT-5.2 Codex (xhigh),gpt-5-2-codex,gpt 5 2 codex,,,,,,,,
+GPT-5.3 Codex (xhigh),gpt-5-3-codex,gpt 5 3 codex,,,,,,,,
+GPT-5.4 (xhigh),gpt-5-4,gpt 5 4,6,65.56029261746838,,,,,,
+GPT-5.4 mini (xhigh),gpt-5-4-mini,gpt 5 4 mini,68,42.76866492663089,48,43.315441205163026,44,34.31522149636781,46,43.315441205163026
+GPT-5.4 nano (xhigh),gpt-5-4-nano,gpt 5 4 nano,80,39.69066667192338,59,39.123042406446295,56,28.54796662119576,59,39.123042406446295
+GPT-5.4 Pro (xhigh),gpt-5-4-pro,gpt 5 4 pro,,,,,,,,
+GPT-5.5 (xhigh),gpt-5-5,gpt 5 5,21,55.40234012326236,16,57.7128517403257,17,49.253784635880294,13,57.7128517403257
+GPT-5.5 Pro (xhigh),gpt-5-5-pro,gpt 5 5 pro,,,,,,,,
+Grok 4.6 (xhigh),grok-4-6-xhigh,grok 4 6,27,53.81854344040403,15,58.55822344040402,15,49.823342327602,12,58.55822344040402
+Muse Spark 1.1 (xhigh),muse-spark-1-1,muse spark 1 1,46,49.65134924192466,34,51.20014854415392,33,42.3018767323439,30,51.20014854415392
+Muse Spark 1.2 (xhigh),muse-spark-1-2,muse spark 1 2,44,49.8152121819742,33,51.51261708231132,31,43.07179690255941,29,51.51261708231132
+Qwen3.8 27B (xhigh),qwen3-8-27b,qwen3 8 27b,51,48.72965135138431,35,50.88922632000386,35,41.747439020273134,31,50.88922632000386
+Gemini 3.7 Flash (high),gemini-3-7-flash,gemini 3 7 flash,28,53.535718586972806,13,59.3845185869728,10,51.831461315905855,10,59.3845185869728
+Gemini 3.8 Flash (high),gemini-3-8-flash,gemini 3 8 flash,17,57.11746243141074,11,60.44171332606365,9,52.357235692803506,9,60.44171332606365
+Gemini 3 Pro Preview (high),gemini-3-pro,gemini 3 pro preview,,,,,,,,
+GPT-5 (high),gpt-5,gpt 5,48,49.49900002587947,,,,,,
+GPT-5.1 (high),gpt-5-1,gpt 5 1,31,53.2772582164321,,,,,,
+GPT-5.1 Codex (high),gpt-5-1-codex,gpt 5 1 codex,,,,,,,,
+GPT-5.1 Codex mini (high),gpt-5-1-codex-mini,gpt 5 1 codex mini,,,,,,,,
+GPT-5 Codex (high),gpt-5-codex,gpt 5 codex,,,,,,,,
+GPT-5 mini (high),gpt-5-mini,gpt 5 mini,93,35.80728891893972,63,35.841680993686836,62,26.161407544670674,63,35.841680993686836
+GPT-5 nano (high),gpt-5-nano,gpt 5 nano,,,,,,,,
+gpt-oss-120b (high),gpt-oss-120b,gpt oss 120b,100,30.98208519941177,74,29.448372193087273,72,21.766224676242935,74,29.448372193087273
+gpt-oss-20b (high),gpt-oss-20b,gpt oss 20b,107,27.48449222658425,79,25.616370297897195,76,20.394053184638352,79,25.616370297897195
+Grok 3 mini Reasoning (high),grok-3-mini-reasoning,grok 3 mini reasoning,,,,,,,,
+Grok 4.3 (high),grok-4-3,grok 4 3,56,46.37785878404304,47,43.31903389164679,47,32.71920788741782,47,43.27599869010862
+Grok 4.5 (high),grok-4-5,grok 4 5,33,52.867028401527364,21,56.04162840152736,20,47.89886907411502,17,56.04162840152736
+HyperNova 60B 2605 (high),hypernova-60b,hypernova 60b 2605,106,28.005157706805512,,,,,,
+K2-V2 (high),k2-v2,k2 v2,,,,,,,,
+Muse Glimmer (high),muse-glimmer,muse glimmer,75,40.66627052379127,58,39.42571260003265,57,28.51906054157113,58,39.42571260003265
+Nova 2.0 Lite (high),nova-2-0-lite-reasoning,nova 2 0 lite,,,,,,,,
+o3-mini (high),o3-mini-high,o3 mini,118,23.83890620777955,88,22.91402620777955,81,16.168749906878695,87,22.91402620777955
+o4-mini (high),o4-mini,o4 mini,,,,,,,,
+Sarvam 105B (high),sarvam-105b,sarvam 105b,,,,,,,,
+Sarvam 30B (high),sarvam-30b,sarvam 30b,,,,,,,,
+QwQ 32B-Preview,QwQ-32B-Preview,qwq 32b preview,,,,,,,,
+A.X-K2,a-x-k2,a x k2,69,42.668407382745144,,,,,,
+Agnes 2.5 Pro Alpha,agnes-2-5-pro-alpha,agnes 2 5 pro alpha,78,39.892200147495444,43,45.10458014749544,,,41,45.10458014749544
+Agnes 2.5 Pro Beta,agnes-2-5-pro-beta,agnes 2 5 pro beta,11,59.052115798322966,,,,,,
+Apertus 70B Instruct,apertus-70b-instruct,apertus 70b instruct,,,,,,,,
+Apertus 8B Instruct,apertus-8b-instruct,apertus 8b instruct,,,,,,,,
+Apodex 1.1,apodex-1-1,apodex 1 1,14,57.9921153725504,,,,,,
+Apriel-v1.5-15B-Thinker,apriel-v1-5-15b-thinker,apriel v1 5 15b thinker,,,,,,,,
+Apriel-v1.6-15B-Thinker,apriel-v1-6-15b-thinker,apriel v1 6 15b thinker,,,,,,,,
+Arctic,arctic-instruct,arctic,,,,,,,,
+Celeris-1,celeris-1,celeris 1,125,17.79746108544657,95,17.097121085446574,95,10.847676526737303,95,17.097121085446574
+Claude 2.0,claude-2,claude 2 0,,,,,,,,
+Claude 2.1,claude-21,claude 2 1,,,,,,,,
+Claude 3.5 Haiku,claude-3-5-haiku,claude 3 5 haiku,,,,,,,,
+Claude 3.7 Sonnet,claude-3-7-sonnet-thinking,claude 3 7 sonnet,,,,,,,,
+Claude 3 Haiku,claude-3-haiku,claude 3 haiku,,,,,,,,
+Claude 3 Opus,claude-3-opus,claude 3 opus,,,,,,,,
+Claude 3 Sonnet,claude-3-sonnet,claude 3 sonnet,,,,,,,,
+Claude 3.5 Sonnet (Oct),claude-35-sonnet,claude 3 5 sonnet oct,,,,,,,,
+Claude 3.5 Sonnet (June),claude-35-sonnet-june-24,claude 3 5 sonnet june,,,,,,,,
+Claude 4.1 Opus,claude-4-1-opus-thinking,claude 4 1 opus,,,,,,,,
+Claude 4.5 Haiku,claude-4-5-haiku-reasoning,claude 4 5 haiku,98,33.91741679572652,72,31.93601850333419,75,20.608944873341635,72,31.93601850333419
+Claude 4.5 Sonnet,claude-4-5-sonnet-thinking,claude 4 5 sonnet,84,38.14180456684232,60,37.82279484094919,59,27.134849876812183,60,37.82279484094919
+Claude 4 Opus,claude-4-opus-thinking,claude 4 opus,,,,,,,,
+Claude 4 Sonnet,claude-4-sonnet-thinking,claude 4 sonnet,76,40.51238892313863,,,,,,
+Claude Fable 5 (with fallback),claude-fable-5,claude fable 5 with fallback,4,66.82963907251678,4,69.84742434192361,3,62.271206850595505,3,68.96374712599669
+Claude Instant,claude-instant,claude instant,,,,,,,,
+Claude Opus 4.5,claude-opus-4-5-thinking,claude opus 4 5,,,,,,,,
+Cogito v2.1,cogito-v2-1-reasoning,cogito v2 1,,,,,,,,
+Command A,command-a,command a,,,,,,,,
+Command-R (Mar),command-r-03-2024,command r mar,,,,,,,,
+Command-R+ (Apr),command-r-plus-04-2024,command r apr,,,,,,,,
+DBRX,dbrx,dbrx,,,,,,,,
+DeepHermes 3 - Llama-3.1 8B,deephermes-3-llama-3-1-8b-preview,deephermes 3 llama 3 1 8b,,,,,,,,
+DeepHermes 3 - Mistral 24B,deephermes-3-mistral-24b-preview,deephermes 3 mistral 24b,,,,,,,,
+DeepSeek-Coder-V2,deepseek-coder-v2,deepseek coder v2,,,,,,,,
+DeepSeek Coder V2 Lite,deepseek-coder-v2-lite,deepseek coder v2 lite,,,,,,,,
+DeepSeek LLM 67B (V1),deepseek-llm-67b-chat,deepseek llm 67b v1,,,,,,,,
+DeepSeek R1 0528,deepseek-r1,deepseek r1 0528,,,,,,,,
+DeepSeek R1 (Jan),deepseek-r1-0120,deepseek r1 jan,102,29.646555603133557,77,27.797580757827944,79,18.842415892927306,77,27.797580757827944
+DeepSeek R1 Distill Llama 70B,deepseek-r1-distill-llama-70b,deepseek r1 distill llama 70b,,,,,,,,
+DeepSeek R1 Distill Llama 8B,deepseek-r1-distill-llama-8b,deepseek r1 distill llama 8b,,,,,,,,
+DeepSeek R1 Distill Qwen 1.5B,deepseek-r1-distill-qwen-1-5b,deepseek r1 distill qwen 1 5b,,,,,,,,
+DeepSeek R1 Distill Qwen 14B,deepseek-r1-distill-qwen-14b,deepseek r1 distill qwen 14b,,,,,,,,
+DeepSeek R1 Distill Qwen 32B,deepseek-r1-distill-qwen-32b,deepseek r1 distill qwen 32b,,,,,,,,
+DeepSeek R1 0528 Qwen3 8B,deepseek-r1-qwen3-8b,deepseek r1 0528 qwen3 8b,,,,,,,,
+DeepSeek-V2,deepseek-v2,deepseek v2,,,,,,,,
+DeepSeek-V2.5 (Dec),deepseek-v2-5,deepseek v2 5 dec,,,,,,,,
+DeepSeek-V2.5,deepseek-v2-5-sep-2024,deepseek v2 5,,,,,,,,
+DeepSeek V3 (Dec),deepseek-v3,deepseek v3 dec,127,16.883197455853963,96,16.05131745585396,94,11.38302491800406,96,16.05131745585396
+DeepSeek V3 0324,deepseek-v3-0324,deepseek v3 0324,122,20.801817854532715,91,20.010585230968207,87,13.746250265297027,90,20.010585230968207
+DeepSeek V3.1,deepseek-v3-1-reasoning,deepseek v3 1,,,,,,,,
+DeepSeek V3.1 Terminus,deepseek-v3-1-terminus-reasoning,deepseek v3 1 terminus,88,36.65648321849793,71,33.347281620021235,69,23.523387707677465,71,33.347281620021235
+DeepSeek V3.2,deepseek-v3-2-reasoning,deepseek v3 2,,,,,,,,
+DeepSeek V3.2 Exp,deepseek-v3-2-reasoning-0925,deepseek v3 2 exp,,,,,,,,
+DeepSeek V3.2 Speciale,deepseek-v3-2-speciale,deepseek v3 2 speciale,,,,,,,,
+Devstral 2,devstral-2,devstral 2,124,19.184646231125292,94,18.144618834528217,88,13.706333692006117,94,18.144618834528217
+Devstral Small,devstral-small,devstral small,,,,,,,,
+Devstral Small 2,devstral-small-2,devstral small 2,128,16.881805873983456,97,15.94012831135461,93,11.669213663584872,97,15.94012831135461
+Devstral Small (May),devstral-small-2505,devstral small may,,,,,,,,
+DiffusionGemma 26B A4B,diffusiongemma-26b-a4b,diffusiongemma 26b a4b,,,,,,,,
+Doubao Seed Code,doubao-seed-code,doubao seed code,,,,,,,,
+ERNIE 4.5 300B A47B,ernie-4-5-300b-a47b,ernie 4 5 300b a47b,,,,,,,,
+ERNIE 5.0 Thinking Preview,ernie-5-0-thinking-preview,ernie 5 0 thinking preview,,,,,,,,
+Exaone 4.0 1.2B,exaone-4-0-1-2b-reasoning,exaone 4 0 1 2b,,,,,,,,
+EXAONE 4.0 32B,exaone-4-0-32b-reasoning,exaone 4 0 32b,,,,,,,,
+EXAONE 4.5 33B,exaone-4-5-33b,exaone 4 5 33b,,,,,,,,
+Falcon-H1R-7B,falcon-h1r-7b,falcon h1r 7b,,,,,,,,
+G9v3-39A5B,g9v3-39a5b,g9v3 39a5b,85,38.08958980493618,,,,,,
+G9v3-3B,g9v3-3b,g9v3 3b,,,,,,,,
+Gemini 1.0 Pro,gemini-1-0-pro,gemini 1 0 pro,,,,,,,,
+Gemini 1.0 Ultra,gemini-1-0-ultra,gemini 1 0 ultra,,,,,,,,
+Gemini 1.5 Flash (Sep),gemini-1-5-flash,gemini 1 5 flash sep,,,,,,,,
+Gemini 1.5 Flash-8B,gemini-1-5-flash-8b,gemini 1 5 flash 8b,,,,,,,,
+Gemini 1.5 Flash (May),gemini-1-5-flash-may-2024,gemini 1 5 flash may,,,,,,,,
+Gemini 1.5 Pro (Sep),gemini-1-5-pro,gemini 1 5 pro sep,,,,,,,,
+Gemini 1.5 Pro (May),gemini-1-5-pro-may-2024,gemini 1 5 pro may,,,,,,,,
+Gemini 2.0 Flash,gemini-2-0-flash,gemini 2 0 flash,,,,,,,,
+Gemini 2.0 Flash (exp),gemini-2-0-flash-experimental,gemini 2 0 flash exp,,,,,,,,
+Gemini 2.0 Flash-Lite (Feb),gemini-2-0-flash-lite-001,gemini 2 0 flash lite feb,,,,,,,,
+Gemini 2.0 Flash-Lite (Preview),gemini-2-0-flash-lite-preview,gemini 2 0 flash lite preview,,,,,,,,
+Gemini 2.0 Flash Thinking exp. (Jan),gemini-2-0-flash-thinking-exp-0121,gemini 2 0 flash thinking exp jan,,,,,,,,
+Gemini 2.0 Flash Thinking exp. (Dec),gemini-2-0-flash-thinking-exp-1219,gemini 2 0 flash thinking exp dec,,,,,,,,
+Gemini 2.0 Pro Experimental,gemini-2-0-pro-experimental-02-05,gemini 2 0 pro experimental,,,,,,,,
+Gemini 2.5 Flash-Lite (Sep),gemini-2-5-flash-lite-preview-09-2025-reasoning,gemini 2 5 flash lite sep,,,,,,,,
+Gemini 2.5 Flash-Lite,gemini-2-5-flash-lite-reasoning,gemini 2 5 flash lite,,,,,,,,
+Gemini 2.5 Flash (Sep),gemini-2-5-flash-preview-09-2025-reasoning,gemini 2 5 flash sep,,,,,,,,
+Gemini 2.5 Flash,gemini-2-5-flash-reasoning,gemini 2 5 flash,,,,,,,,
+Gemini 2.5 Flash (Apr),gemini-2-5-flash-reasoning-04-2025,gemini 2 5 flash apr,,,,,,,,
+Gemini 2.5 Pro,gemini-2-5-pro,gemini 2 5 pro,92,35.94485003569294,68,34.59752317076841,63,25.947535868357125,68,34.59752317076841
+Gemini 2.5 Pro (Mar),gemini-2-5-pro-03-25,gemini 2 5 pro mar,,,,,,,,
+Gemini 2.5 Pro (May),gemini-2-5-pro-05-06,gemini 2 5 pro may,,,,,,,,
+Gemini 3.1 Flash-Lite,gemini-3-1-flash-lite-preview,gemini 3 1 flash lite,90,36.14001899038895,66,35.04515901839979,65,24.99138380810718,66,35.04515901839979
+Gemini 3.1 Pro Preview,gemini-3-1-pro-preview,gemini 3 1 pro preview,35,52.71342056470912,28,53.19338293903818,28,44.43192489921582,24,53.19338293903818
+Gemini 3.5 Flash,gemini-3-5-flash,gemini 3 5 flash,36,51.654459078771275,27,53.531979789557475,22,46.48874960087957,23,53.531979789557475
+Gemini 3.5 Flash-Lite,gemini-3-5-flash-lite,gemini 3 5 flash lite,82,38.528229218499575,56,39.95206666239987,51,31.17724035816355,56,39.95206666239987
+Gemini 3.6 Flash,gemini-3-6-flash,gemini 3 6 flash,49,49.326670784132105,25,53.9506307841321,26,45.412534026603154,22,53.9506307841321
+Gemini 3 Deep Think,gemini-3-deep-think,gemini 3 deep think,,,,,,,,
+Gemini 3 Flash,gemini-3-flash-reasoning,gemini 3 flash,30,53.39064034874132,,,,,,
+Gemma 3 12B,gemma-3-12b,gemma 3 12b,141,8.052231271679194,109,7.925511271679194,104,6.8362003861671266,109,7.925511271679194
+Gemma 3 1B,gemma-3-1b,gemma 3 1b,,,,,,,,
+Gemma 3 270M,gemma-3-270m,gemma 3 270m,,,,,,,,
+Gemma 3 27B,gemma-3-27b,gemma 3 27b,140,9.087203967357764,107,8.960483967357764,103,7.736035445203056,107,8.960483967357764
+Gemma 3 4B,gemma-3-4b,gemma 3 4b,142,6.96782114538901,,,,,,
+Gemma 3n E2B,gemma-3n-e2b,gemma 3n e2b,,,,,,,,
+Gemma 3n E4B,gemma-3n-e4b,gemma 3n e4b,143,5.56459075363457,,,,,,
+Gemma 3n E4B (May),gemma-3n-e4b-preview-0520,gemma 3n e4b may,,,,,,,,
+Gemma 4 12B,gemma-4-12b,gemma 4 12b,,,,,,,,
+Gemma 4 26B A4B,gemma-4-26b-a4b,gemma 4 26b a4b,77,39.93465463800959,,,,,,
+Gemma 4 31B,gemma-4-31b,gemma 4 31b,91,36.04467627849601,67,34.75275510092514,66,24.827859089106287,67,34.75275510092514
+Gemma 4 E2B,gemma-4-e2b,gemma 4 e2b,,,,,,,,
+Gemma 4 E4B,gemma-4-e4b,gemma 4 e4b,,,,,,,,
+GLM-4.5-Air,glm-4-5-air,glm 4 5 air,,,,,,,,
+GLM-4.5V,glm-4-5v-reasoning,glm 4 5v,,,,,,,,
+GLM-4.6,glm-4-6-reasoning,glm 4 6,70,42.32898963926087,,,,,,
+GLM-4.6V,glm-4-6v-reasoning,glm 4 6v,,,,,,,,
+GLM-4.7,glm-4-7,glm 4 7,39,50.8928249565798,,,,,,
+GLM-4.7-Flash,glm-4-7-flash,glm 4 7 flash,,,,,,,,
+GLM-4.5,glm-4.5,glm 4 5,,,,,,,,
+GLM-5,glm-5,glm 5,,,,,,,,
+GLM-5.1,glm-5-1,glm 5 1,25,54.39968218811104,23,54.740646093191415,27,44.90953808646031,42,44.97404362199717
+GLM-5.3-Flash,glm-5-3-flash,glm 5 3 flash,26,54.0837329584297,17,57.444914175990114,19,48.380854893037665,14,57.444914175990114
+GLM-5-Turbo,glm-5-turbo,glm 5 turbo,,,,,,,,
+GLM 5V Turbo,glm-5v-turbo,glm 5v turbo,,,,,,,,
+GPT-3.5 Turbo (0613),gpt-3-5-turbo-0613,gpt 3 5 turbo 0613,,,,,,,,
+GPT-3.5 Turbo,gpt-35-turbo,gpt 3 5 turbo,,,,,,,,
+GPT-4,gpt-4,gpt 4,,,,,,,,
+GPT-4.1,gpt-4-1,gpt 4 1,,,,,,,,
+GPT-4.1 mini,gpt-4-1-mini,gpt 4 1 mini,116,24.292396691052407,,,,,,
+GPT-4.1 nano,gpt-4-1-nano,gpt 4 1 nano,136,13.546547445474651,,,,,,
+GPT-4.5 (Preview),gpt-4-5,gpt 4 5 preview,,,,,,,,
+GPT-4 Turbo,gpt-4-turbo,gpt 4 turbo,,,,,,,,
+GPT-4o (Nov),gpt-4o,gpt 4o nov,,,,,,,,
+GPT-4o (May),gpt-4o-2024-05-13,gpt 4o may,,,,,,,,
+GPT-4o (Aug),gpt-4o-2024-08-06,gpt 4o aug,,,,,,,,
+GPT-4o (ChatGPT),gpt-4o-chatgpt,gpt 4o chatgpt,,,,,,,,
+GPT-4o (Mar),gpt-4o-chatgpt-03-25,gpt 4o mar,,,,,,,,
+GPT-4o mini,gpt-4o-mini,gpt 4o mini,,,,,,,,
+GPT-4o mini Realtime (Dec),gpt-4o-mini-realtime-dec-2024,gpt 4o mini realtime dec,,,,,,,,
+GPT-4o Realtime (Dec),gpt-4o-realtime-dec-2024,gpt 4o realtime dec,,,,,,,,
+GPT-5.5 Instant (May 2026),gpt-5-5-instant-05-26,gpt 5 5 instant may 2026,,,,,,,,
+GPT-5.5 Instant (June 2026),gpt-5-5-instant-06-26,gpt 5 5 instant june 2026,81,39.06990231364767,44,44.006702313647665,37,37.52734058443293,43,44.006702313647665
+GPT-5 (ChatGPT),gpt-5-chatgpt,gpt 5 chatgpt,,,,,,,,
+Granite 3.3 8B,granite-3-3-8b-instruct,granite 3 3 8b,,,,,,,,
+Granite 4.0 350M,granite-4-0-350m,granite 4 0 350m,,,,,,,,
+Granite 4.0 H 350M,granite-4-0-h-350m,granite 4 0 h 350m,,,,,,,,
+Granite 4.0 H 1B,granite-4-0-h-nano-1b,granite 4 0 h 1b,,,,,,,,
+Granite 4.0 H Small,granite-4-0-h-small,granite 4 0 h small,,,,,,,,
+Granite 4.0 Micro,granite-4-0-micro,granite 4 0 micro,,,,,,,,
+Granite 4.0 1B,granite-4-0-nano-1b,granite 4 0 1b,,,,,,,,
+Granite 4.1 30B,granite-4-1-30b,granite 4 1 30b,,,,,,,,
+Granite 4.1 3B,granite-4-1-3b,granite 4 1 3b,,,,,,,,
+Granite 4.1 8B,granite-4-1-8b,granite 4 1 8b,,,,,,,,
+Granite 4.2 30B,granite-4-2-30b,granite 4 2 30b,105,28.20275398430402,,,,,,
+Granite 4.2 3B,granite-4-2-3b,granite 4 2 3b,131,14.361769855166767,101,13.323729855166768,100,8.898280009175036,101,13.323729855166768
+Granite 4.2 8B,granite-4-2-8b,granite 4 2 8b,117,24.280185090690544,87,23.165825090690547,83,15.205055575231874,91,19.678926290690548
+Grok-1,grok-1,grok 1,,,,,,,,
+Grok 2,grok-2-1212,grok 2,,,,,,,,
+Grok 3,grok-3,grok 3,,,,,,,,
+Grok 3 Reasoning Beta,grok-3-reasoning,grok 3 reasoning beta,,,,,,,,
+Grok 4,grok-4,grok 4,,,,,,,,
+Grok 4.1 Fast,grok-4-1-fast-reasoning,grok 4 1 fast,,,,,,,,
+Grok 4.20 0309 v2,grok-4-20,grok 4 20 0309 v2,,,,,,,,
+Grok 4.20 0309,grok-4-20-0309,grok 4 20 0309,,,,,,,,
+Grok 4 Fast,grok-4-fast-reasoning,grok 4 fast,,,,,,,,
+Grok Beta,grok-beta,grok beta,,,,,,,,
+Grok Build 0.1 0616,grok-build-0-1-06-16,grok build 0 1 0616,34,52.790843337026686,,,,,,
+Grok Code Fast 1,grok-code-fast-1,grok code fast 1,,,,,,,,
+Hermes 3 - Llama-3.1 70B,hermes-3-llama-3-1-70b,hermes 3 llama 3 1 70b,,,,,,,,
+Hermes 4 405B,hermes-4-llama-3-1-405b-reasoning,hermes 4 405b,,,,,,,,
+Hermes 4 70B,hermes-4-llama-3-1-70b-reasoning,hermes 4 70b,,,,,,,,
+Hy3,hy3,hy3,72,42.14405373635421,51,41.971419939005585,48,32.09617107621869,50,41.971419939005585
+Hy3-preview,hy3-preview,hy3 preview,,,,,,,,
+HyperCLOVA X SEED Think (32B),hyperclova-x-seed-think-32b,hyperclova x seed think 32b,,,,,,,,
+Inkling,inkling,inkling,63,44.06324434944252,49,42.76002893117033,46,33.5805189973972,48,42.76002893117033
+Inkling Small,inkling-small,inkling small,74,40.931094059605414,57,39.58781823012289,53,30.27170049750839,57,39.58781823012289
+INTELLECT-3,intellect-3,intellect 3,,,,,,,,
+Jamba 1.5 Large,jamba-1-5-large,jamba 1 5 large,,,,,,,,
+Jamba 1.5 Mini,jamba-1-5-mini,jamba 1 5 mini,,,,,,,,
+Jamba 1.6 Large,jamba-1-6-large,jamba 1 6 large,,,,,,,,
+Jamba 1.6 Mini,jamba-1-6-mini,jamba 1 6 mini,,,,,,,,
+Jamba 1.7 Large,jamba-1-7-large,jamba 1 7 large,,,,,,,,
+Jamba 1.7 Mini,jamba-1-7-mini,jamba 1 7 mini,,,,,,,,
+Jamba Reasoning 3B,jamba-reasoning-3b,jamba reasoning 3b,,,,,,,,
+JT-35B-Flash,jt-35b-flash,jt 35b flash,,,,,,,,
+JT-4.1 Flash 236B A21B,jt-4-1-flash-236b-a21b,jt 4 1 flash 236b a21b,,,,,,,,
+JT-MINI,jt-mini,jt mini,,,,,,,,
+K-EXAONE,k-exaone,k exaone,,,,,,,,
+K-EXAONE 2.0,k-exaone-2-0-0803,k exaone 2 0,89,36.425205689735904,,,,,,
+K2 Horizon 375B A23B,k2-horizon-375b-a23b,k2 horizon 375b a23b,22,55.0404483467041,,,,,,
+K2 Think V2,k2-think-v2,k2 think v2,,,,,,,,
+KAT-Coder-Pro V1,kat-coder-pro-v1,kat coder pro v1,,,,,,,,
+KAT-Coder-Pro V2,kat-coder-pro-v2,kat coder pro v2,40,50.7251340896079,,,,,,
+Kimi K2,kimi-k2,kimi k2,,,,,,,,
+Kimi K2 0905,kimi-k2-0905,kimi k2 0905,,,,,,,,
+Kimi K2.5,kimi-k2-5,kimi k2 5,24,54.681377835654814,,,,,,
+Kimi K2.6,kimi-k2-6,kimi k2 6,9,60.019891699651126,12,60.047839262443475,14,50.22211364145274,32,49.66562845955184
+Kimi K2.7 Code,kimi-k2-7-code,kimi k2 7 code,58,46.07097167296837,39,46.566600258423776,42,36.60800239658095,36,46.566600258423776
+Kimi K2 Thinking,kimi-k2-thinking,kimi k2 thinking,,,,,,,,
+Kimi Linear 48B A3B Instruct,kimi-linear-48b-a3b-instruct,kimi linear 48b a3b instruct,,,,,,,,
+LFM 40B,lfm-40b,lfm 40b,,,,,,,,
+LFM2 1.2B,lfm2-1-2b,lfm2 1 2b,,,,,,,,
+LFM2 2.6B,lfm2-2-6b,lfm2 2 6b,,,,,,,,
+LFM2 24B A2B,lfm2-24b-a2b,lfm2 24b a2b,,,,,,,,
+LFM2.5-1.2B-Instruct,lfm2-5-1-2b-instruct,lfm2 5 1 2b instruct,,,,,,,,
+LFM2.5-1.2B-Thinking,lfm2-5-1-2b-thinking,lfm2 5 1 2b thinking,,,,,,,,
+LFM2.5-2.6B,lfm2-5-2-6b,lfm2 5 2 6b,138,10.266785080023702,,,,,,
+LFM2.5-8B-A1B,lfm2-5-8b-a1b,lfm2 5 8b a1b,,,,,,,,
+LFM2.5-VL-1.6B,lfm2-5-vl-1-6b,lfm2 5 vl 1 6b,,,,,,,,
+LFM2 8B A1B,lfm2-8b-a1b,lfm2 8b a1b,,,,,,,,
+Ling-1T,ling-1t,ling 1t,,,,,,,,
+Ling-2.6-1T,ling-2-6-1t,ling 2 6 1t,,,,,,,,
+Ling 2.6 Flash,ling-2-6-flash,ling 2 6 flash,108,27.31128715664481,,,,,,
+Ling 3.0 Flash,ling-3-0-flash,ling 3 0 flash,54,47.45197332827495,,,,,,
+Ling 3.0 Tiny,ling-3-0-tiny,ling 3 0 tiny,111,26.4638805100642,81,24.76447894579087,85,14.088714128906624,81,24.76447894579087
+Ling-flash-2.0,ling-flash-2-0,ling flash 2 0,,,,,,,,
+Ling-mini-2.0,ling-mini-2-0,ling mini 2 0,,,,,,,,
+Llama 2 Chat 13B,llama-2-chat-13b,llama 2 chat 13b,,,,,,,,
+Llama 2 Chat 70B,llama-2-chat-70b,llama 2 chat 70b,,,,,,,,
+Llama 2 Chat 7B,llama-2-chat-7b,llama 2 chat 7b,,,,,,,,
+Llama 3.1 405B,llama-3-1-instruct-405b,llama 3 1 405b,,,,,,,,
+Llama 3.1 70B,llama-3-1-instruct-70b,llama 3 1 70b,,,,,,,,
+Llama 3.1 8B,llama-3-1-instruct-8b,llama 3 1 8b,,,,,,,,
+Llama 3.1 Nemotron 70B,llama-3-1-nemotron-instruct-70b,llama 3 1 nemotron 70b,,,,,,,,
+Llama 3.1 Nemotron Nano 4B v1.1,llama-3-1-nemotron-nano-4b-reasoning,llama 3 1 nemotron nano 4b v1 1,,,,,,,,
+Llama Nemotron Ultra,llama-3-1-nemotron-ultra-253b-v1-reasoning,llama nemotron ultra,,,,,,,,
+Llama 3.2 11B (Vision),llama-3-2-instruct-11b-vision,llama 3 2 11b vision,,,,,,,,
+Llama 3.2 1B,llama-3-2-instruct-1b,llama 3 2 1b,,,,,,,,
+Llama 3.2 3B,llama-3-2-instruct-3b,llama 3 2 3b,,,,,,,,
+Llama 3.2 90B (Vision),llama-3-2-instruct-90b-vision,llama 3 2 90b vision,,,,,,,,
+Llama 3.3 70B,llama-3-3-instruct-70b,llama 3 3 70b,,,,,,,,
+Llama 3.3 Nemotron Super 49B,llama-3-3-nemotron-super-49b-reasoning,llama 3 3 nemotron super 49b,,,,,,,,
+Llama 3 70B,llama-3-instruct-70b,llama 3 70b,,,,,,,,
+Llama 3 8B,llama-3-instruct-8b,llama 3 8b,,,,,,,,
+Llama 4 Maverick,llama-4-maverick,llama 4 maverick,119,22.545693325422373,89,21.845873325422374,92,13.110784389489726,88,21.845873325422374
+Llama 4 Scout,llama-4-scout,llama 4 scout,130,15.145499275779885,99,14.523919275779885,99,8.984971891569241,99,14.523919275779885
+Llama 65B,llama-65b,llama 65b,,,,,,,,
+Llama Nemotron Super 49B v1.5,llama-nemotron-super-49b-v1-5-reasoning,llama nemotron super 49b v1 5,,,,,,,,
+LongCat 2.0,longcat-2-0,longcat 2 0,94,35.50424666906264,69,34.16304818207601,64,25.23762720155544,69,34.16304818207601
+LongCat Flash Lite,longcat-flash-lite,longcat flash lite,,,,,,,,
+Magistral Medium 1.2,magistral-medium-2509,magistral medium 1 2,99,31.783342385388593,,,,,,
+Magistral Small 1,magistral-small,magistral small 1,,,,,,,,
+Magistral Small 1.2,magistral-small-2509,magistral small 1 2,121,21.659672295621775,92,19.93652891387912,,,93,19.03955791234095
+Mercury 2,mercury-2,mercury 2,104,28.62464977077134,76,28.007648284631287,73,21.69091484962808,76,28.007648284631287
+Mi:dm K 2.5 Pro,mi-dm-k-2-5-pro-dec28,mi dm k 2 5 pro,,,,,,,,
+Mi:dm K 2.5 Pro Preview,midm-250-pro-rsnsft,mi dm k 2 5 pro preview,,,,,,,,
+MiMo-V2-Flash (Feb 2026),mimo-v2-0206,mimo v2 flash feb 2026,,,,,,,,
+MiMo-V2.5,mimo-v2-5-0424,mimo v2 5,71,42.226728200239435,50,42.00863177528616,52,30.73533226969235,49,42.00863177528616
+MiMo-V2.5-Pro,mimo-v2-5-pro,mimo v2 5 pro,64,43.75536538080849,45,43.67482213077779,50,31.198973967790575,44,43.631786929239624
+MiMo-V2-Flash,mimo-v2-flash-reasoning,mimo v2 flash,,,,,,,,
+MiMo-V2-Omni,mimo-v2-omni,mimo v2 omni,,,,,,,,
+MiMo-V2-Omni-0327,mimo-v2-omni-0327,mimo v2 omni 0327,,,,,,,,
+MiMo-V2-Pro,mimo-v2-pro,mimo v2 pro,,,,,,,,
+MiniCPM-V 4.6 1.3B,minicpm-v4-6-1-3b,minicpm v 4 6 1 3b,,,,,,,,
+MiniCPM5-1B,minicpm5-1b,minicpm5 1b,,,,,,,,
+MiniCPM5-2B,minicpm5-2b,minicpm5 2b,113,25.90455370106734,85,24.333157604951644,,,85,24.333157604951644
+MiniMax M1 40k,minimax-m1-40k,minimax m1 40k,,,,,,,,
+MiniMax M1 80k,minimax-m1-80k,minimax m1 80k,,,,,,,,
+MiniMax-M2,minimax-m2,minimax m2,,,,,,,,
+MiniMax-M2.1,minimax-m2-1,minimax m2 1,,,,,,,,
+MiniMax-M2.5,minimax-m2-5,minimax m2 5,,,,,,,,
+MiniMax-M2.7,minimax-m2-7,minimax m2 7,67,42.81616318400749,53,41.479847190184195,54,30.03632661175559,52,41.43681198864603
+MiniMax-M3,minimax-m3,minimax m3,53,47.46849324594868,38,47.155645391479986,43,36.18255065558678,35,47.155645391479986
+Ministral 3 14B,ministral-3-14b,ministral 3 14b,129,15.414999897886613,100,14.205659897886616,96,10.063276732122738,100,14.205659897886616
+Ministral 3 3B,ministral-3-3b,ministral 3 3b,137,10.705770197738394,106,9.890490197738394,105,6.4913148188635175,106,9.890490197738394
+Ministral 3 8B,ministral-3-8b,ministral 3 8b,135,13.65299469081926,102,13.316348587355229,97,9.360171105188668,102,13.316348587355229
+Mistral 7B,mistral-7b-instruct,mistral 7b,,,,,,,,
+Mixtral 8x22B,mistral-8x22b-instruct,mixtral 8x22b,,,,,,,,
+Mistral Large (Feb),mistral-large,mistral large feb,,,,,,,,
+Mistral Large 2 (Nov),mistral-large-2,mistral large 2 nov,,,,,,,,
+Mistral Large 2 (Jul),mistral-large-2407,mistral large 2 jul,,,,,,,,
+Mistral Large 3,mistral-large-3,mistral large 3,123,19.958927031620824,93,19.240636944586853,89,13.614310513218282,92,19.240636944586853
+Mistral Medium 3,mistral-medium-3,mistral medium 3,,,,,,,,
+Mistral Medium 3.1,mistral-medium-3-1,mistral medium 3 1,,,,,,,,
+Mistral Medium 3.5,mistral-medium-3-5,mistral medium 3 5,87,37.31835826810733,65,35.214471109935246,68,24.021688874995444,65,35.17143590839708
+Mistral Saba,mistral-saba,mistral saba,,,,,,,,
+Mistral Small (Sep),mistral-small,mistral small sep,,,,,,,,
+Mistral Small (Feb),mistral-small-2402,mistral small feb,,,,,,,,
+Mistral Small 3,mistral-small-3,mistral small 3,,,,,,,,
+Mistral Small 3.1,mistral-small-3-1,mistral small 3 1,133,13.981156716647785,104,12.736816716647784,98,9.215319136552425,104,12.736816716647784
+Mistral Small 3.2,mistral-small-3-2,mistral small 3 2,134,13.728532680888902,105,12.548492680888902,102,8.482734530100245,105,12.548492680888902
+Mistral Small 4,mistral-small-4,mistral small 4,115,24.59721604907262,86,23.800216049072624,86,13.868285541179732,86,23.800216049072624
+Mixtral 8x7B,mixtral-8x7b-instruct,mixtral 8x7b,,,,,,,,
+Molmo 7B-D,molmo-7b-d,molmo 7b d,,,,,,,,
+Molmo2-8B,molmo2-8b,molmo2 8b,,,,,,,,
+Motif 3 (Beta),motif-0714,motif 3 beta,,,,,,,,
+Motif-2-12.7B,motif-2-12-7b,motif 2 12 7b,,,,,,,,
+Motif 3,motif-3,motif 3,15,57.610010268365556,,,,,,
+Muse Spark,muse-spark,muse spark,,,,,,,,
+Nanbeige4.1-3B,nanbeige4-1-3b,nanbeige4 1 3b,,,,,,,,
+Nemotron 3.5 Lightning,nemotron-3-5-lightning,nemotron 3 5 lightning,112,26.0974916312491,83,24.492491631249102,84,15.116555697369591,83,24.492491631249102
+Nemotron 3 Nano Omni 30B A3B,nemotron-3-nano-omni-30b-a3b,nemotron 3 nano omni 30b a3b,,,,,,,,
+Nemotron Cascade 2 30B A3B,nemotron-cascade-2-30b-a3b,nemotron cascade 2 30b a3b,,,,,,,,
+Nex-N2-Pro,nex-n2-pro,nex n2 pro,19,56.90281541925316,19,57.140545993077204,21,47.13742328090263,37,46.541101033781814
+North Mini Code,north-mini-code,north mini code,120,22.198185183648196,90,21.2180851836482,,,89,21.2180851836482
+Nova Lite,nova-lite,nova lite,,,,,,,,
+Nova Micro,nova-micro,nova micro,,,,,,,,
+Nova Premier,nova-premier,nova premier,,,,,,,,
+Nova Pro,nova-pro,nova pro,,,,,,,,
+Nemotron 3 Nano,nvidia-nemotron-3-nano-30b-a3b-reasoning,nemotron 3 nano,109,27.049373157900718,80,24.92459867854955,80,18.761529215274898,80,24.92459867854955
+Nemotron 3 Nano 4B,nvidia-nemotron-3-nano-4b,nemotron 3 nano 4b,,,,,,,,
+Nemotron 3 Super,nvidia-nemotron-3-super-120b-a12b,nemotron 3 super,97,33.95337842324177,70,33.415754319566986,70,22.745797651673808,70,33.415754319566986
+Nemotron 3 Ultra,nvidia-nemotron-3-ultra-550b-a55b,nemotron 3 ultra,73,41.13134534402906,55,40.41159787685896,58,28.41547917207565,55,40.3685626753208
+NVIDIA Nemotron Nano 12B v2 VL,nvidia-nemotron-nano-12b-v2-vl-reasoning,nvidia nemotron nano 12b v2 vl,,,,,,,,
+NVIDIA Nemotron Nano 9B V2,nvidia-nemotron-nano-9b-v2-reasoning,nvidia nemotron nano 9b v2,,,,,,,,
+o1,o1,o1,,,,,,,,
+o1-mini,o1-mini,o1 mini,,,,,,,,
+o1-preview,o1-preview,o1 preview,,,,,,,,
+o1-pro,o1-pro,o1 pro,,,,,,,,
+o3,o3,o3,,,,,,,,
+o3-pro,o3-pro,o3 pro,,,,,,,,
+OLMo 2 32B,olmo-2-32b,olmo 2 32b,,,,,,,,
+OLMo 2 7B,olmo-2-7b,olmo 2 7b,,,,,,,,
+Olmo 3.1 32B Instruct,olmo-3-1-32b-instruct,olmo 3 1 32b instruct,,,,,,,,
+Olmo 3.1 32B Think,olmo-3-1-32b-think,olmo 3 1 32b think,,,,,,,,
+Olmo 3 32B Think,olmo-3-32b-think,olmo 3 32b think,,,,,,,,
+Olmo 3 7B,olmo-3-7b-instruct,olmo 3 7b,,,,,,,,
+Olmo 3 7B Think,olmo-3-7b-think,olmo 3 7b think,,,,,,,,
+OpenChat 3.5,openchat-35,openchat 3 5,,,,,,,,
+PALM-2,palm-2,palm 2,,,,,,,,
+Phi-3 Mini,phi-3-mini,phi 3 mini,,,,,,,,
+Phi-4,phi-4,phi 4,,,,,,,,
+Phi-4 Mini,phi-4-mini,phi 4 mini,,,,,,,,
+Phi-4 Multimodal,phi-4-multimodal,phi 4 multimodal,,,,,,,,
+Pixtral Large,pixtral-large-2411,pixtral large,,,,,,,,
+Qwen Chat 14B,qwen-chat-14b,qwen chat 14b,,,,,,,,
+Qwen Chat 72B,qwen-chat-72b,qwen chat 72b,,,,,,,,
+Qwen2.5 Turbo,qwen-turbo,qwen2 5 turbo,,,,,,,,
+Qwen1.5 Chat 110B,qwen1.5-110b-chat,qwen1 5 chat 110b,,,,,,,,
+Qwen2.5 72B,qwen2-5-72b-instruct,qwen2 5 72b,,,,,,,,
+Qwen2.5 Coder 32B,qwen2-5-coder-32b-instruct,qwen2 5 coder 32b,,,,,,,,
+Qwen2.5 Coder 7B ,qwen2-5-coder-7b-instruct,qwen2 5 coder 7b,,,,,,,,
+Qwen2 72B,qwen2-72b-instruct,qwen2 72b,,,,,,,,
+Qwen2.5 Instruct 32B,qwen2.5-32b-instruct,qwen2 5 instruct 32b,,,,,,,,
+Qwen3 0.6B,qwen3-0.6b-instruct-reasoning,qwen3 0 6b,,,,,,,,
+Qwen3 1.7B,qwen3-1.7b-instruct-reasoning,qwen3 1 7b,,,,,,,,
+Qwen3 14B,qwen3-14b-instruct-reasoning,qwen3 14b,132,14.112873795891845,103,13.252154613409422,90,13.51281433235971,103,13.252154613409422
+Qwen3 235B A22B 2507,qwen3-235b-a22b-instruct-2507-reasoning,qwen3 235b a22b 2507,96,34.07024217145133,73,31.178213956439862,74,20.673655870171864,73,31.178213956439862
+Qwen3 235B,qwen3-235b-a22b-instruct-reasoning,qwen3 235b,,,,,,,,
+Qwen3 30B A3B 2507,qwen3-30b-a3b-2507-reasoning,qwen3 30b a3b 2507,114,25.52260982717425,82,24.60946982717425,91,13.333432257770287,82,24.60946982717425
+Qwen3 30B,qwen3-30b-a3b-instruct-reasoning,qwen3 30b,,,,,,,,
+Qwen3 32B,qwen3-32b-instruct-reasoning,qwen3 32b,126,16.964085689896827,98,15.705996085447474,82,15.94162201282873,98,15.705996085447474
+Qwen3 4B 2507,qwen3-4b-2507-instruct-reasoning,qwen3 4b 2507,,,,,,,,
+Qwen3 4B,qwen3-4b-instruct-reasoning,qwen3 4b,,,,,,,,
+Qwen3.5 0.8B,qwen3-5-0-8b,qwen3 5 0 8b,,,,,,,,
+Qwen3.5 122B A10B,qwen3-5-122b-a10b,qwen3 5 122b a10b,61,44.618872496301485,54,41.29134545572879,55,29.12767622811564,53,41.24831025419063
+Qwen3.5 27B,qwen3-5-27b,qwen3 5 27b,,,,,,,,
+Qwen3.5 2B,qwen3-5-2b,qwen3 5 2b,,,,,,,,
+Qwen3.5 35B A3B,qwen3-5-35b-a3b,qwen3 5 35b a3b,,,,,,,,
+Qwen3.5 397B A17B,qwen3-5-397b-a17b,qwen3 5 397b a17b,59,45.70260746316569,46,43.50852359348586,45,34.06855505592008,45,43.465488391947694
+Qwen3.5 4B,qwen3-5-4b,qwen3 5 4b,83,38.49033250983554,,,,,,
+Qwen3.5 9B,qwen3-5-9b,qwen3 5 9b,65,42.8654931524016,,,,,,
+Qwen3.5 Omni Flash,qwen3-5-omni-flash,qwen3 5 omni flash,,,,,,,,
+Qwen3.5 Omni Plus,qwen3-5-omni-plus,qwen3 5 omni plus,,,,,,,,
+Qwen3.6 27B,qwen3-6-27b,qwen3 6 27b,66,42.83716554927933,52,41.763094282303044,49,32.00876479323104,51,41.72005908076488
+Qwen3.6 35B A3B,qwen3-6-35b-a3b,qwen3 6 35b a3b,45,49.683623114327055,36,47.867140872647845,36,37.762292325486456,54,40.39988572715054
+Qwen3.6 Plus,qwen3-6-plus,qwen3 6 plus,18,56.96711194664576,,,,,,
+Qwen3.7 Plus,qwen3-7-plus,qwen3 7 plus,50,48.93155269115325,42,45.84325590567383,39,37.118831846671306,40,46.13560966035778
+Qwen3.8 2.4T A95B,qwen3-8-2-4t-a95b,qwen3 8 2 4t a95b,37,51.51825473705796,24,54.6165695376083,25,45.55042846241172,20,54.6165695376083
+Qwen3.8-Flash-Next,qwen3-8-flash-next,qwen3 8 flash next,3,66.85984175177803,5,67.84036885324186,5,58.87445702516119,19,54.69034811728698
+Qwen3 8B,qwen3-8b-instruct-reasoning,qwen3 8b,139,9.642445507415522,108,8.760505507415521,101,8.760741950606844,108,8.760505507415521
+Qwen3 Coder 30B A3B,qwen3-coder-30b-a3b-instruct,qwen3 coder 30b a3b,,,,,,,,
+Qwen3 Coder 480B,qwen3-coder-480b-a35b-instruct,qwen3 coder 480b,,,,,,,,
+Qwen3 Coder Next,qwen3-coder-next,qwen3 coder next,103,28.66194074178204,78,27.059857599122317,77,19.757983442358935,78,27.01682239758415
+Qwen3 Max (Preview),qwen3-max-preview,qwen3 max preview,,,,,,,,
+Qwen3 Max Thinking,qwen3-max-thinking,qwen3 max thinking,,,,,,,,
+Qwen3 Max Thinking (Preview),qwen3-max-thinking-preview,qwen3 max thinking preview,,,,,,,,
+Qwen3 Next 80B A3B,qwen3-next-80b-a3b-instruct,qwen3 next 80b a3b,,,,,,,,
+Qwen3 Omni 30B A3B,qwen3-omni-30b-a3b-instruct,qwen3 omni 30b a3b,,,,,,,,
+Qwen3 VL 235B A22B,qwen3-vl-235b-a22b-instruct,qwen3 vl 235b a22b,,,,,,,,
+Qwen3 VL 30B A3B,qwen3-vl-30b-a3b-instruct,qwen3 vl 30b a3b,,,,,,,,
+Qwen3 VL 32B,qwen3-vl-32b-instruct,qwen3 vl 32b,,,,,,,,
+Qwen3 VL 4B,qwen3-vl-4b-instruct,qwen3 vl 4b,,,,,,,,
+Qwen3 VL 8B,qwen3-vl-8b-instruct,qwen3 vl 8b,,,,,,,,
+QwQ-32B,qwq-32b,qwq 32b,,,,,,,,
+R1 1776,r1-1776,r1 1776,,,,,,,,
+Reka Flash,reka-flash,reka flash,,,,,,,,
+Reka Flash 3,reka-flash-3,reka flash 3,,,,,,,,
+Ring-1T,ring-1t,ring 1t,,,,,,,,
+Ring-2.6-1T,ring-2-6-1t,ring 2 6 1t,79,39.765155285298505,61,37.305100478228205,60,26.454245430655156,61,37.26206527669004
+Ring-flash-2.0,ring-flash-2-0,ring flash 2 0,,,,,,,,
+Sarvam M,sarvam-m-reasoning,sarvam m,,,,,,,,
+Seed-OSS-36B-Instruct,seed-oss-36b-instruct,seed oss 36b instruct,,,,,,,,
+Solar Mini,solar-mini,solar mini,,,,,,,,
+Solar Open 100B,solar-open-100b-reasoning,solar open 100b,,,,,,,,
+Solar Open2 250B,solar-open2-250b,solar open2 250b,60,44.9826831008575,,,,,,
+Solar Pro 2 (Preview),solar-pro-2-preview-reasoning,solar pro 2 preview,,,,,,,,
+Solar Pro 2,solar-pro-2-reasoning,solar pro 2,,,,,,,,
+Solar Pro 3,solar-pro-3,solar pro 3,110,26.895572359191252,84,24.421189109160554,78,19.28028978967783,84,24.378153907622387
+Solar Pro 4,solar-pro4,solar pro 4,86,37.98279222367303,62,37.02467530288274,61,26.284934233660273,62,37.02467530288274
+Sonar,sonar,sonar,,,,,,,,
+Sonar Pro,sonar-pro,sonar pro,,,,,,,,
+Sonar Reasoning,sonar-reasoning,sonar reasoning,,,,,,,,
+Sonar Reasoning Pro,sonar-reasoning-pro,sonar reasoning pro,,,,,,,,
+Step 3.5 Flash 2603,step-3-5-flash,step 3 5 flash 2603,,,,,,,,
+Step 3.5 Flash,step-3-5-flash-0202,step 3 5 flash,,,,,,,,
+Step 3.7 Flash,step-3-7-flash,step 3 7 flash,47,49.57504994853741,,,,,,
+Step3 VL 10B,step-3-vl-10b,step3 vl 10b,,,,,,,,
+Tiny Aya Global,tiny-aya-global,tiny aya global,,,,,,,,
+Tri-21B-think Preview,tri-21b-think-preview,tri 21b think preview,,,,,,,,
+Tri-21B-Think,tri-21b-think-v0-5,tri 21b think,,,,,,,,
+Trinity Large Thinking,trinity-large-thinking,trinity large thinking,101,29.899015819704466,75,28.163872569673764,71,21.801671677331434,75,28.120837368135597
+Tulu3 405B,tulu3-405b,tulu3 405b,,,,,,,,
+Devstral Medium,devstral-medium,devstral medium,,,,,,,,
+Magistral Medium 1,magistral-medium,magistral medium 1,,,,,,,,
+Mistral Medium,mistral-medium,mistral medium,,,,,,,,
+Nova 2.0 Omni (medium),nova-2-0-omni-reasoning-medium,nova 2 0 omni,,,,,,,,
+Nova 2.0 Pro Preview (medium),nova-2-0-pro-reasoning-medium,nova 2 0 pro preview,,,,,,,,
+Qwen3 235B 2507 (Non-reasoning),qwen3-235b-a22b-instruct-2507,qwen3 235b 2507,,,,,,,,

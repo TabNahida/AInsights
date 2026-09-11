@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "schemes": 10,
+  "core_slots_per_scheme": 8,
+  "single_core_domains": 2,
+  "common_population": 107,
+  "populations": {
+    "mc01": 121,
+    "mc02": 121,
+    "mc03": 121,
+    "mc04": 121,
+    "mc05": 111,
+    "mc06": 121,
+    "mc07": 120,
+    "mc08": 121,
+    "mc09": 109,
+    "mc10": 120
+  },
+  "maximum_numeric_error": 7.105427357601002e-15,
+  "top30_rows": 300,
+  "raw_mapping_and_sort_verified": true,
+  "all_nine_preferences_full_and_common": true,
+  "legacy_terminal_extensions_absent": true,
+  "source_hashes_unchanged": true,
+  "all_archived_passing_weights_verified": 18834,
+  "archived_structures": 21,
+  "minimum_archived_margin": 0.05000888823636458
+}

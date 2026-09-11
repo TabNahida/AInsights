@@ -1,0 +1,181 @@
+variant,population,condition,higher,lower,margin,passed,label
+mc01,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.9231819205191485,True,Fable 5.1 第一
+mc01,full,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.693716061483066,True,GPT-6 Astra 第二
+mc01,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.6994447805332911,True,Kimi K3 高于 Gemini 3.8 Flash
+mc01,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.11739150000000365,True,GPT-5.5 高于 Muse Spark 1.3
+mc01,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,4.735524805815274,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc01,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,2.1781948662529587,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc01,full,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.12015977867097405,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc01,full,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.8275539999999992,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc01,full,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.46132700000000426,True,Grok 4.6 高于 Grok 4.5
+mc01,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.9231819205191485,True,Fable 5.1 第一
+mc01,common,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.693716061483066,True,GPT-6 Astra 第二
+mc01,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.6807290936255725,True,Kimi K3 高于 Gemini 3.8 Flash
+mc01,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.11739150000000365,True,GPT-5.5 高于 Muse Spark 1.3
+mc01,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,4.716420226569305,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc01,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,2.081241378623673,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc01,common,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.12015977867097405,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc01,common,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.8647622577702805,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc01,common,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.46132700000000426,True,Grok 4.6 高于 Grok 4.5
+mc02,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.6758350516053753,True,Fable 5.1 第一
+mc02,full,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.6036331597977664,True,GPT-6 Astra 第二
+mc02,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,1.3535738177015304,True,Kimi K3 高于 Gemini 3.8 Flash
+mc02,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.1586446976257605,True,GPT-5.5 高于 Muse Spark 1.3
+mc02,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,7.791053987044563,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc02,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,4.383495597979284,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc02,full,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.12907587430751732,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc02,full,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.4988144999999946,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc02,full,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.2320320000000038,True,Grok 4.6 高于 Grok 4.5
+mc02,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.6758350516053753,True,Fable 5.1 第一
+mc02,common,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.6036331597977664,True,GPT-6 Astra 第二
+mc02,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,1.3339669076077314,True,Kimi K3 高于 Gemini 3.8 Flash
+mc02,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.1586446976257605,True,GPT-5.5 高于 Muse Spark 1.3
+mc02,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,7.771039665929749,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc02,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,4.281925277605744,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc02,common,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.12907587430751732,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc02,common,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.5377945795688603,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc02,common,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.2320320000000038,True,Grok 4.6 高于 Grok 4.5
+mc03,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,2.0985727862422863,True,Fable 5.1 第一
+mc03,full,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.2805587447201958,True,GPT-6 Astra 第二
+mc03,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,1.0517242805332856,True,Kimi K3 高于 Gemini 3.8 Flash
+mc03,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.10092271970692934,True,GPT-5.5 高于 Muse Spark 1.3
+mc03,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.572632305815269,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc03,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,2.1222348662529527,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc03,full,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.09609470821705912,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc03,full,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.39858949999999993,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc03,full,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.16923350000000426,True,Grok 4.6 高于 Grok 4.5
+mc03,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,2.0985727862422863,True,Fable 5.1 第一
+mc03,common,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.2805587447201958,True,GPT-6 Astra 第二
+mc03,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,1.033008593625567,True,Kimi K3 高于 Gemini 3.8 Flash
+mc03,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.11908870714874098,True,GPT-5.5 高于 Muse Spark 1.3
+mc03,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.553527726569307,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc03,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,2.025281378623667,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc03,common,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.09609470821705912,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc03,common,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.4357977577702812,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc03,common,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.16923350000000426,True,Grok 4.6 高于 Grok 4.5
+mc04,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.5337087331105863,True,Fable 5.1 第一
+mc04,full,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.7770416034797307,True,GPT-6 Astra 第二
+mc04,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.8655777124655444,True,Kimi K3 高于 Gemini 3.8 Flash
+mc04,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.21535090499612153,True,GPT-5.5 高于 Muse Spark 1.3
+mc04,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.855438517604767,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc04,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,2.3743741552841087,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc04,full,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.18322276789935188,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc04,full,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.554381586610944,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc04,full,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.29728491709021654,True,Grok 4.6 高于 Grok 4.5
+mc04,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.533685743862776,True,Fable 5.1 第一
+mc04,common,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.7770416034797307,True,GPT-6 Astra 第二
+mc04,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.8446399800535502,True,Kimi K3 高于 Gemini 3.8 Flash
+mc04,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.22500083165157037,True,GPT-5.5 高于 Muse Spark 1.3
+mc04,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,5.837747640282657,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc04,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,2.27270266056491,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc04,common,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.15715690263987625,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc04,common,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.6199605490038564,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc04,common,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.3197010969065275,True,Grok 4.6 高于 Grok 4.5
+mc05,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.20660590942974,True,Fable 5.1 第一
+mc05,full,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,1.0582165269965884,True,GPT-6 Astra 第二
+mc05,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.8659069959582268,True,Kimi K3 高于 Gemini 3.8 Flash
+mc05,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.2173477349415478,True,GPT-5.5 高于 Muse Spark 1.3
+mc05,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,8.168802701252268,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc05,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,4.486919479798743,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc05,full,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.1851990229648095,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc05,full,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.5864356900318413,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc05,full,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.26082488307040563,True,Grok 4.6 高于 Grok 4.5
+mc05,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.206503385318662,True,Fable 5.1 第一
+mc05,common,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,1.0582165269965884,True,GPT-6 Astra 第二
+mc05,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.8533709456297629,True,Kimi K3 高于 Gemini 3.8 Flash
+mc05,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.23741628510982338,True,GPT-5.5 高于 Muse Spark 1.3
+mc05,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,8.143631531173646,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc05,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,4.498408670262322,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc05,common,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.15400367892085853,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc05,common,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.6261470941065852,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc05,common,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.30329058035317047,True,Grok 4.6 高于 Grok 4.5
+mc06,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.6842740033810486,True,Fable 5.1 第一
+mc06,full,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.5248747290583324,True,GPT-6 Astra 第二
+mc06,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,1.2298023352873457,True,Kimi K3 高于 Gemini 3.8 Flash
+mc06,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.11538481947258106,True,GPT-5.5 高于 Muse Spark 1.3
+mc06,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,8.543227671474558,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc06,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,5.127809678668573,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc06,full,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.11253595992863552,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc06,full,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.5059236274376602,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc06,full,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.39025350621226806,True,Grok 4.6 高于 Grok 4.5
+mc06,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.6842740033810486,True,Fable 5.1 第一
+mc06,common,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.5248747290583324,True,GPT-6 Astra 第二
+mc06,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,1.2032354126531573,True,Kimi K3 高于 Gemini 3.8 Flash
+mc06,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.1324177612933397,True,GPT-5.5 高于 Muse Spark 1.3
+mc06,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,8.496802526216616,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc06,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,5.00262609413846,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc06,common,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.08368505707764484,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc06,common,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.5543219422349495,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc06,common,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.4117938936154175,True,Grok 4.6 高于 Grok 4.5
+mc07,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.3656421106529706,True,Fable 5.1 第一
+mc07,full,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,1.089711362377038,True,GPT-6 Astra 第二
+mc07,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,1.2062175000000082,True,Kimi K3 高于 Gemini 3.8 Flash
+mc07,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.13214549999999292,True,GPT-5.5 高于 Muse Spark 1.3
+mc07,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,4.057033612261449,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc07,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,0.6999722485443272,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc07,full,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.9323135266350491,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc07,full,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.7545039999999972,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc07,full,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.13780599999999765,True,Grok 4.6 高于 Grok 4.5
+mc07,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.3656421106529706,True,Fable 5.1 第一
+mc07,common,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,1.089711362377038,True,GPT-6 Astra 第二
+mc07,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,1.2062175000000082,True,Kimi K3 高于 Gemini 3.8 Flash
+mc07,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.13214549999999292,True,GPT-5.5 高于 Muse Spark 1.3
+mc07,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,4.057033612261449,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc07,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,0.6999722485443272,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc07,common,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.9323135266350491,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc07,common,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.7545039999999972,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc07,common,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.13780599999999765,True,Grok 4.6 高于 Grok 4.5
+mc08,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.7061495155308393,True,Fable 5.1 第一
+mc08,full,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.36909655728324964,True,GPT-6 Astra 第二
+mc08,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,2.334475999999995,True,Kimi K3 高于 Gemini 3.8 Flash
+mc08,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.14436750000000842,True,GPT-5.5 高于 Muse Spark 1.3
+mc08,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,4.570409237859607,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc08,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,3.4776683544010396,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc08,full,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.15403550196905513,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc08,full,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.4534745000000058,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc08,full,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,1.0619125000000054,True,Grok 4.6 高于 Grok 4.5
+mc08,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,1.7061495155308393,True,Fable 5.1 第一
+mc08,common,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.36909655728324964,True,GPT-6 Astra 第二
+mc08,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,2.334475999999995,True,Kimi K3 高于 Gemini 3.8 Flash
+mc08,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.14436750000000842,True,GPT-5.5 高于 Muse Spark 1.3
+mc08,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,4.5719756058235745,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc08,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,3.4146905646726182,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc08,common,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.15403550196905513,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc08,common,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.4534745000000058,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc08,common,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,1.0619125000000054,True,Grok 4.6 高于 Grok 4.5
+mc09,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,2.3281779205191526,True,Fable 5.1 第一
+mc09,full,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.408835561483059,True,GPT-6 Astra 第二
+mc09,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.6425236292707908,True,Kimi K3 高于 Gemini 3.8 Flash
+mc09,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.10895499999999458,True,GPT-5.5 高于 Muse Spark 1.3
+mc09,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,4.0619614181471775,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc09,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,1.330872603587821,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc09,full,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.18245127867098176,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc09,full,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.49729100861382847,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc09,full,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.1300680000000014,True,Grok 4.6 高于 Grok 4.5
+mc09,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,2.3281779205191526,True,Fable 5.1 第一
+mc09,common,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.408835561483059,True,GPT-6 Astra 第二
+mc09,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,0.6371374076077316,True,Kimi K3 高于 Gemini 3.8 Flash
+mc09,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.10895499999999458,True,GPT-5.5 高于 Muse Spark 1.3
+mc09,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,4.076749665929739,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc09,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,1.3860477776057465,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc09,common,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.18245127867098176,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc09,common,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.4869835795688573,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc09,common,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.1300680000000014,True,Grok 4.6 高于 Grok 4.5
+mc10,full,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,2.0220590060324852,True,Fable 5.1 第一
+mc10,full,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.39786696784791786,True,GPT-6 Astra 第二
+mc10,full,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,1.4594470000000044,True,Kimi K3 高于 Gemini 3.8 Flash
+mc10,full,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.09476871970692002,True,GPT-5.5 高于 Muse Spark 1.3
+mc10,full,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,4.183321429140442,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc10,full,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,0.29849523495212793,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc10,full,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.7752990349906241,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc10,full,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.1280360000000016,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc10,full,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.08795400000000342,True,Grok 4.6 高于 Grok 4.5
+mc10,common,claude-fable-5-1 rank=1,claude-fable-5-1,gpt-6-astra,2.0220590060324852,True,Fable 5.1 第一
+mc10,common,gpt-6-astra rank=2,gpt-6-astra,claude-fable-5,0.39786696784791786,True,GPT-6 Astra 第二
+mc10,common,kimi-k3 > gemini-3-8-flash,kimi-k3,gemini-3-8-flash,1.4594470000000044,True,Kimi K3 高于 Gemini 3.8 Flash
+mc10,common,gpt-5-5 > muse-spark-1-3,gpt-5-5,muse-spark-1-3,0.11293470714873877,True,GPT-5.5 高于 Muse Spark 1.3
+mc10,common,qwen3-8-max > qwen3-8-flash-next,qwen3-8-max,qwen3-8-flash-next,4.183321429140442,True,Qwen3.8 Max 高于 Qwen3.8 Flash-Next
+mc10,common,qwen3-8-2-4t-a95b > qwen3-8-flash-next,qwen3-8-2-4t-a95b,qwen3-8-flash-next,0.29849523495212793,True,Qwen3.8 2.4T A95B 高于 Qwen3.8 Flash-Next
+mc10,common,gpt-5-6-sol > claude-opus-5,gpt-5-6-sol,claude-opus-5,0.7752990349906241,True,GPT-5.6 Sol 高于 Claude Opus 5
+mc10,common,gpt-5-6-terra > muse-spark-1-3,gpt-5-6-terra,muse-spark-1-3,0.1280360000000016,True,GPT-5.6 Terra 高于 Muse Spark 1.3
+mc10,common,grok-4-6-xhigh > grok-4-5,grok-4-6-xhigh,grok-4-5,0.08795400000000342,True,Grok 4.6 高于 Grok 4.5
