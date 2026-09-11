@@ -195,7 +195,7 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn('priceIncludedShort: "额度内 $/M"', app_js)
         self.assertIn('priceIncludedShort: "Included $/M"', app_js)
 
-    def test_default_ranking_uses_precomputed_scheme18_score_for_value_and_order(self):
+    def test_default_ranking_uses_precomputed_mixed_core_score_for_value_and_order(self):
         root = Path(__file__).resolve().parents[1]
         app_js = (root / "docs" / "app.js").read_text(encoding="utf-8")
         payload = json.loads(
@@ -280,7 +280,7 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertNotIn("publicationRank", rank_source)
         self.assertIn("b.score - a.score", compare_source)
         self.assertIn("a.scoreRank - b.scoreRank", compare_source)
-        self.assertIn('tr("scheme18Cap"', precomputed_source)
+        self.assertIn('tr("aindexBonusCap"', precomputed_source)
         render_results_source = app_js.split("function renderResults(preset)", 1)[
             1
         ].split("\nfunction ", 1)[0]
@@ -391,7 +391,7 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("sparseRasch: 25", app_js)
         self.assertIn("twopl: 25", app_js)
         self.assertIn("denseRasch: 25", app_js)
-        self.assertIn("audit/sensitivity only", app_js)
+        self.assertIn("remain audit and sensitivity views", app_js)
         self.assertIn('customMethodAggregator: "mean"', app_js)
         self.assertIn('customBoardAggregator: "arithmetic"', app_js)
         self.assertIn("customMetricGroups", app_js)
@@ -578,8 +578,16 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("Sparse Rasch", html)
         self.assertIn("Equal-board 2PL", html)
         self.assertIn("Dense Rasch", html)
-        self.assertEqual(html.count("<td>20%</td>"), 5)
-        self.assertIn("A model is not scored when a mandatory Core value is missing", html)
+        for weight in (12, 9, 22, 37, 20):
+            self.assertEqual(html.count(f"<td>{weight}%</td>"), 1)
+        self.assertIn("A model is not scored when any board has no observed Core", html)
+        self.assertIn("at least four configured Core items are missing", html)
+        self.assertIn("Unconfigured second slots do not count as missing", html)
+        self.assertIn("dual_core_score = adjusted_1 / 2 + adjusted_2 / 2", html)
+        self.assertIn("board_points_b = board_score_b × board_weight_b / 100", html)
+        for core in ("Terminal-Bench v4.0", "SciCode", "AutomationBench-AA", "τ³-Banking", "CritPt", "AA-Omniscience Accuracy", "GDP.pdf", "AA-LCR v1.1"):
+            self.assertIn(core, html)
+        self.assertIn("A board receives no extension bonus while any of its configured Core items are missing", html)
         self.assertIn("Missing extension results remain absent", html)
         self.assertIn("No model name, provider, family order, reserved position", html)
         self.assertIn("unrounded AIndex value", html)
@@ -614,6 +622,10 @@ class DocsMarkupTests(unittest.TestCase):
             "AInsights Index / AIndex 默认使用几何加权均值",
             "AInsights Index / AIndex defaults to geometric weighted mean",
             "boards enter the final geometric weighted mean",
+            "Scheme 18",
+            "方案 18",
+            "board_score / 5",
+            "unweighted geometric Core",
         ):
             self.assertNotIn(obsolete, html)
             self.assertNotIn(obsolete, app_js)

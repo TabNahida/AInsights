@@ -1,55 +1,32 @@
-# 覆盖感知的 IRT 榜单探索
+# AIndex 生产计分与历史实验
 
-这是一套基于 `docs/data/models.json` 可复现的五板块榜单研究与生产流水线。生产 AIndex 现采用候选审核中的**方案 18**：`partial_credit_geometric` Core + `logsumexp_residual_t1` 独立扩展证据 + 动态 `mean + sqrt(2) * SD` cap。Coding、Agentic/tool work、Hard reasoning、Knowledge/science、Instruction/context 五板严格等权。
+当前网站采用用户选定的 **Mixed Core 07（第 7 套）**，生产模块为 `aindex_mixed_core.py`，独立校验为 `validate_mixed_core_production.py`。实验搜索模块与模型顺序偏好不进入生产导入链，也不决定每日发布是否通过。
 
-- **Core**：每板块必须完成其全部必做测试；在原始 0–100 分数上计算无权重几何均值。缺任一 Core 项则该配置不计 AIndex。
-- **扩展证据**：只允许 benchmark 控制方不是被排名模型厂商的项目。每个扩展项在默认去重 cohort 上匿名拟合 Core 到扩展成绩的 OLS 趋势，斜率限制为非负，只保留高于预测的正残差。
-- **Bonus**：板块内用零中性、单调的 `log(1 + sum(expm1(positive_residual)))` 累积正残差，再以全 cohort、跨板块 pooled 正残差的 `mean + sqrt(2) * population_SD` 动态封顶。
-- **主分**：`board_score = min(100, core_score + capped_bonus)`；`final_score` 精确等于五个 `board_score / 5` 之和，也就是五板算术平均。
-- **缺失规则**：扩展缺失保持 absent，不填 0、不填 50、不插入先验，也不扣 Core。低于预期的已观测扩展成绩只产生 0 bonus，不产生负分。
-- **排序规则**：只按未舍入 `final_score` 降序，完全相同时才用稳定 ID；没有模型名、厂商、系列顺序、reserved rank 或事后换位。
-- **敏感性**：等板块 2PL、Core/Sparse/Dense Rasch 与旧 mean-rank 结果只作对照，不参与方案 18 主分。
-- **证据限制**：扩展 benchmark 的控制方独立，并不等于所有 result operator、agent scaffold、prompt、采样和版本完全一致；这些字段继续在来源政策和验证结果中披露。
+| 领域 | Core 项目 | 权重 |
+| --- | --- | ---: |
+| 编程 | Terminal-Bench v4.0、SciCode | 12% |
+| Agent／工具工作 | AutomationBench-AA、τ³-Banking | 9% |
+| 高难推理 | CritPt | 22% |
+| 知识／科学 | AA-Omniscience Accuracy、GDP.pdf | 37% |
+| 指令／上下文 | AA-LCR v1.1 | 20% |
 
-`constrained_ranking_analysis.py` 是早期产品规则实验，仅保留作历史对照，不是当前推荐榜，也不应当用于证明模型强弱。
+单 Core 占本领域基础分 100%，双 Core 各占 50%。缺项的份额不重新分配、贡献为零，原始观测仍保持缺失；观测到的零分有效。任一领域 Core 全缺，或累计缺少至少 4 个已配置 Core 项目，即不排名。先按 variantPriority 降序、slug 升序选定系列代表，再判断准入；不能通过改选配置或跨配置借分补齐。
 
-## 当前生产方法：AIndex 方案 18
-
-五板必做 Core 为：
-
-| 板块 | Core 测试 |
-| --- | --- |
-| Coding | SciCode |
-| Agentic/tool work | AA-LCR |
-| Hard reasoning | Humanity's Last Exam、CritPt、GPQA Diamond |
-| Knowledge/science | SciCode、Humanity's Last Exam、GPQA Diamond、AA-Omniscience Accuracy |
-| Instruction/context | CritPt、AA-LCR |
-
-设板块 `b` 的必做成绩为 `x_bj`，已观测扩展成绩为 `y_bik`：
+Terminal 只用 v4，不使用 v2.1 或 Hard，也不把旧版作为扩展。AIME、LiveCodeBench、GPQA 及旧短数学测试不进入 Core。本轮只变更 Core，扩展准入和算法延续原规则：全局去除 Core 家族后，独立控制的扩展测试仅在本领域 Core 完整时拟合／发放奖励。
 
 ```text
-core_b = 100 * exp(mean(log(clip(x_bj / 100, 1e-6, 1))))
-predicted_bik = clip(alpha_bk + max(beta_bk, 0) * core_bi, 0, 100)
-residual_bik = max(y_bik - predicted_bik, 0)
+core_b = sum(observed_score_or_zero) / configured_core_count
+residual_bik = max(y_bik - clip(alpha_bk + max(beta_bk, 0) * core_bi, 0, 100), 0)
 raw_bonus_b = log(1 + sum(expm1(residual_bik)))
 cap = mean(all_positive_residuals) + sqrt(2) * population_sd(all_positive_residuals)
-board_score_b = min(100, core_b + min(raw_bonus_b, cap))
-final_score = sum(board_score_b / 5)
+bonus_b = min(raw_bonus_b, cap) if complete_board_core else 0
+board_score_b = min(100, core_b + bonus_b)
+final_score = sum(board_score_b * board_weight_b / 100)
 ```
 
-OLS 趋势与 cap 都从默认 `variantGroup` 去重 cohort 匿名估计，不包含具名模型参数。cap 随每日数据快照重算，所以文档不固定某个历史数值。生产验证器独立复算 Core、残差、bonus、cap、五板加总、排序和 benchmark policy，并检查 `docs/data/models.json` 中的站点字段与生产输出一致。
+OLS 趋势与统一 cap 在符合准入的固定代表集合上按领域 Core 完整子集拟合，精确配置使用同一标尺、不重新拟合。只按未舍入分数降序，完全相同时用稳定 ID。生产校验独立复算原始 Core、残差、cap、加权贡献、去重与精确配置排名，以及站点序列化结果；不包含具名模型名次门槛。
 
-旧多方法分析仍并行保留作敏感性审计，包括：
-
-1. 无观测权重的连续 1PL/Rasch 点估计，五板块算术等权。
-2. 匿名学习 item discrimination 的连续 2PL 点估计，五板块算术等权；所有残差等权，统一 slope ridge 只用于稳定 item 参数。
-3. benchmark 内经验百分位，板块内等权均值，再对五板块等权。
-4. benchmark 内经验百分位，板块内稳健中位数，再对五板块等权。
-5. 跨板块去重后的 canonical family 全局等权百分位，检查板块复用造成的隐式重权。
-6. `variantGroup >= 3` 的稀疏 item Rasch 敏感性，只作补充观察。
-7. `variantGroup >= 20` 且 creator >= 3 的保守 Rasch 敏感性。
-
-这些旧方法不会与方案 18 做固定比例混合，也不会改变站点主分。它们用于观察 item discrimination、覆盖密度、稀疏信号和结果稳定性。
+历史 Scheme 18、2PL 和 Rasch 等审计文件继续输出用于对照，其资格条件不会阻止符合新规则的模型获得主分。下面保留历史分析过程和实验说明；其中方案 18 的描述仅适用于旧方法。
 
 ## 证据审计：纯证据 2PL
 

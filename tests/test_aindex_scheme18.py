@@ -420,11 +420,9 @@ class AIndexScheme18ExactConfigTests(unittest.TestCase):
             cls.payload,
             exact_config_only=True,
         )
-        cls.exact_slugs = [
-            str(model["slug"])
-            for model in cls.payload["models"]
-            if model.get("exactRankingProfile")
-        ]
+        cls.exact_slugs = [row["slug"] for row in read_csv(
+            PRODUCTION_OUTPUT_DIR / scheme18.OUTPUT_FILENAMES["exact_config_full_rankings"]
+        )]
         cls.result = scheme18.run_aindex_scheme18_from_payload(
             cls.payload,
             calibration_slugs=cls.calibration_slugs,

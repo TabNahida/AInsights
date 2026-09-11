@@ -21,6 +21,7 @@ DEFAULT_VENDOR_MANIFEST_JSON = (
 VERIFIED_HF_ORGANIZATIONS = {"Qwen", "zai-org", "moonshotai", "deepseek-ai"}
 
 PRIMARY_VENDOR_SOURCE_URLS = {
+    "deepseek-v4-1-flash-release": "https://api-docs.deepseek.com/news/news260910",
     "openai-gpt-6-astra-release": "https://openai.com/index/gpt-6-astra/",
     "zai-glm-5-3-flash-release": "https://docs.z.ai/guides/llm/glm-5.3-flash",
     "deepseek-v4-flash-vision-exp-card": "https://api-docs.deepseek.com/news/news260821",
@@ -48,6 +49,7 @@ PRIMARY_VENDOR_SOURCE_URLS = {
 }
 
 PRIMARY_VENDOR_SOURCE_RAW_URLS = {
+    "deepseek-v4-1-flash-release": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/raw/main/README.md",
     "openai-gpt-6-astra-release": "https://openai.com/index/gpt-6-astra/",
     "zai-glm-5-3-flash-release": "https://docs.z.ai/guides/llm/glm-5.3-flash.md",
     "deepseek-v4-flash-vision-exp-card": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp/raw/main/README.md",
@@ -94,6 +96,7 @@ OFFICIAL_HF_SOURCE_MODELS = {
 }
 
 EXPLICIT_HF_RAW_SOURCES = {
+    "deepseek-v4-1-flash-release": ("deepseek-ai", "DeepSeek-V4.1-Flash", "readme"),
     "qwen-qwen3-8-flash-next-card": ("Qwen", "Qwen3.8-Flash-Next", "readme"),
     "deepseek-v4-flash-vision-exp-card": ("deepseek-ai", "DeepSeek-V4-Flash-Vision-Exp", "readme"),
     "qwen-qwen3-8-27b-card": ("Qwen", "Qwen3.8-27B", "readme"),

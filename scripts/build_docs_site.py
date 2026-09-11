@@ -19,6 +19,7 @@ if __package__ is None or __package__ == "":
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from ArtificialAnalysis.scrape_artificial_analysis import RAW_SCORES_FILENAME, SCORE_SPECS
+from analysis.irt_leaderboard_exploration import aindex_mixed_core as primary
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -32,11 +33,8 @@ DEFAULT_RANKING_OUTPUT_DIR = (
     PROJECT_ROOT / "analysis" / "irt_leaderboard_exploration" / "outputs"
 )
 
-PRIMARY_RANKING_METHOD = "aindex_scheme18"
-PRIMARY_CANDIDATE_ID = (
-    "v5_partial_credit_geometric_logsumexp_residual_t1_"
-    "independent_audit_mean_plus_sqrt2_sd"
-)
+PRIMARY_RANKING_METHOD = primary.METHOD_ID
+PRIMARY_CANDIDATE_ID = primary.CANDIDATE_ID
 # Kept only for the historical two-method sensitivity artifact.  These
 # weights never enter the production AIndex score or ordering.
 AUDIT_COMPONENT_WEIGHTS = {
@@ -669,10 +667,10 @@ def external_metric_key(benchmark_id: str) -> str:
 
 
 def aindex_metric_policy_metadata(metric_key: str) -> dict[str, Any]:
-    """Expose the frozen Scheme 18 benchmark policy to the static client.
+    """Expose the frozen Mixed Core 07 benchmark policy to the static client.
 
     The role is derived from the policy registry, never from a Custom Weight
-    default.  Conditional items enter Scheme 18 only when the benchmark
+    default.  Conditional items enter Mixed Core 07 only when the benchmark
     controller is confirmed independent of every ranked model vendor; mixed
     operators and protocols remain visible in the returned metadata.
     """
@@ -688,40 +686,56 @@ def aindex_metric_policy_metadata(metric_key: str) -> dict[str, Any]:
         None,
     )
     if policy is None:
+        boards = [b for b, keys in primary.CORE_ITEMS.items() if metric_key in keys]
+        if boards:
+            return {
+                "aindexRole": "core", "aindexBoards": boards, "onlyAdd": False,
+                "canonicalBenchmarkFamily": primary.canonical_family(metric_key),
+                "benchmarkController": "Artificial Analysis / benchmark authors",
+                "controllerIsRankedModelVendor": False,
+                "resultOperator": "Artificial Analysis",
+                "resultProtocol": "Direct AA percentage under the named benchmark version",
+                "scoreProvenance": "Artificial Analysis raw score snapshot",
+                "versionPin": metric_key, "sourceUrl": SOURCE_URL,
+                "scoringReason": "Scheme 07 selected Core: fixed share, observed zero valid, no legacy Terminal fallback.",
+                "policyTier": "core", "protocolStatus": "common-core",
+            }
         return {
             "aindexRole": "custom-only",
             "aindexBoards": [],
             "onlyAdd": False,
             "scoringReason": (
                 "Available to Custom Weight tools but absent from the fixed "
-                "Scheme 18 scoring registry."
+                "Mixed Core 07 scoring registry."
             ),
         }
 
-    is_core = policy.tier == "core" and policy.publication_eligible
-    is_extension = (
-        policy.tier == "extension"
-        and policy.publication_eligible
-    ) or (
-        policy.tier == "conditional_extension"
-        and policy.exploration_eligible
-        and policy.controller_is_ranked_model_vendor is False
-    )
+    core_boards = [b for b, keys in primary.CORE_ITEMS.items() if metric_key in keys]
+    extension_boards = [b for b, keys in primary.EXTENSION_ITEMS.items() if metric_key in keys]
+    is_core = bool(core_boards)
+    is_extension = bool(extension_boards)
     role = "core" if is_core else "extension" if is_extension else "excluded"
     return {
         "aindexRole": role,
-        "aindexBoards": list(policy.boards) if role != "excluded" else [],
-        "canonicalBenchmarkFamily": policy.canonical_family,
+        "aindexBoards": core_boards if is_core else extension_boards,
+        "canonicalBenchmarkFamily": primary.canonical_family(metric_key),
         "benchmarkController": policy.benchmark_creator_controller,
         "controllerIsRankedModelVendor": policy.controller_is_ranked_model_vendor,
         "resultOperator": policy.result_operator,
-        "resultProtocol": policy.result_protocol,
+        "resultProtocol": "AA common protocol for the named version" if is_core else policy.result_protocol,
         "scoreProvenance": policy.score_provenance,
-        "versionPin": policy.version_pin,
-        "onlyAdd": bool(policy.only_add and role == "extension"),
+        "versionPin": (f"{metric_key} / current AA snapshot" if is_core else policy.version_pin),
+        "onlyAdd": role == "extension",
         "sourceUrl": policy.source_url,
-        "scoringReason": policy.rationale,
-        "policyTier": policy.tier,
+        "scoringReason": (
+            "Scheme 07 fixed-share Core; Terminal v4 only; missing slots retain their fixed share."
+            if is_core else "Scheme 07 positive-residual extension, only with complete board Core. " + policy.rationale
+            if is_extension else "Excluded from the Scheme 07 scoring registry."
+        ),
+        "historicalPolicyRationale": policy.rationale,
+        "policyTier": role,
+        "historicalPolicyTier": policy.tier,
+        "historicalPolicyVersionPin": policy.version_pin,
         "protocolStatus": (
             "common-core"
             if role == "core"
@@ -779,10 +793,10 @@ def build_site_payload(
             "url": SOURCE_URL,
             "methodologyUrl": "methodology.html",
             "methodologyNote": (
-                "AIndex Scheme 18 takes the unweighted geometric mean of each board's "
-                "complete Core percentages, then adds only positive residual evidence "
+                "AIndex Mixed Core 07 uses one Core item at 100% or two at 50% each, "
+                "with fixed shares for missing observations, then adds positive residual evidence "
                 "from listed independent-controller extension benchmarks under one "
-                "anonymous dynamic cap. Five board scores contribute equally. Missing "
+                "anonymous dynamic cap. Board weights are 12%, 9%, 22%, 37%, 20%. Missing "
                 "extensions stay absent and never reduce Core. Some extension operators, "
                 "agent stacks, prompts, or versions remain mixed and are disclosed."
             ),
@@ -1262,7 +1276,8 @@ def write_site_payload(
         else {"version": 1, "sources": [], "benchmarks": [], "results": []}
     )
     provider_pricing = load_provider_pricing(provider_pricing_json)
-    payload = build_site_payload(read_csv_rows(input_csv), external_benchmarks, provider_pricing)
+    raw_rows = read_csv_rows(input_csv)
+    payload = build_site_payload(raw_rows, external_benchmarks, provider_pricing)
     is_default_output = output_json.resolve() == DEFAULT_OUTPUT_JSON.resolve()
     should_attach_ranking = (
         is_default_output if include_irt_ranking is None else include_irt_ranking
@@ -1279,6 +1294,7 @@ def write_site_payload(
         )
         analysis_result = run_multi_method_analysis_from_payload(
             payload,
+            raw_rows=raw_rows,
             output_dir=DEFAULT_RANKING_OUTPUT_DIR,
             write_outputs=should_write_analysis,
         )
@@ -1775,7 +1791,7 @@ def attach_irt_ranking_profiles(
     payload: dict[str, Any],
     analysis_result: dict[str, Any],
 ) -> dict[str, Any]:
-    """Attach Scheme 18 scores and keep legacy IRT methods as audit fields.
+    """Attach Mixed Core 07 scores and keep legacy IRT methods as audit fields.
 
     The scoring analysis owns the unrounded order.  This function performs a
     strict slug/configuration join and never recalculates, calibrates, or
@@ -1783,31 +1799,31 @@ def attach_irt_ranking_profiles(
     deduplicated cohort but their own exact-scoped evidence.
     """
 
-    scheme_rows = _validated_scheme18_rows(
+    scheme_rows = _validated_mixed_core_rows(
         _analysis_rows(
             analysis_result,
-            "aindex_scheme18_full_rankings",
-            "scheme18_full_rankings",
+            "aindex_mixed_core_full_rankings",
+            "mixed_core_full_rankings",
         ),
         ranking_grain="variant_group",
     )
-    exact_scheme_rows = _validated_scheme18_rows(
+    exact_scheme_rows = _validated_mixed_core_rows(
         _analysis_rows(
             analysis_result,
-            "exact_config_aindex_scheme18_full_rankings",
-            "aindex_scheme18_exact_config_full_rankings",
-            "exact_config_scheme18_full_rankings",
+            "exact_config_aindex_mixed_core_full_rankings",
+            "aindex_mixed_core_exact_config_full_rankings",
+            "exact_config_mixed_core_full_rankings",
         ),
         ranking_grain="exact_config",
     )
     if not scheme_rows:
-        raise ValueError("analysis did not return the Scheme 18 main ranking")
+        raise ValueError("analysis did not return the Mixed Core 07 main ranking")
     if not exact_scheme_rows:
-        raise ValueError("analysis did not return the Scheme 18 exact-config ranking")
+        raise ValueError("analysis did not return the Mixed Core 07 exact-config ranking")
 
     calibration = dict(
-        analysis_result.get("aindex_scheme18_calibration")
-        or analysis_result.get("scheme18_calibration")
+        analysis_result.get("aindex_mixed_core_calibration")
+        or analysis_result.get("mixed_core_calibration")
         or {}
     )
     candidate_id = str(
@@ -1818,7 +1834,7 @@ def attach_irt_ranking_profiles(
     )
     if candidate_id != PRIMARY_CANDIDATE_ID:
         raise ValueError(
-            f"unexpected Scheme 18 candidate id: {candidate_id!r}"
+            f"unexpected Mixed Core 07 candidate id: {candidate_id!r}"
         )
 
     evidence_methods = analysis_result.get("full_rankings") or {}
@@ -1848,6 +1864,7 @@ def attach_irt_ranking_profiles(
     audit_pool_sizes = {
         key: _summary_method_pool_sizes(summary, method_id)
         for key, method_id in RANKING_METHOD_KEYS.items()
+        if evidence_methods[method_id]
     }
     exact_audit_pool_sizes = {
         key: _summary_method_pool_sizes(
@@ -1856,6 +1873,7 @@ def attach_irt_ranking_profiles(
             collection_key="exact_config_board_item_pool_sizes",
         )
         for key, method_id in RANKING_METHOD_KEYS.items()
+        if exact_evidence_methods[method_id]
     }
     model_by_slug: dict[str, dict[str, Any]] = {}
     for model in payload.get("models", []):
@@ -1873,21 +1891,21 @@ def attach_irt_ranking_profiles(
         variant_group_id = str(scheme_row.get("variant_group") or "")
         selected_slug = str(scheme_row.get("slug") or "")
         if not variant_group_id:
-            raise ValueError("Scheme 18 ranking row has no variant_group")
+            raise ValueError("Mixed Core 07 ranking row has no variant_group")
         if not selected_slug:
-            raise ValueError("Scheme 18 ranking row has no slug")
+            raise ValueError("Mixed Core 07 ranking row has no slug")
         component_rows = {
             key: rows.get(variant_group_id) for key, rows in evidence_by_key.items()
         }
-        if any(row is None for row in component_rows.values()):
-            raise ValueError(
-                f"Scheme 18 group {variant_group_id!r} is missing an audit row"
-            )
+        # Audit methods may lack this configuration; their eligibility must
+        # never suppress a valid production score or borrow a sibling result.
+        component_rows = {key: row for key, row in component_rows.items()
+                          if row is not None and str(row.get("slug") or "") == selected_slug}
         for method_key, method_row in component_rows.items():
             method_slug = str(method_row.get("slug") or "")
             if selected_slug != method_slug:
                 raise ValueError(
-                    f"Scheme 18 configuration mismatch for {variant_group_id!r}: "
+                    f"Mixed Core 07 configuration mismatch for {variant_group_id!r}: "
                     f"selected={selected_slug!r}, {method_key}={method_slug!r}"
                 )
         model = model_by_slug.get(selected_slug)
@@ -1901,7 +1919,7 @@ def attach_irt_ranking_profiles(
             raise ValueError(f"ranked slug {selected_slug!r} was attached twice")
         attached_slugs.add(selected_slug)
 
-        profile = _scheme18_ranking_profile(
+        profile = _mixed_core_ranking_profile(
             scheme_row=scheme_row,
             audit_rows=component_rows,
             audit_pool_sizes=audit_pool_sizes,
@@ -1929,7 +1947,7 @@ def attach_irt_ranking_profiles(
         selected_slug = str(scheme_row.get("slug") or "")
         variant_group_id = str(scheme_row.get("variant_group") or "")
         if not selected_slug or not variant_group_id:
-            raise ValueError("exact Scheme 18 row has no slug or variant_group")
+            raise ValueError("exact Mixed Core 07 row has no slug or variant_group")
         if selected_slug in exact_attached_slugs:
             raise ValueError(
                 f"exact-config slug {selected_slug!r} was attached twice"
@@ -1939,10 +1957,10 @@ def attach_irt_ranking_profiles(
             key: rows.get(selected_slug)
             for key, rows in exact_evidence_by_key.items()
         }
-        if any(row is None for row in component_rows.values()):
-            raise ValueError(
-                f"exact-config {selected_slug!r} is missing an audit row"
-            )
+        # Audit methods may lack this configuration; their eligibility must
+        # never suppress a valid production score or borrow a sibling result.
+        component_rows = {key: row for key, row in component_rows.items()
+                          if row is not None and str(row.get("slug") or "") == selected_slug}
         for method_key, method_row in component_rows.items():
             method_slug = str(method_row.get("slug") or "")
             if selected_slug != method_slug:
@@ -1961,7 +1979,7 @@ def attach_irt_ranking_profiles(
                 f"exact-config slug {selected_slug!r} has mismatched variant group"
             )
 
-        exact_profile = _scheme18_ranking_profile(
+        exact_profile = _mixed_core_ranking_profile(
             scheme_row=scheme_row,
             audit_rows=component_rows,
             audit_pool_sizes=exact_audit_pool_sizes,
@@ -1991,9 +2009,9 @@ def attach_irt_ranking_profiles(
         "populationSize": population_size,
         "exactPopulationSize": exact_population_size,
         "boardOrder": list(RANKING_BOARD_IDS),
-        "coreItems": _scheme18_item_registry(calibration, "core"),
-        "extensionItems": _scheme18_item_registry(calibration, "extension"),
-        "bonusCap": _scheme18_cap(calibration),
+        "coreItems": _mixed_core_item_registry(calibration, "core"),
+        "extensionItems": _mixed_core_item_registry(calibration, "extension"),
+        "bonusCap": _mixed_core_cap(calibration),
         "bonusCapRule": str(
             calibration.get("bonusCapRule")
             or calibration.get("bonus_cap_rule")
@@ -2006,11 +2024,12 @@ def attach_irt_ranking_profiles(
             or calibration.get("population_size")
             or population_size
         ),
-        "coreFit": "unweighted geometric mean of direct percentages",
+        "coreFit": "fixed-share arithmetic: one Core 100%, two Core 50% each",
+        "boardWeights": dict(primary.BOARD_WEIGHTS),
         "extensionAggregation": "log(1 + sum(expm1(positive residual)))",
         "missingPolicy": (
-            "Core must be complete; missing extension observations stay absent, "
-            "earn zero bonus, and never reduce Core."
+            "Each board requires at least one observed configured Core; exclude at four missing Core items. "
+            "Missing Core keeps its fixed share with zero contribution; extensions require complete board Core."
         ),
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "calibration": calibration,
@@ -2040,6 +2059,7 @@ def attach_irt_ranking_profiles(
             "comparisonRole": "audit-and-sensitivity-only",
             "labels": dict(summary.get("methods") or {}),
         },
+        "auditStatus": summary.get("legacy_audits") or {"status": "available", "available": True},
         "rows": leaderboard_rows,
         "exactRows": exact_leaderboard_rows,
     }
@@ -2048,10 +2068,7 @@ def attach_irt_ranking_profiles(
         exact_population_size
     )
     payload.setdefault("summary", {})["eligibleExactConfigurationsExposed"] = (
-        int(
-            summary.get("eligible_exact_configs_hidden_by_group_collapse")
-            or 0
-        )
+        len(exact_attached_slugs - attached_slugs)
     )
     return payload
 
@@ -2064,7 +2081,7 @@ def _analysis_rows(analysis_result: dict[str, Any], *keys: str) -> list[dict[str
     return []
 
 
-def _scheme18_row_score(row: dict[str, Any]) -> float:
+def _mixed_core_row_score(row: dict[str, Any]) -> float:
     value = _number_or_none(
         row.get("score_full_precision")
         if row.get("score_full_precision") is not None
@@ -2073,11 +2090,11 @@ def _scheme18_row_score(row: dict[str, Any]) -> float:
         else row.get("score")
     )
     if value is None or not 0.0 <= value <= 100.0:
-        raise ValueError("Scheme 18 row has no valid 0-100 final score")
+        raise ValueError("Mixed Core 07 row has no valid 0-100 final score")
     return value
 
 
-def _validated_scheme18_rows(
+def _validated_mixed_core_rows(
     rows: Iterable[dict[str, Any]],
     *,
     ranking_grain: str,
@@ -2093,9 +2110,9 @@ def _validated_scheme18_rows(
     for position, row in enumerate(result, start=1):
         candidate_id = str(row.get("candidate_id") or PRIMARY_CANDIDATE_ID)
         if candidate_id != PRIMARY_CANDIDATE_ID:
-            raise ValueError(f"unexpected Scheme 18 row candidate: {candidate_id!r}")
+            raise ValueError(f"unexpected Mixed Core 07 row candidate: {candidate_id!r}")
         if int(row.get("rank") or 0) != position:
-            raise ValueError("Scheme 18 ranks must be contiguous and pre-sorted")
+            raise ValueError("Mixed Core 07 ranks must be contiguous and pre-sorted")
         identity = str(
             row.get("slug")
             if ranking_grain == "exact_config"
@@ -2103,15 +2120,15 @@ def _validated_scheme18_rows(
             or ""
         )
         if not identity or identity in seen:
-            raise ValueError(f"duplicate or missing Scheme 18 identity: {identity!r}")
+            raise ValueError(f"duplicate or missing Mixed Core 07 identity: {identity!r}")
         seen.add(identity)
-        score = _scheme18_row_score(row)
+        score = _mixed_core_row_score(row)
         tie_key = f"{row.get('slug') or ''}\0{row.get('model') or ''}"
         if score > previous_score + 1e-12:
-            raise ValueError("Scheme 18 rows are not sorted by unrounded score")
+            raise ValueError("Mixed Core 07 rows are not sorted by unrounded score")
         if math.isclose(score, previous_score, rel_tol=0.0, abs_tol=1e-12):
             if previous_tie_key and tie_key < previous_tie_key:
-                raise ValueError("Scheme 18 exact ties are not stably ordered")
+                raise ValueError("Mixed Core 07 exact ties are not stably ordered")
         else:
             previous_tie_key = ""
         previous_score = score
@@ -2119,7 +2136,7 @@ def _validated_scheme18_rows(
     return result
 
 
-def _scheme18_item_registry(
+def _mixed_core_item_registry(
     calibration: dict[str, Any],
     tier: str,
 ) -> dict[str, list[str]]:
@@ -2152,11 +2169,11 @@ def _scheme18_item_registry(
             for board_id in RANKING_BOARD_IDS
         }
     if tier == "core" and any(not items for items in registry.values()):
-        raise ValueError("Scheme 18 Core item registry must cover every board")
+        raise ValueError("Mixed Core 07 Core item registry must cover every board")
     return registry
 
 
-def _scheme18_cap(calibration: dict[str, Any]) -> float:
+def _mixed_core_cap(calibration: dict[str, Any]) -> float:
     value = _number_or_none(
         calibration.get("bonusCap")
         if calibration.get("bonusCap") is not None
@@ -2165,7 +2182,7 @@ def _scheme18_cap(calibration: dict[str, Any]) -> float:
         else calibration.get("bonus_cap_per_board")
     )
     if value is None or value < 0.0:
-        raise ValueError("Scheme 18 calibration has no valid bonus cap")
+        raise ValueError("Mixed Core 07 calibration has no valid bonus cap")
     return value
 
 
@@ -2178,7 +2195,7 @@ def _rank_consensus_rows_by_composite_score(
     """Rebuild the historical 80/20 sensitivity order for audit tests.
 
     This helper is not called by the production AIndex path.  It remains so
-    older artifacts can be reproduced and compared with Scheme 18.
+    older artifacts can be reproduced and compared with Mixed Core 07.
     """
 
     twopl_rows = component_rows_by_key["twopl"]
@@ -2322,7 +2339,7 @@ def _required_number(row: dict[str, Any], key: str) -> float:
     return value
 
 
-def _scheme18_ranking_profile(
+def _mixed_core_ranking_profile(
     *,
     scheme_row: dict[str, Any],
     audit_rows: dict[str, dict[str, Any]],
@@ -2330,14 +2347,16 @@ def _scheme18_ranking_profile(
     calibration: dict[str, Any],
     ranking_grain: str,
 ) -> dict[str, Any]:
-    """Build one production profile from a scorer-owned Scheme 18 row."""
+    """Build one production profile from a scorer-owned Mixed Core 07 row."""
 
-    core_items = _scheme18_item_registry(calibration, "core")
-    extension_items = _scheme18_item_registry(calibration, "extension")
-    cap = _scheme18_cap(calibration)
+    core_items = _mixed_core_item_registry(calibration, "core")
+    extension_items = _mixed_core_item_registry(calibration, "extension")
+    cap = _mixed_core_cap(calibration)
     method_profiles: dict[str, dict[str, Any]] = {}
     for key, method_id in RANKING_METHOD_KEYS.items():
-        evidence_row = audit_rows[key]
+        evidence_row = audit_rows.get(key)
+        if evidence_row is None:
+            continue
         audit_rank = int(evidence_row["rank"])
         method_profiles[key] = {
             "id": method_id,
@@ -2382,16 +2401,19 @@ def _scheme18_ranking_profile(
         extension_tests = int(
             scheme_row.get(f"{board_id}_extension_tests") or 0
         )
-        if core_tests != len(core_items[board_id]):
-            raise ValueError(f"Scheme 18 Core is incomplete for {board_id}")
+        if not 1 <= core_tests <= len(core_items[board_id]):
+            raise ValueError(f"Mixed Core 07 board has no observed Core for {board_id}")
+        if core_tests < len(core_items[board_id]) and bonus != 0:
+            raise ValueError(f"Incomplete Core must not earn extension bonus for {board_id}")
         # The public audit column is rounded to six decimals while the scorer
         # applies the cap at full precision.
         if not 0.0 <= bonus <= cap + 1.0e-6:
-            raise ValueError(f"Scheme 18 bonus is outside cap for {board_id}")
+            raise ValueError(f"Mixed Core 07 bonus is outside cap for {board_id}")
         if not core_score - 1e-6 <= board_score <= 100.0 + 1e-9:
-            raise ValueError(f"invalid Scheme 18 board score for {board_id}")
-        if not math.isclose(points, board_score / 5.0, abs_tol=1e-10):
-            raise ValueError(f"Scheme 18 board points identity failed for {board_id}")
+            raise ValueError(f"invalid Mixed Core 07 board score for {board_id}")
+        weight = primary.BOARD_WEIGHTS[board_id]
+        if not math.isclose(points, board_score * weight / 100.0, abs_tol=1e-10):
+            raise ValueError(f"Mixed Core 07 board points identity failed for {board_id}")
         extension_pool_size = len(extension_items[board_id])
         coverage = (
             100.0 * extension_tests / extension_pool_size
@@ -2403,6 +2425,16 @@ def _scheme18_ranking_profile(
         total_extension_tests += extension_tests
         boards[board_id] = {
             "coreScore": core_score,
+            "weight": weight,
+            "coreComplete": core_tests == len(core_items[board_id]),
+            "coreItems": [
+                {"key": key,
+                 "observed": bool(scheme_row.get(f"{board_id}_item{i}_observed")),
+                 "adjustedScore": scheme_row.get(f"{board_id}_item{i}_adjusted"),
+                 "basePoints": scheme_row.get(f"{board_id}_item{i}_base_points"),
+                 "share": 1 / len(core_items[board_id])}
+                for i, key in enumerate(core_items[board_id], 1)
+            ],
             "extensionBonus": bonus,
             "score": board_score,
             "points": points,
@@ -2416,15 +2448,18 @@ def _scheme18_ranking_profile(
             "itemPoolSize": len(core_items[board_id]) + extension_pool_size,
         }
 
-    final_score = _scheme18_row_score(scheme_row)
+    final_score = _mixed_core_row_score(scheme_row)
     point_sum = sum(board["points"] for board in boards.values())
     if not math.isclose(final_score, point_sum, abs_tol=1e-10):
-        raise ValueError("Scheme 18 final score is not the sum of five board points")
+        raise ValueError("Mixed Core 07 final score is not the sum of five board points")
     score_full_precision = str(
         scheme_row.get("score_full_precision")
         or format(final_score, ".17g")
     )
     extension_coverage = sum(extension_coverages) / len(extension_coverages)
+    missing_core_count = sum(b["coreItemPoolSize"] - b["coreTests"] for b in boards.values())
+    if missing_core_count >= 4:
+        raise ValueError("Mixed Core 07 excludes four or more missing Core items")
     return {
         "method": PRIMARY_RANKING_METHOD,
         "candidateId": PRIMARY_CANDIDATE_ID,
@@ -2435,8 +2470,11 @@ def _scheme18_ranking_profile(
         "finalScore": final_score,
         "scoreFullPrecision": score_full_precision,
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
-        "scoreScale": "0-100 equal-additive five-board points",
-        "coreComplete": True,
+        "scoreScale": "0-100 weighted-additive five-board points",
+        "coreComplete": missing_core_count == 0,
+        "missingCoreCount": missing_core_count,
+        "missingCoreItems": [item["key"] for b in boards.values() for item in b["coreItems"] if not item["observed"]],
+        "boardWeights": dict(primary.BOARD_WEIGHTS),
         "bonusCap": cap,
         "bonusCapRule": str(
             calibration.get("bonusCapRule")
@@ -2444,7 +2482,7 @@ def _scheme18_ranking_profile(
             or calibration.get("cap_rule")
             or "pooled positive residual mean + sqrt(2) population SD"
         ),
-        "evidenceTier": str(audit_rows["twopl"].get("evidence_tier") or ""),
+        "evidenceTier": "Main" if missing_core_count == 0 else "Partial Core",
         "boardTestSlotsTotal": total_tests,
         "extensionTestsTotal": total_extension_tests,
         "extensionCoverageScore": round(extension_coverage, 3),
@@ -2940,13 +2978,14 @@ def _presets() -> dict[str, dict[str, Any]]:
             "id": "zhihu-adjusted",
             "label": "AInsights Index",
             "kind": "precomputed-ranking",
-            "description": "方案 18：每板 Core 真实百分成绩取不加权几何均值；独立控制的扩展测试只用高于匿名 cohort 趋势的正残差加分，并受每日数据重算的统一动态 cap 限制。五板等分相加；扩展缺失不补值、不扣 Core。",
+            "description": "方案 07：单 Core 占本领域基础分 100%，双 Core 各占 50%；缺项保留份额、贡献为零。五领域权重为 12/9/22/37/20；任一领域 Core 全缺或累计缺 4 项即不排名。Core 完整的领域沿用正残差扩展加分和统一动态 cap。",
             "method": PRIMARY_RANKING_METHOD,
             "candidateId": PRIMARY_CANDIDATE_ID,
-            "calculation": "geometric-core-positive-residual-logsumexp",
+            "calculation": "fixed-share-core-positive-residual-logsumexp",
             "normalization": "none",
-            "missingPolicy": "core-required-extension-absent",
-            "boardAggregation": "equal-additive",
+            "missingPolicy": "board-core-required-max-three-missing",
+            "boardAggregation": "weighted-additive",
+            "boardWeights": dict(primary.BOARD_WEIGHTS),
             "extensionPolicy": "only-add-positive-residual",
             "bonusCapRule": "pooled positive residual mean + sqrt(2) population SD",
             "comparisonMethods": [

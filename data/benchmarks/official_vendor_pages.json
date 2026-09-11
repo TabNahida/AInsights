@@ -572,6 +572,20 @@
       ],
       "sourceKey": "deepseek-api-docs-sitemap",
       "title": "DeepSeek-V4-Pro GA Release"
+    },
+    {
+      "vendor": "deepseek",
+      "name": "DeepSeek-V4.1-Flash",
+      "displayName": "DeepSeek V4.1 Flash",
+      "url": "https://api-docs.deepseek.com/news/news260910",
+      "rawUrl": "https://api-docs.deepseek.com/news/news260910",
+      "aliases": [
+        "DeepSeek V4.1 Flash",
+        "DeepSeek-V4.1-Flash",
+        "deepseek-v4-1-flash"
+      ],
+      "sourceKey": "deepseek-api-docs-sitemap",
+      "title": "DeepSeek-V4.1-Flash: Smarter, Faster, More Efficient"
     }
   ]
 }

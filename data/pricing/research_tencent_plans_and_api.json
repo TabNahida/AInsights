@@ -555,7 +555,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-personal-general-lite",
       "modelSlugs": [
-        "deepseek-v4-flash-non-reasoning"
+        "deepseek-v4-flash-0420-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-flash-202605",
       "pricingKind": "effective-subscription",
@@ -856,7 +856,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-personal-general-standard",
       "modelSlugs": [
-        "deepseek-v4-flash-non-reasoning"
+        "deepseek-v4-flash-0420-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-flash-202605",
       "pricingKind": "effective-subscription",
@@ -1157,7 +1157,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-personal-general-pro",
       "modelSlugs": [
-        "deepseek-v4-flash-non-reasoning"
+        "deepseek-v4-flash-0420-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-flash-202605",
       "pricingKind": "effective-subscription",
@@ -1458,7 +1458,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-personal-general-max",
       "modelSlugs": [
-        "deepseek-v4-flash-non-reasoning"
+        "deepseek-v4-flash-0420-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-flash-202605",
       "pricingKind": "effective-subscription",
@@ -2386,7 +2386,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-enterprise-pro-guangzhou",
       "modelSlugs": [
-        "deepseek-v4-flash-non-reasoning"
+        "deepseek-v4-flash-0420-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-flash",
       "pricingKind": "effective-subscription",
@@ -2432,7 +2432,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-enterprise-pro-guangzhou",
       "modelSlugs": [
-        "deepseek-v4-flash-non-reasoning"
+        "deepseek-v4-flash-0420-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-flash-202605",
       "pricingKind": "effective-subscription",
@@ -2733,7 +2733,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-enterprise-pro-singapore",
       "modelSlugs": [
-        "deepseek-v4-flash-non-reasoning"
+        "deepseek-v4-flash-0420-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-flash",
       "pricingKind": "effective-subscription",
@@ -2779,7 +2779,7 @@
       "providerId": "tencent-token-plan",
       "planId": "tencent-token-plan-enterprise-pro-singapore",
       "modelSlugs": [
-        "deepseek-v4-flash-non-reasoning"
+        "deepseek-v4-flash-0420-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-flash-202605",
       "pricingKind": "effective-subscription",
@@ -3041,7 +3041,7 @@
       "providerId": "tencent-tokenhub",
       "planId": "tencent-tokenhub-guangzhou-payg",
       "modelSlugs": [
-        "deepseek-v4-flash-non-reasoning"
+        "deepseek-v4-flash-0420-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-flash",
       "pricingKind": "per-token",
@@ -3085,7 +3085,7 @@
       "providerId": "tencent-tokenhub",
       "planId": "tencent-tokenhub-guangzhou-payg",
       "modelSlugs": [
-        "deepseek-v4-flash-non-reasoning"
+        "deepseek-v4-flash-0420-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-flash-202605",
       "pricingKind": "per-token",
@@ -3782,7 +3782,7 @@
       "providerId": "tencent-tokenhub",
       "planId": "tencent-tokenhub-singapore-payg",
       "modelSlugs": [
-        "deepseek-v4-flash-non-reasoning"
+        "deepseek-v4-flash-0420-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-flash",
       "pricingKind": "per-token",
@@ -3826,7 +3826,7 @@
       "providerId": "tencent-tokenhub",
       "planId": "tencent-tokenhub-singapore-payg",
       "modelSlugs": [
-        "deepseek-v4-flash-non-reasoning"
+        "deepseek-v4-flash-0420-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-flash-202605",
       "pricingKind": "per-token",

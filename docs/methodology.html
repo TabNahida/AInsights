@@ -4,15 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AInsights Index Methodology - AI Insights Analysis</title>
-    <meta name="description" content="Learn how AIndex Scheme 18 combines complete geometric Core scores with capped positive-residual extension evidence across five equally weighted capability boards." />
-    <meta name="keywords" content="AInsights Index, AIndex, Scheme 18, geometric mean, positive residual, benchmark, LLM leaderboard" />
+    <meta name="description" content="Learn how AIndex Mixed Core 07 combines three dual-Core boards and two single-Core boards with fixed weights and capped positive-residual extensions." />
+    <meta name="keywords" content="AInsights Index, AIndex, Mixed Core 07, fixed Core shares, positive residual, benchmark, LLM leaderboard" />
     <link rel="canonical" href="https://ainsights.tab.homes/methodology.html" />
     <meta property="og:title" content="AInsights Index Methodology - AI Insights Analysis" />
-    <meta property="og:description" content="A source-backed leaderboard using geometric mandatory-Core scores, anonymous OLS residual evidence, a monotone log-sum-exp bonus, and five equal capability boards." />
+    <meta property="og:description" content="A source-backed leaderboard using eight distinct Core tests, fixed board weights, anonymous OLS residual evidence, and a capped log-sum-exp bonus." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ainsights.tab.homes/methodology.html" />
     <meta name="twitter:card" content="summary" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"AInsights Index Methodology - AI Insights Analysis","alternateName":["AInsights Index","AIndex","AIndex Scheme 18"],"url":"https://ainsights.tab.homes/methodology.html","description":"AIndex Scheme 18 calculates five board scores from complete geometric Core results plus capped positive residual evidence from independently controlled extension benchmarks."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"AInsights Index Methodology - AI Insights Analysis","alternateName":["AInsights Index","AIndex","AIndex Mixed Core 07"],"url":"https://ainsights.tab.homes/methodology.html","description":"AIndex Mixed Core 07 calculates five board scores from fixed-share Core evidence, weights of 12/9/22/37/20, and capped positive-residual extensions."}</script>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -31,9 +31,9 @@
     <main>
       <section class="methodology-view" id="methodologyView">
         <section class="methodology-hero">
-          <p class="eyebrow">Methodology · Scheme 18</p>
+          <p class="eyebrow">Methodology · Mixed Core 07</p>
           <h2>AInsights Index Methodology</h2>
-          <p>AIndex Scheme 18 gives every capability board a direct 0–100 score. A small set of mandatory tests determines a geometric Core score; independently controlled extension tests can only raise that score when they provide positive evidence beyond an anonymous cohort-wide expectation. The final AIndex score is the equal arithmetic mean of the five board scores.</p>
+          <p>AIndex Mixed Core 07 uses three boards with two Core items each and two boards with a single Core item. A dual-Core item supplies one half of its board base; a single Core supplies the full base. Independently controlled extensions can add capped positive-residual evidence. The final score uses fixed board weights of 12%, 9%, 22%, 37%, and 20%.</p>
         </section>
 
         <section class="methodology-grid">
@@ -41,91 +41,91 @@
             <h3>Default Ranking at a Glance</h3>
             <ol class="methodology-steps">
               <li>Canonicalize source-backed, direct 0–100 results and select the default deduplicated model population before fitting.</li>
-              <li>Require every mandatory Core result in each board, then calculate that board's unweighted geometric Core mean.</li>
-              <li>For every eligible extension item, fit one anonymous OLS relationship from Core score to the observed extension result across the current cohort.</li>
+              <li>Exclude a model when any board has no observed Core, or at least four of the eight configured Core items are missing. Sum the fixed Core shares without renormalizing missing items.</li>
+              <li>On each board, use only models with all its configured Core observed to fit anonymous extension OLS trends and award extension bonuses.</li>
               <li>Keep only positive residuals, combine them with a zero-neutral monotone log-sum-exp function, and cap the increment using the pooled positive-residual <code>mean + sqrt(2) × SD</code>.</li>
-              <li>Calculate <code>board_score = min(100, core_score + capped_bonus)</code>, then average the five board scores equally and sort the unrounded final score descending.</li>
+              <li>Calculate <code>board_score = min(100, core_score + capped_bonus)</code>, then combine the five board scores with their fixed weights and sort the unrounded final score descending.</li>
             </ol>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>Capability Boards</h3>
-            <p>Every board contributes exactly one fifth of AIndex. There is no hidden board weighting and no later model-specific adjustment.</p>
+            <p>The selected weights remain fixed after data refreshes. All eight Core tests belong to distinct benchmark families; no named-model correction or daily preference fitting changes the calculated order.</p>
             <div class="methodology-table-wrap">
               <table class="methodology-weight-table methodology-matrix-table">
                 <thead>
                   <tr>
                     <th>Board</th>
                     <th>Share</th>
-                    <th>Mandatory Core</th>
+                    <th>Configured Core</th>
                     <th>Published score</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>Coding</td>
-                    <td>20%</td>
-                    <td>SciCode</td>
+                    <td>12%</td>
+                    <td>Terminal-Bench v4.0 + SciCode</td>
                     <td><code>coding_score</code></td>
                   </tr>
                   <tr>
                     <td>Agentic/tool work</td>
-                    <td>20%</td>
-                    <td>AA-LCR</td>
+                    <td>9%</td>
+                    <td>AutomationBench-AA + τ³-Banking</td>
                     <td><code>agentic-tool-work_score</code></td>
                   </tr>
                   <tr>
                     <td>Hard reasoning</td>
-                    <td>20%</td>
-                    <td>Humanity's Last Exam, CritPt, GPQA Diamond</td>
+                    <td>22%</td>
+                    <td>CritPt (single Core)</td>
                     <td><code>hard-reasoning_score</code></td>
                   </tr>
                   <tr>
                     <td>Knowledge/science</td>
-                    <td>20%</td>
-                    <td>SciCode, Humanity's Last Exam, GPQA Diamond, AA-Omniscience Accuracy</td>
+                    <td>37%</td>
+                    <td>AA-Omniscience Accuracy + GDP.pdf</td>
                     <td><code>knowledge-science_score</code></td>
                   </tr>
                   <tr>
                     <td>Instruction/context</td>
                     <td>20%</td>
-                    <td>CritPt, AA-LCR</td>
+                    <td>AA-LCR v1.1 (single Core)</td>
                     <td><code>instruction-context_score</code></td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p>A canonical benchmark family occupies at most one Core slot within a board. A family may appear in more than one board when the same observed result supplies relevant evidence for multiple capabilities; this creates some cross-board correlation and is disclosed as a limitation.</p>
+            <p>Each canonical family occupies only one Core slot across the entire scheme and is removed from the entire extension pool. Terminal-Bench uses v4.0 only: v2.1 and Hard variants supply no fallback or extension. AIME, LiveCodeBench, GPQA, HMMT, MATH-500, and GSM8K are excluded from Core; otherwise permitted extensions retain their existing rules.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>Core Score</h3>
-            <p>For a board with mandatory results <code>x_1 ... x_k</code>, Scheme 18 uses the unweighted geometric partial-credit score:</p>
-            <p><code>core_score = 100 × exp((1/k) × sum(log(clip(x_j / 100, 10^-6, 1))))</code></p>
-            <p>The formula stays on the native percentage scale. It has no canonical T transformation, fixed 50-point center, percentile conversion, item-specific weight, or named-model coefficient. A low mandatory result has more leverage than it would under an arithmetic mean, so broad Core mastery matters.</p>
-            <p>A model is not scored when a mandatory Core value is missing. Scheme 18 does not manufacture a Core value from a sibling model, prior, cohort mean, or lower-effort configuration.</p>
+            <p>Each configured Core item retains a fixed share of its board base:</p>
+            <p><code>single_core_score = adjusted_score; dual_core_score = adjusted_1 / 2 + adjusted_2 / 2</code></p>
+            <p>The selected scheme uses direct bounded 0–100 Core values. A missing Core share contributes zero points but remains missing evidence; an observed numerical zero is valid evidence. The available half of a dual-Core board is never increased to compensate for a missing half. Unconfigured second slots do not count as missing.</p>
+            <p>A model is not scored when any board has no observed Core, or when at least four configured Core items are missing. A single-Core board therefore requires its one observation; a dual-Core board requires at least one. Core data is never borrowed from a sibling model or another effort configuration.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>Independent Extension Evidence</h3>
             <p>Extension items must be controlled by an organization that is not a ranked model vendor. Vendor-controlled benchmark families, including GDPval and BrowseComp, are excluded; ITBench remains excluded because its controller is also a ranked model vendor. Equivalent representations of one canonical family cannot create duplicate bonus opportunities inside a board.</p>
             <p>The extension pool includes independently controlled public benchmarks with sufficient observed coverage. Some reported results still use mixed, vendor-reported, agent-scaffold, prompt, or version-sensitive protocols. Their benchmark ownership is independent, but that does not make every result protocol identical. Sources, operators, versions, and coverage remain visible so this limitation can be audited.</p>
-            <p>Extension evidence is only-add. Missing extension results remain absent, contribute no residual, receive no imputed zero or neutral score, and never reduce the mandatory Core.</p>
+            <p>Extension evidence is only-add. Missing extension results remain absent, contribute no residual, receive no imputed zero or neutral score, and never reduce Core. A board receives no extension bonus while any of its configured Core items are missing; broader extensions cannot repair a missing Core share.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>Anonymous Positive Residuals</h3>
-            <p>For each extension item <code>j</code>, the current deduplicated cohort supplies all observed pairs of board Core score <code>c_i</code> and extension result <code>y_ij</code>. Scheme 18 fits:</p>
+            <p>For each extension item <code>j</code>, the current eligible deduplicated cohort supplies observed pairs from models with every Core item complete on the board: board Core score <code>c_i</code> and extension result <code>y_ij</code>. Mixed Core 07 fits:</p>
             <p><code>predicted_ij = clip(alpha_j + max(0, beta_j) × c_i, 0, 100)</code></p>
             <p><code>positive_residual_ij = max(y_ij - predicted_ij, 0)</code></p>
-            <p>The OLS intercept and non-negative slope are learned anonymously from the complete observed cohort. They are benchmark-level calibration parameters, not corrections for a named model. An extension result at or below its cohort expectation contributes zero rather than a penalty.</p>
+            <p>The OLS intercept and non-negative slope are learned anonymously from the observed cohort with complete Core on the relevant board. They are benchmark-level calibration parameters, not corrections for a named model. An extension result at or below its cohort expectation contributes zero rather than a penalty.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>Monotone Log-Sum-Exp Bonus and Dynamic Cap</h3>
             <p>For a model's positive observed residuals in one board, the raw bonus is:</p>
             <p><code>raw_bonus = log(1 + sum(expm1(positive_residual_j)))</code></p>
-            <p>This form is zero-neutral and monotone: adding a zero residual changes nothing, while adding any positive residual cannot lower the bonus. It allows multiple independent frontier signals to corroborate one another.</p>
+            <p>At fixed calibration this form is zero-neutral and monotone: adding a zero residual changes nothing, while adding any positive residual cannot lower the bonus. It allows multiple independent frontier signals to corroborate one another.</p>
             <p>One symmetric cap is recalculated from all pooled positive extension residuals in the current default cohort:</p>
             <p><code>cap = mean(pooled_positive_residuals) + sqrt(2) × population_SD(pooled_positive_residuals)</code></p>
             <p><code>bonus = min(cap, raw_bonus)</code></p>
@@ -135,39 +135,39 @@
           <article class="methodology-card methodology-card-wide">
             <h3>Board and Final Score</h3>
             <p><code>board_score_b = min(100, core_score_b + bonus_b)</code></p>
-            <p><code>board_points_b = board_score_b / 5</code></p>
-            <p><code>AIndex = sum(board_points_b) = (1/5) × sum(board_score_b)</code></p>
+            <p><code>board_points_b = board_score_b × board_weight_b / 100</code></p>
+            <p><code>AIndex = 0.12 × coding + 0.09 × agentic + 0.22 × reasoning + 0.37 × knowledge + 0.20 × context</code></p>
             <p>The displayed score, bar length, and rank all use this same quantity. Ranking uses the unrounded AIndex value; stable model ID is used only for an exact numerical tie. No model name, provider, family order, reserved position, mean rank, or post-hoc score calibration can move a row ahead of a higher calculated score.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>Deduplication and Exact Configurations</h3>
-            <p>The default leaderboard first selects one representative exact configuration for each <code>variantGroup</code>, then fits the anonymous extension trends and dynamic cap on that deduplicated cohort. This is also the calibration population used by the published ranking.</p>
-            <p>When Full Ranking shows every eligible tier, exact configurations use their own mandatory results. Only external evidence explicitly scoped to that exact variant with <code>variantScoped</code> may contribute to its extension bonus; family-level evidence is not concentrated onto one effort tier. The production export records the ranking grain and selected exact slug so the join can be audited.</p>
+            <p>The default leaderboard first selects one representative exact configuration for each <code>variantGroup</code> by descending <code>variantPriority</code> and ascending slug, before checking eligibility. It never switches to a lower configuration to repair missing Core. Anonymous extension trends and the dynamic cap are then fitted on the eligible deduplicated cohort. This is also the calibration population used by the published ranking.</p>
+            <p>When Full Ranking shows every eligible tier, exact configurations use their own Core results and reuse the same serialized deduplicated trends and cap. Only external evidence explicitly scoped to that exact variant with <code>variantScoped</code> may contribute to its extension bonus; family-level evidence is not concentrated onto one effort tier. The production export records the ranking grain and selected exact slug so the join can be audited.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>Radar and Evidence Coverage</h3>
-            <p>The first five radar axes read the five Scheme 18 board scores directly. The sixth axis is evidence coverage: it reports Core completeness and observed extension breadth but never changes a board score or rank.</p>
-            <p>Coverage is not a missing-data penalty. Core completeness is a scoring eligibility condition; after that condition is met, missing extension cells remain absent and the displayed score is based only on the Core plus observed positive residual evidence.</p>
+            <p>The first five radar axes read the five Mixed Core 07 board scores directly. The sixth axis is evidence coverage: it reports Core completeness and observed extension breadth but never changes a board score or rank.</p>
+            <p>Core coverage shows which fixed shares are supported. Missing Core shares contribute no points and can prevent ranking or board extensions. Missing extension cells remain absent. The sixth radar coverage axis itself never changes the score.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>Sensitivity Views and Custom Tools</h3>
-            <p>Equal-board 2PL, Core Rasch, Sparse Rasch, and Dense Rasch remain available as sensitivity views. They do not contribute a fixed percentage to Scheme 18 and cannot override its score order. Full Ranking may display standalone 2PL and Dense Rasch ranks for comparison only.</p>
-            <p>Custom tools can separately explore method ranks, capability-board weights, and per-benchmark calculations. These user-defined views do not reproduce or modify the default AIndex unless they implement the complete Scheme 18 Core, residual, cap, and five-board pipeline.</p>
+            <p>Equal-board 2PL, Core Rasch, Sparse Rasch, and Dense Rasch remain available as sensitivity views. They do not contribute a fixed percentage to Mixed Core 07 and cannot override its score order. Full Ranking may display standalone 2PL and Dense Rasch ranks for comparison only.</p>
+            <p>Custom tools can separately explore method ranks, capability-board weights, and per-benchmark calculations. These user-defined views do not reproduce or modify the default AIndex unless they implement the complete Mixed Core 07 Core, residual, cap, and five-board pipeline.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>AIndex Calculation</h3>
             <ol class="methodology-steps">
               <li>Load source-backed direct scores and canonical benchmark policy metadata.</li>
-              <li>Select the default deduplicated population and require every board's mandatory Core.</li>
-              <li>Calculate each Core as an unweighted geometric mean on the native 0–100 scale.</li>
-              <li>Fit one anonymous non-negative-slope OLS trend per extension item and retain only observed positive residuals.</li>
+              <li>Fix the deduplicated representatives before checking for any empty Core board or at least four missing configured items.</li>
+              <li>Sum the fixed Core shares: one full share for a single-Core board, two half shares for a dual-Core board.</li>
+              <li>On complete-Core boards only, fit non-negative-slope OLS trends and retain observed positive extension residuals.</li>
               <li>Pool positive residuals to derive the dynamic <code>mean + sqrt(2) × SD</code> cap.</li>
               <li>Apply the monotone log-sum-exp bonus, cap it, and add it to the matching Core without imputing missing extension results.</li>
-              <li>Average the five bounded board scores equally, sort the unrounded AIndex score descending, and publish Core, bonus, coverage, and sensitivity diagnostics.</li>
+              <li>Apply fixed board weights 12/9/22/37/20, sort the unrounded AIndex score descending, and publish Core, bonus, coverage, and sensitivity diagnostics.</li>
             </ol>
           </article>
         </section>
@@ -176,7 +176,7 @@
 
     <footer class="site-footer">
       Source: <a href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" target="_blank" rel="noreferrer">Artificial Analysis</a> and linked independently controlled public benchmark sources.
-      AInsights Index / AIndex recalculates Scheme 18 from observed results and publishes Core, extension, coverage, and sensitivity diagnostics alongside the score order.
+      AInsights Index / AIndex recalculates Mixed Core 07 from observed results and publishes Core, extension, coverage, and sensitivity diagnostics alongside the score order.
     </footer>
   </body>
 </html>

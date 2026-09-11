@@ -307,8 +307,8 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
         )
         self.assertEqual(
             self.result["summary"]["rank_policy"],
-            "no product/model constraints; no named-model corrections; no fixed "
-            "missing-score penalty; score descending is the only ranking rule",
+            "no product/model constraints or named-model corrections; "
+            "unrounded score descending, stable IDs for exact ties",
         )
         forbidden = {
             "constraint_flags",
@@ -374,11 +374,11 @@ class MultiMethodEvidenceRankingTests(unittest.TestCase):
         )
         self.assertEqual(
             self.result["summary"]["default_consensus_method"],
-            "aindex_scheme18",
+            "aindex_mixed_core",
         )
         self.assertEqual(
             self.result["summary"]["default_ranking_method"],
-            "aindex_scheme18",
+            "aindex_mixed_core",
         )
         self.assertEqual(
             CONSENSUS_METHOD,

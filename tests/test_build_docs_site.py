@@ -9,6 +9,7 @@ from pathlib import Path
 from ArtificialAnalysis.scrape_artificial_analysis import SCORE_SPECS
 from benchmarks.collect_benchmark_scores import build_payload as build_benchmark_payload
 from analysis.irt_leaderboard_exploration.v5_benchmark_policy import BENCHMARK_POLICIES
+from analysis.irt_leaderboard_exploration import aindex_mixed_core as primary
 from scripts.build_docs_site import (
     AINDEX_GROUPS,
     DEFAULT_AINDEX_WEIGHTS,
@@ -106,7 +107,8 @@ class BuildDocsSiteTests(unittest.TestCase):
             self.assertIn(offer["planId"], plan_by_id)
             self.assertEqual(plan_by_id[offer["planId"]]["providerId"], offer["providerId"])
             self.assertEqual(len(offer["modelSlugs"]), 1)
-            self.assertTrue(set(offer["modelSlugs"]) <= model_slugs)
+            self.assertTrue(set(offer["modelSlugs"]) <= model_slugs,
+                            f"pricing offer {offer['id']} references missing model slugs: {sorted(set(offer['modelSlugs']) - model_slugs)}")
             self.assertTrue(set(offer["sourceIds"]) <= source_id_set)
             token_rate_fields = (
                 "inputPerMillionTokensUsd",
@@ -1087,7 +1089,7 @@ class BuildDocsSiteTests(unittest.TestCase):
                 "deepseek-v4-pro",
                 "deepseek-v4-pro-0424-non-reasoning",
                 "deepseek-v4-flash",
-                "deepseek-v4-flash-non-reasoning",
+                "deepseek-v4-flash-0420-non-reasoning",
                 "glm-5-2",
                 "glm-5-1",
                 "kimi-k2-6",
@@ -1245,7 +1247,8 @@ class BuildDocsSiteTests(unittest.TestCase):
                 profile["finalScore"],
                 delta=0.00006,
             )
-            self.assertTrue(profile["coreComplete"])
+            self.assertEqual(profile["coreComplete"], profile["missingCoreCount"] == 0)
+            self.assertLess(profile["missingCoreCount"], 4)
             self.assertEqual(profile["candidateId"], payload["leaderboard"]["candidateId"])
             self.assertEqual(
                 float(profile["scoreFullPrecision"]),
@@ -1257,10 +1260,8 @@ class BuildDocsSiteTests(unittest.TestCase):
                 sum(board["points"] for board in profile["boards"].values()),
                 delta=1e-10,
             )
-            self.assertIn("twopl", methods)
-            self.assertIn("denseRasch", methods)
-            self.assertEqual(methods["twopl"]["role"], "audit-and-sensitivity-only")
-            self.assertEqual(methods["denseRasch"]["role"], "audit-and-sensitivity-only")
+            for method in methods.values():
+                self.assertEqual(method["role"], "audit-and-sensitivity-only")
             extension_coverages = []
             for board_id, board in profile["boards"].items():
                 self.assertAlmostEqual(
@@ -1273,7 +1274,15 @@ class BuildDocsSiteTests(unittest.TestCase):
                     board["extensionBonus"],
                     profile["bonusCap"] + 1e-6,
                 )
-                self.assertEqual(board["coreTests"], board["coreItemPoolSize"])
+                self.assertGreaterEqual(board["coreTests"], 1)
+                self.assertLessEqual(board["coreTests"], board["coreItemPoolSize"])
+                self.assertEqual(board["weight"], primary.BOARD_WEIGHTS[board_id])
+                self.assertAlmostEqual(board["points"], board["score"] * board["weight"] / 100)
+                self.assertAlmostEqual(board["coreScore"], sum(
+                    (item["adjustedScore"] or 0) * item["share"] for item in board["coreItems"]
+                ), places=5)
+                if board["coreTests"] < board["coreItemPoolSize"]:
+                    self.assertEqual(board["extensionBonus"], 0)
                 extension_coverages.append(board["extensionCoverageScore"])
             self.assertAlmostEqual(
                 profile["extensionCoverageScore"],
@@ -1339,18 +1348,13 @@ class BuildDocsSiteTests(unittest.TestCase):
         # A tier can lose eligibility when AA withdraws a mandatory score.
         # Check the publication policy against the live catalogue, rather than
         # requiring a frozen list of GPT tiers to keep scores indefinitely.
-        core_keys = {
-            policy.score_key for policy in BENCHMARK_POLICIES
-            if policy.tier == "core" and policy.publication_eligible
-        }
         for model in payload["models"]:
-            complete_core = all(
-                isinstance(model["scores"].get(key), (int, float))
-                and math.isfinite(model["scores"][key])
-                for key in core_keys
-            )
-            if not complete_core:
-                self.assertFalse(model.get("exactRankingProfile"), model["slug"])
+            missing_by_board = [sum(primary.score_value(model, key) is None for key in keys)
+                                for keys in primary.CORE_ITEMS.values()]
+            eligible = (sum(missing_by_board) < 4 and all(
+                missing < len(keys) for missing, keys in zip(missing_by_board, primary.CORE_ITEMS.values())
+            ))
+            self.assertEqual(bool(model.get("exactRankingProfile")), eligible, model["slug"])
         self.assertTrue(any(not model.get("rankingProfile") for model in exact_ranked))
         self.assertNotEqual(
             payload["leaderboard"]["boardItemPoolSizesByMethod"],
@@ -1375,11 +1379,11 @@ class BuildDocsSiteTests(unittest.TestCase):
         ).read_text(encoding="utf-8")
         current_analysis = analysis_readme.split("## 历史五套实验", 1)[0]
 
-        self.assertEqual(PRIMARY_RANKING_METHOD, "aindex_scheme18")
+        self.assertEqual(PRIMARY_RANKING_METHOD, "aindex_mixed_core")
         for text in (readme, methodology, current_analysis):
             self.assertNotIn("发布层", text)
             self.assertNotIn("reserves rank 1", text)
-        self.assertIn("Scheme 18", methodology)
+        self.assertIn("Mixed Core 07", methodology)
         self.assertIn("positive residual", methodology)
         self.assertIn("dynamic cap", methodology.lower())
         self.assertIn("0–100", methodology)
@@ -1753,16 +1757,16 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["label"], "AInsights Index")
         self.assertEqual(
             payload["presets"]["zhihu-adjusted"]["calculation"],
-            "geometric-core-positive-residual-logsumexp",
+            "fixed-share-core-positive-residual-logsumexp",
         )
         self.assertEqual(payload["presets"]["zhihu-adjusted"]["normalization"], "none")
         self.assertEqual(
             payload["presets"]["zhihu-adjusted"]["missingPolicy"],
-            "core-required-extension-absent",
+            "board-core-required-max-three-missing",
         )
         self.assertEqual(
             payload["presets"]["zhihu-adjusted"]["candidateId"],
-            "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
+            "mixed_core_mc07",
         )
         self.assertNotIn("componentMethods", payload["presets"]["zhihu-adjusted"])
         self.assertNotIn("componentWeights", payload["presets"]["zhihu-adjusted"])
@@ -1770,7 +1774,7 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(metrics_by_key["SciCode"]["aindexRole"], "core")
         self.assertEqual(
             metrics_by_key["Terminal-Bench v2.1"]["aindexRole"],
-            "extension",
+            "excluded",
         )
         self.assertEqual(metrics_by_key["GDPval-AA v2"]["aindexRole"], "excluded")
         for field in (

@@ -34,7 +34,7 @@ const copy = {
     },
     customToolDescriptions: {
       methodRank: "组合四种旧 IRT 审计方法的真实证据名次；默认等权，仅用于敏感性探索。",
-      boardScore: "组合方案 18 的五个真实能力板块分；默认五板等权，也可切换几何或最弱板块聚合。",
+      boardScore: "组合混合 Core 方案 07 的五个能力板块分；默认沿用 12/9/22/37/20 权重，也可切换聚合方式。",
       benchmarkLab: "直接组合原始公开测试成绩，可继续控制归一化、缺失处理与覆盖门槛。",
     },
     customAggregatorTitle: "聚合器",
@@ -51,7 +51,7 @@ const copy = {
     customMethodWeightsTitle: "IRT 方法名次权重",
     customMethodWeightsSubtitle: "使用各 IRT 方法的真实 evidence rank；权重为 0 即不纳入。",
     customBoardWeightsTitle: "能力板块权重",
-    customBoardWeightsSubtitle: "每个板块都来自真实测试成绩的 IRT 板块分，不做模型特定修正。",
+    customBoardWeightsSubtitle: "每板使用混合 Core 基础分与扩展加分；权重改变总分贡献，不改变原始板块分。",
     customWeightSum: "权重合计 {total}",
     customActions: {
       equalize: "等权",
@@ -79,7 +79,7 @@ const copy = {
     metricWeightsSubtitle: "直接参与当前自定义排名的逐项权重，按已有模型数据量排序",
     metricCoverage: "{count} 个模型",
     extensionTestCount: "{count} 个扩展观测",
-    scheme18Cap: "动态 cap {cap}",
+    aindexBonusCap: "动态 cap {cap}",
     metricCoverageFilterLabel: "折叠低覆盖项目",
     metricCoverageFilterAll: "显示全部",
     metricCoverageFilterOption: "少于 {count} 个模型",
@@ -87,10 +87,10 @@ const copy = {
     metricCoverageFilterEmpty: "没有达到该覆盖门槛的测试项",
     metricGroupMeta: "{count} 个模型 · {metrics} 个数据项",
     customWeightPresetTitle: "权重预设",
-    customWeightPresetSubtitle: "从均衡 Benchmark Lab 或 AA 三个方向开始，再微调下方逐项测试权重；这些预设不改变 IRT 主榜。",
+    customWeightPresetSubtitle: "从均衡 Benchmark Lab 或 AA 三个方向开始，再微调下方逐项测试权重；这些预设不改变 AIndex 主榜。",
     customWeightPresetMeta: "{count} 项",
     missingModeTitle: "计算方式",
-    missingModeSubtitle: "逐项 Benchmark Lab 可选择分数基线、均值方式和缺失处理策略；这些设置只影响自定义实验，不影响 IRT 主榜。",
+    missingModeSubtitle: "逐项 Benchmark Lab 可选择分数基线、均值方式和缺失处理策略；这些设置只影响自定义实验，不影响 AIndex 主榜。",
     normalizationMethodTitle: "分数基线",
     normalizationMethodHint: "Benchmark Lab 的相对最高分模式先除以各测试项观察最高分，再按 AA Intelligence 最高分缩放展示；仅用于逐项实验。",
     normalizationMethods: {
@@ -98,7 +98,7 @@ const copy = {
       raw: "原始分数",
     },
     calculationMethodTitle: "均值方式",
-    calculationMethodHint: "逐项 Benchmark Lab 可比较几何加权均值与普通加权均值；IRT 主榜不使用这套逐项聚合。",
+    calculationMethodHint: "逐项 Benchmark Lab 可比较几何加权均值与普通加权均值；AIndex 主榜不使用这套逐项聚合。",
     meanMethods: {
       geometric: "几何加权均值",
       arithmetic: "普通加权均值",
@@ -176,7 +176,7 @@ const copy = {
     reasoning: "Reasoning",
     methodologyLink: "AInsights Index 计算方式",
     footerPrefix: "数据来源：",
-    footerSuffix: "。AIndex 方案 18 使用 AA Core 与已链接的独立 benchmark 扩展来源计算。",
+    footerSuffix: "。AIndex 混合 Core 方案 07 使用 AA Core 与已链接的独立 benchmark 扩展来源计算。",
     repository: "仓库",
     rankingItems: "个排名项",
     scorableModels: "个可评分模型",
@@ -186,7 +186,7 @@ const copy = {
     allTiers: "显示全部档位",
     sourceFilter: "来源",
     top20Title: "AInsights Index Top {count}",
-    top20Subtitle: "按预计算的方案 18 AIndex score 降序生成名次；数值和柱宽均表示同一个 AIndex 分数（points）",
+    top20Subtitle: "按预计算的混合 Core 方案 07 AIndex score 降序生成名次；数值和柱宽均表示同一个 AIndex 分数（points）",
     latestModelsTitle: "最新模型",
     latestModelsSubtitle: "按发布日期展示最近进入数据集的去重模型",
     fullRanking: "查看完整排名",
@@ -281,7 +281,7 @@ const copy = {
     attractiveQuadrant: "高分低成本区域",
     noCostData: "没有足够的成本数据可绘制散点图",
     scoreBandsTitle: "AInsights 能力分分布",
-    scoreBandsSubtitle: "去重模型在方案 18 AIndex 各分数区间的分布",
+    scoreBandsSubtitle: "去重模型在混合 Core 方案 07 AIndex 各分数区间的分布",
     providerChartTitle: "机构覆盖",
     providerChartSubtitle: "按可评分去重模型数量和最高分展示",
     providerModelCount: "模型数量",
@@ -294,7 +294,7 @@ const copy = {
     providerSummaryAverage: "平均分",
     providerSummaryOpen: "开源模型",
     providerModelsTitle: "模型列表",
-    providerModelsSubtitle: "已排名模型按方案 18 AIndex 名次优先，未排名模型明确标为暂无分数",
+    providerModelsSubtitle: "已排名模型按混合 Core 方案 07 AIndex 名次优先，未排名模型明确标为暂无分数",
     comparePageTitle: "模型对比",
     comparePageSubtitle: "选择多个模型，横向查看分数、排名、成本、速度、上下文和各项测试数据",
     comparePickerTitle: "选择模型",
@@ -309,7 +309,7 @@ const copy = {
     compareEmpty: "请选择至少一个模型",
     compareCoreTitle: "核心数据",
     compareRadarTitle: "能力雷达对比",
-    compareRadarSubtitle: "叠加对比五个 IRT 能力板块与证据覆盖度；证据轴不参与排名",
+    compareRadarSubtitle: "叠加对比五个 AIndex 能力板块与证据覆盖度；证据轴不参与排名",
     compareBenchmarkTitle: "测试项数据",
     compareMetricColumn: "指标",
     compareRemove: "移除",
@@ -331,11 +331,11 @@ const copy = {
     sourceExplorerTitle: "测评源地图",
     sourceExplorerSubtitle: "AA Core 与已链接的独立 benchmark 扩展来源，并列展示计分角色与协议",
     detailRankTitle: "排名快照",
-    detailRadarSubtitle: "五个 IRT 能力板块加证据覆盖度；外圈为 100 分，橙色为入榜模型平均值",
+    detailRadarSubtitle: "五个 AIndex 能力板块加证据覆盖度；外圈为 100 分，橙色为入榜模型平均值",
     detailBenchmarkTitle: "Benchmark Lab 参考项目",
     detailBenchmarkSubtitle: "均衡逐项实验模板中的测试项；它们不作为主榜固定权重。",
     detailExternalTitle: "非参考项目分数",
-    detailExternalSubtitle: "AA 子项、官方发布页及其他公开测评：其中一部分作为方案 18 的只增益扩展项参与计分，其余为排除项或仅用于 Custom Weight",
+    detailExternalSubtitle: "AA 子项、官方发布页及其他公开测评：其中一部分作为混合 Core 方案 07 的只增益扩展项参与计分，其余为排除项或仅用于 Custom Weight",
     detailReferenceOnlyTitle: "官网参考分数（不参与排名）",
     detailReferenceOnlySubtitle: "官网已公布、但无法可靠归属到当前具体推理档位或评分口径的结果；仅展示原始证据，不写入模型分数。",
     benchmarkReferenceOnly: "仅供参考 · 不参与排名",
@@ -344,9 +344,9 @@ const copy = {
     detailSourcesTitle: "外部测评参考",
     radarAverage: "入榜模型平均值",
     radarDataSource: "数据来源",
-    radarSourceText: "AIndex 方案 18 / 真实 Core 与列明的扩展 benchmark 成绩",
+    radarSourceText: "AIndex 混合 Core 方案 07 / 真实 Core 与列明的扩展 benchmark 成绩",
     radarBasisTitle: "雷达维度口径",
-    radarBasisSubtitle: "五个能力轴直接读取方案 18 板块分；扩展覆盖轴只反映稀疏证据广度，不修正能力分，也不参与排名。",
+    radarBasisSubtitle: "五个能力轴直接读取混合 Core 方案 07 板块分；扩展覆盖轴只反映稀疏证据广度，不修正能力分，也不参与排名。",
     radarCoverage: "{available}/{total} 项测试",
     radarTestCount: "{available} 项测试",
     radarDualCoverage: "Core {coreAvailable}/{coreTotal} · 扩展 {extensionAvailable}/{extensionTotal}",
@@ -360,11 +360,11 @@ const copy = {
       evidenceCoverage: "证据覆盖度",
     },
     radarAxisNotes: {
-      coding: "coding_score：软件工程、代码生成与执行能力。",
-      agenticToolWork: "agentic-tool-work_score：工具、浏览器、终端与工作流执行能力。",
-      hardReasoning: "hard-reasoning_score：高难数学、科学与复合推理能力。",
-      knowledgeScience: "knowledge-science_score：知识与科学问题表现。",
-      instructionContext: "instruction-context_score：指令遵循与长上下文稳定性。",
+      coding: "12% · Terminal-Bench v4.0 + SciCode，各占基础分一半。",
+      agenticToolWork: "9% · AutomationBench-AA + τ³-Banking，各占基础分一半。",
+      hardReasoning: "22% · CritPt 单 Core，占全部基础分。",
+      knowledgeScience: "37% · AA-Omniscience Accuracy + GDP.pdf，各占基础分一半。",
+      instructionContext: "20% · AA-LCR v1.1 单 Core，占全部基础分。",
       evidenceCoverage: "extensionCoverageScore：五板块扩展测试覆盖广度，仅作证据充分度参考。",
     },
     detailRows: {
@@ -399,7 +399,7 @@ const copy = {
     benchmarkRankingSubtitle: "{count} 个模型有分数 · {category}",
     benchmarkReference: "AIndex 计分项",
     benchmarkNonReference: "不进入 AIndex",
-    benchmarkCore: "Core 必做项",
+    benchmarkCore: "Core 计分项",
     benchmarkExtension: "扩展加分项",
     benchmarkExcluded: "明确排除",
     benchmarkCustomOnly: "仅 Custom 工具",
@@ -458,9 +458,9 @@ const copy = {
     presets: {
       "zhihu-adjusted": {
         label: "AInsights Index",
-        calculation: "scheme-18",
+        calculation: "mixed-core-07",
         normalization: "none",
-        description: "方案 18：各板 Core 真实百分成绩取不加权几何均值，独立控制的扩展测试只以匿名趋势之上的正残差加分，并受动态统一 cap 限制；五板等分相加。",
+        description: "混合 Core 方案 07：编程、智能体、知识三板各两项 Core 各占一半；高难推理和上下文各一项占全部基础分。五板按 12/9/22/37/20 加权，Core 完整的板块可获有上限的正残差扩展加分。",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -478,7 +478,7 @@ const copy = {
         label: "自定义工具",
         calculation: "multi-tool",
         normalization: "mode-specific",
-        description: "分别组合四种 IRT 方法名次、五个 IRT 能力板块，或逐项公开 benchmark；不同量纲不会混算。",
+        description: "分别组合四种 IRT 方法名次、五个 AIndex 能力板块，或逐项公开 benchmark；不同量纲不会混算。",
       },
       "benchmark-lab": {
         label: "均衡 Benchmark Lab",
@@ -518,7 +518,7 @@ const copy = {
     },
     customToolDescriptions: {
       methodRank: "Combine observed ranks from four legacy IRT audit methods; the default is equal weights and remains sensitivity-only.",
-      boardScore: "Combine the five observed Scheme 18 board scores; the default is equal boards, with geometric and weakest-board alternatives.",
+      boardScore: "Combine the five Mixed Core 07 board scores; defaults use 12/9/22/37/20 weights, with alternative aggregators available.",
       benchmarkLab: "Combine raw public benchmark results with optional normalization, missing-data handling, and coverage gates.",
     },
     customAggregatorTitle: "Aggregator",
@@ -535,7 +535,7 @@ const copy = {
     customMethodWeightsTitle: "IRT method-rank weights",
     customMethodWeightsSubtitle: "Uses the observed evidence rank from each IRT method; a zero weight excludes the method.",
     customBoardWeightsTitle: "Capability-board weights",
-    customBoardWeightsSubtitle: "Every board is an IRT score based on observed benchmark results, without model-specific score correction.",
+    customBoardWeightsSubtitle: "Each board uses its mixed Core base and extension bonus; weights change its total contribution, while the original board score stays fixed.",
     customWeightSum: "Weight total {total}",
     customActions: {
       equalize: "Equalize",
@@ -563,7 +563,7 @@ const copy = {
     metricWeightsSubtitle: "Fine-grained weights used directly by the custom ranking, sorted by model coverage",
     metricCoverage: "{count} models",
     extensionTestCount: "{count} extension observations",
-    scheme18Cap: "dynamic cap {cap}",
+    aindexBonusCap: "dynamic cap {cap}",
     metricCoverageFilterLabel: "Collapse low-coverage fields",
     metricCoverageFilterAll: "Show all fields",
     metricCoverageFilterOption: "Fewer than {count} models",
@@ -571,10 +571,10 @@ const copy = {
     metricCoverageFilterEmpty: "No fields meet this coverage threshold",
     metricGroupMeta: "{count} models · {metrics} data fields",
     customWeightPresetTitle: "Weight presets",
-    customWeightPresetSubtitle: "Start from the Balanced Benchmark Lab or one of three AA directions, then tune per-benchmark weights; these presets do not change the IRT primary ranking.",
+    customWeightPresetSubtitle: "Start from the Balanced Benchmark Lab or one of three AA directions, then tune per-benchmark weights; these presets do not change the AIndex primary ranking.",
     customWeightPresetMeta: "{count} fields",
     missingModeTitle: "Calculation",
-    missingModeSubtitle: "The per-benchmark lab can vary score basis, mean method, and missing-value policy; these settings affect custom experiments only, not the IRT primary ranking.",
+    missingModeSubtitle: "The per-benchmark lab can vary score basis, mean method, and missing-value policy; these settings affect custom experiments only, not the AIndex primary ranking.",
     normalizationMethodTitle: "Score basis",
     normalizationMethodHint: "Benchmark Lab's best-score mode divides each benchmark by its observed maximum, then scales display values by the highest AA Intelligence score; this is only a per-item experiment.",
     normalizationMethods: {
@@ -582,7 +582,7 @@ const copy = {
       raw: "Raw score",
     },
     calculationMethodTitle: "Mean method",
-    calculationMethodHint: "The per-benchmark lab can compare geometric and arithmetic weighted means; the IRT primary ranking does not use this per-item aggregation.",
+    calculationMethodHint: "The per-benchmark lab can compare geometric and arithmetic weighted means; the AIndex primary ranking does not use this per-item aggregation.",
     meanMethods: {
       geometric: "Geometric Weight Mean",
       arithmetic: "Weight Mean",
@@ -660,7 +660,7 @@ const copy = {
     reasoning: "Reasoning",
     methodologyLink: "AInsights Index methodology",
     footerPrefix: "Source: ",
-    footerSuffix: ". Scheme 18 AIndex uses AA Core and linked, independently controlled benchmark extensions.",
+    footerSuffix: ". Mixed Core 07 AIndex uses AA Core and linked, independently controlled benchmark extensions.",
     repository: "Repository",
     rankingItems: "ranked items",
     scorableModels: "scorable models",
@@ -670,7 +670,7 @@ const copy = {
     allTiers: "Showing every tier",
     sourceFilter: "Source",
     top20Title: "AInsights Index Top {count}",
-    top20Subtitle: "Ranked directly by the precomputed Scheme 18 AIndex score; the value and bar encode the same AIndex points",
+    top20Subtitle: "Ranked directly by the precomputed Mixed Core 07 AIndex score; the value and bar encode the same AIndex points",
     latestModelsTitle: "Latest models",
     latestModelsSubtitle: "Recently released deduplicated models in the dataset",
     fullRanking: "View full ranking",
@@ -765,7 +765,7 @@ const copy = {
     attractiveQuadrant: "High-score low-cost region",
     noCostData: "Not enough cost data to draw the scatter chart",
     scoreBandsTitle: "AInsights point distribution",
-    scoreBandsSubtitle: "Where deduplicated models fall across Scheme 18 AIndex score bands",
+    scoreBandsSubtitle: "Where deduplicated models fall across Mixed Core 07 AIndex score bands",
     providerChartTitle: "Provider coverage",
     providerChartSubtitle: "Scorable deduped model count and best score by lab",
     providerModelCount: "Model count",
@@ -778,7 +778,7 @@ const copy = {
     providerSummaryAverage: "Average points",
     providerSummaryOpen: "Open models",
     providerModelsTitle: "Model list",
-    providerModelsSubtitle: "Ranked models come first by Scheme 18 AIndex; unranked catalog models are clearly marked N/A",
+    providerModelsSubtitle: "Ranked models come first by Mixed Core 07 AIndex; unranked catalog models are clearly marked N/A",
     comparePageTitle: "Model comparison",
     comparePageSubtitle: "Choose models and compare scores, ranks, cost, speed, context, and benchmark data side by side",
     comparePickerTitle: "Choose models",
@@ -793,7 +793,7 @@ const copy = {
     compareEmpty: "Choose at least one model",
     compareCoreTitle: "Core data",
     compareRadarTitle: "Capability radar",
-    compareRadarSubtitle: "Five IRT capability boards plus evidence coverage; the evidence axis does not affect rank",
+    compareRadarSubtitle: "Five AIndex capability boards plus evidence coverage; the evidence axis does not affect rank",
     compareBenchmarkTitle: "Benchmark data",
     compareMetricColumn: "Metric",
     compareRemove: "Remove",
@@ -815,11 +815,11 @@ const copy = {
     sourceExplorerTitle: "Benchmark source map",
     sourceExplorerSubtitle: "AA Core and linked, independently controlled benchmark extensions, with scoring roles and protocols shown side by side",
     detailRankTitle: "Rank snapshot",
-    detailRadarSubtitle: "Five IRT capability boards plus evidence coverage; the outer ring is 100 and orange is the ranked-model average",
+    detailRadarSubtitle: "Five AIndex capability boards plus evidence coverage; the outer ring is 100 and orange is the ranked-model average",
     detailBenchmarkTitle: "Benchmark Lab reference set",
     detailBenchmarkSubtitle: "Benchmarks in the balanced per-item experiment template; these are not fixed primary-ranking weights.",
     detailExternalTitle: "Non-reference benchmark scores",
-    detailExternalSubtitle: "AA submetrics, official release scores, and other public evaluations: some are only-add Scheme 18 extensions; others are excluded or Custom-only",
+    detailExternalSubtitle: "AA submetrics, official release scores, and other public evaluations: some are only-add Mixed Core 07 extensions; others are excluded or Custom-only",
     detailReferenceOnlyTitle: "Official reference scores (not ranked)",
     detailReferenceOnlySubtitle: "Published first-party results that cannot be assigned reliably to this exact effort tier or scoring protocol. They are displayed as evidence and never written to model scores.",
     benchmarkReferenceOnly: "Reference only · not ranked",
@@ -828,9 +828,9 @@ const copy = {
     detailSourcesTitle: "External evaluation references",
     radarAverage: "Ranked-model average",
     radarDataSource: "Sources",
-    radarSourceText: "AIndex Scheme 18 / observed Core and listed extension benchmarks",
+    radarSourceText: "AIndex Mixed Core 07 / observed Core and listed extension benchmarks",
     radarBasisTitle: "Radar axis basis",
-    radarBasisSubtitle: "The five capability axes read Scheme 18 board scores directly. Extension coverage only shows sparse-evidence breadth; it neither adjusts capability scores nor affects rank.",
+    radarBasisSubtitle: "The five capability axes read Mixed Core 07 board scores directly. Extension coverage only shows sparse-evidence breadth; it neither adjusts capability scores nor affects rank.",
     radarCoverage: "{available}/{total} tests",
     radarTestCount: "{available} tests",
     radarDualCoverage: "Core {coreAvailable}/{coreTotal} · Extension {extensionAvailable}/{extensionTotal}",
@@ -844,11 +844,11 @@ const copy = {
       evidenceCoverage: "Evidence coverage",
     },
     radarAxisNotes: {
-      coding: "coding_score: software engineering, code generation, and execution.",
-      agenticToolWork: "agentic-tool-work_score: tool, browser, terminal, and workflow execution.",
-      hardReasoning: "hard-reasoning_score: difficult mathematical, scientific, and compound reasoning.",
-      knowledgeScience: "knowledge-science_score: performance on knowledge and science tasks.",
-      instructionContext: "instruction-context_score: instruction following and long-context stability.",
+      coding: "12% · Terminal-Bench v4.0 + SciCode, each with half the Core base.",
+      agenticToolWork: "9% · AutomationBench-AA + τ³-Banking, each with half the Core base.",
+      hardReasoning: "22% · CritPt is the single Core, supplying the full base.",
+      knowledgeScience: "37% · AA-Omniscience Accuracy + GDP.pdf, each with half the Core base.",
+      instructionContext: "20% · AA-LCR v1.1 is the single Core, supplying the full base.",
       evidenceCoverage: "extensionCoverageScore: extension-test breadth across the five boards, shown only as evidence sufficiency.",
     },
     detailRows: {
@@ -883,7 +883,7 @@ const copy = {
     benchmarkRankingSubtitle: "{count} scored models · {category}",
     benchmarkReference: "AIndex scoring item",
     benchmarkNonReference: "Not used by AIndex",
-    benchmarkCore: "Required Core",
+    benchmarkCore: "Scoring Core",
     benchmarkExtension: "Only-add extension",
     benchmarkExcluded: "Explicitly excluded",
     benchmarkCustomOnly: "Custom tools only",
@@ -942,9 +942,9 @@ const copy = {
     presets: {
       "zhihu-adjusted": {
         label: "AInsights Index",
-        calculation: "scheme-18",
+        calculation: "mixed-core-07",
         normalization: "none",
-        description: "Scheme 18 takes an unweighted geometric mean of each board's real Core percentages, adds only positive residual evidence from independent-controller extensions under one dynamic cap, and sums five equal board contributions.",
+        description: "Mixed Core 07 uses two equally shared Core items in coding, agentic work, and knowledge, and one full-share Core in reasoning and context. Board weights are 12/9/22/37/20; only complete-Core boards receive capped positive-residual extension bonuses.",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -962,7 +962,7 @@ const copy = {
         label: "Custom tools",
         calculation: "multi-tool",
         normalization: "mode-specific",
-        description: "Separately combines four IRT method ranks, five IRT capability boards, or individual public benchmarks; unlike units are never mixed.",
+        description: "Separately combines four IRT method ranks, five AIndex capability boards, or individual public benchmarks; unlike units are never mixed.",
       },
       "benchmark-lab": {
         label: "Balanced Benchmark Lab",
@@ -988,10 +988,10 @@ const state = {
   },
   customMethodAggregator: "mean",
   customBoardWeights: {
-    coding: 20,
-    "agentic-tool-work": 20,
-    "hard-reasoning": 20,
-    "knowledge-science": 20,
+    coding: 12,
+    "agentic-tool-work": 9,
+    "hard-reasoning": 22,
+    "knowledge-science": 37,
     "instruction-context": 20,
   },
   customBoardAggregator: "arithmetic",
@@ -1960,8 +1960,8 @@ function scoreModelForPrecomputedRanking(model) {
     ].filter(Boolean).join(" · "),
     availableWeight: 100,
     scoreMeta: Number.isFinite(bonusCap)
-      ? tr("scheme18Cap", { cap: formatNumber(bonusCap) })
-      : "Scheme 18",
+      ? tr("aindexBonusCap", { cap: formatNumber(bonusCap) })
+      : "Mixed Core 07",
   };
 }
 
@@ -2511,11 +2511,22 @@ function renderSummary(filteredCount, visibleCount, scoredCount, preset, unranke
   `;
 }
 
+function defaultCoreBoardWeights() {
+  const selected = state.data?.leaderboard?.boardWeights || {
+    coding: 12,
+    "agentic-tool-work": 9,
+    "hard-reasoning": 22,
+    "knowledge-science": 37,
+    "instruction-context": 20,
+  };
+  return Object.fromEntries(customBoardOrder.map((boardId) => [boardId, Number(selected[boardId])]));
+}
+
 function resetCustomConfiguration() {
   state.customToolMode = "method-rank";
   state.customMethodWeights = { rasch: 25, sparseRasch: 25, twopl: 25, denseRasch: 25 };
   state.customMethodAggregator = "mean";
-  state.customBoardWeights = Object.fromEntries(customBoardOrder.map((boardId) => [boardId, 20]));
+  state.customBoardWeights = defaultCoreBoardWeights();
   state.customBoardAggregator = "arithmetic";
   state.customWeightPresetId = "benchmark-lab";
   state.customCalculationMethod = "geometric";
@@ -2880,7 +2891,7 @@ function restoreActiveCustomDefaults() {
     state.customMethodWeights = { rasch: 25, sparseRasch: 25, twopl: 25, denseRasch: 25 };
     state.customMethodAggregator = "mean";
   } else if (state.customToolMode === "board-score") {
-    state.customBoardWeights = Object.fromEntries(customBoardOrder.map((boardId) => [boardId, 20]));
+    state.customBoardWeights = defaultCoreBoardWeights();
     state.customBoardAggregator = "arithmetic";
   } else {
     state.customWeightPresetId = "benchmark-lab";
@@ -4094,61 +4105,68 @@ function renderMethodologyPage() {
   document.title = `${zh ? "AInsights Index 计算方式" : "AInsights Index Methodology"} · ${tr("pageTitle")}`;
   els.methodologyDetail.innerHTML = `
     <section class="methodology-hero">
-      <p class="eyebrow">Methodology</p>
+      <p class="eyebrow">Methodology · Mixed Core 07</p>
       <h2>${escapeHtml(zh ? "AInsights Index 计算方式" : "AInsights Index Methodology")}</h2>
       <p>${escapeHtml(zh
-        ? "AIndex 采用方案 18：每板由完整 Core 真实成绩给出基础分，列明的独立控制扩展测试只提供非负前沿加分；五板等权，最终只按未经舍入的 final_score 排序。"
-        : "AIndex uses Scheme 18: complete real Core results establish each board's base, listed independent-controller extensions provide non-negative frontier bonuses, five boards are equal, and only the unrounded final_score determines order.")}</p>
+        ? "AIndex 采用混合 Core 方案 07：三个双 Core 领域、两个单 Core 领域，共八个不同测试。板块权重固定为 12%、9%、22%、37%、20%，扩展测试只提供有上限的正残差加分，最终按未经舍入的分数排序。"
+        : "AIndex uses Mixed Core 07: three dual-Core boards and two single-Core boards, with eight distinct tests. Fixed board weights are 12%, 9%, 22%, 37%, and 20%. Extensions provide capped positive-residual bonuses; the unrounded final score determines order.")}</p>
     </section>
     <section class="methodology-grid">
       <article class="methodology-card methodology-card-wide">
+        <h3>${escapeHtml(zh ? "Core 项目与固定权重" : "Core items and fixed weights")}</h3>
+        ${renderRadarBasisNotes()}
+      </article>
+      <article class="methodology-card methodology-card-wide">
         <h3>${escapeHtml(zh ? "Core 基础分" : "Core base score")}</h3>
-        <p><code>core = 100 × exp(mean(log(score / 100)))</code></p>
+        <p><code>single_core = adjusted_score; dual_core = adjusted_1 / 2 + adjusted_2 / 2</code></p>
         <p>${escapeHtml(zh
-          ? "每板 Core 项必须全部完成，并在真实百分尺度上取不加权几何均值；不填 0、不填 50，也没有测试项特定权重。"
-          : "Every Core item on a board must be complete and enters an unweighted geometric mean on the real percentage scale; there is no 0/50 fill and no item-specific weight.")}</p>
+          ? "单 Core 占全部基础分；双 Core 各占固定的一半，缺测的一半不贡献分数，也不将剩余项目重新放大。真实 0 分是有效观测。任何领域全部 Core 缺测，或八项累计缺测至少四项，均不进入排名；未配置的第二槽位不算缺测。"
+          : "A single Core supplies the full base; dual Core items retain one half each. A missing share contributes no points and the observed share is never renormalized. An observed zero is valid. A model is excluded when any board has no observed Core or when at least four of the eight configured items are missing; unconfigured second slots do not count as missing.")}</p>
+        <p>${escapeHtml(zh
+          ? "Terminal-Bench 仅使用 v4.0，不使用 v2.1 或 Hard 回退。AIME、LiveCodeBench、GPQA 与旧短题数学测试不进入 Core；允许的扩展项沿用原规则。所有 Core 测试家族从整个扩展池移除，避免重复加分。"
+          : "Terminal-Bench uses v4.0 only, with no v2.1 or Hard fallback. AIME, LiveCodeBench, GPQA, and older short-math tests are not Core; permitted extensions retain the existing rules. Every Core family is removed from the entire extension pool to avoid duplicate bonuses.")}</p>
       </article>
       <article class="methodology-card">
         <h3>${escapeHtml(zh ? "匿名趋势" : "Anonymous trend")}</h3>
         <p>${escapeHtml(zh
-          ? "每个扩展测试对同板 Core 分拟合 cohort-wide OLS，斜率限制为非负；只保留真实观测高于预测趋势的 r=max(y−ŷ,0)。"
-          : "Each extension fits a cohort-wide OLS trend against the same board's Core score with a non-negative slope; only r=max(y−ŷ,0) above the predicted trend is retained.")}</p>
+          ? "只有本板全部 Core 有数据的模型，才用于该板扩展趋势拟合并获得扩展加分。每个扩展测试对同板 Core 分拟合 OLS，斜率限制为非负；只保留高于预测的正残差 r=max(y−ŷ,0)。"
+          : "Only models with every configured Core observed on a board fit that board's extension trends and receive its bonuses. Each extension fits a non-negative-slope OLS trend against the board Core; only positive residuals r=max(y−ŷ,0) contribute.")}</p>
       </article>
       <article class="methodology-card">
         <h3>${escapeHtml(zh ? "动态统一 cap" : "One dynamic cap")}</h3>
         <p>${escapeHtml(zh
-          ? `五板全部正残差共同计算 mean + √2 × population SD，Action 每次随数据重算；当前 cap 为 ${capText}。`
-          : `All positive residuals across five boards determine mean + √2 × population SD and are recomputed on every data refresh; the current cap is ${capText}.`)}</p>
+          ? `五板全部有效正残差共同计算 mean + √2 × population SD，随数据刷新重算；当前 cap 为 ${capText}。`
+          : `Eligible positive residuals across all boards determine mean + √2 × population SD, recomputed with each refresh; the current cap is ${capText}.`)}</p>
       </article>
       <article class="methodology-card methodology-card-wide">
         <h3>${escapeHtml(zh ? "扩展聚合与总分" : "Extension aggregation and total")}</h3>
         <p><code>bonus = min(cap, log(1 + Σ expm1(r)))</code></p>
         <p><code>board_score = min(100, core + bonus)</code></p>
-        <p><code>final_score = Σ(board_score / 5) = mean(five board_scores)</code></p>
+        <p><code>final_score = Σ(board_score × board_weight / 100)</code></p>
         <p>${escapeHtml(zh
-          ? "log-sum-exp 对零残差中性，新增任意正证据都不会降分。五板完全等权；榜面 0–100 points 是直接计算分，不是 percentile、mean rank 或 T 分。"
-          : "The log-sum-exp is neutral to zero residuals and any new positive evidence cannot lower a score. Five boards are exactly equal; displayed 0–100 points are direct calculated scores, not a percentile, mean rank, or T score.")}</p>
+          ? "板块权重固定为编程 12%、智能体 9%、高难推理 22%、知识与科学 37%、指令与上下文 20%。缺失扩展保持 absent，不产生残差；同一校准下，新增正残差不会降低分数。榜面数值和柱宽表示相同的直接计算分。"
+          : "Fixed weights are coding 12%, agentic work 9%, hard reasoning 22%, knowledge/science 37%, and instruction/context 20%. Missing extensions remain absent. At fixed calibration, adding a positive residual cannot lower a score. Values and bars display the same directly calculated points.")}</p>
       </article>
       <article class="methodology-card methodology-card-wide">
         <h3>${escapeHtml(zh ? "缺失、去重与协议" : "Missingness, dedupe, and protocols")}</h3>
         <p>${escapeHtml(zh
-          ? "扩展缺失保持 absent，bonus 为 0，绝不扣 Core。去重榜可使用系列级外部证据；关闭去重只使用 AA 精确行和 variantScoped 外部结果，并复用去重 cohort 的同一 OLS 参数与 cap。"
-          : "Missing extensions remain absent with zero bonus and never reduce Core. The deduplicated view may use family-level evidence; dedupe-off accepts only AA exact rows and variantScoped external results while reusing the identical OLS parameters and cap from the deduplicated cohort.")}</p>
+          ? "先按 variantPriority 降序、slug 升序固定每组代表，再检查 Core 准入；不因缺测换用低档配置或跨配置借分。关闭去重时只使用精确配置的观测与 variantScoped 外部结果，并复用去重群体的同一 OLS 参数与 cap。"
+          : "Representatives are fixed by descending variantPriority, then ascending slug, before eligibility checks. Missing Core never triggers a switch to a lower tier or score borrowing across configurations. Exact configurations use their own observations and variantScoped external results, reusing the same deduplicated OLS parameters and cap.")}</p>
         <p>${escapeHtml(zh
-          ? "扩展 benchmark 的 controller 均不属于被排名模型厂商，但部分 result operator、agent scaffold、prompt 或版本仍是混合/敏感协议；这些限制在 Benchmark 页面逐项披露。"
-          : "Extension benchmark controllers are independent of ranked model vendors, but some result operators, agent scaffolds, prompts, or versions remain mixed or sensitive; the Benchmark page discloses these limits item by item.")}</p>
+          ? "模型顺序偏好只用于历史方案筛选，不进入日常计分规则。刷新数据后权重保持不变，模型按统一公式重新排序。扩展测试的来源、执行方、脚手架与版本限制在 Benchmark 页面逐项披露。"
+          : "Named-model order preferences were used only to select the historical scheme. Daily scoring keeps its weights fixed and applies the same formula to refreshed evidence. Benchmark pages disclose extension sources, result operators, scaffolds, and version limitations.")}</p>
       </article>
       <article class="methodology-card">
         <h3>${escapeHtml(zh ? "六轴雷达" : "Radar Profile")}</h3>
         <p>${escapeHtml(zh
-          ? "前五轴直接读取方案 18 的五个板块分；第六轴是扩展覆盖度，只反映证据广度，永不参与计分。"
-          : "The first five axes directly read Scheme 18 board scores; the sixth is extension coverage, reflecting evidence breadth only and never entering the score.")}</p>
+          ? "前五轴直接读取混合 Core 方案 07 的板块分，权重决定其最终分数贡献；第六轴是扩展覆盖度，只反映证据广度，不参与计分。"
+          : "The first five axes read Mixed Core 07 board scores directly; weights determine their final contributions. The sixth axis is extension coverage, reflecting evidence breadth without contributing points.")}</p>
       </article>
       <article class="methodology-card">
         <h3>${escapeHtml(zh ? "敏感性与 Custom 工具" : "Sensitivity and Custom Tools")}</h3>
         <p>${escapeHtml(zh
-          ? "等板块 2PL、Sparse Rasch、Core Rasch 与 Dense Rasch 只作审计/敏感性。Custom 可独立组合这些方法名次、方案 18 五板分或逐项 benchmark，不会改写主榜。"
-          : "Equal-board 2PL, Sparse Rasch, Core Rasch, and Dense Rasch are audit/sensitivity only. Custom tools can independently combine those ranks, Scheme 18 board scores, or individual benchmarks without rewriting the primary ranking.")}</p>
+          ? "等板块 2PL、Sparse Rasch、Core Rasch 与 Dense Rasch 只作审计与敏感性比较。Custom 可组合这些方法名次、混合 Core 五板分或逐项 benchmark，不会改写主榜。"
+          : "Equal-board 2PL, Sparse Rasch, Core Rasch, and Dense Rasch remain audit and sensitivity views. Custom tools can combine their ranks, mixed Core board scores, or individual benchmarks without rewriting the primary ranking.")}</p>
       </article>
     </section>
   `;
@@ -4454,6 +4472,7 @@ function renderModelDetail(ranked, preset) {
         <p>${escapeHtml(tr("detailRadarSubtitle"))}</p>
       </div>
       ${renderRadarChart([model], { average: true, mode: "detail" })}
+      ${renderCoreScoreBreakdown(model)}
     </section>
 
     <section class="detail-grid">
@@ -4660,6 +4679,39 @@ function renderRankCards(model) {
       </article>
     `;
   }).join("");
+}
+
+function renderCoreScoreBreakdown(model) {
+  const profile = model?.rankingProfile;
+  if (!profile?.boards) return "";
+  const zh = state.language === "zh-CN";
+  const rows = customBoardOrder.map((boardId) => {
+    const board = profile.boards[boardId];
+    if (!board) return "";
+    return `<tr>
+      <td>${escapeHtml(customWeightItemLabel(boardId, "board"))}</td>
+      <td>${escapeHtml(formatNumber(board.coreScore))}</td>
+      <td>${escapeHtml(`${board.coreTests}/${board.coreItemPoolSize}`)}</td>
+      <td>+${escapeHtml(formatNumber(board.extensionBonus))}</td>
+      <td>${escapeHtml(formatNumber(board.score))}</td>
+      <td>${escapeHtml(formatWeight(board.weight))}%</td>
+      <td>${escapeHtml(formatNumber(board.points))}</td>
+    </tr>`;
+  }).join("");
+  return `<div class="methodology-table-wrap">
+    <table class="methodology-weight-table methodology-matrix-table">
+      <caption>${escapeHtml(zh ? "AIndex 分数构成 · 混合 Core 方案 07" : "AIndex score breakdown · Mixed Core 07")}</caption>
+      <thead><tr>${(zh
+        ? ["领域", "Core 基础分", "Core 覆盖", "扩展加分", "领域分", "权重", "总分贡献"]
+        : ["Board", "Core base", "Core coverage", "Bonus", "Board score", "Weight", "Points"]
+      ).map((label) => `<th>${escapeHtml(label)}</th>`).join("")}</tr></thead>
+      <tbody>${rows}</tbody>
+      <tfoot><tr><th colspan="6">AIndex</th><td>${escapeHtml(formatNumber(profile.displayScore))}</td></tr></tfoot>
+    </table>
+    <p>${escapeHtml(zh
+      ? "双 Core 缺测的半项不贡献分数；本板 Core 不完整时扩展加分为 0。表中显示值经过舍入，排名使用原始精度。"
+      : "A missing dual-Core half contributes no points; incomplete-Core boards receive no bonus. Displayed values are rounded, while ranking uses full precision.")}</p>
+  </div>`;
 }
 
 function renderRadarChart(models, options = {}) {

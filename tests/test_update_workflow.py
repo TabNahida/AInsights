@@ -25,6 +25,11 @@ ANALYSIS_OUTPUTS = (
     "full_rankings_exact_config_aindex_scheme18.csv",
     "top50_exact_config_aindex_scheme18.csv",
     "aindex_scheme18_validation_summary.json",
+    "full_rankings_aindex_mixed_core.csv",
+    "top50_aindex_mixed_core.csv",
+    "full_rankings_exact_config_aindex_mixed_core.csv",
+    "top50_exact_config_aindex_mixed_core.csv",
+    "aindex_mixed_core_validation_summary.json",
     "exact_config_multi_method_full_rankings.csv",
     "exact_config_score_visibility_audit.csv",
     "full_rankings_exact_config_twopl_sparse_80_20_score.csv",
@@ -91,7 +96,7 @@ class UpdateWorkflowTests(unittest.TestCase):
         )
         self.assertIn("python scripts/build_docs_site.py", workflow)
         self.assertIn(
-            "python -B analysis/irt_leaderboard_exploration/validate_scheme18_production.py --input docs/data/models.json",
+            "python -B analysis/irt_leaderboard_exploration/validate_mixed_core_production.py --input docs/data/models.json",
             workflow,
         )
         self.assertEqual(workflow.count("python -B -m unittest discover -s tests"), 1)
@@ -109,7 +114,7 @@ class UpdateWorkflowTests(unittest.TestCase):
 
         scrape_position = workflow.index("python ArtificialAnalysis/scrape_artificial_analysis.py")
         build_position = workflow.index("python scripts/build_docs_site.py")
-        validate_position = workflow.index("validate_scheme18_production.py")
+        validate_position = workflow.index("validate_mixed_core_production.py")
         tests_position = workflow.index("python -B -m unittest discover -s tests")
         commit_position = workflow.index('git commit -m "Update Artificial Analysis model data"')
         self.assertLess(scrape_position, build_position)
@@ -128,6 +133,10 @@ class UpdateWorkflowTests(unittest.TestCase):
         self.assertIn("python benchmarks/collect_benchmark_scores.py", workflow)
         self.assertIn("python benchmarks/validate_official_sources.py", workflow)
         self.assertIn("python scripts/build_docs_site.py", workflow)
+        self.assertIn(
+            "python -B analysis/irt_leaderboard_exploration/validate_mixed_core_production.py --input docs/data/models.json",
+            workflow,
+        )
         self.assertIn("python -B -m unittest discover -s tests", workflow)
         self.assertIn("git add -- data/benchmarks/official_model_cards.json", workflow)
         self.assertIn("git add -- data/benchmarks/official_vendor_pages.json", workflow)
@@ -141,13 +150,15 @@ class UpdateWorkflowTests(unittest.TestCase):
         collector_position = workflow.index("collect_benchmark_scores.py")
         policy_position = workflow.index("validate_official_sources.py")
         build_position = workflow.index("python scripts/build_docs_site.py")
+        validate_position = workflow.index("validate_mixed_core_production.py")
         tests_position = workflow.index("python -B -m unittest discover -s tests")
         commit_position = workflow.index('git commit -m "Refresh external benchmark data"')
         self.assertLess(discovery_position, collector_position)
         self.assertLess(vendor_discovery_position, collector_position)
         self.assertLess(collector_position, policy_position)
         self.assertLess(policy_position, build_position)
-        self.assertLess(build_position, tests_position)
+        self.assertLess(build_position, validate_position)
+        self.assertLess(validate_position, tests_position)
         self.assertLess(tests_position, commit_position)
 
 

@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_scheme18",
   "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
-  "calibration_population_size": 121,
-  "bonus_cap_per_board": 19.845225781507455,
+  "calibration_population_size": 123,
+  "bonus_cap_per_board": 19.782202345639433,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 121,
-    "unique_slugs": 121,
-    "unique_variant_groups": 121,
+    "row_count": 123,
+    "unique_slugs": 123,
+    "unique_variant_groups": 123,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 162,
-    "unique_slugs": 162,
-    "unique_variant_groups": 121,
+    "row_count": 164,
+    "unique_slugs": 164,
+    "unique_variant_groups": 123,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -26,8 +26,8 @@
   "passed": true,
   "core_eligibility": {
     "variant_group": {
-      "requested_count": 140,
-      "eligible_count": 121,
+      "requested_count": 142,
+      "eligible_count": 123,
       "excluded_count": 19,
       "excluded_models": [
         {
@@ -242,8 +242,8 @@
       ]
     },
     "exact_config": {
-      "requested_count": 162,
-      "eligible_count": 162,
+      "requested_count": 164,
+      "eligible_count": 164,
       "excluded_count": 0,
       "excluded_models": []
     }
@@ -256,10 +256,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 19.845225781507455,
-    "pooled_positive_residual_count": 358,
-    "pooled_positive_residual_mean": 8.709411735084435,
-    "pooled_positive_residual_population_sd": 7.874209626258124,
+    "bonus_cap_per_board": 19.782202345639433,
+    "pooled_positive_residual_count": 362,
+    "pooled_positive_residual_mean": 8.715346300318934,
+    "pooled_positive_residual_population_sd": 7.825448956061462,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -268,7 +268,7 @@
       "instruction-context"
     ],
     "board_points_max": 20.0,
-    "population_size": 121,
+    "population_size": 123,
     "population_slugs": [
       "g9v3-39a5b",
       "qwen3-14b-instruct-reasoning",
@@ -326,6 +326,7 @@
       "mercury-2",
       "ling-3-0-flash",
       "ling-3-0-tiny",
+      "ling-3-0-flash-vl",
       "ring-2-6-1t",
       "kimi-k2-6",
       "kimi-k2-7-code",
@@ -375,6 +376,7 @@
       "a-x-k2",
       "agnes-2-5-pro-alpha",
       "agnes-2-5-pro-beta",
+      "agnes-3-0-flash",
       "grok-4-3",
       "grok-4-5",
       "grok-4-6",
@@ -449,6 +451,7 @@
       "mercury 2",
       "ling 3 0 flash",
       "ling 3 0 tiny",
+      "ling 3 0 flash vl",
       "ring 2 6 1t",
       "kimi k2 6",
       "kimi k2 7 code",
@@ -498,6 +501,7 @@
       "a x k2",
       "agnes 2 5 pro alpha",
       "agnes 2 5 pro beta",
+      "agnes 3 0 flash",
       "grok 4 3",
       "grok 4 5",
       "grok 4 6",
@@ -532,9 +536,9 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 121,
-            "slope": 2.3157284565856338,
-            "intercept": -50.91783034524004
+            "observed_count": 123,
+            "slope": 2.3249761055787865,
+            "intercept": -51.10187591362588
           },
           {
             "item_id": "swe-bench-pro",
@@ -551,7 +555,7 @@
             "canonical_family": "livecodebench",
             "enabled": true,
             "observed_count": 16,
-            "slope": 0.32016127661147875,
+            "slope": 0.3201612766114788,
             "intercept": 65.82231197922313
           }
         ],
@@ -572,9 +576,9 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 121,
-            "slope": 1.0451200833696417,
-            "intercept": -17.78790960917707
+            "observed_count": 123,
+            "slope": 1.0493801072294595,
+            "intercept": -17.933800010074513
           },
           {
             "item_id": "tau2-bench-telecom-aa",
@@ -590,9 +594,9 @@
             "score_key": "τ³-Banking",
             "canonical_family": "tau3-banking",
             "enabled": true,
-            "observed_count": 121,
-            "slope": 0.43634018027021415,
-            "intercept": -7.076314311793091
+            "observed_count": 123,
+            "slope": 0.44338936620603053,
+            "intercept": -7.309184091089644
           },
           {
             "item_id": "apex-agents-aa",
@@ -704,9 +708,9 @@
             "score_key": "MMMU-Pro",
             "canonical_family": "mmmu-pro",
             "enabled": true,
-            "observed_count": 57,
-            "slope": 0.7703981195130124,
-            "intercept": 39.706895973052966
+            "observed_count": 58,
+            "slope": 0.7617534243227698,
+            "intercept": 40.2991162199575
           },
           {
             "item_id": "mmlu-pro",
@@ -749,62 +753,5 @@
         "extension_item_count": 1
       }
     }
-  },
-  "independent_validation": {
-    "method_id": "aindex_scheme18",
-    "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
-    "independent_of_production_scoring_module": true,
-    "exact_reuses_serialized_deduplicated_calibration": true,
-    "calibration": {
-      "population_size": 121,
-      "cap": 19.845225781507455,
-      "serialized_cap": 19.845225781507455,
-      "cap_error": 0.0,
-      "passed": true,
-      "failures": []
-    },
-    "variant_group": {
-      "row_count": 121,
-      "maximum_numeric_error": 1.4210854715202004e-14,
-      "passed": true,
-      "failures": []
-    },
-    "variant_group_top50": {
-      "row_count": 50,
-      "is_full_ranking_prefix": true,
-      "passed": true,
-      "failures": []
-    },
-    "exact_config": {
-      "row_count": 162,
-      "maximum_numeric_error": 1.4210854715202004e-14,
-      "passed": true,
-      "failures": []
-    },
-    "exact_config_top50": {
-      "row_count": 50,
-      "is_full_ranking_prefix": true,
-      "passed": true,
-      "failures": []
-    },
-    "exact_config_sanitation": {
-      "shared_variant_score_cells_removed": 481,
-      "configuration_ineligible_score_cells_removed": 0,
-      "derived_external_score_cells_removed": 0,
-      "unscoped_external_score_cells_removed": 767,
-      "site_livecodebench_cells_excluded": 381,
-      "variant_scoped_direct_score_cells_retained": 462
-    },
-    "review_parity": {
-      "requested": false,
-      "passed": true,
-      "failures": []
-    },
-    "benchmark_policy": {
-      "passed": true,
-      "failures": []
-    },
-    "passed": true,
-    "failures": []
   }
 }

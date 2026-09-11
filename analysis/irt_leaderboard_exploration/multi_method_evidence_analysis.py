@@ -1,21 +1,8 @@
-"""Multi-method evidence measurement ranked only by observed-score evidence.
+"""Publish the independent mixed-Core primary score and optional legacy audits.
 
-All primary methods use the same sanitized model-by-benchmark matrix.  There
-are no product-order constraints, named-model adjustments, model-specific
-weights, or fixed missing-score penalties.  The five boards receive equal
-weight wherever boards are aggregated.  Coverage only controls eligibility
-and the Main/Provisional evidence label.
-
-The primary leaderboard score is the disclosed blend of 80% equal-board 2PL
-score and 20% sparse-item Rasch score.  Rows are ordered by that score alone,
-with a stable identifier used only to make exact score ties deterministic.
-Component ranks and their weighted mean remain audit diagnostics and never
-change the primary order.
-
-The repository contains benchmark-level aggregate scores rather than
-question-level responses, so the Rasch and 2PL methods below are continuous
-benchmark-as-item approximations.  They are point estimates, not Bayesian
-posterior means.
+MC07 owns its representatives, eligibility, calibration, and score order. The
+historical Rasch/2PL, percentile, and Scheme 18 methods remain diagnostic only;
+insufficient legacy coverage must never prevent a valid MC07 publication.
 """
 
 from __future__ import annotations
@@ -34,10 +21,12 @@ import numpy as np
 
 try:
     from . import aindex_scheme18 as scheme18
+    from . import aindex_mixed_core as primary
     from . import evidence_only_ranking_analysis as evidence
     from . import irt_leaderboard_analysis as base
 except ImportError:  # Direct script execution.
     import aindex_scheme18 as scheme18
+    import aindex_mixed_core as primary
     import evidence_only_ranking_analysis as evidence
     import irt_leaderboard_analysis as base
 
@@ -104,6 +93,10 @@ CONSENSUS_DISPLAY_METHODS: tuple[str, str] = (
     "rasch_equal_board",
     "rasch_dense_item_sensitivity",
 )
+
+
+class LegacyAuditUnavailable(ValueError):
+    """The legacy audit lacks the observed population needed for its methods."""
 
 def prepare_common_matrix(
     models: list[dict[str, Any]],
@@ -401,6 +394,10 @@ def coverage_profile(
                 family_presence[family] |= item_observed
             else:
                 family_presence[family] = item_observed.copy()
+        if not board_family_presence:
+            raise LegacyAuditUnavailable(
+                f"legacy board {board_id!r} has no benchmark family meeting its coverage requirements"
+            )
         board_counts.append(
             np.sum(
                 np.column_stack(list(board_family_presence.values())), axis=1
@@ -1444,15 +1441,18 @@ def prepare_method_measurements(
     }
 
 
-def run_multi_method_analysis_from_payload(
+def _run_legacy_audits_from_payload(
     payload: dict[str, Any],
     *,
+    primary_result: dict[str, Any],
     output_dir: Path = DEFAULT_OUTPUT_DIR,
     write_outputs: bool = False,
 ) -> dict[str, Any]:
-    """Analyze an in-memory site payload without reading the generated site file."""
+    """Run historical audits after the primary score has passed its own checks."""
 
     models, sanitation = evidence.sanitize_models(payload)
+    if not models:
+        raise LegacyAuditUnavailable("legacy audit source population is empty")
     measurement = prepare_method_measurements(models)
     board_data = measurement["board_data"]
     coverage = measurement["coverage"]
@@ -1478,6 +1478,8 @@ def run_multi_method_analysis_from_payload(
     representative_eligible = np.logical_and.reduce(
         [method_profiles[method]["eligible"] for method in representative_methods]
     )
+    if not np.any(representative_eligible):
+        raise LegacyAuditUnavailable("no model meets the legacy common audit coverage requirements")
     representative_main = np.logical_and.reduce(
         [method_profiles[method]["main"] for method in representative_methods]
     )
@@ -1554,6 +1556,8 @@ def run_multi_method_analysis_from_payload(
             )
         ]
     )
+    if not np.any(exact_config_eligible):
+        raise LegacyAuditUnavailable("no exact configuration meets the legacy common audit coverage requirements")
     exact_primary_board_item_pool_sizes = board_item_pool_sizes(
         exact_measurement["board_data"]
     )
@@ -1599,13 +1603,13 @@ def run_multi_method_analysis_from_payload(
             "score-order validation"
         )
 
-    # The legacy four-method analysis above remains the frozen eligibility and
-    # representative-slug audit.  Scheme 18 is now the primary score.  Fit it
+    # Retain the historical four-method and Scheme 18 artifacts for comparison.
+    # Their population does not gate the production mixed Core method. Fit it
     # on the raw payload rows for the selected deduplicated slugs so legitimate
     # family-level evidence remains available in the family view.  Apply that
     # exact same calibration and cap to the already-qualified, exact-config-
     # sanitized rows; never refit on the larger exact population.
-    scheme18_result = scheme18.run_aindex_scheme18_from_payload(
+    scheme18_result = _run_optional_scheme18(
         payload,
         calibration_slugs=[
             str(row.get("slug") or "") for row in consensus_full_rankings
@@ -1684,16 +1688,29 @@ def run_multi_method_analysis_from_payload(
     summary = {
         "method_count": len(METHOD_LABELS),
         "methods": METHOD_LABELS,
-        "default_consensus_method": scheme18.METHOD_ID,
-        "default_ranking_method": scheme18.METHOD_ID,
-        "ranked_variant_groups": len(scheme18_result["full_rankings"]),
+        "legacy_audits": {"status": "available", "available": True},
+        "default_consensus_method": primary.METHOD_ID,
+        "default_ranking_method": primary.METHOD_ID,
+        "ranked_variant_groups": len(primary_result["full_rankings"]),
         "ranked_exact_config_rows_primary": len(
-            scheme18_result["exact_config_full_rankings"]
+            primary_result["exact_config_full_rankings"]
         ),
+        "aindex_mixed_core": {
+            "id": primary.METHOD_ID,
+            "candidate_id": primary.CANDIDATE_ID,
+            "role": "sole primary ranking score",
+            "board_weights": primary.BOARD_WEIGHTS,
+            "core_items": primary.CORE_ITEMS,
+            "extension_items": primary.EXTENSION_ITEMS,
+            "calibration": primary_result["calibration"],
+            "validation": {key: value for key, value in primary_result["validation"].items()
+                           if key != "core_eligibility"},
+            "eligibility_policy": "fixed representative before Core coverage; no IRT or named-model gate",
+        },
         "aindex_scheme18": {
             "id": scheme18.METHOD_ID,
             "candidate_id": scheme18.CANDIDATE_ID,
-            "role": "sole primary ranking score",
+            "role": "historical Scheme 18 audit only",
             "core_fit": scheme18.CORE_FIT,
             "extension_aggregator": scheme18.EXTENSION_AGGREGATOR,
             "extension_pool": "independent_audit",
@@ -1770,21 +1787,16 @@ def run_multi_method_analysis_from_payload(
             ),
         },
         "rank_policy": (
-            "no product/model constraints; no named-model corrections; no fixed "
-            "missing-score penalty; score descending is the only ranking rule"
+            "no product/model constraints or named-model corrections; "
+            "unrounded score descending, stable IDs for exact ties"
         ),
         "weight_policy": (
-            "the primary Scheme 18 has no model-specific or benchmark-specific "
-            "weights: complete core items enter an unweighted geometric partial-credit "
-            "score, observed independent extensions can add only a capped positive "
-            "residual, and every board contributes exactly one fifth; the legacy "
-            "80% 2PL / 20% sparse-Rasch blend remains audit-only"
+            "Mixed Core 07 uses fixed board weights 12/9/22/37/20, single Core 100% "
+            "or dual Core 50% each, and capped positive residual extensions on complete boards"
         ),
         "coverage_policy": (
-            "the legacy four-method common gate selects qualified rows and one "
-            "representative slug per variant group; Scheme 18 then requires every "
-            "declared core item, while missing extensions remain absent and earn zero "
-            "bonus without an imputed score"
+            "exclude any board without Core evidence or at least four missing Core items; "
+            "missing Core retains its share with zero contribution, incomplete boards earn no extension bonus"
         ),
         "configuration_policy": (
             "rank evaluated source-backed product/configuration rows; system or "
@@ -1792,11 +1804,8 @@ def run_multi_method_analysis_from_payload(
             "recast as hypothetical pure base-model scores"
         ),
         "variant_group_representative_policy": (
-            "for continuity, the audit layer requires the common four-method gate, "
-            "prefers a configuration that is Main in all four displayed audit "
-            "methods, then selects the highest untouched legacy consensus score "
-            "within that evidence tier; this determines population membership and "
-            "display slug only, never a Scheme 18 score or rank"
+            "production chooses highest variantPriority then slug before eligibility; "
+            "legacy audits retain their own historical representative policy"
         ),
         "exact_config_evidence_policy": (
             "AA exact rows plus direct external results explicitly marked "
@@ -1939,6 +1948,10 @@ def run_multi_method_analysis_from_payload(
 
     return {
         "summary": summary,
+        "aindex_mixed_core_full_rankings": primary_result["full_rankings"],
+        "exact_config_aindex_mixed_core_full_rankings": primary_result["exact_config_full_rankings"],
+        "aindex_mixed_core_calibration": primary_result["calibration"],
+        "aindex_mixed_core_validation": primary_result["validation"],
         "aindex_scheme18_full_rankings": scheme18_result["full_rankings"],
         "aindex_scheme18_top50": scheme18_result["top50"],
         "exact_config_aindex_scheme18_full_rankings": scheme18_result[
@@ -1969,6 +1982,137 @@ def run_multi_method_analysis_from_payload(
         "pairwise_overlap": overlap_rows,
         "exact_config_visibility": exact_config_visibility_rows,
     }
+
+
+
+def _run_optional_scheme18(*args: Any, **kwargs: Any) -> dict[str, Any]:
+    """Classify only the historical scorer's two explicit data limitations."""
+
+    try:
+        return scheme18.run_aindex_scheme18_from_payload(*args, **kwargs)
+    except AssertionError as exc:
+        if str(exc) not in {
+            "Scheme 18 calibration population is empty",
+            "cannot derive Scheme 18 cap without positive evidence",
+        }:
+            raise
+        raise LegacyAuditUnavailable(str(exc)) from exc
+
+
+def _unavailable_legacy_audits(
+    primary_result: dict[str, Any],
+    reason: Exception,
+    *,
+    output_dir: Path,
+    write_outputs: bool,
+) -> dict[str, Any]:
+    """Expose unavailable diagnostics explicitly and clear stale audit exports."""
+
+    status = {
+        "status": "unavailable",
+        "available": False,
+        "reason": str(reason),
+        "reason_type": type(reason).__name__,
+        "role": "optional historical audits; no effect on primary eligibility or scores",
+    }
+    validation = {**status, "passed": None}
+    summary = {
+        "method_count": len(METHOD_LABELS),
+        "methods": METHOD_LABELS,
+        "legacy_audits": status,
+        "default_consensus_method": primary.METHOD_ID,
+        "default_ranking_method": primary.METHOD_ID,
+        "ranked_variant_groups": len(primary_result["full_rankings"]),
+        "ranked_exact_config_rows_primary": len(primary_result["exact_config_full_rankings"]),
+        "aindex_mixed_core": {
+            "id": primary.METHOD_ID,
+            "candidate_id": primary.CANDIDATE_ID,
+            "role": "sole primary ranking score",
+            "board_weights": primary.BOARD_WEIGHTS,
+            "core_items": primary.CORE_ITEMS,
+            "extension_items": primary.EXTENSION_ITEMS,
+            "calibration": primary_result["calibration"],
+            "validation": {key: value for key, value in primary_result["validation"].items()
+                           if key != "core_eligibility"},
+            "eligibility_policy": "fixed representative before Core coverage; no IRT or named-model gate",
+        },
+        "aindex_scheme18": {"id": scheme18.METHOD_ID, **status},
+        "board_item_pool_sizes": {},
+        "exact_config_board_item_pool_sizes": {},
+        "ranked_variant_groups_by_method": {method: 0 for method in METHOD_LABELS},
+    }
+    result = {
+        "summary": summary,
+        "aindex_mixed_core_full_rankings": primary_result["full_rankings"],
+        "exact_config_aindex_mixed_core_full_rankings": primary_result["exact_config_full_rankings"],
+        "aindex_mixed_core_calibration": primary_result["calibration"],
+        "aindex_mixed_core_validation": primary_result["validation"],
+        "aindex_scheme18_calibration": None,
+        "aindex_scheme18_validation": validation,
+        "consensus_score_order_validation": validation,
+        "exact_config_score_order_validation": validation,
+    }
+    for key in ("full_rankings", "top50", "exact_config_full_rankings", "exact_config_top50"):
+        result[key] = {method: [] for method in METHOD_LABELS}
+    for key in (
+        "aindex_scheme18_full_rankings", "aindex_scheme18_top50",
+        "exact_config_aindex_scheme18_full_rankings", "exact_config_aindex_scheme18_top50",
+        "consensus_full_rankings", "consensus_top50", "exact_config_consensus_full_rankings",
+        "exact_config_consensus_top50", "source_coverage", "target_exact_configs",
+        "method_stability", "pairwise_overlap", "exact_config_visibility",
+    ):
+        result[key] = []
+
+    if write_outputs:
+        output_dir.mkdir(parents=True, exist_ok=True)
+        filenames = [
+            "multi_method_top50.csv", "multi_method_full_rankings.csv",
+            "exact_config_multi_method_full_rankings.csv",
+            "target_source_coverage_audit.csv", "target_exact_config_comparison.csv",
+            "method_stability.csv", "key_pair_overlap_audit.csv", "exact_config_score_visibility_audit.csv",
+            *[f"top50_{method}.csv" for method in METHOD_LABELS],
+            *[f"{prefix}_{method}.csv"
+              for method in (CONSENSUS_METHOD, scheme18.METHOD_ID)
+              for prefix in ("full_rankings", "top50", "full_rankings_exact_config", "top50_exact_config")],
+        ]
+        for filename in filenames:
+            base.write_csv(output_dir / filename, [])
+        for filename, data in (
+            ("multi_method_validation_summary.json", summary),
+            ("aindex_scheme18_validation_summary.json", validation),
+            ("score_order_validation_summary.json", {
+                "variant_group_consensus": validation, "exact_config_consensus": validation,
+            }),
+        ):
+            (output_dir / filename).write_text(
+                json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+            )
+    return result
+
+
+def run_multi_method_analysis_from_payload(
+    payload: dict[str, Any],
+    *,
+    raw_rows: list[dict[str, Any]] | None = None,
+    output_dir: Path = DEFAULT_OUTPUT_DIR,
+    write_outputs: bool = False,
+) -> dict[str, Any]:
+    """Score and validate MC07 first; legacy evidence is optional diagnostics."""
+
+    # Keep this outside the optional-audit catch: production validation errors,
+    # source errors, and output failures must still stop publication.
+    primary_result = primary.run_aindex_mixed_core_from_payload(
+        payload, raw_rows=raw_rows, output_dir=output_dir, write_outputs=write_outputs
+    )
+    try:
+        return _run_legacy_audits_from_payload(
+            payload, primary_result=primary_result, output_dir=output_dir,
+            write_outputs=write_outputs,
+        )
+    except (LegacyAuditUnavailable, FloatingPointError, np.linalg.LinAlgError) as exc:
+        return _unavailable_legacy_audits(
+            primary_result, exc, output_dir=output_dir, write_outputs=write_outputs
+        )
 
 
 def run_multi_method_analysis(

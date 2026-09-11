@@ -226,7 +226,7 @@
       "providerId": "baidu-qianfan-token-plan",
       "planId": "baidu-qianfan-token-plan-mini",
       "modelSlugs": [
-        "deepseek-v4-flash-non-reasoning"
+        "deepseek-v4-flash-0420-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-flash",
       "pricingKind": "effective-subscription",
@@ -440,7 +440,7 @@
       "providerId": "baidu-qianfan-token-plan",
       "planId": "baidu-qianfan-token-plan-lite",
       "modelSlugs": [
-        "deepseek-v4-flash-non-reasoning"
+        "deepseek-v4-flash-0420-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-flash",
       "pricingKind": "effective-subscription",
@@ -654,7 +654,7 @@
       "providerId": "baidu-qianfan-token-plan",
       "planId": "baidu-qianfan-token-plan-pro",
       "modelSlugs": [
-        "deepseek-v4-flash-non-reasoning"
+        "deepseek-v4-flash-0420-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-flash",
       "pricingKind": "effective-subscription",
@@ -868,7 +868,7 @@
       "providerId": "baidu-qianfan-token-plan",
       "planId": "baidu-qianfan-token-plan-max",
       "modelSlugs": [
-        "deepseek-v4-flash-non-reasoning"
+        "deepseek-v4-flash-0420-non-reasoning"
       ],
       "providerModelId": "deepseek-v4-flash",
       "pricingKind": "effective-subscription",

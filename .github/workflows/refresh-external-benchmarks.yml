@@ -56,8 +56,8 @@ jobs:
       - name: Rebuild site from refreshed benchmark data
         run: python scripts/build_docs_site.py
 
-      - name: Validate AIndex Scheme 18 production output
-        run: python -B analysis/irt_leaderboard_exploration/validate_scheme18_production.py --input docs/data/models.json
+      - name: Validate AIndex mixed Core scheme 07 production output
+        run: python -B analysis/irt_leaderboard_exploration/validate_mixed_core_production.py --input docs/data/models.json
 
       - name: Run regression tests
         run: python -B -m unittest discover -s tests
@@ -77,6 +77,11 @@ jobs:
           git add -- analysis/irt_leaderboard_exploration/outputs/full_rankings_exact_config_aindex_scheme18.csv
           git add -- analysis/irt_leaderboard_exploration/outputs/top50_exact_config_aindex_scheme18.csv
           git add -- analysis/irt_leaderboard_exploration/outputs/aindex_scheme18_validation_summary.json
+          git add -- analysis/irt_leaderboard_exploration/outputs/full_rankings_aindex_mixed_core.csv
+          git add -- analysis/irt_leaderboard_exploration/outputs/top50_aindex_mixed_core.csv
+          git add -- analysis/irt_leaderboard_exploration/outputs/full_rankings_exact_config_aindex_mixed_core.csv
+          git add -- analysis/irt_leaderboard_exploration/outputs/top50_exact_config_aindex_mixed_core.csv
+          git add -- analysis/irt_leaderboard_exploration/outputs/aindex_mixed_core_validation_summary.json
           git add -- analysis/irt_leaderboard_exploration/outputs/exact_config_multi_method_full_rankings.csv
           git add -- analysis/irt_leaderboard_exploration/outputs/exact_config_score_visibility_audit.csv
           git add -- analysis/irt_leaderboard_exploration/outputs/full_rankings_exact_config_twopl_sparse_80_20_score.csv

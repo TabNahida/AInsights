@@ -370,7 +370,11 @@ MODEL_ALIASES = {
     "DeepSeek V4 Pro": ["DeepSeek V4 Pro", "DeepSeek-V4-Pro Non-Think", "deepseek-v4-pro-non-reasoning"],
     "DeepSeek V4 Flash (Max)": ["DeepSeek V4 Flash (Max)", "DeepSeek-V4-Flash Max", "deepseek-v4-flash-0420"],
     "DeepSeek V4 Flash (High)": ["DeepSeek V4 Flash (High)", "DeepSeek-V4-Flash High", "deepseek-v4-flash-high"],
-    "DeepSeek V4 Flash": ["DeepSeek V4 Flash", "DeepSeek-V4-Flash Non-Think", "deepseek-v4-flash-non-reasoning"],
+    "DeepSeek V4 Flash": ["DeepSeek V4 Flash", "DeepSeek-V4-Flash Non-Think", "deepseek-v4-flash-non-reasoning", "deepseek-v4-flash-0420-non-reasoning"],
+    "DeepSeek V4.1 Flash (max)": [
+        "DeepSeek V4.1 Flash (max)", "DeepSeek-V4.1-Flash (max)",
+        "deepseek-v4-1-flash",
+    ],
     "DeepSeek V4 Flash 0731 (max)": [
         "DeepSeek V4 Flash 0731 (max)",
         "DeepSeek V4 Flash 0731 (max) [R]",
@@ -1685,6 +1689,12 @@ BENCHMARKS.extend([
     {"id": "apexbench-pass1", "label": "ApexBench (Pass@1)", "category": "Agentic reasoning", "unit": "%", "icon": "APEX"},
     {"id": "chartography", "label": "Chartography", "category": "Multimodal reasoning", "unit": "%", "icon": "CHART"},
     {"id": "lvbench", "label": "LVBench", "category": "Video understanding", "unit": "%", "icon": "VID"},
+    {"id": "hle-text-only", "label": "Humanity's Last Exam (text-only subset)", "category": "Reasoning", "unit": "%", "icon": "HLE"},
+    {"id": "matharena-apex", "label": "MathArena Apex", "category": "Mathematics", "unit": "%", "icon": "MATH"},
+    {"id": "agents-last-exam-pass1", "label": "Agents' Last Exam (Pass@1)", "category": "Agentic reasoning", "unit": "%", "icon": "ALE"},
+    {"id": "chartography-tools", "label": "Chartography (with tools)", "category": "Multimodal reasoning", "unit": "%", "icon": "CHART"},
+    {"id": "babyvision-tools", "label": "BabyVision (with tools)", "category": "Multimodal reasoning", "unit": "%", "icon": "VIS"},
+    {"id": "zerobench-main-tools-pass5", "label": "ZeroBench Main (with tools, Pass@5)", "category": "Multimodal reasoning", "unit": "%", "icon": "ZERO"},
 ])
 
 SEED_OPENAI_VALUES = {
@@ -1701,6 +1711,73 @@ SEED_OPENAI_VALUES = {
 }
 
 OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
+    {
+        "id": "deepseek-v4-1-flash-release",
+        "label": "DeepSeek V4.1 Flash official release evaluations",
+        "url": "https://api-docs.deepseek.com/news/news260910",
+        "rawUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/raw/main/README.md",
+        "modelId": "deepseek-ai/DeepSeek-V4.1-Flash",
+        "organization": "deepseek-ai",
+        "category": "Official model release",
+        "modelAliases": MODEL_ALIASES["DeepSeek V4.1 Flash (max)"],
+        "variantScoped": True,
+        "effort": "max",
+        "configurationConfidence": "explicit",
+        "exactBenchmarkLabelsOnly": True,
+        "note": (
+            "DeepSeek's September 10, 2026 release card explicitly uses reasoning_effort=100 "
+            "for all instruct evaluations, temperature=1.0 and top_p=0.95. Only its own "
+            "instruct column is ingested; base-model and competitor columns are excluded. "
+            "Code agents use DeepSeek Harness Minimal with 1M context, except DeepSWE v1.1 "
+            "uses mini-SWE and SEC-Bench Pro uses Claude Code. Visual agents use Claude Code "
+            "with 512k context; AutomationBench and Agent's Last Exam use official scaffolds. "
+            "HLE full and text-only scores, Terminal 2.1/3.0/4.0, Pass@1 vs Score, and "
+            "visual tool-assisted results remain separate observations."
+        ),
+        "columns": {"DS-V4.1-Flash": "DeepSeek V4.1 Flash (max)"},
+        "rowLabels": {
+            "GPQA Diamond (Pass@1)": "gpqa-diamond",
+            "HLE (Pass@1)": "hle",
+            "Codeforces (Rating)": "codeforces-elo",
+            "MathArena Apex (Pass@1)": "matharena-apex",
+            "Terminal-Bench 2.1 (Pass@1)": "terminal-bench-2-1",
+            "Terminal-Bench 3.0 (Pass@1)": "terminal-bench-3",
+            "Terminal-Bench 4.0 (Pass@1)": "terminal-bench-4",
+            "DeepSWE v1.1 (Resolved)": "deepswe-v1-1",
+            "ProgramBench (Almost@1)": "programbench-almost-solved",
+            "NL2Repo-Bench (Score)": "nl2repo",
+            "CyberGym (Pass@1)": "cybergym",
+            "SEC-Bench Pro (Pass@1)": "sec-bench-pro",
+            "ExploitGym (Pass@1)": "exploitgym",
+            "HLE w/ tools (Pass@1)": "hle-tools",
+            "AutomationBench (Pass@1)": "automationbench",
+            "Agent's Last Exam (Pass@1)": "agents-last-exam-pass1",
+            "Chartography w/ tools (Pass@1)": "chartography-tools",
+            "BabyVision w/ tools (Pass@1)": "babyvision-tools",
+            "ZeroBench-main w/ tools (Pass@5)": "zerobench-main-tools-pass5",
+        },
+        "compositeRows": {
+            "hle": [
+                {"benchmarkId": "hle", "component": 0},
+                {"benchmarkId": "hle-text-only", "component": 1},
+            ],
+        },
+        "scoreSelections": {
+            "hle": "full HLE without tools (first value)",
+            "hle-text-only": "text-only subset (parenthesized dagger-marked value)",
+        },
+        "scores": {"DeepSeek V4.1 Flash (max)": {
+            "gpqa-diamond": 90.9, "hle": 36.8, "hle-text-only": 39.1,
+            "codeforces-elo": 3471, "matharena-apex": 65.6,
+            "terminal-bench-2-1": 90.6, "terminal-bench-3": 30.0,
+            "terminal-bench-4": 31.2, "deepswe-v1-1": 74.2,
+            "programbench-almost-solved": 20.3, "nl2repo": 64.0,
+            "cybergym": 88.1, "sec-bench-pro": 62.8, "exploitgym": 15.3,
+            "hle-tools": 63.9, "automationbench": 54.8,
+            "agents-last-exam-pass1": 31.8, "chartography-tools": 78.9,
+            "babyvision-tools": 89.6, "zerobench-main-tools-pass5": 49.0,
+        }},
+    },
     {
         "id": "openai-gpt-6-astra-release",
         "label": "OpenAI GPT-6 Astra official release evaluations",

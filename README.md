@@ -2,9 +2,21 @@
 
 Compare AI models across intelligence, coding, agentic behavior, speed, cost, and raw benchmark quality.
 
-The default leaderboard uses AIndex Scheme 18. Each of five equally weighted capability boards starts from the geometric mean of a small, complete mandatory Core. Independently controlled extension benchmarks may then add only evidence above an anonymous cohort-wide OLS expectation. Positive residuals are accumulated with a zero-neutral monotone log-sum-exp bonus and capped by the current cohort's pooled positive-residual `mean + sqrt(2) * SD`. A board is `min(100, core + capped_bonus)`, and AIndex is the arithmetic mean of the five board scores.
+The default leaderboard uses **AIndex Mixed Core 07**. Coding, agentic/tool work, hard reasoning, knowledge/science, and instruction/context use weights **12%, 9%, 22%, 37%, 20%** respectively.
 
-Missing extension results stay absent: they are never filled with 0 or a neutral value and never reduce the Core score. Benchmarks controlled by a ranked model vendor are excluded from the extension pool. The displayed 0–100 points are direct calculated scores, not a percentile, canonical T score, mean rank, or model-specific correction. Equal-board 2PL and Dense Rasch remain available only as sensitivity comparisons.
+| Board | Core | Weight |
+| --- | --- | ---: |
+| Coding | Terminal-Bench v4.0 + SciCode | 12% |
+| Agentic/tool work | AutomationBench-AA + τ³-Banking | 9% |
+| Hard reasoning | CritPt | 22% |
+| Knowledge/science | AA-Omniscience Accuracy + GDP.pdf | 37% |
+| Instruction/context | AA-LCR v1.1 | 20% |
+
+A single Core item supplies its board's whole base; two items each supply half. Missing Core observations keep their fixed share with zero contribution; observed zero is valid. A configuration is excluded if any board has no observed Core or at least four configured Core items are missing. Representatives are chosen by descending inference priority and then slug **before** eligibility; evidence is never borrowed across configurations. Terminal v4 is the only scoring version. AIME, LiveCodeBench, GPQA and old short-math tests are excluded from Core.
+
+The existing extension calculation remains: globally remove Core families and legacy Terminal, fit nonnegative-slope OLS only on complete-Core boards in the eligible representative cohort, retain positive residuals, aggregate `log(1 + sum(expm1(residual)))`, and cap with pooled positive-residual `mean + sqrt(2) * population_SD`. Incomplete-Core boards earn no extension bonus. Each board is `min(100, core + capped_bonus)`; AIndex is the sum of board score times its fixed weight. Exact configurations reuse the representative cohort's calibration.
+
+The displayed 0–100 points are direct scores. Named-model ordering preferences were used only to choose a historical experimental scheme; they never gate daily publication or retune weights. Legacy Scheme 18, equal-board 2PL and Rasch outputs remain historical/sensitivity audits.
 
 ## Update data
 
@@ -16,7 +28,7 @@ python benchmarks\discover_official_vendor_pages.py --output-json data\benchmark
 python benchmarks\collect_benchmark_scores.py --output-json data\benchmarks\benchmark_scores.json
 python benchmarks\validate_official_sources.py
 python scripts\build_docs_site.py
-python -B analysis\irt_leaderboard_exploration\validate_scheme18_production.py --input docs\data\models.json
+python -B analysis\irt_leaderboard_exploration\validate_mixed_core_production.py --input docs\data\models.json
 ```
 
 The daily workflow refreshes Artificial Analysis and rebuilds the site; a separate
@@ -42,15 +54,14 @@ field (v1.1), while Terminal-Bench v2.1 and v4.0 remain separate observations.
 SciCode's upstream v1.0.1 regrading continues through the existing `scicode` field.
 The exact pre-v4.3 CSV schema is accepted for migration without disabling row
 or score coverage validation. Adding these data columns makes them available
-to the site; it does not add new Core or extension items to AIndex Scheme 18.
+to the site. The production Core registry is the fixed Mixed Core 07 table above.
 
 The AA scraper validates row and score coverage before atomically replacing the
 snapshot. A large SciCode withdrawal is accepted only when the models page and
 the dedicated SciCode evaluation page agree on the complete model catalogue and
 every score/null. Confirmed withdrawn scores and ranks stay blank. Models missing
-a required Core observation remain in the catalogue but are excluded from
-Scheme 18 calibration and ranking, with missing items recorded in its validation
-summary. Other unexpected coverage losses still fail validation. The daily workflow's
+enough Core observations to fail the above eligibility rules remain in the
+catalogue but are excluded from scoring, with missing items recorded in the validation summary. Other unexpected coverage losses still fail validation. The daily workflow's
 `--allow-stale` option can retain a validated snapshot during upstream outages;
 check its warning annotations before treating a green run as a fresh import.
 
