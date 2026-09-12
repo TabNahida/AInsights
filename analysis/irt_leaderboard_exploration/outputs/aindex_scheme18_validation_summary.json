@@ -16,8 +16,8 @@
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 164,
-    "unique_slugs": 164,
+    "row_count": 163,
+    "unique_slugs": 163,
     "unique_variant_groups": 123,
     "max_final_score_identity_error": 0.0,
     "passed": true,
@@ -242,8 +242,8 @@
       ]
     },
     "exact_config": {
-      "requested_count": 164,
-      "eligible_count": 164,
+      "requested_count": 163,
+      "eligible_count": 163,
       "excluded_count": 0,
       "excluded_models": []
     }

@@ -16,8 +16,8 @@
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 169,
-    "unique_slugs": 169,
+    "row_count": 168,
+    "unique_slugs": 168,
     "unique_variant_groups": 124,
     "max_final_score_identity_error": 0.0,
     "passed": true,
@@ -7338,8 +7338,8 @@
       ]
     },
     "exact_config": {
-      "requested_count": 647,
-      "eligible_count": 169,
+      "requested_count": 646,
+      "eligible_count": 168,
       "excluded_count": 478,
       "excluded_models": [
         {
@@ -17400,7 +17400,7 @@
         ],
         "core_item_count": 2,
         "extension_item_count": 2,
-        "complete_core_models": 108,
+        "complete_core_models": 109,
         "weight": 12
       },
       "agentic-tool-work": {
@@ -17570,7 +17570,7 @@
     "candidate_id": "mixed_core_mc07",
     "independent_of_production_scoring_module": true,
     "variant_group_count": 123,
-    "exact_config_count": 169,
+    "exact_config_count": 168,
     "cap": 30.789002759585685,
     "profiles_checked": true,
     "passed": true,
