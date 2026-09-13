@@ -555,7 +555,7 @@
             "canonical_family": "livecodebench",
             "enabled": true,
             "observed_count": 16,
-            "slope": 0.3201612766114788,
+            "slope": 0.32016127661147875,
             "intercept": 65.82231197922313
           }
         ],
