@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_mixed_core",
   "candidate_id": "mixed_core_mc07",
-  "calibration_population_size": 123,
+  "calibration_population_size": 127,
   "bonus_cap_per_board": 30.789002759585685,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 123,
-    "unique_slugs": 123,
-    "unique_variant_groups": 123,
+    "row_count": 127,
+    "unique_slugs": 127,
+    "unique_variant_groups": 127,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 168,
-    "unique_slugs": 168,
-    "unique_variant_groups": 124,
+    "row_count": 172,
+    "unique_slugs": 172,
+    "unique_variant_groups": 128,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -26,8 +26,8 @@
   "passed": true,
   "core_eligibility": {
     "variant_group": {
-      "requested_count": 474,
-      "eligible_count": 123,
+      "requested_count": 478,
+      "eligible_count": 127,
       "excluded_count": 351,
       "excluded_models": [
         {
@@ -7338,8 +7338,8 @@
       ]
     },
     "exact_config": {
-      "requested_count": 646,
-      "eligible_count": 168,
+      "requested_count": 650,
+      "eligible_count": 172,
       "excluded_count": 478,
       "excluded_models": [
         {
@@ -17109,7 +17109,7 @@
       "knowledge-science": 37,
       "instruction-context": 20
     },
-    "population_size": 123,
+    "population_size": 127,
     "population_slugs": [
       "claude-fable-5-1",
       "claude-opus-4-8",
@@ -17184,7 +17184,11 @@
       "inkling",
       "inkling-small",
       "k-exaone-2-0-0803",
+      "k2-1b-final",
+      "k2-4b-ph1",
+      "k2-7b-ph2",
       "k2-horizon-375b-a23b",
+      "k2-mova-36b-mid5",
       "kimi-k2-6",
       "kimi-k2-7-code",
       "lfm2-5-2-6b",
@@ -17309,7 +17313,11 @@
       "inkling",
       "inkling small",
       "k exaone 2 0",
+      "k2 horizon 0 9b",
+      "k2 horizon 3 7b",
+      "k2 horizon 7b",
       "k2 horizon 375b a23b",
+      "k2 horizon mova 36b a4b",
       "kimi k2 6",
       "kimi k2 7 code",
       "lfm2 5 2 6b",
@@ -17400,7 +17408,7 @@
         ],
         "core_item_count": 2,
         "extension_item_count": 2,
-        "complete_core_models": 110,
+        "complete_core_models": 114,
         "weight": 12
       },
       "agentic-tool-work": {
@@ -17474,7 +17482,7 @@
         ],
         "core_item_count": 2,
         "extension_item_count": 6,
-        "complete_core_models": 111,
+        "complete_core_models": 115,
         "weight": 9
       },
       "hard-reasoning": {
@@ -17498,7 +17506,7 @@
         ],
         "core_item_count": 1,
         "extension_item_count": 1,
-        "complete_core_models": 123,
+        "complete_core_models": 127,
         "weight": 22
       },
       "knowledge-science": {
@@ -17536,7 +17544,7 @@
         ],
         "core_item_count": 2,
         "extension_item_count": 2,
-        "complete_core_models": 113,
+        "complete_core_models": 117,
         "weight": 37
       },
       "instruction-context": {
@@ -17560,7 +17568,7 @@
         ],
         "core_item_count": 1,
         "extension_item_count": 1,
-        "complete_core_models": 123,
+        "complete_core_models": 127,
         "weight": 20
       }
     }
@@ -17569,8 +17577,8 @@
     "method_id": "aindex_mixed_core",
     "candidate_id": "mixed_core_mc07",
     "independent_of_production_scoring_module": true,
-    "variant_group_count": 123,
-    "exact_config_count": 168,
+    "variant_group_count": 127,
+    "exact_config_count": 172,
     "cap": 30.789002759585685,
     "profiles_checked": true,
     "passed": true,

@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_scheme18",
   "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
-  "calibration_population_size": 123,
-  "bonus_cap_per_board": 19.782202345639433,
+  "calibration_population_size": 127,
+  "bonus_cap_per_board": 19.931208249922882,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 123,
-    "unique_slugs": 123,
-    "unique_variant_groups": 123,
+    "row_count": 127,
+    "unique_slugs": 127,
+    "unique_variant_groups": 127,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 163,
-    "unique_slugs": 163,
-    "unique_variant_groups": 123,
+    "row_count": 167,
+    "unique_slugs": 167,
+    "unique_variant_groups": 127,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -26,8 +26,8 @@
   "passed": true,
   "core_eligibility": {
     "variant_group": {
-      "requested_count": 142,
-      "eligible_count": 123,
+      "requested_count": 146,
+      "eligible_count": 127,
       "excluded_count": 19,
       "excluded_models": [
         {
@@ -242,8 +242,8 @@
       ]
     },
     "exact_config": {
-      "requested_count": 163,
-      "eligible_count": 163,
+      "requested_count": 167,
+      "eligible_count": 167,
       "excluded_count": 0,
       "excluded_models": []
     }
@@ -256,10 +256,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 19.782202345639433,
-    "pooled_positive_residual_count": 362,
-    "pooled_positive_residual_mean": 8.715346300318934,
-    "pooled_positive_residual_population_sd": 7.825448956061462,
+    "bonus_cap_per_board": 19.931208249922882,
+    "pooled_positive_residual_count": 367,
+    "pooled_positive_residual_mean": 8.754802820464997,
+    "pooled_positive_residual_population_sd": 7.90291206845982,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -268,7 +268,7 @@
       "instruction-context"
     ],
     "board_points_max": 20.0,
-    "population_size": 123,
+    "population_size": 127,
     "population_slugs": [
       "g9v3-39a5b",
       "qwen3-14b-instruct-reasoning",
@@ -334,7 +334,11 @@
       "k-exaone-2-0-0803",
       "lfm2-5-2-6b",
       "longcat-2-0",
+      "k2-1b-final",
+      "k2-4b-ph1",
       "k2-horizon-375b-a23b",
+      "k2-7b-ph2",
+      "k2-mova-36b-mid5",
       "llama-4-maverick",
       "llama-4-scout",
       "muse-glimmer",
@@ -459,7 +463,11 @@
       "k exaone 2 0",
       "lfm2 5 2 6b",
       "longcat 2 0",
+      "k2 horizon 0 9b",
+      "k2 horizon 3 7b",
       "k2 horizon 375b a23b",
+      "k2 horizon 7b",
+      "k2 horizon mova 36b a4b",
       "llama 4 maverick",
       "llama 4 scout",
       "muse glimmer",
@@ -536,9 +544,9 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 123,
-            "slope": 2.3249761055787865,
-            "intercept": -51.10187591362588
+            "observed_count": 127,
+            "slope": 2.1770511677338082,
+            "intercept": -43.95318197366054
           },
           {
             "item_id": "swe-bench-pro",
@@ -555,7 +563,7 @@
             "canonical_family": "livecodebench",
             "enabled": true,
             "observed_count": 16,
-            "slope": 0.32016127661147875,
+            "slope": 0.3201612766114788,
             "intercept": 65.82231197922313
           }
         ],
@@ -576,9 +584,9 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 123,
-            "slope": 1.0493801072294595,
-            "intercept": -17.933800010074513
+            "observed_count": 127,
+            "slope": 1.037789212496458,
+            "intercept": -17.345240129114508
           },
           {
             "item_id": "tau2-bench-telecom-aa",
@@ -594,9 +602,9 @@
             "score_key": "τ³-Banking",
             "canonical_family": "tau3-banking",
             "enabled": true,
-            "observed_count": 123,
-            "slope": 0.44338936620603053,
-            "intercept": -7.309184091089644
+            "observed_count": 127,
+            "slope": 0.4364999452973476,
+            "intercept": -6.7125271537209805
           },
           {
             "item_id": "apex-agents-aa",
