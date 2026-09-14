@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-11T17:12:49+00:00",
+  "generatedAt": "2026-09-14T08:51:16+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
       "label": "OpenAI GPT-5.5 launch evaluations",
       "url": "https://openai.com/index/introducing-gpt-5-5/",
       "category": "Official model release",
-      "collectionStatus": "partial-refresh; seeded 188 benchmark rows",
+      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
       "note": "Official OpenAI table covering GPT-5.5, GPT-5.4, GPT-5.5 Pro, GPT-5.4 Pro, Claude Opus 4.7, and Gemini 3.1 Pro."
     },
     {
@@ -36,7 +36,7 @@
       "url": "https://openai.com/index/gpt-6-astra/",
       "rawUrl": "https://openai.com/index/gpt-6-astra/",
       "category": "Official model release",
-      "collectionStatus": "refreshed",
+      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
       "note": "OpenAI's September 3, 2026 release appendix explicitly reports the maximum score at any effort. These are source-library results, not evidence for a particular max, xhigh, or lower-effort variant. Only OpenAI's Astra column is ingested. OSWorld's offline subset, Terminal-Bench 4.0, and the new June-August ExploitBench set remain separate from earlier evaluations. BenchCAD uses tools; ExploitGym was run without the six-hour time limit.",
       "modelAliases": [
         "GPT-6 Astra",
@@ -199,7 +199,7 @@
       "url": "https://openai.com/index/gpt-5-6/",
       "rawUrl": "https://openai.com/index/gpt-5-6/",
       "category": "Official model release",
-      "collectionStatus": "refreshed",
+      "collectionStatus": "seeded-official-values; refresh blocked: HTTPError",
       "note": "OpenAI official GPT-5.6 release tables covering Sol, Terra, and Luna across professional work, coding, science, computer use, cybersecurity, reasoning, tool use, and long-context evaluations. The release appendix labels the single-agent columns only by model tier, while the surrounding AA index values and separately reported Sol Ultra rows support mapping these columns to max effort. The mapping is therefore exact-variant scoped but marked as configuration-inferred and must not be broadcast to other effort settings.",
       "modelAliases": [
         "GPT-5.6 Sol (max)",
