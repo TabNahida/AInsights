@@ -16,8 +16,8 @@
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 167,
-    "unique_slugs": 167,
+    "row_count": 169,
+    "unique_slugs": 169,
     "unique_variant_groups": 127,
     "max_final_score_identity_error": 0.0,
     "passed": true,
@@ -242,8 +242,8 @@
       ]
     },
     "exact_config": {
-      "requested_count": 167,
-      "eligible_count": 167,
+      "requested_count": 169,
+      "eligible_count": 169,
       "excluded_count": 0,
       "excluded_models": []
     }
@@ -563,7 +563,7 @@
             "canonical_family": "livecodebench",
             "enabled": true,
             "observed_count": 16,
-            "slope": 0.32016127661147875,
+            "slope": 0.3201612766114788,
             "intercept": 65.82231197922313
           }
         ],

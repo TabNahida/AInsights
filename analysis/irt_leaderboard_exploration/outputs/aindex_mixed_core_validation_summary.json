@@ -2,7 +2,7 @@
   "method_id": "aindex_mixed_core",
   "candidate_id": "mixed_core_mc07",
   "calibration_population_size": 127,
-  "bonus_cap_per_board": 30.789002759585685,
+  "bonus_cap_per_board": 30.780077949994123,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
@@ -16,8 +16,8 @@
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 172,
-    "unique_slugs": 172,
+    "row_count": 174,
+    "unique_slugs": 174,
     "unique_variant_groups": 128,
     "max_final_score_identity_error": 0.0,
     "passed": true,
@@ -7339,8 +7339,8 @@
     },
     "exact_config": {
       "requested_count": 650,
-      "eligible_count": 172,
-      "excluded_count": 478,
+      "eligible_count": 174,
+      "excluded_count": 476,
       "excluded_models": [
         {
           "slug": "glm-4-5v",
@@ -12396,23 +12396,6 @@
           ]
         },
         {
-          "slug": "gpt-5-6-sol-non-reasoning",
-          "missing_core_items": [
-            "Terminal-Bench v4.0",
-            "SciCode",
-            "AutomationBench-AA",
-            "GDP.pdf"
-          ],
-          "missing_core_count": 4,
-          "empty_boards": [
-            "coding"
-          ],
-          "reason": [
-            "board_missing_all",
-            "missing_at_least_four"
-          ]
-        },
-        {
           "slug": "gemini-3-flash-reasoning",
           "missing_core_items": [
             "Terminal-Bench v4.0",
@@ -13359,23 +13342,6 @@
             "hard-reasoning",
             "knowledge-science",
             "instruction-context"
-          ],
-          "reason": [
-            "board_missing_all",
-            "missing_at_least_four"
-          ]
-        },
-        {
-          "slug": "gpt-5-6-terra-non-reasoning",
-          "missing_core_items": [
-            "Terminal-Bench v4.0",
-            "SciCode",
-            "AutomationBench-AA",
-            "GDP.pdf"
-          ],
-          "missing_core_count": 4,
-          "empty_boards": [
-            "coding"
           ],
           "reason": [
             "board_missing_all",
@@ -17091,10 +17057,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 30.789002759585685,
+    "bonus_cap_per_board": 30.780077949994123,
     "pooled_positive_residual_count": 96,
-    "pooled_positive_residual_mean": 13.01998308228456,
-    "pooled_positive_residual_population_sd": 12.564594308856824,
+    "pooled_positive_residual_mean": 13.016895180914224,
+    "pooled_positive_residual_population_sd": 12.560466991472433,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -17408,7 +17374,7 @@
         ],
         "core_item_count": 2,
         "extension_item_count": 2,
-        "complete_core_models": 114,
+        "complete_core_models": 116,
         "weight": 12
       },
       "agentic-tool-work": {
@@ -17482,7 +17448,7 @@
         ],
         "core_item_count": 2,
         "extension_item_count": 6,
-        "complete_core_models": 115,
+        "complete_core_models": 116,
         "weight": 9
       },
       "hard-reasoning": {
@@ -17529,8 +17495,8 @@
             "canonical_family": "mmmu-pro",
             "enabled": true,
             "observed_count": 54,
-            "slope": 0.8847578919255229,
-            "intercept": 52.29823666115886
+            "slope": 0.8886926041264395,
+            "intercept": 52.19689100251975
           },
           {
             "item_id": "mmlu-pro",
@@ -17578,8 +17544,8 @@
     "candidate_id": "mixed_core_mc07",
     "independent_of_production_scoring_module": true,
     "variant_group_count": 127,
-    "exact_config_count": 172,
-    "cap": 30.789002759585685,
+    "exact_config_count": 174,
+    "cap": 30.780077949994123,
     "profiles_checked": true,
     "passed": true,
     "failures": []
