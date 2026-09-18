@@ -26,6 +26,10 @@ const copy = {
     dedupe: "去除重复档位",
     customTitle: "自定义计算实验室",
     customToolTitle: "计算工具",
+    customResetAll: "重置全部模式",
+    customWeightActions: "当前模式权重",
+    customLiveHint: "先选择计算方式，再调整权重；修改会更新下方排名。权重为 0 表示不纳入。",
+    customPreciseWeight: "{name}：输入权重",
     customToolSubtitle: "选择同量纲数据进行组合；方法名次、能力板块分和逐项 benchmark 不会混算。",
     customToolModes: {
       methodRank: "方法名次",
@@ -57,7 +61,7 @@ const copy = {
       equalize: "等权",
       normalize: "归一到 100",
       clear: "清零",
-      restore: "恢复默认",
+      restore: "恢复当前模式",
       export: "导出配置",
       exported: "已导出 JSON",
     },
@@ -344,10 +348,20 @@ const copy = {
     detailSourcesTitle: "外部测评参考",
     radarAverage: "入榜模型平均值",
     radarDataSource: "数据来源",
-    radarSourceText: "AIndex 混合 Core 方案 07 · 视觉：Artificial Analysis MMMU-Pro",
+    radarSourceText: "AIndex 混合 Core 方案 07 · 视觉：所选测试，原始百分比",
     radarBasisTitle: "雷达维度口径",
-    radarBasisSubtitle: "五个能力轴读取板块分，视觉理解读取 MMMU-Pro 原始百分比，不改变 AIndex 权重。缺失值显示为 —，图形留空，不按零分处理。各轴均值只统计有该项成绩的入榜模型。",
+    radarBasisSubtitle: "五个能力轴读取板块分，视觉轴读取当前所选测试，不改变 AIndex 权重。缺失值显示为 —，不按零分处理。AA 均值只统计有该项成绩的入榜模型；官方测试不显示均值或名次。",
     radarMeanLabel: "均值",
+    visionSelector: "视觉测试",
+    visionAA: "MMMU-Pro · AA 统一评测",
+    visionOfficial: "官方发布",
+    visionEvidenceTitle: "视觉测试与来源",
+    visionEvidenceHint: "每张雷达图只绘制所选测试，不跨测试补分。官方协议可能不同，官方分数不计算跨模型均值或名次，也不写入 AIndex。",
+    visionExact: "对应配置",
+    visionReference: "其他档位 / 家族参考，不入雷达",
+    visionNoEvidence: "尚未核实到此配置的视觉成绩；缺分不表示零分或不支持图片。",
+    visionNoImage: "当前数据未标记图片输入，也未收录视觉测试。",
+    visionOtherEvidence: "有官方参考，见下方测试与来源",
     radarCoverage: "{available}/{total} 项测试",
     radarTestCount: "{available} 项测试",
     radarDualCoverage: "Core {coreAvailable}/{coreTotal} · 扩展 {extensionAvailable}/{extensionTotal}",
@@ -366,7 +380,7 @@ const copy = {
       hardReasoning: "22% · CritPt 单 Core，占全部基础分。",
       knowledgeScience: "37% · AA-Omniscience Accuracy + GDP.pdf，各占基础分一半。",
       instructionContext: "20% · AA-LCR v1.1 单 Core，占全部基础分。",
-      visualUnderstanding: "MMMU-Pro · Artificial Analysis 同一评测口径的多模态理解成绩（%）；不混用官方自报或带工具版本。",
+      visualUnderstanding: "可切换 AA MMMU-Pro 或已核实的官方视觉测试。不同测试、带工具版本分别列出；其他档位只展示为参考，不绘入当前配置。",
     },
     detailRows: {
       provider: "供应商",
@@ -521,6 +535,10 @@ const copy = {
     dedupe: "Remove duplicate tiers",
     customTitle: "Custom calculation lab",
     customToolTitle: "Calculation tool",
+    customResetAll: "Reset all modes",
+    customWeightActions: "Current mode weights",
+    customLiveHint: "Choose a calculation mode, then adjust weights. Changes update the ranking below; a zero weight excludes an item.",
+    customPreciseWeight: "{name}: enter weight",
     customToolSubtitle: "Combine like-for-like evidence; method ranks, capability-board scores, and benchmark scores are never mixed in one calculation.",
     customToolModes: {
       methodRank: "Method ranks",
@@ -552,7 +570,7 @@ const copy = {
       equalize: "Equalize",
       normalize: "Normalize to 100",
       clear: "Clear",
-      restore: "Restore defaults",
+      restore: "Restore this mode",
       export: "Export config",
       exported: "JSON exported",
     },
@@ -839,10 +857,20 @@ const copy = {
     detailSourcesTitle: "External evaluation references",
     radarAverage: "Ranked-model average",
     radarDataSource: "Sources",
-    radarSourceText: "AIndex Mixed Core 07 · Vision: Artificial Analysis MMMU-Pro",
+    radarSourceText: "AIndex Mixed Core 07 · Vision: selected evaluation, raw percentage",
     radarBasisTitle: "Radar axis basis",
-    radarBasisSubtitle: "Five axes read board scores; vision uses the raw MMMU-Pro percentage without changing AIndex weights. Missing values appear as — and leave gaps, never zeroes. Each axis average includes only ranked models with a score on that axis.",
+    radarBasisSubtitle: "Five axes read board scores; vision uses the selected test without changing AIndex weights. Missing values appear as —, never zeroes. AA averages include ranked models with scores; official tests have no cross-model mean or rank.",
     radarMeanLabel: "Avg",
+    visionSelector: "Vision benchmark",
+    visionAA: "MMMU-Pro · AA common protocol",
+    visionOfficial: "Official report",
+    visionEvidenceTitle: "Visual evaluations and sources",
+    visionEvidenceHint: "A radar plots one selected test, never substitutes scores from another. Official protocols can differ, so official scores have no cross-model mean or rank and never enter AIndex.",
+    visionExact: "Matching configuration",
+    visionReference: "Other tier / family reference, not plotted",
+    visionNoEvidence: "No verified visual result for this configuration yet. Missing does not mean zero or no image support.",
+    visionNoImage: "Current metadata lists no image input and no visual evaluation is recorded.",
+    visionOtherEvidence: "Official references available below",
     radarCoverage: "{available}/{total} tests",
     radarTestCount: "{available} tests",
     radarDualCoverage: "Core {coreAvailable}/{coreTotal} · Extension {extensionAvailable}/{extensionTotal}",
@@ -861,7 +889,7 @@ const copy = {
       hardReasoning: "22% · CritPt is the single Core, supplying the full base.",
       knowledgeScience: "37% · AA-Omniscience Accuracy + GDP.pdf, each with half the Core base.",
       instructionContext: "20% · AA-LCR v1.1 is the single Core, supplying the full base.",
-      visualUnderstanding: "MMMU-Pro · Multimodal understanding (%) under the Artificial Analysis protocol; excludes self-reported and tool-assisted variants.",
+      visualUnderstanding: "Choose AA MMMU-Pro or a verified official visual test. Different benchmarks and tool protocols stay separate; results from other tiers are references and never plotted for this configuration.",
     },
     detailRows: {
       provider: "Provider",
@@ -1037,6 +1065,7 @@ const state = {
   providerId: initialRoute.providerId,
   compareIds: initialRoute.compareIds || [],
   compareQuery: "",
+  radarVisionBenchmark: "",
   compareTouched: false,
   comparePickerOpen: false,
   contributionMode: "score",
@@ -1330,6 +1359,12 @@ function bindControlEvents() {
     });
   }
   bindContributionEvents();
+  document.addEventListener("change", (event) => {
+    if (!event.target.matches("[data-vision-benchmark]")) return;
+    state.radarVisionBenchmark = event.target.value;
+    render();
+    document.querySelector("[data-vision-benchmark]")?.focus({ preventScroll: true });
+  });
   document.addEventListener("click", (event) => {
     const addButton = event.target.closest("[data-compare-add]");
     if (!addButton) return;
@@ -1389,7 +1424,7 @@ function renderStaticControls() {
   els.searchInput.placeholder = tr("searchPlaceholder");
   els.dedupeLabel.textContent = tr("dedupe");
   els.customTitle.textContent = tr("customTitle");
-  els.resetWeightsButton.textContent = tr("reset");
+  els.resetWeightsButton.textContent = tr("customResetAll");
   if (els.latestModelsTitle) els.latestModelsTitle.textContent = tr("latestModelsTitle");
   if (els.latestModelsSubtitle) els.latestModelsSubtitle.textContent = tr("latestModelsSubtitle");
   if (els.comparePageTitle) els.comparePageTitle.textContent = tr("comparePageTitle");
@@ -2632,23 +2667,25 @@ function renderWeights() {
           <h3>${escapeHtml(tr("customToolTitle"))}</h3>
           <p>${escapeHtml(tr("customToolSubtitle"))}</p>
         </div>
-        <div class="custom-action-toolbar" role="group" aria-label="${escapeHtml(tr("customToolTitle"))}">
-          ${["equalize", "normalize", "clear", "restore", "export"].map((action) => `
-            <button type="button" data-custom-action="${action}">${escapeHtml(tr(`customActions.${action}`))}</button>
-          `).join("")}
-          <span class="custom-export-status" data-custom-export-status aria-live="polite"></span>
-        </div>
       </div>
-      <div class="custom-tool-tabs" role="tablist">
+      <div class="custom-tool-tabs" role="tablist" aria-label="${escapeHtml(tr("customToolTitle"))}">
         ${customToolModeOrder.map((mode) => `
-          <button type="button" role="tab" data-custom-tool-mode="${mode}" aria-selected="${mode === state.customToolMode}">
+          <button type="button" role="tab" id="custom-tab-${mode}" data-custom-tool-mode="${mode}" aria-controls="custom-mode-panel" tabindex="${mode === state.customToolMode ? 0 : -1}" aria-selected="${mode === state.customToolMode}">
             <strong>${escapeHtml(tr(`customToolModes.${customToolTranslationId(mode)}`))}</strong>
             <span>${escapeHtml(tr(`customToolDescriptions.${customToolTranslationId(mode)}`))}</span>
           </button>
         `).join("")}
       </div>
+      <div class="custom-action-toolbar" role="group" aria-label="${escapeHtml(tr("customWeightActions"))}">
+        <span class="custom-action-label">${escapeHtml(tr("customWeightActions"))}</span>
+        ${["equalize", "normalize", "clear", "restore", "export"].map((action) => `
+          <button type="button" data-custom-action="${action}">${escapeHtml(tr(`customActions.${action}`))}</button>
+        `).join("")}
+        <span class="custom-export-status" data-custom-export-status aria-live="polite"></span>
+      </div>
+      <p class="custom-live-hint">${escapeHtml(tr("customLiveHint"))}</p>
     </section>
-    <div class="custom-mode-body" data-custom-mode-body></div>
+    <div class="custom-mode-body" id="custom-mode-panel" role="tabpanel" aria-labelledby="custom-tab-${state.customToolMode}" data-custom-mode-body></div>
   `;
   bindCustomToolChrome();
   const body = els.weightsGrid.querySelector("[data-custom-mode-body]");
@@ -2699,6 +2736,14 @@ function bindCustomToolChrome() {
       state.customToolMode = button.dataset.customToolMode;
       renderWeights();
       renderResults(state.data.presets.custom);
+      els.weightsGrid.querySelector(`[data-custom-tool-mode="${state.customToolMode}"]`).focus();
+    });
+    button.addEventListener("keydown", (event) => {
+      const index = customToolModeOrder.indexOf(button.dataset.customToolMode);
+      const next = { ArrowRight: (index + 1) % customToolModeOrder.length, ArrowLeft: (index + customToolModeOrder.length - 1) % customToolModeOrder.length, Home: 0, End: customToolModeOrder.length - 1 }[event.key];
+      if (next === undefined) return;
+      event.preventDefault();
+      els.weightsGrid.querySelector(`[data-custom-tool-mode="${customToolModeOrder[next]}"]`).click();
     });
   });
   els.weightsGrid.querySelectorAll("[data-custom-action]").forEach((button) => {
@@ -2730,14 +2775,14 @@ function renderSimpleCustomWeights(target, options) {
       </div>
       <div class="custom-simple-weight-grid">
         ${options.ids.map((id) => `
-          <label class="custom-simple-weight">
+          <div class="custom-simple-weight">
             <span>
               <strong>${escapeHtml(customWeightItemLabel(id, options.weightKind))}</strong>
               <em>${escapeHtml(isMethod ? tr("evidenceRankLabel") : customBoardEvidenceMeta(id))}</em>
             </span>
-            <input type="range" min="0" max="100" step="0.1" value="${escapeHtml(options.weights[id] || 0)}" data-simple-weight="${escapeHtml(id)}" />
-            <output>${escapeHtml(formatWeight(options.weights[id] || 0))}</output>
-          </label>
+            <input type="range" min="0" max="100" step="0.1" value="${escapeHtml(options.weights[id] || 0)}" data-simple-weight="${escapeHtml(id)}" aria-label="${escapeHtml(customWeightItemLabel(id, options.weightKind))}" />
+            <input type="number" min="0" max="100" step="0.1" value="${escapeHtml(formatWeight(options.weights[id] || 0))}" data-weight-number="${escapeHtml(id)}" aria-label="${escapeHtml(tr("customPreciseWeight", { name: customWeightItemLabel(id, options.weightKind) }))}" />
+          </div>
         `).join("")}
       </div>
     </section>
@@ -2754,10 +2799,25 @@ function renderSimpleCustomWeights(target, options) {
     input.addEventListener("input", (event) => {
       const weights = isMethod ? state.customMethodWeights : state.customBoardWeights;
       weights[event.target.dataset.simpleWeight] = Number(event.target.value);
-      event.target.closest(".custom-simple-weight").querySelector("output").value = formatWeight(event.target.value);
+      event.target.closest(".custom-simple-weight").querySelector("[data-weight-number]").value = formatWeight(event.target.value);
       updateSimpleCustomWeightTotal(target, weights);
     });
     input.addEventListener("change", () => renderResults(state.data.presets.custom));
+  });
+  target.querySelectorAll("[data-weight-number]").forEach((input) => {
+    const updateWeight = () => {
+      const weights = isMethod ? state.customMethodWeights : state.customBoardWeights;
+      const value = clamp(Number(input.value) || 0, 0, 100);
+      weights[input.dataset.weightNumber] = value;
+      input.closest(".custom-simple-weight").querySelector("[data-simple-weight]").value = value;
+      updateSimpleCustomWeightTotal(target, weights);
+      renderResults(state.data.presets.custom);
+    };
+    input.addEventListener("input", updateWeight);
+    input.addEventListener("change", updateWeight);
+    input.addEventListener("blur", () => {
+      input.value = formatWeight(clamp(Number(input.value) || 0, 0, 100));
+    });
   });
 }
 
@@ -2897,9 +2957,10 @@ function handleCustomAction(action) {
   } else if (action === "restore") {
     restoreActiveCustomDefaults();
   }
-  if (state.customToolMode === "benchmark-lab") state.customWeightPresetId = customManualWeightPresetId;
+  if (state.customToolMode === "benchmark-lab" && action !== "restore") state.customWeightPresetId = customManualWeightPresetId;
   renderWeights();
   renderResults(state.data.presets.custom);
+  els.weightsGrid.querySelector(`[data-custom-action="${action}"]`)?.focus();
 }
 
 function activeCustomWeights() {
@@ -4737,11 +4798,22 @@ function renderCoreScoreBreakdown(model) {
 }
 
 function renderRadarChart(models, options = {}) {
+  const visionOptions = radarVisionOptions(models.filter(Boolean));
+  const vision = visionOptions.find((item) => item.id === state.radarVisionBenchmark) || visionOptions[0];
   const axes = radarAxes();
+  if (vision.id !== "aa") {
+    axes[5] = { ...axes[5], metricKey: null, visionBenchmark: vision.id, visionLabel: vision.label };
+  }
+  const visionControls = `<div class="vision-controls">
+    <label for="radarVisionBenchmark">${escapeHtml(tr("visionSelector"))}</label>
+    <select id="radarVisionBenchmark" data-vision-benchmark>${visionOptions.map((item) => `<option value="${escapeHtml(item.id)}" ${item.id === vision.id ? "selected" : ""}>${escapeHtml(item.label)} · ${item.count}/${models.filter(Boolean).length}</option>`).join("")}</select>
+    <p>${escapeHtml(tr("visionEvidenceHint"))}</p>
+  </div>`;
+  const evidence = renderVisionEvidence(models.filter(Boolean));
   const visibleModels = models
     .filter(Boolean)
     .filter((model) => radarHasData(model, axes));
-  if (visibleModels.length === 0) return `<div class="empty">${escapeHtml(tr("radarNoData"))}</div>`;
+  if (visibleModels.length === 0) return `${visionControls}<div class="empty">${escapeHtml(tr("radarNoData"))}</div>${evidence}`;
 
   const detailModel = options.mode === "detail" ? visibleModels[0] : null;
   const layout = radarChartLayout(options.mode, visibleModels.length);
@@ -4758,6 +4830,7 @@ function renderRadarChart(models, options = {}) {
   }));
 
   return `
+    ${visionControls}
     <div class="radar-card ${options.mode === "compare" ? "compare-radar-card" : ""}">
       <div class="radar-legend">
         ${series.map((item) => `
@@ -4795,7 +4868,41 @@ function renderRadarChart(models, options = {}) {
         <b>${escapeHtml(tr("radarSourceText"))}</b>
       </div>
     </div>
+    ${evidence}
   `;
+}
+
+function radarVisionOptions(models) {
+  const options = [{ id: "aa", label: tr("visionAA"), count: models.filter((model) => Number.isFinite(model.scores?.["MMMU-Pro"])).length }];
+  const ids = new Map();
+  for (const model of models) {
+    for (const row of model.visionBenchmarks || []) {
+      if (row.exactConfiguration && Number.isFinite(row.value)) ids.set(row.benchmarkId, row.label);
+    }
+  }
+  for (const [id, label] of ids) options.push({
+    id, label: `${label} · ${tr("visionOfficial")}`,
+    count: models.filter((model) => (model.visionBenchmarks || []).some((row) => row.benchmarkId === id && row.exactConfiguration && Number.isFinite(row.value))).length,
+  });
+  return options.sort((a, b) => b.count - a.count || (a.id === "aa" ? -1 : b.id === "aa" ? 1 : 0));
+}
+
+function renderVisionEvidence(models) {
+  return `<details class="vision-evidence" ${models.some((model) => !Number.isFinite(model.scores?.["MMMU-Pro"])) ? "open" : ""}>
+    <summary>${escapeHtml(tr("visionEvidenceTitle"))}</summary>
+    ${models.map((model) => {
+      const rows = model.visionBenchmarks || [];
+      const aa = Number.isFinite(model.scores?.["MMMU-Pro"]);
+      return `<section><h4>${escapeHtml(model.model)}</h4>
+        ${aa ? `<p class="vision-evidence-aa">${escapeHtml(tr("visionAA"))} <b>${formatNumber(model.scores["MMMU-Pro"])}%</b> · <a href="${escapeHtml(model.modelUrl || "https://artificialanalysis.ai/evaluations/mmmu-pro")}" target="_blank" rel="noreferrer">Artificial Analysis</a></p>` : ""}
+        ${rows.length ? `<ul>${rows.map((row) => `<li>
+          <div><strong>${escapeHtml(row.label)} · ${formatNumber(row.value)}%</strong><span class="vision-scope ${row.exactConfiguration ? "is-exact" : ""}">${escapeHtml(tr(row.exactConfiguration ? "visionExact" : "visionReference"))}</span></div>
+          <p>${escapeHtml(row.configuration)}</p>
+          <a href="${escapeHtml(row.sourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(row.sourceLabel)}</a>
+        </li>`).join("")}</ul>` : aa ? "" : `<p>${escapeHtml(tr(model.inputModalities?.includes("Image") ? "visionNoEvidence" : "visionNoImage"))}</p>`}
+      </section>`;
+    }).join("")}
+  </details>`;
 }
 
 function radarChartLayout(mode, seriesCount = 1) {
@@ -4857,7 +4964,7 @@ function renderRadarDetailAxisLabel(axis, value, average, rankLabel, coverage) {
   const coverageLabel = radarCoverageLabel(coverage);
   return `
     <strong><b>${escapeHtml(formatNumber(value))}</b> ${escapeHtml(axis.label)}</strong>
-    <em>${escapeHtml(tr("radarMeanLabel"))} ${escapeHtml(formatNumber(average))}${rankLabel ? ` · ${escapeHtml(rankLabel)}` : ""}${coverageLabel ? ` · ${escapeHtml(coverageLabel)}` : ""}</em>
+    <em>${axis.visionBenchmark ? escapeHtml(axis.visionLabel) : `${escapeHtml(tr("radarMeanLabel"))} ${escapeHtml(formatNumber(average))}${rankLabel ? ` · ${escapeHtml(rankLabel)}` : ""}${coverageLabel ? ` · ${escapeHtml(coverageLabel)}` : ""}`}</em>
   `;
 }
 
@@ -4956,7 +5063,9 @@ function radarBoardProfile(model, boardId) {
 }
 
 function radarAxisValue(model, axis) {
-  const rawValue = axis.metricKey
+  const rawValue = axis.visionBenchmark
+    ? (model?.visionBenchmarks || []).find((row) => row.benchmarkId === axis.visionBenchmark && row.exactConfiguration)?.value
+    : axis.metricKey
     ? model?.scores?.[axis.metricKey]
     : radarBoardProfile(model, axis.boardId)?.score;
   if (rawValue === null || rawValue === undefined || rawValue === "") return null;
@@ -5011,6 +5120,7 @@ function radarProfilePopulation(axes = radarAxes()) {
 }
 
 function radarAxisAverage(axis) {
+  if (axis.visionBenchmark) return null;
   const axes = radarAxes();
   const values = radarProfilePopulation(axes)
     .map((model) => radarAxisValue(model, axis))
@@ -5020,6 +5130,7 @@ function radarAxisAverage(axis) {
 }
 
 function radarAxisRank(axis, model) {
+  if (axis.visionBenchmark) return null;
   const target = radarAxisValue(model, axis);
   if (!Number.isFinite(target)) return null;
   const rows = radarProfilePopulation(radarAxes())

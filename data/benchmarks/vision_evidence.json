@@ -1,0 +1,571 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-09-19",
+  "policy": "Display only. Exact slugs identify tested configurations. referenceSlugs are related configurations, never radar inputs. Benchmarks and tool protocols remain separate; these rows never enter AIndex or Custom ranking scores.",
+  "results": [
+    {
+      "modelSlugs": [
+        "gpt-5-2"
+      ],
+      "referenceSlugs": [
+        "gpt-5-2-medium",
+        "gpt-5-2-non-reasoning"
+      ],
+      "benchmarkId": "mmmu-pro-no-tools",
+      "value": 79.5,
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+      "sourceLabel": "OpenAI GPT-5.2 release",
+      "configuration": "GPT-5.2 Thinking, xhigh; research API evaluation",
+      "sourceLocator": "Appendix: Vision; benchmark methodology footnote",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "gpt-5-2"
+      ],
+      "referenceSlugs": [
+        "gpt-5-2-medium",
+        "gpt-5-2-non-reasoning"
+      ],
+      "benchmarkId": "mmmu-pro-tools",
+      "value": 80.4,
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+      "sourceLabel": "OpenAI GPT-5.2 release",
+      "configuration": "GPT-5.2 Thinking, xhigh; research API evaluation",
+      "sourceLocator": "Appendix: Vision; benchmark methodology footnote",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "gpt-5-2"
+      ],
+      "referenceSlugs": [
+        "gpt-5-2-medium",
+        "gpt-5-2-non-reasoning"
+      ],
+      "benchmarkId": "charxiv-no-tools",
+      "value": 82.1,
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+      "sourceLabel": "OpenAI GPT-5.2 release",
+      "configuration": "GPT-5.2 Thinking, xhigh; research API evaluation",
+      "sourceLocator": "Appendix: Vision; benchmark methodology footnote",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "gpt-5-2"
+      ],
+      "referenceSlugs": [
+        "gpt-5-2-medium",
+        "gpt-5-2-non-reasoning"
+      ],
+      "benchmarkId": "charxiv-tools",
+      "value": 88.7,
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+      "sourceLabel": "OpenAI GPT-5.2 release",
+      "configuration": "GPT-5.2 Thinking, xhigh; research API evaluation",
+      "sourceLocator": "Appendix: Vision; benchmark methodology footnote",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-fable-5-1"
+      ],
+      "referenceSlugs": [
+        "claude-fable-5-1-low",
+        "claude-fable-5-1-medium",
+        "claude-fable-5-1-high",
+        "claude-fable-5-1-xhigh"
+      ],
+      "benchmarkId": "chartography-no-tools",
+      "value": 42.6,
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Fable 5.1 system card",
+      "configuration": "Fable 5.1, adaptive thinking, max effort; mean of five runs",
+      "sourceLocator": "Section 8.14.1, pages 184-186",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-fable-5-1"
+      ],
+      "referenceSlugs": [
+        "claude-fable-5-1-low",
+        "claude-fable-5-1-medium",
+        "claude-fable-5-1-high",
+        "claude-fable-5-1-xhigh"
+      ],
+      "benchmarkId": "chartography-tools",
+      "value": 86.2,
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Fable 5.1 system card",
+      "configuration": "Fable 5.1, adaptive thinking, max effort; mean of five runs",
+      "sourceLocator": "Section 8.14.1, pages 184-186",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [],
+      "referenceSlugs": [
+        "claude-fable-5"
+      ],
+      "benchmarkId": "chartography-no-tools",
+      "value": 36.6,
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Fable 5.1 system card",
+      "configuration": "Fable 5, adaptive thinking, max effort; fallback configuration not identified for this evaluation",
+      "sourceLocator": "Section 8.14.1, pages 184-186",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [],
+      "referenceSlugs": [
+        "claude-fable-5"
+      ],
+      "benchmarkId": "chartography-tools",
+      "value": 84.2,
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Fable 5.1 system card",
+      "configuration": "Fable 5, adaptive thinking, max effort; fallback configuration not identified for this evaluation",
+      "sourceLocator": "Section 8.14.1, pages 184-186",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-sonnet-5"
+      ],
+      "referenceSlugs": [
+        "claude-sonnet-5-low",
+        "claude-sonnet-5-medium",
+        "claude-sonnet-5-high",
+        "claude-sonnet-5-xhigh",
+        "claude-sonnet-5-non-reasoning"
+      ],
+      "benchmarkId": "charxiv-no-tools",
+      "value": 77.0,
+      "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+      "sourceLabel": "Anthropic Sonnet 5 system card",
+      "configuration": "Sonnet 5, adaptive thinking, max effort; 1,000 validation questions; mean of five runs",
+      "sourceLocator": "Section 8.10.5, pages 128-129",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-sonnet-5"
+      ],
+      "referenceSlugs": [
+        "claude-sonnet-5-low",
+        "claude-sonnet-5-medium",
+        "claude-sonnet-5-high",
+        "claude-sonnet-5-xhigh",
+        "claude-sonnet-5-non-reasoning"
+      ],
+      "benchmarkId": "charxiv-tools",
+      "value": 88.3,
+      "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+      "sourceLabel": "Anthropic Sonnet 5 system card",
+      "configuration": "Sonnet 5, adaptive thinking, max effort; 1,000 validation questions; mean of five runs",
+      "sourceLocator": "Section 8.10.5, pages 128-129",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-opus-4-8"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "charxiv-no-tools",
+      "value": 80.5,
+      "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+      "sourceLabel": "Anthropic Sonnet 5 system card",
+      "configuration": "Opus 4.8, adaptive thinking, max effort; mean of five runs",
+      "sourceLocator": "Section 8.10.5, pages 128-129",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-opus-4-8"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "charxiv-tools",
+      "value": 89.9,
+      "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+      "sourceLabel": "Anthropic Sonnet 5 system card",
+      "configuration": "Opus 4.8, adaptive thinking, max effort; mean of five runs",
+      "sourceLocator": "Section 8.10.5, pages 128-129",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "mistral-small-3-1"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu-pro",
+      "value": 49.25,
+      "sourceUrl": "https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+      "sourceLabel": "Mistral Small 3.1 official model card",
+      "configuration": "Small 3.1 24B Instruct; Mistral evaluation harness",
+      "sourceLocator": "Instruction Evals / Vision table (not the Base model table)",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "mistral-small-3-1"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu",
+      "value": 64.0,
+      "sourceUrl": "https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+      "sourceLabel": "Mistral Small 3.1 official model card",
+      "configuration": "Small 3.1 24B Instruct; Mistral evaluation harness",
+      "sourceLocator": "Instruction Evals / Vision table (not the Base model table)",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "mistral-small-3-1"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mathvista",
+      "value": 68.91,
+      "sourceUrl": "https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+      "sourceLabel": "Mistral Small 3.1 official model card",
+      "configuration": "Small 3.1 24B Instruct; Mistral evaluation harness",
+      "sourceLocator": "Instruction Evals / Vision table (not the Base model table)",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "apriel-v1-6-15b-thinker"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu",
+      "value": 72,
+      "sourceUrl": "https://huggingface.co/ServiceNow-AI/Apriel-1.6-15b-Thinker",
+      "sourceLabel": "ServiceNow Apriel 1.6 official model card",
+      "configuration": "Apriel 1.6 15B Thinker; published multimodal evaluation",
+      "sourceLocator": "Multimodal evaluation table, Apriel-1.6-15B-Thinker column",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "apriel-v1-6-15b-thinker"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu-pro-10-choice",
+      "value": 60.28,
+      "sourceUrl": "https://huggingface.co/ServiceNow-AI/Apriel-1.6-15b-Thinker",
+      "sourceLabel": "ServiceNow Apriel 1.6 official model card",
+      "configuration": "Apriel 1.6 15B Thinker; published multimodal evaluation",
+      "sourceLocator": "Multimodal evaluation table, Apriel-1.6-15B-Thinker column",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "apriel-v1-6-15b-thinker"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu-pro-vision-only",
+      "value": 52.89,
+      "sourceUrl": "https://huggingface.co/ServiceNow-AI/Apriel-1.6-15b-Thinker",
+      "sourceLabel": "ServiceNow Apriel 1.6 official model card",
+      "configuration": "Apriel 1.6 15B Thinker; published multimodal evaluation",
+      "sourceLocator": "Multimodal evaluation table, Apriel-1.6-15B-Thinker column",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "apriel-v1-6-15b-thinker"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mathvista",
+      "value": 79.9,
+      "sourceUrl": "https://huggingface.co/ServiceNow-AI/Apriel-1.6-15b-Thinker",
+      "sourceLabel": "ServiceNow Apriel 1.6 official model card",
+      "configuration": "Apriel 1.6 15B Thinker; published multimodal evaluation",
+      "sourceLocator": "Multimodal evaluation table, Apriel-1.6-15B-Thinker column",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "apriel-v1-6-15b-thinker"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "charxiv-reasoning",
+      "value": 56,
+      "sourceUrl": "https://huggingface.co/ServiceNow-AI/Apriel-1.6-15b-Thinker",
+      "sourceLabel": "ServiceNow Apriel 1.6 official model card",
+      "configuration": "Apriel 1.6 15B Thinker; published multimodal evaluation",
+      "sourceLocator": "Multimodal evaluation table, Apriel-1.6-15B-Thinker column",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "exaone-4-5-33b"
+      ],
+      "referenceSlugs": [
+        "exaone-4-5-33b-non-reasoning"
+      ],
+      "benchmarkId": "mmmu",
+      "value": 78.7,
+      "sourceUrl": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+      "sourceLabel": "LG AI EXAONE 4.5 official model card",
+      "configuration": "EXAONE 4.5 33B, reasoning enabled",
+      "sourceLocator": "Vision-language Tasks, EXAONE 4.5 33B (Reasoning) column",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "exaone-4-5-33b"
+      ],
+      "referenceSlugs": [
+        "exaone-4-5-33b-non-reasoning"
+      ],
+      "benchmarkId": "mmmu-pro",
+      "value": 68.6,
+      "sourceUrl": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+      "sourceLabel": "LG AI EXAONE 4.5 official model card",
+      "configuration": "EXAONE 4.5 33B, reasoning enabled",
+      "sourceLocator": "Vision-language Tasks, EXAONE 4.5 33B (Reasoning) column",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "exaone-4-5-33b"
+      ],
+      "referenceSlugs": [
+        "exaone-4-5-33b-non-reasoning"
+      ],
+      "benchmarkId": "mathvista",
+      "value": 85.0,
+      "sourceUrl": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+      "sourceLabel": "LG AI EXAONE 4.5 official model card",
+      "configuration": "EXAONE 4.5 33B, reasoning enabled",
+      "sourceLocator": "Vision-language Tasks, EXAONE 4.5 33B (Reasoning) column",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "exaone-4-5-33b"
+      ],
+      "referenceSlugs": [
+        "exaone-4-5-33b-non-reasoning"
+      ],
+      "benchmarkId": "charxiv-reasoning",
+      "value": 71.7,
+      "sourceUrl": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+      "sourceLabel": "LG AI EXAONE 4.5 official model card",
+      "configuration": "EXAONE 4.5 33B, reasoning enabled",
+      "sourceLocator": "Vision-language Tasks, EXAONE 4.5 33B (Reasoning) column",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-35-sonnet-june-24"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu",
+      "value": 68.3,
+      "sourceUrl": "https://www.anthropic.com/news/claude-3-5-sonnet",
+      "sourceLabel": "Anthropic June 2024 vision evaluations",
+      "configuration": "June 2024 models; 0-shot chain of thought; MMMU validation / MathVista testmini",
+      "sourceLocator": "Claude 3.5 Sonnet vision evals image",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-35-sonnet-june-24"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mathvista",
+      "value": 67.7,
+      "sourceUrl": "https://www.anthropic.com/news/claude-3-5-sonnet",
+      "sourceLabel": "Anthropic June 2024 vision evaluations",
+      "configuration": "June 2024 models; 0-shot chain of thought; MMMU validation / MathVista testmini",
+      "sourceLocator": "Claude 3.5 Sonnet vision evals image",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-3-opus"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu",
+      "value": 59.4,
+      "sourceUrl": "https://www.anthropic.com/news/claude-3-5-sonnet",
+      "sourceLabel": "Anthropic June 2024 vision evaluations",
+      "configuration": "June 2024 models; 0-shot chain of thought; MMMU validation / MathVista testmini",
+      "sourceLocator": "Claude 3.5 Sonnet vision evals image",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-3-opus"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mathvista",
+      "value": 50.5,
+      "sourceUrl": "https://www.anthropic.com/news/claude-3-5-sonnet",
+      "sourceLabel": "Anthropic June 2024 vision evaluations",
+      "configuration": "June 2024 models; 0-shot chain of thought; MMMU validation / MathVista testmini",
+      "sourceLocator": "Claude 3.5 Sonnet vision evals image",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-35-sonnet"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu",
+      "value": 70.4,
+      "sourceUrl": "https://www.anthropic.com/news/claude-3-7-sonnet",
+      "sourceLabel": "Anthropic Claude 3.7 launch evaluations",
+      "configuration": "Claude 3.5 Sonnet (new / October 2024)",
+      "sourceLocator": "Visual reasoning MMMU validation row",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-3-7-sonnet"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu",
+      "value": 71.8,
+      "sourceUrl": "https://www.anthropic.com/news/claude-3-7-sonnet",
+      "sourceLabel": "Anthropic Claude 3.7 launch evaluations",
+      "configuration": "Claude 3.7 Sonnet, no extended thinking",
+      "sourceLocator": "Visual reasoning MMMU validation row",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [],
+      "referenceSlugs": [
+        "claude-3-7-sonnet-thinking"
+      ],
+      "benchmarkId": "mmmu",
+      "value": 75,
+      "sourceUrl": "https://www.anthropic.com/news/claude-3-7-sonnet",
+      "sourceLabel": "Anthropic Claude 3.7 launch evaluations",
+      "configuration": "Claude 3.7 Sonnet, 64K extended thinking; current configuration budget not verified",
+      "sourceLocator": "Visual reasoning MMMU validation row",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-4-opus"
+      ],
+      "referenceSlugs": [
+        "claude-4-opus-thinking"
+      ],
+      "benchmarkId": "mmmu",
+      "value": 73.7,
+      "sourceUrl": "https://www.anthropic.com/news/claude-4",
+      "sourceLabel": "Anthropic Claude 4 launch evaluations",
+      "configuration": "Claude Opus 4, without extended thinking",
+      "sourceLocator": "Evaluation methodology: MMMU without extended thinking",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "o1"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu",
+      "value": 77.3,
+      "sourceUrl": "https://openai.com/index/o1-and-new-tools-for-developers/",
+      "sourceLabel": "OpenAI o1 developer release",
+      "configuration": "o1-2024-12-17; pass@1; published API snapshot, effort unspecified",
+      "sourceLocator": "Evaluation table / Vision",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "o1"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mathvista",
+      "value": 71.0,
+      "sourceUrl": "https://openai.com/index/o1-and-new-tools-for-developers/",
+      "sourceLabel": "OpenAI o1 developer release",
+      "configuration": "o1-2024-12-17; pass@1; published API snapshot, effort unspecified",
+      "sourceLocator": "Evaluation table / Vision",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "gemini-1-5-pro-may-2024"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu",
+      "value": 62.2,
+      "sourceUrl": "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf",
+      "sourceLabel": "Google Gemini 1.5 technical report",
+      "configuration": "May 2024 snapshot; 0-shot chain of thought; MMMU validation / MathVista testmini",
+      "sourceLocator": "Table 18, page 39",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "gemini-1-5-pro-may-2024"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mathvista",
+      "value": 63.9,
+      "sourceUrl": "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf",
+      "sourceLabel": "Google Gemini 1.5 technical report",
+      "configuration": "May 2024 snapshot; 0-shot chain of thought; MMMU validation / MathVista testmini",
+      "sourceLocator": "Table 18, page 39",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "gemini-1-5-flash-may-2024"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu",
+      "value": 56.1,
+      "sourceUrl": "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf",
+      "sourceLabel": "Google Gemini 1.5 technical report",
+      "configuration": "May 2024 snapshot; 0-shot chain of thought; MMMU validation / MathVista testmini",
+      "sourceLocator": "Table 18, page 39",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "gemini-1-5-flash-may-2024"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mathvista",
+      "value": 58.4,
+      "sourceUrl": "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf",
+      "sourceLabel": "Google Gemini 1.5 technical report",
+      "configuration": "May 2024 snapshot; 0-shot chain of thought; MMMU validation / MathVista testmini",
+      "sourceLocator": "Table 18, page 39",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "gemini-1-0-pro"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu",
+      "value": 47.9,
+      "sourceUrl": "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf",
+      "sourceLabel": "Google Gemini 1.5 technical report",
+      "configuration": "May 2024 snapshot; 0-shot chain of thought; MMMU validation / MathVista testmini",
+      "sourceLocator": "Table 18, page 39",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "gemini-1-0-pro"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mathvista",
+      "value": 46.6,
+      "sourceUrl": "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf",
+      "sourceLabel": "Google Gemini 1.5 technical report",
+      "configuration": "May 2024 snapshot; 0-shot chain of thought; MMMU validation / MathVista testmini",
+      "sourceLocator": "Table 18, page 39",
+      "reviewedAt": "2026-09-19"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 window.AINSIGHTS_MODELS_DATA = {
   "version": 2,
-  "generatedAt": "2026-09-18T20:15:54+00:00",
+  "generatedAt": "2026-09-18T23:48:37+00:00",
   "source": {
     "label": "Artificial Analysis Core + listed benchmark extensions",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -135153,7 +135153,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 3.5 Flash [R]",
@@ -135450,6 +135451,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -136610,6 +136612,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -137666,7 +137669,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Mercury 2 [R]",
@@ -137960,6 +137964,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -139020,7 +139025,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nova 2.0 Omni (medium) [R]",
@@ -139314,7 +139320,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.2 Codex (xhigh) [R]",
@@ -139608,7 +139615,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 122B A10B (Non-reasoning)",
@@ -139902,7 +139910,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemma 4 12B (Non-reasoning)",
@@ -140198,7 +140207,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 3.5 Flash (minimal)",
@@ -140494,7 +140504,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude 3.5 Haiku",
@@ -140788,7 +140799,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-3.5 Turbo",
@@ -141081,7 +141093,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.0 Flash Thinking exp. (Jan) [R]",
@@ -141379,7 +141392,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen2.5 Coder 32B",
@@ -141672,7 +141686,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Sonar Reasoning [R]",
@@ -141965,7 +141980,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemma 3 270M",
@@ -142258,7 +142274,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok 4.20 0309 [R]",
@@ -142552,7 +142569,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.1 Codex (high) [R]",
@@ -142846,7 +142864,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Muse Spark 1.2 (xhigh) [R]",
@@ -143143,6 +143162,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -144201,6 +144221,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -144877,6 +144898,30 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "chartography-no-tools",
+          "label": "Chartography (no tools)",
+          "value": 42.6,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+          "sourceLabel": "Anthropic Fable 5.1 system card",
+          "configuration": "Fable 5.1, adaptive thinking, max effort; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "chartography-tools",
+          "label": "Chartography (with tools)",
+          "value": 86.2,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+          "sourceLabel": "Anthropic Fable 5.1 system card",
+          "configuration": "Fable 5.1, adaptive thinking, max effort; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -145553,6 +145598,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -146610,7 +146656,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Pro (May) [R]",
@@ -146905,7 +146952,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "o3-mini (high) [R]",
@@ -147199,6 +147247,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -148255,7 +148304,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V3.2 Exp (Non-reasoning)",
@@ -148548,7 +148598,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Apodex 1.1 [R]",
@@ -148843,6 +148894,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -149909,6 +149961,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -150583,7 +150636,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 3.5 Flash-Lite [R]",
@@ -151034,6 +151088,28 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 74.5,
+          "unit": "%",
+          "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/",
+          "sourceLabel": "Google DeepMind Gemini 3.5 Flash-Lite model card",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 76.5,
+          "unit": "%",
+          "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/",
+          "sourceLabel": "Google DeepMind Gemini 3.5 Flash-Lite model card",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -152092,7 +152168,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Devstral 2",
@@ -152386,6 +152463,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -153443,7 +153521,20 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 70.4,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/news/claude-3-7-sonnet",
+          "sourceLabel": "Anthropic Claude 3.7 launch evaluations",
+          "configuration": "Claude 3.5 Sonnet (new / October 2024)",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "DeepSeek V3.1 Terminus [R]",
@@ -153741,6 +153832,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "deepseek-v3-1-terminus"
       ],
       "officialModelSourceId": "official-deepseek-news250922-page",
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -154801,7 +154893,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok Build 0.1 0616 [R]",
@@ -155095,7 +155188,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Granite 4.2 3B [R]",
@@ -155389,6 +155483,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -156446,7 +156541,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Inkling [R]",
@@ -157117,6 +157213,38 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 73.5,
+          "unit": "%",
+          "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+          "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        },
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 78.1,
+          "unit": "%",
+          "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+          "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 82.0,
+          "unit": "%",
+          "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+          "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -158551,6 +158679,18 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 80.1,
+          "unit": "%",
+          "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
+          "sourceLabel": "Kimi K2.6 official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -159608,6 +159748,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -160664,7 +160805,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 0.6B (Non-reasoning)",
@@ -160957,7 +161099,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 397B A17B [R]",
@@ -161491,6 +161634,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -162547,7 +162691,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Kimi K2.6 (Non-reasoning)",
@@ -163239,7 +163384,19 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 80.1,
+          "unit": "%",
+          "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
+          "sourceLabel": "Kimi K2.6 official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        }
+      ]
     },
     {
       "modelKey": "Magistral Small 1 [R]",
@@ -163532,7 +163689,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Granite 4.2 30B [R]",
@@ -163826,6 +163984,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -165041,6 +165200,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "IFM/K2-Horizon-7B"
       ],
       "officialModelSourceId": "ifm-k2-horizon-7b-card",
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -165860,7 +166020,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "MiniMax-M2.5 [R]",
@@ -166341,7 +166502,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Mistral Small 4 (Non-reasoning)",
@@ -166635,7 +166797,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Opus 5 (xhigh) [R]",
@@ -166930,6 +167093,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -167605,7 +167769,20 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 75,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/news/claude-3-7-sonnet",
+          "sourceLabel": "Anthropic Claude 3.7 launch evaluations",
+          "configuration": "Claude 3.7 Sonnet, 64K extended thinking; current configuration budget not verified",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Claude Sonnet 5 (low) [R]",
@@ -168009,6 +168186,30 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 77.0,
+          "unit": "%",
+          "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "sourceLabel": "Anthropic Sonnet 5 system card",
+          "configuration": "Sonnet 5, adaptive thinking, max effort; 1,000 validation questions; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 88.3,
+          "unit": "%",
+          "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "sourceLabel": "Anthropic Sonnet 5 system card",
+          "configuration": "Sonnet 5, adaptive thinking, max effort; 1,000 validation questions; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -168564,7 +168765,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GLM-5-Turbo [R]",
@@ -168857,7 +169059,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Ling-1T",
@@ -169150,7 +169353,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "gpt-oss-20b (low) [R]",
@@ -169443,7 +169647,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 27B [R]",
@@ -169976,7 +170181,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "o3 [R]",
@@ -170270,7 +170476,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 1.5 Pro (May)",
@@ -170566,7 +170773,31 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 62.2,
+          "unit": "%",
+          "sourceUrl": "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf",
+          "sourceLabel": "Google Gemini 1.5 technical report",
+          "configuration": "May 2024 snapshot; 0-shot chain of thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mathvista",
+          "label": "MathVista",
+          "value": 63.9,
+          "unit": "%",
+          "sourceUrl": "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf",
+          "sourceLabel": "Google Gemini 1.5 technical report",
+          "configuration": "May 2024 snapshot; 0-shot chain of thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "K-EXAONE 2.0 [R]",
@@ -170860,6 +171091,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -172027,7 +172259,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GLM-5.3-Flash [R]",
@@ -172435,6 +172668,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "GLM-5.3-Flash (max)"
       ],
       "officialModelSourceId": "zai-glm-5-3-flash-release",
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -173495,7 +173729,8 @@ window.AINSIGHTS_MODELS_DATA = {
       "externalModelAliases": [
         "deepseek-v3-1"
       ],
-      "officialModelSourceId": "official-deepseek-news250821-page"
+      "officialModelSourceId": "official-deepseek-news250821-page",
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama 3.3 Nemotron Super 49B [R]",
@@ -173788,7 +174023,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Step 3.5 Flash 2603 [R]",
@@ -174081,7 +174317,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Mistral Large 2 (Jul)",
@@ -174374,7 +174611,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Solar Pro 4 [R]",
@@ -174668,6 +174906,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -175724,7 +175963,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GLM-4.5 [R]",
@@ -176205,7 +176445,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen2.5 Instruct 32B",
@@ -176550,7 +176791,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash-Lite (Non-reasoning)",
@@ -176846,7 +177088,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Hermes 3 - Llama-3.1 70B",
@@ -177139,7 +177382,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "North Mini Code [R]",
@@ -177433,6 +177677,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -178489,7 +178734,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.5 (xhigh) [R]",
@@ -179278,6 +179524,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -180334,7 +180581,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-6 Astra (xhigh) [R]",
@@ -180629,6 +180877,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -181304,7 +181553,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Granite 4.0 Micro",
@@ -181597,7 +181847,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude 3 Haiku",
@@ -181891,7 +182142,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Opus 5 (low) [R]",
@@ -182186,6 +182438,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -182862,7 +183115,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Mistral 7B",
@@ -183155,7 +183409,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash [R]",
@@ -183451,7 +183706,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemma 3 4B",
@@ -183745,7 +184001,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 122B A10B [R]",
@@ -184449,6 +184706,18 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 76.9,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-122B-A10B",
+          "sourceLabel": "Qwen3.5 122B-A10B official model card",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": true
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -185507,6 +185776,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -186650,7 +186920,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Hermes 4 70B (Non-reasoning)",
@@ -186943,7 +187214,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nemotron 3 Nano (Non-reasoning)",
@@ -187507,7 +187779,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Sonnet 5 (max) [R]",
@@ -187905,6 +188178,30 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 77.0,
+          "unit": "%",
+          "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "sourceLabel": "Anthropic Sonnet 5 system card",
+          "configuration": "Sonnet 5, adaptive thinking, max effort; 1,000 validation questions; mean of five runs",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 88.3,
+          "unit": "%",
+          "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "sourceLabel": "Anthropic Sonnet 5 system card",
+          "configuration": "Sonnet 5, adaptive thinking, max effort; 1,000 validation questions; mean of five runs",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -188962,7 +189259,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GLM 5V Turbo [R]",
@@ -189257,7 +189555,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Mistral Small 3.1",
@@ -189552,6 +189851,41 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 49.25,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+          "sourceLabel": "Mistral Small 3.1 official model card",
+          "configuration": "Small 3.1 24B Instruct; Mistral evaluation harness",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 64.0,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+          "sourceLabel": "Mistral Small 3.1 official model card",
+          "configuration": "Small 3.1 24B Instruct; Mistral evaluation harness",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mathvista",
+          "label": "MathVista",
+          "value": 68.91,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+          "sourceLabel": "Mistral Small 3.1 official model card",
+          "configuration": "Small 3.1 24B Instruct; Mistral evaluation harness",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -190609,7 +190943,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok 4.6 (medium) [R]",
@@ -190904,6 +191239,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -191578,7 +191914,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama Nemotron Super 49B v1.5 (Non-reasoning)",
@@ -191871,7 +192208,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.6 Terra (medium) [R]",
@@ -192166,6 +192504,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -192844,6 +193183,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -194088,7 +194428,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "MiniMax-M3 [R]",
@@ -194604,6 +194945,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -195660,7 +196002,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "MiMo-V2-Omni-0327 [R]",
@@ -195956,7 +196299,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5 mini (high) [R]",
@@ -196251,6 +196595,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -197308,6 +197653,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -198364,7 +198710,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 1.5 Pro (Sep)",
@@ -198660,7 +199007,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 1.0 Ultra",
@@ -198953,7 +199301,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 1.7B (Non-reasoning)",
@@ -199246,7 +199595,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemma 3 27B",
@@ -199541,6 +199891,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -200700,7 +201051,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Phi-4 Multimodal",
@@ -200995,7 +201347,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Granite 3.3 8B",
@@ -201288,7 +201641,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek-V2",
@@ -201581,7 +201935,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 9B [R]",
@@ -202217,7 +202572,19 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 70.1,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-9B",
+          "sourceLabel": "Qwen3.5 9B official model card",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": true
+        }
+      ]
     },
     {
       "modelKey": "o3-mini [R]",
@@ -202510,7 +202877,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok 4 Fast (Non-reasoning)",
@@ -202804,7 +203172,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Sonnet 4.6 (Non-reasoning, high)",
@@ -203098,7 +203467,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Ling-2.6-1T",
@@ -203391,7 +203761,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemma 3 12B",
@@ -203686,6 +204057,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -204742,7 +205114,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Command A+ [R]",
@@ -205037,6 +205410,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -206169,6 +206543,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "GPT-6 Astra (max)"
       ],
       "officialModelSourceId": "openai-gpt-6-astra-release",
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -207104,7 +207479,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Opus 4.7 (Non-reasoning, high)",
@@ -207705,7 +208081,29 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 82.1,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416",
+          "sourceLabel": "Anthropic Claude Opus 4.7 official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 91.0,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416",
+          "sourceLabel": "Anthropic Claude Opus 4.7 official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        }
+      ]
     },
     {
       "modelKey": "G9v3-3B [R]",
@@ -207998,7 +208396,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GLM-4.5V [R]",
@@ -208292,7 +208691,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 4B (Non-reasoning)",
@@ -208587,7 +208987,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 397B A17B (Non-reasoning)",
@@ -209134,7 +209535,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "K2 Horizon 3.7B [R]",
@@ -209580,6 +209982,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "IFM/K2-Horizon-3.7B"
       ],
       "officialModelSourceId": "ifm-k2-horizon-3-7b-card",
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -210398,7 +210801,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Olmo 3 7B Think [R]",
@@ -210691,7 +211095,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "HyperCLOVA X SEED Think (32B) [R]",
@@ -210986,7 +211391,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "HyperNova 60B 2605 (high) [R]",
@@ -211279,7 +211685,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Sonar Pro",
@@ -211572,7 +211979,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nova Micro",
@@ -211865,7 +212273,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Sarvam M [R]",
@@ -212158,7 +212567,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen2.5 Turbo",
@@ -212503,7 +212913,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "EXAONE 4.5 33B (Non-reasoning)",
@@ -212797,7 +213208,53 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 78.7,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+          "sourceLabel": "LG AI EXAONE 4.5 official model card",
+          "configuration": "EXAONE 4.5 33B, reasoning enabled",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 68.6,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+          "sourceLabel": "LG AI EXAONE 4.5 official model card",
+          "configuration": "EXAONE 4.5 33B, reasoning enabled",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mathvista",
+          "label": "MathVista",
+          "value": 85.0,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+          "sourceLabel": "LG AI EXAONE 4.5 official model card",
+          "configuration": "EXAONE 4.5 33B, reasoning enabled",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "charxiv-reasoning",
+          "label": "CharXiv Reasoning (published protocol)",
+          "value": 71.7,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+          "sourceLabel": "LG AI EXAONE 4.5 official model card",
+          "configuration": "EXAONE 4.5 33B, reasoning enabled",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Qwen3.8 27B",
@@ -213610,6 +214067,28 @@ window.AINSIGHTS_MODELS_DATA = {
         "Qwen3.8 27B (xhigh)"
       ],
       "officialModelSourceId": "qwen-qwen3-8-27b-card",
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 83.7,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-27B",
+          "sourceLabel": "Qwen3.8-27B official model card",
+          "configuration": "xhigh",
+          "exactConfiguration": true
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 90.2,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-27B",
+          "sourceLabel": "Qwen3.8-27B official model card",
+          "configuration": "xhigh",
+          "exactConfiguration": true
+        }
+      ],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -214287,7 +214766,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "INTELLECT-3 [R]",
@@ -214580,7 +215060,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "gpt-oss-20b (high) [R]",
@@ -214874,6 +215355,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -216101,7 +216583,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.4 mini (medium) [R]",
@@ -216395,7 +216878,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Olmo 3.1 32B Think [R]",
@@ -216688,7 +217172,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.6 27B (Non-reasoning)",
@@ -217236,7 +217721,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nex-N2-Pro [R]",
@@ -217531,6 +218017,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -218592,7 +219079,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Fable 5.1 (medium with fallback) [R]",
@@ -218887,6 +219375,30 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "chartography-no-tools",
+          "label": "Chartography (no tools)",
+          "value": 42.6,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+          "sourceLabel": "Anthropic Fable 5.1 system card",
+          "configuration": "Fable 5.1, adaptive thinking, max effort; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "chartography-tools",
+          "label": "Chartography (with tools)",
+          "value": 86.2,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+          "sourceLabel": "Anthropic Fable 5.1 system card",
+          "configuration": "Fable 5.1, adaptive thinking, max effort; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -219561,7 +220073,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "LFM2.5-VL-1.6B",
@@ -219855,7 +220368,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 8B",
@@ -220149,7 +220663,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "JT-MINI",
@@ -220442,7 +220957,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Ling-mini-2.0",
@@ -220735,7 +221251,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.0 Flash-Lite (Preview)",
@@ -221031,7 +221548,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 30B [R]",
@@ -221427,7 +221945,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Fable 5.1 (max with fallback) [R]",
@@ -222028,6 +222547,30 @@ window.AINSIGHTS_MODELS_DATA = {
         "Claude Fable 5.1 (max with fallback)"
       ],
       "officialModelSourceId": "anthropic-claude-fable-5-1-system-card",
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "chartography-no-tools",
+          "label": "Chartography (no tools)",
+          "value": 42.6,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+          "sourceLabel": "Anthropic Fable 5.1 system card",
+          "configuration": "Fable 5.1, adaptive thinking, max effort; mean of five runs",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "chartography-tools",
+          "label": "Chartography (with tools)",
+          "value": 86.2,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+          "sourceLabel": "Anthropic Fable 5.1 system card",
+          "configuration": "Fable 5.1, adaptive thinking, max effort; mean of five runs",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -223084,7 +223627,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Molmo2-8B",
@@ -223379,7 +223923,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Mistral Small 4 [R]",
@@ -223674,6 +224219,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -224732,7 +225278,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GLM-5 [R]",
@@ -225247,7 +225794,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Opus 4.5 (Non-reasoning)",
@@ -225541,7 +226089,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen Chat 72B",
@@ -225834,7 +226383,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 1.5 Flash (Sep)",
@@ -226130,7 +226680,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.6 Luna (max) [R]",
@@ -227055,6 +227606,28 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro-no-tools",
+          "label": "MMMU-Pro (no tools)",
+          "value": 78.4,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/gpt-5-6/",
+          "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+          "configuration": "max",
+          "exactConfiguration": true
+        },
+        {
+          "benchmarkId": "mmmu-pro-tools",
+          "label": "MMMU-Pro (with tools)",
+          "value": 79.5,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/gpt-5-6/",
+          "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+          "configuration": "max",
+          "exactConfiguration": true
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -228112,7 +228685,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Solar Pro 2 (Preview) (Non-reasoning)",
@@ -228405,7 +228979,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Ling-3.0-flash-VL [R]",
@@ -228701,6 +229276,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -229759,7 +230335,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-4o mini Realtime (Dec)",
@@ -230054,7 +230631,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 235B (Non-reasoning)",
@@ -230438,7 +231016,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Opus 4.6 (Non-reasoning, high)",
@@ -230985,7 +231564,29 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 69.1,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416",
+          "sourceLabel": "Anthropic Claude Opus 4.7 official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 84.7,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416",
+          "sourceLabel": "Anthropic Claude Opus 4.7 official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        }
+      ]
     },
     {
       "modelKey": "Mistral Small 3.2",
@@ -231280,6 +231881,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -232341,6 +232943,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "deepseek-v3"
       ],
       "officialModelSourceId": "official-deepseek-news1226-page",
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -233466,7 +234069,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek R1 Distill Qwen 1.5B [R]",
@@ -233759,7 +234363,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "EXAONE 4.0 32B [R]",
@@ -234052,7 +234657,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Solar Pro 2 (Non-reasoning)",
@@ -234345,7 +234951,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 14B [R]",
@@ -234639,6 +235246,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -235695,7 +236303,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama 3.1 405B",
@@ -235988,7 +236597,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama 3.1 70B",
@@ -236281,7 +236891,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 35B A3B [R]",
@@ -236984,7 +237595,19 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 75.1,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B",
+          "sourceLabel": "Qwen3.5 35B-A3B official model card",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": true
+        }
+      ]
     },
     {
       "modelKey": "MiMo-V2.5-Pro (Non-reasoning)",
@@ -237386,7 +238009,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Ring-flash-2.0 [R]",
@@ -237679,7 +238303,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "LFM2.5-1.2B-Instruct",
@@ -237972,7 +238597,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5 (high) [R]",
@@ -238266,7 +238892,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Mistral Large 3",
@@ -238561,6 +239188,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -239799,7 +240427,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.2 (xhigh) [R]",
@@ -240093,7 +240722,53 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro-no-tools",
+          "label": "MMMU-Pro (no tools)",
+          "value": 79.5,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+          "sourceLabel": "OpenAI GPT-5.2 release",
+          "configuration": "GPT-5.2 Thinking, xhigh; research API evaluation",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mmmu-pro-tools",
+          "label": "MMMU-Pro (with tools)",
+          "value": 80.4,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+          "sourceLabel": "OpenAI GPT-5.2 release",
+          "configuration": "GPT-5.2 Thinking, xhigh; research API evaluation",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 82.1,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+          "sourceLabel": "OpenAI GPT-5.2 release",
+          "configuration": "GPT-5.2 Thinking, xhigh; research API evaluation",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 88.7,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+          "sourceLabel": "OpenAI GPT-5.2 release",
+          "configuration": "GPT-5.2 Thinking, xhigh; research API evaluation",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Apertus 70B Instruct",
@@ -240386,7 +241061,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok 4.1 Fast (Non-reasoning)",
@@ -240771,7 +241447,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek R1 Distill Llama 70B [R]",
@@ -241064,7 +241741,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 0.6B [R]",
@@ -241357,7 +242035,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "MiniMax-M2.7 [R]",
@@ -241788,6 +242467,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -242844,7 +243524,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Doubao Seed Code [R]",
@@ -243138,7 +243819,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.1 (high) [R]",
@@ -243432,7 +244114,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 3.5 Flash (medium) [R]",
@@ -243728,7 +244411,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude 4 Opus (Non-reasoning)",
@@ -244022,7 +244706,20 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 73.7,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/news/claude-4",
+          "sourceLabel": "Anthropic Claude 4 launch evaluations",
+          "configuration": "Claude Opus 4, without extended thinking",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "EXAONE 4.5 33B [R]",
@@ -244316,7 +245013,53 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 78.7,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+          "sourceLabel": "LG AI EXAONE 4.5 official model card",
+          "configuration": "EXAONE 4.5 33B, reasoning enabled",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 68.6,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+          "sourceLabel": "LG AI EXAONE 4.5 official model card",
+          "configuration": "EXAONE 4.5 33B, reasoning enabled",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mathvista",
+          "label": "MathVista",
+          "value": 85.0,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+          "sourceLabel": "LG AI EXAONE 4.5 official model card",
+          "configuration": "EXAONE 4.5 33B, reasoning enabled",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "charxiv-reasoning",
+          "label": "CharXiv Reasoning (published protocol)",
+          "value": 71.7,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+          "sourceLabel": "LG AI EXAONE 4.5 official model card",
+          "configuration": "EXAONE 4.5 33B, reasoning enabled",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Qwen3.5 27B (Non-reasoning)",
@@ -244863,7 +245606,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Mistral Large 2 (Nov)",
@@ -245156,7 +245900,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Kimi K3 (low) [R]",
@@ -245451,6 +246196,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -246125,7 +246871,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 30B A3B",
@@ -246419,7 +247166,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok 4.20 0309 (Non-reasoning)",
@@ -246713,7 +247461,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V3.2 Speciale [R]",
@@ -247006,7 +247755,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemma 4 E4B (Non-reasoning)",
@@ -247429,7 +248179,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.4 (low) [R]",
@@ -247904,7 +248655,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "K2 Horizon MoVA 36B A4B [R]",
@@ -248368,6 +249120,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "IFM/K2-Horizon-MoVA-36B-A4B"
       ],
       "officialModelSourceId": "ifm-k2-horizon-mova-36b-a4b-card",
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -249426,7 +250179,29 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 69.1,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416",
+          "sourceLabel": "Anthropic Claude Opus 4.7 official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 84.7,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416",
+          "sourceLabel": "Anthropic Claude Opus 4.7 official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        }
+      ]
     },
     {
       "modelKey": "Jamba 1.5 Mini",
@@ -249719,7 +250494,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "OLMo 2 32B",
@@ -250012,7 +250788,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nova Pro",
@@ -250307,7 +251084,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Granite 4.0 350M",
@@ -250600,7 +251378,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash (Apr) (Non-reasoning)",
@@ -250896,7 +251675,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok 4 Fast [R]",
@@ -251190,7 +251970,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-4o (Mar)",
@@ -251484,7 +252265,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Muse Glimmer (high) [R]",
@@ -251779,6 +252561,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -252837,6 +253620,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -253511,7 +254295,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 3.1 Flash-Lite [R]",
@@ -253808,6 +254593,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -254864,7 +255650,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama 2 Chat 70B",
@@ -255157,7 +255944,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Solar Open 100B [R]",
@@ -255450,7 +256238,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.3 Codex (xhigh) [R]",
@@ -255744,7 +256533,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Mistral Medium 3",
@@ -256038,7 +256828,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "LFM2.5-1.2B-Thinking [R]",
@@ -256331,7 +257122,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "K2 Think V2 [R]",
@@ -256624,7 +257416,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GLM-5.1 [R]",
@@ -257293,6 +258086,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -258350,7 +259144,31 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 77.3,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/o1-and-new-tools-for-developers/",
+          "sourceLabel": "OpenAI o1 developer release",
+          "configuration": "o1-2024-12-17; pass@1; published API snapshot, effort unspecified",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mathvista",
+          "label": "MathVista",
+          "value": 71.0,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/o1-and-new-tools-for-developers/",
+          "sourceLabel": "OpenAI o1 developer release",
+          "configuration": "o1-2024-12-17; pass@1; published API snapshot, effort unspecified",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Qwen3 Max (Preview)",
@@ -258643,7 +259461,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nemotron 3 Ultra [R]",
@@ -259244,6 +260063,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -260370,7 +261190,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "LongCat 2.0 [R]",
@@ -260664,6 +261485,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -261722,7 +262544,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Seed-OSS-36B-Instruct [R]",
@@ -262015,7 +262838,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-4.5 (Preview)",
@@ -262309,7 +263133,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5 Codex (high) [R]",
@@ -262603,7 +263428,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GLM-4.5-Air [R]",
@@ -263033,7 +263859,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 2B [R]",
@@ -263617,7 +264444,39 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 50.3,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-2B",
+          "sourceLabel": "Qwen3.5 2B official model card",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": true
+        },
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 58.8,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-2B",
+          "sourceLabel": "Qwen3.5 2B official model card",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": true
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 52.6,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-2B",
+          "sourceLabel": "Qwen3.5 2B official model card",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": true
+        }
+      ]
     },
     {
       "modelKey": "MiMo-V2-Pro [R]",
@@ -263910,7 +264769,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Tri-21B-Think [R]",
@@ -264203,7 +265063,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V4 Pro (high) [R]",
@@ -264898,7 +265759,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Granite 4.0 H Small",
@@ -265191,7 +266053,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 30B A3B 2507 [R]",
@@ -265485,6 +266348,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -266541,7 +267405,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.8 Max [R]",
@@ -267306,6 +268171,38 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 82.3,
+          "unit": "%",
+          "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+          "sourceLabel": "Qwen3.8-Max official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        },
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 88.4,
+          "unit": "%",
+          "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+          "sourceLabel": "Qwen3.8-Max official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 93.5,
+          "unit": "%",
+          "sourceUrl": "https://qwen.ai/blog?id=qwen3.8",
+          "sourceLabel": "Qwen3.8-Max official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -268246,7 +269143,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5 (medium) [R]",
@@ -268540,7 +269438,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok 4 [R]",
@@ -268834,7 +269733,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Sonar",
@@ -269127,7 +270027,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama 3.2 11B (Vision)",
@@ -269421,7 +270322,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek R1 0528 Qwen3 8B [R]",
@@ -269714,7 +270616,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.6 Max Preview [R]",
@@ -270042,7 +270945,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "LongCat Flash Lite",
@@ -270335,7 +271239,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Tri-21B-think Preview [R]",
@@ -270628,7 +271533,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nova 2.0 Lite (high) [R]",
@@ -270922,7 +271828,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Pro (Mar) [R]",
@@ -271218,7 +272125,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nemotron 3 Super [R]",
@@ -271768,6 +272676,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -272825,6 +273734,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -273882,7 +274792,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 4B [R]",
@@ -274518,7 +275429,19 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 66.3,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-4B",
+          "sourceLabel": "Qwen3.5 4B official model card",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": true
+        }
+      ]
     },
     {
       "modelKey": "Magistral Medium 1 [R]",
@@ -274811,7 +275734,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Kimi K2 0905",
@@ -275173,7 +276097,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.8 27B (medium) [R]",
@@ -275469,6 +276394,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -276143,7 +277069,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.6 35B A3B (Non-reasoning)",
@@ -276691,7 +277618,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Ministral 3 3B",
@@ -276986,6 +277914,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -278042,7 +278971,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash (Apr) [R]",
@@ -278338,7 +279268,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.7 Max [R]",
@@ -278854,6 +279785,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -280064,7 +280996,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-4",
@@ -280357,7 +281290,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Agnes 3.0 Flash [R]",
@@ -280652,6 +281586,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -281711,7 +282646,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama 2 Chat 13B",
@@ -282004,7 +282940,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.5 (medium) [R]",
@@ -282822,6 +283759,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -283496,7 +284434,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Step 3.7 Flash [R]",
@@ -283791,6 +284730,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -285026,6 +285966,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "inclusionAI/Ling-3.0-flash-Fin"
       ],
       "officialModelSourceId": "inclusionai-ling-3-0-flash-fin-card",
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -285844,7 +286785,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 32B",
@@ -286138,7 +287080,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.2 (Non-reasoning)",
@@ -286432,7 +287375,53 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro-no-tools",
+          "label": "MMMU-Pro (no tools)",
+          "value": 79.5,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+          "sourceLabel": "OpenAI GPT-5.2 release",
+          "configuration": "GPT-5.2 Thinking, xhigh; research API evaluation",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mmmu-pro-tools",
+          "label": "MMMU-Pro (with tools)",
+          "value": 80.4,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+          "sourceLabel": "OpenAI GPT-5.2 release",
+          "configuration": "GPT-5.2 Thinking, xhigh; research API evaluation",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 82.1,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+          "sourceLabel": "OpenAI GPT-5.2 release",
+          "configuration": "GPT-5.2 Thinking, xhigh; research API evaluation",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 88.7,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+          "sourceLabel": "OpenAI GPT-5.2 release",
+          "configuration": "GPT-5.2 Thinking, xhigh; research API evaluation",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Gemma 4 26B A4B [R]",
@@ -286848,6 +287837,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -288327,7 +289317,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "NVIDIA Nemotron Nano 12B v2 VL [R]",
@@ -288621,7 +289612,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.6 Sol (medium) [R]",
@@ -288916,6 +289908,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -290114,7 +291107,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 Omni Flash",
@@ -290411,7 +291405,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GLM-4.7 [R]",
@@ -290909,7 +291904,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nova 2.0 Lite (low) [R]",
@@ -291203,7 +292199,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Magistral Small 1.2 [R]",
@@ -291497,7 +292494,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemma 4 26B A4B (Non-reasoning)",
@@ -291919,7 +292917,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Opus 5 (high) [R]",
@@ -292232,6 +293231,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -292908,6 +293908,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -293964,7 +294965,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama 3.2 3B",
@@ -294257,7 +295259,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash-Lite (Sep) (Non-reasoning)",
@@ -294553,7 +295556,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Inkling Small [R]",
@@ -295224,6 +296228,38 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 74.0,
+          "unit": "%",
+          "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+          "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        },
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 77.4,
+          "unit": "%",
+          "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+          "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 81.3,
+          "unit": "%",
+          "sourceUrl": "https://thinkingmachines.ai/news/inkling-small/",
+          "sourceLabel": "Thinking Machines Inkling and Inkling-Small official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -296281,7 +297317,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama 3.1 Nemotron 70B",
@@ -296574,7 +297611,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama 3.1 8B",
@@ -296867,7 +297905,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "LFM2 2.6B",
@@ -297160,7 +298199,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 3.8 Flash (medium) [R]",
@@ -297457,6 +298497,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -298244,7 +299285,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V3 0324",
@@ -298542,6 +299584,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "deepseek-v3-0324"
       ],
       "officialModelSourceId": "official-deepseek-news250325-page",
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -299598,7 +300641,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Sarvam 30B (high) [R]",
@@ -299891,7 +300935,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen2 72B",
@@ -300236,7 +301281,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-4 Turbo",
@@ -300530,7 +301576,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nova 2.0 Lite (Non-reasoning)",
@@ -300824,7 +301871,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nemotron 3 Nano [R]",
@@ -301374,6 +302422,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -302637,6 +303686,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "DeepSeek V4 Flash Vision (Reasoning, Max Effort)"
       ],
       "officialModelSourceId": "deepseek-v4-flash-vision-exp-card",
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -303693,7 +304743,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "MiniCPM5-1B [R]",
@@ -303986,7 +305037,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude 3 Opus",
@@ -304280,7 +305332,31 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 59.4,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/news/claude-3-5-sonnet",
+          "sourceLabel": "Anthropic June 2024 vision evaluations",
+          "configuration": "June 2024 models; 0-shot chain of thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mathvista",
+          "label": "MathVista",
+          "value": 50.5,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/news/claude-3-5-sonnet",
+          "sourceLabel": "Anthropic June 2024 vision evaluations",
+          "configuration": "June 2024 models; 0-shot chain of thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Gemini 3.6 Flash [R]",
@@ -304748,6 +305824,28 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 85.2,
+          "unit": "%",
+          "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+          "sourceLabel": "Google DeepMind Gemini 3.6 Flash model card",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 89.4,
+          "unit": "%",
+          "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+          "sourceLabel": "Google DeepMind Gemini 3.6 Flash model card",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -305807,7 +306905,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Jamba 1.7 Large",
@@ -306100,7 +307199,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok 4.5 (high) [R]",
@@ -306481,6 +307581,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -307537,7 +308638,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 Max",
@@ -307830,7 +308932,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.0 Flash-Lite (Feb)",
@@ -308126,7 +309229,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Mistral Small (Sep)",
@@ -308419,7 +309523,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.6 Sol (Non-reasoning)",
@@ -308714,6 +309819,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -309393,7 +310499,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nanbeige4.1-3B [R]",
@@ -309686,7 +310793,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.8 27B (low) [R]",
@@ -309982,6 +311090,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -310657,6 +311766,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -311722,6 +312832,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -312778,7 +313889,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5 (low) [R]",
@@ -313072,7 +314184,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Celeris-1",
@@ -313385,6 +314498,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -314633,7 +315747,8 @@ window.AINSIGHTS_MODELS_DATA = {
       "externalModelAliases": [
         "qwen3-max-thinking"
       ],
-      "officialModelSourceId": "official-qwen-qwen3-max-thinking-page"
+      "officialModelSourceId": "official-qwen-qwen3-max-thinking-page",
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama 3.2 1B",
@@ -314926,7 +316041,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Tiny Aya Global",
@@ -315219,7 +316335,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.6 Terra (high) [R]",
@@ -315514,6 +316631,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -316405,7 +317523,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "A.X-K2 [R]",
@@ -316699,6 +317818,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -317763,7 +318883,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama 3 8B",
@@ -318056,7 +319177,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Hermes 4 405B [R]",
@@ -318349,7 +319471,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "MiMo-V2-Flash (Non-reasoning)",
@@ -318642,7 +319765,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Granite 4.1 8B",
@@ -318935,7 +320059,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V4 Pro 0813 (max) [R]",
@@ -319572,6 +320697,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -320628,7 +321754,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash-Lite (Sep) [R]",
@@ -320924,7 +322051,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "o4-mini (high) [R]",
@@ -321218,7 +322346,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.2 (medium) [R]",
@@ -321512,7 +322641,53 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro-no-tools",
+          "label": "MMMU-Pro (no tools)",
+          "value": 79.5,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+          "sourceLabel": "OpenAI GPT-5.2 release",
+          "configuration": "GPT-5.2 Thinking, xhigh; research API evaluation",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mmmu-pro-tools",
+          "label": "MMMU-Pro (with tools)",
+          "value": 80.4,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+          "sourceLabel": "OpenAI GPT-5.2 release",
+          "configuration": "GPT-5.2 Thinking, xhigh; research API evaluation",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 82.1,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+          "sourceLabel": "OpenAI GPT-5.2 release",
+          "configuration": "GPT-5.2 Thinking, xhigh; research API evaluation",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 88.7,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+          "sourceLabel": "OpenAI GPT-5.2 release",
+          "configuration": "GPT-5.2 Thinking, xhigh; research API evaluation",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Magistral Medium 1.2 [R]",
@@ -321806,7 +322981,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.6 35B A3B [R]",
@@ -322340,6 +323516,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -323398,6 +324575,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -324075,7 +325253,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "QwQ 32B-Preview [R]",
@@ -324368,7 +325547,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Ling-flash-2.0",
@@ -324661,7 +325841,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.4 nano [R]",
@@ -324955,7 +326136,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Apertus 8B Instruct",
@@ -325248,7 +326430,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V4 Flash (high) [R]",
@@ -325782,6 +326965,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -326460,7 +327644,8 @@ window.AINSIGHTS_MODELS_DATA = {
       "externalModelAliases": [
         "deepseek-v2-5"
       ],
-      "officialModelSourceId": "official-deepseek-news0905-page"
+      "officialModelSourceId": "official-deepseek-news0905-page",
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude 4 Opus [R]",
@@ -326754,7 +327939,20 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 73.7,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/news/claude-4",
+          "sourceLabel": "Anthropic Claude 4 launch evaluations",
+          "configuration": "Claude Opus 4, without extended thinking",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Gemini 3.8 Flash (high) [R]",
@@ -327328,6 +328526,18 @@ window.AINSIGHTS_MODELS_DATA = {
         "Gemini 3.8 Flash (high)"
       ],
       "officialModelSourceId": "google-gemini-3-8-flash-card",
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 86.2,
+          "unit": "%",
+          "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+          "sourceLabel": "Google DeepMind Gemini 3.8 Flash model card",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -328386,6 +329596,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -329060,7 +330271,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-4o (Aug)",
@@ -329354,7 +330566,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.6 27B [R]",
@@ -329889,6 +331102,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -330948,7 +332162,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Hy3-preview [R]",
@@ -331241,7 +332456,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Kimi K2.7 Code [R]",
@@ -331640,6 +332856,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -332697,7 +333914,31 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 47.9,
+          "unit": "%",
+          "sourceUrl": "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf",
+          "sourceLabel": "Google Gemini 1.5 technical report",
+          "configuration": "May 2024 snapshot; 0-shot chain of thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mathvista",
+          "label": "MathVista",
+          "value": 46.6,
+          "unit": "%",
+          "sourceUrl": "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf",
+          "sourceLabel": "Google Gemini 1.5 technical report",
+          "configuration": "May 2024 snapshot; 0-shot chain of thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Agnes 2.5 Pro Alpha [R]",
@@ -333181,6 +334422,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -334238,6 +335480,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -335294,7 +336537,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5 nano (medium) [R]",
@@ -335588,7 +336832,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek-Coder-V2",
@@ -335881,7 +337126,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Olmo 3 7B",
@@ -336174,7 +337420,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "JT-4.1 Flash 236B A21B",
@@ -336468,7 +337715,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok 4.3 (Non-reasoning)",
@@ -336763,6 +338011,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -337439,6 +338688,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -338496,7 +339746,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Granite 4.1 3B",
@@ -338789,7 +340040,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Ling 2.6 Flash",
@@ -339082,7 +340334,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama 4 Maverick",
@@ -339377,6 +340630,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -340433,7 +341687,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GLM-5.1 (Non-reasoning)",
@@ -341123,7 +342378,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 1.5 Flash-8B",
@@ -341419,7 +342675,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GLM-4.6 (Non-reasoning)",
@@ -341875,7 +343132,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok 4.3 (high) [R]",
@@ -342170,6 +343428,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -343226,7 +344485,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "MiMo-V2-Omni [R]",
@@ -343520,7 +344780,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Ministral 3 8B",
@@ -343815,6 +345076,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -344871,7 +346133,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nemotron Cascade 2 30B A3B [R]",
@@ -345164,7 +346427,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "R1 1776 [R]",
@@ -345457,7 +346721,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Opus 4.8 (max) [R]",
@@ -346127,6 +347392,30 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 80.5,
+          "unit": "%",
+          "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "sourceLabel": "Anthropic Sonnet 5 system card",
+          "configuration": "Opus 4.8, adaptive thinking, max effort; mean of five runs",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 89.9,
+          "unit": "%",
+          "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "sourceLabel": "Anthropic Sonnet 5 system card",
+          "configuration": "Opus 4.8, adaptive thinking, max effort; mean of five runs",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -347186,6 +348475,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -348232,6 +349522,30 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 77.0,
+          "unit": "%",
+          "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "sourceLabel": "Anthropic Sonnet 5 system card",
+          "configuration": "Sonnet 5, adaptive thinking, max effort; 1,000 validation questions; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 88.3,
+          "unit": "%",
+          "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "sourceLabel": "Anthropic Sonnet 5 system card",
+          "configuration": "Sonnet 5, adaptive thinking, max effort; 1,000 validation questions; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -349234,6 +350548,28 @@ window.AINSIGHTS_MODELS_DATA = {
         "Qwen3.8 Flash-Next (xhigh)"
       ],
       "officialModelSourceId": "qwen-qwen3-8-flash-next-card",
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 84.6,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+          "sourceLabel": "Qwen3.8-Flash-Next official model card",
+          "configuration": "xhigh",
+          "exactConfiguration": true
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 90.6,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+          "sourceLabel": "Qwen3.8-Flash-Next official model card",
+          "configuration": "xhigh",
+          "exactConfiguration": true
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -350292,6 +351628,30 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "chartography-no-tools",
+          "label": "Chartography (no tools)",
+          "value": 42.6,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+          "sourceLabel": "Anthropic Fable 5.1 system card",
+          "configuration": "Fable 5.1, adaptive thinking, max effort; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "chartography-tools",
+          "label": "Chartography (with tools)",
+          "value": 86.2,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+          "sourceLabel": "Anthropic Fable 5.1 system card",
+          "configuration": "Fable 5.1, adaptive thinking, max effort; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -350968,6 +352328,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -351815,7 +353176,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama 3.2 90B (Vision)",
@@ -352109,7 +353471,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "K-EXAONE (Non-reasoning)",
@@ -352402,7 +353765,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Fable 5.1 (high with fallback) [R]",
@@ -352697,6 +354061,30 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "chartography-no-tools",
+          "label": "Chartography (no tools)",
+          "value": 42.6,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+          "sourceLabel": "Anthropic Fable 5.1 system card",
+          "configuration": "Fable 5.1, adaptive thinking, max effort; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "chartography-tools",
+          "label": "Chartography (with tools)",
+          "value": 86.2,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+          "sourceLabel": "Anthropic Fable 5.1 system card",
+          "configuration": "Fable 5.1, adaptive thinking, max effort; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -353372,6 +354760,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -354428,7 +355817,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.6 Terra (xhigh) [R]",
@@ -354723,6 +356113,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -355550,6 +356941,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "IFM/K2-Horizon-0.9B"
       ],
       "officialModelSourceId": "ifm-k2-horizon-0-9b-card",
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -356368,7 +357760,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nemotron 3 Nano 4B [R]",
@@ -356661,7 +358054,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-4.1 mini",
@@ -356955,7 +358349,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Phi-4 Mini",
@@ -357248,7 +358643,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok Beta",
@@ -357541,7 +358937,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok Code Fast 1 [R]",
@@ -357834,7 +359231,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nova 2.0 Pro Preview (Non-reasoning)",
@@ -358128,7 +359526,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Ring-1T [R]",
@@ -358421,7 +359820,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Granite 4.0 1B",
@@ -358714,7 +360114,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Motif 3 (Beta) [R]",
@@ -359007,7 +360408,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "K2-V2 (high) [R]",
@@ -359300,7 +360702,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-6 Astra (low) [R]",
@@ -359595,6 +360998,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -360269,7 +361673,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "ERNIE 5.0 Thinking Preview [R]",
@@ -360564,7 +361969,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Kimi K2.5 [R]",
@@ -361013,7 +362419,19 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 78.5,
+          "unit": "%",
+          "sourceUrl": "https://www.kimi.com/blog/kimi-k2-5",
+          "sourceLabel": "Kimi K2.5 official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        }
+      ]
     },
     {
       "modelKey": "Claude 4.5 Haiku [R]",
@@ -361308,6 +362726,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -362364,7 +363783,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 0.8B [R]",
@@ -362949,7 +364369,39 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 31.2,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-0.8B",
+          "sourceLabel": "Qwen3.5 0.8B official model card",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": true
+        },
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 41.3,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-0.8B",
+          "sourceLabel": "Qwen3.5 0.8B official model card",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": true
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 38.2,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-0.8B",
+          "sourceLabel": "Qwen3.5 0.8B official model card",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": true
+        }
+      ]
     },
     {
       "modelKey": "Apriel-v1.6-15B-Thinker [R]",
@@ -363243,7 +364695,64 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 72,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/ServiceNow-AI/Apriel-1.6-15b-Thinker",
+          "sourceLabel": "ServiceNow Apriel 1.6 official model card",
+          "configuration": "Apriel 1.6 15B Thinker; published multimodal evaluation",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mmmu-pro-10-choice",
+          "label": "MMMU-Pro (10 choice)",
+          "value": 60.28,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/ServiceNow-AI/Apriel-1.6-15b-Thinker",
+          "sourceLabel": "ServiceNow Apriel 1.6 official model card",
+          "configuration": "Apriel 1.6 15B Thinker; published multimodal evaluation",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mmmu-pro-vision-only",
+          "label": "MMMU-Pro (vision only)",
+          "value": 52.89,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/ServiceNow-AI/Apriel-1.6-15b-Thinker",
+          "sourceLabel": "ServiceNow Apriel 1.6 official model card",
+          "configuration": "Apriel 1.6 15B Thinker; published multimodal evaluation",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mathvista",
+          "label": "MathVista",
+          "value": 79.9,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/ServiceNow-AI/Apriel-1.6-15b-Thinker",
+          "sourceLabel": "ServiceNow Apriel 1.6 official model card",
+          "configuration": "Apriel 1.6 15B Thinker; published multimodal evaluation",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "charxiv-reasoning",
+          "label": "CharXiv Reasoning (published protocol)",
+          "value": 56,
+          "unit": "%",
+          "sourceUrl": "https://huggingface.co/ServiceNow-AI/Apriel-1.6-15b-Thinker",
+          "sourceLabel": "ServiceNow Apriel 1.6 official model card",
+          "configuration": "Apriel 1.6 15B Thinker; published multimodal evaluation",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Claude 4 Sonnet [R]",
@@ -363537,7 +365046,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemma 3n E4B",
@@ -363831,7 +365341,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 235B A22B (Reasoning) [R]",
@@ -364125,7 +365636,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek R1 0528 [R]",
@@ -364423,7 +365935,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "deepseek-r1",
         "deepseek-r1-0528"
       ],
-      "officialModelSourceId": "official-deepseek-news250528-page"
+      "officialModelSourceId": "official-deepseek-news250528-page",
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.7 Plus [R]",
@@ -365234,6 +366747,28 @@ window.AINSIGHTS_MODELS_DATA = {
         "qwen3-7-plus"
       ],
       "officialModelSourceId": "official-qwen-qwen3-7-plus-page",
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 79.0,
+          "unit": "%",
+          "sourceUrl": "https://qwen.ai/blog?id=qwen3.7-plus",
+          "sourceLabel": "Qwen3.7 Plus automatically discovered official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": true
+        },
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 85.9,
+          "unit": "%",
+          "sourceUrl": "https://qwen.ai/blog?id=qwen3.7-plus",
+          "sourceLabel": "Qwen3.7 Plus automatically discovered official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": true
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -366462,7 +367997,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemma 3n E2B",
@@ -366756,7 +368292,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepHermes 3 - Mistral 24B",
@@ -367049,7 +368586,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Reka Flash",
@@ -367345,7 +368883,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.6 Luna (high) [R]",
@@ -367640,6 +369179,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -368314,7 +369854,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "NVIDIA Nemotron Nano 12B v2 VL (Non-reasoning)",
@@ -368608,7 +370149,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Devstral Medium",
@@ -368901,7 +370443,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Command-R (Mar)",
@@ -369194,7 +370737,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Apriel-v1.5-15B-Thinker [R]",
@@ -369488,7 +371032,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 1.5 Flash (May)",
@@ -369784,7 +371329,31 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 56.1,
+          "unit": "%",
+          "sourceUrl": "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf",
+          "sourceLabel": "Google Gemini 1.5 technical report",
+          "configuration": "May 2024 snapshot; 0-shot chain of thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mathvista",
+          "label": "MathVista",
+          "value": 58.4,
+          "unit": "%",
+          "sourceUrl": "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf",
+          "sourceLabel": "Google Gemini 1.5 technical report",
+          "configuration": "May 2024 snapshot; 0-shot chain of thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Claude 3.5 Sonnet (June)",
@@ -370078,7 +371647,31 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 68.3,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/news/claude-3-5-sonnet",
+          "sourceLabel": "Anthropic June 2024 vision evaluations",
+          "configuration": "June 2024 models; 0-shot chain of thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mathvista",
+          "label": "MathVista",
+          "value": 67.7,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/news/claude-3-5-sonnet",
+          "sourceLabel": "Anthropic June 2024 vision evaluations",
+          "configuration": "June 2024 models; 0-shot chain of thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Step3 VL 10B [R]",
@@ -370372,7 +371965,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V4 Flash (Non-reasoning)",
@@ -370918,7 +372512,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama 4 Scout",
@@ -371213,6 +372808,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -372270,6 +373866,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -373327,7 +374924,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "ERNIE 4.5 300B A47B",
@@ -373620,7 +375218,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V3.2 Exp [R]",
@@ -373917,7 +375516,8 @@ window.AINSIGHTS_MODELS_DATA = {
       "externalModelAliases": [
         "deepseek-v3-2-exp"
       ],
-      "officialModelSourceId": "official-deepseek-news250929-page"
+      "officialModelSourceId": "official-deepseek-news250929-page",
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Molmo 7B-D",
@@ -374211,7 +375811,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 32B [R]",
@@ -374591,6 +376192,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -375650,6 +377252,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -376707,6 +378310,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -377771,7 +379375,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemma 4 E2B [R]",
@@ -378171,7 +379776,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.8 Max (0902) [R]",
@@ -378466,6 +380072,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -380047,6 +381654,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -380721,7 +382329,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 3.7 Flash (high) [R]",
@@ -381018,6 +382627,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -382314,6 +383924,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -383370,7 +384981,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 8B (Non-reasoning)",
@@ -383663,7 +385275,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude 3 Sonnet",
@@ -383957,7 +385570,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 3 Pro Preview (low) [R]",
@@ -384253,7 +385867,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nova 2.0 Omni (low) [R]",
@@ -384547,7 +386162,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Arctic",
@@ -384840,7 +386456,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-4o (ChatGPT)",
@@ -385134,7 +386751,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Jamba 1.5 Large",
@@ -385427,7 +387045,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Jamba 1.7 Mini",
@@ -385720,7 +387339,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen2.5 72B",
@@ -386065,7 +387685,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "o1-mini [R]",
@@ -386358,7 +387979,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Hy3-preview (Non-reasoning)",
@@ -386651,7 +388273,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-4o mini",
@@ -386945,7 +388568,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Trinity Large Thinking [R]",
@@ -387239,6 +388863,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -388295,7 +389920,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Solar Pro 3 [R]",
@@ -388589,6 +390215,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -389767,6 +391394,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -390826,7 +392454,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen2.5 Max",
@@ -391171,7 +392800,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Sonnet 5 (high) [R]",
@@ -391575,6 +393205,30 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 77.0,
+          "unit": "%",
+          "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "sourceLabel": "Anthropic Sonnet 5 system card",
+          "configuration": "Sonnet 5, adaptive thinking, max effort; 1,000 validation questions; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 88.3,
+          "unit": "%",
+          "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "sourceLabel": "Anthropic Sonnet 5 system card",
+          "configuration": "Sonnet 5, adaptive thinking, max effort; 1,000 validation questions; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -392295,7 +393949,19 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 78.5,
+          "unit": "%",
+          "sourceUrl": "https://www.kimi.com/blog/kimi-k2-5",
+          "sourceLabel": "Kimi K2.5 official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        }
+      ]
     },
     {
       "modelKey": "GPT-5.4 mini (xhigh) [R]",
@@ -392590,6 +394256,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -393647,6 +395314,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -395303,6 +396971,18 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 80.5,
+          "unit": "%",
+          "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-1-pro/",
+          "sourceLabel": "Google DeepMind Gemini 3.1 Pro model card",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -396445,7 +398125,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5 mini (minimal)",
@@ -396739,7 +398420,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek-V2.5 (Dec)",
@@ -397032,7 +398714,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.0 Flash",
@@ -397329,7 +399012,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.6 Terra (max) [R]",
@@ -398254,6 +399938,28 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro-no-tools",
+          "label": "MMMU-Pro (no tools)",
+          "value": 80.7,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/gpt-5-6/",
+          "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+          "configuration": "max",
+          "exactConfiguration": true
+        },
+        {
+          "benchmarkId": "mmmu-pro-tools",
+          "label": "MMMU-Pro (with tools)",
+          "value": 82.0,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/gpt-5-6/",
+          "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+          "configuration": "max",
+          "exactConfiguration": true
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -399312,7 +401018,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Kimi K2 Thinking [R]",
@@ -399759,7 +401466,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "MiMo-V2-Flash [R]",
@@ -400052,7 +401760,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V4 Pro (max) [R]",
@@ -400738,6 +402447,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -401885,7 +403595,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok 4.6 (low) [R]",
@@ -402180,6 +403891,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -402855,7 +404567,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "G9v3-39A5B [R]",
@@ -403149,6 +404862,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -404214,7 +405928,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude 4.5 Haiku (Non-reasoning)",
@@ -404508,7 +406223,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5 mini (medium) [R]",
@@ -404802,7 +406518,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5 (minimal)",
@@ -405096,7 +406813,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DiffusionGemma 26B A4B [R]",
@@ -405391,7 +407109,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.5 Instant (June 2026) [R]",
@@ -405686,6 +407405,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -406742,7 +408462,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama 3.3 Nemotron Super 49B (Non-reasoning)",
@@ -407035,7 +408756,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.0 Pro Experimental",
@@ -407331,7 +409053,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok 4.20 0309 v2 [R]",
@@ -407625,7 +409348,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek Coder V2 Lite",
@@ -407918,7 +409642,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash (Sep) [R]",
@@ -408214,7 +409939,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Falcon-H1R-7B [R]",
@@ -408507,7 +410233,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.5 (low) [R]",
@@ -409324,7 +411051,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Step 3.5 Flash [R]",
@@ -409617,7 +411345,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GLM-4.7-Flash (Non-reasoning)",
@@ -409910,7 +411639,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Olmo 3 32B Think [R]",
@@ -410203,7 +411933,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 Next 80B A3B (Reasoning) [R]",
@@ -410496,7 +412227,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok 4.6 (high) [R]",
@@ -410791,6 +412523,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -411465,7 +413198,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "o3-pro [R]",
@@ -411759,7 +413493,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Mixtral 8x22B",
@@ -412052,7 +413787,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 Max Thinking (Preview) [R]",
@@ -412345,7 +414081,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Devstral Small (May)",
@@ -412638,7 +414375,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.6 Terra (low) [R]",
@@ -412933,6 +414671,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -413608,7 +415347,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemma 4 31B [R]",
@@ -414024,6 +415764,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -415366,6 +417107,30 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "chartography-no-tools",
+          "label": "Chartography (no tools)",
+          "value": 36.6,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+          "sourceLabel": "Anthropic Fable 5.1 system card",
+          "configuration": "Fable 5, adaptive thinking, max effort; fallback configuration not identified for this evaluation",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "chartography-tools",
+          "label": "Chartography (with tools)",
+          "value": 84.2,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+          "sourceLabel": "Anthropic Fable 5.1 system card",
+          "configuration": "Fable 5, adaptive thinking, max effort; fallback configuration not identified for this evaluation",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -416721,6 +418486,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "GLM-5.3"
       ],
       "officialModelSourceId": "zai-glm-5-3-release",
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -417778,7 +419544,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Devstral Small 2",
@@ -418073,6 +419840,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -419129,7 +420897,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama Nemotron Ultra [R]",
@@ -419422,7 +421191,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude 4 Sonnet (Non-reasoning)",
@@ -419716,7 +421486,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemma 4 31B (Non-reasoning)",
@@ -420138,7 +421909,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.1 (Non-reasoning)",
@@ -420432,7 +422204,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 3 Pro Preview (high) [R]",
@@ -420728,7 +422501,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemma 3 1B",
@@ -421021,7 +422795,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen1.5 Chat 110B",
@@ -421314,7 +423089,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GLM-4.6V [R]",
@@ -421608,7 +423384,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "MiniCPM5-1B (Non-reasoning)",
@@ -421901,7 +423678,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 32B (Reasoning) [R]",
@@ -422195,7 +423973,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Hermes 4 405B (Non-reasoning)",
@@ -422488,7 +424267,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Granite 4.1 30B",
@@ -422781,7 +424561,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.4 nano (xhigh) [R]",
@@ -423076,6 +424857,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -424135,6 +425917,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -424919,7 +426702,31 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 77.0,
+          "unit": "%",
+          "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "sourceLabel": "Anthropic Sonnet 5 system card",
+          "configuration": "Sonnet 5, adaptive thinking, max effort; 1,000 validation questions; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 88.3,
+          "unit": "%",
+          "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "sourceLabel": "Anthropic Sonnet 5 system card",
+          "configuration": "Sonnet 5, adaptive thinking, max effort; 1,000 validation questions; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Qwen3 VL 235B A22B",
@@ -425213,7 +427020,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Muse Spark 1.1 (xhigh) [R]",
@@ -425510,6 +427318,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -426570,7 +428379,8 @@ window.AINSIGHTS_MODELS_DATA = {
       "externalModelAliases": [
         "deepseek-v3-2"
       ],
-      "officialModelSourceId": "official-deepseek-news251201-page"
+      "officialModelSourceId": "official-deepseek-news251201-page",
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok 4.6 (xhigh) [R]",
@@ -426865,6 +428675,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -427800,7 +429611,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemma 4 E4B [R]",
@@ -428216,7 +430028,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V4 Flash (max) [R]",
@@ -428749,6 +430562,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -429806,7 +431620,20 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 71.8,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/news/claude-3-7-sonnet",
+          "sourceLabel": "Anthropic Claude 3.7 launch evaluations",
+          "configuration": "Claude 3.7 Sonnet, no extended thinking",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "GPT-5.6 Sol (max) [R]",
@@ -430731,6 +432558,28 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro-no-tools",
+          "label": "MMMU-Pro (no tools)",
+          "value": 83.0,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/gpt-5-6/",
+          "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+          "configuration": "max",
+          "exactConfiguration": true
+        },
+        {
+          "benchmarkId": "mmmu-pro-tools",
+          "label": "MMMU-Pro (with tools)",
+          "value": 84.6,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/gpt-5-6/",
+          "sourceLabel": "OpenAI GPT-5.6 official release evaluations",
+          "configuration": "max",
+          "exactConfiguration": true
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -431787,7 +433636,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.6 Sol (xhigh) [R]",
@@ -432082,6 +433932,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -432756,7 +434607,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "K2-V2 (low) [R]",
@@ -433049,7 +434901,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Granite 4.0 H 1B",
@@ -433342,7 +435195,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Reka Flash 3 [R]",
@@ -433635,7 +435489,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V4.1 Flash (max) [R]",
@@ -434273,6 +436128,18 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "chartography-tools",
+          "label": "Chartography (with tools)",
+          "value": 78.9,
+          "unit": "%",
+          "sourceUrl": "https://api-docs.deepseek.com/news/news260910",
+          "sourceLabel": "DeepSeek V4.1 Flash official release evaluations",
+          "configuration": "max",
+          "exactConfiguration": true
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -435093,6 +436960,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -435771,6 +437639,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -436827,7 +438696,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude 2.0",
@@ -437120,7 +438990,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 3.7 Flash (low) [R]",
@@ -437417,6 +439288,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -438096,7 +439968,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 8B (Reasoning) [R]",
@@ -438390,7 +440263,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Phi-3 Mini",
@@ -438683,7 +440557,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Mi:dm K 2.5 Pro [R]",
@@ -438976,7 +440851,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Sonnet 4.6 (max) [R]",
@@ -439271,6 +441147,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -440327,7 +442204,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V3.1 Terminus (Non-reasoning)",
@@ -440620,7 +442498,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.0 Flash Thinking exp. (Dec) [R]",
@@ -440916,7 +442795,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Mi:dm K 2.5 Pro Preview [R]",
@@ -441209,7 +443089,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-6 Astra (high) [R]",
@@ -441504,6 +443385,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -442179,7 +444061,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "LFM2.5-2.6B [R]",
@@ -442473,6 +444356,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -443537,7 +445421,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "LFM2.5-8B-A1B [R]",
@@ -443830,7 +445715,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-4o Realtime (Dec)",
@@ -444125,7 +446011,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5.5 Pro (xhigh) [R]",
@@ -444488,7 +446375,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Ling 3.0 Flash [R]",
@@ -444782,6 +446670,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -445839,7 +447728,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen2.5 Coder 7B ",
@@ -446201,7 +448091,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 4B (Non-reasoning)",
@@ -446603,7 +448494,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nova Premier",
@@ -446896,7 +448788,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Mistral Small 3",
@@ -447189,7 +449082,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GLM-5.2 (Non-reasoning)",
@@ -447807,7 +449701,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "o1-pro [R]",
@@ -448101,7 +449996,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Jamba 1.6 Mini",
@@ -448394,7 +450290,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-6 Astra (medium) [R]",
@@ -448689,6 +450586,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -449364,7 +451262,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Opus 4.7 (max) [R]",
@@ -449948,7 +451847,29 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 82.1,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416",
+          "sourceLabel": "Anthropic Claude Opus 4.7 official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 91.0,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416",
+          "sourceLabel": "Anthropic Claude Opus 4.7 official release",
+          "configuration": "Published model configuration; effort unspecified",
+          "exactConfiguration": false
+        }
+      ]
     },
     {
       "modelKey": "Cogito v2.1 [R]",
@@ -450241,7 +452162,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GPT-5 (ChatGPT)",
@@ -450535,7 +452457,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 3.7 Flash (medium) [R]",
@@ -450832,6 +452755,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -451511,6 +453435,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -452567,7 +454492,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Muse Spark [R]",
@@ -452862,7 +454788,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok 3 Reasoning Beta [R]",
@@ -453155,7 +455082,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "OpenChat 3.5",
@@ -453448,7 +455376,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 14B (Non-reasoning)",
@@ -453741,7 +455670,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Phi-4",
@@ -454034,7 +455964,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.5 35B A3B (Non-reasoning)",
@@ -454328,7 +456259,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Sonnet 5 (medium) [R]",
@@ -454732,6 +456664,30 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 77.0,
+          "unit": "%",
+          "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "sourceLabel": "Anthropic Sonnet 5 system card",
+          "configuration": "Sonnet 5, adaptive thinking, max effort; 1,000 validation questions; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 88.3,
+          "unit": "%",
+          "sourceUrl": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "sourceLabel": "Anthropic Sonnet 5 system card",
+          "configuration": "Sonnet 5, adaptive thinking, max effort; 1,000 validation questions; mean of five runs",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -455288,6 +457244,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -456579,7 +458536,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "NVIDIA Nemotron Nano 9B V2 [R]",
@@ -456872,7 +458830,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Sonnet 4.6 (Non-reasoning, low)",
@@ -457166,7 +459125,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude 4.1 Opus (Non-reasoning)",
@@ -457460,7 +459420,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 30B (Non-reasoning)",
@@ -457862,7 +459823,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3.6 Plus [R]",
@@ -458243,7 +460205,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Agnes 2.5 Pro Beta [R]",
@@ -458538,6 +460501,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -459603,7 +461567,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.5 Flash-Lite [R]",
@@ -459899,7 +461864,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 4B",
@@ -460193,7 +462159,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 235B A22B 2507 [R]",
@@ -460487,6 +462454,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -461547,6 +463515,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -462221,7 +464190,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "MiniMax-M2 [R]",
@@ -462583,7 +464553,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Jamba Reasoning 3B [R]",
@@ -462876,7 +464847,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "GLM-5.2 (max) [R]",
@@ -463477,6 +465449,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -465386,6 +467359,48 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu-pro",
+          "label": "MMMU-Pro",
+          "value": 81.6,
+          "unit": "%",
+          "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+          "sourceLabel": "Kimi K3 official release evaluations",
+          "configuration": "max",
+          "exactConfiguration": true
+        },
+        {
+          "benchmarkId": "mmmu-pro-python",
+          "label": "MMMU-Pro (Python)",
+          "value": 83.4,
+          "unit": "%",
+          "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+          "sourceLabel": "Kimi K3 official release evaluations",
+          "configuration": "max",
+          "exactConfiguration": true
+        },
+        {
+          "benchmarkId": "charxiv-no-tools",
+          "label": "CharXiv Reasoning (no tools)",
+          "value": 84.8,
+          "unit": "%",
+          "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+          "sourceLabel": "Kimi K3 official release evaluations",
+          "configuration": "max",
+          "exactConfiguration": true
+        },
+        {
+          "benchmarkId": "charxiv-tools",
+          "label": "CharXiv Reasoning (with tools)",
+          "value": 91.3,
+          "unit": "%",
+          "sourceUrl": "https://www.kimi.com/blog/kimi-k3",
+          "sourceLabel": "Kimi K3 official release evaluations",
+          "configuration": "max",
+          "exactConfiguration": true
+        }
+      ],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -466442,7 +468457,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 VL 4B (Reasoning) [R]",
@@ -466736,7 +468752,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Quasar 438B (max) [R]",
@@ -467030,6 +469047,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -468086,7 +470104,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V3.1 (Non-reasoning)",
@@ -468379,7 +470398,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "LFM2 24B A2B",
@@ -468672,7 +470692,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Nova 2.0 Lite (medium) [R]",
@@ -468966,7 +470987,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "KAT-Coder-Pro V2",
@@ -469259,7 +471281,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Qwen3 Coder Next",
@@ -469557,6 +471580,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "qwen3-coder-next"
       ],
       "officialModelSourceId": "official-qwen-qwen3-coder-next-page",
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -470614,7 +472638,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Gemini 2.0 Flash (exp)",
@@ -470910,7 +472935,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama 65B",
@@ -471203,7 +473229,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Grok 4.3 (low) [R]",
@@ -471497,7 +473524,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "DeepSeek V4 Flash 0731 (max) [R]",
@@ -472081,6 +474109,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -473140,7 +475169,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Claude Opus 5 (medium) [R]",
@@ -473435,6 +475465,7 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "visionBenchmarks": [],
       "exactRankingProfile": {
         "method": "aindex_mixed_core",
         "candidateId": "mixed_core_mc07",
@@ -474110,7 +476141,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     },
     {
       "modelKey": "Llama 2 Chat 7B",
@@ -474403,7 +476435,8 @@ window.AINSIGHTS_MODELS_DATA = {
             "video": false
           }
         }
-      }
+      },
+      "visionBenchmarks": []
     }
   ],
   "summary": {

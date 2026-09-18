@@ -6,6 +6,10 @@ on:
       - "docs/**"
       - "tests/frontend_interactions.test.cjs"
       - "tests/test_docs_markup.py"
+      - "tests/test_vision_evidence.py"
+      - "benchmarks/vision_evidence.py"
+      - "data/benchmarks/vision_evidence.json"
+      - "scripts/build_docs_site.py"
       - ".github/workflows/frontend-checks.yml"
   push:
     branches: [main]
@@ -13,6 +17,10 @@ on:
       - "docs/**"
       - "tests/frontend_interactions.test.cjs"
       - "tests/test_docs_markup.py"
+      - "tests/test_vision_evidence.py"
+      - "benchmarks/vision_evidence.py"
+      - "data/benchmarks/vision_evidence.json"
+      - "scripts/build_docs_site.py"
       - ".github/workflows/frontend-checks.yml"
   workflow_dispatch:
 
@@ -40,3 +48,5 @@ jobs:
           node --test tests/frontend_interactions.test.cjs
       - name: Check page structure and data cache references
         run: python -B -m unittest discover -s tests -p test_docs_markup.py
+      - name: Validate visual evidence and configuration matching
+        run: python -B -m unittest discover -s tests -p test_vision_evidence.py

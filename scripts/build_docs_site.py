@@ -20,6 +20,7 @@ if __package__ is None or __package__ == "":
 
 from ArtificialAnalysis.scrape_artificial_analysis import RAW_SCORES_FILENAME, SCORE_SPECS
 from analysis.irt_leaderboard_exploration import aindex_mixed_core as primary
+from benchmarks.vision_evidence import attach_vision_evidence
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -781,6 +782,7 @@ def build_site_payload(
     add_external_models_if_missing(models, external_benchmark_data, metric_keys)
     enrich_models_from_official_metadata(models, external_benchmark_data)
     attach_external_benchmark_scores(models, external_benchmark_data)
+    attach_vision_evidence(models)
     apply_metric_fallbacks(models, AINDEX_METRIC_FALLBACKS)
     baselines = metric_baselines(models, metric_keys)
     aa_intelligence_max = aa_score_baseline(models, "aa-intelligence")

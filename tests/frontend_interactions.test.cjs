@@ -8,7 +8,8 @@ const source = fs.readFileSync(path.join(__dirname, '../docs/app.js'), 'utf8');
 const names = ['radarAxes', 'radarBoardProfile', 'radarAxisValue', 'radarHasData',
   'radarLinePath', 'radarPolygonPoints', 'radarPoint', 'radarProfilePopulation',
   'radarAxisAverage', 'modelForRankingGrain', 'benchmarkMatchesSearch',
-  'benchmarkRankingRows', 'benchmarkHref'];
+  'benchmarkRankingRows', 'benchmarkHref', 'radarVisionOptions', 'radarAxisRank',
+  'handleCustomAction', 'activeCustomWeights', 'restoreActiveCustomDefaults'];
 const context = vm.createContext({
   state: { data: { models: [] }, dedupe: true },
   tr: (key) => key,
@@ -86,4 +87,51 @@ test('benchmark navigation retains both searches with correctly encoded URLs', (
   assert.equal(result.searchParams.get('id'), 'benchmark:mmmu-pro');
   assert.equal(result.searchParams.get('benchmarkSearch'), 'MMMU');
   assert.equal(result.searchParams.get('modelSearch'), 'Claude & GPT');
+});
+
+test('visual selection keeps one benchmark and does not substitute another test or tier', () => {
+  const official = { benchmarkId: 'mmmu', label: 'MMMU', value: 72, exactConfiguration: true };
+  const model = { scores: {}, visionBenchmarks: [official, { benchmarkId: 'charxiv-no-tools', value: 85, exactConfiguration: false }] };
+  const axis = { visionBenchmark: 'mmmu' };
+  assert.equal(context.radarAxisValue(model, axis), 72);
+  assert.equal(context.radarAxisValue(model, { visionBenchmark: 'mmmu-pro' }), null);
+  assert.equal(context.radarAxisValue(model, { visionBenchmark: 'charxiv-no-tools' }), null);
+  assert.equal(context.radarAxisAverage(axis), null);
+  assert.equal(context.radarAxisRank(axis, model), null);
+  assert.equal(context.radarVisionOptions([model])[0].id, 'mmmu');
+  assert.ok(!context.radarVisionOptions([model]).some(option => option.id === 'charxiv-no-tools'));
+});
+
+test('comparison selects the test with the most matching configurations and prefers AA on ties', () => {
+  const official = { benchmarkId: 'mmmu', label: 'MMMU', value: 70, exactConfiguration: true };
+  const a = { scores: { 'MMMU-Pro': 80 }, visionBenchmarks: [official] };
+  const b = { scores: {}, visionBenchmarks: [official] };
+  assert.equal(context.radarVisionOptions([a])[0].id, 'aa');
+  assert.equal(context.radarVisionOptions([a, b])[0].id, 'mmmu');
+});
+
+
+test('restore keeps the benchmark preset and leaves other mode weights intact', () => {
+  Object.assign(context, {
+    customManualWeightPresetId: 'manual',
+    customWeightsForPreset: () => ({ vision: 20, reasoning: 80 }),
+    applyMissingModePreset: () => {},
+    renderWeights: () => {},
+    renderResults: () => {},
+    els: { weightsGrid: { querySelector: () => ({ focus() {} }) } },
+  });
+  Object.assign(context.state, {
+    customToolMode: 'benchmark-lab', customWeightPresetId: 'manual',
+    customWeights: { vision: 0, reasoning: 0 },
+    customMethodWeights: { rasch: 15 }, customBoardWeights: { coding: 35 },
+    data: { presets: { custom: {} } },
+  });
+  context.handleCustomAction('restore');
+  assert.equal(context.state.customWeightPresetId, 'benchmark-lab');
+  assert.deepEqual(context.state.customWeights, { vision: 20, reasoning: 80 });
+  assert.equal(context.state.customMethodWeights.rasch, 15);
+  assert.equal(context.state.customBoardWeights.coding, 35);
+  context.handleCustomAction('clear');
+  assert.equal(context.state.customWeightPresetId, 'manual');
+  assert.deepEqual(context.state.customWeights, { vision: 0, reasoning: 0 });
 });
