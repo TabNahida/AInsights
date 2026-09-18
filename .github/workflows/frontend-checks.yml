@@ -31,6 +31,8 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.13"
+      - name: Install site builder dependencies used by markup tests
+        run: python -m pip install -r requirements.txt
       - name: Check frontend syntax and behavior
         run: |
           node --check docs/app.js
