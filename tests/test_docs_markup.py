@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 class DocsMarkupTests(unittest.TestCase):
-    def test_radar_axes_read_six_direct_ranking_profile_values(self):
+    def test_radar_axes_read_board_scores_and_observed_vision(self):
         root = Path(__file__).resolve().parents[1]
         app_js = (root / "docs" / "app.js").read_text(encoding="utf-8")
         radar_source = app_js.split("function radarAxes()", 1)[1].split("function renderRadarBasisNotes()", 1)[0]
@@ -14,7 +14,7 @@ class DocsMarkupTests(unittest.TestCase):
             "function radarAxisCoverage(model, axis)", 1
         )[0]
         coverage_source = app_js.split("function radarAxisCoverage(model, axis)", 1)[1].split(
-            "function radarHasCompleteProfile(model, axes", 1
+            "function radarHasData(model, axes", 1
         )[0]
 
         self.assertEqual(
@@ -25,7 +25,7 @@ class DocsMarkupTests(unittest.TestCase):
                 "hard-reasoning",
                 "knowledge-science",
                 "instruction-context",
-                "evidence-coverage",
+                "visual-understanding",
             ],
         )
         self.assertEqual(
@@ -38,9 +38,9 @@ class DocsMarkupTests(unittest.TestCase):
                 "instruction-context",
             ],
         )
-        self.assertIn('profileKey: "extensionCoverageScore"', radar_source)
+        self.assertIn('metricKey: "MMMU-Pro"', radar_source)
         self.assertIn("model?.rankingProfile?.boards?.[boardId]", app_js)
-        self.assertIn("model?.rankingProfile?.[axis.profileKey]", value_source)
+        self.assertIn("model?.scores?.[axis.metricKey]", value_source)
         self.assertNotIn("frontierGroupValue", value_source)
         self.assertNotIn("axis.metrics", radar_source + value_source)
         self.assertIn("board?.coreTests", coverage_source)
@@ -48,7 +48,7 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("board?.extensionTests", coverage_source)
         self.assertIn("board?.extensionItemPoolSize", coverage_source)
         self.assertIn('tr("radarDualCoverage", coverage)', coverage_source)
-        self.assertIn("function radarHasCompleteProfile(model, axes", app_js)
+        self.assertIn("function radarHasData(model, axes", app_js)
         self.assertIn(
             "values.some((value) => !Number.isFinite(value))",
             app_js,

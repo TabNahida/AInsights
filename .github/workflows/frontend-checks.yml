@@ -1,0 +1,40 @@
+name: Frontend checks
+
+on:
+  pull_request:
+    paths:
+      - "docs/**"
+      - "tests/frontend_interactions.test.cjs"
+      - "tests/test_docs_markup.py"
+      - ".github/workflows/frontend-checks.yml"
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - "tests/frontend_interactions.test.cjs"
+      - "tests/test_docs_markup.py"
+      - ".github/workflows/frontend-checks.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Check frontend syntax and behavior
+        run: |
+          node --check docs/app.js
+          node --check docs/app-utils.js
+          node --test tests/frontend_interactions.test.cjs
+      - name: Check page structure and data cache references
+        run: python -B -m unittest discover -s tests -p test_docs_markup.py
