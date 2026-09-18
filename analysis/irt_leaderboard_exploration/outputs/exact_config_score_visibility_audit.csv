@@ -1,170 +1,169 @@
 ﻿variant_group,eligible_exact_configs_in_group,model,slug,selected_in_deduped_ranking,recovered_when_dedupe_disabled,exact_rank,exact_score,exact_rank_mean_audit,deduped_rank,evidence_tier,unique_benchmark_families
-claude fable 5 1 with fallback,5,Claude Fable 5.1 (max with fallback),claude-fable-5-1,True,False,1,95.0514,1.0,1,Provisional,10
-claude fable 5 1 with fallback,5,Claude Fable 5.1 (xhigh with fallback),claude-fable-5-1-xhigh,False,True,2,94.9798,2.0,,Provisional,7
-claude fable 5 1 with fallback,5,Claude Fable 5.1 (high with fallback),claude-fable-5-1-high,False,True,3,94.4019,3.2,,Provisional,7
-claude opus 5,5,Claude Opus 5 (max),claude-opus-5,True,False,4,94.1106,5.4,2,Provisional,10
-gpt 6 astra,5,GPT-6 Astra (xhigh),gpt-6-astra-xhigh,True,False,5,94.0939,4.2,4,Provisional,8
-gpt 6 astra,5,GPT-6 Astra (high),gpt-6-astra-high,False,True,6,94.062,5.4,,Provisional,8
-gpt 6 astra,5,GPT-6 Astra (max),gpt-6-astra,False,True,7,94.0032,6.8,,Provisional,8
-gpt 6 astra,5,GPT-6 Astra (medium),gpt-6-astra-medium,False,True,8,93.7719,8.8,,Provisional,8
-claude fable 5 1 with fallback,5,Claude Fable 5.1 (medium with fallback),claude-fable-5-1-medium,False,True,9,93.6838,9.8,,Provisional,7
-gpt 5 6 sol,6,GPT-5.6 Sol (xhigh),gpt-5-6-sol-xhigh,False,True,10,93.6775,9.4,,Provisional,9
-claude opus 5,5,Claude Opus 5 (xhigh),claude-opus-5-xhigh,False,True,11,93.4382,10.8,,Provisional,8
-kimi k3,2,Kimi K3 (max),kimi-k3,True,False,12,93.1943,13.4,7,Provisional,11
-claude fable 5 with fallback,1,Claude Fable 5 (with fallback),claude-fable-5,True,False,13,93.1412,14.2,3,Main,12
-claude opus 5,5,Claude Opus 5 (high),claude-opus-5-high,False,True,14,93.1404,13.6,,Provisional,8
-gpt 6 astra,5,GPT-6 Astra (low),gpt-6-astra-low,False,True,15,93.1208,13.2,,Provisional,8
-gemini 3 8 flash,3,Gemini 3.8 Flash (high),gemini-3-8-flash,True,False,16,93.1187,15.4,6,Provisional,9
-muse spark 1 3,2,Muse Spark 1.3 (xhigh),muse-spark-1-3-xhigh,True,False,17,92.8284,18.4,8,Provisional,8
-gpt 5 6 sol,6,GPT-5.6 Sol (max),gpt-5-6-sol,True,False,18,92.8192,19.0,5,Main,13
-gpt 5 6 sol,6,GPT-5.6 Sol (high),gpt-5-6-sol-high,False,True,19,92.8056,18.6,,Provisional,9
-grok 4 6,4,Grok 4.6 (high),grok-4-6,True,False,20,92.7445,19.4,9,Provisional,7
-claude opus 5,5,Claude Opus 5 (medium),claude-opus-5-medium,False,True,21,92.645,21.8,,Provisional,8
-gpt 5 5,3,GPT-5.5 (xhigh),gpt-5-5,True,False,22,92.5577,22.0,12,Provisional,9
-muse spark 1 3,2,Muse Spark 1.3 (max),muse-spark-1-3,False,True,23,92.5346,22.8,,Provisional,7
-grok 4 6,4,Grok 4.6 (xhigh),grok-4-6-xhigh,False,True,24,92.4831,22.8,,Provisional,7
-claude fable 5 1 with fallback,5,Claude Fable 5.1 (low with fallback),claude-fable-5-1-low,False,True,25,92.3829,24.0,,Provisional,7
-gemini 3 7 flash,3,Gemini 3.7 Flash (high),gemini-3-7-flash,True,False,26,92.236,26.4,10,Provisional,8
-gpt 5 6 sol,6,GPT-5.6 Sol (medium),gpt-5-6-sol-medium,False,True,27,92.0584,26.8,,Provisional,9
-gpt 5 6 terra,6,GPT-5.6 Terra (max),gpt-5-6-terra,True,False,28,91.5676,29.0,11,Main,13
-grok 4 6,4,Grok 4.6 (medium),grok-4-6-medium,False,True,29,91.4566,29.4,,Provisional,7
-gemini 3 8 flash,3,Gemini 3.8 Flash (medium),gemini-3-8-flash-medium,False,True,30,91.4416,29.0,,Provisional,8
-gpt 5 5,3,GPT-5.5 (high),gpt-5-5-high,False,True,31,91.2904,31.0,,Provisional,9
-glm 5 3,1,GLM-5.3 (max),glm-5-3,True,False,32,91.0945,32.0,13,Provisional,9
-claude opus 4 8,1,Claude Opus 4.8 (max),claude-opus-4-8,True,False,33,90.9966,33.0,14,Provisional,8
-gpt 5 5,3,GPT-5.5 (medium),gpt-5-5-medium,False,True,34,90.7132,35.0,,Provisional,9
-qwen3 8 2 4t a95b,1,Qwen3.8 2.4T A95B,qwen3-8-2-4t-a95b,True,False,35,90.667,34.4,15,Provisional,7
-grok 4 5,1,Grok 4.5 (high),grok-4-5,True,False,36,90.4264,35.8,20,Provisional,8
-deepseek v4 pro 0813,1,DeepSeek V4 Pro 0813 (max),deepseek-v4-pro,True,False,37,90.3701,36.4,33,Provisional,9
-qwen3 8 max,1,Qwen3.8 Max,qwen3-8-max,True,False,38,90.1036,38.0,16,Provisional,8
-muse spark 1 2,1,Muse Spark 1.2 (xhigh),muse-spark-1-2,True,False,39,90.0843,39.2,18,Provisional,7
-claude sonnet 5,1,Claude Sonnet 5 (max),claude-sonnet-5,True,False,40,89.9436,40.8,19,Provisional,8
-gpt 5 6 terra,6,GPT-5.6 Terra (xhigh),gpt-5-6-terra-xhigh,False,True,41,89.8874,40.6,,Provisional,9
-gemini 3 1 pro preview,1,Gemini 3.1 Pro Preview,gemini-3-1-pro-preview,True,False,42,89.8233,43.0,28,Provisional,9
-glm 5 3 flash,1,GLM-5.3-Flash,glm-5-3-flash,True,False,43,89.7329,44.0,21,Provisional,8
-gpt 5 6 luna,5,GPT-5.6 Luna (max),gpt-5-6-luna,True,False,44,89.7326,43.6,17,Provisional,12
-agnes 3 0 flash,1,Agnes 3.0 Flash,agnes-3-0-flash,True,False,45,89.5533,45.0,23,Provisional,7
-gemini 3 7 flash,3,Gemini 3.7 Flash (medium),gemini-3-7-flash-medium,False,True,46,89.5208,45.2,,Provisional,8
-claude opus 5,5,Claude Opus 5 (low),claude-opus-5-low,False,True,47,89.3542,46.8,,Provisional,8
-muse spark 1 1,1,Muse Spark 1.1 (xhigh),muse-spark-1-1,True,False,48,89.3385,46.6,24,Provisional,7
-gpt 5 6 luna,5,GPT-5.6 Luna (xhigh),gpt-5-6-luna-xhigh,False,True,49,89.0036,48.8,,Provisional,8
-deepseek v4 flash 0731,1,DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,True,False,50,88.8809,50.6,38,Provisional,7
-gemini 3 6 flash,1,Gemini 3.6 Flash,gemini-3-6-flash,True,False,51,88.838,51.8,29,Provisional,8
-qwen3 8 flash next,1,Qwen3.8-Flash-Next,qwen3-8-flash-next,True,False,52,88.6821,50.6,25,Provisional,11
-gemini 3 5 flash,1,Gemini 3.5 Flash,gemini-3-5-flash,True,False,53,88.6099,52.8,27,Provisional,9
-gpt 5 6 sol,6,GPT-5.6 Sol (low),gpt-5-6-sol-low,False,True,54,88.3513,54.0,,Provisional,9
-glm 5 2,1,GLM-5.2 (max),glm-5-2,True,False,55,88.1217,55.2,31,Provisional,8
-gpt 5 6 terra,6,GPT-5.6 Terra (high),gpt-5-6-terra-high,False,True,56,88.0995,56.2,,Provisional,9
-gemini 3 8 flash,3,Gemini 3.8 Flash (low),gemini-3-8-flash-low,False,True,57,87.9558,57.2,,Provisional,8
-qwen3 7 max,1,Qwen3.7 Max,qwen3-7-max,True,False,58,87.7261,58.2,32,Provisional,8
-deepseek v4 flash vision,1,DeepSeek V4 Flash Vision (max),deepseek-v4-flash-vision,True,False,59,87.7034,58.2,30,Provisional,11
-gemini 3 7 flash,3,Gemini 3.7 Flash (low),gemini-3-7-flash-low,False,True,60,87.2445,60.0,,Provisional,8
-gpt 5 6 luna,5,GPT-5.6 Luna (high),gpt-5-6-luna-high,False,True,61,86.4666,61.0,,Provisional,8
-agnes 2 5 pro beta,1,Agnes 2.5 Pro Beta,agnes-2-5-pro-beta,True,False,62,85.9404,62.0,34,Provisional,8
-gpt 5 6 terra,6,GPT-5.6 Terra (medium),gpt-5-6-terra-medium,False,True,63,85.4093,63.0,,Provisional,9
-qwen3 8 27b,4,Qwen3.8 27B (xhigh),qwen3-8-27b,True,False,64,85.3216,64.0,36,Provisional,8
-kimi k2 6,1,Kimi K2.6,kimi-k2-6,True,False,65,84.8915,65.0,37,Provisional,9
-grok 4 6,4,Grok 4.6 (low),grok-4-6-low,False,True,66,84.4872,66.8,,Provisional,7
-kimi k2 7 code,1,Kimi K2.7 Code,kimi-k2-7-code,True,False,67,84.4066,66.4,39,Provisional,8
-deepseek v4 pro,1,DeepSeek V4 Pro (max),deepseek-v4-pro-0424,True,False,68,84.3542,67.8,35,Provisional,8
-nex n2 pro,1,Nex-N2-Pro,nex-n2-pro,True,False,69,83.881,69.2,40,Provisional,8
-minimax m3,1,MiniMax-M3,minimax-m3,True,False,70,83.4027,70.2,41,Provisional,9
-kimi k3,2,Kimi K3 (low),kimi-k3-low,False,True,71,83.1534,71.2,,Provisional,8
-agnes 2 5 pro alpha,1,Agnes 2.5 Pro Alpha,agnes-2-5-pro-alpha,True,False,72,83.1379,71.4,50,Provisional,7
-motif 3,1,Motif 3,motif-3,True,False,73,82.9395,73.0,44,Provisional,7
-qwen3 7 plus,1,Qwen3.7 Plus,qwen3-7-plus,True,False,74,82.5569,74.4,43,Main,11
-apodex 1 1,1,Apodex 1.1,apodex-1-1,True,False,75,82.1776,75.0,47,Provisional,8
-hy3,1,Hy3,hy3,True,False,76,82.1269,76.4,45,Provisional,7
-deepseek v4 flash,2,DeepSeek V4 Flash (max),deepseek-v4-flash-0420,True,False,77,82.0054,76.2,46,Provisional,8
-gpt 5 4 mini,1,GPT-5.4 mini (xhigh),gpt-5-4-mini,True,False,78,81.6272,79.0,48,Provisional,9
-claude sonnet 4 6,1,Claude Sonnet 4.6 (max),claude-sonnet-4-6-adaptive,True,False,79,81.5877,79.2,49,Provisional,9
-k2 horizon 375b a23b,1,K2 Horizon 375B A23B,k2-horizon-375b-a23b,True,False,80,81.4564,80.0,52,Provisional,7
-mimo v2 5 pro,1,MiMo-V2.5-Pro,mimo-v2-5-pro,True,False,81,81.2969,81.0,53,Provisional,8
-inkling small,1,Inkling Small,inkling-small,True,False,82,80.835,82.0,51,Provisional,8
-gpt 5 6 terra,6,GPT-5.6 Terra (low),gpt-5-6-terra-low,False,True,83,80.5476,82.0,,Provisional,9
-inkling,1,Inkling,inkling,True,False,84,79.4786,83.8,54,Provisional,8
-gpt 5 4 nano,1,GPT-5.4 nano (xhigh),gpt-5-4-nano,True,False,85,79.1945,85.0,55,Provisional,9
-glm 5 1,1,GLM-5.1,glm-5-1,True,False,86,78.6683,86.4,56,Provisional,8
-solar pro 4,1,Solar Pro 4,solar-pro4,True,False,87,78.1911,87.0,58,Provisional,7
-grok 4 3,2,Grok 4.3 (high),grok-4-3,True,False,88,77.9682,87.6,59,Provisional,9
-gpt 5 6 luna,5,GPT-5.6 Luna (medium),gpt-5-6-luna-medium,False,True,89,77.3151,89.0,,Provisional,8
-gpt 5 6 sol,6,GPT-5.6 Sol (Non-reasoning),gpt-5-6-sol-non-reasoning,False,True,90,76.7299,91.0,,Provisional,8
-deepseek v4 flash,2,DeepSeek V4 Flash (high),deepseek-v4-flash-0420-high,False,True,91,76.6755,90.4,,Provisional,8
-quasar 438b,1,Quasar 438B (max),quasar-438b,True,False,92,76.5492,93.2,61,Provisional,7
-mimo v2 5,1,MiMo-V2.5,mimo-v2-5-0424,True,False,93,76.4345,92.6,62,Provisional,9
-nemotron 3 ultra,1,Nemotron 3 Ultra,nvidia-nemotron-3-ultra-550b-a55b,True,False,94,76.3561,93.0,64,Provisional,8
-qwen3 5 397b a17b,1,Qwen3.5 397B A17B,qwen3-5-397b-a17b,True,False,95,75.3923,95.2,63,Provisional,9
-ling 3 0 flash vl,1,Ling-3.0-flash-VL,ling-3-0-flash-vl,True,False,96,74.9045,96.6,66,Provisional,8
-solar open2 250b,1,Solar Open2 250B,solar-open2-250b,True,False,97,74.434,98.0,68,Provisional,7
-muse glimmer,1,Muse Glimmer (high),muse-glimmer,True,False,98,74.3793,97.2,69,Provisional,8
-minimax m2 7,1,MiniMax-M2.7,minimax-m2-7,True,False,99,74.141,98.4,65,Provisional,8
-a x k2,1,A.X-K2,a-x-k2,True,False,100,73.6037,99.4,70,Provisional,7
-qwen3 6 27b,1,Qwen3.6 27B,qwen3-6-27b,True,False,101,71.6067,101.4,72,Provisional,9
-ling 3 0 flash,1,Ling 3.0 Flash,ling-3-0-flash,True,False,102,71.1781,102.0,74,Provisional,7
-k2 horizon mova 36b a4b,1,K2 Horizon MoVA 36B A4B,k2-mova-36b-mid5,True,False,103,70.588,103.2,76,Provisional,7
-longcat 2 0,1,LongCat 2.0,longcat-2-0,True,False,104,70.4373,105.0,77,Provisional,7
-ring 2 6 1t,1,Ring-2.6-1T,ring-2-6-1t,True,False,105,70.4335,104.4,78,Provisional,8
-gpt 5 6 luna,5,GPT-5.6 Luna (low),gpt-5-6-luna-low,False,True,106,70.2152,105.0,,Provisional,8
-qwen3 8 27b,4,Qwen3.8 27B (medium),qwen3-8-27b-medium,False,True,107,69.3746,107.6,,Provisional,8
-qwen3 8 27b,4,Qwen3.8 27B (low),qwen3-8-27b-low,False,True,108,69.2473,109.6,,Provisional,8
-qwen3 5 122b a10b,1,Qwen3.5 122B A10B,qwen3-5-122b-a10b,True,False,109,69.1284,109.2,80,Provisional,10
-gemini 3 5 flash lite,1,Gemini 3.5 Flash-Lite,gemini-3-5-flash-lite,True,False,110,68.8551,110.2,84,Provisional,8
-gemma 4 31b,1,Gemma 4 31B,gemma-4-31b,True,False,111,68.6206,110.4,81,Provisional,9
-claude 4 5 sonnet,1,Claude 4.5 Sonnet,claude-4-5-sonnet-thinking,True,False,112,68.3725,111.8,82,Provisional,10
-step 3 7 flash,1,Step 3.7 Flash,step-3-7-flash,True,False,113,68.3012,111.4,83,Provisional,9
-nemotron 3 super,1,Nemotron 3 Super,nvidia-nemotron-3-super-120b-a12b,True,False,114,66.4021,114.2,87,Provisional,8
-qwen3 6 35b a3b,1,Qwen3.6 35B A3B,qwen3-6-35b-a3b,True,False,115,65.61,115.8,86,Provisional,9
-gpt 5 5 instant june 2026,1,GPT-5.5 Instant (June 2026),gpt-5-5-instant-06-26,True,False,116,64.9212,116.2,89,Provisional,7
-deepseek v3 1 terminus,1,DeepSeek V3.1 Terminus,deepseek-v3-1-terminus-reasoning,True,False,117,64.5049,117.6,90,Provisional,9
-gemini 2 5 pro,1,Gemini 2.5 Pro,gemini-2-5-pro,True,False,118,64.4316,118.6,91,Provisional,10
-gemini 3 1 flash lite,1,Gemini 3.1 Flash-Lite,gemini-3-1-flash-lite-preview,True,False,119,64.2574,118.8,92,Provisional,9
-gpt 5 6 terra,6,GPT-5.6 Terra (Non-reasoning),gpt-5-6-terra-non-reasoning,False,True,120,64.2056,117.6,,Provisional,8
-qwen3 8 27b,4,Qwen3.8 27B,qwen3-8-27b-non-reasoning,False,True,121,63.4174,121.0,,Provisional,11
-mistral medium 3 5,1,Mistral Medium 3.5,mistral-medium-3-5,True,False,122,61.7966,122.0,93,Provisional,9
-k exaone 2 0,1,K-EXAONE 2.0,k-exaone-2-0-0803,True,False,123,60.1856,123.0,95,Provisional,7
-claude 4 5 haiku,1,Claude 4.5 Haiku,claude-4-5-haiku-reasoning,True,False,124,58.6438,124.8,97,Provisional,10
-k2 horizon 7b,1,K2 Horizon 7B,k2-7b-ph2,True,False,125,58.5397,124.6,98,Provisional,7
-g9v3 39a5b,1,G9v3-39A5B,g9v3-39a5b,True,False,126,57.8648,126.0,99,Provisional,7
-gpt oss 120b,1,gpt-oss-120b (high),gpt-oss-120b,True,False,127,56.8692,126.6,100,Provisional,9
-qwen3 235b a22b 2507,1,Qwen3 235B A22B 2507,qwen3-235b-a22b-instruct-2507-reasoning,True,False,128,54.1959,128.0,102,Provisional,9
-mercury 2,1,Mercury 2,mercury-2,True,False,129,53.1378,129.2,103,Provisional,8
-gpt 5 mini,1,GPT-5 mini (high),gpt-5-mini,True,False,130,52.1226,129.8,105,Provisional,10
-north mini code,1,North Mini Code,north-mini-code,True,False,131,50.4271,131.2,106,Provisional,8
-qwen3 coder next,1,Qwen3 Coder Next,qwen3-coder-next,True,False,132,49.8904,132.6,107,Provisional,8
-command a,1,Command A+,command-a-plus,True,False,133,49.6009,132.6,108,Provisional,9
-nemotron 3 5 lightning,1,Nemotron 3.5 Lightning,nemotron-3-5-lightning,True,False,134,49.3078,134.0,109,Provisional,7
-trinity large thinking,1,Trinity Large Thinking,trinity-large-thinking,True,False,135,48.9056,135.4,110,Provisional,8
-k2 horizon 3 7b,1,K2 Horizon 3.7B,k2-4b-ph1,True,False,136,48.7953,135.8,112,Provisional,7
-mistral small 4,1,Mistral Small 4,mistral-small-4,True,False,137,47.7228,137.0,113,Provisional,9
-deepseek r1 jan,1,DeepSeek R1 (Jan),deepseek-r1-0120,True,False,138,47.5958,137.6,114,Provisional,9
-ling 3 0 tiny,1,Ling 3.0 Tiny,ling-3-0-tiny,True,False,139,46.96,139.2,115,Provisional,7
-granite 4 2 30b,1,Granite 4.2 30B,granite-4-2-30b,True,False,140,45.6583,140.2,116,Provisional,7
-gpt oss 20b,1,gpt-oss-20b (high),gpt-oss-20b,True,False,141,45.145,140.4,117,Provisional,9
-grok 4 3,2,Grok 4.3 (Non-reasoning),grok-4-3-non-reasoning,False,True,142,44.613,142.0,,Provisional,9
-nemotron 3 nano,1,Nemotron 3 Nano,nvidia-nemotron-3-nano-30b-a3b-reasoning,True,False,143,42.6527,143.0,118,Provisional,9
-o3 mini,1,o3-mini (high),o3-mini-high,True,False,144,41.8933,144.0,119,Provisional,8
-granite 4 2 8b,1,Granite 4.2 8B,granite-4-2-8b,True,False,145,40.7448,145.0,120,Provisional,7
-solar pro 3,1,Solar Pro 3,solar-pro-3,True,False,146,39.9143,146.0,121,Provisional,8
-minicpm5 2b,1,MiniCPM5-2B,minicpm5-2b,True,False,147,39.3758,147.0,122,Provisional,7
-devstral 2,1,Devstral 2,devstral-2,True,False,148,37.9001,148.2,123,Provisional,9
-deepseek v3 0324,1,DeepSeek V3 0324,deepseek-v3-0324,True,False,149,37.5161,148.8,124,Provisional,9
-qwen3 30b a3b 2507,1,Qwen3 30B A3B 2507,qwen3-30b-a3b-2507-reasoning,True,False,150,36.1103,150.0,125,Provisional,9
-mistral large 3,1,Mistral Large 3,mistral-large-3,True,False,151,35.1084,151.8,126,Provisional,10
-llama 4 maverick,1,Llama 4 Maverick,llama-4-maverick,True,False,152,34.8394,152.8,128,Provisional,10
-devstral small 2,1,Devstral Small 2,devstral-small-2,True,False,153,34.7514,151.4,127,Provisional,10
-celeris 1,1,Celeris-1,celeris-1,True,False,154,33.5323,154.0,129,Provisional,7
-deepseek v3 dec,1,DeepSeek V3 (Dec),deepseek-v3,True,False,155,32.1645,155.0,130,Provisional,9
-granite 4 2 3b,1,Granite 4.2 3B,granite-4-2-3b,True,False,156,30.3093,156.0,131,Provisional,7
-mistral small 3 1,1,Mistral Small 3.1,mistral-small-3-1,True,False,157,28.879,157.0,132,Provisional,9
-ministral 3 14b,1,Ministral 3 14B,ministral-3-14b,True,False,158,27.634,158.0,133,Provisional,10
-mistral small 3 2,1,Mistral Small 3.2,mistral-small-3-2,True,False,159,23.6621,159.2,135,Provisional,10
-qwen3 32b,1,Qwen3 32B,qwen3-32b-instruct-reasoning,True,False,160,23.3458,160.6,134,Provisional,9
-llama 4 scout,1,Llama 4 Scout,llama-4-scout,True,False,161,23.1979,160.2,136,Provisional,10
-ministral 3 8b,1,Ministral 3 8B,ministral-3-8b,True,False,162,22.5319,162.0,138,Provisional,10
-qwen3 14b,1,Qwen3 14B,qwen3-14b-instruct-reasoning,True,False,163,18.541,163.0,139,Provisional,9
-gemma 3 27b,1,Gemma 3 27B,gemma-3-27b,True,False,164,17.2503,164.0,140,Provisional,10
-lfm2 5 2 6b,1,LFM2.5-2.6B,lfm2-5-2-6b,True,False,165,16.8803,165.0,141,Provisional,7
-ministral 3 3b,1,Ministral 3 3B,ministral-3-3b,True,False,166,15.1252,166.2,143,Provisional,10
-qwen3 8b,1,Qwen3 8B,qwen3-8b-instruct-reasoning,True,False,167,13.1665,166.8,144,Provisional,9
-gemma 3 12b,1,Gemma 3 12B,gemma-3-12b,True,False,168,12.6268,168.0,145,Provisional,10
-k2 horizon 0 9b,1,K2 Horizon 0.9B,k2-1b-final,True,False,169,10.4082,169.0,146,Provisional,7
+claude fable 5 1 with fallback,5,Claude Fable 5.1 (max with fallback),claude-fable-5-1,True,False,1,94.9546,1.0,1,Provisional,10
+claude fable 5 1 with fallback,5,Claude Fable 5.1 (xhigh with fallback),claude-fable-5-1-xhigh,False,True,2,94.8836,2.0,,Provisional,7
+claude fable 5 1 with fallback,5,Claude Fable 5.1 (high with fallback),claude-fable-5-1-high,False,True,3,94.3009,3.2,,Provisional,7
+claude opus 5,5,Claude Opus 5 (max),claude-opus-5,True,False,4,94.0098,5.4,2,Provisional,10
+gpt 6 astra,5,GPT-6 Astra (xhigh),gpt-6-astra-xhigh,True,False,5,93.9963,4.2,4,Provisional,8
+gpt 6 astra,5,GPT-6 Astra (high),gpt-6-astra-high,False,True,6,93.9633,5.4,,Provisional,8
+gpt 6 astra,5,GPT-6 Astra (max),gpt-6-astra,False,True,7,93.9043,6.8,,Provisional,8
+gpt 6 astra,5,GPT-6 Astra (medium),gpt-6-astra-medium,False,True,8,93.672,8.8,,Provisional,8
+claude fable 5 1 with fallback,5,Claude Fable 5.1 (medium with fallback),claude-fable-5-1-medium,False,True,9,93.5791,9.8,,Provisional,7
+gpt 5 6 sol,6,GPT-5.6 Sol (xhigh),gpt-5-6-sol-xhigh,False,True,10,93.5721,9.4,,Provisional,9
+claude opus 5,5,Claude Opus 5 (xhigh),claude-opus-5-xhigh,False,True,11,93.3352,10.8,,Provisional,8
+kimi k3,2,Kimi K3 (max),kimi-k3,True,False,12,93.0838,13.4,7,Provisional,11
+claude opus 5,5,Claude Opus 5 (high),claude-opus-5-high,False,True,13,93.0363,13.6,,Provisional,8
+claude fable 5 with fallback,1,Claude Fable 5 (with fallback),claude-fable-5,True,False,14,93.032,14.2,3,Main,12
+gpt 6 astra,5,GPT-6 Astra (low),gpt-6-astra-low,False,True,15,93.0164,13.2,,Provisional,8
+gemini 3 8 flash,3,Gemini 3.8 Flash (high),gemini-3-8-flash,True,False,16,93.011,15.4,6,Provisional,9
+muse spark 1 3,2,Muse Spark 1.3 (xhigh),muse-spark-1-3-xhigh,True,False,17,92.7179,18.4,8,Provisional,8
+gpt 5 6 sol,6,GPT-5.6 Sol (max),gpt-5-6-sol,True,False,18,92.7144,19.0,5,Main,13
+gpt 5 6 sol,6,GPT-5.6 Sol (high),gpt-5-6-sol-high,False,True,19,92.6944,18.6,,Provisional,9
+grok 4 6,4,Grok 4.6 (high),grok-4-6,True,False,20,92.6333,19.4,9,Provisional,7
+claude opus 5,5,Claude Opus 5 (medium),claude-opus-5-medium,False,True,21,92.5418,21.8,,Provisional,8
+gpt 5 5,3,GPT-5.5 (xhigh),gpt-5-5,True,False,22,92.4504,22.0,12,Provisional,9
+muse spark 1 3,2,Muse Spark 1.3 (max),muse-spark-1-3,False,True,23,92.4247,22.8,,Provisional,7
+grok 4 6,4,Grok 4.6 (xhigh),grok-4-6-xhigh,False,True,24,92.3738,22.8,,Provisional,7
+claude fable 5 1 with fallback,5,Claude Fable 5.1 (low with fallback),claude-fable-5-1-low,False,True,25,92.2726,24.0,,Provisional,7
+gemini 3 7 flash,3,Gemini 3.7 Flash (high),gemini-3-7-flash,True,False,26,92.1221,26.4,10,Provisional,8
+gpt 5 6 sol,6,GPT-5.6 Sol (medium),gpt-5-6-sol-medium,False,True,27,91.9433,26.8,,Provisional,9
+gpt 5 6 terra,6,GPT-5.6 Terra (max),gpt-5-6-terra,True,False,28,91.4571,29.0,11,Main,13
+grok 4 6,4,Grok 4.6 (medium),grok-4-6-medium,False,True,29,91.3419,29.4,,Provisional,7
+gemini 3 8 flash,3,Gemini 3.8 Flash (medium),gemini-3-8-flash-medium,False,True,30,91.3254,29.0,,Provisional,8
+gpt 5 5,3,GPT-5.5 (high),gpt-5-5-high,False,True,31,91.1848,31.0,,Provisional,9
+glm 5 3,1,GLM-5.3 (max),glm-5-3,True,False,32,90.9772,32.0,13,Provisional,9
+claude opus 4 8,1,Claude Opus 4.8 (max),claude-opus-4-8,True,False,33,90.8824,33.0,14,Provisional,8
+gpt 5 5,3,GPT-5.5 (medium),gpt-5-5-medium,False,True,34,90.6023,35.0,,Provisional,9
+qwen3 8 2 4t a95b,1,Qwen3.8 2.4T A95B,qwen3-8-2-4t-a95b,True,False,35,90.5558,34.4,15,Provisional,7
+grok 4 5,1,Grok 4.5 (high),grok-4-5,True,False,36,90.3114,35.8,21,Provisional,8
+deepseek v4 pro 0813,1,DeepSeek V4 Pro 0813 (max),deepseek-v4-pro,True,False,37,90.2688,36.4,34,Provisional,9
+qwen3 8 max 0902,1,Qwen3.8 Max (0902),qwen3-8-max,True,False,38,90.0532,38.0,17,Provisional,8
+muse spark 1 2,1,Muse Spark 1.2 (xhigh),muse-spark-1-2,True,False,39,89.9675,39.2,18,Provisional,7
+claude sonnet 5,1,Claude Sonnet 5 (max),claude-sonnet-5,True,False,40,89.8281,40.8,20,Provisional,8
+gpt 5 6 terra,6,GPT-5.6 Terra (xhigh),gpt-5-6-terra-xhigh,False,True,41,89.7788,40.6,,Provisional,9
+gemini 3 1 pro preview,1,Gemini 3.1 Pro Preview,gemini-3-1-pro-preview,True,False,42,89.7194,43.0,29,Provisional,9
+gpt 5 6 luna,6,GPT-5.6 Luna (max),gpt-5-6-luna,True,False,43,89.6206,43.4,16,Provisional,12
+glm 5 3 flash,1,GLM-5.3-Flash,glm-5-3-flash,True,False,44,89.6152,44.0,22,Provisional,8
+agnes 3 0 flash,1,Agnes 3.0 Flash,agnes-3-0-flash,True,False,45,89.437,45.0,24,Provisional,7
+gemini 3 7 flash,3,Gemini 3.7 Flash (medium),gemini-3-7-flash-medium,False,True,46,89.3958,45.2,,Provisional,8
+claude opus 5,5,Claude Opus 5 (low),claude-opus-5-low,False,True,47,89.2578,46.8,,Provisional,8
+muse spark 1 1,1,Muse Spark 1.1 (xhigh),muse-spark-1-1,True,False,48,89.2198,46.6,25,Provisional,7
+gpt 5 6 luna,6,GPT-5.6 Luna (xhigh),gpt-5-6-luna-xhigh,False,True,49,88.8969,48.8,,Provisional,8
+deepseek v4 flash 0731,1,DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,True,False,50,88.7717,50.8,39,Provisional,7
+gemini 3 6 flash,1,Gemini 3.6 Flash,gemini-3-6-flash,True,False,51,88.7244,51.8,30,Provisional,8
+qwen3 8 flash next,1,Qwen3.8-Flash-Next,qwen3-8-flash-next,True,False,52,88.5617,50.6,26,Provisional,11
+gemini 3 5 flash,1,Gemini 3.5 Flash,gemini-3-5-flash,True,False,53,88.4942,52.8,27,Provisional,9
+gpt 5 6 sol,6,GPT-5.6 Sol (low),gpt-5-6-sol-low,False,True,54,88.2326,54.0,,Provisional,9
+glm 5 2,1,GLM-5.2 (max),glm-5-2,True,False,55,88.0112,55.2,32,Provisional,8
+gpt 5 6 terra,6,GPT-5.6 Terra (high),gpt-5-6-terra-high,False,True,56,87.9925,56.2,,Provisional,9
+gemini 3 8 flash,3,Gemini 3.8 Flash (low),gemini-3-8-flash-low,False,True,57,87.8148,57.2,,Provisional,8
+qwen3 7 max,1,Qwen3.7 Max,qwen3-7-max,True,False,58,87.6247,58.2,33,Provisional,8
+deepseek v4 flash vision,1,DeepSeek V4 Flash Vision (max),deepseek-v4-flash-vision,True,False,59,87.5954,58.2,31,Provisional,11
+gemini 3 7 flash,3,Gemini 3.7 Flash (low),gemini-3-7-flash-low,False,True,60,87.1078,60.0,,Provisional,8
+gpt 5 6 luna,6,GPT-5.6 Luna (high),gpt-5-6-luna-high,False,True,61,86.3692,61.0,,Provisional,8
+agnes 2 5 pro beta,1,Agnes 2.5 Pro Beta,agnes-2-5-pro-beta,True,False,62,85.8487,62.0,35,Provisional,8
+gpt 5 6 terra,6,GPT-5.6 Terra (medium),gpt-5-6-terra-medium,False,True,63,85.3014,63.0,,Provisional,9
+qwen3 8 27b,4,Qwen3.8 27B (xhigh),qwen3-8-27b,True,False,64,85.1914,64.0,37,Provisional,8
+kimi k2 6,1,Kimi K2.6,kimi-k2-6,True,False,65,84.7963,65.0,38,Provisional,9
+grok 4 6,4,Grok 4.6 (low),grok-4-6-low,False,True,66,84.3587,66.8,,Provisional,7
+kimi k2 7 code,1,Kimi K2.7 Code,kimi-k2-7-code,True,False,67,84.3137,66.4,40,Provisional,8
+deepseek v4 pro,1,DeepSeek V4 Pro (max),deepseek-v4-pro-0424,True,False,68,84.2691,67.8,36,Provisional,8
+nex n2 pro,1,Nex-N2-Pro,nex-n2-pro,True,False,69,83.7937,69.2,41,Provisional,8
+minimax m3,1,MiniMax-M3,minimax-m3,True,False,70,83.3107,70.2,42,Provisional,9
+agnes 2 5 pro alpha,1,Agnes 2.5 Pro Alpha,agnes-2-5-pro-alpha,True,False,71,83.054,71.4,50,Provisional,7
+kimi k3,2,Kimi K3 (low),kimi-k3-low,False,True,72,82.9935,71.2,,Provisional,8
+motif 3,1,Motif 3,motif-3,True,False,73,82.8239,73.0,45,Provisional,7
+qwen3 7 plus,1,Qwen3.7 Plus,qwen3-7-plus,True,False,74,82.4739,74.4,44,Main,11
+apodex 1 1,1,Apodex 1.1,apodex-1-1,True,False,75,82.0667,75.0,48,Provisional,8
+hy3,1,Hy3,hy3,True,False,76,82.0278,76.4,46,Provisional,7
+deepseek v4 flash,2,DeepSeek V4 Flash (max),deepseek-v4-flash-0420,True,False,77,81.9289,76.2,47,Provisional,8
+gpt 5 4 mini,1,GPT-5.4 mini (xhigh),gpt-5-4-mini,True,False,78,81.5401,79.0,49,Provisional,9
+claude sonnet 4 6,1,Claude Sonnet 4.6 (max),claude-sonnet-4-6-adaptive,True,False,79,81.4564,79.0,51,Provisional,9
+k2 horizon 375b a23b,1,K2 Horizon 375B A23B,k2-horizon-375b-a23b,True,False,80,81.342,80.0,53,Provisional,7
+mimo v2 5 pro,1,MiMo-V2.5-Pro,mimo-v2-5-pro,True,False,81,81.1866,81.0,54,Provisional,8
+inkling small,1,Inkling Small,inkling-small,True,False,82,80.7678,82.0,52,Provisional,8
+gpt 5 6 terra,6,GPT-5.6 Terra (low),gpt-5-6-terra-low,False,True,83,80.45,82.0,,Provisional,9
+inkling,1,Inkling,inkling,True,False,84,79.4086,84.0,55,Provisional,8
+gpt 5 4 nano,1,GPT-5.4 nano (xhigh),gpt-5-4-nano,True,False,85,79.1053,85.0,56,Provisional,9
+glm 5 1,1,GLM-5.1,glm-5-1,True,False,86,78.5765,86.4,57,Provisional,8
+solar pro 4,1,Solar Pro 4,solar-pro4,True,False,87,78.1165,87.0,59,Provisional,7
+grok 4 3,2,Grok 4.3 (high),grok-4-3,True,False,88,77.9581,87.6,60,Provisional,9
+gpt 5 6 luna,6,GPT-5.6 Luna (medium),gpt-5-6-luna-medium,False,True,89,77.244,89.0,,Provisional,8
+deepseek v4 flash,2,DeepSeek V4 Flash (high),deepseek-v4-flash-0420-high,False,True,90,76.6066,90.4,,Provisional,8
+gpt 5 6 sol,6,GPT-5.6 Sol (Non-reasoning),gpt-5-6-sol-non-reasoning,False,True,91,76.5814,91.8,,Provisional,8
+quasar 438b,1,Quasar 438B (max),quasar-438b,True,False,92,76.4215,93.2,62,Provisional,7
+mimo v2 5,1,MiMo-V2.5,mimo-v2-5-0424,True,False,93,76.3301,91.8,63,Provisional,9
+nemotron 3 ultra,1,Nemotron 3 Ultra,nvidia-nemotron-3-ultra-550b-a55b,True,False,94,76.297,93.0,65,Provisional,8
+qwen3 5 397b a17b,1,Qwen3.5 397B A17B,qwen3-5-397b-a17b,True,False,95,75.3233,95.2,64,Provisional,9
+ling 3 0 flash vl,1,Ling-3.0-flash-VL,ling-3-0-flash-vl,True,False,96,74.7876,96.6,67,Provisional,8
+solar open2 250b,1,Solar Open2 250B,solar-open2-250b,True,False,97,74.3883,98.0,69,Provisional,7
+muse glimmer,1,Muse Glimmer (high),muse-glimmer,True,False,98,74.3061,97.2,70,Provisional,8
+minimax m2 7,1,MiniMax-M2.7,minimax-m2-7,True,False,99,74.0356,98.4,66,Provisional,8
+a x k2,1,A.X-K2,a-x-k2,True,False,100,73.6017,99.4,71,Provisional,7
+qwen3 6 27b,1,Qwen3.6 27B,qwen3-6-27b,True,False,101,71.4975,101.4,73,Provisional,9
+ling 3 0 flash,1,Ling 3.0 Flash,ling-3-0-flash,True,False,102,71.0888,102.0,75,Provisional,7
+longcat 2 0,1,LongCat 2.0,longcat-2-0,True,False,103,70.3866,104.0,77,Provisional,7
+ring 2 6 1t,1,Ring-2.6-1T,ring-2-6-1t,True,False,104,70.3853,103.4,78,Provisional,8
+gpt 5 6 luna,6,GPT-5.6 Luna (low),gpt-5-6-luna-low,False,True,105,70.1588,104.2,,Provisional,8
+qwen3 8 27b,4,Qwen3.8 27B (medium),qwen3-8-27b-medium,False,True,106,69.2555,107.4,,Provisional,8
+qwen3 8 27b,4,Qwen3.8 27B (low),qwen3-8-27b-low,False,True,107,69.1171,108.6,,Provisional,8
+qwen3 5 122b a10b,1,Qwen3.5 122B A10B,qwen3-5-122b-a10b,True,False,108,69.0697,107.4,80,Provisional,10
+gemini 3 5 flash lite,1,Gemini 3.5 Flash-Lite,gemini-3-5-flash-lite,True,False,109,68.7685,109.2,84,Provisional,8
+gemma 4 31b,1,Gemma 4 31B,gemma-4-31b,True,False,110,68.5617,109.4,81,Provisional,9
+claude 4 5 sonnet,1,Claude 4.5 Sonnet,claude-4-5-sonnet-thinking,True,False,111,68.2677,110.8,82,Provisional,10
+step 3 7 flash,1,Step 3.7 Flash,step-3-7-flash,True,False,112,68.2636,110.4,83,Provisional,9
+nemotron 3 super,1,Nemotron 3 Super,nvidia-nemotron-3-super-120b-a12b,True,False,113,66.3879,113.2,87,Provisional,8
+qwen3 6 35b a3b,1,Qwen3.6 35B A3B,qwen3-6-35b-a3b,True,False,114,65.5648,115.0,86,Provisional,9
+gpt 5 5 instant june 2026,1,GPT-5.5 Instant (June 2026),gpt-5-5-instant-06-26,True,False,115,64.8647,115.2,89,Provisional,7
+deepseek v3 1 terminus,1,DeepSeek V3.1 Terminus,deepseek-v3-1-terminus-reasoning,True,False,116,64.4556,115.8,90,Provisional,9
+gemini 2 5 pro,1,Gemini 2.5 Pro,gemini-2-5-pro,True,False,117,64.4236,117.6,91,Provisional,10
+gemini 3 1 flash lite,1,Gemini 3.1 Flash-Lite,gemini-3-1-flash-lite-preview,True,False,118,64.241,117.0,92,Provisional,9
+gpt 5 6 terra,6,GPT-5.6 Terra (Non-reasoning),gpt-5-6-terra-non-reasoning,False,True,119,64.0956,118.0,,Provisional,8
+qwen3 8 27b,4,Qwen3.8 27B,qwen3-8-27b-non-reasoning,False,True,120,63.3151,120.0,,Provisional,11
+mistral medium 3 5,1,Mistral Medium 3.5,mistral-medium-3-5,True,False,121,61.7184,121.0,93,Provisional,9
+gemma 4 26b a4b,1,Gemma 4 26B A4B,gemma-4-26b-a4b,True,False,122,61.4294,122.0,94,Provisional,9
+k exaone 2 0,1,K-EXAONE 2.0,k-exaone-2-0-0803,True,False,123,60.132,123.0,95,Provisional,7
+claude 4 5 haiku,1,Claude 4.5 Haiku,claude-4-5-haiku-reasoning,True,False,124,58.5787,124.0,97,Provisional,10
+g9v3 39a5b,1,G9v3-39A5B,g9v3-39a5b,True,False,125,57.8499,125.2,98,Provisional,7
+gpt oss 120b,1,gpt-oss-120b (high),gpt-oss-120b,True,False,126,56.8832,125.8,99,Provisional,9
+qwen3 235b a22b 2507,1,Qwen3 235B A22B 2507,qwen3-235b-a22b-instruct-2507-reasoning,True,False,127,54.2113,127.0,101,Provisional,9
+mercury 2,1,Mercury 2,mercury-2,True,False,128,53.1377,128.2,102,Provisional,8
+gpt 5 mini,1,GPT-5 mini (high),gpt-5-mini,True,False,129,52.1025,128.8,104,Provisional,10
+north mini code,1,North Mini Code,north-mini-code,True,False,130,50.4001,130.2,105,Provisional,8
+qwen3 coder next,1,Qwen3 Coder Next,qwen3-coder-next,True,False,131,49.862,131.6,106,Provisional,8
+command a,1,Command A+,command-a-plus,True,False,132,49.6119,131.6,107,Provisional,9
+nemotron 3 5 lightning,1,Nemotron 3.5 Lightning,nemotron-3-5-lightning,True,False,133,49.3262,133.0,108,Provisional,7
+trinity large thinking,1,Trinity Large Thinking,trinity-large-thinking,True,False,134,48.9161,133.6,109,Provisional,8
+gpt 5 6 luna,6,GPT-5.6 Luna (Non-reasoning),gpt-5-6-luna-non-reasoning,False,True,135,48.1525,135.0,,Provisional,8
+mistral small 4,1,Mistral Small 4,mistral-small-4,True,False,136,47.7338,136.2,111,Provisional,9
+deepseek r1 jan,1,DeepSeek R1 (Jan),deepseek-r1-0120,True,False,137,47.609,136.8,112,Provisional,9
+ling 3 0 tiny,1,Ling 3.0 Tiny,ling-3-0-tiny,True,False,138,46.9972,138.2,113,Provisional,7
+granite 4 2 30b,1,Granite 4.2 30B,granite-4-2-30b,True,False,139,45.6615,139.2,114,Provisional,7
+gpt oss 20b,1,gpt-oss-20b (high),gpt-oss-20b,True,False,140,45.1671,139.6,115,Provisional,9
+grok 4 3,2,Grok 4.3 (Non-reasoning),grok-4-3-non-reasoning,False,True,141,44.5962,141.0,,Provisional,9
+nemotron 3 nano,1,Nemotron 3 Nano,nvidia-nemotron-3-nano-30b-a3b-reasoning,True,False,142,42.6621,142.0,116,Provisional,9
+o3 mini,1,o3-mini (high),o3-mini-high,True,False,143,41.8766,143.0,117,Provisional,8
+granite 4 2 8b,1,Granite 4.2 8B,granite-4-2-8b,True,False,144,40.7806,144.0,118,Provisional,7
+solar pro 3,1,Solar Pro 3,solar-pro-3,True,False,145,39.9567,145.0,119,Provisional,8
+minicpm5 2b,1,MiniCPM5-2B,minicpm5-2b,True,False,146,39.4027,146.0,120,Provisional,7
+devstral 2,1,Devstral 2,devstral-2,True,False,147,37.9183,147.2,121,Provisional,9
+deepseek v3 0324,1,DeepSeek V3 0324,deepseek-v3-0324,True,False,148,37.5423,147.8,122,Provisional,9
+qwen3 30b a3b 2507,1,Qwen3 30B A3B 2507,qwen3-30b-a3b-2507-reasoning,True,False,149,36.0379,149.0,123,Provisional,9
+mistral medium 3 1,1,Mistral Medium 3.1,mistral-medium-3-1,True,False,150,35.6413,150.0,124,Provisional,10
+mistral large 3,1,Mistral Large 3,mistral-large-3,True,False,151,35.1422,151.8,125,Provisional,10
+llama 4 maverick,1,Llama 4 Maverick,llama-4-maverick,True,False,152,34.8663,152.8,127,Provisional,10
+devstral small 2,1,Devstral Small 2,devstral-small-2,True,False,153,34.7828,151.4,126,Provisional,10
+celeris 1,1,Celeris-1,celeris-1,True,False,154,33.585,154.0,128,Provisional,7
+deepseek v3 dec,1,DeepSeek V3 (Dec),deepseek-v3,True,False,155,32.2071,155.0,129,Provisional,9
+granite 4 2 3b,1,Granite 4.2 3B,granite-4-2-3b,True,False,156,30.374,156.0,130,Provisional,7
+mistral small 3 1,1,Mistral Small 3.1,mistral-small-3-1,True,False,157,28.9455,157.0,131,Provisional,9
+ministral 3 14b,1,Ministral 3 14B,ministral-3-14b,True,False,158,27.6929,158.0,132,Provisional,10
+mistral small 3 2,1,Mistral Small 3.2,mistral-small-3-2,True,False,159,23.6958,159.2,134,Provisional,10
+qwen3 32b,1,Qwen3 32B,qwen3-32b-instruct-reasoning,True,False,160,23.3951,160.6,133,Provisional,9
+llama 4 scout,1,Llama 4 Scout,llama-4-scout,True,False,161,23.2058,160.2,135,Provisional,10
+ministral 3 8b,1,Ministral 3 8B,ministral-3-8b,True,False,162,22.5478,162.0,137,Provisional,10
+qwen3 14b,1,Qwen3 14B,qwen3-14b-instruct-reasoning,True,False,163,18.5954,163.0,138,Provisional,9
+gemma 3 27b,1,Gemma 3 27B,gemma-3-27b,True,False,164,17.2953,164.0,139,Provisional,10
+lfm2 5 2 6b,1,LFM2.5-2.6B,lfm2-5-2-6b,True,False,165,16.9294,165.0,140,Provisional,7
+ministral 3 3b,1,Ministral 3 3B,ministral-3-3b,True,False,166,15.0848,166.2,142,Provisional,10
+qwen3 8b,1,Qwen3 8B,qwen3-8b-instruct-reasoning,True,False,167,13.1871,166.8,143,Provisional,9
+gemma 3 12b,1,Gemma 3 12B,gemma-3-12b,True,False,168,12.5982,168.0,144,Provisional,10

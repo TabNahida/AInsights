@@ -71,4 +71,15 @@ reported as best across unspecified effort settings remain reference evidence;
 they are not assigned to a particular reasoning configuration. Versioned
 Terminal-Bench, OSWorld, HLE-Verified, and CursorBench results remain distinct.
 
+The September 18 refresh adds official cards for K2 Horizon 0.9B, 3.7B, 7B,
+MoVA 36B A4B, and Ling-3.0-flash-Fin, including 42 reference results and
+official license/context metadata. K2 tables are refreshed automatically;
+Ling's image-only chart is manually transcribed with its URL and evaluation
+protocols recorded in the source note. Unspecified effort settings remain
+reference-only, and versioned LiveCodeBench and SpreadsheetBench rows stay
+separate. Qwen3.8-Max's August release scores bind to the dated `0803` identity;
+AA's rolling `qwen3-8-max` slug now identifies the September `0902` checkpoint.
+Daily regression checks validate observed coverage and evidence tiers rather
+than requiring named models to retain historical benchmark counts.
+
 The static ranking site lives in `docs/` and reads `docs/data/models.json`. The detailed calculation is documented in `docs/methodology.html`; reproducible analysis outputs live in `analysis/irt_leaderboard_exploration/outputs/`.

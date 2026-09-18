@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T08:51:16+00:00",
+  "generatedAt": "2026-09-18T20:15:01+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
       "label": "OpenAI GPT-5.5 launch evaluations",
       "url": "https://openai.com/index/introducing-gpt-5-5/",
       "category": "Official model release",
-      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
+      "collectionStatus": "partial-refresh; seeded 196 benchmark rows",
       "note": "Official OpenAI table covering GPT-5.5, GPT-5.4, GPT-5.5 Pro, GPT-5.4 Pro, Claude Opus 4.7, and Gemini 3.1 Pro."
     },
     {
@@ -36,7 +36,7 @@
       "url": "https://openai.com/index/gpt-6-astra/",
       "rawUrl": "https://openai.com/index/gpt-6-astra/",
       "category": "Official model release",
-      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
+      "collectionStatus": "refreshed",
       "note": "OpenAI's September 3, 2026 release appendix explicitly reports the maximum score at any effort. These are source-library results, not evidence for a particular max, xhigh, or lower-effort variant. Only OpenAI's Astra column is ingested. OSWorld's offline subset, Terminal-Bench 4.0, and the new June-August ExploitBench set remain separate from earlier evaluations. BenchCAD uses tools; ExploitGym was run without the six-hour time limit.",
       "modelAliases": [
         "GPT-6 Astra",
@@ -199,7 +199,7 @@
       "url": "https://openai.com/index/gpt-5-6/",
       "rawUrl": "https://openai.com/index/gpt-5-6/",
       "category": "Official model release",
-      "collectionStatus": "seeded-official-values; refresh blocked: HTTPError",
+      "collectionStatus": "refreshed",
       "note": "OpenAI official GPT-5.6 release tables covering Sol, Terra, and Luna across professional work, coding, science, computer use, cybersecurity, reasoning, tool use, and long-context evaluations. The release appendix labels the single-agent columns only by model tier, while the surrounding AA index values and separately reported Sol Ultra rows support mapping these columns to max effort. The mapping is therefore exact-variant scoped but marked as configuration-inferred and must not be broadcast to other effort settings.",
       "modelAliases": [
         "GPT-5.6 Sol (max)",
@@ -399,11 +399,9 @@
       "collectionStatus": "refreshed",
       "note": "Qwen's August 3, 2026 Qwen3.8-Max release table. Only the Qwen3.8-Max column is ingested from Qwen's article-retrieval JSON API. Scores retain the published harness/configuration: for example Terminal-Bench 2.1 is Claude Code avg@10, SWE-bench Pro uses the Claude Code harness on the refined task set, and CharXiv reports without/with Code Interpreter separately. Slash-valued rows use explicit semantic component selection so refreshes cannot silently replace Score with Pass or partial with binary.",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ]
     },
     {
@@ -1005,6 +1003,175 @@
       ],
       "modelScoreEligible": false,
       "evidenceEligible": false
+    },
+    {
+      "id": "ifm-k2-horizon-0-9b-card",
+      "label": "IFM K2-Horizon-0.9B official model card",
+      "url": "https://huggingface.co/IFM/K2-Horizon-0.9B",
+      "rawUrl": "https://huggingface.co/IFM/K2-Horizon-0.9B/raw/main/README.md",
+      "category": "Official model card",
+      "collectionStatus": "refreshed",
+      "note": "IFM model card checked September 18, 2026; links to https://ifm.ai/blog/k2/. Published owner-column values only. The tables do not establish a per-row reasoning effort, so these are reference scores rather than exact-configuration ranking inputs. BrowseComp uses Discard-all@95k; LCR has no version label. AA-derived rows remain reference evidence and do not replace the AA import.",
+      "modelAliases": [
+        "k2-horizon-0-9b",
+        "K2-Horizon-0.9B"
+      ],
+      "displayReferenceScores": true,
+      "exactBenchmarkLabelsOnly": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "modelId": "IFM/K2-Horizon-0.9B",
+      "organization": "IFM",
+      "modelMetadata": {
+        "slug": "k2-horizon-0-9b",
+        "contextWindowTokens": 131072,
+        "openSourceCategorization": "permissive",
+        "inputModalities": [
+          "Text"
+        ],
+        "outputModalities": [
+          "Text"
+        ],
+        "modelDetails": {
+          "license": "Apache-2.0",
+          "parameters": "0.9B"
+        }
+      }
+    },
+    {
+      "id": "ifm-k2-horizon-3-7b-card",
+      "label": "IFM K2-Horizon-3.7B official model card",
+      "url": "https://huggingface.co/IFM/K2-Horizon-3.7B",
+      "rawUrl": "https://huggingface.co/IFM/K2-Horizon-3.7B/raw/main/README.md",
+      "category": "Official model card",
+      "collectionStatus": "refreshed",
+      "note": "IFM model card checked September 18, 2026; links to https://ifm.ai/blog/k2/. Published owner-column values only. The tables do not establish a per-row reasoning effort, so these are reference scores rather than exact-configuration ranking inputs. BrowseComp uses Discard-all@95k; LCR has no version label. AA-derived rows remain reference evidence and do not replace the AA import.",
+      "modelAliases": [
+        "k2-horizon-3-7b",
+        "K2-Horizon-3.7B"
+      ],
+      "displayReferenceScores": true,
+      "exactBenchmarkLabelsOnly": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "modelId": "IFM/K2-Horizon-3.7B",
+      "organization": "IFM",
+      "modelMetadata": {
+        "slug": "k2-horizon-3-7b",
+        "contextWindowTokens": 524288,
+        "openSourceCategorization": "permissive",
+        "inputModalities": [
+          "Text"
+        ],
+        "outputModalities": [
+          "Text"
+        ],
+        "modelDetails": {
+          "license": "Apache-2.0",
+          "parameters": "3.7B"
+        }
+      }
+    },
+    {
+      "id": "ifm-k2-horizon-7b-card",
+      "label": "IFM K2-Horizon-7B official model card",
+      "url": "https://huggingface.co/IFM/K2-Horizon-7B",
+      "rawUrl": "https://huggingface.co/IFM/K2-Horizon-7B/raw/main/README.md",
+      "category": "Official model card",
+      "collectionStatus": "refreshed",
+      "note": "IFM model card checked September 18, 2026; links to https://ifm.ai/blog/k2/. Published owner-column values only. The tables do not establish a per-row reasoning effort, so these are reference scores rather than exact-configuration ranking inputs. BrowseComp uses Discard-all@95k; LCR has no version label. AA-derived rows remain reference evidence and do not replace the AA import.",
+      "modelAliases": [
+        "k2-horizon-7b",
+        "K2-Horizon-7B"
+      ],
+      "displayReferenceScores": true,
+      "exactBenchmarkLabelsOnly": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "modelId": "IFM/K2-Horizon-7B",
+      "organization": "IFM",
+      "modelMetadata": {
+        "slug": "k2-horizon-7b",
+        "contextWindowTokens": 524288,
+        "openSourceCategorization": "permissive",
+        "inputModalities": [
+          "Text"
+        ],
+        "outputModalities": [
+          "Text"
+        ],
+        "modelDetails": {
+          "license": "Apache-2.0",
+          "parameters": "7B"
+        }
+      }
+    },
+    {
+      "id": "ifm-k2-horizon-mova-36b-a4b-card",
+      "label": "IFM K2-Horizon-MoVA-36B-A4B official model card",
+      "url": "https://huggingface.co/IFM/K2-Horizon-MoVA-36B-A4B",
+      "rawUrl": "https://huggingface.co/IFM/K2-Horizon-MoVA-36B-A4B/raw/main/README.md",
+      "category": "Official model card",
+      "collectionStatus": "refreshed",
+      "note": "IFM model card checked September 18, 2026; links to https://ifm.ai/blog/k2/. Published owner-column values only. The tables do not establish a per-row reasoning effort, so these are reference scores rather than exact-configuration ranking inputs. BrowseComp uses Discard-all@95k; LCR has no version label. AA-derived rows remain reference evidence and do not replace the AA import.",
+      "modelAliases": [
+        "k2-horizon-mova-36b-a4b",
+        "K2-Horizon-MoVA-36B-A4B"
+      ],
+      "displayReferenceScores": true,
+      "exactBenchmarkLabelsOnly": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "modelId": "IFM/K2-Horizon-MoVA-36B-A4B",
+      "organization": "IFM",
+      "modelMetadata": {
+        "slug": "k2-horizon-mova-36b-a4b",
+        "contextWindowTokens": 524288,
+        "openSourceCategorization": "permissive",
+        "inputModalities": [
+          "Text"
+        ],
+        "outputModalities": [
+          "Text"
+        ],
+        "modelDetails": {
+          "license": "Apache-2.0",
+          "parameters": "36B total; 4B active"
+        }
+      }
+    },
+    {
+      "id": "inclusionai-ling-3-0-flash-fin-card",
+      "label": "Ant Group Ling-3.0-flash-Fin official model card",
+      "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin",
+      "rawUrl": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin/raw/main/README.md",
+      "category": "Official model card",
+      "collectionStatus": "seeded-official-values; no parseable benchmark table found",
+      "note": "Values visually transcribed September 18, 2026 from the owner (blue) bars at https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin/resolve/main/assets/ling-3.0-flash-fin-evaluation.png. The chart says highest reasoning tier without naming the API effort, so scores are reference-only. Finance Agent reports strict-pass means over 10 runs (v1.1) and 20 runs (v2). SpreadsheetBench uses Claude Code 2.1.173, LibreOffice 25.8.7, temperature 0.6, 3-hour limits and 120/300 turns for V1/V2. FinSearchComp Verified uses 145 reviewed answers of 273; tau3-Banking is sourced from AA. Competitor bars are not ingested. Image values require manual review to refresh.",
+      "modelAliases": [
+        "ling-3-0-flash-fin",
+        "Ling-3.0-flash-Fin"
+      ],
+      "displayReferenceScores": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "modelId": "inclusionAI/Ling-3.0-flash-Fin",
+      "organization": "inclusionAI",
+      "modelMetadata": {
+        "slug": "ling-3-0-flash-fin",
+        "contextWindowTokens": 262144,
+        "openSourceCategorization": "permissive",
+        "inputModalities": [
+          "Text"
+        ],
+        "outputModalities": [
+          "Text"
+        ],
+        "modelDetails": {
+          "license": "MIT",
+          "parameters": "124B total; 5.1B active"
+        }
+      }
     },
     {
       "id": "official-qwen-qwen3-coder-next-page",
@@ -3271,6 +3438,62 @@
       "category": "Biology",
       "unit": "%",
       "icon": "LAB"
+    },
+    {
+      "id": "humaneval-plus",
+      "label": "HumanEval+",
+      "category": "Coding",
+      "unit": "%",
+      "icon": "HE+"
+    },
+    {
+      "id": "mbpp-plus",
+      "label": "MBPP+",
+      "category": "Coding",
+      "unit": "%",
+      "icon": "MBPP"
+    },
+    {
+      "id": "livecodebench-v6",
+      "label": "LiveCodeBench v6",
+      "category": "Coding",
+      "unit": "%",
+      "icon": "LCB6"
+    },
+    {
+      "id": "finfirst",
+      "label": "FinFIRST",
+      "category": "Financial research",
+      "unit": "%",
+      "icon": "FIN"
+    },
+    {
+      "id": "finsearchcomp-verified",
+      "label": "FinSearchComp Verified",
+      "category": "Financial research",
+      "unit": "%",
+      "icon": "FIN"
+    },
+    {
+      "id": "fincraft",
+      "label": "FinCRAFT",
+      "category": "Financial research",
+      "unit": "%",
+      "icon": "FIN"
+    },
+    {
+      "id": "spreadsheetbench-v1-claude-code",
+      "label": "SpreadsheetBench V1 (Claude Code)",
+      "category": "Agentic work",
+      "unit": "%",
+      "icon": "SHEET"
+    },
+    {
+      "id": "spreadsheetbench-v2-claude-code",
+      "label": "SpreadsheetBench V2 (Claude Code)",
+      "category": "Agentic work",
+      "unit": "%",
+      "icon": "SHEET"
     }
   ],
   "results": [
@@ -10959,11 +11182,9 @@
       "benchmarkLabel": "Terminal-Bench 2.1",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 86.6,
       "unit": "%",
@@ -10976,11 +11197,9 @@
       "benchmarkLabel": "SWE-Bench Pro",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 67.7,
       "unit": "%",
@@ -10993,11 +11212,9 @@
       "benchmarkLabel": "DeepSWE v1.1",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 56.6,
       "unit": "%",
@@ -11010,11 +11227,9 @@
       "benchmarkLabel": "NL2Repo",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 55.9,
       "unit": "%",
@@ -11027,11 +11242,9 @@
       "benchmarkLabel": "FrontierSWE Dominance",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 73.5,
       "unit": "%",
@@ -11044,11 +11257,9 @@
       "benchmarkLabel": "MLS Bench Lite",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 41.0,
       "unit": "%",
@@ -11061,11 +11272,9 @@
       "benchmarkLabel": "Job Bench",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 53.4,
       "unit": "%",
@@ -11078,11 +11287,9 @@
       "benchmarkLabel": "SkillsBench Avg5",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 70.2,
       "unit": "%",
@@ -11095,11 +11302,9 @@
       "benchmarkLabel": "Agents' Last Exam",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 52.4,
       "unit": "%",
@@ -11113,11 +11318,9 @@
       "benchmarkLabel": "AutomationBench",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 27.3,
       "unit": "%",
@@ -11130,11 +11333,9 @@
       "benchmarkLabel": "Toolathlon",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 72.5,
       "unit": "%",
@@ -11147,11 +11348,9 @@
       "benchmarkLabel": "HLE w/ tools",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 56.2,
       "unit": "%",
@@ -11164,11 +11363,9 @@
       "benchmarkLabel": "GPQA Diamond",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 92.6,
       "unit": "%",
@@ -11181,11 +11378,9 @@
       "benchmarkLabel": "Humanity's Last Exam",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 43.6,
       "unit": "%",
@@ -11198,11 +11393,9 @@
       "benchmarkLabel": "IFBench",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 82.8,
       "unit": "%",
@@ -11215,11 +11408,9 @@
       "benchmarkLabel": "MMMU-Pro",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 82.3,
       "unit": "%",
@@ -11232,11 +11423,9 @@
       "benchmarkLabel": "MathVision",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 95.2,
       "unit": "%",
@@ -11250,11 +11439,9 @@
       "benchmarkLabel": "MathVision w/ Python",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 97.7,
       "unit": "%",
@@ -11268,11 +11455,9 @@
       "benchmarkLabel": "BabyVision w/ Python",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 91.3,
       "unit": "%",
@@ -11286,11 +11471,9 @@
       "benchmarkLabel": "ZeroBench pass@5",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 24.0,
       "unit": "%",
@@ -11304,11 +11487,9 @@
       "benchmarkLabel": "ZeroBench w/ Python pass@5",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 49.0,
       "unit": "%",
@@ -11322,11 +11503,9 @@
       "benchmarkLabel": "OSWorld-Verified",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 86.1,
       "unit": "%",
@@ -11339,11 +11518,9 @@
       "benchmarkLabel": "OSWorld 2.0",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 46.7,
       "unit": "%",
@@ -11357,11 +11534,9 @@
       "benchmarkLabel": "CharXiv Reasoning",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 88.4,
       "unit": "%",
@@ -11375,11 +11550,9 @@
       "benchmarkLabel": "CharXiv Reasoning w/ tools",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 93.5,
       "unit": "%",
@@ -11393,11 +11566,9 @@
       "benchmarkLabel": "OmniDocBench",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 92.1,
       "unit": "%",
@@ -11410,11 +11581,9 @@
       "benchmarkLabel": "PerceptionBench",
       "model": "Qwen3.8 Max",
       "modelAliases": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max"
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803"
       ],
       "value": 63.5,
       "unit": "%",
@@ -23678,6 +23847,678 @@
       "sourceId": "google-gemini-3-7-flash-comparison",
       "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
       "sourceLabel": "Google DeepMind Gemini 3.7 Flash comparison evaluations",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "aime-2025",
+      "benchmarkLabel": "AIME 2025",
+      "model": "K2-Horizon-0.9B",
+      "modelAliases": [
+        "k2-horizon-0-9b",
+        "K2-Horizon-0.9B"
+      ],
+      "value": 41.7,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-0-9b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-0.9B",
+      "sourceLabel": "IFM K2-Horizon-0.9B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "aime-2026",
+      "benchmarkLabel": "AIME 2026",
+      "model": "K2-Horizon-0.9B",
+      "modelAliases": [
+        "k2-horizon-0-9b",
+        "K2-Horizon-0.9B"
+      ],
+      "value": 48.5,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-0-9b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-0.9B",
+      "sourceLabel": "IFM K2-Horizon-0.9B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "K2-Horizon-0.9B",
+      "modelAliases": [
+        "k2-horizon-0-9b",
+        "K2-Horizon-0.9B"
+      ],
+      "value": 25.8,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-0-9b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-0.9B",
+      "sourceLabel": "IFM K2-Horizon-0.9B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "K2-Horizon-0.9B",
+      "modelAliases": [
+        "k2-horizon-0-9b",
+        "K2-Horizon-0.9B"
+      ],
+      "value": 27.3,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-0-9b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-0.9B",
+      "sourceLabel": "IFM K2-Horizon-0.9B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "humaneval-plus",
+      "benchmarkLabel": "HumanEval+",
+      "model": "K2-Horizon-0.9B",
+      "modelAliases": [
+        "k2-horizon-0-9b",
+        "K2-Horizon-0.9B"
+      ],
+      "value": 79.9,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-0-9b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-0.9B",
+      "sourceLabel": "IFM K2-Horizon-0.9B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "mbpp-plus",
+      "benchmarkLabel": "MBPP+",
+      "model": "K2-Horizon-0.9B",
+      "modelAliases": [
+        "k2-horizon-0-9b",
+        "K2-Horizon-0.9B"
+      ],
+      "value": 68.0,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-0-9b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-0.9B",
+      "sourceLabel": "IFM K2-Horizon-0.9B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "livecodebench-v6",
+      "benchmarkLabel": "LiveCodeBench v6",
+      "model": "K2-Horizon-0.9B",
+      "modelAliases": [
+        "k2-horizon-0-9b",
+        "K2-Horizon-0.9B"
+      ],
+      "value": 37.4,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-0-9b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-0.9B",
+      "sourceLabel": "IFM K2-Horizon-0.9B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "bfcl-v4",
+      "benchmarkLabel": "BFCL v4",
+      "model": "K2-Horizon-0.9B",
+      "modelAliases": [
+        "k2-horizon-0-9b",
+        "K2-Horizon-0.9B"
+      ],
+      "value": 28.0,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-0-9b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-0.9B",
+      "sourceLabel": "IFM K2-Horizon-0.9B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "K2-Horizon-3.7B",
+      "modelAliases": [
+        "k2-horizon-3-7b",
+        "K2-Horizon-3.7B"
+      ],
+      "value": 70.5,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-3-7b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-3.7B",
+      "sourceLabel": "IFM K2-Horizon-3.7B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "K2-Horizon-3.7B",
+      "modelAliases": [
+        "k2-horizon-3-7b",
+        "K2-Horizon-3.7B"
+      ],
+      "value": 68.6,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-3-7b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-3.7B",
+      "sourceLabel": "IFM K2-Horizon-3.7B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "K2-Horizon-3.7B",
+      "modelAliases": [
+        "k2-horizon-3-7b",
+        "K2-Horizon-3.7B"
+      ],
+      "value": 65.4,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-3-7b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-3.7B",
+      "sourceLabel": "IFM K2-Horizon-3.7B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "K2-Horizon-3.7B",
+      "modelAliases": [
+        "k2-horizon-3-7b",
+        "K2-Horizon-3.7B"
+      ],
+      "value": 12.9,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-3-7b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-3.7B",
+      "sourceLabel": "IFM K2-Horizon-3.7B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "scicode",
+      "benchmarkLabel": "SciCode",
+      "model": "K2-Horizon-3.7B",
+      "modelAliases": [
+        "k2-horizon-3-7b",
+        "K2-Horizon-3.7B"
+      ],
+      "value": 25.9,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-3-7b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-3.7B",
+      "sourceLabel": "IFM K2-Horizon-3.7B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "K2-Horizon-3.7B",
+      "modelAliases": [
+        "k2-horizon-3-7b",
+        "K2-Horizon-3.7B"
+      ],
+      "value": 25.1,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-3-7b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-3.7B",
+      "sourceLabel": "IFM K2-Horizon-3.7B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "tau3-banking",
+      "benchmarkLabel": "τ³-Banking",
+      "model": "K2-Horizon-3.7B",
+      "modelAliases": [
+        "k2-horizon-3-7b",
+        "K2-Horizon-3.7B"
+      ],
+      "value": 17.7,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-3-7b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-3.7B",
+      "sourceLabel": "IFM K2-Horizon-3.7B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "bfcl-v4",
+      "benchmarkLabel": "BFCL v4",
+      "model": "K2-Horizon-3.7B",
+      "modelAliases": [
+        "k2-horizon-3-7b",
+        "K2-Horizon-3.7B"
+      ],
+      "value": 50.9,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-3-7b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-3.7B",
+      "sourceLabel": "IFM K2-Horizon-3.7B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "hmmt-2026-feb",
+      "benchmarkLabel": "HMMT Feb 2026",
+      "model": "K2-Horizon-7B",
+      "modelAliases": [
+        "k2-horizon-7b",
+        "K2-Horizon-7B"
+      ],
+      "value": 73.3,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-7b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-7B",
+      "sourceLabel": "IFM K2-Horizon-7B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "K2-Horizon-7B",
+      "modelAliases": [
+        "k2-horizon-7b",
+        "K2-Horizon-7B"
+      ],
+      "value": 70.6,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-7b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-7B",
+      "sourceLabel": "IFM K2-Horizon-7B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "K2-Horizon-7B",
+      "modelAliases": [
+        "k2-horizon-7b",
+        "K2-Horizon-7B"
+      ],
+      "value": 18.6,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-7b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-7B",
+      "sourceLabel": "IFM K2-Horizon-7B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "scicode",
+      "benchmarkLabel": "SciCode",
+      "model": "K2-Horizon-7B",
+      "modelAliases": [
+        "k2-horizon-7b",
+        "K2-Horizon-7B"
+      ],
+      "value": 31.6,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-7b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-7B",
+      "sourceLabel": "IFM K2-Horizon-7B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "aa-lcr",
+      "benchmarkLabel": "AA-LCR",
+      "model": "K2-Horizon-7B",
+      "modelAliases": [
+        "k2-horizon-7b",
+        "K2-Horizon-7B"
+      ],
+      "value": 68.0,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-7b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-7B",
+      "sourceLabel": "IFM K2-Horizon-7B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "K2-Horizon-7B",
+      "modelAliases": [
+        "k2-horizon-7b",
+        "K2-Horizon-7B"
+      ],
+      "value": 39.1,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-7b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-7B",
+      "sourceLabel": "IFM K2-Horizon-7B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "tau3-banking",
+      "benchmarkLabel": "τ³-Banking",
+      "model": "K2-Horizon-7B",
+      "modelAliases": [
+        "k2-horizon-7b",
+        "K2-Horizon-7B"
+      ],
+      "value": 25.8,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-7b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-7B",
+      "sourceLabel": "IFM K2-Horizon-7B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "K2-Horizon-7B",
+      "modelAliases": [
+        "k2-horizon-7b",
+        "K2-Horizon-7B"
+      ],
+      "value": 59.0,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-7b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-7B",
+      "sourceLabel": "IFM K2-Horizon-7B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "tau3-banking",
+      "benchmarkLabel": "τ³-Banking",
+      "model": "K2-Horizon-MoVA-36B-A4B",
+      "modelAliases": [
+        "k2-horizon-mova-36b-a4b",
+        "K2-Horizon-MoVA-36B-A4B"
+      ],
+      "value": 26.8,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-mova-36b-a4b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-MoVA-36B-A4B",
+      "sourceLabel": "IFM K2-Horizon-MoVA-36B-A4B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "K2-Horizon-MoVA-36B-A4B",
+      "modelAliases": [
+        "k2-horizon-mova-36b-a4b",
+        "K2-Horizon-MoVA-36B-A4B"
+      ],
+      "value": 58.6,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-mova-36b-a4b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-MoVA-36B-A4B",
+      "sourceLabel": "IFM K2-Horizon-MoVA-36B-A4B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "scicode",
+      "benchmarkLabel": "SciCode",
+      "model": "K2-Horizon-MoVA-36B-A4B",
+      "modelAliases": [
+        "k2-horizon-mova-36b-a4b",
+        "K2-Horizon-MoVA-36B-A4B"
+      ],
+      "value": 38.9,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-mova-36b-a4b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-MoVA-36B-A4B",
+      "sourceLabel": "IFM K2-Horizon-MoVA-36B-A4B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "K2-Horizon-MoVA-36B-A4B",
+      "modelAliases": [
+        "k2-horizon-mova-36b-a4b",
+        "K2-Horizon-MoVA-36B-A4B"
+      ],
+      "value": 25.2,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-mova-36b-a4b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-MoVA-36B-A4B",
+      "sourceLabel": "IFM K2-Horizon-MoVA-36B-A4B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "K2-Horizon-MoVA-36B-A4B",
+      "modelAliases": [
+        "k2-horizon-mova-36b-a4b",
+        "K2-Horizon-MoVA-36B-A4B"
+      ],
+      "value": 80.8,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-mova-36b-a4b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-MoVA-36B-A4B",
+      "sourceLabel": "IFM K2-Horizon-MoVA-36B-A4B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "critpt",
+      "benchmarkLabel": "CritPt",
+      "model": "K2-Horizon-MoVA-36B-A4B",
+      "modelAliases": [
+        "k2-horizon-mova-36b-a4b",
+        "K2-Horizon-MoVA-36B-A4B"
+      ],
+      "value": 2.1,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-mova-36b-a4b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-MoVA-36B-A4B",
+      "sourceLabel": "IFM K2-Horizon-MoVA-36B-A4B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "aa-lcr",
+      "benchmarkLabel": "AA-LCR",
+      "model": "K2-Horizon-MoVA-36B-A4B",
+      "modelAliases": [
+        "k2-horizon-mova-36b-a4b",
+        "K2-Horizon-MoVA-36B-A4B"
+      ],
+      "value": 66.3,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-mova-36b-a4b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-MoVA-36B-A4B",
+      "sourceLabel": "IFM K2-Horizon-MoVA-36B-A4B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "aa-omniscience-accuracy",
+      "benchmarkLabel": "AA-Omniscience Accuracy",
+      "model": "K2-Horizon-MoVA-36B-A4B",
+      "modelAliases": [
+        "k2-horizon-mova-36b-a4b",
+        "K2-Horizon-MoVA-36B-A4B"
+      ],
+      "value": 18.8,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-mova-36b-a4b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-MoVA-36B-A4B",
+      "sourceLabel": "IFM K2-Horizon-MoVA-36B-A4B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "aa-omniscience-non-hallucination",
+      "benchmarkLabel": "AA-Omniscience Non-Hallucination",
+      "model": "K2-Horizon-MoVA-36B-A4B",
+      "modelAliases": [
+        "k2-horizon-mova-36b-a4b",
+        "K2-Horizon-MoVA-36B-A4B"
+      ],
+      "value": 69.2,
+      "unit": "%",
+      "sourceId": "ifm-k2-horizon-mova-36b-a4b-card",
+      "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-MoVA-36B-A4B",
+      "sourceLabel": "IFM K2-Horizon-MoVA-36B-A4B official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "finfirst",
+      "benchmarkLabel": "FinFIRST",
+      "model": "Ling-3.0-flash-Fin",
+      "modelAliases": [
+        "ling-3-0-flash-fin",
+        "Ling-3.0-flash-Fin"
+      ],
+      "value": 52.85,
+      "unit": "%",
+      "sourceId": "inclusionai-ling-3-0-flash-fin-card",
+      "sourceUrl": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin",
+      "sourceLabel": "Ant Group Ling-3.0-flash-Fin official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "finsearchcomp-verified",
+      "benchmarkLabel": "FinSearchComp Verified",
+      "model": "Ling-3.0-flash-Fin",
+      "modelAliases": [
+        "ling-3-0-flash-fin",
+        "Ling-3.0-flash-Fin"
+      ],
+      "value": 77.04,
+      "unit": "%",
+      "sourceId": "inclusionai-ling-3-0-flash-fin-card",
+      "sourceUrl": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin",
+      "sourceLabel": "Ant Group Ling-3.0-flash-Fin official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "fincraft",
+      "benchmarkLabel": "FinCRAFT",
+      "model": "Ling-3.0-flash-Fin",
+      "modelAliases": [
+        "ling-3-0-flash-fin",
+        "Ling-3.0-flash-Fin"
+      ],
+      "value": 51.74,
+      "unit": "%",
+      "sourceId": "inclusionai-ling-3-0-flash-fin-card",
+      "sourceUrl": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin",
+      "sourceLabel": "Ant Group Ling-3.0-flash-Fin official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "finance-agent-v1-1",
+      "benchmarkLabel": "Finance Agent v1.1",
+      "model": "Ling-3.0-flash-Fin",
+      "modelAliases": [
+        "ling-3-0-flash-fin",
+        "Ling-3.0-flash-Fin"
+      ],
+      "value": 69.19,
+      "unit": "%",
+      "sourceId": "inclusionai-ling-3-0-flash-fin-card",
+      "sourceUrl": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin",
+      "sourceLabel": "Ant Group Ling-3.0-flash-Fin official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "finance-agent-v2",
+      "benchmarkLabel": "Finance Agent v2",
+      "model": "Ling-3.0-flash-Fin",
+      "modelAliases": [
+        "ling-3-0-flash-fin",
+        "Ling-3.0-flash-Fin"
+      ],
+      "value": 59.81,
+      "unit": "%",
+      "sourceId": "inclusionai-ling-3-0-flash-fin-card",
+      "sourceUrl": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin",
+      "sourceLabel": "Ant Group Ling-3.0-flash-Fin official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "apex-agents",
+      "benchmarkLabel": "APEX-Agents",
+      "model": "Ling-3.0-flash-Fin",
+      "modelAliases": [
+        "ling-3-0-flash-fin",
+        "Ling-3.0-flash-Fin"
+      ],
+      "value": 29.17,
+      "unit": "%",
+      "sourceId": "inclusionai-ling-3-0-flash-fin-card",
+      "sourceUrl": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin",
+      "sourceLabel": "Ant Group Ling-3.0-flash-Fin official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "spreadsheetbench-v1-claude-code",
+      "benchmarkLabel": "SpreadsheetBench V1 (Claude Code)",
+      "model": "Ling-3.0-flash-Fin",
+      "modelAliases": [
+        "ling-3-0-flash-fin",
+        "Ling-3.0-flash-Fin"
+      ],
+      "value": 86.5,
+      "unit": "%",
+      "sourceId": "inclusionai-ling-3-0-flash-fin-card",
+      "sourceUrl": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin",
+      "sourceLabel": "Ant Group Ling-3.0-flash-Fin official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "spreadsheetbench-v2-claude-code",
+      "benchmarkLabel": "SpreadsheetBench V2 (Claude Code)",
+      "model": "Ling-3.0-flash-Fin",
+      "modelAliases": [
+        "ling-3-0-flash-fin",
+        "Ling-3.0-flash-Fin"
+      ],
+      "value": 21.81,
+      "unit": "%",
+      "sourceId": "inclusionai-ling-3-0-flash-fin-card",
+      "sourceUrl": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin",
+      "sourceLabel": "Ant Group Ling-3.0-flash-Fin official model card",
+      "modelScoreEligible": false,
+      "evidenceEligible": false
+    },
+    {
+      "benchmarkId": "tau3-banking",
+      "benchmarkLabel": "τ³-Banking",
+      "model": "Ling-3.0-flash-Fin",
+      "modelAliases": [
+        "ling-3-0-flash-fin",
+        "Ling-3.0-flash-Fin"
+      ],
+      "value": 41.0,
+      "unit": "%",
+      "sourceId": "inclusionai-ling-3-0-flash-fin-card",
+      "sourceUrl": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin",
+      "sourceLabel": "Ant Group Ling-3.0-flash-Fin official model card",
       "modelScoreEligible": false,
       "evidenceEligible": false
     },
