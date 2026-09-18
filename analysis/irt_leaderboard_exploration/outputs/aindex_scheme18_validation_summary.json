@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_scheme18",
   "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
-  "calibration_population_size": 127,
-  "bonus_cap_per_board": 19.931208249922882,
+  "calibration_population_size": 126,
+  "bonus_cap_per_board": 19.81230497726427,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 127,
-    "unique_slugs": 127,
-    "unique_variant_groups": 127,
+    "row_count": 126,
+    "unique_slugs": 126,
+    "unique_variant_groups": 126,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 169,
-    "unique_slugs": 169,
-    "unique_variant_groups": 127,
+    "row_count": 168,
+    "unique_slugs": 168,
+    "unique_variant_groups": 125,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -26,9 +26,9 @@
   "passed": true,
   "core_eligibility": {
     "variant_group": {
-      "requested_count": 146,
-      "eligible_count": 127,
-      "excluded_count": 19,
+      "requested_count": 144,
+      "eligible_count": 126,
+      "excluded_count": 18,
       "excluded_models": [
         {
           "slug": "gpt-5-4",
@@ -163,17 +163,6 @@
           }
         },
         {
-          "slug": "gemma-4-26b-a4b",
-          "missing_core": {
-            "coding": [
-              "SciCode"
-            ],
-            "knowledge-science": [
-              "SciCode"
-            ]
-          }
-        },
-        {
           "slug": "glm-4-6-reasoning",
           "missing_core": {
             "coding": [
@@ -242,8 +231,8 @@
       ]
     },
     "exact_config": {
-      "requested_count": 169,
-      "eligible_count": 169,
+      "requested_count": 168,
+      "eligible_count": 168,
       "excluded_count": 0,
       "excluded_models": []
     }
@@ -256,10 +245,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 19.931208249922882,
-    "pooled_positive_residual_count": 367,
-    "pooled_positive_residual_mean": 8.754802820464997,
-    "pooled_positive_residual_population_sd": 7.90291206845982,
+    "bonus_cap_per_board": 19.81230497726427,
+    "pooled_positive_residual_count": 370,
+    "pooled_positive_residual_mean": 8.67961417090871,
+    "pooled_positive_residual_population_sd": 7.872001162027149,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -268,7 +257,7 @@
       "instruction-context"
     ],
     "board_points_max": 20.0,
-    "population_size": 127,
+    "population_size": 126,
     "population_slugs": [
       "g9v3-39a5b",
       "qwen3-14b-instruct-reasoning",
@@ -285,6 +274,7 @@
       "qwen3-7-plus",
       "qwen3-8-2-4t-a95b",
       "qwen3-8-27b",
+      "qwen3-8-max-0803",
       "qwen3-8-max",
       "qwen3-8-flash-next",
       "claude-4-5-haiku-reasoning",
@@ -319,6 +309,7 @@
       "gemini-3-8-flash",
       "gemma-3-12b",
       "gemma-3-27b",
+      "gemma-4-26b-a4b",
       "gemma-4-31b",
       "granite-4-2-30b",
       "granite-4-2-3b",
@@ -328,17 +319,13 @@
       "ling-3-0-tiny",
       "ling-3-0-flash-vl",
       "ring-2-6-1t",
+      "k2-horizon-375b-a23b",
       "kimi-k2-6",
       "kimi-k2-7-code",
       "kimi-k3",
       "k-exaone-2-0-0803",
       "lfm2-5-2-6b",
       "longcat-2-0",
-      "k2-1b-final",
-      "k2-4b-ph1",
-      "k2-horizon-375b-a23b",
-      "k2-7b-ph2",
-      "k2-mova-36b-mid5",
       "llama-4-maverick",
       "llama-4-scout",
       "muse-glimmer",
@@ -353,6 +340,7 @@
       "ministral-3-3b",
       "ministral-3-8b",
       "mistral-large-3",
+      "mistral-medium-3-1",
       "mistral-medium-3-5",
       "mistral-small-3-1",
       "mistral-small-3-2",
@@ -415,6 +403,7 @@
       "qwen3 8 2 4t a95b",
       "qwen3 8 27b",
       "qwen3 8 max",
+      "qwen3 8 max 0902",
       "qwen3 8 flash next",
       "claude 4 5 haiku",
       "claude 4 5 sonnet",
@@ -448,6 +437,7 @@
       "gemini 3 8 flash",
       "gemma 3 12b",
       "gemma 3 27b",
+      "gemma 4 26b a4b",
       "gemma 4 31b",
       "granite 4 2 30b",
       "granite 4 2 3b",
@@ -457,17 +447,13 @@
       "ling 3 0 tiny",
       "ling 3 0 flash vl",
       "ring 2 6 1t",
+      "k2 horizon 375b a23b",
       "kimi k2 6",
       "kimi k2 7 code",
       "kimi k3",
       "k exaone 2 0",
       "lfm2 5 2 6b",
       "longcat 2 0",
-      "k2 horizon 0 9b",
-      "k2 horizon 3 7b",
-      "k2 horizon 375b a23b",
-      "k2 horizon 7b",
-      "k2 horizon mova 36b a4b",
       "llama 4 maverick",
       "llama 4 scout",
       "muse glimmer",
@@ -482,6 +468,7 @@
       "ministral 3 3b",
       "ministral 3 8b",
       "mistral large 3",
+      "mistral medium 3 1",
       "mistral medium 3 5",
       "mistral small 3 1",
       "mistral small 3 2",
@@ -544,9 +531,9 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 127,
-            "slope": 2.1770511677338082,
-            "intercept": -43.95318197366054
+            "observed_count": 125,
+            "slope": 2.334417730035465,
+            "intercept": -51.59340671419342
           },
           {
             "item_id": "swe-bench-pro",
@@ -562,9 +549,9 @@
             "score_key": "benchmark:livecodebench",
             "canonical_family": "livecodebench",
             "enabled": true,
-            "observed_count": 16,
-            "slope": 0.3201612766114788,
-            "intercept": 65.82231197922313
+            "observed_count": 17,
+            "slope": 0.3281830654444254,
+            "intercept": 65.38323553283237
           }
         ],
         "core_item_count": 1,
@@ -584,27 +571,27 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 127,
-            "slope": 1.037789212496458,
-            "intercept": -17.345240129114508
+            "observed_count": 125,
+            "slope": 1.0533291980908934,
+            "intercept": -18.40211975328957
           },
           {
             "item_id": "tau2-bench-telecom-aa",
             "score_key": "τ²-Bench Telecom",
             "canonical_family": "tau2-bench",
             "enabled": true,
-            "observed_count": 71,
-            "slope": 0.9387780274064941,
-            "intercept": 10.65238951869432
+            "observed_count": 73,
+            "slope": 0.9366309254350013,
+            "intercept": 10.243991157868734
           },
           {
             "item_id": "tau3-banking-aa",
             "score_key": "τ³-Banking",
             "canonical_family": "tau3-banking",
             "enabled": true,
-            "observed_count": 127,
-            "slope": 0.4364999452973476,
-            "intercept": -6.7125271537209805
+            "observed_count": 126,
+            "slope": 0.4493490199265583,
+            "intercept": -7.63926214439617
           },
           {
             "item_id": "apex-agents-aa",
@@ -679,9 +666,9 @@
             "score_key": "AIME 2025",
             "canonical_family": "aime-2025",
             "enabled": true,
-            "observed_count": 28,
-            "slope": 4.140890430442017,
-            "intercept": 37.683572079809515
+            "observed_count": 29,
+            "slope": 4.13929489794008,
+            "intercept": 37.701794545049076
           }
         ],
         "core_item_count": 3,
@@ -716,18 +703,18 @@
             "score_key": "MMMU-Pro",
             "canonical_family": "mmmu-pro",
             "enabled": true,
-            "observed_count": 58,
-            "slope": 0.7617534243227698,
-            "intercept": 40.2991162199575
+            "observed_count": 61,
+            "slope": 0.7652533588570205,
+            "intercept": 40.25184669336266
           },
           {
             "item_id": "mmlu-pro",
             "score_key": "benchmark:mmlu-pro",
             "canonical_family": "mmlu-pro",
             "enabled": true,
-            "observed_count": 15,
-            "slope": 0.16786404522972148,
-            "intercept": 76.80376697055829
+            "observed_count": 16,
+            "slope": 0.16661857234960212,
+            "intercept": 76.87005089395626
           }
         ],
         "core_item_count": 4,

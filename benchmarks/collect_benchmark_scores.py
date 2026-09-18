@@ -283,11 +283,11 @@ MODEL_ALIASES = {
     "Qwen3.6 Plus": ["Qwen3.6 Plus", "Qwen3.6-Plus", "qwen3.6-plus", "qwen3-6-plus"],
     "Qwen3.6 Max Preview": ["Qwen3.6 Max Preview", "Qwen3.6-Max-Preview", "qwen3.6-max-preview", "qwen3-6-max-preview"],
     "Qwen3.8 Max": [
-        "Qwen3.8 Max",
-        "Qwen3.8-Max",
-        "Qwen 3.8-Max",
-        "qwen3.8-max",
-        "qwen3-8-max",
+        # AA reassigned the undated slug to the September 2 checkpoint.
+        # The August release table must never follow that rolling alias.
+        "qwen3-8-max-0803",
+        "Qwen3.8 Max (0803)",
+        "Qwen3.8-Max-0803",
     ],
     "Qwen3.8 27B": [
         "Qwen3.8 27B",
@@ -5113,6 +5113,132 @@ OFFICIAL_SOURCE_SPECS.extend([
 ])
 
 
+# September 18 review: preserve the versions printed in the first-party cards.
+BENCHMARKS.extend([
+    {"id": "humaneval-plus", "label": "HumanEval+", "category": "Coding", "unit": "%", "icon": "HE+"},
+    {"id": "mbpp-plus", "label": "MBPP+", "category": "Coding", "unit": "%", "icon": "MBPP"},
+    {"id": "livecodebench-v6", "label": "LiveCodeBench v6", "category": "Coding", "unit": "%", "icon": "LCB6"},
+    {"id": "finfirst", "label": "FinFIRST", "category": "Financial research", "unit": "%", "icon": "FIN"},
+    {"id": "finsearchcomp-verified", "label": "FinSearchComp Verified", "category": "Financial research", "unit": "%", "icon": "FIN"},
+    {"id": "fincraft", "label": "FinCRAFT", "category": "Financial research", "unit": "%", "icon": "FIN"},
+    {"id": "spreadsheetbench-v1-claude-code", "label": "SpreadsheetBench V1 (Claude Code)", "category": "Agentic work", "unit": "%", "icon": "SHEET"},
+    {"id": "spreadsheetbench-v2-claude-code", "label": "SpreadsheetBench V2 (Claude Code)", "category": "Agentic work", "unit": "%", "icon": "SHEET"},
+])
+
+# Only the owner's column is ingested, never the comparison-model columns.
+K2_HORIZON_ROW_LABELS = {
+    "AIME 2025 Competition mathematics": "aime-2025",
+    "AIME 2026 Competition mathematics": "aime-2026",
+    "HMMT Feb 2026 Competition mathematics": "hmmt-2026-feb",
+    "GPQA Diamond Graduate-level science QA": "gpqa-diamond",
+    "HumanEval+ Code generation": "humaneval-plus",
+    "MBPP+ Code generation": "mbpp-plus",
+    "LiveCodeBench v6 Competitive coding": "livecodebench-v6",
+    "BFCL v4 Function calling": "bfcl-v4",
+    "SWE-bench Verified Software engineering": "swe-bench-verified",
+    "HLE Expert-level reasoning": "hle",
+    "Humanity's Last Exam (without tools) Expert-level reasoning": "hle",
+    "SciCode Scientific coding": "scicode",
+    "LCR Long-context reasoning": "aa-lcr",
+    "AA-LCR Long-context reasoning": "aa-lcr",
+    "Terminal-Bench 2.1 Agentic terminal use": "terminal-bench-2-1",
+    "tau3-Banking Agentic tool use": "tau3-banking",
+    "BrowseComp Web browsing": "browsecomp",
+    "CritPt Frontier physics reasoning": "critpt",
+    "AA-Omniscience Accuracy Factual accuracy": "aa-omniscience-accuracy",
+    "AA-Omniscience Non-Hallucination Non-hallucination rate": "aa-omniscience-non-hallucination",
+}
+for _size, _slug_suffix, _context, _parameters, _scores in (
+    ("0.9B", "0-9b", 131072, "0.9B", {
+        "aime-2025": 41.7, "aime-2026": 48.5, "hmmt-2026-feb": 25.8,
+        "gpqa-diamond": 27.3, "humaneval-plus": 79.9, "mbpp-plus": 68.0,
+        "livecodebench-v6": 37.4, "bfcl-v4": 28.0,
+    }),
+    ("3.7B", "3-7b", 524288, "3.7B", {
+        "hmmt-2026-feb": 70.5, "swe-bench-verified": 68.6,
+        "gpqa-diamond": 65.4, "hle": 12.9, "scicode": 25.9,
+        "terminal-bench-2-1": 25.1, "tau3-banking": 17.7, "bfcl-v4": 50.9,
+    }),
+    ("7B", "7b", 524288, "7B", {
+        "hmmt-2026-feb": 73.3, "swe-bench-verified": 70.6, "hle": 18.6,
+        "scicode": 31.6, "aa-lcr": 68.0, "terminal-bench-2-1": 39.1,
+        "tau3-banking": 25.8, "browsecomp": 59.0,
+    }),
+    ("MoVA-36B-A4B", "mova-36b-a4b", 524288, "36B total; 4B active", {
+        "tau3-banking": 26.8, "terminal-bench-2-1": 58.6, "scicode": 38.9,
+        "hle": 25.2, "gpqa-diamond": 80.8, "critpt": 2.1, "aa-lcr": 66.3,
+        "aa-omniscience-accuracy": 18.8, "aa-omniscience-non-hallucination": 69.2,
+    }),
+):
+    _name = f"K2-Horizon-{_size}"
+    _slug = f"k2-horizon-{_slug_suffix}"
+    MODEL_ALIASES[_name] = [_slug, _name]
+    OFFICIAL_SOURCE_SPECS.append({
+        "id": f"ifm-{_slug}-card",
+        "label": f"IFM {_name} official model card",
+        "url": f"https://huggingface.co/IFM/{_name}",
+        "rawUrl": f"https://huggingface.co/IFM/{_name}/raw/main/README.md",
+        "modelId": f"IFM/{_name}", "organization": "IFM",
+        "category": "Official model card",
+        "modelAliases": MODEL_ALIASES[_name],
+        "displayReferenceScores": True,
+        "modelScoreEligible": False, "evidenceEligible": False,
+        "exactBenchmarkLabelsOnly": True,
+        "headerRowIndex": 1,
+        "modelMetadata": {
+            "slug": _slug, "contextWindowTokens": _context,
+            "openSourceCategorization": "permissive",
+            "inputModalities": ["Text"], "outputModalities": ["Text"],
+            "modelDetails": {"license": "Apache-2.0", "parameters": _parameters},
+        },
+        "columns": {_name: _name},
+        "rowLabels": K2_HORIZON_ROW_LABELS,
+        "scores": {_name: _scores},
+        "note": (
+            "IFM model card checked September 18, 2026; links to https://ifm.ai/blog/k2/. "
+            "Published owner-column values only. The tables do not establish a per-row "
+            "reasoning effort, so these are reference scores rather than exact-configuration "
+            "ranking inputs. BrowseComp uses Discard-all@95k; LCR has no version label. "
+            "AA-derived rows remain reference evidence and do not replace the AA import."
+        ),
+    })
+
+MODEL_ALIASES["Ling-3.0-flash-Fin"] = ["ling-3-0-flash-fin", "Ling-3.0-flash-Fin"]
+OFFICIAL_SOURCE_SPECS.append({
+    "id": "inclusionai-ling-3-0-flash-fin-card",
+    "label": "Ant Group Ling-3.0-flash-Fin official model card",
+    "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin",
+    "rawUrl": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin/raw/main/README.md",
+    "modelId": "inclusionAI/Ling-3.0-flash-Fin", "organization": "inclusionAI",
+    "category": "Official model card",
+    "modelAliases": MODEL_ALIASES["Ling-3.0-flash-Fin"],
+    "displayReferenceScores": True,
+    "modelScoreEligible": False, "evidenceEligible": False,
+    "modelMetadata": {
+        "slug": "ling-3-0-flash-fin", "contextWindowTokens": 262144,
+        "openSourceCategorization": "permissive",
+        "inputModalities": ["Text"], "outputModalities": ["Text"],
+        "modelDetails": {"license": "MIT", "parameters": "124B total; 5.1B active"},
+    },
+    "scores": {"Ling-3.0-flash-Fin": {
+        "finfirst": 52.85, "finsearchcomp-verified": 77.04, "fincraft": 51.74,
+        "finance-agent-v1-1": 69.19, "finance-agent-v2": 59.81,
+        "apex-agents": 29.17, "spreadsheetbench-v1-claude-code": 86.50,
+        "spreadsheetbench-v2-claude-code": 21.81, "tau3-banking": 41.00,
+    }},
+    "note": (
+        "Values visually transcribed September 18, 2026 from the owner (blue) bars at "
+        "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin/resolve/main/assets/ling-3.0-flash-fin-evaluation.png. "
+        "The chart says highest reasoning tier without naming the API effort, so scores "
+        "are reference-only. Finance Agent reports strict-pass means over 10 runs (v1.1) "
+        "and 20 runs (v2). SpreadsheetBench uses Claude Code 2.1.173, LibreOffice 25.8.7, "
+        "temperature 0.6, 3-hour limits and 120/300 turns for V1/V2. FinSearchComp "
+        "Verified uses 145 reviewed answers of 273; tau3-Banking is sourced from AA. "
+        "Competitor bars are not ingested. Image values require manual review to refresh."
+    ),
+})
+
+
 DISCOVERED_CANONICAL_ROW_LABELS = {
     "GDPval-AA v2": "gdpval-aa-v2-elo",
     "Tau² Bench": "tau2-bench-weighted",
@@ -5884,7 +6010,10 @@ def parse_markdown_source_scores(text: str, spec: dict[str, Any]) -> list[dict[s
     for table in html_tables(text) + markdown_tables(text) + embedded_sheet_tables(text):
         if not table:
             continue
-        header = table[0]
+        header_index = int(spec.get("headerRowIndex", 0))
+        if header_index < 0 or header_index >= len(table):
+            continue
+        header = table[header_index]
         column_indexes = {
             index: column_model_by_key[_normalize_label(cell)]
             for index, cell in enumerate(header)
@@ -5892,7 +6021,7 @@ def parse_markdown_source_scores(text: str, spec: dict[str, Any]) -> list[dict[s
         }
         if not column_indexes:
             continue
-        for row in table[1:]:
+        for row in table[header_index + 1:]:
             if not row:
                 continue
             benchmark_id = _benchmark_id_from_row(

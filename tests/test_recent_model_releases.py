@@ -16,6 +16,77 @@ def source(source_id):
 
 
 class RecentModelReleaseTests(unittest.TestCase):
+    def test_qwen_august_scores_never_follow_the_reassigned_september_slug(self):
+        collected = build_payload({}, "seeded")
+        source_id = "qwen-qwen3-8-max-release"
+        external = {
+            "sources": [s for s in collected["sources"] if s["id"] == source_id],
+            "benchmarks": collected["benchmarks"],
+            "results": [r for r in collected["results"] if r["sourceId"] == source_id],
+        }
+        old = {"model": "Qwen3.8 Max", "slug": "qwen3-8-max-0803", "creator": "Alibaba"}
+        new = {"model": "Qwen3.8 Max (0902)", "slug": "qwen3-8-max", "creator": "Alibaba"}
+        for rows in ([old, new], [new, old], [new]):
+            with self.subTest(slugs=[r["slug"] for r in rows]):
+                models = {m["slug"]: m for m in build_site_payload(rows, external, {})["models"]}
+                self.assertEqual(models["qwen3-8-max"]["externalBenchmarks"], [])
+                if "qwen3-8-max-0803" in models:
+                    august = models["qwen3-8-max-0803"]
+                    self.assertEqual(august["scores"]["benchmark:swe-bench-pro"], 67.7)
+                    self.assertEqual(len(august["externalBenchmarks"]), 27)
+
+    def test_k2_card_reads_second_header_and_preserves_benchmark_version(self):
+        spec = source("ifm-k2-horizon-0-9b-card")
+        html = """
+        <table>
+        <tr><th></th><th colspan="2">Reference models</th></tr>
+        <tr><th></th><th>K2-Horizon-0.9B</th><th>Competitor</th></tr>
+        <tr><td>LiveCodeBench v6 Competitive coding</td><td>37.4</td><td>99</td></tr>
+        <tr><td>LiveCodeBench v7 Competitive coding</td><td>88</td><td>99</td></tr>
+        <tr><td>BFCL v4 Function calling</td><td>28.0</td><td>99</td></tr>
+        </table>
+        """
+        rows = parse_markdown_source_scores(html, spec)
+        self.assertEqual({r["benchmarkId"]: r["value"] for r in rows},
+                         {"livecodebench-v6": 37.4, "bfcl-v4": 28.0})
+        self.assertTrue(all(r["model"] == "K2-Horizon-0.9B" for r in rows))
+        self.assertTrue(all(r["modelScoreEligible"] is False for r in rows))
+
+    def test_september_18_cards_enrich_aa_rows_without_adding_ranking_evidence(self):
+        collected = build_payload({}, "seeded")
+        slugs = ["k2-horizon-0-9b", "k2-horizon-3-7b", "k2-horizon-7b",
+                 "k2-horizon-mova-36b-a4b", "ling-3-0-flash-fin"]
+        source_ids = {f"ifm-{slug}-card" for slug in slugs[:-1]}
+        source_ids.add("inclusionai-ling-3-0-flash-fin-card")
+        external = {
+            "sources": [s for s in collected["sources"] if s["id"] in source_ids],
+            "benchmarks": collected["benchmarks"],
+            "results": [r for r in collected["results"] if r["sourceId"] in source_ids],
+        }
+        aa = [{"model": slug, "slug": slug, "SciCode": "10"} for slug in slugs]
+        models = {m["slug"]: m for m in build_site_payload(aa, external, {})["models"]}
+        self.assertEqual(len(models), 5)
+        self.assertEqual(len(external["results"]), 42)
+        for slug, count in zip(slugs, [8, 8, 8, 9, 9]):
+            model = models[slug]
+            self.assertEqual(model["scores"]["SciCode"], 10)
+            self.assertEqual(len(model["externalBenchmarks"]), count)
+            self.assertFalse(model.get("externalOnly", False))
+            for row in model["externalBenchmarks"]:
+                self.assertTrue(row["displayOnly"])
+                self.assertFalse(row["evidenceEligible"])
+                self.assertIsNone(model["scores"].get(row["metricKey"]))
+        self.assertEqual(models[slugs[0]]["contextWindowTokens"], 131072)
+        self.assertEqual(models[slugs[2]]["contextWindowTokens"], 524288)
+        self.assertEqual(models[slugs[2]]["modelDetails"]["license"], "Apache-2.0")
+        ling = models[slugs[-1]]
+        self.assertEqual(ling["modelDetails"]["license"], "MIT")
+        self.assertEqual(ling["contextWindowTokens"], 262144)
+        scores = {r["benchmarkId"]: r["value"] for r in ling["externalBenchmarks"]}
+        self.assertEqual(scores["finance-agent-v1-1"], 69.19)
+        self.assertEqual(scores["finance-agent-v2"], 59.81)
+        self.assertEqual(scores["spreadsheetbench-v2-claude-code"], 21.81)
+
     def test_deepseek_vision_official_weights_enrich_existing_aa_identity(self):
         collected = build_payload({}, "seeded")
         source_id = "deepseek-v4-flash-vision-exp-card"

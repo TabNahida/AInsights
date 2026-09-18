@@ -33,5 +33,5 @@ Qwen3.5 4B,qwen3-5-4b,Alibaba,20,20,4,16,hf-qwen-qwen3-5-4b-card
 Qwen3.5 9B,qwen3-5-9b,Alibaba,20,20,4,16,hf-qwen-qwen3-5-9b-card
 Qwen3.7 Plus,qwen3-7-plus,Alibaba,30,30,9,21,official-qwen-qwen3-7-plus-page
 Qwen3.8 27B,qwen3-8-27b-non-reasoning,Alibaba,29,29,5,24,qwen-qwen3-8-27b-card
-Qwen3.8 Max,qwen3-8-max,Alibaba,27,27,7,20,qwen-qwen3-8-max-release
+Qwen3.8 Max,qwen3-8-max-0803,Alibaba,27,27,7,20,qwen-qwen3-8-max-release
 Qwen3.8-Flash-Next,qwen3-8-flash-next,Alibaba,25,25,6,19,qwen-qwen3-8-flash-next-card

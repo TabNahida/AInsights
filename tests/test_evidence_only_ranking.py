@@ -7,6 +7,7 @@ from pathlib import Path
 
 from analysis.irt_leaderboard_exploration.evidence_only_ranking_analysis import (
     DEFAULT_INPUT,
+    EVIDENCE_BOARD_ITEMS,
     run_evidence_analysis,
     sanitize_models,
 )
@@ -128,21 +129,27 @@ class EvidenceOnlyRankingTests(unittest.TestCase):
             "no product/model constraints; no fixed missing-test penalty",
         )
 
-    def test_new_official_scores_raise_target_coverage_without_variant_broadcast(self):
-        targets = self.result["summary"]["target_models"]
-        opus = targets["Claude Opus 5"]
-        qwen = targets["Qwen3.8 Max"]
-
-        self.assertEqual(opus["model"], "Claude Opus 5 (max)")
-        self.assertGreaterEqual(opus["coding_tests"], 5)
-        self.assertGreaterEqual(opus["agentic-tool-work_tests"], 5)
-        self.assertEqual(opus["evidence_tier"], "Provisional")
-        self.assertGreaterEqual(qwen["coding_tests"], 3)
-        self.assertGreaterEqual(qwen["instruction-context_tests"], 3)
-        self.assertEqual(qwen["evidence_tier"], "Main")
-        self.assertGreater(
-            self.result["summary"]["shared_variant_score_cells_removed"], 0
-        )
+    def test_coverage_and_tiers_follow_current_direct_observations(self):
+        # Daily inputs may split a release or withdraw observations. Assert the
+        # evidence contract, not a historical count/tier for a named product.
+        payload = json.loads(DEFAULT_INPUT.read_text(encoding="utf-8"))
+        models, _ = sanitize_models(payload)
+        by_slug = {model["slug"]: model for model in models}
+        summary = self.result["summary"]
+        for row in self.result["full_rankings"]:
+            counts = []
+            for board, items in EVIDENCE_BOARD_ITEMS.items():
+                excluded = {item["id"] for item in summary["excluded_sparse_items"][board]}
+                count = sum(
+                    item["id"] not in excluded
+                    and base.item_value(by_slug[row["slug"]], item) is not None
+                    for item in items
+                )
+                self.assertEqual(row[f"{board}_tests"], count, (row["slug"], board))
+                counts.append(count)
+            self.assertGreaterEqual(min(counts), summary["provisional_min_tests_per_board"])
+            expected_tier = "Main" if min(counts) >= summary["main_tests_per_board"] else "Provisional"
+            self.assertEqual(row["evidence_tier"], expected_tier, row["slug"])
 
     def test_rank_and_score_are_invariant_to_model_brand_label(self):
         original = next(

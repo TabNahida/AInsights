@@ -1078,7 +1078,8 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertEqual(qwen["ifbench"]["value"], 82.8)
         self.assertEqual(qwen["charxiv-tools"]["value"], 93.5)
         self.assertIn("partial", qwen["osworld-2"]["scoreSelection"])
-        self.assertIn("qwen3-8-max", qwen["swe-bench-pro"]["modelAliases"])
+        self.assertIn("qwen3-8-max-0803", qwen["swe-bench-pro"]["modelAliases"])
+        self.assertNotIn("qwen3-8-max", qwen["swe-bench-pro"]["modelAliases"])
 
         self.assertEqual(
             sources["qwen-qwen3-8-27b-card"]["url"],

@@ -110,6 +110,20 @@ EXPLICIT_HF_RAW_SOURCES = {
     "zai-glm-5-2-card": ("zai-org", "GLM-5.2", "page"),
 }
 
+# Curated sources are pinned to exact owner repositories, independently of the
+# broader discovery allowlist.
+for _source_id, _organization, _model_name in [
+    (f"ifm-k2-horizon-{suffix}-card", "IFM", f"K2-Horizon-{size}")
+    for suffix, size in (
+        ("0-9b", "0.9B"), ("3-7b", "3.7B"), ("7b", "7B"),
+        ("mova-36b-a4b", "MoVA-36B-A4B"),
+    )
+] + [("inclusionai-ling-3-0-flash-fin-card", "inclusionAI", "Ling-3.0-flash-Fin")]:
+    OFFICIAL_HF_SOURCE_ORGS[_source_id] = _organization
+    OFFICIAL_HF_SOURCE_MODELS[_source_id] = _model_name
+    EXPLICIT_HF_RAW_SOURCES[_source_id] = (_organization, _model_name, "readme")
+
+
 VENDOR_MANIFEST_SOURCES = {
     "qwen-article-json": (
         "qwen",
