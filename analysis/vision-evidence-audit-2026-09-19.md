@@ -4,7 +4,7 @@
 
 The snapshot has 652 configurations; 260 have AA MMMU-Pro observations. Of the 392 without AA MMMU-Pro, 69 list Image input. Missing image metadata is not proof that a model cannot process images.
 
-This update adds 40 manually reviewed official results. Within the 69 missing-AA image configurations, 13 now have an exact-configuration visual result, 13 have reference evidence only (including existing external evidence), and 43 remain unverified. These are configuration counts, not model-family counts.
+This update adds 54 manually reviewed official results. Within the 69 missing-AA image configurations, 20 now have an exact-configuration visual result, 18 have reference evidence only (including existing external evidence), and 31 remain unverified. These are configuration counts, not model-family counts.
 
 ## Interpretation rules
 
@@ -28,12 +28,19 @@ This update adds 40 manually reviewed official results. Within the 69 missing-AA
 - [Anthropic Claude 4 launch evaluations](https://www.anthropic.com/news/claude-4): Evaluation methodology: MMMU without extended thinking
 - [OpenAI o1 developer release](https://openai.com/index/o1-and-new-tools-for-developers/): Evaluation table / Vision
 - [Google Gemini 1.5 technical report](https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf): Table 18, page 39
+- [Anthropic Claude 3 model card](https://www.anthropic.com/claude-3-model-card): Table 3, page 8; section 5.3
+- [Google Gemini 2.0 February release](https://blog.google/technology/google-deepmind/gemini-model-updates-february-2025/): Benchmark table image: Image / MMMU row (gemini_benchmarks_cropped_light1x.gif)
+- [Google Gemini 2.5 Pro March release](https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/): Benchmark image: visual reasoning MMMU row and methodology footer; Benchmark image: image understanding Vibe-Eval row and methodology footer
+- [OpenAI GPT-4.5 release](https://openai.com/index/introducing-gpt-4-5/): Appendix: Model evaluation scores, MMMU (multimodal) row
+- [OpenAI GPT-4o May release](https://openai.com/index/hello-gpt-4o/): Model evaluations > Vision understanding evals; gpt-40-01_dark.png; Model evaluations > Vision understanding evals; GPT-4T 2024-04-09 column
 
 ## Outstanding verification
 
 Not verified does not mean no test exists. Do not copy regular-model scores into Pro or Instant releases. GPT-5.2/5.5 release tables leave relevant Pro vision entries empty. Fable/Sonnet system cards report max-effort results; lower-tier chart dots without numeric labels are insufficient.
 
 GLM-5.3-Flash release text and all three evaluation/architecture images were checked: the displayed results cover coding, agentic work and intelligence, without a separate visual score. Agnes 2.5 Pro Alpha, Celeris-1, HyperCLOVA, Gemma 3n and Grok 4.6 pages checked in this pass did not yield a verified compatible numeric visual result. Some older release/PDF routes were unavailable. Other configurations below remain pending source/snapshot verification.
+
+GPT-4o May results are references for later November/ChatGPT snapshots. GPT-4 Turbo results explicitly name 2024-04-09, while the local row is dated November 2023. Gemini 2.0 Flash-Lite results name the February 5 public preview, so the February 25 GA configuration remains reference only.
 
 ## Missing-AA image configuration inventory
 
@@ -45,7 +52,7 @@ GLM-5.3-Flash release text and all three evaluation/architecture images were che
 | `celeris-1` | Unverified in this pass |
 | `claude-3-7-sonnet-thinking` | Reference only; no matching configuration score |
 | `claude-3-opus` | Exact result: MMMU, MathVista |
-| `claude-3-sonnet` | Unverified in this pass |
+| `claude-3-sonnet` | Exact result: MMMU, MathVista |
 | `claude-35-sonnet` | Exact result: MMMU |
 | `claude-35-sonnet-june-24` | Exact result: MMMU, MathVista |
 | `claude-4-1-opus` | Unverified in this pass |
@@ -66,24 +73,24 @@ GLM-5.3-Flash release text and all three evaluation/architecture images were che
 | `gemini-1-0-pro` | Exact result: MMMU, MathVista |
 | `gemini-1-5-flash-may-2024` | Exact result: MMMU, MathVista |
 | `gemini-1-5-pro-may-2024` | Exact result: MMMU, MathVista |
-| `gemini-2-0-flash` | Unverified in this pass |
+| `gemini-2-0-flash` | Exact result: MMMU |
 | `gemini-2-0-flash-experimental` | Unverified in this pass |
-| `gemini-2-0-flash-lite-001` | Unverified in this pass |
-| `gemini-2-0-flash-lite-preview` | Unverified in this pass |
+| `gemini-2-0-flash-lite-001` | Reference only; no matching configuration score |
+| `gemini-2-0-flash-lite-preview` | Exact result: MMMU |
 | `gemini-2-0-flash-thinking-exp-0121` | Unverified in this pass |
 | `gemini-2-0-flash-thinking-exp-1219` | Unverified in this pass |
-| `gemini-2-0-pro-experimental-02-05` | Unverified in this pass |
+| `gemini-2-0-pro-experimental-02-05` | Exact result: MMMU |
 | `gemini-2-5-flash-reasoning-04-2025` | Unverified in this pass |
-| `gemini-2-5-pro-03-25` | Unverified in this pass |
+| `gemini-2-5-pro-03-25` | Exact result: MMMU, Vibe-Eval (Reka) |
 | `gemini-3-pro-low` | Unverified in this pass |
 | `gemma-3n-e2b` | Unverified in this pass |
 | `glm-5-3-flash` | Unverified in this pass |
-| `gpt-4-5` | Unverified in this pass |
-| `gpt-4-turbo` | Unverified in this pass |
-| `gpt-4o` | Unverified in this pass |
-| `gpt-4o-2024-05-13` | Unverified in this pass |
-| `gpt-4o-chatgpt` | Unverified in this pass |
-| `gpt-4o-chatgpt-03-25` | Unverified in this pass |
+| `gpt-4-5` | Exact result: MMMU |
+| `gpt-4-turbo` | Reference only; no matching configuration score |
+| `gpt-4o` | Reference only; no matching configuration score |
+| `gpt-4o-2024-05-13` | Exact result: MMMU, MathVista |
+| `gpt-4o-chatgpt` | Reference only; no matching configuration score |
+| `gpt-4o-chatgpt-03-25` | Reference only; no matching configuration score |
 | `gpt-5-2` | Exact result: MMMU-Pro (no tools), MMMU-Pro (with tools), CharXiv Reasoning (no tools), CharXiv Reasoning (with tools) |
 | `gpt-5-4-pro` | Unverified in this pass |
 | `gpt-5-5-instant-05-26` | Unverified in this pass |
@@ -112,5 +119,5 @@ GLM-5.3-Flash release text and all three evaluation/architecture images were che
 ## Validation
 
 - Generated model payload differs only by the new visionBenchmarks field and generation timestamp. Existing scores, profiles and other model fields are identical to the previous commit.
-- 356 Python tests and 9 frontend behavior tests pass; the independent production ranking validator passes.
+- 357 Python tests and 9 frontend behavior tests pass; the independent production ranking validator passes.
 - Browser checks cover desktop/mobile lab layout, numeric input and slider synchronization, input clamping, normalization, mode keyboard navigation and official visual benchmark selection.

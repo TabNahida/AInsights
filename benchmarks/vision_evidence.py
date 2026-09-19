@@ -20,6 +20,7 @@ VISUAL_BENCHMARKS = {
     "mmmu-pro-vision-only": "MMMU-Pro (vision only)",
     "mmmu": "MMMU",
     "mathvista": "MathVista",
+    "vibe-eval": "Vibe-Eval (Reka)",
     "charxiv-reasoning": "CharXiv Reasoning (published protocol)",
     "charxiv-no-tools": "CharXiv Reasoning (no tools)",
     "charxiv-tools": "CharXiv Reasoning (with tools)",

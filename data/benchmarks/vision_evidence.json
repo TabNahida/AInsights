@@ -566,6 +566,198 @@
       "configuration": "May 2024 snapshot; 0-shot chain of thought; MMMU validation / MathVista testmini",
       "sourceLocator": "Table 18, page 39",
       "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-3-sonnet"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu",
+      "value": 53.1,
+      "sourceUrl": "https://www.anthropic.com/claude-3-model-card",
+      "sourceLabel": "Anthropic Claude 3 model card",
+      "configuration": "Claude 3 launch configuration; MMMU validation, 0-shot, temperature 0",
+      "sourceLocator": "Table 3, page 8; section 5.3",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-3-sonnet"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mathvista",
+      "value": 47.9,
+      "sourceUrl": "https://www.anthropic.com/claude-3-model-card",
+      "sourceLabel": "Anthropic Claude 3 model card",
+      "configuration": "Claude 3 launch configuration; MathVista testmini, 0-shot chain-of-thought, temperature 0",
+      "sourceLocator": "Table 3, page 8; section 5.3",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-3-haiku"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu",
+      "value": 50.2,
+      "sourceUrl": "https://www.anthropic.com/claude-3-model-card",
+      "sourceLabel": "Anthropic Claude 3 model card",
+      "configuration": "Claude 3 launch configuration; MMMU validation, 0-shot, temperature 0",
+      "sourceLocator": "Table 3, page 8; section 5.3",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-3-haiku"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mathvista",
+      "value": 46.4,
+      "sourceUrl": "https://www.anthropic.com/claude-3-model-card",
+      "sourceLabel": "Anthropic Claude 3 model card",
+      "configuration": "Claude 3 launch configuration; MathVista testmini, 0-shot chain-of-thought, temperature 0",
+      "sourceLocator": "Table 3, page 8; section 5.3",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "gemini-2-0-flash"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu",
+      "value": 71.7,
+      "sourceUrl": "https://blog.google/technology/google-deepmind/gemini-model-updates-february-2025/",
+      "sourceLabel": "Google Gemini 2.0 February release",
+      "configuration": "Gemini 2.0 Flash GA, February 5 2025",
+      "sourceLocator": "Benchmark table image: Image / MMMU row (gemini_benchmarks_cropped_light1x.gif)",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "gemini-2-0-flash-lite-preview"
+      ],
+      "referenceSlugs": [
+        "gemini-2-0-flash-lite-001"
+      ],
+      "benchmarkId": "mmmu",
+      "value": 68.0,
+      "sourceUrl": "https://blog.google/technology/google-deepmind/gemini-model-updates-february-2025/",
+      "sourceLabel": "Google Gemini 2.0 February release",
+      "configuration": "Gemini 2.0 Flash-Lite public preview, February 5 2025",
+      "sourceLocator": "Benchmark table image: Image / MMMU row (gemini_benchmarks_cropped_light1x.gif)",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "gemini-2-0-pro-experimental-02-05"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu",
+      "value": 72.7,
+      "sourceUrl": "https://blog.google/technology/google-deepmind/gemini-model-updates-february-2025/",
+      "sourceLabel": "Google Gemini 2.0 February release",
+      "configuration": "Gemini 2.0 Pro Experimental, February 5 2025",
+      "sourceLocator": "Benchmark table image: Image / MMMU row (gemini_benchmarks_cropped_light1x.gif)",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "gemini-2-5-pro-03-25"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu",
+      "value": 81.7,
+      "sourceUrl": "https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/",
+      "sourceLabel": "Google Gemini 2.5 Pro March release",
+      "configuration": "gemini-2.5-pro-exp-03-25, AI Studio API default sampling, pass@1; no majority voting",
+      "sourceLocator": "Benchmark image: visual reasoning MMMU row and methodology footer",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "gemini-2-5-pro-03-25"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "vibe-eval",
+      "value": 69.4,
+      "sourceUrl": "https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/",
+      "sourceLabel": "Google Gemini 2.5 Pro March release",
+      "configuration": "gemini-2.5-pro-exp-03-25, AI Studio API default sampling; Gemini used as judge",
+      "sourceLocator": "Benchmark image: image understanding Vibe-Eval row and methodology footer",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "gpt-4-5"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "mmmu",
+      "value": 74.4,
+      "sourceUrl": "https://openai.com/index/introducing-gpt-4-5/",
+      "sourceLabel": "OpenAI GPT-4.5 release",
+      "configuration": "GPT-4.5 research preview, February 27 2025; published evaluation protocol",
+      "sourceLocator": "Appendix: Model evaluation scores, MMMU (multimodal) row",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "gpt-4o-2024-05-13"
+      ],
+      "referenceSlugs": [
+        "gpt-4o",
+        "gpt-4o-chatgpt",
+        "gpt-4o-chatgpt-03-25"
+      ],
+      "benchmarkId": "mmmu",
+      "value": 69.1,
+      "sourceUrl": "https://openai.com/index/hello-gpt-4o/",
+      "sourceLabel": "OpenAI GPT-4o May release",
+      "configuration": "GPT-4o May 13 2024 launch; 0-shot chain-of-thought; MMMU validation / MathVista testmini",
+      "sourceLocator": "Model evaluations > Vision understanding evals; gpt-40-01_dark.png",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "gpt-4o-2024-05-13"
+      ],
+      "referenceSlugs": [
+        "gpt-4o",
+        "gpt-4o-chatgpt",
+        "gpt-4o-chatgpt-03-25"
+      ],
+      "benchmarkId": "mathvista",
+      "value": 63.8,
+      "sourceUrl": "https://openai.com/index/hello-gpt-4o/",
+      "sourceLabel": "OpenAI GPT-4o May release",
+      "configuration": "GPT-4o May 13 2024 launch; 0-shot chain-of-thought; MMMU validation / MathVista testmini",
+      "sourceLocator": "Model evaluations > Vision understanding evals; gpt-40-01_dark.png",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [],
+      "referenceSlugs": [
+        "gpt-4-turbo"
+      ],
+      "benchmarkId": "mmmu",
+      "value": 63.1,
+      "sourceUrl": "https://openai.com/index/hello-gpt-4o/",
+      "sourceLabel": "OpenAI GPT-4o May release",
+      "configuration": "GPT-4 Turbo 2024-04-09; 0-shot chain-of-thought; the local record is dated November 2023, so this later snapshot is reference only",
+      "sourceLocator": "Model evaluations > Vision understanding evals; GPT-4T 2024-04-09 column",
+      "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [],
+      "referenceSlugs": [
+        "gpt-4-turbo"
+      ],
+      "benchmarkId": "mathvista",
+      "value": 58.1,
+      "sourceUrl": "https://openai.com/index/hello-gpt-4o/",
+      "sourceLabel": "OpenAI GPT-4o May release",
+      "configuration": "GPT-4 Turbo 2024-04-09; 0-shot chain-of-thought; the local record is dated November 2023, so this later snapshot is reference only",
+      "sourceLocator": "Model evaluations > Vision understanding evals; GPT-4T 2024-04-09 column",
+      "reviewedAt": "2026-09-19"
     }
   ]
 }

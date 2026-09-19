@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-18T23:48:37+00:00",
+  "generatedAt": "2026-09-19T03:23:06+00:00",
   "source": {
     "label": "Artificial Analysis Core + listed benchmark extensions",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -182143,7 +182143,30 @@
           }
         }
       },
-      "visionBenchmarks": []
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 50.2,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/claude-3-model-card",
+          "sourceLabel": "Anthropic Claude 3 model card",
+          "configuration": "Claude 3 launch configuration; MMMU validation, 0-shot, temperature 0",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mathvista",
+          "label": "MathVista",
+          "value": 46.4,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/claude-3-model-card",
+          "sourceLabel": "Anthropic Claude 3 model card",
+          "configuration": "Claude 3 launch configuration; MathVista testmini, 0-shot chain-of-thought, temperature 0",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Claude Opus 5 (low) [R]",
@@ -221549,7 +221572,19 @@
           }
         }
       },
-      "visionBenchmarks": []
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 68.0,
+          "unit": "%",
+          "sourceUrl": "https://blog.google/technology/google-deepmind/gemini-model-updates-february-2025/",
+          "sourceLabel": "Google Gemini 2.0 February release",
+          "configuration": "Gemini 2.0 Flash-Lite public preview, February 5 2025",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Qwen3 30B [R]",
@@ -252266,7 +252301,30 @@
           }
         }
       },
-      "visionBenchmarks": []
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 69.1,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/hello-gpt-4o/",
+          "sourceLabel": "OpenAI GPT-4o May release",
+          "configuration": "GPT-4o May 13 2024 launch; 0-shot chain-of-thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mathvista",
+          "label": "MathVista",
+          "value": 63.8,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/hello-gpt-4o/",
+          "sourceLabel": "OpenAI GPT-4o May release",
+          "configuration": "GPT-4o May 13 2024 launch; 0-shot chain-of-thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Muse Glimmer (high) [R]",
@@ -263134,7 +263192,19 @@
           }
         }
       },
-      "visionBenchmarks": []
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 74.4,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/introducing-gpt-4-5/",
+          "sourceLabel": "OpenAI GPT-4.5 release",
+          "configuration": "GPT-4.5 research preview, February 27 2025; published evaluation protocol",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "GPT-5 Codex (high) [R]",
@@ -272126,7 +272196,30 @@
           }
         }
       },
-      "visionBenchmarks": []
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 81.7,
+          "unit": "%",
+          "sourceUrl": "https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/",
+          "sourceLabel": "Google Gemini 2.5 Pro March release",
+          "configuration": "gemini-2.5-pro-exp-03-25, AI Studio API default sampling, pass@1; no majority voting",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "vibe-eval",
+          "label": "Vibe-Eval (Reka)",
+          "value": 69.4,
+          "unit": "%",
+          "sourceUrl": "https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/",
+          "sourceLabel": "Google Gemini 2.5 Pro March release",
+          "configuration": "gemini-2.5-pro-exp-03-25, AI Studio API default sampling; Gemini used as judge",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Nemotron 3 Super [R]",
@@ -301577,7 +301670,30 @@
           }
         }
       },
-      "visionBenchmarks": []
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 63.1,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/hello-gpt-4o/",
+          "sourceLabel": "OpenAI GPT-4o May release",
+          "configuration": "GPT-4 Turbo 2024-04-09; 0-shot chain-of-thought; the local record is dated November 2023, so this later snapshot is reference only",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mathvista",
+          "label": "MathVista",
+          "value": 58.1,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/hello-gpt-4o/",
+          "sourceLabel": "OpenAI GPT-4o May release",
+          "configuration": "GPT-4 Turbo 2024-04-09; 0-shot chain-of-thought; the local record is dated November 2023, so this later snapshot is reference only",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Nova 2.0 Lite (Non-reasoning)",
@@ -309230,7 +309346,19 @@
           }
         }
       },
-      "visionBenchmarks": []
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 68.0,
+          "unit": "%",
+          "sourceUrl": "https://blog.google/technology/google-deepmind/gemini-model-updates-february-2025/",
+          "sourceLabel": "Google Gemini 2.0 February release",
+          "configuration": "Gemini 2.0 Flash-Lite public preview, February 5 2025",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Mistral Small (Sep)",
@@ -385571,7 +385699,30 @@
           }
         }
       },
-      "visionBenchmarks": []
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 53.1,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/claude-3-model-card",
+          "sourceLabel": "Anthropic Claude 3 model card",
+          "configuration": "Claude 3 launch configuration; MMMU validation, 0-shot, temperature 0",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mathvista",
+          "label": "MathVista",
+          "value": 47.9,
+          "unit": "%",
+          "sourceUrl": "https://www.anthropic.com/claude-3-model-card",
+          "sourceLabel": "Anthropic Claude 3 model card",
+          "configuration": "Claude 3 launch configuration; MathVista testmini, 0-shot chain-of-thought, temperature 0",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Gemini 3 Pro Preview (low) [R]",
@@ -386752,7 +386903,30 @@
           }
         }
       },
-      "visionBenchmarks": []
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 69.1,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/hello-gpt-4o/",
+          "sourceLabel": "OpenAI GPT-4o May release",
+          "configuration": "GPT-4o May 13 2024 launch; 0-shot chain-of-thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mathvista",
+          "label": "MathVista",
+          "value": 63.8,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/hello-gpt-4o/",
+          "sourceLabel": "OpenAI GPT-4o May release",
+          "configuration": "GPT-4o May 13 2024 launch; 0-shot chain-of-thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Jamba 1.5 Large",
@@ -399013,7 +399187,19 @@
           }
         }
       },
-      "visionBenchmarks": []
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 71.7,
+          "unit": "%",
+          "sourceUrl": "https://blog.google/technology/google-deepmind/gemini-model-updates-february-2025/",
+          "sourceLabel": "Google Gemini 2.0 February release",
+          "configuration": "Gemini 2.0 Flash GA, February 5 2025",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "GPT-5.6 Terra (max) [R]",
@@ -404568,7 +404754,30 @@
           }
         }
       },
-      "visionBenchmarks": []
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 69.1,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/hello-gpt-4o/",
+          "sourceLabel": "OpenAI GPT-4o May release",
+          "configuration": "GPT-4o May 13 2024 launch; 0-shot chain-of-thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mathvista",
+          "label": "MathVista",
+          "value": 63.8,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/hello-gpt-4o/",
+          "sourceLabel": "OpenAI GPT-4o May release",
+          "configuration": "GPT-4o May 13 2024 launch; 0-shot chain-of-thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": false,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "G9v3-39A5B [R]",
@@ -409054,7 +409263,19 @@
           }
         }
       },
-      "visionBenchmarks": []
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 72.7,
+          "unit": "%",
+          "sourceUrl": "https://blog.google/technology/google-deepmind/gemini-model-updates-february-2025/",
+          "sourceLabel": "Google Gemini 2.0 February release",
+          "configuration": "Gemini 2.0 Pro Experimental, February 5 2025",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Grok 4.20 0309 v2 [R]",
@@ -451263,7 +451484,30 @@
           }
         }
       },
-      "visionBenchmarks": []
+      "visionBenchmarks": [
+        {
+          "benchmarkId": "mmmu",
+          "label": "MMMU",
+          "value": 69.1,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/hello-gpt-4o/",
+          "sourceLabel": "OpenAI GPT-4o May release",
+          "configuration": "GPT-4o May 13 2024 launch; 0-shot chain-of-thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        },
+        {
+          "benchmarkId": "mathvista",
+          "label": "MathVista",
+          "value": 63.8,
+          "unit": "%",
+          "sourceUrl": "https://openai.com/index/hello-gpt-4o/",
+          "sourceLabel": "OpenAI GPT-4o May release",
+          "configuration": "GPT-4o May 13 2024 launch; 0-shot chain-of-thought; MMMU validation / MathVista testmini",
+          "exactConfiguration": true,
+          "reviewedAt": "2026-09-19"
+        }
+      ]
     },
     {
       "modelKey": "Claude Opus 4.7 (max) [R]",

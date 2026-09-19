@@ -44,6 +44,17 @@ class VisionEvidenceTests(unittest.TestCase):
         self.assertTrue(models[0]["visionBenchmarks"][0]["exactConfiguration"])
         self.assertFalse(models[1]["visionBenchmarks"][0]["exactConfiguration"])
 
+    def test_release_snapshots_do_not_inherit_preview_or_older_scores(self):
+        slugs = ["gpt-4o-2024-05-13", "gpt-4o", "gpt-4-turbo",
+                 "gemini-2-0-flash-lite-preview", "gemini-2-0-flash-lite-001"]
+        models = [{"slug": slug} for slug in slugs]
+        attach_vision_evidence(models)
+        for index in (0, 3):
+            self.assertTrue(all(row["exactConfiguration"] for row in models[index]["visionBenchmarks"]))
+        for index in (1, 2, 4):
+            self.assertTrue(models[index]["visionBenchmarks"])
+            self.assertTrue(all(not row["exactConfiguration"] for row in models[index]["visionBenchmarks"]))
+
     def test_mmmu_variants_and_tool_protocols_remain_separate(self):
         models = [{"slug": "apriel-v1-6-15b-thinker"}, {"slug": "gpt-5-2"}]
         attach_vision_evidence(models)
