@@ -313,7 +313,7 @@ const copy = {
     compareEmpty: "请选择至少一个模型",
     compareCoreTitle: "核心数据",
     compareRadarTitle: "能力雷达对比",
-    compareRadarSubtitle: "叠加对比五个 AIndex 能力板块与证据覆盖度；证据轴不参与排名",
+    compareRadarSubtitle: "叠加对比五个 AIndex 能力板块与所选视觉测试；视觉成绩不参与 AIndex 排名",
     compareBenchmarkTitle: "测试项数据",
     compareMetricColumn: "指标",
     compareRemove: "移除",
@@ -362,6 +362,9 @@ const copy = {
     visionNoEvidence: "尚未核实到此配置的视觉成绩；缺分不表示零分或不支持图片。",
     visionNoImage: "当前数据未标记图片输入，也未收录视觉测试。",
     visionOtherEvidence: "有官方参考，见下方测试与来源",
+    visionMissingSelected: "当前所选测试暂无此配置的成绩。",
+    visionShowResult: "查看 {test} · {score}%",
+    visionReferenceOnly: "仅有其他档位或版本的参考成绩，见下方来源；不作为此配置的分数。",
     radarCoverage: "{available}/{total} 项测试",
     radarTestCount: "{available} 项测试",
     radarDualCoverage: "Core {coreAvailable}/{coreTotal} · 扩展 {extensionAvailable}/{extensionTotal}",
@@ -822,7 +825,7 @@ const copy = {
     compareEmpty: "Choose at least one model",
     compareCoreTitle: "Core data",
     compareRadarTitle: "Capability radar",
-    compareRadarSubtitle: "Five AIndex capability boards plus evidence coverage; the evidence axis does not affect rank",
+    compareRadarSubtitle: "Five AIndex capability boards plus the selected visual test; vision scores do not affect AIndex rank",
     compareBenchmarkTitle: "Benchmark data",
     compareMetricColumn: "Metric",
     compareRemove: "Remove",
@@ -871,6 +874,9 @@ const copy = {
     visionNoEvidence: "No verified visual result for this configuration yet. Missing does not mean zero or no image support.",
     visionNoImage: "Current metadata lists no image input and no visual evaluation is recorded.",
     visionOtherEvidence: "Official references available below",
+    visionMissingSelected: "This configuration has no result on the selected test.",
+    visionShowResult: "Show {test} · {score}%",
+    visionReferenceOnly: "Only other-tier or version references are available below; these are not scores for this configuration.",
     radarCoverage: "{available}/{total} tests",
     radarTestCount: "{available} tests",
     radarDualCoverage: "Core {coreAvailable}/{coreTotal} · Extension {extensionAvailable}/{extensionTotal}",
@@ -1366,6 +1372,13 @@ function bindControlEvents() {
     document.querySelector("[data-vision-benchmark]")?.focus({ preventScroll: true });
   });
   document.addEventListener("click", (event) => {
+    const visionButton = event.target.closest("[data-vision-select]");
+    if (visionButton) {
+      state.radarVisionBenchmark = visionButton.dataset.visionSelect;
+      render();
+      document.querySelector("[data-vision-benchmark]")?.focus({ preventScroll: true });
+      return;
+    }
     const addButton = event.target.closest("[data-compare-add]");
     if (!addButton) return;
     event.preventDefault();
@@ -4808,7 +4821,7 @@ function renderRadarChart(models, options = {}) {
     <label for="radarVisionBenchmark">${escapeHtml(tr("visionSelector"))}</label>
     <select id="radarVisionBenchmark" data-vision-benchmark>${visionOptions.map((item) => `<option value="${escapeHtml(item.id)}" ${item.id === vision.id ? "selected" : ""}>${escapeHtml(item.label)} · ${item.count}/${models.filter(Boolean).length}</option>`).join("")}</select>
     <p>${escapeHtml(tr("visionEvidenceHint"))}</p>
-  </div>`;
+  </div>${renderVisionAvailability(models.filter(Boolean), vision.id)}`;
   const evidence = renderVisionEvidence(models.filter(Boolean));
   const visibleModels = models
     .filter(Boolean)
@@ -4885,6 +4898,30 @@ function radarVisionOptions(models) {
     count: models.filter((model) => (model.visionBenchmarks || []).some((row) => row.benchmarkId === id && row.exactConfiguration && Number.isFinite(row.value))).length,
   });
   return options.sort((a, b) => b.count - a.count || (a.id === "aa" ? -1 : b.id === "aa" ? 1 : 0));
+}
+
+function modelVisionResults(model) {
+  const results = [];
+  if (Number.isFinite(model.scores?.["MMMU-Pro"])) {
+    results.push({ id: "aa", label: tr("visionAA"), value: model.scores["MMMU-Pro"] });
+  }
+  for (const row of model.visionBenchmarks || []) {
+    if (!row.exactConfiguration || !Number.isFinite(row.value) || results.some((item) => item.id === row.benchmarkId)) continue;
+    results.push({ id: row.benchmarkId, label: `${row.label} · ${tr("visionOfficial")}`, value: row.value });
+  }
+  return results;
+}
+
+function renderVisionAvailability(models, selectedId) {
+  const missing = models.map((model) => ({ model, results: modelVisionResults(model) }))
+    .filter(({ results }) => !results.some((row) => row.id === selectedId));
+  if (!missing.length) return "";
+  return `<ul class="vision-availability">${missing.map(({ model, results }) => `<li>
+    <strong>${escapeHtml(model.model)}</strong>
+    <p>${escapeHtml(tr("visionMissingSelected"))}</p>
+    ${results.length ? `<div class="vision-alternatives">${results.map((row) => `<button type="button" data-vision-select="${escapeHtml(row.id)}">${escapeHtml(tr("visionShowResult", { test: row.label, score: formatNumber(row.value) }))}</button>`).join("")}</div>`
+      : `<p>${escapeHtml(tr(model.visionBenchmarks?.length ? "visionReferenceOnly" : model.inputModalities?.includes("Image") ? "visionNoEvidence" : "visionNoImage"))}</p>`}
+  </li>`).join("")}</ul>`;
 }
 
 function renderVisionEvidence(models) {

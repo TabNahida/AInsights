@@ -9,10 +9,13 @@ const names = ['radarAxes', 'radarBoardProfile', 'radarAxisValue', 'radarHasData
   'radarLinePath', 'radarPolygonPoints', 'radarPoint', 'radarProfilePopulation',
   'radarAxisAverage', 'modelForRankingGrain', 'benchmarkMatchesSearch',
   'benchmarkRankingRows', 'benchmarkHref', 'radarVisionOptions', 'radarAxisRank',
-  'handleCustomAction', 'activeCustomWeights', 'restoreActiveCustomDefaults'];
+  'handleCustomAction', 'activeCustomWeights', 'restoreActiveCustomDefaults',
+  'modelVisionResults', 'renderVisionAvailability'];
 const context = vm.createContext({
   state: { data: { models: [] }, dedupe: true },
   tr: (key) => key,
+  escapeHtml: (value) => String(value),
+  formatNumber: (value) => String(value),
   clamp: (value, min, max) => Math.min(max, Math.max(min, value)),
   formatSvgNumber: (value) => value.toFixed(2),
   URLSearchParams,
@@ -134,4 +137,29 @@ test('restore keeps the benchmark preset and leaves other mode weights intact', 
   context.handleCustomAction('clear');
   assert.equal(context.state.customWeightPresetId, 'manual');
   assert.deepEqual(context.state.customWeights, { vision: 0, reasoning: 0 });
+});
+
+
+test('missing selected vision exposes tested alternatives without mixing comparison scores', () => {
+  const fable = { model: 'Fable', scores: {}, visionBenchmarks: [
+    { benchmarkId: 'chartography-no-tools', label: 'Chartography', value: 42.6, exactConfiguration: true },
+  ] };
+  const opus = { model: 'Opus', scores: { 'MMMU-Pro': 84.7 } };
+  const html = context.renderVisionAvailability([fable, opus], 'aa');
+  assert.match(html, /Fable/);
+  assert.match(html, /data-vision-select="chartography-no-tools"/);
+  assert.doesNotMatch(html, /<strong>Opus/);
+  assert.equal(context.modelVisionResults(fable)[0].value, 42.6);
+  assert.equal(context.radarAxisValue(fable, context.radarAxes().at(-1)), null);
+  assert.equal(context.renderVisionAvailability([fable], 'chartography-no-tools'), '');
+});
+
+test('reference-only vision explains the missing configuration without a score switch', () => {
+  const model = { model: 'Fable low', scores: {}, visionBenchmarks: [
+    { benchmarkId: 'chartography-no-tools', label: 'Chartography', value: 42.6, exactConfiguration: false },
+  ] };
+  assert.equal(context.modelVisionResults(model).length, 0);
+  const html = context.renderVisionAvailability([model], 'aa');
+  assert.match(html, /visionReferenceOnly/);
+  assert.doesNotMatch(html, /data-vision-select/);
 });

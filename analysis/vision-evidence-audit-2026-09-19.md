@@ -2,7 +2,7 @@
 
 ## Scope and outcome
 
-The snapshot has 652 configurations; 260 have AA MMMU-Pro observations. Of the 392 without AA MMMU-Pro, 69 list Image input. Missing image metadata is not proof that a model cannot process images.
+The snapshot has 653 configurations; 261 have AA MMMU-Pro observations. Of the 392 without AA MMMU-Pro, 69 list Image input. Missing image metadata is not proof that a model cannot process images.
 
 This update adds 54 manually reviewed official results. Within the 69 missing-AA image configurations, 20 now have an exact-configuration visual result, 18 have reference evidence only (including existing external evidence), and 31 remain unverified. These are configuration counts, not model-family counts.
 
@@ -119,5 +119,11 @@ GPT-4o May results are references for later November/ChatGPT snapshots. GPT-4 Tu
 ## Validation
 
 - Generated model payload differs only by the new visionBenchmarks field and generation timestamp. Existing scores, profiles and other model fields are identical to the previous commit.
-- 357 Python tests and 9 frontend behavior tests pass; the independent production ranking validator passes.
+- 358 Python tests and 11 frontend behavior tests pass; the independent production ranking validator passes.
 - Browser checks cover desktop/mobile lab layout, numeric input and slider synchronization, input clamping, normalization, mode keyboard navigation and official visual benchmark selection.
+
+## Remote data reconciliation
+
+Merged the September 19 automatic update at `670023b` and regenerated both static payloads from its latest inputs. The 653 model records retain all remote non-vision data; rebuilt ranking profiles differ only in 12 floating-point values at machine precision. The independent production validator passes. A static-payload regression verifies models.js equals models.json and every generated visionBenchmarks field matches the registry attachment.
+
+When a comparison selects AA MMMU-Pro, a Claude configuration measured on another test can still have a missing radar point. The page now displays its available tested scores and switch buttons above the radar. Reference-only configurations receive an explicit explanation instead of an unexplained dash.

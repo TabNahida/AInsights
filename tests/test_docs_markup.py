@@ -49,6 +49,8 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("board?.extensionItemPoolSize", coverage_source)
         self.assertIn('tr("radarDualCoverage", coverage)', coverage_source)
         self.assertIn("function radarHasData(model, axes", app_js)
+        self.assertNotIn("plus evidence coverage", app_js)
+        self.assertNotIn("能力板块与证据覆盖度", app_js)
         self.assertIn(
             "values.some((value) => !Number.isFinite(value))",
             app_js,

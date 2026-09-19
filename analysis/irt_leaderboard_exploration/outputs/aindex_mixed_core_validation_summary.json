@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_mixed_core",
   "candidate_id": "mixed_core_mc07",
-  "calibration_population_size": 131,
-  "bonus_cap_per_board": 30.679240853653944,
+  "calibration_population_size": 132,
+  "bonus_cap_per_board": 30.67996662724486,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 131,
-    "unique_slugs": 131,
-    "unique_variant_groups": 131,
+    "row_count": 132,
+    "unique_slugs": 132,
+    "unique_variant_groups": 132,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 179,
-    "unique_slugs": 179,
-    "unique_variant_groups": 132,
+    "row_count": 180,
+    "unique_slugs": 180,
+    "unique_variant_groups": 133,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -26,8 +26,8 @@
   "passed": true,
   "core_eligibility": {
     "variant_group": {
-      "requested_count": 480,
-      "eligible_count": 131,
+      "requested_count": 481,
+      "eligible_count": 132,
       "excluded_count": 349,
       "excluded_models": [
         {
@@ -7308,8 +7308,8 @@
       ]
     },
     "exact_config": {
-      "requested_count": 652,
-      "eligible_count": 179,
+      "requested_count": 653,
+      "eligible_count": 180,
       "excluded_count": 473,
       "excluded_models": [
         {
@@ -16980,10 +16980,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 30.679240853653944,
+    "bonus_cap_per_board": 30.67996662724486,
     "pooled_positive_residual_count": 98,
-    "pooled_positive_residual_mean": 12.931016855086634,
-    "pooled_positive_residual_population_sd": 12.549889543404767,
+    "pooled_positive_residual_mean": 12.935107523015523,
+    "pooled_positive_residual_population_sd": 12.547510203800407,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -16998,7 +16998,7 @@
       "knowledge-science": 37,
       "instruction-context": 20
     },
-    "population_size": 131,
+    "population_size": 132,
     "population_slugs": [
       "claude-fable-5-1",
       "claude-opus-4-8",
@@ -17130,6 +17130,7 @@
       "solar-pro-3",
       "solar-pro4",
       "step-3-7-flash",
+      "step-5",
       "trinity-large-thinking"
     ],
     "population_variant_groups": [
@@ -17263,6 +17264,7 @@
       "solar pro 3",
       "solar pro 4",
       "step 3 7 flash",
+      "step 5 preview",
       "trinity large thinking"
     ],
     "representative_policy": "variantPriority descending then slug, before eligibility",
@@ -17403,7 +17405,7 @@
         ],
         "core_item_count": 1,
         "extension_item_count": 1,
-        "complete_core_models": 131,
+        "complete_core_models": 132,
         "weight": 22
       },
       "knowledge-science": {
@@ -17425,9 +17427,9 @@
             "score_key": "MMMU-Pro",
             "canonical_family": "mmmu-pro",
             "enabled": true,
-            "observed_count": 56,
-            "slope": 0.9059109119512865,
-            "intercept": 51.80126681186376
+            "observed_count": 57,
+            "slope": 0.9050045504607558,
+            "intercept": 51.80403260174923
           },
           {
             "item_id": "mmlu-pro",
@@ -17441,7 +17443,7 @@
         ],
         "core_item_count": 2,
         "extension_item_count": 2,
-        "complete_core_models": 121,
+        "complete_core_models": 122,
         "weight": 37
       },
       "instruction-context": {
@@ -17465,7 +17467,7 @@
         ],
         "core_item_count": 1,
         "extension_item_count": 1,
-        "complete_core_models": 131,
+        "complete_core_models": 132,
         "weight": 20
       }
     }
@@ -17474,9 +17476,9 @@
     "method_id": "aindex_mixed_core",
     "candidate_id": "mixed_core_mc07",
     "independent_of_production_scoring_module": true,
-    "variant_group_count": 131,
-    "exact_config_count": 179,
-    "cap": 30.679240853653944,
+    "variant_group_count": 132,
+    "exact_config_count": 180,
+    "cap": 30.67996662724486,
     "profiles_checked": true,
     "passed": true,
     "failures": []

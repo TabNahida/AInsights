@@ -8,6 +8,17 @@ from benchmarks.vision_evidence import attach_vision_evidence, load_vision_evide
 
 
 class VisionEvidenceTests(unittest.TestCase):
+    def test_static_script_matches_json_and_contains_attached_vision_evidence(self):
+        root = Path(__file__).resolve().parents[1]
+        payload = json.loads((root / "docs/data/models.json").read_text(encoding="utf-8"))
+        script = (root / "docs/data/models.js").read_text(encoding="utf-8")
+        self.assertTrue(script.startswith("window.AINSIGHTS_MODELS_DATA = "))
+        self.assertEqual(json.loads(script.split("=", 1)[1].strip().removesuffix(";")), payload)
+        expected = copy.deepcopy(payload["models"])
+        attach_vision_evidence(expected)
+        for actual, model in zip(payload["models"], expected):
+            self.assertEqual(actual.get("visionBenchmarks"), model["visionBenchmarks"], model["slug"])
+
     def test_curated_sources_are_valid_and_all_slugs_exist(self):
         rows = load_vision_evidence()
         payload = json.loads((Path(__file__).resolve().parents[1] / "docs/data/models.json").read_text(encoding="utf-8"))
