@@ -26,6 +26,10 @@ const copy = {
     dedupe: "去除重复档位",
     customTitle: "自定义计算实验室",
     customToolTitle: "计算工具",
+    customResetAll: "重置全部模式",
+    customWeightActions: "当前模式权重",
+    customLiveHint: "先选择计算方式，再调整权重；修改会更新下方排名。权重为 0 表示不纳入。",
+    customPreciseWeight: "{name}：输入权重",
     customToolSubtitle: "选择同量纲数据进行组合；方法名次、能力板块分和逐项 benchmark 不会混算。",
     customToolModes: {
       methodRank: "方法名次",
@@ -57,7 +61,7 @@ const copy = {
       equalize: "等权",
       normalize: "归一到 100",
       clear: "清零",
-      restore: "恢复默认",
+      restore: "恢复当前模式",
       export: "导出配置",
       exported: "已导出 JSON",
     },
@@ -309,7 +313,7 @@ const copy = {
     compareEmpty: "请选择至少一个模型",
     compareCoreTitle: "核心数据",
     compareRadarTitle: "能力雷达对比",
-    compareRadarSubtitle: "叠加对比五个 AIndex 能力板块与证据覆盖度；证据轴不参与排名",
+    compareRadarSubtitle: "叠加对比五个 AIndex 能力板块与所选视觉测试；视觉成绩不参与 AIndex 排名",
     compareBenchmarkTitle: "测试项数据",
     compareMetricColumn: "指标",
     compareRemove: "移除",
@@ -331,7 +335,7 @@ const copy = {
     sourceExplorerTitle: "测评源地图",
     sourceExplorerSubtitle: "AA Core 与已链接的独立 benchmark 扩展来源，并列展示计分角色与协议",
     detailRankTitle: "排名快照",
-    detailRadarSubtitle: "五个 AIndex 能力板块加证据覆盖度；外圈为 100 分，橙色为入榜模型平均值",
+    detailRadarSubtitle: "五个 AIndex 能力板块与视觉理解；外圈为 100 分，橙色为参考均值，统计范围见图例",
     detailBenchmarkTitle: "Benchmark Lab 参考项目",
     detailBenchmarkSubtitle: "均衡逐项实验模板中的测试项；它们不作为主榜固定权重。",
     detailExternalTitle: "非参考项目分数",
@@ -344,20 +348,36 @@ const copy = {
     detailSourcesTitle: "外部测评参考",
     radarAverage: "入榜模型平均值",
     radarDataSource: "数据来源",
-    radarSourceText: "AIndex 混合 Core 方案 07 / 真实 Core 与列明的扩展 benchmark 成绩",
+    radarSourceText: "AIndex 混合 Core 方案 07 · 视觉：所选测试，原始百分比",
     radarBasisTitle: "雷达维度口径",
-    radarBasisSubtitle: "五个能力轴直接读取混合 Core 方案 07 板块分；扩展覆盖轴只反映稀疏证据广度，不修正能力分，也不参与排名。",
+    radarBasisSubtitle: "五个能力轴读取板块分，视觉轴读取所选测试，不改变 AIndex。AA 均值统计有成绩的入榜模型；官方均值仅统计已核实的同协议评测组，至少两个模型，不计算名次。无完整均值时不绘制均值轮廓。",
+    radarMeanLabel: "均值",
+    visionSelector: "视觉测试",
+    visionAA: "MMMU-Pro · AA 统一评测",
+    visionOfficial: "官方发布",
+    visionEvidenceTitle: "视觉测试与来源",
+    visionEvidenceHint: "只绘制所选测试，不跨测试补分。官方均值仅来自明确的同协议评测组，并注明样本数；不计算官方名次，也不写入 AIndex。",
+    radarCohortAverage: "板块：入榜模型均值 · 视觉：同协议 {count} 模型均值",
+    visionCohortMean: "同协议均值 {score} · n={count}",
+    visionExact: "对应配置",
+    visionReference: "其他档位 / 家族参考，不入雷达",
+    visionNoEvidence: "尚未核实到此配置的视觉成绩；缺分不表示零分或不支持图片。",
+    visionNoImage: "当前数据未标记图片输入，也未收录视觉测试。",
+    visionOtherEvidence: "有官方参考，见下方测试与来源",
+    visionMissingSelected: "当前所选测试暂无此配置的成绩。",
+    visionShowResult: "查看 {test} · {score}%",
+    visionReferenceOnly: "仅有其他档位或版本的参考成绩，见下方来源；不作为此配置的分数。",
     radarCoverage: "{available}/{total} 项测试",
     radarTestCount: "{available} 项测试",
     radarDualCoverage: "Core {coreAvailable}/{coreTotal} · 扩展 {extensionAvailable}/{extensionTotal}",
-    radarNoData: "该配置暂无完整的排行榜能力数据",
+    radarNoData: "该配置暂无可展示的能力数据",
     radarAxes: {
       coding: "代码编程",
       agenticToolWork: "智能体与工具工作",
       hardReasoning: "高难推理",
       knowledgeScience: "知识与科学",
       instructionContext: "指令与上下文",
-      evidenceCoverage: "证据覆盖度",
+      visualUnderstanding: "视觉理解",
     },
     radarAxisNotes: {
       coding: "12% · Terminal-Bench v4.0 + SciCode，各占基础分一半。",
@@ -365,7 +385,7 @@ const copy = {
       hardReasoning: "22% · CritPt 单 Core，占全部基础分。",
       knowledgeScience: "37% · AA-Omniscience Accuracy + GDP.pdf，各占基础分一半。",
       instructionContext: "20% · AA-LCR v1.1 单 Core，占全部基础分。",
-      evidenceCoverage: "extensionCoverageScore：五板块扩展测试覆盖广度，仅作证据充分度参考。",
+      visualUnderstanding: "可切换 AA MMMU-Pro 或已核实的官方视觉测试。不同测试、带工具版本分别列出；其他档位只展示为参考，不绘入当前配置。",
     },
     detailRows: {
       provider: "供应商",
@@ -395,6 +415,16 @@ const copy = {
     benchmarkPageTitle: "单项测试排名",
     benchmarkPageSubtitle: "查看每一项测试下所有有分数模型的具体排名和来源",
     benchmarkPickerTitle: "选择测试项",
+    benchmarkSearchLabel: "搜索 benchmark",
+    benchmarkModelSearchLabel: "搜索模型",
+    benchmarkSearchPlaceholder: "名称、来源或类别",
+    benchmarkModelSearchPlaceholder: "模型名称或机构",
+    benchmarkSearchCount: "显示 {shown} / {total} 项",
+    benchmarkModelSearchCount: "显示 {shown} / {total} 个模型 · 保留原始名次",
+    benchmarkSearchEmpty: "没有匹配结果，请尝试其他关键词或清除搜索。",
+    benchmarkSearchClear: "清除搜索",
+    benchmarkPolicyDetails: "计分规则与数据来源",
+    benchmarkPublicSource: "官方 / 公开测评",
     benchmarkRankingTitle: "{label} 排名",
     benchmarkRankingSubtitle: "{count} 个模型有分数 · {category}",
     benchmarkReference: "AIndex 计分项",
@@ -510,6 +540,10 @@ const copy = {
     dedupe: "Remove duplicate tiers",
     customTitle: "Custom calculation lab",
     customToolTitle: "Calculation tool",
+    customResetAll: "Reset all modes",
+    customWeightActions: "Current mode weights",
+    customLiveHint: "Choose a calculation mode, then adjust weights. Changes update the ranking below; a zero weight excludes an item.",
+    customPreciseWeight: "{name}: enter weight",
     customToolSubtitle: "Combine like-for-like evidence; method ranks, capability-board scores, and benchmark scores are never mixed in one calculation.",
     customToolModes: {
       methodRank: "Method ranks",
@@ -541,7 +575,7 @@ const copy = {
       equalize: "Equalize",
       normalize: "Normalize to 100",
       clear: "Clear",
-      restore: "Restore defaults",
+      restore: "Restore this mode",
       export: "Export config",
       exported: "JSON exported",
     },
@@ -793,7 +827,7 @@ const copy = {
     compareEmpty: "Choose at least one model",
     compareCoreTitle: "Core data",
     compareRadarTitle: "Capability radar",
-    compareRadarSubtitle: "Five AIndex capability boards plus evidence coverage; the evidence axis does not affect rank",
+    compareRadarSubtitle: "Five AIndex capability boards plus the selected visual test; vision scores do not affect AIndex rank",
     compareBenchmarkTitle: "Benchmark data",
     compareMetricColumn: "Metric",
     compareRemove: "Remove",
@@ -815,7 +849,7 @@ const copy = {
     sourceExplorerTitle: "Benchmark source map",
     sourceExplorerSubtitle: "AA Core and linked, independently controlled benchmark extensions, with scoring roles and protocols shown side by side",
     detailRankTitle: "Rank snapshot",
-    detailRadarSubtitle: "Five AIndex capability boards plus evidence coverage; the outer ring is 100 and orange is the ranked-model average",
+    detailRadarSubtitle: "Five AIndex capability boards plus visual understanding; the outer ring is 100. Orange shows reference means; see the legend for their populations",
     detailBenchmarkTitle: "Benchmark Lab reference set",
     detailBenchmarkSubtitle: "Benchmarks in the balanced per-item experiment template; these are not fixed primary-ranking weights.",
     detailExternalTitle: "Non-reference benchmark scores",
@@ -828,20 +862,36 @@ const copy = {
     detailSourcesTitle: "External evaluation references",
     radarAverage: "Ranked-model average",
     radarDataSource: "Sources",
-    radarSourceText: "AIndex Mixed Core 07 / observed Core and listed extension benchmarks",
+    radarSourceText: "AIndex Mixed Core 07 · Vision: selected evaluation, raw percentage",
     radarBasisTitle: "Radar axis basis",
-    radarBasisSubtitle: "The five capability axes read Mixed Core 07 board scores directly. Extension coverage only shows sparse-evidence breadth; it neither adjusts capability scores nor affects rank.",
+    radarBasisSubtitle: "Five axes read board scores; vision uses the selected test without changing AIndex. AA averages include ranked models with scores. Official means require a reviewed common-protocol cohort of at least two models, without ranks. Incomplete mean outlines are not drawn.",
+    radarMeanLabel: "Avg",
+    visionSelector: "Vision benchmark",
+    visionAA: "MMMU-Pro · AA common protocol",
+    visionOfficial: "Official report",
+    visionEvidenceTitle: "Visual evaluations and sources",
+    visionEvidenceHint: "Only the selected test is plotted, without substitution. Official means use explicitly reviewed common-protocol cohorts with sample counts; official scores have no ranks and never enter AIndex.",
+    radarCohortAverage: "Boards: ranked-model mean · Vision: {count}-model protocol cohort",
+    visionCohortMean: "Protocol mean {score} · n={count}",
+    visionExact: "Matching configuration",
+    visionReference: "Other tier / family reference, not plotted",
+    visionNoEvidence: "No verified visual result for this configuration yet. Missing does not mean zero or no image support.",
+    visionNoImage: "Current metadata lists no image input and no visual evaluation is recorded.",
+    visionOtherEvidence: "Official references available below",
+    visionMissingSelected: "This configuration has no result on the selected test.",
+    visionShowResult: "Show {test} · {score}%",
+    visionReferenceOnly: "Only other-tier or version references are available below; these are not scores for this configuration.",
     radarCoverage: "{available}/{total} tests",
     radarTestCount: "{available} tests",
     radarDualCoverage: "Core {coreAvailable}/{coreTotal} · Extension {extensionAvailable}/{extensionTotal}",
-    radarNoData: "No complete ranking capability profile is available for this configuration",
+    radarNoData: "No capability scores are available for this configuration",
     radarAxes: {
       coding: "Coding",
       agenticToolWork: "Agentic/tool work",
       hardReasoning: "Hard reasoning",
       knowledgeScience: "Knowledge/science",
       instructionContext: "Instruction/context",
-      evidenceCoverage: "Evidence coverage",
+      visualUnderstanding: "Visual understanding",
     },
     radarAxisNotes: {
       coding: "12% · Terminal-Bench v4.0 + SciCode, each with half the Core base.",
@@ -849,7 +899,7 @@ const copy = {
       hardReasoning: "22% · CritPt is the single Core, supplying the full base.",
       knowledgeScience: "37% · AA-Omniscience Accuracy + GDP.pdf, each with half the Core base.",
       instructionContext: "20% · AA-LCR v1.1 is the single Core, supplying the full base.",
-      evidenceCoverage: "extensionCoverageScore: extension-test breadth across the five boards, shown only as evidence sufficiency.",
+      visualUnderstanding: "Choose AA MMMU-Pro or a verified official visual test. Different benchmarks and tool protocols stay separate; results from other tiers are references and never plotted for this configuration.",
     },
     detailRows: {
       provider: "Provider",
@@ -879,6 +929,16 @@ const copy = {
     benchmarkPageTitle: "Benchmark rankings",
     benchmarkPageSubtitle: "Inspect model rankings and source-backed scores for each benchmark",
     benchmarkPickerTitle: "Choose benchmark",
+    benchmarkSearchLabel: "Search benchmarks",
+    benchmarkModelSearchLabel: "Search models",
+    benchmarkSearchPlaceholder: "Name, source or category",
+    benchmarkModelSearchPlaceholder: "Model name or provider",
+    benchmarkSearchCount: "Showing {shown} / {total} benchmarks",
+    benchmarkModelSearchCount: "Showing {shown} / {total} models · Original ranks retained",
+    benchmarkSearchEmpty: "No matches. Try another keyword or clear the search.",
+    benchmarkSearchClear: "Clear search",
+    benchmarkPolicyDetails: "Scoring rules and sources",
+    benchmarkPublicSource: "Official / public results",
     benchmarkRankingTitle: "{label} ranking",
     benchmarkRankingSubtitle: "{count} scored models · {category}",
     benchmarkReference: "AIndex scoring item",
@@ -1015,6 +1075,7 @@ const state = {
   providerId: initialRoute.providerId,
   compareIds: initialRoute.compareIds || [],
   compareQuery: "",
+  radarVisionBenchmark: "",
   compareTouched: false,
   comparePickerOpen: false,
   contributionMode: "score",
@@ -1308,7 +1369,20 @@ function bindControlEvents() {
     });
   }
   bindContributionEvents();
+  document.addEventListener("change", (event) => {
+    if (!event.target.matches("[data-vision-benchmark]")) return;
+    state.radarVisionBenchmark = event.target.value;
+    render();
+    document.querySelector("[data-vision-benchmark]")?.focus({ preventScroll: true });
+  });
   document.addEventListener("click", (event) => {
+    const visionButton = event.target.closest("[data-vision-select]");
+    if (visionButton) {
+      state.radarVisionBenchmark = visionButton.dataset.visionSelect;
+      render();
+      document.querySelector("[data-vision-benchmark]")?.focus({ preventScroll: true });
+      return;
+    }
     const addButton = event.target.closest("[data-compare-add]");
     if (!addButton) return;
     event.preventDefault();
@@ -1367,7 +1441,7 @@ function renderStaticControls() {
   els.searchInput.placeholder = tr("searchPlaceholder");
   els.dedupeLabel.textContent = tr("dedupe");
   els.customTitle.textContent = tr("customTitle");
-  els.resetWeightsButton.textContent = tr("reset");
+  els.resetWeightsButton.textContent = tr("customResetAll");
   if (els.latestModelsTitle) els.latestModelsTitle.textContent = tr("latestModelsTitle");
   if (els.latestModelsSubtitle) els.latestModelsSubtitle.textContent = tr("latestModelsSubtitle");
   if (els.comparePageTitle) els.comparePageTitle.textContent = tr("comparePageTitle");
@@ -2610,23 +2684,25 @@ function renderWeights() {
           <h3>${escapeHtml(tr("customToolTitle"))}</h3>
           <p>${escapeHtml(tr("customToolSubtitle"))}</p>
         </div>
-        <div class="custom-action-toolbar" role="group" aria-label="${escapeHtml(tr("customToolTitle"))}">
-          ${["equalize", "normalize", "clear", "restore", "export"].map((action) => `
-            <button type="button" data-custom-action="${action}">${escapeHtml(tr(`customActions.${action}`))}</button>
-          `).join("")}
-          <span class="custom-export-status" data-custom-export-status aria-live="polite"></span>
-        </div>
       </div>
-      <div class="custom-tool-tabs" role="tablist">
+      <div class="custom-tool-tabs" role="tablist" aria-label="${escapeHtml(tr("customToolTitle"))}">
         ${customToolModeOrder.map((mode) => `
-          <button type="button" role="tab" data-custom-tool-mode="${mode}" aria-selected="${mode === state.customToolMode}">
+          <button type="button" role="tab" id="custom-tab-${mode}" data-custom-tool-mode="${mode}" aria-controls="custom-mode-panel" tabindex="${mode === state.customToolMode ? 0 : -1}" aria-selected="${mode === state.customToolMode}">
             <strong>${escapeHtml(tr(`customToolModes.${customToolTranslationId(mode)}`))}</strong>
             <span>${escapeHtml(tr(`customToolDescriptions.${customToolTranslationId(mode)}`))}</span>
           </button>
         `).join("")}
       </div>
+      <div class="custom-action-toolbar" role="group" aria-label="${escapeHtml(tr("customWeightActions"))}">
+        <span class="custom-action-label">${escapeHtml(tr("customWeightActions"))}</span>
+        ${["equalize", "normalize", "clear", "restore", "export"].map((action) => `
+          <button type="button" data-custom-action="${action}">${escapeHtml(tr(`customActions.${action}`))}</button>
+        `).join("")}
+        <span class="custom-export-status" data-custom-export-status aria-live="polite"></span>
+      </div>
+      <p class="custom-live-hint">${escapeHtml(tr("customLiveHint"))}</p>
     </section>
-    <div class="custom-mode-body" data-custom-mode-body></div>
+    <div class="custom-mode-body" id="custom-mode-panel" role="tabpanel" aria-labelledby="custom-tab-${state.customToolMode}" data-custom-mode-body></div>
   `;
   bindCustomToolChrome();
   const body = els.weightsGrid.querySelector("[data-custom-mode-body]");
@@ -2677,6 +2753,14 @@ function bindCustomToolChrome() {
       state.customToolMode = button.dataset.customToolMode;
       renderWeights();
       renderResults(state.data.presets.custom);
+      els.weightsGrid.querySelector(`[data-custom-tool-mode="${state.customToolMode}"]`).focus();
+    });
+    button.addEventListener("keydown", (event) => {
+      const index = customToolModeOrder.indexOf(button.dataset.customToolMode);
+      const next = { ArrowRight: (index + 1) % customToolModeOrder.length, ArrowLeft: (index + customToolModeOrder.length - 1) % customToolModeOrder.length, Home: 0, End: customToolModeOrder.length - 1 }[event.key];
+      if (next === undefined) return;
+      event.preventDefault();
+      els.weightsGrid.querySelector(`[data-custom-tool-mode="${customToolModeOrder[next]}"]`).click();
     });
   });
   els.weightsGrid.querySelectorAll("[data-custom-action]").forEach((button) => {
@@ -2708,14 +2792,14 @@ function renderSimpleCustomWeights(target, options) {
       </div>
       <div class="custom-simple-weight-grid">
         ${options.ids.map((id) => `
-          <label class="custom-simple-weight">
+          <div class="custom-simple-weight">
             <span>
               <strong>${escapeHtml(customWeightItemLabel(id, options.weightKind))}</strong>
               <em>${escapeHtml(isMethod ? tr("evidenceRankLabel") : customBoardEvidenceMeta(id))}</em>
             </span>
-            <input type="range" min="0" max="100" step="0.1" value="${escapeHtml(options.weights[id] || 0)}" data-simple-weight="${escapeHtml(id)}" />
-            <output>${escapeHtml(formatWeight(options.weights[id] || 0))}</output>
-          </label>
+            <input type="range" min="0" max="100" step="0.1" value="${escapeHtml(options.weights[id] || 0)}" data-simple-weight="${escapeHtml(id)}" aria-label="${escapeHtml(customWeightItemLabel(id, options.weightKind))}" />
+            <input type="number" min="0" max="100" step="0.1" value="${escapeHtml(formatWeight(options.weights[id] || 0))}" data-weight-number="${escapeHtml(id)}" aria-label="${escapeHtml(tr("customPreciseWeight", { name: customWeightItemLabel(id, options.weightKind) }))}" />
+          </div>
         `).join("")}
       </div>
     </section>
@@ -2732,10 +2816,25 @@ function renderSimpleCustomWeights(target, options) {
     input.addEventListener("input", (event) => {
       const weights = isMethod ? state.customMethodWeights : state.customBoardWeights;
       weights[event.target.dataset.simpleWeight] = Number(event.target.value);
-      event.target.closest(".custom-simple-weight").querySelector("output").value = formatWeight(event.target.value);
+      event.target.closest(".custom-simple-weight").querySelector("[data-weight-number]").value = formatWeight(event.target.value);
       updateSimpleCustomWeightTotal(target, weights);
     });
     input.addEventListener("change", () => renderResults(state.data.presets.custom));
+  });
+  target.querySelectorAll("[data-weight-number]").forEach((input) => {
+    const updateWeight = () => {
+      const weights = isMethod ? state.customMethodWeights : state.customBoardWeights;
+      const value = clamp(Number(input.value) || 0, 0, 100);
+      weights[input.dataset.weightNumber] = value;
+      input.closest(".custom-simple-weight").querySelector("[data-simple-weight]").value = value;
+      updateSimpleCustomWeightTotal(target, weights);
+      renderResults(state.data.presets.custom);
+    };
+    input.addEventListener("input", updateWeight);
+    input.addEventListener("change", updateWeight);
+    input.addEventListener("blur", () => {
+      input.value = formatWeight(clamp(Number(input.value) || 0, 0, 100));
+    });
   });
 }
 
@@ -2875,9 +2974,10 @@ function handleCustomAction(action) {
   } else if (action === "restore") {
     restoreActiveCustomDefaults();
   }
-  if (state.customToolMode === "benchmark-lab") state.customWeightPresetId = customManualWeightPresetId;
+  if (state.customToolMode === "benchmark-lab" && action !== "restore") state.customWeightPresetId = customManualWeightPresetId;
   renderWeights();
   renderResults(state.data.presets.custom);
+  els.weightsGrid.querySelector(`[data-custom-action="${action}"]`)?.focus();
 }
 
 function activeCustomWeights() {
@@ -4715,11 +4815,23 @@ function renderCoreScoreBreakdown(model) {
 }
 
 function renderRadarChart(models, options = {}) {
+  const visionOptions = radarVisionOptions(models.filter(Boolean));
+  const vision = visionOptions.find((item) => item.id === state.radarVisionBenchmark) || visionOptions[0];
   const axes = radarAxes();
+  if (vision.id !== "aa") {
+    axes[5] = { ...axes[5], metricKey: null, visionBenchmark: vision.id, visionLabel: vision.label,
+      visionComparisonGroup: radarVisionComparisonGroup(models.filter(Boolean), vision.id) };
+  }
+  const visionControls = `<div class="vision-controls">
+    <label for="radarVisionBenchmark">${escapeHtml(tr("visionSelector"))}</label>
+    <select id="radarVisionBenchmark" data-vision-benchmark>${visionOptions.map((item) => `<option value="${escapeHtml(item.id)}" ${item.id === vision.id ? "selected" : ""}>${escapeHtml(item.label)} · ${item.count}/${models.filter(Boolean).length}</option>`).join("")}</select>
+    <p>${escapeHtml(tr("visionEvidenceHint"))}</p>
+  </div>${renderVisionAvailability(models.filter(Boolean), vision.id)}`;
+  const evidence = renderVisionEvidence(models.filter(Boolean));
   const visibleModels = models
     .filter(Boolean)
-    .filter((model) => radarHasCompleteProfile(model, axes));
-  if (visibleModels.length === 0) return `<div class="empty">${escapeHtml(tr("radarNoData"))}</div>`;
+    .filter((model) => radarHasData(model, axes));
+  if (visibleModels.length === 0) return `${visionControls}<div class="empty">${escapeHtml(tr("radarNoData"))}</div>${evidence}`;
 
   const detailModel = options.mode === "detail" ? visibleModels[0] : null;
   const layout = radarChartLayout(options.mode, visibleModels.length);
@@ -4736,12 +4848,13 @@ function renderRadarChart(models, options = {}) {
   }));
 
   return `
+    ${visionControls}
     <div class="radar-card ${options.mode === "compare" ? "compare-radar-card" : ""}">
       <div class="radar-legend">
         ${series.map((item) => `
           <span><i style="--legend-color: ${escapeHtml(item.color)}"></i>${escapeHtml(item.model.model)}</span>
         `).join("")}
-        ${showAverage ? `<span><i class="average-key"></i>${escapeHtml(tr("radarAverage"))}</span>` : ""}
+        ${showAverage ? `<span><i class="average-key"></i>${escapeHtml(axes[5].visionComparisonGroup ? tr("radarCohortAverage", { count: radarVisionCohortValues(axes[5]).length }) : tr("radarAverage"))}</span>` : ""}
       </div>
       <div class="radar-plot-wrap">
         <svg class="radar-plot" viewBox="0 0 ${layout.width} ${layout.height}" role="img" aria-label="${escapeHtml(tr("compareRadarTitle"))}">
@@ -4752,17 +4865,17 @@ function renderRadarChart(models, options = {}) {
               return `<line x1="${center.x}" y1="${center.y}" x2="${formatSvgNumber(end.x)}" y2="${formatSvgNumber(end.y)}"></line>`;
             }).join("")}
           </g>
-          ${showAverage ? `<polygon class="radar-area radar-average-area" points="${escapeHtml(averagePoints)}"></polygon>` : ""}
+          ${showAverage && averagePoints ? `<polygon class="radar-area radar-average-area" points="${escapeHtml(averagePoints)}"></polygon>` : ""}
           ${series.map((item, index) => `
-            <polygon class="radar-area radar-series-area" style="--series-color: ${escapeHtml(item.color)}; --series-index: ${index}" points="${escapeHtml(radarPolygonPoints(item.values, center, radius))}"></polygon>
-            <polyline class="radar-series-line" style="--series-color: ${escapeHtml(item.color)}" points="${escapeHtml(radarPolygonPoints(item.values, center, radius))}"></polyline>
+            ${item.values.every(Number.isFinite) ? `<polygon class="radar-area radar-series-area" style="--series-color: ${escapeHtml(item.color)}; --series-index: ${index}" points="${escapeHtml(radarPolygonPoints(item.values, center, radius))}"></polygon>` : ""}
+            <path class="radar-series-line" style="--series-color: ${escapeHtml(item.color)}" d="${radarLinePath(item.values, center, radius)}"></path>
             ${item.values.map((value, axisIndex) => {
               if (!Number.isFinite(value)) return "";
               const point = radarPoint(axisIndex, value, axes.length, center, radius);
               return `<circle class="radar-point" style="--series-color: ${escapeHtml(item.color)}" cx="${formatSvgNumber(point.x)}" cy="${formatSvgNumber(point.y)}" r="3.8"></circle>`;
             }).join("")}
           `).join("")}
-          ${showAverage ? `<polyline class="radar-average-line" points="${escapeHtml(averagePoints)}"></polyline>` : ""}
+          ${showAverage ? `<path class="radar-average-line" d="${radarLinePath(averageValues, center, radius)}"></path>` : ""}
           <g class="radar-labels">
             ${axes.map((axis, index) => renderRadarAxisLabel(axis, index, axes.length, layout, detailModel, series, options.mode)).join("")}
           </g>
@@ -4773,7 +4886,65 @@ function renderRadarChart(models, options = {}) {
         <b>${escapeHtml(tr("radarSourceText"))}</b>
       </div>
     </div>
+    ${evidence}
   `;
+}
+
+function radarVisionOptions(models) {
+  const options = [{ id: "aa", label: tr("visionAA"), count: models.filter((model) => Number.isFinite(model.scores?.["MMMU-Pro"])).length }];
+  const ids = new Map();
+  for (const model of models) {
+    for (const row of model.visionBenchmarks || []) {
+      if (row.exactConfiguration && Number.isFinite(row.value)) ids.set(row.benchmarkId, row.label);
+    }
+  }
+  for (const [id, label] of ids) options.push({
+    id, label: `${label} · ${tr("visionOfficial")}`,
+    count: models.filter((model) => (model.visionBenchmarks || []).some((row) => row.benchmarkId === id && row.exactConfiguration && Number.isFinite(row.value))).length,
+  });
+  return options.sort((a, b) => b.count - a.count || (a.id === "aa" ? -1 : b.id === "aa" ? 1 : 0));
+}
+
+function modelVisionResults(model) {
+  const results = [];
+  if (Number.isFinite(model.scores?.["MMMU-Pro"])) {
+    results.push({ id: "aa", label: tr("visionAA"), value: model.scores["MMMU-Pro"] });
+  }
+  for (const row of model.visionBenchmarks || []) {
+    if (!row.exactConfiguration || !Number.isFinite(row.value) || results.some((item) => item.id === row.benchmarkId)) continue;
+    results.push({ id: row.benchmarkId, label: `${row.label} · ${tr("visionOfficial")}`, value: row.value });
+  }
+  return results;
+}
+
+function renderVisionAvailability(models, selectedId) {
+  const missing = models.map((model) => ({ model, results: modelVisionResults(model) }))
+    .filter(({ results }) => !results.some((row) => row.id === selectedId));
+  if (!missing.length) return "";
+  return `<ul class="vision-availability">${missing.map(({ model, results }) => `<li>
+    <strong>${escapeHtml(model.model)}</strong>
+    <p>${escapeHtml(tr("visionMissingSelected"))}</p>
+    ${results.length ? `<div class="vision-alternatives">${results.map((row) => `<button type="button" data-vision-select="${escapeHtml(row.id)}">${escapeHtml(tr("visionShowResult", { test: row.label, score: formatNumber(row.value) }))}</button>`).join("")}</div>`
+      : `<p>${escapeHtml(tr(model.visionBenchmarks?.length ? "visionReferenceOnly" : model.inputModalities?.includes("Image") ? "visionNoEvidence" : "visionNoImage"))}</p>`}
+  </li>`).join("")}</ul>`;
+}
+
+function renderVisionEvidence(models) {
+  return `<details class="vision-evidence" ${models.some((model) => !Number.isFinite(model.scores?.["MMMU-Pro"])) ? "open" : ""}>
+    <summary>${escapeHtml(tr("visionEvidenceTitle"))}</summary>
+    ${models.map((model) => {
+      const rows = model.visionBenchmarks || [];
+      const aa = Number.isFinite(model.scores?.["MMMU-Pro"]);
+      return `<section><h4>${escapeHtml(model.model)}</h4>
+        ${aa ? `<p class="vision-evidence-aa">${escapeHtml(tr("visionAA"))} <b>${formatNumber(model.scores["MMMU-Pro"])}%</b> · <a href="${escapeHtml(model.modelUrl || "https://artificialanalysis.ai/evaluations/mmmu-pro")}" target="_blank" rel="noreferrer">Artificial Analysis</a></p>` : ""}
+        ${rows.length ? `<ul>${rows.map((row) => `<li>
+          <div><strong>${escapeHtml(row.label)} · ${formatNumber(row.value)}%</strong><span class="vision-scope ${row.exactConfiguration ? "is-exact" : ""}">${escapeHtml(tr(row.exactConfiguration ? "visionExact" : "visionReference"))}</span></div>
+          <p>${escapeHtml(row.configuration)}</p>
+          <a href="${escapeHtml(row.sourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(row.sourceLabel)}</a>
+        </li>`).join("")}</ul>` : aa ? "" : `<p>${escapeHtml(tr(model.inputModalities?.includes("Image") ? "visionNoEvidence" : "visionNoImage"))}</p>`}
+      </section>`;
+    }).join("")}
+  </details>`;
 }
 
 function radarChartLayout(mode, seriesCount = 1) {
@@ -4833,9 +5004,11 @@ function radarAxisLabelBox(point, layout, mode, seriesCount) {
 
 function renderRadarDetailAxisLabel(axis, value, average, rankLabel, coverage) {
   const coverageLabel = radarCoverageLabel(coverage);
+  const cohortLabel = axis.visionBenchmark && Number.isFinite(average)
+    ? ` · ${tr("visionCohortMean", { score: formatNumber(average), count: radarVisionCohortValues(axis).length })}` : "";
   return `
     <strong><b>${escapeHtml(formatNumber(value))}</b> ${escapeHtml(axis.label)}</strong>
-    <em>${escapeHtml(formatNumber(average))}${rankLabel ? ` · ${escapeHtml(rankLabel)}` : ""}${coverageLabel ? ` · ${escapeHtml(coverageLabel)}` : ""}</em>
+    <em>${axis.visionBenchmark ? escapeHtml(axis.visionLabel + cohortLabel) : `${escapeHtml(tr("radarMeanLabel"))} ${escapeHtml(formatNumber(average))}${rankLabel ? ` · ${escapeHtml(rankLabel)}` : ""}${coverageLabel ? ` · ${escapeHtml(coverageLabel)}` : ""}`}</em>
   `;
 }
 
@@ -4900,10 +5073,10 @@ function radarAxes() {
       note: tr("radarAxisNotes.instructionContext"),
     },
     {
-      id: "evidence-coverage",
-      profileKey: "extensionCoverageScore",
-      label: tr("radarAxes.evidenceCoverage"),
-      note: tr("radarAxisNotes.evidenceCoverage"),
+      id: "visual-understanding",
+      metricKey: "MMMU-Pro",
+      label: tr("radarAxes.visualUnderstanding"),
+      note: tr("radarAxisNotes.visualUnderstanding"),
     },
   ];
 }
@@ -4934,8 +5107,10 @@ function radarBoardProfile(model, boardId) {
 }
 
 function radarAxisValue(model, axis) {
-  const rawValue = axis.profileKey
-    ? model?.rankingProfile?.[axis.profileKey]
+  const rawValue = axis.visionBenchmark
+    ? (model?.visionBenchmarks || []).find((row) => row.benchmarkId === axis.visionBenchmark && row.exactConfiguration)?.value
+    : axis.metricKey
+    ? model?.scores?.[axis.metricKey]
     : radarBoardProfile(model, axis.boardId)?.score;
   if (rawValue === null || rawValue === undefined || rawValue === "") return null;
   const value = Number(rawValue);
@@ -4975,9 +5150,8 @@ function radarCoverageLabel(coverage) {
   return tr("radarCoverage", coverage);
 }
 
-function radarHasCompleteProfile(model, axes = radarAxes()) {
-  return Boolean(model?.rankingProfile)
-    && axes.every((axis) => Number.isFinite(radarAxisValue(model, axis)));
+function radarHasData(model, axes = radarAxes()) {
+  return axes.some((axis) => Number.isFinite(radarAxisValue(model, axis)));
 }
 
 function radarProfilePopulation(axes = radarAxes()) {
@@ -4986,10 +5160,34 @@ function radarProfilePopulation(axes = radarAxes()) {
       model,
       state.dedupe ? "variant-group" : "exact-config",
     ))
-    .filter((model) => radarHasCompleteProfile(model, axes));
+    .filter((model) => model?.rankingProfile && radarHasData(model, axes));
+}
+
+function radarVisionComparisonGroup(models, benchmarkId) {
+  const rows = models.map((model) => (model.visionBenchmarks || [])
+    .find((row) => row.benchmarkId === benchmarkId && row.exactConfiguration && Number.isFinite(row.value)))
+    .filter(Boolean);
+  if (!rows.length || rows.some((row) => !row.comparisonGroup)) return null;
+  const groups = new Set(rows.map((row) => row.comparisonGroup));
+  return groups.size === 1 ? rows[0].comparisonGroup : null;
+}
+
+function radarVisionCohortValues(axis) {
+  if (!axis.visionBenchmark || !axis.visionComparisonGroup) return [];
+  const values = new Map();
+  for (const model of state.data?.models || []) {
+    const row = (model.visionBenchmarks || []).find((item) => item.benchmarkId === axis.visionBenchmark
+      && item.comparisonGroup === axis.visionComparisonGroup && item.exactConfiguration && Number.isFinite(item.value));
+    if (row) values.set(model.slug || model.modelKey || model.model, row.value);
+  }
+  return [...values.values()];
 }
 
 function radarAxisAverage(axis) {
+  if (axis.visionBenchmark) {
+    const values = radarVisionCohortValues(axis);
+    return values.length >= 2 ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
+  }
   const axes = radarAxes();
   const values = radarProfilePopulation(axes)
     .map((model) => radarAxisValue(model, axis))
@@ -4999,6 +5197,7 @@ function radarAxisAverage(axis) {
 }
 
 function radarAxisRank(axis, model) {
+  if (axis.visionBenchmark) return null;
   const target = radarAxisValue(model, axis);
   if (!Number.isFinite(target)) return null;
   const rows = radarProfilePopulation(radarAxes())
@@ -5006,6 +5205,17 @@ function radarAxisRank(axis, model) {
     .filter((row) => Number.isFinite(row.value))
     .sort((a, b) => b.value - a.value || a.candidate.model.localeCompare(b.candidate.model));
   return rankFromRows(rows, model);
+}
+
+// Draw only observed neighboring axes, leaving gaps for unavailable scores.
+function radarLinePath(values, center, radius) {
+  return values.map((value, index) => {
+    const next = (index + 1) % values.length;
+    if (!Number.isFinite(value) || !Number.isFinite(values[next])) return "";
+    const a = radarPoint(index, value, values.length, center, radius);
+    const b = radarPoint(next, values[next], values.length, center, radius);
+    return `M${formatSvgNumber(a.x)},${formatSvgNumber(a.y)} L${formatSvgNumber(b.x)},${formatSvgNumber(b.y)}`;
+  }).join(" ");
 }
 
 function radarPolygonPoints(values, center, radius) {
@@ -5288,9 +5498,9 @@ function renderBenchmarkPage() {
       <div class="benchmark-page-grid">
         <section class="benchmark-picker" aria-labelledby="benchmarkPickerTitle">
           <h3 id="benchmarkPickerTitle">${escapeHtml(tr("benchmarkPickerTitle"))}</h3>
-          <div class="benchmark-picker-list">
-            ${metrics.map((metric) => renderBenchmarkPickerItem(metric, selected)).join("")}
-          </div>
+          ${renderBenchmarkSearch("benchmarkSearch", "benchmarkSearchLabel", "benchmarkSearchPlaceholder", "benchmarkPickerList")}
+          <p class="benchmark-search-count" id="benchmarkSearchCount" role="status"></p>
+          <div class="benchmark-picker-list" id="benchmarkPickerList"></div>
         </section>
         <section class="benchmark-ranking-panel">
           <div class="detail-section-head">
@@ -5298,13 +5508,71 @@ function renderBenchmarkPage() {
             <p>${escapeHtml(tr("benchmarkRankingSubtitle", { count: rows.length, category: benchmarkRoleLabel(selected) }))}</p>
           </div>
           ${benchmarkPolicySummary(selected)}
-          <div class="benchmark-ranking-list">
-            ${rows.length ? rows.map((row) => renderBenchmarkRankingRow(row, selected)).join("") : `<div class="empty">${escapeHtml(tr("notAvailable"))}</div>`}
-          </div>
+          ${renderBenchmarkSearch("modelSearch", "benchmarkModelSearchLabel", "benchmarkModelSearchPlaceholder", "benchmarkRankingList")}
+          <p class="benchmark-search-count" id="modelSearchCount" role="status"></p>
+          <div class="benchmark-ranking-list" id="benchmarkRankingList"></div>
         </section>
       </div>
     </section>
   `;
+  const maxValue = selected.unit === "%" ? 100 : Math.max(...rows.map((row) => row.value), 1);
+  const updateResults = (kind) => {
+    const params = new URLSearchParams(location.search);
+    if (!kind || kind === "benchmarkSearch") {
+      const visible = metrics.filter((metric) => benchmarkMatchesSearch(params.get("benchmarkSearch"), [
+        metric.label, metric.key, metric.category, metric.aindexRole, benchmarkRoleLabel(metric), benchmarkOriginLabel(metric),
+      ]));
+      document.getElementById("benchmarkPickerList").innerHTML = visible.length
+        ? visible.map((metric) => renderBenchmarkPickerItem(metric, selected)).join("")
+        : `<div class="empty">${escapeHtml(tr("benchmarkSearchEmpty"))}</div>`;
+      document.getElementById("benchmarkSearchCount").textContent = tr("benchmarkSearchCount", { shown: visible.length, total: metrics.length });
+    }
+    if (!kind || kind === "modelSearch") {
+      const visible = rows.filter((row) => benchmarkMatchesSearch(params.get("modelSearch"), [row.model.model, row.model.creator, row.model.slug]));
+      document.getElementById("benchmarkRankingList").innerHTML = visible.length
+        ? visible.map((row) => renderBenchmarkRankingRow(row, selected, maxValue)).join("")
+        : `<div class="empty">${escapeHtml(tr("benchmarkSearchEmpty"))}</div>`;
+      document.getElementById("modelSearchCount").textContent = tr("benchmarkModelSearchCount", { shown: visible.length, total: rows.length });
+      els.benchmarkDetail.querySelectorAll("[data-benchmark-key]").forEach((link) => {
+        link.href = benchmarkHref(link.dataset.benchmarkKey);
+      });
+    }
+  };
+  els.benchmarkDetail.querySelectorAll(".benchmark-search input").forEach((input) => {
+    const button = input.parentElement.querySelector("button");
+    const update = () => {
+      const url = new URL(location.href);
+      if (input.value) url.searchParams.set(input.id, input.value);
+      else url.searchParams.delete(input.id);
+      history.replaceState(null, "", url);
+      button.disabled = !input.value;
+      updateResults(input.id);
+    };
+    input.addEventListener("input", update);
+    button.addEventListener("click", () => { input.value = ""; update(); input.focus(); });
+  });
+  updateResults();
+}
+
+function benchmarkMatchesSearch(query, fields) {
+  const terms = String(query || "").normalize("NFKC").toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
+  const text = fields.filter(Boolean).join(" ").normalize("NFKC").toLocaleLowerCase();
+  return terms.every((term) => text.includes(term));
+}
+
+function renderBenchmarkSearch(id, label, placeholder, controls) {
+  const value = new URLSearchParams(location.search).get(id) || "";
+  return `<div class="benchmark-search">
+    <label for="${id}">${escapeHtml(tr(label))}</label>
+    <div class="benchmark-search-field">
+      <input id="${id}" type="search" value="${escapeHtml(value)}" placeholder="${escapeHtml(tr(placeholder))}" aria-controls="${controls}" autocomplete="off">
+      <button type="button" ${value ? "" : "disabled"} aria-label="${escapeHtml(tr("benchmarkSearchClear"))}">${escapeHtml(tr("benchmarkSearchClear"))}</button>
+    </div>
+  </div>`;
+}
+
+function benchmarkOriginLabel(metric) {
+  return metric.source === "benchmark" ? tr("benchmarkPublicSource") : "Artificial Analysis";
 }
 
 function benchmarkRoleLabel(metric) {
@@ -5328,14 +5596,14 @@ function benchmarkPolicySummary(metric) {
   const version = metric.versionPin || tr("notAvailable");
   const reason = metric.scoringReason || "";
   return `
-    <div class="source-note benchmark-policy-note">
-      <strong>${escapeHtml(benchmarkRoleLabel(metric))}</strong>
+    <details class="source-note benchmark-policy-note">
+      <summary>${escapeHtml(tr("benchmarkPolicyDetails"))} · ${escapeHtml(benchmarkOriginLabel(metric))}</summary>
       <p>${escapeHtml(zh ? `板块：${boards || "—"}` : `Boards: ${boards || "—"}`)}</p>
-      <p>${escapeHtml(zh ? `Benchmark controller：${controller}` : `Benchmark controller: ${controller}`)}</p>
+      <p>${escapeHtml(zh ? `测试维护方：${controller}` : `Benchmark controller: ${controller}`)}</p>
       <p>${escapeHtml(zh ? `结果执行方 / 协议：${operator} / ${protocol}` : `Result operator / protocol: ${operator} / ${protocol}`)}</p>
       <p>${escapeHtml(zh ? `版本约束：${version}` : `Version pin: ${version}`)}</p>
       ${reason ? `<p>${escapeHtml(reason)}</p>` : ""}
-    </div>
+    </details>
   `;
 }
 
@@ -5364,10 +5632,10 @@ function renderBenchmarkPickerItem(metric, selected) {
   const active = metric.key === selected.key;
   const kind = benchmarkRoleLabel(metric);
   return `
-    <a class="benchmark-picker-item${active ? " is-active" : ""}" href="${escapeHtml(benchmarkHref(metric.key))}">
+    <a class="benchmark-picker-item${active ? " is-active" : ""}" ${active ? 'aria-current="true"' : ""} data-benchmark-key="${escapeHtml(metric.key)}" href="${escapeHtml(benchmarkHref(metric.key))}">
       <span>${escapeHtml(metric.icon || initials(metric.label))}</span>
       <strong>${escapeHtml(metric.label)}</strong>
-      <em>${escapeHtml(tr("metricCoverage", { count: metric.coverage }))} · ${escapeHtml(kind)}</em>
+      <em>${escapeHtml(benchmarkOriginLabel(metric))} · ${escapeHtml(tr("metricCoverage", { count: metric.coverage }))} · ${escapeHtml(kind)}</em>
     </a>
   `;
 }
@@ -5398,10 +5666,7 @@ function benchmarkRankingRows(metric) {
   });
 }
 
-function renderBenchmarkRankingRow(row, metric) {
-  const maxValue = metric.unit === "%"
-    ? 100
-    : Math.max(...benchmarkRankingRows(metric).map((item) => item.value), 1);
+function renderBenchmarkRankingRow(row, metric, maxValue) {
   const valueWidth = clamp((row.value / maxValue) * 100, 0, 100);
   const value = `${formatNumber(row.value)}${metric.unit === "%" ? "%" : ` ${metric.unit || ""}`}`.trim();
   const source = row.sourceUrl
@@ -6352,7 +6617,12 @@ function modelCompareHref(model) {
 }
 
 function benchmarkHref(metricKey) {
-  return `benchmark.html?id=${encodeURIComponent(metricKey)}`;
+  const params = new URLSearchParams({ id: metricKey });
+  const current = new URLSearchParams(location.search);
+  for (const key of ["benchmarkSearch", "modelSearch"]) {
+    if (current.get(key)) params.set(key, current.get(key));
+  }
+  return `benchmark.html?${params}`;
 }
 
 function providerHref(provider, source = state.page, context = {}) {
