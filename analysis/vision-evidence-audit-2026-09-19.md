@@ -4,14 +4,14 @@
 
 The snapshot has 653 configurations; 261 have AA MMMU-Pro observations. Of the 392 without AA MMMU-Pro, 69 list Image input. Missing image metadata is not proof that a model cannot process images.
 
-This update adds 54 manually reviewed official results. Within the 69 missing-AA image configurations, 20 now have an exact-configuration visual result, 18 have reference evidence only (including existing external evidence), and 31 remain unverified. These are configuration counts, not model-family counts.
+This update adds 58 manually reviewed official results. Within the 69 missing-AA image configurations, 21 now have an exact-configuration visual result, 17 have reference evidence only (including existing external evidence), and 31 remain unverified. These are configuration counts, not model-family counts.
 
 ## Interpretation rules
 
 - Keep AA and official evaluations separate, including MMMU, MMMU-Pro variants, MathVista, CharXiv and Chartography.
 - Select one visual test for the whole comparison; never fill a missing point using another test.
 - Only explicitly matched configurations can be plotted. Other effort tiers remain reference evidence.
-- Official results receive no cross-model mean or rank: protocols may differ even with the same test name.
+- Official means require an explicitly reviewed common-protocol cohort with at least two distinct exact-match models. The UI reports its sample count; no official ranks are calculated. A shared test name alone does not establish comparability. Incomplete mean outlines are omitted.
 - Visual evidence does not enter scores, AIndex, Custom calculations or ranking profiles.
 - Exact means the reviewed source matches the named configuration; unspecified evaluation details remain documented as unspecified.
 
@@ -58,7 +58,7 @@ GPT-4o May results are references for later November/ChatGPT snapshots. GPT-4 Tu
 | `claude-4-1-opus` | Unverified in this pass |
 | `claude-4-opus` | Exact result: MMMU |
 | `claude-4-opus-thinking` | Reference only; no matching configuration score |
-| `claude-fable-5` | Reference only; no matching configuration score |
+| `claude-fable-5` | Exact result: Chartography (no tools), Chartography (with tools) |
 | `claude-fable-5-1` | Exact result: Chartography (no tools), Chartography (with tools) |
 | `claude-fable-5-1-high` | Reference only; no matching configuration score |
 | `claude-fable-5-1-low` | Reference only; no matching configuration score |
@@ -119,7 +119,7 @@ GPT-4o May results are references for later November/ChatGPT snapshots. GPT-4 Tu
 ## Validation
 
 - Generated model payload differs only by the new visionBenchmarks field and generation timestamp. Existing scores, profiles and other model fields are identical to the previous commit.
-- 358 Python tests and 11 frontend behavior tests pass; the independent production ranking validator passes.
+- 359 Python tests and 13 frontend behavior tests pass; the independent production ranking validator passes.
 - Browser checks cover desktop/mobile lab layout, numeric input and slider synchronization, input clamping, normalization, mode keyboard navigation and official visual benchmark selection.
 
 ## Remote data reconciliation
@@ -127,3 +127,11 @@ GPT-4o May results are references for later November/ChatGPT snapshots. GPT-4 Tu
 Merged the September 19 automatic update at `670023b` and regenerated both static payloads from its latest inputs. The 653 model records retain all remote non-vision data; rebuilt ranking profiles differ only in 12 floating-point values at machine precision. The independent production validator passes. A static-payload regression verifies models.js equals models.json and every generated visionBenchmarks field matches the registry attachment.
 
 When a comparison selects AA MMMU-Pro, a Claude configuration measured on another test can still have a missing radar point. The page now displays its available tested scores and switch buttons above the radar. Reference-only configurations receive an explicit explanation instead of an unexplained dash.
+
+## Fable radar correction
+
+Fable 5 was previously classified as reference-only because its local name includes fallback. The [Fable 5 system card](https://www.anthropic.com/claude-fable-5-mythos-5-system-card), Table 8.1.A, explicitly states that Fable scores reflect production safeguards including fallback to Opus 4.8. Its published Chartography scores therefore match this production configuration.
+
+The Fable 5.1 card, section 8.14.1 and Figure 8.14.1.A (pages 184–185), evaluates four Claude models with the same Anthropic Chartography implementation, adaptive thinking at max effort, and five-run means. Their no-tools / tools scores are Fable 5.1 42.6 / 86.2, Fable 5 36.6 / 84.2, Opus 5 29.6 / 83.0, and Sonnet 5 16.0 / 71.8. The separate cohort means are 31.2 and 81.3 (n=4). The figure's third-party Surge comparison scores are excluded because their protocols differ. Lower effort configurations remain reference-only and do not enter either mean.
+
+Both Fable detail radars now default to their available exact Chartography result and display a complete model polygon plus the reviewed cohort mean. GPT-6 Astra and Opus 5 retain their AA MMMU-Pro default and values. Regression checks use the generated static payload and verify these four defaults, both Chartography means, and exclusions for reference evidence, other protocols, duplicate models, and singleton cohorts.

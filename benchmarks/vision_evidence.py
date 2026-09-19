@@ -32,6 +32,7 @@ VISUAL_BENCHMARKS = {
 def load_vision_evidence(path: Path = DEFAULT_PATH) -> list[dict]:
     rows = json.loads(path.read_text(encoding="utf-8"))["results"]
     seen = set()
+    groups = {}
     for row in rows:
         if row["benchmarkId"] not in VISUAL_BENCHMARKS:
             raise ValueError(f"Unknown visual benchmark: {row['benchmarkId']}")
@@ -40,6 +41,11 @@ def load_vision_evidence(path: Path = DEFAULT_PATH) -> list[dict]:
             raise ValueError("Visual scores must be finite percentages")
         if urlparse(row["sourceUrl"]).scheme != "https" or not row.get("configuration"):
             raise ValueError("Visual evidence requires an HTTPS source and configuration")
+        if group := row.get("comparisonGroup"):
+            signature = (row["benchmarkId"], row["sourceUrl"])
+            if group in groups and groups[group] != signature:
+                raise ValueError("A visual comparison group must share a benchmark protocol and source")
+            groups[group] = signature
         for slug in row["modelSlugs"] + row.get("referenceSlugs", []):
             key = (slug, row["benchmarkId"], row["sourceUrl"])
             if key in seen:
@@ -64,6 +70,7 @@ def attach_vision_evidence(models: list[dict], rows: list[dict] | None = None) -
                 "sourceUrl": row["sourceUrl"], "sourceLabel": row["sourceLabel"],
                 "configuration": row["configuration"], "exactConfiguration": exact,
                 "reviewedAt": row["reviewedAt"],
+                **({"comparisonGroup": row["comparisonGroup"]} if row.get("comparisonGroup") else {}),
             })
         for row in model.get("externalBenchmarks", []):
             key = row.get("benchmarkId")

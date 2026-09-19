@@ -10,7 +10,7 @@ const names = ['radarAxes', 'radarBoardProfile', 'radarAxisValue', 'radarHasData
   'radarAxisAverage', 'modelForRankingGrain', 'benchmarkMatchesSearch',
   'benchmarkRankingRows', 'benchmarkHref', 'radarVisionOptions', 'radarAxisRank',
   'handleCustomAction', 'activeCustomWeights', 'restoreActiveCustomDefaults',
-  'modelVisionResults', 'renderVisionAvailability'];
+  'modelVisionResults', 'renderVisionAvailability', 'radarVisionComparisonGroup', 'radarVisionCohortValues'];
 const context = vm.createContext({
   state: { data: { models: [] }, dedupe: true },
   tr: (key) => key,
@@ -162,4 +162,46 @@ test('reference-only vision explains the missing configuration without a score s
   const html = context.renderVisionAvailability([model], 'aa');
   assert.match(html, /visionReferenceOnly/);
   assert.doesNotMatch(html, /data-vision-select/);
+});
+
+
+test('Fable detail radar closes both model and same-protocol mean; AA defaults stay unchanged', () => {
+  const payload = JSON.parse(fs.readFileSync(path.join(__dirname, '../docs/data/models.json'), 'utf8'));
+  context.state.data = payload;
+  context.state.dedupe = true;
+  for (const [slug, score] of [['claude-fable-5', 36.6], ['claude-fable-5-1', 42.6]]) {
+    const model = payload.models.find(row => row.slug === slug);
+    const option = context.radarVisionOptions([model])[0];
+    assert.equal(option.id, 'chartography-no-tools');
+    const axes = context.radarAxes();
+    axes[5] = { visionBenchmark: option.id, visionComparisonGroup: context.radarVisionComparisonGroup([model], option.id) };
+    assert.equal(context.radarAxisValue(model, axes[5]), score);
+    assert.equal(context.radarVisionCohortValues(axes[5]).length, 4);
+    assert.ok(Math.abs(context.radarAxisAverage(axes[5]) - 31.2) < 1e-10);
+    assert.equal(context.radarAxisRank(axes[5], model), null);
+    assert.ok(context.radarPolygonPoints(axes.map(axis => context.radarAxisValue(model, axis)), {x: 100, y: 100}, 80));
+    assert.ok(context.radarPolygonPoints(axes.map(axis => context.radarAxisAverage(axis)), {x: 100, y: 100}, 80));
+    assert.ok(Math.abs(context.radarAxisAverage({ visionBenchmark: 'chartography-tools',
+      visionComparisonGroup: context.radarVisionComparisonGroup([model], 'chartography-tools') }) - 81.3) < 1e-10);
+  }
+  for (const slug of ['gpt-6-astra', 'claude-opus-5']) {
+    const model = payload.models.find(row => row.slug === slug);
+    assert.ok(model, slug);
+    assert.equal(context.radarVisionOptions([model])[0].id, 'aa');
+    assert.equal(context.radarAxisValue(model, context.radarAxes()[5]), model.scores['MMMU-Pro']);
+  }
+});
+
+test('official means exclude reference tiers, unrelated protocols and singleton cohorts', () => {
+  const row = { benchmarkId: 'mmmu', exactConfiguration: true, comparisonGroup: 'same-protocol', value: 40 };
+  const a = { slug: 'a', visionBenchmarks: [row] };
+  const b = { slug: 'b', visionBenchmarks: [{...row, value: 60}] };
+  const reference = {slug: 'reference', visionBenchmarks: [{...row, exactConfiguration: false, value: 99}]};
+  const other = {slug: 'other', visionBenchmarks: [{...row, comparisonGroup: 'different', value: 100}]};
+  const axis = {visionBenchmark: 'mmmu', visionComparisonGroup: 'same-protocol'};
+  context.state.data = {models: [a, b, reference, other, a]};
+  assert.equal(context.radarAxisAverage(axis), 50);
+  assert.equal(context.radarVisionComparisonGroup([a, other], 'mmmu'), null);
+  context.state.data = {models: [a, reference, other]};
+  assert.equal(context.radarAxisAverage(axis), null);
 });

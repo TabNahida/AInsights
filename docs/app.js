@@ -335,7 +335,7 @@ const copy = {
     sourceExplorerTitle: "测评源地图",
     sourceExplorerSubtitle: "AA Core 与已链接的独立 benchmark 扩展来源，并列展示计分角色与协议",
     detailRankTitle: "排名快照",
-    detailRadarSubtitle: "五个 AIndex 能力板块与视觉理解；外圈为 100 分，橙色为各轴有成绩的入榜模型平均值",
+    detailRadarSubtitle: "五个 AIndex 能力板块与视觉理解；外圈为 100 分，橙色为参考均值，统计范围见图例",
     detailBenchmarkTitle: "Benchmark Lab 参考项目",
     detailBenchmarkSubtitle: "均衡逐项实验模板中的测试项；它们不作为主榜固定权重。",
     detailExternalTitle: "非参考项目分数",
@@ -350,13 +350,15 @@ const copy = {
     radarDataSource: "数据来源",
     radarSourceText: "AIndex 混合 Core 方案 07 · 视觉：所选测试，原始百分比",
     radarBasisTitle: "雷达维度口径",
-    radarBasisSubtitle: "五个能力轴读取板块分，视觉轴读取当前所选测试，不改变 AIndex 权重。缺失值显示为 —，不按零分处理。AA 均值只统计有该项成绩的入榜模型；官方测试不显示均值或名次。",
+    radarBasisSubtitle: "五个能力轴读取板块分，视觉轴读取所选测试，不改变 AIndex。AA 均值统计有成绩的入榜模型；官方均值仅统计已核实的同协议评测组，至少两个模型，不计算名次。无完整均值时不绘制均值轮廓。",
     radarMeanLabel: "均值",
     visionSelector: "视觉测试",
     visionAA: "MMMU-Pro · AA 统一评测",
     visionOfficial: "官方发布",
     visionEvidenceTitle: "视觉测试与来源",
-    visionEvidenceHint: "每张雷达图只绘制所选测试，不跨测试补分。官方协议可能不同，官方分数不计算跨模型均值或名次，也不写入 AIndex。",
+    visionEvidenceHint: "只绘制所选测试，不跨测试补分。官方均值仅来自明确的同协议评测组，并注明样本数；不计算官方名次，也不写入 AIndex。",
+    radarCohortAverage: "板块：入榜模型均值 · 视觉：同协议 {count} 模型均值",
+    visionCohortMean: "同协议均值 {score} · n={count}",
     visionExact: "对应配置",
     visionReference: "其他档位 / 家族参考，不入雷达",
     visionNoEvidence: "尚未核实到此配置的视觉成绩；缺分不表示零分或不支持图片。",
@@ -847,7 +849,7 @@ const copy = {
     sourceExplorerTitle: "Benchmark source map",
     sourceExplorerSubtitle: "AA Core and linked, independently controlled benchmark extensions, with scoring roles and protocols shown side by side",
     detailRankTitle: "Rank snapshot",
-    detailRadarSubtitle: "Five AIndex capability boards plus visual understanding; the outer ring is 100 and orange is the per-axis average of ranked models with scores",
+    detailRadarSubtitle: "Five AIndex capability boards plus visual understanding; the outer ring is 100. Orange shows reference means; see the legend for their populations",
     detailBenchmarkTitle: "Benchmark Lab reference set",
     detailBenchmarkSubtitle: "Benchmarks in the balanced per-item experiment template; these are not fixed primary-ranking weights.",
     detailExternalTitle: "Non-reference benchmark scores",
@@ -862,13 +864,15 @@ const copy = {
     radarDataSource: "Sources",
     radarSourceText: "AIndex Mixed Core 07 · Vision: selected evaluation, raw percentage",
     radarBasisTitle: "Radar axis basis",
-    radarBasisSubtitle: "Five axes read board scores; vision uses the selected test without changing AIndex weights. Missing values appear as —, never zeroes. AA averages include ranked models with scores; official tests have no cross-model mean or rank.",
+    radarBasisSubtitle: "Five axes read board scores; vision uses the selected test without changing AIndex. AA averages include ranked models with scores. Official means require a reviewed common-protocol cohort of at least two models, without ranks. Incomplete mean outlines are not drawn.",
     radarMeanLabel: "Avg",
     visionSelector: "Vision benchmark",
     visionAA: "MMMU-Pro · AA common protocol",
     visionOfficial: "Official report",
     visionEvidenceTitle: "Visual evaluations and sources",
-    visionEvidenceHint: "A radar plots one selected test, never substitutes scores from another. Official protocols can differ, so official scores have no cross-model mean or rank and never enter AIndex.",
+    visionEvidenceHint: "Only the selected test is plotted, without substitution. Official means use explicitly reviewed common-protocol cohorts with sample counts; official scores have no ranks and never enter AIndex.",
+    radarCohortAverage: "Boards: ranked-model mean · Vision: {count}-model protocol cohort",
+    visionCohortMean: "Protocol mean {score} · n={count}",
     visionExact: "Matching configuration",
     visionReference: "Other tier / family reference, not plotted",
     visionNoEvidence: "No verified visual result for this configuration yet. Missing does not mean zero or no image support.",
@@ -4815,7 +4819,8 @@ function renderRadarChart(models, options = {}) {
   const vision = visionOptions.find((item) => item.id === state.radarVisionBenchmark) || visionOptions[0];
   const axes = radarAxes();
   if (vision.id !== "aa") {
-    axes[5] = { ...axes[5], metricKey: null, visionBenchmark: vision.id, visionLabel: vision.label };
+    axes[5] = { ...axes[5], metricKey: null, visionBenchmark: vision.id, visionLabel: vision.label,
+      visionComparisonGroup: radarVisionComparisonGroup(models.filter(Boolean), vision.id) };
   }
   const visionControls = `<div class="vision-controls">
     <label for="radarVisionBenchmark">${escapeHtml(tr("visionSelector"))}</label>
@@ -4834,7 +4839,7 @@ function renderRadarChart(models, options = {}) {
   const rings = [20, 40, 60, 80, 100];
   const averageValues = axes.map((axis) => radarAxisAverage(axis));
   const showAverage = Boolean(options.average && options.mode !== "compare")
-    && averageValues.some(Number.isFinite);
+    && averageValues.every(Number.isFinite);
   const averagePoints = showAverage ? radarPolygonPoints(averageValues, center, radius) : "";
   const series = visibleModels.slice(0, 8).map((model, index) => ({
     model,
@@ -4849,7 +4854,7 @@ function renderRadarChart(models, options = {}) {
         ${series.map((item) => `
           <span><i style="--legend-color: ${escapeHtml(item.color)}"></i>${escapeHtml(item.model.model)}</span>
         `).join("")}
-        ${showAverage ? `<span><i class="average-key"></i>${escapeHtml(tr("radarAverage"))}</span>` : ""}
+        ${showAverage ? `<span><i class="average-key"></i>${escapeHtml(axes[5].visionComparisonGroup ? tr("radarCohortAverage", { count: radarVisionCohortValues(axes[5]).length }) : tr("radarAverage"))}</span>` : ""}
       </div>
       <div class="radar-plot-wrap">
         <svg class="radar-plot" viewBox="0 0 ${layout.width} ${layout.height}" role="img" aria-label="${escapeHtml(tr("compareRadarTitle"))}">
@@ -4999,9 +5004,11 @@ function radarAxisLabelBox(point, layout, mode, seriesCount) {
 
 function renderRadarDetailAxisLabel(axis, value, average, rankLabel, coverage) {
   const coverageLabel = radarCoverageLabel(coverage);
+  const cohortLabel = axis.visionBenchmark && Number.isFinite(average)
+    ? ` · ${tr("visionCohortMean", { score: formatNumber(average), count: radarVisionCohortValues(axis).length })}` : "";
   return `
     <strong><b>${escapeHtml(formatNumber(value))}</b> ${escapeHtml(axis.label)}</strong>
-    <em>${axis.visionBenchmark ? escapeHtml(axis.visionLabel) : `${escapeHtml(tr("radarMeanLabel"))} ${escapeHtml(formatNumber(average))}${rankLabel ? ` · ${escapeHtml(rankLabel)}` : ""}${coverageLabel ? ` · ${escapeHtml(coverageLabel)}` : ""}`}</em>
+    <em>${axis.visionBenchmark ? escapeHtml(axis.visionLabel + cohortLabel) : `${escapeHtml(tr("radarMeanLabel"))} ${escapeHtml(formatNumber(average))}${rankLabel ? ` · ${escapeHtml(rankLabel)}` : ""}${coverageLabel ? ` · ${escapeHtml(coverageLabel)}` : ""}`}</em>
   `;
 }
 
@@ -5156,8 +5163,31 @@ function radarProfilePopulation(axes = radarAxes()) {
     .filter((model) => model?.rankingProfile && radarHasData(model, axes));
 }
 
+function radarVisionComparisonGroup(models, benchmarkId) {
+  const rows = models.map((model) => (model.visionBenchmarks || [])
+    .find((row) => row.benchmarkId === benchmarkId && row.exactConfiguration && Number.isFinite(row.value)))
+    .filter(Boolean);
+  if (!rows.length || rows.some((row) => !row.comparisonGroup)) return null;
+  const groups = new Set(rows.map((row) => row.comparisonGroup));
+  return groups.size === 1 ? rows[0].comparisonGroup : null;
+}
+
+function radarVisionCohortValues(axis) {
+  if (!axis.visionBenchmark || !axis.visionComparisonGroup) return [];
+  const values = new Map();
+  for (const model of state.data?.models || []) {
+    const row = (model.visionBenchmarks || []).find((item) => item.benchmarkId === axis.visionBenchmark
+      && item.comparisonGroup === axis.visionComparisonGroup && item.exactConfiguration && Number.isFinite(item.value));
+    if (row) values.set(model.slug || model.modelKey || model.model, row.value);
+  }
+  return [...values.values()];
+}
+
 function radarAxisAverage(axis) {
-  if (axis.visionBenchmark) return null;
+  if (axis.visionBenchmark) {
+    const values = radarVisionCohortValues(axis);
+    return values.length >= 2 ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
+  }
   const axes = radarAxes();
   const values = radarProfilePopulation(axes)
     .map((model) => radarAxisValue(model, axis))

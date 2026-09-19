@@ -55,6 +55,24 @@ class VisionEvidenceTests(unittest.TestCase):
         self.assertTrue(models[0]["visionBenchmarks"][0]["exactConfiguration"])
         self.assertFalse(models[1]["visionBenchmarks"][0]["exactConfiguration"])
 
+    def test_fable_production_results_share_only_the_reviewed_chartography_cohort(self):
+        models = [{"slug": slug} for slug in ["claude-fable-5", "claude-fable-5-1", "claude-opus-5", "claude-sonnet-5"]]
+        attach_vision_evidence(models)
+        for benchmark, expected in [("chartography-no-tools", [36.6, 42.6, 29.6, 16.0]),
+                                    ("chartography-tools", [84.2, 86.2, 83.0, 71.8])]:
+            cohort = [next(row for row in model["visionBenchmarks"] if row["benchmarkId"] == benchmark) for model in models]
+            self.assertEqual([row["value"] for row in cohort], expected)
+            self.assertTrue(all(row["exactConfiguration"] for row in cohort))
+            self.assertEqual(len({row["comparisonGroup"] for row in cohort}), 1)
+        row = copy.deepcopy(load_vision_evidence()[0])
+        other = {**row, "benchmarkId": "mmmu", "comparisonGroup": "invalid-group"}
+        row["comparisonGroup"] = "invalid-group"
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "vision.json"
+            path.write_text(json.dumps({"results": [row, other]}), encoding="utf-8")
+            with self.assertRaises(ValueError):
+                load_vision_evidence(path)
+
     def test_release_snapshots_do_not_inherit_preview_or_older_scores(self):
         slugs = ["gpt-4o-2024-05-13", "gpt-4o", "gpt-4-turbo",
                  "gemini-2-0-flash-lite-preview", "gemini-2-0-flash-lite-001"]

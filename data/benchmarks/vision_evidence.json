@@ -83,7 +83,8 @@
       "sourceLabel": "Anthropic Fable 5.1 system card",
       "configuration": "Fable 5.1, adaptive thinking, max effort; mean of five runs",
       "sourceLocator": "Section 8.14.1, pages 184-186",
-      "reviewedAt": "2026-09-19"
+      "reviewedAt": "2026-09-19",
+      "comparisonGroup": "anthropic-chartography-sept2026-max-chartography-no-tools"
     },
     {
       "modelSlugs": [
@@ -101,33 +102,38 @@
       "sourceLabel": "Anthropic Fable 5.1 system card",
       "configuration": "Fable 5.1, adaptive thinking, max effort; mean of five runs",
       "sourceLocator": "Section 8.14.1, pages 184-186",
-      "reviewedAt": "2026-09-19"
+      "reviewedAt": "2026-09-19",
+      "comparisonGroup": "anthropic-chartography-sept2026-max-chartography-tools"
     },
     {
-      "modelSlugs": [],
-      "referenceSlugs": [
+      "modelSlugs": [
         "claude-fable-5"
       ],
+      "referenceSlugs": [],
       "benchmarkId": "chartography-no-tools",
       "value": 36.6,
       "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
       "sourceLabel": "Anthropic Fable 5.1 system card",
-      "configuration": "Fable 5, adaptive thinking, max effort; fallback configuration not identified for this evaluation",
-      "sourceLocator": "Section 8.14.1, pages 184-186",
-      "reviewedAt": "2026-09-19"
+      "configuration": "Fable 5 production model with safeguards/fallback; adaptive thinking, max effort; mean of five runs",
+      "sourceLocator": "Section 8.14.1 and Figure 8.14.1.A, pages 184-185; Fable production safeguards described in Fable 5 system card Table 8.1.A",
+      "reviewedAt": "2026-09-19",
+      "comparisonGroup": "anthropic-chartography-sept2026-max-chartography-no-tools",
+      "scopeSourceUrl": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card"
     },
     {
-      "modelSlugs": [],
-      "referenceSlugs": [
+      "modelSlugs": [
         "claude-fable-5"
       ],
+      "referenceSlugs": [],
       "benchmarkId": "chartography-tools",
       "value": 84.2,
       "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
       "sourceLabel": "Anthropic Fable 5.1 system card",
-      "configuration": "Fable 5, adaptive thinking, max effort; fallback configuration not identified for this evaluation",
-      "sourceLocator": "Section 8.14.1, pages 184-186",
-      "reviewedAt": "2026-09-19"
+      "configuration": "Fable 5 production model with safeguards/fallback; adaptive thinking, max effort; mean of five runs",
+      "sourceLocator": "Section 8.14.1 and Figure 8.14.1.A, pages 184-185; Fable production safeguards described in Fable 5 system card Table 8.1.A",
+      "reviewedAt": "2026-09-19",
+      "comparisonGroup": "anthropic-chartography-sept2026-max-chartography-tools",
+      "scopeSourceUrl": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card"
     },
     {
       "modelSlugs": [
@@ -758,6 +764,62 @@
       "configuration": "GPT-4 Turbo 2024-04-09; 0-shot chain-of-thought; the local record is dated November 2023, so this later snapshot is reference only",
       "sourceLocator": "Model evaluations > Vision understanding evals; GPT-4T 2024-04-09 column",
       "reviewedAt": "2026-09-19"
+    },
+    {
+      "modelSlugs": [
+        "claude-opus-5"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "chartography-no-tools",
+      "value": 29.6,
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Fable 5.1 system card",
+      "configuration": "claude-opus-5: adaptive thinking, max effort; mean of five runs; Anthropic Chartography implementation",
+      "sourceLocator": "Figure 8.14.1.A, page 185; identical Claude evaluation protocol in section 8.14.1",
+      "reviewedAt": "2026-09-19",
+      "comparisonGroup": "anthropic-chartography-sept2026-max-chartography-no-tools"
+    },
+    {
+      "modelSlugs": [
+        "claude-opus-5"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "chartography-tools",
+      "value": 83.0,
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Fable 5.1 system card",
+      "configuration": "claude-opus-5: adaptive thinking, max effort; mean of five runs; Anthropic Chartography implementation",
+      "sourceLocator": "Figure 8.14.1.A, page 185; identical Claude evaluation protocol in section 8.14.1",
+      "reviewedAt": "2026-09-19",
+      "comparisonGroup": "anthropic-chartography-sept2026-max-chartography-tools"
+    },
+    {
+      "modelSlugs": [
+        "claude-sonnet-5"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "chartography-no-tools",
+      "value": 16.0,
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Fable 5.1 system card",
+      "configuration": "claude-sonnet-5: adaptive thinking, max effort; mean of five runs; Anthropic Chartography implementation",
+      "sourceLocator": "Figure 8.14.1.A, page 185; identical Claude evaluation protocol in section 8.14.1",
+      "reviewedAt": "2026-09-19",
+      "comparisonGroup": "anthropic-chartography-sept2026-max-chartography-no-tools"
+    },
+    {
+      "modelSlugs": [
+        "claude-sonnet-5"
+      ],
+      "referenceSlugs": [],
+      "benchmarkId": "chartography-tools",
+      "value": 71.8,
+      "sourceUrl": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "sourceLabel": "Anthropic Fable 5.1 system card",
+      "configuration": "claude-sonnet-5: adaptive thinking, max effort; mean of five runs; Anthropic Chartography implementation",
+      "sourceLocator": "Figure 8.14.1.A, page 185; identical Claude evaluation protocol in section 8.14.1",
+      "reviewedAt": "2026-09-19",
+      "comparisonGroup": "anthropic-chartography-sept2026-max-chartography-tools"
     }
   ]
 }
