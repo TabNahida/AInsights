@@ -80,10 +80,10 @@
       "extension_aggregator": "logsumexp_residual_t1",
       "extension_pool": "independent_audit",
       "cap_rule": "mean_plus_sqrt2_sd",
-      "bonus_cap_per_board": 30.67996662724486,
+      "bonus_cap_per_board": 30.679661158999394,
       "pooled_positive_residual_count": 98,
-      "pooled_positive_residual_mean": 12.935107523015523,
-      "pooled_positive_residual_population_sd": 12.547510203800407,
+      "pooled_positive_residual_mean": 12.934694830117923,
+      "pooled_positive_residual_population_sd": 12.547586023079043,
       "board_order": [
         "coding",
         "agentic-tool-work",
@@ -528,8 +528,8 @@
               "canonical_family": "mmmu-pro",
               "enabled": true,
               "observed_count": 57,
-              "slope": 0.9050045504607558,
-              "intercept": 51.80403260174923
+              "slope": 0.9052215143874073,
+              "intercept": 51.79775353675464
             },
             {
               "item_id": "mmlu-pro",
@@ -576,7 +576,7 @@
       "method_id": "aindex_mixed_core",
       "candidate_id": "mixed_core_mc07",
       "calibration_population_size": 132,
-      "bonus_cap_per_board": 30.67996662724486,
+      "bonus_cap_per_board": 30.679661158999394,
       "cap_rule": "mean_plus_sqrt2_sd",
       "exact_reuses_deduplicated_calibration": true,
       "variant_group": {
