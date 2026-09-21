@@ -1,6 +1,6 @@
 window.AINSIGHTS_MODELS_DATA = {
   "version": 2,
-  "generatedAt": "2026-09-21T05:49:04+00:00",
+  "generatedAt": "2026-09-21T08:52:23+00:00",
   "source": {
     "label": "Artificial Analysis Core + listed benchmark extensions",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -7036,26 +7036,6 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelKeys": []
     },
     {
-      "id": "official-deepseek-news250120-page",
-      "label": "DeepSeek R1 automatically discovered official release",
-      "icon": "DRA",
-      "url": "https://api-docs.deepseek.com/news/news250120",
-      "category": "Official release",
-      "coverage": "3 model references",
-      "focus": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "defaultWeight": 0,
-      "relatedMetrics": [],
-      "benchmarkIds": [],
-      "modelAliases": [
-        "DeepSeek R1",
-        "DeepSeek-R1",
-        "deepseek-r1"
-      ],
-      "modelKeys": []
-    },
-    {
       "id": "official-deepseek-news250528-page",
       "label": "DeepSeek R1 0528 automatically discovered official release",
       "icon": "DR0",
@@ -7192,26 +7172,6 @@ window.AINSIGHTS_MODELS_DATA = {
         "DeepSeek V3.1 Terminus",
         "DeepSeek-V3.1-Terminus",
         "deepseek-v3-1-terminus"
-      ],
-      "modelKeys": []
-    },
-    {
-      "id": "official-deepseek-news251201-page",
-      "label": "DeepSeek V3.2 automatically discovered official release",
-      "icon": "DV2",
-      "url": "https://api-docs.deepseek.com/news/news251201",
-      "category": "Official release",
-      "coverage": "3 model references",
-      "focus": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "defaultWeight": 0,
-      "relatedMetrics": [],
-      "benchmarkIds": [],
-      "modelAliases": [
-        "DeepSeek V3.2",
-        "DeepSeek-V3.2",
-        "deepseek-v3-2"
       ],
       "modelKeys": []
     },
@@ -7761,6 +7721,28 @@ window.AINSIGHTS_MODELS_DATA = {
         "zai-org/GLM-4.6V-Flash",
         "GLM 4 6V Flash",
         "glm-4-6v-flash"
+      ],
+      "modelKeys": []
+    },
+    {
+      "id": "hf-deepseek-ai-deepseek-v3-2-card",
+      "label": "DeepSeek V3.2 official model card",
+      "icon": "DV2",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2",
+      "category": "Official model card",
+      "coverage": "5 model references",
+      "focus": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "defaultWeight": 0,
+      "relatedMetrics": [],
+      "benchmarkIds": [],
+      "modelAliases": [
+        "DeepSeek V3.2",
+        "DeepSeek-V3.2",
+        "deepseek-ai/DeepSeek-V3.2",
+        "DeepSeek V3 2",
+        "deepseek-v3-2"
       ],
       "modelKeys": []
     },
@@ -366917,7 +366899,6 @@ window.AINSIGHTS_MODELS_DATA = {
         }
       },
       "externalModelAliases": [
-        "deepseek-r1",
         "deepseek-r1-0528"
       ],
       "officialModelSourceId": "official-deepseek-news250528-page",
@@ -429198,7 +429179,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "slug": "deepseek-v3-2-reasoning",
       "creator": "DeepSeek",
       "releaseDate": "2025-12-01",
-      "modelUrl": "https://api-docs.deepseek.com/news/news251201",
+      "modelUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "permissive",
       "openSourceType": "open",
@@ -429481,10 +429462,6 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
-      "externalModelAliases": [
-        "deepseek-v3-2"
-      ],
-      "officialModelSourceId": "official-deepseek-news251201-page",
       "visionBenchmarks": []
     },
     {
