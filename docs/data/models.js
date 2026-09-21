@@ -1,6 +1,6 @@
 window.AINSIGHTS_MODELS_DATA = {
   "version": 2,
-  "generatedAt": "2026-09-20T05:39:22+00:00",
+  "generatedAt": "2026-09-21T05:49:04+00:00",
   "source": {
     "label": "Artificial Analysis Core + listed benchmark extensions",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -134881,7 +134881,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 38.1506,
+      "medianOutputSpeed": 36.8791,
       "aa": {
         "aa-intelligence": 6.6967,
         "aa-coding": null,
@@ -135176,7 +135176,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 219.9267,
+      "medianOutputSpeed": 244.2955,
       "aa": {
         "aa-intelligence": 32.5983,
         "aa-coding": null,
@@ -135194,12 +135194,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 216.6413
       },
       "scores": {
-        "AA-Briefcase": 18.4075,
+        "AA-Briefcase": 18.3915,
         "AutomationBench-AA": 42.0797,
         "Terminal-Bench v4.0": 6.5657,
         "GDP.pdf": 19.8,
         "AA-LCR v1.1": 73.3333,
-        "GDPval-AA v2": 34.2305,
+        "GDPval-AA v2": 34.24,
         "τ³-Banking": 32.1649,
         "Terminal-Bench v2.1": 78.6517,
         "GDPval-AA": 37.953,
@@ -135717,7 +135717,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 27,
             "evidenceRank": 27,
-            "score": 88.6166,
+            "score": 88.6164,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -135747,7 +135747,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 28,
             "evidenceRank": 28,
-            "score": 88.6307,
+            "score": 88.6305,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -135777,7 +135777,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 27,
             "evidenceRank": 27,
-            "score": 88.7229,
+            "score": 88.7228,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -135793,7 +135793,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.766,
+                "score": 95.765,
                 "tests": 5
               },
               "instruction-context": {
@@ -135807,7 +135807,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 29,
             "evidenceRank": 29,
-            "score": 88.6115,
+            "score": 88.6114,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -135823,7 +135823,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.947,
+                "score": 94.946,
                 "tests": 5
               },
               "instruction-context": {
@@ -136099,7 +136099,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 53,
             "evidenceRank": 53,
-            "score": 88.2535,
+            "score": 88.2533,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -136115,7 +136115,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.869,
+                "score": 94.868,
                 "tests": 5
               },
               "instruction-context": {
@@ -136129,7 +136129,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 52,
             "evidenceRank": 52,
-            "score": 88.2979,
+            "score": 88.2977,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -136145,7 +136145,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.892,
+                "score": 94.891,
                 "tests": 5
               },
               "instruction-context": {
@@ -136159,7 +136159,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 53,
             "evidenceRank": 53,
-            "score": 88.4355,
+            "score": 88.4353,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -136175,7 +136175,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.745,
+                "score": 95.744,
                 "tests": 5
               },
               "instruction-context": {
@@ -136189,7 +136189,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 53,
             "evidenceRank": 53,
-            "score": 88.2603,
+            "score": 88.2601,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -136205,7 +136205,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.869,
+                "score": 94.868,
                 "tests": 5
               },
               "instruction-context": {
@@ -136237,7 +136237,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 52.0328,
+      "medianOutputSpeed": 46.4706,
       "aa": {
         "aa-intelligence": 25.9869,
         "aa-coding": null,
@@ -136255,12 +136255,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 16.8971
       },
       "scores": {
-        "AA-Briefcase": 19.007,
+        "AA-Briefcase": 18.9855,
         "AutomationBench-AA": 13.7036,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 4.0,
         "AA-LCR v1.1": 79.6667,
-        "GDPval-AA v2": 30.349,
+        "GDPval-AA v2": 30.351,
         "τ³-Banking": 9.8969,
         "Terminal-Bench v2.1": 65.1685,
         "GDPval-AA": 34.316,
@@ -136878,7 +136878,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 55,
             "evidenceRank": 55,
-            "score": 79.5946,
+            "score": 79.5936,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -136894,7 +136894,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.125,
+                "score": 77.119,
                 "tests": 5
               },
               "instruction-context": {
@@ -136908,7 +136908,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 55,
             "evidenceRank": 55,
-            "score": 79.614,
+            "score": 79.613,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -136924,7 +136924,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.125,
+                "score": 77.119,
                 "tests": 5
               },
               "instruction-context": {
@@ -136938,7 +136938,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 54,
             "evidenceRank": 54,
-            "score": 80.2308,
+            "score": 80.2302,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -136954,7 +136954,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.828,
+                "score": 79.825,
                 "tests": 5
               },
               "instruction-context": {
@@ -136968,7 +136968,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 55,
             "evidenceRank": 55,
-            "score": 79.5822,
+            "score": 79.5812,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -136984,7 +136984,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.067,
+                "score": 77.061,
                 "tests": 5
               },
               "instruction-context": {
@@ -137260,7 +137260,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 81,
             "evidenceRank": 81,
-            "score": 81.0569,
+            "score": 81.0561,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -137276,7 +137276,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.893,
+                "score": 84.889,
                 "tests": 4
               },
               "instruction-context": {
@@ -137290,7 +137290,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 81,
             "evidenceRank": 81,
-            "score": 81.101,
+            "score": 81.1002,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -137306,7 +137306,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.921,
+                "score": 84.917,
                 "tests": 4
               },
               "instruction-context": {
@@ -137320,7 +137320,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 81,
             "evidenceRank": 81,
-            "score": 81.0508,
+            "score": 81.0505,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -137336,7 +137336,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.985,
+                "score": 84.983,
                 "tests": 4
               },
               "instruction-context": {
@@ -137350,7 +137350,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 81,
             "evidenceRank": 81,
-            "score": 81.0645,
+            "score": 81.0637,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -137366,7 +137366,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.893,
+                "score": 84.889,
                 "tests": 4
               },
               "instruction-context": {
@@ -137692,7 +137692,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/inceptionlabs_small.svg",
         "color": "#021B30"
       },
-      "medianOutputSpeed": 414.497,
+      "medianOutputSpeed": 639.104,
       "aa": {
         "aa-intelligence": 13.7691,
         "aa-coding": null,
@@ -138230,7 +138230,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 103,
             "evidenceRank": 103,
-            "score": 53.9041,
+            "score": 53.9027,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -138246,7 +138246,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.267,
+                "score": 66.26,
                 "tests": 4
               },
               "instruction-context": {
@@ -138260,7 +138260,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 103,
             "evidenceRank": 103,
-            "score": 53.9148,
+            "score": 53.9135,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -138276,7 +138276,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.267,
+                "score": 66.26,
                 "tests": 4
               },
               "instruction-context": {
@@ -138290,7 +138290,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 102,
             "evidenceRank": 102,
-            "score": 53.0804,
+            "score": 53.0793,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -138306,7 +138306,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 64.001,
+                "score": 63.996,
                 "tests": 4
               },
               "instruction-context": {
@@ -138320,7 +138320,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 103,
             "evidenceRank": 103,
-            "score": 53.9034,
+            "score": 53.9021,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -138336,7 +138336,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.254,
+                "score": 66.247,
                 "tests": 4
               },
               "instruction-context": {
@@ -138612,7 +138612,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 129,
             "evidenceRank": 129,
-            "score": 53.8128,
+            "score": 53.8114,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -138628,7 +138628,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.257,
+                "score": 66.25,
                 "tests": 4
               },
               "instruction-context": {
@@ -138642,7 +138642,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 129,
             "evidenceRank": 129,
-            "score": 53.8253,
+            "score": 53.8239,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -138658,7 +138658,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.271,
+                "score": 66.264,
                 "tests": 4
               },
               "instruction-context": {
@@ -138672,7 +138672,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 128,
             "evidenceRank": 128,
-            "score": 52.7928,
+            "score": 52.7918,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -138688,7 +138688,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 63.995,
+                "score": 63.99,
                 "tests": 4
               },
               "instruction-context": {
@@ -138702,7 +138702,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 129,
             "evidenceRank": 129,
-            "score": 53.8217,
+            "score": 53.8203,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -138718,7 +138718,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.257,
+                "score": 66.25,
                 "tests": 4
               },
               "instruction-context": {
@@ -138750,7 +138750,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 94.4109,
+      "medianOutputSpeed": 92.8477,
       "aa": {
         "aa-intelligence": 20.384,
         "aa-coding": null,
@@ -139638,7 +139638,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 143.6516,
+      "medianOutputSpeed": 144.0601,
       "aa": {
         "aa-intelligence": 17.748,
         "aa-coding": null,
@@ -139661,7 +139661,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 61.3333,
-        "GDPval-AA v2": 9.7425,
+        "GDPval-AA v2": 9.738,
         "τ³-Banking": 10.3093,
         "Terminal-Bench v2.1": 47.191,
         "GDPval-AA": 16.6525,
@@ -139933,7 +139933,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 109.602,
+      "medianOutputSpeed": 113.0669,
       "aa": {
         "aa-intelligence": 9.3799,
         "aa-coding": null,
@@ -140230,7 +140230,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 196.1723,
+      "medianOutputSpeed": 193.6317,
       "aa": {
         "aa-intelligence": 23.8488,
         "aa-coding": null,
@@ -142887,7 +142887,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 230.2366,
+      "medianOutputSpeed": 233.6434,
       "aa": {
         "aa-intelligence": 39.5759,
         "aa-coding": null,
@@ -142905,12 +142905,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 144.0008
       },
       "scores": {
-        "AA-Briefcase": 42.0605,
+        "AA-Briefcase": 41.988,
         "AutomationBench-AA": 40.6134,
         "Terminal-Bench v4.0": 7.0707,
         "GDP.pdf": 17.4,
         "AA-LCR v1.1": 79.0,
-        "GDPval-AA v2": 49.073,
+        "GDPval-AA v2": 49.081,
         "τ³-Banking": 34.8454,
         "Terminal-Bench v2.1": 80.1498,
         "GDPval-AA": 51.166,
@@ -143428,7 +143428,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 15,
             "evidenceRank": 15,
-            "score": 91.0369,
+            "score": 91.0366,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -143444,7 +143444,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.736,
+                "score": 94.735,
                 "tests": 4
               },
               "instruction-context": {
@@ -143458,7 +143458,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 15,
             "evidenceRank": 15,
-            "score": 91.05,
+            "score": 91.0497,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -143474,7 +143474,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.736,
+                "score": 94.735,
                 "tests": 4
               },
               "instruction-context": {
@@ -143488,7 +143488,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 20,
             "evidenceRank": 20,
-            "score": 89.9539,
+            "score": 89.9537,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -143504,7 +143504,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.801,
+                "score": 94.8,
                 "tests": 4
               },
               "instruction-context": {
@@ -143518,7 +143518,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 15,
             "evidenceRank": 15,
-            "score": 91.0364,
+            "score": 91.036,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -143534,7 +143534,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.718,
+                "score": 94.716,
                 "tests": 4
               },
               "instruction-context": {
@@ -143810,7 +143810,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 36,
             "evidenceRank": 36,
-            "score": 90.6819,
+            "score": 90.6816,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -143826,7 +143826,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.644,
+                "score": 94.642,
                 "tests": 4
               },
               "instruction-context": {
@@ -143840,7 +143840,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 36,
             "evidenceRank": 36,
-            "score": 90.7222,
+            "score": 90.7218,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -143856,7 +143856,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.666,
+                "score": 94.664,
                 "tests": 4
               },
               "instruction-context": {
@@ -143870,7 +143870,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 40,
             "evidenceRank": 40,
-            "score": 89.6788,
+            "score": 89.6786,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -143900,7 +143900,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 36,
             "evidenceRank": 36,
-            "score": 90.6882,
+            "score": 90.6879,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -143916,7 +143916,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.644,
+                "score": 94.642,
                 "tests": 4
               },
               "instruction-context": {
@@ -143948,7 +143948,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 135.0519,
+      "medianOutputSpeed": 151.5562,
       "aa": {
         "aa-intelligence": 21.0125,
         "aa-coding": null,
@@ -143966,12 +143966,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 5.972
       },
       "scores": {
-        "AA-Briefcase": 11.9155,
+        "AA-Briefcase": 11.896,
         "AutomationBench-AA": 11.6922,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 14.2,
         "AA-LCR v1.1": 70.0,
-        "GDPval-AA v2": 24.0545,
+        "GDPval-AA v2": 24.0485,
         "τ³-Banking": 12.7835,
         "Terminal-Bench v2.1": 43.4457,
         "GDPval-AA": 29.0895,
@@ -144487,7 +144487,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 101,
             "evidenceRank": 101,
-            "score": 70.9841,
+            "score": 70.9836,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -144503,7 +144503,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 81.417,
+                "score": 81.414,
                 "tests": 5
               },
               "instruction-context": {
@@ -144517,7 +144517,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 101,
             "evidenceRank": 101,
-            "score": 71.0178,
+            "score": 71.0173,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -144533,7 +144533,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 81.448,
+                "score": 81.445,
                 "tests": 5
               },
               "instruction-context": {
@@ -144547,7 +144547,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 105,
             "evidenceRank": 105,
-            "score": 69.7687,
+            "score": 69.7681,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -144563,7 +144563,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 80.497,
+                "score": 80.494,
                 "tests": 5
               },
               "instruction-context": {
@@ -144577,7 +144577,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 101,
             "evidenceRank": 101,
-            "score": 70.993,
+            "score": 70.9925,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -144593,7 +144593,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 81.417,
+                "score": 81.414,
                 "tests": 5
               },
               "instruction-context": {
@@ -144625,7 +144625,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 53.7938,
+      "medianOutputSpeed": 56.9566,
       "aa": {
         "aa-intelligence": 46.8163,
         "aa-coding": null,
@@ -145189,7 +145189,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 20,
             "evidenceRank": 20,
-            "score": 92.743,
+            "score": 92.7427,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -145205,7 +145205,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.898,
+                "score": 95.897,
                 "tests": 4
               },
               "instruction-context": {
@@ -145219,7 +145219,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 20,
             "evidenceRank": 20,
-            "score": 92.7798,
+            "score": 92.7796,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -145235,7 +145235,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.917,
+                "score": 95.916,
                 "tests": 4
               },
               "instruction-context": {
@@ -145249,7 +145249,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 25,
             "evidenceRank": 25,
-            "score": 92.0625,
+            "score": 92.0623,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -145265,7 +145265,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.849,
+                "score": 95.848,
                 "tests": 4
               },
               "instruction-context": {
@@ -145279,7 +145279,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 20,
             "evidenceRank": 20,
-            "score": 92.7485,
+            "score": 92.7483,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -145295,7 +145295,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.898,
+                "score": 95.897,
                 "tests": 4
               },
               "instruction-context": {
@@ -145327,7 +145327,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 140.2109,
+      "medianOutputSpeed": 135.4518,
       "aa": {
         "aa-intelligence": 9.1844,
         "aa-coding": null,
@@ -145345,7 +145345,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 35.7185
       },
       "scores": {
-        "AA-Briefcase": 1.128,
+        "AA-Briefcase": 1.118,
         "AutomationBench-AA": 4.1462,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 1.2,
@@ -145866,7 +145866,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 124,
             "evidenceRank": 124,
-            "score": 35.897,
+            "score": 35.8961,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -145882,7 +145882,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 39.687,
+                "score": 39.682,
                 "tests": 5
               },
               "instruction-context": {
@@ -145896,7 +145896,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 124,
             "evidenceRank": 124,
-            "score": 35.8958,
+            "score": 35.8948,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -145912,7 +145912,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 39.687,
+                "score": 39.682,
                 "tests": 5
               },
               "instruction-context": {
@@ -145926,7 +145926,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 124,
             "evidenceRank": 124,
-            "score": 35.6144,
+            "score": 35.6134,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -145942,7 +145942,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 31.904,
+                "score": 31.899,
                 "tests": 5
               },
               "instruction-context": {
@@ -145956,7 +145956,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 124,
             "evidenceRank": 124,
-            "score": 35.9053,
+            "score": 35.9043,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -145972,7 +145972,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 39.704,
+                "score": 39.699,
                 "tests": 5
               },
               "instruction-context": {
@@ -146248,7 +146248,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 150,
             "evidenceRank": 150,
-            "score": 35.9856,
+            "score": 35.9847,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -146264,7 +146264,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 39.835,
+                "score": 39.831,
                 "tests": 5
               },
               "instruction-context": {
@@ -146278,7 +146278,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 150,
             "evidenceRank": 150,
-            "score": 35.9748,
+            "score": 35.9739,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -146294,7 +146294,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 39.82,
+                "score": 39.815,
                 "tests": 5
               },
               "instruction-context": {
@@ -146308,7 +146308,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 150,
             "evidenceRank": 150,
-            "score": 35.4373,
+            "score": 35.4363,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -146324,7 +146324,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 31.932,
+                "score": 31.927,
                 "tests": 5
               },
               "instruction-context": {
@@ -146338,7 +146338,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 150,
             "evidenceRank": 150,
-            "score": 35.9937,
+            "score": 35.9928,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -146354,7 +146354,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 39.835,
+                "score": 39.831,
                 "tests": 5
               },
               "instruction-context": {
@@ -146386,7 +146386,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 155.3654,
+      "medianOutputSpeed": 174.9368,
       "aa": {
         "aa-intelligence": 7.0888,
         "aa-coding": null,
@@ -146977,7 +146977,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 208.1819,
+      "medianOutputSpeed": 215.6306,
       "aa": {
         "aa-intelligence": 10.9644,
         "aa-coding": null,
@@ -147515,7 +147515,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 117,
             "evidenceRank": 117,
-            "score": 43.5426,
+            "score": 43.5412,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -147531,7 +147531,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 64.446,
+                "score": 64.439,
                 "tests": 4
               },
               "instruction-context": {
@@ -147545,7 +147545,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 117,
             "evidenceRank": 117,
-            "score": 43.5489,
+            "score": 43.5475,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -147561,7 +147561,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 64.446,
+                "score": 64.439,
                 "tests": 4
               },
               "instruction-context": {
@@ -147575,7 +147575,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 117,
             "evidenceRank": 117,
-            "score": 41.3665,
+            "score": 41.3654,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -147591,7 +147591,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 60.403,
+                "score": 60.398,
                 "tests": 4
               },
               "instruction-context": {
@@ -147605,7 +147605,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 117,
             "evidenceRank": 117,
-            "score": 43.5357,
+            "score": 43.5342,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -147621,7 +147621,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 64.435,
+                "score": 64.428,
                 "tests": 4
               },
               "instruction-context": {
@@ -147897,7 +147897,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 143,
             "evidenceRank": 143,
-            "score": 43.6642,
+            "score": 43.6628,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -147913,7 +147913,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 64.448,
+                "score": 64.441,
                 "tests": 4
               },
               "instruction-context": {
@@ -147927,7 +147927,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 143,
             "evidenceRank": 143,
-            "score": 43.6577,
+            "score": 43.6563,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -147943,7 +147943,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 64.46,
+                "score": 64.453,
                 "tests": 4
               },
               "instruction-context": {
@@ -147957,7 +147957,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 143,
             "evidenceRank": 143,
-            "score": 41.2947,
+            "score": 41.2936,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -147973,7 +147973,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 60.4,
+                "score": 60.394,
                 "tests": 4
               },
               "instruction-context": {
@@ -147987,7 +147987,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 143,
             "evidenceRank": 143,
-            "score": 43.6708,
+            "score": 43.6694,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -148003,7 +148003,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 64.448,
+                "score": 64.441,
                 "tests": 4
               },
               "instruction-context": {
@@ -148646,7 +148646,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 79.3333,
-        "GDPval-AA v2": 34.4195,
+        "GDPval-AA v2": 34.429,
         "τ³-Banking": 25.1546,
         "Terminal-Bench v2.1": 69.6629,
         "GDPval-AA": 38.657,
@@ -149166,7 +149166,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 47,
             "evidenceRank": 47,
-            "score": 82.3974,
+            "score": 82.397,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -149182,7 +149182,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.238,
+                "score": 86.236,
                 "tests": 5
               },
               "instruction-context": {
@@ -149196,7 +149196,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 47,
             "evidenceRank": 47,
-            "score": 82.416,
+            "score": 82.4157,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -149212,7 +149212,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.238,
+                "score": 86.236,
                 "tests": 5
               },
               "instruction-context": {
@@ -149226,7 +149226,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 48,
             "evidenceRank": 48,
-            "score": 82.2474,
+            "score": 82.2471,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -149242,7 +149242,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.912,
+                "score": 86.911,
                 "tests": 5
               },
               "instruction-context": {
@@ -149256,7 +149256,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 49,
             "evidenceRank": 49,
-            "score": 82.3914,
+            "score": 82.391,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -149272,7 +149272,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.213,
+                "score": 86.211,
                 "tests": 5
               },
               "instruction-context": {
@@ -149552,7 +149552,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 76,
             "evidenceRank": 76,
-            "score": 82.0424,
+            "score": 82.042,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -149568,7 +149568,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.118,
+                "score": 86.116,
                 "tests": 5
               },
               "instruction-context": {
@@ -149582,7 +149582,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 75,
             "evidenceRank": 75,
-            "score": 82.0858,
+            "score": 82.0855,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -149598,7 +149598,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.149,
+                "score": 86.147,
                 "tests": 5
               },
               "instruction-context": {
@@ -149612,7 +149612,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 75,
             "evidenceRank": 75,
-            "score": 81.9105,
+            "score": 81.9102,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -149628,7 +149628,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.883,
+                "score": 86.882,
                 "tests": 5
               },
               "instruction-context": {
@@ -149642,7 +149642,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 75,
             "evidenceRank": 75,
-            "score": 82.0499,
+            "score": 82.0495,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -149658,7 +149658,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.118,
+                "score": 86.116,
                 "tests": 5
               },
               "instruction-context": {
@@ -149690,7 +149690,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 65.2548,
+      "medianOutputSpeed": 67.0664,
       "aa": {
         "aa-intelligence": 33.4731,
         "aa-coding": null,
@@ -150229,7 +150229,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 54,
             "evidenceRank": 54,
-            "score": 87.9549,
+            "score": 87.9548,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -150245,7 +150245,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.055,
+                "score": 94.054,
                 "tests": 5
               },
               "instruction-context": {
@@ -150259,7 +150259,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 54,
             "evidenceRank": 54,
-            "score": 87.9997,
+            "score": 87.9996,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -150275,7 +150275,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.079,
+                "score": 94.078,
                 "tests": 5
               },
               "instruction-context": {
@@ -150289,7 +150289,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 54,
             "evidenceRank": 54,
-            "score": 88.1794,
+            "score": 88.1792,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -150305,7 +150305,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.675,
+                "score": 94.673,
                 "tests": 5
               },
               "instruction-context": {
@@ -150319,7 +150319,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 54,
             "evidenceRank": 54,
-            "score": 87.9616,
+            "score": 87.9615,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -150335,7 +150335,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.055,
+                "score": 94.054,
                 "tests": 5
               },
               "instruction-context": {
@@ -150367,7 +150367,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 47.6303,
+      "medianOutputSpeed": 47.206,
       "aa": {
         "aa-intelligence": 11.899,
         "aa-coding": null,
@@ -150661,7 +150661,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 397.5293,
+      "medianOutputSpeed": 407.3006,
       "aa": {
         "aa-intelligence": 22.1685,
         "aa-coding": null,
@@ -150679,12 +150679,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 26.5891
       },
       "scores": {
-        "AA-Briefcase": 7.106,
+        "AA-Briefcase": 7.095,
         "AutomationBench-AA": 25.0113,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 13.6,
         "AA-LCR v1.1": 76.0,
-        "GDPval-AA v2": 23.4895,
+        "GDPval-AA v2": 23.476,
         "τ³-Banking": 17.5258,
         "Terminal-Bench v2.1": 53.5581,
         "GDPval-AA": 28.1625,
@@ -151377,7 +151377,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 85,
             "evidenceRank": 85,
-            "score": 68.3419,
+            "score": 68.3413,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -151393,7 +151393,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.04,
+                "score": 79.037,
                 "tests": 5
               },
               "instruction-context": {
@@ -151407,7 +151407,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 85,
             "evidenceRank": 85,
-            "score": 68.3579,
+            "score": 68.3574,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -151423,7 +151423,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.04,
+                "score": 79.037,
                 "tests": 5
               },
               "instruction-context": {
@@ -151437,7 +151437,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 84,
             "evidenceRank": 84,
-            "score": 68.0392,
+            "score": 68.0387,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -151453,7 +151453,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.962,
+                "score": 77.959,
                 "tests": 5
               },
               "instruction-context": {
@@ -151467,7 +151467,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 81,
             "evidenceRank": 81,
-            "score": 69.2982,
+            "score": 69.2977,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -151483,7 +151483,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.016,
+                "score": 79.014,
                 "tests": 5
               },
               "instruction-context": {
@@ -151759,7 +151759,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 111,
             "evidenceRank": 111,
-            "score": 68.2359,
+            "score": 68.2353,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -151775,7 +151775,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.939,
+                "score": 78.936,
                 "tests": 5
               },
               "instruction-context": {
@@ -151789,7 +151789,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 110,
             "evidenceRank": 110,
-            "score": 68.2686,
+            "score": 68.2681,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -151805,7 +151805,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.969,
+                "score": 78.966,
                 "tests": 5
               },
               "instruction-context": {
@@ -151819,7 +151819,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 109,
             "evidenceRank": 109,
-            "score": 68.7087,
+            "score": 68.7082,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -151835,7 +151835,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.934,
+                "score": 77.932,
                 "tests": 5
               },
               "instruction-context": {
@@ -151849,7 +151849,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 111,
             "evidenceRank": 111,
-            "score": 68.2445,
+            "score": 68.2439,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -151865,7 +151865,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.939,
+                "score": 78.936,
                 "tests": 5
               },
               "instruction-context": {
@@ -151903,24 +151903,24 @@ window.AINSIGHTS_MODELS_DATA = {
         "aa-coding": null,
         "aa-agentic": null
       },
-      "aaCostUsd": 922.8378,
+      "aaCostUsd": 924.6768,
       "pricing": {
         "inputPerMillionTokensUsd": 1.0,
         "outputPerMillionTokensUsd": 2.7,
         "cacheHitPerMillionTokensUsd": 0.05,
-        "aaIndexCostUsd": 922.8378,
-        "aaIndexInputCostUsd": 501.748,
-        "aaIndexOutputCostUsd": 421.0898,
-        "aaIndexReasoningCostUsd": 349.1834,
-        "aaIndexAnswerCostUsd": 71.9063
+        "aaIndexCostUsd": 924.6768,
+        "aaIndexInputCostUsd": 503.2565,
+        "aaIndexOutputCostUsd": 421.4203,
+        "aaIndexReasoningCostUsd": 349.3606,
+        "aaIndexAnswerCostUsd": 72.0597
       },
       "scores": {
-        "AA-Briefcase": 46.663,
+        "AA-Briefcase": 46.601,
         "AutomationBench-AA": 50.9566,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": 14.8,
         "AA-LCR v1.1": 88.3333,
-        "GDPval-AA v2": 53.2975,
+        "GDPval-AA v2": 53.306,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -153016,7 +153016,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 150.0635,
+      "medianOutputSpeed": 133.2597,
       "aa": {
         "aa-intelligence": 8.6168,
         "aa-coding": null,
@@ -153039,7 +153039,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 2.4,
         "AA-LCR v1.1": 32.3333,
-        "GDPval-AA v2": 1.5415,
+        "GDPval-AA v2": 1.569,
         "τ³-Banking": 10.5155,
         "Terminal-Bench v2.1": 30.3371,
         "GDPval-AA": 9.4325,
@@ -153554,7 +153554,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 122,
             "evidenceRank": 122,
-            "score": 37.5362,
+            "score": 37.5346,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -153570,7 +153570,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 36.389,
+                "score": 36.381,
                 "tests": 4
               },
               "instruction-context": {
@@ -153584,7 +153584,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 122,
             "evidenceRank": 122,
-            "score": 37.5349,
+            "score": 37.5333,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -153600,7 +153600,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 36.389,
+                "score": 36.381,
                 "tests": 4
               },
               "instruction-context": {
@@ -153614,7 +153614,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 121,
             "evidenceRank": 121,
-            "score": 38.1816,
+            "score": 38.18,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -153630,7 +153630,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 28.76,
+                "score": 28.752,
                 "tests": 4
               },
               "instruction-context": {
@@ -153644,7 +153644,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 122,
             "evidenceRank": 122,
-            "score": 37.5509,
+            "score": 37.5493,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -153660,7 +153660,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 36.409,
+                "score": 36.402,
                 "tests": 4
               },
               "instruction-context": {
@@ -153936,7 +153936,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 148,
             "evidenceRank": 148,
-            "score": 37.503,
+            "score": 37.5014,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -153952,7 +153952,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 36.577,
+                "score": 36.569,
                 "tests": 4
               },
               "instruction-context": {
@@ -153966,7 +153966,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 148,
             "evidenceRank": 148,
-            "score": 37.4997,
+            "score": 37.4981,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -153982,7 +153982,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 36.552,
+                "score": 36.544,
                 "tests": 4
               },
               "instruction-context": {
@@ -153996,7 +153996,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 147,
             "evidenceRank": 147,
-            "score": 37.8952,
+            "score": 37.8936,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -154012,7 +154012,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 28.79,
+                "score": 28.782,
                 "tests": 4
               },
               "instruction-context": {
@@ -154026,7 +154026,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 148,
             "evidenceRank": 148,
-            "score": 37.5117,
+            "score": 37.5101,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -154042,7 +154042,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 36.577,
+                "score": 36.569,
                 "tests": 4
               },
               "instruction-context": {
@@ -154404,7 +154404,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 5.4,
         "AA-LCR v1.1": 69.3333,
-        "GDPval-AA v2": 9.899,
+        "GDPval-AA v2": 9.909,
         "τ³-Banking": 21.0309,
         "Terminal-Bench v2.1": 44.9438,
         "GDPval-AA": 16.306,
@@ -154923,7 +154923,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 88,
             "evidenceRank": 88,
-            "score": 66.3535,
+            "score": 66.3522,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -154939,7 +154939,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 70.551,
+                "score": 70.545,
                 "tests": 4
               },
               "instruction-context": {
@@ -154953,7 +154953,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 88,
             "evidenceRank": 88,
-            "score": 66.3717,
+            "score": 66.3704,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -154969,7 +154969,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 70.551,
+                "score": 70.545,
                 "tests": 4
               },
               "instruction-context": {
@@ -154983,7 +154983,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 90,
             "evidenceRank": 90,
-            "score": 64.1906,
+            "score": 64.1895,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -154999,7 +154999,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 68.301,
+                "score": 68.296,
                 "tests": 4
               },
               "instruction-context": {
@@ -155013,7 +155013,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 88,
             "evidenceRank": 88,
-            "score": 66.3508,
+            "score": 66.3495,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -155029,7 +155029,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 70.534,
+                "score": 70.528,
                 "tests": 4
               },
               "instruction-context": {
@@ -155305,7 +155305,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 115,
             "evidenceRank": 115,
-            "score": 66.145,
+            "score": 66.1437,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -155321,7 +155321,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 70.513,
+                "score": 70.507,
                 "tests": 4
               },
               "instruction-context": {
@@ -155335,7 +155335,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 115,
             "evidenceRank": 115,
-            "score": 66.1717,
+            "score": 66.1704,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -155351,7 +155351,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 70.532,
+                "score": 70.525,
                 "tests": 4
               },
               "instruction-context": {
@@ -155365,7 +155365,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 117,
             "evidenceRank": 117,
-            "score": 63.845,
+            "score": 63.844,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -155381,7 +155381,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 68.286,
+                "score": 68.281,
                 "tests": 4
               },
               "instruction-context": {
@@ -155395,7 +155395,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 115,
             "evidenceRank": 115,
-            "score": 66.154,
+            "score": 66.1528,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -155411,7 +155411,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 70.513,
+                "score": 70.507,
                 "tests": 4
               },
               "instruction-context": {
@@ -155443,7 +155443,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 95.825,
+      "medianOutputSpeed": 92.3316,
       "aa": {
         "aa-intelligence": 6.0061,
         "aa-coding": null,
@@ -155741,7 +155741,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 50.0658,
+      "medianOutputSpeed": 53.293,
       "aa": {
         "aa-intelligence": 27.1714,
         "aa-coding": null,
@@ -155764,7 +155764,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 74.6667,
-        "GDPval-AA v2": 27.5825,
+        "GDPval-AA v2": 27.5955,
         "τ³-Banking": 13.4021,
         "Terminal-Bench v2.1": 52.0599,
         "GDPval-AA": 31.9145,
@@ -156036,7 +156036,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 215.0348,
+      "medianOutputSpeed": 219.0518,
       "aa": {
         "aa-intelligence": 9.0559,
         "aa-coding": null,
@@ -156574,7 +156574,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 130,
             "evidenceRank": 130,
-            "score": 30.3378,
+            "score": 30.3363,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -156590,7 +156590,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 28.415,
+                "score": 28.408,
                 "tests": 4
               },
               "instruction-context": {
@@ -156604,7 +156604,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 130,
             "evidenceRank": 130,
-            "score": 30.3368,
+            "score": 30.3354,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -156620,7 +156620,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 28.415,
+                "score": 28.408,
                 "tests": 4
               },
               "instruction-context": {
@@ -156634,7 +156634,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 130,
             "evidenceRank": 130,
-            "score": 30.4136,
+            "score": 30.4124,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -156650,7 +156650,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 24.292,
+                "score": 24.285,
                 "tests": 4
               },
               "instruction-context": {
@@ -156664,7 +156664,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 130,
             "evidenceRank": 130,
-            "score": 30.3518,
+            "score": 30.3503,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -156680,7 +156680,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 28.442,
+                "score": 28.435,
                 "tests": 4
               },
               "instruction-context": {
@@ -156956,7 +156956,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 156,
             "evidenceRank": 156,
-            "score": 30.4791,
+            "score": 30.4776,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -156972,7 +156972,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 28.636,
+                "score": 28.629,
                 "tests": 4
               },
               "instruction-context": {
@@ -156986,7 +156986,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 156,
             "evidenceRank": 156,
-            "score": 30.4575,
+            "score": 30.456,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -157002,7 +157002,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 28.604,
+                "score": 28.596,
                 "tests": 4
               },
               "instruction-context": {
@@ -157016,7 +157016,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 156,
             "evidenceRank": 156,
-            "score": 30.2496,
+            "score": 30.2483,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -157032,7 +157032,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 24.332,
+                "score": 24.326,
                 "tests": 4
               },
               "instruction-context": {
@@ -157046,7 +157046,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 156,
             "evidenceRank": 156,
-            "score": 30.4863,
+            "score": 30.4848,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -157062,7 +157062,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 28.636,
+                "score": 28.629,
                 "tests": 4
               },
               "instruction-context": {
@@ -157094,7 +157094,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 115.6355,
+      "medianOutputSpeed": 118.5144,
       "aa": {
         "aa-intelligence": 14.1555,
         "aa-coding": null,
@@ -157389,7 +157389,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/thinking_machines.svg",
         "color": "#676767"
       },
-      "medianOutputSpeed": 84.2384,
+      "medianOutputSpeed": 97.8454,
       "aa": {
         "aa-intelligence": 24.9848,
         "aa-coding": null,
@@ -157407,12 +157407,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 52.0768
       },
       "scores": {
-        "AA-Briefcase": 16.4665,
+        "AA-Briefcase": 16.468,
         "AutomationBench-AA": 4.9849,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 12.8,
         "AA-LCR v1.1": 77.3333,
-        "GDPval-AA v2": 28.1605,
+        "GDPval-AA v2": 28.1835,
         "τ³-Banking": 29.0722,
         "Terminal-Bench v2.1": 55.0562,
         "GDPval-AA": 33.2595,
@@ -158335,7 +158335,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 54,
             "evidenceRank": 54,
-            "score": 80.1891,
+            "score": 80.1888,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -158351,7 +158351,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.912,
+                "score": 86.91,
                 "tests": 5
               },
               "instruction-context": {
@@ -158365,7 +158365,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 54,
             "evidenceRank": 54,
-            "score": 80.206,
+            "score": 80.2056,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -158381,7 +158381,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.912,
+                "score": 86.91,
                 "tests": 5
               },
               "instruction-context": {
@@ -158395,7 +158395,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 55,
             "evidenceRank": 55,
-            "score": 79.4912,
+            "score": 79.4907,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -158411,7 +158411,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.647,
+                "score": 87.645,
                 "tests": 5
               },
               "instruction-context": {
@@ -158425,7 +158425,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 53,
             "evidenceRank": 53,
-            "score": 81.0691,
+            "score": 81.0687,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -158441,7 +158441,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.887,
+                "score": 86.885,
                 "tests": 5
               },
               "instruction-context": {
@@ -158717,7 +158717,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 84,
             "evidenceRank": 84,
-            "score": 80.1143,
+            "score": 80.1139,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -158733,7 +158733,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.791,
+                "score": 86.79,
                 "tests": 5
               },
               "instruction-context": {
@@ -158747,7 +158747,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 84,
             "evidenceRank": 84,
-            "score": 80.154,
+            "score": 80.1536,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -158763,7 +158763,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.823,
+                "score": 86.821,
                 "tests": 5
               },
               "instruction-context": {
@@ -158777,7 +158777,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 84,
             "evidenceRank": 84,
-            "score": 79.0694,
+            "score": 79.0689,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -158793,7 +158793,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.616,
+                "score": 87.613,
                 "tests": 5
               },
               "instruction-context": {
@@ -158807,7 +158807,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 84,
             "evidenceRank": 84,
-            "score": 80.1226,
+            "score": 80.1223,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -158823,7 +158823,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.791,
+                "score": 86.79,
                 "tests": 5
               },
               "instruction-context": {
@@ -158855,7 +158855,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 35.8264,
+      "medianOutputSpeed": 36.4107,
       "aa": {
         "aa-intelligence": 26.9792,
         "aa-coding": null,
@@ -158873,12 +158873,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 56.1182
       },
       "scores": {
-        "AA-Briefcase": 15.7575,
+        "AA-Briefcase": 15.7365,
         "AutomationBench-AA": 13.0208,
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 13.0,
         "AA-LCR v1.1": 81.0,
-        "GDPval-AA v2": 26.2995,
+        "GDPval-AA v2": 26.3045,
         "τ³-Banking": 23.299,
         "Terminal-Bench v2.1": 65.9176,
         "GDPval-AA": 30.7655,
@@ -159781,7 +159781,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 39,
             "evidenceRank": 39,
-            "score": 84.9427,
+            "score": 84.9424,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -159797,7 +159797,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.23,
+                "score": 90.228,
                 "tests": 5
               },
               "instruction-context": {
@@ -159811,7 +159811,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 39,
             "evidenceRank": 39,
-            "score": 84.9559,
+            "score": 84.9557,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -159827,7 +159827,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.23,
+                "score": 90.228,
                 "tests": 5
               },
               "instruction-context": {
@@ -159841,7 +159841,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 38,
             "evidenceRank": 38,
-            "score": 85.4071,
+            "score": 85.4069,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -159857,7 +159857,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.352,
+                "score": 91.351,
                 "tests": 5
               },
               "instruction-context": {
@@ -159871,7 +159871,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 39,
             "evidenceRank": 39,
-            "score": 84.9807,
+            "score": 84.9805,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -159887,7 +159887,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.206,
+                "score": 90.205,
                 "tests": 5
               },
               "instruction-context": {
@@ -160163,7 +160163,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 65,
             "evidenceRank": 65,
-            "score": 84.6446,
+            "score": 84.6444,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -160179,7 +160179,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.111,
+                "score": 90.11,
                 "tests": 5
               },
               "instruction-context": {
@@ -160193,7 +160193,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 65,
             "evidenceRank": 65,
-            "score": 84.6889,
+            "score": 84.6887,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -160209,7 +160209,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.141,
+                "score": 90.14,
                 "tests": 5
               },
               "instruction-context": {
@@ -160223,7 +160223,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 65,
             "evidenceRank": 65,
-            "score": 84.6911,
+            "score": 84.691,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -160239,7 +160239,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.324,
+                "score": 91.323,
                 "tests": 5
               },
               "instruction-context": {
@@ -160253,7 +160253,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 65,
             "evidenceRank": 65,
-            "score": 84.6521,
+            "score": 84.6519,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -160269,7 +160269,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.111,
+                "score": 90.11,
                 "tests": 5
               },
               "instruction-context": {
@@ -160839,7 +160839,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 110,
             "evidenceRank": 110,
-            "score": 48.6188,
+            "score": 48.6173,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -160855,7 +160855,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 59.984,
+                "score": 59.977,
                 "tests": 4
               },
               "instruction-context": {
@@ -160869,7 +160869,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 110,
             "evidenceRank": 110,
-            "score": 48.6265,
+            "score": 48.625,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -160885,7 +160885,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 59.984,
+                "score": 59.977,
                 "tests": 4
               },
               "instruction-context": {
@@ -160899,7 +160899,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 112,
             "evidenceRank": 112,
-            "score": 47.4381,
+            "score": 47.4365,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -160915,7 +160915,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 54.122,
+                "score": 54.114,
                 "tests": 4
               },
               "instruction-context": {
@@ -160929,7 +160929,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 110,
             "evidenceRank": 110,
-            "score": 48.6227,
+            "score": 48.6212,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -160945,7 +160945,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 59.978,
+                "score": 59.971,
                 "tests": 4
               },
               "instruction-context": {
@@ -161221,7 +161221,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 136,
             "evidenceRank": 136,
-            "score": 48.6027,
+            "score": 48.6012,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -161237,7 +161237,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 60.017,
+                "score": 60.01,
                 "tests": 4
               },
               "instruction-context": {
@@ -161251,7 +161251,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 136,
             "evidenceRank": 136,
-            "score": 48.6052,
+            "score": 48.6037,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -161267,7 +161267,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 60.024,
+                "score": 60.016,
                 "tests": 4
               },
               "instruction-context": {
@@ -161281,7 +161281,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 137,
             "evidenceRank": 137,
-            "score": 47.2021,
+            "score": 47.2006,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -161297,7 +161297,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 54.122,
+                "score": 54.115,
                 "tests": 4
               },
               "instruction-context": {
@@ -161311,7 +161311,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 136,
             "evidenceRank": 136,
-            "score": 48.6117,
+            "score": 48.6102,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -161327,7 +161327,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 60.017,
+                "score": 60.01,
                 "tests": 4
               },
               "instruction-context": {
@@ -161947,7 +161947,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 86.1696,
+      "medianOutputSpeed": 87.7198,
       "aa": {
         "aa-intelligence": 18.4204,
         "aa-coding": null,
@@ -161965,12 +161965,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 55.6496
       },
       "scores": {
-        "AA-Briefcase": 2.761,
+        "AA-Briefcase": 2.746,
         "AutomationBench-AA": 6.8867,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 12.2,
         "AA-LCR v1.1": 77.3333,
-        "GDPval-AA v2": 13.9655,
+        "GDPval-AA v2": 13.978,
         "τ³-Banking": 13.4021,
         "Terminal-Bench v2.1": 51.3109,
         "GDPval-AA": 20.27,
@@ -162725,7 +162725,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 65,
             "evidenceRank": 65,
-            "score": 75.4591,
+            "score": 75.4587,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -162741,7 +162741,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.872,
+                "score": 84.87,
                 "tests": 6
               },
               "instruction-context": {
@@ -162755,7 +162755,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 65,
             "evidenceRank": 65,
-            "score": 75.4786,
+            "score": 75.4782,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -162771,7 +162771,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.872,
+                "score": 84.87,
                 "tests": 6
               },
               "instruction-context": {
@@ -162785,7 +162785,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 64,
             "evidenceRank": 64,
-            "score": 76.0645,
+            "score": 76.0642,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -162801,7 +162801,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.632,
+                "score": 86.63,
                 "tests": 6
               },
               "instruction-context": {
@@ -162815,7 +162815,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 65,
             "evidenceRank": 65,
-            "score": 75.4562,
+            "score": 75.4558,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -162831,7 +162831,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.824,
+                "score": 84.822,
                 "tests": 6
               },
               "instruction-context": {
@@ -163107,7 +163107,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 96,
             "evidenceRank": 96,
-            "score": 75.0724,
+            "score": 75.072,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -163123,7 +163123,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 85.415,
+                "score": 85.413,
                 "tests": 5
               },
               "instruction-context": {
@@ -163137,7 +163137,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 96,
             "evidenceRank": 96,
-            "score": 75.1108,
+            "score": 75.1104,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -163153,7 +163153,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 85.447,
+                "score": 85.445,
                 "tests": 5
               },
               "instruction-context": {
@@ -163167,7 +163167,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 95,
             "evidenceRank": 95,
-            "score": 75.2031,
+            "score": 75.2028,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -163183,7 +163183,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.407,
+                "score": 86.406,
                 "tests": 5
               },
               "instruction-context": {
@@ -163197,7 +163197,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 96,
             "evidenceRank": 96,
-            "score": 75.081,
+            "score": 75.0806,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -163213,7 +163213,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 85.415,
+                "score": 85.413,
                 "tests": 5
               },
               "instruction-context": {
@@ -163539,7 +163539,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 36.916,
+      "medianOutputSpeed": 39.8738,
       "aa": {
         "aa-intelligence": 23.5696,
         "aa-coding": null,
@@ -164537,7 +164537,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 74.9897,
+      "medianOutputSpeed": 74.6943,
       "aa": {
         "aa-intelligence": 14.8312,
         "aa-coding": null,
@@ -164560,7 +164560,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": 1.8,
         "AA-LCR v1.1": 49.0,
-        "GDPval-AA v2": 3.1805,
+        "GDPval-AA v2": 3.187,
         "τ³-Banking": 14.433,
         "Terminal-Bench v2.1": 26.5918,
         "GDPval-AA": 11.0505,
@@ -165078,7 +165078,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 116,
             "evidenceRank": 116,
-            "score": 46.3255,
+            "score": 46.3239,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -165094,7 +165094,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 45.013,
+                "score": 45.004,
                 "tests": 4
               },
               "instruction-context": {
@@ -165108,7 +165108,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 116,
             "evidenceRank": 116,
-            "score": 46.331,
+            "score": 46.3294,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -165124,7 +165124,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 45.013,
+                "score": 45.004,
                 "tests": 4
               },
               "instruction-context": {
@@ -165138,7 +165138,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 114,
             "evidenceRank": 114,
-            "score": 45.6315,
+            "score": 45.6303,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -165154,7 +165154,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 40.337,
+                "score": 40.331,
                 "tests": 4
               },
               "instruction-context": {
@@ -165168,7 +165168,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 116,
             "evidenceRank": 116,
-            "score": 46.3352,
+            "score": 46.3336,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -165184,7 +165184,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 45.024,
+                "score": 45.015,
                 "tests": 4
               },
               "instruction-context": {
@@ -165463,7 +165463,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 140,
             "evidenceRank": 140,
-            "score": 46.2743,
+            "score": 46.2726,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -165479,7 +165479,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 45.149,
+                "score": 45.141,
                 "tests": 4
               },
               "instruction-context": {
@@ -165493,7 +165493,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 140,
             "evidenceRank": 140,
-            "score": 46.2766,
+            "score": 46.2749,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -165509,7 +165509,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 45.135,
+                "score": 45.127,
                 "tests": 4
               },
               "instruction-context": {
@@ -165523,7 +165523,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 139,
             "evidenceRank": 139,
-            "score": 45.3554,
+            "score": 45.3542,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -165539,7 +165539,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 40.367,
+                "score": 40.361,
                 "tests": 4
               },
               "instruction-context": {
@@ -165553,7 +165553,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 140,
             "evidenceRank": 140,
-            "score": 46.2833,
+            "score": 46.2816,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -165569,7 +165569,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 45.149,
+                "score": 45.141,
                 "tests": 4
               },
               "instruction-context": {
@@ -165619,12 +165619,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 25.9425,
+        "AA-Briefcase": 25.923,
         "AutomationBench-AA": 20.9006,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": 3.2,
         "AA-LCR v1.1": 69.6667,
-        "GDPval-AA v2": 25.5545,
+        "GDPval-AA v2": 25.57,
         "τ³-Banking": 27.6289,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -166868,7 +166868,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 96.6994,
+      "medianOutputSpeed": 97.3575,
       "aa": {
         "aa-intelligence": 22.7966,
         "aa-coding": null,
@@ -167350,7 +167350,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 151.9139,
+      "medianOutputSpeed": 145.5143,
       "aa": {
         "aa-intelligence": 8.9901,
         "aa-coding": null,
@@ -167645,7 +167645,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 53.6543,
+      "medianOutputSpeed": 56.5232,
       "aa": {
         "aa-intelligence": 49.6774,
         "aa-coding": null,
@@ -168214,7 +168214,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 10,
             "evidenceRank": 10,
-            "score": 93.6945,
+            "score": 93.6944,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -168230,7 +168230,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.936,
+                "score": 96.935,
                 "tests": 5
               },
               "instruction-context": {
@@ -168244,7 +168244,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 11,
             "evidenceRank": 11,
-            "score": 93.1759,
+            "score": 93.1758,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -168274,7 +168274,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 10,
             "evidenceRank": 10,
-            "score": 93.6637,
+            "score": 93.6636,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -168629,7 +168629,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 59.3072,
+      "medianOutputSpeed": 63.0657,
       "aa": {
         "aa-intelligence": 24.2638,
         "aa-coding": null,
@@ -168647,12 +168647,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 130.8143
       },
       "scores": {
-        "AA-Briefcase": 21.0705,
+        "AA-Briefcase": 21.045,
         "AutomationBench-AA": 19.9019,
         "Terminal-Bench v4.0": 2.5253,
         "GDP.pdf": 9.4,
         "AA-LCR v1.1": 67.3333,
-        "GDPval-AA v2": 27.9135,
+        "GDPval-AA v2": 27.9275,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": 32.252,
@@ -170201,7 +170201,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 201.3747,
+      "medianOutputSpeed": 213.3597,
       "aa": {
         "aa-intelligence": 9.953,
         "aa-coding": null,
@@ -170495,7 +170495,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 77.0339,
+      "medianOutputSpeed": 74.987,
       "aa": {
         "aa-intelligence": 22.8993,
         "aa-coding": null,
@@ -171029,7 +171029,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 130.3675,
+      "medianOutputSpeed": 143.7283,
       "aa": {
         "aa-intelligence": 20.2008,
         "aa-coding": null,
@@ -172186,7 +172186,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 95,
             "evidenceRank": 95,
-            "score": 60.0552,
+            "score": 60.0538,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -172202,7 +172202,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.949,
+                "score": 66.942,
                 "tests": 4
               },
               "instruction-context": {
@@ -172216,7 +172216,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 95,
             "evidenceRank": 95,
-            "score": 60.0691,
+            "score": 60.0677,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -172232,7 +172232,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.949,
+                "score": 66.942,
                 "tests": 4
               },
               "instruction-context": {
@@ -172246,7 +172246,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 95,
             "evidenceRank": 95,
-            "score": 60.3468,
+            "score": 60.3461,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -172262,7 +172262,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 65.788,
+                "score": 65.784,
                 "tests": 4
               },
               "instruction-context": {
@@ -172276,7 +172276,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 95,
             "evidenceRank": 95,
-            "score": 60.0598,
+            "score": 60.0584,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -172292,7 +172292,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.936,
+                "score": 66.929,
                 "tests": 4
               },
               "instruction-context": {
@@ -172572,7 +172572,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 123,
             "evidenceRank": 123,
-            "score": 59.8614,
+            "score": 59.8601,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -172588,7 +172588,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.934,
+                "score": 66.928,
                 "tests": 4
               },
               "instruction-context": {
@@ -172602,7 +172602,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 123,
             "evidenceRank": 123,
-            "score": 59.8817,
+            "score": 59.8803,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -172618,7 +172618,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.949,
+                "score": 66.942,
                 "tests": 4
               },
               "instruction-context": {
@@ -172632,7 +172632,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 123,
             "evidenceRank": 123,
-            "score": 60.0098,
+            "score": 60.0091,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -172648,7 +172648,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 65.782,
+                "score": 65.779,
                 "tests": 4
               },
               "instruction-context": {
@@ -172662,7 +172662,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 122,
             "evidenceRank": 122,
-            "score": 59.8706,
+            "score": 59.8692,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -172678,7 +172678,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.934,
+                "score": 66.928,
                 "tests": 4
               },
               "instruction-context": {
@@ -173107,7 +173107,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 95.1746,
+      "medianOutputSpeed": 93.667,
       "aa": {
         "aa-intelligence": 41.8075,
         "aa-coding": null,
@@ -173125,12 +173125,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 14.6125
       },
       "scores": {
-        "AA-Briefcase": 48.031,
+        "AA-Briefcase": 47.9705,
         "AutomationBench-AA": 60.3686,
         "Terminal-Bench v4.0": 32.8283,
         "GDP.pdf": 15.4,
         "AA-LCR v1.1": 80.0,
-        "GDPval-AA v2": 57.031,
+        "GDPval-AA v2": 57.039,
         "τ³-Banking": 47.2165,
         "Terminal-Bench v2.1": 84.2697,
         "GDPval-AA": 58.4635,
@@ -173759,7 +173759,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 23,
             "evidenceRank": 23,
-            "score": 90.0402,
+            "score": 90.0396,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -173775,7 +173775,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.371,
+                "score": 90.368,
                 "tests": 4
               },
               "instruction-context": {
@@ -173789,7 +173789,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 24,
             "evidenceRank": 24,
-            "score": 90.0534,
+            "score": 90.0529,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -173805,7 +173805,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.371,
+                "score": 90.368,
                 "tests": 4
               },
               "instruction-context": {
@@ -173819,7 +173819,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 22,
             "evidenceRank": 22,
-            "score": 89.7085,
+            "score": 89.7083,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -173835,7 +173835,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.98,
+                "score": 90.979,
                 "tests": 4
               },
               "instruction-context": {
@@ -173849,7 +173849,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 22,
             "evidenceRank": 22,
-            "score": 90.0964,
+            "score": 90.0958,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -173865,7 +173865,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.348,
+                "score": 90.345,
                 "tests": 4
               },
               "instruction-context": {
@@ -174141,7 +174141,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 45,
             "evidenceRank": 45,
-            "score": 89.8067,
+            "score": 89.8061,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -174157,7 +174157,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.262,
+                "score": 90.259,
                 "tests": 4
               },
               "instruction-context": {
@@ -174171,7 +174171,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 44,
             "evidenceRank": 44,
-            "score": 89.8429,
+            "score": 89.8424,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -174187,7 +174187,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.289,
+                "score": 90.286,
                 "tests": 4
               },
               "instruction-context": {
@@ -174201,7 +174201,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 44,
             "evidenceRank": 44,
-            "score": 89.4529,
+            "score": 89.4528,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -174217,7 +174217,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.956,
+                "score": 90.955,
                 "tests": 4
               },
               "instruction-context": {
@@ -174231,7 +174231,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 44,
             "evidenceRank": 44,
-            "score": 89.9893,
+            "score": 89.9888,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -174247,7 +174247,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.262,
+                "score": 90.259,
                 "tests": 4
               },
               "instruction-context": {
@@ -174871,7 +174871,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/stepfun_small.svg",
         "color": "#00F5E7"
       },
-      "medianOutputSpeed": 101.0808,
+      "medianOutputSpeed": 103.9452,
       "aa": {
         "aa-intelligence": 16.9641,
         "aa-coding": null,
@@ -175459,7 +175459,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/upstage_small.svg",
         "color": "#7c59f5"
       },
-      "medianOutputSpeed": 71.4771,
+      "medianOutputSpeed": 73.2411,
       "aa": {
         "aa-intelligence": 28.1541,
         "aa-coding": null,
@@ -175997,7 +175997,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 59,
             "evidenceRank": 59,
-            "score": 78.9384,
+            "score": 78.9375,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -176013,7 +176013,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 81.471,
+                "score": 81.466,
                 "tests": 4
               },
               "instruction-context": {
@@ -176027,7 +176027,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 59,
             "evidenceRank": 59,
-            "score": 78.9572,
+            "score": 78.9562,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -176043,7 +176043,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 81.471,
+                "score": 81.466,
                 "tests": 4
               },
               "instruction-context": {
@@ -176057,7 +176057,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 59,
             "evidenceRank": 59,
-            "score": 78.1745,
+            "score": 78.1742,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -176073,7 +176073,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.134,
+                "score": 82.132,
                 "tests": 4
               },
               "instruction-context": {
@@ -176087,7 +176087,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 59,
             "evidenceRank": 59,
-            "score": 78.932,
+            "score": 78.931,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -176103,7 +176103,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 81.447,
+                "score": 81.442,
                 "tests": 4
               },
               "instruction-context": {
@@ -176379,7 +176379,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 87,
             "evidenceRank": 87,
-            "score": 78.6298,
+            "score": 78.6289,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -176395,7 +176395,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 81.376,
+                "score": 81.371,
                 "tests": 4
               },
               "instruction-context": {
@@ -176409,7 +176409,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 87,
             "evidenceRank": 87,
-            "score": 78.6688,
+            "score": 78.6679,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -176425,7 +176425,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 81.403,
+                "score": 81.399,
                 "tests": 4
               },
               "instruction-context": {
@@ -176439,7 +176439,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 87,
             "evidenceRank": 87,
-            "score": 77.819,
+            "score": 77.8187,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -176455,7 +176455,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.111,
+                "score": 82.109,
                 "tests": 4
               },
               "instruction-context": {
@@ -176469,7 +176469,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 87,
             "evidenceRank": 87,
-            "score": 78.6383,
+            "score": 78.6373,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -176485,7 +176485,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 81.376,
+                "score": 81.371,
                 "tests": 4
               },
               "instruction-context": {
@@ -177639,7 +177639,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 288.1654,
+      "medianOutputSpeed": 316.168,
       "aa": {
         "aa-intelligence": 6.6685,
         "aa-coding": null,
@@ -177936,7 +177936,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nousresearch_small.jpg",
         "color": "#006fa8"
       },
-      "medianOutputSpeed": 30.6904,
+      "medianOutputSpeed": 30.2126,
       "aa": {
         "aa-intelligence": 5.9968,
         "aa-coding": null,
@@ -178230,7 +178230,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/cohere_small.svg",
         "color": "#D18EE2"
       },
-      "medianOutputSpeed": 82.7251,
+      "medianOutputSpeed": 91.1287,
       "aa": {
         "aa-intelligence": 9.9146,
         "aa-coding": null,
@@ -178768,7 +178768,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 106,
             "evidenceRank": 106,
-            "score": 50.9058,
+            "score": 50.9043,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -178784,7 +178784,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 59.204,
+                "score": 59.197,
                 "tests": 4
               },
               "instruction-context": {
@@ -178798,7 +178798,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 106,
             "evidenceRank": 106,
-            "score": 50.9138,
+            "score": 50.9123,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -178814,7 +178814,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 59.204,
+                "score": 59.197,
                 "tests": 4
               },
               "instruction-context": {
@@ -178828,7 +178828,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 105,
             "evidenceRank": 105,
-            "score": 50.4575,
+            "score": 50.4563,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -178844,7 +178844,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 55.26,
+                "score": 55.254,
                 "tests": 4
               },
               "instruction-context": {
@@ -178858,7 +178858,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 106,
             "evidenceRank": 106,
-            "score": 50.9125,
+            "score": 50.911,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -178874,7 +178874,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 59.199,
+                "score": 59.191,
                 "tests": 4
               },
               "instruction-context": {
@@ -179150,7 +179150,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 131,
             "evidenceRank": 131,
-            "score": 50.7694,
+            "score": 50.7679,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -179166,7 +179166,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 59.243,
+                "score": 59.235,
                 "tests": 4
               },
               "instruction-context": {
@@ -179180,7 +179180,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 131,
             "evidenceRank": 131,
-            "score": 50.7818,
+            "score": 50.7803,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -179196,7 +179196,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 59.248,
+                "score": 59.241,
                 "tests": 4
               },
               "instruction-context": {
@@ -179210,7 +179210,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 130,
             "evidenceRank": 130,
-            "score": 50.1392,
+            "score": 50.138,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -179226,7 +179226,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 55.264,
+                "score": 55.258,
                 "tests": 4
               },
               "instruction-context": {
@@ -179240,7 +179240,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 131,
             "evidenceRank": 131,
-            "score": 50.7783,
+            "score": 50.7768,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -179256,7 +179256,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 59.243,
+                "score": 59.235,
                 "tests": 4
               },
               "instruction-context": {
@@ -179582,7 +179582,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 97.2632,
+      "medianOutputSpeed": 111.241,
       "aa": {
         "aa-intelligence": 38.3556,
         "aa-coding": null,
@@ -179600,12 +179600,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 381.7999
       },
       "scores": {
-        "AA-Briefcase": 31.97,
+        "AA-Briefcase": 31.9425,
         "AutomationBench-AA": 47.3006,
         "Terminal-Bench v4.0": 14.6465,
         "GDP.pdf": 21.2,
         "AA-LCR v1.1": 84.3333,
-        "GDPval-AA v2": 41.7855,
+        "GDPval-AA v2": 41.7945,
         "τ³-Banking": 38.9691,
         "Terminal-Bench v2.1": 84.2697,
         "GDPval-AA": 44.7925,
@@ -180615,7 +180615,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 14,
             "evidenceRank": 14,
-            "score": 91.1341,
+            "score": 91.134,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -180631,7 +180631,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.745,
+                "score": 95.744,
                 "tests": 5
               },
               "instruction-context": {
@@ -180645,7 +180645,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 14,
             "evidenceRank": 14,
-            "score": 91.3631,
+            "score": 91.363,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -180661,7 +180661,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 5
               },
               "knowledge-science": {
-                "score": 95.745,
+                "score": 95.744,
                 "tests": 5
               },
               "instruction-context": {
@@ -180675,7 +180675,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 12,
             "evidenceRank": 12,
-            "score": 91.498,
+            "score": 91.4978,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -180691,7 +180691,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.675,
+                "score": 96.674,
                 "tests": 5
               },
               "instruction-context": {
@@ -180705,7 +180705,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 14,
             "evidenceRank": 14,
-            "score": 91.1384,
+            "score": 91.1383,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -180721,7 +180721,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.728,
+                "score": 95.727,
                 "tests": 5
               },
               "instruction-context": {
@@ -180997,7 +180997,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 26,
             "evidenceRank": 26,
-            "score": 92.1763,
+            "score": 92.1762,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -181013,7 +181013,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.656,
+                "score": 95.655,
                 "tests": 5
               },
               "instruction-context": {
@@ -181027,7 +181027,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 26,
             "evidenceRank": 26,
-            "score": 92.2172,
+            "score": 92.2171,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -181057,7 +181057,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 21,
             "evidenceRank": 21,
-            "score": 92.428,
+            "score": 92.4279,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -181087,7 +181087,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 27,
             "evidenceRank": 27,
-            "score": 92.1819,
+            "score": 92.1818,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -181103,7 +181103,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.656,
+                "score": 95.655,
                 "tests": 5
               },
               "instruction-context": {
@@ -181135,7 +181135,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 145.1323,
+      "medianOutputSpeed": 133.0477,
       "aa": {
         "aa-intelligence": 5.4919,
         "aa-coding": null,
@@ -181429,7 +181429,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 53.8426,
+      "medianOutputSpeed": 62.7775,
       "aa": {
         "aa-intelligence": 52.3863,
         "aa-coding": null,
@@ -181968,7 +181968,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 5,
             "evidenceRank": 5,
-            "score": 94.3425,
+            "score": 94.3424,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -181998,7 +181998,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 5,
             "evidenceRank": 5,
-            "score": 94.377,
+            "score": 94.3769,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -182028,7 +182028,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 4,
             "evidenceRank": 4,
-            "score": 93.8397,
+            "score": 93.8396,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -182044,7 +182044,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 98.729,
+                "score": 98.728,
                 "tests": 5
               },
               "instruction-context": {
@@ -183013,7 +183013,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 55.5297,
+      "medianOutputSpeed": 62.0486,
       "aa": {
         "aa-intelligence": 39.3543,
         "aa-coding": null,
@@ -183552,7 +183552,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 47,
             "evidenceRank": 47,
-            "score": 89.6214,
+            "score": 89.6212,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -183568,7 +183568,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.121,
+                "score": 93.12,
                 "tests": 5
               },
               "instruction-context": {
@@ -183582,7 +183582,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 46,
             "evidenceRank": 46,
-            "score": 89.661,
+            "score": 89.6609,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -183598,7 +183598,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.147,
+                "score": 93.146,
                 "tests": 5
               },
               "instruction-context": {
@@ -183612,7 +183612,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 47,
             "evidenceRank": 47,
-            "score": 89.0568,
+            "score": 89.0565,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -183628,7 +183628,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.102,
+                "score": 94.101,
                 "tests": 5
               },
               "instruction-context": {
@@ -183642,7 +183642,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 47,
             "evidenceRank": 47,
-            "score": 89.6282,
+            "score": 89.628,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -183658,7 +183658,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.121,
+                "score": 93.12,
                 "tests": 5
               },
               "instruction-context": {
@@ -183690,7 +183690,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 91.6742,
+      "medianOutputSpeed": 87.6642,
       "aa": {
         "aa-intelligence": 13.266,
         "aa-coding": null,
@@ -183986,7 +183986,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 89.6167,
+      "medianOutputSpeed": 92.4463,
       "aa": {
         "aa-intelligence": 5.035,
         "aa-coding": null,
@@ -184280,7 +184280,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 218.2981,
+      "medianOutputSpeed": 228.8768,
       "aa": {
         "aa-intelligence": 13.106,
         "aa-coding": null,
@@ -184872,7 +184872,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 128.9962,
+      "medianOutputSpeed": 127.7694,
       "aa": {
         "aa-intelligence": 15.5694,
         "aa-coding": null,
@@ -184895,7 +184895,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 3.4,
         "AA-LCR v1.1": 76.3333,
-        "GDPval-AA v2": 15.0845,
+        "GDPval-AA v2": 15.09,
         "τ³-Banking": 15.2577,
         "Terminal-Bench v2.1": 47.5655,
         "GDPval-AA": 21.26,
@@ -185831,7 +185831,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 84,
             "evidenceRank": 84,
-            "score": 68.3976,
+            "score": 68.397,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -185847,7 +185847,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.07,
+                "score": 78.068,
                 "tests": 7
               },
               "instruction-context": {
@@ -185861,7 +185861,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 84,
             "evidenceRank": 84,
-            "score": 68.4057,
+            "score": 68.4051,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -185877,7 +185877,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.07,
+                "score": 78.068,
                 "tests": 7
               },
               "instruction-context": {
@@ -185891,7 +185891,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 80,
             "evidenceRank": 80,
-            "score": 69.5597,
+            "score": 69.5593,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -185907,7 +185907,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.437,
+                "score": 79.435,
                 "tests": 7
               },
               "instruction-context": {
@@ -185921,7 +185921,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 84,
             "evidenceRank": 84,
-            "score": 68.6923,
+            "score": 68.6917,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -185937,7 +185937,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.631,
+                "score": 78.629,
                 "tests": 6
               },
               "instruction-context": {
@@ -186213,7 +186213,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 107,
             "evidenceRank": 107,
-            "score": 68.7255,
+            "score": 68.7249,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -186229,7 +186229,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.682,
+                "score": 78.679,
                 "tests": 5
               },
               "instruction-context": {
@@ -186243,7 +186243,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 113,
             "evidenceRank": 113,
-            "score": 67.4738,
+            "score": 67.4733,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -186259,7 +186259,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.455,
+                "score": 77.452,
                 "tests": 7
               },
               "instruction-context": {
@@ -186273,7 +186273,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 107,
             "evidenceRank": 107,
-            "score": 69.2837,
+            "score": 69.2833,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -186289,7 +186289,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.154,
+                "score": 79.152,
                 "tests": 5
               },
               "instruction-context": {
@@ -186303,7 +186303,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 107,
             "evidenceRank": 107,
-            "score": 69.0057,
+            "score": 69.0051,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -186319,7 +186319,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.682,
+                "score": 78.679,
                 "tests": 5
               },
               "instruction-context": {
@@ -186351,7 +186351,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 31.3554,
+      "medianOutputSpeed": 32.5741,
       "aa": {
         "aa-intelligence": 25.1743,
         "aa-coding": null,
@@ -186369,12 +186369,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 5.2701
       },
       "scores": {
-        "AA-Briefcase": 12.4355,
+        "AA-Briefcase": 12.406,
         "AutomationBench-AA": 18.4295,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 4.0,
         "AA-LCR v1.1": 73.0,
-        "GDPval-AA v2": 24.3155,
+        "GDPval-AA v2": 24.3105,
         "τ³-Banking": 8.6598,
         "Terminal-Bench v2.1": 63.6704,
         "GDPval-AA": 28.9715,
@@ -186890,7 +186890,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 64,
             "evidenceRank": 64,
-            "score": 75.8474,
+            "score": 75.8468,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -186906,7 +186906,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.297,
+                "score": 77.294,
                 "tests": 5
               },
               "instruction-context": {
@@ -186920,7 +186920,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 64,
             "evidenceRank": 64,
-            "score": 75.8664,
+            "score": 75.8658,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -186936,7 +186936,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.297,
+                "score": 77.294,
                 "tests": 5
               },
               "instruction-context": {
@@ -186950,7 +186950,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 62,
             "evidenceRank": 62,
-            "score": 76.7041,
+            "score": 76.7038,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -186966,7 +186966,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.462,
+                "score": 77.46,
                 "tests": 5
               },
               "instruction-context": {
@@ -186980,7 +186980,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 64,
             "evidenceRank": 64,
-            "score": 75.841,
+            "score": 75.8405,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -186996,7 +186996,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.274,
+                "score": 77.272,
                 "tests": 5
               },
               "instruction-context": {
@@ -187272,7 +187272,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 95,
             "evidenceRank": 95,
-            "score": 75.5194,
+            "score": 75.5188,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -187288,7 +187288,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.204,
+                "score": 77.201,
                 "tests": 5
               },
               "instruction-context": {
@@ -187302,7 +187302,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 95,
             "evidenceRank": 95,
-            "score": 75.561,
+            "score": 75.5604,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -187318,7 +187318,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.233,
+                "score": 77.23,
                 "tests": 5
               },
               "instruction-context": {
@@ -187332,7 +187332,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 91,
             "evidenceRank": 91,
-            "score": 76.3554,
+            "score": 76.3551,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -187348,7 +187348,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.439,
+                "score": 77.437,
                 "tests": 5
               },
               "instruction-context": {
@@ -187362,7 +187362,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 95,
             "evidenceRank": 95,
-            "score": 75.5275,
+            "score": 75.527,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -187378,7 +187378,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.204,
+                "score": 77.201,
                 "tests": 5
               },
               "instruction-context": {
@@ -188085,7 +188085,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 186.5681,
+      "medianOutputSpeed": 159.5492,
       "aa": {
         "aa-intelligence": 6.8479,
         "aa-coding": null,
@@ -188650,7 +188650,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 72.3003,
+      "medianOutputSpeed": 77.3317,
       "aa": {
         "aa-intelligence": 38.1639,
         "aa-coding": null,
@@ -188668,12 +188668,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 392.0903
       },
       "scores": {
-        "AA-Briefcase": 43.1965,
+        "AA-Briefcase": 43.1405,
         "AutomationBench-AA": 36.5127,
         "Terminal-Bench v4.0": 14.1414,
         "GDP.pdf": 13.2,
         "AA-LCR v1.1": 82.0,
-        "GDPval-AA v2": 47.4515,
+        "GDPval-AA v2": 47.46,
         "τ³-Banking": 37.3196,
         "Terminal-Bench v2.1": 80.5243,
         "GDPval-AA": 50.043,
@@ -189339,7 +189339,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 19,
             "evidenceRank": 19,
-            "score": 90.4768,
+            "score": 90.4766,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -189355,7 +189355,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.902,
+                "score": 91.901,
                 "tests": 5
               },
               "instruction-context": {
@@ -189369,7 +189369,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 19,
             "evidenceRank": 19,
-            "score": 90.4905,
+            "score": 90.4903,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -189385,7 +189385,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.902,
+                "score": 91.901,
                 "tests": 5
               },
               "instruction-context": {
@@ -189399,7 +189399,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 19,
             "evidenceRank": 19,
-            "score": 90.002,
+            "score": 90.0017,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -189415,7 +189415,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.002,
+                "score": 93.001,
                 "tests": 5
               },
               "instruction-context": {
@@ -189429,7 +189429,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 24,
             "evidenceRank": 24,
-            "score": 90.0456,
+            "score": 90.0454,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -189445,7 +189445,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.88,
+                "score": 91.879,
                 "tests": 5
               },
               "instruction-context": {
@@ -189721,7 +189721,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 40,
             "evidenceRank": 40,
-            "score": 90.1706,
+            "score": 90.1703,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -189737,7 +189737,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.789,
+                "score": 91.788,
                 "tests": 5
               },
               "instruction-context": {
@@ -189751,7 +189751,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 40,
             "evidenceRank": 40,
-            "score": 90.2118,
+            "score": 90.2116,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -189767,7 +189767,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.816,
+                "score": 91.815,
                 "tests": 5
               },
               "instruction-context": {
@@ -189781,7 +189781,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 41,
             "evidenceRank": 41,
-            "score": 89.6314,
+            "score": 89.6312,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -189797,7 +189797,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.976,
+                "score": 92.975,
                 "tests": 5
               },
               "instruction-context": {
@@ -189811,7 +189811,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 41,
             "evidenceRank": 41,
-            "score": 90.1767,
+            "score": 90.1765,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -189827,7 +189827,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.789,
+                "score": 91.788,
                 "tests": 5
               },
               "instruction-context": {
@@ -190450,7 +190450,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 145.3978,
+      "medianOutputSpeed": 139.1198,
       "aa": {
         "aa-intelligence": 7.1174,
         "aa-coding": null,
@@ -191023,7 +191023,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 131,
             "evidenceRank": 131,
-            "score": 28.2267,
+            "score": 28.2253,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -191039,7 +191039,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 26.675,
+                "score": 26.668,
                 "tests": 4
               },
               "instruction-context": {
@@ -191053,7 +191053,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 131,
             "evidenceRank": 131,
-            "score": 28.2225,
+            "score": 28.2211,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -191069,7 +191069,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 26.675,
+                "score": 26.668,
                 "tests": 4
               },
               "instruction-context": {
@@ -191083,7 +191083,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 131,
             "evidenceRank": 131,
-            "score": 29.2819,
+            "score": 29.2805,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -191099,7 +191099,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 20.25,
+                "score": 20.243,
                 "tests": 4
               },
               "instruction-context": {
@@ -191113,7 +191113,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 131,
             "evidenceRank": 131,
-            "score": 28.2435,
+            "score": 28.2421,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -191129,7 +191129,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 26.703,
+                "score": 26.696,
                 "tests": 4
               },
               "instruction-context": {
@@ -191405,7 +191405,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 157,
             "evidenceRank": 157,
-            "score": 28.2621,
+            "score": 28.2606,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -191421,7 +191421,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 26.901,
+                "score": 26.894,
                 "tests": 4
               },
               "instruction-context": {
@@ -191435,7 +191435,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 157,
             "evidenceRank": 157,
-            "score": 28.2496,
+            "score": 28.2481,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -191451,7 +191451,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 26.868,
+                "score": 26.86,
                 "tests": 4
               },
               "instruction-context": {
@@ -191465,7 +191465,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 157,
             "evidenceRank": 157,
-            "score": 29.0241,
+            "score": 29.0227,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -191481,7 +191481,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 20.289,
+                "score": 20.282,
                 "tests": 4
               },
               "instruction-context": {
@@ -191495,7 +191495,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 157,
             "evidenceRank": 157,
-            "score": 28.2702,
+            "score": 28.2687,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -191511,7 +191511,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 26.901,
+                "score": 26.894,
                 "tests": 4
               },
               "instruction-context": {
@@ -191543,7 +191543,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 46.9322,
+      "medianOutputSpeed": 49.0734,
       "aa": {
         "aa-intelligence": 29.0955,
         "aa-coding": null,
@@ -191838,7 +191838,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 58.8681,
+      "medianOutputSpeed": 60.9315,
       "aa": {
         "aa-intelligence": 42.8363,
         "aa-coding": null,
@@ -191856,12 +191856,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 114.9878
       },
       "scores": {
-        "AA-Briefcase": 49.6315,
+        "AA-Briefcase": 49.5725,
         "AutomationBench-AA": 63.1513,
         "Terminal-Bench v4.0": 13.1313,
         "GDP.pdf": 17.8,
         "AA-LCR v1.1": 81.0,
-        "GDPval-AA v2": 55.234,
+        "GDPval-AA v2": 55.242,
         "τ³-Banking": 44.3299,
         "Terminal-Bench v2.1": 84.2697,
         "GDPval-AA": 57.128,
@@ -192377,7 +192377,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 27,
             "evidenceRank": 27,
-            "score": 91.7872,
+            "score": 91.7869,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -192393,7 +192393,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.912,
+                "score": 94.911,
                 "tests": 4
               },
               "instruction-context": {
@@ -192407,7 +192407,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 27,
             "evidenceRank": 27,
-            "score": 91.8267,
+            "score": 91.8263,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -192423,7 +192423,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.934,
+                "score": 94.932,
                 "tests": 4
               },
               "instruction-context": {
@@ -192437,7 +192437,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 30,
             "evidenceRank": 30,
-            "score": 91.1292,
+            "score": 91.1291,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -192467,7 +192467,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 28,
             "evidenceRank": 28,
-            "score": 91.793,
+            "score": 91.7927,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -192483,7 +192483,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.912,
+                "score": 94.911,
                 "tests": 4
               },
               "instruction-context": {
@@ -192515,7 +192515,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 177.9142,
+      "medianOutputSpeed": 177.6616,
       "aa": {
         "aa-intelligence": 9.6434,
         "aa-coding": null,
@@ -192809,7 +192809,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 48.4945,
+      "medianOutputSpeed": 126.1689,
       "aa": {
         "aa-intelligence": 7.3644,
         "aa-coding": null,
@@ -193103,7 +193103,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 84.3094,
+      "medianOutputSpeed": 93.9171,
       "aa": {
         "aa-intelligence": 30.0938,
         "aa-coding": null,
@@ -193121,12 +193121,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 93.4865
       },
       "scores": {
-        "AA-Briefcase": 27.041,
+        "AA-Briefcase": 27.0265,
         "AutomationBench-AA": 33.536,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 17.0,
         "AA-LCR v1.1": 74.0,
-        "GDPval-AA v2": 37.721,
+        "GDPval-AA v2": 37.7305,
         "τ³-Banking": 25.567,
         "Terminal-Bench v2.1": 72.2846,
         "GDPval-AA": 40.9685,
@@ -193642,7 +193642,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 63,
             "evidenceRank": 63,
-            "score": 84.9109,
+            "score": 84.9106,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -193658,7 +193658,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.003,
+                "score": 89.002,
                 "tests": 5
               },
               "instruction-context": {
@@ -193672,7 +193672,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 63,
             "evidenceRank": 63,
-            "score": 84.9564,
+            "score": 84.9561,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -193688,7 +193688,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.033,
+                "score": 89.032,
                 "tests": 5
               },
               "instruction-context": {
@@ -193702,7 +193702,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 63,
             "evidenceRank": 63,
-            "score": 85.2635,
+            "score": 85.2631,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -193718,7 +193718,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.589,
+                "score": 89.587,
                 "tests": 5
               },
               "instruction-context": {
@@ -193732,7 +193732,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 63,
             "evidenceRank": 63,
-            "score": 84.9183,
+            "score": 84.918,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -193748,7 +193748,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.003,
+                "score": 89.002,
                 "tests": 5
               },
               "instruction-context": {
@@ -193780,7 +193780,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 134.1299,
+      "medianOutputSpeed": 141.0679,
       "aa": {
         "aa-intelligence": 16.0779,
         "aa-coding": null,
@@ -194321,7 +194321,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 86,
             "evidenceRank": 86,
-            "score": 67.9244,
+            "score": 67.9239,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -194337,7 +194337,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 83.031,
+                "score": 83.029,
                 "tests": 5
               },
               "instruction-context": {
@@ -194351,7 +194351,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 86,
             "evidenceRank": 86,
-            "score": 67.9432,
+            "score": 67.9427,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -194367,7 +194367,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 83.031,
+                "score": 83.029,
                 "tests": 5
               },
               "instruction-context": {
@@ -194381,7 +194381,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 92,
             "evidenceRank": 92,
-            "score": 63.7247,
+            "score": 63.7241,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -194397,7 +194397,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 82.502,
+                "score": 82.5,
                 "tests": 5
               },
               "instruction-context": {
@@ -194411,7 +194411,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 86,
             "evidenceRank": 86,
-            "score": 67.9182,
+            "score": 67.9177,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -194427,7 +194427,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 83.007,
+                "score": 83.004,
                 "tests": 5
               },
               "instruction-context": {
@@ -194703,7 +194703,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 113,
             "evidenceRank": 113,
-            "score": 67.751,
+            "score": 67.7505,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -194719,7 +194719,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 82.917,
+                "score": 82.915,
                 "tests": 5
               },
               "instruction-context": {
@@ -194733,7 +194733,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 112,
             "evidenceRank": 112,
-            "score": 67.7761,
+            "score": 67.7757,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -194749,7 +194749,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 82.949,
+                "score": 82.946,
                 "tests": 5
               },
               "instruction-context": {
@@ -194763,7 +194763,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 119,
             "evidenceRank": 119,
-            "score": 63.4178,
+            "score": 63.4172,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -194779,7 +194779,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 82.471,
+                "score": 82.468,
                 "tests": 5
               },
               "instruction-context": {
@@ -194793,7 +194793,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 113,
             "evidenceRank": 113,
-            "score": 67.7602,
+            "score": 67.7598,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -194809,7 +194809,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 82.917,
+                "score": 82.915,
                 "tests": 5
               },
               "instruction-context": {
@@ -194841,7 +194841,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 95.459,
+      "medianOutputSpeed": 108.3071,
       "aa": {
         "aa-intelligence": 20.9453,
         "aa-coding": null,
@@ -195323,7 +195323,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 210.3869,
+      "medianOutputSpeed": 227.251,
       "aa": {
         "aa-intelligence": 29.2203,
         "aa-coding": null,
@@ -195341,12 +195341,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 34.9582
       },
       "scores": {
-        "AA-Briefcase": 29.6565,
+        "AA-Briefcase": 29.616,
         "AutomationBench-AA": 21.2513,
         "Terminal-Bench v4.0": 2.0202,
         "GDP.pdf": 9.8,
         "AA-LCR v1.1": 83.0,
-        "GDPval-AA v2": 36.494,
+        "GDPval-AA v2": 36.5035,
         "τ³-Banking": 15.2577,
         "Terminal-Bench v2.1": 65.1685,
         "GDPval-AA": 40.198,
@@ -196083,7 +196083,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 41,
             "evidenceRank": 41,
-            "score": 83.5242,
+            "score": 83.5239,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -196099,7 +196099,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.86,
+                "score": 86.859,
                 "tests": 5
               },
               "instruction-context": {
@@ -196113,7 +196113,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 41,
             "evidenceRank": 41,
-            "score": 83.5341,
+            "score": 83.5337,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -196129,7 +196129,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.86,
+                "score": 86.859,
                 "tests": 5
               },
               "instruction-context": {
@@ -196173,7 +196173,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 43,
             "evidenceRank": 43,
-            "score": 83.5131,
+            "score": 83.5127,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -196189,7 +196189,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.836,
+                "score": 86.834,
                 "tests": 5
               },
               "instruction-context": {
@@ -196465,7 +196465,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 71,
             "evidenceRank": 71,
-            "score": 82.812,
+            "score": 82.8116,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -196481,7 +196481,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.74,
+                "score": 86.738,
                 "tests": 5
               },
               "instruction-context": {
@@ -196495,7 +196495,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 71,
             "evidenceRank": 71,
-            "score": 82.8558,
+            "score": 82.8554,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -196511,7 +196511,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.771,
+                "score": 86.77,
                 "tests": 5
               },
               "instruction-context": {
@@ -196525,7 +196525,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 70,
             "evidenceRank": 70,
-            "score": 83.2798,
+            "score": 83.2797,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -196555,7 +196555,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 71,
             "evidenceRank": 71,
-            "score": 82.8195,
+            "score": 82.8192,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -196571,7 +196571,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.74,
+                "score": 86.738,
                 "tests": 5
               },
               "instruction-context": {
@@ -197194,7 +197194,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 88.2718,
+      "medianOutputSpeed": 99.8512,
       "aa": {
         "aa-intelligence": 16.7731,
         "aa-coding": null,
@@ -197217,7 +197217,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 8.4,
         "AA-LCR v1.1": 72.3333,
-        "GDPval-AA v2": 12.6705,
+        "GDPval-AA v2": 12.694,
         "τ³-Banking": 15.4639,
         "Terminal-Bench v2.1": 3.7453,
         "GDPval-AA": 19.0135,
@@ -197733,7 +197733,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 102,
             "evidenceRank": 102,
-            "score": 55.0621,
+            "score": 55.0615,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -197749,7 +197749,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 74.273,
+                "score": 74.27,
                 "tests": 5
               },
               "instruction-context": {
@@ -197763,7 +197763,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 102,
             "evidenceRank": 102,
-            "score": 55.078,
+            "score": 55.0774,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -197779,7 +197779,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 74.273,
+                "score": 74.27,
                 "tests": 5
               },
               "instruction-context": {
@@ -197793,7 +197793,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 104,
             "evidenceRank": 104,
-            "score": 51.2415,
+            "score": 51.241,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -197809,7 +197809,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 73.905,
+                "score": 73.902,
                 "tests": 5
               },
               "instruction-context": {
@@ -197823,7 +197823,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 102,
             "evidenceRank": 102,
-            "score": 55.0469,
+            "score": 55.0463,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -197839,7 +197839,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 74.253,
+                "score": 74.25,
                 "tests": 5
               },
               "instruction-context": {
@@ -198115,7 +198115,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 128,
             "evidenceRank": 128,
-            "score": 55.19,
+            "score": 55.1894,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -198131,7 +198131,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 74.195,
+                "score": 74.192,
                 "tests": 5
               },
               "instruction-context": {
@@ -198145,7 +198145,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 128,
             "evidenceRank": 128,
-            "score": 55.1908,
+            "score": 55.1902,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -198161,7 +198161,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 74.222,
+                "score": 74.219,
                 "tests": 5
               },
               "instruction-context": {
@@ -198175,7 +198175,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 129,
             "evidenceRank": 129,
-            "score": 51.186,
+            "score": 51.1854,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -198191,7 +198191,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 73.881,
+                "score": 73.878,
                 "tests": 5
               },
               "instruction-context": {
@@ -198205,7 +198205,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 128,
             "evidenceRank": 128,
-            "score": 55.1974,
+            "score": 55.1968,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -198221,7 +198221,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 74.195,
+                "score": 74.192,
                 "tests": 5
               },
               "instruction-context": {
@@ -198271,12 +198271,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 4.9419
       },
       "scores": {
-        "AA-Briefcase": 0.0225,
+        "AA-Briefcase": 0.0075,
         "AutomationBench-AA": 0.841,
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 3.0,
         "AA-LCR v1.1": 60.3333,
-        "GDPval-AA v2": 6.174,
+        "GDPval-AA v2": 6.211,
         "τ³-Banking": 8.866,
         "Terminal-Bench v2.1": 24.3446,
         "GDPval-AA": 13.3445,
@@ -198791,7 +198791,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 108,
             "evidenceRank": 108,
-            "score": 49.5935,
+            "score": 49.5919,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -198807,7 +198807,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 51.154,
+                "score": 51.146,
                 "tests": 4
               },
               "instruction-context": {
@@ -198821,7 +198821,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 108,
             "evidenceRank": 108,
-            "score": 49.6013,
+            "score": 49.5997,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -198837,7 +198837,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 51.154,
+                "score": 51.146,
                 "tests": 4
               },
               "instruction-context": {
@@ -198851,7 +198851,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 109,
             "evidenceRank": 109,
-            "score": 49.3587,
+            "score": 49.3575,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -198867,7 +198867,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 48.165,
+                "score": 48.159,
                 "tests": 4
               },
               "instruction-context": {
@@ -198881,7 +198881,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 108,
             "evidenceRank": 108,
-            "score": 49.5975,
+            "score": 49.5959,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -198897,7 +198897,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 51.158,
+                "score": 51.15,
                 "tests": 4
               },
               "instruction-context": {
@@ -199173,7 +199173,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 133,
             "evidenceRank": 133,
-            "score": 49.5834,
+            "score": 49.5818,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -199189,7 +199189,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 51.25,
+                "score": 51.242,
                 "tests": 4
               },
               "instruction-context": {
@@ -199203,7 +199203,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 133,
             "evidenceRank": 133,
-            "score": 49.5858,
+            "score": 49.5842,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -199219,7 +199219,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 51.244,
+                "score": 51.236,
                 "tests": 4
               },
               "instruction-context": {
@@ -199233,7 +199233,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 133,
             "evidenceRank": 133,
-            "score": 49.0985,
+            "score": 49.0973,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -199249,7 +199249,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 48.179,
+                "score": 48.173,
                 "tests": 4
               },
               "instruction-context": {
@@ -199263,7 +199263,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 133,
             "evidenceRank": 133,
-            "score": 49.5925,
+            "score": 49.5909,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -199279,7 +199279,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 51.25,
+                "score": 51.242,
                 "tests": 4
               },
               "instruction-context": {
@@ -201029,7 +201029,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 139,
             "evidenceRank": 139,
-            "score": 17.2283,
+            "score": 17.2275,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -201045,7 +201045,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 24.284,
+                "score": 24.279,
                 "tests": 5
               },
               "instruction-context": {
@@ -201059,7 +201059,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 139,
             "evidenceRank": 139,
-            "score": 17.2208,
+            "score": 17.2199,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -201075,7 +201075,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 24.284,
+                "score": 24.279,
                 "tests": 5
               },
               "instruction-context": {
@@ -201089,7 +201089,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 139,
             "evidenceRank": 139,
-            "score": 17.2637,
+            "score": 17.2629,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -201105,7 +201105,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 17.595,
+                "score": 17.591,
                 "tests": 5
               },
               "instruction-context": {
@@ -201119,7 +201119,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 139,
             "evidenceRank": 139,
-            "score": 17.2395,
+            "score": 17.2387,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -201135,7 +201135,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 24.313,
+                "score": 24.308,
                 "tests": 5
               },
               "instruction-context": {
@@ -201411,7 +201411,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 164,
             "evidenceRank": 164,
-            "score": 17.4344,
+            "score": 17.4335,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -201427,7 +201427,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 24.498,
+                "score": 24.494,
                 "tests": 5
               },
               "instruction-context": {
@@ -201441,7 +201441,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 164,
             "evidenceRank": 164,
-            "score": 17.4058,
+            "score": 17.4049,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -201457,7 +201457,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 24.467,
+                "score": 24.463,
                 "tests": 5
               },
               "instruction-context": {
@@ -201471,7 +201471,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 164,
             "evidenceRank": 164,
-            "score": 17.2154,
+            "score": 17.2146,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -201487,7 +201487,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 17.635,
+                "score": 17.631,
                 "tests": 5
               },
               "instruction-context": {
@@ -201501,7 +201501,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 164,
             "evidenceRank": 164,
-            "score": 17.4381,
+            "score": 17.4373,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -201517,7 +201517,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 24.498,
+                "score": 24.494,
                 "tests": 5
               },
               "instruction-context": {
@@ -201549,7 +201549,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 73.4662,
+      "medianOutputSpeed": 79.7548,
       "aa": {
         "aa-intelligence": 14.872,
         "aa-coding": null,
@@ -201946,7 +201946,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/microsoft_small.svg",
         "color": "#0078D5"
       },
-      "medianOutputSpeed": 17.2362,
+      "medianOutputSpeed": 17.1886,
       "aa": {
         "aa-intelligence": 5.8052,
         "aa-coding": null,
@@ -202242,7 +202242,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 40.4084,
+      "medianOutputSpeed": 15.9844,
       "aa": {
         "aa-intelligence": 4.9216,
         "aa-coding": null,
@@ -202830,7 +202830,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 70.5273,
+      "medianOutputSpeed": 56.3269,
       "aa": {
         "aa-intelligence": 13.6541,
         "aa-coding": null,
@@ -203478,7 +203478,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 208.5083,
+      "medianOutputSpeed": 206.1384,
       "aa": {
         "aa-intelligence": 12.4708,
         "aa-coding": null,
@@ -204067,7 +204067,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 43.6684,
+      "medianOutputSpeed": 43.4941,
       "aa": {
         "aa-intelligence": 24.6869,
         "aa-coding": null,
@@ -205195,7 +205195,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 144,
             "evidenceRank": 144,
-            "score": 11.9711,
+            "score": 11.9704,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -205211,7 +205211,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 15.196,
+                "score": 15.193,
                 "tests": 5
               },
               "instruction-context": {
@@ -205225,7 +205225,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 144,
             "evidenceRank": 144,
-            "score": 11.9627,
+            "score": 11.962,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -205241,7 +205241,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 15.196,
+                "score": 15.193,
                 "tests": 5
               },
               "instruction-context": {
@@ -205255,7 +205255,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 144,
             "evidenceRank": 144,
-            "score": 12.6744,
+            "score": 12.6738,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -205271,7 +205271,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 10.472,
+                "score": 10.469,
                 "tests": 5
               },
               "instruction-context": {
@@ -205285,7 +205285,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 144,
             "evidenceRank": 144,
-            "score": 11.9837,
+            "score": 11.983,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -205301,7 +205301,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 15.227,
+                "score": 15.224,
                 "tests": 5
               },
               "instruction-context": {
@@ -205577,7 +205577,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 168,
             "evidenceRank": 168,
-            "score": 12.1422,
+            "score": 12.1415,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -205593,7 +205593,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 15.411,
+                "score": 15.408,
                 "tests": 5
               },
               "instruction-context": {
@@ -205607,7 +205607,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 168,
             "evidenceRank": 168,
-            "score": 12.1164,
+            "score": 12.1157,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -205623,7 +205623,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 15.377,
+                "score": 15.374,
                 "tests": 5
               },
               "instruction-context": {
@@ -205637,7 +205637,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 168,
             "evidenceRank": 168,
-            "score": 12.6869,
+            "score": 12.6863,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -205653,7 +205653,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 10.508,
+                "score": 10.505,
                 "tests": 5
               },
               "instruction-context": {
@@ -205667,7 +205667,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 168,
             "evidenceRank": 168,
-            "score": 12.1437,
+            "score": 12.143,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -205683,7 +205683,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 15.411,
+                "score": 15.408,
                 "tests": 5
               },
               "instruction-context": {
@@ -206009,7 +206009,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/cohere_small.svg",
         "color": "#D18EE2"
       },
-      "medianOutputSpeed": 240.8613,
+      "medianOutputSpeed": 244.0295,
       "aa": {
         "aa-intelligence": 13.1335,
         "aa-coding": null,
@@ -206032,7 +206032,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 1.0,
         "AA-LCR v1.1": 52.6667,
-        "GDPval-AA v2": 0.004,
+        "GDPval-AA v2": 0.0015,
         "τ³-Banking": 5.9794,
         "Terminal-Bench v2.1": 22.8464,
         "GDPval-AA": 7.904,
@@ -206548,7 +206548,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 130,
             "evidenceRank": 130,
-            "score": 50.8991,
+            "score": 50.8982,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -206564,7 +206564,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 52.589,
+                "score": 52.584,
                 "tests": 5
               },
               "instruction-context": {
@@ -206578,7 +206578,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 130,
             "evidenceRank": 130,
-            "score": 50.909,
+            "score": 50.9081,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -206594,7 +206594,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 52.59,
+                "score": 52.585,
                 "tests": 5
               },
               "instruction-context": {
@@ -206608,7 +206608,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 132,
             "evidenceRank": 132,
-            "score": 49.1268,
+            "score": 49.1264,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -206624,7 +206624,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 48.875,
+                "score": 48.873,
                 "tests": 5
               },
               "instruction-context": {
@@ -206638,7 +206638,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 130,
             "evidenceRank": 130,
-            "score": 50.9081,
+            "score": 50.9072,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -206654,7 +206654,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 52.589,
+                "score": 52.584,
                 "tests": 5
               },
               "instruction-context": {
@@ -206686,7 +206686,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 59.3463,
+      "medianOutputSpeed": 68.6954,
       "aa": {
         "aa-intelligence": 52.6737,
         "aa-coding": null,
@@ -207942,7 +207942,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 6,
             "evidenceRank": 6,
-            "score": 94.285,
+            "score": 94.2849,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -207972,7 +207972,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 6,
             "evidenceRank": 6,
-            "score": 94.3195,
+            "score": 94.3194,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -208002,7 +208002,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 7,
             "evidenceRank": 7,
-            "score": 93.7381,
+            "score": 93.738,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -208018,7 +208018,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 98.753,
+                "score": 98.752,
                 "tests": 5
               },
               "instruction-context": {
@@ -208374,7 +208374,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 44.8619,
+      "medianOutputSpeed": 44.6511,
       "aa": {
         "aa-intelligence": 30.9317,
         "aa-coding": null,
@@ -208392,7 +208392,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 28.4,
+        "AA-Briefcase": 28.353,
         "AutomationBench-AA": null,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
@@ -209291,7 +209291,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 41.1989,
+      "medianOutputSpeed": 40.9738,
       "aa": {
         "aa-intelligence": 7.5561,
         "aa-coding": null,
@@ -209586,7 +209586,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 17.9927,
+      "medianOutputSpeed": 14.7014,
       "aa": {
         "aa-intelligence": 10.8123,
         "aa-coding": null,
@@ -209882,7 +209882,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 87.0243,
+      "medianOutputSpeed": 90.7357,
       "aa": {
         "aa-intelligence": 21.4367,
         "aa-coding": null,
@@ -210448,12 +210448,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 14.418,
+        "AA-Briefcase": 14.4025,
         "AutomationBench-AA": 14.6951,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": 3.2,
         "AA-LCR v1.1": 62.3333,
-        "GDPval-AA v2": 18.2175,
+        "GDPval-AA v2": 18.229,
         "τ³-Banking": 19.5876,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -211402,7 +211402,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 60.5821,
+      "medianOutputSpeed": 55.1397,
       "aa": {
         "aa-intelligence": 11.9971,
         "aa-coding": null,
@@ -212874,7 +212874,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 265.2305,
+      "medianOutputSpeed": 252.2118,
       "aa": {
         "aa-intelligence": 5.8765,
         "aa-coding": null,
@@ -213462,7 +213462,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 108.3683,
+      "medianOutputSpeed": 104.7468,
       "aa": {
         "aa-intelligence": 6.4332,
         "aa-coding": null,
@@ -214148,7 +214148,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 45.914,
+      "medianOutputSpeed": 52.6155,
       "aa": {
         "aa-intelligence": 22.419,
         "aa-coding": null,
@@ -214166,12 +214166,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 19.749,
+        "AA-Briefcase": 19.725,
         "AutomationBench-AA": 12.4347,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 69.3333,
-        "GDPval-AA v2": 27.601,
+        "GDPval-AA v2": 27.6105,
         "τ³-Banking": 20.0,
         "Terminal-Bench v2.1": 49.0637,
         "GDPval-AA": 31.8405,
@@ -215229,7 +215229,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 120,
             "evidenceRank": 120,
-            "score": 62.2565,
+            "score": 62.2556,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -215245,7 +215245,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 57.187,
+                "score": 57.183,
                 "tests": 5
               },
               "instruction-context": {
@@ -215259,7 +215259,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 120,
             "evidenceRank": 120,
-            "score": 64.3994,
+            "score": 64.3986,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -215275,7 +215275,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 57.195,
+                "score": 57.191,
                 "tests": 5
               },
               "instruction-context": {
@@ -215289,7 +215289,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 120,
             "evidenceRank": 120,
-            "score": 62.8673,
+            "score": 62.8671,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -215305,7 +215305,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 54.629,
+                "score": 54.628,
                 "tests": 5
               },
               "instruction-context": {
@@ -215319,7 +215319,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 123,
             "evidenceRank": 123,
-            "score": 59.5173,
+            "score": 59.5164,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -215335,7 +215335,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 57.187,
+                "score": 57.183,
                 "tests": 5
               },
               "instruction-context": {
@@ -215367,7 +215367,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 143.6294,
+      "medianOutputSpeed": 139.2103,
       "aa": {
         "aa-intelligence": 5.5004,
         "aa-coding": null,
@@ -215955,7 +215955,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 167.7311,
+      "medianOutputSpeed": 170.5603,
       "aa": {
         "aa-intelligence": 8.9675,
         "aa-coding": null,
@@ -216493,7 +216493,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 112,
             "evidenceRank": 112,
-            "score": 47.977,
+            "score": 47.9755,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -216509,7 +216509,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 53.241,
+                "score": 53.233,
                 "tests": 4
               },
               "instruction-context": {
@@ -216523,7 +216523,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 112,
             "evidenceRank": 112,
-            "score": 47.9899,
+            "score": 47.9883,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -216539,7 +216539,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 53.241,
+                "score": 53.233,
                 "tests": 4
               },
               "instruction-context": {
@@ -216553,7 +216553,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 115,
             "evidenceRank": 115,
-            "score": 44.4975,
+            "score": 44.4962,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -216569,7 +216569,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 48.379,
+                "score": 48.372,
                 "tests": 4
               },
               "instruction-context": {
@@ -216583,7 +216583,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 112,
             "evidenceRank": 112,
-            "score": 47.9763,
+            "score": 47.9747,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -216599,7 +216599,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 53.243,
+                "score": 53.235,
                 "tests": 4
               },
               "instruction-context": {
@@ -216875,7 +216875,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 138,
             "evidenceRank": 138,
-            "score": 48.0093,
+            "score": 48.0077,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -216891,7 +216891,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 53.322,
+                "score": 53.314,
                 "tests": 4
               },
               "instruction-context": {
@@ -216905,7 +216905,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 138,
             "evidenceRank": 138,
-            "score": 48.0084,
+            "score": 48.0069,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -216921,7 +216921,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 53.32,
+                "score": 53.312,
                 "tests": 4
               },
               "instruction-context": {
@@ -216935,7 +216935,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 140,
             "evidenceRank": 140,
-            "score": 44.3072,
+            "score": 44.3059,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -216951,7 +216951,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 48.395,
+                "score": 48.388,
                 "tests": 4
               },
               "instruction-context": {
@@ -216965,7 +216965,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 138,
             "evidenceRank": 138,
-            "score": 48.0172,
+            "score": 48.0156,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -216981,7 +216981,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 53.322,
+                "score": 53.314,
                 "tests": 4
               },
               "instruction-context": {
@@ -217478,7 +217478,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 179.8028,
+      "medianOutputSpeed": 178.2919,
       "aa": {
         "aa-intelligence": 19.7484,
         "aa-coding": null,
@@ -218067,7 +218067,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 60.8129,
+      "medianOutputSpeed": 62.6559,
       "aa": {
         "aa-intelligence": 19.8288,
         "aa-coding": null,
@@ -218090,7 +218090,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 66.6667,
-        "GDPval-AA v2": 22.4675,
+        "GDPval-AA v2": 22.495,
         "τ³-Banking": 9.2784,
         "Terminal-Bench v2.1": 51.3109,
         "GDPval-AA": 27.14,
@@ -218634,12 +218634,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 21.774,
+        "AA-Briefcase": 21.759,
         "AutomationBench-AA": 17.6291,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": 12.6,
         "AA-LCR v1.1": 81.6667,
-        "GDPval-AA v2": 29.5555,
+        "GDPval-AA v2": 29.572,
         "τ³-Banking": 17.5258,
         "Terminal-Bench v2.1": 67.7903,
         "GDPval-AA": 33.76,
@@ -219157,7 +219157,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 42,
             "evidenceRank": 42,
-            "score": 83.3954,
+            "score": 83.3948,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -219173,7 +219173,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.885,
+                "score": 87.882,
                 "tests": 4
               },
               "instruction-context": {
@@ -219187,7 +219187,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 42,
             "evidenceRank": 42,
-            "score": 83.4127,
+            "score": 83.412,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -219203,7 +219203,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.885,
+                "score": 87.882,
                 "tests": 4
               },
               "instruction-context": {
@@ -219217,7 +219217,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 41,
             "evidenceRank": 41,
-            "score": 84.1704,
+            "score": 84.1701,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -219233,7 +219233,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.407,
+                "score": 88.405,
                 "tests": 4
               },
               "instruction-context": {
@@ -219247,7 +219247,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 44,
             "evidenceRank": 44,
-            "score": 83.3878,
+            "score": 83.3871,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -219263,7 +219263,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.861,
+                "score": 87.858,
                 "tests": 4
               },
               "instruction-context": {
@@ -219541,7 +219541,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 70,
             "evidenceRank": 70,
-            "score": 83.0493,
+            "score": 83.0487,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -219557,7 +219557,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.776,
+                "score": 87.773,
                 "tests": 4
               },
               "instruction-context": {
@@ -219571,7 +219571,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 70,
             "evidenceRank": 70,
-            "score": 83.0924,
+            "score": 83.0917,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -219587,7 +219587,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.804,
+                "score": 87.801,
                 "tests": 4
               },
               "instruction-context": {
@@ -219601,7 +219601,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 69,
             "evidenceRank": 69,
-            "score": 83.8281,
+            "score": 83.8277,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -219617,7 +219617,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.381,
+                "score": 88.379,
                 "tests": 4
               },
               "instruction-context": {
@@ -219631,7 +219631,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 70,
             "evidenceRank": 70,
-            "score": 83.0569,
+            "score": 83.0562,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -219647,7 +219647,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.776,
+                "score": 87.773,
                 "tests": 4
               },
               "instruction-context": {
@@ -219679,7 +219679,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 165.5265,
+      "medianOutputSpeed": 189.3329,
       "aa": {
         "aa-intelligence": 12.6913,
         "aa-coding": null,
@@ -219974,7 +219974,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 54.934,
+      "medianOutputSpeed": 57.3377,
       "aa": {
         "aa-intelligence": 48.9206,
         "aa-coding": null,
@@ -220538,7 +220538,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 9,
             "evidenceRank": 9,
-            "score": 93.8726,
+            "score": 93.8724,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -220554,7 +220554,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.679,
+                "score": 96.677,
                 "tests": 4
               },
               "instruction-context": {
@@ -220568,7 +220568,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 9,
             "evidenceRank": 9,
-            "score": 93.9076,
+            "score": 93.9074,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -220584,7 +220584,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.696,
+                "score": 96.694,
                 "tests": 4
               },
               "instruction-context": {
@@ -220598,7 +220598,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 10,
             "evidenceRank": 10,
-            "score": 93.4235,
+            "score": 93.4233,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -220614,7 +220614,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.752,
+                "score": 96.751,
                 "tests": 4
               },
               "instruction-context": {
@@ -220628,7 +220628,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 9,
             "evidenceRank": 9,
-            "score": 93.8776,
+            "score": 93.8774,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -220644,7 +220644,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.679,
+                "score": 96.677,
                 "tests": 4
               },
               "instruction-context": {
@@ -220676,7 +220676,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/cohere_small.svg",
         "color": "#D18EE2"
       },
-      "medianOutputSpeed": 60.3238,
+      "medianOutputSpeed": 59.0815,
       "aa": {
         "aa-intelligence": 6.9582,
         "aa-coding": null,
@@ -221265,7 +221265,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 117.2011,
+      "medianOutputSpeed": 111.9525,
       "aa": {
         "aa-intelligence": 7.2584,
         "aa-coding": null,
@@ -222457,7 +222457,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 109.6265,
+      "medianOutputSpeed": 99.8416,
       "aa": {
         "aa-intelligence": 7.6261,
         "aa-coding": null,
@@ -222854,7 +222854,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 69.71,
+      "medianOutputSpeed": 69.2201,
       "aa": {
         "aa-intelligence": 53.3549,
         "aa-coding": null,
@@ -223724,7 +223724,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 1,
             "evidenceRank": 1,
-            "score": 95.5852,
+            "score": 95.5851,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -223754,7 +223754,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 1,
             "evidenceRank": 1,
-            "score": 95.5927,
+            "score": 95.5926,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -223784,7 +223784,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 1,
             "evidenceRank": 1,
-            "score": 95.0867,
+            "score": 95.0866,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -223800,7 +223800,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 98.769,
+                "score": 98.768,
                 "tests": 4
               },
               "instruction-context": {
@@ -223814,7 +223814,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 1,
             "evidenceRank": 1,
-            "score": 95.7905,
+            "score": 95.7904,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -224106,7 +224106,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 1,
             "evidenceRank": 1,
-            "score": 95.3626,
+            "score": 95.3625,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -224136,7 +224136,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 1,
             "evidenceRank": 1,
-            "score": 95.3551,
+            "score": 95.355,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -224182,7 +224182,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 98.76,
+                "score": 98.759,
                 "tests": 4
               },
               "instruction-context": {
@@ -224196,7 +224196,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 1,
             "evidenceRank": 1,
-            "score": 95.7137,
+            "score": 95.7136,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -224834,7 +224834,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 168.5957,
+      "medianOutputSpeed": 154.9467,
       "aa": {
         "aa-intelligence": 11.2676,
         "aa-coding": null,
@@ -225373,7 +225373,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 111,
             "evidenceRank": 111,
-            "score": 48.2758,
+            "score": 48.2749,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -225389,7 +225389,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 57.883,
+                "score": 57.879,
                 "tests": 5
               },
               "instruction-context": {
@@ -225403,7 +225403,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 111,
             "evidenceRank": 111,
-            "score": 48.2833,
+            "score": 48.2824,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -225419,7 +225419,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 57.883,
+                "score": 57.879,
                 "tests": 5
               },
               "instruction-context": {
@@ -225433,7 +225433,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 111,
             "evidenceRank": 111,
-            "score": 47.7007,
+            "score": 47.6998,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -225449,7 +225449,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 54.082,
+                "score": 54.077,
                 "tests": 5
               },
               "instruction-context": {
@@ -225463,7 +225463,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 111,
             "evidenceRank": 111,
-            "score": 48.2797,
+            "score": 48.2789,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -225479,7 +225479,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 57.879,
+                "score": 57.875,
                 "tests": 5
               },
               "instruction-context": {
@@ -225755,7 +225755,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 137,
             "evidenceRank": 137,
-            "score": 48.2385,
+            "score": 48.2376,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -225771,7 +225771,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 57.91,
+                "score": 57.906,
                 "tests": 5
               },
               "instruction-context": {
@@ -225785,7 +225785,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 137,
             "evidenceRank": 137,
-            "score": 48.2433,
+            "score": 48.2425,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -225801,7 +225801,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 57.919,
+                "score": 57.914,
                 "tests": 5
               },
               "instruction-context": {
@@ -225815,7 +225815,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 136,
             "evidenceRank": 136,
-            "score": 47.4502,
+            "score": 47.4493,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -225831,7 +225831,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 54.08,
+                "score": 54.075,
                 "tests": 5
               },
               "instruction-context": {
@@ -225845,7 +225845,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 137,
             "evidenceRank": 137,
-            "score": 48.2473,
+            "score": 48.2465,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -225861,7 +225861,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 57.91,
+                "score": 57.906,
                 "tests": 5
               },
               "instruction-context": {
@@ -226189,7 +226189,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 68.7523,
+      "medianOutputSpeed": 75.0644,
       "aa": {
         "aa-intelligence": 27.9112,
         "aa-coding": null,
@@ -226705,7 +226705,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 45.2796,
+      "medianOutputSpeed": 46.1179,
       "aa": {
         "aa-intelligence": 23.6789,
         "aa-coding": null,
@@ -227591,7 +227591,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 161.7711,
+      "medianOutputSpeed": 166.467,
       "aa": {
         "aa-intelligence": 37.3244,
         "aa-coding": null,
@@ -227609,12 +227609,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 22.0174
       },
       "scores": {
-        "AA-Briefcase": 42.305,
+        "AA-Briefcase": 42.269,
         "AutomationBench-AA": 50.2086,
         "Terminal-Bench v4.0": 11.6162,
         "GDP.pdf": 24.0,
         "AA-LCR v1.1": 83.6667,
-        "GDPval-AA v2": 47.1485,
+        "GDPval-AA v2": 47.157,
         "τ³-Banking": 31.134,
         "Terminal-Bench v2.1": 80.8989,
         "GDPval-AA": 49.4665,
@@ -228781,7 +228781,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 17,
             "evidenceRank": 17,
-            "score": 90.6253,
+            "score": 90.6251,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -228797,7 +228797,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.169,
+                "score": 92.167,
                 "tests": 5
               },
               "instruction-context": {
@@ -228811,7 +228811,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 17,
             "evidenceRank": 17,
-            "score": 90.6321,
+            "score": 90.6319,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -228827,7 +228827,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.169,
+                "score": 92.167,
                 "tests": 5
               },
               "instruction-context": {
@@ -228841,7 +228841,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 17,
             "evidenceRank": 17,
-            "score": 90.2159,
+            "score": 90.2156,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -228857,7 +228857,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.161,
+                "score": 93.16,
                 "tests": 5
               },
               "instruction-context": {
@@ -228871,7 +228871,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 20,
             "evidenceRank": 20,
-            "score": 90.3761,
+            "score": 90.3759,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -228887,7 +228887,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.147,
+                "score": 92.145,
                 "tests": 5
               },
               "instruction-context": {
@@ -229163,7 +229163,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 44,
             "evidenceRank": 44,
-            "score": 89.8477,
+            "score": 89.8475,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -229179,7 +229179,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.056,
+                "score": 92.055,
                 "tests": 5
               },
               "instruction-context": {
@@ -229193,7 +229193,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 49,
             "evidenceRank": 49,
-            "score": 89.2415,
+            "score": 89.2412,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -229209,7 +229209,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.083,
+                "score": 92.082,
                 "tests": 5
               },
               "instruction-context": {
@@ -229223,7 +229223,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 42,
             "evidenceRank": 42,
-            "score": 89.6164,
+            "score": 89.6162,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -229239,7 +229239,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.135,
+                "score": 93.134,
                 "tests": 5
               },
               "instruction-context": {
@@ -229253,7 +229253,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 35,
             "evidenceRank": 35,
-            "score": 90.699,
+            "score": 90.6988,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -229269,7 +229269,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.056,
+                "score": 92.055,
                 "tests": 5
               },
               "instruction-context": {
@@ -229301,7 +229301,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 75.2396,
+      "medianOutputSpeed": 74.5199,
       "aa": {
         "aa-intelligence": 8.35,
         "aa-coding": null,
@@ -229890,7 +229890,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 143.5936,
+      "medianOutputSpeed": 147.5266,
       "aa": {
         "aa-intelligence": 24.5693,
         "aa-coding": null,
@@ -229908,12 +229908,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 24.198,
+        "AA-Briefcase": 24.141,
         "AutomationBench-AA": 15.6844,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 8.4,
         "AA-LCR v1.1": 78.3333,
-        "GDPval-AA v2": 32.483,
+        "GDPval-AA v2": 32.4945,
         "τ³-Banking": 34.433,
         "Terminal-Bench v2.1": 64.4195,
         "GDPval-AA": null,
@@ -230430,7 +230430,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 70,
             "evidenceRank": 70,
-            "score": 74.848,
+            "score": 74.8474,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -230446,7 +230446,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.264,
+                "score": 76.261,
                 "tests": 5
               },
               "instruction-context": {
@@ -230460,7 +230460,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 70,
             "evidenceRank": 70,
-            "score": 74.8658,
+            "score": 74.8652,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -230476,7 +230476,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.264,
+                "score": 76.261,
                 "tests": 5
               },
               "instruction-context": {
@@ -230490,7 +230490,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 68,
             "evidenceRank": 68,
-            "score": 75.018,
+            "score": 75.0179,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -230520,7 +230520,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 70,
             "evidenceRank": 70,
-            "score": 74.8435,
+            "score": 74.843,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -230536,7 +230536,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.243,
+                "score": 76.24,
                 "tests": 5
               },
               "instruction-context": {
@@ -230812,7 +230812,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 99,
             "evidenceRank": 99,
-            "score": 74.5179,
+            "score": 74.5173,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -230828,7 +230828,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.176,
+                "score": 76.173,
                 "tests": 5
               },
               "instruction-context": {
@@ -230842,7 +230842,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 99,
             "evidenceRank": 99,
-            "score": 74.5581,
+            "score": 74.5576,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -230858,7 +230858,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.205,
+                "score": 76.202,
                 "tests": 5
               },
               "instruction-context": {
@@ -230872,7 +230872,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 96,
             "evidenceRank": 96,
-            "score": 74.6695,
+            "score": 74.6694,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -230902,7 +230902,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 99,
             "evidenceRank": 99,
-            "score": 74.5258,
+            "score": 74.5252,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -230918,7 +230918,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.176,
+                "score": 76.173,
                 "tests": 5
               },
               "instruction-context": {
@@ -231542,7 +231542,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 57.676,
+      "medianOutputSpeed": 56.2987,
       "aa": {
         "aa-intelligence": 8.2947,
         "aa-coding": null,
@@ -231927,7 +231927,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 39.616,
+      "medianOutputSpeed": 41.2209,
       "aa": {
         "aa-intelligence": 26.3534,
         "aa-coding": null,
@@ -232496,7 +232496,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 148.2259,
+      "medianOutputSpeed": 144.9867,
       "aa": {
         "aa-intelligence": 8.2454,
         "aa-coding": null,
@@ -233035,7 +233035,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 134,
             "evidenceRank": 134,
-            "score": 23.7419,
+            "score": 23.741,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -233051,7 +233051,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.514,
+                "score": 29.509,
                 "tests": 5
               },
               "instruction-context": {
@@ -233065,7 +233065,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 134,
             "evidenceRank": 134,
-            "score": 23.7362,
+            "score": 23.7353,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -233081,7 +233081,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.514,
+                "score": 29.509,
                 "tests": 5
               },
               "instruction-context": {
@@ -233095,7 +233095,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 133,
             "evidenceRank": 133,
-            "score": 23.6341,
+            "score": 23.6332,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -233111,7 +233111,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 22.225,
+                "score": 22.221,
                 "tests": 5
               },
               "instruction-context": {
@@ -233125,7 +233125,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 134,
             "evidenceRank": 134,
-            "score": 23.7522,
+            "score": 23.7512,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -233141,7 +233141,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.539,
+                "score": 29.535,
                 "tests": 5
               },
               "instruction-context": {
@@ -233417,7 +233417,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 160,
             "evidenceRank": 160,
-            "score": 23.9333,
+            "score": 23.9324,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -233433,7 +233433,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.712,
+                "score": 29.708,
                 "tests": 5
               },
               "instruction-context": {
@@ -233447,7 +233447,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 160,
             "evidenceRank": 160,
-            "score": 23.9084,
+            "score": 23.9075,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -233463,7 +233463,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.685,
+                "score": 29.681,
                 "tests": 5
               },
               "instruction-context": {
@@ -233477,7 +233477,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 159,
             "evidenceRank": 159,
-            "score": 23.5653,
+            "score": 23.5644,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -233493,7 +233493,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 22.263,
+                "score": 22.258,
                 "tests": 5
               },
               "instruction-context": {
@@ -233507,7 +233507,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 160,
             "evidenceRank": 160,
-            "score": 23.9387,
+            "score": 23.9378,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -233523,7 +233523,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.712,
+                "score": 29.708,
                 "tests": 5
               },
               "instruction-context": {
@@ -234097,7 +234097,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 129,
             "evidenceRank": 129,
-            "score": 32.4452,
+            "score": 32.4436,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -234113,7 +234113,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 36.676,
+                "score": 36.668,
                 "tests": 4
               },
               "instruction-context": {
@@ -234127,7 +234127,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 129,
             "evidenceRank": 129,
-            "score": 32.4413,
+            "score": 32.4397,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -234143,7 +234143,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 36.676,
+                "score": 36.668,
                 "tests": 4
               },
               "instruction-context": {
@@ -234157,7 +234157,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 129,
             "evidenceRank": 129,
-            "score": 32.2369,
+            "score": 32.2352,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -234173,7 +234173,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 27.568,
+                "score": 27.559,
                 "tests": 4
               },
               "instruction-context": {
@@ -234187,7 +234187,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 129,
             "evidenceRank": 129,
-            "score": 32.4576,
+            "score": 32.4561,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -234203,7 +234203,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 36.696,
+                "score": 36.688,
                 "tests": 4
               },
               "instruction-context": {
@@ -234479,7 +234479,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 155,
             "evidenceRank": 155,
-            "score": 32.495,
+            "score": 32.4934,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -234495,7 +234495,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 36.862,
+                "score": 36.854,
                 "tests": 4
               },
               "instruction-context": {
@@ -234509,7 +234509,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 155,
             "evidenceRank": 155,
-            "score": 32.4838,
+            "score": 32.4822,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -234525,7 +234525,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 36.838,
+                "score": 36.83,
                 "tests": 4
               },
               "instruction-context": {
@@ -234539,7 +234539,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 155,
             "evidenceRank": 155,
-            "score": 32.0279,
+            "score": 32.0263,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -234555,7 +234555,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 27.597,
+                "score": 27.589,
                 "tests": 4
               },
               "instruction-context": {
@@ -234569,7 +234569,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 155,
             "evidenceRank": 155,
-            "score": 32.5029,
+            "score": 32.5013,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -234585,7 +234585,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 36.862,
+                "score": 36.854,
                 "tests": 4
               },
               "instruction-context": {
@@ -234617,7 +234617,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 41.4128,
+      "medianOutputSpeed": 45.7838,
       "aa": {
         "aa-intelligence": 12.7155,
         "aa-coding": null,
@@ -235862,7 +235862,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 62.1863,
+      "medianOutputSpeed": 57.6718,
       "aa": {
         "aa-intelligence": 8.1543,
         "aa-coding": null,
@@ -236400,7 +236400,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 138,
             "evidenceRank": 138,
-            "score": 19.6263,
+            "score": 19.6248,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -236416,7 +236416,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 34.525,
+                "score": 34.517,
                 "tests": 4
               },
               "instruction-context": {
@@ -236430,7 +236430,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 138,
             "evidenceRank": 138,
-            "score": 19.6229,
+            "score": 19.6213,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -236446,7 +236446,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 34.525,
+                "score": 34.517,
                 "tests": 4
               },
               "instruction-context": {
@@ -236460,7 +236460,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 138,
             "evidenceRank": 138,
-            "score": 18.3134,
+            "score": 18.312,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -236476,7 +236476,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 28.289,
+                "score": 28.282,
                 "tests": 4
               },
               "instruction-context": {
@@ -236490,7 +236490,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 138,
             "evidenceRank": 138,
-            "score": 19.634,
+            "score": 19.6324,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -236506,7 +236506,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 34.546,
+                "score": 34.538,
                 "tests": 4
               },
               "instruction-context": {
@@ -236782,7 +236782,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 163,
             "evidenceRank": 163,
-            "score": 19.7994,
+            "score": 19.7979,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -236798,7 +236798,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 34.721,
+                "score": 34.713,
                 "tests": 4
               },
               "instruction-context": {
@@ -236812,7 +236812,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 163,
             "evidenceRank": 163,
-            "score": 19.7742,
+            "score": 19.7726,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -236828,7 +236828,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 34.694,
+                "score": 34.687,
                 "tests": 4
               },
               "instruction-context": {
@@ -236842,7 +236842,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 163,
             "evidenceRank": 163,
-            "score": 18.24,
+            "score": 18.2386,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -236858,7 +236858,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 28.323,
+                "score": 28.315,
                 "tests": 4
               },
               "instruction-context": {
@@ -236872,7 +236872,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 163,
             "evidenceRank": 163,
-            "score": 19.8024,
+            "score": 19.8008,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -236888,7 +236888,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 34.721,
+                "score": 34.713,
                 "tests": 4
               },
               "instruction-context": {
@@ -237508,7 +237508,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 73.0249,
+      "medianOutputSpeed": 66.4432,
       "aa": {
         "aa-intelligence": 6.604,
         "aa-coding": null,
@@ -237802,7 +237802,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 146.0786,
+      "medianOutputSpeed": 148.1297,
       "aa": {
         "aa-intelligence": 19.3295,
         "aa-coding": null,
@@ -238517,7 +238517,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 49.7001,
+      "medianOutputSpeed": 53.0392,
       "aa": {
         "aa-intelligence": 18.29,
         "aa-coding": null,
@@ -239508,7 +239508,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 99.6714,
+      "medianOutputSpeed": 107.6112,
       "aa": {
         "aa-intelligence": 22.9828,
         "aa-coding": null,
@@ -239531,7 +239531,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 78.2,
-        "GDPval-AA v2": 20.25,
+        "GDPval-AA v2": 20.288,
         "τ³-Banking": 22.0619,
         "Terminal-Bench v2.1": 35.206,
         "GDPval-AA": 25.746,
@@ -239803,7 +239803,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 76.8042,
+      "medianOutputSpeed": 74.7457,
       "aa": {
         "aa-intelligence": 9.2661,
         "aa-coding": null,
@@ -240342,7 +240342,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 125,
             "evidenceRank": 125,
-            "score": 35.8947,
+            "score": 35.8937,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -240358,7 +240358,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 46.264,
+                "score": 46.259,
                 "tests": 5
               },
               "instruction-context": {
@@ -240372,7 +240372,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 125,
             "evidenceRank": 125,
-            "score": 35.8935,
+            "score": 35.8925,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -240388,7 +240388,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 46.264,
+                "score": 46.259,
                 "tests": 5
               },
               "instruction-context": {
@@ -240402,7 +240402,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 126,
             "evidenceRank": 126,
-            "score": 34.9848,
+            "score": 34.9837,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -240418,7 +240418,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 38.534,
+                "score": 38.528,
                 "tests": 5
               },
               "instruction-context": {
@@ -240432,7 +240432,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 125,
             "evidenceRank": 125,
-            "score": 35.9026,
+            "score": 35.9016,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -240448,7 +240448,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 46.273,
+                "score": 46.268,
                 "tests": 5
               },
               "instruction-context": {
@@ -240724,7 +240724,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 151,
             "evidenceRank": 151,
-            "score": 35.9721,
+            "score": 35.9712,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -240740,7 +240740,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 46.371,
+                "score": 46.366,
                 "tests": 5
               },
               "instruction-context": {
@@ -240754,7 +240754,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 151,
             "evidenceRank": 151,
-            "score": 35.9617,
+            "score": 35.9608,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -240770,7 +240770,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 46.364,
+                "score": 46.359,
                 "tests": 5
               },
               "instruction-context": {
@@ -240784,7 +240784,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 152,
             "evidenceRank": 152,
-            "score": 34.8186,
+            "score": 34.8175,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -240800,7 +240800,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 38.55,
+                "score": 38.545,
                 "tests": 5
               },
               "instruction-context": {
@@ -240814,7 +240814,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 151,
             "evidenceRank": 151,
-            "score": 35.9798,
+            "score": 35.9789,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -240830,7 +240830,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 46.371,
+                "score": 46.366,
                 "tests": 5
               },
               "instruction-context": {
@@ -240862,7 +240862,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 99.0738,
+      "medianOutputSpeed": 104.9862,
       "aa": {
         "aa-intelligence": 18.1597,
         "aa-coding": null,
@@ -241338,7 +241338,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 74.885,
+      "medianOutputSpeed": 92.8888,
       "aa": {
         "aa-intelligence": 30.4482,
         "aa-coding": null,
@@ -242946,7 +242946,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 66.5257,
+      "medianOutputSpeed": 80.7817,
       "aa": {
         "aa-intelligence": 22.7578,
         "aa-coding": null,
@@ -242964,12 +242964,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 25.0793
       },
       "scores": {
-        "AA-Briefcase": 10.6335,
+        "AA-Briefcase": 10.6385,
         "AutomationBench-AA": 4.4353,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 6.0,
         "AA-LCR v1.1": 78.3333,
-        "GDPval-AA v2": 24.928,
+        "GDPval-AA v2": 24.932,
         "τ³-Banking": 9.8969,
         "Terminal-Bench v2.1": 55.4307,
         "GDPval-AA": 29.351,
@@ -243621,7 +243621,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 69,
             "evidenceRank": 69,
-            "score": 74.9019,
+            "score": 74.9012,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -243637,7 +243637,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 85.081,
+                "score": 85.077,
                 "tests": 4
               },
               "instruction-context": {
@@ -243651,7 +243651,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 69,
             "evidenceRank": 69,
-            "score": 74.9111,
+            "score": 74.9103,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -243667,7 +243667,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 85.081,
+                "score": 85.077,
                 "tests": 4
               },
               "instruction-context": {
@@ -243681,7 +243681,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 66,
             "evidenceRank": 66,
-            "score": 75.4095,
+            "score": 75.4091,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -243697,7 +243697,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.708,
+                "score": 84.706,
                 "tests": 4
               },
               "instruction-context": {
@@ -243711,7 +243711,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 69,
             "evidenceRank": 69,
-            "score": 74.8942,
+            "score": 74.8934,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -243727,7 +243727,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 85.056,
+                "score": 85.052,
                 "tests": 4
               },
               "instruction-context": {
@@ -244003,7 +244003,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 100,
             "evidenceRank": 100,
-            "score": 73.7727,
+            "score": 73.7719,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -244019,7 +244019,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.975,
+                "score": 84.971,
                 "tests": 4
               },
               "instruction-context": {
@@ -244033,7 +244033,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 100,
             "evidenceRank": 100,
-            "score": 73.8122,
+            "score": 73.8114,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -244049,7 +244049,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 85.004,
+                "score": 85.0,
                 "tests": 4
               },
               "instruction-context": {
@@ -244063,7 +244063,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 98,
             "evidenceRank": 98,
-            "score": 73.908,
+            "score": 73.9076,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -244079,7 +244079,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.683,
+                "score": 84.681,
                 "tests": 4
               },
               "instruction-context": {
@@ -244093,7 +244093,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 100,
             "evidenceRank": 100,
-            "score": 73.7809,
+            "score": 73.7801,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -244109,7 +244109,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.975,
+                "score": 84.971,
                 "tests": 4
               },
               "instruction-context": {
@@ -244730,7 +244730,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 103.4219,
+      "medianOutputSpeed": 131.9436,
       "aa": {
         "aa-intelligence": 24.7358,
         "aa-coding": null,
@@ -244753,7 +244753,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 80.0,
-        "GDPval-AA v2": 15.6255,
+        "GDPval-AA v2": 15.631,
         "τ³-Banking": 15.8763,
         "Terminal-Bench v2.1": 52.4345,
         "GDPval-AA": 21.4765,
@@ -245025,7 +245025,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 226.053,
+      "medianOutputSpeed": 242.5547,
       "aa": {
         "aa-intelligence": 33.6326,
         "aa-coding": null,
@@ -245043,7 +245043,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 18.581,
+        "AA-Briefcase": 18.575,
         "AutomationBench-AA": null,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
@@ -245969,7 +245969,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 83.4376,
+      "medianOutputSpeed": 83.083,
       "aa": {
         "aa-intelligence": 19.3684,
         "aa-coding": null,
@@ -246811,7 +246811,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 36.854,
+      "medianOutputSpeed": 40.532,
       "aa": {
         "aa-intelligence": 34.4555,
         "aa-coding": null,
@@ -246829,7 +246829,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 173.6195
       },
       "scores": {
-        "AA-Briefcase": 24.16,
+        "AA-Briefcase": 24.1245,
         "AutomationBench-AA": 49.2568,
         "Terminal-Bench v4.0": 12.6263,
         "GDP.pdf": 18.6,
@@ -247350,7 +247350,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 72,
             "evidenceRank": 72,
-            "score": 82.7596,
+            "score": 82.7592,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -247366,7 +247366,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.226,
+                "score": 87.224,
                 "tests": 5
               },
               "instruction-context": {
@@ -247380,7 +247380,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 72,
             "evidenceRank": 72,
-            "score": 82.8047,
+            "score": 82.8044,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -247396,7 +247396,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.257,
+                "score": 87.255,
                 "tests": 5
               },
               "instruction-context": {
@@ -247410,7 +247410,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 71,
             "evidenceRank": 71,
-            "score": 82.8917,
+            "score": 82.8912,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -247426,7 +247426,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.635,
+                "score": 86.633,
                 "tests": 5
               },
               "instruction-context": {
@@ -247440,7 +247440,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 72,
             "evidenceRank": 72,
-            "score": 82.7658,
+            "score": 82.7654,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -247456,7 +247456,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.226,
+                "score": 87.224,
                 "tests": 5
               },
               "instruction-context": {
@@ -247782,7 +247782,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 113.7679,
+      "medianOutputSpeed": 107.7274,
       "aa": {
         "aa-intelligence": 7.9264,
         "aa-coding": null,
@@ -248666,7 +248666,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 44.0807,
+      "medianOutputSpeed": 43.2957,
       "aa": {
         "aa-intelligence": 7.4577,
         "aa-coding": null,
@@ -249090,7 +249090,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 99.3911,
+      "medianOutputSpeed": 106.1914,
       "aa": {
         "aa-intelligence": 27.5773,
         "aa-coding": null,
@@ -249584,12 +249584,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 33.589,
+        "AA-Briefcase": 33.5085,
         "AutomationBench-AA": 26.102,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": 4.2,
         "AA-LCR v1.1": 71.6667,
-        "GDPval-AA v2": 34.055,
+        "GDPval-AA v2": 34.064,
         "τ³-Banking": 31.9588,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -250556,7 +250556,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 38.0425,
+      "medianOutputSpeed": 43.1198,
       "aa": {
         "aa-intelligence": 31.9457,
         "aa-coding": null,
@@ -253199,7 +253199,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 93.9729,
+      "medianOutputSpeed": 93.534,
       "aa": {
         "aa-intelligence": 17.4754,
         "aa-coding": null,
@@ -253738,7 +253738,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 67,
             "evidenceRank": 67,
-            "score": 75.1865,
+            "score": 75.186,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -253754,7 +253754,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.615,
+                "score": 78.612,
                 "tests": 5
               },
               "instruction-context": {
@@ -253768,7 +253768,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 67,
             "evidenceRank": 67,
-            "score": 75.2045,
+            "score": 75.204,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -253784,7 +253784,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.615,
+                "score": 78.612,
                 "tests": 5
               },
               "instruction-context": {
@@ -253798,7 +253798,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 69,
             "evidenceRank": 69,
-            "score": 74.3365,
+            "score": 74.336,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -253814,7 +253814,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.87,
+                "score": 77.867,
                 "tests": 5
               },
               "instruction-context": {
@@ -253828,7 +253828,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 67,
             "evidenceRank": 67,
-            "score": 75.1798,
+            "score": 75.1793,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -253844,7 +253844,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.592,
+                "score": 78.589,
                 "tests": 5
               },
               "instruction-context": {
@@ -254120,7 +254120,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 98,
             "evidenceRank": 98,
-            "score": 74.8947,
+            "score": 74.8941,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -254136,7 +254136,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.516,
+                "score": 78.514,
                 "tests": 5
               },
               "instruction-context": {
@@ -254150,7 +254150,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 98,
             "evidenceRank": 98,
-            "score": 74.9323,
+            "score": 74.9317,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -254166,7 +254166,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.546,
+                "score": 78.543,
                 "tests": 5
               },
               "instruction-context": {
@@ -254180,7 +254180,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 97,
             "evidenceRank": 97,
-            "score": 73.9776,
+            "score": 73.9772,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -254196,7 +254196,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.843,
+                "score": 77.841,
                 "tests": 5
               },
               "instruction-context": {
@@ -254210,7 +254210,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 98,
             "evidenceRank": 98,
-            "score": 74.903,
+            "score": 74.9025,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -254226,7 +254226,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.516,
+                "score": 78.514,
                 "tests": 5
               },
               "instruction-context": {
@@ -254258,7 +254258,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 135.6725,
+      "medianOutputSpeed": 151.0036,
       "aa": {
         "aa-intelligence": 25.0359,
         "aa-coding": null,
@@ -254276,12 +254276,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 8.6262
       },
       "scores": {
-        "AA-Briefcase": 21.5785,
+        "AA-Briefcase": 21.5795,
         "AutomationBench-AA": 23.0745,
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 15.2,
         "AA-LCR v1.1": 75.0,
-        "GDPval-AA v2": 30.6005,
+        "GDPval-AA v2": 30.6135,
         "τ³-Banking": 17.732,
         "Terminal-Bench v2.1": 53.1835,
         "GDPval-AA": 34.821,
@@ -254797,7 +254797,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 89,
             "evidenceRank": 89,
-            "score": 78.0448,
+            "score": 78.0444,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -254813,7 +254813,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 85.181,
+                "score": 85.179,
                 "tests": 5
               },
               "instruction-context": {
@@ -254827,7 +254827,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 89,
             "evidenceRank": 89,
-            "score": 78.084,
+            "score": 78.0836,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -254843,7 +254843,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 85.212,
+                "score": 85.21,
                 "tests": 5
               },
               "instruction-context": {
@@ -254857,7 +254857,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 89,
             "evidenceRank": 89,
-            "score": 76.8735,
+            "score": 76.873,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -254873,7 +254873,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 85.264,
+                "score": 85.262,
                 "tests": 5
               },
               "instruction-context": {
@@ -254887,7 +254887,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 89,
             "evidenceRank": 89,
-            "score": 78.0533,
+            "score": 78.053,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -254903,7 +254903,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 85.181,
+                "score": 85.179,
                 "tests": 5
               },
               "instruction-context": {
@@ -255229,7 +255229,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 346.5434,
+      "medianOutputSpeed": 357.2086,
       "aa": {
         "aa-intelligence": 15.5543,
         "aa-coding": null,
@@ -255770,7 +255770,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 91,
             "evidenceRank": 91,
-            "score": 65.2513,
+            "score": 65.2508,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -255786,7 +255786,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.86,
+                "score": 78.858,
                 "tests": 5
               },
               "instruction-context": {
@@ -255800,7 +255800,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 91,
             "evidenceRank": 91,
-            "score": 65.2653,
+            "score": 65.2647,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -255816,7 +255816,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.86,
+                "score": 78.858,
                 "tests": 5
               },
               "instruction-context": {
@@ -255830,7 +255830,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 91,
             "evidenceRank": 91,
-            "score": 64.1638,
+            "score": 64.1632,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -255846,7 +255846,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.262,
+                "score": 77.259,
                 "tests": 5
               },
               "instruction-context": {
@@ -255860,7 +255860,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 91,
             "evidenceRank": 91,
-            "score": 65.243,
+            "score": 65.2425,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -255876,7 +255876,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.837,
+                "score": 78.834,
                 "tests": 5
               },
               "instruction-context": {
@@ -256152,7 +256152,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 117,
             "evidenceRank": 117,
-            "score": 65.0764,
+            "score": 65.0758,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -256168,7 +256168,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.76,
+                "score": 78.758,
                 "tests": 5
               },
               "instruction-context": {
@@ -256182,7 +256182,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 117,
             "evidenceRank": 117,
-            "score": 65.1035,
+            "score": 65.1029,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -256198,7 +256198,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.79,
+                "score": 78.788,
                 "tests": 5
               },
               "instruction-context": {
@@ -256212,7 +256212,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 116,
             "evidenceRank": 116,
-            "score": 63.8476,
+            "score": 63.847,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -256228,7 +256228,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.233,
+                "score": 77.23,
                 "tests": 5
               },
               "instruction-context": {
@@ -256242,7 +256242,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 117,
             "evidenceRank": 117,
-            "score": 65.0856,
+            "score": 65.0851,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -256258,7 +256258,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.76,
+                "score": 78.758,
                 "tests": 5
               },
               "instruction-context": {
@@ -257172,7 +257172,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 140.4904,
+      "medianOutputSpeed": 175.4419,
       "aa": {
         "aa-intelligence": 32.5028,
         "aa-coding": null,
@@ -257190,7 +257190,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 18.2,
+        "AA-Briefcase": 18.178,
         "AutomationBench-AA": null,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
@@ -257467,7 +257467,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 136.1745,
+      "medianOutputSpeed": 137.3184,
       "aa": {
         "aa-intelligence": 9.0476,
         "aa-coding": null,
@@ -258350,7 +258350,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 39.907,
+      "medianOutputSpeed": 38.67,
       "aa": {
         "aa-intelligence": 26.0586,
         "aa-coding": null,
@@ -258368,12 +258368,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 86.3494
       },
       "scores": {
-        "AA-Briefcase": 23.2385,
+        "AA-Briefcase": 23.196,
         "AutomationBench-AA": 20.3084,
         "Terminal-Bench v4.0": 2.0202,
         "GDP.pdf": 8.4,
         "AA-LCR v1.1": 73.6667,
-        "GDPval-AA v2": 30.157,
+        "GDPval-AA v2": 30.168,
         "τ³-Banking": 13.6082,
         "Terminal-Bench v2.1": 61.7978,
         "GDPval-AA": 34.0565,
@@ -259263,7 +259263,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 57,
             "evidenceRank": 57,
-            "score": 79.1554,
+            "score": 79.1545,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -259279,7 +259279,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.305,
+                "score": 82.301,
                 "tests": 4
               },
               "instruction-context": {
@@ -259293,7 +259293,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 57,
             "evidenceRank": 57,
-            "score": 79.1677,
+            "score": 79.1668,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -259309,7 +259309,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.305,
+                "score": 82.301,
                 "tests": 4
               },
               "instruction-context": {
@@ -259323,7 +259323,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 57,
             "evidenceRank": 57,
-            "score": 79.2595,
+            "score": 79.2591,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -259339,7 +259339,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.432,
+                "score": 82.429,
                 "tests": 4
               },
               "instruction-context": {
@@ -259353,7 +259353,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 58,
             "evidenceRank": 58,
-            "score": 79.1266,
+            "score": 79.1257,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -259369,7 +259369,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.281,
+                "score": 82.276,
                 "tests": 4
               },
               "instruction-context": {
@@ -259645,7 +259645,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 88,
             "evidenceRank": 88,
-            "score": 78.251,
+            "score": 78.2501,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -259661,7 +259661,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.207,
+                "score": 82.203,
                 "tests": 4
               },
               "instruction-context": {
@@ -259675,7 +259675,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 88,
             "evidenceRank": 88,
-            "score": 78.2927,
+            "score": 78.2918,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -259691,7 +259691,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.235,
+                "score": 82.231,
                 "tests": 4
               },
               "instruction-context": {
@@ -259705,7 +259705,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 86,
             "evidenceRank": 86,
-            "score": 78.4849,
+            "score": 78.4844,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -259721,7 +259721,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.408,
+                "score": 82.406,
                 "tests": 4
               },
               "instruction-context": {
@@ -259735,7 +259735,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 88,
             "evidenceRank": 88,
-            "score": 78.2592,
+            "score": 78.2583,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -259751,7 +259751,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.207,
+                "score": 82.203,
                 "tests": 4
               },
               "instruction-context": {
@@ -260101,7 +260101,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 58.41,
+      "medianOutputSpeed": 58.268,
       "aa": {
         "aa-intelligence": 12.5884,
         "aa-coding": null,
@@ -260395,7 +260395,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 164.5705,
+      "medianOutputSpeed": 190.5662,
       "aa": {
         "aa-intelligence": 22.9279,
         "aa-coding": null,
@@ -260413,12 +260413,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 44.844
       },
       "scores": {
-        "AA-Briefcase": 18.6835,
+        "AA-Briefcase": 18.6675,
         "AutomationBench-AA": 2.9863,
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 5.0,
         "AA-LCR v1.1": 79.3333,
-        "GDPval-AA v2": 25.023,
+        "GDPval-AA v2": 25.0175,
         "τ³-Banking": 14.2268,
         "Terminal-Bench v2.1": 53.9326,
         "GDPval-AA": 29.544,
@@ -261240,7 +261240,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 66,
             "evidenceRank": 66,
-            "score": 75.388,
+            "score": 75.387,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -261256,7 +261256,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.532,
+                "score": 79.528,
                 "tests": 5
               },
               "instruction-context": {
@@ -261270,7 +261270,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 66,
             "evidenceRank": 66,
-            "score": 75.393,
+            "score": 75.392,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -261286,7 +261286,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.532,
+                "score": 79.528,
                 "tests": 5
               },
               "instruction-context": {
@@ -261300,7 +261300,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 65,
             "evidenceRank": 65,
-            "score": 75.8901,
+            "score": 75.8897,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -261316,7 +261316,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 80.87,
+                "score": 80.868,
                 "tests": 5
               },
               "instruction-context": {
@@ -261330,7 +261330,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 66,
             "evidenceRank": 66,
-            "score": 75.3678,
+            "score": 75.3669,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -261346,7 +261346,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.475,
+                "score": 79.471,
                 "tests": 5
               },
               "instruction-context": {
@@ -261622,7 +261622,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 93,
             "evidenceRank": 93,
-            "score": 76.0465,
+            "score": 76.0455,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -261638,7 +261638,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.705,
+                "score": 79.7,
                 "tests": 4
               },
               "instruction-context": {
@@ -261652,7 +261652,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 93,
             "evidenceRank": 93,
-            "score": 76.0839,
+            "score": 76.0829,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -261668,7 +261668,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.731,
+                "score": 79.726,
                 "tests": 4
               },
               "instruction-context": {
@@ -261682,7 +261682,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 93,
             "evidenceRank": 93,
-            "score": 76.1804,
+            "score": 76.1799,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -261698,7 +261698,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 80.256,
+                "score": 80.254,
                 "tests": 4
               },
               "instruction-context": {
@@ -261712,7 +261712,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 93,
             "evidenceRank": 93,
-            "score": 76.055,
+            "score": 76.054,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -261728,7 +261728,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.705,
+                "score": 79.7,
                 "tests": 4
               },
               "instruction-context": {
@@ -262142,12 +262142,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 19.034
       },
       "scores": {
-        "AA-Briefcase": 11.7605,
+        "AA-Briefcase": 11.74,
         "AutomationBench-AA": 4.5339,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 6.4,
         "AA-LCR v1.1": 65.0,
-        "GDPval-AA v2": 17.775,
+        "GDPval-AA v2": 17.8095,
         "τ³-Banking": 13.1959,
         "Terminal-Bench v2.1": 50.1873,
         "GDPval-AA": 23.2255,
@@ -262662,7 +262662,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 78,
             "evidenceRank": 78,
-            "score": 70.4403,
+            "score": 70.4393,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -262678,7 +262678,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.533,
+                "score": 78.527,
                 "tests": 4
               },
               "instruction-context": {
@@ -262692,7 +262692,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 78,
             "evidenceRank": 78,
-            "score": 70.4588,
+            "score": 70.4577,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -262708,7 +262708,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.533,
+                "score": 78.527,
                 "tests": 4
               },
               "instruction-context": {
@@ -262722,7 +262722,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 77,
             "evidenceRank": 77,
-            "score": 70.5965,
+            "score": 70.5957,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -262738,7 +262738,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.451,
+                "score": 78.447,
                 "tests": 4
               },
               "instruction-context": {
@@ -262752,7 +262752,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 78,
             "evidenceRank": 78,
-            "score": 70.4355,
+            "score": 70.4344,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -262768,7 +262768,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.51,
+                "score": 78.505,
                 "tests": 4
               },
               "instruction-context": {
@@ -263044,7 +263044,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 104,
             "evidenceRank": 104,
-            "score": 70.2043,
+            "score": 70.2033,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -263060,7 +263060,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.45,
+                "score": 78.445,
                 "tests": 4
               },
               "instruction-context": {
@@ -263074,7 +263074,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 104,
             "evidenceRank": 104,
-            "score": 70.2348,
+            "score": 70.2338,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -263090,7 +263090,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.476,
+                "score": 78.471,
                 "tests": 4
               },
               "instruction-context": {
@@ -263104,7 +263104,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 104,
             "evidenceRank": 104,
-            "score": 70.244,
+            "score": 70.2432,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -263120,7 +263120,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.431,
+                "score": 78.427,
                 "tests": 4
               },
               "instruction-context": {
@@ -263134,7 +263134,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 104,
             "evidenceRank": 104,
-            "score": 70.2133,
+            "score": 70.2123,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -263150,7 +263150,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.45,
+                "score": 78.445,
                 "tests": 4
               },
               "instruction-context": {
@@ -263182,7 +263182,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 174.9151,
+      "medianOutputSpeed": 173.6598,
       "aa": {
         "aa-intelligence": 6.6657,
         "aa-coding": null,
@@ -263478,7 +263478,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/bytedance_small.svg",
         "color": "#3c8bff"
       },
-      "medianOutputSpeed": 39.5117,
+      "medianOutputSpeed": 40.1842,
       "aa": {
         "aa-intelligence": 12.0993,
         "aa-coding": null,
@@ -264374,7 +264374,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 71.6369,
+      "medianOutputSpeed": 80.4161,
       "aa": {
         "aa-intelligence": 11.0889,
         "aa-coding": null,
@@ -266009,7 +266009,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 84.4451,
+      "medianOutputSpeed": 99.7741,
       "aa": {
         "aa-intelligence": 30.1055,
         "aa-coding": null,
@@ -266032,7 +266032,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 70.3333,
-        "GDPval-AA v2": 32.025,
+        "GDPval-AA v2": 32.041,
         "τ³-Banking": 26.1856,
         "Terminal-Bench v2.1": 64.794,
         "GDPval-AA": 35.936,
@@ -266705,7 +266705,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 17.4882,
+      "medianOutputSpeed": 20.3718,
       "aa": {
         "aa-intelligence": 6.0493,
         "aa-coding": null,
@@ -266999,7 +266999,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 153.3775,
+      "medianOutputSpeed": 148.8563,
       "aa": {
         "aa-intelligence": 9.8054,
         "aa-coding": null,
@@ -267537,7 +267537,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 123,
             "evidenceRank": 123,
-            "score": 36.6989,
+            "score": 36.6973,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -267553,7 +267553,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 50.862,
+                "score": 50.854,
                 "tests": 4
               },
               "instruction-context": {
@@ -267567,7 +267567,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 123,
             "evidenceRank": 123,
-            "score": 36.7024,
+            "score": 36.7008,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -267583,7 +267583,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 50.862,
+                "score": 50.854,
                 "tests": 4
               },
               "instruction-context": {
@@ -267597,7 +267597,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 123,
             "evidenceRank": 123,
-            "score": 35.7111,
+            "score": 35.7098,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -267613,7 +267613,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 46.994,
+                "score": 46.988,
                 "tests": 4
               },
               "instruction-context": {
@@ -267627,7 +267627,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 123,
             "evidenceRank": 123,
-            "score": 36.6941,
+            "score": 36.6925,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -267643,7 +267643,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 50.867,
+                "score": 50.859,
                 "tests": 4
               },
               "instruction-context": {
@@ -267919,7 +267919,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 149,
             "evidenceRank": 149,
-            "score": 36.8878,
+            "score": 36.8862,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -267935,7 +267935,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 50.96,
+                "score": 50.952,
                 "tests": 4
               },
               "instruction-context": {
@@ -267949,7 +267949,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 149,
             "evidenceRank": 149,
-            "score": 36.8745,
+            "score": 36.8729,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -267965,7 +267965,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 50.954,
+                "score": 50.946,
                 "tests": 4
               },
               "instruction-context": {
@@ -267979,7 +267979,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 149,
             "evidenceRank": 149,
-            "score": 35.7131,
+            "score": 35.7118,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -267995,7 +267995,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.01,
+                "score": 47.003,
                 "tests": 4
               },
               "instruction-context": {
@@ -268009,7 +268009,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 149,
             "evidenceRank": 149,
-            "score": 36.8929,
+            "score": 36.8913,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -268025,7 +268025,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 50.96,
+                "score": 50.952,
                 "tests": 4
               },
               "instruction-context": {
@@ -268351,7 +268351,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 38.556,
+      "medianOutputSpeed": 38.6426,
       "aa": {
         "aa-intelligence": 40.1529,
         "aa-coding": null,
@@ -268369,12 +268369,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 175.1333
       },
       "scores": {
-        "AA-Briefcase": 44.5495,
+        "AA-Briefcase": 44.4975,
         "AutomationBench-AA": 49.2321,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": 20.2,
         "AA-LCR v1.1": 78.3333,
-        "GDPval-AA v2": 54.768,
+        "GDPval-AA v2": 54.7765,
         "τ³-Banking": 51.3402,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -269393,7 +269393,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 25,
             "evidenceRank": 25,
-            "score": 89.8111,
+            "score": 89.8109,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -269409,7 +269409,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.557,
+                "score": 92.556,
                 "tests": 5
               },
               "instruction-context": {
@@ -269423,7 +269423,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 25,
             "evidenceRank": 25,
-            "score": 89.8248,
+            "score": 89.8246,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -269439,7 +269439,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.557,
+                "score": 92.556,
                 "tests": 5
               },
               "instruction-context": {
@@ -269453,7 +269453,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 16,
             "evidenceRank": 16,
-            "score": 90.2445,
+            "score": 90.2444,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -269483,7 +269483,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 25,
             "evidenceRank": 25,
-            "score": 89.7402,
+            "score": 89.7399,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -269499,7 +269499,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.536,
+                "score": 92.535,
                 "tests": 5
               },
               "instruction-context": {
@@ -269794,7 +269794,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 110.1122,
+      "medianOutputSpeed": 120.0442,
       "aa": {
         "aa-intelligence": 24.7817,
         "aa-coding": null,
@@ -270089,7 +270089,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 96.3657,
+      "medianOutputSpeed": 112.9121,
       "aa": {
         "aa-intelligence": 22.8693,
         "aa-coding": null,
@@ -270973,7 +270973,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 20.7992,
+      "medianOutputSpeed": 21.7477,
       "aa": {
         "aa-intelligence": 5.408,
         "aa-coding": null,
@@ -271562,7 +271562,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 67.2118,
+      "medianOutputSpeed": 69.8911,
       "aa": {
         "aa-intelligence": 28.3749,
         "aa-coding": null,
@@ -272479,7 +272479,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 159.1659,
+      "medianOutputSpeed": 162.8489,
       "aa": {
         "aa-intelligence": 13.3741,
         "aa-coding": null,
@@ -273094,7 +273094,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 186.8711,
+      "medianOutputSpeed": 224.785,
       "aa": {
         "aa-intelligence": 12.8288,
         "aa-coding": null,
@@ -273888,7 +273888,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 87,
             "evidenceRank": 87,
-            "score": 66.6063,
+            "score": 66.6051,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -273904,7 +273904,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 71.093,
+                "score": 71.087,
                 "tests": 5
               },
               "instruction-context": {
@@ -273918,7 +273918,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 87,
             "evidenceRank": 87,
-            "score": 66.624,
+            "score": 66.6228,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -273934,7 +273934,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 71.093,
+                "score": 71.087,
                 "tests": 5
               },
               "instruction-context": {
@@ -273948,7 +273948,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 86,
             "evidenceRank": 86,
-            "score": 66.6535,
+            "score": 66.6526,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -273964,7 +273964,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 70.782,
+                "score": 70.777,
                 "tests": 5
               },
               "instruction-context": {
@@ -273978,7 +273978,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 87,
             "evidenceRank": 87,
-            "score": 66.6007,
+            "score": 66.5995,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -273994,7 +273994,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 71.035,
+                "score": 71.029,
                 "tests": 5
               },
               "instruction-context": {
@@ -274270,7 +274270,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 114,
             "evidenceRank": 114,
-            "score": 66.4872,
+            "score": 66.486,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -274286,7 +274286,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 71.373,
+                "score": 71.366,
                 "tests": 4
               },
               "instruction-context": {
@@ -274300,7 +274300,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 114,
             "evidenceRank": 114,
-            "score": 66.5134,
+            "score": 66.5121,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -274316,7 +274316,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 71.392,
+                "score": 71.386,
                 "tests": 4
               },
               "instruction-context": {
@@ -274330,7 +274330,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 113,
             "evidenceRank": 113,
-            "score": 66.1793,
+            "score": 66.1784,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -274346,7 +274346,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 70.343,
+                "score": 70.338,
                 "tests": 4
               },
               "instruction-context": {
@@ -274360,7 +274360,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 114,
             "evidenceRank": 114,
-            "score": 66.4964,
+            "score": 66.4952,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -274376,7 +274376,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 71.373,
+                "score": 71.366,
                 "tests": 4
               },
               "instruction-context": {
@@ -274431,7 +274431,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 1.4,
         "AA-LCR v1.1": 59.3333,
-        "GDPval-AA v2": 9.703,
+        "GDPval-AA v2": 9.7135,
         "τ³-Banking": 20.8247,
         "Terminal-Bench v2.1": 8.6142,
         "GDPval-AA": 16.4205,
@@ -274946,7 +274946,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 120,
             "evidenceRank": 120,
-            "score": 39.6471,
+            "score": 39.6455,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -274962,7 +274962,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 37.317,
+                "score": 37.309,
                 "tests": 4
               },
               "instruction-context": {
@@ -274976,7 +274976,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 120,
             "evidenceRank": 120,
-            "score": 39.6516,
+            "score": 39.65,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -274992,7 +274992,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 37.317,
+                "score": 37.309,
                 "tests": 4
               },
               "instruction-context": {
@@ -275006,7 +275006,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 120,
             "evidenceRank": 120,
-            "score": 39.2791,
+            "score": 39.278,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -275022,7 +275022,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 34.963,
+                "score": 34.958,
                 "tests": 4
               },
               "instruction-context": {
@@ -275036,7 +275036,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 120,
             "evidenceRank": 120,
-            "score": 39.6498,
+            "score": 39.6482,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -275052,7 +275052,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 37.337,
+                "score": 37.329,
                 "tests": 4
               },
               "instruction-context": {
@@ -275328,7 +275328,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 146,
             "evidenceRank": 146,
-            "score": 39.8185,
+            "score": 39.8169,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -275344,7 +275344,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 37.5,
+                "score": 37.492,
                 "tests": 4
               },
               "instruction-context": {
@@ -275358,7 +275358,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 146,
             "evidenceRank": 146,
-            "score": 39.8035,
+            "score": 39.8019,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -275374,7 +275374,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 37.476,
+                "score": 37.468,
                 "tests": 4
               },
               "instruction-context": {
@@ -275388,7 +275388,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 146,
             "evidenceRank": 146,
-            "score": 39.1714,
+            "score": 39.1703,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -275404,7 +275404,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 34.996,
+                "score": 34.99,
                 "tests": 4
               },
               "instruction-context": {
@@ -275418,7 +275418,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 146,
             "evidenceRank": 146,
-            "score": 39.8263,
+            "score": 39.8247,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -275434,7 +275434,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 37.5,
+                "score": 37.492,
                 "tests": 4
               },
               "instruction-context": {
@@ -275466,7 +275466,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 76.2605,
+      "medianOutputSpeed": 77.5282,
       "aa": {
         "aa-intelligence": 14.201,
         "aa-coding": null,
@@ -275761,7 +275761,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 18.6538,
+      "medianOutputSpeed": 21.2525,
       "aa": {
         "aa-intelligence": 13.1248,
         "aa-coding": null,
@@ -276703,7 +276703,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 41.5188,
+      "medianOutputSpeed": 43.158,
       "aa": {
         "aa-intelligence": 15.2942,
         "aa-coding": null,
@@ -277066,7 +277066,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 47.628,
+      "medianOutputSpeed": 52.8437,
       "aa": {
         "aa-intelligence": 27.5508,
         "aa-coding": null,
@@ -277084,12 +277084,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 96.125
       },
       "scores": {
-        "AA-Briefcase": 44.1435,
+        "AA-Briefcase": 44.08,
         "AutomationBench-AA": 40.2521,
         "Terminal-Bench v4.0": 5.0505,
         "GDP.pdf": 12.8,
         "AA-LCR v1.1": 79.6667,
-        "GDPval-AA v2": 43.4155,
+        "GDPval-AA v2": 43.4245,
         "τ³-Banking": 47.4227,
         "Terminal-Bench v2.1": 65.1685,
         "GDPval-AA": 46.5665,
@@ -277606,7 +277606,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 110,
             "evidenceRank": 110,
-            "score": 68.3793,
+            "score": 68.3786,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -277622,7 +277622,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 69.989,
+                "score": 69.986,
                 "tests": 5
               },
               "instruction-context": {
@@ -277636,7 +277636,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 109,
             "evidenceRank": 109,
-            "score": 68.415,
+            "score": 68.4143,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -277652,7 +277652,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 70.012,
+                "score": 70.009,
                 "tests": 5
               },
               "instruction-context": {
@@ -277666,7 +277666,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 106,
             "evidenceRank": 106,
-            "score": 69.2855,
+            "score": 69.2852,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -277682,7 +277682,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 68.387,
+                "score": 68.385,
                 "tests": 5
               },
               "instruction-context": {
@@ -277696,7 +277696,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 110,
             "evidenceRank": 110,
-            "score": 68.3873,
+            "score": 68.3866,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -277712,7 +277712,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 69.989,
+                "score": 69.986,
                 "tests": 5
               },
               "instruction-context": {
@@ -278061,7 +278061,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 64.3333,
-        "GDPval-AA v2": 16.854,
+        "GDPval-AA v2": 16.8675,
         "τ³-Banking": 5.3608,
         "Terminal-Bench v2.1": 41.573,
         "GDPval-AA": 22.6595,
@@ -278587,7 +278587,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 221.6285,
+      "medianOutputSpeed": 211.0134,
       "aa": {
         "aa-intelligence": 4.8376,
         "aa-coding": null,
@@ -279126,7 +279126,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 143,
             "evidenceRank": 143,
-            "score": 13.8016,
+            "score": 13.8009,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -279142,7 +279142,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 15.606,
+                "score": 15.603,
                 "tests": 5
               },
               "instruction-context": {
@@ -279156,7 +279156,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 143,
             "evidenceRank": 143,
-            "score": 13.7937,
+            "score": 13.793,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -279172,7 +279172,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 15.606,
+                "score": 15.603,
                 "tests": 5
               },
               "instruction-context": {
@@ -279186,7 +279186,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 142,
             "evidenceRank": 142,
-            "score": 15.3101,
+            "score": 15.3095,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -279202,7 +279202,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 11.3,
+                "score": 11.296,
                 "tests": 5
               },
               "instruction-context": {
@@ -279216,7 +279216,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 143,
             "evidenceRank": 143,
-            "score": 13.8139,
+            "score": 13.8132,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -279232,7 +279232,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 15.637,
+                "score": 15.633,
                 "tests": 5
               },
               "instruction-context": {
@@ -279508,7 +279508,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 167,
             "evidenceRank": 167,
-            "score": 13.9734,
+            "score": 13.9727,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -279524,7 +279524,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 15.822,
+                "score": 15.819,
                 "tests": 5
               },
               "instruction-context": {
@@ -279538,7 +279538,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 167,
             "evidenceRank": 167,
-            "score": 13.9483,
+            "score": 13.9476,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -279554,7 +279554,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 15.788,
+                "score": 15.784,
                 "tests": 5
               },
               "instruction-context": {
@@ -279568,7 +279568,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 166,
             "evidenceRank": 166,
-            "score": 15.3264,
+            "score": 15.3258,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -279584,7 +279584,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 11.338,
+                "score": 11.334,
                 "tests": 5
               },
               "instruction-context": {
@@ -279598,7 +279598,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 167,
             "evidenceRank": 167,
-            "score": 13.9753,
+            "score": 13.9746,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -279614,7 +279614,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 15.822,
+                "score": 15.819,
                 "tests": 5
               },
               "instruction-context": {
@@ -280237,7 +280237,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 200.9868,
+      "medianOutputSpeed": 200.2964,
       "aa": {
         "aa-intelligence": 29.4572,
         "aa-coding": null,
@@ -280255,12 +280255,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 142.4245
       },
       "scores": {
-        "AA-Briefcase": 20.6475,
+        "AA-Briefcase": 20.6135,
         "AutomationBench-AA": 22.9769,
         "Terminal-Bench v4.0": 1.5152,
         "GDP.pdf": 8.6,
         "AA-LCR v1.1": 79.0,
-        "GDPval-AA v2": 30.712,
+        "GDPval-AA v2": 30.714,
         "τ³-Banking": 11.7526,
         "Terminal-Bench v2.1": 74.5318,
         "GDPval-AA": 34.493,
@@ -280997,7 +280997,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 33,
             "evidenceRank": 33,
-            "score": 87.6273,
+            "score": 87.6268,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -281013,7 +281013,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.564,
+                "score": 91.562,
                 "tests": 4
               },
               "instruction-context": {
@@ -281027,7 +281027,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 33,
             "evidenceRank": 33,
-            "score": 87.641,
+            "score": 87.6406,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -281043,7 +281043,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.564,
+                "score": 91.562,
                 "tests": 4
               },
               "instruction-context": {
@@ -281057,7 +281057,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 33,
             "evidenceRank": 33,
-            "score": 87.798,
+            "score": 87.7978,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -281073,7 +281073,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.351,
+                "score": 92.35,
                 "tests": 4
               },
               "instruction-context": {
@@ -281087,7 +281087,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 33,
             "evidenceRank": 33,
-            "score": 87.6062,
+            "score": 87.6057,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -281103,7 +281103,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.542,
+                "score": 91.539,
                 "tests": 4
               },
               "instruction-context": {
@@ -281379,7 +281379,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 59,
             "evidenceRank": 59,
-            "score": 87.4008,
+            "score": 87.4003,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -281395,7 +281395,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.458,
+                "score": 91.455,
                 "tests": 4
               },
               "instruction-context": {
@@ -281409,7 +281409,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 59,
             "evidenceRank": 59,
-            "score": 87.4446,
+            "score": 87.4441,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -281425,7 +281425,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.484,
+                "score": 91.481,
                 "tests": 4
               },
               "instruction-context": {
@@ -281439,7 +281439,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 58,
             "evidenceRank": 58,
-            "score": 87.5534,
+            "score": 87.5533,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -281455,7 +281455,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.328,
+                "score": 92.327,
                 "tests": 4
               },
               "instruction-context": {
@@ -281469,7 +281469,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 58,
             "evidenceRank": 58,
-            "score": 87.4079,
+            "score": 87.4074,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -281485,7 +281485,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.458,
+                "score": 91.455,
                 "tests": 4
               },
               "instruction-context": {
@@ -281517,7 +281517,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 38.592,
+      "medianOutputSpeed": 38.4943,
       "aa": {
         "aa-intelligence": 18.5297,
         "aa-coding": null,
@@ -281540,7 +281540,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 54.0,
-        "GDPval-AA v2": 12.297,
+        "GDPval-AA v2": 12.2975,
         "τ³-Banking": 13.4021,
         "Terminal-Bench v2.1": 49.4382,
         "GDPval-AA": 18.69,
@@ -282282,7 +282282,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": 7.0707,
         "GDP.pdf": 10.0,
         "AA-LCR v1.1": 81.0,
-        "GDPval-AA v2": 52.4955,
+        "GDPval-AA v2": 52.504,
         "τ³-Banking": 47.6289,
         "Terminal-Bench v2.1": 82.0225,
         "GDPval-AA": null,
@@ -282798,7 +282798,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 22,
             "evidenceRank": 22,
-            "score": 90.0505,
+            "score": 90.0499,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -282814,7 +282814,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.369,
+                "score": 90.366,
                 "tests": 4
               },
               "instruction-context": {
@@ -282828,7 +282828,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 23,
             "evidenceRank": 23,
-            "score": 90.0641,
+            "score": 90.0635,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -282844,7 +282844,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.369,
+                "score": 90.366,
                 "tests": 4
               },
               "instruction-context": {
@@ -282858,7 +282858,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 24,
             "evidenceRank": 24,
-            "score": 89.5284,
+            "score": 89.5283,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -282874,7 +282874,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.141,
+                "score": 91.14,
                 "tests": 4
               },
               "instruction-context": {
@@ -282888,7 +282888,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 23,
             "evidenceRank": 23,
-            "score": 90.0485,
+            "score": 90.048,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -282904,7 +282904,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.346,
+                "score": 90.343,
                 "tests": 4
               },
               "instruction-context": {
@@ -283180,7 +283180,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 46,
             "evidenceRank": 46,
-            "score": 89.6872,
+            "score": 89.6866,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -283196,7 +283196,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.261,
+                "score": 90.258,
                 "tests": 4
               },
               "instruction-context": {
@@ -283210,7 +283210,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 45,
             "evidenceRank": 45,
-            "score": 89.7289,
+            "score": 89.7283,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -283226,7 +283226,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.288,
+                "score": 90.285,
                 "tests": 4
               },
               "instruction-context": {
@@ -283240,7 +283240,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 45,
             "evidenceRank": 45,
-            "score": 89.2578,
+            "score": 89.2577,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -283256,7 +283256,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.117,
+                "score": 91.116,
                 "tests": 4
               },
               "instruction-context": {
@@ -283270,7 +283270,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 46,
             "evidenceRank": 46,
-            "score": 89.6934,
+            "score": 89.6928,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -283286,7 +283286,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.261,
+                "score": 90.258,
                 "tests": 4
               },
               "instruction-context": {
@@ -283318,7 +283318,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 213.1967,
+      "medianOutputSpeed": 217.1179,
       "aa": {
         "aa-intelligence": 9.8513,
         "aa-coding": null,
@@ -283909,7 +283909,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 86.7517,
+      "medianOutputSpeed": 102.3357,
       "aa": {
         "aa-intelligence": 33.8044,
         "aa-coding": null,
@@ -283932,7 +283932,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": 5.0505,
         "GDP.pdf": 20.6,
         "AA-LCR v1.1": 83.0,
-        "GDPval-AA v2": 35.911,
+        "GDPval-AA v2": 35.9215,
         "τ³-Banking": 29.8969,
         "Terminal-Bench v2.1": 80.5243,
         "GDPval-AA": 39.409,
@@ -284971,7 +284971,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 39,
             "evidenceRank": 39,
-            "score": 90.243,
+            "score": 90.2428,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -284987,7 +284987,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.021,
+                "score": 95.02,
                 "tests": 5
               },
               "instruction-context": {
@@ -285001,7 +285001,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 39,
             "evidenceRank": 39,
-            "score": 90.2863,
+            "score": 90.2861,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -285017,7 +285017,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.043,
+                "score": 95.042,
                 "tests": 5
               },
               "instruction-context": {
@@ -285031,7 +285031,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 34,
             "evidenceRank": 34,
-            "score": 90.5853,
+            "score": 90.5851,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -285047,7 +285047,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.952,
+                "score": 95.951,
                 "tests": 5
               },
               "instruction-context": {
@@ -285061,7 +285061,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 39,
             "evidenceRank": 39,
-            "score": 90.2491,
+            "score": 90.249,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -285077,7 +285077,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.021,
+                "score": 95.02,
                 "tests": 5
               },
               "instruction-context": {
@@ -285403,7 +285403,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/stepfun_small.svg",
         "color": "#00F5E7"
       },
-      "medianOutputSpeed": 168.3,
+      "medianOutputSpeed": 192.7266,
       "aa": {
         "aa-intelligence": 19.4813,
         "aa-coding": null,
@@ -285426,7 +285426,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 73.6667,
-        "GDPval-AA v2": 17.237,
+        "GDPval-AA v2": 17.2415,
         "τ³-Banking": 11.9588,
         "Terminal-Bench v2.1": 39.3258,
         "GDPval-AA": 22.71,
@@ -285946,7 +285946,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 82,
             "evidenceRank": 82,
-            "score": 68.7276,
+            "score": 68.727,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -285962,7 +285962,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.879,
+                "score": 76.876,
                 "tests": 5
               },
               "instruction-context": {
@@ -285976,7 +285976,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 82,
             "evidenceRank": 82,
-            "score": 68.7448,
+            "score": 68.7442,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -285992,7 +285992,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.879,
+                "score": 76.876,
                 "tests": 5
               },
               "instruction-context": {
@@ -286006,7 +286006,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 82,
             "evidenceRank": 82,
-            "score": 68.3591,
+            "score": 68.3586,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -286022,7 +286022,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 75.586,
+                "score": 75.583,
                 "tests": 5
               },
               "instruction-context": {
@@ -286036,7 +286036,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 83,
             "evidenceRank": 83,
-            "score": 68.7201,
+            "score": 68.7196,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -286052,7 +286052,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.857,
+                "score": 76.854,
                 "tests": 5
               },
               "instruction-context": {
@@ -286332,7 +286332,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 109,
             "evidenceRank": 109,
-            "score": 68.5031,
+            "score": 68.5025,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -286348,7 +286348,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.788,
+                "score": 76.785,
                 "tests": 5
               },
               "instruction-context": {
@@ -286362,7 +286362,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 108,
             "evidenceRank": 108,
-            "score": 68.5347,
+            "score": 68.5342,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -286378,7 +286378,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.816,
+                "score": 76.814,
                 "tests": 5
               },
               "instruction-context": {
@@ -286392,7 +286392,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 111,
             "evidenceRank": 111,
-            "score": 68.0189,
+            "score": 68.0184,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -286408,7 +286408,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 75.562,
+                "score": 75.56,
                 "tests": 5
               },
               "instruction-context": {
@@ -286422,7 +286422,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 109,
             "evidenceRank": 109,
-            "score": 68.5122,
+            "score": 68.5116,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -286438,7 +286438,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.788,
+                "score": 76.785,
                 "tests": 5
               },
               "instruction-context": {
@@ -286470,7 +286470,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 159.1875,
+      "medianOutputSpeed": 161.4896,
       "aa": {
         "aa-intelligence": 22.5966,
         "aa-coding": null,
@@ -286488,12 +286488,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 23.162,
+        "AA-Briefcase": 23.0935,
         "AutomationBench-AA": 7.3944,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": 5.4,
         "AA-LCR v1.1": 73.6667,
-        "GDPval-AA v2": 29.634,
+        "GDPval-AA v2": 29.647,
         "τ³-Banking": 38.5567,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -287754,7 +287754,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 56.6376,
+      "medianOutputSpeed": 60.5563,
       "aa": {
         "aa-intelligence": 8.387,
         "aa-coding": null,
@@ -288049,7 +288049,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 71.7213,
+      "medianOutputSpeed": 81.1589,
       "aa": {
         "aa-intelligence": 16.976,
         "aa-coding": null,
@@ -288412,7 +288412,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 65.6667,
-        "GDPval-AA v2": 2.651,
+        "GDPval-AA v2": 2.6465,
         "τ³-Banking": 11.9588,
         "Terminal-Bench v2.1": 38.9513,
         "GDPval-AA": 10.652,
@@ -289053,7 +289053,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 94,
             "evidenceRank": 94,
-            "score": 61.4765,
+            "score": 61.4758,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -289069,7 +289069,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 69.255,
+                "score": 69.251,
                 "tests": 7
               },
               "instruction-context": {
@@ -289083,7 +289083,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 94,
             "evidenceRank": 94,
-            "score": 61.4896,
+            "score": 61.4889,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -289099,7 +289099,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 69.255,
+                "score": 69.251,
                 "tests": 7
               },
               "instruction-context": {
@@ -289113,7 +289113,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 94,
             "evidenceRank": 94,
-            "score": 61.6154,
+            "score": 61.6149,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -289129,7 +289129,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 68.556,
+                "score": 68.553,
                 "tests": 7
               },
               "instruction-context": {
@@ -289143,7 +289143,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 94,
             "evidenceRank": 94,
-            "score": 61.3493,
+            "score": 61.3486,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -289159,7 +289159,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 68.567,
+                "score": 68.563,
                 "tests": 6
               },
               "instruction-context": {
@@ -289439,7 +289439,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 122,
             "evidenceRank": 122,
-            "score": 61.5615,
+            "score": 61.5608,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -289455,7 +289455,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 68.965,
+                "score": 68.961,
                 "tests": 5
               },
               "instruction-context": {
@@ -289469,7 +289469,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 122,
             "evidenceRank": 122,
-            "score": 61.587,
+            "score": 61.5862,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -289485,7 +289485,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 68.987,
+                "score": 68.983,
                 "tests": 5
               },
               "instruction-context": {
@@ -289499,7 +289499,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 122,
             "evidenceRank": 122,
-            "score": 61.2087,
+            "score": 61.2081,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -289515,7 +289515,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 67.457,
+                "score": 67.454,
                 "tests": 5
               },
               "instruction-context": {
@@ -289529,7 +289529,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 121,
             "evidenceRank": 121,
-            "score": 61.5707,
+            "score": 61.57,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -289545,7 +289545,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 68.965,
+                "score": 68.961,
                 "tests": 5
               },
               "instruction-context": {
@@ -289577,7 +289577,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 88.1122,
+      "medianOutputSpeed": 113.5371,
       "aa": {
         "aa-intelligence": 20.8345,
         "aa-coding": null,
@@ -290286,7 +290286,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 67.6674,
+      "medianOutputSpeed": 131.3144,
       "aa": {
         "aa-intelligence": 7.478,
         "aa-coding": null,
@@ -290581,7 +290581,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 60.4334,
+      "medianOutputSpeed": 67.6911,
       "aa": {
         "aa-intelligence": 39.2364,
         "aa-coding": null,
@@ -291120,7 +291120,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 29,
             "evidenceRank": 29,
-            "score": 91.5551,
+            "score": 91.5549,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -291150,7 +291150,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 30,
             "evidenceRank": 30,
-            "score": 91.597,
+            "score": 91.5969,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -291166,7 +291166,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.404,
+                "score": 95.403,
                 "tests": 5
               },
               "instruction-context": {
@@ -291180,7 +291180,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 26,
             "evidenceRank": 26,
-            "score": 91.9445,
+            "score": 91.9443,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -291196,7 +291196,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.195,
+                "score": 96.194,
                 "tests": 5
               },
               "instruction-context": {
@@ -291210,7 +291210,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 30,
             "evidenceRank": 30,
-            "score": 91.5606,
+            "score": 91.5605,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -291258,7 +291258,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 82.6956,
+      "medianOutputSpeed": 81.5754,
       "aa": {
         "aa-intelligence": 23.1674,
         "aa-coding": null,
@@ -291281,7 +291281,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 64.0,
-        "GDPval-AA v2": 22.846,
+        "GDPval-AA v2": 22.853,
         "τ³-Banking": 14.8454,
         "Terminal-Bench v2.1": 61.0487,
         "GDPval-AA": 27.7205,
@@ -292076,7 +292076,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 229.0855,
+      "medianOutputSpeed": 239.2293,
       "aa": {
         "aa-intelligence": 12.474,
         "aa-coding": null,
@@ -292374,7 +292374,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 99.8723,
+      "medianOutputSpeed": 103.5083,
       "aa": {
         "aa-intelligence": 22.2403,
         "aa-coding": null,
@@ -292397,7 +292397,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 71.0,
-        "GDPval-AA v2": 25.0,
+        "GDPval-AA v2": 24.9895,
         "τ³-Banking": 12.1649,
         "Terminal-Bench v2.1": 45.3184,
         "GDPval-AA": 29.7935,
@@ -292873,7 +292873,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 162.1,
+      "medianOutputSpeed": 157.412,
       "aa": {
         "aa-intelligence": 11.8041,
         "aa-coding": null,
@@ -293463,7 +293463,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 66.6155,
+      "medianOutputSpeed": 70.7386,
       "aa": {
         "aa-intelligence": 13.1304,
         "aa-coding": null,
@@ -293886,7 +293886,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 54.1926,
+      "medianOutputSpeed": 58.8702,
       "aa": {
         "aa-intelligence": 48.1219,
         "aa-coding": null,
@@ -294443,7 +294443,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 12,
             "evidenceRank": 12,
-            "score": 93.3813,
+            "score": 93.3812,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -294459,7 +294459,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.585,
+                "score": 96.584,
                 "tests": 5
               },
               "instruction-context": {
@@ -294473,7 +294473,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 12,
             "evidenceRank": 12,
-            "score": 93.418,
+            "score": 93.4179,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -294503,7 +294503,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 13,
             "evidenceRank": 13,
-            "score": 92.8697,
+            "score": 92.8696,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -294519,7 +294519,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 97.528,
+                "score": 97.527,
                 "tests": 5
               },
               "instruction-context": {
@@ -294533,7 +294533,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 13,
             "evidenceRank": 13,
-            "score": 93.3868,
+            "score": 93.3867,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -294549,7 +294549,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.585,
+                "score": 96.584,
                 "tests": 5
               },
               "instruction-context": {
@@ -294581,7 +294581,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 87.2032,
+      "medianOutputSpeed": 88.614,
       "aa": {
         "aa-intelligence": 6.0444,
         "aa-coding": null,
@@ -295120,7 +295120,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 132,
             "evidenceRank": 132,
-            "score": 27.2514,
+            "score": 27.2505,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -295136,7 +295136,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 30.05,
+                "score": 30.045,
                 "tests": 5
               },
               "instruction-context": {
@@ -295150,7 +295150,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 132,
             "evidenceRank": 132,
-            "score": 27.2477,
+            "score": 27.2468,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -295166,7 +295166,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 30.05,
+                "score": 30.045,
                 "tests": 5
               },
               "instruction-context": {
@@ -295180,7 +295180,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 132,
             "evidenceRank": 132,
-            "score": 27.7893,
+            "score": 27.7885,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -295196,7 +295196,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 23.936,
+                "score": 23.932,
                 "tests": 5
               },
               "instruction-context": {
@@ -295210,7 +295210,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 132,
             "evidenceRank": 132,
-            "score": 27.2626,
+            "score": 27.2617,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -295226,7 +295226,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 30.075,
+                "score": 30.07,
                 "tests": 5
               },
               "instruction-context": {
@@ -295502,7 +295502,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 158,
             "evidenceRank": 158,
-            "score": 27.4266,
+            "score": 27.4257,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -295518,7 +295518,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 30.246,
+                "score": 30.241,
                 "tests": 5
               },
               "instruction-context": {
@@ -295532,7 +295532,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 158,
             "evidenceRank": 158,
-            "score": 27.404,
+            "score": 27.403,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -295548,7 +295548,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 30.22,
+                "score": 30.215,
                 "tests": 5
               },
               "instruction-context": {
@@ -295562,7 +295562,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 158,
             "evidenceRank": 158,
-            "score": 27.6716,
+            "score": 27.6708,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -295578,7 +295578,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 23.972,
+                "score": 23.968,
                 "tests": 5
               },
               "instruction-context": {
@@ -295592,7 +295592,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 158,
             "evidenceRank": 158,
-            "score": 27.4332,
+            "score": 27.4323,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -295608,7 +295608,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 30.246,
+                "score": 30.241,
                 "tests": 5
               },
               "instruction-context": {
@@ -296525,7 +296525,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/thinking_machines.svg",
         "color": "#676767"
       },
-      "medianOutputSpeed": 171.2591,
+      "medianOutputSpeed": 184.4454,
       "aa": {
         "aa-intelligence": 27.7806,
         "aa-coding": null,
@@ -296543,7 +296543,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 11.6675
       },
       "scores": {
-        "AA-Briefcase": 20.5175,
+        "AA-Briefcase": 20.494,
         "AutomationBench-AA": 4.8142,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 11.2,
@@ -297471,7 +297471,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 48,
             "evidenceRank": 48,
-            "score": 82.3253,
+            "score": 82.3249,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -297487,7 +297487,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.23,
+                "score": 87.228,
                 "tests": 5
               },
               "instruction-context": {
@@ -297501,7 +297501,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 48,
             "evidenceRank": 48,
-            "score": 82.3409,
+            "score": 82.3406,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -297517,7 +297517,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.23,
+                "score": 87.228,
                 "tests": 5
               },
               "instruction-context": {
@@ -297531,7 +297531,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 53,
             "evidenceRank": 53,
-            "score": 81.4204,
+            "score": 81.4201,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -297547,7 +297547,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.273,
+                "score": 88.271,
                 "tests": 5
               },
               "instruction-context": {
@@ -297561,7 +297561,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 45,
             "evidenceRank": 45,
-            "score": 83.2305,
+            "score": 83.2301,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -297577,7 +297577,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.205,
+                "score": 87.204,
                 "tests": 5
               },
               "instruction-context": {
@@ -297853,7 +297853,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 78,
             "evidenceRank": 78,
-            "score": 81.7807,
+            "score": 81.7803,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -297869,7 +297869,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.11,
+                "score": 87.108,
                 "tests": 5
               },
               "instruction-context": {
@@ -297883,7 +297883,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 78,
             "evidenceRank": 78,
-            "score": 81.8207,
+            "score": 81.8204,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -297899,7 +297899,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.141,
+                "score": 87.139,
                 "tests": 5
               },
               "instruction-context": {
@@ -297913,7 +297913,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 83,
             "evidenceRank": 83,
-            "score": 80.363,
+            "score": 80.3626,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -297929,7 +297929,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.242,
+                "score": 88.241,
                 "tests": 5
               },
               "instruction-context": {
@@ -297943,7 +297943,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 77,
             "evidenceRank": 77,
-            "score": 81.789,
+            "score": 81.7887,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -297959,7 +297959,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.11,
+                "score": 87.108,
                 "tests": 5
               },
               "instruction-context": {
@@ -297991,7 +297991,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 144.986,
+      "medianOutputSpeed": 163.3383,
       "aa": {
         "aa-intelligence": 7.818,
         "aa-coding": null,
@@ -298286,7 +298286,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 74.7479,
+      "medianOutputSpeed": 166.363,
       "aa": {
         "aa-intelligence": 6.9438,
         "aa-coding": null,
@@ -298580,7 +298580,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 140.9209,
+      "medianOutputSpeed": 141.2176,
       "aa": {
         "aa-intelligence": 6.9335,
         "aa-coding": null,
@@ -299709,7 +299709,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 28,
             "evidenceRank": 28,
-            "score": 91.5613,
+            "score": 91.5612,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -299725,7 +299725,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.487,
+                "score": 95.486,
                 "tests": 5
               },
               "instruction-context": {
@@ -299739,7 +299739,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 29,
             "evidenceRank": 29,
-            "score": 91.6015,
+            "score": 91.6014,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -299755,7 +299755,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.508,
+                "score": 95.507,
                 "tests": 5
               },
               "instruction-context": {
@@ -299769,7 +299769,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 29,
             "evidenceRank": 29,
-            "score": 91.162,
+            "score": 91.1619,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -299785,7 +299785,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.375,
+                "score": 96.374,
                 "tests": 5
               },
               "instruction-context": {
@@ -299799,7 +299799,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 29,
             "evidenceRank": 29,
-            "score": 91.567,
+            "score": 91.5669,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -299815,7 +299815,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.487,
+                "score": 95.486,
                 "tests": 5
               },
               "instruction-context": {
@@ -300796,7 +300796,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 121,
             "evidenceRank": 121,
-            "score": 38.5361,
+            "score": 38.5345,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -300812,7 +300812,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.408,
+                "score": 47.4,
                 "tests": 4
               },
               "instruction-context": {
@@ -300826,7 +300826,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 121,
             "evidenceRank": 121,
-            "score": 38.5358,
+            "score": 38.5342,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -300842,7 +300842,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.408,
+                "score": 47.4,
                 "tests": 4
               },
               "instruction-context": {
@@ -300856,7 +300856,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 122,
             "evidenceRank": 122,
-            "score": 37.3445,
+            "score": 37.3429,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -300872,7 +300872,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 39.402,
+                "score": 39.394,
                 "tests": 4
               },
               "instruction-context": {
@@ -300886,7 +300886,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 121,
             "evidenceRank": 121,
-            "score": 38.5432,
+            "score": 38.5416,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -300902,7 +300902,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.416,
+                "score": 47.408,
                 "tests": 4
               },
               "instruction-context": {
@@ -301178,7 +301178,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 147,
             "evidenceRank": 147,
-            "score": 38.5834,
+            "score": 38.5817,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -301194,7 +301194,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.529,
+                "score": 47.521,
                 "tests": 4
               },
               "instruction-context": {
@@ -301208,7 +301208,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 147,
             "evidenceRank": 147,
-            "score": 38.5764,
+            "score": 38.5747,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -301224,7 +301224,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.518,
+                "score": 47.51,
                 "tests": 4
               },
               "instruction-context": {
@@ -301238,7 +301238,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 148,
             "evidenceRank": 148,
-            "score": 37.156,
+            "score": 37.1544,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -301254,7 +301254,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 39.421,
+                "score": 39.413,
                 "tests": 4
               },
               "instruction-context": {
@@ -301268,7 +301268,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 147,
             "evidenceRank": 147,
-            "score": 38.5915,
+            "score": 38.5899,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -301284,7 +301284,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.529,
+                "score": 47.521,
                 "tests": 4
               },
               "instruction-context": {
@@ -302250,7 +302250,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 31.6231,
+      "medianOutputSpeed": 31.5533,
       "aa": {
         "aa-intelligence": 7.0435,
         "aa-coding": null,
@@ -302863,7 +302863,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 124.4458,
+      "medianOutputSpeed": 128.7972,
       "aa": {
         "aa-intelligence": 8.8961,
         "aa-coding": null,
@@ -303657,7 +303657,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 114,
             "evidenceRank": 114,
-            "score": 46.8109,
+            "score": 46.8094,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -303673,7 +303673,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 54.57,
+                "score": 54.563,
                 "tests": 5
               },
               "instruction-context": {
@@ -303687,7 +303687,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 114,
             "evidenceRank": 114,
-            "score": 46.8229,
+            "score": 46.8214,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -303703,7 +303703,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 54.57,
+                "score": 54.563,
                 "tests": 5
               },
               "instruction-context": {
@@ -303717,7 +303717,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 116,
             "evidenceRank": 116,
-            "score": 42.9101,
+            "score": 42.909,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -303733,7 +303733,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 52.039,
+                "score": 52.034,
                 "tests": 5
               },
               "instruction-context": {
@@ -303747,7 +303747,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 114,
             "evidenceRank": 114,
-            "score": 46.7715,
+            "score": 46.77,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -303763,7 +303763,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 54.523,
+                "score": 54.516,
                 "tests": 5
               },
               "instruction-context": {
@@ -304039,7 +304039,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 142,
             "evidenceRank": 142,
-            "score": 44.8835,
+            "score": 44.8819,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -304055,7 +304055,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 54.521,
+                "score": 54.513,
                 "tests": 4
               },
               "instruction-context": {
@@ -304069,7 +304069,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 142,
             "evidenceRank": 142,
-            "score": 44.8737,
+            "score": 44.8721,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -304085,7 +304085,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 54.52,
+                "score": 54.512,
                 "tests": 4
               },
               "instruction-context": {
@@ -304099,7 +304099,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 142,
             "evidenceRank": 142,
-            "score": 41.967,
+            "score": 41.9658,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -304115,7 +304115,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 51.968,
+                "score": 51.962,
                 "tests": 4
               },
               "instruction-context": {
@@ -304129,7 +304129,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 142,
             "evidenceRank": 142,
-            "score": 44.8902,
+            "score": 44.8886,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -304145,7 +304145,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 54.521,
+                "score": 54.513,
                 "tests": 4
               },
               "instruction-context": {
@@ -304177,7 +304177,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 212.0728,
+      "medianOutputSpeed": 236.3357,
       "aa": {
         "aa-intelligence": 34.8391,
         "aa-coding": null,
@@ -304195,12 +304195,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 40.9766
       },
       "scores": {
-        "AA-Briefcase": 46.895,
+        "AA-Briefcase": 46.841,
         "AutomationBench-AA": 47.4709,
         "Terminal-Bench v4.0": 12.1212,
         "GDP.pdf": 12.0,
         "AA-LCR v1.1": 81.3333,
-        "GDPval-AA v2": 51.7125,
+        "GDPval-AA v2": 51.721,
         "τ³-Banking": 41.0309,
         "Terminal-Bench v2.1": 74.1573,
         "GDPval-AA": 53.8605,
@@ -304921,7 +304921,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 31,
             "evidenceRank": 31,
-            "score": 88.2909,
+            "score": 88.2906,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -304937,7 +304937,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.535,
+                "score": 89.534,
                 "tests": 5
               },
               "instruction-context": {
@@ -304951,7 +304951,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 31,
             "evidenceRank": 31,
-            "score": 88.306,
+            "score": 88.3057,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -304967,7 +304967,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.535,
+                "score": 89.534,
                 "tests": 5
               },
               "instruction-context": {
@@ -304981,7 +304981,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 32,
             "evidenceRank": 32,
-            "score": 87.9059,
+            "score": 87.9056,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -304997,7 +304997,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.784,
+                "score": 90.783,
                 "tests": 5
               },
               "instruction-context": {
@@ -305011,7 +305011,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 31,
             "evidenceRank": 31,
-            "score": 88.0593,
+            "score": 88.059,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -305027,7 +305027,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.512,
+                "score": 89.51,
                 "tests": 5
               },
               "instruction-context": {
@@ -305303,7 +305303,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 56,
             "evidenceRank": 56,
-            "score": 87.7169,
+            "score": 87.7166,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -305319,7 +305319,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.416,
+                "score": 89.415,
                 "tests": 5
               },
               "instruction-context": {
@@ -305333,7 +305333,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 55,
             "evidenceRank": 55,
-            "score": 87.7683,
+            "score": 87.768,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -305349,7 +305349,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.446,
+                "score": 89.445,
                 "tests": 5
               },
               "instruction-context": {
@@ -305363,7 +305363,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 59,
             "evidenceRank": 59,
-            "score": 87.4338,
+            "score": 87.4335,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -305379,7 +305379,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.754,
+                "score": 90.753,
                 "tests": 5
               },
               "instruction-context": {
@@ -305393,7 +305393,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 60,
             "evidenceRank": 60,
-            "score": 87.1219,
+            "score": 87.1216,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -305409,7 +305409,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.416,
+                "score": 89.415,
                 "tests": 5
               },
               "instruction-context": {
@@ -306347,7 +306347,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 203.7589,
+      "medianOutputSpeed": 222.6085,
       "aa": {
         "aa-intelligence": 33.9786,
         "aa-coding": null,
@@ -306365,12 +306365,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 96.4568
       },
       "scores": {
-        "AA-Briefcase": 22.4525,
+        "AA-Briefcase": 22.4285,
         "AutomationBench-AA": 53.0167,
         "Terminal-Bench v4.0": 7.0707,
         "GDP.pdf": 17.4,
         "AA-LCR v1.1": 80.0,
-        "GDPval-AA v2": 38.2235,
+        "GDPval-AA v2": 38.2335,
         "τ³-Banking": 29.8969,
         "Terminal-Bench v2.1": 77.5281,
         "GDPval-AA": 41.5685,
@@ -307080,7 +307080,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 29,
             "evidenceRank": 29,
-            "score": 88.3921,
+            "score": 88.3919,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -307096,7 +307096,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.624,
+                "score": 94.623,
                 "tests": 5
               },
               "instruction-context": {
@@ -307110,7 +307110,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 29,
             "evidenceRank": 29,
-            "score": 88.4077,
+            "score": 88.4076,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -307126,7 +307126,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.624,
+                "score": 94.623,
                 "tests": 5
               },
               "instruction-context": {
@@ -307140,7 +307140,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 30,
             "evidenceRank": 30,
-            "score": 88.0101,
+            "score": 88.01,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -307170,7 +307170,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 27,
             "evidenceRank": 27,
-            "score": 88.9279,
+            "score": 88.9277,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -307186,7 +307186,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.605,
+                "score": 94.604,
                 "tests": 5
               },
               "instruction-context": {
@@ -307462,7 +307462,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 51,
             "evidenceRank": 51,
-            "score": 89.1462,
+            "score": 89.1461,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -307478,7 +307478,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.525,
+                "score": 94.524,
                 "tests": 5
               },
               "instruction-context": {
@@ -307492,7 +307492,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 51,
             "evidenceRank": 51,
-            "score": 89.1884,
+            "score": 89.1883,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -307508,7 +307508,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.548,
+                "score": 94.547,
                 "tests": 5
               },
               "instruction-context": {
@@ -307522,7 +307522,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 52,
             "evidenceRank": 52,
-            "score": 88.4988,
+            "score": 88.4987,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -307538,7 +307538,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.492,
+                "score": 95.491,
                 "tests": 5
               },
               "instruction-context": {
@@ -307552,7 +307552,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 52,
             "evidenceRank": 52,
-            "score": 89.1529,
+            "score": 89.1527,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -307568,7 +307568,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.525,
+                "score": 94.524,
                 "tests": 5
               },
               "instruction-context": {
@@ -307600,7 +307600,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 176.9828,
+      "medianOutputSpeed": 213.0306,
       "aa": {
         "aa-intelligence": 17.9337,
         "aa-coding": null,
@@ -308191,7 +308191,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 59.042,
+      "medianOutputSpeed": 63.0745,
       "aa": {
         "aa-intelligence": 38.8121,
         "aa-coding": null,
@@ -308209,12 +308209,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 126.7555
       },
       "scores": {
-        "AA-Briefcase": 39.3375,
+        "AA-Briefcase": 39.3005,
         "AutomationBench-AA": 57.9349,
         "Terminal-Bench v4.0": 10.6061,
         "GDP.pdf": 18.8,
         "AA-LCR v1.1": 79.3333,
-        "GDPval-AA v2": 43.5135,
+        "GDPval-AA v2": 43.522,
         "τ³-Banking": 42.0619,
         "Terminal-Bench v2.1": 81.6479,
         "GDPval-AA": 46.48,
@@ -308816,7 +308816,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 21,
             "evidenceRank": 21,
-            "score": 90.4124,
+            "score": 90.4123,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -308832,7 +308832,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.768,
+                "score": 94.767,
                 "tests": 5
               },
               "instruction-context": {
@@ -308846,7 +308846,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 21,
             "evidenceRank": 21,
-            "score": 90.4258,
+            "score": 90.4256,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -308862,7 +308862,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.768,
+                "score": 94.767,
                 "tests": 5
               },
               "instruction-context": {
@@ -308876,7 +308876,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 21,
             "evidenceRank": 21,
-            "score": 89.8637,
+            "score": 89.8635,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -308892,7 +308892,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.742,
+                "score": 95.741,
                 "tests": 5
               },
               "instruction-context": {
@@ -308906,7 +308906,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 16,
             "evidenceRank": 16,
-            "score": 90.7858,
+            "score": 90.7856,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -308922,7 +308922,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.749,
+                "score": 94.748,
                 "tests": 5
               },
               "instruction-context": {
@@ -309198,7 +309198,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 35,
             "evidenceRank": 35,
-            "score": 90.7371,
+            "score": 90.737,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -309214,7 +309214,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.67,
+                "score": 94.669,
                 "tests": 5
               },
               "instruction-context": {
@@ -309228,7 +309228,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 35,
             "evidenceRank": 35,
-            "score": 90.7781,
+            "score": 90.7779,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -309244,7 +309244,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.693,
+                "score": 94.692,
                 "tests": 5
               },
               "instruction-context": {
@@ -309258,7 +309258,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 36,
             "evidenceRank": 36,
-            "score": 90.0983,
+            "score": 90.0982,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -309274,7 +309274,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.72,
+                "score": 95.719,
                 "tests": 5
               },
               "instruction-context": {
@@ -309288,7 +309288,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 34,
             "evidenceRank": 34,
-            "score": 90.7433,
+            "score": 90.7432,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -309304,7 +309304,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.67,
+                "score": 94.669,
                 "tests": 5
               },
               "instruction-context": {
@@ -309630,7 +309630,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 54.9196,
+      "medianOutputSpeed": 54.8876,
       "aa": {
         "aa-intelligence": 15.6098,
         "aa-coding": null,
@@ -310233,7 +310233,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 146.1381,
+      "medianOutputSpeed": 143.2219,
       "aa": {
         "aa-intelligence": 5.8484,
         "aa-coding": null,
@@ -310527,7 +310527,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 59.8971,
+      "medianOutputSpeed": 63.6344,
       "aa": {
         "aa-intelligence": 28.328,
         "aa-coding": null,
@@ -311068,7 +311068,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 91,
             "evidenceRank": 91,
-            "score": 76.9865,
+            "score": 76.986,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -311084,7 +311084,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 80.33,
+                "score": 80.328,
                 "tests": 5
               },
               "instruction-context": {
@@ -311098,7 +311098,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 91,
             "evidenceRank": 91,
-            "score": 77.0305,
+            "score": 77.03,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -311114,7 +311114,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 80.361,
+                "score": 80.358,
                 "tests": 5
               },
               "instruction-context": {
@@ -311128,7 +311128,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 92,
             "evidenceRank": 92,
-            "score": 76.309,
+            "score": 76.3082,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -311144,7 +311144,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.163,
+                "score": 78.159,
                 "tests": 5
               },
               "instruction-context": {
@@ -311158,7 +311158,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 91,
             "evidenceRank": 91,
-            "score": 76.9942,
+            "score": 76.9937,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -311174,7 +311174,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 80.33,
+                "score": 80.328,
                 "tests": 5
               },
               "instruction-context": {
@@ -311206,7 +311206,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 214.6741,
+      "medianOutputSpeed": 217.9061,
       "aa": {
         "aa-intelligence": 26.3272,
         "aa-coding": null,
@@ -311797,7 +311797,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 54.1968,
+      "medianOutputSpeed": 54.7695,
       "aa": {
         "aa-intelligence": 26.2048,
         "aa-coding": null,
@@ -311815,12 +311815,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 106.9409
       },
       "scores": {
-        "AA-Briefcase": 39.028,
+        "AA-Briefcase": 38.964,
         "AutomationBench-AA": 30.1033,
         "Terminal-Bench v4.0": 2.5253,
         "GDP.pdf": 10.4,
         "AA-LCR v1.1": 77.3333,
-        "GDPval-AA v2": 42.07,
+        "GDPval-AA v2": 42.0785,
         "τ³-Banking": 32.1649,
         "Terminal-Bench v2.1": 67.4157,
         "GDPval-AA": 45.1895,
@@ -312337,7 +312337,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 112,
             "evidenceRank": 112,
-            "score": 68.17,
+            "score": 68.1693,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -312353,7 +312353,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 69.496,
+                "score": 69.492,
                 "tests": 5
               },
               "instruction-context": {
@@ -312367,7 +312367,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 111,
             "evidenceRank": 111,
-            "score": 68.206,
+            "score": 68.2053,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -312383,7 +312383,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 69.518,
+                "score": 69.515,
                 "tests": 5
               },
               "instruction-context": {
@@ -312397,7 +312397,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 108,
             "evidenceRank": 108,
-            "score": 69.1656,
+            "score": 69.1652,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -312413,7 +312413,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 67.793,
+                "score": 67.791,
                 "tests": 5
               },
               "instruction-context": {
@@ -312427,7 +312427,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 112,
             "evidenceRank": 112,
-            "score": 68.1779,
+            "score": 68.1772,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -312443,7 +312443,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 69.496,
+                "score": 69.492,
                 "tests": 5
               },
               "instruction-context": {
@@ -313017,7 +313017,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 63,
             "evidenceRank": 63,
-            "score": 76.0238,
+            "score": 76.0228,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -313033,7 +313033,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.858,
+                "score": 79.853,
                 "tests": 4
               },
               "instruction-context": {
@@ -313047,7 +313047,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 63,
             "evidenceRank": 63,
-            "score": 76.0428,
+            "score": 76.0418,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -313063,7 +313063,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.858,
+                "score": 79.853,
                 "tests": 4
               },
               "instruction-context": {
@@ -313077,7 +313077,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 70,
             "evidenceRank": 70,
-            "score": 74.2243,
+            "score": 74.2239,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -313093,7 +313093,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.509,
+                "score": 79.506,
                 "tests": 4
               },
               "instruction-context": {
@@ -313107,7 +313107,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 63,
             "evidenceRank": 63,
-            "score": 76.0165,
+            "score": 76.0155,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -313123,7 +313123,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.834,
+                "score": 79.829,
                 "tests": 4
               },
               "instruction-context": {
@@ -313403,7 +313403,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 94,
             "evidenceRank": 94,
-            "score": 75.7562,
+            "score": 75.7552,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -313419,7 +313419,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.769,
+                "score": 79.764,
                 "tests": 4
               },
               "instruction-context": {
@@ -313433,7 +313433,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 94,
             "evidenceRank": 94,
-            "score": 75.7916,
+            "score": 75.7906,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -313449,7 +313449,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.796,
+                "score": 79.791,
                 "tests": 4
               },
               "instruction-context": {
@@ -313463,7 +313463,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 99,
             "evidenceRank": 99,
-            "score": 73.8745,
+            "score": 73.8741,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -313479,7 +313479,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.489,
+                "score": 79.486,
                 "tests": 4
               },
               "instruction-context": {
@@ -313493,7 +313493,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 94,
             "evidenceRank": 94,
-            "score": 75.7651,
+            "score": 75.7641,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -313509,7 +313509,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.769,
+                "score": 79.764,
                 "tests": 4
               },
               "instruction-context": {
@@ -313541,7 +313541,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 155.5306,
+      "medianOutputSpeed": 57.0194,
       "aa": {
         "aa-intelligence": 15.2883,
         "aa-coding": null,
@@ -314079,7 +314079,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 115,
             "evidenceRank": 115,
-            "score": 46.3904,
+            "score": 46.3888,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -314095,7 +314095,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 38.438,
+                "score": 38.43,
                 "tests": 4
               },
               "instruction-context": {
@@ -314109,7 +314109,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 115,
             "evidenceRank": 115,
-            "score": 46.3974,
+            "score": 46.3958,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -314125,7 +314125,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 38.438,
+                "score": 38.43,
                 "tests": 4
               },
               "instruction-context": {
@@ -314139,7 +314139,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 113,
             "evidenceRank": 113,
-            "score": 47.2493,
+            "score": 47.2483,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -314155,7 +314155,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 36.973,
+                "score": 36.968,
                 "tests": 4
               },
               "instruction-context": {
@@ -314169,7 +314169,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 115,
             "evidenceRank": 115,
-            "score": 46.3971,
+            "score": 46.3955,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -314185,7 +314185,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 38.456,
+                "score": 38.448,
                 "tests": 4
               },
               "instruction-context": {
@@ -314461,7 +314461,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 139,
             "evidenceRank": 139,
-            "score": 46.4262,
+            "score": 46.4246,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -314477,7 +314477,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 38.614,
+                "score": 38.606,
                 "tests": 4
               },
               "instruction-context": {
@@ -314491,7 +314491,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 139,
             "evidenceRank": 139,
-            "score": 46.4228,
+            "score": 46.4212,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -314507,7 +314507,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 38.592,
+                "score": 38.584,
                 "tests": 4
               },
               "instruction-context": {
@@ -314521,7 +314521,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 138,
             "evidenceRank": 138,
-            "score": 46.9853,
+            "score": 46.9843,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -314537,7 +314537,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 37.003,
+                "score": 36.998,
                 "tests": 4
               },
               "instruction-context": {
@@ -314551,7 +314551,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 139,
             "evidenceRank": 139,
-            "score": 46.4354,
+            "score": 46.4338,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -314567,7 +314567,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 38.614,
+                "score": 38.606,
                 "tests": 4
               },
               "instruction-context": {
@@ -314599,7 +314599,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 137.7265,
+      "medianOutputSpeed": 133.9113,
       "aa": {
         "aa-intelligence": 7.5211,
         "aa-coding": null,
@@ -314893,7 +314893,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 93.7977,
+      "medianOutputSpeed": 97.7597,
       "aa": {
         "aa-intelligence": 20.7856,
         "aa-coding": null,
@@ -315188,7 +315188,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/celeris.svg",
         "color": "#ff8a75"
       },
-      "medianOutputSpeed": 1566.9091,
+      "medianOutputSpeed": 1597.9432,
       "aa": {
         "aa-intelligence": 6.347,
         "aa-coding": null,
@@ -315745,7 +315745,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 128,
             "evidenceRank": 128,
-            "score": 34.0117,
+            "score": 34.0102,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -315761,7 +315761,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 34.83,
+                "score": 34.823,
                 "tests": 5
               },
               "instruction-context": {
@@ -315775,7 +315775,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 128,
             "evidenceRank": 128,
-            "score": 34.0127,
+            "score": 34.0112,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -315791,7 +315791,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 34.83,
+                "score": 34.823,
                 "tests": 5
               },
               "instruction-context": {
@@ -315805,7 +315805,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 128,
             "evidenceRank": 128,
-            "score": 33.9417,
+            "score": 33.9405,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -315821,7 +315821,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 30.045,
+                "score": 30.039,
                 "tests": 5
               },
               "instruction-context": {
@@ -315835,7 +315835,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 128,
             "evidenceRank": 128,
-            "score": 34.0121,
+            "score": 34.0106,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -315851,7 +315851,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 34.808,
+                "score": 34.8,
                 "tests": 5
               },
               "instruction-context": {
@@ -316127,7 +316127,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 154,
             "evidenceRank": 154,
-            "score": 33.5234,
+            "score": 33.5218,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -316143,7 +316143,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 31.711,
+                "score": 31.703,
                 "tests": 4
               },
               "instruction-context": {
@@ -316157,7 +316157,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 154,
             "evidenceRank": 154,
-            "score": 33.5021,
+            "score": 33.5006,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -316173,7 +316173,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 31.681,
+                "score": 31.673,
                 "tests": 4
               },
               "instruction-context": {
@@ -316187,7 +316187,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 154,
             "evidenceRank": 154,
-            "score": 33.4908,
+            "score": 33.4895,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -316203,7 +316203,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 28.48,
+                "score": 28.474,
                 "tests": 4
               },
               "instruction-context": {
@@ -316217,7 +316217,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 154,
             "evidenceRank": 154,
-            "score": 33.5307,
+            "score": 33.5292,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -316233,7 +316233,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 31.711,
+                "score": 31.703,
                 "tests": 4
               },
               "instruction-context": {
@@ -317339,7 +317339,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 88.5879,
+      "medianOutputSpeed": 89.6054,
       "aa": {
         "aa-intelligence": 34.2377,
         "aa-coding": null,
@@ -317357,12 +317357,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 133.3064
       },
       "scores": {
-        "AA-Briefcase": 35.143,
+        "AA-Briefcase": 35.109,
         "AutomationBench-AA": 42.0204,
         "Terminal-Bench v4.0": 1.5152,
         "GDP.pdf": 20.8,
         "AA-LCR v1.1": 77.6667,
-        "GDPval-AA v2": 43.119,
+        "GDPval-AA v2": 43.1275,
         "τ³-Banking": 28.6598,
         "Terminal-Bench v2.1": 75.6554,
         "GDPval-AA": 45.768,
@@ -317878,7 +317878,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 57,
             "evidenceRank": 57,
-            "score": 87.6855,
+            "score": 87.6853,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -317894,7 +317894,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.664,
+                "score": 91.663,
                 "tests": 5
               },
               "instruction-context": {
@@ -317908,7 +317908,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 57,
             "evidenceRank": 57,
-            "score": 87.7304,
+            "score": 87.7302,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -317924,7 +317924,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.692,
+                "score": 91.691,
                 "tests": 5
               },
               "instruction-context": {
@@ -317938,7 +317938,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 56,
             "evidenceRank": 56,
-            "score": 87.9495,
+            "score": 87.9493,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -317954,7 +317954,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.566,
+                "score": 92.565,
                 "tests": 5
               },
               "instruction-context": {
@@ -317968,7 +317968,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 56,
             "evidenceRank": 56,
-            "score": 87.6925,
+            "score": 87.6922,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -317984,7 +317984,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.664,
+                "score": 91.663,
                 "tests": 5
               },
               "instruction-context": {
@@ -318016,7 +318016,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 99.8748,
+      "medianOutputSpeed": 98.1866,
       "aa": {
         "aa-intelligence": 17.3564,
         "aa-coding": null,
@@ -319069,7 +319069,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 68,
             "evidenceRank": 68,
-            "score": 75.1272,
+            "score": 75.1261,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -319085,7 +319085,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.857,
+                "score": 77.852,
                 "tests": 4
               },
               "instruction-context": {
@@ -319099,7 +319099,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 68,
             "evidenceRank": 68,
-            "score": 75.1456,
+            "score": 75.1445,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -319115,7 +319115,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.857,
+                "score": 77.852,
                 "tests": 4
               },
               "instruction-context": {
@@ -319129,7 +319129,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 71,
             "evidenceRank": 71,
-            "score": 73.4457,
+            "score": 73.4453,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -319145,7 +319145,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.376,
+                "score": 78.373,
                 "tests": 4
               },
               "instruction-context": {
@@ -319159,7 +319159,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 68,
             "evidenceRank": 68,
-            "score": 75.119,
+            "score": 75.1179,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -319175,7 +319175,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.835,
+                "score": 77.83,
                 "tests": 4
               },
               "instruction-context": {
@@ -319455,7 +319455,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 97,
             "evidenceRank": 97,
-            "score": 74.9223,
+            "score": 74.9213,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -319471,7 +319471,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.778,
+                "score": 77.773,
                 "tests": 4
               },
               "instruction-context": {
@@ -319485,7 +319485,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 97,
             "evidenceRank": 97,
-            "score": 74.9519,
+            "score": 74.9509,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -319501,7 +319501,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.803,
+                "score": 77.798,
                 "tests": 4
               },
               "instruction-context": {
@@ -319515,7 +319515,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 100,
             "evidenceRank": 100,
-            "score": 73.1101,
+            "score": 73.1096,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -319531,7 +319531,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.356,
+                "score": 78.354,
                 "tests": 4
               },
               "instruction-context": {
@@ -319545,7 +319545,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 97,
             "evidenceRank": 97,
-            "score": 74.9315,
+            "score": 74.9304,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -319561,7 +319561,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.778,
+                "score": 77.773,
                 "tests": 4
               },
               "instruction-context": {
@@ -320181,7 +320181,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nousresearch_small.jpg",
         "color": "#006fa8"
       },
-      "medianOutputSpeed": 44.2942,
+      "medianOutputSpeed": 43.5902,
       "aa": {
         "aa-intelligence": 7.495,
         "aa-coding": null,
@@ -320498,7 +320498,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 36.3333,
-        "GDPval-AA v2": 5.712,
+        "GDPval-AA v2": 5.726,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": 61.7978,
         "GDPval-AA": 14.409,
@@ -320769,7 +320769,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 77.7309,
+      "medianOutputSpeed": 70.3449,
       "aa": {
         "aa-intelligence": 6.5721,
         "aa-coding": null,
@@ -321063,7 +321063,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 88.8188,
+      "medianOutputSpeed": 104.9899,
       "aa": {
         "aa-intelligence": 35.9968,
         "aa-coding": null,
@@ -321081,12 +321081,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 97.9321
       },
       "scores": {
-        "AA-Briefcase": 38.0685,
+        "AA-Briefcase": 38.0315,
         "AutomationBench-AA": 56.7117,
         "Terminal-Bench v4.0": 14.1414,
         "GDP.pdf": 11.4,
         "AA-LCR v1.1": 80.3333,
-        "GDPval-AA v2": 47.0625,
+        "GDPval-AA v2": 47.071,
         "τ³-Banking": 39.5876,
         "Terminal-Bench v2.1": 78.6517,
         "GDPval-AA": 49.6655,
@@ -321944,7 +321944,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 34,
             "evidenceRank": 34,
-            "score": 86.7097,
+            "score": 86.7093,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -321960,7 +321960,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.813,
+                "score": 91.811,
                 "tests": 5
               },
               "instruction-context": {
@@ -321974,7 +321974,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 34,
             "evidenceRank": 34,
-            "score": 86.722,
+            "score": 86.7216,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -321990,7 +321990,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.813,
+                "score": 91.811,
                 "tests": 5
               },
               "instruction-context": {
@@ -322004,7 +322004,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 34,
             "evidenceRank": 34,
-            "score": 86.5951,
+            "score": 86.5949,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -322020,7 +322020,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.819,
+                "score": 93.818,
                 "tests": 5
               },
               "instruction-context": {
@@ -322034,7 +322034,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 35,
             "evidenceRank": 35,
-            "score": 86.4877,
+            "score": 86.4872,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -322050,7 +322050,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.773,
+                "score": 91.771,
                 "tests": 5
               },
               "instruction-context": {
@@ -322326,7 +322326,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 34,
             "evidenceRank": 34,
-            "score": 90.749,
+            "score": 90.7486,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -322342,7 +322342,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.729,
+                "score": 94.727,
                 "tests": 4
               },
               "instruction-context": {
@@ -322356,7 +322356,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 34,
             "evidenceRank": 34,
-            "score": 90.8161,
+            "score": 90.8158,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -322372,7 +322372,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.751,
+                "score": 94.749,
                 "tests": 4
               },
               "instruction-context": {
@@ -322386,7 +322386,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 37,
             "evidenceRank": 37,
-            "score": 90.0332,
+            "score": 90.0331,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -322416,7 +322416,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 40,
             "evidenceRank": 40,
-            "score": 90.2137,
+            "score": 90.2134,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -322432,7 +322432,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.729,
+                "score": 94.727,
                 "tests": 4
               },
               "instruction-context": {
@@ -323055,7 +323055,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 150.7832,
+      "medianOutputSpeed": 157.9654,
       "aa": {
         "aa-intelligence": 16.6531,
         "aa-coding": null,
@@ -323985,7 +323985,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 108.9499,
+      "medianOutputSpeed": 112.7462,
       "aa": {
         "aa-intelligence": 18.229,
         "aa-coding": null,
@@ -324003,12 +324003,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 276.4307
       },
       "scores": {
-        "AA-Briefcase": 10.425,
+        "AA-Briefcase": 10.42,
         "AutomationBench-AA": 5.2086,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 6.6,
         "AA-LCR v1.1": 71.6667,
-        "GDPval-AA v2": 18.947,
+        "GDPval-AA v2": 18.9605,
         "τ³-Banking": 9.2784,
         "Terminal-Bench v2.1": 44.9438,
         "GDPval-AA": 24.593,
@@ -324763,7 +324763,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 90,
             "evidenceRank": 90,
-            "score": 65.9519,
+            "score": 65.9512,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -324779,7 +324779,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 73.781,
+                "score": 73.778,
                 "tests": 6
               },
               "instruction-context": {
@@ -324793,7 +324793,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 90,
             "evidenceRank": 90,
-            "score": 65.968,
+            "score": 65.9674,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -324809,7 +324809,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 73.781,
+                "score": 73.778,
                 "tests": 6
               },
               "instruction-context": {
@@ -324823,7 +324823,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 85,
             "evidenceRank": 85,
-            "score": 67.0004,
+            "score": 67.0,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -324839,7 +324839,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 74.33,
+                "score": 74.328,
                 "tests": 6
               },
               "instruction-context": {
@@ -324853,7 +324853,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 90,
             "evidenceRank": 90,
-            "score": 65.9526,
+            "score": 65.9519,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -324869,7 +324869,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 73.729,
+                "score": 73.726,
                 "tests": 6
               },
               "instruction-context": {
@@ -325145,7 +325145,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 119,
             "evidenceRank": 119,
-            "score": 64.6292,
+            "score": 64.6286,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -325161,7 +325161,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 73.673,
+                "score": 73.67,
                 "tests": 5
               },
               "instruction-context": {
@@ -325175,7 +325175,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 119,
             "evidenceRank": 119,
-            "score": 64.6562,
+            "score": 64.6556,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -325191,7 +325191,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 73.699,
+                "score": 73.696,
                 "tests": 5
               },
               "instruction-context": {
@@ -325205,7 +325205,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 114,
             "evidenceRank": 114,
-            "score": 65.6061,
+            "score": 65.6058,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -325221,7 +325221,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 73.688,
+                "score": 73.686,
                 "tests": 5
               },
               "instruction-context": {
@@ -325235,7 +325235,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 119,
             "evidenceRank": 119,
-            "score": 64.6382,
+            "score": 64.6376,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -325251,7 +325251,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 73.673,
+                "score": 73.67,
                 "tests": 5
               },
               "instruction-context": {
@@ -325283,7 +325283,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 142.7402,
+      "medianOutputSpeed": 161.9735,
       "aa": {
         "aa-intelligence": 34.5553,
         "aa-coding": null,
@@ -325301,12 +325301,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 17.6344
       },
       "scores": {
-        "AA-Briefcase": 38.454,
+        "AA-Briefcase": 38.397,
         "AutomationBench-AA": 42.5978,
         "Terminal-Bench v4.0": 3.5354,
         "GDP.pdf": 23.8,
         "AA-LCR v1.1": 81.6667,
-        "GDPval-AA v2": 44.177,
+        "GDPval-AA v2": 44.1855,
         "τ³-Banking": 28.6598,
         "Terminal-Bench v2.1": 77.9026,
         "GDPval-AA": 46.4235,
@@ -325822,7 +325822,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 49,
             "evidenceRank": 49,
-            "score": 89.2164,
+            "score": 89.2162,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -325838,7 +325838,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.579,
+                "score": 90.577,
                 "tests": 5
               },
               "instruction-context": {
@@ -325852,7 +325852,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 48,
             "evidenceRank": 48,
-            "score": 89.2572,
+            "score": 89.257,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -325868,7 +325868,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.608,
+                "score": 90.606,
                 "tests": 5
               },
               "instruction-context": {
@@ -325882,7 +325882,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 49,
             "evidenceRank": 49,
-            "score": 88.7018,
+            "score": 88.7015,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -325898,7 +325898,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.556,
+                "score": 91.554,
                 "tests": 5
               },
               "instruction-context": {
@@ -325912,7 +325912,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 50,
             "evidenceRank": 50,
-            "score": 89.223,
+            "score": 89.2228,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -325928,7 +325928,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.579,
+                "score": 90.577,
                 "tests": 5
               },
               "instruction-context": {
@@ -326551,7 +326551,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 8.1808,
+      "medianOutputSpeed": 7.3718,
       "aa": {
         "aa-intelligence": 7.8075,
         "aa-coding": null,
@@ -326845,7 +326845,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 171.4555,
+      "medianOutputSpeed": 172.3163,
       "aa": {
         "aa-intelligence": 20.0139,
         "aa-coding": null,
@@ -327452,7 +327452,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 5.9623
       },
       "scores": {
-        "AA-Briefcase": 27.461,
+        "AA-Briefcase": 27.406,
         "AutomationBench-AA": 28.5043,
         "Terminal-Bench v4.0": 3.0303,
         "GDP.pdf": 10.4,
@@ -328212,7 +328212,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 92,
             "evidenceRank": 92,
-            "score": 76.0479,
+            "score": 76.0471,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -328228,7 +328228,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.621,
+                "score": 84.617,
                 "tests": 4
               },
               "instruction-context": {
@@ -328242,7 +328242,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 92,
             "evidenceRank": 92,
-            "score": 76.0862,
+            "score": 76.0854,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -328258,7 +328258,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.649,
+                "score": 84.645,
                 "tests": 4
               },
               "instruction-context": {
@@ -328272,7 +328272,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 90,
             "evidenceRank": 90,
-            "score": 76.5675,
+            "score": 76.567,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -328288,7 +328288,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.945,
+                "score": 84.943,
                 "tests": 4
               },
               "instruction-context": {
@@ -328302,7 +328302,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 92,
             "evidenceRank": 92,
-            "score": 76.0565,
+            "score": 76.0557,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -328318,7 +328318,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.621,
+                "score": 84.617,
                 "tests": 4
               },
               "instruction-context": {
@@ -328955,7 +328955,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 305.0358,
+      "medianOutputSpeed": 330.9273,
       "aa": {
         "aa-intelligence": 40.9262,
         "aa-coding": null,
@@ -329784,7 +329784,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 5,
             "evidenceRank": 5,
-            "score": 93.7366,
+            "score": 93.7365,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -329800,7 +329800,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.982,
+                "score": 96.981,
                 "tests": 5
               },
               "instruction-context": {
@@ -329814,7 +329814,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 5,
             "evidenceRank": 5,
-            "score": 93.7468,
+            "score": 93.7467,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -329830,7 +329830,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.982,
+                "score": 96.981,
                 "tests": 5
               },
               "instruction-context": {
@@ -329844,7 +329844,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 6,
             "evidenceRank": 6,
-            "score": 93.1453,
+            "score": 93.1452,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -329874,7 +329874,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 6,
             "evidenceRank": 6,
-            "score": 93.5776,
+            "score": 93.5775,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -329890,7 +329890,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.968,
+                "score": 96.967,
                 "tests": 5
               },
               "instruction-context": {
@@ -330166,7 +330166,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 13,
             "evidenceRank": 13,
-            "score": 93.3326,
+            "score": 93.3325,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -330182,7 +330182,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.907,
+                "score": 96.906,
                 "tests": 5
               },
               "instruction-context": {
@@ -330196,7 +330196,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 13,
             "evidenceRank": 13,
-            "score": 93.3786,
+            "score": 93.3785,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -330226,7 +330226,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 16,
             "evidenceRank": 16,
-            "score": 92.8437,
+            "score": 92.8436,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -330256,7 +330256,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 15,
             "evidenceRank": 15,
-            "score": 93.2503,
+            "score": 93.2502,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -330272,7 +330272,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.907,
+                "score": 96.906,
                 "tests": 5
               },
               "instruction-context": {
@@ -330304,7 +330304,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 63.3116,
+      "medianOutputSpeed": 74.282,
       "aa": {
         "aa-intelligence": 42.3461,
         "aa-coding": null,
@@ -330843,7 +330843,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 24,
             "evidenceRank": 24,
-            "score": 92.3122,
+            "score": 92.3121,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -330873,7 +330873,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 25,
             "evidenceRank": 25,
-            "score": 92.3531,
+            "score": 92.353,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -330889,7 +330889,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.916,
+                "score": 95.915,
                 "tests": 5
               },
               "instruction-context": {
@@ -330903,7 +330903,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 17,
             "evidenceRank": 17,
-            "score": 92.7007,
+            "score": 92.7005,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -330933,7 +330933,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 26,
             "evidenceRank": 26,
-            "score": 92.3175,
+            "score": 92.3174,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -331275,7 +331275,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 110.1627,
+      "medianOutputSpeed": 124.1133,
       "aa": {
         "aa-intelligence": 7.7397,
         "aa-coding": null,
@@ -331570,7 +331570,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 58.1189,
+      "medianOutputSpeed": 59.3085,
       "aa": {
         "aa-intelligence": 21.428,
         "aa-coding": null,
@@ -331588,12 +331588,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 67.0437
       },
       "scores": {
-        "AA-Briefcase": 15.611,
+        "AA-Briefcase": 15.575,
         "AutomationBench-AA": 11.0452,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 11.0,
         "AA-LCR v1.1": 77.3333,
-        "GDPval-AA v2": 23.6675,
+        "GDPval-AA v2": 23.667,
         "τ³-Banking": 16.701,
         "Terminal-Bench v2.1": 60.6742,
         "GDPval-AA": 28.4435,
@@ -332349,7 +332349,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 76,
             "evidenceRank": 76,
-            "score": 70.6354,
+            "score": 70.6348,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -332365,7 +332365,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.272,
+                "score": 76.269,
                 "tests": 6
               },
               "instruction-context": {
@@ -332379,7 +332379,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 76,
             "evidenceRank": 76,
-            "score": 70.652,
+            "score": 70.6514,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -332395,7 +332395,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.272,
+                "score": 76.269,
                 "tests": 6
               },
               "instruction-context": {
@@ -332409,7 +332409,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 73,
             "evidenceRank": 73,
-            "score": 71.9621,
+            "score": 71.9618,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -332425,7 +332425,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.597,
+                "score": 76.595,
                 "tests": 6
               },
               "instruction-context": {
@@ -332439,7 +332439,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 76,
             "evidenceRank": 76,
-            "score": 70.6353,
+            "score": 70.6347,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -332455,7 +332455,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.219,
+                "score": 76.216,
                 "tests": 6
               },
               "instruction-context": {
@@ -332731,7 +332731,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 103,
             "evidenceRank": 103,
-            "score": 70.4471,
+            "score": 70.4466,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -332747,7 +332747,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.082,
+                "score": 76.079,
                 "tests": 5
               },
               "instruction-context": {
@@ -332761,7 +332761,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 103,
             "evidenceRank": 103,
-            "score": 70.4852,
+            "score": 70.4846,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -332777,7 +332777,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.11,
+                "score": 76.107,
                 "tests": 5
               },
               "instruction-context": {
@@ -332791,7 +332791,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 101,
             "evidenceRank": 101,
-            "score": 71.5688,
+            "score": 71.5684,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -332807,7 +332807,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 75.775,
+                "score": 75.773,
                 "tests": 5
               },
               "instruction-context": {
@@ -332821,7 +332821,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 103,
             "evidenceRank": 103,
-            "score": 70.4553,
+            "score": 70.4548,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -332837,7 +332837,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.082,
+                "score": 76.079,
                 "tests": 5
               },
               "instruction-context": {
@@ -333460,7 +333460,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 55.3326,
+      "medianOutputSpeed": 61.6411,
       "aa": {
         "aa-intelligence": 25.8121,
         "aa-coding": null,
@@ -333478,12 +333478,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 61.1948
       },
       "scores": {
-        "AA-Briefcase": 17.7125,
+        "AA-Briefcase": 17.702,
         "AutomationBench-AA": 24.4543,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 11.2,
         "AA-LCR v1.1": 79.3333,
-        "GDPval-AA v2": 26.237,
+        "GDPval-AA v2": 26.252,
         "τ³-Banking": 20.2062,
         "Terminal-Bench v2.1": 67.4157,
         "GDPval-AA": 30.7245,
@@ -334103,7 +334103,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 40,
             "evidenceRank": 40,
-            "score": 84.332,
+            "score": 84.3314,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -334119,7 +334119,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.372,
+                "score": 90.37,
                 "tests": 4
               },
               "instruction-context": {
@@ -334133,7 +334133,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 40,
             "evidenceRank": 40,
-            "score": 84.3482,
+            "score": 84.3476,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -334149,7 +334149,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.372,
+                "score": 90.37,
                 "tests": 4
               },
               "instruction-context": {
@@ -334163,7 +334163,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 40,
             "evidenceRank": 40,
-            "score": 84.752,
+            "score": 84.7516,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -334179,7 +334179,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.574,
+                "score": 90.573,
                 "tests": 4
               },
               "instruction-context": {
@@ -334193,7 +334193,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 40,
             "evidenceRank": 40,
-            "score": 84.3137,
+            "score": 84.3132,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -334209,7 +334209,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.349,
+                "score": 90.346,
                 "tests": 4
               },
               "instruction-context": {
@@ -334485,7 +334485,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 68,
             "evidenceRank": 68,
-            "score": 83.8465,
+            "score": 83.8459,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -334501,7 +334501,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.264,
+                "score": 90.261,
                 "tests": 4
               },
               "instruction-context": {
@@ -334515,7 +334515,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 68,
             "evidenceRank": 68,
-            "score": 83.8902,
+            "score": 83.8897,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -334531,7 +334531,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.291,
+                "score": 90.288,
                 "tests": 4
               },
               "instruction-context": {
@@ -334545,7 +334545,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 66,
             "evidenceRank": 66,
-            "score": 84.2837,
+            "score": 84.2833,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -334561,7 +334561,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.549,
+                "score": 90.547,
                 "tests": 4
               },
               "instruction-context": {
@@ -334575,7 +334575,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 68,
             "evidenceRank": 68,
-            "score": 83.8541,
+            "score": 83.8535,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -334591,7 +334591,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.264,
+                "score": 90.261,
                 "tests": 4
               },
               "instruction-context": {
@@ -334941,7 +334941,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/sapiens.svg",
         "color": "#1521a9"
       },
-      "medianOutputSpeed": 186.0957,
+      "medianOutputSpeed": 193.3559,
       "aa": {
         "aa-intelligence": 26.7728,
         "aa-coding": null,
@@ -334959,7 +334959,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 34.9185,
+        "AA-Briefcase": 34.858,
         "AutomationBench-AA": 38.433,
         "Terminal-Bench v4.0": 3.0303,
         "GDP.pdf": 9.0,
@@ -335669,7 +335669,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 51,
             "evidenceRank": 51,
-            "score": 81.907,
+            "score": 81.9063,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -335685,7 +335685,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.519,
+                "score": 86.515,
                 "tests": 4
               },
               "instruction-context": {
@@ -335699,7 +335699,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 51,
             "evidenceRank": 51,
-            "score": 81.9196,
+            "score": 81.9189,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -335715,7 +335715,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.519,
+                "score": 86.515,
                 "tests": 4
               },
               "instruction-context": {
@@ -335729,7 +335729,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 51,
             "evidenceRank": 51,
-            "score": 81.6377,
+            "score": 81.6372,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -335745,7 +335745,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.887,
+                "score": 86.885,
                 "tests": 4
               },
               "instruction-context": {
@@ -335759,7 +335759,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 42,
             "evidenceRank": 42,
-            "score": 83.8122,
+            "score": 83.8114,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -335775,7 +335775,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.494,
+                "score": 86.49,
                 "tests": 4
               },
               "instruction-context": {
@@ -336051,7 +336051,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 69,
             "evidenceRank": 69,
-            "score": 83.4792,
+            "score": 83.4784,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -336067,7 +336067,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.411,
+                "score": 86.407,
                 "tests": 4
               },
               "instruction-context": {
@@ -336081,7 +336081,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 69,
             "evidenceRank": 69,
-            "score": 83.5197,
+            "score": 83.519,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -336097,7 +336097,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.439,
+                "score": 86.435,
                 "tests": 4
               },
               "instruction-context": {
@@ -336111,7 +336111,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 72,
             "evidenceRank": 72,
-            "score": 82.7989,
+            "score": 82.7984,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -336127,7 +336127,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.861,
+                "score": 86.859,
                 "tests": 4
               },
               "instruction-context": {
@@ -336141,7 +336141,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 69,
             "evidenceRank": 69,
-            "score": 83.487,
+            "score": 83.4863,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -336157,7 +336157,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.411,
+                "score": 86.407,
                 "tests": 4
               },
               "instruction-context": {
@@ -336189,7 +336189,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 38.2799,
+      "medianOutputSpeed": 39.9644,
       "aa": {
         "aa-intelligence": 39.8862,
         "aa-coding": null,
@@ -336207,12 +336207,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 176.2443
       },
       "scores": {
-        "AA-Briefcase": 47.297,
+        "AA-Briefcase": 47.239,
         "AutomationBench-AA": 57.2474,
         "Terminal-Bench v4.0": 11.1111,
         "GDP.pdf": 15.0,
         "AA-LCR v1.1": 80.3333,
-        "GDPval-AA v2": 54.855,
+        "GDPval-AA v2": 54.8635,
         "τ³-Banking": 49.0722,
         "Terminal-Bench v2.1": 82.0225,
         "GDPval-AA": 56.391,
@@ -336727,7 +336727,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 13,
             "evidenceRank": 13,
-            "score": 91.3544,
+            "score": 91.354,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -336743,7 +336743,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.328,
+                "score": 93.326,
                 "tests": 4
               },
               "instruction-context": {
@@ -336757,7 +336757,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 13,
             "evidenceRank": 13,
-            "score": 91.3661,
+            "score": 91.3657,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -336773,7 +336773,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.328,
+                "score": 93.326,
                 "tests": 4
               },
               "instruction-context": {
@@ -336787,7 +336787,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 15,
             "evidenceRank": 15,
-            "score": 90.6075,
+            "score": 90.6074,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -336803,7 +336803,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.005,
+                "score": 94.004,
                 "tests": 4
               },
               "instruction-context": {
@@ -336817,7 +336817,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 13,
             "evidenceRank": 13,
-            "score": 91.3541,
+            "score": 91.3537,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -336833,7 +336833,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.307,
+                "score": 93.305,
                 "tests": 4
               },
               "instruction-context": {
@@ -337109,7 +337109,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 32,
             "evidenceRank": 32,
-            "score": 90.9968,
+            "score": 90.9963,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -337125,7 +337125,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.228,
+                "score": 93.226,
                 "tests": 4
               },
               "instruction-context": {
@@ -337139,7 +337139,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 32,
             "evidenceRank": 32,
-            "score": 91.0368,
+            "score": 91.0364,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -337155,7 +337155,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.252,
+                "score": 93.25,
                 "tests": 4
               },
               "instruction-context": {
@@ -337169,7 +337169,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 35,
             "evidenceRank": 35,
-            "score": 90.3406,
+            "score": 90.3405,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -337199,7 +337199,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 33,
             "evidenceRank": 33,
-            "score": 91.0029,
+            "score": 91.0025,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -337215,7 +337215,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.228,
+                "score": 93.226,
                 "tests": 4
               },
               "instruction-context": {
@@ -337541,7 +337541,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 154.4518,
+      "medianOutputSpeed": 166.475,
       "aa": {
         "aa-intelligence": 12.4803,
         "aa-coding": null,
@@ -338447,7 +338447,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 71.3333,
-        "GDPval-AA v2": 30.704,
+        "GDPval-AA v2": 30.717,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": 59.5506,
         "GDPval-AA": 34.665,
@@ -338719,7 +338719,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 101.3369,
+      "medianOutputSpeed": 102.7931,
       "aa": {
         "aa-intelligence": 13.9927,
         "aa-coding": null,
@@ -338737,12 +338737,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 29.9104
       },
       "scores": {
-        "AA-Briefcase": 10.969,
+        "AA-Briefcase": 10.9475,
         "AutomationBench-AA": 0.9305,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 2.8,
         "AA-LCR v1.1": 32.3333,
-        "GDPval-AA v2": 21.437,
+        "GDPval-AA v2": 21.4555,
         "τ³-Banking": 8.0412,
         "Terminal-Bench v2.1": 34.0824,
         "GDPval-AA": 26.54,
@@ -339258,7 +339258,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 141,
             "evidenceRank": 141,
-            "score": 45.4285,
+            "score": 45.4276,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -339274,7 +339274,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 53.732,
+                "score": 53.727,
                 "tests": 5
               },
               "instruction-context": {
@@ -339288,7 +339288,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 141,
             "evidenceRank": 141,
-            "score": 45.4375,
+            "score": 45.4366,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -339304,7 +339304,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 53.735,
+                "score": 53.73,
                 "tests": 5
               },
               "instruction-context": {
@@ -339318,7 +339318,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 141,
             "evidenceRank": 141,
-            "score": 44.2397,
+            "score": 44.2387,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -339334,7 +339334,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 46.336,
+                "score": 46.332,
                 "tests": 5
               },
               "instruction-context": {
@@ -339348,7 +339348,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 141,
             "evidenceRank": 141,
-            "score": 45.4372,
+            "score": 45.4363,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -339364,7 +339364,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 53.732,
+                "score": 53.727,
                 "tests": 5
               },
               "instruction-context": {
@@ -339396,7 +339396,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 42.3306,
+      "medianOutputSpeed": 43.6281,
       "aa": {
         "aa-intelligence": 20.6662,
         "aa-coding": null,
@@ -339414,12 +339414,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 248.3123
       },
       "scores": {
-        "AA-Briefcase": 10.4295,
+        "AA-Briefcase": 10.42,
         "AutomationBench-AA": 14.0757,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 5.2,
         "AA-LCR v1.1": 72.3333,
-        "GDPval-AA v2": 19.6325,
+        "GDPval-AA v2": 19.6435,
         "τ³-Banking": 24.5361,
         "Terminal-Bench v2.1": 55.8052,
         "GDPval-AA": 24.463,
@@ -339935,7 +339935,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 80,
             "evidenceRank": 80,
-            "score": 69.8363,
+            "score": 69.8358,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -339951,7 +339951,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 77.096,
+                "score": 77.093,
                 "tests": 5
               },
               "instruction-context": {
@@ -339965,7 +339965,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 80,
             "evidenceRank": 80,
-            "score": 69.8542,
+            "score": 69.8536,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -339981,7 +339981,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 77.096,
+                "score": 77.093,
                 "tests": 5
               },
               "instruction-context": {
@@ -339995,7 +339995,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 83,
             "evidenceRank": 83,
-            "score": 68.1208,
+            "score": 68.1201,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -340011,7 +340011,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 75.865,
+                "score": 75.861,
                 "tests": 5
               },
               "instruction-context": {
@@ -340025,7 +340025,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 80,
             "evidenceRank": 80,
-            "score": 69.8357,
+            "score": 69.8351,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -340041,7 +340041,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 77.074,
+                "score": 77.071,
                 "tests": 5
               },
               "instruction-context": {
@@ -340317,7 +340317,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 106,
             "evidenceRank": 106,
-            "score": 69.5356,
+            "score": 69.5351,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -340333,7 +340333,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 77.004,
+                "score": 77.001,
                 "tests": 5
               },
               "instruction-context": {
@@ -340347,7 +340347,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 106,
             "evidenceRank": 106,
-            "score": 69.5707,
+            "score": 69.5702,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -340363,7 +340363,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 77.033,
+                "score": 77.03,
                 "tests": 5
               },
               "instruction-context": {
@@ -340377,7 +340377,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 112,
             "evidenceRank": 112,
-            "score": 67.7635,
+            "score": 67.7628,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -340393,7 +340393,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 75.836,
+                "score": 75.833,
                 "tests": 5
               },
               "instruction-context": {
@@ -340407,7 +340407,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 106,
             "evidenceRank": 106,
-            "score": 69.5441,
+            "score": 69.5436,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -340423,7 +340423,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 77.004,
+                "score": 77.001,
                 "tests": 5
               },
               "instruction-context": {
@@ -340455,7 +340455,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 39.4575,
+      "medianOutputSpeed": 38.8359,
       "aa": {
         "aa-intelligence": 19.3437,
         "aa-coding": null,
@@ -341338,7 +341338,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 110.3904,
+      "medianOutputSpeed": 109.1301,
       "aa": {
         "aa-intelligence": 9.9906,
         "aa-coding": null,
@@ -341877,7 +341877,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 126,
             "evidenceRank": 126,
-            "score": 35.4592,
+            "score": 35.4583,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -341893,7 +341893,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.83,
+                "score": 47.825,
                 "tests": 5
               },
               "instruction-context": {
@@ -341907,7 +341907,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 126,
             "evidenceRank": 126,
-            "score": 35.4563,
+            "score": 35.4554,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -341923,7 +341923,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.83,
+                "score": 47.825,
                 "tests": 5
               },
               "instruction-context": {
@@ -341937,7 +341937,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 127,
             "evidenceRank": 127,
-            "score": 34.68,
+            "score": 34.679,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -341953,7 +341953,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 40.64,
+                "score": 40.635,
                 "tests": 5
               },
               "instruction-context": {
@@ -341967,7 +341967,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 126,
             "evidenceRank": 126,
-            "score": 35.4618,
+            "score": 35.4609,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -341983,7 +341983,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.837,
+                "score": 47.833,
                 "tests": 5
               },
               "instruction-context": {
@@ -342259,7 +342259,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 152,
             "evidenceRank": 152,
-            "score": 35.6006,
+            "score": 35.5997,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -342275,7 +342275,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.927,
+                "score": 47.922,
                 "tests": 5
               },
               "instruction-context": {
@@ -342289,7 +342289,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 152,
             "evidenceRank": 152,
-            "score": 35.5883,
+            "score": 35.5873,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -342305,7 +342305,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.922,
+                "score": 47.917,
                 "tests": 5
               },
               "instruction-context": {
@@ -342319,7 +342319,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 153,
             "evidenceRank": 153,
-            "score": 34.5716,
+            "score": 34.5706,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -342335,7 +342335,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 40.655,
+                "score": 40.65,
                 "tests": 5
               },
               "instruction-context": {
@@ -342349,7 +342349,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 152,
             "evidenceRank": 152,
-            "score": 35.6081,
+            "score": 35.6072,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -342365,7 +342365,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.927,
+                "score": 47.922,
                 "tests": 5
               },
               "instruction-context": {
@@ -342691,7 +342691,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 37.3648,
+      "medianOutputSpeed": 40.8545,
       "aa": {
         "aa-intelligence": 24.2412,
         "aa-coding": null,
@@ -343679,7 +343679,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 35.8863,
+      "medianOutputSpeed": 38.573,
       "aa": {
         "aa-intelligence": 14.9293,
         "aa-coding": null,
@@ -344136,7 +344136,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 108.8781,
+      "medianOutputSpeed": 114.9562,
       "aa": {
         "aa-intelligence": 24.8801,
         "aa-coding": null,
@@ -344154,12 +344154,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 18.5196
       },
       "scores": {
-        "AA-Briefcase": 12.8625,
+        "AA-Briefcase": 12.836,
         "AutomationBench-AA": 1.376,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 5.8,
         "AA-LCR v1.1": 73.0,
-        "GDPval-AA v2": 21.142,
+        "GDPval-AA v2": 21.1605,
         "τ³-Banking": 12.3711,
         "Terminal-Bench v2.1": 39.7004,
         "GDPval-AA": 25.9245,
@@ -344675,7 +344675,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 58,
             "evidenceRank": 58,
-            "score": 79.1368,
+            "score": 79.1365,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -344691,7 +344691,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.292,
+                "score": 89.29,
                 "tests": 5
               },
               "instruction-context": {
@@ -344705,7 +344705,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 58,
             "evidenceRank": 58,
-            "score": 79.1539,
+            "score": 79.1536,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -344721,7 +344721,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.292,
+                "score": 89.29,
                 "tests": 5
               },
               "instruction-context": {
@@ -344735,7 +344735,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 60,
             "evidenceRank": 60,
-            "score": 77.9228,
+            "score": 77.9225,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -344751,7 +344751,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.481,
+                "score": 90.48,
                 "tests": 5
               },
               "instruction-context": {
@@ -344765,7 +344765,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 57,
             "evidenceRank": 57,
-            "score": 79.1276,
+            "score": 79.1273,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -344781,7 +344781,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.268,
+                "score": 89.266,
                 "tests": 5
               },
               "instruction-context": {
@@ -345057,7 +345057,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 86,
             "evidenceRank": 86,
-            "score": 78.8816,
+            "score": 78.8813,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -345073,7 +345073,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.172,
+                "score": 89.171,
                 "tests": 5
               },
               "instruction-context": {
@@ -345087,7 +345087,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 86,
             "evidenceRank": 86,
-            "score": 78.9169,
+            "score": 78.9166,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -345103,7 +345103,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.202,
+                "score": 89.201,
                 "tests": 5
               },
               "instruction-context": {
@@ -345117,7 +345117,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 88,
             "evidenceRank": 88,
-            "score": 77.5787,
+            "score": 77.5784,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -345133,7 +345133,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.452,
+                "score": 90.451,
                 "tests": 5
               },
               "instruction-context": {
@@ -345147,7 +345147,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 86,
             "evidenceRank": 86,
-            "score": 78.8906,
+            "score": 78.8903,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -345163,7 +345163,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.172,
+                "score": 89.171,
                 "tests": 5
               },
               "instruction-context": {
@@ -345784,7 +345784,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 94.6625,
+      "medianOutputSpeed": 93.0622,
       "aa": {
         "aa-intelligence": 5.4777,
         "aa-coding": null,
@@ -346323,7 +346323,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 137,
             "evidenceRank": 137,
-            "score": 21.5931,
+            "score": 21.5922,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -346339,7 +346339,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 23.663,
+                "score": 23.659,
                 "tests": 5
               },
               "instruction-context": {
@@ -346353,7 +346353,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 137,
             "evidenceRank": 137,
-            "score": 21.5875,
+            "score": 21.5867,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -346369,7 +346369,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 23.663,
+                "score": 23.659,
                 "tests": 5
               },
               "instruction-context": {
@@ -346383,7 +346383,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 137,
             "evidenceRank": 137,
-            "score": 22.6995,
+            "score": 22.6987,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -346399,7 +346399,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 17.674,
+                "score": 17.67,
                 "tests": 5
               },
               "instruction-context": {
@@ -346413,7 +346413,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 137,
             "evidenceRank": 137,
-            "score": 21.6039,
+            "score": 21.603,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -346429,7 +346429,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 23.693,
+                "score": 23.688,
                 "tests": 5
               },
               "instruction-context": {
@@ -346705,7 +346705,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 162,
             "evidenceRank": 162,
-            "score": 21.8121,
+            "score": 21.8112,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -346721,7 +346721,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 23.879,
+                "score": 23.875,
                 "tests": 5
               },
               "instruction-context": {
@@ -346735,7 +346735,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 162,
             "evidenceRank": 162,
-            "score": 21.7847,
+            "score": 21.7838,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -346751,7 +346751,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 23.847,
+                "score": 23.843,
                 "tests": 5
               },
               "instruction-context": {
@@ -346765,7 +346765,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 162,
             "evidenceRank": 162,
-            "score": 22.6653,
+            "score": 22.6645,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -346781,7 +346781,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 17.712,
+                "score": 17.708,
                 "tests": 5
               },
               "instruction-context": {
@@ -346795,7 +346795,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 162,
             "evidenceRank": 162,
-            "score": 21.8169,
+            "score": 21.8161,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -346811,7 +346811,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 23.879,
+                "score": 23.875,
                 "tests": 5
               },
               "instruction-context": {
@@ -346843,7 +346843,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 85.8597,
+      "medianOutputSpeed": 79.9675,
       "aa": {
         "aa-intelligence": 7.6638,
         "aa-coding": null,
@@ -347725,7 +347725,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 55.8599,
+      "medianOutputSpeed": 58.1171,
       "aa": {
         "aa-intelligence": 41.7899,
         "aa-coding": null,
@@ -347743,12 +347743,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 729.0982
       },
       "scores": {
-        "AA-Briefcase": 41.15,
+        "AA-Briefcase": 41.1105,
         "AutomationBench-AA": 45.5934,
         "Terminal-Bench v4.0": 21.7172,
         "GDP.pdf": 22.8,
         "AA-LCR v1.1": 77.6667,
-        "GDPval-AA v2": 46.9075,
+        "GDPval-AA v2": 46.916,
         "τ³-Banking": 34.2268,
         "Terminal-Bench v2.1": 84.6442,
         "GDPval-AA": 49.452,
@@ -348662,7 +348662,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 18,
             "evidenceRank": 18,
-            "score": 90.4926,
+            "score": 90.4923,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -348678,7 +348678,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.686,
+                "score": 95.685,
                 "tests": 4
               },
               "instruction-context": {
@@ -348692,7 +348692,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 18,
             "evidenceRank": 18,
-            "score": 90.5041,
+            "score": 90.5038,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -348708,7 +348708,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.686,
+                "score": 95.685,
                 "tests": 4
               },
               "instruction-context": {
@@ -348722,7 +348722,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 14,
             "evidenceRank": 14,
-            "score": 90.9471,
+            "score": 90.947,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -348738,7 +348738,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.016,
+                "score": 96.015,
                 "tests": 4
               },
               "instruction-context": {
@@ -348752,7 +348752,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 18,
             "evidenceRank": 18,
-            "score": 90.4679,
+            "score": 90.4677,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -348768,7 +348768,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.669,
+                "score": 95.668,
                 "tests": 4
               },
               "instruction-context": {
@@ -349044,7 +349044,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 37,
             "evidenceRank": 37,
-            "score": 90.3985,
+            "score": 90.3982,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -349060,7 +349060,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.601,
+                "score": 95.6,
                 "tests": 4
               },
               "instruction-context": {
@@ -349074,7 +349074,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 37,
             "evidenceRank": 37,
-            "score": 90.4417,
+            "score": 90.4414,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -349090,7 +349090,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.621,
+                "score": 95.62,
                 "tests": 4
               },
               "instruction-context": {
@@ -349104,7 +349104,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 32,
             "evidenceRank": 32,
-            "score": 90.9002,
+            "score": 90.9,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -349120,7 +349120,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.998,
+                "score": 95.997,
                 "tests": 4
               },
               "instruction-context": {
@@ -349134,7 +349134,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 37,
             "evidenceRank": 37,
-            "score": 90.4045,
+            "score": 90.4042,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -349150,7 +349150,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.601,
+                "score": 95.6,
                 "tests": 4
               },
               "instruction-context": {
@@ -349182,7 +349182,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 224.0244,
+      "medianOutputSpeed": 240.6815,
       "aa": {
         "aa-intelligence": 48.0923,
         "aa-coding": null,
@@ -349200,12 +349200,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 142.4362
       },
       "scores": {
-        "AA-Briefcase": 54.932,
+        "AA-Briefcase": 54.871,
         "AutomationBench-AA": 57.8534,
         "Terminal-Bench v4.0": 33.3333,
         "GDP.pdf": 26.6,
         "AA-LCR v1.1": 83.0,
-        "GDPval-AA v2": 58.6955,
+        "GDPval-AA v2": 58.7035,
         "τ³-Banking": 50.5155,
         "Terminal-Bench v2.1": 84.2697,
         "GDPval-AA": 60.167,
@@ -349983,7 +349983,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 18,
             "evidenceRank": 18,
-            "score": 92.969,
+            "score": 92.9687,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -349999,7 +349999,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.079,
+                "score": 96.078,
                 "tests": 4
               },
               "instruction-context": {
@@ -350013,7 +350013,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 18,
             "evidenceRank": 18,
-            "score": 93.006,
+            "score": 93.0057,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -350029,7 +350029,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.098,
+                "score": 96.096,
                 "tests": 4
               },
               "instruction-context": {
@@ -350043,7 +350043,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 24,
             "evidenceRank": 24,
-            "score": 92.1989,
+            "score": 92.1988,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -350073,7 +350073,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 19,
             "evidenceRank": 19,
-            "score": 92.9746,
+            "score": 92.9743,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -350089,7 +350089,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.079,
+                "score": 96.078,
                 "tests": 4
               },
               "instruction-context": {
@@ -350121,7 +350121,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 70.325,
+      "medianOutputSpeed": 72.4881,
       "aa": {
         "aa-intelligence": 34.3842,
         "aa-coding": null,
@@ -350139,12 +350139,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 301.6364
       },
       "scores": {
-        "AA-Briefcase": 38.8265,
+        "AA-Briefcase": 38.77,
         "AutomationBench-AA": 34.4763,
         "Terminal-Bench v4.0": 7.0707,
         "GDP.pdf": 12.6,
         "AA-LCR v1.1": 76.6667,
-        "GDPval-AA v2": 42.211,
+        "GDPval-AA v2": 42.22,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": 45.5245,
@@ -350811,7 +350811,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 56.8199,
+      "medianOutputSpeed": 61.352,
       "aa": {
         "aa-intelligence": 39.8223,
         "aa-coding": null,
@@ -350829,12 +350829,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 20.3476
       },
       "scores": {
-        "AA-Briefcase": 54.919,
+        "AA-Briefcase": 54.8605,
         "AutomationBench-AA": 55.9083,
         "Terminal-Bench v4.0": 25.2525,
         "GDP.pdf": 15.6,
         "AA-LCR v1.1": 79.6667,
-        "GDPval-AA v2": 55.5985,
+        "GDPval-AA v2": 55.6065,
         "τ³-Banking": 45.3608,
         "Terminal-Bench v2.1": 86.1423,
         "GDPval-AA": 57.401,
@@ -351816,7 +351816,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 26,
             "evidenceRank": 26,
-            "score": 88.7802,
+            "score": 88.7799,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -351832,7 +351832,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.335,
+                "score": 89.334,
                 "tests": 5
               },
               "instruction-context": {
@@ -351846,7 +351846,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 26,
             "evidenceRank": 26,
-            "score": 88.7952,
+            "score": 88.7949,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -351862,7 +351862,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.335,
+                "score": 89.334,
                 "tests": 5
               },
               "instruction-context": {
@@ -351876,7 +351876,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 26,
             "evidenceRank": 26,
-            "score": 89.0617,
+            "score": 89.0616,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -351892,7 +351892,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.802,
+                "score": 90.801,
                 "tests": 5
               },
               "instruction-context": {
@@ -351906,7 +351906,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 26,
             "evidenceRank": 26,
-            "score": 89.1294,
+            "score": 89.1292,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -351922,7 +351922,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.311,
+                "score": 89.31,
                 "tests": 5
               },
               "instruction-context": {
@@ -352198,7 +352198,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 52,
             "evidenceRank": 52,
-            "score": 88.6398,
+            "score": 88.6396,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -352214,7 +352214,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.216,
+                "score": 89.214,
                 "tests": 5
               },
               "instruction-context": {
@@ -352228,7 +352228,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 53,
             "evidenceRank": 53,
-            "score": 88.0154,
+            "score": 88.0152,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -352244,7 +352244,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.246,
+                "score": 89.244,
                 "tests": 5
               },
               "instruction-context": {
@@ -352258,7 +352258,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 50,
             "evidenceRank": 50,
-            "score": 88.5862,
+            "score": 88.586,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -352288,7 +352288,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 48,
             "evidenceRank": 48,
-            "score": 89.491,
+            "score": 89.4907,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -352304,7 +352304,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.216,
+                "score": 89.214,
                 "tests": 5
               },
               "instruction-context": {
@@ -352336,7 +352336,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 61.0547,
+      "medianOutputSpeed": 62.797,
       "aa": {
         "aa-intelligence": 53.2033,
         "aa-coding": null,
@@ -352900,7 +352900,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 2,
             "evidenceRank": 2,
-            "score": 95.3035,
+            "score": 95.3033,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -352930,7 +352930,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 2,
             "evidenceRank": 2,
-            "score": 95.3349,
+            "score": 95.3348,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -352990,7 +352990,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 2,
             "evidenceRank": 2,
-            "score": 95.308,
+            "score": 95.3079,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -353038,7 +353038,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 84.3646,
+      "medianOutputSpeed": 86.5944,
       "aa": {
         "aa-intelligence": 20.7797,
         "aa-coding": null,
@@ -353056,12 +353056,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 69.8166
       },
       "scores": {
-        "AA-Briefcase": 22.279,
+        "AA-Briefcase": 22.275,
         "AutomationBench-AA": 12.5408,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": 11.2,
         "AA-LCR v1.1": 58.6667,
-        "GDPval-AA v2": 29.222,
+        "GDPval-AA v2": 29.2385,
         "τ³-Banking": 15.6701,
         "Terminal-Bench v2.1": 56.1798,
         "GDPval-AA": 33.4315,
@@ -353579,7 +353579,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 118,
             "evidenceRank": 118,
-            "score": 64.6307,
+            "score": 64.63,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -353595,7 +353595,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 69.862,
+                "score": 69.858,
                 "tests": 5
               },
               "instruction-context": {
@@ -353609,7 +353609,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 118,
             "evidenceRank": 118,
-            "score": 64.6638,
+            "score": 64.6631,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -353625,7 +353625,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 69.884,
+                "score": 69.881,
                 "tests": 5
               },
               "instruction-context": {
@@ -353639,7 +353639,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 118,
             "evidenceRank": 118,
-            "score": 63.7798,
+            "score": 63.7788,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -353655,7 +353655,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 65.574,
+                "score": 65.569,
                 "tests": 5
               },
               "instruction-context": {
@@ -353669,7 +353669,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 118,
             "evidenceRank": 118,
-            "score": 64.6394,
+            "score": 64.6387,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -353685,7 +353685,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 69.862,
+                "score": 69.858,
                 "tests": 5
               },
               "instruction-context": {
@@ -354771,7 +354771,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 55.0504,
+      "medianOutputSpeed": 56.8394,
       "aa": {
         "aa-intelligence": 51.1516,
         "aa-coding": null,
@@ -355335,7 +355335,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 3,
             "evidenceRank": 3,
-            "score": 94.6482,
+            "score": 94.648,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -355351,7 +355351,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 97.536,
+                "score": 97.535,
                 "tests": 4
               },
               "instruction-context": {
@@ -355365,7 +355365,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 4,
             "evidenceRank": 4,
-            "score": 94.6815,
+            "score": 94.6813,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -355395,7 +355395,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 3,
             "evidenceRank": 3,
-            "score": 94.1401,
+            "score": 94.14,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -355411,7 +355411,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 97.658,
+                "score": 97.657,
                 "tests": 4
               },
               "instruction-context": {
@@ -355425,7 +355425,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 3,
             "evidenceRank": 3,
-            "score": 94.6529,
+            "score": 94.6528,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -355441,7 +355441,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 97.536,
+                "score": 97.535,
                 "tests": 4
               },
               "instruction-context": {
@@ -355473,7 +355473,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 41.3201,
+      "medianOutputSpeed": 40.7835,
       "aa": {
         "aa-intelligence": 7.2763,
         "aa-coding": null,
@@ -356011,7 +356011,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 142,
             "evidenceRank": 142,
-            "score": 13.9628,
+            "score": 13.9613,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -356027,7 +356027,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.7,
+                "score": 29.693,
                 "tests": 4
               },
               "instruction-context": {
@@ -356041,7 +356041,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 142,
             "evidenceRank": 142,
-            "score": 13.9552,
+            "score": 13.9537,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -356057,7 +356057,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.7,
+                "score": 29.693,
                 "tests": 4
               },
               "instruction-context": {
@@ -356071,7 +356071,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 143,
             "evidenceRank": 143,
-            "score": 12.9375,
+            "score": 12.9362,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -356087,7 +356087,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 23.924,
+                "score": 23.917,
                 "tests": 4
               },
               "instruction-context": {
@@ -356101,7 +356101,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 142,
             "evidenceRank": 142,
-            "score": 13.9712,
+            "score": 13.9697,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -356117,7 +356117,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.726,
+                "score": 29.718,
                 "tests": 4
               },
               "instruction-context": {
@@ -356393,7 +356393,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 166,
             "evidenceRank": 166,
-            "score": 14.1605,
+            "score": 14.159,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -356409,7 +356409,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.917,
+                "score": 29.909,
                 "tests": 4
               },
               "instruction-context": {
@@ -356423,7 +356423,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 166,
             "evidenceRank": 166,
-            "score": 14.1332,
+            "score": 14.1317,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -356439,7 +356439,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.886,
+                "score": 29.878,
                 "tests": 4
               },
               "instruction-context": {
@@ -356453,7 +356453,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 167,
             "evidenceRank": 167,
-            "score": 12.915,
+            "score": 12.9136,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -356469,7 +356469,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 23.959,
+                "score": 23.953,
                 "tests": 4
               },
               "instruction-context": {
@@ -356483,7 +356483,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 166,
             "evidenceRank": 166,
-            "score": 14.1626,
+            "score": 14.1611,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -356499,7 +356499,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.917,
+                "score": 29.909,
                 "tests": 4
               },
               "instruction-context": {
@@ -356825,7 +356825,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 81.3443,
+      "medianOutputSpeed": 100.7228,
       "aa": {
         "aa-intelligence": 37.9513,
         "aa-coding": null,
@@ -356843,12 +356843,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 168.752
       },
       "scores": {
-        "AA-Briefcase": 41.9925,
+        "AA-Briefcase": 41.9355,
         "AutomationBench-AA": 47.1363,
         "Terminal-Bench v4.0": 10.101,
         "GDP.pdf": 24.6,
         "AA-LCR v1.1": 79.0,
-        "GDPval-AA v2": 46.3995,
+        "GDPval-AA v2": 46.408,
         "τ³-Banking": 29.6907,
         "Terminal-Bench v2.1": 80.1498,
         "GDPval-AA": 48.93,
@@ -357364,7 +357364,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 48,
             "evidenceRank": 48,
-            "score": 89.3785,
+            "score": 89.3783,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -357380,7 +357380,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.624,
+                "score": 92.623,
                 "tests": 5
               },
               "instruction-context": {
@@ -357394,7 +357394,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 47,
             "evidenceRank": 47,
-            "score": 89.4227,
+            "score": 89.4225,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -357410,7 +357410,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.651,
+                "score": 92.65,
                 "tests": 5
               },
               "instruction-context": {
@@ -357424,7 +357424,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 39,
             "evidenceRank": 39,
-            "score": 89.7706,
+            "score": 89.7704,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -357440,7 +357440,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.723,
+                "score": 93.722,
                 "tests": 5
               },
               "instruction-context": {
@@ -357454,7 +357454,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 49,
             "evidenceRank": 49,
-            "score": 89.385,
+            "score": 89.3848,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -357470,7 +357470,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.624,
+                "score": 92.623,
                 "tests": 5
               },
               "instruction-context": {
@@ -359062,7 +359062,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 139.2943,
+      "medianOutputSpeed": 149.0488,
       "aa": {
         "aa-intelligence": 10.1589,
         "aa-coding": null,
@@ -359357,7 +359357,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/microsoft_small.svg",
         "color": "#0078D5"
       },
-      "medianOutputSpeed": 44.9786,
+      "medianOutputSpeed": 45.6397,
       "aa": {
         "aa-intelligence": 6.3286,
         "aa-coding": null,
@@ -360239,7 +360239,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 99.568,
+      "medianOutputSpeed": 105.6432,
       "aa": {
         "aa-intelligence": 9.959,
         "aa-coding": null,
@@ -361145,7 +361145,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 74.6667,
-        "GDPval-AA v2": 29.3015,
+        "GDPval-AA v2": 29.323,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": 70.7865,
         "GDPval-AA": 34.131,
@@ -361710,7 +361710,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 54.6309,
+      "medianOutputSpeed": 62.0429,
       "aa": {
         "aa-intelligence": 45.7819,
         "aa-coding": null,
@@ -362249,7 +362249,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 14,
             "evidenceRank": 14,
-            "score": 93.2746,
+            "score": 93.2745,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -362279,7 +362279,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 14,
             "evidenceRank": 14,
-            "score": 93.3116,
+            "score": 93.3115,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -362309,7 +362309,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 14,
             "evidenceRank": 14,
-            "score": 92.8691,
+            "score": 92.869,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -362325,7 +362325,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 97.254,
+                "score": 97.253,
                 "tests": 5
               },
               "instruction-context": {
@@ -362339,7 +362339,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 14,
             "evidenceRank": 14,
-            "score": 93.28,
+            "score": 93.2799,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -363000,7 +363000,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 78.0,
-        "GDPval-AA v2": 16.243,
+        "GDPval-AA v2": 16.203,
         "τ³-Banking": 14.2268,
         "Terminal-Bench v2.1": 45.6929,
         "GDPval-AA": 21.816,
@@ -363438,7 +363438,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 92.3521,
+      "medianOutputSpeed": 90.4172,
       "aa": {
         "aa-intelligence": 16.8822,
         "aa-coding": null,
@@ -363461,7 +363461,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 3.8,
         "AA-LCR v1.1": 74.3333,
-        "GDPval-AA v2": 10.9335,
+        "GDPval-AA v2": 10.943,
         "τ³-Banking": 9.2784,
         "Terminal-Bench v2.1": 44.1948,
         "GDPval-AA": 17.7225,
@@ -363977,7 +363977,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 97,
             "evidenceRank": 97,
-            "score": 59.4055,
+            "score": 59.4046,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -363993,7 +363993,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 54.02,
+                "score": 54.015,
                 "tests": 5
               },
               "instruction-context": {
@@ -364007,7 +364007,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 97,
             "evidenceRank": 97,
-            "score": 59.4178,
+            "score": 59.4169,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -364023,7 +364023,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 54.02,
+                "score": 54.015,
                 "tests": 5
               },
               "instruction-context": {
@@ -364037,7 +364037,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 97,
             "evidenceRank": 97,
-            "score": 58.5872,
+            "score": 58.5862,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -364053,7 +364053,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 48.307,
+                "score": 48.303,
                 "tests": 5
               },
               "instruction-context": {
@@ -364067,7 +364067,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 97,
             "evidenceRank": 97,
-            "score": 59.4087,
+            "score": 59.4078,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -364083,7 +364083,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 54.02,
+                "score": 54.016,
                 "tests": 5
               },
               "instruction-context": {
@@ -364359,7 +364359,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 124,
             "evidenceRank": 124,
-            "score": 59.1987,
+            "score": 59.1978,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -364375,7 +364375,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 54.074,
+                "score": 54.069,
                 "tests": 5
               },
               "instruction-context": {
@@ -364389,7 +364389,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 124,
             "evidenceRank": 124,
-            "score": 59.2224,
+            "score": 59.2215,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -364405,7 +364405,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 54.077,
+                "score": 54.073,
                 "tests": 5
               },
               "instruction-context": {
@@ -364419,7 +364419,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 124,
             "evidenceRank": 124,
-            "score": 58.2452,
+            "score": 58.2443,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -364435,7 +364435,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 48.319,
+                "score": 48.314,
                 "tests": 5
               },
               "instruction-context": {
@@ -364449,7 +364449,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 124,
             "evidenceRank": 124,
-            "score": 59.2077,
+            "score": 59.2068,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -364465,7 +364465,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 54.074,
+                "score": 54.069,
                 "tests": 5
               },
               "instruction-context": {
@@ -365782,7 +365782,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 70.3333,
-        "GDPval-AA v2": 8.983,
+        "GDPval-AA v2": 8.988,
         "τ³-Banking": 16.701,
         "Terminal-Bench v2.1": 36.3296,
         "GDPval-AA": 15.9465,
@@ -366349,7 +366349,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 56.4361,
+      "medianOutputSpeed": 53.4313,
       "aa": {
         "aa-intelligence": 13.4376,
         "aa-coding": null,
@@ -366943,7 +366943,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 67.4806,
+      "medianOutputSpeed": 68.8716,
       "aa": {
         "aa-intelligence": 25.1622,
         "aa-coding": null,
@@ -366961,12 +366961,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 27.4785
       },
       "scores": {
-        "AA-Briefcase": 20.5755,
+        "AA-Briefcase": 20.554,
         "AutomationBench-AA": 17.3912,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 12.2,
         "AA-LCR v1.1": 73.0,
-        "GDPval-AA v2": 12.825,
+        "GDPval-AA v2": 12.802,
         "τ³-Banking": 17.5258,
         "Terminal-Bench v2.1": 61.0487,
         "GDPval-AA": 19.2915,
@@ -368019,7 +368019,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 46,
             "evidenceRank": 46,
-            "score": 82.8189,
+            "score": 82.8185,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -368035,7 +368035,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 85.364,
+                "score": 85.362,
                 "tests": 7
               },
               "instruction-context": {
@@ -368049,7 +368049,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 46,
             "evidenceRank": 46,
-            "score": 82.8391,
+            "score": 82.8387,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -368065,7 +368065,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 85.364,
+                "score": 85.362,
                 "tests": 7
               },
               "instruction-context": {
@@ -368079,7 +368079,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 44,
             "evidenceRank": 44,
-            "score": 83.1431,
+            "score": 83.1429,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -368095,7 +368095,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.734,
+                "score": 87.733,
                 "tests": 7
               },
               "instruction-context": {
@@ -368109,7 +368109,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 48,
             "evidenceRank": 48,
-            "score": 82.7103,
+            "score": 82.7099,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -368125,7 +368125,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 85.938,
+                "score": 85.936,
                 "tests": 6
               },
               "instruction-context": {
@@ -368401,7 +368401,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 75,
             "evidenceRank": 75,
-            "score": 82.304,
+            "score": 82.3036,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -368417,7 +368417,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.385,
+                "score": 86.384,
                 "tests": 5
               },
               "instruction-context": {
@@ -368431,7 +368431,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 76,
             "evidenceRank": 76,
-            "score": 81.9598,
+            "score": 81.9594,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -368447,7 +368447,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.849,
+                "score": 84.847,
                 "tests": 7
               },
               "instruction-context": {
@@ -368461,7 +368461,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 74,
             "evidenceRank": 74,
-            "score": 82.4639,
+            "score": 82.4638,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -368491,7 +368491,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 79,
             "evidenceRank": 79,
-            "score": 81.6963,
+            "score": 81.6959,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -368507,7 +368507,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.385,
+                "score": 86.384,
                 "tests": 5
               },
               "instruction-context": {
@@ -368539,7 +368539,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 129.2399,
+      "medianOutputSpeed": 142.267,
       "aa": {
         "aa-intelligence": 38.9756,
         "aa-coding": null,
@@ -368562,7 +368562,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 82.0,
-        "GDPval-AA v2": 36.631,
+        "GDPval-AA v2": 36.6335,
         "τ³-Banking": 39.5876,
         "Terminal-Bench v2.1": 78.2772,
         "GDPval-AA": 40.3355,
@@ -369891,7 +369891,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 139.9257,
+      "medianOutputSpeed": 156.8123,
       "aa": {
         "aa-intelligence": 32.1196,
         "aa-coding": null,
@@ -369909,12 +369909,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 14.672
       },
       "scores": {
-        "AA-Briefcase": 33.5925,
+        "AA-Briefcase": 33.5735,
         "AutomationBench-AA": 35.5879,
         "Terminal-Bench v4.0": 2.5253,
         "GDP.pdf": 22.2,
         "AA-LCR v1.1": 80.3333,
-        "GDPval-AA v2": 40.9285,
+        "GDPval-AA v2": 40.938,
         "τ³-Banking": 25.1546,
         "Terminal-Bench v2.1": 69.6629,
         "GDPval-AA": 43.814,
@@ -370430,7 +370430,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 61,
             "evidenceRank": 61,
-            "score": 87.0748,
+            "score": 87.0745,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -370446,7 +370446,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.718,
+                "score": 89.716,
                 "tests": 5
               },
               "instruction-context": {
@@ -370460,7 +370460,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 61,
             "evidenceRank": 61,
-            "score": 87.1159,
+            "score": 87.1156,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -370476,7 +370476,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.747,
+                "score": 89.746,
                 "tests": 5
               },
               "instruction-context": {
@@ -370490,7 +370490,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 61,
             "evidenceRank": 61,
-            "score": 86.0643,
+            "score": 86.0639,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -370506,7 +370506,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 90.49,
+                "score": 90.488,
                 "tests": 5
               },
               "instruction-context": {
@@ -370520,7 +370520,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 61,
             "evidenceRank": 61,
-            "score": 87.0821,
+            "score": 87.0818,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -370536,7 +370536,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.718,
+                "score": 89.716,
                 "tests": 5
               },
               "instruction-context": {
@@ -370862,7 +370862,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 181.7339,
+      "medianOutputSpeed": 185.3335,
       "aa": {
         "aa-intelligence": 5.8205,
         "aa-coding": null,
@@ -373520,7 +373520,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 100.0729,
+      "medianOutputSpeed": 100.7316,
       "aa": {
         "aa-intelligence": 8.075,
         "aa-coding": null,
@@ -374059,7 +374059,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 135,
             "evidenceRank": 135,
-            "score": 22.9292,
+            "score": 22.9283,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -374075,7 +374075,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.725,
+                "score": 29.72,
                 "tests": 5
               },
               "instruction-context": {
@@ -374089,7 +374089,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 135,
             "evidenceRank": 135,
-            "score": 22.9227,
+            "score": 22.9218,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -374105,7 +374105,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.725,
+                "score": 29.72,
                 "tests": 5
               },
               "instruction-context": {
@@ -374119,7 +374119,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 135,
             "evidenceRank": 135,
-            "score": 23.1828,
+            "score": 23.182,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -374135,7 +374135,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 23.468,
+                "score": 23.464,
                 "tests": 5
               },
               "instruction-context": {
@@ -374149,7 +374149,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 135,
             "evidenceRank": 135,
-            "score": 22.9372,
+            "score": 22.9363,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -374165,7 +374165,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.75,
+                "score": 29.746,
                 "tests": 5
               },
               "instruction-context": {
@@ -374441,7 +374441,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 161,
             "evidenceRank": 161,
-            "score": 23.1433,
+            "score": 23.1424,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -374457,7 +374457,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.922,
+                "score": 29.918,
                 "tests": 5
               },
               "instruction-context": {
@@ -374471,7 +374471,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 161,
             "evidenceRank": 161,
-            "score": 23.1184,
+            "score": 23.1175,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -374487,7 +374487,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.896,
+                "score": 29.891,
                 "tests": 5
               },
               "instruction-context": {
@@ -374501,7 +374501,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 160,
             "evidenceRank": 160,
-            "score": 23.1531,
+            "score": 23.1523,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -374517,7 +374517,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 23.502,
+                "score": 23.498,
                 "tests": 5
               },
               "instruction-context": {
@@ -374531,7 +374531,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 161,
             "evidenceRank": 161,
-            "score": 23.1482,
+            "score": 23.1473,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -374547,7 +374547,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.922,
+                "score": 29.918,
                 "tests": 5
               },
               "instruction-context": {
@@ -374579,7 +374579,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 83.5494,
+      "medianOutputSpeed": 89.9501,
       "aa": {
         "aa-intelligence": 11.0813,
         "aa-coding": null,
@@ -375117,7 +375117,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 118,
             "evidenceRank": 118,
-            "score": 41.2003,
+            "score": 41.1987,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -375133,7 +375133,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 40.923,
+                "score": 40.915,
                 "tests": 4
               },
               "instruction-context": {
@@ -375147,7 +375147,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 118,
             "evidenceRank": 118,
-            "score": 41.2041,
+            "score": 41.2025,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -375163,7 +375163,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 40.923,
+                "score": 40.915,
                 "tests": 4
               },
               "instruction-context": {
@@ -375177,7 +375177,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 118,
             "evidenceRank": 118,
-            "score": 40.7391,
+            "score": 40.7378,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -375193,7 +375193,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 36.696,
+                "score": 36.69,
                 "tests": 4
               },
               "instruction-context": {
@@ -375207,7 +375207,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 118,
             "evidenceRank": 118,
-            "score": 41.2093,
+            "score": 41.2077,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -375223,7 +375223,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 40.938,
+                "score": 40.93,
                 "tests": 4
               },
               "instruction-context": {
@@ -375499,7 +375499,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 144,
             "evidenceRank": 144,
-            "score": 41.2574,
+            "score": 41.2558,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -375515,7 +375515,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 41.085,
+                "score": 41.077,
                 "tests": 4
               },
               "instruction-context": {
@@ -375529,7 +375529,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 144,
             "evidenceRank": 144,
-            "score": 41.249,
+            "score": 41.2474,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -375545,7 +375545,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 41.066,
+                "score": 41.058,
                 "tests": 4
               },
               "instruction-context": {
@@ -375559,7 +375559,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 144,
             "evidenceRank": 144,
-            "score": 40.5244,
+            "score": 40.5231,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -375575,7 +375575,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 36.728,
+                "score": 36.722,
                 "tests": 4
               },
               "instruction-context": {
@@ -375589,7 +375589,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 144,
             "evidenceRank": 144,
-            "score": 41.2659,
+            "score": 41.2643,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -375605,7 +375605,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 41.085,
+                "score": 41.077,
                 "tests": 4
               },
               "instruction-context": {
@@ -375637,7 +375637,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 182.56,
+      "medianOutputSpeed": 201.9696,
       "aa": {
         "aa-intelligence": 11.1447,
         "aa-coding": null,
@@ -375660,7 +375660,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 37.0,
-        "GDPval-AA v2": 3.852,
+        "GDPval-AA v2": 3.846,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": 11.7135,
@@ -376819,7 +376819,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 105.5285,
+      "medianOutputSpeed": 99.8725,
       "aa": {
         "aa-intelligence": 8.5869,
         "aa-coding": null,
@@ -377443,7 +377443,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 133,
             "evidenceRank": 133,
-            "score": 26.0704,
+            "score": 26.0687,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -377459,7 +377459,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.25,
+                "score": 47.242,
                 "tests": 4
               },
               "instruction-context": {
@@ -377473,7 +377473,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 133,
             "evidenceRank": 133,
-            "score": 26.0724,
+            "score": 26.0708,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -377489,7 +377489,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.25,
+                "score": 47.242,
                 "tests": 4
               },
               "instruction-context": {
@@ -377503,7 +377503,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 134,
             "evidenceRank": 134,
-            "score": 23.3937,
+            "score": 23.3923,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -377519,7 +377519,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 41.422,
+                "score": 41.415,
                 "tests": 4
               },
               "instruction-context": {
@@ -377533,7 +377533,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 133,
             "evidenceRank": 133,
-            "score": 26.0838,
+            "score": 26.0821,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -377549,7 +377549,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.258,
+                "score": 47.25,
                 "tests": 4
               },
               "instruction-context": {
@@ -377825,7 +377825,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 159,
             "evidenceRank": 159,
-            "score": 25.4133,
+            "score": 25.4117,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -377841,7 +377841,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.372,
+                "score": 47.364,
                 "tests": 4
               },
               "instruction-context": {
@@ -377855,7 +377855,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 159,
             "evidenceRank": 159,
-            "score": 25.393,
+            "score": 25.3914,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -377871,7 +377871,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.361,
+                "score": 47.353,
                 "tests": 4
               },
               "instruction-context": {
@@ -377885,7 +377885,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 161,
             "evidenceRank": 161,
-            "score": 22.8176,
+            "score": 22.8162,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -377901,7 +377901,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 41.443,
+                "score": 41.436,
                 "tests": 4
               },
               "instruction-context": {
@@ -377915,7 +377915,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 159,
             "evidenceRank": 159,
-            "score": 25.4165,
+            "score": 25.4149,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -377931,7 +377931,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 47.372,
+                "score": 47.364,
                 "tests": 4
               },
               "instruction-context": {
@@ -377963,7 +377963,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 44.6139,
+      "medianOutputSpeed": 46.4792,
       "aa": {
         "aa-intelligence": 33.6963,
         "aa-coding": null,
@@ -377981,12 +377981,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 82.5122
       },
       "scores": {
-        "AA-Briefcase": 45.21,
+        "AA-Briefcase": 45.1565,
         "AutomationBench-AA": 48.2424,
         "Terminal-Bench v4.0": 5.5556,
         "GDP.pdf": 16.6,
         "AA-LCR v1.1": 82.0,
-        "GDPval-AA v2": 45.4385,
+        "GDPval-AA v2": 45.447,
         "τ³-Banking": 48.0412,
         "Terminal-Bench v2.1": 79.7753,
         "GDPval-AA": 48.1625,
@@ -378503,7 +378503,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 38,
             "evidenceRank": 38,
-            "score": 85.172,
+            "score": 85.1716,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -378519,7 +378519,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.9,
+                "score": 82.898,
                 "tests": 5
               },
               "instruction-context": {
@@ -378533,7 +378533,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 38,
             "evidenceRank": 38,
-            "score": 85.1895,
+            "score": 85.189,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -378549,7 +378549,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.9,
+                "score": 82.898,
                 "tests": 5
               },
               "instruction-context": {
@@ -378563,7 +378563,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 37,
             "evidenceRank": 37,
-            "score": 85.4341,
+            "score": 85.434,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -378593,7 +378593,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 37,
             "evidenceRank": 37,
-            "score": 85.1665,
+            "score": 85.1661,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -378609,7 +378609,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.876,
+                "score": 82.873,
                 "tests": 5
               },
               "instruction-context": {
@@ -378885,7 +378885,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 64,
             "evidenceRank": 64,
-            "score": 84.8011,
+            "score": 84.8007,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -378901,7 +378901,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.787,
+                "score": 82.784,
                 "tests": 5
               },
               "instruction-context": {
@@ -378915,7 +378915,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 64,
             "evidenceRank": 64,
-            "score": 84.846,
+            "score": 84.8456,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -378931,7 +378931,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.818,
+                "score": 82.816,
                 "tests": 5
               },
               "instruction-context": {
@@ -378945,7 +378945,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 64,
             "evidenceRank": 64,
-            "score": 85.1416,
+            "score": 85.1415,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -378975,7 +378975,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 64,
             "evidenceRank": 64,
-            "score": 84.8076,
+            "score": 84.8072,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -378991,7 +378991,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.787,
+                "score": 82.784,
                 "tests": 5
               },
               "instruction-context": {
@@ -379565,7 +379565,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 45,
             "evidenceRank": 45,
-            "score": 83.0815,
+            "score": 83.0806,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -379581,7 +379581,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.157,
+                "score": 84.153,
                 "tests": 4
               },
               "instruction-context": {
@@ -379595,7 +379595,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 45,
             "evidenceRank": 45,
-            "score": 83.0998,
+            "score": 83.099,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -379611,7 +379611,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.157,
+                "score": 84.153,
                 "tests": 4
               },
               "instruction-context": {
@@ -379625,7 +379625,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 45,
             "evidenceRank": 45,
-            "score": 83.0094,
+            "score": 83.0089,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -379641,7 +379641,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.366,
+                "score": 84.363,
                 "tests": 4
               },
               "instruction-context": {
@@ -379655,7 +379655,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 47,
             "evidenceRank": 47,
-            "score": 83.0759,
+            "score": 83.075,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -379671,7 +379671,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.132,
+                "score": 84.128,
                 "tests": 4
               },
               "instruction-context": {
@@ -379951,7 +379951,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 73,
             "evidenceRank": 73,
-            "score": 82.7245,
+            "score": 82.7237,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -379967,7 +379967,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.053,
+                "score": 84.049,
                 "tests": 4
               },
               "instruction-context": {
@@ -379981,7 +379981,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 73,
             "evidenceRank": 73,
-            "score": 82.7677,
+            "score": 82.7669,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -379997,7 +379997,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.082,
+                "score": 84.078,
                 "tests": 4
               },
               "instruction-context": {
@@ -380011,7 +380011,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 73,
             "evidenceRank": 73,
-            "score": 82.6903,
+            "score": 82.6897,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -380027,7 +380027,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.342,
+                "score": 84.339,
                 "tests": 4
               },
               "instruction-context": {
@@ -380041,7 +380041,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 73,
             "evidenceRank": 73,
-            "score": 82.7319,
+            "score": 82.731,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -380057,7 +380057,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.053,
+                "score": 84.049,
                 "tests": 4
               },
               "instruction-context": {
@@ -380784,7 +380784,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 37.1904,
+      "medianOutputSpeed": 37.2753,
       "aa": {
         "aa-intelligence": 45.4152,
         "aa-coding": null,
@@ -380802,12 +380802,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 258.8045
       },
       "scores": {
-        "AA-Briefcase": 57.11,
+        "AA-Briefcase": 57.0175,
         "AutomationBench-AA": 56.1905,
         "Terminal-Bench v4.0": 18.6869,
         "GDP.pdf": 22.8,
         "AA-LCR v1.1": 80.3333,
-        "GDPval-AA v2": 58.378,
+        "GDPval-AA v2": 58.386,
         "τ³-Banking": 47.8351,
         "Terminal-Bench v2.1": 81.2734,
         "GDPval-AA": 56.5195,
@@ -381323,7 +381323,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 16,
             "evidenceRank": 16,
-            "score": 90.6956,
+            "score": 90.6954,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -381339,7 +381339,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.542,
+                "score": 92.541,
                 "tests": 5
               },
               "instruction-context": {
@@ -381353,7 +381353,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 16,
             "evidenceRank": 16,
-            "score": 90.708,
+            "score": 90.7078,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -381369,7 +381369,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.542,
+                "score": 92.541,
                 "tests": 5
               },
               "instruction-context": {
@@ -381383,7 +381383,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 18,
             "evidenceRank": 18,
-            "score": 90.1508,
+            "score": 90.1507,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -381399,7 +381399,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.824,
+                "score": 93.823,
                 "tests": 5
               },
               "instruction-context": {
@@ -381413,7 +381413,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 17,
             "evidenceRank": 17,
-            "score": 90.6946,
+            "score": 90.6944,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -381429,7 +381429,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.52,
+                "score": 92.519,
                 "tests": 5
               },
               "instruction-context": {
@@ -381705,7 +381705,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 38,
             "evidenceRank": 38,
-            "score": 90.3323,
+            "score": 90.3321,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -381721,7 +381721,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.431,
+                "score": 92.43,
                 "tests": 5
               },
               "instruction-context": {
@@ -381735,7 +381735,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 38,
             "evidenceRank": 38,
-            "score": 90.3735,
+            "score": 90.3733,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -381751,7 +381751,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.458,
+                "score": 92.457,
                 "tests": 5
               },
               "instruction-context": {
@@ -381765,7 +381765,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 38,
             "evidenceRank": 38,
-            "score": 89.8758,
+            "score": 89.8757,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -381781,7 +381781,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.8,
+                "score": 93.799,
                 "tests": 5
               },
               "instruction-context": {
@@ -381795,7 +381795,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 38,
             "evidenceRank": 38,
-            "score": 90.3386,
+            "score": 90.3384,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -381811,7 +381811,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.431,
+                "score": 92.43,
                 "tests": 5
               },
               "instruction-context": {
@@ -381843,7 +381843,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 92.2256,
+      "medianOutputSpeed": 105.5677,
       "aa": {
         "aa-intelligence": 36.9794,
         "aa-coding": null,
@@ -381861,12 +381861,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 340.4789
       },
       "scores": {
-        "AA-Briefcase": 29.4835,
+        "AA-Briefcase": 29.456,
         "AutomationBench-AA": 44.3462,
         "Terminal-Bench v4.0": 9.0909,
         "GDP.pdf": 22.6,
         "AA-LCR v1.1": 84.3333,
-        "GDPval-AA v2": 40.45,
+        "GDPval-AA v2": 40.459,
         "τ³-Banking": 36.701,
         "Terminal-Bench v2.1": 79.4007,
         "GDPval-AA": 43.5755,
@@ -382905,7 +382905,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 31,
             "evidenceRank": 31,
-            "score": 91.0498,
+            "score": 91.0497,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -382921,7 +382921,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.605,
+                "score": 95.604,
                 "tests": 5
               },
               "instruction-context": {
@@ -382935,7 +382935,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 31,
             "evidenceRank": 31,
-            "score": 91.0918,
+            "score": 91.0917,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -382951,7 +382951,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.626,
+                "score": 95.625,
                 "tests": 5
               },
               "instruction-context": {
@@ -382965,7 +382965,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 31,
             "evidenceRank": 31,
-            "score": 91.1192,
+            "score": 91.119,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -382981,7 +382981,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.543,
+                "score": 96.542,
                 "tests": 5
               },
               "instruction-context": {
@@ -382995,7 +382995,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 32,
             "evidenceRank": 32,
-            "score": 91.0559,
+            "score": 91.0558,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -383011,7 +383011,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.605,
+                "score": 95.604,
                 "tests": 5
               },
               "instruction-context": {
@@ -383337,7 +383337,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 321.4372,
+      "medianOutputSpeed": 334.6745,
       "aa": {
         "aa-intelligence": 39.0595,
         "aa-coding": null,
@@ -383355,12 +383355,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 165.9167
       },
       "scores": {
-        "AA-Briefcase": 30.383,
+        "AA-Briefcase": 30.386,
         "AutomationBench-AA": 62.0275,
         "Terminal-Bench v4.0": 13.6364,
         "GDP.pdf": 23.6,
         "AA-LCR v1.1": 81.6667,
-        "GDPval-AA v2": 43.554,
+        "GDPval-AA v2": 43.5625,
         "τ³-Banking": 32.7835,
         "Terminal-Bench v2.1": 85.7678,
         "GDPval-AA": 46.657,
@@ -383878,7 +383878,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 10,
             "evidenceRank": 10,
-            "score": 92.827,
+            "score": 92.8269,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -383894,7 +383894,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.826,
+                "score": 96.825,
                 "tests": 5
               },
               "instruction-context": {
@@ -383908,7 +383908,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 10,
             "evidenceRank": 10,
-            "score": 92.8385,
+            "score": 92.8384,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -383924,7 +383924,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.826,
+                "score": 96.825,
                 "tests": 5
               },
               "instruction-context": {
@@ -383938,7 +383938,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 11,
             "evidenceRank": 11,
-            "score": 92.1691,
+            "score": 92.169,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -383984,7 +383984,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.812,
+                "score": 96.811,
                 "tests": 5
               },
               "instruction-context": {
@@ -384260,7 +384260,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 23,
             "evidenceRank": 23,
-            "score": 92.4867,
+            "score": 92.4866,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -384290,7 +384290,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 24,
             "evidenceRank": 24,
-            "score": 92.5255,
+            "score": 92.5254,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -384306,7 +384306,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.767,
+                "score": 96.766,
                 "tests": 5
               },
               "instruction-context": {
@@ -384320,7 +384320,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 27,
             "evidenceRank": 27,
-            "score": 91.9367,
+            "score": 91.9366,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -384336,7 +384336,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 97.576,
+                "score": 97.575,
                 "tests": 5
               },
               "instruction-context": {
@@ -384350,7 +384350,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 24,
             "evidenceRank": 24,
-            "score": 92.4922,
+            "score": 92.4921,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -384398,7 +384398,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/tencent_small.svg",
         "color": "#5CB9FF"
       },
-      "medianOutputSpeed": 81.1949,
+      "medianOutputSpeed": 86.8635,
       "aa": {
         "aa-intelligence": 25.2973,
         "aa-coding": null,
@@ -384416,12 +384416,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 8.955
       },
       "scores": {
-        "AA-Briefcase": 22.333,
+        "AA-Briefcase": 22.2275,
         "AutomationBench-AA": 18.4091,
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 11.2,
         "AA-LCR v1.1": 79.0,
-        "GDPval-AA v2": 27.237,
+        "GDPval-AA v2": 27.256,
         "τ³-Banking": 22.8866,
         "Terminal-Bench v2.1": 64.4195,
         "GDPval-AA": 31.798,
@@ -385175,7 +385175,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 44,
             "evidenceRank": 44,
-            "score": 83.1153,
+            "score": 83.1146,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -385191,7 +385191,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.578,
+                "score": 88.574,
                 "tests": 4
               },
               "instruction-context": {
@@ -385205,7 +385205,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 44,
             "evidenceRank": 44,
-            "score": 83.1277,
+            "score": 83.127,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -385221,7 +385221,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.578,
+                "score": 88.574,
                 "tests": 4
               },
               "instruction-context": {
@@ -385235,7 +385235,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 47,
             "evidenceRank": 47,
-            "score": 82.5047,
+            "score": 82.5044,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -385251,7 +385251,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.814,
+                "score": 88.813,
                 "tests": 4
               },
               "instruction-context": {
@@ -385265,7 +385265,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 46,
             "evidenceRank": 46,
-            "score": 83.101,
+            "score": 83.1003,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -385281,7 +385281,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.554,
+                "score": 88.55,
                 "tests": 4
               },
               "instruction-context": {
@@ -385557,7 +385557,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 74,
             "evidenceRank": 74,
-            "score": 82.4716,
+            "score": 82.471,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -385573,7 +385573,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.468,
+                "score": 88.465,
                 "tests": 4
               },
               "instruction-context": {
@@ -385587,7 +385587,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 74,
             "evidenceRank": 74,
-            "score": 82.5138,
+            "score": 82.5132,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -385603,7 +385603,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.496,
+                "score": 88.493,
                 "tests": 4
               },
               "instruction-context": {
@@ -385617,7 +385617,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 77,
             "evidenceRank": 77,
-            "score": 81.755,
+            "score": 81.7547,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -385633,7 +385633,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.789,
+                "score": 88.787,
                 "tests": 4
               },
               "instruction-context": {
@@ -385647,7 +385647,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 74,
             "evidenceRank": 74,
-            "score": 82.4794,
+            "score": 82.4788,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -385663,7 +385663,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.468,
+                "score": 88.465,
                 "tests": 4
               },
               "instruction-context": {
@@ -385989,7 +385989,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 41.727,
+      "medianOutputSpeed": 40.2596,
       "aa": {
         "aa-intelligence": 5.9921,
         "aa-coding": null,
@@ -389327,7 +389327,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 142.0826,
+      "medianOutputSpeed": 137.0678,
       "aa": {
         "aa-intelligence": 6.6643,
         "aa-coding": null,
@@ -389622,7 +389622,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/arcee_small.svg",
         "color": "#008c8d"
       },
-      "medianOutputSpeed": 303.2368,
+      "medianOutputSpeed": 292.8495,
       "aa": {
         "aa-intelligence": 10.8242,
         "aa-coding": null,
@@ -390160,7 +390160,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 107,
             "evidenceRank": 107,
-            "score": 49.8185,
+            "score": 49.8171,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -390176,7 +390176,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.312,
+                "score": 66.305,
                 "tests": 4
               },
               "instruction-context": {
@@ -390190,7 +390190,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 107,
             "evidenceRank": 107,
-            "score": 49.8277,
+            "score": 49.8263,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -390206,7 +390206,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.312,
+                "score": 66.305,
                 "tests": 4
               },
               "instruction-context": {
@@ -390220,7 +390220,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 110,
             "evidenceRank": 110,
-            "score": 48.7914,
+            "score": 48.7903,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -390236,7 +390236,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 63.064,
+                "score": 63.058,
                 "tests": 4
               },
               "instruction-context": {
@@ -390250,7 +390250,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 107,
             "evidenceRank": 107,
-            "score": 49.8207,
+            "score": 49.8193,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -390266,7 +390266,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.299,
+                "score": 66.293,
                 "tests": 4
               },
               "instruction-context": {
@@ -390542,7 +390542,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 132,
             "evidenceRank": 132,
-            "score": 49.7647,
+            "score": 49.7633,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -390558,7 +390558,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.302,
+                "score": 66.295,
                 "tests": 4
               },
               "instruction-context": {
@@ -390572,7 +390572,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 132,
             "evidenceRank": 132,
-            "score": 49.7708,
+            "score": 49.7694,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -390588,7 +390588,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.316,
+                "score": 66.309,
                 "tests": 4
               },
               "instruction-context": {
@@ -390602,7 +390602,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 134,
             "evidenceRank": 134,
-            "score": 48.54,
+            "score": 48.5388,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -390618,7 +390618,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 63.059,
+                "score": 63.053,
                 "tests": 4
               },
               "instruction-context": {
@@ -390632,7 +390632,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 132,
             "evidenceRank": 132,
-            "score": 49.7732,
+            "score": 49.7718,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -390648,7 +390648,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 66.302,
+                "score": 66.295,
                 "tests": 4
               },
               "instruction-context": {
@@ -390974,7 +390974,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/upstage_small.svg",
         "color": "#7c59f5"
       },
-      "medianOutputSpeed": 147.698,
+      "medianOutputSpeed": 142.32,
       "aa": {
         "aa-intelligence": 7.8155,
         "aa-coding": null,
@@ -391512,7 +391512,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 119,
             "evidenceRank": 119,
-            "score": 40.7167,
+            "score": 40.715,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -391528,7 +391528,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 49.461,
+                "score": 49.452,
                 "tests": 4
               },
               "instruction-context": {
@@ -391542,7 +391542,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 119,
             "evidenceRank": 119,
-            "score": 40.7215,
+            "score": 40.7199,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -391558,7 +391558,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 49.461,
+                "score": 49.452,
                 "tests": 4
               },
               "instruction-context": {
@@ -391572,7 +391572,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 119,
             "evidenceRank": 119,
-            "score": 39.7519,
+            "score": 39.7506,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -391588,7 +391588,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 47.044,
+                "score": 47.038,
                 "tests": 4
               },
               "instruction-context": {
@@ -391602,7 +391602,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 119,
             "evidenceRank": 119,
-            "score": 40.716,
+            "score": 40.7144,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -391618,7 +391618,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 49.467,
+                "score": 49.459,
                 "tests": 4
               },
               "instruction-context": {
@@ -391894,7 +391894,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 145,
             "evidenceRank": 145,
-            "score": 40.8417,
+            "score": 40.8401,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -391910,7 +391910,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 49.568,
+                "score": 49.56,
                 "tests": 4
               },
               "instruction-context": {
@@ -391924,7 +391924,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 145,
             "evidenceRank": 145,
-            "score": 40.8319,
+            "score": 40.8303,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -391940,7 +391940,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 49.56,
+                "score": 49.552,
                 "tests": 4
               },
               "instruction-context": {
@@ -391954,7 +391954,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 145,
             "evidenceRank": 145,
-            "score": 39.6003,
+            "score": 39.5989,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -391970,7 +391970,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 47.057,
+                "score": 47.05,
                 "tests": 4
               },
               "instruction-context": {
@@ -391984,7 +391984,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 145,
             "evidenceRank": 145,
-            "score": 40.8491,
+            "score": 40.8474,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -392000,7 +392000,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 49.568,
+                "score": 49.56,
                 "tests": 4
               },
               "instruction-context": {
@@ -392032,7 +392032,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 55.2969,
+      "medianOutputSpeed": 60.7076,
       "aa": {
         "aa-intelligence": 50.7771,
         "aa-coding": null,
@@ -392716,7 +392716,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 2,
             "evidenceRank": 2,
-            "score": 95.1439,
+            "score": 95.1438,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -392746,7 +392746,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 2,
             "evidenceRank": 2,
-            "score": 95.1527,
+            "score": 95.1526,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -392776,7 +392776,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 2,
             "evidenceRank": 2,
-            "score": 94.4051,
+            "score": 94.405,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -392806,7 +392806,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 2,
             "evidenceRank": 2,
-            "score": 95.1391,
+            "score": 95.139,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -392822,7 +392822,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 97.095,
+                "score": 97.094,
                 "tests": 5
               },
               "instruction-context": {
@@ -393098,7 +393098,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 4,
             "evidenceRank": 4,
-            "score": 94.3827,
+            "score": 94.3826,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -393128,7 +393128,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 3,
             "evidenceRank": 3,
-            "score": 94.7131,
+            "score": 94.713,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -393174,7 +393174,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 97.835,
+                "score": 97.834,
                 "tests": 5
               },
               "instruction-context": {
@@ -393188,7 +393188,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 7,
             "evidenceRank": 7,
-            "score": 93.9366,
+            "score": 93.9365,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -393236,7 +393236,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 100.6871,
+      "medianOutputSpeed": 98.4282,
       "aa": {
         "aa-intelligence": 7.7608,
         "aa-coding": null,
@@ -393879,7 +393879,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 65.1757,
+      "medianOutputSpeed": 71.7056,
       "aa": {
         "aa-intelligence": 31.6623,
         "aa-coding": null,
@@ -393897,12 +393897,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 242.0601
       },
       "scores": {
-        "AA-Briefcase": 33.8585,
+        "AA-Briefcase": 33.8035,
         "AutomationBench-AA": 32.0966,
         "Terminal-Bench v4.0": 5.0505,
         "GDP.pdf": 9.4,
         "AA-LCR v1.1": 76.6667,
-        "GDPval-AA v2": 37.2755,
+        "GDPval-AA v2": 37.286,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": 40.784,
@@ -395039,7 +395039,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 212.3704,
+      "medianOutputSpeed": 238.8364,
       "aa": {
         "aa-intelligence": 24.0682,
         "aa-coding": null,
@@ -395057,12 +395057,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 52.0634
       },
       "scores": {
-        "AA-Briefcase": 10.7015,
+        "AA-Briefcase": 10.6805,
         "AutomationBench-AA": 26.2049,
         "Terminal-Bench v4.0": 2.0202,
         "GDP.pdf": 13.4,
         "AA-LCR v1.1": 77.0,
-        "GDPval-AA v2": 25.012,
+        "GDPval-AA v2": 25.011,
         "τ³-Banking": 25.567,
         "Terminal-Bench v2.1": 59.176,
         "GDPval-AA": 29.727,
@@ -395578,7 +395578,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 50,
             "evidenceRank": 50,
-            "score": 82.1165,
+            "score": 82.1161,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -395594,7 +395594,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.305,
+                "score": 86.304,
                 "tests": 5
               },
               "instruction-context": {
@@ -395608,7 +395608,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 50,
             "evidenceRank": 50,
-            "score": 82.1345,
+            "score": 82.1341,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -395624,7 +395624,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.305,
+                "score": 86.304,
                 "tests": 5
               },
               "instruction-context": {
@@ -395638,7 +395638,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 50,
             "evidenceRank": 50,
-            "score": 81.6822,
+            "score": 81.6818,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -395654,7 +395654,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.556,
+                "score": 86.554,
                 "tests": 5
               },
               "instruction-context": {
@@ -395668,7 +395668,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 51,
             "evidenceRank": 51,
-            "score": 82.1092,
+            "score": 82.1088,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -395684,7 +395684,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.281,
+                "score": 86.279,
                 "tests": 5
               },
               "instruction-context": {
@@ -395960,7 +395960,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 79,
             "evidenceRank": 79,
-            "score": 81.7736,
+            "score": 81.7733,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -395976,7 +395976,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.186,
+                "score": 86.184,
                 "tests": 5
               },
               "instruction-context": {
@@ -395990,7 +395990,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 79,
             "evidenceRank": 79,
-            "score": 81.817,
+            "score": 81.8167,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -396006,7 +396006,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.217,
+                "score": 86.215,
                 "tests": 5
               },
               "instruction-context": {
@@ -396020,7 +396020,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 79,
             "evidenceRank": 79,
-            "score": 81.3286,
+            "score": 81.3281,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -396036,7 +396036,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.525,
+                "score": 86.522,
                 "tests": 5
               },
               "instruction-context": {
@@ -396050,7 +396050,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 78,
             "evidenceRank": 78,
-            "score": 81.7817,
+            "score": 81.7813,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -396066,7 +396066,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.186,
+                "score": 86.184,
                 "tests": 5
               },
               "instruction-context": {
@@ -396116,12 +396116,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 40.2015,
+        "AA-Briefcase": 40.143,
         "AutomationBench-AA": 37.208,
         "Terminal-Bench v4.0": 1.5152,
         "GDP.pdf": 7.4,
         "AA-LCR v1.1": 80.0,
-        "GDPval-AA v2": 42.4505,
+        "GDPval-AA v2": 42.46,
         "τ³-Banking": 34.2268,
         "Terminal-Bench v2.1": 71.9101,
         "GDPval-AA": 45.5,
@@ -396636,7 +396636,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 52,
             "evidenceRank": 52,
-            "score": 81.454,
+            "score": 81.453,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -396652,7 +396652,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 80.259,
+                "score": 80.254,
                 "tests": 4
               },
               "instruction-context": {
@@ -396666,7 +396666,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 52,
             "evidenceRank": 52,
-            "score": 81.4726,
+            "score": 81.4716,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -396682,7 +396682,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 80.259,
+                "score": 80.254,
                 "tests": 4
               },
               "instruction-context": {
@@ -396696,7 +396696,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 52,
             "evidenceRank": 52,
-            "score": 81.5654,
+            "score": 81.565,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -396712,7 +396712,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 81.03,
+                "score": 81.028,
                 "tests": 4
               },
               "instruction-context": {
@@ -396726,7 +396726,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 52,
             "evidenceRank": 52,
-            "score": 81.4482,
+            "score": 81.4473,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -396742,7 +396742,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 80.236,
+                "score": 80.231,
                 "tests": 4
               },
               "instruction-context": {
@@ -397018,7 +397018,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 80,
             "evidenceRank": 80,
-            "score": 81.1037,
+            "score": 81.1028,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -397034,7 +397034,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 80.169,
+                "score": 80.164,
                 "tests": 4
               },
               "instruction-context": {
@@ -397048,7 +397048,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 80,
             "evidenceRank": 80,
-            "score": 81.1463,
+            "score": 81.1453,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -397064,7 +397064,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 80.196,
+                "score": 80.191,
                 "tests": 4
               },
               "instruction-context": {
@@ -397078,7 +397078,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 80,
             "evidenceRank": 80,
-            "score": 81.2352,
+            "score": 81.2348,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -397094,7 +397094,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 81.008,
+                "score": 81.007,
                 "tests": 4
               },
               "instruction-context": {
@@ -397108,7 +397108,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 80,
             "evidenceRank": 80,
-            "score": 81.1111,
+            "score": 81.1101,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -397124,7 +397124,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 80.169,
+                "score": 80.164,
                 "tests": 4
               },
               "instruction-context": {
@@ -397156,7 +397156,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 118.9066,
+      "medianOutputSpeed": 124.4405,
       "aa": {
         "aa-intelligence": 29.7186,
         "aa-coding": null,
@@ -397179,7 +397179,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": 4.0404,
         "GDP.pdf": 17.8,
         "AA-LCR v1.1": 82.0,
-        "GDPval-AA v2": 13.786,
+        "GDPval-AA v2": 13.799,
         "τ³-Banking": 21.4433,
         "Terminal-Bench v2.1": 73.7828,
         "GDPval-AA": 20.197,
@@ -398304,7 +398304,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 28,
             "evidenceRank": 28,
-            "score": 88.5893,
+            "score": 88.5892,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -398320,7 +398320,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.732,
+                "score": 95.731,
                 "tests": 6
               },
               "instruction-context": {
@@ -398334,7 +398334,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 30,
             "evidenceRank": 30,
-            "score": 88.3144,
+            "score": 88.3143,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -398350,7 +398350,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 5
               },
               "knowledge-science": {
-                "score": 95.732,
+                "score": 95.731,
                 "tests": 6
               },
               "instruction-context": {
@@ -398364,7 +398364,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 29,
             "evidenceRank": 29,
-            "score": 88.5188,
+            "score": 88.5187,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -398380,7 +398380,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.956,
+                "score": 96.955,
                 "tests": 6
               },
               "instruction-context": {
@@ -398394,7 +398394,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 28,
             "evidenceRank": 28,
-            "score": 88.8967,
+            "score": 88.8966,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -398686,7 +398686,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 43,
             "evidenceRank": 43,
-            "score": 89.9312,
+            "score": 89.9311,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -398716,7 +398716,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 43,
             "evidenceRank": 43,
-            "score": 89.9735,
+            "score": 89.9734,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -398746,7 +398746,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 43,
             "evidenceRank": 43,
-            "score": 89.5589,
+            "score": 89.5588,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -398776,7 +398776,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 45,
             "evidenceRank": 45,
-            "score": 89.9379,
+            "score": 89.9378,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -398824,7 +398824,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 60.3038,
+      "medianOutputSpeed": 58.1688,
       "aa": {
         "aa-intelligence": 9.4997,
         "aa-coding": null,
@@ -399204,7 +399204,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 99.65,
+      "medianOutputSpeed": 102.5335,
       "aa": {
         "aa-intelligence": 9.9062,
         "aa-coding": null,
@@ -400103,7 +400103,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 89.4942,
+      "medianOutputSpeed": 104.6262,
       "aa": {
         "aa-intelligence": 42.0829,
         "aa-coding": null,
@@ -400121,12 +400121,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 210.8034
       },
       "scores": {
-        "AA-Briefcase": 41.8645,
+        "AA-Briefcase": 41.7965,
         "AutomationBench-AA": 59.65,
         "Terminal-Bench v4.0": 35.3535,
         "GDP.pdf": 24.0,
         "AA-LCR v1.1": 83.0,
-        "GDPval-AA v2": 46.605,
+        "GDPval-AA v2": 46.6135,
         "τ³-Banking": 40.2062,
         "Terminal-Bench v2.1": 88.015,
         "GDPval-AA": 48.848,
@@ -401293,7 +401293,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 12,
             "evidenceRank": 12,
-            "score": 91.7978,
+            "score": 91.7977,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -401309,7 +401309,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.143,
+                "score": 94.142,
                 "tests": 5
               },
               "instruction-context": {
@@ -401323,7 +401323,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 12,
             "evidenceRank": 12,
-            "score": 91.8027,
+            "score": 91.8026,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -401339,7 +401339,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.143,
+                "score": 94.142,
                 "tests": 5
               },
               "instruction-context": {
@@ -401353,7 +401353,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 10,
             "evidenceRank": 10,
-            "score": 92.2056,
+            "score": 92.2054,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -401369,7 +401369,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.135,
+                "score": 95.134,
                 "tests": 5
               },
               "instruction-context": {
@@ -401383,7 +401383,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 12,
             "evidenceRank": 12,
-            "score": 91.6458,
+            "score": 91.6457,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -401399,7 +401399,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.124,
+                "score": 94.123,
                 "tests": 5
               },
               "instruction-context": {
@@ -401675,7 +401675,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 33,
             "evidenceRank": 33,
-            "score": 90.9167,
+            "score": 90.9166,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -401691,7 +401691,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.041,
+                "score": 94.04,
                 "tests": 5
               },
               "instruction-context": {
@@ -401705,7 +401705,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 33,
             "evidenceRank": 33,
-            "score": 90.886,
+            "score": 90.8858,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -401735,7 +401735,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 28,
             "evidenceRank": 28,
-            "score": 91.5144,
+            "score": 91.5143,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -401751,7 +401751,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.112,
+                "score": 95.111,
                 "tests": 5
               },
               "instruction-context": {
@@ -401765,7 +401765,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 25,
             "evidenceRank": 25,
-            "score": 92.3231,
+            "score": 92.323,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -401781,7 +401781,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.041,
+                "score": 94.04,
                 "tests": 5
               },
               "instruction-context": {
@@ -402109,7 +402109,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 121.5051,
+      "medianOutputSpeed": 123.4062,
       "aa": {
         "aa-intelligence": 22.02,
         "aa-coding": null,
@@ -402851,7 +402851,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 90.9237,
+      "medianOutputSpeed": 106.9648,
       "aa": {
         "aa-intelligence": 30.4497,
         "aa-coding": null,
@@ -402869,12 +402869,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 20.5386
       },
       "scores": {
-        "AA-Briefcase": 21.1075,
+        "AA-Briefcase": 21.079,
         "AutomationBench-AA": 56.2897,
         "Terminal-Bench v4.0": 14.6465,
         "GDP.pdf": 13.4,
         "AA-LCR v1.1": 74.6667,
-        "GDPval-AA v2": 32.208,
+        "GDPval-AA v2": 32.2185,
         "τ³-Banking": 30.1031,
         "Terminal-Bench v2.1": 64.0449,
         "GDPval-AA": 36.1685,
@@ -403781,7 +403781,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 36,
             "evidenceRank": 36,
-            "score": 85.4507,
+            "score": 85.4502,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -403797,7 +403797,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.912,
+                "score": 89.909,
                 "tests": 5
               },
               "instruction-context": {
@@ -403811,7 +403811,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 36,
             "evidenceRank": 36,
-            "score": 85.4601,
+            "score": 85.4595,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -403827,7 +403827,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.912,
+                "score": 89.909,
                 "tests": 5
               },
               "instruction-context": {
@@ -403841,7 +403841,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 36,
             "evidenceRank": 36,
-            "score": 85.6317,
+            "score": 85.6314,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -403857,7 +403857,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.211,
+                "score": 91.209,
                 "tests": 5
               },
               "instruction-context": {
@@ -403871,7 +403871,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 36,
             "evidenceRank": 36,
-            "score": 85.294,
+            "score": 85.2935,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -403887,7 +403887,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.867,
+                "score": 89.864,
                 "tests": 5
               },
               "instruction-context": {
@@ -404163,7 +404163,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 67,
             "evidenceRank": 67,
-            "score": 84.5102,
+            "score": 84.5097,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -404179,7 +404179,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.536,
+                "score": 91.534,
                 "tests": 4
               },
               "instruction-context": {
@@ -404193,7 +404193,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 67,
             "evidenceRank": 67,
-            "score": 84.553,
+            "score": 84.5525,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -404209,7 +404209,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.562,
+                "score": 91.56,
                 "tests": 4
               },
               "instruction-context": {
@@ -404223,7 +404223,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 68,
             "evidenceRank": 68,
-            "score": 84.0678,
+            "score": 84.0675,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -404239,7 +404239,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.6,
+                "score": 91.598,
                 "tests": 4
               },
               "instruction-context": {
@@ -404253,7 +404253,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 67,
             "evidenceRank": 67,
-            "score": 84.518,
+            "score": 84.5176,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -404269,7 +404269,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.536,
+                "score": 91.534,
                 "tests": 4
               },
               "instruction-context": {
@@ -404301,7 +404301,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 106.3028,
+      "medianOutputSpeed": 99.3022,
       "aa": {
         "aa-intelligence": 7.3443,
         "aa-coding": null,
@@ -404686,7 +404686,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 55.3986,
+      "medianOutputSpeed": 56.8452,
       "aa": {
         "aa-intelligence": 35.1247,
         "aa-coding": null,
@@ -404704,12 +404704,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 69.5736
       },
       "scores": {
-        "AA-Briefcase": 39.6905,
+        "AA-Briefcase": 39.6485,
         "AutomationBench-AA": 53.4454,
         "Terminal-Bench v4.0": 3.0303,
         "GDP.pdf": 15.8,
         "AA-LCR v1.1": 80.6667,
-        "GDPval-AA v2": 45.1125,
+        "GDPval-AA v2": 45.121,
         "τ³-Banking": 38.1443,
         "Terminal-Bench v2.1": 75.2809,
         "GDPval-AA": 48.065,
@@ -405225,7 +405225,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 66,
             "evidenceRank": 66,
-            "score": 84.6023,
+            "score": 84.6017,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -405241,7 +405241,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.776,
+                "score": 88.773,
                 "tests": 4
               },
               "instruction-context": {
@@ -405255,7 +405255,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 66,
             "evidenceRank": 66,
-            "score": 84.6463,
+            "score": 84.6457,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -405271,7 +405271,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.804,
+                "score": 88.801,
                 "tests": 4
               },
               "instruction-context": {
@@ -405285,7 +405285,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 67,
             "evidenceRank": 67,
-            "score": 84.1423,
+            "score": 84.1419,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -405301,7 +405301,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.235,
+                "score": 88.232,
                 "tests": 4
               },
               "instruction-context": {
@@ -405315,7 +405315,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 66,
             "evidenceRank": 66,
-            "score": 84.6092,
+            "score": 84.6086,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -405331,7 +405331,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.776,
+                "score": 88.773,
                 "tests": 4
               },
               "instruction-context": {
@@ -405363,7 +405363,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 150.638,
+      "medianOutputSpeed": 156.4885,
       "aa": {
         "aa-intelligence": 8.4416,
         "aa-coding": null,
@@ -406223,7 +406223,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 99,
             "evidenceRank": 99,
-            "score": 57.8552,
+            "score": 57.8537,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -406239,7 +406239,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 63.856,
+                "score": 63.849,
                 "tests": 4
               },
               "instruction-context": {
@@ -406253,7 +406253,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 99,
             "evidenceRank": 99,
-            "score": 57.868,
+            "score": 57.8665,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -406269,7 +406269,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 63.856,
+                "score": 63.849,
                 "tests": 4
               },
               "instruction-context": {
@@ -406283,7 +406283,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 98,
             "evidenceRank": 98,
-            "score": 58.0017,
+            "score": 58.0008,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -406299,7 +406299,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 62.666,
+                "score": 62.662,
                 "tests": 4
               },
               "instruction-context": {
@@ -406313,7 +406313,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 99,
             "evidenceRank": 99,
-            "score": 57.857,
+            "score": 57.8555,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -406329,7 +406329,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 63.846,
+                "score": 63.839,
                 "tests": 4
               },
               "instruction-context": {
@@ -406609,7 +406609,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 126,
             "evidenceRank": 126,
-            "score": 57.7387,
+            "score": 57.7373,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -406625,7 +406625,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 63.862,
+                "score": 63.855,
                 "tests": 4
               },
               "instruction-context": {
@@ -406639,7 +406639,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 126,
             "evidenceRank": 126,
-            "score": 57.7532,
+            "score": 57.7517,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -406655,7 +406655,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 63.873,
+                "score": 63.866,
                 "tests": 4
               },
               "instruction-context": {
@@ -406669,7 +406669,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 125,
             "evidenceRank": 125,
-            "score": 57.6923,
+            "score": 57.6915,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -406685,7 +406685,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 62.663,
+                "score": 62.659,
                 "tests": 4
               },
               "instruction-context": {
@@ -406699,7 +406699,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 126,
             "evidenceRank": 126,
-            "score": 57.748,
+            "score": 57.7466,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -406715,7 +406715,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 63.862,
+                "score": 63.855,
                 "tests": 4
               },
               "instruction-context": {
@@ -406747,7 +406747,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 160.534,
+      "medianOutputSpeed": 166.7505,
       "aa": {
         "aa-intelligence": 11.6892,
         "aa-coding": null,
@@ -407042,7 +407042,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 86.4118,
+      "medianOutputSpeed": 87.8418,
       "aa": {
         "aa-intelligence": 15.4109,
         "aa-coding": null,
@@ -407337,7 +407337,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 94.749,
+      "medianOutputSpeed": 103.4711,
       "aa": {
         "aa-intelligence": 20.5992,
         "aa-coding": null,
@@ -407632,7 +407632,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 84.5464,
+      "medianOutputSpeed": 97.4657,
       "aa": {
         "aa-intelligence": 11.4482,
         "aa-coding": null,
@@ -408223,7 +408223,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 130.9925,
+      "medianOutputSpeed": 159.6007,
       "aa": {
         "aa-intelligence": 26.0135,
         "aa-coding": null,
@@ -408241,7 +408241,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 237.8036
       },
       "scores": {
-        "AA-Briefcase": 29.219,
+        "AA-Briefcase": 29.202,
         "AutomationBench-AA": 36.4366,
         "Terminal-Bench v4.0": 12.6263,
         "GDP.pdf": 20.2,
@@ -408762,7 +408762,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 89,
             "evidenceRank": 89,
-            "score": 65.9951,
+            "score": 65.9943,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -408778,7 +408778,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.803,
+                "score": 84.799,
                 "tests": 4
               },
               "instruction-context": {
@@ -408792,7 +408792,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 89,
             "evidenceRank": 89,
-            "score": 66.0093,
+            "score": 66.0085,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -408808,7 +408808,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.803,
+                "score": 84.799,
                 "tests": 4
               },
               "instruction-context": {
@@ -408822,7 +408822,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 89,
             "evidenceRank": 89,
-            "score": 64.7862,
+            "score": 64.7854,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -408838,7 +408838,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.213,
+                "score": 82.209,
                 "tests": 4
               },
               "instruction-context": {
@@ -408852,7 +408852,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 89,
             "evidenceRank": 89,
-            "score": 65.9945,
+            "score": 65.9937,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -408868,7 +408868,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.778,
+                "score": 84.774,
                 "tests": 4
               },
               "instruction-context": {
@@ -409144,7 +409144,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 116,
             "evidenceRank": 116,
-            "score": 65.757,
+            "score": 65.7562,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -409160,7 +409160,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.698,
+                "score": 84.694,
                 "tests": 4
               },
               "instruction-context": {
@@ -409174,7 +409174,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 116,
             "evidenceRank": 116,
-            "score": 65.7846,
+            "score": 65.7838,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -409190,7 +409190,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.726,
+                "score": 84.722,
                 "tests": 4
               },
               "instruction-context": {
@@ -409204,7 +409204,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 115,
             "evidenceRank": 115,
-            "score": 64.4506,
+            "score": 64.4498,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -409220,7 +409220,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 82.185,
+                "score": 82.181,
                 "tests": 4
               },
               "instruction-context": {
@@ -409234,7 +409234,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 116,
             "evidenceRank": 116,
-            "score": 65.766,
+            "score": 65.7652,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -409250,7 +409250,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.698,
+                "score": 84.694,
                 "tests": 4
               },
               "instruction-context": {
@@ -410179,7 +410179,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 97.0079,
+      "medianOutputSpeed": 105.4993,
       "aa": {
         "aa-intelligence": 25.655,
         "aa-coding": null,
@@ -411359,7 +411359,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 82.2543,
+      "medianOutputSpeed": 89.3518,
       "aa": {
         "aa-intelligence": 30.7095,
         "aa-coding": null,
@@ -411382,7 +411382,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 81.0,
-        "GDPval-AA v2": 26.588,
+        "GDPval-AA v2": 26.606,
         "τ³-Banking": 24.9485,
         "Terminal-Bench v2.1": 65.5431,
         "GDPval-AA": 30.6355,
@@ -412177,7 +412177,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/stepfun_small.svg",
         "color": "#00F5E7"
       },
-      "medianOutputSpeed": 105.9938,
+      "medianOutputSpeed": 106.0155,
       "aa": {
         "aa-intelligence": 16.6169,
         "aa-coding": null,
@@ -412471,7 +412471,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 116.58,
+      "medianOutputSpeed": 123.262,
       "aa": {
         "aa-intelligence": 10.5557,
         "aa-coding": null,
@@ -413059,7 +413059,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 179.5674,
+      "medianOutputSpeed": 185.8399,
       "aa": {
         "aa-intelligence": 11.1974,
         "aa-coding": null,
@@ -413353,7 +413353,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 59.7949,
+      "medianOutputSpeed": 66.6843,
       "aa": {
         "aa-intelligence": 44.3113,
         "aa-coding": null,
@@ -413371,12 +413371,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 129.4828
       },
       "scores": {
-        "AA-Briefcase": 51.16,
+        "AA-Briefcase": 52.2795,
         "AutomationBench-AA": 66.6785,
         "Terminal-Bench v4.0": 21.2121,
         "GDP.pdf": 17.0,
         "AA-LCR v1.1": 80.3333,
-        "GDPval-AA v2": 55.266,
+        "GDPval-AA v2": 55.2745,
         "τ³-Banking": 50.7216,
         "Terminal-Bench v2.1": 88.3895,
         "GDPval-AA": 57.148,
@@ -413892,7 +413892,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 17,
             "evidenceRank": 17,
-            "score": 92.9956,
+            "score": 92.9953,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -413908,7 +413908,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.351,
+                "score": 96.35,
                 "tests": 4
               },
               "instruction-context": {
@@ -413922,7 +413922,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 17,
             "evidenceRank": 17,
-            "score": 93.0334,
+            "score": 93.0331,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -413938,7 +413938,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.369,
+                "score": 96.368,
                 "tests": 4
               },
               "instruction-context": {
@@ -413982,7 +413982,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 18,
             "evidenceRank": 18,
-            "score": 93.0008,
+            "score": 93.0006,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -413998,7 +413998,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.351,
+                "score": 96.35,
                 "tests": 4
               },
               "instruction-context": {
@@ -414030,7 +414030,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 195.8978,
+      "medianOutputSpeed": 208.8424,
       "aa": {
         "aa-intelligence": 10.2106,
         "aa-coding": null,
@@ -414913,7 +414913,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 58.4964,
+      "medianOutputSpeed": 61.027,
       "aa": {
         "aa-intelligence": 16.291,
         "aa-coding": null,
@@ -415501,7 +415501,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 79.3286,
+      "medianOutputSpeed": 88.1195,
       "aa": {
         "aa-intelligence": 27.4962,
         "aa-coding": null,
@@ -415519,12 +415519,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 76.8286
       },
       "scores": {
-        "AA-Briefcase": 25.688,
+        "AA-Briefcase": 25.6565,
         "AutomationBench-AA": 29.1064,
         "Terminal-Bench v4.0": 1.5152,
         "GDP.pdf": 17.6,
         "AA-LCR v1.1": 71.3333,
-        "GDPval-AA v2": 29.79,
+        "GDPval-AA v2": 29.803,
         "τ³-Banking": 18.7629,
         "Terminal-Bench v2.1": 62.5468,
         "GDPval-AA": 33.961,
@@ -416040,7 +416040,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 82,
             "evidenceRank": 82,
-            "score": 80.1552,
+            "score": 80.1549,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -416056,7 +416056,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.732,
+                "score": 86.73,
                 "tests": 5
               },
               "instruction-context": {
@@ -416070,7 +416070,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 82,
             "evidenceRank": 82,
-            "score": 80.1991,
+            "score": 80.1987,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -416086,7 +416086,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.763,
+                "score": 86.762,
                 "tests": 5
               },
               "instruction-context": {
@@ -416100,7 +416100,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 82,
             "evidenceRank": 82,
-            "score": 80.3653,
+            "score": 80.3649,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -416116,7 +416116,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.723,
+                "score": 86.72,
                 "tests": 5
               },
               "instruction-context": {
@@ -416130,7 +416130,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 82,
             "evidenceRank": 82,
-            "score": 80.1633,
+            "score": 80.163,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -416146,7 +416146,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.732,
+                "score": 86.73,
                 "tests": 5
               },
               "instruction-context": {
@@ -416473,7 +416473,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 35.2221,
+      "medianOutputSpeed": 34.9468,
       "aa": {
         "aa-intelligence": 18.9788,
         "aa-coding": null,
@@ -416496,7 +416496,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 6.0,
         "AA-LCR v1.1": 69.6667,
-        "GDPval-AA v2": 5.3055,
+        "GDPval-AA v2": 5.3105,
         "τ³-Banking": 14.8454,
         "Terminal-Bench v2.1": 43.4457,
         "GDPval-AA": 12.7725,
@@ -417133,7 +417133,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 83,
             "evidenceRank": 83,
-            "score": 68.54,
+            "score": 68.5394,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -417149,7 +417149,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.368,
+                "score": 77.365,
                 "tests": 7
               },
               "instruction-context": {
@@ -417163,7 +417163,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 83,
             "evidenceRank": 83,
-            "score": 68.5572,
+            "score": 68.5566,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -417179,7 +417179,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.368,
+                "score": 77.365,
                 "tests": 7
               },
               "instruction-context": {
@@ -417193,7 +417193,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 81,
             "evidenceRank": 81,
-            "score": 68.7906,
+            "score": 68.7902,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -417209,7 +417209,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.295,
+                "score": 78.293,
                 "tests": 7
               },
               "instruction-context": {
@@ -417223,7 +417223,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 85,
             "evidenceRank": 85,
-            "score": 68.4674,
+            "score": 68.4668,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -417239,7 +417239,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 76.963,
+                "score": 76.96,
                 "tests": 6
               },
               "instruction-context": {
@@ -417515,7 +417515,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 108,
             "evidenceRank": 108,
-            "score": 68.7092,
+            "score": 68.7087,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -417531,7 +417531,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.509,
+                "score": 77.507,
                 "tests": 5
               },
               "instruction-context": {
@@ -417545,7 +417545,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 107,
             "evidenceRank": 107,
-            "score": 68.7428,
+            "score": 68.7422,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -417561,7 +417561,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.538,
+                "score": 77.536,
                 "tests": 5
               },
               "instruction-context": {
@@ -417575,7 +417575,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 110,
             "evidenceRank": 110,
-            "score": 68.3351,
+            "score": 68.3347,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -417591,7 +417591,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.427,
+                "score": 77.426,
                 "tests": 5
               },
               "instruction-context": {
@@ -417605,7 +417605,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 108,
             "evidenceRank": 108,
-            "score": 68.7182,
+            "score": 68.7176,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -417621,7 +417621,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.509,
+                "score": 77.507,
                 "tests": 5
               },
               "instruction-context": {
@@ -417653,7 +417653,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 57.4215,
+      "medianOutputSpeed": 66.3572,
       "aa": {
         "aa-intelligence": 49.6258,
         "aa-coding": null,
@@ -417671,12 +417671,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 1447.0308
       },
       "scores": {
-        "AA-Briefcase": 52.202,
+        "AA-Briefcase": 52.1485,
         "AutomationBench-AA": 54.0713,
         "Terminal-Bench v4.0": 42.4242,
         "GDP.pdf": 24.0,
         "AA-LCR v1.1": 82.3333,
-        "GDPval-AA v2": 54.762,
+        "GDPval-AA v2": 54.7705,
         "τ³-Banking": 38.1443,
         "Terminal-Bench v2.1": 84.6442,
         "GDPval-AA": 56.573,
@@ -418501,7 +418501,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 4,
             "evidenceRank": 4,
-            "score": 94.1187,
+            "score": 94.1185,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -418517,7 +418517,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 98.107,
+                "score": 98.106,
                 "tests": 4
               },
               "instruction-context": {
@@ -418531,7 +418531,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 4,
             "evidenceRank": 4,
-            "score": 94.1277,
+            "score": 94.1276,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -418547,7 +418547,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 98.107,
+                "score": 98.106,
                 "tests": 4
               },
               "instruction-context": {
@@ -418561,7 +418561,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 3,
             "evidenceRank": 3,
-            "score": 94.181,
+            "score": 94.1809,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -418577,7 +418577,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 98.204,
+                "score": 98.203,
                 "tests": 4
               },
               "instruction-context": {
@@ -418591,7 +418591,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 5,
             "evidenceRank": 5,
-            "score": 93.6613,
+            "score": 93.6612,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -418883,7 +418883,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 19,
             "evidenceRank": 19,
-            "score": 92.7646,
+            "score": 92.7645,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -418913,7 +418913,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 11,
             "evidenceRank": 11,
-            "score": 93.4581,
+            "score": 93.458,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -418929,7 +418929,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 98.065,
+                "score": 98.064,
                 "tests": 4
               },
               "instruction-context": {
@@ -418973,7 +418973,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 23,
             "evidenceRank": 23,
-            "score": 92.5767,
+            "score": 92.5765,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -419021,7 +419021,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 72.1152,
+      "medianOutputSpeed": 71.7453,
       "aa": {
         "aa-intelligence": 44.7774,
         "aa-coding": null,
@@ -419039,12 +419039,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 128.2216
       },
       "scores": {
-        "AA-Briefcase": 51.298,
+        "AA-Briefcase": 51.243,
         "AutomationBench-AA": 62.2029,
         "Terminal-Bench v4.0": 41.9192,
         "GDP.pdf": 11.2,
         "AA-LCR v1.1": 79.6667,
-        "GDPval-AA v2": 57.268,
+        "GDPval-AA v2": 57.276,
         "τ³-Banking": 50.3093,
         "Terminal-Bench v2.1": 83.8951,
         "GDPval-AA": 58.812,
@@ -419857,7 +419857,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 11,
             "evidenceRank": 11,
-            "score": 91.9589,
+            "score": 91.9585,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -419873,7 +419873,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.491,
+                "score": 93.489,
                 "tests": 4
               },
               "instruction-context": {
@@ -419887,7 +419887,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 11,
             "evidenceRank": 11,
-            "score": 91.9711,
+            "score": 91.9707,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -419903,7 +419903,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.491,
+                "score": 93.489,
                 "tests": 4
               },
               "instruction-context": {
@@ -419917,7 +419917,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 13,
             "evidenceRank": 13,
-            "score": 91.144,
+            "score": 91.1439,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -419933,7 +419933,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.661,
+                "score": 93.66,
                 "tests": 4
               },
               "instruction-context": {
@@ -419947,7 +419947,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 11,
             "evidenceRank": 11,
-            "score": 91.9852,
+            "score": 91.9848,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -419963,7 +419963,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.47,
+                "score": 93.468,
                 "tests": 4
               },
               "instruction-context": {
@@ -420239,7 +420239,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 30,
             "evidenceRank": 30,
-            "score": 91.4803,
+            "score": 91.4799,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -420255,7 +420255,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.391,
+                "score": 93.389,
                 "tests": 4
               },
               "instruction-context": {
@@ -420269,7 +420269,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 28,
             "evidenceRank": 28,
-            "score": 91.6325,
+            "score": 91.6321,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -420285,7 +420285,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.415,
+                "score": 93.413,
                 "tests": 4
               },
               "instruction-context": {
@@ -420299,7 +420299,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 33,
             "evidenceRank": 33,
-            "score": 90.719,
+            "score": 90.7189,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -420329,7 +420329,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 31,
             "evidenceRank": 31,
-            "score": 91.4604,
+            "score": 91.46,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -420345,7 +420345,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.391,
+                "score": 93.389,
                 "tests": 4
               },
               "instruction-context": {
@@ -420377,7 +420377,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 113.115,
+      "medianOutputSpeed": 106.5727,
       "aa": {
         "aa-intelligence": 9.4531,
         "aa-coding": null,
@@ -420672,7 +420672,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 140.3934,
+      "medianOutputSpeed": 131.1837,
       "aa": {
         "aa-intelligence": 7.5369,
         "aa-coding": null,
@@ -420695,7 +420695,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 1.0,
         "AA-LCR v1.1": 28.0,
-        "GDPval-AA v2": 0.7875,
+        "GDPval-AA v2": 0.786,
         "τ³-Banking": 10.7216,
         "Terminal-Bench v2.1": 29.588,
         "GDPval-AA": 8.994,
@@ -421211,7 +421211,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 127,
             "evidenceRank": 127,
-            "score": 34.0846,
+            "score": 34.0837,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -421227,7 +421227,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.555,
+                "score": 29.551,
                 "tests": 5
               },
               "instruction-context": {
@@ -421241,7 +421241,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 127,
             "evidenceRank": 127,
-            "score": 34.0822,
+            "score": 34.0813,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -421257,7 +421257,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.555,
+                "score": 29.551,
                 "tests": 5
               },
               "instruction-context": {
@@ -421271,7 +421271,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 125,
             "evidenceRank": 125,
-            "score": 35.1295,
+            "score": 35.1286,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -421287,7 +421287,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 21.812,
+                "score": 21.807,
                 "tests": 5
               },
               "instruction-context": {
@@ -421301,7 +421301,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 127,
             "evidenceRank": 127,
-            "score": 34.1018,
+            "score": 34.1008,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -421317,7 +421317,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.581,
+                "score": 29.576,
                 "tests": 5
               },
               "instruction-context": {
@@ -421593,7 +421593,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 153,
             "evidenceRank": 153,
-            "score": 34.0617,
+            "score": 34.0608,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -421609,7 +421609,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.754,
+                "score": 29.749,
                 "tests": 5
               },
               "instruction-context": {
@@ -421623,7 +421623,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 153,
             "evidenceRank": 153,
-            "score": 34.0559,
+            "score": 34.055,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -421639,7 +421639,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.727,
+                "score": 29.722,
                 "tests": 5
               },
               "instruction-context": {
@@ -421653,7 +421653,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 151,
             "evidenceRank": 151,
-            "score": 34.8483,
+            "score": 34.8474,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -421669,7 +421669,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 21.848,
+                "score": 21.843,
                 "tests": 5
               },
               "instruction-context": {
@@ -421683,7 +421683,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 153,
             "evidenceRank": 153,
-            "score": 34.0703,
+            "score": 34.0693,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -421699,7 +421699,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 29.754,
+                "score": 29.749,
                 "tests": 5
               },
               "instruction-context": {
@@ -422614,7 +422614,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 41.5563,
+      "medianOutputSpeed": 38.7025,
       "aa": {
         "aa-intelligence": 13.9199,
         "aa-coding": null,
@@ -422637,7 +422637,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 46.6667,
-        "GDPval-AA v2": 1.7465,
+        "GDPval-AA v2": 1.7645,
         "τ³-Banking": 8.866,
         "Terminal-Bench v2.1": 29.2135,
         "GDPval-AA": 9.573,
@@ -423037,7 +423037,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 100.5769,
+      "medianOutputSpeed": 123.6959,
       "aa": {
         "aa-intelligence": 13.3137,
         "aa-coding": null,
@@ -424217,7 +424217,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 64.5565,
+      "medianOutputSpeed": 55.2817,
       "aa": {
         "aa-intelligence": 11.2162,
         "aa-coding": null,
@@ -424806,7 +424806,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 89.1911,
+      "medianOutputSpeed": 83.7845,
       "aa": {
         "aa-intelligence": 11.8702,
         "aa-coding": null,
@@ -425101,7 +425101,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nousresearch_small.jpg",
         "color": "#006fa8"
       },
-      "medianOutputSpeed": 45.3204,
+      "medianOutputSpeed": 41.3839,
       "aa": {
         "aa-intelligence": 7.4122,
         "aa-coding": null,
@@ -425689,7 +425689,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 167.4445,
+      "medianOutputSpeed": 185.5527,
       "aa": {
         "aa-intelligence": 20.7197,
         "aa-coding": null,
@@ -425707,12 +425707,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 15.0839
       },
       "scores": {
-        "AA-Briefcase": 8.295,
+        "AA-Briefcase": 8.3015,
         "AutomationBench-AA": 5.9606,
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 7.8,
         "AA-LCR v1.1": 76.6667,
-        "GDPval-AA v2": 21.8125,
+        "GDPval-AA v2": 21.8325,
         "τ³-Banking": 27.4227,
         "Terminal-Bench v2.1": 60.6742,
         "GDPval-AA": 26.771,
@@ -426228,7 +426228,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 56,
             "evidenceRank": 56,
-            "score": 79.4479,
+            "score": 79.4474,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -426244,7 +426244,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.357,
+                "score": 77.354,
                 "tests": 5
               },
               "instruction-context": {
@@ -426258,7 +426258,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 56,
             "evidenceRank": 56,
-            "score": 79.4667,
+            "score": 79.4661,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -426274,7 +426274,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.357,
+                "score": 77.354,
                 "tests": 5
               },
               "instruction-context": {
@@ -426288,7 +426288,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 56,
             "evidenceRank": 56,
-            "score": 79.2939,
+            "score": 79.2933,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -426304,7 +426304,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.249,
+                "score": 77.246,
                 "tests": 5
               },
               "instruction-context": {
@@ -426318,7 +426318,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 56,
             "evidenceRank": 56,
-            "score": 79.441,
+            "score": 79.4404,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -426334,7 +426334,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.334,
+                "score": 77.332,
                 "tests": 5
               },
               "instruction-context": {
@@ -426610,7 +426610,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 85,
             "evidenceRank": 85,
-            "score": 79.1184,
+            "score": 79.1178,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -426626,7 +426626,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.263,
+                "score": 77.261,
                 "tests": 5
               },
               "instruction-context": {
@@ -426640,7 +426640,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 85,
             "evidenceRank": 85,
-            "score": 79.1605,
+            "score": 79.1599,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -426656,7 +426656,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.292,
+                "score": 77.29,
                 "tests": 5
               },
               "instruction-context": {
@@ -426670,7 +426670,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 85,
             "evidenceRank": 85,
-            "score": 78.9416,
+            "score": 78.9409,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -426686,7 +426686,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.224,
+                "score": 77.22,
                 "tests": 5
               },
               "instruction-context": {
@@ -426700,7 +426700,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 85,
             "evidenceRank": 85,
-            "score": 79.1265,
+            "score": 79.1259,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -426716,7 +426716,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 77.263,
+                "score": 77.261,
                 "tests": 5
               },
               "instruction-context": {
@@ -426748,7 +426748,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 249.5441,
+      "medianOutputSpeed": 292.7571,
       "aa": {
         "aa-intelligence": 45.0733,
         "aa-coding": null,
@@ -426766,12 +426766,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 126.1202
       },
       "scores": {
-        "AA-Briefcase": 49.739,
+        "AA-Briefcase": 49.69,
         "AutomationBench-AA": 56.8361,
         "Terminal-Bench v4.0": 16.6667,
         "GDP.pdf": 24.2,
         "AA-LCR v1.1": 83.0,
-        "GDPval-AA v2": 56.3805,
+        "GDPval-AA v2": 56.3885,
         "τ³-Banking": 47.2165,
         "Terminal-Bench v2.1": 85.3933,
         "GDPval-AA": 58.117,
@@ -427288,7 +427288,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 16,
             "evidenceRank": 16,
-            "score": 93.1456,
+            "score": 93.1455,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -427304,7 +427304,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.256,
+                "score": 95.255,
                 "tests": 5
               },
               "instruction-context": {
@@ -427318,7 +427318,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 16,
             "evidenceRank": 16,
-            "score": 93.1827,
+            "score": 93.1826,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -427334,7 +427334,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.278,
+                "score": 95.277,
                 "tests": 5
               },
               "instruction-context": {
@@ -427348,7 +427348,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 19,
             "evidenceRank": 19,
-            "score": 92.5252,
+            "score": 92.5251,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -427364,7 +427364,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.326,
+                "score": 96.325,
                 "tests": 5
               },
               "instruction-context": {
@@ -427378,7 +427378,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 17,
             "evidenceRank": 17,
-            "score": 93.1511,
+            "score": 93.1509,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -427394,7 +427394,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.256,
+                "score": 95.255,
                 "tests": 5
               },
               "instruction-context": {
@@ -427426,7 +427426,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 64.3406,
+      "medianOutputSpeed": 66.1724,
       "aa": {
         "aa-intelligence": 23.2,
         "aa-coding": null,
@@ -427449,7 +427449,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 70.0,
-        "GDPval-AA v2": 34.993,
+        "GDPval-AA v2": 35.005,
         "τ³-Banking": 15.6701,
         "Terminal-Bench v2.1": 75.2809,
         "GDPval-AA": 39.1735,
@@ -427853,7 +427853,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 48.688,
+      "medianOutputSpeed": 49.1567,
       "aa": {
         "aa-intelligence": 9.937,
         "aa-coding": null,
@@ -428166,12 +428166,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 136.9447
       },
       "scores": {
-        "AA-Briefcase": 17.304,
+        "AA-Briefcase": 17.282,
         "AutomationBench-AA": 38.8489,
         "Terminal-Bench v4.0": 6.0606,
         "GDP.pdf": 14.4,
         "AA-LCR v1.1": 77.6667,
-        "GDPval-AA v2": 35.426,
+        "GDPval-AA v2": 35.418,
         "τ³-Banking": 31.7526,
         "Terminal-Bench v2.1": 77.9026,
         "GDPval-AA": 39.7075,
@@ -428689,7 +428689,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 20,
             "evidenceRank": 20,
-            "score": 90.447,
+            "score": 90.4467,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -428705,7 +428705,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.53,
+                "score": 95.529,
                 "tests": 4
               },
               "instruction-context": {
@@ -428719,7 +428719,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 20,
             "evidenceRank": 20,
-            "score": 90.4609,
+            "score": 90.4606,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -428735,7 +428735,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.53,
+                "score": 95.529,
                 "tests": 4
               },
               "instruction-context": {
@@ -428749,7 +428749,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 25,
             "evidenceRank": 25,
-            "score": 89.1735,
+            "score": 89.1733,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -428765,7 +428765,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.455,
+                "score": 95.454,
                 "tests": 4
               },
               "instruction-context": {
@@ -428779,7 +428779,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 19,
             "evidenceRank": 19,
-            "score": 90.4459,
+            "score": 90.4457,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -428795,7 +428795,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.513,
+                "score": 95.512,
                 "tests": 4
               },
               "instruction-context": {
@@ -429071,7 +429071,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 41,
             "evidenceRank": 41,
-            "score": 90.0916,
+            "score": 90.0913,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -429087,7 +429087,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.444,
+                "score": 95.443,
                 "tests": 4
               },
               "instruction-context": {
@@ -429101,7 +429101,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 41,
             "evidenceRank": 41,
-            "score": 90.1323,
+            "score": 90.1321,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -429117,7 +429117,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.465,
+                "score": 95.463,
                 "tests": 4
               },
               "instruction-context": {
@@ -429131,7 +429131,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 48,
             "evidenceRank": 48,
-            "score": 88.8868,
+            "score": 88.8867,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -429147,7 +429147,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.436,
+                "score": 95.435,
                 "tests": 4
               },
               "instruction-context": {
@@ -429161,7 +429161,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 42,
             "evidenceRank": 42,
-            "score": 90.0981,
+            "score": 90.0978,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -429177,7 +429177,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.444,
+                "score": 95.443,
                 "tests": 4
               },
               "instruction-context": {
@@ -429232,7 +429232,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 73.3333,
-        "GDPval-AA v2": 9.0275,
+        "GDPval-AA v2": 9.041,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": 46.8165,
         "GDPval-AA": 15.512,
@@ -429507,7 +429507,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 60.2753,
+      "medianOutputSpeed": 63.2425,
       "aa": {
         "aa-intelligence": 44.1998,
         "aa-coding": null,
@@ -429525,12 +429525,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 135.8032
       },
       "scores": {
-        "AA-Briefcase": 52.824,
+        "AA-Briefcase": 52.7695,
         "AutomationBench-AA": 66.9974,
         "Terminal-Bench v4.0": 17.1717,
         "GDP.pdf": 17.2,
         "AA-LCR v1.1": 81.0,
-        "GDPval-AA v2": 56.6025,
+        "GDPval-AA v2": 56.611,
         "τ³-Banking": 43.299,
         "Terminal-Bench v2.1": 88.015,
         "GDPval-AA": 58.1535,
@@ -430307,7 +430307,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 22,
             "evidenceRank": 22,
-            "score": 92.5907,
+            "score": 92.5904,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -430323,7 +430323,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.93,
+                "score": 94.929,
                 "tests": 4
               },
               "instruction-context": {
@@ -430337,7 +430337,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 22,
             "evidenceRank": 22,
-            "score": 92.6292,
+            "score": 92.6289,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -430353,7 +430353,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.952,
+                "score": 94.95,
                 "tests": 4
               },
               "instruction-context": {
@@ -430367,7 +430367,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 23,
             "evidenceRank": 23,
-            "score": 92.2263,
+            "score": 92.2262,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -430397,7 +430397,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 22,
             "evidenceRank": 22,
-            "score": 92.5961,
+            "score": 92.5957,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -430413,7 +430413,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.93,
+                "score": 94.929,
                 "tests": 4
               },
               "instruction-context": {
@@ -430739,7 +430739,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 40.8875,
+      "medianOutputSpeed": 41.7613,
       "aa": {
         "aa-intelligence": 8.9148,
         "aa-coding": null,
@@ -431174,12 +431174,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 5.9534
       },
       "scores": {
-        "AA-Briefcase": 16.694,
+        "AA-Briefcase": 16.6785,
         "AutomationBench-AA": 27.986,
         "Terminal-Bench v4.0": 2.5253,
         "GDP.pdf": 10.8,
         "AA-LCR v1.1": 74.3333,
-        "GDPval-AA v2": 26.134,
+        "GDPval-AA v2": 26.15,
         "τ³-Banking": 30.9278,
         "Terminal-Bench v2.1": 61.7978,
         "GDPval-AA": 30.782,
@@ -431933,7 +431933,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 49,
             "evidenceRank": 49,
-            "score": 82.1984,
+            "score": 82.1978,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -431949,7 +431949,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.161,
+                "score": 87.157,
                 "tests": 5
               },
               "instruction-context": {
@@ -431963,7 +431963,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 49,
             "evidenceRank": 49,
-            "score": 82.2088,
+            "score": 82.2082,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -431979,7 +431979,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.161,
+                "score": 87.157,
                 "tests": 5
               },
               "instruction-context": {
@@ -431993,7 +431993,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 46,
             "evidenceRank": 46,
-            "score": 82.6907,
+            "score": 82.6904,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -432009,7 +432009,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.936,
+                "score": 88.934,
                 "tests": 5
               },
               "instruction-context": {
@@ -432023,7 +432023,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 50,
             "evidenceRank": 50,
-            "score": 82.1768,
+            "score": 82.1761,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -432039,7 +432039,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.111,
+                "score": 87.108,
                 "tests": 5
               },
               "instruction-context": {
@@ -432315,7 +432315,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 77,
             "evidenceRank": 77,
-            "score": 81.8322,
+            "score": 81.8316,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -432331,7 +432331,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.042,
+                "score": 89.039,
                 "tests": 4
               },
               "instruction-context": {
@@ -432345,7 +432345,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 77,
             "evidenceRank": 77,
-            "score": 81.874,
+            "score": 81.8734,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -432361,7 +432361,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.069,
+                "score": 89.066,
                 "tests": 4
               },
               "instruction-context": {
@@ -432375,7 +432375,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 76,
             "evidenceRank": 76,
-            "score": 81.7971,
+            "score": 81.7967,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -432391,7 +432391,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.526,
+                "score": 89.524,
                 "tests": 4
               },
               "instruction-context": {
@@ -432405,7 +432405,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 76,
             "evidenceRank": 76,
-            "score": 81.8404,
+            "score": 81.8398,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -432421,7 +432421,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.042,
+                "score": 89.039,
                 "tests": 4
               },
               "instruction-context": {
@@ -432760,7 +432760,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 61.4852,
+      "medianOutputSpeed": 72.6419,
       "aa": {
         "aa-intelligence": 46.9727,
         "aa-coding": null,
@@ -433950,7 +433950,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 7,
             "evidenceRank": 7,
-            "score": 93.395,
+            "score": 93.3949,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -433966,7 +433966,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.815,
+                "score": 96.814,
                 "tests": 5
               },
               "instruction-context": {
@@ -433980,7 +433980,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 7,
             "evidenceRank": 7,
-            "score": 93.3988,
+            "score": 93.3987,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -433996,7 +433996,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.815,
+                "score": 96.814,
                 "tests": 5
               },
               "instruction-context": {
@@ -434010,7 +434010,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 5,
             "evidenceRank": 5,
-            "score": 93.637,
+            "score": 93.6369,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -434040,7 +434040,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 9,
             "evidenceRank": 9,
-            "score": 92.9176,
+            "score": 92.9175,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -434332,7 +434332,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 25,
             "evidenceRank": 25,
-            "score": 92.2709,
+            "score": 92.2708,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -434348,7 +434348,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.738,
+                "score": 96.737,
                 "tests": 5
               },
               "instruction-context": {
@@ -434362,7 +434362,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 23,
             "evidenceRank": 23,
-            "score": 92.5694,
+            "score": 92.5693,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -434392,7 +434392,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 18,
             "evidenceRank": 18,
-            "score": 92.6757,
+            "score": 92.6756,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -434422,7 +434422,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 12,
             "evidenceRank": 12,
-            "score": 93.3969,
+            "score": 93.3968,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -434438,7 +434438,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.738,
+                "score": 96.737,
                 "tests": 5
               },
               "instruction-context": {
@@ -434764,7 +434764,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 65.2837,
+      "medianOutputSpeed": 69.2763,
       "aa": {
         "aa-intelligence": 44.0089,
         "aa-coding": null,
@@ -435303,7 +435303,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 15,
             "evidenceRank": 15,
-            "score": 93.1504,
+            "score": 93.1503,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -435319,7 +435319,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.167,
+                "score": 96.166,
                 "tests": 5
               },
               "instruction-context": {
@@ -435333,7 +435333,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 15,
             "evidenceRank": 15,
-            "score": 93.1898,
+            "score": 93.1897,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -435363,7 +435363,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 8,
             "evidenceRank": 8,
-            "score": 93.5957,
+            "score": 93.5956,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -435379,7 +435379,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 97.01,
+                "score": 97.009,
                 "tests": 5
               },
               "instruction-context": {
@@ -435393,7 +435393,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 16,
             "evidenceRank": 16,
-            "score": 93.1553,
+            "score": 93.1552,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -435409,7 +435409,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.167,
+                "score": 96.166,
                 "tests": 5
               },
               "instruction-context": {
@@ -435441,7 +435441,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 85.3687,
+      "medianOutputSpeed": 87.1741,
       "aa": {
         "aa-intelligence": 9.5854,
         "aa-coding": null,
@@ -436617,7 +436617,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 207.4639,
+      "medianOutputSpeed": 242.3332,
       "aa": {
         "aa-intelligence": 39.4562,
         "aa-coding": null,
@@ -436635,7 +436635,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 40.3781
       },
       "scores": {
-        "AA-Briefcase": 46.6595,
+        "AA-Briefcase": 46.5895,
         "AutomationBench-AA": 68.891,
         "Terminal-Bench v4.0": 26.7677,
         "GDP.pdf": 12.8,
@@ -437792,7 +437792,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 132.773,
+      "medianOutputSpeed": 150.1166,
       "aa": {
         "aa-intelligence": 15.527,
         "aa-coding": null,
@@ -437810,12 +437810,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 5.817
       },
       "scores": {
-        "AA-Briefcase": 10.089,
+        "AA-Briefcase": 10.0825,
         "AutomationBench-AA": 4.9708,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": 6.0,
         "AA-LCR v1.1": 42.6667,
-        "GDPval-AA v2": 20.2995,
+        "GDPval-AA v2": 20.309,
         "τ³-Banking": 9.6907,
         "Terminal-Bench v2.1": 38.9513,
         "GDPval-AA": 25.3505,
@@ -438333,7 +438333,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 135,
             "evidenceRank": 135,
-            "score": 48.7636,
+            "score": 48.7627,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -438349,7 +438349,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 54.812,
+                "score": 54.807,
                 "tests": 5
               },
               "instruction-context": {
@@ -438363,7 +438363,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 135,
             "evidenceRank": 135,
-            "score": 48.7759,
+            "score": 48.775,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -438379,7 +438379,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 54.816,
+                "score": 54.812,
                 "tests": 5
               },
               "instruction-context": {
@@ -438393,7 +438393,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 135,
             "evidenceRank": 135,
-            "score": 47.8433,
+            "score": 47.8422,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -438409,7 +438409,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 47.588,
+                "score": 47.582,
                 "tests": 5
               },
               "instruction-context": {
@@ -438423,7 +438423,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 135,
             "evidenceRank": 135,
-            "score": 48.7726,
+            "score": 48.7717,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -438439,7 +438439,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 54.812,
+                "score": 54.807,
                 "tests": 5
               },
               "instruction-context": {
@@ -438471,7 +438471,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 140.7915,
+      "medianOutputSpeed": 138.1199,
       "aa": {
         "aa-intelligence": 14.1889,
         "aa-coding": null,
@@ -438489,12 +438489,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 131.605
       },
       "scores": {
-        "AA-Briefcase": 0.7455,
+        "AA-Briefcase": 0.731,
         "AutomationBench-AA": 6.2996,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 2.8,
         "AA-LCR v1.1": 69.3333,
-        "GDPval-AA v2": 12.3595,
+        "GDPval-AA v2": 12.355,
         "τ³-Banking": 15.0515,
         "Terminal-Bench v2.1": 50.5618,
         "GDPval-AA": 18.757,
@@ -439010,7 +439010,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 93,
             "evidenceRank": 93,
-            "score": 61.8351,
+            "score": 61.8343,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -439026,7 +439026,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 64.87,
+                "score": 64.866,
                 "tests": 5
               },
               "instruction-context": {
@@ -439040,7 +439040,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 93,
             "evidenceRank": 93,
-            "score": 61.8453,
+            "score": 61.8445,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -439056,7 +439056,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 64.87,
+                "score": 64.866,
                 "tests": 5
               },
               "instruction-context": {
@@ -439070,7 +439070,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 93,
             "evidenceRank": 93,
-            "score": 61.9186,
+            "score": 61.9177,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -439086,7 +439086,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 61.506,
+                "score": 61.502,
                 "tests": 5
               },
               "instruction-context": {
@@ -439100,7 +439100,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 93,
             "evidenceRank": 93,
-            "score": 61.8345,
+            "score": 61.8337,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -439116,7 +439116,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 64.859,
+                "score": 64.855,
                 "tests": 5
               },
               "instruction-context": {
@@ -439392,7 +439392,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 121,
             "evidenceRank": 121,
-            "score": 61.5919,
+            "score": 61.5912,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -439408,7 +439408,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 64.849,
+                "score": 64.845,
                 "tests": 5
               },
               "instruction-context": {
@@ -439422,7 +439422,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 121,
             "evidenceRank": 121,
-            "score": 61.6215,
+            "score": 61.6207,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -439438,7 +439438,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 64.866,
+                "score": 64.863,
                 "tests": 5
               },
               "instruction-context": {
@@ -439452,7 +439452,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 121,
             "evidenceRank": 121,
-            "score": 61.566,
+            "score": 61.5651,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -439468,7 +439468,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 61.497,
+                "score": 61.492,
                 "tests": 5
               },
               "instruction-context": {
@@ -439482,7 +439482,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 120,
             "evidenceRank": 120,
-            "score": 61.6008,
+            "score": 61.6,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -439498,7 +439498,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 64.849,
+                "score": 64.845,
                 "tests": 5
               },
               "instruction-context": {
@@ -440118,7 +440118,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 283.2943,
+      "medianOutputSpeed": 320.405,
       "aa": {
         "aa-intelligence": 36.9459,
         "aa-coding": null,
@@ -440141,7 +440141,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 78.6667,
-        "GDPval-AA v2": 40.2515,
+        "GDPval-AA v2": 40.2615,
         "τ³-Banking": 29.4845,
         "Terminal-Bench v2.1": 79.7753,
         "GDPval-AA": 42.703,
@@ -440663,7 +440663,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 60,
             "evidenceRank": 60,
-            "score": 87.3141,
+            "score": 87.3139,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -440679,7 +440679,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.928,
+                "score": 93.927,
                 "tests": 5
               },
               "instruction-context": {
@@ -440693,7 +440693,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 60,
             "evidenceRank": 60,
-            "score": 87.3578,
+            "score": 87.3577,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -440709,7 +440709,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.953,
+                "score": 93.952,
                 "tests": 5
               },
               "instruction-context": {
@@ -440723,7 +440723,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 60,
             "evidenceRank": 60,
-            "score": 86.9182,
+            "score": 86.918,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -440739,7 +440739,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.363,
+                "score": 94.362,
                 "tests": 5
               },
               "instruction-context": {
@@ -440753,7 +440753,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 59,
             "evidenceRank": 59,
-            "score": 87.3205,
+            "score": 87.3203,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -440769,7 +440769,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 93.928,
+                "score": 93.927,
                 "tests": 5
               },
               "instruction-context": {
@@ -441096,7 +441096,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 115.5851,
+      "medianOutputSpeed": 108.3537,
       "aa": {
         "aa-intelligence": 8.1723,
         "aa-coding": null,
@@ -441979,7 +441979,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 43.7308,
+      "medianOutputSpeed": 46.4396,
       "aa": {
         "aa-intelligence": 30.0576,
         "aa-coding": null,
@@ -441997,12 +441997,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 452.4027
       },
       "scores": {
-        "AA-Briefcase": 28.149,
+        "AA-Briefcase": 28.121,
         "AutomationBench-AA": 20.0981,
         "Terminal-Bench v4.0": 3.0303,
         "GDP.pdf": 15.8,
         "AA-LCR v1.1": 80.0,
-        "GDPval-AA v2": 35.9765,
+        "GDPval-AA v2": 35.986,
         "τ³-Banking": 34.433,
         "Terminal-Bench v2.1": 71.161,
         "GDPval-AA": 39.7705,
@@ -442518,7 +442518,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 53,
             "evidenceRank": 53,
-            "score": 80.4806,
+            "score": 80.4802,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -442534,7 +442534,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.795,
+                "score": 87.794,
                 "tests": 5
               },
               "instruction-context": {
@@ -442548,7 +442548,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 53,
             "evidenceRank": 53,
-            "score": 80.4993,
+            "score": 80.499,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -442564,7 +442564,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.795,
+                "score": 87.794,
                 "tests": 5
               },
               "instruction-context": {
@@ -442578,7 +442578,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 49,
             "evidenceRank": 49,
-            "score": 81.953,
+            "score": 81.9526,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -442594,7 +442594,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.514,
+                "score": 88.512,
                 "tests": 5
               },
               "instruction-context": {
@@ -442608,7 +442608,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 54,
             "evidenceRank": 54,
-            "score": 80.4747,
+            "score": 80.4744,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -442624,7 +442624,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.771,
+                "score": 87.769,
                 "tests": 5
               },
               "instruction-context": {
@@ -442900,7 +442900,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 83,
             "evidenceRank": 83,
-            "score": 80.1159,
+            "score": 80.1156,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -442916,7 +442916,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.675,
+                "score": 87.673,
                 "tests": 5
               },
               "instruction-context": {
@@ -442930,7 +442930,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 83,
             "evidenceRank": 83,
-            "score": 80.1604,
+            "score": 80.1601,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -442946,7 +442946,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.706,
+                "score": 87.704,
                 "tests": 5
               },
               "instruction-context": {
@@ -442960,7 +442960,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 78,
             "evidenceRank": 78,
-            "score": 81.6243,
+            "score": 81.6239,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -442976,7 +442976,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.483,
+                "score": 88.481,
                 "tests": 5
               },
               "instruction-context": {
@@ -442990,7 +442990,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 83,
             "evidenceRank": 83,
-            "score": 80.1231,
+            "score": 80.1228,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -443006,7 +443006,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 87.675,
+                "score": 87.673,
                 "tests": 5
               },
               "instruction-context": {
@@ -444217,7 +444217,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 52.3137,
+      "medianOutputSpeed": 63.6871,
       "aa": {
         "aa-intelligence": 50.9191,
         "aa-coding": null,
@@ -444756,7 +444756,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 7,
             "evidenceRank": 7,
-            "score": 94.2598,
+            "score": 94.2597,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -444786,7 +444786,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 7,
             "evidenceRank": 7,
-            "score": 94.2947,
+            "score": 94.2946,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -444894,7 +444894,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 155.4675,
+      "medianOutputSpeed": 157.7497,
       "aa": {
         "aa-intelligence": 12.9922,
         "aa-coding": null,
@@ -445731,7 +445731,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 140,
             "evidenceRank": 140,
-            "score": 16.1416,
+            "score": 16.1404,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -445747,7 +445747,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 15.724,
+                "score": 15.718,
                 "tests": 4
               },
               "instruction-context": {
@@ -445761,7 +445761,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 140,
             "evidenceRank": 140,
-            "score": 16.1376,
+            "score": 16.1364,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -445777,7 +445777,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 15.724,
+                "score": 15.718,
                 "tests": 4
               },
               "instruction-context": {
@@ -445791,7 +445791,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 140,
             "evidenceRank": 140,
-            "score": 17.0672,
+            "score": 17.0664,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -445807,7 +445807,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 14.578,
+                "score": 14.574,
                 "tests": 4
               },
               "instruction-context": {
@@ -445821,7 +445821,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 140,
             "evidenceRank": 140,
-            "score": 16.1543,
+            "score": 16.1532,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -445837,7 +445837,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 15.755,
+                "score": 15.749,
                 "tests": 4
               },
               "instruction-context": {
@@ -446117,7 +446117,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 165,
             "evidenceRank": 165,
-            "score": 16.3558,
+            "score": 16.3547,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -446133,7 +446133,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 15.953,
+                "score": 15.948,
                 "tests": 4
               },
               "instruction-context": {
@@ -446147,7 +446147,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 165,
             "evidenceRank": 165,
-            "score": 16.325,
+            "score": 16.3239,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -446163,7 +446163,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 15.916,
+                "score": 15.91,
                 "tests": 4
               },
               "instruction-context": {
@@ -446177,7 +446177,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 165,
             "evidenceRank": 165,
-            "score": 17.0301,
+            "score": 17.0293,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -446193,7 +446193,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 14.62,
+                "score": 14.616,
                 "tests": 4
               },
               "instruction-context": {
@@ -446207,7 +446207,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 165,
             "evidenceRank": 165,
-            "score": 16.359,
+            "score": 16.3579,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -446223,7 +446223,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 15.953,
+                "score": 15.948,
                 "tests": 4
               },
               "instruction-context": {
@@ -446255,7 +446255,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 67.9988,
+      "medianOutputSpeed": 149.1667,
       "aa": {
         "aa-intelligence": 9.0144,
         "aa-coding": null,
@@ -447521,7 +447521,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 7.9152
       },
       "scores": {
-        "AA-Briefcase": 14.828,
+        "AA-Briefcase": 14.799,
         "AutomationBench-AA": 3.2196,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 5.4,
@@ -448041,7 +448041,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 75,
             "evidenceRank": 75,
-            "score": 71.0761,
+            "score": 71.0749,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -448057,7 +448057,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 75.276,
+                "score": 75.271,
                 "tests": 4
               },
               "instruction-context": {
@@ -448071,7 +448071,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 75,
             "evidenceRank": 75,
-            "score": 71.0938,
+            "score": 71.0926,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -448087,7 +448087,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 75.276,
+                "score": 75.271,
                 "tests": 4
               },
               "instruction-context": {
@@ -448101,7 +448101,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 75,
             "evidenceRank": 75,
-            "score": 71.3261,
+            "score": 71.3256,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -448117,7 +448117,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 75.067,
+                "score": 75.064,
                 "tests": 4
               },
               "instruction-context": {
@@ -448131,7 +448131,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 75,
             "evidenceRank": 75,
-            "score": 71.0731,
+            "score": 71.0719,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -448147,7 +448147,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 75.256,
+                "score": 75.25,
                 "tests": 4
               },
               "instruction-context": {
@@ -448423,7 +448423,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 102,
             "evidenceRank": 102,
-            "score": 70.7931,
+            "score": 70.7919,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -448439,7 +448439,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 75.21,
+                "score": 75.205,
                 "tests": 4
               },
               "instruction-context": {
@@ -448453,7 +448453,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 102,
             "evidenceRank": 102,
-            "score": 70.8273,
+            "score": 70.8262,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -448469,7 +448469,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 75.234,
+                "score": 75.228,
                 "tests": 4
               },
               "instruction-context": {
@@ -448483,7 +448483,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 102,
             "evidenceRank": 102,
-            "score": 70.9702,
+            "score": 70.9696,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -448499,7 +448499,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 75.049,
+                "score": 75.047,
                 "tests": 4
               },
               "instruction-context": {
@@ -448513,7 +448513,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 102,
             "evidenceRank": 102,
-            "score": 70.8017,
+            "score": 70.8005,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -448529,7 +448529,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 75.21,
+                "score": 75.205,
                 "tests": 4
               },
               "instruction-context": {
@@ -449916,7 +449916,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 150.868,
+      "medianOutputSpeed": 140.6813,
       "aa": {
         "aa-intelligence": 6.6712,
         "aa-coding": null,
@@ -450210,7 +450210,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 155.4677,
+      "medianOutputSpeed": 177.9809,
       "aa": {
         "aa-intelligence": 22.4323,
         "aa-coding": null,
@@ -450233,7 +450233,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 42.3333,
-        "GDPval-AA v2": 36.639,
+        "GDPval-AA v2": 36.65,
         "τ³-Banking": 16.701,
         "Terminal-Bench v2.1": 51.6854,
         "GDPval-AA": 40.3215,
@@ -451418,7 +451418,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 52.9517,
+      "medianOutputSpeed": 62.1813,
       "aa": {
         "aa-intelligence": 49.5704,
         "aa-coding": null,
@@ -451957,7 +451957,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 8,
             "evidenceRank": 8,
-            "score": 93.9193,
+            "score": 93.9192,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -451987,7 +451987,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 8,
             "evidenceRank": 8,
-            "score": 93.955,
+            "score": 93.9549,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -452095,7 +452095,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 94.8131,
+      "medianOutputSpeed": 128.3444,
       "aa": {
         "aa-intelligence": 7.3317,
         "aa-coding": null,
@@ -452413,7 +452413,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 49.2516,
+      "medianOutputSpeed": 50.5196,
       "aa": {
         "aa-intelligence": 40.6898,
         "aa-coding": null,
@@ -452431,12 +452431,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 316.7715
       },
       "scores": {
-        "AA-Briefcase": 37.8025,
+        "AA-Briefcase": 37.7625,
         "AutomationBench-AA": null,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 78.6667,
-        "GDPval-AA v2": 41.9125,
+        "GDPval-AA v2": 41.921,
         "τ³-Banking": 34.6392,
         "Terminal-Bench v2.1": 83.1461,
         "GDPval-AA": 44.789,
@@ -453608,7 +453608,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 297.0048,
+      "medianOutputSpeed": 317.6961,
       "aa": {
         "aa-intelligence": 39.6178,
         "aa-coding": null,
@@ -453631,7 +453631,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 83.0,
-        "GDPval-AA v2": 41.9695,
+        "GDPval-AA v2": 41.979,
         "τ³-Banking": 35.4639,
         "Terminal-Bench v2.1": 78.2772,
         "GDPval-AA": 45.33,
@@ -454153,7 +454153,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 42,
             "evidenceRank": 42,
-            "score": 89.9908,
+            "score": 89.9907,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -454169,7 +454169,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.342,
+                "score": 95.341,
                 "tests": 5
               },
               "instruction-context": {
@@ -454183,7 +454183,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 42,
             "evidenceRank": 42,
-            "score": 90.0324,
+            "score": 90.0323,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -454213,7 +454213,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 46,
             "evidenceRank": 46,
-            "score": 89.1274,
+            "score": 89.1273,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -454229,7 +454229,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.91,
+                "score": 95.909,
                 "tests": 5
               },
               "instruction-context": {
@@ -454243,7 +454243,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 43,
             "evidenceRank": 43,
-            "score": 89.997,
+            "score": 89.9969,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -454259,7 +454259,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.342,
+                "score": 95.341,
                 "tests": 5
               },
               "instruction-context": {
@@ -454291,7 +454291,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 130.5428,
+      "medianOutputSpeed": 133.7861,
       "aa": {
         "aa-intelligence": 16.6172,
         "aa-coding": null,
@@ -454309,12 +454309,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 48.0206
       },
       "scores": {
-        "AA-Briefcase": 7.6305,
+        "AA-Briefcase": 7.6355,
         "AutomationBench-AA": 0.7179,
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 3.8,
         "AA-LCR v1.1": 70.0,
-        "GDPval-AA v2": 11.696,
+        "GDPval-AA v2": 11.68,
         "τ³-Banking": 17.9381,
         "Terminal-Bench v2.1": 43.0712,
         "GDPval-AA": 18.181,
@@ -454829,7 +454829,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 79,
             "evidenceRank": 79,
-            "score": 70.1463,
+            "score": 70.1453,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -454845,7 +454845,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.125,
+                "score": 79.12,
                 "tests": 4
               },
               "instruction-context": {
@@ -454859,7 +454859,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 79,
             "evidenceRank": 79,
-            "score": 70.1651,
+            "score": 70.1641,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -454875,7 +454875,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.125,
+                "score": 79.12,
                 "tests": 4
               },
               "instruction-context": {
@@ -454889,7 +454889,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 76,
             "evidenceRank": 76,
-            "score": 70.6701,
+            "score": 70.6695,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -454905,7 +454905,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.132,
+                "score": 78.129,
                 "tests": 4
               },
               "instruction-context": {
@@ -454919,7 +454919,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 79,
             "evidenceRank": 79,
-            "score": 70.1414,
+            "score": 70.1404,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -454935,7 +454935,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.102,
+                "score": 79.097,
                 "tests": 4
               },
               "instruction-context": {
@@ -455211,7 +455211,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 105,
             "evidenceRank": 105,
-            "score": 69.901,
+            "score": 69.9,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -455227,7 +455227,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.04,
+                "score": 79.035,
                 "tests": 4
               },
               "instruction-context": {
@@ -455241,7 +455241,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 105,
             "evidenceRank": 105,
-            "score": 69.9326,
+            "score": 69.9316,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -455257,7 +455257,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.066,
+                "score": 79.061,
                 "tests": 4
               },
               "instruction-context": {
@@ -455271,7 +455271,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 103,
             "evidenceRank": 103,
-            "score": 70.3235,
+            "score": 70.3229,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -455287,7 +455287,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 78.11,
+                "score": 78.106,
                 "tests": 4
               },
               "instruction-context": {
@@ -455301,7 +455301,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 105,
             "evidenceRank": 105,
-            "score": 69.91,
+            "score": 69.909,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -455317,7 +455317,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 79.04,
+                "score": 79.035,
                 "tests": 4
               },
               "instruction-context": {
@@ -455661,12 +455661,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 6.9805,
+        "AA-Briefcase": 6.968,
         "AutomationBench-AA": null,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 78.0,
-        "GDPval-AA v2": 24.283,
+        "GDPval-AA v2": 24.289,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": 62.1723,
         "GDPval-AA": 28.8155,
@@ -456527,7 +456527,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 63.3591,
+      "medianOutputSpeed": 58.6425,
       "aa": {
         "aa-intelligence": 6.703,
         "aa-coding": null,
@@ -456821,7 +456821,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/microsoft_small.svg",
         "color": "#0078D5"
       },
-      "medianOutputSpeed": 29.8594,
+      "medianOutputSpeed": 29.6817,
       "aa": {
         "aa-intelligence": 5.9226,
         "aa-coding": null,
@@ -457115,7 +457115,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 148.7145,
+      "medianOutputSpeed": 149.7726,
       "aa": {
         "aa-intelligence": 15.116,
         "aa-coding": null,
@@ -457138,7 +457138,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 63.0,
-        "GDPval-AA v2": 4.7285,
+        "GDPval-AA v2": 4.733,
         "τ³-Banking": 4.9485,
         "Terminal-Bench v2.1": 40.824,
         "GDPval-AA": 12.0235,
@@ -457410,7 +457410,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 63.3599,
+      "medianOutputSpeed": 69.6336,
       "aa": {
         "aa-intelligence": 28.0531,
         "aa-coding": null,
@@ -457428,12 +457428,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 186.2291
       },
       "scores": {
-        "AA-Briefcase": 27.7285,
+        "AA-Briefcase": 27.7165,
         "AutomationBench-AA": 27.8722,
         "Terminal-Bench v4.0": 2.0202,
         "GDP.pdf": 11.6,
         "AA-LCR v1.1": 73.6667,
-        "GDPval-AA v2": 32.2255,
+        "GDPval-AA v2": 32.238,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": 36.126,
@@ -458100,7 +458100,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 185.3801,
+      "medianOutputSpeed": 208.9169,
       "aa": {
         "aa-intelligence": 11.6028,
         "aa-coding": null,
@@ -458123,7 +458123,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 4.0,
         "AA-LCR v1.1": 52.0,
-        "GDPval-AA v2": 4.7815,
+        "GDPval-AA v2": 4.775,
         "τ³-Banking": 12.7835,
         "Terminal-Bench v2.1": 26.2172,
         "GDPval-AA": 12.237,
@@ -458638,7 +458638,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 98,
             "evidenceRank": 98,
-            "score": 59.0304,
+            "score": 59.029,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -458654,7 +458654,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 67.348,
+                "score": 67.341,
                 "tests": 4
               },
               "instruction-context": {
@@ -458668,7 +458668,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 98,
             "evidenceRank": 98,
-            "score": 59.048,
+            "score": 59.0466,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -458684,7 +458684,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 67.348,
+                "score": 67.341,
                 "tests": 4
               },
               "instruction-context": {
@@ -458698,7 +458698,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 100,
             "evidenceRank": 100,
-            "score": 56.461,
+            "score": 56.4599,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -458714,7 +458714,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 66.204,
+                "score": 66.199,
                 "tests": 4
               },
               "instruction-context": {
@@ -458728,7 +458728,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 98,
             "evidenceRank": 98,
-            "score": 59.0271,
+            "score": 59.0257,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -458744,7 +458744,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 67.334,
+                "score": 67.327,
                 "tests": 4
               },
               "instruction-context": {
@@ -459020,7 +459020,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 125,
             "evidenceRank": 125,
-            "score": 58.967,
+            "score": 58.9656,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -459036,7 +459036,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 67.33,
+                "score": 67.323,
                 "tests": 4
               },
               "instruction-context": {
@@ -459050,7 +459050,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 125,
             "evidenceRank": 125,
-            "score": 58.9789,
+            "score": 58.9775,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -459066,7 +459066,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 67.345,
+                "score": 67.339,
                 "tests": 4
               },
               "instruction-context": {
@@ -459080,7 +459080,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 126,
             "evidenceRank": 126,
-            "score": 56.183,
+            "score": 56.182,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -459096,7 +459096,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 66.195,
+                "score": 66.19,
                 "tests": 4
               },
               "instruction-context": {
@@ -459110,7 +459110,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 125,
             "evidenceRank": 125,
-            "score": 58.976,
+            "score": 58.9747,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -459126,7 +459126,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 67.33,
+                "score": 67.323,
                 "tests": 4
               },
               "instruction-context": {
@@ -459158,7 +459158,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 61.8647,
+      "medianOutputSpeed": 67.798,
       "aa": {
         "aa-intelligence": 21.7826,
         "aa-coding": null,
@@ -459687,7 +459687,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 114.607,
+      "medianOutputSpeed": 117.3098,
       "aa": {
         "aa-intelligence": 7.4288,
         "aa-coding": null,
@@ -459981,7 +459981,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 42.3837,
+      "medianOutputSpeed": 42.7938,
       "aa": {
         "aa-intelligence": 23.3035,
         "aa-coding": null,
@@ -460571,7 +460571,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 106.9855,
+      "medianOutputSpeed": 103.3104,
       "aa": {
         "aa-intelligence": 6.6226,
         "aa-coding": null,
@@ -460974,7 +460974,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 56.2403,
+      "medianOutputSpeed": 56.3601,
       "aa": {
         "aa-intelligence": 27.0099,
         "aa-coding": null,
@@ -460997,7 +460997,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 78.3333,
-        "GDPval-AA v2": 23.778,
+        "GDPval-AA v2": 23.792,
         "τ³-Banking": 20.8247,
         "Terminal-Bench v2.1": 61.4232,
         "GDPval-AA": 28.2915,
@@ -461379,7 +461379,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 83.0,
-        "GDPval-AA v2": 40.554,
+        "GDPval-AA v2": 40.563,
         "τ³-Banking": 35.6701,
         "Terminal-Bench v2.1": 69.6629,
         "GDPval-AA": 43.7885,
@@ -461899,7 +461899,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 35,
             "evidenceRank": 35,
-            "score": 86.6124,
+            "score": 86.612,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -461915,7 +461915,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.451,
+                "score": 84.449,
                 "tests": 5
               },
               "instruction-context": {
@@ -461929,7 +461929,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 35,
             "evidenceRank": 35,
-            "score": 86.627,
+            "score": 86.6266,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -461945,7 +461945,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.451,
+                "score": 84.449,
                 "tests": 5
               },
               "instruction-context": {
@@ -461959,7 +461959,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 35,
             "evidenceRank": 35,
-            "score": 85.952,
+            "score": 85.9518,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -461975,7 +461975,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 86.144,
+                "score": 86.143,
                 "tests": 5
               },
               "instruction-context": {
@@ -461989,7 +461989,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 34,
             "evidenceRank": 34,
-            "score": 86.6108,
+            "score": 86.6104,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -462005,7 +462005,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.426,
+                "score": 84.424,
                 "tests": 5
               },
               "instruction-context": {
@@ -462285,7 +462285,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 62,
             "evidenceRank": 62,
-            "score": 86.2555,
+            "score": 86.2551,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -462301,7 +462301,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.333,
+                "score": 84.331,
                 "tests": 5
               },
               "instruction-context": {
@@ -462315,7 +462315,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 62,
             "evidenceRank": 62,
-            "score": 86.2963,
+            "score": 86.2958,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -462331,7 +462331,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.365,
+                "score": 84.363,
                 "tests": 5
               },
               "instruction-context": {
@@ -462345,7 +462345,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 62,
             "evidenceRank": 62,
-            "score": 85.6181,
+            "score": 85.618,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -462375,7 +462375,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 62,
             "evidenceRank": 62,
-            "score": 86.2627,
+            "score": 86.2623,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -462391,7 +462391,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 84.333,
+                "score": 84.331,
                 "tests": 5
               },
               "instruction-context": {
@@ -462423,7 +462423,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 114.538,
+      "medianOutputSpeed": 114.1365,
       "aa": {
         "aa-intelligence": 12.7755,
         "aa-coding": null,
@@ -462453,8 +462453,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench Hard": 17.4242,
         "τ²-Bench Telecom": 90.6433,
         "AA-LCR": 64.6667,
-        "AA-Omniscience Accuracy": 17.1,
-        "AA-Omniscience Non-Hallucination Rate": 30.4785,
+        "AA-Omniscience Accuracy": 22.0,
+        "AA-Omniscience Non-Hallucination Rate": 12.1368,
         "Humanity's Last Exam": 5.19,
         "GPQA Diamond": 75.0505,
         "SciCode": null,
@@ -462718,7 +462718,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 412.9636,
+      "medianOutputSpeed": 373.2403,
       "aa": {
         "aa-intelligence": 8.5456,
         "aa-coding": null,
@@ -463310,7 +463310,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 66.137,
+      "medianOutputSpeed": 68.248,
       "aa": {
         "aa-intelligence": 12.7109,
         "aa-coding": null,
@@ -463848,7 +463848,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 100,
             "evidenceRank": 100,
-            "score": 56.4159,
+            "score": 56.4145,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -463864,7 +463864,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 69.008,
+                "score": 69.001,
                 "tests": 4
               },
               "instruction-context": {
@@ -463878,7 +463878,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 100,
             "evidenceRank": 100,
-            "score": 56.4322,
+            "score": 56.4309,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -463894,7 +463894,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 69.008,
+                "score": 69.001,
                 "tests": 4
               },
               "instruction-context": {
@@ -463908,7 +463908,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 101,
             "evidenceRank": 101,
-            "score": 53.6656,
+            "score": 53.6646,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -463924,7 +463924,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 66.313,
+                "score": 66.308,
                 "tests": 4
               },
               "instruction-context": {
@@ -463938,7 +463938,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 100,
             "evidenceRank": 100,
-            "score": 56.4108,
+            "score": 56.4095,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -463954,7 +463954,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 68.993,
+                "score": 68.986,
                 "tests": 4
               },
               "instruction-context": {
@@ -464230,7 +464230,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 127,
             "evidenceRank": 127,
-            "score": 56.4371,
+            "score": 56.4358,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -464246,7 +464246,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 68.98,
+                "score": 68.973,
                 "tests": 4
               },
               "instruction-context": {
@@ -464260,7 +464260,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 127,
             "evidenceRank": 127,
-            "score": 56.442,
+            "score": 56.4407,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -464276,7 +464276,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 68.997,
+                "score": 68.99,
                 "tests": 4
               },
               "instruction-context": {
@@ -464290,7 +464290,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 127,
             "evidenceRank": 127,
-            "score": 53.4873,
+            "score": 53.4863,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -464306,7 +464306,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 66.303,
+                "score": 66.298,
                 "tests": 4
               },
               "instruction-context": {
@@ -464320,7 +464320,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 127,
             "evidenceRank": 127,
-            "score": 56.4461,
+            "score": 56.4447,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -464336,7 +464336,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 4
               },
               "knowledge-science": {
-                "score": 68.98,
+                "score": 68.973,
                 "tests": 4
               },
               "instruction-context": {
@@ -464909,7 +464909,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 58,
             "evidenceRank": 58,
-            "score": 87.6341,
+            "score": 87.6339,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -464925,7 +464925,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.466,
+                "score": 94.465,
                 "tests": 5
               },
               "instruction-context": {
@@ -464939,7 +464939,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 58,
             "evidenceRank": 58,
-            "score": 87.6776,
+            "score": 87.6774,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -464955,7 +464955,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.49,
+                "score": 94.489,
                 "tests": 5
               },
               "instruction-context": {
@@ -464969,7 +464969,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 57,
             "evidenceRank": 57,
-            "score": 87.7231,
+            "score": 87.7229,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -464985,7 +464985,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.165,
+                "score": 95.164,
                 "tests": 5
               },
               "instruction-context": {
@@ -464999,7 +464999,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 57,
             "evidenceRank": 57,
-            "score": 87.64,
+            "score": 87.6399,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -465015,7 +465015,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 94.466,
+                "score": 94.465,
                 "tests": 5
               },
               "instruction-context": {
@@ -465341,7 +465341,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 92.2157,
+      "medianOutputSpeed": 107.7253,
       "aa": {
         "aa-intelligence": 18.6257,
         "aa-coding": null,
@@ -465998,7 +465998,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 76.33,
+      "medianOutputSpeed": 73.9653,
       "aa": {
         "aa-intelligence": 33.7055,
         "aa-coding": null,
@@ -466016,12 +466016,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 88.9269
       },
       "scores": {
-        "AA-Briefcase": 36.709,
+        "AA-Briefcase": 36.6475,
         "AutomationBench-AA": 28.399,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 10.4,
         "AA-LCR v1.1": 78.3333,
-        "GDPval-AA v2": 42.8675,
+        "GDPval-AA v2": 42.876,
         "τ³-Banking": 34.6392,
         "Terminal-Bench v2.1": 77.9026,
         "GDPval-AA": 45.881,
@@ -466843,7 +466843,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 32,
             "evidenceRank": 32,
-            "score": 87.6854,
+            "score": 87.6847,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -466859,7 +466859,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.741,
+                "score": 88.737,
                 "tests": 4
               },
               "instruction-context": {
@@ -466873,7 +466873,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 32,
             "evidenceRank": 32,
-            "score": 87.6988,
+            "score": 87.6982,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -466889,7 +466889,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.741,
+                "score": 88.737,
                 "tests": 4
               },
               "instruction-context": {
@@ -466903,7 +466903,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 31,
             "evidenceRank": 31,
-            "score": 87.9167,
+            "score": 87.9165,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -466919,7 +466919,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.324,
+                "score": 89.323,
                 "tests": 4
               },
               "instruction-context": {
@@ -466933,7 +466933,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 32,
             "evidenceRank": 32,
-            "score": 87.6587,
+            "score": 87.6581,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -466949,7 +466949,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.717,
+                "score": 88.713,
                 "tests": 4
               },
               "instruction-context": {
@@ -467225,7 +467225,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 55,
             "evidenceRank": 55,
-            "score": 87.7184,
+            "score": 87.7178,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -467241,7 +467241,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.631,
+                "score": 88.628,
                 "tests": 4
               },
               "instruction-context": {
@@ -467255,7 +467255,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 56,
             "evidenceRank": 56,
-            "score": 87.7628,
+            "score": 87.7622,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -467271,7 +467271,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.659,
+                "score": 88.656,
                 "tests": 4
               },
               "instruction-context": {
@@ -467285,7 +467285,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 55,
             "evidenceRank": 55,
-            "score": 87.9615,
+            "score": 87.9613,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -467301,7 +467301,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.301,
+                "score": 89.3,
                 "tests": 4
               },
               "instruction-context": {
@@ -467315,7 +467315,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 55,
             "evidenceRank": 55,
-            "score": 87.7251,
+            "score": 87.7245,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -467331,7 +467331,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.631,
+                "score": 88.628,
                 "tests": 4
               },
               "instruction-context": {
@@ -467363,7 +467363,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 39.3003,
+      "medianOutputSpeed": 42.8945,
       "aa": {
         "aa-intelligence": 43.5938,
         "aa-coding": null,
@@ -467381,12 +467381,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 322.1663
       },
       "scores": {
-        "AA-Briefcase": 50.568,
+        "AA-Briefcase": 50.5115,
         "AutomationBench-AA": 58.273,
         "Terminal-Bench v4.0": 12.6263,
         "GDP.pdf": 22.0,
         "AA-LCR v1.1": 88.6667,
-        "GDPval-AA v2": 51.19,
+        "GDPval-AA v2": 51.1985,
         "τ³-Banking": 45.9794,
         "Terminal-Bench v2.1": 85.0187,
         "GDPval-AA": 54.1765,
@@ -468794,7 +468794,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 8,
             "evidenceRank": 8,
-            "score": 93.362,
+            "score": 93.3619,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -468810,7 +468810,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.371,
+                "score": 95.37,
                 "tests": 5
               },
               "instruction-context": {
@@ -468824,7 +468824,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 8,
             "evidenceRank": 8,
-            "score": 93.3697,
+            "score": 93.3696,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -468840,7 +468840,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.371,
+                "score": 95.37,
                 "tests": 5
               },
               "instruction-context": {
@@ -468854,7 +468854,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 7,
             "evidenceRank": 7,
-            "score": 93.0328,
+            "score": 93.0327,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -468884,7 +468884,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 4,
             "evidenceRank": 4,
-            "score": 93.7306,
+            "score": 93.7305,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -469176,7 +469176,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 11,
             "evidenceRank": 11,
-            "score": 93.4598,
+            "score": 93.4597,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -469206,7 +469206,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 19,
             "evidenceRank": 19,
-            "score": 92.9037,
+            "score": 92.9036,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -469222,7 +469222,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.3,
+                "score": 95.299,
                 "tests": 5
               },
               "instruction-context": {
@@ -469236,7 +469236,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 12,
             "evidenceRank": 12,
-            "score": 93.0507,
+            "score": 93.0505,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -469266,7 +469266,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 11,
             "evidenceRank": 11,
-            "score": 93.5142,
+            "score": 93.514,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -469903,7 +469903,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/multiversecomputing_small.svg",
         "color": "#f11338"
       },
-      "medianOutputSpeed": 175.3938,
+      "medianOutputSpeed": 166.4393,
       "aa": {
         "aa-intelligence": 26.7373,
         "aa-coding": null,
@@ -469921,12 +469921,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 55.3804
       },
       "scores": {
-        "AA-Briefcase": 31.165,
+        "AA-Briefcase": 31.12,
         "AutomationBench-AA": 23.8644,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 5.4,
         "AA-LCR v1.1": 76.3333,
-        "GDPval-AA v2": 33.07,
+        "GDPval-AA v2": 33.079,
         "τ³-Banking": 28.6598,
         "Terminal-Bench v2.1": 69.2884,
         "GDPval-AA": 36.954,
@@ -470441,7 +470441,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 61,
             "evidenceRank": 61,
-            "score": 77.8106,
+            "score": 77.8092,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -470457,7 +470457,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 65.763,
+                "score": 65.756,
                 "tests": 4
               },
               "instruction-context": {
@@ -470471,7 +470471,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 61,
             "evidenceRank": 61,
-            "score": 77.8293,
+            "score": 77.8279,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -470487,7 +470487,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 65.763,
+                "score": 65.756,
                 "tests": 4
               },
               "instruction-context": {
@@ -470501,7 +470501,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 63,
             "evidenceRank": 63,
-            "score": 76.3231,
+            "score": 76.3221,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -470517,7 +470517,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 62.021,
+                "score": 62.016,
                 "tests": 4
               },
               "instruction-context": {
@@ -470531,7 +470531,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 61,
             "evidenceRank": 61,
-            "score": 77.8084,
+            "score": 77.807,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -470547,7 +470547,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 65.751,
+                "score": 65.744,
                 "tests": 4
               },
               "instruction-context": {
@@ -470823,7 +470823,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 90,
             "evidenceRank": 90,
-            "score": 77.4769,
+            "score": 77.4755,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -470839,7 +470839,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 65.756,
+                "score": 65.749,
                 "tests": 4
               },
               "instruction-context": {
@@ -470853,7 +470853,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 90,
             "evidenceRank": 90,
-            "score": 77.5164,
+            "score": 77.515,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -470869,7 +470869,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 65.769,
+                "score": 65.762,
                 "tests": 4
               },
               "instruction-context": {
@@ -470883,7 +470883,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 94,
             "evidenceRank": 94,
-            "score": 75.9943,
+            "score": 75.9933,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -470899,7 +470899,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 62.023,
+                "score": 62.018,
                 "tests": 4
               },
               "instruction-context": {
@@ -470913,7 +470913,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 90,
             "evidenceRank": 90,
-            "score": 77.4845,
+            "score": 77.4831,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -470929,7 +470929,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 65.756,
+                "score": 65.749,
                 "tests": 4
               },
               "instruction-context": {
@@ -470979,12 +470979,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 4.7555,
+        "AA-Briefcase": 4.7415,
         "AutomationBench-AA": null,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 38.6667,
-        "GDPval-AA v2": 10.9135,
+        "GDPval-AA v2": 10.9165,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": 17.265,
@@ -471843,7 +471843,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 161.5889,
+      "medianOutputSpeed": 160.9582,
       "aa": {
         "aa-intelligence": 12.4824,
         "aa-coding": null,
@@ -472161,7 +472161,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 73.0,
-        "GDPval-AA v2": 10.973,
+        "GDPval-AA v2": 10.9905,
         "τ³-Banking": 4.5361,
         "Terminal-Bench v2.1": 70.0375,
         "GDPval-AA": 17.1625,
@@ -472432,7 +472432,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 111.6141,
+      "medianOutputSpeed": 114.2091,
       "aa": {
         "aa-intelligence": 9.2368,
         "aa-coding": null,
@@ -472455,7 +472455,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 2.6,
         "AA-LCR v1.1": 47.0,
-        "GDPval-AA v2": 0.053,
+        "GDPval-AA v2": 0.0495,
         "τ³-Banking": 5.3608,
         "Terminal-Bench v2.1": 38.2022,
         "GDPval-AA": 8.2155,
@@ -472974,7 +472974,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 109,
             "evidenceRank": 109,
-            "score": 49.3267,
+            "score": 49.3251,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -472990,7 +472990,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 53.804,
+                "score": 53.796,
                 "tests": 4
               },
               "instruction-context": {
@@ -473004,7 +473004,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 109,
             "evidenceRank": 109,
-            "score": 49.3342,
+            "score": 49.3326,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -473020,7 +473020,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 53.804,
+                "score": 53.796,
                 "tests": 4
               },
               "instruction-context": {
@@ -473034,7 +473034,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 106,
             "evidenceRank": 106,
-            "score": 50.1834,
+            "score": 50.1822,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -473050,7 +473050,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 49.816,
+                "score": 49.81,
                 "tests": 4
               },
               "instruction-context": {
@@ -473064,7 +473064,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 109,
             "evidenceRank": 109,
-            "score": 49.3382,
+            "score": 49.3366,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -473080,7 +473080,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 53.805,
+                "score": 53.797,
                 "tests": 4
               },
               "instruction-context": {
@@ -473356,7 +473356,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 134,
             "evidenceRank": 134,
-            "score": 49.2012,
+            "score": 49.1997,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -473372,7 +473372,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 53.881,
+                "score": 53.873,
                 "tests": 4
               },
               "instruction-context": {
@@ -473386,7 +473386,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 134,
             "evidenceRank": 134,
-            "score": 49.2101,
+            "score": 49.2085,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -473402,7 +473402,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 53.879,
+                "score": 53.871,
                 "tests": 4
               },
               "instruction-context": {
@@ -473416,7 +473416,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 131,
             "evidenceRank": 131,
-            "score": 49.8617,
+            "score": 49.8605,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -473432,7 +473432,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 49.827,
+                "score": 49.821,
                 "tests": 4
               },
               "instruction-context": {
@@ -473446,7 +473446,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 134,
             "evidenceRank": 134,
-            "score": 49.2104,
+            "score": 49.2088,
             "evidenceTier": "Main",
             "boards": {
               "coding": {
@@ -473462,7 +473462,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 53.881,
+                "score": 53.873,
                 "tests": 4
               },
               "instruction-context": {
@@ -474380,7 +474380,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 111.5708,
+      "medianOutputSpeed": 119.6573,
       "aa": {
         "aa-intelligence": 24.2959,
         "aa-coding": null,
@@ -474675,7 +474675,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 210.8904,
+      "medianOutputSpeed": 243.661,
       "aa": {
         "aa-intelligence": 34.3305,
         "aa-coding": null,
@@ -474693,12 +474693,12 @@ window.AINSIGHTS_MODELS_DATA = {
         "aaIndexAnswerCostUsd": 32.7118
       },
       "scores": {
-        "AA-Briefcase": 38.026,
+        "AA-Briefcase": 37.9835,
         "AutomationBench-AA": 53.9677,
         "Terminal-Bench v4.0": 12.1212,
         "GDP.pdf": 11.0,
         "AA-LCR v1.1": 79.6667,
-        "GDPval-AA v2": 46.32,
+        "GDPval-AA v2": 46.3285,
         "τ³-Banking": 39.3814,
         "Terminal-Bench v2.1": 78.6517,
         "GDPval-AA": 48.389,
@@ -475503,7 +475503,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 37,
             "evidenceRank": 37,
-            "score": 85.2217,
+            "score": 85.2211,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -475519,7 +475519,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.029,
+                "score": 89.026,
                 "tests": 5
               },
               "instruction-context": {
@@ -475533,7 +475533,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 37,
             "evidenceRank": 37,
-            "score": 85.2358,
+            "score": 85.2352,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -475549,7 +475549,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 89.029,
+                "score": 89.026,
                 "tests": 5
               },
               "instruction-context": {
@@ -475563,7 +475563,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 39,
             "evidenceRank": 39,
-            "score": 85.1862,
+            "score": 85.1859,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -475579,7 +475579,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 91.029,
+                "score": 91.028,
                 "tests": 5
               },
               "instruction-context": {
@@ -475593,7 +475593,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 38,
             "evidenceRank": 38,
-            "score": 85.0249,
+            "score": 85.0244,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -475609,7 +475609,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 88.983,
+                "score": 88.98,
                 "tests": 5
               },
               "instruction-context": {
@@ -475885,7 +475885,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 50,
             "evidenceRank": 50,
-            "score": 89.1929,
+            "score": 89.1925,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -475901,7 +475901,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.116,
+                "score": 92.113,
                 "tests": 4
               },
               "instruction-context": {
@@ -475915,7 +475915,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 50,
             "evidenceRank": 50,
-            "score": 89.2342,
+            "score": 89.2337,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -475931,7 +475931,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.141,
+                "score": 92.139,
                 "tests": 4
               },
               "instruction-context": {
@@ -475945,7 +475945,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 51,
             "evidenceRank": 51,
-            "score": 88.5469,
+            "score": 88.5467,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -475961,7 +475961,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.505,
+                "score": 92.504,
                 "tests": 4
               },
               "instruction-context": {
@@ -475975,7 +475975,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 51,
             "evidenceRank": 51,
-            "score": 89.1996,
+            "score": 89.1991,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -475991,7 +475991,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 92.116,
+                "score": 92.113,
                 "tests": 4
               },
               "instruction-context": {
@@ -476023,7 +476023,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 109.6856,
+      "medianOutputSpeed": 113.1563,
       "aa": {
         "aa-intelligence": 14.1848,
         "aa-coding": null,
@@ -476320,7 +476320,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 54.5144,
+      "medianOutputSpeed": 58.6125,
       "aa": {
         "aa-intelligence": 44.8253,
         "aa-coding": null,
@@ -476859,7 +476859,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 21,
             "evidenceRank": 21,
-            "score": 92.6784,
+            "score": 92.6783,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -476875,7 +476875,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.416,
+                "score": 95.415,
                 "tests": 5
               },
               "instruction-context": {
@@ -476889,7 +476889,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 21,
             "evidenceRank": 21,
-            "score": 92.7163,
+            "score": 92.7162,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -476919,7 +476919,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 22,
             "evidenceRank": 22,
-            "score": 92.4205,
+            "score": 92.4204,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -476935,7 +476935,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 96.494,
+                "score": 96.493,
                 "tests": 5
               },
               "instruction-context": {
@@ -476949,7 +476949,7 @@ window.AINSIGHTS_MODELS_DATA = {
             "role": "audit-and-sensitivity-only",
             "auditRank": 21,
             "evidenceRank": 21,
-            "score": 92.684,
+            "score": 92.6839,
             "evidenceTier": "Provisional",
             "boards": {
               "coding": {
@@ -476965,7 +476965,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "tests": 3
               },
               "knowledge-science": {
-                "score": 95.416,
+                "score": 95.415,
                 "tests": 5
               },
               "instruction-context": {
@@ -476997,7 +476997,7 @@ window.AINSIGHTS_MODELS_DATA = {
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 76.7764,
+      "medianOutputSpeed": 84.6077,
       "aa": {
         "aa-intelligence": 14.6213,
         "aa-coding": null,
