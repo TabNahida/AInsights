@@ -336,10 +336,10 @@ const copy = {
     sourceExplorerSubtitle: "AA Core 与已链接的独立 benchmark 扩展来源，并列展示计分角色与协议",
     detailRankTitle: "排名快照",
     detailRadarSubtitle: "五个 AIndex 能力板块与视觉理解；外圈为 100 分，橙色为参考均值，统计范围见图例",
-    detailBenchmarkTitle: "Benchmark Lab 参考项目",
-    detailBenchmarkSubtitle: "均衡逐项实验模板中的测试项；它们不作为主榜固定权重。",
-    detailExternalTitle: "非参考项目分数",
-    detailExternalSubtitle: "AA 子项、官方发布页及其他公开测评：其中一部分作为混合 Core 方案 07 的只增益扩展项参与计分，其余为排除项或仅用于 Custom Weight",
+    detailBenchmarkTitle: "AIndex 核心与扩展成绩",
+    detailBenchmarkSubtitle: "按当前 AIndex 计分规则列出已有成绩；扩展项是否加分取决于本板 Core 覆盖与残差，不由 Custom 模板权重决定。",
+    detailExternalTitle: "其他已收录评测成绩",
+    detailExternalSubtitle: "已有数据，但未进入当前 AIndex 计分规则。官方自测与 AA 评测分别标明来源，同名测试不混用。",
     detailReferenceOnlyTitle: "官网参考分数（不参与排名）",
     detailReferenceOnlySubtitle: "官网已公布、但无法可靠归属到当前具体推理档位或评分口径的结果；仅展示原始证据，不写入模型分数。",
     benchmarkReferenceOnly: "仅供参考 · 不参与排名",
@@ -850,10 +850,10 @@ const copy = {
     sourceExplorerSubtitle: "AA Core and linked, independently controlled benchmark extensions, with scoring roles and protocols shown side by side",
     detailRankTitle: "Rank snapshot",
     detailRadarSubtitle: "Five AIndex capability boards plus visual understanding; the outer ring is 100. Orange shows reference means; see the legend for their populations",
-    detailBenchmarkTitle: "Benchmark Lab reference set",
-    detailBenchmarkSubtitle: "Benchmarks in the balanced per-item experiment template; these are not fixed primary-ranking weights.",
-    detailExternalTitle: "Non-reference benchmark scores",
-    detailExternalSubtitle: "AA submetrics, official release scores, and other public evaluations: some are only-add Mixed Core 07 extensions; others are excluded or Custom-only",
+    detailBenchmarkTitle: "AIndex Core and extension results",
+    detailBenchmarkSubtitle: "Observed results under the current AIndex policy. Extension bonuses depend on complete board Core and residuals, not Custom template weights.",
+    detailExternalTitle: "Other published benchmark results",
+    detailExternalSubtitle: "Available results outside the current AIndex scoring registry. Vendor runs and AA evaluations retain their own sources and are not interchangeable.",
     detailReferenceOnlyTitle: "Official reference scores (not ranked)",
     detailReferenceOnlySubtitle: "Published first-party results that cannot be assigned reliably to this exact effort tier or scoring protocol. They are displayed as evidence and never written to model scores.",
     benchmarkReferenceOnly: "Reference only · not ranked",
@@ -5406,7 +5406,6 @@ function renderSiblingVariants(rows, currentModel) {
 }
 
 function benchmarkProfileRows(model, { reference = true } = {}) {
-  const defaultWeights = state.data.presets.custom?.weights || {};
   return state.data.metrics
     .map((metric) => {
       const value = model.scores?.[metric.key];
@@ -5415,7 +5414,7 @@ function benchmarkProfileRows(model, { reference = true } = {}) {
         key: metric.key,
         label: metric.label,
         value,
-        weight: Number(defaultWeights[metric.key] || 0),
+        role: metric.aindexRole || "custom-only",
         rank: metricRank(metric.key, model),
         metric,
         sourceLabel: externalRow?.sourceLabel || (metric.source === "benchmark" ? tr("source") : "Artificial Analysis"),
@@ -5423,17 +5422,16 @@ function benchmarkProfileRows(model, { reference = true } = {}) {
         unit: externalRow?.unit || metric.unit || "%",
       };
     })
-    .filter((row) => (reference ? row.weight > 0 : row.weight <= 0))
+    .filter((row) => ["core", "extension"].includes(row.role) === reference)
     .filter((row) => Number.isFinite(row.value))
-    .sort((a, b) => b.weight - a.weight || String(a.metric.category || "").localeCompare(String(b.metric.category || "")) || b.value - a.value || a.label.localeCompare(b.label));
+    .sort((a, b) => ({ core: 0, extension: 1 }[a.role] ?? 2) - ({ core: 0, extension: 1 }[b.role] ?? 2)
+      || String(a.metric.category || "").localeCompare(String(b.metric.category || "")) || a.label.localeCompare(b.label));
 }
 
 function renderBenchmarkRow(row) {
   const valueWidth = clamp(row.value, 0, 100);
   const value = `${formatNumber(row.value)}${row.unit === "%" ? "%" : ` ${row.unit || ""}`}`.trim();
-  const meta = row.weight > 0
-    ? `#${row.rank || tr("notAvailable")} · w ${formatWeight(row.weight)}`
-    : `#${row.rank || tr("notAvailable")} · ${row.sourceLabel || tr("benchmarkNonReference")}`;
+  const meta = `#${row.rank || tr("notAvailable")} · ${benchmarkRoleLabel(row.metric)} · ${row.sourceLabel}`;
   const label = `<strong>${escapeHtml(row.label)}</strong>`;
   const labelHtml = row.key
     ? `<a href="${escapeHtml(benchmarkHref(row.key))}">${label}</a>`

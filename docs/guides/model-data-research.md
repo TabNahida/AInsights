@@ -36,6 +36,8 @@ Use one row per exact model/checkpoint/configuration. Capture:
 
 Count observations, not every non-null alias. For example, `AA-LCR` and `AA-LCR v1.1` can represent the same imported observation. Missing data is `null`, not an observed score of zero.
 
+Before reporting that AA has not published a result, inspect the live model manifest and the named evaluation page. A blank local CSV cell is not evidence of an upstream null. Distinguish an absent key, an explicit null, a zero, and an unrecognized renamed field. Compare the actual raw keys with both normalization and explicit-column merge handling: fixing only normalization can still let a prior value overwrite the new observation. On September 22, `terminalBench40` / `terminalBench21` replaced older aliases and models-page Omniscience accuracy/hallucination fields became flat, while evaluation pages retained a breakdown. The scraper missed published results even though its job succeeded and prior coverage guards passed. Keep both verified schemas, test explicit-null and zero behavior, and compare live catalogue/evaluation rows before concluding that evidence is absent.
+
 ## Find sources actively
 
 For each named release, inspect all relevant evidence classes:
@@ -115,6 +117,8 @@ python -B -m unittest discover -s tests
 `--seed-only` is a fixture/debug mode; do not use it to replace a richer production snapshot. `--allow-stale` can preserve availability during outages; a successful run using old data is not a fresh import.
 
 5. Inspect the generated target models: source links, exact/reference binding, null handling, pricing offers and eligibility. If a displayed surface changed, inspect it in the browser. Review `git diff --check` and the generated diff for unexpected removals, duplicates or unrelated changes.
+
+Classify model-page results from the production metric's `aindexRole`, not a Custom preset's default weight. GDP.pdf and AA Terminal-Bench v4.0 are Core even if that experimental template gives them zero weight. Show data availability, publisher and scoring role separately; “outside AIndex” must never imply that a published observation is missing.
 
 Refresh a bounded set of source slices when investigating a few releases; preserve unrelated source rows and their dates/statuses. Compare the parser's live rows with reviewed source values before writing. Do not replace the entire benchmark catalogue with a seed-only payload. Ensure later scheduled runs know the same source specifications and preserve the corrections.
 

@@ -608,9 +608,13 @@ MANIFEST_SCORE_KEYS = {
     "briefcaseBreakdown": "AA-Briefcase",
     "automationBenchPartialScore": "AutomationBench-AA",
     "terminalbenchV40": "Terminal-Bench v4.0",
+    "terminalBench40": "Terminal-Bench v4.0",
     "gdpPdfAllPass": "GDP.pdf",
     "tauBanking": "τ³-Banking",
     "terminalbenchV21": "Terminal-Bench v2.1",
+    "terminalBench21": "Terminal-Bench v2.1",
+    "omniscienceAccuracy": "AA-Omniscience Accuracy",
+    "omniscienceHallucinationRate": "AA-Omniscience Non-Hallucination Rate",
     "terminalbenchHard": "Terminal-Bench Hard",
     "tau2": "τ²-Bench Telecom",
     "lcr": "AA-LCR",
@@ -667,6 +671,10 @@ def normalize_manifest_model_row(row: dict[str, Any]) -> dict[str, Any]:
         "tauBanking": "tau_banking",
         "terminalbenchV21": "terminalbench_v2_1",
         "terminalbenchV40": "terminalbench_v4_0",
+        # Current models/evaluation manifests renamed these fields. Keep the
+        # legacy aliases above; current keys win even when explicitly null.
+        "terminalBench21": "terminalbench_v2_1",
+        "terminalBench40": "terminalbench_v4_0",
         "automationBenchPartialScore": "automation_bench_partial_score",
         "gdpPdfAllPass": "gdp_pdf_all_pass",
         "terminalbenchHard": "terminalbench_hard",
@@ -752,15 +760,22 @@ def normalize_manifest_model_row(row: dict[str, Any]) -> dict[str, Any]:
             break
 
     omniscience = row.get("omniscienceBreakdown")
+    total: dict[str, Any] = {}
     if isinstance(omniscience, dict):
-        total: dict[str, Any] = {}
         if "accuracy" in omniscience:
             total["accuracy"] = omniscience["accuracy"]
         if "hallucinationRate" in omniscience:
             rate = _as_float(omniscience["hallucinationRate"])
             total["non_hallucination_rate"] = None if rate is None else 1 - rate
-        if total:
-            normalized["omniscience_breakdown"] = {"total": total}
+    # Models-page manifests flatten these values, while evaluation pages still
+    # use the breakdown. Never use the composite `omniscience` as accuracy.
+    if "omniscienceAccuracy" in row:
+        total["accuracy"] = row["omniscienceAccuracy"]
+    if "omniscienceHallucinationRate" in row:
+        rate = _as_float(row["omniscienceHallucinationRate"])
+        total["non_hallucination_rate"] = None if rate is None else 1 - rate
+    if total:
+        normalized["omniscience_breakdown"] = {"total": total}
 
     cost = row.get("intelligenceIndexCost")
     if isinstance(cost, dict):

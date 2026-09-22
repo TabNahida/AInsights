@@ -95,7 +95,12 @@ catalogue entry with 16 observations, and eight Grok 4.7 observations (seven
 xhigh and the explicitly footnoted high-effort DeepSWE result). Final MiMo
 report tables take precedence over intermediate training curves. Corrected
 CyberGym, internal tasks, benchmark versions and Elo units remain distinct.
-The refreshed AA feed still lacks three Core items for Pro and both Grok
-configurations, so their AIndex scores are unchanged despite richer coverage.
+An initial import missed renamed AA fields. The corrected scraper supports
+`terminalBench40`, `terminalBench21`, and flat Omniscience accuracy/hallucination
+fields as well as the previous schemas. Live catalogue/evaluation manifests
+agree on the recovered observations. Pro and both Grok configurations now lack
+only τ³-Banking; AIndex is recalculated from AA's own scores. Model detail groups
+use the production scoring role, so GDP.pdf and AA Terminal-Bench are correctly
+shown as Core regardless of Custom template weights.
 
 The static ranking site lives in `docs/` and reads `docs/data/models.json`. The detailed calculation is documented in `docs/methodology.html`; reproducible analysis outputs live in `analysis/irt_leaderboard_exploration/outputs/`.

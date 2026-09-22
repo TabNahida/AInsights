@@ -17361,7 +17361,7 @@
         ],
         "core_item_count": 2,
         "extension_item_count": 2,
-        "complete_core_models": 113,
+        "complete_core_models": 122,
         "weight": 12
       },
       "agentic-tool-work": {
@@ -17497,7 +17497,7 @@
         ],
         "core_item_count": 2,
         "extension_item_count": 2,
-        "complete_core_models": 122,
+        "complete_core_models": 124,
         "weight": 37
       },
       "instruction-context": {

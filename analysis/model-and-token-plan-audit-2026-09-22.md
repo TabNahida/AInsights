@@ -1,5 +1,19 @@
 # Model coverage and TokenPlan research examples — September 22, 2026
 
+## Correction after checking AA's live manifests
+
+The initial audit below incorrectly described Terminal-Bench v4.0 and AA-Omniscience Accuracy as unpublished. They were published but missed by the scraper: AA renamed Terminal fields to `terminalBench40` / `terminalBench21` and flattened models-page Omniscience fields. GDP.pdf was already imported correctly from `gdpPdfAllPass`; its placement under “Non-reference benchmark scores” was a UI classification error caused by using Custom template weights.
+
+The corrected import was checked against AA's models page and the Terminal-Bench 4.0, GDP.pdf and Omniscience evaluation manifests: each comparison matched all 656 model rows, including nulls. The [AA recheck ledger](aa-field-recheck-2026-09-22.json) records source hashes and observations. The parser supports both old and current schemas, preserves measured zero, and clears prior scores/ranks on explicit null. The UI now groups results by the production AIndex policy.
+
+| Exact configuration | AA Terminal-Bench 4.0 | AA GDP.pdf | AA Omniscience Accuracy | AIndex before → corrected |
+| --- | ---: | ---: | ---: | ---: |
+| MiMo-V2.6-Pro | 34.8485% | 19.2% | 34.85% | 32.955197 → 41.493357 |
+| Grok 4.7 high | 24.7475% | 23.2% | 47.8167% | 29.975649 → 40.306589 |
+| Grok 4.7 xhigh | 25.7576% | 20.0% | 47.45% | 29.325058 → 39.648764 |
+
+Only τ³-Banking remains absent from AA Core for these configurations. No vendor results were substituted and no scoring weights changed. The original baseline and first-refresh counts below are retained as a record of the investigation; the corrected values and missing-data conclusions above supersede them. The TokenPlan calculations are unaffected.
+
 ## Scope and baseline
 
 This records a completed production benchmark refresh and a TokenPlan worked-example handoff. Public source pages were read on September 22, 2026. The pricing examples are not measurements of a customer's bill. Calculations assume text-token workloads without taxes, paid tools, media or other extras; source-specific restrictions still apply.
@@ -44,7 +58,7 @@ The rebuilt payload at `2026-09-22T04:10:41+00:00` contains 657 model rows. Live
 
 Ranks above are the generated `exactRankingProfile.publicationRank`, not the UI's deduplicated representative rank. Grok's starred 71.0% DeepSWE result belongs only to high; the other seven results belong to xhigh. Flash is now a browsable external-only catalogue entry without sufficient AA Core for ranking. No general vision-accuracy results were established for these configurations; MiMo Visual Coding is an internal agent task and does not fill MMMU-Pro.
 
-The refreshed live AA import still leaves Terminal-Bench v4.0, τ³-Banking and AA-Omniscience Accuracy missing for Pro and both Grok configurations. Their fixed Core shares contribute no points, and incomplete-Core boards receive no extension bonus. Richer official coverage therefore leaves these AIndex values unchanged. No weights or missing-data rules were changed to raise named models' scores.
+The first import left three Core columns blank locally and therefore left AIndex unchanged. As explained in the correction above, two blanks were scraper defects rather than absent AA evidence. Correcting them raises the scores without changing weights or missing-data rules.
 
 The [Grok model page](https://docs.x.ai/developers/models/grok-4.7) confirms 500K context, text/image input, text output, low/medium/high/xhigh reasoning with high as default, and a higher-price condition above 200K context. A USD 2/6 headline alone is not a complete tariff. The [release](https://x.ai/news/grok-4-7) also advertises a fast variant at twice the price. This audit has not reconstructed its complete regional/long-context price matrix.
 
@@ -138,4 +152,4 @@ The calculator uses decimal arithmetic and reconciles capacity × full-use rate 
 
 Validation passed: all 365 Python tests (including parser/configuration regressions), 13 frontend tests, official-source ownership validation, and an independent Mixed Core production recomputation. The affected model pages were inspected in the browser, and the TokenPlan calculation artifact exactly matches recomputation from its reviewed inputs. Repository instructions and the English playbook now require supported observations to reach maintained data and generated pages rather than ending at an audit.
 
-Remaining evidence work: attach current provider offers; research UltraSpeed's custom-service identity and conditions; distinguish Baidu billing modes and promotional terms in production offers; and refresh Alibaba's supported models, tiers and window metadata. The three absent AA Core observations remain missing until matching evaluator evidence becomes available. Those gaps are separate from the 41 official release observations now ingested.
+Remaining evidence work: attach current provider offers; research UltraSpeed's custom-service identity and conditions; distinguish Baidu billing modes and promotional terms in production offers; and refresh Alibaba's supported models, tiers and window metadata. After the AA parser correction, only τ³-Banking remains absent from these configurations' Core. Those gaps are separate from the 41 official release observations now ingested.

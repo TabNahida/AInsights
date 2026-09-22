@@ -1,0 +1,93 @@
+{
+  "baselineCommit": "bacb969cbc6c912b40a3b5dd36f27bbcd16c9556",
+  "siteGeneratedAt": "2026-09-22T14:01:53+00:00",
+  "finding": "AA published these observations; old manifest field mappings missed them. GDP.pdf was already correctly imported. No vendor fallback or weight change.",
+  "sources": [
+    {
+      "url": "https://artificialanalysis.ai/models",
+      "accessedAt": "2026-09-22T13:58:19.256360+00:00",
+      "decodedModelsSha256": "a2ed46ef50f9317fd0148d0de4898b27b37065f7cbe5cc37230fcbeb3254e180",
+      "rows": 656
+    },
+    {
+      "url": "https://artificialanalysis.ai/evaluations/terminalbench-4-0",
+      "accessedAt": "2026-09-22T13:58:20.050997+00:00",
+      "decodedModelsSha256": "bad506f4cfdfb1d9bcc0e1feb3460506561dbca19fa05f0673258904351433d6",
+      "rows": 656
+    },
+    {
+      "url": "https://artificialanalysis.ai/evaluations/gdp-pdf",
+      "accessedAt": "2026-09-22T13:58:20.897106+00:00",
+      "decodedModelsSha256": "bad506f4cfdfb1d9bcc0e1feb3460506561dbca19fa05f0673258904351433d6",
+      "rows": 656
+    },
+    {
+      "url": "https://artificialanalysis.ai/evaluations/omniscience",
+      "accessedAt": "2026-09-22T13:58:22.012952+00:00",
+      "decodedModelsSha256": "bad506f4cfdfb1d9bcc0e1feb3460506561dbca19fa05f0673258904351433d6",
+      "rows": 656
+    }
+  ],
+  "crossCheck": "All 656 slugs and normalized values including nulls match between the models manifest and the respective Terminal-Bench 4.0, GDP.pdf and Omniscience evaluation manifests.",
+  "rawTargetFields": [
+    {
+      "slug": "mimo-v2-6-pro",
+      "terminalBench40": 0.348484848484849,
+      "terminalBench21": null,
+      "gdpPdfAllPass": 0.192,
+      "omniscienceAccuracy": 0.3485,
+      "omniscienceHallucinationRate": 0.40624200562803786,
+      "tauBanking": null
+    },
+    {
+      "slug": "grok-4-7-high",
+      "terminalBench40": 0.247474747474747,
+      "terminalBench21": null,
+      "gdpPdfAllPass": 0.232,
+      "omniscienceAccuracy": 0.4781666666666667,
+      "omniscienceHallucinationRate": 0.3241775790482274,
+      "tauBanking": null
+    },
+    {
+      "slug": "grok-4-7",
+      "terminalBench40": 0.257575757575758,
+      "terminalBench21": null,
+      "gdpPdfAllPass": 0.2,
+      "omniscienceAccuracy": 0.4745,
+      "omniscienceHallucinationRate": 0.29337139232477005,
+      "tauBanking": null
+    }
+  ],
+  "scoreChanges": [
+    {
+      "slug": "mimo-v2-6-pro",
+      "before": 32.955197,
+      "after": 41.493356999999996,
+      "missingCoreItems": [
+        "τ³-Banking"
+      ]
+    },
+    {
+      "slug": "grok-4-7-high",
+      "before": 29.975649,
+      "after": 40.306588500000004,
+      "missingCoreItems": [
+        "τ³-Banking"
+      ]
+    },
+    {
+      "slug": "grok-4-7",
+      "before": 29.325058000000002,
+      "after": 39.648764,
+      "missingCoreItems": [
+        "τ³-Banking"
+      ]
+    }
+  ],
+  "validation": {
+    "pythonTests": 367,
+    "frontendTests": 14,
+    "independentMixedCoreValidation": "passed",
+    "browser": "MiMo Pro and Grok xhigh AA Core rows, sources and updated scores verified"
+  }
+}

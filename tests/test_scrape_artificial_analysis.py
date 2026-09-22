@@ -365,6 +365,48 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
         self.assertEqual(rows[0]["Terminal-Bench v2.1"], 91)
         self.assertEqual(rows[0]["AA-LCR"], rows[0]["AA-LCR v1.1"])
 
+    def test_current_manifest_terminal_and_flat_omniscience_fields(self):
+        sources = [
+            {"slug": "mimo-v2-6-pro", "shortName": "MiMo-V2.6-Pro",
+             "terminalBench40": 0.348484848484849, "terminalBench21": None,
+             "omniscience": 8.383333333333333, "omniscienceAccuracy": 0.3485,
+             "omniscienceHallucinationRate": 0.40624200562803786,
+             "gdpPdfAllPass": 0.192},
+            {"slug": "grok-4-7", "shortName": "Grok 4.7 (xhigh)",
+             "terminalBench40": 0.257575757575758,
+             "omniscienceAccuracy": 0.4745,
+             "omniscienceHallucinationRate": 0.29337139232477005,
+             "gdpPdfAllPass": 0.2},
+        ]
+        rows = build_raw_scores_rows([normalize_manifest_model_row(r) for r in sources])
+        self.assertEqual(rows[0]["Terminal-Bench v4.0"], 34.8485)
+        self.assertEqual(rows[0]["Terminal-Bench v4.0_rank"], 1)
+        self.assertEqual(rows[1]["Terminal-Bench v4.0"], 25.7576)
+        self.assertEqual(rows[1]["Terminal-Bench v4.0_rank"], 2)
+        self.assertEqual(rows[0]["AA-Omniscience Accuracy"], 34.85)
+        self.assertEqual(rows[1]["AA-Omniscience Accuracy"], 47.45)
+        self.assertEqual(rows[0]["AA-Omniscience Non-Hallucination Rate"], 59.3758)
+        self.assertEqual(rows[0]["GDP.pdf"], 19.2)
+
+    def test_current_aliases_preserve_zero_and_clear_prior_on_explicit_null(self):
+        keys = {"terminalBench40": "Terminal-Bench v4.0",
+                "terminalBench21": "Terminal-Bench v2.1",
+                "omniscienceAccuracy": "AA-Omniscience Accuracy",
+                "omniscienceHallucinationRate": "AA-Omniscience Non-Hallucination Rate"}
+        for value in (None, 0):
+            source = {"slug": "a", "shortName": "A", **dict.fromkeys(keys, value),
+                      "terminalbenchV40": 0.9, "terminalbenchV21": 0.9,
+                      "omniscienceBreakdown": {"accuracy": 0.9, "hallucinationRate": 0.9}}
+            prior = {"slug": "a"}
+            for column in keys.values():
+                prior.update({column: "90", column + "_rank": "99"})
+            candidate = build_raw_scores_rows([normalize_manifest_model_row(source)])
+            row = merge_manifest_rows_with_prior(candidate, [source], [prior])[0]
+            for column in keys.values():
+                expected = "" if value is None else 100 if column.endswith("Non-Hallucination Rate") else 0
+                self.assertEqual(row[column], expected)
+                self.assertEqual(row[column + "_rank"], "" if value is None else 1)
+
     def test_briefcase_supports_evaluation_shapes_and_explicit_null(self):
         for source, expected in [
             ({"briefcaseElo": 1600}, 55),

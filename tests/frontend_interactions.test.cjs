@@ -10,10 +10,12 @@ const names = ['radarAxes', 'radarBoardProfile', 'radarAxisValue', 'radarHasData
   'radarAxisAverage', 'modelForRankingGrain', 'benchmarkMatchesSearch',
   'benchmarkRankingRows', 'benchmarkHref', 'radarVisionOptions', 'radarAxisRank',
   'handleCustomAction', 'activeCustomWeights', 'restoreActiveCustomDefaults',
-  'modelVisionResults', 'renderVisionAvailability', 'radarVisionComparisonGroup', 'radarVisionCohortValues'];
+  'modelVisionResults', 'renderVisionAvailability', 'radarVisionComparisonGroup', 'radarVisionCohortValues',
+  'benchmarkProfileRows'];
 const context = vm.createContext({
   state: { data: { models: [] }, dedupe: true },
   tr: (key) => key,
+  metricRank: () => 1,
   escapeHtml: (value) => String(value),
   formatNumber: (value) => String(value),
   clamp: (value, min, max) => Math.min(max, Math.max(min, value)),
@@ -38,6 +40,28 @@ test('vision uses the observed AA score and preserves zero and missing values', 
   }
   assert.equal(context.radarAxisValue({ scores: { 'benchmark:mmmu-pro': 90 },
     rankingProfile: { extensionCoverageScore: 100 } }, axis), null);
+});
+
+test('detail benchmarks follow AIndex policy, not Custom template weights', () => {
+  context.state.data.metrics = [
+    { key: 'GDP.pdf', label: 'GDP.pdf', aindexRole: 'core' },
+    { key: 'Terminal-Bench v4.0', label: 'Terminal-Bench v4.0', aindexRole: 'core' },
+    { key: 'extension', label: 'Extension', aindexRole: 'extension' },
+    { key: 'benchmark:terminal-bench-4', label: 'Terminal-Bench 4.0', aindexRole: 'custom-only', source: 'benchmark' },
+    { key: 'legacy', label: 'Legacy', aindexRole: 'excluded' },
+  ];
+  context.state.data.presets = { custom: { weights: { legacy: 100, 'GDP.pdf': 0 } } };
+  const model = { scores: { 'GDP.pdf': 19.2, 'Terminal-Bench v4.0': 34.8485,
+    extension: 0, 'benchmark:terminal-bench-4': 34.9, legacy: 90 },
+    externalBenchmarks: [{ metricKey: 'benchmark:terminal-bench-4', sourceLabel: 'Xiaomi' }] };
+  const scoring = context.benchmarkProfileRows(model);
+  assert.deepEqual(Array.from(scoring, r => r.key), ['GDP.pdf', 'Terminal-Bench v4.0', 'extension']);
+  assert.equal(scoring[0].sourceLabel, 'Artificial Analysis');
+  const other = context.benchmarkProfileRows(model, { reference: false });
+  assert.equal(other.find(r => r.key === 'benchmark:terminal-bench-4').sourceLabel, 'Xiaomi');
+  model.scores['Terminal-Bench v4.0'] = null;
+  assert.ok(!context.benchmarkProfileRows(model).some(r => r.key === 'Terminal-Bench v4.0'));
+  assert.equal(model.scores['benchmark:terminal-bench-4'], 34.9);
 });
 
 test('missing vision retains other axes without drawing a fabricated zero or closed area', () => {
