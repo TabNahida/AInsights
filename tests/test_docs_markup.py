@@ -638,6 +638,20 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn('if (page === "methodology") return "methodology.html";', app_utils)
         self.assertIn('const pageOrder = ["home", "ranking", "compare", "providers", "benchmarks", "sources", "contribute"];', app_js)
 
+    def test_methodology_extensions_match_the_production_registry(self):
+        from analysis.irt_leaderboard_exploration.aindex_mixed_core import EXTENSION_ITEMS
+
+        root = Path(__file__).resolve().parents[1]
+        html = (root / "docs" / "methodology.html").read_text(encoding="utf-8")
+        rows = re.findall(r'data-extension-key="([^"]+)" data-boards="([^"]+)"', html)
+        expected = {}
+        for board, keys in EXTENSION_ITEMS.items():
+            for key in keys:
+                expected.setdefault(key, set()).add(board)
+        self.assertEqual(len(rows), len(expected))
+        self.assertEqual({key: set(boards.split()) for key, boards in rows}, expected)
+        self.assertIn('id="extension-registry"', html)
+
     def test_sources_page_and_split_scripts_are_present(self):
         docs_dir = Path(__file__).resolve().parents[1] / "docs"
         html = (docs_dir / "sources.html").read_text(encoding="utf-8")

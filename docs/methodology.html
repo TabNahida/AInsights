@@ -15,6 +15,10 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"AInsights Index Methodology - AI Insights Analysis","alternateName":["AInsights Index","AIndex","AIndex Mixed Core 07"],"url":"https://ainsights.tab.homes/methodology.html","description":"AIndex Mixed Core 07 calculates five board scores from fixed-share Core evidence, weights of 12/9/22/37/20, and capped positive-residual extensions."}</script>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css?v=20260919-fable-radar" />
+    <style>
+      #extension-registry { scroll-margin-top: 150px; }
+      #extension-registry td:nth-child(2) { width: 220px; }
+    </style>
   </head>
   <body data-page="methodology">
     <header class="topbar">
@@ -113,6 +117,36 @@
             <p>Extension evidence is only-add. Missing extension results remain absent, contribute no residual, receive no imputed zero or neutral score, and never reduce Core. A board receives no extension bonus while any of its configured Core items are missing; broader extensions cannot repair a missing Core share.</p>
           </article>
 
+          <article class="methodology-card methodology-card-wide" id="extension-registry">
+            <h3>Which Extra Tests Can Add Points?</h3>
+            <p>The current registry contains <strong>11 distinct extension metrics across 12 board slots</strong>. SWE-Bench Pro is used on two boards, with a separate board trend; it is not duplicated within either board. These are permitted bonus inputs, not a list of every benchmark collected by the site. Each test link opens its scores and source/protocol details.</p>
+            <div class="methodology-table-wrap">
+              <table class="methodology-weight-table methodology-matrix-table">
+                <thead><tr><th>Board</th><th>Extension test</th><th>Result source and scope</th></tr></thead>
+                <tbody>
+                  <tr data-extension-key="benchmark:swe-bench-pro" data-boards="coding agentic-tool-work"><td>Coding; agentic/tool work</td><td><a href="benchmark.html?id=benchmark%3Aswe-bench-pro">SWE-Bench Pro</a></td><td>Official release/system-card results; harness and configuration must be checked.</td></tr>
+                  <tr data-extension-key="benchmark:livecodebench" data-boards="coding"><td>Coding</td><td><a href="benchmark.html?id=benchmark%3Alivecodebench">LiveCodeBench</a></td><td>Official reported results; preserve release window, pass@k and sampling.</td></tr>
+                  <tr data-extension-key="τ²-Bench Telecom" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=%CF%84%C2%B2-Bench+Telecom">τ²-Bench Telecom</a></td><td>AA evaluation; distinct from the τ³-Banking Core test.</td></tr>
+                  <tr data-extension-key="APEX-Agents-AA" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=APEX-Agents-AA">APEX-Agents-AA</a></td><td>AA evaluation of Mercor environments.</td></tr>
+                  <tr data-extension-key="benchmark:hle-tools" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=benchmark%3Ahle-tools">HLE w/ tools</a></td><td>Official reported tool runs; not the no-tools HLE score.</td></tr>
+                  <tr data-extension-key="benchmark:mcp-atlas" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=benchmark%3Amcp-atlas">MCP-Atlas Public</a></td><td>Official reported public-split runs; tool/wrapper protocols vary.</td></tr>
+                  <tr data-extension-key="benchmark:osworld-verified" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=benchmark%3Aosworld-verified">OSWorld-Verified</a></td><td>Official computer-use results; OS image, task revision and wrapper matter.</td></tr>
+                  <tr data-extension-key="AIME 2025" data-boards="hard-reasoning"><td>Hard reasoning</td><td><a href="benchmark.html?id=AIME+2025">AIME 2025</a></td><td>AA evaluation of the 2025 question set.</td></tr>
+                  <tr data-extension-key="MMMU-Pro" data-boards="knowledge-science"><td>Knowledge/science</td><td><a href="benchmark.html?id=MMMU-Pro">MMMU-Pro</a></td><td>AA evaluation; vendor MMMU variants are separate observations.</td></tr>
+                  <tr data-extension-key="benchmark:mmlu-pro" data-boards="knowledge-science"><td>Knowledge/science</td><td><a href="benchmark.html?id=benchmark%3Ammlu-pro">MMLU-Pro</a></td><td>Official reported results; prompts, sampling and grading vary.</td></tr>
+                  <tr data-extension-key="benchmark:charxiv-no-tools" data-boards="instruction-context"><td>Instruction/context</td><td><a href="benchmark.html?id=benchmark%3Acharxiv-no-tools">CharXiv Reasoning (no tools)</a></td><td>Official reported no-tools runs; tool-enabled variants cannot substitute.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>All Core families, including Terminal-Bench, are removed from the extension pool. GDP.pdf already contributes to Core. New benchmark versions or additional official results do not enter this registry automatically. An allowed result adds points only with exact-configuration evidence, complete Core on its board, and a positive residual above the fitted expectation. Missing or below-expectation extensions add nothing.</p>
+          </article>
+
+          <article class="methodology-card methodology-card-wide" id="grok-4-7-example">
+            <h3>Example: Why Grok 4.7 Has No Extension Bonus</h3>
+            <p>In the September 22, 2026 snapshot, <a href="model.html?id=grok-4-7">Grok 4.7 (xhigh)</a> has seven official release observations but <strong>0 of the 11 permitted extension metrics</strong>. Its collected CursorBench 4.0, EEBench, AA Briefcase v1.1 Elo, official Terminal-Bench 4.0, Legal Agent Benchmark, HealthBench Professional and GDPval Elo are outside the extension registry. DeepSWE 71% belongs to <em>high</em>, not xhigh, and is also outside this registry.</p>
+            <p>Its five board scores are 41.5825, 32.7792, 17.7143, 33.7250 and 76.6667. Their weighted contributions are 4.989900 + 2.950128 + 3.897146 + 12.478250 + 15.333340 = <strong>39.648764 AIndex</strong>, with zero extension bonus. CritPt and knowledge/science together carry 59% of the weight; τ³-Banking is still missing, so the agentic board retains only its observed half and cannot earn a bonus. More collected tests do not automatically raise this score. This is a fixed-policy result, not a general claim that the model is weak; the linked model page shows the latest snapshot.</p>
+          </article>
+
           <article class="methodology-card methodology-card-wide">
             <h3>Anonymous Positive Residuals</h3>
             <p>For each extension item <code>j</code>, the current eligible deduplicated cohort supplies observed pairs from models with every Core item complete on the board: board Core score <code>c_i</code> and extension result <code>y_ij</code>. Mixed Core 07 fits:</p>
@@ -148,8 +182,8 @@
 
           <article class="methodology-card methodology-card-wide">
             <h3>Radar and Evidence Coverage</h3>
-            <p>The first five radar axes read the five Mixed Core 07 board scores directly. The sixth axis is evidence coverage: it reports Core completeness and observed extension breadth but never changes a board score or rank.</p>
-            <p>Core coverage shows which fixed shares are supported. Missing Core shares contribute no points and can prevent ranking or board extensions. Missing extension cells remain absent. The sixth radar coverage axis itself never changes the score.</p>
+            <p>The first five radar axes read the five Mixed Core 07 board scores directly. The sixth shows the selected visual benchmark, with AA MMMU-Pro as the default. Other verified visual tests remain separate by version and protocol; missing results are not plotted as zero. Changing this visual selection does not change AIndex, although AA MMMU-Pro separately belongs to the knowledge/science extension registry above.</p>
+            <p>Core and extension coverage are disclosed alongside the board scores. Missing Core shares contribute no points and can prevent ranking or board extensions. Missing extension cells remain absent.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">

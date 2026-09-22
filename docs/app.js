@@ -4259,8 +4259,8 @@ function renderMethodologyPage() {
       <article class="methodology-card">
         <h3>${escapeHtml(zh ? "六轴雷达" : "Radar Profile")}</h3>
         <p>${escapeHtml(zh
-          ? "前五轴直接读取混合 Core 方案 07 的板块分，权重决定其最终分数贡献；第六轴是扩展覆盖度，只反映证据广度，不参与计分。"
-          : "The first five axes read Mixed Core 07 board scores directly; weights determine their final contributions. The sixth axis is extension coverage, reflecting evidence breadth without contributing points.")}</p>
+          ? "前五轴读取板块分，第六轴显示所选视觉测试，默认 AA MMMU-Pro。切换视觉测试不改变 AIndex；AA MMMU-Pro 本身另列于知识与科学扩展池。扩展清单见 methodology 页面。"
+          : "The first five axes read board scores; the sixth shows the selected visual test, defaulting to AA MMMU-Pro. Switching visual tests does not change AIndex; AA MMMU-Pro separately belongs to the knowledge/science extension pool.")}</p>
       </article>
       <article class="methodology-card">
         <h3>${escapeHtml(zh ? "敏感性与 Custom 工具" : "Sensitivity and Custom Tools")}</h3>
