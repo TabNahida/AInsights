@@ -1,6 +1,6 @@
 window.AINSIGHTS_MODELS_DATA = {
   "version": 2,
-  "generatedAt": "2026-09-22T04:10:41+00:00",
+  "generatedAt": "2026-09-22T05:46:57+00:00",
   "source": {
     "label": "Artificial Analysis Core + listed benchmark extensions",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -260924,7 +260924,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.49574090369993756,
+            "extensionBonus": 0.4957409036999376,
             "score": 8.739190903699937,
             "points": 0.7865271813329943,
             "coreTests": 2,
@@ -261306,7 +261306,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.49574090369993756,
+            "extensionBonus": 0.4957409036999376,
             "score": 8.739190903699937,
             "points": 0.7865271813329943,
             "coreTests": 2,
@@ -306824,9 +306824,9 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.3715488844818822,
-            "score": 0.3715488844818822,
-            "points": 0.0817407545860141,
+            "extensionBonus": 0.37154888448188217,
+            "score": 0.37154888448188217,
+            "points": 0.08174075458601408,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -307206,9 +307206,9 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.3715488844818822,
-            "score": 0.3715488844818822,
-            "points": 0.0817407545860141,
+            "extensionBonus": 0.37154888448188217,
+            "score": 0.37154888448188217,
+            "points": 0.08174075458601408,
             "coreTests": 1,
             "extensionTests": 1,
             "coreItemPoolSize": 1,
@@ -311050,7 +311050,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.1129140874585204,
+            "extensionBonus": 0.11291408745852038,
             "score": 25.39626408745852,
             "points": 9.396617712359653,
             "coreTests": 2,
@@ -311432,7 +311432,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.1129140874585204,
+            "extensionBonus": 0.11291408745852038,
             "score": 25.39626408745852,
             "points": 9.396617712359653,
             "coreTests": 2,
@@ -313249,7 +313249,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.9483533666042802,
+            "extensionBonus": 0.9483533666042803,
             "score": 34.631703366604285,
             "points": 12.813730245643585,
             "coreTests": 2,
@@ -313631,7 +313631,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.9483533666042802,
+            "extensionBonus": 0.9483533666042803,
             "score": 34.631703366604285,
             "points": 12.813730245643585,
             "coreTests": 2,
@@ -425326,7 +425326,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.7032775951937965,
+            "extensionBonus": 0.7032775951937964,
             "score": 10.592527595193797,
             "points": 0.9533274835674418,
             "coreTests": 2,
@@ -425708,7 +425708,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.7032775951937965,
+            "extensionBonus": 0.7032775951937964,
             "score": 10.592527595193797,
             "points": 0.9533274835674418,
             "coreTests": 2,
@@ -435726,7 +435726,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.4812611159738936,
+            "extensionBonus": 0.48126111597389354,
             "score": 33.339611115973895,
             "points": 12.335656112910343,
             "coreTests": 2,
