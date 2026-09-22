@@ -1,0 +1,178 @@
+{
+  "asOf": "2026-09-22",
+  "scope": "Source-backed worked examples, not invoice measurements or production pricing overrides.",
+  "creditCases": [
+    {
+      "id": "mimo-pro-cn-monthly",
+      "currency": "CNY",
+      "period": "month",
+      "fee": "39.000000000",
+      "fullUtilizationRatesPerMillion": {
+        "input": "2.853658537",
+        "cache": "0.023780488",
+        "output": "5.707317073"
+      },
+      "weightedCreditsPerToken": "121.750000000",
+      "capacityMillionMixedTokens": "33.675564682",
+      "fullUtilizationMixedRatePerMillion": "1.158109756",
+      "paygMixedRatePerMillion": "1.217500000",
+      "breakEvenUtilization": "0.951219512",
+      "realizedRateByCreditUtilization": {
+        "1": "1.158109756",
+        "0.5": "2.316219512",
+        "0.25": "4.632439024"
+      }
+    },
+    {
+      "id": "mimo-flash-cn-monthly",
+      "currency": "CNY",
+      "period": "month",
+      "fee": "39.000000000",
+      "fullUtilizationRatesPerMillion": {
+        "input": "0.951219512",
+        "cache": "0.019024390",
+        "output": "1.902439024"
+      },
+      "weightedCreditsPerToken": "41.400000000",
+      "capacityMillionMixedTokens": "99.033816425",
+      "fullUtilizationMixedRatePerMillion": "0.393804878",
+      "paygMixedRatePerMillion": "0.414000000",
+      "breakEvenUtilization": "0.951219512",
+      "realizedRateByCreditUtilization": {
+        "1": "0.393804878",
+        "0.5": "0.787609756",
+        "0.25": "1.575219512"
+      }
+    },
+    {
+      "id": "mimo-pro-global-monthly",
+      "currency": "USD",
+      "period": "month",
+      "fee": "6.000000000",
+      "fullUtilizationRatesPerMillion": {
+        "input": "0.439024390",
+        "cache": "0.003658537",
+        "output": "0.878048780"
+      },
+      "weightedCreditsPerToken": "121.750000000",
+      "capacityMillionMixedTokens": "33.675564682",
+      "fullUtilizationMixedRatePerMillion": "0.178170732",
+      "paygMixedRatePerMillion": "0.176520000",
+      "breakEvenUtilization": "1.009351528",
+      "realizedRateByCreditUtilization": {
+        "1": "0.178170732",
+        "0.5": "0.356341463",
+        "0.25": "0.712682927"
+      }
+    },
+    {
+      "id": "mimo-pro-cn-annual",
+      "currency": "CNY",
+      "period": "year",
+      "fee": "411.840000000",
+      "fullUtilizationRatesPerMillion": {
+        "input": "2.511219512",
+        "cache": "0.020926829",
+        "output": "5.022439024"
+      },
+      "weightedCreditsPerToken": "121.750000000",
+      "capacityMillionMixedTokens": "404.106776181",
+      "fullUtilizationMixedRatePerMillion": "1.019136585",
+      "paygMixedRatePerMillion": "1.217500000",
+      "breakEvenUtilization": "0.837073171",
+      "realizedRateByCreditUtilization": {
+        "1": "1.019136585",
+        "0.5": "2.038273171",
+        "0.25": "4.076546341"
+      }
+    }
+  ],
+  "mimoCnMonthlyAllOffPeak": {
+    "id": "mimo-pro-cn-monthly",
+    "currency": "CNY",
+    "period": "month",
+    "fee": "39.000000000",
+    "fullUtilizationRatesPerMillion": {
+      "input": "2.282926829",
+      "cache": "0.019024390",
+      "output": "4.565853659"
+    },
+    "weightedCreditsPerToken": "97.400000000",
+    "capacityMillionMixedTokens": "42.094455852",
+    "fullUtilizationMixedRatePerMillion": "0.926487805",
+    "paygMixedRatePerMillion": "1.217500000",
+    "breakEvenUtilization": "0.760975610",
+    "realizedRateByCreditUtilization": {
+      "1": "0.926487805",
+      "0.5": "1.852975610",
+      "0.25": "3.705951220"
+    }
+  },
+  "mimoCnMonthlyFirstPurchaseDaytime": {
+    "id": "mimo-pro-cn-monthly",
+    "currency": "CNY",
+    "period": "month",
+    "fee": "34.320000000",
+    "fullUtilizationRatesPerMillion": {
+      "input": "2.511219512",
+      "cache": "0.020926829",
+      "output": "5.022439024"
+    },
+    "weightedCreditsPerToken": "121.750000000",
+    "capacityMillionMixedTokens": "33.675564682",
+    "fullUtilizationMixedRatePerMillion": "1.019136585",
+    "paygMixedRatePerMillion": "1.217500000",
+    "breakEvenUtilization": "0.837073171",
+    "realizedRateByCreditUtilization": {
+      "1": "1.019136585",
+      "0.5": "2.038273171",
+      "0.25": "4.076546341"
+    }
+  },
+  "mimoCnMonthlyTenMillionTokenExample": {
+    "totalTokens": "10000000.000000000",
+    "creditsUsed": "1217500000.000000000",
+    "creditUtilization": "0.296951220",
+    "subscriptionCashPaid": "39.000000000",
+    "realizedCostPerMillion": "3.900000000",
+    "paygCashForSameWorkload": "12.175000000"
+  },
+  "baiduLiteTokenMode": {
+    "fullUtilizationRatesPerMillion": {
+      "list": "0.952380952",
+      "conditionalFirstPurchase": "0.473809524",
+      "conditionalFirstRenewal": "0.571428571"
+    },
+    "listRateAt50PercentUtilization": "1.904761905",
+    "listRateAt25PercentUtilization": "3.809523810",
+    "promotionNote": "Promotional calculations are conditional on eligibility and the selected Token-mode checkout confirming this price; the freshly fetched product card defaults to point mode."
+  },
+  "baiduPointModeConditionalIllustration": {
+    "capacityMillionTokensIfEveryCallRepeatsExample": "25.344000000",
+    "approximateRatePerMillion": "1.578282828",
+    "comparisonEligible": false,
+    "note": "An approximate documentation example, not a universal model tariff. No extrapolated per-token offer may enter production rankings."
+  },
+  "alibabaLite": {
+    "conditionalWindowSchedules": [
+      {
+        "fullyConsumedWindows": 4,
+        "consumedCredits": "10000.000000000",
+        "currentCostPerConsumedCredit": "0.003900000",
+        "listCostPerConsumedCredit": "0.006000000"
+      },
+      {
+        "fullyConsumedWindows": 5,
+        "consumedCredits": "12500.000000000",
+        "currentCostPerConsumedCredit": "0.003120000",
+        "listCostPerConsumedCredit": "0.004800000"
+      }
+    ],
+    "legacy52WeekMonthlyEquivalentCredits": "10833.333333333",
+    "legacyAverageCurrentCostPerCredit": "0.003600000",
+    "additionalPackMarginalCostPerCredit": "0.005000000",
+    "currentCashForLitePlusOnePack": "139.000000000",
+    "tokenRatePerMillion": null,
+    "comparisonEligible": false
+  }
+}

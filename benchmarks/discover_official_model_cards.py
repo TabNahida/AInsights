@@ -43,6 +43,7 @@ OFFICIAL_VENDORS = (
     VendorConfig("glm", "zai-org", r"^GLM[-_.]?\d"),
     VendorConfig("kimi", "moonshotai", r"^Kimi[-_.]?K\d"),
     VendorConfig("deepseek", "deepseek-ai", r"^DeepSeek[-_.]?(?:V|R)\d"),
+    VendorConfig("xiaomi", "XiaomiMiMo", r"^MiMo[-_.]?V\d"),
 )
 
 DERIVATIVE_MODEL_RE = re.compile(

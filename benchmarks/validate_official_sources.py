@@ -18,9 +18,10 @@ DEFAULT_VENDOR_MANIFEST_JSON = (
     PROJECT_ROOT / "data" / "benchmarks" / "official_vendor_pages.json"
 )
 
-VERIFIED_HF_ORGANIZATIONS = {"Qwen", "zai-org", "moonshotai", "deepseek-ai"}
+VERIFIED_HF_ORGANIZATIONS = {"Qwen", "zai-org", "moonshotai", "deepseek-ai", "XiaomiMiMo"}
 
 PRIMARY_VENDOR_SOURCE_URLS = {
+    "spacexai-grok-4-7-release": "https://x.ai/news/grok-4-7",
     "deepseek-v4-1-flash-release": "https://api-docs.deepseek.com/news/news260910",
     "openai-gpt-6-astra-release": "https://openai.com/index/gpt-6-astra/",
     "zai-glm-5-3-flash-release": "https://docs.z.ai/guides/llm/glm-5.3-flash",
@@ -49,6 +50,7 @@ PRIMARY_VENDOR_SOURCE_URLS = {
 }
 
 PRIMARY_VENDOR_SOURCE_RAW_URLS = {
+    "spacexai-grok-4-7-release": "https://x.ai/news/grok-4-7",
     "deepseek-v4-1-flash-release": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/raw/main/README.md",
     "openai-gpt-6-astra-release": "https://openai.com/index/gpt-6-astra/",
     "zai-glm-5-3-flash-release": "https://docs.z.ai/guides/llm/glm-5.3-flash.md",
@@ -84,18 +86,24 @@ PRIMARY_VENDOR_SOURCE_RAW_URLS = {
 PRIMARY_VENDOR_PAGE_SOURCE_IDS = set(PRIMARY_VENDOR_SOURCE_URLS)
 
 OFFICIAL_HF_SOURCE_ORGS = {
+    "xiaomi-mimo-v2-6-pro-card": "XiaomiMiMo",
+    "xiaomi-mimo-v2-6-flash-card": "XiaomiMiMo",
     "qwen-qwen3-8-flash-next-card": "Qwen",
     "qwen-qwen3-8-27b-card": "Qwen",
     "kimi-k2-0905-card": "moonshotai",
 }
 
 OFFICIAL_HF_SOURCE_MODELS = {
+    "xiaomi-mimo-v2-6-pro-card": "MiMo-V2.6-Pro-RL",
+    "xiaomi-mimo-v2-6-flash-card": "MiMo-V2.6-Flash-RL",
     "qwen-qwen3-8-flash-next-card": "Qwen3.8-Flash-Next",
     "qwen-qwen3-8-27b-card": "Qwen3.8-27B",
     "kimi-k2-0905-card": "Kimi-K2-Instruct-0905",
 }
 
 EXPLICIT_HF_RAW_SOURCES = {
+    "xiaomi-mimo-v2-6-pro-card": ("XiaomiMiMo", "MiMo-V2.6-Pro-RL", "readme"),
+    "xiaomi-mimo-v2-6-flash-card": ("XiaomiMiMo", "MiMo-V2.6-Pro-RL", "readme"),
     "deepseek-v4-1-flash-release": ("deepseek-ai", "DeepSeek-V4.1-Flash", "readme"),
     "qwen-qwen3-8-flash-next-card": ("Qwen", "Qwen3.8-Flash-Next", "readme"),
     "deepseek-v4-flash-vision-exp-card": ("deepseek-ai", "DeepSeek-V4-Flash-Vision-Exp", "readme"),

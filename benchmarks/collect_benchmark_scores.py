@@ -5239,6 +5239,118 @@ OFFICIAL_SOURCE_SPECS.append({
 })
 
 
+# September 22: owner tables reviewed against the MiMo report (Table 3, p. 26)
+# and Grok release footnotes. These never replace AA's Core observations.
+BENCHMARKS.extend([
+    {"id": "mimo-code-bench", "label": "MiMo Code Bench (internal)", "category": "Coding", "unit": "%", "icon": "CODE"},
+    {"id": "toolathlon-verified", "label": "Toolathlon-Verified", "category": "Tool use", "unit": "%", "icon": "TOOL"},
+    {"id": "gdpval-aa-v2-1-elo", "label": "GDPval-AA v2.1 Elo", "category": "Professional work", "unit": "Elo", "icon": "GDP"},
+    {"id": "cybergym-mimo-corrected", "label": "CyberGym (MiMo corrected environments)", "category": "Cybersecurity", "unit": "%", "icon": "CYB"},
+    {"id": "mimo-cyber-bench", "label": "MiMo Cyber Bench (internal)", "category": "Cybersecurity", "unit": "%", "icon": "CYB"},
+    {"id": "mimo-visual-coding", "label": "MiMo Visual Coding (internal)", "category": "Visual coding", "unit": "%", "icon": "VIS"},
+    {"id": "cursorbench-4", "label": "CursorBench 4.0", "category": "Agentic coding", "unit": "%", "icon": "CODE"},
+    {"id": "eebench", "label": "EEBench", "category": "Electrical engineering", "unit": "%", "icon": "EE"},
+    {"id": "aa-briefcase-v1-1-elo", "label": "AA Briefcase v1.1 Elo", "category": "Professional work", "unit": "Elo", "icon": "WORK"},
+    {"id": "gdpval-grok-4-7-elo", "label": "GDPval Elo (Grok 4.7 release; version unspecified)", "category": "Professional work", "unit": "Elo", "icon": "GDP"},
+])
+
+MIMO26_ROW_LABELS = {
+    "DeepSWE v1.1": "deepswe-v1-1", "ProgramBench": "programbench",
+    "MiMo Code Bench": "mimo-code-bench", "AutomationBench v1.0.6": "automationbench-v1-0-6",
+    "Toolathlon-Verified": "toolathlon-verified", "GDPval-AA 2.1": "gdpval-aa-v2-1-elo",
+    "Agents’ Last Exam": "agents-last-exam", "Terminal Bench 4.0": "terminal-bench-4",
+    "Terminal Bench 2.1": "terminal-bench-2-1", "OSWorld-Verified": "osworld-verified",
+    "JobBench": "job-bench", "CyberGym": "cybergym-mimo-corrected",
+    "MiMo Cyber Bench": "mimo-cyber-bench", "ExploitGym": "exploitgym",
+    "ExploitBench": "exploitbench", "SEC Bench Pro": "sec-bench-pro",
+    "MiMo VisualCoding": "mimo-visual-coding",
+}
+for _tier, _values in (
+    ("Pro", [71.9, 26.5, 63.2, 53.1, 76.9, 1673, 31.6, 34.9, 89.9, 82.0, 62.0, 94.0, 80.2, 17.8, 47.9, 66.3, 72.3]),
+    ("Flash", [67.9, 26.0, 61.2, 52.3, 73.6, None, 27.6, 28.8, 87.6, 80.8, 61.2, 95.1, 77.2, 6.0, 25.3, 47.5, 71.5]),
+):
+    _name = f"MiMo-V2.6-{_tier}"
+    _slug = f"mimo-v2-6-{_tier.lower()}"
+    _repo = f"XiaomiMiMo/{_name}-RL"
+    MODEL_ALIASES[_name] = [_slug, _name, f"MiMo-V2.6 {_tier}", _repo]
+    OFFICIAL_SOURCE_SPECS.append({
+        "id": f"xiaomi-mimo-v2-6-{_tier.lower()}-card",
+        "label": f"Xiaomi {_name} official final evaluations",
+        "url": f"https://huggingface.co/{_repo}",
+        # Both final owner columns are in the Pro card, matching report Table 3.
+        "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/raw/main/README.md",
+        "modelId": _repo, "organization": "XiaomiMiMo",
+        "category": "Official model card", "modelAliases": MODEL_ALIASES[_name],
+        "variantScoped": True, "configurationConfidence": "model-card-default",
+        "configurationNote": (
+            "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), "
+            "not an intermediate RL checkpoint or the 9B distilled model. No named "
+            "API effort is asserted; the report's max-effort statement concerns baselines."
+        ),
+        "exactBenchmarkLabelsOnly": True, "addModelIfMissing": True,
+        "modelMetadata": {
+            "slug": _slug, "model": _name, "creator": "Xiaomi",
+            "releaseDate": "2026-09-21", "contextWindowTokens": 1000000,
+            "openSourceCategorization": "permissive",
+            "inputModalities": ["Text", "Image", "Audio", "Video"], "outputModalities": ["Text"],
+            "modelDetails": {"license": "MIT", "maxOutputTokens": 128000},
+        },
+        "columns": {f"MiMo-V2.6 {_tier}": _name},
+        "rowLabels": MIMO26_ROW_LABELS,
+        "scores": {_name: {key: value for key, value in zip(MIMO26_ROW_LABELS.values(), _values) if value is not None}},
+        "resultOverrides": {
+            key: {"evidenceEligible": False, "configurationNote": note}
+            for key, note in {
+                "mimo-code-bench": "Vendor-controlled internal coding benchmark; display as an observation, not independent ranking evidence.",
+                "mimo-cyber-bench": "Vendor-controlled internal cyber benchmark; not independent ranking evidence.",
+                "mimo-visual-coding": "Vendor-controlled WebDev/Image2Code agent benchmark; not a general visual accuracy score.",
+                "cybergym-mimo-corrected": "Report section 5.2 footnote 1: flawed environments corrected using section 4.2.4; not the original CyberGym protocol.",
+                "gdpval-aa-v2-1-elo": "GDPval-AA v2.1 Elo, as printed in Table 3; not a percentage or an AA Core replacement.",
+            }.items()
+        },
+        "note": (
+            "Live card checked September 22, 2026 against "
+            "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf "
+            "sections 5.2/5.4 and Table 3, visually reviewed p. 26. Final product "
+            "scores are separate from training curves and competitor columns. "
+            "The official release confirms the Pro/Flash product names and API IDs. "
+            "CyberGym uses corrected environments; internal and Elo metrics remain non-ranking evidence."
+        ),
+    })
+
+MODEL_ALIASES["Grok 4.7 (xhigh)"] = ["grok-4-7", "Grok 4.7 (xhigh)"]
+MODEL_ALIASES["Grok 4.7 (high)"] = ["grok-4-7-high", "Grok 4.7 (high)"]
+OFFICIAL_SOURCE_SPECS.append({
+    "id": "spacexai-grok-4-7-release",
+    "label": "SpaceXAI Grok 4.7 official release evaluations",
+    "url": "https://x.ai/news/grok-4-7", "rawUrl": "https://x.ai/news/grok-4-7",
+    "category": "Official model release",
+    "modelAliases": MODEL_ALIASES["Grok 4.7 (xhigh)"] + MODEL_ALIASES["Grok 4.7 (high)"],
+    "variantScoped": True, "effort": "xhigh", "configurationConfidence": "explicit",
+    "parser": "grok-4-7-release",
+    "configurationNote": "September 21 Model Improvements table, Grok 4.7 xhigh column; DeepSWE high-effort exception is bound separately.",
+    "rowLabels": {
+        "CursorBench 4.0": "cursorbench-4", "DeepSWE v1.1": "deepswe-v1-1",
+        "EEBench": "eebench", "AA Briefcase v1.1": "aa-briefcase-v1-1-elo",
+        "Terminal-Bench 4.0": "terminal-bench-4",
+        "Harvey Legal Agent Benchmark": "legal-agent-benchmark",
+        "HealthBench Professional": "healthbench-professional",
+    },
+    "scores": {"Grok 4.7 (xhigh)": {
+        "cursorbench-4": 46.3, "deepswe-v1-1": 71.0, "eebench": 64.0,
+        "aa-briefcase-v1-1-elo": 1657, "terminal-bench-4": 38.0,
+        "legal-agent-benchmark": 19.6, "healthbench-professional": 56.7,
+        "gdpval-grok-4-7-elo": 1695,
+    }},
+    "resultOverrides": {
+        "deepswe-v1-1": {"model": "Grok 4.7 (high)", "modelAliases": MODEL_ALIASES["Grok 4.7 (high)"], "effort": "high", "configurationNote": "The 71.0% cell is starred; the release explicitly says '* high effort'. It does not belong to xhigh."},
+        "gdpval-grok-4-7-elo": {"evidenceEligible": False, "configurationNote": "GDPval chart labels Grok 4.7 (xhigh) 1695 Elo; evaluation version is unspecified. Never merge into versioned GDPval-AA or a percent score."},
+        "aa-briefcase-v1-1-elo": {"evidenceEligible": False, "configurationNote": "AA Briefcase v1.1 raw Elo as reported by the vendor; distinct from AA's normalized snapshot."},
+    },
+    "note": "Official September 21 release, fetched September 22. Seven table observations plus the labelled GDPval chart; DeepSWE is high effort, other table rows xhigh. Safety percentages with different denominators and competitor scores are excluded. Public API supports low/medium/high/xhigh, with high default; default is not substituted for the published xhigh configuration.",
+})
+
+
 DISCOVERED_CANONICAL_ROW_LABELS = {
     "GDPval-AA v2": "gdpval-aa-v2-elo",
     "Tau² Bench": "tau2-bench-weighted",
@@ -5991,6 +6103,8 @@ def merge_result_rows(
 
 
 def parse_markdown_source_scores(text: str, spec: dict[str, Any]) -> list[dict[str, Any]]:
+    if spec.get("parser") == "grok-4-7-release":
+        return parse_grok47_release_scores(text, spec)
     column_model_by_key = {
         _normalize_label(column): model
         for column, model in spec.get("columns", {}).items()
@@ -6071,6 +6185,38 @@ def parse_markdown_source_scores(text: str, spec: dict[str, Any]) -> list[dict[s
     if not results and spec.get("textColumns"):
         results.extend(parse_plain_text_source_scores(text, spec))
     return dedupe_result_rows(results)
+
+
+def parse_grok47_release_scores(text: str, spec: dict[str, Any]) -> list[dict[str, Any]]:
+    """Read the release's div-based table, checking column order and effort note."""
+    tokens = visible_text_tokens(text)
+    start = tokens.index("Model Improvements")
+    header = ["Grok 4.7", "xHigh", "Grok 4.6", "High", "GPT-5.6 Sol", "Max", "Fable 5.1", "Max"]
+    header_start = next((i for i in range(start, len(tokens)) if tokens[i:i + len(header)] == header), None)
+    if header_start is None or "* high effort" not in tokens[header_start:]:
+        raise ValueError("Grok 4.7 table columns or effort footnote changed; review required")
+    end = tokens.index("* high effort", header_start)
+    table = tokens[header_start + len(header):end]
+    rows = []
+    for label, benchmark_id in spec["rowLabels"].items():
+        if table.count(label) != 1:
+            raise ValueError(f"Grok 4.7 missing/duplicate row: {label}")
+        index = table.index(label)
+        cells = table[index + 1:index + 5]
+        if len(cells) != 4 or not all(re.fullmatch(r"[\d,]+(?:\.\d+)?%?\*?", cell) for cell in cells):
+            raise ValueError(f"Grok 4.7 malformed row: {label}")
+        if ("*" in cells[0]) != (benchmark_id == "deepswe-v1-1"):
+            raise ValueError("Grok 4.7 row effort marker changed; review required")
+        rows.append(_result_row(spec, "Grok 4.7 (xhigh)", benchmark_id, _numeric_cell(cells[0])))
+    # The chart is a separate labelled Elo observation, not a table percentage.
+    chart_start = tokens.index("GDPval", end)
+    chart_end = tokens.index("Safety & Cybersecurity", chart_start)
+    chart = tokens[chart_start:chart_end]
+    for i in range(1, len(chart) - 1):
+        if chart[i:i + 2] == ["Grok 4.7", "(xhigh)"] and re.fullmatch(r"[\d,]+", chart[i - 1]):
+            rows.append(_result_row(spec, "Grok 4.7 (xhigh)", "gdpval-grok-4-7-elo", _numeric_cell(chart[i - 1])))
+            break
+    return rows
 
 
 def parse_plain_text_source_scores(text: str, spec: dict[str, Any]) -> list[dict[str, Any]]:

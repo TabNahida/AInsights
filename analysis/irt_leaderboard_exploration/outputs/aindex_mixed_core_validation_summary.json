@@ -26,9 +26,9 @@
   "passed": true,
   "core_eligibility": {
     "variant_group": {
-      "requested_count": 483,
+      "requested_count": 484,
       "eligible_count": 134,
-      "excluded_count": 349,
+      "excluded_count": 350,
       "excluded_models": [
         {
           "slug": "claude-opus-4-6-adaptive",
@@ -4754,6 +4754,31 @@
           ]
         },
         {
+          "slug": "mimo-v2-6-flash",
+          "missing_core_items": [
+            "Terminal-Bench v4.0",
+            "SciCode",
+            "AutomationBench-AA",
+            "τ³-Banking",
+            "CritPt",
+            "AA-Omniscience Accuracy",
+            "GDP.pdf",
+            "AA-LCR v1.1"
+          ],
+          "missing_core_count": 8,
+          "empty_boards": [
+            "coding",
+            "agentic-tool-work",
+            "hard-reasoning",
+            "knowledge-science",
+            "instruction-context"
+          ],
+          "reason": [
+            "board_missing_all",
+            "missing_at_least_four"
+          ]
+        },
+        {
           "slug": "mimo-v2-flash-reasoning",
           "missing_core_items": [
             "Terminal-Bench v4.0",
@@ -7308,9 +7333,9 @@
       ]
     },
     "exact_config": {
-      "requested_count": 656,
+      "requested_count": 657,
       "eligible_count": 183,
-      "excluded_count": 473,
+      "excluded_count": 474,
       "excluded_models": [
         {
           "slug": "glm-4-5v",
@@ -16946,6 +16971,31 @@
         },
         {
           "slug": "llama-2-chat-7b",
+          "missing_core_items": [
+            "Terminal-Bench v4.0",
+            "SciCode",
+            "AutomationBench-AA",
+            "τ³-Banking",
+            "CritPt",
+            "AA-Omniscience Accuracy",
+            "GDP.pdf",
+            "AA-LCR v1.1"
+          ],
+          "missing_core_count": 8,
+          "empty_boards": [
+            "coding",
+            "agentic-tool-work",
+            "hard-reasoning",
+            "knowledge-science",
+            "instruction-context"
+          ],
+          "reason": [
+            "board_missing_all",
+            "missing_at_least_four"
+          ]
+        },
+        {
+          "slug": "mimo-v2-6-flash",
           "missing_core_items": [
             "Terminal-Bench v4.0",
             "SciCode",

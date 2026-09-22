@@ -1,0 +1,120 @@
+{
+  "asOf": "2026-09-22",
+  "purpose": "Source-backed worked examples, not invoice measurements or production pricing overrides.",
+  "currencyPolicy": "Compare native CNY with native CNY and native USD with native USD; no FX conversion.",
+  "workload": {
+    "name": "AInsights Coding Mix",
+    "weights": {"input": "0.2", "cache": "0.7", "output": "0.1"},
+    "note": "Shares of total billable tokens. Input excludes cache hits; output includes billed reasoning tokens. This is a scenario, not observed customer traffic."
+  },
+  "sources": [
+    {
+      "id": "xiaomi-plan",
+      "url": "https://mimo.mi.com/docs/zh-CN/price/token-plan",
+      "accessedAt": "2026-09-22",
+      "pageUpdatedAt": "2026-09-21",
+      "locator": "Personal monthly/annual pricing tables; language-model credit consumption table; exhaustion and discount paragraphs",
+      "facts": "Lite CNY 39 or USD 6 monthly, 4.1B Credits. Personal annual Lite CNY 411.84, 49.2B Credits. Pro input/cache/output coefficients 300/2.5/600; Flash 100/2/200 Credits per token. Off-peak coefficient 0.8, 00:00-08:00 UTC+08. First personal monthly purchase 0.88; not stackable with annual discount. Exhaustion stops service."
+    },
+    {
+      "id": "xiaomi-payg",
+      "url": "https://mimo.mi.com/docs/zh-CN/price/pay-as-you-go",
+      "accessedAt": "2026-09-22",
+      "pageUpdatedAt": "2026-09-21",
+      "locator": "Domestic and overseas real-time language-model pricing tables; billing notes",
+      "facts": "MiMo V2.6 Pro input/cache/output per million: CNY 3/0.025/6 and USD 0.435/0.0036/0.87. Flash: CNY 1/0.02/2. Batch is a separate service. Search calls are charged separately."
+    },
+    {
+      "id": "baidu-doc",
+      "url": "https://cloud.baidu.com/doc/qianfan/s/Dmrabu8b6",
+      "accessedAt": "2026-09-22",
+      "pageUpdatedAt": "2026-09-18",
+      "locator": "Plan explanation, pricing, point deduction example and migration sections",
+      "facts": "Lite CNY 40 monthly: Token mode 42M tokens or point mode 6600 points. Token mode deducts input/output/cache equally. Points depend on model, token type, reasoning and tools. The DeepSeek V4 Pro example is approximate: 853 input, 10240 cached and 427 output tokens consume about 1 point each, about 3 total."
+    },
+    {
+      "id": "baidu-product",
+      "url": "https://cloud.baidu.com/product/codingplan.html",
+      "accessedAt": "2026-09-22",
+      "pageUpdatedAt": null,
+      "locator": "Promotional notices and Lite point-mode price card",
+      "facts": "Lite first-purchase card CNY 19.9 vs CNY 40 list. First renewal during the activity is advertised at 60% of list. The product now offers both point and Token modes. Promotional eligibility and final checkout remain conditional."
+    },
+    {
+      "id": "alibaba-plan",
+      "url": "https://help.aliyun.com/zh/model-studio/token-plan-personal-overview",
+      "accessedAt": "2026-09-22",
+      "pageUpdatedAt": null,
+      "locator": "Plan prices; every-seven-day limit definition; usage packs; Credits billing mechanism",
+      "facts": "Lite limited-time CNY 39/month, list CNY 60; 2500 Credits per seven-day window starting on first use in each window; unused Credits do not carry over. Additional pack CNY 100/month for 20000 Credits requires an active subscription. Request Credits depend on model, tokens, reasoning and tools, with console usage controlling actual debit."
+    }
+  ],
+  "creditCases": [
+    {
+      "id": "mimo-pro-cn-monthly",
+      "model": "mimo-v2.6-pro",
+      "currency": "CNY", "period": "month",
+      "price": "39", "includedCredits": "4100000000",
+      "creditsPerToken": {"input": "300", "cache": "2.5", "output": "600"},
+      "paygPerMillion": {"input": "3", "cache": "0.025", "output": "6"},
+      "sourceIds": ["xiaomi-plan", "xiaomi-payg"]
+    },
+    {
+      "id": "mimo-flash-cn-monthly",
+      "model": "mimo-v2.6-flash",
+      "currency": "CNY", "period": "month",
+      "price": "39", "includedCredits": "4100000000",
+      "creditsPerToken": {"input": "100", "cache": "2", "output": "200"},
+      "paygPerMillion": {"input": "1", "cache": "0.02", "output": "2"},
+      "sourceIds": ["xiaomi-plan", "xiaomi-payg"]
+    },
+    {
+      "id": "mimo-pro-global-monthly",
+      "model": "mimo-v2.6-pro",
+      "currency": "USD", "period": "month",
+      "price": "6", "includedCredits": "4100000000",
+      "creditsPerToken": {"input": "300", "cache": "2.5", "output": "600"},
+      "paygPerMillion": {"input": "0.435", "cache": "0.0036", "output": "0.87"},
+      "sourceIds": ["xiaomi-plan", "xiaomi-payg"]
+    },
+    {
+      "id": "mimo-pro-cn-annual",
+      "model": "mimo-v2.6-pro",
+      "currency": "CNY", "period": "year",
+      "price": "411.84", "includedCredits": "49200000000",
+      "creditsPerToken": {"input": "300", "cache": "2.5", "output": "600"},
+      "paygPerMillion": {"input": "3", "cache": "0.025", "output": "6"},
+      "note": "Annual fee already includes 0.88 discount. Amortized arithmetic does not establish when Credits are released or whether they roll over.",
+      "sourceIds": ["xiaomi-plan", "xiaomi-payg"]
+    }
+  ],
+  "mimoPromotions": {"firstPurchasePriceMultiplier": "0.88", "offPeakCreditMultiplier": "0.8"},
+  "tokenCase": {
+    "id": "baidu-lite-token-mode",
+    "currency": "CNY", "period": "month",
+    "price": "40", "includedTokens": "42000000",
+    "conditionalFirstPurchasePrice": "19.9",
+    "conditionalFirstRenewalMultiplier": "0.6",
+    "promotionNote": "Promotional calculations are conditional on eligibility and the selected Token-mode checkout confirming this price; the freshly fetched product card defaults to point mode.",
+    "sourceIds": ["baidu-doc", "baidu-product"]
+  },
+  "approximatePointCase": {
+    "id": "baidu-lite-point-mode-example-only",
+    "currency": "CNY", "price": "40", "includedPoints": "6600",
+    "exampleTokens": {"input": "853", "cache": "10240", "output": "427"},
+    "approximateExamplePoints": "3",
+    "comparisonEligible": false,
+    "sourceIds": ["baidu-doc"],
+    "note": "An approximate documentation example, not a universal model tariff. No extrapolated per-token offer may enter production rankings."
+  },
+  "dynamicCreditCase": {
+    "id": "alibaba-cn-lite",
+    "currency": "CNY", "period": "month",
+    "currentPrice": "39", "listPrice": "60", "creditsPerSevenDays": "2500",
+    "illustrativeFullyConsumedWindows": [4, 5],
+    "packPrice": "100", "packCredits": "20000",
+    "comparisonEligible": false,
+    "sourceIds": ["alibaba-plan"],
+    "note": "Window examples are conditional schedules, not a guaranteed monthly quota. A token-to-Credit formula is not established by the reviewed page."
+  }
+}

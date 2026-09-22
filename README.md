@@ -20,6 +20,14 @@ The displayed 0–100 points are direct scores. Named-model ordering preferences
 
 ## Update data
 
+For an agent-led research pass, use the English
+[model data research playbook](docs/guides/model-data-research.md) and
+[TokenPlan pricing research playbook](docs/guides/token-plan-pricing-research.md).
+The [September 22 worked audit](analysis/model-and-token-plan-audit-2026-09-22.md)
+checks MiMo V2.6 / Grok 4.7 coverage and calculates Xiaomi, Baidu, and Alibaba
+plan examples from current official terms. Its reviewed inputs and offline
+calculator distinguish full-quota normalization from actual workload cost.
+
 ```powershell
 python -m pip install -r requirements.txt
 python ArtificialAnalysis\scrape_artificial_analysis.py --output-dir ArtificialAnalysis
@@ -33,7 +41,7 @@ python -B analysis\irt_leaderboard_exploration\validate_mixed_core_production.py
 
 The daily workflow refreshes Artificial Analysis and rebuilds the site; a separate
 Monday workflow discovers and refreshes external benchmark sources. Discovery watches the verified
-`Qwen`, `zai-org`, `moonshotai`, and `deepseek-ai` Hugging Face organizations as
+`Qwen`, `zai-org`, `moonshotai`, `deepseek-ai`, and `XiaomiMiMo` Hugging Face organizations as
 well as pinned Qwen, Z.ai, Kimi, and DeepSeek first-party release indexes. It
 preserves previously discovered cards and pages during transient outages and
 feeds new candidates into the benchmark collector. Curated source specifications
@@ -81,5 +89,13 @@ separate. Qwen3.8-Max's August release scores bind to the dated `0803` identity;
 AA's rolling `qwen3-8-max` slug now identifies the September `0902` checkpoint.
 Daily regression checks validate observed coverage and evidence tiers rather
 than requiring named models to retain historical benchmark counts.
+
+The September 22 refresh adds 17 official MiMo V2.6 Pro observations, a Flash
+catalogue entry with 16 observations, and eight Grok 4.7 observations (seven
+xhigh and the explicitly footnoted high-effort DeepSWE result). Final MiMo
+report tables take precedence over intermediate training curves. Corrected
+CyberGym, internal tasks, benchmark versions and Elo units remain distinct.
+The refreshed AA feed still lacks three Core items for Pro and both Grok
+configurations, so their AIndex scores are unchanged despite richer coverage.
 
 The static ranking site lives in `docs/` and reads `docs/data/models.json`. The detailed calculation is documented in `docs/methodology.html`; reproducible analysis outputs live in `analysis/irt_leaderboard_exploration/outputs/`.

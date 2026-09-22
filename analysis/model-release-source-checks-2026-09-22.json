@@ -1,0 +1,37 @@
+{
+  "scope": "Only these source slices were refreshed; other source statuses and results are retained.",
+  "sources": [
+    {
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/raw/main/README.md",
+      "accessedAt": "2026-09-22T04:08:30+00:00",
+      "sha256": "bf373f444efcd309534804edd1fadadd1eb0ad64f7b0474c96fdac946614c13e",
+      "parsedRows": 17
+    },
+    {
+      "sourceId": "xiaomi-mimo-v2-6-flash-card",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/raw/main/README.md",
+      "accessedAt": "2026-09-22T04:08:30+00:00",
+      "sha256": "bf373f444efcd309534804edd1fadadd1eb0ad64f7b0474c96fdac946614c13e",
+      "parsedRows": 16
+    },
+    {
+      "sourceId": "spacexai-grok-4-7-release",
+      "url": "https://x.ai/news/grok-4-7",
+      "accessedAt": "2026-09-22T04:08:30+00:00",
+      "sha256": "fc405898e077980be5453730f11fd187a03aa9d856f9b3c19cbb162fb5b68ce2",
+      "parsedRows": 8
+    }
+  ],
+  "technicalReport": {
+    "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/resolve/main/MiMo_V2_6_technical_report.pdf",
+    "sha256": "fb81e6e083801b3358f084ed6be953dc23b0d2e434690f4541d5eae03e01e7af",
+    "reviewedPages": [
+      21,
+      22,
+      25,
+      26
+    ],
+    "table": "Final evaluation Table 3, page 26; visually verified"
+  }
+}

@@ -20,10 +20,14 @@ Gemini 3.5 Flash-Lite,gemini-3-5-flash-lite,Google,9,9,4,5,google-gemini-3-5-fla
 Gemini 3.6 Flash,gemini-3-6-flash,Google,10,10,5,5,google-gemini-3-6-flash-card
 Gemini 3.8 Flash (high),gemini-3-8-flash,Google,1,1,1,0,google-gemini-3-8-flash-card
 Grok 4.5 (high),grok-4-5,SpaceXAI,5,5,2,3,spacexai-grok-4-5-release
+Grok 4.7 (high),grok-4-7-high,SpaceXAI,1,1,1,0,spacexai-grok-4-7-release
+Grok 4.7 (xhigh),grok-4-7,SpaceXAI,5,5,0,5,spacexai-grok-4-7-release
 Hy3,hy3,Tencent,14,14,7,7,tencent-hy3-repository
 Inkling,inkling,Thinking Machines,22,22,7,15,thinking-machines-inkling-small-release
 Inkling Small,inkling-small,Thinking Machines,22,22,7,15,thinking-machines-inkling-small-release
 Kimi K3 (max),kimi-k3,Kimi,50,50,7,43,kimi-k3-release
+MiMo-V2.6-Flash,mimo-v2-6-flash,Xiaomi,12,12,2,10,xiaomi-mimo-v2-6-flash-card
+MiMo-V2.6-Pro,mimo-v2-6-pro,Xiaomi,12,12,2,10,xiaomi-mimo-v2-6-pro-card
 Qwen3 Max Thinking,qwen3-max-thinking,Alibaba,11,11,4,7,official-qwen-qwen3-max-thinking-page
 Qwen3.5 0.8B,qwen3-5-0-8b,Alibaba,17,17,3,14,hf-qwen-qwen3-5-0-8b-card
 Qwen3.5 122B A10B,qwen3-5-122b-a10b,Alibaba,24,24,6,18,hf-qwen-qwen3-5-122b-a10b-card

@@ -24,16 +24,17 @@ def _valid_payload():
     ]
     for source_id, organization in OFFICIAL_HF_SOURCE_ORGS.items():
         model_name = OFFICIAL_HF_SOURCE_MODELS[source_id]
-        _raw_org, _raw_model, raw_kind = EXPLICIT_HF_RAW_SOURCES[source_id]
+        raw_org, raw_model, raw_kind = EXPLICIT_HF_RAW_SOURCES[source_id]
         base = f"https://huggingface.co/{organization}/{model_name}"
+        raw_base = f"https://huggingface.co/{raw_org}/{raw_model}"
         sources.append(
             {
                 "id": source_id,
                 "url": base,
                 "rawUrl": (
-                    base
+                    raw_base
                     if raw_kind == "page"
-                    else f"{base}/raw/main/README.md"
+                    else f"{raw_base}/raw/main/README.md"
                 ),
             }
         )
