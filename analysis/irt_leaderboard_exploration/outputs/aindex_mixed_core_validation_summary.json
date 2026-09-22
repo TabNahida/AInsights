@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_mixed_core",
   "candidate_id": "mixed_core_mc07",
-  "calibration_population_size": 132,
+  "calibration_population_size": 134,
   "bonus_cap_per_board": 30.679661158999394,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 132,
-    "unique_slugs": 132,
-    "unique_variant_groups": 132,
+    "row_count": 134,
+    "unique_slugs": 134,
+    "unique_variant_groups": 134,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 180,
-    "unique_slugs": 180,
-    "unique_variant_groups": 133,
+    "row_count": 183,
+    "unique_slugs": 183,
+    "unique_variant_groups": 135,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -26,8 +26,8 @@
   "passed": true,
   "core_eligibility": {
     "variant_group": {
-      "requested_count": 481,
-      "eligible_count": 132,
+      "requested_count": 483,
+      "eligible_count": 134,
       "excluded_count": 349,
       "excluded_models": [
         {
@@ -7308,8 +7308,8 @@
       ]
     },
     "exact_config": {
-      "requested_count": 653,
-      "eligible_count": 180,
+      "requested_count": 656,
+      "eligible_count": 183,
       "excluded_count": 473,
       "excluded_models": [
         {
@@ -16998,7 +16998,7 @@
       "knowledge-science": 37,
       "instruction-context": 20
     },
-    "population_size": 132,
+    "population_size": 134,
     "population_slugs": [
       "claude-fable-5-1",
       "claude-opus-4-8",
@@ -17025,6 +17025,7 @@
       "gpt-5-4-nano",
       "gpt-5-5",
       "grok-4-6-xhigh",
+      "grok-4-7",
       "muse-spark-1-1",
       "muse-spark-1-2",
       "qwen3-8-27b",
@@ -17091,6 +17092,7 @@
       "mercury-2",
       "mimo-v2-5-0424",
       "mimo-v2-5-pro",
+      "mimo-v2-6-pro",
       "minicpm5-2b",
       "minimax-m2-7",
       "minimax-m3",
@@ -17159,6 +17161,7 @@
       "gpt 5 4 nano",
       "gpt 5 5",
       "grok 4 6",
+      "grok 4 7",
       "muse spark 1 1",
       "muse spark 1 2",
       "qwen3 8 27b",
@@ -17225,6 +17228,7 @@
       "mercury 2",
       "mimo v2 5",
       "mimo v2 5 pro",
+      "mimo v2 6 pro",
       "minicpm5 2b",
       "minimax m2 7",
       "minimax m3",
@@ -17405,7 +17409,7 @@
         ],
         "core_item_count": 1,
         "extension_item_count": 1,
-        "complete_core_models": 132,
+        "complete_core_models": 134,
         "weight": 22
       },
       "knowledge-science": {
@@ -17467,7 +17471,7 @@
         ],
         "core_item_count": 1,
         "extension_item_count": 1,
-        "complete_core_models": 132,
+        "complete_core_models": 134,
         "weight": 20
       }
     }
@@ -17476,8 +17480,8 @@
     "method_id": "aindex_mixed_core",
     "candidate_id": "mixed_core_mc07",
     "independent_of_production_scoring_module": true,
-    "variant_group_count": 132,
-    "exact_config_count": 180,
+    "variant_group_count": 134,
+    "exact_config_count": 183,
     "cap": 30.679661158999394,
     "profiles_checked": true,
     "passed": true,
