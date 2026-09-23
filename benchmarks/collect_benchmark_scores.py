@@ -34,8 +34,10 @@ DEFAULT_OFFICIAL_VENDOR_PAGES_JSON = (
 )
 OPENAI_GPT55_URL = "https://openai.com/index/introducing-gpt-5-5/"
 OPENAI_GPT56_URL = "https://openai.com/index/gpt-5-6/"
+OPENAI_GPT6_SOL_LUNA_URL = "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
 ANTHROPIC_OPUS47_URL = "https://www.anthropic.com/news/claude-opus-4-7?pubDate=20260416"
 ANTHROPIC_OPUS5_URL = "https://www.anthropic.com/news/claude-opus-5"
+ANTHROPIC_OPUS55_URL = "https://www.anthropic.com/claude-opus-5-5"
 ANTHROPIC_OPUS5_SYSTEM_CARD_URL = (
     "https://www-cdn.anthropic.com/"
     "b514064af1408018e64b1ad24e7d5e75850b4ffd/"
@@ -115,6 +117,9 @@ NVIDIA_NEMOTRON3_ULTRA_URL = "https://research.nvidia.com/labs/nemotron/files/NV
 
 MODEL_ALIASES = {
     "GPT-6 Astra": ["GPT-6 Astra", "gpt-6-astra"],
+    "GPT-6 Sol (max)": ["GPT-6 Sol (max)", "GPT-6 Sol (max) [R]", "gpt-6-sol"],
+    "GPT-6 Sol (xhigh)": ["GPT-6 Sol (xhigh)", "GPT-6 Sol (xhigh) [R]", "gpt-6-sol-xhigh"],
+    "GPT-6 Luna (max)": ["GPT-6 Luna (max)", "GPT-6 Luna (max) [R]", "gpt-6-luna"],
     "Qwen3.8 Flash-Next": [
         "Qwen3.8 Flash-Next", "Qwen3.8-Flash-Next", "Qwen3.8 Flash-Next (xhigh)",
         "Qwen/Qwen3.8-Flash-Next", "qwen3-8-flash-next",
@@ -192,6 +197,16 @@ MODEL_ALIASES = {
         "claude-opus-5-high",
         "claude-opus-5-medium",
         "claude-opus-5-low",
+    ],
+    "Claude Opus 5.5 (max with fallback)": [
+        "Claude Opus 5.5 (max with fallback)",
+        "Claude Opus 5.5 (max with fallback) [R]",
+        "claude-opus-5-5",
+    ],
+    "Claude Opus 5.5 (xhigh with fallback)": [
+        "Claude Opus 5.5 (xhigh with fallback)",
+        "Claude Opus 5.5 (xhigh with fallback) [R]",
+        "claude-opus-5-5-xhigh",
     ],
     "Claude Opus 5 (max)": [
         "Claude Opus 5 (max)",
@@ -1682,6 +1697,7 @@ BENCHMARKS.extend([
     {"id": "terminal-bench-4", "label": "Terminal-Bench 4.0", "category": "Agentic coding", "unit": "%", "icon": "TERM"},
     {"id": "terminal-bench-science-0-1", "label": "Terminal-Bench Science 0.1", "category": "Scientific reasoning", "unit": "%", "icon": "SCI"},
     {"id": "osworld-2-offline-2026-08-08-partial", "label": "OSWorld 2.0 Offline (2026-08-08, partial)", "category": "Computer use", "unit": "%", "icon": "OS"},
+    {"id": "osworld-2-opus55-release-partial", "label": "OSWorld 2.0 (Opus 5.5 release, partial)", "category": "Computer use", "unit": "%", "icon": "OS"},
     {"id": "screenspot-pro-no-tools", "label": "ScreenSpot-Pro (no tools)", "category": "Computer use", "unit": "%", "icon": "GUI"},
     {"id": "frontiercode-v1-1-extended", "label": "FrontierCode v1.1 Extended (score)", "category": "Agentic coding", "unit": "%", "icon": "CODE"},
     {"id": "exploitbench-2026-06-08", "label": "ExploitBench (June-August 2026)", "category": "Cybersecurity", "unit": "%", "icon": "CYB"},
@@ -1866,6 +1882,75 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
                 "arc-agi-1": 98.5,
             }
         },
+    },
+    {
+        "id": "openai-gpt-6-sol-release",
+        "label": "OpenAI GPT-6 Sol official release",
+        "url": OPENAI_GPT6_SOL_LUNA_URL,
+        "rawUrl": OPENAI_GPT6_SOL_LUNA_URL,
+        "category": "Official model release",
+        "modelAliases": MODEL_ALIASES["GPT-6 Sol (max)"],
+        "verifiedSeedAt": "2026-09-23",
+        "modelMetadata": {
+            "model": "GPT-6 Sol (max)",
+            "modelKey": "GPT-6 Sol (max) [R]",
+            "slug": "gpt-6-sol",
+            "displayName": "GPT-6 Sol",
+            "creator": "OpenAI",
+            "releaseDate": "2026-09-22",
+            "modelUrl": OPENAI_GPT6_SOL_LUNA_URL,
+            "openSourceCategorization": "proprietary",
+        },
+        "variantScoped": True,
+        "note": (
+            "OpenAI's September 22, 2026 release, checked September 23. Professional work "
+            "reports AutomationBench 1.0.6 at xhigh and Agents' Last Exam V1 at max; "
+            "Coding reports DeepSWE v1.1 at max; Computer use reports the v2026.08.08 "
+            "offline OSWorld partial score at xhigh. These are separate effort configurations. "
+            "Only explicitly printed GPT-6 Sol values are transcribed, not comparator columns "
+            "or points estimated from charts."
+        ),
+        "scores": {
+            "GPT-6 Sol (xhigh)": {
+                "automationbench-v1-0-6": 33.2,
+                "osworld-2-offline-2026-08-08-partial": 60.5,
+            },
+            "GPT-6 Sol (max)": {
+                "agents-last-exam": 56.4,
+                "deepswe-v1-1": 68.8,
+            },
+        },
+        "modelResultOverrides": {
+            "GPT-6 Sol (xhigh)": {"effort": "xhigh", "modelAliases": MODEL_ALIASES["GPT-6 Sol (xhigh)"]},
+            "GPT-6 Sol (max)": {"effort": "max", "modelAliases": MODEL_ALIASES["GPT-6 Sol (max)"]},
+        },
+    },
+    {
+        "id": "openai-gpt-6-luna-release",
+        "label": "OpenAI GPT-6 Luna official release",
+        "url": OPENAI_GPT6_SOL_LUNA_URL,
+        "rawUrl": OPENAI_GPT6_SOL_LUNA_URL,
+        "category": "Official model release",
+        "modelAliases": MODEL_ALIASES["GPT-6 Luna (max)"],
+        "verifiedSeedAt": "2026-09-23",
+        "modelMetadata": {
+            "model": "GPT-6 Luna (max)",
+            "modelKey": "GPT-6 Luna (max) [R]",
+            "slug": "gpt-6-luna",
+            "displayName": "GPT-6 Luna",
+            "creator": "OpenAI",
+            "releaseDate": "2026-09-22",
+            "modelUrl": OPENAI_GPT6_SOL_LUNA_URL,
+            "openSourceCategorization": "proprietary",
+        },
+        "variantScoped": True,
+        "effort": "max",
+        "note": (
+            "OpenAI's September 22, 2026 release, checked September 23. The Coding section "
+            "explicitly gives GPT-6 Luna at max effort 66.6% on DeepSWE v1.1. Other Luna "
+            "charts do not expose exact values in the article text."
+        ),
+        "scores": {"GPT-6 Luna (max)": {"deepswe-v1-1": 66.6}},
     },
     {
         "id": "qwen-qwen3-8-flash-next-card",
@@ -2416,6 +2501,65 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
                 "officeqa-pro": 66.9,
                 "aa-briefcase-elo": 1720,
                 "toolathlon": 80.6,
+            },
+        },
+    },
+    {
+        "id": "anthropic-claude-opus-5-5-release",
+        "label": "Anthropic Claude Opus 5.5 official release",
+        "url": ANTHROPIC_OPUS55_URL,
+        "rawUrl": ANTHROPIC_OPUS55_URL,
+        "category": "Official model release",
+        "modelAliases": MODEL_ALIASES["Claude Opus 5.5 (max with fallback)"],
+        "verifiedSeedAt": "2026-09-23",
+        "modelMetadata": {
+            "model": "Claude Opus 5.5 (max with fallback)",
+            "modelKey": "Claude Opus 5.5 (max with fallback) [R]",
+            "slug": "claude-opus-5-5",
+            "displayName": "Claude Opus 5.5",
+            "creator": "Anthropic",
+            "modelUrl": ANTHROPIC_OPUS55_URL,
+            "openSourceCategorization": "proprietary",
+        },
+        "variantScoped": True,
+        "effort": "max",
+        "systemScore": True,
+        "fallbackConfigured": True,
+        "productEvidenceEligible": True,
+        "pureModelEligible": False,
+        "note": (
+            "Anthropic's Claude Opus 5.5 release performance table and footnotes, checked "
+            "September 23, 2026. The table uses adaptive thinking at max effort except "
+            "Terminal-Bench 4.0, which is explicitly xhigh. Production safeguards were "
+            "enabled and could route cyber tasks to Opus 4.8 or biology/frontier-LLM "
+            "tasks to Opus 5; these are product results, not pure-model evidence. "
+            "AutomationBench's 40.0% was measured by Zapier without fallbacks; "
+            "safeguard interventions counted as failures. The release does not identify "
+            "the exact OSWorld task/grader revision, so its partial score remains a "
+            "release-specific benchmark rather than an older OSWorld series. "
+            "Only the Opus 5.5 column is transcribed."
+        ),
+        "scores": {"Claude Opus 5.5 (max with fallback)": {
+            "terminal-bench-4": 66.4,
+            "frontiercode-v1-1-main": 54.4,
+            "cursorbench-4": 57.8,
+            "gdpval-aa-v2-1-elo": 1846,
+            "automationbench": 40.0,
+            "hle-tools": 67.7,
+            "terminal-bench-science-0-1": 58.7,
+            "osworld-2-opus55-release-partial": 81.8,
+            "chartography-tools": 89.0,
+        }},
+        "resultOverrides": {
+            "terminal-bench-4": {
+                "model": "Claude Opus 5.5 (xhigh with fallback)",
+                "modelAliases": MODEL_ALIASES["Claude Opus 5.5 (xhigh with fallback)"],
+                "effort": "xhigh",
+                "configurationNote": "Release table footnote 1 specifies xhigh for Opus 5.5.",
+            },
+            "automationbench": {
+                "fallbackObserved": False,
+                "configurationNote": "Zapier run without fallback; safeguard interventions were failures.",
             },
         },
     },
@@ -5972,6 +6116,7 @@ def build_payload(
             "tags",
             "autoDiscovered",
             "autoDiscoveredVendorPage",
+            "verifiedSeedAt",
             "vendor",
             "discoverySourceKey",
             "addModelIfMissing",
@@ -6067,7 +6212,12 @@ def collect_official_sources(timeout: float = 30) -> tuple[list[dict[str, Any]],
             results.extend(merged_rows)
         elif seed_rows:
             results.extend(seed_rows)
-            statuses[spec["id"]] = "seeded-official-values; no parseable benchmark table found"
+            verified_at = str(spec.get("verifiedSeedAt") or "").strip()
+            statuses[spec["id"]] = (
+                f"seeded-official-values; manually verified {verified_at}"
+                if verified_at
+                else "seeded-official-values; no parseable benchmark table found"
+            )
         else:
             statuses[spec["id"]] = "reference-only; no parseable benchmark table found"
     return results, statuses

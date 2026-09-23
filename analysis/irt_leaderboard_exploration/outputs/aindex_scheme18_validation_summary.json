@@ -26,9 +26,9 @@
   "passed": true,
   "core_eligibility": {
     "variant_group": {
-      "requested_count": 149,
+      "requested_count": 150,
       "eligible_count": 130,
-      "excluded_count": 19,
+      "excluded_count": 20,
       "excluded_models": [
         {
           "slug": "gpt-5-4",
@@ -109,6 +109,17 @@
         },
         {
           "slug": "minimax-m2-5",
+          "missing_core": {
+            "coding": [
+              "SciCode"
+            ],
+            "knowledge-science": [
+              "SciCode"
+            ]
+          }
+        },
+        {
+          "slug": "mimo-v2-flash-reasoning",
           "missing_core": {
             "coding": [
               "SciCode"

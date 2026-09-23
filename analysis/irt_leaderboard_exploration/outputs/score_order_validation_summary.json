@@ -6,7 +6,7 @@
     "methods": {
       "twopl_sparse_80_20_score": {
         "passed": true,
-        "full_rows": 149,
+        "full_rows": 150,
         "top_rows": 50,
         "sequential_ranks": true,
         "scores_non_increasing": true,

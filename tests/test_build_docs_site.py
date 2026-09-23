@@ -1492,6 +1492,29 @@ class BuildDocsSiteTests(unittest.TestCase):
             )["variantScoped"]
         )
 
+    def test_new_release_scores_attach_to_exact_effort_and_fallback_variants(self):
+        payload = build_site_payload(
+            read_csv_rows(DEFAULT_INPUT_CSV),
+            build_benchmark_payload({}, "seeded"),
+        )
+        by_model = {model["model"]: model for model in payload["models"]}
+        sol_max = by_model["GPT-6 Sol (max)"]
+        sol_xhigh = by_model["GPT-6 Sol (xhigh)"]
+        luna_max = by_model["GPT-6 Luna (max)"]
+        opus_max = by_model["Claude Opus 5.5 (max with fallback)"]
+        opus_xhigh = by_model["Claude Opus 5.5 (xhigh with fallback)"]
+        opus_low = by_model["Claude Opus 5.5 (low with fallback)"]
+
+        self.assertEqual(sol_xhigh["scores"]["benchmark:automationbench-v1-0-6"], 33.2)
+        self.assertIsNone(sol_max["scores"]["benchmark:automationbench-v1-0-6"])
+        self.assertEqual(sol_max["scores"]["benchmark:agents-last-exam"], 56.4)
+        self.assertIsNone(sol_xhigh["scores"]["benchmark:agents-last-exam"])
+        self.assertEqual(luna_max["scores"]["benchmark:deepswe-v1-1"], 66.6)
+        self.assertEqual(opus_xhigh["scores"]["benchmark:terminal-bench-4"], 66.4)
+        self.assertIsNone(opus_max["scores"]["benchmark:terminal-bench-4"])
+        self.assertEqual(opus_max["scores"]["benchmark:gdpval-aa-v2-1-elo"], 1846)
+        self.assertIsNone(opus_low["scores"]["benchmark:gdpval-aa-v2-1-elo"])
+
     def test_gpt56_release_scores_attach_only_to_max_variants(self):
         payload = build_site_payload(
             read_csv_rows(DEFAULT_INPUT_CSV),

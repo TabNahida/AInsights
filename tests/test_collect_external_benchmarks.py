@@ -1028,6 +1028,25 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertEqual(opus["arc-agi-3"]["model"], "Claude Opus 5 (high)")
         self.assertIn("Opus 4.8", opus["frontier-bench-v0-1"]["model"])
 
+        sol = by_source["openai-gpt-6-sol-release"]
+        luna = by_source["openai-gpt-6-luna-release"]
+        opus55 = by_source["anthropic-claude-opus-5-5-release"]
+        self.assertEqual(sol["automationbench-v1-0-6"]["model"], "GPT-6 Sol (xhigh)")
+        self.assertEqual(sol["automationbench-v1-0-6"]["value"], 33.2)
+        self.assertEqual(sol["agents-last-exam"]["model"], "GPT-6 Sol (max)")
+        self.assertEqual(sol["agents-last-exam"]["value"], 56.4)
+        self.assertEqual(luna["deepswe-v1-1"]["value"], 66.6)
+        self.assertEqual(opus55["terminal-bench-4"]["model"], "Claude Opus 5.5 (xhigh with fallback)")
+        self.assertEqual(opus55["terminal-bench-4"]["effort"], "xhigh")
+        self.assertEqual(opus55["terminal-bench-4"]["value"], 66.4)
+        self.assertEqual(opus55["gdpval-aa-v2-1-elo"]["value"], 1846)
+        self.assertEqual(opus55["gdpval-aa-v2-1-elo"]["effort"], "max")
+        self.assertTrue(opus55["gdpval-aa-v2-1-elo"]["fallbackConfigured"])
+        self.assertFalse(opus55["gdpval-aa-v2-1-elo"]["pureModelEligible"])
+        self.assertEqual(opus55["osworld-2-opus55-release-partial"]["value"], 81.8)
+        self.assertEqual(sources["openai-gpt-6-sol-release"]["verifiedSeedAt"], "2026-09-23")
+        self.assertEqual(sources["anthropic-claude-opus-5-5-release"]["verifiedSeedAt"], "2026-09-23")
+
         self.assertEqual(gemini36["swe-bench-pro"]["value"], 58.7)
         self.assertEqual(gemini36["mle-bench"]["value"], 63.9)
         self.assertEqual(gemini36["mrcr-v2-1m"]["value"], 54.0)

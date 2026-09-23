@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-22T04:08:30+00:00",
+  "generatedAt": "2026-09-22T23:30:42+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
       "label": "OpenAI GPT-5.5 launch evaluations",
       "url": "https://openai.com/index/introducing-gpt-5-5/",
       "category": "Official model release",
-      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
+      "collectionStatus": "partial-refresh; seeded 207 benchmark rows",
       "note": "Official OpenAI table covering GPT-5.5, GPT-5.4, GPT-5.5 Pro, GPT-5.4 Pro, Claude Opus 4.7, and Gemini 3.1 Pro."
     },
     {
@@ -56,6 +56,59 @@
         "creator": "OpenAI",
         "releaseDate": "2026-09-03",
         "modelUrl": "https://openai.com/index/gpt-6-astra/",
+        "openSourceCategorization": "proprietary"
+      }
+    },
+    {
+      "id": "openai-gpt-6-sol-release",
+      "label": "OpenAI GPT-6 Sol official release",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "rawUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "category": "Official model release",
+      "collectionStatus": "seeded-official-values; manually verified 2026-09-23",
+      "note": "OpenAI's September 22, 2026 release, checked September 23. Professional work reports AutomationBench 1.0.6 at xhigh and Agents' Last Exam V1 at max; Coding reports DeepSWE v1.1 at max; Computer use reports the v2026.08.08 offline OSWorld partial score at xhigh. These are separate effort configurations. Only explicitly printed GPT-6 Sol values are transcribed, not comparator columns or points estimated from charts.",
+      "modelAliases": [
+        "GPT-6 Sol (max)",
+        "GPT-6 Sol (max) [R]",
+        "gpt-6-sol"
+      ],
+      "variantScoped": true,
+      "verifiedSeedAt": "2026-09-23",
+      "modelMetadata": {
+        "model": "GPT-6 Sol (max)",
+        "modelKey": "GPT-6 Sol (max) [R]",
+        "slug": "gpt-6-sol",
+        "displayName": "GPT-6 Sol",
+        "creator": "OpenAI",
+        "releaseDate": "2026-09-22",
+        "modelUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+        "openSourceCategorization": "proprietary"
+      }
+    },
+    {
+      "id": "openai-gpt-6-luna-release",
+      "label": "OpenAI GPT-6 Luna official release",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "rawUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "category": "Official model release",
+      "collectionStatus": "seeded-official-values; manually verified 2026-09-23",
+      "note": "OpenAI's September 22, 2026 release, checked September 23. The Coding section explicitly gives GPT-6 Luna at max effort 66.6% on DeepSWE v1.1. Other Luna charts do not expose exact values in the article text.",
+      "modelAliases": [
+        "GPT-6 Luna (max)",
+        "GPT-6 Luna (max) [R]",
+        "gpt-6-luna"
+      ],
+      "variantScoped": true,
+      "effort": "max",
+      "verifiedSeedAt": "2026-09-23",
+      "modelMetadata": {
+        "model": "GPT-6 Luna (max)",
+        "modelKey": "GPT-6 Luna (max) [R]",
+        "slug": "gpt-6-luna",
+        "displayName": "GPT-6 Luna",
+        "creator": "OpenAI",
+        "releaseDate": "2026-09-22",
+        "modelUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
         "openSourceCategorization": "proprietary"
       }
     },
@@ -199,7 +252,7 @@
       "url": "https://openai.com/index/gpt-5-6/",
       "rawUrl": "https://openai.com/index/gpt-5-6/",
       "category": "Official model release",
-      "collectionStatus": "seeded-official-values; refresh blocked: HTTPError",
+      "collectionStatus": "refreshed",
       "note": "OpenAI official GPT-5.6 release tables covering Sol, Terra, and Luna across professional work, coding, science, computer use, cybersecurity, reasoning, tool use, and long-context evaluations. The release appendix labels the single-agent columns only by model tier, while the surrounding AA index values and separately reported Sol Ultra rows support mapping these columns to max effort. The mapping is therefore exact-variant scoped but marked as configuration-inferred and must not be broadcast to other effort settings.",
       "modelAliases": [
         "GPT-5.6 Sol (max)",
@@ -252,6 +305,36 @@
       ],
       "variantScoped": true,
       "effort": "max"
+    },
+    {
+      "id": "anthropic-claude-opus-5-5-release",
+      "label": "Anthropic Claude Opus 5.5 official release",
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "rawUrl": "https://www.anthropic.com/claude-opus-5-5",
+      "category": "Official model release",
+      "collectionStatus": "seeded-official-values; manually verified 2026-09-23",
+      "note": "Anthropic's Claude Opus 5.5 release performance table and footnotes, checked September 23, 2026. The table uses adaptive thinking at max effort except Terminal-Bench 4.0, which is explicitly xhigh. Production safeguards were enabled and could route cyber tasks to Opus 4.8 or biology/frontier-LLM tasks to Opus 5; these are product results, not pure-model evidence. AutomationBench's 40.0% was measured by Zapier without fallbacks; safeguard interventions counted as failures. The release does not identify the exact OSWorld task/grader revision, so its partial score remains a release-specific benchmark rather than an older OSWorld series. Only the Opus 5.5 column is transcribed.",
+      "modelAliases": [
+        "Claude Opus 5.5 (max with fallback)",
+        "Claude Opus 5.5 (max with fallback) [R]",
+        "claude-opus-5-5"
+      ],
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false,
+      "verifiedSeedAt": "2026-09-23",
+      "modelMetadata": {
+        "model": "Claude Opus 5.5 (max with fallback)",
+        "modelKey": "Claude Opus 5.5 (max with fallback) [R]",
+        "slug": "claude-opus-5-5",
+        "displayName": "Claude Opus 5.5",
+        "creator": "Anthropic",
+        "modelUrl": "https://www.anthropic.com/claude-opus-5-5",
+        "openSourceCategorization": "proprietary"
+      }
     },
     {
       "id": "anthropic-claude-opus-4-7-release",
@@ -1174,6 +1257,108 @@
       }
     },
     {
+      "id": "xiaomi-mimo-v2-6-pro-card",
+      "label": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/raw/main/README.md",
+      "category": "Official model card",
+      "collectionStatus": "refreshed",
+      "note": "Live card checked September 22, 2026 against https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf sections 5.2/5.4 and Table 3, visually reviewed p. 26. Final product scores are separate from training curves and competitor columns. The official release confirms the Pro/Flash product names and API IDs. CyberGym uses corrected environments; internal and Elo metrics remain non-ranking evidence.",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "model-card-default",
+      "modelId": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "organization": "XiaomiMiMo",
+      "addModelIfMissing": true,
+      "modelMetadata": {
+        "slug": "mimo-v2-6-pro",
+        "model": "MiMo-V2.6-Pro",
+        "creator": "Xiaomi",
+        "releaseDate": "2026-09-21",
+        "contextWindowTokens": 1000000,
+        "openSourceCategorization": "permissive",
+        "inputModalities": [
+          "Text",
+          "Image",
+          "Audio",
+          "Video"
+        ],
+        "outputModalities": [
+          "Text"
+        ],
+        "modelDetails": {
+          "license": "MIT",
+          "maxOutputTokens": 128000
+        }
+      }
+    },
+    {
+      "id": "xiaomi-mimo-v2-6-flash-card",
+      "label": "Xiaomi MiMo-V2.6-Flash official final evaluations",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/raw/main/README.md",
+      "category": "Official model card",
+      "collectionStatus": "refreshed",
+      "note": "Live card checked September 22, 2026 against https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf sections 5.2/5.4 and Table 3, visually reviewed p. 26. Final product scores are separate from training curves and competitor columns. The official release confirms the Pro/Flash product names and API IDs. CyberGym uses corrected environments; internal and Elo metrics remain non-ranking evidence.",
+      "modelAliases": [
+        "mimo-v2-6-flash",
+        "MiMo-V2.6-Flash",
+        "MiMo-V2.6 Flash",
+        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "model-card-default",
+      "modelId": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "organization": "XiaomiMiMo",
+      "addModelIfMissing": true,
+      "modelMetadata": {
+        "slug": "mimo-v2-6-flash",
+        "model": "MiMo-V2.6-Flash",
+        "creator": "Xiaomi",
+        "releaseDate": "2026-09-21",
+        "contextWindowTokens": 1000000,
+        "openSourceCategorization": "permissive",
+        "inputModalities": [
+          "Text",
+          "Image",
+          "Audio",
+          "Video"
+        ],
+        "outputModalities": [
+          "Text"
+        ],
+        "modelDetails": {
+          "license": "MIT",
+          "maxOutputTokens": 128000
+        }
+      }
+    },
+    {
+      "id": "spacexai-grok-4-7-release",
+      "label": "SpaceXAI Grok 4.7 official release evaluations",
+      "url": "https://x.ai/news/grok-4-7",
+      "rawUrl": "https://x.ai/news/grok-4-7",
+      "category": "Official model release",
+      "collectionStatus": "refreshed",
+      "note": "Official September 21 release, fetched September 22. Seven table observations plus the labelled GDPval chart; DeepSWE is high effort, other table rows xhigh. Safety percentages with different denominators and competitor scores are excluded. Public API supports low/medium/high/xhigh, with high default; default is not substituted for the published xhigh configuration.",
+      "modelAliases": [
+        "grok-4-7",
+        "Grok 4.7 (xhigh)",
+        "grok-4-7-high",
+        "Grok 4.7 (high)"
+      ],
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "explicit"
+    },
+    {
       "id": "official-qwen-qwen3-coder-next-page",
       "label": "Qwen3 Coder Next automatically discovered official release",
       "url": "https://qwen.ai/blog?id=qwen3-coder-next",
@@ -1596,6 +1781,92 @@
         "creator": "DeepSeek",
         "modelUrl": "https://api-docs.deepseek.com/news/news250929"
       }
+    },
+    {
+      "id": "hf-xiaomimimo-mimo-v2-5-dflash-card",
+      "label": "MiMo-V2.5-DFlash official model card",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5-DFlash",
+      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5-DFlash/raw/1f58446181abcaa01030fdbde835fbd38ae9a2b1/README.md",
+      "category": "Official model card",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
+      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "MiMo-V2.5-DFlash",
+        "XiaomiMiMo/MiMo-V2.5-DFlash",
+        "MiMo V2 5 DFlash",
+        "mimo-v2-5-dflash"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "model-card-default",
+      "modelId": "XiaomiMiMo/MiMo-V2.5-DFlash",
+      "organization": "XiaomiMiMo",
+      "createdAt": "2026-07-03T11:18:28.000Z",
+      "lastModified": "2026-07-04T03:19:50.000Z",
+      "revision": "1f58446181abcaa01030fdbde835fbd38ae9a2b1",
+      "tags": [
+        "license:mit"
+      ],
+      "autoDiscovered": true
+    },
+    {
+      "id": "hf-xiaomimimo-mimo-v2-5-card",
+      "label": "MiMo-V2.5 official model card",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5",
+      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5/raw/63651580ca774f8504f676040460aed3e1244ac1/README.md",
+      "category": "Official model card",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
+      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "MiMo-V2.5",
+        "XiaomiMiMo/MiMo-V2.5",
+        "MiMo V2 5",
+        "mimo-v2-5"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "model-card-default",
+      "modelId": "XiaomiMiMo/MiMo-V2.5",
+      "organization": "XiaomiMiMo",
+      "createdAt": "2026-04-27T13:37:38.000Z",
+      "lastModified": "2026-07-09T04:23:16.000Z",
+      "revision": "63651580ca774f8504f676040460aed3e1244ac1",
+      "tags": [
+        "eval-results",
+        "license:mit"
+      ],
+      "autoDiscovered": true
+    },
+    {
+      "id": "hf-xiaomimimo-mimo-v2-flash-card",
+      "label": "MiMo-V2-Flash official model card",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash",
+      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash/raw/1afd314a2406c282e0956375c34a676501c78649/README.md",
+      "category": "Official model card",
+      "collectionStatus": "refreshed",
+      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "MiMo-V2-Flash",
+        "XiaomiMiMo/MiMo-V2-Flash",
+        "MiMo V2 Flash",
+        "mimo-v2-flash"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "model-card-default",
+      "modelId": "XiaomiMiMo/MiMo-V2-Flash",
+      "organization": "XiaomiMiMo",
+      "createdAt": "2025-12-16T08:47:02.000Z",
+      "lastModified": "2026-07-09T04:25:07.000Z",
+      "revision": "1afd314a2406c282e0956375c34a676501c78649",
+      "tags": [
+        "eval-results",
+        "license:mit"
+      ],
+      "autoDiscovered": true
     },
     {
       "id": "hf-qwen-qwen3-8-2-4t-a95b-card",
@@ -2022,108 +2293,6 @@
         "license:mit"
       ],
       "autoDiscovered": true
-    },
-    {
-      "id": "xiaomi-mimo-v2-6-pro-card",
-      "label": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/raw/main/README.md",
-      "category": "Official model card",
-      "collectionStatus": "refreshed",
-      "note": "Live card checked September 22, 2026 against https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf sections 5.2/5.4 and Table 3, visually reviewed p. 26. Final product scores are separate from training curves and competitor columns. The official release confirms the Pro/Flash product names and API IDs. CyberGym uses corrected environments; internal and Elo metrics remain non-ranking evidence.",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "variantScoped": true,
-      "exactBenchmarkLabelsOnly": true,
-      "configurationConfidence": "model-card-default",
-      "modelId": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "organization": "XiaomiMiMo",
-      "addModelIfMissing": true,
-      "modelMetadata": {
-        "slug": "mimo-v2-6-pro",
-        "model": "MiMo-V2.6-Pro",
-        "creator": "Xiaomi",
-        "releaseDate": "2026-09-21",
-        "contextWindowTokens": 1000000,
-        "openSourceCategorization": "permissive",
-        "inputModalities": [
-          "Text",
-          "Image",
-          "Audio",
-          "Video"
-        ],
-        "outputModalities": [
-          "Text"
-        ],
-        "modelDetails": {
-          "license": "MIT",
-          "maxOutputTokens": 128000
-        }
-      }
-    },
-    {
-      "id": "xiaomi-mimo-v2-6-flash-card",
-      "label": "Xiaomi MiMo-V2.6-Flash official final evaluations",
-      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/raw/main/README.md",
-      "category": "Official model card",
-      "collectionStatus": "refreshed",
-      "note": "Live card checked September 22, 2026 against https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf sections 5.2/5.4 and Table 3, visually reviewed p. 26. Final product scores are separate from training curves and competitor columns. The official release confirms the Pro/Flash product names and API IDs. CyberGym uses corrected environments; internal and Elo metrics remain non-ranking evidence.",
-      "modelAliases": [
-        "mimo-v2-6-flash",
-        "MiMo-V2.6-Flash",
-        "MiMo-V2.6 Flash",
-        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
-      ],
-      "variantScoped": true,
-      "exactBenchmarkLabelsOnly": true,
-      "configurationConfidence": "model-card-default",
-      "modelId": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "organization": "XiaomiMiMo",
-      "addModelIfMissing": true,
-      "modelMetadata": {
-        "slug": "mimo-v2-6-flash",
-        "model": "MiMo-V2.6-Flash",
-        "creator": "Xiaomi",
-        "releaseDate": "2026-09-21",
-        "contextWindowTokens": 1000000,
-        "openSourceCategorization": "permissive",
-        "inputModalities": [
-          "Text",
-          "Image",
-          "Audio",
-          "Video"
-        ],
-        "outputModalities": [
-          "Text"
-        ],
-        "modelDetails": {
-          "license": "MIT",
-          "maxOutputTokens": 128000
-        }
-      }
-    },
-    {
-      "id": "spacexai-grok-4-7-release",
-      "label": "SpaceXAI Grok 4.7 official release evaluations",
-      "url": "https://x.ai/news/grok-4-7",
-      "rawUrl": "https://x.ai/news/grok-4-7",
-      "category": "Official model release",
-      "collectionStatus": "refreshed",
-      "note": "Official September 21 release, fetched September 22. Seven table observations plus the labelled GDPval chart; DeepSWE is high effort, other table rows xhigh. Safety percentages with different denominators and competitor scores are excluded. Public API supports low/medium/high/xhigh, with high default; default is not substituted for the published xhigh configuration.",
-      "modelAliases": [
-        "grok-4-7",
-        "Grok 4.7 (xhigh)",
-        "grok-4-7-high",
-        "Grok 4.7 (high)"
-      ],
-      "variantScoped": true,
-      "effort": "xhigh",
-      "configurationConfidence": "explicit"
     }
   ],
   "benchmarks": [
@@ -3355,6 +3524,13 @@
     {
       "id": "osworld-2-offline-2026-08-08-partial",
       "label": "OSWorld 2.0 Offline (2026-08-08, partial)",
+      "category": "Computer use",
+      "unit": "%",
+      "icon": "OS"
+    },
+    {
+      "id": "osworld-2-opus55-release-partial",
+      "label": "OSWorld 2.0 (Opus 5.5 release, partial)",
       "category": "Computer use",
       "unit": "%",
       "icon": "OS"
@@ -5147,6 +5323,91 @@
       "modelScoreEligible": false,
       "evidenceEligible": false,
       "configurationConfidence": "best-across-efforts"
+    },
+    {
+      "benchmarkId": "automationbench-v1-0-6",
+      "benchmarkLabel": "AutomationBench v1.0.6",
+      "model": "GPT-6 Sol (xhigh)",
+      "modelAliases": [
+        "GPT-6 Sol (xhigh)",
+        "GPT-6 Sol (xhigh) [R]",
+        "gpt-6-sol-xhigh"
+      ],
+      "value": 33.2,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "xhigh"
+    },
+    {
+      "benchmarkId": "osworld-2-offline-2026-08-08-partial",
+      "benchmarkLabel": "OSWorld 2.0 Offline (2026-08-08, partial)",
+      "model": "GPT-6 Sol (xhigh)",
+      "modelAliases": [
+        "GPT-6 Sol (xhigh)",
+        "GPT-6 Sol (xhigh) [R]",
+        "gpt-6-sol-xhigh"
+      ],
+      "value": 60.5,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "xhigh"
+    },
+    {
+      "benchmarkId": "agents-last-exam",
+      "benchmarkLabel": "Agents' Last Exam",
+      "model": "GPT-6 Sol (max)",
+      "modelAliases": [
+        "GPT-6 Sol (max)",
+        "GPT-6 Sol (max) [R]",
+        "gpt-6-sol"
+      ],
+      "value": 56.4,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "max"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "GPT-6 Sol (max)",
+      "modelAliases": [
+        "GPT-6 Sol (max)",
+        "GPT-6 Sol (max) [R]",
+        "gpt-6-sol"
+      ],
+      "value": 68.8,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "max"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "GPT-6 Luna (max)",
+      "modelAliases": [
+        "GPT-6 Luna (max)",
+        "GPT-6 Luna (max) [R]",
+        "gpt-6-luna"
+      ],
+      "value": 66.6,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "max"
     },
     {
       "benchmarkId": "deepswe-v1-1",
@@ -8471,6 +8732,198 @@
       "sourceLabel": "Anthropic Claude Opus 5 System Card",
       "variantScoped": true,
       "effort": "max"
+    },
+    {
+      "benchmarkId": "terminal-bench-4",
+      "benchmarkLabel": "Terminal-Bench 4.0",
+      "model": "Claude Opus 5.5 (xhigh with fallback)",
+      "modelAliases": [
+        "Claude Opus 5.5 (xhigh with fallback)",
+        "Claude Opus 5.5 (xhigh with fallback) [R]",
+        "claude-opus-5-5-xhigh"
+      ],
+      "value": 66.4,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-5-release",
+      "sourceUrl": "https://www.anthropic.com/claude-opus-5-5",
+      "sourceLabel": "Anthropic Claude Opus 5.5 official release",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "xhigh",
+      "configurationNote": "Release table footnote 1 specifies xhigh for Opus 5.5.",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "frontiercode-v1-1-main",
+      "benchmarkLabel": "FrontierCode v1.1 Main",
+      "model": "Claude Opus 5.5 (max with fallback)",
+      "modelAliases": [
+        "Claude Opus 5.5 (max with fallback)",
+        "Claude Opus 5.5 (max with fallback) [R]",
+        "claude-opus-5-5"
+      ],
+      "value": 54.4,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-5-release",
+      "sourceUrl": "https://www.anthropic.com/claude-opus-5-5",
+      "sourceLabel": "Anthropic Claude Opus 5.5 official release",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "cursorbench-4",
+      "benchmarkLabel": "CursorBench 4.0",
+      "model": "Claude Opus 5.5 (max with fallback)",
+      "modelAliases": [
+        "Claude Opus 5.5 (max with fallback)",
+        "Claude Opus 5.5 (max with fallback) [R]",
+        "claude-opus-5-5"
+      ],
+      "value": 57.8,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-5-release",
+      "sourceUrl": "https://www.anthropic.com/claude-opus-5-5",
+      "sourceLabel": "Anthropic Claude Opus 5.5 official release",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "gdpval-aa-v2-1-elo",
+      "benchmarkLabel": "GDPval-AA v2.1 Elo",
+      "model": "Claude Opus 5.5 (max with fallback)",
+      "modelAliases": [
+        "Claude Opus 5.5 (max with fallback)",
+        "Claude Opus 5.5 (max with fallback) [R]",
+        "claude-opus-5-5"
+      ],
+      "value": 1846,
+      "unit": "Elo",
+      "sourceId": "anthropic-claude-opus-5-5-release",
+      "sourceUrl": "https://www.anthropic.com/claude-opus-5-5",
+      "sourceLabel": "Anthropic Claude Opus 5.5 official release",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "automationbench",
+      "benchmarkLabel": "AutomationBench",
+      "model": "Claude Opus 5.5 (max with fallback)",
+      "modelAliases": [
+        "Claude Opus 5.5 (max with fallback)",
+        "Claude Opus 5.5 (max with fallback) [R]",
+        "claude-opus-5-5"
+      ],
+      "value": 40.0,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-5-release",
+      "sourceUrl": "https://www.anthropic.com/claude-opus-5-5",
+      "sourceLabel": "Anthropic Claude Opus 5.5 official release",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "configurationNote": "Zapier run without fallback; safeguard interventions were failures.",
+      "fallbackConfigured": true,
+      "fallbackObserved": false,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "hle-tools",
+      "benchmarkLabel": "HLE w/ tools",
+      "model": "Claude Opus 5.5 (max with fallback)",
+      "modelAliases": [
+        "Claude Opus 5.5 (max with fallback)",
+        "Claude Opus 5.5 (max with fallback) [R]",
+        "claude-opus-5-5"
+      ],
+      "value": 67.7,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-5-release",
+      "sourceUrl": "https://www.anthropic.com/claude-opus-5-5",
+      "sourceLabel": "Anthropic Claude Opus 5.5 official release",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "terminal-bench-science-0-1",
+      "benchmarkLabel": "Terminal-Bench Science 0.1",
+      "model": "Claude Opus 5.5 (max with fallback)",
+      "modelAliases": [
+        "Claude Opus 5.5 (max with fallback)",
+        "Claude Opus 5.5 (max with fallback) [R]",
+        "claude-opus-5-5"
+      ],
+      "value": 58.7,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-5-release",
+      "sourceUrl": "https://www.anthropic.com/claude-opus-5-5",
+      "sourceLabel": "Anthropic Claude Opus 5.5 official release",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "osworld-2-opus55-release-partial",
+      "benchmarkLabel": "OSWorld 2.0 (Opus 5.5 release, partial)",
+      "model": "Claude Opus 5.5 (max with fallback)",
+      "modelAliases": [
+        "Claude Opus 5.5 (max with fallback)",
+        "Claude Opus 5.5 (max with fallback) [R]",
+        "claude-opus-5-5"
+      ],
+      "value": 81.8,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-5-release",
+      "sourceUrl": "https://www.anthropic.com/claude-opus-5-5",
+      "sourceLabel": "Anthropic Claude Opus 5.5 official release",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "chartography-tools",
+      "benchmarkLabel": "Chartography (with tools)",
+      "model": "Claude Opus 5.5 (max with fallback)",
+      "modelAliases": [
+        "Claude Opus 5.5 (max with fallback)",
+        "Claude Opus 5.5 (max with fallback) [R]",
+        "claude-opus-5-5"
+      ],
+      "value": 89.0,
+      "unit": "%",
+      "sourceId": "anthropic-claude-opus-5-5-release",
+      "sourceUrl": "https://www.anthropic.com/claude-opus-5-5",
+      "sourceLabel": "Anthropic Claude Opus 5.5 official release",
+      "variantScoped": true,
+      "systemScore": true,
+      "effort": "max",
+      "fallbackConfigured": true,
+      "productEvidenceEligible": true,
+      "pureModelEligible": false
     },
     {
       "benchmarkId": "swe-bench-pro",
@@ -24667,6 +25120,788 @@
       "evidenceEligible": false
     },
     {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "MiMo-V2.6-Pro",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "value": 71.9,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "programbench",
+      "benchmarkLabel": "ProgramBench",
+      "model": "MiMo-V2.6-Pro",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "value": 26.5,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "mimo-code-bench",
+      "benchmarkLabel": "MiMo Code Bench (internal)",
+      "model": "MiMo-V2.6-Pro",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "value": 63.2,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "variantScoped": true,
+      "evidenceEligible": false,
+      "configurationNote": "Vendor-controlled internal coding benchmark; display as an observation, not independent ranking evidence.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "automationbench-v1-0-6",
+      "benchmarkLabel": "AutomationBench v1.0.6",
+      "model": "MiMo-V2.6-Pro",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "value": 53.1,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "toolathlon-verified",
+      "benchmarkLabel": "Toolathlon-Verified",
+      "model": "MiMo-V2.6-Pro",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "value": 76.9,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "gdpval-aa-v2-1-elo",
+      "benchmarkLabel": "GDPval-AA v2.1 Elo",
+      "model": "MiMo-V2.6-Pro",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "value": 1673.0,
+      "unit": "Elo",
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "variantScoped": true,
+      "evidenceEligible": false,
+      "configurationNote": "GDPval-AA v2.1 Elo, as printed in Table 3; not a percentage or an AA Core replacement.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "agents-last-exam",
+      "benchmarkLabel": "Agents' Last Exam",
+      "model": "MiMo-V2.6-Pro",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "value": 31.6,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "terminal-bench-4",
+      "benchmarkLabel": "Terminal-Bench 4.0",
+      "model": "MiMo-V2.6-Pro",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "value": 34.9,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "MiMo-V2.6-Pro",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "value": 89.9,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "osworld-verified",
+      "benchmarkLabel": "OSWorld-Verified",
+      "model": "MiMo-V2.6-Pro",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "value": 82.0,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "job-bench",
+      "benchmarkLabel": "Job Bench",
+      "model": "MiMo-V2.6-Pro",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "value": 62.0,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "cybergym-mimo-corrected",
+      "benchmarkLabel": "CyberGym (MiMo corrected environments)",
+      "model": "MiMo-V2.6-Pro",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "value": 94.0,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "variantScoped": true,
+      "evidenceEligible": false,
+      "configurationNote": "Report section 5.2 footnote 1: flawed environments corrected using section 4.2.4; not the original CyberGym protocol.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "mimo-cyber-bench",
+      "benchmarkLabel": "MiMo Cyber Bench (internal)",
+      "model": "MiMo-V2.6-Pro",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "value": 80.2,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "variantScoped": true,
+      "evidenceEligible": false,
+      "configurationNote": "Vendor-controlled internal cyber benchmark; not independent ranking evidence.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "exploitgym",
+      "benchmarkLabel": "ExploitGym",
+      "model": "MiMo-V2.6-Pro",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "value": 17.8,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "exploitbench",
+      "benchmarkLabel": "ExploitBench",
+      "model": "MiMo-V2.6-Pro",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "value": 47.9,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "sec-bench-pro",
+      "benchmarkLabel": "SEC-Bench Pro",
+      "model": "MiMo-V2.6-Pro",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "value": 66.3,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "mimo-visual-coding",
+      "benchmarkLabel": "MiMo Visual Coding (internal)",
+      "model": "MiMo-V2.6-Pro",
+      "modelAliases": [
+        "mimo-v2-6-pro",
+        "MiMo-V2.6-Pro",
+        "MiMo-V2.6 Pro",
+        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      ],
+      "value": 72.3,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-pro-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
+      "variantScoped": true,
+      "evidenceEligible": false,
+      "configurationNote": "Vendor-controlled WebDev/Image2Code agent benchmark; not a general visual accuracy score.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "MiMo-V2.6-Flash",
+      "modelAliases": [
+        "mimo-v2-6-flash",
+        "MiMo-V2.6-Flash",
+        "MiMo-V2.6 Flash",
+        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      ],
+      "value": 67.9,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "programbench",
+      "benchmarkLabel": "ProgramBench",
+      "model": "MiMo-V2.6-Flash",
+      "modelAliases": [
+        "mimo-v2-6-flash",
+        "MiMo-V2.6-Flash",
+        "MiMo-V2.6 Flash",
+        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      ],
+      "value": 26.0,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "mimo-code-bench",
+      "benchmarkLabel": "MiMo Code Bench (internal)",
+      "model": "MiMo-V2.6-Flash",
+      "modelAliases": [
+        "mimo-v2-6-flash",
+        "MiMo-V2.6-Flash",
+        "MiMo-V2.6 Flash",
+        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      ],
+      "value": 61.2,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
+      "variantScoped": true,
+      "evidenceEligible": false,
+      "configurationNote": "Vendor-controlled internal coding benchmark; display as an observation, not independent ranking evidence.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "automationbench-v1-0-6",
+      "benchmarkLabel": "AutomationBench v1.0.6",
+      "model": "MiMo-V2.6-Flash",
+      "modelAliases": [
+        "mimo-v2-6-flash",
+        "MiMo-V2.6-Flash",
+        "MiMo-V2.6 Flash",
+        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      ],
+      "value": 52.3,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "toolathlon-verified",
+      "benchmarkLabel": "Toolathlon-Verified",
+      "model": "MiMo-V2.6-Flash",
+      "modelAliases": [
+        "mimo-v2-6-flash",
+        "MiMo-V2.6-Flash",
+        "MiMo-V2.6 Flash",
+        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      ],
+      "value": 73.6,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "agents-last-exam",
+      "benchmarkLabel": "Agents' Last Exam",
+      "model": "MiMo-V2.6-Flash",
+      "modelAliases": [
+        "mimo-v2-6-flash",
+        "MiMo-V2.6-Flash",
+        "MiMo-V2.6 Flash",
+        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      ],
+      "value": 27.6,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "terminal-bench-4",
+      "benchmarkLabel": "Terminal-Bench 4.0",
+      "model": "MiMo-V2.6-Flash",
+      "modelAliases": [
+        "mimo-v2-6-flash",
+        "MiMo-V2.6-Flash",
+        "MiMo-V2.6 Flash",
+        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      ],
+      "value": 28.8,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "terminal-bench-2-1",
+      "benchmarkLabel": "Terminal-Bench 2.1",
+      "model": "MiMo-V2.6-Flash",
+      "modelAliases": [
+        "mimo-v2-6-flash",
+        "MiMo-V2.6-Flash",
+        "MiMo-V2.6 Flash",
+        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      ],
+      "value": 87.6,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "osworld-verified",
+      "benchmarkLabel": "OSWorld-Verified",
+      "model": "MiMo-V2.6-Flash",
+      "modelAliases": [
+        "mimo-v2-6-flash",
+        "MiMo-V2.6-Flash",
+        "MiMo-V2.6 Flash",
+        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      ],
+      "value": 80.8,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "job-bench",
+      "benchmarkLabel": "Job Bench",
+      "model": "MiMo-V2.6-Flash",
+      "modelAliases": [
+        "mimo-v2-6-flash",
+        "MiMo-V2.6-Flash",
+        "MiMo-V2.6 Flash",
+        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      ],
+      "value": 61.2,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "cybergym-mimo-corrected",
+      "benchmarkLabel": "CyberGym (MiMo corrected environments)",
+      "model": "MiMo-V2.6-Flash",
+      "modelAliases": [
+        "mimo-v2-6-flash",
+        "MiMo-V2.6-Flash",
+        "MiMo-V2.6 Flash",
+        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      ],
+      "value": 95.1,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
+      "variantScoped": true,
+      "evidenceEligible": false,
+      "configurationNote": "Report section 5.2 footnote 1: flawed environments corrected using section 4.2.4; not the original CyberGym protocol.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "mimo-cyber-bench",
+      "benchmarkLabel": "MiMo Cyber Bench (internal)",
+      "model": "MiMo-V2.6-Flash",
+      "modelAliases": [
+        "mimo-v2-6-flash",
+        "MiMo-V2.6-Flash",
+        "MiMo-V2.6 Flash",
+        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      ],
+      "value": 77.2,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
+      "variantScoped": true,
+      "evidenceEligible": false,
+      "configurationNote": "Vendor-controlled internal cyber benchmark; not independent ranking evidence.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "exploitgym",
+      "benchmarkLabel": "ExploitGym",
+      "model": "MiMo-V2.6-Flash",
+      "modelAliases": [
+        "mimo-v2-6-flash",
+        "MiMo-V2.6-Flash",
+        "MiMo-V2.6 Flash",
+        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      ],
+      "value": 6.0,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "exploitbench",
+      "benchmarkLabel": "ExploitBench",
+      "model": "MiMo-V2.6-Flash",
+      "modelAliases": [
+        "mimo-v2-6-flash",
+        "MiMo-V2.6-Flash",
+        "MiMo-V2.6 Flash",
+        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      ],
+      "value": 25.3,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "sec-bench-pro",
+      "benchmarkLabel": "SEC-Bench Pro",
+      "model": "MiMo-V2.6-Flash",
+      "modelAliases": [
+        "mimo-v2-6-flash",
+        "MiMo-V2.6-Flash",
+        "MiMo-V2.6 Flash",
+        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      ],
+      "value": 47.5,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
+      "variantScoped": true,
+      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "mimo-visual-coding",
+      "benchmarkLabel": "MiMo Visual Coding (internal)",
+      "model": "MiMo-V2.6-Flash",
+      "modelAliases": [
+        "mimo-v2-6-flash",
+        "MiMo-V2.6-Flash",
+        "MiMo-V2.6 Flash",
+        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      ],
+      "value": 71.5,
+      "unit": "%",
+      "sourceId": "xiaomi-mimo-v2-6-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
+      "variantScoped": true,
+      "evidenceEligible": false,
+      "configurationNote": "Vendor-controlled WebDev/Image2Code agent benchmark; not a general visual accuracy score.",
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "cursorbench-4",
+      "benchmarkLabel": "CursorBench 4.0",
+      "model": "Grok 4.7 (xhigh)",
+      "modelAliases": [
+        "grok-4-7",
+        "Grok 4.7 (xhigh)"
+      ],
+      "value": 46.3,
+      "unit": "%",
+      "sourceId": "spacexai-grok-4-7-release",
+      "sourceUrl": "https://x.ai/news/grok-4-7",
+      "sourceLabel": "SpaceXAI Grok 4.7 official release evaluations",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationNote": "September 21 Model Improvements table, Grok 4.7 xhigh column; DeepSWE high-effort exception is bound separately.",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "Grok 4.7 (high)",
+      "modelAliases": [
+        "grok-4-7-high",
+        "Grok 4.7 (high)"
+      ],
+      "value": 71.0,
+      "unit": "%",
+      "sourceId": "spacexai-grok-4-7-release",
+      "sourceUrl": "https://x.ai/news/grok-4-7",
+      "sourceLabel": "SpaceXAI Grok 4.7 official release evaluations",
+      "variantScoped": true,
+      "effort": "high",
+      "configurationNote": "The 71.0% cell is starred; the release explicitly says '* high effort'. It does not belong to xhigh.",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "eebench",
+      "benchmarkLabel": "EEBench",
+      "model": "Grok 4.7 (xhigh)",
+      "modelAliases": [
+        "grok-4-7",
+        "Grok 4.7 (xhigh)"
+      ],
+      "value": 64.0,
+      "unit": "%",
+      "sourceId": "spacexai-grok-4-7-release",
+      "sourceUrl": "https://x.ai/news/grok-4-7",
+      "sourceLabel": "SpaceXAI Grok 4.7 official release evaluations",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationNote": "September 21 Model Improvements table, Grok 4.7 xhigh column; DeepSWE high-effort exception is bound separately.",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "aa-briefcase-v1-1-elo",
+      "benchmarkLabel": "AA Briefcase v1.1 Elo",
+      "model": "Grok 4.7 (xhigh)",
+      "modelAliases": [
+        "grok-4-7",
+        "Grok 4.7 (xhigh)"
+      ],
+      "value": 1657.0,
+      "unit": "Elo",
+      "sourceId": "spacexai-grok-4-7-release",
+      "sourceUrl": "https://x.ai/news/grok-4-7",
+      "sourceLabel": "SpaceXAI Grok 4.7 official release evaluations",
+      "variantScoped": true,
+      "evidenceEligible": false,
+      "effort": "xhigh",
+      "configurationNote": "AA Briefcase v1.1 raw Elo as reported by the vendor; distinct from AA's normalized snapshot.",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "terminal-bench-4",
+      "benchmarkLabel": "Terminal-Bench 4.0",
+      "model": "Grok 4.7 (xhigh)",
+      "modelAliases": [
+        "grok-4-7",
+        "Grok 4.7 (xhigh)"
+      ],
+      "value": 37.6,
+      "unit": "%",
+      "sourceId": "spacexai-grok-4-7-release",
+      "sourceUrl": "https://x.ai/news/grok-4-7",
+      "sourceLabel": "SpaceXAI Grok 4.7 official release evaluations",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationNote": "September 21 Model Improvements table, Grok 4.7 xhigh column; DeepSWE high-effort exception is bound separately.",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "legal-agent-benchmark",
+      "benchmarkLabel": "Legal Agent Benchmark",
+      "model": "Grok 4.7 (xhigh)",
+      "modelAliases": [
+        "grok-4-7",
+        "Grok 4.7 (xhigh)"
+      ],
+      "value": 19.6,
+      "unit": "%",
+      "sourceId": "spacexai-grok-4-7-release",
+      "sourceUrl": "https://x.ai/news/grok-4-7",
+      "sourceLabel": "SpaceXAI Grok 4.7 official release evaluations",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationNote": "September 21 Model Improvements table, Grok 4.7 xhigh column; DeepSWE high-effort exception is bound separately.",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "healthbench-professional",
+      "benchmarkLabel": "HealthBench Professional",
+      "model": "Grok 4.7 (xhigh)",
+      "modelAliases": [
+        "grok-4-7",
+        "Grok 4.7 (xhigh)"
+      ],
+      "value": 56.7,
+      "unit": "%",
+      "sourceId": "spacexai-grok-4-7-release",
+      "sourceUrl": "https://x.ai/news/grok-4-7",
+      "sourceLabel": "SpaceXAI Grok 4.7 official release evaluations",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationNote": "September 21 Model Improvements table, Grok 4.7 xhigh column; DeepSWE high-effort exception is bound separately.",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "gdpval-grok-4-7-elo",
+      "benchmarkLabel": "GDPval Elo (Grok 4.7 release; version unspecified)",
+      "model": "Grok 4.7 (xhigh)",
+      "modelAliases": [
+        "grok-4-7",
+        "Grok 4.7 (xhigh)"
+      ],
+      "value": 1695.0,
+      "unit": "Elo",
+      "sourceId": "spacexai-grok-4-7-release",
+      "sourceUrl": "https://x.ai/news/grok-4-7",
+      "sourceLabel": "SpaceXAI Grok 4.7 official release evaluations",
+      "variantScoped": true,
+      "evidenceEligible": false,
+      "effort": "xhigh",
+      "configurationNote": "GDPval chart labels Grok 4.7 (xhigh) 1695 Elo; evaluation version is unspecified. Never merge into versioned GDPval-AA or a percent score.",
+      "configurationConfidence": "explicit"
+    },
+    {
       "benchmarkId": "mmlu-pro",
       "benchmarkLabel": "MMLU-Pro",
       "model": "Qwen3 Max Thinking",
@@ -25362,6 +26597,222 @@
       "sourceLabel": "Qwen3.7 Plus automatically discovered official release",
       "variantScoped": true,
       "configurationConfidence": "release-page-default"
+    },
+    {
+      "benchmarkId": "mmlu-pro",
+      "benchmarkLabel": "MMLU-Pro",
+      "model": "MiMo-V2-Flash",
+      "modelAliases": [
+        "MiMo-V2-Flash",
+        "XiaomiMiMo/MiMo-V2-Flash",
+        "MiMo V2 Flash",
+        "mimo-v2-flash"
+      ],
+      "value": 84.9,
+      "unit": "%",
+      "sourceId": "hf-xiaomimimo-mimo-v2-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash",
+      "sourceLabel": "MiMo-V2-Flash official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "benchmarkLabel": "GPQA Diamond",
+      "model": "MiMo-V2-Flash",
+      "modelAliases": [
+        "MiMo-V2-Flash",
+        "XiaomiMiMo/MiMo-V2-Flash",
+        "MiMo V2 Flash",
+        "mimo-v2-flash"
+      ],
+      "value": 83.7,
+      "unit": "%",
+      "sourceId": "hf-xiaomimimo-mimo-v2-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash",
+      "sourceLabel": "MiMo-V2-Flash official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "hle",
+      "benchmarkLabel": "Humanity's Last Exam",
+      "model": "MiMo-V2-Flash",
+      "modelAliases": [
+        "MiMo-V2-Flash",
+        "XiaomiMiMo/MiMo-V2-Flash",
+        "MiMo V2 Flash",
+        "mimo-v2-flash"
+      ],
+      "value": 22.1,
+      "unit": "%",
+      "sourceId": "hf-xiaomimimo-mimo-v2-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash",
+      "sourceLabel": "MiMo-V2-Flash official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "aime-2025",
+      "benchmarkLabel": "AIME 2025",
+      "model": "MiMo-V2-Flash",
+      "modelAliases": [
+        "MiMo-V2-Flash",
+        "XiaomiMiMo/MiMo-V2-Flash",
+        "MiMo V2 Flash",
+        "mimo-v2-flash"
+      ],
+      "value": 94.1,
+      "unit": "%",
+      "sourceId": "hf-xiaomimimo-mimo-v2-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash",
+      "sourceLabel": "MiMo-V2-Flash official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "livecodebench",
+      "benchmarkLabel": "LiveCodeBench",
+      "model": "MiMo-V2-Flash",
+      "modelAliases": [
+        "MiMo-V2-Flash",
+        "XiaomiMiMo/MiMo-V2-Flash",
+        "MiMo V2 Flash",
+        "mimo-v2-flash"
+      ],
+      "value": 80.6,
+      "unit": "%",
+      "sourceId": "hf-xiaomimimo-mimo-v2-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash",
+      "sourceLabel": "MiMo-V2-Flash official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "longbench-v2-1m",
+      "benchmarkLabel": "LongBench v2 ≤1M",
+      "model": "MiMo-V2-Flash",
+      "modelAliases": [
+        "MiMo-V2-Flash",
+        "XiaomiMiMo/MiMo-V2-Flash",
+        "MiMo V2 Flash",
+        "mimo-v2-flash"
+      ],
+      "value": 60.6,
+      "unit": "%",
+      "sourceId": "hf-xiaomimimo-mimo-v2-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash",
+      "sourceLabel": "MiMo-V2-Flash official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "swe-bench-verified",
+      "benchmarkLabel": "SWE-bench Verified",
+      "model": "MiMo-V2-Flash",
+      "modelAliases": [
+        "MiMo-V2-Flash",
+        "XiaomiMiMo/MiMo-V2-Flash",
+        "MiMo V2 Flash",
+        "mimo-v2-flash"
+      ],
+      "value": 73.4,
+      "unit": "%",
+      "sourceId": "hf-xiaomimimo-mimo-v2-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash",
+      "sourceLabel": "MiMo-V2-Flash official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "swe-bench-multilingual",
+      "benchmarkLabel": "SWE-bench Multilingual",
+      "model": "MiMo-V2-Flash",
+      "modelAliases": [
+        "MiMo-V2-Flash",
+        "XiaomiMiMo/MiMo-V2-Flash",
+        "MiMo V2 Flash",
+        "mimo-v2-flash"
+      ],
+      "value": 71.7,
+      "unit": "%",
+      "sourceId": "hf-xiaomimimo-mimo-v2-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash",
+      "sourceLabel": "MiMo-V2-Flash official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "terminal-bench-hard",
+      "benchmarkLabel": "Terminal-Bench Hard",
+      "model": "MiMo-V2-Flash",
+      "modelAliases": [
+        "MiMo-V2-Flash",
+        "XiaomiMiMo/MiMo-V2-Flash",
+        "MiMo V2 Flash",
+        "mimo-v2-flash"
+      ],
+      "value": 30.5,
+      "unit": "%",
+      "sourceId": "hf-xiaomimimo-mimo-v2-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash",
+      "sourceLabel": "MiMo-V2-Flash official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "terminal-bench-2",
+      "benchmarkLabel": "Terminal-Bench 2.0",
+      "model": "MiMo-V2-Flash",
+      "modelAliases": [
+        "MiMo-V2-Flash",
+        "XiaomiMiMo/MiMo-V2-Flash",
+        "MiMo V2 Flash",
+        "mimo-v2-flash"
+      ],
+      "value": 38.5,
+      "unit": "%",
+      "sourceId": "hf-xiaomimimo-mimo-v2-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash",
+      "sourceLabel": "MiMo-V2-Flash official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "browsecomp",
+      "benchmarkLabel": "BrowseComp",
+      "model": "MiMo-V2-Flash",
+      "modelAliases": [
+        "MiMo-V2-Flash",
+        "XiaomiMiMo/MiMo-V2-Flash",
+        "MiMo V2 Flash",
+        "mimo-v2-flash"
+      ],
+      "value": 45.4,
+      "unit": "%",
+      "sourceId": "hf-xiaomimimo-mimo-v2-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash",
+      "sourceLabel": "MiMo-V2-Flash official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
+    },
+    {
+      "benchmarkId": "browsecomp-context",
+      "benchmarkLabel": "BrowseComp (Context Manage)",
+      "model": "MiMo-V2-Flash",
+      "modelAliases": [
+        "MiMo-V2-Flash",
+        "XiaomiMiMo/MiMo-V2-Flash",
+        "MiMo V2 Flash",
+        "mimo-v2-flash"
+      ],
+      "value": 58.3,
+      "unit": "%",
+      "sourceId": "hf-xiaomimimo-mimo-v2-flash-card",
+      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash",
+      "sourceLabel": "MiMo-V2-Flash official model card",
+      "variantScoped": true,
+      "configurationConfidence": "model-card-default"
     },
     {
       "benchmarkId": "mmlu-pro",
@@ -27788,788 +29239,6 @@
       "sourceLabel": "GLM-4.7-Flash official model card",
       "variantScoped": true,
       "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "deepswe-v1-1",
-      "benchmarkLabel": "DeepSWE v1.1",
-      "model": "MiMo-V2.6-Pro",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "value": 71.9,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-pro-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "programbench",
-      "benchmarkLabel": "ProgramBench",
-      "model": "MiMo-V2.6-Pro",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "value": 26.5,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-pro-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "mimo-code-bench",
-      "benchmarkLabel": "MiMo Code Bench (internal)",
-      "model": "MiMo-V2.6-Pro",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "value": 63.2,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-pro-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "variantScoped": true,
-      "evidenceEligible": false,
-      "configurationNote": "Vendor-controlled internal coding benchmark; display as an observation, not independent ranking evidence.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "automationbench-v1-0-6",
-      "benchmarkLabel": "AutomationBench v1.0.6",
-      "model": "MiMo-V2.6-Pro",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "value": 53.1,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-pro-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "toolathlon-verified",
-      "benchmarkLabel": "Toolathlon-Verified",
-      "model": "MiMo-V2.6-Pro",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "value": 76.9,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-pro-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "gdpval-aa-v2-1-elo",
-      "benchmarkLabel": "GDPval-AA v2.1 Elo",
-      "model": "MiMo-V2.6-Pro",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "value": 1673.0,
-      "unit": "Elo",
-      "sourceId": "xiaomi-mimo-v2-6-pro-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "variantScoped": true,
-      "evidenceEligible": false,
-      "configurationNote": "GDPval-AA v2.1 Elo, as printed in Table 3; not a percentage or an AA Core replacement.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "agents-last-exam",
-      "benchmarkLabel": "Agents' Last Exam",
-      "model": "MiMo-V2.6-Pro",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "value": 31.6,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-pro-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "terminal-bench-4",
-      "benchmarkLabel": "Terminal-Bench 4.0",
-      "model": "MiMo-V2.6-Pro",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "value": 34.9,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-pro-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "terminal-bench-2-1",
-      "benchmarkLabel": "Terminal-Bench 2.1",
-      "model": "MiMo-V2.6-Pro",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "value": 89.9,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-pro-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "osworld-verified",
-      "benchmarkLabel": "OSWorld-Verified",
-      "model": "MiMo-V2.6-Pro",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "value": 82.0,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-pro-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "job-bench",
-      "benchmarkLabel": "Job Bench",
-      "model": "MiMo-V2.6-Pro",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "value": 62.0,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-pro-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "cybergym-mimo-corrected",
-      "benchmarkLabel": "CyberGym (MiMo corrected environments)",
-      "model": "MiMo-V2.6-Pro",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "value": 94.0,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-pro-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "variantScoped": true,
-      "evidenceEligible": false,
-      "configurationNote": "Report section 5.2 footnote 1: flawed environments corrected using section 4.2.4; not the original CyberGym protocol.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "mimo-cyber-bench",
-      "benchmarkLabel": "MiMo Cyber Bench (internal)",
-      "model": "MiMo-V2.6-Pro",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "value": 80.2,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-pro-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "variantScoped": true,
-      "evidenceEligible": false,
-      "configurationNote": "Vendor-controlled internal cyber benchmark; not independent ranking evidence.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "exploitgym",
-      "benchmarkLabel": "ExploitGym",
-      "model": "MiMo-V2.6-Pro",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "value": 17.8,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-pro-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "exploitbench",
-      "benchmarkLabel": "ExploitBench",
-      "model": "MiMo-V2.6-Pro",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "value": 47.9,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-pro-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "sec-bench-pro",
-      "benchmarkLabel": "SEC-Bench Pro",
-      "model": "MiMo-V2.6-Pro",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "value": 66.3,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-pro-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "mimo-visual-coding",
-      "benchmarkLabel": "MiMo Visual Coding (internal)",
-      "model": "MiMo-V2.6-Pro",
-      "modelAliases": [
-        "mimo-v2-6-pro",
-        "MiMo-V2.6-Pro",
-        "MiMo-V2.6 Pro",
-        "XiaomiMiMo/MiMo-V2.6-Pro-RL"
-      ],
-      "value": 72.3,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-pro-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Pro official final evaluations",
-      "variantScoped": true,
-      "evidenceEligible": false,
-      "configurationNote": "Vendor-controlled WebDev/Image2Code agent benchmark; not a general visual accuracy score.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "deepswe-v1-1",
-      "benchmarkLabel": "DeepSWE v1.1",
-      "model": "MiMo-V2.6-Flash",
-      "modelAliases": [
-        "mimo-v2-6-flash",
-        "MiMo-V2.6-Flash",
-        "MiMo-V2.6 Flash",
-        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
-      ],
-      "value": 67.9,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-flash-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "programbench",
-      "benchmarkLabel": "ProgramBench",
-      "model": "MiMo-V2.6-Flash",
-      "modelAliases": [
-        "mimo-v2-6-flash",
-        "MiMo-V2.6-Flash",
-        "MiMo-V2.6 Flash",
-        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
-      ],
-      "value": 26.0,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-flash-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "mimo-code-bench",
-      "benchmarkLabel": "MiMo Code Bench (internal)",
-      "model": "MiMo-V2.6-Flash",
-      "modelAliases": [
-        "mimo-v2-6-flash",
-        "MiMo-V2.6-Flash",
-        "MiMo-V2.6 Flash",
-        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
-      ],
-      "value": 61.2,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-flash-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
-      "variantScoped": true,
-      "evidenceEligible": false,
-      "configurationNote": "Vendor-controlled internal coding benchmark; display as an observation, not independent ranking evidence.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "automationbench-v1-0-6",
-      "benchmarkLabel": "AutomationBench v1.0.6",
-      "model": "MiMo-V2.6-Flash",
-      "modelAliases": [
-        "mimo-v2-6-flash",
-        "MiMo-V2.6-Flash",
-        "MiMo-V2.6 Flash",
-        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
-      ],
-      "value": 52.3,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-flash-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "toolathlon-verified",
-      "benchmarkLabel": "Toolathlon-Verified",
-      "model": "MiMo-V2.6-Flash",
-      "modelAliases": [
-        "mimo-v2-6-flash",
-        "MiMo-V2.6-Flash",
-        "MiMo-V2.6 Flash",
-        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
-      ],
-      "value": 73.6,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-flash-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "agents-last-exam",
-      "benchmarkLabel": "Agents' Last Exam",
-      "model": "MiMo-V2.6-Flash",
-      "modelAliases": [
-        "mimo-v2-6-flash",
-        "MiMo-V2.6-Flash",
-        "MiMo-V2.6 Flash",
-        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
-      ],
-      "value": 27.6,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-flash-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "terminal-bench-4",
-      "benchmarkLabel": "Terminal-Bench 4.0",
-      "model": "MiMo-V2.6-Flash",
-      "modelAliases": [
-        "mimo-v2-6-flash",
-        "MiMo-V2.6-Flash",
-        "MiMo-V2.6 Flash",
-        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
-      ],
-      "value": 28.8,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-flash-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "terminal-bench-2-1",
-      "benchmarkLabel": "Terminal-Bench 2.1",
-      "model": "MiMo-V2.6-Flash",
-      "modelAliases": [
-        "mimo-v2-6-flash",
-        "MiMo-V2.6-Flash",
-        "MiMo-V2.6 Flash",
-        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
-      ],
-      "value": 87.6,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-flash-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "osworld-verified",
-      "benchmarkLabel": "OSWorld-Verified",
-      "model": "MiMo-V2.6-Flash",
-      "modelAliases": [
-        "mimo-v2-6-flash",
-        "MiMo-V2.6-Flash",
-        "MiMo-V2.6 Flash",
-        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
-      ],
-      "value": 80.8,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-flash-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "job-bench",
-      "benchmarkLabel": "Job Bench",
-      "model": "MiMo-V2.6-Flash",
-      "modelAliases": [
-        "mimo-v2-6-flash",
-        "MiMo-V2.6-Flash",
-        "MiMo-V2.6 Flash",
-        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
-      ],
-      "value": 61.2,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-flash-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "cybergym-mimo-corrected",
-      "benchmarkLabel": "CyberGym (MiMo corrected environments)",
-      "model": "MiMo-V2.6-Flash",
-      "modelAliases": [
-        "mimo-v2-6-flash",
-        "MiMo-V2.6-Flash",
-        "MiMo-V2.6 Flash",
-        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
-      ],
-      "value": 95.1,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-flash-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
-      "variantScoped": true,
-      "evidenceEligible": false,
-      "configurationNote": "Report section 5.2 footnote 1: flawed environments corrected using section 4.2.4; not the original CyberGym protocol.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "mimo-cyber-bench",
-      "benchmarkLabel": "MiMo Cyber Bench (internal)",
-      "model": "MiMo-V2.6-Flash",
-      "modelAliases": [
-        "mimo-v2-6-flash",
-        "MiMo-V2.6-Flash",
-        "MiMo-V2.6 Flash",
-        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
-      ],
-      "value": 77.2,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-flash-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
-      "variantScoped": true,
-      "evidenceEligible": false,
-      "configurationNote": "Vendor-controlled internal cyber benchmark; not independent ranking evidence.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "exploitgym",
-      "benchmarkLabel": "ExploitGym",
-      "model": "MiMo-V2.6-Flash",
-      "modelAliases": [
-        "mimo-v2-6-flash",
-        "MiMo-V2.6-Flash",
-        "MiMo-V2.6 Flash",
-        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
-      ],
-      "value": 6.0,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-flash-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "exploitbench",
-      "benchmarkLabel": "ExploitBench",
-      "model": "MiMo-V2.6-Flash",
-      "modelAliases": [
-        "mimo-v2-6-flash",
-        "MiMo-V2.6-Flash",
-        "MiMo-V2.6 Flash",
-        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
-      ],
-      "value": 25.3,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-flash-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "sec-bench-pro",
-      "benchmarkLabel": "SEC-Bench Pro",
-      "model": "MiMo-V2.6-Flash",
-      "modelAliases": [
-        "mimo-v2-6-flash",
-        "MiMo-V2.6-Flash",
-        "MiMo-V2.6 Flash",
-        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
-      ],
-      "value": 47.5,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-flash-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
-      "variantScoped": true,
-      "configurationNote": "Final released MiMo-V2.6 model, technical report Table 3 (p. 26), not an intermediate RL checkpoint or the 9B distilled model. No named API effort is asserted; the report's max-effort statement concerns baselines.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "mimo-visual-coding",
-      "benchmarkLabel": "MiMo Visual Coding (internal)",
-      "model": "MiMo-V2.6-Flash",
-      "modelAliases": [
-        "mimo-v2-6-flash",
-        "MiMo-V2.6-Flash",
-        "MiMo-V2.6 Flash",
-        "XiaomiMiMo/MiMo-V2.6-Flash-RL"
-      ],
-      "value": 71.5,
-      "unit": "%",
-      "sourceId": "xiaomi-mimo-v2-6-flash-card",
-      "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "sourceLabel": "Xiaomi MiMo-V2.6-Flash official final evaluations",
-      "variantScoped": true,
-      "evidenceEligible": false,
-      "configurationNote": "Vendor-controlled WebDev/Image2Code agent benchmark; not a general visual accuracy score.",
-      "configurationConfidence": "model-card-default"
-    },
-    {
-      "benchmarkId": "cursorbench-4",
-      "benchmarkLabel": "CursorBench 4.0",
-      "model": "Grok 4.7 (xhigh)",
-      "modelAliases": [
-        "grok-4-7",
-        "Grok 4.7 (xhigh)"
-      ],
-      "value": 46.3,
-      "unit": "%",
-      "sourceId": "spacexai-grok-4-7-release",
-      "sourceUrl": "https://x.ai/news/grok-4-7",
-      "sourceLabel": "SpaceXAI Grok 4.7 official release evaluations",
-      "variantScoped": true,
-      "effort": "xhigh",
-      "configurationNote": "September 21 Model Improvements table, Grok 4.7 xhigh column; DeepSWE high-effort exception is bound separately.",
-      "configurationConfidence": "explicit"
-    },
-    {
-      "benchmarkId": "deepswe-v1-1",
-      "benchmarkLabel": "DeepSWE v1.1",
-      "model": "Grok 4.7 (high)",
-      "modelAliases": [
-        "grok-4-7-high",
-        "Grok 4.7 (high)"
-      ],
-      "value": 71.0,
-      "unit": "%",
-      "sourceId": "spacexai-grok-4-7-release",
-      "sourceUrl": "https://x.ai/news/grok-4-7",
-      "sourceLabel": "SpaceXAI Grok 4.7 official release evaluations",
-      "variantScoped": true,
-      "effort": "high",
-      "configurationNote": "The 71.0% cell is starred; the release explicitly says '* high effort'. It does not belong to xhigh.",
-      "configurationConfidence": "explicit"
-    },
-    {
-      "benchmarkId": "eebench",
-      "benchmarkLabel": "EEBench",
-      "model": "Grok 4.7 (xhigh)",
-      "modelAliases": [
-        "grok-4-7",
-        "Grok 4.7 (xhigh)"
-      ],
-      "value": 64.0,
-      "unit": "%",
-      "sourceId": "spacexai-grok-4-7-release",
-      "sourceUrl": "https://x.ai/news/grok-4-7",
-      "sourceLabel": "SpaceXAI Grok 4.7 official release evaluations",
-      "variantScoped": true,
-      "effort": "xhigh",
-      "configurationNote": "September 21 Model Improvements table, Grok 4.7 xhigh column; DeepSWE high-effort exception is bound separately.",
-      "configurationConfidence": "explicit"
-    },
-    {
-      "benchmarkId": "aa-briefcase-v1-1-elo",
-      "benchmarkLabel": "AA Briefcase v1.1 Elo",
-      "model": "Grok 4.7 (xhigh)",
-      "modelAliases": [
-        "grok-4-7",
-        "Grok 4.7 (xhigh)"
-      ],
-      "value": 1657.0,
-      "unit": "Elo",
-      "sourceId": "spacexai-grok-4-7-release",
-      "sourceUrl": "https://x.ai/news/grok-4-7",
-      "sourceLabel": "SpaceXAI Grok 4.7 official release evaluations",
-      "variantScoped": true,
-      "evidenceEligible": false,
-      "effort": "xhigh",
-      "configurationNote": "AA Briefcase v1.1 raw Elo as reported by the vendor; distinct from AA's normalized snapshot.",
-      "configurationConfidence": "explicit"
-    },
-    {
-      "benchmarkId": "terminal-bench-4",
-      "benchmarkLabel": "Terminal-Bench 4.0",
-      "model": "Grok 4.7 (xhigh)",
-      "modelAliases": [
-        "grok-4-7",
-        "Grok 4.7 (xhigh)"
-      ],
-      "value": 38.0,
-      "unit": "%",
-      "sourceId": "spacexai-grok-4-7-release",
-      "sourceUrl": "https://x.ai/news/grok-4-7",
-      "sourceLabel": "SpaceXAI Grok 4.7 official release evaluations",
-      "variantScoped": true,
-      "effort": "xhigh",
-      "configurationNote": "September 21 Model Improvements table, Grok 4.7 xhigh column; DeepSWE high-effort exception is bound separately.",
-      "configurationConfidence": "explicit"
-    },
-    {
-      "benchmarkId": "legal-agent-benchmark",
-      "benchmarkLabel": "Legal Agent Benchmark",
-      "model": "Grok 4.7 (xhigh)",
-      "modelAliases": [
-        "grok-4-7",
-        "Grok 4.7 (xhigh)"
-      ],
-      "value": 19.6,
-      "unit": "%",
-      "sourceId": "spacexai-grok-4-7-release",
-      "sourceUrl": "https://x.ai/news/grok-4-7",
-      "sourceLabel": "SpaceXAI Grok 4.7 official release evaluations",
-      "variantScoped": true,
-      "effort": "xhigh",
-      "configurationNote": "September 21 Model Improvements table, Grok 4.7 xhigh column; DeepSWE high-effort exception is bound separately.",
-      "configurationConfidence": "explicit"
-    },
-    {
-      "benchmarkId": "healthbench-professional",
-      "benchmarkLabel": "HealthBench Professional",
-      "model": "Grok 4.7 (xhigh)",
-      "modelAliases": [
-        "grok-4-7",
-        "Grok 4.7 (xhigh)"
-      ],
-      "value": 56.7,
-      "unit": "%",
-      "sourceId": "spacexai-grok-4-7-release",
-      "sourceUrl": "https://x.ai/news/grok-4-7",
-      "sourceLabel": "SpaceXAI Grok 4.7 official release evaluations",
-      "variantScoped": true,
-      "effort": "xhigh",
-      "configurationNote": "September 21 Model Improvements table, Grok 4.7 xhigh column; DeepSWE high-effort exception is bound separately.",
-      "configurationConfidence": "explicit"
-    },
-    {
-      "benchmarkId": "gdpval-grok-4-7-elo",
-      "benchmarkLabel": "GDPval Elo (Grok 4.7 release; version unspecified)",
-      "model": "Grok 4.7 (xhigh)",
-      "modelAliases": [
-        "grok-4-7",
-        "Grok 4.7 (xhigh)"
-      ],
-      "value": 1695.0,
-      "unit": "Elo",
-      "sourceId": "spacexai-grok-4-7-release",
-      "sourceUrl": "https://x.ai/news/grok-4-7",
-      "sourceLabel": "SpaceXAI Grok 4.7 official release evaluations",
-      "variantScoped": true,
-      "evidenceEligible": false,
-      "effort": "xhigh",
-      "configurationNote": "GDPval chart labels Grok 4.7 (xhigh) 1695 Elo; evaluation version is unspecified. Never merge into versioned GDPval-AA or a percent score.",
-      "configurationConfidence": "explicit"
     }
   ]
 }
