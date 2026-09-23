@@ -1506,10 +1506,13 @@ class BuildDocsSiteTests(unittest.TestCase):
         opus_low = by_model["Claude Opus 5.5 (low with fallback)"]
 
         self.assertEqual(sol_xhigh["scores"]["benchmark:automationbench-v1-0-6"], 33.2)
-        self.assertIsNone(sol_max["scores"]["benchmark:automationbench-v1-0-6"])
+        self.assertEqual(sol_max["scores"]["benchmark:automationbench-v1-0-6"], 32.0)
         self.assertEqual(sol_max["scores"]["benchmark:agents-last-exam"], 56.4)
-        self.assertIsNone(sol_xhigh["scores"]["benchmark:agents-last-exam"])
+        self.assertEqual(sol_xhigh["scores"]["benchmark:agents-last-exam"], 55.4)
+        self.assertEqual(sol_max["scores"]["benchmark:frontiercode-v1-1-main"], 49.3)
+        self.assertEqual(sol_xhigh["scores"]["benchmark:frontiercode-v1-1-main"], 48.4)
         self.assertEqual(luna_max["scores"]["benchmark:deepswe-v1-1"], 66.6)
+        self.assertEqual(luna_max["scores"]["benchmark:osworld-2-offline-2026-08-08-partial"], 52.7)
         self.assertEqual(opus_xhigh["scores"]["benchmark:terminal-bench-4"], 66.4)
         self.assertIsNone(opus_max["scores"]["benchmark:terminal-bench-4"])
         self.assertEqual(opus_max["scores"]["benchmark:gdpval-aa-v2-1-elo"], 1846)

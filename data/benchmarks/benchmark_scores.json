@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-22T23:30:42+00:00",
+  "generatedAt": "2026-09-23T09:28:45+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
       "label": "OpenAI GPT-5.5 launch evaluations",
       "url": "https://openai.com/index/introducing-gpt-5-5/",
       "category": "Official model release",
-      "collectionStatus": "partial-refresh; seeded 207 benchmark rows",
+      "collectionStatus": "partial-refresh; seeded 211 benchmark rows",
       "note": "Official OpenAI table covering GPT-5.5, GPT-5.4, GPT-5.5 Pro, GPT-5.4 Pro, Claude Opus 4.7, and Gemini 3.1 Pro."
     },
     {
@@ -36,7 +36,7 @@
       "url": "https://openai.com/index/gpt-6-astra/",
       "rawUrl": "https://openai.com/index/gpt-6-astra/",
       "category": "Official model release",
-      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
+      "collectionStatus": "refreshed",
       "note": "OpenAI's September 3, 2026 release appendix explicitly reports the maximum score at any effort. These are source-library results, not evidence for a particular max, xhigh, or lower-effort variant. Only OpenAI's Astra column is ingested. OSWorld's offline subset, Terminal-Bench 4.0, and the new June-August ExploitBench set remain separate from earlier evaluations. BenchCAD uses tools; ExploitGym was run without the six-hour time limit.",
       "modelAliases": [
         "GPT-6 Astra",
@@ -66,13 +66,14 @@
       "rawUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "category": "Official model release",
       "collectionStatus": "seeded-official-values; manually verified 2026-09-23",
-      "note": "OpenAI's September 22, 2026 release, checked September 23. Professional work reports AutomationBench 1.0.6 at xhigh and Agents' Last Exam V1 at max; Coding reports DeepSWE v1.1 at max; Computer use reports the v2026.08.08 offline OSWorld partial score at xhigh. These are separate effort configurations. Only explicitly printed GPT-6 Sol values are transcribed, not comparator columns or points estimated from charts.",
+      "note": "OpenAI's September 22, 2026 release, checked September 23. Exact values and efforts come from the rendered chart point aria-labels (Score, Effort), not positions estimated from the plots. Figure captions identify AutomationBench 1.0.6, Agents' Last Exam V1, FrontierCode 1.1 Main, DeepSWE v1.1, and OSWorld 2.0 offline v2026.08.08 partial reward. The chart DOM id frontiercode-extended is not the captioned benchmark variant. Vendor runs remain distinct from AA Core and from coding-agent harness scores.",
       "modelAliases": [
         "GPT-6 Sol (max)",
         "GPT-6 Sol (max) [R]",
         "gpt-6-sol"
       ],
       "variantScoped": true,
+      "configurationConfidence": "explicit",
       "verifiedSeedAt": "2026-09-23",
       "modelMetadata": {
         "model": "GPT-6 Sol (max)",
@@ -91,15 +92,15 @@
       "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "rawUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "category": "Official model release",
-      "collectionStatus": "seeded-official-values; manually verified 2026-09-23",
-      "note": "OpenAI's September 22, 2026 release, checked September 23. The Coding section explicitly gives GPT-6 Luna at max effort 66.6% on DeepSWE v1.1. Other Luna charts do not expose exact values in the article text.",
+      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
+      "note": "OpenAI's September 22, 2026 release, checked September 23. Exact values and efforts come from rendered chart point aria-labels. Figure captions identify AutomationBench 1.0.6, Agents' Last Exam V1, FrontierCode 1.1 Main, DeepSWE v1.1, and OSWorld 2.0 offline v2026.08.08 partial reward. The chart DOM id frontiercode-extended is not the captioned benchmark variant.",
       "modelAliases": [
         "GPT-6 Luna (max)",
         "GPT-6 Luna (max) [R]",
         "gpt-6-luna"
       ],
       "variantScoped": true,
-      "effort": "max",
+      "configurationConfidence": "explicit",
       "verifiedSeedAt": "2026-09-23",
       "modelMetadata": {
         "model": "GPT-6 Luna (max)",
@@ -1347,7 +1348,7 @@
       "rawUrl": "https://x.ai/news/grok-4-7",
       "category": "Official model release",
       "collectionStatus": "refreshed",
-      "note": "Official September 21 release, fetched September 22. Seven table observations plus the labelled GDPval chart; DeepSWE is high effort, other table rows xhigh. Safety percentages with different denominators and competitor scores are excluded. Public API supports low/medium/high/xhigh, with high default; default is not substituted for the published xhigh configuration.",
+      "note": "Official September 21 release, checked September 23. Seven table observations plus the labelled GDPval chart; Terminal-Bench 4.0 now reads 37.6% in the live table. DeepSWE is high effort, other table rows xhigh. Safety percentages with different denominators and competitor scores are excluded. Public API supports low/medium/high/xhigh, with high default; default is not substituted for the published xhigh configuration.",
       "modelAliases": [
         "grok-4-7",
         "Grok 4.7 (xhigh)",
@@ -1357,6 +1358,28 @@
       "variantScoped": true,
       "effort": "xhigh",
       "configurationConfidence": "explicit"
+    },
+    {
+      "id": "aa-grok-4-7-grok-build-coding-agent",
+      "label": "Artificial Analysis Grok 4.7 with Grok Build coding-agent evaluation",
+      "url": "https://artificialanalysis.ai/articles/benchmarking-grok-4-7",
+      "rawUrl": "https://artificialanalysis.ai/articles/benchmarking-grok-4-7",
+      "category": "Independent coding-agent evaluation",
+      "collectionStatus": "seeded-official-values; manually verified 2026-09-23",
+      "note": "Artificial Analysis September 21 article, checked September 23. Coding Agent Index 56 and its three published component scores (DeepSWE v1.1 73%, Terminal-Bench 4.0 33%, SWE-Atlas-QnA 63%) use Grok Build. Reference display only; no AIndex evidence or bare-model substitution.",
+      "modelAliases": [
+        "grok-4-7",
+        "Grok 4.7 (xhigh)"
+      ],
+      "variantScoped": true,
+      "displayReferenceScores": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "effort": "xhigh",
+      "configurationConfidence": "explicit",
+      "pureModelEligible": false,
+      "verifiedSeedAt": "2026-09-23"
     },
     {
       "id": "official-qwen-qwen3-coder-next-page",
@@ -3814,6 +3837,34 @@
       "category": "Professional work",
       "unit": "Elo",
       "icon": "GDP"
+    },
+    {
+      "id": "grok-build-aa-coding-agent-index",
+      "label": "AA Coding Agent Index (Grok Build)",
+      "category": "Coding agent system",
+      "unit": "index",
+      "icon": "CODE"
+    },
+    {
+      "id": "grok-build-deepswe-v1-1",
+      "label": "DeepSWE v1.1 (Grok Build)",
+      "category": "Coding agent system",
+      "unit": "%",
+      "icon": "CODE"
+    },
+    {
+      "id": "grok-build-terminal-bench-4",
+      "label": "Terminal-Bench 4.0 (Grok Build)",
+      "category": "Coding agent system",
+      "unit": "%",
+      "icon": "TERM"
+    },
+    {
+      "id": "grok-build-swe-atlas-qna",
+      "label": "SWE-Atlas-QnA (Grok Build)",
+      "category": "Coding agent system",
+      "unit": "%",
+      "icon": "CODE"
     }
   ],
   "results": [
@@ -5327,11 +5378,281 @@
     {
       "benchmarkId": "automationbench-v1-0-6",
       "benchmarkLabel": "AutomationBench v1.0.6",
+      "model": "GPT-6 Sol (low)",
+      "modelAliases": [
+        "gpt-6-sol-low",
+        "GPT-6 Sol (low) [R]",
+        "GPT-6 Sol (low)"
+      ],
+      "value": 21.2,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "low",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "agents-last-exam",
+      "benchmarkLabel": "Agents' Last Exam",
+      "model": "GPT-6 Sol (low)",
+      "modelAliases": [
+        "gpt-6-sol-low",
+        "GPT-6 Sol (low) [R]",
+        "GPT-6 Sol (low)"
+      ],
+      "value": 48.7,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "low",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "frontiercode-v1-1-main",
+      "benchmarkLabel": "FrontierCode v1.1 Main",
+      "model": "GPT-6 Sol (low)",
+      "modelAliases": [
+        "gpt-6-sol-low",
+        "GPT-6 Sol (low) [R]",
+        "GPT-6 Sol (low)"
+      ],
+      "value": 37.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "low",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "GPT-6 Sol (low)",
+      "modelAliases": [
+        "gpt-6-sol-low",
+        "GPT-6 Sol (low) [R]",
+        "GPT-6 Sol (low)"
+      ],
+      "value": 37.2,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "low",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "osworld-2-offline-2026-08-08-partial",
+      "benchmarkLabel": "OSWorld 2.0 Offline (2026-08-08, partial)",
+      "model": "GPT-6 Sol (low)",
+      "modelAliases": [
+        "gpt-6-sol-low",
+        "GPT-6 Sol (low) [R]",
+        "GPT-6 Sol (low)"
+      ],
+      "value": 43.9,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "low",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "automationbench-v1-0-6",
+      "benchmarkLabel": "AutomationBench v1.0.6",
+      "model": "GPT-6 Sol (medium)",
+      "modelAliases": [
+        "gpt-6-sol-medium",
+        "GPT-6 Sol (medium) [R]",
+        "GPT-6 Sol (medium)"
+      ],
+      "value": 26.9,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "medium",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "agents-last-exam",
+      "benchmarkLabel": "Agents' Last Exam",
+      "model": "GPT-6 Sol (medium)",
+      "modelAliases": [
+        "gpt-6-sol-medium",
+        "GPT-6 Sol (medium) [R]",
+        "GPT-6 Sol (medium)"
+      ],
+      "value": 53.1,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "medium",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "frontiercode-v1-1-main",
+      "benchmarkLabel": "FrontierCode v1.1 Main",
+      "model": "GPT-6 Sol (medium)",
+      "modelAliases": [
+        "gpt-6-sol-medium",
+        "GPT-6 Sol (medium) [R]",
+        "GPT-6 Sol (medium)"
+      ],
+      "value": 45.9,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "medium",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "GPT-6 Sol (medium)",
+      "modelAliases": [
+        "gpt-6-sol-medium",
+        "GPT-6 Sol (medium) [R]",
+        "GPT-6 Sol (medium)"
+      ],
+      "value": 56.6,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "medium",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "osworld-2-offline-2026-08-08-partial",
+      "benchmarkLabel": "OSWorld 2.0 Offline (2026-08-08, partial)",
+      "model": "GPT-6 Sol (medium)",
+      "modelAliases": [
+        "gpt-6-sol-medium",
+        "GPT-6 Sol (medium) [R]",
+        "GPT-6 Sol (medium)"
+      ],
+      "value": 54.0,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "medium",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "automationbench-v1-0-6",
+      "benchmarkLabel": "AutomationBench v1.0.6",
+      "model": "GPT-6 Sol (high)",
+      "modelAliases": [
+        "gpt-6-sol-high",
+        "GPT-6 Sol (high) [R]",
+        "GPT-6 Sol (high)"
+      ],
+      "value": 31.2,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "high",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "agents-last-exam",
+      "benchmarkLabel": "Agents' Last Exam",
+      "model": "GPT-6 Sol (high)",
+      "modelAliases": [
+        "gpt-6-sol-high",
+        "GPT-6 Sol (high) [R]",
+        "GPT-6 Sol (high)"
+      ],
+      "value": 52.6,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "high",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "frontiercode-v1-1-main",
+      "benchmarkLabel": "FrontierCode v1.1 Main",
+      "model": "GPT-6 Sol (high)",
+      "modelAliases": [
+        "gpt-6-sol-high",
+        "GPT-6 Sol (high) [R]",
+        "GPT-6 Sol (high)"
+      ],
+      "value": 47.7,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "high",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "GPT-6 Sol (high)",
+      "modelAliases": [
+        "gpt-6-sol-high",
+        "GPT-6 Sol (high) [R]",
+        "GPT-6 Sol (high)"
+      ],
+      "value": 65.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "high",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "osworld-2-offline-2026-08-08-partial",
+      "benchmarkLabel": "OSWorld 2.0 Offline (2026-08-08, partial)",
+      "model": "GPT-6 Sol (high)",
+      "modelAliases": [
+        "gpt-6-sol-high",
+        "GPT-6 Sol (high) [R]",
+        "GPT-6 Sol (high)"
+      ],
+      "value": 58.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "high",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "automationbench-v1-0-6",
+      "benchmarkLabel": "AutomationBench v1.0.6",
       "model": "GPT-6 Sol (xhigh)",
       "modelAliases": [
-        "GPT-6 Sol (xhigh)",
+        "gpt-6-sol-xhigh",
         "GPT-6 Sol (xhigh) [R]",
-        "gpt-6-sol-xhigh"
+        "GPT-6 Sol (xhigh)"
       ],
       "value": 33.2,
       "unit": "%",
@@ -5339,16 +5660,71 @@
       "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "sourceLabel": "OpenAI GPT-6 Sol official release",
       "variantScoped": true,
-      "effort": "xhigh"
+      "effort": "xhigh",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "agents-last-exam",
+      "benchmarkLabel": "Agents' Last Exam",
+      "model": "GPT-6 Sol (xhigh)",
+      "modelAliases": [
+        "gpt-6-sol-xhigh",
+        "GPT-6 Sol (xhigh) [R]",
+        "GPT-6 Sol (xhigh)"
+      ],
+      "value": 55.4,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "frontiercode-v1-1-main",
+      "benchmarkLabel": "FrontierCode v1.1 Main",
+      "model": "GPT-6 Sol (xhigh)",
+      "modelAliases": [
+        "gpt-6-sol-xhigh",
+        "GPT-6 Sol (xhigh) [R]",
+        "GPT-6 Sol (xhigh)"
+      ],
+      "value": 48.4,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "GPT-6 Sol (xhigh)",
+      "modelAliases": [
+        "gpt-6-sol-xhigh",
+        "GPT-6 Sol (xhigh) [R]",
+        "GPT-6 Sol (xhigh)"
+      ],
+      "value": 66.6,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "explicit"
     },
     {
       "benchmarkId": "osworld-2-offline-2026-08-08-partial",
       "benchmarkLabel": "OSWorld 2.0 Offline (2026-08-08, partial)",
       "model": "GPT-6 Sol (xhigh)",
       "modelAliases": [
-        "GPT-6 Sol (xhigh)",
+        "gpt-6-sol-xhigh",
         "GPT-6 Sol (xhigh) [R]",
-        "gpt-6-sol-xhigh"
+        "GPT-6 Sol (xhigh)"
       ],
       "value": 60.5,
       "unit": "%",
@@ -5356,16 +5732,35 @@
       "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "sourceLabel": "OpenAI GPT-6 Sol official release",
       "variantScoped": true,
-      "effort": "xhigh"
+      "effort": "xhigh",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "automationbench-v1-0-6",
+      "benchmarkLabel": "AutomationBench v1.0.6",
+      "model": "GPT-6 Sol (max)",
+      "modelAliases": [
+        "gpt-6-sol",
+        "GPT-6 Sol (max) [R]",
+        "GPT-6 Sol (max)"
+      ],
+      "value": 32.0,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "explicit"
     },
     {
       "benchmarkId": "agents-last-exam",
       "benchmarkLabel": "Agents' Last Exam",
       "model": "GPT-6 Sol (max)",
       "modelAliases": [
-        "GPT-6 Sol (max)",
+        "gpt-6-sol",
         "GPT-6 Sol (max) [R]",
-        "gpt-6-sol"
+        "GPT-6 Sol (max)"
       ],
       "value": 56.4,
       "unit": "%",
@@ -5373,16 +5768,35 @@
       "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "sourceLabel": "OpenAI GPT-6 Sol official release",
       "variantScoped": true,
-      "effort": "max"
+      "effort": "max",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "frontiercode-v1-1-main",
+      "benchmarkLabel": "FrontierCode v1.1 Main",
+      "model": "GPT-6 Sol (max)",
+      "modelAliases": [
+        "gpt-6-sol",
+        "GPT-6 Sol (max) [R]",
+        "GPT-6 Sol (max)"
+      ],
+      "value": 49.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "explicit"
     },
     {
       "benchmarkId": "deepswe-v1-1",
       "benchmarkLabel": "DeepSWE v1.1",
       "model": "GPT-6 Sol (max)",
       "modelAliases": [
-        "GPT-6 Sol (max)",
+        "gpt-6-sol",
         "GPT-6 Sol (max) [R]",
-        "gpt-6-sol"
+        "GPT-6 Sol (max)"
       ],
       "value": 68.8,
       "unit": "%",
@@ -5390,16 +5804,449 @@
       "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "sourceLabel": "OpenAI GPT-6 Sol official release",
       "variantScoped": true,
-      "effort": "max"
+      "effort": "max",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "osworld-2-offline-2026-08-08-partial",
+      "benchmarkLabel": "OSWorld 2.0 Offline (2026-08-08, partial)",
+      "model": "GPT-6 Sol (max)",
+      "modelAliases": [
+        "gpt-6-sol",
+        "GPT-6 Sol (max) [R]",
+        "GPT-6 Sol (max)"
+      ],
+      "value": 64.4,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-sol-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Sol official release",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "automationbench-v1-0-6",
+      "benchmarkLabel": "AutomationBench v1.0.6",
+      "model": "GPT-6 Luna (low)",
+      "modelAliases": [
+        "gpt-6-luna-low",
+        "GPT-6 Luna (low) [R]",
+        "GPT-6 Luna (low)"
+      ],
+      "value": 1.2,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "low",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "agents-last-exam",
+      "benchmarkLabel": "Agents' Last Exam",
+      "model": "GPT-6 Luna (low)",
+      "modelAliases": [
+        "gpt-6-luna-low",
+        "GPT-6 Luna (low) [R]",
+        "GPT-6 Luna (low)"
+      ],
+      "value": 36.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "low",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "frontiercode-v1-1-main",
+      "benchmarkLabel": "FrontierCode v1.1 Main",
+      "model": "GPT-6 Luna (low)",
+      "modelAliases": [
+        "gpt-6-luna-low",
+        "GPT-6 Luna (low) [R]",
+        "GPT-6 Luna (low)"
+      ],
+      "value": 25.7,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "low",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "GPT-6 Luna (low)",
+      "modelAliases": [
+        "gpt-6-luna-low",
+        "GPT-6 Luna (low) [R]",
+        "GPT-6 Luna (low)"
+      ],
+      "value": 2.4,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "low",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "osworld-2-offline-2026-08-08-partial",
+      "benchmarkLabel": "OSWorld 2.0 Offline (2026-08-08, partial)",
+      "model": "GPT-6 Luna (low)",
+      "modelAliases": [
+        "gpt-6-luna-low",
+        "GPT-6 Luna (low) [R]",
+        "GPT-6 Luna (low)"
+      ],
+      "value": 8.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "low",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "automationbench-v1-0-6",
+      "benchmarkLabel": "AutomationBench v1.0.6",
+      "model": "GPT-6 Luna (medium)",
+      "modelAliases": [
+        "gpt-6-luna-medium",
+        "GPT-6 Luna (medium) [R]",
+        "GPT-6 Luna (medium)"
+      ],
+      "value": 9.4,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "medium",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "agents-last-exam",
+      "benchmarkLabel": "Agents' Last Exam",
+      "model": "GPT-6 Luna (medium)",
+      "modelAliases": [
+        "gpt-6-luna-medium",
+        "GPT-6 Luna (medium) [R]",
+        "GPT-6 Luna (medium)"
+      ],
+      "value": 46.8,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "medium",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "frontiercode-v1-1-main",
+      "benchmarkLabel": "FrontierCode v1.1 Main",
+      "model": "GPT-6 Luna (medium)",
+      "modelAliases": [
+        "gpt-6-luna-medium",
+        "GPT-6 Luna (medium) [R]",
+        "GPT-6 Luna (medium)"
+      ],
+      "value": 35.5,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "medium",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "GPT-6 Luna (medium)",
+      "modelAliases": [
+        "gpt-6-luna-medium",
+        "GPT-6 Luna (medium) [R]",
+        "GPT-6 Luna (medium)"
+      ],
+      "value": 44.5,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "medium",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "osworld-2-offline-2026-08-08-partial",
+      "benchmarkLabel": "OSWorld 2.0 Offline (2026-08-08, partial)",
+      "model": "GPT-6 Luna (medium)",
+      "modelAliases": [
+        "gpt-6-luna-medium",
+        "GPT-6 Luna (medium) [R]",
+        "GPT-6 Luna (medium)"
+      ],
+      "value": 31.5,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "medium",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "automationbench-v1-0-6",
+      "benchmarkLabel": "AutomationBench v1.0.6",
+      "model": "GPT-6 Luna (high)",
+      "modelAliases": [
+        "gpt-6-luna-high",
+        "GPT-6 Luna (high) [R]",
+        "GPT-6 Luna (high)"
+      ],
+      "value": 14.5,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "high",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "agents-last-exam",
+      "benchmarkLabel": "Agents' Last Exam",
+      "model": "GPT-6 Luna (high)",
+      "modelAliases": [
+        "gpt-6-luna-high",
+        "GPT-6 Luna (high) [R]",
+        "GPT-6 Luna (high)"
+      ],
+      "value": 43.6,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "high",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "frontiercode-v1-1-main",
+      "benchmarkLabel": "FrontierCode v1.1 Main",
+      "model": "GPT-6 Luna (high)",
+      "modelAliases": [
+        "gpt-6-luna-high",
+        "GPT-6 Luna (high) [R]",
+        "GPT-6 Luna (high)"
+      ],
+      "value": 37.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "high",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "GPT-6 Luna (high)",
+      "modelAliases": [
+        "gpt-6-luna-high",
+        "GPT-6 Luna (high) [R]",
+        "GPT-6 Luna (high)"
+      ],
+      "value": 59.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "high",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "osworld-2-offline-2026-08-08-partial",
+      "benchmarkLabel": "OSWorld 2.0 Offline (2026-08-08, partial)",
+      "model": "GPT-6 Luna (high)",
+      "modelAliases": [
+        "gpt-6-luna-high",
+        "GPT-6 Luna (high) [R]",
+        "GPT-6 Luna (high)"
+      ],
+      "value": 41.4,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "high",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "automationbench-v1-0-6",
+      "benchmarkLabel": "AutomationBench v1.0.6",
+      "model": "GPT-6 Luna (xhigh)",
+      "modelAliases": [
+        "gpt-6-luna-xhigh",
+        "GPT-6 Luna (xhigh) [R]",
+        "GPT-6 Luna (xhigh)"
+      ],
+      "value": 12.6,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "agents-last-exam",
+      "benchmarkLabel": "Agents' Last Exam",
+      "model": "GPT-6 Luna (xhigh)",
+      "modelAliases": [
+        "gpt-6-luna-xhigh",
+        "GPT-6 Luna (xhigh) [R]",
+        "GPT-6 Luna (xhigh)"
+      ],
+      "value": 47.9,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "frontiercode-v1-1-main",
+      "benchmarkLabel": "FrontierCode v1.1 Main",
+      "model": "GPT-6 Luna (xhigh)",
+      "modelAliases": [
+        "gpt-6-luna-xhigh",
+        "GPT-6 Luna (xhigh) [R]",
+        "GPT-6 Luna (xhigh)"
+      ],
+      "value": 37.1,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1",
+      "model": "GPT-6 Luna (xhigh)",
+      "modelAliases": [
+        "gpt-6-luna-xhigh",
+        "GPT-6 Luna (xhigh) [R]",
+        "GPT-6 Luna (xhigh)"
+      ],
+      "value": 61.3,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "osworld-2-offline-2026-08-08-partial",
+      "benchmarkLabel": "OSWorld 2.0 Offline (2026-08-08, partial)",
+      "model": "GPT-6 Luna (xhigh)",
+      "modelAliases": [
+        "gpt-6-luna-xhigh",
+        "GPT-6 Luna (xhigh) [R]",
+        "GPT-6 Luna (xhigh)"
+      ],
+      "value": 46.7,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "xhigh",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "automationbench-v1-0-6",
+      "benchmarkLabel": "AutomationBench v1.0.6",
+      "model": "GPT-6 Luna (max)",
+      "modelAliases": [
+        "gpt-6-luna",
+        "GPT-6 Luna (max) [R]",
+        "GPT-6 Luna (max)"
+      ],
+      "value": 20.7,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "agents-last-exam",
+      "benchmarkLabel": "Agents' Last Exam",
+      "model": "GPT-6 Luna (max)",
+      "modelAliases": [
+        "gpt-6-luna",
+        "GPT-6 Luna (max) [R]",
+        "GPT-6 Luna (max)"
+      ],
+      "value": 50.9,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "frontiercode-v1-1-main",
+      "benchmarkLabel": "FrontierCode v1.1 Main",
+      "model": "GPT-6 Luna (max)",
+      "modelAliases": [
+        "gpt-6-luna",
+        "GPT-6 Luna (max) [R]",
+        "GPT-6 Luna (max)"
+      ],
+      "value": 42.4,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "explicit"
     },
     {
       "benchmarkId": "deepswe-v1-1",
       "benchmarkLabel": "DeepSWE v1.1",
       "model": "GPT-6 Luna (max)",
       "modelAliases": [
-        "GPT-6 Luna (max)",
+        "gpt-6-luna",
         "GPT-6 Luna (max) [R]",
-        "gpt-6-luna"
+        "GPT-6 Luna (max)"
       ],
       "value": 66.6,
       "unit": "%",
@@ -5407,7 +6254,26 @@
       "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "sourceLabel": "OpenAI GPT-6 Luna official release",
       "variantScoped": true,
-      "effort": "max"
+      "effort": "max",
+      "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "osworld-2-offline-2026-08-08-partial",
+      "benchmarkLabel": "OSWorld 2.0 Offline (2026-08-08, partial)",
+      "model": "GPT-6 Luna (max)",
+      "modelAliases": [
+        "gpt-6-luna",
+        "GPT-6 Luna (max) [R]",
+        "GPT-6 Luna (max)"
+      ],
+      "value": 52.7,
+      "unit": "%",
+      "sourceId": "openai-gpt-6-luna-release",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "sourceLabel": "OpenAI GPT-6 Luna official release",
+      "variantScoped": true,
+      "effort": "max",
+      "configurationConfidence": "explicit"
     },
     {
       "benchmarkId": "deepswe-v1-1",
@@ -25900,6 +26766,94 @@
       "effort": "xhigh",
       "configurationNote": "GDPval chart labels Grok 4.7 (xhigh) 1695 Elo; evaluation version is unspecified. Never merge into versioned GDPval-AA or a percent score.",
       "configurationConfidence": "explicit"
+    },
+    {
+      "benchmarkId": "grok-build-aa-coding-agent-index",
+      "benchmarkLabel": "AA Coding Agent Index (Grok Build)",
+      "model": "Grok 4.7 (xhigh)",
+      "modelAliases": [
+        "grok-4-7",
+        "Grok 4.7 (xhigh)"
+      ],
+      "value": 56,
+      "unit": "index",
+      "sourceId": "aa-grok-4-7-grok-build-coding-agent",
+      "sourceUrl": "https://artificialanalysis.ai/articles/benchmarking-grok-4-7",
+      "sourceLabel": "Artificial Analysis Grok 4.7 with Grok Build coding-agent evaluation",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "effort": "xhigh",
+      "configurationNote": "Grok 4.7 (xhigh) inside the Grok Build first-party coding-agent harness; not a bare-model run or AA Core.",
+      "configurationConfidence": "explicit",
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "grok-build-deepswe-v1-1",
+      "benchmarkLabel": "DeepSWE v1.1 (Grok Build)",
+      "model": "Grok 4.7 (xhigh)",
+      "modelAliases": [
+        "grok-4-7",
+        "Grok 4.7 (xhigh)"
+      ],
+      "value": 73,
+      "unit": "%",
+      "sourceId": "aa-grok-4-7-grok-build-coding-agent",
+      "sourceUrl": "https://artificialanalysis.ai/articles/benchmarking-grok-4-7",
+      "sourceLabel": "Artificial Analysis Grok 4.7 with Grok Build coding-agent evaluation",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "effort": "xhigh",
+      "configurationNote": "Grok 4.7 (xhigh) inside the Grok Build first-party coding-agent harness; not a bare-model run or AA Core.",
+      "configurationConfidence": "explicit",
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "grok-build-terminal-bench-4",
+      "benchmarkLabel": "Terminal-Bench 4.0 (Grok Build)",
+      "model": "Grok 4.7 (xhigh)",
+      "modelAliases": [
+        "grok-4-7",
+        "Grok 4.7 (xhigh)"
+      ],
+      "value": 33,
+      "unit": "%",
+      "sourceId": "aa-grok-4-7-grok-build-coding-agent",
+      "sourceUrl": "https://artificialanalysis.ai/articles/benchmarking-grok-4-7",
+      "sourceLabel": "Artificial Analysis Grok 4.7 with Grok Build coding-agent evaluation",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "effort": "xhigh",
+      "configurationNote": "Grok 4.7 (xhigh) inside the Grok Build first-party coding-agent harness; not a bare-model run or AA Core.",
+      "configurationConfidence": "explicit",
+      "pureModelEligible": false
+    },
+    {
+      "benchmarkId": "grok-build-swe-atlas-qna",
+      "benchmarkLabel": "SWE-Atlas-QnA (Grok Build)",
+      "model": "Grok 4.7 (xhigh)",
+      "modelAliases": [
+        "grok-4-7",
+        "Grok 4.7 (xhigh)"
+      ],
+      "value": 63,
+      "unit": "%",
+      "sourceId": "aa-grok-4-7-grok-build-coding-agent",
+      "sourceUrl": "https://artificialanalysis.ai/articles/benchmarking-grok-4-7",
+      "sourceLabel": "Artificial Analysis Grok 4.7 with Grok Build coding-agent evaluation",
+      "variantScoped": true,
+      "modelScoreEligible": false,
+      "evidenceEligible": false,
+      "systemScore": true,
+      "effort": "xhigh",
+      "configurationNote": "Grok 4.7 (xhigh) inside the Grok Build first-party coding-agent harness; not a bare-model run or AA Core.",
+      "configurationConfidence": "explicit",
+      "pureModelEligible": false
     },
     {
       "benchmarkId": "mmlu-pro",

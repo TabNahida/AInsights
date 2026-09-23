@@ -1028,13 +1028,21 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertEqual(opus["arc-agi-3"]["model"], "Claude Opus 5 (high)")
         self.assertIn("Opus 4.8", opus["frontier-bench-v0-1"]["model"])
 
-        sol = by_source["openai-gpt-6-sol-release"]
-        luna = by_source["openai-gpt-6-luna-release"]
+        sol = {row["benchmarkId"]: row for row in payload["results"]
+               if row["sourceId"] == "openai-gpt-6-sol-release"
+               and row["model"] == "GPT-6 Sol (xhigh)"}
+        sol_max = {row["benchmarkId"]: row for row in payload["results"]
+                   if row["sourceId"] == "openai-gpt-6-sol-release"
+                   and row["model"] == "GPT-6 Sol (max)"}
+        luna = {row["benchmarkId"]: row for row in payload["results"]
+                if row["sourceId"] == "openai-gpt-6-luna-release"
+                and row["model"] == "GPT-6 Luna (max)"}
         opus55 = by_source["anthropic-claude-opus-5-5-release"]
         self.assertEqual(sol["automationbench-v1-0-6"]["model"], "GPT-6 Sol (xhigh)")
         self.assertEqual(sol["automationbench-v1-0-6"]["value"], 33.2)
-        self.assertEqual(sol["agents-last-exam"]["model"], "GPT-6 Sol (max)")
-        self.assertEqual(sol["agents-last-exam"]["value"], 56.4)
+        self.assertEqual(sol_max["agents-last-exam"]["model"], "GPT-6 Sol (max)")
+        self.assertEqual(sol_max["agents-last-exam"]["value"], 56.4)
+        self.assertEqual(sol_max["frontiercode-v1-1-main"]["value"], 49.3)
         self.assertEqual(luna["deepswe-v1-1"]["value"], 66.6)
         self.assertEqual(opus55["terminal-bench-4"]["model"], "Claude Opus 5.5 (xhigh with fallback)")
         self.assertEqual(opus55["terminal-bench-4"]["effort"], "xhigh")

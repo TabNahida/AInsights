@@ -21,7 +21,7 @@ def grok_fixture():
         ("DeepSWE v1.1", ["71.0%*", "65.2%", "72.7%", "70.0%"]),
         ("EEBench", ["64.0%", "53.0%", "39.4%", "56.4%"]),
         ("AA Briefcase v1.1", ["1,657", "1,546", "1,487", "1,678"]),
-        ("Terminal-Bench 4.0", ["38.0%", "20.3%", "37.3%", "57.9%"]),
+        ("Terminal-Bench 4.0", ["37.6%", "20.3%", "37.3%", "57.9%"]),
         ("Harvey Legal Agent Benchmark", ["19.6%", "15.8%", "2.5%", "6.7%"]),
         ("HealthBench Professional", ["56.7%", "48.5%", "60.5%", "62.1%"]),
     ]:
@@ -38,14 +38,14 @@ class September22ReleaseTests(unittest.TestCase):
         by_key = {r["benchmarkId"]: r for r in rows}
         self.assertEqual(by_key["deepswe-v1-1"]["model"], "Grok 4.7 (high)")
         self.assertEqual(by_key["deepswe-v1-1"]["effort"], "high")
-        self.assertEqual(by_key["terminal-bench-4"]["value"], 38)
+        self.assertEqual(by_key["terminal-bench-4"]["value"], 37.6)
         self.assertEqual(by_key["cursorbench-4"]["value"], 46.3)
         self.assertEqual(by_key["aa-briefcase-v1-1-elo"]["unit"], "Elo")
         self.assertEqual(by_key["gdpval-grok-4-7-elo"]["value"], 1695)
         self.assertFalse(by_key["gdpval-grok-4-7-elo"]["evidenceEligible"])
 
     def test_changed_grok_configuration_requires_review(self):
-        for old, new in [("xHigh", "High"), ("71.0%*", "71.0%"), ("38.0%", "38.0%*"), ("* high effort", "* medium effort")]:
+        for old, new in [("xHigh", "High"), ("71.0%*", "71.0%"), ("37.6%", "37.6%*"), ("* high effort", "* medium effort")]:
             with self.subTest(old=old), self.assertRaises(ValueError):
                 parse_markdown_source_scores(grok_fixture().replace(old, new), source("spacexai-grok-4-7-release"))
 
@@ -91,6 +91,56 @@ class September22ReleaseTests(unittest.TestCase):
             self.assertEqual(models[slug]["externalBenchmarks"], [])
         for m in models.values():
             self.assertIsNone(m["scores"]["Terminal-Bench v4.0"])
+
+    def test_openai_chart_points_bind_to_exact_effort_and_benchmark(self):
+        sol = source("openai-gpt-6-sol-release")
+        luna = source("openai-gpt-6-luna-release")
+        for spec in (sol, luna):
+            rows = official_seed_results_for_source(spec)
+            self.assertEqual(len(rows), 25)
+            self.assertEqual({r["effort"] for r in rows}, {"low", "medium", "high", "xhigh", "max"})
+            self.assertTrue(all(r["variantScoped"] for r in rows))
+            self.assertTrue(all(r["configurationConfidence"] == "explicit" for r in rows))
+            self.assertTrue(all(len([r for r in rows if r["model"] == model]) == 5
+                                for model in spec["scores"]))
+        sol_max = {r["benchmarkId"]: r["value"] for r in official_seed_results_for_source(sol)
+                   if r["model"] == "GPT-6 Sol (max)"}
+        luna_max = {r["benchmarkId"]: r["value"] for r in official_seed_results_for_source(luna)
+                    if r["model"] == "GPT-6 Luna (max)"}
+        self.assertEqual(sol_max["frontiercode-v1-1-main"], 49.3)
+        self.assertEqual(sol_max["osworld-2-offline-2026-08-08-partial"], 64.4)
+        self.assertEqual(luna_max["agents-last-exam"], 50.9)
+        self.assertEqual(luna_max["deepswe-v1-1"], 66.6)
+
+    def test_grok_build_results_are_reference_only(self):
+        spec = source("aa-grok-4-7-grok-build-coding-agent")
+        rows = official_seed_results_for_source(spec)
+        self.assertEqual({r["benchmarkId"] for r in rows}, {
+            "grok-build-aa-coding-agent-index", "grok-build-deepswe-v1-1",
+            "grok-build-terminal-bench-4", "grok-build-swe-atlas-qna",
+        })
+        self.assertTrue(all(r["systemScore"] and not r["modelScoreEligible"]
+                            and not r["evidenceEligible"] for r in rows))
+        seeded = build_payload({}, "fixture")
+        ids = {spec["id"], "spacexai-grok-4-7-release",
+               "openai-gpt-6-sol-release", "openai-gpt-6-luna-release"}
+        external = {"sources": [s for s in seeded["sources"] if s["id"] in ids],
+                    "benchmarks": seeded["benchmarks"],
+                    "results": [r for r in seeded["results"] if r["sourceId"] in ids]}
+        aa_rows = [{"model": name, "slug": slug, "SciCode": "50"} for name, slug in [
+            ("Grok 4.7 (xhigh)", "grok-4-7"),
+            ("GPT-6 Sol (max)", "gpt-6-sol"),
+            ("GPT-6 Sol (xhigh)", "gpt-6-sol-xhigh"),
+            ("GPT-6 Luna (max)", "gpt-6-luna"),
+            ("GPT-6 Luna (xhigh)", "gpt-6-luna-xhigh"),
+        ]]
+        models = {m["slug"]: m for m in build_site_payload(aa_rows, external, {})["models"]}
+        for slug in ("gpt-6-sol", "gpt-6-sol-xhigh", "gpt-6-luna", "gpt-6-luna-xhigh"):
+            self.assertEqual(len(models[slug]["externalBenchmarks"]), 5)
+        grok = models["grok-4-7"]
+        self.assertEqual(len(grok["externalBenchmarks"]), 11)
+        self.assertEqual(sum(not entry["modelScoreEligible"] for entry in grok["externalBenchmarks"]), 4)
+        self.assertIsNone(grok["scores"]["benchmark:grok-build-deepswe-v1-1"])
 
     def test_xiaomi_discovery_owns_release_and_excludes_derivatives(self):
         vendor = next(v for v in OFFICIAL_VENDORS if v.id == "xiaomi")

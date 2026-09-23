@@ -1902,27 +1902,37 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
             "openSourceCategorization": "proprietary",
         },
         "variantScoped": True,
+        "configurationConfidence": "explicit",
         "note": (
-            "OpenAI's September 22, 2026 release, checked September 23. Professional work "
-            "reports AutomationBench 1.0.6 at xhigh and Agents' Last Exam V1 at max; "
-            "Coding reports DeepSWE v1.1 at max; Computer use reports the v2026.08.08 "
-            "offline OSWorld partial score at xhigh. These are separate effort configurations. "
-            "Only explicitly printed GPT-6 Sol values are transcribed, not comparator columns "
-            "or points estimated from charts."
+            "OpenAI's September 22, 2026 release, checked September 23. Exact values "
+            "and efforts come from the rendered chart point aria-labels (Score, Effort), "
+            "not positions estimated from the plots. Figure captions identify "
+            "AutomationBench 1.0.6, Agents' Last Exam V1, FrontierCode 1.1 Main, "
+            "DeepSWE v1.1, and OSWorld 2.0 offline v2026.08.08 partial reward. "
+            "The chart DOM id frontiercode-extended is not the captioned benchmark "
+            "variant. Vendor runs remain distinct from AA Core and from coding-agent harness scores."
         ),
         "scores": {
-            "GPT-6 Sol (xhigh)": {
-                "automationbench-v1-0-6": 33.2,
-                "osworld-2-offline-2026-08-08-partial": 60.5,
-            },
-            "GPT-6 Sol (max)": {
-                "agents-last-exam": 56.4,
-                "deepswe-v1-1": 68.8,
-            },
+            f"GPT-6 Sol ({effort})": dict(zip(
+                ("automationbench-v1-0-6", "agents-last-exam", "frontiercode-v1-1-main",
+                 "deepswe-v1-1", "osworld-2-offline-2026-08-08-partial"),
+                values,
+            ))
+            for effort, values in {
+                "low": (21.2, 48.7, 37.3, 37.2, 43.9),
+                "medium": (26.9, 53.1, 45.9, 56.6, 54.0),
+                "high": (31.2, 52.6, 47.7, 65.3, 58.3),
+                "xhigh": (33.2, 55.4, 48.4, 66.6, 60.5),
+                "max": (32.0, 56.4, 49.3, 68.8, 64.4),
+            }.items()
         },
         "modelResultOverrides": {
-            "GPT-6 Sol (xhigh)": {"effort": "xhigh", "modelAliases": MODEL_ALIASES["GPT-6 Sol (xhigh)"]},
-            "GPT-6 Sol (max)": {"effort": "max", "modelAliases": MODEL_ALIASES["GPT-6 Sol (max)"]},
+            f"GPT-6 Sol ({effort})": {
+                "effort": effort,
+                "modelAliases": [f"gpt-6-sol-{effort}" if effort != "max" else "gpt-6-sol",
+                                 f"GPT-6 Sol ({effort}) [R]", f"GPT-6 Sol ({effort})"],
+            }
+            for effort in ("low", "medium", "high", "xhigh", "max")
         },
     },
     {
@@ -1944,13 +1954,36 @@ OFFICIAL_SOURCE_SPECS: list[dict[str, Any]] = [
             "openSourceCategorization": "proprietary",
         },
         "variantScoped": True,
-        "effort": "max",
+        "configurationConfidence": "explicit",
         "note": (
-            "OpenAI's September 22, 2026 release, checked September 23. The Coding section "
-            "explicitly gives GPT-6 Luna at max effort 66.6% on DeepSWE v1.1. Other Luna "
-            "charts do not expose exact values in the article text."
+            "OpenAI's September 22, 2026 release, checked September 23. Exact values "
+            "and efforts come from rendered chart point aria-labels. Figure captions identify "
+            "AutomationBench 1.0.6, Agents' Last Exam V1, FrontierCode 1.1 Main, "
+            "DeepSWE v1.1, and OSWorld 2.0 offline v2026.08.08 partial reward. "
+            "The chart DOM id frontiercode-extended is not the captioned benchmark variant."
         ),
-        "scores": {"GPT-6 Luna (max)": {"deepswe-v1-1": 66.6}},
+        "scores": {
+            f"GPT-6 Luna ({effort})": dict(zip(
+                ("automationbench-v1-0-6", "agents-last-exam", "frontiercode-v1-1-main",
+                 "deepswe-v1-1", "osworld-2-offline-2026-08-08-partial"),
+                values,
+            ))
+            for effort, values in {
+                "low": (1.2, 36.3, 25.7, 2.4, 8.3),
+                "medium": (9.4, 46.8, 35.5, 44.5, 31.5),
+                "high": (14.5, 43.6, 37.3, 59.3, 41.4),
+                "xhigh": (12.6, 47.9, 37.1, 61.3, 46.7),
+                "max": (20.7, 50.9, 42.4, 66.6, 52.7),
+            }.items()
+        },
+        "modelResultOverrides": {
+            f"GPT-6 Luna ({effort})": {
+                "effort": effort,
+                "modelAliases": [f"gpt-6-luna-{effort}" if effort != "max" else "gpt-6-luna",
+                                 f"GPT-6 Luna ({effort}) [R]", f"GPT-6 Luna ({effort})"],
+            }
+            for effort in ("low", "medium", "high", "xhigh", "max")
+        },
     },
     {
         "id": "qwen-qwen3-8-flash-next-card",
@@ -5396,6 +5429,10 @@ BENCHMARKS.extend([
     {"id": "eebench", "label": "EEBench", "category": "Electrical engineering", "unit": "%", "icon": "EE"},
     {"id": "aa-briefcase-v1-1-elo", "label": "AA Briefcase v1.1 Elo", "category": "Professional work", "unit": "Elo", "icon": "WORK"},
     {"id": "gdpval-grok-4-7-elo", "label": "GDPval Elo (Grok 4.7 release; version unspecified)", "category": "Professional work", "unit": "Elo", "icon": "GDP"},
+    {"id": "grok-build-aa-coding-agent-index", "label": "AA Coding Agent Index (Grok Build)", "category": "Coding agent system", "unit": "index", "icon": "CODE"},
+    {"id": "grok-build-deepswe-v1-1", "label": "DeepSWE v1.1 (Grok Build)", "category": "Coding agent system", "unit": "%", "icon": "CODE"},
+    {"id": "grok-build-terminal-bench-4", "label": "Terminal-Bench 4.0 (Grok Build)", "category": "Coding agent system", "unit": "%", "icon": "TERM"},
+    {"id": "grok-build-swe-atlas-qna", "label": "SWE-Atlas-QnA (Grok Build)", "category": "Coding agent system", "unit": "%", "icon": "CODE"},
 ])
 
 MIMO26_ROW_LABELS = {
@@ -5482,7 +5519,7 @@ OFFICIAL_SOURCE_SPECS.append({
     },
     "scores": {"Grok 4.7 (xhigh)": {
         "cursorbench-4": 46.3, "deepswe-v1-1": 71.0, "eebench": 64.0,
-        "aa-briefcase-v1-1-elo": 1657, "terminal-bench-4": 38.0,
+        "aa-briefcase-v1-1-elo": 1657, "terminal-bench-4": 37.6,
         "legal-agent-benchmark": 19.6, "healthbench-professional": 56.7,
         "gdpval-grok-4-7-elo": 1695,
     }},
@@ -5491,7 +5528,35 @@ OFFICIAL_SOURCE_SPECS.append({
         "gdpval-grok-4-7-elo": {"evidenceEligible": False, "configurationNote": "GDPval chart labels Grok 4.7 (xhigh) 1695 Elo; evaluation version is unspecified. Never merge into versioned GDPval-AA or a percent score."},
         "aa-briefcase-v1-1-elo": {"evidenceEligible": False, "configurationNote": "AA Briefcase v1.1 raw Elo as reported by the vendor; distinct from AA's normalized snapshot."},
     },
-    "note": "Official September 21 release, fetched September 22. Seven table observations plus the labelled GDPval chart; DeepSWE is high effort, other table rows xhigh. Safety percentages with different denominators and competitor scores are excluded. Public API supports low/medium/high/xhigh, with high default; default is not substituted for the published xhigh configuration.",
+    "note": "Official September 21 release, checked September 23. Seven table observations plus the labelled GDPval chart; Terminal-Bench 4.0 now reads 37.6% in the live table. DeepSWE is high effort, other table rows xhigh. Safety percentages with different denominators and competitor scores are excluded. Public API supports low/medium/high/xhigh, with high default; default is not substituted for the published xhigh configuration.",
+})
+
+# AA evaluates the model inside Grok Build. These are useful system results,
+# but the harness differs from both AA Core and xAI's release-table runs.
+OFFICIAL_SOURCE_SPECS.append({
+    "id": "aa-grok-4-7-grok-build-coding-agent",
+    "label": "Artificial Analysis Grok 4.7 with Grok Build coding-agent evaluation",
+    "url": "https://artificialanalysis.ai/articles/benchmarking-grok-4-7",
+    "rawUrl": "https://artificialanalysis.ai/articles/benchmarking-grok-4-7",
+    "category": "Independent coding-agent evaluation",
+    "modelAliases": MODEL_ALIASES["Grok 4.7 (xhigh)"],
+    "verifiedSeedAt": "2026-09-23",
+    "variantScoped": True,
+    "effort": "xhigh",
+    "configurationConfidence": "explicit",
+    "configurationNote": "Grok 4.7 (xhigh) inside the Grok Build first-party coding-agent harness; not a bare-model run or AA Core.",
+    "displayReferenceScores": True,
+    "modelScoreEligible": False,
+    "evidenceEligible": False,
+    "systemScore": True,
+    "pureModelEligible": False,
+    "scores": {"Grok 4.7 (xhigh)": {
+        "grok-build-aa-coding-agent-index": 56,
+        "grok-build-deepswe-v1-1": 73,
+        "grok-build-terminal-bench-4": 33,
+        "grok-build-swe-atlas-qna": 63,
+    }},
+    "note": "Artificial Analysis September 21 article, checked September 23. Coding Agent Index 56 and its three published component scores (DeepSWE v1.1 73%, Terminal-Bench 4.0 33%, SWE-Atlas-QnA 63%) use Grok Build. Reference display only; no AIndex evidence or bare-model substitution.",
 })
 
 
