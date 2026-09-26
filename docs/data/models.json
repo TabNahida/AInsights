@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-26T21:18:23+00:00",
+  "generatedAt": "2026-09-26T21:31:54+00:00",
   "source": {
     "label": "Artificial Analysis Core + listed benchmark extensions",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -147476,7 +147476,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.17,
+            "extensionBonus": 0.16999999999999998,
             "score": 12.40785,
             "points": 2.9778840000000004,
             "coreTests": 2,
@@ -153712,7 +153712,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.16064928949737836,
+            "extensionBonus": 0.16064928949737833,
             "score": 28.848549289497377,
             "points": 6.92365182947937,
             "coreTests": 2,
@@ -153743,7 +153743,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.43022575021081305,
+            "extensionBonus": 0.430225750210813,
             "score": 35.45917575021082,
             "points": 8.510202180050596,
             "coreTests": 2,
@@ -203312,7 +203312,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.4049009241272899,
+            "extensionBonus": 0.40490092412728984,
             "score": 26.14145092412729,
             "points": 6.273948221790549,
             "coreTests": 2,
@@ -220207,7 +220207,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.8635166756251492,
+            "extensionBonus": 0.8635166756251493,
             "score": 58.64971667562514,
             "points": 14.075932002150035,
             "coreTests": 2,
@@ -220475,7 +220475,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.8635166756251492,
+            "extensionBonus": 0.8635166756251493,
             "score": 58.64971667562514,
             "points": 14.075932002150035,
             "coreTests": 2,
@@ -245423,7 +245423,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 3.1013268188369474,
+            "extensionBonus": 3.101326818836947,
             "score": 43.77262681883695,
             "points": 10.505430436520866,
             "coreTests": 2,
@@ -245812,7 +245812,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 3.1013268188369474,
+            "extensionBonus": 3.101326818836947,
             "score": 43.77262681883695,
             "points": 10.505430436520866,
             "coreTests": 2,
@@ -275395,7 +275395,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.17,
+            "extensionBonus": 0.16999999999999998,
             "score": 20.57325,
             "points": 4.9375800000000005,
             "coreTests": 2,
@@ -277557,7 +277557,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.3122749011898183,
+            "extensionBonus": 0.31227490118981827,
             "score": 8.555724901189818,
             "points": 2.053373976285556,
             "coreTests": 2,
@@ -277946,7 +277946,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.3122749011898183,
+            "extensionBonus": 0.31227490118981827,
             "score": 8.555724901189818,
             "points": 2.053373976285556,
             "coreTests": 2,
@@ -297387,7 +297387,7 @@
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.9551317700912173,
+            "extensionBonus": 0.9551317700912172,
             "score": 4.098031770091217,
             "points": 1.1064685779246286,
             "coreTests": 1,
@@ -297776,7 +297776,7 @@
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.9551317700912173,
+            "extensionBonus": 0.9551317700912172,
             "score": 4.098031770091217,
             "points": 1.1064685779246286,
             "coreTests": 1,
@@ -326672,8 +326672,8 @@
         "publicationRank": 32,
         "evidenceRank": 32,
         "displayScore": 43.4501,
-        "finalScore": 43.4500610605983,
-        "scoreFullPrecision": "43.450061060598301",
+        "finalScore": 43.450061060598294,
+        "scoreFullPrecision": "43.450061060598294",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 weighted-additive five-board points",
         "coreComplete": true,
@@ -326714,9 +326714,9 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 9.632019069445915,
-            "score": 47.026819069445914,
-            "points": 11.28643657666702,
+            "extensionBonus": 9.632019069445914,
+            "score": 47.02681906944591,
+            "points": 11.286436576667018,
             "coreTests": 2,
             "extensionTests": 2,
             "coreItemPoolSize": 2,
@@ -371654,7 +371654,7 @@
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.9073069116665736,
+            "extensionBonus": 0.9073069116665735,
             "score": 2.0502069116665735,
             "points": 0.5535558661499749,
             "coreTests": 1,
@@ -372043,7 +372043,7 @@
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.9073069116665736,
+            "extensionBonus": 0.9073069116665735,
             "score": 2.0502069116665735,
             "points": 0.5535558661499749,
             "coreTests": 1,
@@ -418785,7 +418785,7 @@
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.43000000000000005,
+            "extensionBonus": 0.43,
             "score": 40.9536,
             "points": 9.828864000000001,
             "coreTests": 2,
@@ -457090,7 +457090,7 @@
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.0832637423442293,
+            "extensionBonus": 0.08326374234422929,
             "score": 14.65466374234423,
             "points": 3.9567592104329417,
             "coreTests": 1,
@@ -531007,7 +531007,7 @@
       {
         "publicationRank": 32,
         "displayScore": 43.4501,
-        "scoreFullPrecision": "43.450061060598301",
+        "scoreFullPrecision": "43.450061060598294",
         "slug": "gemini-3-8-flash-medium",
         "variantGroup": "gemini 3 8 flash"
       },
