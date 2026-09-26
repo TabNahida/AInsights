@@ -601,6 +601,20 @@ def split_provider_pricing_offers_by_model(
     return normalized
 
 
+def publish_provider_pricing_for_models(
+    catalogue: dict[str, Any], models: list[dict[str, Any]],
+) -> dict[str, Any]:
+    """Keep researched prices while publishing only offers with a model page."""
+
+    model_slugs = {str(model.get("slug") or "") for model in models}
+    return {
+        **catalogue,
+        "offers": [offer for offer in catalogue.get("offers", [])
+                   if len(offer.get("modelSlugs", [])) == 1
+                   and offer["modelSlugs"][0] in model_slugs],
+    }
+
+
 def merge_provider_pricing_catalogue(
     catalogue: dict[str, Any],
     supplement: dict[str, Any],
@@ -677,11 +691,12 @@ def aindex_metric_policy_metadata(metric_key: str) -> dict[str, Any]:
     """
 
     from analysis.irt_leaderboard_exploration import v5_benchmark_policy
+    from analysis.irt_leaderboard_exploration.mixed_core_extension_policy import CURRENT_EXTENSION_POLICIES
 
     policy = next(
         (
             candidate
-            for candidate in v5_benchmark_policy.BENCHMARK_POLICIES
+            for candidate in CURRENT_EXTENSION_POLICIES + v5_benchmark_policy.BENCHMARK_POLICIES
             if candidate.score_key == metric_key
         ),
         None,
@@ -741,7 +756,7 @@ def aindex_metric_policy_metadata(metric_key: str) -> dict[str, Any]:
             "common-core"
             if role == "core"
             else "common-partial"
-            if role == "extension" and policy.tier == "extension"
+            if role == "extension" and policy.result_protocol == "AA common protocol"
             else "mixed-or-version-sensitive"
             if role == "extension"
             else "not-scored"
@@ -798,7 +813,7 @@ def build_site_payload(
                 "AIndex Mixed Core 07 uses one Core item at 100% or two at 50% each, "
                 "with fixed shares for missing observations, then adds positive residual evidence "
                 "from listed independent-controller extension benchmarks under one "
-                "anonymous dynamic cap. Board weights are 12%, 9%, 22%, 37%, 20%. Missing "
+                "anonymous dynamic cap. Board weights are 24%, 24%, 27%, 16%, 9%. Missing "
                 "extensions stay absent and never reduce Core. Some extension operators, "
                 "agent stacks, prompts, or versions remain mixed and are disclosed."
             ),
@@ -1280,6 +1295,7 @@ def write_site_payload(
     provider_pricing = load_provider_pricing(provider_pricing_json)
     raw_rows = read_csv_rows(input_csv)
     payload = build_site_payload(raw_rows, external_benchmarks, provider_pricing)
+    payload["providerPricing"] = publish_provider_pricing_for_models(provider_pricing, payload["models"])
     is_default_output = output_json.resolve() == DEFAULT_OUTPUT_JSON.resolve()
     should_attach_ranking = (
         is_default_output if include_irt_ranking is None else include_irt_ranking
@@ -2378,9 +2394,9 @@ def _mixed_core_ranking_profile(
         }
 
     boards: dict[str, dict[str, Any]] = {}
-    extension_coverages: list[float] = []
     total_tests = 0
     total_extension_tests = 0
+    total_extension_slots = 0
     for board_id in RANKING_BOARD_IDS:
         core_score = _required_number(scheme_row, f"{board_id}_core_score")
         bonus = _required_number(scheme_row, f"{board_id}_extension_bonus")
@@ -2420,9 +2436,9 @@ def _mixed_core_ranking_profile(
         coverage = (
             100.0 * extension_tests / extension_pool_size
             if extension_pool_size
-            else 100.0
+            else None
         )
-        extension_coverages.append(coverage)
+        total_extension_slots += extension_pool_size
         total_tests += core_tests + extension_tests
         total_extension_tests += extension_tests
         boards[board_id] = {
@@ -2444,7 +2460,7 @@ def _mixed_core_ranking_profile(
             "extensionTests": extension_tests,
             "coreItemPoolSize": len(core_items[board_id]),
             "extensionItemPoolSize": extension_pool_size,
-            "extensionCoverageScore": round(coverage, 3),
+            "extensionCoverageScore": round(coverage, 3) if coverage is not None else None,
             # Compatibility fields for existing table and radar code.
             "tests": core_tests + extension_tests,
             "itemPoolSize": len(core_items[board_id]) + extension_pool_size,
@@ -2458,7 +2474,10 @@ def _mixed_core_ranking_profile(
         scheme_row.get("score_full_precision")
         or format(final_score, ".17g")
     )
-    extension_coverage = sum(extension_coverages) / len(extension_coverages)
+    extension_coverage = (
+        100.0 * total_extension_tests / total_extension_slots
+        if total_extension_slots else 0.0
+    )
     missing_core_count = sum(b["coreItemPoolSize"] - b["coreTests"] for b in boards.values())
     if missing_core_count >= 4:
         raise ValueError("Mixed Core 07 excludes four or more missing Core items")
@@ -2619,6 +2638,9 @@ def _attach_external_benchmark_scores_impl(
             "valueType",
             "scoreSelection",
             "configurationConfidence",
+            "agentHarness",
+            "harness",
+            "harnessVariant",
             "composite",
             "compositeModelResult",
             "fallbackConfigured",
@@ -2980,7 +3002,7 @@ def _presets() -> dict[str, dict[str, Any]]:
             "id": "zhihu-adjusted",
             "label": "AInsights Index",
             "kind": "precomputed-ranking",
-            "description": "方案 07：单 Core 占本领域基础分 100%，双 Core 各占 50%；缺项保留份额、贡献为零。五领域权重为 12/9/22/37/20；任一领域 Core 全缺或累计缺 4 项即不排名。Core 完整的领域沿用正残差扩展加分和统一动态 cap。",
+            "description": "方案 07：单 Core 占本领域基础分 100%，双 Core 各占 50%；缺项保留份额、贡献为零。五领域权重为 24/24/27/16/9；任一领域 Core 全缺或累计缺 4 项即不排名。Core 完整的领域沿用正残差扩展加分和统一动态 cap。",
             "method": PRIMARY_RANKING_METHOD,
             "candidateId": PRIMARY_CANDIDATE_ID,
             "calculation": "fixed-share-core-positive-residual-logsumexp",

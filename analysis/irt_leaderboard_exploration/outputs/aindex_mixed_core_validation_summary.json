@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_mixed_core",
   "candidate_id": "mixed_core_mc07",
-  "calibration_population_size": 137,
-  "bonus_cap_per_board": 30.546797740562514,
+  "calibration_population_size": 136,
+  "bonus_cap_per_board": 16.95160947554207,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 137,
-    "unique_slugs": 137,
-    "unique_variant_groups": 137,
+    "row_count": 136,
+    "unique_slugs": 136,
+    "unique_variant_groups": 136,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 200,
-    "unique_slugs": 200,
-    "unique_variant_groups": 138,
+    "row_count": 201,
+    "unique_slugs": 201,
+    "unique_variant_groups": 137,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -26,9 +26,9 @@
   "passed": true,
   "core_eligibility": {
     "variant_group": {
-      "requested_count": 487,
-      "eligible_count": 137,
-      "excluded_count": 350,
+      "requested_count": 485,
+      "eligible_count": 136,
+      "excluded_count": 349,
       "excluded_models": [
         {
           "slug": "claude-opus-4-6-adaptive",
@@ -6431,23 +6431,6 @@
           ]
         },
         {
-          "slug": "qwen3-5-9b",
-          "missing_core_items": [
-            "Terminal-Bench v4.0",
-            "SciCode",
-            "AutomationBench-AA",
-            "GDP.pdf"
-          ],
-          "missing_core_count": 4,
-          "empty_boards": [
-            "coding"
-          ],
-          "reason": [
-            "board_missing_all",
-            "missing_at_least_four"
-          ]
-        },
-        {
           "slug": "qwen3-5-omni-flash",
           "missing_core_items": [
             "Terminal-Bench v4.0",
@@ -7334,8 +7317,8 @@
     },
     "exact_config": {
       "requested_count": 674,
-      "eligible_count": 200,
-      "excluded_count": 474,
+      "eligible_count": 201,
+      "excluded_count": 473,
       "excluded_models": [
         {
           "slug": "glm-4-5v",
@@ -8975,23 +8958,6 @@
             "hard-reasoning",
             "knowledge-science",
             "instruction-context"
-          ],
-          "reason": [
-            "board_missing_all",
-            "missing_at_least_four"
-          ]
-        },
-        {
-          "slug": "qwen3-5-9b",
-          "missing_core_items": [
-            "Terminal-Bench v4.0",
-            "SciCode",
-            "AutomationBench-AA",
-            "GDP.pdf"
-          ],
-          "missing_core_count": 4,
-          "empty_boards": [
-            "coding"
           ],
           "reason": [
             "board_missing_all",
@@ -17025,15 +16991,15 @@
   "calibration": {
     "method_id": "aindex_mixed_core",
     "candidate_id": "mixed_core_mc07",
-    "policy_version": "mixed-core-mc07",
+    "policy_version": "mixed-core-mc07-extra-weights24-2026-09-25",
     "core_fit": "fixed_share_arithmetic",
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 30.546797740562514,
-    "pooled_positive_residual_count": 99,
-    "pooled_positive_residual_mean": 12.8545577130864,
-    "pooled_positive_residual_population_sd": 12.510302897808428,
+    "bonus_cap_per_board": 16.95160947554207,
+    "pooled_positive_residual_count": 243,
+    "pooled_positive_residual_mean": 7.358411840740676,
+    "pooled_positive_residual_population_sd": 6.783415100830814,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -17042,13 +17008,13 @@
       "instruction-context"
     ],
     "board_weights": {
-      "coding": 12,
-      "agentic-tool-work": 9,
-      "hard-reasoning": 22,
-      "knowledge-science": 37,
-      "instruction-context": 20
+      "coding": 24,
+      "agentic-tool-work": 24,
+      "hard-reasoning": 27,
+      "knowledge-science": 16,
+      "instruction-context": 9
     },
-    "population_size": 137,
+    "population_size": 136,
     "population_slugs": [
       "claude-fable-5-1",
       "claude-opus-4-8",
@@ -17092,9 +17058,6 @@
       "muse-glimmer",
       "o3-mini-high",
       "a-x-k2",
-      "agnes-2-5-pro-alpha",
-      "agnes-2-5-pro-beta",
-      "agnes-3-0-flash",
       "apodex-1-1",
       "celeris-1",
       "claude-4-5-haiku-reasoning",
@@ -17143,6 +17106,7 @@
       "llama-4-scout",
       "longcat-2-0",
       "mercury-2",
+      "mercury-2-5",
       "mimo-v2-5-0424",
       "mimo-v2-5-pro",
       "mimo-v2-6-pro",
@@ -17171,6 +17135,7 @@
       "qwen3-32b-instruct-reasoning",
       "qwen3-5-122b-a10b",
       "qwen3-5-397b-a17b",
+      "qwen3-5-9b",
       "qwen3-6-27b",
       "qwen3-6-35b-a3b",
       "qwen3-7-plus",
@@ -17231,9 +17196,6 @@
       "muse glimmer",
       "o3 mini",
       "a x k2",
-      "agnes 2 5 pro alpha",
-      "agnes 2 5 pro beta",
-      "agnes 3 0 flash",
       "apodex 1 1",
       "celeris 1",
       "claude 4 5 haiku",
@@ -17282,6 +17244,7 @@
       "llama 4 scout",
       "longcat 2 0",
       "mercury 2",
+      "mercury 2 5",
       "mimo v2 5",
       "mimo v2 5 pro",
       "mimo v2 6 pro",
@@ -17310,6 +17273,7 @@
       "qwen3 32b",
       "qwen3 5 122b a10b",
       "qwen3 5 397b a17b",
+      "qwen3 5 9b",
       "qwen3 6 27b",
       "qwen3 6 35b a3b",
       "qwen3 7 plus",
@@ -17330,7 +17294,7 @@
     "representative_policy": "variantPriority descending then slug, before eligibility",
     "missing_policy": "fixed shares; exclude any board with no Core evidence or at least four missing Core items",
     "fit_apply_policy": "fit complete boards of fixed representatives once; apply unchanged to exact configurations",
-    "extension_policy": "fit and award only on boards with every configured Core observed; globally exclude Core families and legacy Terminal",
+    "extension_policy": "fit with at least three representative observations and award only on boards with every configured Core observed; require publication eligibility and an independent controller; exclude Core families, legacy Terminal, all AIME, and selected high-scoring tests",
     "boards": {
       "coding": {
         "core_items": [
@@ -17347,28 +17311,37 @@
         ],
         "extension_items": [
           {
-            "item_id": "swe-bench-pro",
-            "score_key": "benchmark:swe-bench-pro",
-            "canonical_family": "swe-bench-pro",
+            "item_id": "frontiercode-v1-1-main-cognition",
+            "score_key": "benchmark:frontiercode-v1-1-main-cognition",
+            "canonical_family": "frontiercode-v1-1-main",
             "enabled": true,
-            "observed_count": 8,
-            "slope": 0.7102586807826022,
-            "intercept": 37.85841070340167
+            "observed_count": 17,
+            "slope": 0.5910012823385636,
+            "intercept": 18.284765022902146
           },
           {
-            "item_id": "livecodebench",
-            "score_key": "benchmark:livecodebench",
-            "canonical_family": "livecodebench",
-            "enabled": false,
-            "observed_count": 3,
-            "slope": null,
-            "intercept": null
+            "item_id": "deepswe-v1-1-owner-mini-swe-agent",
+            "score_key": "benchmark:deepswe-v1-1-owner-mini-swe-agent",
+            "canonical_family": "deepswe-v1-1",
+            "enabled": true,
+            "observed_count": 17,
+            "slope": 0.9769114728403099,
+            "intercept": 24.854353478695828
+          },
+          {
+            "item_id": "swe-marathon-v1-1-owner",
+            "score_key": "benchmark:swe-marathon-v1-1-owner",
+            "canonical_family": "swe-marathon-v1-1",
+            "enabled": true,
+            "observed_count": 7,
+            "slope": 0.7106713792750413,
+            "intercept": 2.416788288035839
           }
         ],
         "core_item_count": 2,
-        "extension_item_count": 2,
+        "extension_item_count": 3,
         "complete_core_models": 125,
-        "weight": 12
+        "weight": 24
       },
       "agentic-tool-work": {
         "core_items": [
@@ -17385,64 +17358,91 @@
         ],
         "extension_items": [
           {
-            "item_id": "tau2-bench-telecom-aa",
-            "score_key": "τ²-Bench Telecom",
-            "canonical_family": "tau2-bench",
-            "enabled": true,
-            "observed_count": 70,
-            "slope": 1.4437532238178508,
-            "intercept": 44.96058583616552
-          },
-          {
-            "item_id": "apex-agents-aa",
+            "item_id": "apex-agents-aa-current",
             "score_key": "APEX-Agents-AA",
             "canonical_family": "apex-agents",
             "enabled": true,
-            "observed_count": 22,
-            "slope": 0.7672442531301624,
-            "intercept": 5.347619457834227
+            "observed_count": 23,
+            "slope": 0.7705307253382884,
+            "intercept": 5.503993591020269
           },
           {
-            "item_id": "swe-bench-pro",
-            "score_key": "benchmark:swe-bench-pro",
-            "canonical_family": "swe-bench-pro",
+            "item_id": "aa-analyst-agent-pass5",
+            "score_key": "benchmark:aa-analyst-agent-pass5",
+            "canonical_family": "aa-analyst-agent",
             "enabled": true,
-            "observed_count": 8,
-            "slope": 0.41351102802063316,
-            "intercept": 50.311661019566046
+            "observed_count": 14,
+            "slope": 1.0040490582281396,
+            "intercept": 1.3679636185385817
           },
           {
-            "item_id": "hle-tools",
-            "score_key": "benchmark:hle-tools",
-            "canonical_family": "hle-tools",
+            "item_id": "terminal-bench-science-aa",
+            "score_key": "benchmark:terminal-bench-science-aa",
+            "canonical_family": "terminal-bench-science",
+            "enabled": true,
+            "observed_count": 14,
+            "slope": 0.6434998119044697,
+            "intercept": -13.742234041889844
+          },
+          {
+            "item_id": "aa-briefcase-rubric-pass-rate",
+            "score_key": "benchmark:aa-briefcase-rubric-pass-rate",
+            "canonical_family": "aa-briefcase",
+            "enabled": true,
+            "observed_count": 19,
+            "slope": 0.8623950734350586,
+            "intercept": 6.019778429612849
+          },
+          {
+            "item_id": "harvey-lab-aa-all-pass-rate",
+            "score_key": "benchmark:harvey-lab-aa-all-pass-rate",
+            "canonical_family": "harvey-lab",
+            "enabled": true,
+            "observed_count": 9,
+            "slope": 0.25317092140047703,
+            "intercept": -0.05915643005917559
+          },
+          {
+            "item_id": "toolathlon-verified-owner",
+            "score_key": "benchmark:toolathlon-verified-owner",
+            "canonical_family": "toolathlon-verified",
+            "enabled": true,
+            "observed_count": 17,
+            "slope": 0.7951569607663604,
+            "intercept": 37.175608924394865
+          },
+          {
+            "item_id": "osworld-v2-v2026-06-24-standard-500",
+            "score_key": "benchmark:osworld-v2-v2026-06-24-standard-500",
+            "canonical_family": "osworld-v2",
             "enabled": true,
             "observed_count": 5,
-            "slope": 0.25720148901836337,
-            "intercept": 46.19927268478735
+            "slope": 0.6479748412213013,
+            "intercept": -7.92328299326375
           },
           {
-            "item_id": "mcp-atlas",
-            "score_key": "benchmark:mcp-atlas",
-            "canonical_family": "mcp-atlas",
-            "enabled": false,
-            "observed_count": 4,
-            "slope": null,
-            "intercept": null
+            "item_id": "arc-agi-3-standard",
+            "score_key": "benchmark:arc-agi-3-standard",
+            "canonical_family": "arc-agi-3",
+            "enabled": true,
+            "observed_count": 7,
+            "slope": 2.0604537881365466,
+            "intercept": -92.5643248651763
           },
           {
-            "item_id": "osworld-verified",
-            "score_key": "benchmark:osworld-verified",
-            "canonical_family": "osworld-verified",
-            "enabled": false,
-            "observed_count": 4,
-            "slope": null,
-            "intercept": null
+            "item_id": "agents-last-exam-v1-overall-pass-rate",
+            "score_key": "benchmark:agents-last-exam-v1-overall-pass-rate",
+            "canonical_family": "agents-last-exam-v1",
+            "enabled": true,
+            "observed_count": 11,
+            "slope": 0.37010784163040067,
+            "intercept": 10.802186844373274
           }
         ],
         "core_item_count": 2,
-        "extension_item_count": 6,
-        "complete_core_models": 120,
-        "weight": 9
+        "extension_item_count": 9,
+        "complete_core_models": 119,
+        "weight": 24
       },
       "hard-reasoning": {
         "core_items": [
@@ -17454,19 +17454,55 @@
         ],
         "extension_items": [
           {
-            "item_id": "aime-2025-aa",
-            "score_key": "AIME 2025",
-            "canonical_family": "aime-2025",
+            "item_id": "frontiermath-tier-4-v2-epoch",
+            "score_key": "benchmark:frontiermath-tier-4-v2-epoch",
+            "canonical_family": "frontiermath-tier-4-v2",
             "enabled": true,
-            "observed_count": 29,
-            "slope": 29.921671764997456,
-            "intercept": 40.62845111551812
+            "observed_count": 25,
+            "slope": 2.613244447665748,
+            "intercept": -9.398891804920957
+          },
+          {
+            "item_id": "epoch-chess-puzzles-v1-1-6",
+            "score_key": "benchmark:epoch-chess-puzzles-v1-1-6",
+            "canonical_family": "chess-puzzles",
+            "enabled": true,
+            "observed_count": 39,
+            "slope": 1.5310541309116155,
+            "intercept": 7.242755687079953
+          },
+          {
+            "item_id": "epoch-mystery-game-puzzles-v1-0-4",
+            "score_key": "benchmark:epoch-mystery-game-puzzles-v1-0-4",
+            "canonical_family": "mystery-game-puzzles",
+            "enabled": true,
+            "observed_count": 24,
+            "slope": 1.5891827244388288,
+            "intercept": 5.709332555722941
+          },
+          {
+            "item_id": "epoch-ebr-bench-card-ban-v4",
+            "score_key": "benchmark:epoch-ebr-bench-card-ban-v4",
+            "canonical_family": "ebr-bench",
+            "enabled": true,
+            "observed_count": 4,
+            "slope": 3.4542281393753798,
+            "intercept": -52.08107232063678
+          },
+          {
+            "item_id": "hle-aa",
+            "score_key": "Humanity's Last Exam",
+            "canonical_family": "hle",
+            "enabled": true,
+            "observed_count": 136,
+            "slope": 1.4589375707876786,
+            "intercept": 15.21957333868019
           }
         ],
         "core_item_count": 1,
-        "extension_item_count": 1,
-        "complete_core_models": 137,
-        "weight": 22
+        "extension_item_count": 5,
+        "complete_core_models": 136,
+        "weight": 27
       },
       "knowledge-science": {
         "core_items": [
@@ -17483,28 +17519,19 @@
         ],
         "extension_items": [
           {
-            "item_id": "mmmu-pro-aa",
-            "score_key": "MMMU-Pro",
-            "canonical_family": "mmmu-pro",
+            "item_id": "mlcr-aa-overall",
+            "score_key": "benchmark:mlcr-aa-overall",
+            "canonical_family": "mlcr-aa",
             "enabled": true,
-            "observed_count": 60,
-            "slope": 0.8715414865662416,
-            "intercept": 52.295384450921595
-          },
-          {
-            "item_id": "mmlu-pro",
-            "score_key": "benchmark:mmlu-pro",
-            "canonical_family": "mmlu-pro",
-            "enabled": false,
-            "observed_count": 2,
-            "slope": null,
-            "intercept": null
+            "observed_count": 27,
+            "slope": 1.031678034343353,
+            "intercept": -1.3319687419916768
           }
         ],
         "core_item_count": 2,
-        "extension_item_count": 2,
-        "complete_core_models": 128,
-        "weight": 37
+        "extension_item_count": 1,
+        "complete_core_models": 129,
+        "weight": 16
       },
       "instruction-context": {
         "core_items": [
@@ -17516,19 +17543,19 @@
         ],
         "extension_items": [
           {
-            "item_id": "charxiv-no-tools",
-            "score_key": "benchmark:charxiv-no-tools",
-            "canonical_family": "charxiv-no-tools",
-            "enabled": false,
-            "observed_count": 3,
-            "slope": null,
-            "intercept": null
+            "item_id": "ifbench-aa",
+            "score_key": "IFBench",
+            "canonical_family": "ifbench",
+            "enabled": true,
+            "observed_count": 73,
+            "slope": 0.5496261012892798,
+            "intercept": 27.966727413725376
           }
         ],
         "core_item_count": 1,
         "extension_item_count": 1,
-        "complete_core_models": 137,
-        "weight": 20
+        "complete_core_models": 136,
+        "weight": 9
       }
     }
   },
@@ -17536,9 +17563,9 @@
     "method_id": "aindex_mixed_core",
     "candidate_id": "mixed_core_mc07",
     "independent_of_production_scoring_module": true,
-    "variant_group_count": 137,
-    "exact_config_count": 200,
-    "cap": 30.546797740562514,
+    "variant_group_count": 136,
+    "exact_config_count": 201,
+    "cap": 16.95160947554207,
     "profiles_checked": true,
     "passed": true,
     "failures": []

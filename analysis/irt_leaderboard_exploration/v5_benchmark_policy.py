@@ -240,9 +240,9 @@ BENCHMARK_POLICIES: Final[tuple[BenchmarkPolicy, ...]] = (
         ("agentic-tool-work",), "percent", 24, 12, "Mercor", False,
         "Artificial Analysis", "AA common protocol over the Mercor environment",
         "direct_observation", "conditional_extension", True, False, True,
-        "Pin APEX dataset, Archipelago agent wrapper, judge, and tool environment",
+        "Pin APEX dataset, Stirrup agent, Archipelago tool environment, and judge",
         "https://github.com/Mercor-Intelligence/archipelago",
-        "Real observations, but agent wrapper and judge choices can dominate a model-only ranking.",
+        "Real AA observations, but agent and judge choices can dominate a model-only ranking.",
     ),
     _policy(
         "itbench-aa", "ITBench-AA", "ITBench-AA", "itbench",

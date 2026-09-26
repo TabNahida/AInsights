@@ -18,12 +18,14 @@ from scripts.build_docs_site import (
     DEFAULT_OUTPUT_JSON,
     DEFAULT_PROVIDER_PRICING_JSON,
     PRIMARY_RANKING_METHOD,
+    aindex_metric_policy_metadata,
     _rank_consensus_rows_by_composite_score,
     apply_metric_fallbacks,
     build_site_payload,
     load_external_benchmarks,
     load_provider_pricing,
     merge_provider_pricing_catalogue,
+    publish_provider_pricing_for_models,
     models_asset_version,
     open_source_type,
     read_csv_rows,
@@ -36,6 +38,18 @@ from scripts.build_docs_site import (
 
 
 class BuildDocsSiteTests(unittest.TestCase):
+    def test_current_extra_policy_metadata_is_distinct_from_historical_registry(self):
+        for board, keys in primary.EXTENSION_ITEMS.items():
+            for key in keys:
+                metadata = aindex_metric_policy_metadata(key)
+                self.assertEqual(metadata["aindexRole"], "extension")
+                self.assertIn(board, metadata["aindexBoards"])
+                self.assertIs(metadata["controllerIsRankedModelVendor"], False)
+        self.assertEqual(
+            aindex_metric_policy_metadata("benchmark:swe-bench-pro")["aindexRole"],
+            "excluded",
+        )
+
     def test_provider_pricing_supplements_replace_append_and_remove_by_id(self):
         base = {
             "asOf": "2026-08-10",
@@ -73,6 +87,26 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertNotIn("stalePricingMethod", merged)
         self.assertEqual(merged["pricingMethodFixture"], {"id": "fixture-v1"})
 
+    def test_published_provider_pricing_follows_available_models(self):
+        catalogue = {
+            "offers": [
+                {"id": "available", "modelSlugs": ["available-model"]},
+                {"id": "temporarily-missing", "modelSlugs": ["missing-model"]},
+            ],
+        }
+        models = [{"slug": "available-model"}]
+
+        published = publish_provider_pricing_for_models(catalogue, models)
+        self.assertEqual([offer["id"] for offer in published["offers"]], ["available"])
+        self.assertEqual(len(catalogue["offers"]), 2)
+
+        models.append({"slug": "missing-model"})
+        restored = publish_provider_pricing_for_models(catalogue, models)
+        self.assertEqual(
+            [offer["id"] for offer in restored["offers"]],
+            ["available", "temporarily-missing"],
+        )
+
     def test_provider_pricing_catalogue_references_are_integral_and_unique(self):
         catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
         provider_ids = [provider["id"] for provider in catalogue["providers"]]
@@ -87,11 +121,6 @@ class BuildDocsSiteTests(unittest.TestCase):
         plan_by_id = {plan["id"]: plan for plan in catalogue["plans"]}
         source_id_set = set(source_ids)
         exchange_rates = catalogue.get("exchangeRates", {})
-        model_slugs = {
-            model["slug"]
-            for model in json.loads(DEFAULT_OUTPUT_JSON.read_text(encoding="utf-8"))["models"]
-        }
-
         for provider in catalogue["providers"]:
             self.assertTrue(set(provider["sourceIds"]) <= source_id_set)
         for currency, rate in exchange_rates.items():
@@ -107,8 +136,6 @@ class BuildDocsSiteTests(unittest.TestCase):
             self.assertIn(offer["planId"], plan_by_id)
             self.assertEqual(plan_by_id[offer["planId"]]["providerId"], offer["providerId"])
             self.assertEqual(len(offer["modelSlugs"]), 1)
-            self.assertTrue(set(offer["modelSlugs"]) <= model_slugs,
-                            f"pricing offer {offer['id']} references missing model slugs: {sorted(set(offer['modelSlugs']) - model_slugs)}")
             self.assertTrue(set(offer["sourceIds"]) <= source_id_set)
             token_rate_fields = (
                 "inputPerMillionTokensUsd",
@@ -975,7 +1002,13 @@ class BuildDocsSiteTests(unittest.TestCase):
         catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
         generated = json.loads(DEFAULT_OUTPUT_JSON.read_text(encoding="utf-8"))
 
-        self.assertEqual(generated["providerPricing"], catalogue)
+        self.assertEqual(
+            generated["providerPricing"],
+            publish_provider_pricing_for_models(catalogue, generated["models"]),
+        )
+        model_slugs = {model["slug"] for model in generated["models"]}
+        self.assertTrue(all(offer["modelSlugs"][0] in model_slugs
+                            for offer in generated["providerPricing"]["offers"]))
 
     def test_coding_plan_prices_and_usage_fields_keep_their_native_terms(self):
         catalogue = load_provider_pricing(DEFAULT_PROVIDER_PRICING_JSON)
@@ -1262,7 +1295,8 @@ class BuildDocsSiteTests(unittest.TestCase):
             )
             for method in methods.values():
                 self.assertEqual(method["role"], "audit-and-sensitivity-only")
-            extension_coverages = []
+            extension_tests = 0
+            extension_slots = 0
             for board_id, board in profile["boards"].items():
                 self.assertAlmostEqual(
                     board["score"],
@@ -1283,10 +1317,19 @@ class BuildDocsSiteTests(unittest.TestCase):
                 ), places=5)
                 if board["coreTests"] < board["coreItemPoolSize"]:
                     self.assertEqual(board["extensionBonus"], 0)
-                extension_coverages.append(board["extensionCoverageScore"])
+                extension_tests += board["extensionTests"]
+                extension_slots += board["extensionItemPoolSize"]
+                if board["extensionItemPoolSize"] == 0:
+                    self.assertIsNone(board["extensionCoverageScore"])
+                else:
+                    self.assertAlmostEqual(
+                        board["extensionCoverageScore"],
+                        100 * board["extensionTests"] / board["extensionItemPoolSize"],
+                        delta=0.0006,
+                    )
             self.assertAlmostEqual(
                 profile["extensionCoverageScore"],
-                sum(extension_coverages) / len(extension_coverages),
+                100 * extension_tests / extension_slots,
                 delta=0.0006,
             )
             self.assertEqual(
@@ -1464,10 +1507,24 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(grok["scores"]["benchmark:swe-marathon"], 29.0)
         self.assertEqual(grok["scores"]["benchmark:terminal-bench-2-1"], 83.3)
         self.assertEqual(grok["scores"]["benchmark:swe-bench-pro"], 64.7)
-        self.assertEqual(len(grok["externalBenchmarks"]), 5)
+        release_rows = [
+            row for row in grok["externalBenchmarks"]
+            if row["sourceId"] == "spacexai-grok-4-5-release"
+        ]
+        self.assertEqual(len(release_rows), 5)
         self.assertEqual(
-            {row["sourceId"] for row in grok["externalBenchmarks"]},
-            {"spacexai-grok-4-5-release"},
+            {row["benchmarkId"] for row in release_rows},
+            {"deepswe", "deepswe-v1-1", "swe-marathon", "terminal-bench-2-1", "swe-bench-pro"},
+        )
+        self.assertTrue(
+            {
+                "frontiercode-v1-1-main-cognition",
+                "frontiermath-tier-4-v2-epoch",
+                "arc-agi-3-standard",
+                "agents-last-exam-v1-overall-pass-rate",
+                "deepswe-v1-1-owner-mini-swe-agent",
+            }.issubset({row["benchmarkId"] for row in grok["externalBenchmarks"]
+                        if row not in release_rows}),
         )
 
     def test_opus5_max_effort_scores_do_not_broadcast_to_lower_effort_variants(self):
@@ -2230,6 +2287,37 @@ class BuildDocsSiteTests(unittest.TestCase):
         self.assertEqual(model["scores"]["benchmark:hle"], 59.0)
         self.assertEqual(len(model["externalBenchmarks"]), 1)
         self.assertEqual(model["externalBenchmarks"][0]["sourceId"], "anthropic-fable")
+
+    def test_external_result_keeps_structured_agent_protocol(self):
+        payload = build_site_payload(
+            [{
+                "model_key": "Protocol Model (high) [R]",
+                "model": "Protocol Model (high)",
+                "slug": "protocol-model-high",
+                "creator": "Example",
+                "is_reasoning": "true",
+            }],
+            {
+                "version": 1,
+                "sources": [{"id": "owner", "category": "Benchmark owner leaderboard"}],
+                "benchmarks": [{"id": "owner-test", "label": "Owner Test"}],
+                "results": [{
+                    "benchmarkId": "owner-test",
+                    "model": "Protocol Model (high) [R]",
+                    "modelAliases": ["Protocol Model (high) [R]"],
+                    "value": 42,
+                    "sourceId": "owner",
+                    "variantScoped": True,
+                    "agentHarness": "agent-v1",
+                    "harness": "Standard",
+                    "harnessVariant": "full-task",
+                }],
+            },
+        )
+        entry = payload["models"][0]["externalBenchmarks"][0]
+        self.assertEqual(entry["agentHarness"], "agent-v1")
+        self.assertEqual(entry["harness"], "Standard")
+        self.assertEqual(entry["harnessVariant"], "full-task")
 
     def test_external_benchmark_matching_keeps_deepseek_0731_separate_from_0424(self):
         payload = build_site_payload(

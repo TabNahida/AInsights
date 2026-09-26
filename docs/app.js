@@ -38,7 +38,7 @@ const copy = {
     },
     customToolDescriptions: {
       methodRank: "组合四种旧 IRT 审计方法的真实证据名次；默认等权，仅用于敏感性探索。",
-      boardScore: "组合混合 Core 方案 07 的五个能力板块分；默认沿用 12/9/22/37/20 权重，也可切换聚合方式。",
+      boardScore: "组合混合 Core 方案 07 的五个能力板块分；默认沿用 24/24/27/16/9 权重，也可切换聚合方式。",
       benchmarkLab: "直接组合原始公开测试成绩，可继续控制归一化、缺失处理与覆盖门槛。",
     },
     customAggregatorTitle: "聚合器",
@@ -380,11 +380,11 @@ const copy = {
       visualUnderstanding: "视觉理解",
     },
     radarAxisNotes: {
-      coding: "12% · Terminal-Bench v4.0 + SciCode，各占基础分一半。",
-      agenticToolWork: "9% · AutomationBench-AA + τ³-Banking，各占基础分一半。",
-      hardReasoning: "22% · CritPt 单 Core，占全部基础分。",
-      knowledgeScience: "37% · AA-Omniscience Accuracy + GDP.pdf，各占基础分一半。",
-      instructionContext: "20% · AA-LCR v1.1 单 Core，占全部基础分。",
+      coding: "24% · Terminal-Bench v4.0 + SciCode，各占基础分一半。",
+      agenticToolWork: "24% · AutomationBench-AA + τ³-Banking，各占基础分一半。",
+      hardReasoning: "27% · CritPt 单 Core，占全部基础分。",
+      knowledgeScience: "16% · AA-Omniscience Accuracy + GDP.pdf，各占基础分一半。",
+      instructionContext: "9% · AA-LCR v1.1 单 Core，占全部基础分。",
       visualUnderstanding: "可切换 AA MMMU-Pro 或已核实的官方视觉测试。不同测试、带工具版本分别列出；其他档位只展示为参考，不绘入当前配置。",
     },
     detailRows: {
@@ -490,7 +490,7 @@ const copy = {
         label: "AInsights Index",
         calculation: "mixed-core-07",
         normalization: "none",
-        description: "混合 Core 方案 07：编程、智能体、知识三板各两项 Core 各占一半；高难推理和上下文各一项占全部基础分。五板按 12/9/22/37/20 加权，Core 完整的板块可获有上限的正残差扩展加分。",
+        description: "混合 Core 方案 07：编程、智能体、知识三板各两项 Core 各占一半；高难推理和上下文各一项占全部基础分。五板按 24/24/27/16/9 加权，Core 完整的板块可获有上限的正残差扩展加分。",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -552,7 +552,7 @@ const copy = {
     },
     customToolDescriptions: {
       methodRank: "Combine observed ranks from four legacy IRT audit methods; the default is equal weights and remains sensitivity-only.",
-      boardScore: "Combine the five Mixed Core 07 board scores; defaults use 12/9/22/37/20 weights, with alternative aggregators available.",
+      boardScore: "Combine the five Mixed Core 07 board scores; defaults use 24/24/27/16/9 weights, with alternative aggregators available.",
       benchmarkLab: "Combine raw public benchmark results with optional normalization, missing-data handling, and coverage gates.",
     },
     customAggregatorTitle: "Aggregator",
@@ -894,11 +894,11 @@ const copy = {
       visualUnderstanding: "Visual understanding",
     },
     radarAxisNotes: {
-      coding: "12% · Terminal-Bench v4.0 + SciCode, each with half the Core base.",
-      agenticToolWork: "9% · AutomationBench-AA + τ³-Banking, each with half the Core base.",
-      hardReasoning: "22% · CritPt is the single Core, supplying the full base.",
-      knowledgeScience: "37% · AA-Omniscience Accuracy + GDP.pdf, each with half the Core base.",
-      instructionContext: "20% · AA-LCR v1.1 is the single Core, supplying the full base.",
+      coding: "24% · Terminal-Bench v4.0 + SciCode, each with half the Core base.",
+      agenticToolWork: "24% · AutomationBench-AA + τ³-Banking, each with half the Core base.",
+      hardReasoning: "27% · CritPt is the single Core, supplying the full base.",
+      knowledgeScience: "16% · AA-Omniscience Accuracy + GDP.pdf, each with half the Core base.",
+      instructionContext: "9% · AA-LCR v1.1 is the single Core, supplying the full base.",
       visualUnderstanding: "Choose AA MMMU-Pro or a verified official visual test. Different benchmarks and tool protocols stay separate; results from other tiers are references and never plotted for this configuration.",
     },
     detailRows: {
@@ -1004,7 +1004,7 @@ const copy = {
         label: "AInsights Index",
         calculation: "mixed-core-07",
         normalization: "none",
-        description: "Mixed Core 07 uses two equally shared Core items in coding, agentic work, and knowledge, and one full-share Core in reasoning and context. Board weights are 12/9/22/37/20; only complete-Core boards receive capped positive-residual extension bonuses.",
+        description: "Mixed Core 07 uses two equally shared Core items in coding, agentic work, and knowledge, and one full-share Core in reasoning and context. Board weights are 24/24/27/16/9; only complete-Core boards receive capped positive-residual extension bonuses.",
       },
       "aa-intelligence": {
         label: "AA Intelligence",
@@ -1048,11 +1048,11 @@ const state = {
   },
   customMethodAggregator: "mean",
   customBoardWeights: {
-    coding: 12,
-    "agentic-tool-work": 9,
-    "hard-reasoning": 22,
-    "knowledge-science": 37,
-    "instruction-context": 20,
+    coding: 24,
+    "agentic-tool-work": 24,
+    "hard-reasoning": 27,
+    "knowledge-science": 16,
+    "instruction-context": 9,
   },
   customBoardAggregator: "arithmetic",
   customWeights: {},
@@ -2587,11 +2587,11 @@ function renderSummary(filteredCount, visibleCount, scoredCount, preset, unranke
 
 function defaultCoreBoardWeights() {
   const selected = state.data?.leaderboard?.boardWeights || {
-    coding: 12,
-    "agentic-tool-work": 9,
-    "hard-reasoning": 22,
-    "knowledge-science": 37,
-    "instruction-context": 20,
+    coding: 24,
+    "agentic-tool-work": 24,
+    "hard-reasoning": 27,
+    "knowledge-science": 16,
+    "instruction-context": 9,
   };
   return Object.fromEntries(customBoardOrder.map((boardId) => [boardId, Number(selected[boardId])]));
 }
@@ -4200,16 +4200,14 @@ function renderSourcesPage() {
 function renderMethodologyPage() {
   if (!els.methodologyDetail) return;
   const zh = state.language === "zh-CN";
-  const cap = Number(state.data?.leaderboard?.bonusCap);
-  const capText = Number.isFinite(cap) ? formatNumber(cap) : tr("notAvailable");
   document.title = `${zh ? "AInsights Index 计算方式" : "AInsights Index Methodology"} · ${tr("pageTitle")}`;
   els.methodologyDetail.innerHTML = `
     <section class="methodology-hero">
       <p class="eyebrow">Methodology · Mixed Core 07</p>
       <h2>${escapeHtml(zh ? "AInsights Index 计算方式" : "AInsights Index Methodology")}</h2>
       <p>${escapeHtml(zh
-        ? "AIndex 采用混合 Core 方案 07：三个双 Core 领域、两个单 Core 领域，共八个不同测试。板块权重固定为 12%、9%、22%、37%、20%，扩展测试只提供有上限的正残差加分，最终按未经舍入的分数排序。"
-        : "AIndex uses Mixed Core 07: three dual-Core boards and two single-Core boards, with eight distinct tests. Fixed board weights are 12%, 9%, 22%, 37%, and 20%. Extensions provide capped positive-residual bonuses; the unrounded final score determines order.")}</p>
+        ? "AIndex 采用混合 Core 方案 07：三个双 Core 领域、两个单 Core 领域，共八个不同测试。板块权重固定为 24%、24%、27%、16%、9%，扩展测试只提供有上限的正残差加分，最终按未经舍入的分数排序。"
+        : "AIndex uses Mixed Core 07: three dual-Core boards and two single-Core boards, with eight distinct tests. Fixed board weights are 24%, 24%, 27%, 16%, and 9%. Extensions provide capped positive-residual bonuses; the unrounded final score determines order.")}</p>
     </section>
     <section class="methodology-grid">
       <article class="methodology-card methodology-card-wide">
@@ -4223,8 +4221,8 @@ function renderMethodologyPage() {
           ? "单 Core 占全部基础分；双 Core 各占固定的一半，缺测的一半不贡献分数，也不将剩余项目重新放大。真实 0 分是有效观测。任何领域全部 Core 缺测，或八项累计缺测至少四项，均不进入排名；未配置的第二槽位不算缺测。"
           : "A single Core supplies the full base; dual Core items retain one half each. A missing share contributes no points and the observed share is never renormalized. An observed zero is valid. A model is excluded when any board has no observed Core or when at least four of the eight configured items are missing; unconfigured second slots do not count as missing.")}</p>
         <p>${escapeHtml(zh
-          ? "Terminal-Bench 仅使用 v4.0，不使用 v2.1 或 Hard 回退。AIME、LiveCodeBench、GPQA 与旧短题数学测试不进入 Core；允许的扩展项沿用原规则。所有 Core 测试家族从整个扩展池移除，避免重复加分。"
-          : "Terminal-Bench uses v4.0 only, with no v2.1 or Hard fallback. AIME, LiveCodeBench, GPQA, and older short-math tests are not Core; permitted extensions retain the existing rules. Every Core family is removed from the entire extension pool to avoid duplicate bonuses.")}</p>
+          ? "Core 测试覆盖五种能力，优先选择能区分前沿模型、公开成绩可核验且评测协议明确的高难度项目。每项测试固定版本与评分口径；例如 Terminal-Bench 使用 v4.0。Extra Tests 同样重视难度与来源质量，可接受较少参测模型，但须有至少三个本板 Core 完整的代表配置提供精确成绩用于拟合。成绩按版本、推理档位、工具及代理脚手架匹配；Core 题集家族不重复进入扩展池。"
+          : "Core tests span five capabilities and favor difficult tasks that distinguish frontier models, have verifiable public results, and use a clear evaluation protocol. Each test has a fixed version and scoring rule; Terminal-Bench, for example, uses v4.0. Extra Tests follow the same difficulty and source standards and may have narrower model coverage, but fitting requires exact results from at least three representatives with complete Core on that board. Results match on version, inference setting, tools, and agent scaffold; Core task families cannot earn duplicate extension bonuses.")}</p>
       </article>
       <article class="methodology-card">
         <h3>${escapeHtml(zh ? "匿名趋势" : "Anonymous trend")}</h3>
@@ -4235,8 +4233,8 @@ function renderMethodologyPage() {
       <article class="methodology-card">
         <h3>${escapeHtml(zh ? "动态统一 cap" : "One dynamic cap")}</h3>
         <p>${escapeHtml(zh
-          ? `五板全部有效正残差共同计算 mean + √2 × population SD，随数据刷新重算；当前 cap 为 ${capText}。`
-          : `Eligible positive residuals across all boards determine mean + √2 × population SD, recomputed with each refresh; the current cap is ${capText}.`)}</p>
+          ? "五板全部有效正残差共同计算 mean + √2 × population SD，并随数据刷新重算。"
+          : "Eligible positive residuals across all boards determine mean + √2 × population SD; the cap is recomputed with each data refresh.")}</p>
       </article>
       <article class="methodology-card methodology-card-wide">
         <h3>${escapeHtml(zh ? "扩展聚合与总分" : "Extension aggregation and total")}</h3>
@@ -4244,8 +4242,8 @@ function renderMethodologyPage() {
         <p><code>board_score = min(100, core + bonus)</code></p>
         <p><code>final_score = Σ(board_score × board_weight / 100)</code></p>
         <p>${escapeHtml(zh
-          ? "板块权重固定为编程 12%、智能体 9%、高难推理 22%、知识与科学 37%、指令与上下文 20%。缺失扩展保持 absent，不产生残差；同一校准下，新增正残差不会降低分数。榜面数值和柱宽表示相同的直接计算分。"
-          : "Fixed weights are coding 12%, agentic work 9%, hard reasoning 22%, knowledge/science 37%, and instruction/context 20%. Missing extensions remain absent. At fixed calibration, adding a positive residual cannot lower a score. Values and bars display the same directly calculated points.")}</p>
+          ? "板块权重固定为编程 24%、智能体 24%、高难推理 27%、知识与科学 16%、指令与上下文 9%。缺失扩展保持 absent，不产生残差；同一校准下，新增正残差不会降低分数。榜面数值和柱宽表示相同的直接计算分。"
+          : "Fixed weights are coding 24%, agentic work 24%, hard reasoning 27%, knowledge/science 16%, and instruction/context 9%. Missing extensions remain absent. At fixed calibration, adding a positive residual cannot lower a score. Values and bars display the same directly calculated points.")}</p>
       </article>
       <article class="methodology-card methodology-card-wide">
         <h3>${escapeHtml(zh ? "缺失、去重与协议" : "Missingness, dedupe, and protocols")}</h3>
@@ -4253,14 +4251,14 @@ function renderMethodologyPage() {
           ? "先按 variantPriority 降序、slug 升序固定每组代表，再检查 Core 准入；不因缺测换用低档配置或跨配置借分。关闭去重时只使用精确配置的观测与 variantScoped 外部结果，并复用去重群体的同一 OLS 参数与 cap。"
           : "Representatives are fixed by descending variantPriority, then ascending slug, before eligibility checks. Missing Core never triggers a switch to a lower tier or score borrowing across configurations. Exact configurations use their own observations and variantScoped external results, reusing the same deduplicated OLS parameters and cap.")}</p>
         <p>${escapeHtml(zh
-          ? "模型顺序偏好只用于历史方案筛选，不进入日常计分规则。刷新数据后权重保持不变，模型按统一公式重新排序。扩展测试的来源、执行方、脚手架与版本限制在 Benchmark 页面逐项披露。"
-          : "Named-model order preferences were used only to select the historical scheme. Daily scoring keeps its weights fixed and applies the same formula to refreshed evidence. Benchmark pages disclose extension sources, result operators, scaffolds, and version limitations.")}</p>
+          ? "默认榜单使用固定权重和统一公式，并在数据刷新后根据最新观测重新排序。扩展测试的来源、执行方、脚手架与版本限制在 Benchmark 页面逐项披露。"
+          : "The default ranking uses fixed weights and one scoring formula, then recalculates from observed results after each data refresh. Benchmark pages disclose extension sources, result operators, scaffolds, and version limitations.")}</p>
       </article>
       <article class="methodology-card">
         <h3>${escapeHtml(zh ? "六轴雷达" : "Radar Profile")}</h3>
         <p>${escapeHtml(zh
-          ? "前五轴读取板块分，第六轴显示所选视觉测试，默认 AA MMMU-Pro。切换视觉测试不改变 AIndex；AA MMMU-Pro 本身另列于知识与科学扩展池。扩展清单见 methodology 页面。"
-          : "The first five axes read board scores; the sixth shows the selected visual test, defaulting to AA MMMU-Pro. Switching visual tests does not change AIndex; AA MMMU-Pro separately belongs to the knowledge/science extension pool.")}</p>
+          ? "前五轴读取板块分，第六轴显示所选视觉测试，初始为 AA MMMU-Pro。视觉轴只供查看，不参与 AIndex 计分。"
+          : "The first five axes read board scores; the sixth shows the selected visual test, initially AA MMMU-Pro. The visual axis is for display and does not enter AIndex scoring.")}</p>
       </article>
       <article class="methodology-card">
         <h3>${escapeHtml(zh ? "敏感性与 Custom 工具" : "Sensitivity and Custom Tools")}</h3>
@@ -5145,6 +5143,7 @@ function radarCoverageLabel(coverage) {
     Number.isFinite(coverage.coreTotal)
     && Number.isFinite(coverage.extensionAvailable)
     && Number.isFinite(coverage.extensionTotal)
+    && coverage.extensionTotal > 0
   ) return tr("radarDualCoverage", coverage);
   if (!Number.isFinite(coverage.total)) return tr("radarTestCount", coverage);
   return tr("radarCoverage", coverage);

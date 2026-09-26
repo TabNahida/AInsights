@@ -12,7 +12,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ainsights.tab.homes/methodology.html" />
     <meta name="twitter:card" content="summary" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"AInsights Index Methodology - AI Insights Analysis","alternateName":["AInsights Index","AIndex","AIndex Mixed Core 07"],"url":"https://ainsights.tab.homes/methodology.html","description":"AIndex Mixed Core 07 calculates five board scores from fixed-share Core evidence, weights of 12/9/22/37/20, and capped positive-residual extensions."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"AInsights Index Methodology - AI Insights Analysis","alternateName":["AInsights Index","AIndex","AIndex Mixed Core 07"],"url":"https://ainsights.tab.homes/methodology.html","description":"AIndex Mixed Core 07 calculates five board scores from fixed-share Core evidence, weights of 24/24/27/16/9, and capped positive-residual extensions."}</script>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css?v=20260919-fable-radar" />
     <style>
@@ -37,7 +37,7 @@
         <section class="methodology-hero">
           <p class="eyebrow">Methodology · Mixed Core 07</p>
           <h2>AInsights Index Methodology</h2>
-          <p>AIndex Mixed Core 07 uses three boards with two Core items each and two boards with a single Core item. A dual-Core item supplies one half of its board base; a single Core supplies the full base. Independently controlled extensions can add capped positive-residual evidence. The final score uses fixed board weights of 12%, 9%, 22%, 37%, and 20%.</p>
+          <p>AIndex Mixed Core 07 uses three boards with two Core items each and two boards with a single Core item. A dual-Core item supplies one half of its board base; a single Core supplies the full base. Reviewed Extra Tests can add capped positive-residual evidence. The final score uses fixed board weights of 24%, 24%, 27%, 16%, and 9%.</p>
         </section>
 
         <section class="methodology-grid">
@@ -54,7 +54,7 @@
 
           <article class="methodology-card methodology-card-wide">
             <h3>Capability Boards</h3>
-            <p>The selected weights remain fixed after data refreshes. All eight Core tests belong to distinct benchmark families; no named-model correction or daily preference fitting changes the calculated order.</p>
+            <p>The published weights remain fixed between data refreshes. All eight Core tests belong to distinct benchmark families.</p>
             <div class="methodology-table-wrap">
               <table class="methodology-weight-table methodology-matrix-table">
                 <thead>
@@ -68,83 +68,92 @@
                 <tbody>
                   <tr>
                     <td>Coding</td>
-                    <td>12%</td>
+                    <td>24%</td>
                     <td>Terminal-Bench v4.0 + SciCode</td>
                     <td><code>coding_score</code></td>
                   </tr>
                   <tr>
                     <td>Agentic/tool work</td>
-                    <td>9%</td>
+                    <td>24%</td>
                     <td>AutomationBench-AA + τ³-Banking</td>
                     <td><code>agentic-tool-work_score</code></td>
                   </tr>
                   <tr>
                     <td>Hard reasoning</td>
-                    <td>22%</td>
+                    <td>27%</td>
                     <td>CritPt (single Core)</td>
                     <td><code>hard-reasoning_score</code></td>
                   </tr>
                   <tr>
                     <td>Knowledge/science</td>
-                    <td>37%</td>
+                    <td>16%</td>
                     <td>AA-Omniscience Accuracy + GDP.pdf</td>
                     <td><code>knowledge-science_score</code></td>
                   </tr>
                   <tr>
                     <td>Instruction/context</td>
-                    <td>20%</td>
+                    <td>9%</td>
                     <td>AA-LCR v1.1 (single Core)</td>
                     <td><code>instruction-context_score</code></td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p>Each canonical family occupies only one Core slot across the entire scheme and is removed from the entire extension pool. Terminal-Bench uses v4.0 only: v2.1 and Hard variants supply no fallback or extension. AIME, LiveCodeBench, GPQA, HMMT, MATH-500, and GSM8K are excluded from Core; otherwise permitted extensions retain their existing rules.</p>
+            <p>The Core slots cover five capabilities with distinct task families and direct bounded scores. Each canonical family occupies one Core slot across the scheme and cannot also supply Extra Test evidence. The Terminal-Bench Core slot uses the v4.0 release and its matching score protocol.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>Core Score</h3>
             <p>Each configured Core item retains a fixed share of its board base:</p>
             <p><code>single_core_score = adjusted_score; dual_core_score = adjusted_1 / 2 + adjusted_2 / 2</code></p>
-            <p>The selected scheme uses direct bounded 0–100 Core values. A missing Core share contributes zero points but remains missing evidence; an observed numerical zero is valid evidence. The available half of a dual-Core board is never increased to compensate for a missing half. Unconfigured second slots do not count as missing.</p>
+            <p>Core uses direct bounded 0–100 values. A missing Core share contributes zero points but remains missing evidence; an observed numerical zero is valid evidence. The available half of a dual-Core board is never increased to compensate for a missing half. Unconfigured second slots do not count as missing.</p>
             <p>A model is not scored when any board has no observed Core, or when at least four configured Core items are missing. A single-Core board therefore requires its one observation; a dual-Core board requires at least one. Core data is never borrowed from a sibling model or another effort configuration.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
-            <h3>Independent Extension Evidence</h3>
-            <p>Extension items must be controlled by an organization that is not a ranked model vendor. Vendor-controlled benchmark families, including GDPval and BrowseComp, are excluded; ITBench remains excluded because its controller is also a ranked model vendor. Equivalent representations of one canonical family cannot create duplicate bonus opportunities inside a board.</p>
-            <p>The extension pool includes independently controlled public benchmarks with sufficient observed coverage. Some reported results still use mixed, vendor-reported, agent-scaffold, prompt, or version-sensitive protocols. Their benchmark ownership is independent, but that does not make every result protocol identical. Sources, operators, versions, and coverage remain visible so this limitation can be audited.</p>
+            <h3>Selecting Extra Tests</h3>
+            <p>Extra Tests target demanding tasks that still distinguish frontier models. We review the score distribution for ceiling concentration, the challenge of the tasks, and whether the metric measures a capability that the board is intended to represent.</p>
+            <p>The benchmark controller must be independent of ranked model vendors. A public owner or evaluator source must document the task set, scoring rule, and result protocol. We pin the benchmark release, metric, tool setting, and agent harness where applicable, and disclose material protocol limits with the result. Different versions or scoring protocols receive separate identities. Equivalent representations of one canonical family cannot create duplicate bonus opportunities inside a board.</p>
+            <p>A test needs at least three exact-configuration default representatives with complete Core evidence on its board to fit a trend. Smaller cohorts can qualify under this rule; their observation counts and fitted parameters remain visible so readers can judge how sensitive the estimate is to new results.</p>
             <p>Extension evidence is only-add. Missing extension results remain absent, contribute no residual, receive no imputed zero or neutral score, and never reduce Core. A board receives no extension bonus while any of its configured Core items are missing; broader extensions cannot repair a missing Core share.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide" id="extension-registry">
             <h3>Which Extra Tests Can Add Points?</h3>
-            <p>The current registry contains <strong>11 distinct extension metrics across 12 board slots</strong>. SWE-Bench Pro is used on two boards, with a separate board trend; it is not duplicated within either board. These are permitted bonus inputs, not a list of every benchmark collected by the site. Each test link opens its scores and source/protocol details.</p>
+            <p>The registry lists each eligible Extra Test with its board, release, score metric, and result protocol. Open a test to inspect its scores and source details.</p>
             <div class="methodology-table-wrap">
               <table class="methodology-weight-table methodology-matrix-table">
                 <thead><tr><th>Board</th><th>Extension test</th><th>Result source and scope</th></tr></thead>
                 <tbody>
-                  <tr data-extension-key="benchmark:swe-bench-pro" data-boards="coding agentic-tool-work"><td>Coding; agentic/tool work</td><td><a href="benchmark.html?id=benchmark%3Aswe-bench-pro">SWE-Bench Pro</a></td><td>Official release/system-card results; harness and configuration must be checked.</td></tr>
-                  <tr data-extension-key="benchmark:livecodebench" data-boards="coding"><td>Coding</td><td><a href="benchmark.html?id=benchmark%3Alivecodebench">LiveCodeBench</a></td><td>Official reported results; preserve release window, pass@k and sampling.</td></tr>
-                  <tr data-extension-key="τ²-Bench Telecom" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=%CF%84%C2%B2-Bench+Telecom">τ²-Bench Telecom</a></td><td>AA evaluation; distinct from the τ³-Banking Core test.</td></tr>
-                  <tr data-extension-key="APEX-Agents-AA" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=APEX-Agents-AA">APEX-Agents-AA</a></td><td>AA evaluation of Mercor environments.</td></tr>
-                  <tr data-extension-key="benchmark:hle-tools" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=benchmark%3Ahle-tools">HLE w/ tools</a></td><td>Official reported tool runs; not the no-tools HLE score.</td></tr>
-                  <tr data-extension-key="benchmark:mcp-atlas" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=benchmark%3Amcp-atlas">MCP-Atlas Public</a></td><td>Official reported public-split runs; tool/wrapper protocols vary.</td></tr>
-                  <tr data-extension-key="benchmark:osworld-verified" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=benchmark%3Aosworld-verified">OSWorld-Verified</a></td><td>Official computer-use results; OS image, task revision and wrapper matter.</td></tr>
-                  <tr data-extension-key="AIME 2025" data-boards="hard-reasoning"><td>Hard reasoning</td><td><a href="benchmark.html?id=AIME+2025">AIME 2025</a></td><td>AA evaluation of the 2025 question set.</td></tr>
-                  <tr data-extension-key="MMMU-Pro" data-boards="knowledge-science"><td>Knowledge/science</td><td><a href="benchmark.html?id=MMMU-Pro">MMMU-Pro</a></td><td>AA evaluation; vendor MMMU variants are separate observations.</td></tr>
-                  <tr data-extension-key="benchmark:mmlu-pro" data-boards="knowledge-science"><td>Knowledge/science</td><td><a href="benchmark.html?id=benchmark%3Ammlu-pro">MMLU-Pro</a></td><td>Official reported results; prompts, sampling and grading vary.</td></tr>
-                  <tr data-extension-key="benchmark:charxiv-no-tools" data-boards="instruction-context"><td>Instruction/context</td><td><a href="benchmark.html?id=benchmark%3Acharxiv-no-tools">CharXiv Reasoning (no tools)</a></td><td>Official reported no-tools runs; tool-enabled variants cannot substitute.</td></tr>
+                  <tr data-extension-key="benchmark:frontiercode-v1-1-main-cognition" data-boards="coding"><td>Coding</td><td><a href="benchmark.html?id=benchmark%3Afrontiercode-v1-1-main-cognition">FrontierCode v1.1 Main</a></td><td>Cognition official Main leaderboard; model-specific agent harnesses are disclosed. Cognition also builds agents.</td></tr>
+                  <tr data-extension-key="benchmark:deepswe-v1-1-owner-mini-swe-agent" data-boards="coding"><td>Coding</td><td><a href="benchmark.html?id=benchmark%3Adeepswe-v1-1-owner-mini-swe-agent">DeepSWE v1.1 owner run</a></td><td>DataCurve 113-task set, mini-swe-agent, four runs per task; scored-attempt pass@1.</td></tr>
+                  <tr data-extension-key="benchmark:swe-marathon-v1-1-owner" data-boards="coding"><td>Coding</td><td><a href="benchmark.html?id=benchmark%3Aswe-marathon-v1-1-owner">SWE-Marathon v1.1 owner run</a></td><td>Owner-run set of 20 long software tasks with eight binary trials each; agent harnesses vary by model.</td></tr>
+                  <tr data-extension-key="APEX-Agents-AA" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=APEX-Agents-AA">APEX-Agents-AA</a></td><td>AA runs 452 Mercor tasks with one Stirrup agent, Archipelago MCP environment, three repeats and strict pass@1. Task and agent commits are not publicly pinned.</td></tr>
+                  <tr data-extension-key="benchmark:aa-analyst-agent-pass5" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=benchmark%3Aaa-analyst-agent-pass5">AA-AnalystAgent pass^5</a></td><td>AA private 80-task analyst evaluation; all five independent attempts must pass.</td></tr>
+                  <tr data-extension-key="benchmark:terminal-bench-science-aa" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=benchmark%3Aterminal-bench-science-aa">Terminal-Bench-Science v0.1.0</a></td><td>AA mini-swe-agent, mean pass@1 over three runs on 70 scientific tasks.</td></tr>
+                  <tr data-extension-key="benchmark:aa-briefcase-rubric-pass-rate" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=benchmark%3Aaa-briefcase-rubric-pass-rate">AA-Briefcase v1.1 Rubric Pass Rate</a></td><td>AA private 91-task document and artifact evaluation; native rubric pass fraction.</td></tr>
+                  <tr data-extension-key="benchmark:harvey-lab-aa-all-pass-rate" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=benchmark%3Aharvey-lab-aa-all-pass-rate">Harvey LAB-AA All-pass Rate</a></td><td>AA private 120-task legal evaluation; all rubric criteria must pass. A single LLM judge grades the rubric.</td></tr>
+                  <tr data-extension-key="benchmark:toolathlon-verified-owner" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=benchmark%3Atoolathlon-verified-owner">Toolathlon-Verified official Pass@1</a></td><td>HKUST owner leaderboard with the Default agent and Pass@1 scoring.</td></tr>
+                  <tr data-extension-key="benchmark:osworld-v2-v2026-06-24-standard-500" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=benchmark%3Aosworld-v2-v2026-06-24-standard-500">OSWorld 2.0 v2026.06.24</a></td><td>Official full 108-task release, standard tools, 500 steps, binary completion.</td></tr>
+                  <tr data-extension-key="benchmark:arc-agi-3-standard" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=benchmark%3Aarc-agi-3-standard">ARC-AGI-3 Standard</a></td><td>ARC Prize evaluation with the Standard harness.</td></tr>
+                  <tr data-extension-key="benchmark:agents-last-exam-v1-overall-pass-rate" data-boards="agentic-tool-work"><td>Agentic/tool work</td><td><a href="benchmark.html?id=benchmark%3Aagents-last-exam-v1-overall-pass-rate">Agents' Last Exam V1 Overall pass rate</a></td><td>Berkeley RDI owner-run pass rate; model-specific agent harnesses are disclosed.</td></tr>
+                  <tr data-extension-key="benchmark:frontiermath-tier-4-v2-epoch" data-boards="hard-reasoning"><td>Hard reasoning</td><td><a href="benchmark.html?id=benchmark%3Afrontiermath-tier-4-v2-epoch">FrontierMath Tier 4 v2</a></td><td>Epoch-run official Tier 4 v2 export. OpenAI commissioned the benchmark and had problem access.</td></tr>
+                  <tr data-extension-key="benchmark:epoch-chess-puzzles-v1-1-6" data-boards="hard-reasoning"><td>Hard reasoning</td><td><a href="benchmark.html?id=benchmark%3Aepoch-chess-puzzles-v1-1-6">Chess Puzzles v1.1.6</a></td><td>Epoch runs on 100 unpublished generated positions, given as FEN text with one best next move.</td></tr>
+                  <tr data-extension-key="benchmark:epoch-mystery-game-puzzles-v1-0-4" data-boards="hard-reasoning"><td>Hard reasoning</td><td><a href="benchmark.html?id=benchmark%3Aepoch-mystery-game-puzzles-v1-0-4">Mystery Game Puzzles v1.0.4</a></td><td>Epoch runs on 100 hidden-identity games, text state and minimal agent scaffold; one best next move.</td></tr>
+                  <tr data-extension-key="benchmark:epoch-ebr-bench-card-ban-v4" data-boards="hard-reasoning"><td>Hard reasoning</td><td><a href="benchmark.html?id=benchmark%3Aepoch-ebr-bench-card-ban-v4">EBR-bench v4 Card-ban</a></td><td>Epoch single-agent runs with the v4 Card-ban scoring rule.</td></tr>
+                  <tr data-extension-key="Humanity's Last Exam" data-boards="hard-reasoning"><td>Hard reasoning</td><td><a href="benchmark.html?id=Humanity%27s+Last+Exam">Humanity's Last Exam</a></td><td>AA common-protocol evaluation of the no-tools test.</td></tr>
+                  <tr data-extension-key="benchmark:mlcr-aa-overall" data-boards="knowledge-science"><td>Knowledge/science</td><td><a href="benchmark.html?id=benchmark%3Amlcr-aa-overall">MLCR-AA Overall</a></td><td>AA private medical long-context tasks; Overall score combines accuracy, completeness, and conciseness.</td></tr>
+                  <tr data-extension-key="IFBench" data-boards="instruction-context"><td>Instruction/context</td><td><a href="benchmark.html?id=IFBench">IFBench (AA)</a></td><td>AA evaluates 294 questions over five repeats with the official loose mode; its Score is prompt-level accuracy.</td></tr>
                 </tbody>
               </table>
             </div>
-            <p>All Core families, including Terminal-Bench, are removed from the extension pool. GDP.pdf already contributes to Core. New benchmark versions or additional official results do not enter this registry automatically. An allowed result adds points only with exact-configuration evidence, complete Core on its board, and a positive residual above the fitted expectation. Missing or below-expectation extensions add nothing.</p>
+            <p>Core task families cannot appear in the extension pool. Terminal-Bench-Science uses a distinct scientific task set, although its shared ecosystem and agent may correlate with Terminal-Bench v4 Core. New benchmark releases and scoring protocols undergo review before they can enter the registry. An Extra Test adds points only when an exact-configuration result has complete Core on its board and a positive residual above the fitted expectation.</p>
           </article>
 
-          <article class="methodology-card methodology-card-wide" id="grok-4-7-example">
-            <h3>Example: Why Grok 4.7 Has No Extension Bonus</h3>
-            <p>In the September 22, 2026 snapshot, <a href="model.html?id=grok-4-7">Grok 4.7 (xhigh)</a> has seven official release observations but <strong>0 of the 11 permitted extension metrics</strong>. Its collected CursorBench 4.0, EEBench, AA Briefcase v1.1 Elo, official Terminal-Bench 4.0, Legal Agent Benchmark, HealthBench Professional and GDPval Elo are outside the extension registry. DeepSWE 71% belongs to <em>high</em>, not xhigh, and is also outside this registry.</p>
-            <p>Its five board scores are 41.5825, 32.7792, 17.7143, 33.7250 and 76.6667. Their weighted contributions are 4.989900 + 2.950128 + 3.897146 + 12.478250 + 15.333340 = <strong>39.648764 AIndex</strong>, with zero extension bonus. CritPt and knowledge/science together carry 59% of the weight; τ³-Banking is still missing, so the agentic board retains only its observed half and cannot earn a bonus. More collected tests do not automatically raise this score. This is a fixed-policy result, not a general claim that the model is weak; the linked model page shows the latest snapshot.</p>
+          <article class="methodology-card methodology-card-wide">
+            <h3>Matching a Result to a Model</h3>
+            <p>Each result is matched to its reported model checkpoint and effort configuration, as well as the test release, task set, scoring metric, tool setting, and agent harness. A result reported for one effort tier supplies evidence for that tier only. We retain the original source and protocol details so readers can trace each match.</p>
+            <p>After matching, the model must have every configured Core item on the Extra Test's board. The fitted trend gives the expected test score at that Core level. Only the amount by which the observed result exceeds that expectation enters the board bonus.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
@@ -152,7 +161,7 @@
             <p>For each extension item <code>j</code>, the current eligible deduplicated cohort supplies observed pairs from models with every Core item complete on the board: board Core score <code>c_i</code> and extension result <code>y_ij</code>. Mixed Core 07 fits:</p>
             <p><code>predicted_ij = clip(alpha_j + max(0, beta_j) × c_i, 0, 100)</code></p>
             <p><code>positive_residual_ij = max(y_ij - predicted_ij, 0)</code></p>
-            <p>The OLS intercept and non-negative slope are learned anonymously from the observed cohort with complete Core on the relevant board. They are benchmark-level calibration parameters, not corrections for a named model. An extension result at or below its cohort expectation contributes zero rather than a penalty.</p>
+            <p>The OLS intercept and non-negative slope are learned anonymously from the observed cohort with complete Core on the relevant board. A trend requires at least three observed representatives. Small cohorts make the fitted trend more sensitive to new results; counts and parameters are published for every test. They are benchmark-level calibration parameters, not corrections for a named model. An extension result at or below its cohort expectation contributes zero rather than a penalty.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
@@ -163,15 +172,15 @@
             <p>One symmetric cap is recalculated from all pooled positive extension residuals in the current default cohort:</p>
             <p><code>cap = mean(pooled_positive_residuals) + sqrt(2) × population_SD(pooled_positive_residuals)</code></p>
             <p><code>bonus = min(cap, raw_bonus)</code></p>
-            <p>The cap is a data-derived cohort parameter and can change after a data refresh. It is not a hard-coded score for a provider or model. Capping limits repeated corroboration, but models with broader observed extension coverage still have more opportunities to produce a positive residual; extension counts are therefore published alongside scores.</p>
+            <p>The cap is calculated from the observed cohort and can change after a data refresh. Capping limits repeated corroboration, but models with broader observed extension coverage still have more opportunities to produce a positive residual; extension counts are therefore published alongside scores.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
             <h3>Board and Final Score</h3>
             <p><code>board_score_b = min(100, core_score_b + bonus_b)</code></p>
             <p><code>board_points_b = board_score_b × board_weight_b / 100</code></p>
-            <p><code>AIndex = 0.12 × coding + 0.09 × agentic + 0.22 × reasoning + 0.37 × knowledge + 0.20 × context</code></p>
-            <p>The displayed score, bar length, and rank all use this same quantity. Ranking uses the unrounded AIndex value; stable model ID is used only for an exact numerical tie. No model name, provider, family order, reserved position, mean rank, or post-hoc score calibration can move a row ahead of a higher calculated score.</p>
+            <p><code>AIndex = 0.24 × coding + 0.24 × agentic + 0.27 × reasoning + 0.16 × knowledge + 0.09 × context</code></p>
+            <p>The displayed score, bar length, and rank all use this same quantity. Ranking follows the unrounded AIndex value; stable model ID resolves an exact numerical tie.</p>
           </article>
 
           <article class="methodology-card methodology-card-wide">
@@ -182,7 +191,7 @@
 
           <article class="methodology-card methodology-card-wide">
             <h3>Radar and Evidence Coverage</h3>
-            <p>The first five radar axes read the five Mixed Core 07 board scores directly. The sixth shows the selected visual benchmark, with AA MMMU-Pro as the default. Other verified visual tests remain separate by version and protocol; missing results are not plotted as zero. Changing this visual selection does not change AIndex, although AA MMMU-Pro separately belongs to the knowledge/science extension registry above.</p>
+            <p>The first five radar axes read the five Mixed Core 07 board scores directly. The sixth shows the selected visual benchmark, with AA MMMU-Pro as the default. Other verified visual tests remain separate by version and protocol; missing results are not plotted as zero. Changing this visual selection does not change AIndex.</p>
             <p>Core and extension coverage are disclosed alongside the board scores. Missing Core shares contribute no points and can prevent ranking or board extensions. Missing extension cells remain absent.</p>
           </article>
 
@@ -201,7 +210,7 @@
               <li>On complete-Core boards only, fit non-negative-slope OLS trends and retain observed positive extension residuals.</li>
               <li>Pool positive residuals to derive the dynamic <code>mean + sqrt(2) × SD</code> cap.</li>
               <li>Apply the monotone log-sum-exp bonus, cap it, and add it to the matching Core without imputing missing extension results.</li>
-              <li>Apply fixed board weights 12/9/22/37/20, sort the unrounded AIndex score descending, and publish Core, bonus, coverage, and sensitivity diagnostics.</li>
+              <li>Apply fixed board weights 24/24/27/16/9, sort the unrounded AIndex score descending, and publish Core, bonus, coverage, and sensitivity diagnostics.</li>
             </ol>
           </article>
         </section>

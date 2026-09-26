@@ -196,6 +196,8 @@ def geometric_core_score(raw: np.ndarray) -> np.ndarray:
 def _fit_positive_residuals(
     core: np.ndarray,
     extensions: np.ndarray,
+    *,
+    minimum_observed: int = 5,
 ) -> tuple[np.ndarray, list[dict[str, Any]]]:
     """Fit anonymous non-negative-slope OLS trends and positive residuals."""
 
@@ -214,7 +216,7 @@ def _fit_positive_residuals(
         y = extension_values[:, column_index]
         observed = np.isfinite(y)
         observed_count = int(np.sum(observed))
-        if observed_count < 5:
+        if observed_count < minimum_observed:
             trends.append(
                 {
                     "enabled": False,

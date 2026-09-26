@@ -1,0 +1,62 @@
+Model,Effort,Score,Harness
+Opus 5,medium,53.4,claude-code
+Opus 5,max,48.0,claude-code
+Opus 5,high,48.0,claude-code
+Opus 5,xhigh,43.6,claude-code
+Opus 5,low,41.9,claude-code
+Opus 4.8,max,46.5,claude-code
+Opus 4.7,max,38.5,claude-code
+Sonnet 5,xhigh,42.7,claude-code
+Sonnet 5,max,42.4,claude-code
+Sonnet 5,high,39.4,claude-code
+Sonnet 5,medium,35.2,claude-code
+Sonnet 5,low,28.7,claude-code
+Sonnet 4.6,max,24.3,claude-code
+GPT-6 Astra,max,53.3,codex
+GPT-6 Astra,high,50.9,codex
+GPT-6 Astra,xhigh,50.6,codex
+GPT-6 Astra,medium,48.8,codex
+GPT-6 Astra,low,45.3,codex
+GPT-6 Sol,max,49.3,codex
+GPT-6 Sol,xhigh,48.4,codex
+GPT-6 Sol,high,47.7,codex
+GPT-6 Sol,medium,45.9,codex
+GPT-6 Sol,low,37.3,codex
+GPT-6 Luna,max,42.4,codex
+GPT-6 Luna,high,37.3,codex
+GPT-6 Luna,xhigh,37.1,codex
+GPT-6 Luna,medium,35.5,codex
+GPT-6 Luna,low,25.7,codex
+GPT-5.6 Sol,max,47.5,codex
+GPT-5.6 Sol,xhigh,46.8,codex
+GPT-5.6 Sol,high,45.1,codex
+GPT-5.6 Sol,medium,39.9,codex
+GPT-5.6 Sol,low,35.4,codex
+GPT-5.6 Terra,max,41.3,codex
+GPT-5.6 Terra,xhigh,38.8,codex
+GPT-5.6 Terra,high,36.9,codex
+GPT-5.6 Terra,medium,33.9,codex
+GPT-5.6 Terra,low,24.1,codex
+GPT-5.6 Luna,max,39.8,codex
+GPT-5.6 Luna,xhigh,38.9,codex
+GPT-5.6 Luna,high,35.9,codex
+GPT-5.6 Luna,medium,25.7,codex
+GPT-5.6 Luna,low,15.4,codex
+GPT-5.5,xhigh,43.0,codex
+GPT-5.5,high,40.6,codex
+GPT-5.5,medium,36.6,codex
+GPT-5.5,low,30.6,codex
+GPT-5.4-mini,xhigh,27.0,codex
+GPT-5.4-mini,medium,20.8,codex
+Grok 4.6,high,48.0,grok-build
+Grok 4.6,medium,46.1,grok-build
+Grok 4.6,low,40.1,grok-build
+Grok 4.7,high,47.6,grok-build
+Grok 4.7,xhigh,45.6,grok-build
+Grok 4.5,high,42.4,grok-build
+Gemini 3.7 Flash,medium,43.6,chisel
+Gemini 3.7 Flash,high,42.2,chisel
+Gemini 3.7 Flash,low,36.9,chisel
+Gemini 3.8 Flash,medium,41.2,chisel
+Gemini 3.8 Flash,high,38.0,chisel
+GLM 5.3,max,40.1,chisel

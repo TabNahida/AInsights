@@ -1791,7 +1791,7 @@ def _run_legacy_audits_from_payload(
             "unrounded score descending, stable IDs for exact ties"
         ),
         "weight_policy": (
-            "Mixed Core 07 uses fixed board weights 12/9/22/37/20, single Core 100% "
+            "Mixed Core 07 uses fixed board weights 24/24/27/16/9, single Core 100% "
             "or dual Core 50% each, and capped positive residual extensions on complete boards"
         ),
         "coverage_policy": (

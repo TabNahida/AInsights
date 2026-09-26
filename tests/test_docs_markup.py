@@ -561,7 +561,8 @@ class DocsMarkupTests(unittest.TestCase):
             "Default Ranking at a Glance",
             "Capability Boards",
             "Core Score",
-            "Independent Extension Evidence",
+            "Selecting Extra Tests",
+            "Matching a Result to a Model",
             "Anonymous Positive Residuals",
             "Monotone Log-Sum-Exp Bonus and Dynamic Cap",
             "Board and Final Score",
@@ -580,8 +581,8 @@ class DocsMarkupTests(unittest.TestCase):
         self.assertIn("Sparse Rasch", html)
         self.assertIn("Equal-board 2PL", html)
         self.assertIn("Dense Rasch", html)
-        for weight in (12, 9, 22, 37, 20):
-            self.assertEqual(html.count(f"<td>{weight}%</td>"), 1)
+        for weight, count in ((24, 2), (27, 1), (16, 1), (9, 1)):
+            self.assertEqual(html.count(f"<td>{weight}%</td>"), count)
         self.assertIn("A model is not scored when any board has no observed Core", html)
         self.assertIn("at least four configured Core items are missing", html)
         self.assertIn("Unconfigured second slots do not count as missing", html)
@@ -591,10 +592,12 @@ class DocsMarkupTests(unittest.TestCase):
             self.assertIn(core, html)
         self.assertIn("A board receives no extension bonus while any of its configured Core items are missing", html)
         self.assertIn("Missing extension results remain absent", html)
-        self.assertIn("No model name, provider, family order, reserved position", html)
+        self.assertIn("Extra Tests target demanding tasks that still distinguish frontier models", html)
+        self.assertIn("The benchmark controller must be independent of ranked model vendors", html)
         self.assertIn("unrounded AIndex value", html)
         self.assertNotIn("Claude Fable 5", html)
         self.assertNotIn("GPT-5.6 Sol", html)
+        self.assertNotIn("AIME, LiveCodeBench", html)
         for runtime_term in (
             "Core base score",
             "Anonymous trend",

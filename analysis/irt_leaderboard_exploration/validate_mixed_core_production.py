@@ -34,7 +34,7 @@ CORE = {
     "knowledge-science": ("AA-Omniscience Accuracy", "GDP.pdf"),
     "instruction-context": ("AA-LCR v1.1",),
 }
-WEIGHTS = dict(zip(CORE, (12, 9, 22, 37, 20), strict=True))
+WEIGHTS = dict(zip(CORE, (24, 24, 27, 16, 9), strict=True))
 SUMMARY_FILENAME = "aindex_mixed_core_validation_summary.json"
 FILES = {"full_rankings": "full_rankings_aindex_mixed_core.csv",
          "top50": "top50_aindex_mixed_core.csv",
@@ -43,12 +43,34 @@ FILES = {"full_rankings": "full_rankings_aindex_mixed_core.csv",
 
 
 def family(key):
+    if key == "benchmark:terminal-bench-science-aa":
+        return "terminal-bench-science"
     if key.startswith("Terminal-Bench") or key.startswith("benchmark:terminal-bench"):
         return "terminal-bench"
     if key.startswith("AA-LCR"):
         return "aa-lcr"
     if key.startswith("AA-Omniscience"):
         return "omniscience"
+    reviewed = {
+        "IFBench": "ifbench",
+        "benchmark:aa-analyst-agent-pass5": "aa-analyst-agent",
+        "benchmark:mlcr-aa-overall": "mlcr-aa",
+        "benchmark:aa-briefcase-rubric-pass-rate": "aa-briefcase",
+        "benchmark:harvey-lab-aa-all-pass-rate": "harvey-lab",
+        "benchmark:toolathlon-verified-owner": "toolathlon-verified",
+        "benchmark:osworld-v2-v2026-06-24-standard-500": "osworld-v2",
+        "benchmark:frontiercode-v1-1-main-cognition": "frontiercode-v1-1-main",
+        "benchmark:deepswe-v1-1-owner-mini-swe-agent": "deepswe-v1-1",
+        "benchmark:swe-marathon-v1-1-owner": "swe-marathon-v1-1",
+        "benchmark:frontiermath-tier-4-v2-epoch": "frontiermath-tier-4-v2",
+        "benchmark:epoch-chess-puzzles-v1-1-6": "chess-puzzles",
+        "benchmark:epoch-mystery-game-puzzles-v1-0-4": "mystery-game-puzzles",
+        "benchmark:epoch-ebr-bench-card-ban-v4": "ebr-bench",
+        "benchmark:arc-agi-3-standard": "arc-agi-3",
+        "benchmark:agents-last-exam-v1-overall-pass-rate": "agents-last-exam-v1",
+    }
+    if key in reviewed:
+        return reviewed[key]
     for registry in (independent.CORE_POLICIES, independent.EXTENSION_POLICIES):
         for policies in registry.values():
             for policy in policies:
@@ -58,10 +80,64 @@ def family(key):
 
 
 CORE_FAMILIES = {family(key) for keys in CORE.values() for key in keys}
-EXTENSIONS = {board: tuple(p.score_key for p in policies
-                          if family(p.score_key) not in CORE_FAMILIES
-                          and family(p.score_key) != "terminal-bench")
-              for board, policies in independent.EXTENSION_POLICIES.items()}
+# Repeat the reviewed exclusions independently of production code.
+EXCLUDED_EXTENSION_KEYS = frozenset({
+    "benchmark:swe-bench-pro", "benchmark:livecodebench", "τ²-Bench Telecom", "benchmark:osworld-verified",
+    "MMMU-Pro", "benchmark:mmlu-pro", "benchmark:charxiv-no-tools",
+    "benchmark:mcp-atlas",
+})
+HLE_POLICY = next(p for p in independent.CORE_POLICIES["hard-reasoning"]
+                  if p.score_key == "Humanity's Last Exam")
+if (HLE_POLICY.controller_is_ranked_model_vendor is not False
+    or HLE_POLICY.result_protocol != "AA common protocol"
+    or HLE_POLICY.score_provenance != "direct_observation"):
+    raise AssertionError("HLE Extra must retain independent AA common-protocol evidence")
+
+
+def _extension_allowed(policy):
+    key = policy.score_key
+    canonical = family(key)
+    return (policy.publication_eligible
+            and policy.controller_is_ranked_model_vendor is False
+            and canonical not in CORE_FAMILIES
+            and canonical != "terminal-bench"
+            and "aime" not in canonical.casefold()
+            and "aime" not in key.casefold()
+            and key not in EXCLUDED_EXTENSION_KEYS)
+
+
+REVIEWED_EXTENSIONS = {
+    "coding": (
+        "benchmark:frontiercode-v1-1-main-cognition",
+        "benchmark:deepswe-v1-1-owner-mini-swe-agent",
+        "benchmark:swe-marathon-v1-1-owner",
+    ),
+    "agentic-tool-work": (
+        "APEX-Agents-AA",
+        "benchmark:aa-analyst-agent-pass5",
+        "benchmark:terminal-bench-science-aa",
+        "benchmark:aa-briefcase-rubric-pass-rate",
+        "benchmark:harvey-lab-aa-all-pass-rate",
+        "benchmark:toolathlon-verified-owner",
+        "benchmark:osworld-v2-v2026-06-24-standard-500",
+        "benchmark:arc-agi-3-standard",
+        "benchmark:agents-last-exam-v1-overall-pass-rate",
+    ),
+    "hard-reasoning": (
+        "benchmark:frontiermath-tier-4-v2-epoch",
+        "benchmark:epoch-chess-puzzles-v1-1-6",
+        "benchmark:epoch-mystery-game-puzzles-v1-0-4",
+        "benchmark:epoch-ebr-bench-card-ban-v4",
+    ),
+    "knowledge-science": ("benchmark:mlcr-aa-overall",),
+    "instruction-context": ("IFBench",),
+}
+EXTENSIONS = {
+    board: tuple(p.score_key for p in policies if _extension_allowed(p))
+    + REVIEWED_EXTENSIONS[board]
+    + (("Humanity's Last Exam",) if board == "hard-reasoning" else ())
+    for board, policies in independent.EXTENSION_POLICIES.items()
+}
 
 
 def _read_csv(path):
@@ -107,7 +183,9 @@ def _calibrate(models):
         complete = np.isfinite(raw).all(axis=1)
         complete_counts[board] = int(complete.sum())
         ext = _matrix(models, EXTENSIONS[board])
-        residuals, trends[board] = independent.fit_trends(_base(raw)[complete], ext[complete])
+        residuals, trends[board] = independent.fit_trends(
+            _base(raw)[complete], ext[complete], minimum_observed=3,
+        )
         positives.extend(float(v) for v in residuals.flat if np.isfinite(v) and v > 0)
     mean = float(np.mean(positives)) if positives else 0.0
     sd = float(np.std(positives, ddof=0)) if positives else 0.0

@@ -264,6 +264,7 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
             "slug": "model-0",
             "shortName": "Renamed Model",
             "isReasoning": False,
+            "creator": {"name": "Example", "logo": "/img/logos/example.svg"},
             "intelligenceIndex": 42,
             "price1mInputTokens": None,
             "gdpvalNormalized": 0.0,
@@ -276,6 +277,7 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
                 "slug": "model-0",
                 "model": "Old Model",
                 "model_key": "Old Model",
+                "creator_logo_small_url": "https://artificialanalysis.ai/img/logos/example_small.svg",
                 "model_url": "/models/model-0",
                 "context_window_tokens": "128000",
                 "Input Price Per 1M Tokens (USD)": "1.25",
@@ -292,6 +294,10 @@ class ArtificialAnalysisScraperTests(unittest.TestCase):
         merged = merge_manifest_rows_with_prior(candidate, [source], [prior])[0]
 
         self.assertEqual(merged["model"], "Renamed Model")
+        self.assertEqual(
+            merged["creator_logo_small_url"],
+            "https://artificialanalysis.ai/img/logos/example_small.svg",
+        )
         self.assertEqual(merged["AA Intelligence Index"], 42.0)
         self.assertEqual(merged["model_url"], "/models/model-0")
         self.assertEqual(merged["context_window_tokens"], "128000")

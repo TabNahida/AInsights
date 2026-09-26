@@ -1,6 +1,8 @@
 import json
+import tempfile
 import unittest
 from http.client import IncompleteRead
+from pathlib import Path
 from unittest.mock import patch
 from uuid import UUID
 
@@ -13,6 +15,8 @@ from benchmarks.collect_benchmark_scores import (
     fetch_official_source_text,
     parse_markdown_source_scores,
     parse_openai_scores,
+    pinned_owner_snapshot_pairs,
+    refresh_pinned_owner_snapshots,
     retain_previous_results_on_blocked_refresh,
 )
 
@@ -67,6 +71,73 @@ class ExternalBenchmarkCollectorTests(unittest.TestCase):
         self.assertEqual(payload["sources"][0]["collectionStatus"], "refreshed")
         self.assertEqual(result["value"], 82.7)
         self.assertIn("gpt-5-5", result["modelAliases"])
+
+    def test_build_payload_keeps_pinned_owner_protocols_separate(self):
+        payload = build_payload({}, "seeded", {}, [])
+        source_ids = [source["id"] for source in payload["sources"]]
+        self.assertEqual(source_ids[0], "openai-gpt-5-5")
+        self.assertEqual(len(source_ids), len(set(source_ids)))
+        expected = {
+            "frontiercode-v1-1-main-cognition": 61,
+            "frontiermath-tier-4-v2-epoch": 40,
+            "arc-agi-3-standard": 34,
+            "agents-last-exam-v1-overall-pass-rate": 46,
+            "toolathlon-verified-owner": 17,
+            "osworld-v2-v2026-06-24-standard-500": 6,
+            "deepswe-v1-1-owner-mini-swe-agent": 51,
+            "epoch-chess-puzzles-v1-1-6": 120,
+            "epoch-mystery-game-puzzles-v1-0-4": 68,
+            "swe-marathon-v1-1-owner": 7,
+            "epoch-ebr-bench-card-ban-v4": 4,
+        }
+        for benchmark_id, count in expected.items():
+            rows = [row for row in payload["results"] if row["benchmarkId"] == benchmark_id]
+            self.assertEqual(len(rows), count)
+            self.assertTrue(all(row.get("variantScoped") for row in rows))
+        self.assertFalse(any(row["benchmarkId"] == "arc-agi-3" for row in payload["results"]))
+
+    def test_pinned_refresh_preserves_unrelated_collected_results(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "scores.json"
+            unrelated = {"benchmarkId": "existing", "model": "Example", "value": 12.0,
+                         "sourceId": "existing-source"}
+            path.write_text(json.dumps({
+                "version": 1, "generatedAt": "old",
+                "benchmarks": [{"id": "existing", "label": "Existing"}],
+                "sources": [{"id": "existing-source", "collectionStatus": "refreshed"}],
+                "results": [unrelated],
+            }), encoding="utf-8")
+            payload = refresh_pinned_owner_snapshots(path)
+            self.assertEqual(payload["results"][0], unrelated)
+            self.assertEqual(payload["sources"][0]["collectionStatus"], "refreshed")
+            pairs = pinned_owner_snapshot_pairs()
+            self.assertEqual(len(payload["benchmarks"]), 1 + len(pairs))
+            self.assertEqual(len(payload["sources"]), 1 + len(pairs))
+            self.assertEqual(len(payload["results"]), 1 + sum(len(rows) for _, rows in pairs))
+
+    @patch("benchmarks.collect_benchmark_scores.pinned_owner_snapshot_pairs")
+    def test_pinned_refresh_replaces_older_source_revision_by_benchmark(self, pairs):
+        new_source = {"id": "arc-owner-new", "collectionStatus": "current"}
+        new_row = {"benchmarkId": "arc-agi-3-standard", "model": "Example",
+                   "value": 13.0, "sourceId": "arc-owner-new"}
+        pairs.return_value = ((new_source, [new_row]),)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "scores.json"
+            unrelated = {"benchmarkId": "other", "model": "Example",
+                         "value": 5.0, "sourceId": "other-source"}
+            path.write_text(json.dumps({
+                "version": 1, "generatedAt": "old",
+                "benchmarks": [{"id": "arc-agi-3-standard"}, {"id": "other"}],
+                "sources": [{"id": "arc-owner-old"}, {"id": "other-source"}],
+                "results": [
+                    {**new_row, "value": 12.0, "sourceId": "arc-owner-old"},
+                    unrelated,
+                ],
+            }), encoding="utf-8")
+            payload = refresh_pinned_owner_snapshots(path)
+            self.assertEqual(payload["results"], [unrelated, new_row])
+            self.assertEqual({row["id"] for row in payload["sources"]},
+                             {"other-source", "arc-owner-new"})
 
     def test_parse_markdown_source_scores_extracts_model_columns(self):
         markdown = """

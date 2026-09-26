@@ -17,18 +17,21 @@ import numpy as np
 
 try:
     from . import aindex_scheme18 as math_helpers
+    from .mixed_core_extension_policy import CURRENT_EXTENSION_POLICIES
     from .evidence_only_ranking_analysis import sanitize_models
 except ImportError:  # Direct script imports.
     import aindex_scheme18 as math_helpers
+    from mixed_core_extension_policy import CURRENT_EXTENSION_POLICIES
     from evidence_only_ranking_analysis import sanitize_models
 
 METHOD_ID = "aindex_mixed_core"
 CANDIDATE_ID = "mixed_core_mc07"
+POLICY_VERSION = "mixed-core-mc07-extra-weights24-2026-09-25"
 CORE_FIT = "fixed_share_arithmetic"
 CAP_RULE = "mean_plus_sqrt2_sd"
 EXTENSION_AGGREGATOR = "logsumexp_residual_t1"
 BOARD_ORDER = math_helpers.BOARD_ORDER
-BOARD_WEIGHTS = dict(zip(BOARD_ORDER, (12, 9, 22, 37, 20), strict=True))
+BOARD_WEIGHTS = dict(zip(BOARD_ORDER, (24, 24, 27, 16, 9), strict=True))
 CORE_ITEMS = {
     "coding": ("Terminal-Bench v4.0", "SciCode"),
     "agentic-tool-work": ("AutomationBench-AA", "τ³-Banking"),
@@ -51,6 +54,9 @@ rank_rows = math_helpers.rank_rows
 
 
 def canonical_family(key: str) -> str:
+    for policy in CURRENT_EXTENSION_POLICIES:
+        if policy.score_key == key:
+            return policy.canonical_family
     if key.startswith("Terminal-Bench") or key.startswith("benchmark:terminal-bench"):
         return "terminal-bench"
     aliases = {
@@ -71,12 +77,49 @@ def canonical_family(key: str) -> str:
 
 
 _CORE_FAMILIES = {canonical_family(key) for keys in CORE_ITEMS.values() for key in keys}
+# SWE-Bench Pro has material task/scoring defects in Epoch's September 2026
+# review; the other listed items fail the current difficulty or protocol audit.
+_EXCLUDED_EXTENSION_KEYS = frozenset({
+    "benchmark:swe-bench-pro", "benchmark:livecodebench", "τ²-Bench Telecom", "benchmark:osworld-verified",
+    "MMMU-Pro", "benchmark:mmlu-pro", "benchmark:charxiv-no-tools",
+    "benchmark:mcp-atlas",
+})
+_HLE_POLICY = next(policy for policy in math_helpers.CORE_POLICIES["hard-reasoning"]
+                   if policy.score_key == "Humanity's Last Exam")
+if (_HLE_POLICY.controller_is_ranked_model_vendor is not False
+    or _HLE_POLICY.result_protocol != "AA common protocol"
+    or _HLE_POLICY.score_provenance != "direct_observation"):
+    raise AssertionError("HLE Extra must retain independent AA common-protocol evidence")
+if any(policy.controller_is_ranked_model_vendor is not False
+       or not policy.publication_eligible
+       or policy.scale != "percent"
+       for policy in CURRENT_EXTENSION_POLICIES):
+    raise AssertionError("reviewed Extra Tests need independent percentage evidence")
+
+
+def _extension_allowed(policy) -> bool:
+    key = policy.score_key
+    family = canonical_family(key)
+    return (policy.publication_eligible
+            and policy.controller_is_ranked_model_vendor is False
+            and family not in _CORE_FAMILIES
+            and family != "terminal-bench"
+            and "aime" not in family.casefold()
+            and "aime" not in key.casefold()
+            and key not in _EXCLUDED_EXTENSION_KEYS)
+
+
 EXTENSION_POLICIES = {
     board: tuple(policy for policy in policies
-                 if canonical_family(policy.score_key) not in _CORE_FAMILIES
-                 and canonical_family(policy.score_key) != "terminal-bench")
+                 + tuple(p for p in CURRENT_EXTENSION_POLICIES if board in p.boards)
+                 + ((_HLE_POLICY,) if board == "hard-reasoning" else ())
+                 if _extension_allowed(policy))
     for board, policies in math_helpers.EXTENSION_POLICIES.items()
 }
+for _board, _policies in EXTENSION_POLICIES.items():
+    _families = [policy.canonical_family for policy in _policies]
+    if len(_families) != len(set(_families)):
+        raise AssertionError(f"duplicate Extra Test family in {_board}")
 EXTENSION_ITEMS = {
     board: tuple(policy.score_key for policy in policies)
     for board, policies in EXTENSION_POLICIES.items()
@@ -161,7 +204,9 @@ def fit_calibration(models: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
         raw = score_matrix(eligible, CORE_ITEMS[board])
         complete = np.isfinite(raw).all(axis=1)
         ext = score_matrix(eligible, EXTENSION_ITEMS[board])
-        residuals, trends = math_helpers._fit_positive_residuals(fixed_share_base(raw)[complete], ext[complete])
+        residuals, trends = math_helpers._fit_positive_residuals(
+            fixed_share_base(raw)[complete], ext[complete], minimum_observed=3,
+        )
         residual_arrays.append(residuals)
         boards[board] = {
             "core_items": [{"item_id": key, "score_key": key, "canonical_family": canonical_family(key)}
@@ -178,7 +223,7 @@ def fit_calibration(models: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
     cap = math_helpers.derive_cap(residual_arrays) if len(positives) else 0.0
     return {
         "method_id": METHOD_ID, "candidate_id": CANDIDATE_ID,
-        "policy_version": "mixed-core-mc07", "core_fit": CORE_FIT,
+        "policy_version": POLICY_VERSION, "core_fit": CORE_FIT,
         "extension_aggregator": EXTENSION_AGGREGATOR, "extension_pool": "independent_audit",
         "cap_rule": CAP_RULE, "bonus_cap_per_board": cap,
         "pooled_positive_residual_count": len(positives),
@@ -190,7 +235,7 @@ def fit_calibration(models: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
         "representative_policy": "variantPriority descending then slug, before eligibility",
         "missing_policy": "fixed shares; exclude any board with no Core evidence or at least four missing Core items",
         "fit_apply_policy": "fit complete boards of fixed representatives once; apply unchanged to exact configurations",
-        "extension_policy": "fit and award only on boards with every configured Core observed; globally exclude Core families and legacy Terminal",
+        "extension_policy": "fit with at least three representative observations and award only on boards with every configured Core observed; require publication eligibility and an independent controller; exclude Core families, legacy Terminal, all AIME, and selected high-scoring tests",
         "boards": boards,
     }
 

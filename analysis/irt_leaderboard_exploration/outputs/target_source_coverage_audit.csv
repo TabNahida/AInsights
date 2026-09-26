@@ -1,5 +1,4 @@
 ﻿model,slug,creator,first_party_direct_rows,first_party_direct_metric_families,first_party_rows_in_common_protocol,first_party_rows_outside_common_protocol,first_party_source_ids
-Agnes 2.5 Pro Alpha,agnes-2-5-pro-alpha,Sapiens AI,11,11,1,10,sapiens-agnes-2-5-pro-alpha-docs
 Celeris-1,celeris-1,Celeris,1,1,1,0,celeris-celeris-1-benchmarks
 Claude Fable 5 (with fallback),claude-fable-5,Anthropic,14,14,7,7,anthropic-claude-fable-5-system-card
 Claude Fable 5.1 (max with fallback),claude-fable-5-1,Anthropic,15,15,5,10,anthropic-claude-fable-5-1-system-card

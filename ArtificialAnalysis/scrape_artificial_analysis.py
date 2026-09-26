@@ -710,12 +710,13 @@ def normalize_manifest_model_row(row: dict[str, Any]) -> dict[str, Any]:
     creator = row.get("creator")
     if isinstance(creator, dict):
         logo = creator.get("logo")
+        logo_small = creator.get("logoSmall")
         normalized["model_creators"] = {
             "name": creator.get("name"),
             "slug": creator.get("slug"),
             "color": creator.get("color"),
             "logo_url": logo,
-            "logo_small_url": logo,
+            "logo_small_url": logo_small or logo,
         }
 
     if "openSourceCategorization" in row:
@@ -801,7 +802,6 @@ def _manifest_explicit_raw_columns(row: dict[str, Any]) -> set[str]:
             "creator_slug",
             "creator_color",
             "creator_logo_url",
-            "creator_logo_small_url",
         },
         "releaseDate": {"release_date"},
         "modelWeightsSourceUrl": {"model_url"},
@@ -827,6 +827,13 @@ def _manifest_explicit_raw_columns(row: dict[str, Any]) -> set[str]:
     for source_key, raw_columns in mapping.items():
         if source_key in row:
             columns.update(raw_columns)
+
+    # The current rich manifest publishes only the full logo. A retained
+    # small-logo URL from the prior snapshot is more precise than duplicating
+    # the full URL; use an explicit small logo when AA supplies one.
+    creator = row.get("creator")
+    if isinstance(creator, dict) and "logoSmall" in creator:
+        columns.add("creator_logo_small_url")
 
     if "intelligenceIndexCost" in row:
         columns.update(

@@ -1,0 +1,771 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-09-25T10:55:00+00:00",
+  "metrics": [
+    {
+      "benchmarkId": "aa-analyst-agent-pass5",
+      "sourceUrl": "https://artificialanalysis.ai/evaluations/aa-analyst-agent",
+      "field": [
+        "analystAgent"
+      ],
+      "pageSha256": "805ec7b652fa0e4c000006bac225efb2fd9d3141618d610f7aaed8b2d2b15aa2",
+      "publicChartRows": 15,
+      "rows": [
+        {
+          "aaSlug": "claude-fable-5-1",
+          "aaName": "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+          "scoreFraction": 0.575,
+          "siteModelKey": "Claude Fable 5.1 (max with fallback) [R]"
+        },
+        {
+          "aaSlug": "gpt-6-astra",
+          "aaName": "GPT-6 Astra (max)",
+          "scoreFraction": 0.5125,
+          "siteModelKey": "GPT-6 Astra (max) [R]"
+        },
+        {
+          "aaSlug": "claude-opus-5",
+          "aaName": "Claude Opus 5 (Adaptive Reasoning, Max Effort)",
+          "scoreFraction": 0.5375,
+          "siteModelKey": "Claude Opus 5 (max) [R]"
+        },
+        {
+          "aaSlug": "claude-fable-5",
+          "aaName": "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)",
+          "scoreFraction": 0.4875,
+          "siteModelKey": "Claude Fable 5 (with fallback) [R]"
+        },
+        {
+          "aaSlug": "gpt-5-6-sol",
+          "aaName": "GPT-5.6 Sol (max)",
+          "scoreFraction": 0.475,
+          "siteModelKey": "GPT-5.6 Sol (max) [R]"
+        },
+        {
+          "aaSlug": "grok-4-6",
+          "aaName": "Grok 4.6 (high)",
+          "scoreFraction": 0.4125,
+          "siteModelKey": "Grok 4.6 (high) [R]"
+        },
+        {
+          "aaSlug": "kimi-k3",
+          "aaName": "Kimi K3 (max)",
+          "scoreFraction": 0.3875,
+          "siteModelKey": "Kimi K3 (max) [R]"
+        },
+        {
+          "aaSlug": "claude-opus-4-8",
+          "aaName": "Claude Opus 4.8 (Adaptive Reasoning, Max Effort)",
+          "scoreFraction": 0.45,
+          "siteModelKey": "Claude Opus 4.8 (max) [R]"
+        },
+        {
+          "aaSlug": "gemini-3-7-flash",
+          "aaName": "Gemini 3.7 Flash (high)",
+          "scoreFraction": 0.6,
+          "siteModelKey": "Gemini 3.7 Flash (high) [R]"
+        },
+        {
+          "aaSlug": "gpt-5-5",
+          "aaName": "GPT-5.5 (xhigh)",
+          "scoreFraction": 0.5,
+          "siteModelKey": "GPT-5.5 (xhigh) [R]"
+        },
+        {
+          "aaSlug": "claude-sonnet-5",
+          "aaName": "Claude Sonnet 5 (Adaptive Reasoning, Max Effort)",
+          "scoreFraction": 0.4625,
+          "siteModelKey": "Claude Sonnet 5 (max) [R]"
+        },
+        {
+          "aaSlug": "minimax-m3",
+          "aaName": "MiniMax-M3",
+          "scoreFraction": 0.1,
+          "siteModelKey": "MiniMax-M3 [R]"
+        },
+        {
+          "aaSlug": "inkling",
+          "aaName": "Inkling (xhigh)",
+          "scoreFraction": 0.2375,
+          "siteModelKey": "Inkling [R]"
+        },
+        {
+          "aaSlug": "nvidia-nemotron-3-ultra-550b-a55b",
+          "aaName": "Nemotron 3 Ultra 550B A55B (Reasoning)",
+          "scoreFraction": 0.0625,
+          "siteModelKey": "Nemotron 3 Ultra [R]"
+        },
+        {
+          "aaSlug": "mistral-medium-3-5",
+          "aaName": "Mistral Medium 3.5",
+          "scoreFraction": 0.125,
+          "siteModelKey": "Mistral Medium 3.5 [R]"
+        }
+      ]
+    },
+    {
+      "benchmarkId": "mlcr-aa-overall",
+      "sourceUrl": "https://artificialanalysis.ai/evaluations/mlcr-aa",
+      "field": [
+        "mlcrOverall"
+      ],
+      "pageSha256": "6c614cc8936c32ec8d7f17f0433a222ace4a90d674fe6c6412933142a5b27ef7",
+      "publicChartRows": 31,
+      "rows": [
+        {
+          "aaSlug": "claude-opus-5-5",
+          "aaName": "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
+          "scoreFraction": 0.666666666666667,
+          "siteModelKey": "Claude Opus 5.5 (max with fallback) [R]"
+        },
+        {
+          "aaSlug": "claude-fable-5-1",
+          "aaName": "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+          "scoreFraction": 0.711111111111111,
+          "siteModelKey": "Claude Fable 5.1 (max with fallback) [R]"
+        },
+        {
+          "aaSlug": "gpt-6-astra",
+          "aaName": "GPT-6 Astra (max)",
+          "scoreFraction": 0.35,
+          "siteModelKey": "GPT-6 Astra (max) [R]"
+        },
+        {
+          "aaSlug": "claude-opus-5",
+          "aaName": "Claude Opus 5 (Adaptive Reasoning, Max Effort)",
+          "scoreFraction": 0.555555555555556,
+          "siteModelKey": "Claude Opus 5 (max) [R]"
+        },
+        {
+          "aaSlug": "claude-opus-5-xhigh",
+          "aaName": "Claude Opus 5 (Adaptive Reasoning, Xhigh Effort)",
+          "scoreFraction": 0.583333333333333,
+          "siteModelKey": "Claude Opus 5 (xhigh) [R]"
+        },
+        {
+          "aaSlug": "claude-fable-5",
+          "aaName": "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)",
+          "scoreFraction": 0.644444444444444,
+          "siteModelKey": "Claude Fable 5 (with fallback) [R]"
+        },
+        {
+          "aaSlug": "claude-opus-5-high",
+          "aaName": "Claude Opus 5 (Adaptive Reasoning, High Effort)",
+          "scoreFraction": 0.594444444444444,
+          "siteModelKey": "Claude Opus 5 (high) [R]"
+        },
+        {
+          "aaSlug": "muse-spark-1-3",
+          "aaName": "Muse Spark 1.3 (max)",
+          "scoreFraction": 0.433333333333333,
+          "siteModelKey": "Muse Spark 1.3 (max) [R]"
+        },
+        {
+          "aaSlug": "gpt-6-sol",
+          "aaName": "GPT-6 Sol (max)",
+          "scoreFraction": 0.161111111111111,
+          "siteModelKey": "GPT-6 Sol (max) [R]"
+        },
+        {
+          "aaSlug": "gpt-5-6-sol",
+          "aaName": "GPT-5.6 Sol (max)",
+          "scoreFraction": 0.261111111111111,
+          "siteModelKey": "GPT-5.6 Sol (max) [R]"
+        },
+        {
+          "aaSlug": "grok-4-7",
+          "aaName": "Grok 4.7 (xhigh)",
+          "scoreFraction": 0.15,
+          "siteModelKey": "Grok 4.7 (xhigh) [R]"
+        },
+        {
+          "aaSlug": "mimo-v2-6-pro",
+          "aaName": "MiMo-V2.6-Pro",
+          "scoreFraction": 0.183333333333333,
+          "siteModelKey": "MiMo-V2.6-Pro [R]"
+        },
+        {
+          "aaSlug": "qwen3-8-max",
+          "aaName": "Qwen3.8 Max (0902)",
+          "scoreFraction": 0.2,
+          "siteModelKey": "Qwen3.8 Max (0902) [R]"
+        },
+        {
+          "aaSlug": "claude-opus-5-medium",
+          "aaName": "Claude Opus 5 (Adaptive Reasoning, Medium Effort)",
+          "scoreFraction": 0.561111111111111,
+          "siteModelKey": "Claude Opus 5 (medium) [R]"
+        },
+        {
+          "aaSlug": "glm-5-3",
+          "aaName": "GLM-5.3 (max)",
+          "scoreFraction": 0.483333333333333,
+          "siteModelKey": "GLM-5.3 (max) [R]"
+        },
+        {
+          "aaSlug": "grok-4-6",
+          "aaName": "Grok 4.6 (high)",
+          "scoreFraction": 0.122222222222222,
+          "siteModelKey": "Grok 4.6 (high) [R]"
+        },
+        {
+          "aaSlug": "step-5",
+          "aaName": "Step 5 Preview",
+          "scoreFraction": 0.166666666666667,
+          "siteModelKey": "Step 5 Preview [R]"
+        },
+        {
+          "aaSlug": "kimi-k3",
+          "aaName": "Kimi K3 (max)",
+          "scoreFraction": 0.383333333333333,
+          "siteModelKey": "Kimi K3 (max) [R]"
+        },
+        {
+          "aaSlug": "glm-5-3-flash",
+          "aaName": "GLM 5.3 Flash",
+          "scoreFraction": 0.511111111111111,
+          "siteModelKey": "GLM-5.3-Flash [R]"
+        },
+        {
+          "aaSlug": "gemini-3-8-flash",
+          "aaName": "Gemini 3.8 Flash (high)",
+          "scoreFraction": 0.216666666666667,
+          "siteModelKey": "Gemini 3.8 Flash (high) [R]"
+        },
+        {
+          "aaSlug": "deepseek-v4-1-flash",
+          "aaName": "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+          "scoreFraction": 0.227777777777778,
+          "siteModelKey": "DeepSeek V4.1 Flash (max) [R]"
+        },
+        {
+          "aaSlug": "claude-sonnet-5",
+          "aaName": "Claude Sonnet 5 (Adaptive Reasoning, Max Effort)",
+          "scoreFraction": 0.55,
+          "siteModelKey": "Claude Sonnet 5 (max) [R]"
+        },
+        {
+          "aaSlug": "gpt-5-6-luna",
+          "aaName": "GPT-5.6 Luna (max)",
+          "scoreFraction": 0.194444444444444,
+          "siteModelKey": "GPT-5.6 Luna (max) [R]"
+        },
+        {
+          "aaSlug": "gpt-6-luna",
+          "aaName": "GPT-6 Luna (max)",
+          "scoreFraction": 0.161111111111111,
+          "siteModelKey": "GPT-6 Luna (max) [R]"
+        },
+        {
+          "aaSlug": "qwen3-8-27b",
+          "aaName": "Qwen3.8 27B (xhigh)",
+          "scoreFraction": 0.216666666666667,
+          "siteModelKey": "Qwen3.8 27B (xhigh) [R]"
+        },
+        {
+          "aaSlug": "minimax-m3",
+          "aaName": "MiniMax-M3",
+          "scoreFraction": 0.172222222222222,
+          "siteModelKey": "MiniMax-M3 [R]"
+        },
+        {
+          "aaSlug": "inkling",
+          "aaName": "Inkling (xhigh)",
+          "scoreFraction": 0.122222222222222,
+          "siteModelKey": "Inkling [R]"
+        },
+        {
+          "aaSlug": "nvidia-nemotron-3-ultra-550b-a55b",
+          "aaName": "Nemotron 3 Ultra 550B A55B (Reasoning)",
+          "scoreFraction": 0.111111111111111,
+          "siteModelKey": "Nemotron 3 Ultra [R]"
+        },
+        {
+          "aaSlug": "gemini-3-5-flash-lite",
+          "aaName": "Gemini 3.5 Flash-Lite",
+          "scoreFraction": 0.0722222222222222,
+          "siteModelKey": "Gemini 3.5 Flash-Lite [R]"
+        },
+        {
+          "aaSlug": "muse-glimmer",
+          "aaName": "Muse Glimmer (high)",
+          "scoreFraction": 0.2,
+          "siteModelKey": "Muse Glimmer (high) [R]"
+        },
+        {
+          "aaSlug": "mistral-medium-3-5",
+          "aaName": "Mistral Medium 3.5",
+          "scoreFraction": 0.0166666666666667,
+          "siteModelKey": "Mistral Medium 3.5 [R]"
+        }
+      ]
+    },
+    {
+      "benchmarkId": "terminal-bench-science-aa",
+      "sourceUrl": "https://artificialanalysis.ai/evaluations/terminal-bench-science",
+      "field": [
+        "terminalBenchScience"
+      ],
+      "pageSha256": "9a3af04093fcd9b34ef2a0e2cc44c90dd4954bf1cee1a084fc85d4a7c74855a4",
+      "publicChartRows": 26,
+      "rows": [
+        {
+          "aaSlug": "claude-opus-5-5",
+          "aaName": "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
+          "scoreFraction": 0.59047619047619,
+          "siteModelKey": "Claude Opus 5.5 (max with fallback) [R]"
+        },
+        {
+          "aaSlug": "claude-opus-5-5-xhigh",
+          "aaName": "Claude Opus 5.5 (Adaptive Reasoning, Xhigh Effort, Default Fallback)",
+          "scoreFraction": 0.619047619047619,
+          "siteModelKey": "Claude Opus 5.5 (xhigh with fallback) [R]"
+        },
+        {
+          "aaSlug": "claude-opus-5-5-high",
+          "aaName": "Claude Opus 5.5 (Adaptive Reasoning, High Effort, Default Fallback)",
+          "scoreFraction": 0.49047619047619,
+          "siteModelKey": "Claude Opus 5.5 (high with fallback) [R]"
+        },
+        {
+          "aaSlug": "claude-fable-5-1",
+          "aaName": "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+          "scoreFraction": 0.433333333333333,
+          "siteModelKey": "Claude Fable 5.1 (max with fallback) [R]"
+        },
+        {
+          "aaSlug": "gpt-6-astra",
+          "aaName": "GPT-6 Astra (max)",
+          "scoreFraction": 0.633333333333333,
+          "siteModelKey": "GPT-6 Astra (max) [R]"
+        },
+        {
+          "aaSlug": "claude-opus-5-5-medium",
+          "aaName": "Claude Opus 5.5 (Adaptive Reasoning, Medium Effort, Default Fallback)",
+          "scoreFraction": 0.433333333333333,
+          "siteModelKey": "Claude Opus 5.5 (medium with fallback) [R]"
+        },
+        {
+          "aaSlug": "claude-opus-5",
+          "aaName": "Claude Opus 5 (Adaptive Reasoning, Max Effort)",
+          "scoreFraction": 0.285714285714286,
+          "siteModelKey": "Claude Opus 5 (max) [R]"
+        },
+        {
+          "aaSlug": "muse-spark-1-3",
+          "aaName": "Muse Spark 1.3 (max)",
+          "scoreFraction": 0.10952380952381,
+          "siteModelKey": "Muse Spark 1.3 (max) [R]"
+        },
+        {
+          "aaSlug": "gpt-6-sol",
+          "aaName": "GPT-6 Sol (max)",
+          "scoreFraction": 0.3,
+          "siteModelKey": "GPT-6 Sol (max) [R]"
+        },
+        {
+          "aaSlug": "gpt-5-6-sol",
+          "aaName": "GPT-5.6 Sol (max)",
+          "scoreFraction": 0.223809523809524,
+          "siteModelKey": "GPT-5.6 Sol (max) [R]"
+        },
+        {
+          "aaSlug": "mimo-v2-6-pro",
+          "aaName": "MiMo-V2.6-Pro",
+          "scoreFraction": 0.0571428571428571,
+          "siteModelKey": "MiMo-V2.6-Pro [R]"
+        },
+        {
+          "aaSlug": "qwen3-8-max",
+          "aaName": "Qwen3.8 Max (0902)",
+          "scoreFraction": 0.119047619047619,
+          "siteModelKey": "Qwen3.8 Max (0902) [R]"
+        },
+        {
+          "aaSlug": "glm-5-3",
+          "aaName": "GLM-5.3 (max)",
+          "scoreFraction": 0.0952380952380952,
+          "siteModelKey": "GLM-5.3 (max) [R]"
+        },
+        {
+          "aaSlug": "grok-4-6",
+          "aaName": "Grok 4.6 (high)",
+          "scoreFraction": 0.0619047619047619,
+          "siteModelKey": "Grok 4.6 (high) [R]"
+        },
+        {
+          "aaSlug": "gpt-6-sol-xhigh",
+          "aaName": "GPT-6 Sol (xhigh)",
+          "scoreFraction": 0.176190476190476,
+          "siteModelKey": "GPT-6 Sol (xhigh) [R]"
+        },
+        {
+          "aaSlug": "step-5",
+          "aaName": "Step 5 Preview",
+          "scoreFraction": 0.0238095238095238,
+          "siteModelKey": "Step 5 Preview [R]"
+        },
+        {
+          "aaSlug": "claude-opus-5-5-low",
+          "aaName": "Claude Opus 5.5 (Adaptive Reasoning, Low Effort, Default Fallback)",
+          "scoreFraction": 0.242857142857143,
+          "siteModelKey": "Claude Opus 5.5 (low with fallback) [R]"
+        },
+        {
+          "aaSlug": "glm-5-3-flash",
+          "aaName": "GLM 5.3 Flash",
+          "scoreFraction": 0.0476190476190476,
+          "siteModelKey": "GLM-5.3-Flash [R]"
+        },
+        {
+          "aaSlug": "gemini-3-8-flash",
+          "aaName": "Gemini 3.8 Flash (high)",
+          "scoreFraction": 0.1,
+          "siteModelKey": "Gemini 3.8 Flash (high) [R]"
+        },
+        {
+          "aaSlug": "deepseek-v4-1-flash",
+          "aaName": "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+          "scoreFraction": 0.0904761904761905,
+          "siteModelKey": "DeepSeek V4.1 Flash (max) [R]"
+        },
+        {
+          "aaSlug": "gpt-5-6-luna",
+          "aaName": "GPT-5.6 Luna (max)",
+          "scoreFraction": 0.0333333333333333,
+          "siteModelKey": "GPT-5.6 Luna (max) [R]"
+        },
+        {
+          "aaSlug": "gpt-6-luna",
+          "aaName": "GPT-6 Luna (max)",
+          "scoreFraction": 0.0857142857142857,
+          "siteModelKey": "GPT-6 Luna (max) [R]"
+        },
+        {
+          "aaSlug": "qwen3-8-27b",
+          "aaName": "Qwen3.8 27B (xhigh)",
+          "scoreFraction": 0.00476190476190476,
+          "siteModelKey": "Qwen3.8 27B (xhigh) [R]"
+        },
+        {
+          "aaSlug": "minimax-m3",
+          "aaName": "MiniMax-M3",
+          "scoreFraction": 0.00476190476190476,
+          "siteModelKey": "MiniMax-M3 [R]"
+        },
+        {
+          "aaSlug": "inkling",
+          "aaName": "Inkling (xhigh)",
+          "scoreFraction": 0.0,
+          "siteModelKey": "Inkling [R]"
+        },
+        {
+          "aaSlug": "gemini-3-5-flash-lite",
+          "aaName": "Gemini 3.5 Flash-Lite",
+          "scoreFraction": 0.0,
+          "siteModelKey": "Gemini 3.5 Flash-Lite [R]"
+        }
+      ]
+    },
+    {
+      "benchmarkId": "aa-briefcase-rubric-pass-rate",
+      "sourceUrl": "https://artificialanalysis.ai/evaluations/aa-briefcase?results=rubric-score",
+      "field": [
+        "briefcaseBreakdown",
+        "rubricPassRate"
+      ],
+      "pageSha256": "a30dd5f51ab9651918436f1946bf9c5ce057dc7d614abcac5806607284d57cc4",
+      "publicChartRows": 32,
+      "rows": [
+        {
+          "aaSlug": "claude-opus-5-5",
+          "aaName": "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
+          "scoreFraction": 0.6121212121212121,
+          "siteModelKey": "Claude Opus 5.5 (max with fallback) [R]"
+        },
+        {
+          "aaSlug": "claude-opus-5-5-xhigh",
+          "aaName": "Claude Opus 5.5 (Adaptive Reasoning, Xhigh Effort, Default Fallback)",
+          "scoreFraction": 0.6060606060606061,
+          "siteModelKey": "Claude Opus 5.5 (xhigh with fallback) [R]"
+        },
+        {
+          "aaSlug": "claude-opus-5-5-high",
+          "aaName": "Claude Opus 5.5 (Adaptive Reasoning, High Effort, Default Fallback)",
+          "scoreFraction": 0.5888888888888889,
+          "siteModelKey": "Claude Opus 5.5 (high with fallback) [R]"
+        },
+        {
+          "aaSlug": "claude-fable-5-1",
+          "aaName": "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+          "scoreFraction": 0.6151515151515151,
+          "siteModelKey": "Claude Fable 5.1 (max with fallback) [R]"
+        },
+        {
+          "aaSlug": "claude-fable-5-1-xhigh",
+          "aaName": "Claude Fable 5.1 (Adaptive Reasoning, Xhigh Effort, Default Fallback)",
+          "scoreFraction": 0.6060606060606061,
+          "siteModelKey": "Claude Fable 5.1 (xhigh with fallback) [R]"
+        },
+        {
+          "aaSlug": "gpt-6-astra",
+          "aaName": "GPT-6 Astra (max)",
+          "scoreFraction": 0.5202020202020202,
+          "siteModelKey": "GPT-6 Astra (max) [R]"
+        },
+        {
+          "aaSlug": "claude-opus-5-5-medium",
+          "aaName": "Claude Opus 5.5 (Adaptive Reasoning, Medium Effort, Default Fallback)",
+          "scoreFraction": 0.5696969696969697,
+          "siteModelKey": "Claude Opus 5.5 (medium with fallback) [R]"
+        },
+        {
+          "aaSlug": "claude-opus-5",
+          "aaName": "Claude Opus 5 (Adaptive Reasoning, Max Effort)",
+          "scoreFraction": 0.5717171717171717,
+          "siteModelKey": "Claude Opus 5 (max) [R]"
+        },
+        {
+          "aaSlug": "claude-opus-5-xhigh",
+          "aaName": "Claude Opus 5 (Adaptive Reasoning, Xhigh Effort)",
+          "scoreFraction": 0.5797979797979798,
+          "siteModelKey": "Claude Opus 5 (xhigh) [R]"
+        },
+        {
+          "aaSlug": "muse-spark-1-3",
+          "aaName": "Muse Spark 1.3 (max)",
+          "scoreFraction": 0.5868686868686869,
+          "siteModelKey": "Muse Spark 1.3 (max) [R]"
+        },
+        {
+          "aaSlug": "gpt-6-sol",
+          "aaName": "GPT-6 Sol (max)",
+          "scoreFraction": 0.4686868686868687,
+          "siteModelKey": "GPT-6 Sol (max) [R]"
+        },
+        {
+          "aaSlug": "gpt-5-6-sol",
+          "aaName": "GPT-5.6 Sol (max)",
+          "scoreFraction": 0.4184839044652129,
+          "siteModelKey": "GPT-5.6 Sol (max) [R]"
+        },
+        {
+          "aaSlug": "grok-4-7",
+          "aaName": "Grok 4.7 (xhigh)",
+          "scoreFraction": 0.5535353535353535,
+          "siteModelKey": "Grok 4.7 (xhigh) [R]"
+        },
+        {
+          "aaSlug": "mimo-v2-6-pro",
+          "aaName": "MiMo-V2.6-Pro",
+          "scoreFraction": 0.5474747474747474,
+          "siteModelKey": "MiMo-V2.6-Pro [R]"
+        },
+        {
+          "aaSlug": "qwen3-8-max",
+          "aaName": "Qwen3.8 Max (0902)",
+          "scoreFraction": 0.5795574288724974,
+          "siteModelKey": "Qwen3.8 Max (0902) [R]"
+        },
+        {
+          "aaSlug": "glm-5-3",
+          "aaName": "GLM-5.3 (max)",
+          "scoreFraction": 0.5134854771784232,
+          "siteModelKey": "GLM-5.3 (max) [R]"
+        },
+        {
+          "aaSlug": "grok-4-6",
+          "aaName": "Grok 4.6 (high)",
+          "scoreFraction": 0.5282828282828282,
+          "siteModelKey": "Grok 4.6 (high) [R]"
+        },
+        {
+          "aaSlug": "step-5",
+          "aaName": "Step 5 Preview",
+          "scoreFraction": 0.4777777777777778,
+          "siteModelKey": "Step 5 Preview [R]"
+        },
+        {
+          "aaSlug": "kimi-k3",
+          "aaName": "Kimi K3 (max)",
+          "scoreFraction": 0.5097236438075742,
+          "siteModelKey": "Kimi K3 (max) [R]"
+        },
+        {
+          "aaSlug": "glm-5-3-flash",
+          "aaName": "GLM 5.3 Flash",
+          "scoreFraction": 0.4635897435897436,
+          "siteModelKey": "GLM-5.3-Flash [R]"
+        },
+        {
+          "aaSlug": "gemini-3-8-flash",
+          "aaName": "Gemini 3.8 Flash (high)",
+          "scoreFraction": 0.4212121212121212,
+          "siteModelKey": "Gemini 3.8 Flash (high) [R]"
+        },
+        {
+          "aaSlug": "deepseek-v4-1-flash",
+          "aaName": "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+          "scoreFraction": 0.45194274028629855,
+          "siteModelKey": "DeepSeek V4.1 Flash (max) [R]"
+        },
+        {
+          "aaSlug": "gpt-5-6-luna",
+          "aaName": "GPT-5.6 Luna (max)",
+          "scoreFraction": 0.3797979797979798,
+          "siteModelKey": "GPT-5.6 Luna (max) [R]"
+        },
+        {
+          "aaSlug": "gpt-6-luna",
+          "aaName": "GPT-6 Luna (max)",
+          "scoreFraction": 0.37373737373737376,
+          "siteModelKey": "GPT-6 Luna (max) [R]"
+        },
+        {
+          "aaSlug": "qwen3-8-27b",
+          "aaName": "Qwen3.8 27B (xhigh)",
+          "scoreFraction": 0.4780388151174668,
+          "siteModelKey": "Qwen3.8 27B (xhigh) [R]"
+        },
+        {
+          "aaSlug": "k2-horizon-375b-a23b",
+          "aaName": "K2 Horizon 375B A23B",
+          "scoreFraction": 0.4164926931106472,
+          "siteModelKey": "K2 Horizon 375B A23B [R]"
+        },
+        {
+          "aaSlug": "minimax-m3",
+          "aaName": "MiniMax-M3",
+          "scoreFraction": 0.30303030303030304,
+          "siteModelKey": "MiniMax-M3 [R]"
+        },
+        {
+          "aaSlug": "inkling",
+          "aaName": "Inkling (xhigh)",
+          "scoreFraction": 0.19292929292929292,
+          "siteModelKey": "Inkling [R]"
+        },
+        {
+          "aaSlug": "nvidia-nemotron-3-ultra-550b-a55b",
+          "aaName": "Nemotron 3 Ultra 550B A55B (Reasoning)",
+          "scoreFraction": 0.2202020202020202,
+          "siteModelKey": "Nemotron 3 Ultra [R]"
+        },
+        {
+          "aaSlug": "gemini-3-5-flash-lite",
+          "aaName": "Gemini 3.5 Flash-Lite",
+          "scoreFraction": 0.1484848484848485,
+          "siteModelKey": "Gemini 3.5 Flash-Lite [R]"
+        },
+        {
+          "aaSlug": "muse-glimmer",
+          "aaName": "Muse Glimmer (high)",
+          "scoreFraction": 0.11514522821576763,
+          "siteModelKey": "Muse Glimmer (high) [R]"
+        },
+        {
+          "aaSlug": "mistral-medium-3-5",
+          "aaName": "Mistral Medium 3.5",
+          "scoreFraction": 0.12424242424242424,
+          "siteModelKey": "Mistral Medium 3.5 [R]"
+        }
+      ]
+    },
+    {
+      "benchmarkId": "harvey-lab-aa-all-pass-rate",
+      "sourceUrl": "https://artificialanalysis.ai/evaluations/harvey-lab-aa?eval-score=all-pass-rate",
+      "field": [
+        "harveyLabBreakdown",
+        "ungatedAverageAllPass"
+      ],
+      "pageSha256": "4965722bd49ac8b20238fba31fe28658d5e5f8a1e1838c3a70e973e92d4297e1",
+      "publicChartRows": 14,
+      "rows": [
+        {
+          "aaSlug": "claude-opus-5-5",
+          "aaName": "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
+          "scoreFraction": 0.08333333333333333,
+          "siteModelKey": "Claude Opus 5.5 (max with fallback) [R]"
+        },
+        {
+          "aaSlug": "claude-fable-5-1",
+          "aaName": "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+          "scoreFraction": 0.14166666666666666,
+          "siteModelKey": "Claude Fable 5.1 (max with fallback) [R]"
+        },
+        {
+          "aaSlug": "claude-fable-5-1-xhigh",
+          "aaName": "Claude Fable 5.1 (Adaptive Reasoning, Xhigh Effort, Default Fallback)",
+          "scoreFraction": 0.16666666666666666,
+          "siteModelKey": "Claude Fable 5.1 (xhigh with fallback) [R]"
+        },
+        {
+          "aaSlug": "claude-fable-5-1-high",
+          "aaName": "Claude Fable 5.1 (Adaptive Reasoning, High Effort, Default Fallback)",
+          "scoreFraction": 0.13333333333333333,
+          "siteModelKey": "Claude Fable 5.1 (high with fallback) [R]"
+        },
+        {
+          "aaSlug": "claude-opus-5",
+          "aaName": "Claude Opus 5 (Adaptive Reasoning, Max Effort)",
+          "scoreFraction": 0.10833333333333334,
+          "siteModelKey": "Claude Opus 5 (max) [R]"
+        },
+        {
+          "aaSlug": "claude-fable-5",
+          "aaName": "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)",
+          "scoreFraction": 0.14166666666666666,
+          "siteModelKey": "Claude Fable 5 (with fallback) [R]"
+        },
+        {
+          "aaSlug": "claude-fable-5-1-medium",
+          "aaName": "Claude Fable 5.1 (Adaptive Reasoning, Medium Effort, Default Fallback)",
+          "scoreFraction": 0.14166666666666666,
+          "siteModelKey": "Claude Fable 5.1 (medium with fallback) [R]"
+        },
+        {
+          "aaSlug": "gpt-5-6-sol",
+          "aaName": "GPT-5.6 Sol (max)",
+          "scoreFraction": 0.016666666666666666,
+          "siteModelKey": "GPT-5.6 Sol (max) [R]"
+        },
+        {
+          "aaSlug": "muse-spark-1-3-xhigh",
+          "aaName": "Muse Spark 1.3 (xhigh)",
+          "scoreFraction": 0.30833333333333335,
+          "siteModelKey": "Muse Spark 1.3 (xhigh) [R]"
+        },
+        {
+          "aaSlug": "kimi-k3",
+          "aaName": "Kimi K3 (max)",
+          "scoreFraction": 0.26666666666666666,
+          "siteModelKey": "Kimi K3 (max) [R]"
+        },
+        {
+          "aaSlug": "gpt-5-6-luna",
+          "aaName": "GPT-5.6 Luna (max)",
+          "scoreFraction": 0.05,
+          "siteModelKey": "GPT-5.6 Luna (max) [R]"
+        },
+        {
+          "aaSlug": "minimax-m3",
+          "aaName": "MiniMax-M3",
+          "scoreFraction": 0.06666666666666667,
+          "siteModelKey": "MiniMax-M3 [R]"
+        },
+        {
+          "aaSlug": "nvidia-nemotron-3-ultra-550b-a55b",
+          "aaName": "Nemotron 3 Ultra 550B A55B (Reasoning)",
+          "scoreFraction": 0.03333333333333333,
+          "siteModelKey": "Nemotron 3 Ultra [R]"
+        },
+        {
+          "aaSlug": "mistral-medium-3-5",
+          "aaName": "Mistral Medium 3.5",
+          "scoreFraction": 0.008333333333333333,
+          "siteModelKey": "Mistral Medium 3.5 [R]"
+        }
+      ]
+    }
+  ]
+}

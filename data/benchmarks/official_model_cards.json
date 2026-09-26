@@ -46,6 +46,7 @@
       "revision": "5711b268169967567844e1e560e8a3966da959b1",
       "pipelineTag": "text-generation",
       "tags": [
+        "eval-results",
         "license:mit"
       ],
       "aliases": [
@@ -68,6 +69,7 @@
       "revision": "73875d00b30a89ef8cc353a0b60b0e9f9561952d",
       "pipelineTag": "text-generation",
       "tags": [
+        "eval-results",
         "license:mit"
       ],
       "aliases": [

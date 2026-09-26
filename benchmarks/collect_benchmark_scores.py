@@ -23,6 +23,39 @@ from urllib.parse import parse_qs, urlsplit
 from urllib.request import Request, urlopen
 from uuid import uuid4
 
+if __package__:
+    from .aa_public_evaluation_snapshots import load_aa_difficult_snapshots
+    from .cognition_frontiercode_snapshot import load_cognition_frontiercode_snapshot
+    from .deepswe_v1_1_owner_snapshot import load_deepswe_v1_1_owner_snapshot
+    from .epoch_frontiermath_snapshot import load_epoch_frontiermath_snapshot
+    from .epoch_game_reasoning_snapshot import (
+        load_epoch_game_reasoning_snapshots,
+        load_epoch_ebr_card_ban_snapshot,
+    )
+    from .osworld_v2_owner_snapshot import load_osworld_v2_owner_snapshot
+    from .swe_marathon_v1_1_owner_snapshot import load_swe_marathon_v1_1_owner_snapshot
+    from .owner_leaderboard_snapshots import (
+        load_arc_agi_3_standard_snapshot,
+        load_ale_v1_overall_pass_rate_snapshot,
+        load_toolathlon_verified_owner_snapshot,
+    )
+else:  # Direct script execution.
+    from aa_public_evaluation_snapshots import load_aa_difficult_snapshots
+    from cognition_frontiercode_snapshot import load_cognition_frontiercode_snapshot
+    from deepswe_v1_1_owner_snapshot import load_deepswe_v1_1_owner_snapshot
+    from epoch_frontiermath_snapshot import load_epoch_frontiermath_snapshot
+    from epoch_game_reasoning_snapshot import (
+        load_epoch_game_reasoning_snapshots,
+        load_epoch_ebr_card_ban_snapshot,
+    )
+    from osworld_v2_owner_snapshot import load_osworld_v2_owner_snapshot
+    from swe_marathon_v1_1_owner_snapshot import load_swe_marathon_v1_1_owner_snapshot
+    from owner_leaderboard_snapshots import (
+        load_arc_agi_3_standard_snapshot,
+        load_ale_v1_overall_pass_rate_snapshot,
+        load_toolathlon_verified_owner_snapshot,
+    )
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT_JSON = PROJECT_ROOT / "data" / "benchmarks" / "benchmark_scores.json"
@@ -523,6 +556,13 @@ BENCHMARKS = [
     {
         "id": "frontiercode-v1-1-main",
         "label": "FrontierCode v1.1 Main",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "FC",
+    },
+    {
+        "id": "frontiercode-v1-1-main-cognition",
+        "label": "FrontierCode v1.1 Main (Cognition run)",
         "category": "Agentic coding",
         "unit": "%",
         "icon": "FC",
@@ -1530,6 +1570,13 @@ BENCHMARKS = [
         "icon": "FM4",
     },
     {
+        "id": "frontiermath-tier-4-v2-epoch",
+        "label": "FrontierMath Tier 4 v2 (Epoch run)",
+        "category": "Academic reasoning",
+        "unit": "%",
+        "icon": "FM4",
+    },
+    {
         "id": "openai-mrcr-v2-256k-512k",
         "label": "OpenAI MRCR v2 8-needle 256K-512K",
         "category": "Long context",
@@ -1563,6 +1610,104 @@ BENCHMARKS = [
         "category": "Abstract reasoning",
         "unit": "%",
         "icon": "ARC3",
+    },
+    {
+        "id": "arc-agi-3-standard",
+        "label": "ARC-AGI-3 (Standard harness)",
+        "category": "Abstract reasoning",
+        "unit": "%",
+        "icon": "ARC3",
+    },
+    {
+        "id": "agents-last-exam-v1-overall-pass-rate",
+        "label": "Agents' Last Exam V1 (Overall Pass Rate)",
+        "category": "Agentic work",
+        "unit": "%",
+        "icon": "ALE",
+    },
+    {
+        "id": "toolathlon-verified-owner",
+        "label": "Toolathlon-Verified (official Pass@1)",
+        "category": "Tool use",
+        "unit": "%",
+        "icon": "TOOL",
+    },
+    {
+        "id": "osworld-v2-v2026-06-24-standard-500",
+        "label": "OSWorld 2.0 (v2026.06.24, Standard, 500 steps)",
+        "category": "Computer use",
+        "unit": "%",
+        "icon": "OS2",
+    },
+    {
+        "id": "deepswe-v1-1-owner-mini-swe-agent",
+        "label": "DeepSWE v1.1 (DataCurve mini-swe-agent)",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "SWE",
+    },
+    {
+        "id": "epoch-chess-puzzles-v1-1-6",
+        "label": "Chess Puzzles v1.1.6 (Epoch run)",
+        "category": "Hard reasoning",
+        "unit": "%",
+        "icon": "CHESS",
+    },
+    {
+        "id": "epoch-mystery-game-puzzles-v1-0-4",
+        "label": "Mystery Game Puzzles v1.0.4 (Epoch run)",
+        "category": "Hard reasoning",
+        "unit": "%",
+        "icon": "GAME",
+    },
+    {
+        "id": "swe-marathon-v1-1-owner",
+        "label": "SWE-Marathon v1.1 (official 20-task run)",
+        "category": "Agentic coding",
+        "unit": "%",
+        "icon": "SWE",
+    },
+    {
+        "id": "epoch-ebr-bench-card-ban-v4",
+        "label": "EBR-bench v4 Card-ban (Epoch single-agent)",
+        "category": "Hard reasoning",
+        "unit": "%",
+        "icon": "EBR",
+    },
+    {
+        "id": "aa-analyst-agent-pass5",
+        "label": "AA-AnalystAgent (pass^5)",
+        "category": "Agentic analysis",
+        "unit": "%",
+        "icon": "AA",
+    },
+    {
+        "id": "mlcr-aa-overall",
+        "label": "MLCR-AA (Overall)",
+        "category": "Medical long-context reasoning",
+        "unit": "%",
+        "icon": "MLCR",
+    },
+    {
+        "id": "terminal-bench-science-aa",
+        "label": "Terminal-Bench-Science v0.1.0 (AA)",
+        "category": "Agentic scientific work",
+        "unit": "%",
+        "icon": "SCI",
+    },
+    {
+        "id": "aa-briefcase-rubric-pass-rate",
+        "label": "AA-Briefcase v1.1 (Rubric Pass Rate)",
+        "category": "Agentic document work",
+        "unit": "%",
+        "icon": "CASE",
+    },
+    {
+        "id": "harvey-lab-aa-all-pass-rate",
+        "label": "Harvey LAB-AA (All-pass Rate)",
+        "category": "Legal agentic work",
+        "unit": "%",
+        "icon": "LAB",
     },
     {
         "id": "terminal-bench-3",
@@ -6121,6 +6266,23 @@ def visible_text_tokens(html: str) -> list[str]:
     return parser.tokens
 
 
+def pinned_owner_snapshot_pairs() -> tuple[tuple[dict[str, Any], list[dict[str, Any]]], ...]:
+    """Load the reviewed owner-run snapshots without making network requests."""
+
+    return (*load_aa_difficult_snapshots(),
+        *load_epoch_game_reasoning_snapshots(),
+        load_epoch_ebr_card_ban_snapshot(),
+        load_cognition_frontiercode_snapshot(),
+        load_epoch_frontiermath_snapshot(),
+        load_arc_agi_3_standard_snapshot(),
+        load_ale_v1_overall_pass_rate_snapshot(),
+        load_toolathlon_verified_owner_snapshot(),
+        load_osworld_v2_owner_snapshot(),
+        load_deepswe_v1_1_owner_snapshot(),
+        load_swe_marathon_v1_1_owner_snapshot(),
+    )
+
+
 def build_payload(
     openai_scores: dict[str, list[float | None]],
     collection_status: str,
@@ -6210,6 +6372,9 @@ def build_payload(
                 }
             )
     results.extend(official_results if official_results is not None else official_seed_results())
+    for owner_source, owner_results in pinned_owner_snapshot_pairs():
+        additional_sources.append(owner_source)
+        results.extend(owner_results)
 
     return {
         "version": 1,
@@ -6818,6 +6983,45 @@ def write_payload(output_json: Path, timeout: float = 30) -> dict[str, Any]:
     return payload
 
 
+def refresh_pinned_owner_snapshots(output_json: Path) -> dict[str, Any]:
+    """Update owner snapshots while retaining unrelated collected observations."""
+
+    payload = json.loads(output_json.read_text(encoding="utf-8"))
+    pairs = pinned_owner_snapshot_pairs()
+    source_ids = {source["id"] for source, _ in pairs}
+    benchmark_ids = {row["benchmarkId"] for _, rows in pairs for row in rows}
+    replaced_source_ids = {
+        row["sourceId"] for row in payload["results"]
+        if row["benchmarkId"] in benchmark_ids
+    }
+    benchmark_definitions = [
+        {key: value for key, value in benchmark.items() if key != "openaiLabel"}
+        for benchmark in BENCHMARKS if benchmark["id"] in benchmark_ids
+    ]
+    if len(benchmark_definitions) != len(benchmark_ids):
+        raise ValueError("A pinned benchmark is missing from the collector registry")
+    payload["benchmarks"] = [
+        benchmark for benchmark in payload["benchmarks"]
+        if benchmark["id"] not in benchmark_ids
+    ] + benchmark_definitions
+    retained_results = [
+        row for row in payload["results"]
+        if row["benchmarkId"] not in benchmark_ids and row["sourceId"] not in source_ids
+    ]
+    retained_source_ids = {row["sourceId"] for row in retained_results}
+    payload["sources"] = [
+        source for source in payload["sources"]
+        if source["id"] not in source_ids and (
+            source["id"] not in replaced_source_ids
+            or source["id"] in retained_source_ids
+        )
+    ] + [source for source, _ in pairs]
+    payload["results"] = retained_results + [row for _, rows in pairs for row in rows]
+    payload["generatedAt"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    output_json.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return payload
+
+
 def write_seed_payload(output_json: Path) -> dict[str, Any]:
     source_statuses = {
         spec["id"]: "seeded-official-values"
@@ -6867,13 +7071,21 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--output-json", default=str(DEFAULT_OUTPUT_JSON), help="JSON payload to write.")
     parser.add_argument("--timeout", type=float, default=30, help="HTTP timeout in seconds.")
     parser.add_argument("--seed-only", action="store_true", help="Write curated official seed rows without HTTP refresh.")
+    parser.add_argument(
+        "--pinned-only", action="store_true",
+        help="Refresh the checked benchmark-owner snapshots and preserve other collected rows.",
+    )
     return parser.parse_args(argv)
 
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     try:
-        payload = write_seed_payload(Path(args.output_json)) if args.seed_only else write_payload(Path(args.output_json), timeout=args.timeout)
+        if args.seed_only and args.pinned_only:
+            raise ValueError("--seed-only and --pinned-only cannot be combined")
+        payload = (refresh_pinned_owner_snapshots(Path(args.output_json)) if args.pinned_only
+                   else write_seed_payload(Path(args.output_json)) if args.seed_only
+                   else write_payload(Path(args.output_json), timeout=args.timeout))
     except Exception as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1

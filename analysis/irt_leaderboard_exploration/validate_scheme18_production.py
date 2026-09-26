@@ -137,6 +137,8 @@ def geometric_core(raw: np.ndarray) -> np.ndarray:
 def fit_trends(
     core: np.ndarray,
     extensions: np.ndarray,
+    *,
+    minimum_observed: int = 5,
 ) -> tuple[np.ndarray, list[dict[str, Any]]]:
     residuals = np.full(extensions.shape, np.nan, dtype=float)
     trends: list[dict[str, Any]] = []
@@ -144,7 +146,7 @@ def fit_trends(
         y = extensions[:, column_index]
         observed = np.isfinite(y)
         count = int(np.sum(observed))
-        if count < 5:
+        if count < minimum_observed:
             trends.append(
                 {
                     "enabled": False,

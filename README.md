@@ -2,17 +2,17 @@
 
 Compare AI models across intelligence, coding, agentic behavior, speed, cost, and raw benchmark quality.
 
-The default leaderboard uses **AIndex Mixed Core 07**. Coding, agentic/tool work, hard reasoning, knowledge/science, and instruction/context use weights **12%, 9%, 22%, 37%, 20%** respectively.
+The default leaderboard uses **AIndex Mixed Core 07**. Coding, agentic/tool work, hard reasoning, knowledge/science, and instruction/context use weights **24%, 24%, 27%, 16%, 9%** respectively.
 
 | Board | Core | Weight |
 | --- | --- | ---: |
-| Coding | Terminal-Bench v4.0 + SciCode | 12% |
-| Agentic/tool work | AutomationBench-AA + τ³-Banking | 9% |
-| Hard reasoning | CritPt | 22% |
-| Knowledge/science | AA-Omniscience Accuracy + GDP.pdf | 37% |
-| Instruction/context | AA-LCR v1.1 | 20% |
+| Coding | Terminal-Bench v4.0 + SciCode | 24% |
+| Agentic/tool work | AutomationBench-AA + τ³-Banking | 24% |
+| Hard reasoning | CritPt | 27% |
+| Knowledge/science | AA-Omniscience Accuracy + GDP.pdf | 16% |
+| Instruction/context | AA-LCR v1.1 | 9% |
 
-A single Core item supplies its board's whole base; two items each supply half. Missing Core observations keep their fixed share with zero contribution; observed zero is valid. A configuration is excluded if any board has no observed Core or at least four configured Core items are missing. Representatives are chosen by descending inference priority and then slug **before** eligibility; evidence is never borrowed across configurations. Terminal v4 is the only scoring version. AIME, LiveCodeBench, GPQA and old short-math tests are excluded from Core.
+A single Core item supplies its board's whole base; two items each supply half. Missing Core observations keep their fixed share with zero contribution; observed zero is valid. A configuration is excluded if any board has no observed Core or at least four configured Core items are missing. Representatives are chosen by descending inference priority and then slug **before** eligibility; evidence is never borrowed across configurations. Terminal v4 is the only scoring version. AIME, LiveCodeBench, GPQA and old short-math tests are excluded from Core. All AIME years are also excluded from Extra Tests. The current 19 Extra Tests include owner-run FrontierCode Main, DeepSWE v1.1, SWE-Marathon v1.1, FrontierMath Tier 4 v2, Epoch Chess/Mystery puzzles, EBR-bench Card-ban, OSWorld 2.0, and several difficult AA evaluations. Each published Extra Test needs at least three exact-configuration fitting observations; the full board registry and protocol limitations are in [Methodology](docs/methodology.html#extension-registry).
 
 The existing extension calculation remains: globally remove Core families and legacy Terminal, fit nonnegative-slope OLS only on complete-Core boards in the eligible representative cohort, retain positive residuals, aggregate `log(1 + sum(expm1(residual)))`, and cap with pooled positive-residual `mean + sqrt(2) * population_SD`. Incomplete-Core boards earn no extension bonus. Each board is `min(100, core + capped_bonus)`; AIndex is the sum of board score times its fixed weight. Exact configurations reuse the representative cohort's calibration.
 
