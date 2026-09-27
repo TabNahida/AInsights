@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-26T21:31:54+00:00",
+  "generatedAt": "2026-09-27T06:06:44+00:00",
   "source": {
     "label": "Artificial Analysis Core + listed benchmark extensions",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -136424,7 +136424,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 43.2166,
+      "medianOutputSpeed": 43.035,
       "aa": {
         "aa-intelligence": 6.6967,
         "aa-coding": null,
@@ -136750,7 +136750,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 232.1642,
+      "medianOutputSpeed": 203.9863,
       "aa": {
         "aa-intelligence": 32.5983,
         "aa-coding": null,
@@ -137856,7 +137856,7 @@
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 45.3897,
+      "medianOutputSpeed": 39.3351,
       "aa": {
         "aa-intelligence": 25.9869,
         "aa-coding": null,
@@ -139387,7 +139387,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 80.7457,
+      "medianOutputSpeed": 82.0241,
       "aa": {
         "aa-intelligence": 33.9009,
         "aa-coding": null,
@@ -140110,7 +140110,7 @@
         "src": "assets/logos/inceptionlabs_small.svg",
         "color": "#021B30"
       },
-      "medianOutputSpeed": 819.9985,
+      "medianOutputSpeed": 811.9866,
       "aa": {
         "aa-intelligence": 13.7691,
         "aa-coding": null,
@@ -141213,7 +141213,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 106.9116,
+      "medianOutputSpeed": 103.5217,
       "aa": {
         "aa-intelligence": 20.384,
         "aa-coding": null,
@@ -142194,7 +142194,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 140.6752,
+      "medianOutputSpeed": 146.2808,
       "aa": {
         "aa-intelligence": 17.748,
         "aa-coding": null,
@@ -142540,7 +142540,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 122.0318,
+      "medianOutputSpeed": 122.9647,
       "aa": {
         "aa-intelligence": 9.3799,
         "aa-coding": null,
@@ -145824,7 +145824,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 247.023,
+      "medianOutputSpeed": 256.1288,
       "aa": {
         "aa-intelligence": 39.5759,
         "aa-coding": null,
@@ -146971,7 +146971,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 125.4194,
+      "medianOutputSpeed": 116.7924,
       "aa": {
         "aa-intelligence": 21.0125,
         "aa-coding": null,
@@ -147806,7 +147806,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 59.1877,
+      "medianOutputSpeed": 57.8188,
       "aa": {
         "aa-intelligence": 46.8163,
         "aa-coding": null,
@@ -149650,7 +149650,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 158.5377,
+      "medianOutputSpeed": 170.0513,
       "aa": {
         "aa-intelligence": 7.0888,
         "aa-coding": null,
@@ -150342,7 +150342,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 225.0397,
+      "medianOutputSpeed": 226.8053,
       "aa": {
         "aa-intelligence": 10.9644,
         "aa-coding": null,
@@ -153238,7 +153238,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 80.494,
+      "medianOutputSpeed": 79.3924,
       "aa": {
         "aa-intelligence": 33.4731,
         "aa-coding": null,
@@ -154073,7 +154073,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 53.6664,
+      "medianOutputSpeed": 54.1413,
       "aa": {
         "aa-intelligence": 11.899,
         "aa-coding": null,
@@ -155736,22 +155736,22 @@
         "src": "assets/logos/stepfun_small.svg",
         "color": "#00F5E7"
       },
-      "medianOutputSpeed": 76.7865,
+      "medianOutputSpeed": 66.3879,
       "aa": {
         "aa-intelligence": 43.7343,
         "aa-coding": null,
         "aa-agentic": null
       },
-      "aaCostUsd": 924.6768,
+      "aaCostUsd": 929.0037,
       "pricing": {
         "inputPerMillionTokensUsd": 1.0,
         "outputPerMillionTokensUsd": 2.7,
         "cacheHitPerMillionTokensUsd": 0.05,
-        "aaIndexCostUsd": 924.6768,
-        "aaIndexInputCostUsd": 503.2565,
-        "aaIndexOutputCostUsd": 421.4203,
-        "aaIndexReasoningCostUsd": 349.3606,
-        "aaIndexAnswerCostUsd": 72.0597
+        "aaIndexCostUsd": 929.0037,
+        "aaIndexInputCostUsd": 506.5736,
+        "aaIndexOutputCostUsd": 422.4302,
+        "aaIndexReasoningCostUsd": 350.1372,
+        "aaIndexAnswerCostUsd": 72.293
       },
       "scores": {
         "AA-Briefcase": 46.601,
@@ -159555,7 +159555,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 95.678,
+      "medianOutputSpeed": 95.6347,
       "aa": {
         "aa-intelligence": 6.0061,
         "aa-coding": null,
@@ -159884,7 +159884,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 48.8096,
+      "medianOutputSpeed": 58.8569,
       "aa": {
         "aa-intelligence": 27.1714,
         "aa-coding": null,
@@ -160210,7 +160210,7 @@
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 214.9812,
+      "medianOutputSpeed": 207.1776,
       "aa": {
         "aa-intelligence": 9.0559,
         "aa-coding": null,
@@ -161313,7 +161313,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 116.8308,
+      "medianOutputSpeed": 115.9369,
       "aa": {
         "aa-intelligence": 14.1555,
         "aa-coding": null,
@@ -161639,7 +161639,7 @@
         "src": "assets/logos/thinking_machines.svg",
         "color": "#676767"
       },
-      "medianOutputSpeed": 169.566,
+      "medianOutputSpeed": 184.2205,
       "aa": {
         "aa-intelligence": 24.9848,
         "aa-coding": null,
@@ -163226,7 +163226,7 @@
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 54.894,
+      "medianOutputSpeed": 52.218,
       "aa": {
         "aa-intelligence": 26.9792,
         "aa-coding": null,
@@ -166548,7 +166548,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 91.566,
+      "medianOutputSpeed": 91.6513,
       "aa": {
         "aa-intelligence": 18.4204,
         "aa-coding": null,
@@ -168255,7 +168255,7 @@
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 53.877,
+      "medianOutputSpeed": 47.6194,
       "aa": {
         "aa-intelligence": 23.5696,
         "aa-coding": null,
@@ -169334,7 +169334,7 @@
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 75.3507,
+      "medianOutputSpeed": 75.9508,
       "aa": {
         "aa-intelligence": 14.8312,
         "aa-coding": null,
@@ -172022,7 +172022,7 @@
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 101.6482,
+      "medianOutputSpeed": 95.6516,
       "aa": {
         "aa-intelligence": 22.7966,
         "aa-coding": null,
@@ -172535,7 +172535,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 154.6492,
+      "medianOutputSpeed": 158.764,
       "aa": {
         "aa-intelligence": 8.9901,
         "aa-coding": null,
@@ -172861,7 +172861,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 58.6015,
+      "medianOutputSpeed": 59.1334,
       "aa": {
         "aa-intelligence": 49.6774,
         "aa-coding": null,
@@ -174014,7 +174014,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 64.6843,
+      "medianOutputSpeed": 58.9384,
       "aa": {
         "aa-intelligence": 24.2638,
         "aa-coding": null,
@@ -175757,7 +175757,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 212.0513,
+      "medianOutputSpeed": 233.0099,
       "aa": {
         "aa-intelligence": 9.953,
         "aa-coding": null,
@@ -176102,7 +176102,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 79.2636,
+      "medianOutputSpeed": 78.6433,
       "aa": {
         "aa-intelligence": 22.8993,
         "aa-coding": null,
@@ -176667,7 +176667,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 123.2243,
+      "medianOutputSpeed": 133.2905,
       "aa": {
         "aa-intelligence": 20.2008,
         "aa-coding": null,
@@ -178883,7 +178883,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 45.7894,
+      "medianOutputSpeed": 49.8458,
       "aa": {
         "aa-intelligence": 41.8075,
         "aa-coding": null,
@@ -180157,7 +180157,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 136.8337,
+      "medianOutputSpeed": 145.7569,
       "aa": {
         "aa-intelligence": 33.8846,
         "aa-coding": null,
@@ -181554,7 +181554,7 @@
         "src": "assets/logos/stepfun_small.svg",
         "color": "#00F5E7"
       },
-      "medianOutputSpeed": 135.8758,
+      "medianOutputSpeed": 135.913,
       "aa": {
         "aa-intelligence": 16.9641,
         "aa-coding": null,
@@ -182204,7 +182204,7 @@
         "src": "assets/logos/upstage_small.svg",
         "color": "#7c59f5"
       },
-      "medianOutputSpeed": 90.6762,
+      "medianOutputSpeed": 91.9637,
       "aa": {
         "aa-intelligence": 28.1541,
         "aa-coding": null,
@@ -184541,7 +184541,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 301.3667,
+      "medianOutputSpeed": 283.6446,
       "aa": {
         "aa-intelligence": 6.6685,
         "aa-coding": null,
@@ -184869,7 +184869,7 @@
         "src": "assets/logos/nousresearch_small.jpg",
         "color": "#006fa8"
       },
-      "medianOutputSpeed": 31.9956,
+      "medianOutputSpeed": 30.0667,
       "aa": {
         "aa-intelligence": 5.9968,
         "aa-coding": null,
@@ -185194,7 +185194,7 @@
         "src": "assets/logos/cohere_small.svg",
         "color": "#D18EE2"
       },
-      "medianOutputSpeed": 86.1713,
+      "medianOutputSpeed": 84.7084,
       "aa": {
         "aa-intelligence": 9.9146,
         "aa-coding": null,
@@ -188683,7 +188683,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 57.6712,
+      "medianOutputSpeed": 55.3152,
       "aa": {
         "aa-intelligence": 52.3863,
         "aa-coding": null,
@@ -191315,7 +191315,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 85.5279,
+      "medianOutputSpeed": 81.9695,
       "aa": {
         "aa-intelligence": 13.266,
         "aa-coding": null,
@@ -191987,7 +191987,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 225.0603,
+      "medianOutputSpeed": 220.2979,
       "aa": {
         "aa-intelligence": 13.106,
         "aa-coding": null,
@@ -194185,7 +194185,7 @@
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 46.0775,
+      "medianOutputSpeed": 44.7795,
       "aa": {
         "aa-intelligence": 25.1743,
         "aa-coding": null,
@@ -196047,7 +196047,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 249.5441,
+      "medianOutputSpeed": 246.5705,
       "aa": {
         "aa-intelligence": 6.8479,
         "aa-coding": null,
@@ -196643,7 +196643,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 84.9114,
+      "medianOutputSpeed": 75.3824,
       "aa": {
         "aa-intelligence": 38.1639,
         "aa-coding": null,
@@ -199883,7 +199883,7 @@
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 46.0832,
+      "medianOutputSpeed": 44.418,
       "aa": {
         "aa-intelligence": 46.3242,
         "aa-coding": null,
@@ -202207,7 +202207,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 169.2988,
+      "medianOutputSpeed": 179.559,
       "aa": {
         "aa-intelligence": 9.6434,
         "aa-coding": null,
@@ -202857,7 +202857,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 83.1594,
+      "medianOutputSpeed": 82.6738,
       "aa": {
         "aa-intelligence": 30.0938,
         "aa-coding": null,
@@ -203673,7 +203673,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 136.9017,
+      "medianOutputSpeed": 135.6791,
       "aa": {
         "aa-intelligence": 16.0779,
         "aa-coding": null,
@@ -204779,7 +204779,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 64.8546,
+      "medianOutputSpeed": 74.2937,
       "aa": {
         "aa-intelligence": 46.3322,
         "aa-coding": null,
@@ -205413,7 +205413,7 @@
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 96.5369,
+      "medianOutputSpeed": 99.8156,
       "aa": {
         "aa-intelligence": 20.9453,
         "aa-coding": null,
@@ -205926,7 +205926,7 @@
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 183.5193,
+      "medianOutputSpeed": 179.1639,
       "aa": {
         "aa-intelligence": 29.2203,
         "aa-coding": null,
@@ -208057,7 +208057,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 107.0327,
+      "medianOutputSpeed": 113.3817,
       "aa": {
         "aa-intelligence": 16.7731,
         "aa-coding": null,
@@ -209219,19 +209219,19 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 277.5923,
+      "medianOutputSpeed": 282.7638,
       "aa": {
         "aa-intelligence": 12.8572,
         "aa-coding": null,
         "aa-agentic": 13.8497
       },
-      "aaCostUsd": 112.2806,
+      "aaCostUsd": 114.2021,
       "pricing": {
         "inputPerMillionTokensUsd": 0.07,
         "outputPerMillionTokensUsd": 0.22,
         "cacheHitPerMillionTokensUsd": 0.05,
-        "aaIndexCostUsd": 112.2806,
-        "aaIndexInputCostUsd": 85.6755,
+        "aaIndexCostUsd": 114.2021,
+        "aaIndexInputCostUsd": 87.597,
         "aaIndexOutputCostUsd": 26.6051,
         "aaIndexReasoningCostUsd": 21.169,
         "aaIndexAnswerCostUsd": 5.4361
@@ -211663,7 +211663,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "AA-Briefcase": null,
+        "AA-Briefcase": 0.0,
         "AutomationBench-AA": 0.1911,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 0.2,
@@ -212769,7 +212769,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 70.0675,
+      "medianOutputSpeed": 72.5327,
       "aa": {
         "aa-intelligence": 14.872,
         "aa-coding": null,
@@ -213543,7 +213543,7 @@
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 15.0119,
+      "medianOutputSpeed": 14.9796,
       "aa": {
         "aa-intelligence": 4.9216,
         "aa-coding": null,
@@ -214193,7 +214193,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 58.2781,
+      "medianOutputSpeed": 56.7265,
       "aa": {
         "aa-intelligence": 13.6541,
         "aa-coding": null,
@@ -215677,7 +215677,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 233.711,
+      "medianOutputSpeed": 243.6942,
       "aa": {
         "aa-intelligence": 12.4708,
         "aa-coding": null,
@@ -216328,7 +216328,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 45.194,
+      "medianOutputSpeed": 43.8577,
       "aa": {
         "aa-intelligence": 24.6869,
         "aa-coding": null,
@@ -216997,7 +216997,7 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "AA-Briefcase": null,
+        "AA-Briefcase": 0.0,
         "AutomationBench-AA": 0.1911,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 1.0,
@@ -218103,7 +218103,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 157.1686,
+      "medianOutputSpeed": 159.7898,
       "aa": {
         "aa-intelligence": 6.8441,
         "aa-coding": null,
@@ -218428,7 +218428,7 @@
         "src": "assets/logos/cohere_small.svg",
         "color": "#D18EE2"
       },
-      "medianOutputSpeed": 163.0185,
+      "medianOutputSpeed": 180.0781,
       "aa": {
         "aa-intelligence": 13.1335,
         "aa-coding": null,
@@ -219143,7 +219143,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 60.9338,
+      "medianOutputSpeed": 63.2282,
       "aa": {
         "aa-intelligence": 52.6737,
         "aa-coding": null,
@@ -223261,7 +223261,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 42.0953,
+      "medianOutputSpeed": 41.5794,
       "aa": {
         "aa-intelligence": 7.5561,
         "aa-coding": null,
@@ -223587,7 +223587,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 23.9708,
+      "medianOutputSpeed": 23.2107,
       "aa": {
         "aa-intelligence": 10.8123,
         "aa-coding": null,
@@ -223914,7 +223914,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 87.1214,
+      "medianOutputSpeed": 88.5942,
       "aa": {
         "aa-intelligence": 21.4367,
         "aa-coding": null,
@@ -225786,7 +225786,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 60.1028,
+      "medianOutputSpeed": 59.3272,
       "aa": {
         "aa-intelligence": 11.9971,
         "aa-coding": null,
@@ -228063,7 +228063,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 107.9788,
+      "medianOutputSpeed": 107.3648,
       "aa": {
         "aa-intelligence": 6.4332,
         "aa-coding": null,
@@ -228811,7 +228811,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 51.4275,
+      "medianOutputSpeed": 56.9882,
       "aa": {
         "aa-intelligence": 20.1502,
         "aa-coding": null,
@@ -231458,7 +231458,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 159.2497,
+      "medianOutputSpeed": 165.9529,
       "aa": {
         "aa-intelligence": 8.9675,
         "aa-coding": null,
@@ -233077,7 +233077,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 195.4043,
+      "medianOutputSpeed": 200.9163,
       "aa": {
         "aa-intelligence": 19.7484,
         "aa-coding": null,
@@ -233768,7 +233768,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 62.9688,
+      "medianOutputSpeed": 61.4485,
       "aa": {
         "aa-intelligence": 19.8288,
         "aa-coding": null,
@@ -235494,7 +235494,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 160.3354,
+      "medianOutputSpeed": 178.8599,
       "aa": {
         "aa-intelligence": 12.6913,
         "aa-coding": null,
@@ -235840,7 +235840,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 58.5271,
+      "medianOutputSpeed": 57.6239,
       "aa": {
         "aa-intelligence": 48.9206,
         "aa-coding": null,
@@ -236600,7 +236600,7 @@
         "src": "assets/logos/cohere_small.svg",
         "color": "#D18EE2"
       },
-      "medianOutputSpeed": 56.4787,
+      "medianOutputSpeed": 59.8667,
       "aa": {
         "aa-intelligence": 6.9582,
         "aa-coding": null,
@@ -238567,7 +238567,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 108.4944,
+      "medianOutputSpeed": 107.3486,
       "aa": {
         "aa-intelligence": 7.6261,
         "aa-coding": null,
@@ -239014,7 +239014,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 69.2771,
+      "medianOutputSpeed": 68.7387,
       "aa": {
         "aa-intelligence": 53.3549,
         "aa-coding": null,
@@ -241196,7 +241196,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 169.6164,
+      "medianOutputSpeed": 168.416,
       "aa": {
         "aa-intelligence": 11.2676,
         "aa-coding": null,
@@ -242627,7 +242627,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 77.7107,
+      "medianOutputSpeed": 79.7171,
       "aa": {
         "aa-intelligence": 27.9112,
         "aa-coding": null,
@@ -243174,7 +243174,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 47.9118,
+      "medianOutputSpeed": 45.7835,
       "aa": {
         "aa-intelligence": 23.6789,
         "aa-coding": null,
@@ -244153,7 +244153,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 126.2992,
+      "medianOutputSpeed": 125.547,
       "aa": {
         "aa-intelligence": 37.3244,
         "aa-coding": null,
@@ -246142,7 +246142,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 71.1339,
+      "medianOutputSpeed": 74.7312,
       "aa": {
         "aa-intelligence": 8.35,
         "aa-coding": null,
@@ -246793,7 +246793,7 @@
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 146.5988,
+      "medianOutputSpeed": 143.795,
       "aa": {
         "aa-intelligence": 24.5693,
         "aa-coding": null,
@@ -248968,7 +248968,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 39.0701,
+      "medianOutputSpeed": 38.3576,
       "aa": {
         "aa-intelligence": 26.3534,
         "aa-coding": null,
@@ -251799,7 +251799,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 85.1477,
+      "medianOutputSpeed": 80.3791,
       "aa": {
         "aa-intelligence": 42.3078,
         "aa-coding": null,
@@ -252415,7 +252415,7 @@
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 49.9835,
+      "medianOutputSpeed": 51.9794,
       "aa": {
         "aa-intelligence": 12.7155,
         "aa-coding": null,
@@ -253804,7 +253804,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 60.8614,
+      "medianOutputSpeed": 59.1731,
       "aa": {
         "aa-intelligence": 8.1543,
         "aa-coding": null,
@@ -255577,7 +255577,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 44.7418,
+      "medianOutputSpeed": 45.0991,
       "aa": {
         "aa-intelligence": 6.604,
         "aa-coding": null,
@@ -255902,7 +255902,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 147.7069,
+      "medianOutputSpeed": 145.1678,
       "aa": {
         "aa-intelligence": 19.3295,
         "aa-coding": null,
@@ -256667,7 +256667,7 @@
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 34.1243,
+      "medianOutputSpeed": 31.669,
       "aa": {
         "aa-intelligence": 18.29,
         "aa-coding": null,
@@ -257751,7 +257751,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 74.6006,
+      "medianOutputSpeed": 73.9379,
       "aa": {
         "aa-intelligence": 22.9828,
         "aa-coding": null,
@@ -258116,19 +258116,19 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 75.1102,
+      "medianOutputSpeed": 74.4691,
       "aa": {
         "aa-intelligence": 9.2661,
         "aa-coding": null,
         "aa-agentic": 5.5194
       },
-      "aaCostUsd": 72.2705,
+      "aaCostUsd": 46.4068,
       "pricing": {
         "inputPerMillionTokensUsd": 0.5,
         "outputPerMillionTokensUsd": 1.5,
         "cacheHitPerMillionTokensUsd": 0.05,
-        "aaIndexCostUsd": 72.2705,
-        "aaIndexInputCostUsd": 57.5938,
+        "aaIndexCostUsd": 46.4068,
+        "aaIndexInputCostUsd": 31.7301,
         "aaIndexOutputCostUsd": 14.6767,
         "aaIndexReasoningCostUsd": 0.0,
         "aaIndexAnswerCostUsd": 14.6767
@@ -259220,7 +259220,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 94.2468,
+      "medianOutputSpeed": 89.692,
       "aa": {
         "aa-intelligence": 18.1597,
         "aa-coding": null,
@@ -259765,7 +259765,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 79.7252,
+      "medianOutputSpeed": 76.1347,
       "aa": {
         "aa-intelligence": 30.4482,
         "aa-coding": null,
@@ -263459,7 +263459,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 119.4087,
+      "medianOutputSpeed": 124.3857,
       "aa": {
         "aa-intelligence": 24.7358,
         "aa-coding": null,
@@ -263785,7 +263785,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 226.6537,
+      "medianOutputSpeed": 240.2762,
       "aa": {
         "aa-intelligence": 33.6326,
         "aa-coding": null,
@@ -264822,7 +264822,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 86.6922,
+      "medianOutputSpeed": 84.826,
       "aa": {
         "aa-intelligence": 19.3684,
         "aa-coding": null,
@@ -265726,7 +265726,7 @@
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 37.9838,
+      "medianOutputSpeed": 37.8186,
       "aa": {
         "aa-intelligence": 34.4555,
         "aa-coding": null,
@@ -266805,7 +266805,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 112.1892,
+      "medianOutputSpeed": 111.4141,
       "aa": {
         "aa-intelligence": 7.9264,
         "aa-coding": null,
@@ -268505,7 +268505,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 46.3044,
+      "medianOutputSpeed": 55.7633,
       "aa": {
         "aa-intelligence": 7.4577,
         "aa-coding": null,
@@ -268960,7 +268960,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 110.2276,
+      "medianOutputSpeed": 91.5307,
       "aa": {
         "aa-intelligence": 27.5773,
         "aa-coding": null,
@@ -270778,7 +270778,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 43.2057,
+      "medianOutputSpeed": 42.5319,
       "aa": {
         "aa-intelligence": 31.9457,
         "aa-coding": null,
@@ -273766,7 +273766,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 108.9075,
+      "medianOutputSpeed": 113.9523,
       "aa": {
         "aa-intelligence": 17.4754,
         "aa-coding": null,
@@ -274909,7 +274909,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 117.3537,
+      "medianOutputSpeed": 118.9662,
       "aa": {
         "aa-intelligence": 25.0359,
         "aa-coding": null,
@@ -275725,7 +275725,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 56.702,
+      "medianOutputSpeed": 79.892,
       "aa": {
         "aa-intelligence": 46.4466,
         "aa-coding": null,
@@ -277170,7 +277170,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 339.6922,
+      "medianOutputSpeed": 335.4366,
       "aa": {
         "aa-intelligence": 15.5543,
         "aa-coding": null,
@@ -279251,7 +279251,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 120.0301,
+      "medianOutputSpeed": 117.8088,
       "aa": {
         "aa-intelligence": 32.5028,
         "aa-coding": null,
@@ -280553,7 +280553,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 67.3208,
+      "medianOutputSpeed": 70.6547,
       "aa": {
         "aa-intelligence": 26.0586,
         "aa-coding": null,
@@ -282724,19 +282724,19 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 162.5655,
+      "medianOutputSpeed": 194.9408,
       "aa": {
         "aa-intelligence": 22.9279,
         "aa-coding": null,
         "aa-agentic": 27.4979
       },
-      "aaCostUsd": 757.6627,
+      "aaCostUsd": 804.6223,
       "pricing": {
         "inputPerMillionTokensUsd": 0.6,
         "outputPerMillionTokensUsd": 2.5,
         "cacheHitPerMillionTokensUsd": 0.16,
-        "aaIndexCostUsd": 757.6627,
-        "aaIndexInputCostUsd": 476.5423,
+        "aaIndexCostUsd": 804.6223,
+        "aaIndexInputCostUsd": 523.5019,
         "aaIndexOutputCostUsd": 281.1203,
         "aaIndexReasoningCostUsd": 234.4078,
         "aaIndexAnswerCostUsd": 46.7125
@@ -285785,7 +285785,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 173.075,
+      "medianOutputSpeed": 170.4997,
       "aa": {
         "aa-intelligence": 6.6657,
         "aa-coding": null,
@@ -286112,7 +286112,7 @@
         "src": "assets/logos/bytedance_small.svg",
         "color": "#3c8bff"
       },
-      "medianOutputSpeed": 40.5209,
+      "medianOutputSpeed": 40.6234,
       "aa": {
         "aa-intelligence": 12.0993,
         "aa-coding": null,
@@ -287121,7 +287121,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 33.998,
+      "medianOutputSpeed": 38.6202,
       "aa": {
         "aa-intelligence": 11.0889,
         "aa-coding": null,
@@ -288880,7 +288880,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 94.0565,
+      "medianOutputSpeed": 95.5125,
       "aa": {
         "aa-intelligence": 30.1055,
         "aa-coding": null,
@@ -289626,7 +289626,7 @@
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 12.9491,
+      "medianOutputSpeed": 13.3519,
       "aa": {
         "aa-intelligence": 6.0493,
         "aa-coding": null,
@@ -289951,7 +289951,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 140.8973,
+      "medianOutputSpeed": 133.6831,
       "aa": {
         "aa-intelligence": 9.8054,
         "aa-coding": null,
@@ -291399,7 +291399,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 38.9818,
+      "medianOutputSpeed": 38.0636,
       "aa": {
         "aa-intelligence": 40.1529,
         "aa-coding": null,
@@ -293004,7 +293004,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 120.8691,
+      "medianOutputSpeed": 114.5738,
       "aa": {
         "aa-intelligence": 24.7817,
         "aa-coding": null,
@@ -293330,7 +293330,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 71.2361,
+      "medianOutputSpeed": 77.7661,
       "aa": {
         "aa-intelligence": 22.8693,
         "aa-coding": null,
@@ -294346,7 +294346,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 19.1735,
+      "medianOutputSpeed": 18.3243,
       "aa": {
         "aa-intelligence": 5.408,
         "aa-coding": null,
@@ -296046,7 +296046,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 165.7922,
+      "medianOutputSpeed": 172.0523,
       "aa": {
         "aa-intelligence": 13.3741,
         "aa-coding": null,
@@ -296723,7 +296723,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 168.595,
+      "medianOutputSpeed": 167.7896,
       "aa": {
         "aa-intelligence": 12.8288,
         "aa-coding": null,
@@ -298082,7 +298082,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 123.5977,
+      "medianOutputSpeed": 133.0468,
       "aa": {
         "aa-intelligence": 18.2617,
         "aa-coding": null,
@@ -299823,7 +299823,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 94.3962,
+      "medianOutputSpeed": 101.3741,
       "aa": {
         "aa-intelligence": 14.201,
         "aa-coding": null,
@@ -300149,7 +300149,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 25.7674,
+      "medianOutputSpeed": 26.1345,
       "aa": {
         "aa-intelligence": 13.1248,
         "aa-coding": null,
@@ -301153,7 +301153,7 @@
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 50.5483,
+      "medianOutputSpeed": 52.8029,
       "aa": {
         "aa-intelligence": 15.2942,
         "aa-coding": null,
@@ -301547,7 +301547,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 53.7544,
+      "medianOutputSpeed": 53.5906,
       "aa": {
         "aa-intelligence": 27.5508,
         "aa-coding": null,
@@ -302588,7 +302588,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 141.7079,
+      "medianOutputSpeed": 138.4886,
       "aa": {
         "aa-intelligence": 15.2321,
         "aa-coding": null,
@@ -303206,7 +303206,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 209.6389,
+      "medianOutputSpeed": 209.0714,
       "aa": {
         "aa-intelligence": 4.8376,
         "aa-coding": null,
@@ -304963,7 +304963,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 211.31,
+      "medianOutputSpeed": 208.3594,
       "aa": {
         "aa-intelligence": 29.4572,
         "aa-coding": null,
@@ -306345,7 +306345,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 35.5486,
+      "medianOutputSpeed": 36.0298,
       "aa": {
         "aa-intelligence": 18.5297,
         "aa-coding": null,
@@ -307149,7 +307149,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 209.2092,
+      "medianOutputSpeed": 205.0529,
       "aa": {
         "aa-intelligence": 9.8513,
         "aa-coding": null,
@@ -307822,7 +307822,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 96.9646,
+      "medianOutputSpeed": 93.932,
       "aa": {
         "aa-intelligence": 33.8044,
         "aa-coding": null,
@@ -309446,7 +309446,7 @@
         "src": "assets/logos/stepfun_small.svg",
         "color": "#00F5E7"
       },
-      "medianOutputSpeed": 193.0648,
+      "medianOutputSpeed": 199.7539,
       "aa": {
         "aa-intelligence": 19.4813,
         "aa-coding": null,
@@ -310558,7 +310558,7 @@
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 159.4047,
+      "medianOutputSpeed": 159.8727,
       "aa": {
         "aa-intelligence": 22.5966,
         "aa-coding": null,
@@ -312156,7 +312156,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 66.79,
+      "medianOutputSpeed": 78.1064,
       "aa": {
         "aa-intelligence": 8.387,
         "aa-coding": null,
@@ -314125,7 +314125,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 89.2257,
+      "medianOutputSpeed": 92.0539,
       "aa": {
         "aa-intelligence": 20.8345,
         "aa-coding": null,
@@ -315229,7 +315229,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 77.6988,
+      "medianOutputSpeed": 87.4585,
       "aa": {
         "aa-intelligence": 39.2364,
         "aa-coding": null,
@@ -316026,7 +316026,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 82.7332,
+      "medianOutputSpeed": 88.6542,
       "aa": {
         "aa-intelligence": 23.1674,
         "aa-coding": null,
@@ -316913,7 +316913,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 259.6137,
+      "medianOutputSpeed": 241.3017,
       "aa": {
         "aa-intelligence": 12.474,
         "aa-coding": null,
@@ -317242,7 +317242,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 146.2069,
+      "medianOutputSpeed": 153.8223,
       "aa": {
         "aa-intelligence": 37.256,
         "aa-coding": null,
@@ -318318,7 +318318,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 102.4188,
+      "medianOutputSpeed": 101.1841,
       "aa": {
         "aa-intelligence": 22.2403,
         "aa-coding": null,
@@ -318848,7 +318848,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 165.6537,
+      "medianOutputSpeed": 166.6795,
       "aa": {
         "aa-intelligence": 11.8041,
         "aa-coding": null,
@@ -319500,7 +319500,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 104.0065,
+      "medianOutputSpeed": 105.0711,
       "aa": {
         "aa-intelligence": 13.1304,
         "aa-coding": null,
@@ -319954,7 +319954,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 58.1831,
+      "medianOutputSpeed": 59.1594,
       "aa": {
         "aa-intelligence": 48.1219,
         "aa-coding": null,
@@ -320787,7 +320787,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 88.9585,
+      "medianOutputSpeed": 86.3637,
       "aa": {
         "aa-intelligence": 6.0444,
         "aa-coding": null,
@@ -322869,7 +322869,7 @@
         "src": "assets/logos/thinking_machines.svg",
         "color": "#676767"
       },
-      "medianOutputSpeed": 208.2954,
+      "medianOutputSpeed": 214.3207,
       "aa": {
         "aa-intelligence": 27.7806,
         "aa-coding": null,
@@ -324380,7 +324380,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 138.741,
+      "medianOutputSpeed": 145.1053,
       "aa": {
         "aa-intelligence": 7.818,
         "aa-coding": null,
@@ -325031,7 +325031,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 134.6531,
+      "medianOutputSpeed": 135.0862,
       "aa": {
         "aa-intelligence": 6.9335,
         "aa-coding": null,
@@ -325701,7 +325701,7 @@
         "src": "assets/logos/deepseek.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 271.9662,
+      "medianOutputSpeed": 242.3576,
       "aa": {
         "aa-intelligence": 24.6734,
         "aa-coding": null,
@@ -329647,19 +329647,19 @@
         "src": "assets/logos/inceptionlabs.svg",
         "color": "#021B30"
       },
-      "medianOutputSpeed": 842.9576,
+      "medianOutputSpeed": 760.1229,
       "aa": {
         "aa-intelligence": 12.3408,
         "aa-coding": null,
         "aa-agentic": null
       },
-      "aaCostUsd": 127.812,
+      "aaCostUsd": 218.1067,
       "pricing": {
         "inputPerMillionTokensUsd": 0.25,
         "outputPerMillionTokensUsd": 0.75,
         "cacheHitPerMillionTokensUsd": 0.025,
-        "aaIndexCostUsd": 127.812,
-        "aaIndexInputCostUsd": 101.3722,
+        "aaIndexCostUsd": 218.1067,
+        "aaIndexInputCostUsd": 191.6669,
         "aaIndexOutputCostUsd": 26.4398,
         "aaIndexReasoningCostUsd": 24.4943,
         "aaIndexAnswerCostUsd": 1.9456
@@ -330512,7 +330512,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 31.4966,
+      "medianOutputSpeed": 32.0555,
       "aa": {
         "aa-intelligence": 7.0435,
         "aa-coding": null,
@@ -330861,7 +330861,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 162.2974,
+      "medianOutputSpeed": 170.0848,
       "aa": {
         "aa-intelligence": 8.7366,
         "aa-coding": null,
@@ -331187,7 +331187,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 210.0208,
+      "medianOutputSpeed": 185.4547,
       "aa": {
         "aa-intelligence": 8.8961,
         "aa-coding": null,
@@ -332546,7 +332546,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 219.6814,
+      "medianOutputSpeed": 217.9814,
       "aa": {
         "aa-intelligence": 34.8391,
         "aa-coding": null,
@@ -335617,7 +335617,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 216.7901,
+      "medianOutputSpeed": 212.4098,
       "aa": {
         "aa-intelligence": 33.9786,
         "aa-coding": null,
@@ -336915,7 +336915,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 195.5777,
+      "medianOutputSpeed": 197.1342,
       "aa": {
         "aa-intelligence": 17.9337,
         "aa-coding": null,
@@ -337568,7 +337568,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 62.0373,
+      "medianOutputSpeed": 62.4855,
       "aa": {
         "aa-intelligence": 38.8121,
         "aa-coding": null,
@@ -339202,7 +339202,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 58.4795,
+      "medianOutputSpeed": 55.7488,
       "aa": {
         "aa-intelligence": 15.6098,
         "aa-coding": null,
@@ -340212,7 +340212,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 69.2682,
+      "medianOutputSpeed": 84.2575,
       "aa": {
         "aa-intelligence": 28.328,
         "aa-coding": null,
@@ -341296,7 +341296,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 135.9438,
+      "medianOutputSpeed": 146.754,
       "aa": {
         "aa-intelligence": 32.1482,
         "aa-coding": null,
@@ -342364,7 +342364,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 53.1211,
+      "medianOutputSpeed": 48.9595,
       "aa": {
         "aa-intelligence": 26.2048,
         "aa-coding": null,
@@ -344191,7 +344191,7 @@
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 26.3611,
+      "medianOutputSpeed": 30.8109,
       "aa": {
         "aa-intelligence": 15.2883,
         "aa-coding": null,
@@ -345294,7 +345294,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 139.6191,
+      "medianOutputSpeed": 144.5779,
       "aa": {
         "aa-intelligence": 7.5211,
         "aa-coding": null,
@@ -345639,7 +345639,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 81.3589,
+      "medianOutputSpeed": 77.7806,
       "aa": {
         "aa-intelligence": 20.7856,
         "aa-coding": null,
@@ -346004,7 +346004,7 @@
         "src": "assets/logos/celeris.svg",
         "color": "#ff8a75"
       },
-      "medianOutputSpeed": 1628.3215,
+      "medianOutputSpeed": 1564.9524,
       "aa": {
         "aa-intelligence": 6.347,
         "aa-coding": null,
@@ -348313,7 +348313,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 83.935,
+      "medianOutputSpeed": 86.0921,
       "aa": {
         "aa-intelligence": 34.2377,
         "aa-coding": null,
@@ -349110,7 +349110,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 89.6698,
+      "medianOutputSpeed": 95.4848,
       "aa": {
         "aa-intelligence": 17.3564,
         "aa-coding": null,
@@ -352081,7 +352081,7 @@
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 122.3865,
+      "medianOutputSpeed": 125.4007,
       "aa": {
         "aa-intelligence": 6.5721,
         "aa-coding": null,
@@ -352406,7 +352406,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 91.3957,
+      "medianOutputSpeed": 97.9384,
       "aa": {
         "aa-intelligence": 35.9968,
         "aa-coding": null,
@@ -354582,7 +354582,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 146.4926,
+      "medianOutputSpeed": 152.6711,
       "aa": {
         "aa-intelligence": 16.6531,
         "aa-coding": null,
@@ -355664,7 +355664,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 127.9163,
+      "medianOutputSpeed": 127.9067,
       "aa": {
         "aa-intelligence": 18.229,
         "aa-coding": null,
@@ -357026,7 +357026,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 135.5895,
+      "medianOutputSpeed": 133.5222,
       "aa": {
         "aa-intelligence": 34.5553,
         "aa-coding": null,
@@ -358476,7 +358476,7 @@
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 4.9147,
+      "medianOutputSpeed": 5.4445,
       "aa": {
         "aa-intelligence": 7.8075,
         "aa-coding": null,
@@ -358801,7 +358801,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 159.8113,
+      "medianOutputSpeed": 168.9614,
       "aa": {
         "aa-intelligence": 20.0139,
         "aa-coding": null,
@@ -361073,7 +361073,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 329.6595,
+      "medianOutputSpeed": 307.844,
       "aa": {
         "aa-intelligence": 40.9262,
         "aa-coding": null,
@@ -362641,7 +362641,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 80.0712,
+      "medianOutputSpeed": 84.4674,
       "aa": {
         "aa-intelligence": 42.3461,
         "aa-coding": null,
@@ -363763,7 +363763,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 109.1105,
+      "medianOutputSpeed": 110.3578,
       "aa": {
         "aa-intelligence": 7.7397,
         "aa-coding": null,
@@ -364109,7 +364109,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 58.9581,
+      "medianOutputSpeed": 59.0354,
       "aa": {
         "aa-intelligence": 21.428,
         "aa-coding": null,
@@ -365472,7 +365472,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 266.7395,
+      "medianOutputSpeed": 265.1893,
       "aa": {
         "aa-intelligence": 10.2507,
         "aa-coding": null,
@@ -366125,7 +366125,7 @@
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 67.761,
+      "medianOutputSpeed": 62.4776,
       "aa": {
         "aa-intelligence": 25.8121,
         "aa-coding": null,
@@ -367760,7 +367760,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 39.6392,
+      "medianOutputSpeed": 38.8292,
       "aa": {
         "aa-intelligence": 39.8862,
         "aa-coding": null,
@@ -369188,7 +369188,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 156.9395,
+      "medianOutputSpeed": 170.7909,
       "aa": {
         "aa-intelligence": 12.4803,
         "aa-coding": null,
@@ -370510,19 +370510,19 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 122.7627,
+      "medianOutputSpeed": 116.5663,
       "aa": {
         "aa-intelligence": 13.9927,
         "aa-coding": null,
         "aa-agentic": 22.9504
       },
-      "aaCostUsd": 203.0604,
+      "aaCostUsd": 250.3706,
       "pricing": {
         "inputPerMillionTokensUsd": 1.25,
         "outputPerMillionTokensUsd": 2.5,
         "cacheHitPerMillionTokensUsd": 0.2,
-        "aaIndexCostUsd": 203.0604,
-        "aaIndexInputCostUsd": 173.15,
+        "aaIndexCostUsd": 250.3706,
+        "aaIndexInputCostUsd": 220.4602,
         "aaIndexOutputCostUsd": 29.9104,
         "aaIndexReasoningCostUsd": 0.0,
         "aaIndexAnswerCostUsd": 29.9104
@@ -371225,7 +371225,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 42.3531,
+      "medianOutputSpeed": 41.3574,
       "aa": {
         "aa-intelligence": 20.6662,
         "aa-coding": null,
@@ -372349,7 +372349,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 42.15,
+      "medianOutputSpeed": 39.905,
       "aa": {
         "aa-intelligence": 19.3437,
         "aa-coding": null,
@@ -373325,7 +373325,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 115.8005,
+      "medianOutputSpeed": 113.3754,
       "aa": {
         "aa-intelligence": 9.9906,
         "aa-coding": null,
@@ -374754,7 +374754,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 58.847,
+      "medianOutputSpeed": 66.7601,
       "aa": {
         "aa-intelligence": 24.2412,
         "aa-coding": null,
@@ -375804,7 +375804,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 35.7325,
+      "medianOutputSpeed": 35.9952,
       "aa": {
         "aa-intelligence": 14.9293,
         "aa-coding": null,
@@ -376298,13 +376298,13 @@
         "aa-coding": null,
         "aa-agentic": 24.1647
       },
-      "aaCostUsd": 332.004,
+      "aaCostUsd": 363.2443,
       "pricing": {
         "inputPerMillionTokensUsd": 1.25,
         "outputPerMillionTokensUsd": 2.5,
         "cacheHitPerMillionTokensUsd": 0.2,
-        "aaIndexCostUsd": 332.004,
-        "aaIndexInputCostUsd": 114.4481,
+        "aaIndexCostUsd": 363.2443,
+        "aaIndexInputCostUsd": 145.6885,
         "aaIndexOutputCostUsd": 217.5558,
         "aaIndexReasoningCostUsd": 199.0362,
         "aaIndexAnswerCostUsd": 18.5196
@@ -378047,7 +378047,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 96.4683,
+      "medianOutputSpeed": 98.008,
       "aa": {
         "aa-intelligence": 5.4777,
         "aa-coding": null,
@@ -379151,7 +379151,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 85.9585,
+      "medianOutputSpeed": 86.6152,
       "aa": {
         "aa-intelligence": 7.6638,
         "aa-coding": null,
@@ -380126,7 +380126,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 56.5272,
+      "medianOutputSpeed": 53.4156,
       "aa": {
         "aa-intelligence": 41.7899,
         "aa-coding": null,
@@ -381766,7 +381766,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 218.1488,
+      "medianOutputSpeed": 213.9842,
       "aa": {
         "aa-intelligence": 48.0923,
         "aa-coding": null,
@@ -382906,7 +382906,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 73.8736,
+      "medianOutputSpeed": 69.3392,
       "aa": {
         "aa-intelligence": 34.3842,
         "aa-coding": null,
@@ -386042,7 +386042,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 87.0282,
+      "medianOutputSpeed": 85.0961,
       "aa": {
         "aa-intelligence": 20.7797,
         "aa-coding": null,
@@ -387943,7 +387943,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 58.8435,
+      "medianOutputSpeed": 56.8676,
       "aa": {
         "aa-intelligence": 51.1516,
         "aa-coding": null,
@@ -388703,7 +388703,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 42.0116,
+      "medianOutputSpeed": 41.3907,
       "aa": {
         "aa-intelligence": 7.2763,
         "aa-coding": null,
@@ -390151,7 +390151,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 82.8566,
+      "medianOutputSpeed": 87.0295,
       "aa": {
         "aa-intelligence": 37.9513,
         "aa-coding": null,
@@ -392853,7 +392853,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 136.3697,
+      "medianOutputSpeed": 147.7168,
       "aa": {
         "aa-intelligence": 10.1589,
         "aa-coding": null,
@@ -394193,7 +394193,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 102.2839,
+      "medianOutputSpeed": 104.5174,
       "aa": {
         "aa-intelligence": 9.959,
         "aa-coding": null,
@@ -395839,7 +395839,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 55.0305,
+      "medianOutputSpeed": 53.9443,
       "aa": {
         "aa-intelligence": 45.7819,
         "aa-coding": null,
@@ -397805,13 +397805,13 @@
         "aa-coding": null,
         "aa-agentic": 16.4718
       },
-      "aaCostUsd": 524.2504,
+      "aaCostUsd": 594.0795,
       "pricing": {
         "inputPerMillionTokensUsd": 1.0,
         "outputPerMillionTokensUsd": 5.0,
         "cacheHitPerMillionTokensUsd": 0.1,
-        "aaIndexCostUsd": 524.2504,
-        "aaIndexInputCostUsd": 136.082,
+        "aaIndexCostUsd": 594.0795,
+        "aaIndexInputCostUsd": 205.911,
         "aaIndexOutputCostUsd": 388.1684,
         "aaIndexReasoningCostUsd": 317.6524,
         "aaIndexAnswerCostUsd": 70.5161
@@ -400910,7 +400910,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 57.9304,
+      "medianOutputSpeed": 56.9639,
       "aa": {
         "aa-intelligence": 13.4376,
         "aa-coding": null,
@@ -401566,19 +401566,19 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 73.4607,
+      "medianOutputSpeed": 72.0891,
       "aa": {
         "aa-intelligence": 25.1622,
         "aa-coding": null,
         "aa-agentic": 20.6909
       },
-      "aaCostUsd": 527.974,
+      "aaCostUsd": 427.7347,
       "pricing": {
         "inputPerMillionTokensUsd": 0.4,
         "outputPerMillionTokensUsd": 1.6,
         "cacheHitPerMillionTokensUsd": 0.08,
-        "aaIndexCostUsd": 527.974,
-        "aaIndexInputCostUsd": 312.325,
+        "aaIndexCostUsd": 427.7347,
+        "aaIndexInputCostUsd": 212.0857,
         "aaIndexOutputCostUsd": 215.649,
         "aaIndexReasoningCostUsd": 188.1705,
         "aaIndexAnswerCostUsd": 27.4785
@@ -403265,7 +403265,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 144.9337,
+      "medianOutputSpeed": 139.7028,
       "aa": {
         "aa-intelligence": 38.9756,
         "aa-coding": null,
@@ -404799,7 +404799,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 123.0593,
+      "medianOutputSpeed": 117.9322,
       "aa": {
         "aa-intelligence": 32.1196,
         "aa-coding": null,
@@ -405921,7 +405921,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 205.5939,
+      "medianOutputSpeed": 202.1794,
       "aa": {
         "aa-intelligence": 5.8205,
         "aa-coding": null,
@@ -408827,7 +408827,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 96.5662,
+      "medianOutputSpeed": 96.3516,
       "aa": {
         "aa-intelligence": 8.075,
         "aa-coding": null,
@@ -409931,7 +409931,7 @@
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 78.7127,
+      "medianOutputSpeed": 84.9094,
       "aa": {
         "aa-intelligence": 11.0813,
         "aa-coding": null,
@@ -412379,7 +412379,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 103.1691,
+      "medianOutputSpeed": 103.9959,
       "aa": {
         "aa-intelligence": 8.5869,
         "aa-coding": null,
@@ -413587,7 +413587,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 43.8671,
+      "medianOutputSpeed": 44.5553,
       "aa": {
         "aa-intelligence": 33.6963,
         "aa-coding": null,
@@ -416636,7 +416636,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 39.6918,
+      "medianOutputSpeed": 38.9415,
       "aa": {
         "aa-intelligence": 45.4152,
         "aa-coding": null,
@@ -417798,7 +417798,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 94.2234,
+      "medianOutputSpeed": 94.5836,
       "aa": {
         "aa-intelligence": 36.9794,
         "aa-coding": null,
@@ -419440,7 +419440,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 361.4485,
+      "medianOutputSpeed": 332.8767,
       "aa": {
         "aa-intelligence": 39.0595,
         "aa-coding": null,
@@ -420663,7 +420663,7 @@
         "src": "assets/logos/tencent_small.svg",
         "color": "#5CB9FF"
       },
-      "medianOutputSpeed": 89.6699,
+      "medianOutputSpeed": 86.3778,
       "aa": {
         "aa-intelligence": 25.2973,
         "aa-coding": null,
@@ -422350,7 +422350,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 41.5281,
+      "medianOutputSpeed": 41.508,
       "aa": {
         "aa-intelligence": 5.9921,
         "aa-coding": null,
@@ -426049,7 +426049,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 111.7469,
+      "medianOutputSpeed": 122.0919,
       "aa": {
         "aa-intelligence": 6.6643,
         "aa-coding": null,
@@ -426414,22 +426414,22 @@
         "src": "assets/logos/arcee_small.svg",
         "color": "#008c8d"
       },
-      "medianOutputSpeed": 321.8828,
+      "medianOutputSpeed": 321.072,
       "aa": {
         "aa-intelligence": 10.8242,
         "aa-coding": null,
         "aa-agentic": 3.7191
       },
-      "aaCostUsd": 518.0731,
+      "aaCostUsd": 232.9469,
       "pricing": {
         "inputPerMillionTokensUsd": 0.25,
         "outputPerMillionTokensUsd": 0.8,
         "cacheHitPerMillionTokensUsd": 0.06,
-        "aaIndexCostUsd": 518.0731,
-        "aaIndexInputCostUsd": 373.4527,
-        "aaIndexOutputCostUsd": 144.6204,
-        "aaIndexReasoningCostUsd": 136.3985,
-        "aaIndexAnswerCostUsd": 8.2219
+        "aaIndexCostUsd": 232.9469,
+        "aaIndexInputCostUsd": 104.3954,
+        "aaIndexOutputCostUsd": 128.5515,
+        "aaIndexReasoningCostUsd": 121.2431,
+        "aaIndexAnswerCostUsd": 7.3084
       },
       "scores": {
         "AA-Briefcase": 0.0,
@@ -427842,7 +427842,7 @@
         "src": "assets/logos/upstage_small.svg",
         "color": "#7c59f5"
       },
-      "medianOutputSpeed": 152.8619,
+      "medianOutputSpeed": 149.5293,
       "aa": {
         "aa-intelligence": 7.8155,
         "aa-coding": null,
@@ -428945,7 +428945,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 59.0876,
+      "medianOutputSpeed": 60.1675,
       "aa": {
         "aa-intelligence": 50.7771,
         "aa-coding": null,
@@ -430427,7 +430427,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 101.694,
+      "medianOutputSpeed": 99.9208,
       "aa": {
         "aa-intelligence": 7.7608,
         "aa-coding": null,
@@ -431132,7 +431132,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 70.4729,
+      "medianOutputSpeed": 66.4707,
       "aa": {
         "aa-intelligence": 31.6623,
         "aa-coding": null,
@@ -432401,19 +432401,19 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 217.0397,
+      "medianOutputSpeed": 226.817,
       "aa": {
         "aa-intelligence": 24.0682,
         "aa-coding": null,
         "aa-agentic": 31.5417
       },
-      "aaCostUsd": 1437.7997,
+      "aaCostUsd": 1524.0178,
       "pricing": {
         "inputPerMillionTokensUsd": 0.75,
         "outputPerMillionTokensUsd": 4.5,
         "cacheHitPerMillionTokensUsd": 0.075,
-        "aaIndexCostUsd": 1437.7997,
-        "aaIndexInputCostUsd": 410.9249,
+        "aaIndexCostUsd": 1524.0178,
+        "aaIndexInputCostUsd": 497.143,
         "aaIndexOutputCostUsd": 1026.8748,
         "aaIndexReasoningCostUsd": 974.8114,
         "aaIndexAnswerCostUsd": 52.0634
@@ -434687,7 +434687,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 120.2251,
+      "medianOutputSpeed": 119.2855,
       "aa": {
         "aa-intelligence": 29.7186,
         "aa-coding": null,
@@ -436419,7 +436419,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 59.6286,
+      "medianOutputSpeed": 59.1354,
       "aa": {
         "aa-intelligence": 9.4997,
         "aa-coding": null,
@@ -436830,7 +436830,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 118.9102,
+      "medianOutputSpeed": 121.4277,
       "aa": {
         "aa-intelligence": 9.9062,
         "aa-coding": null,
@@ -441110,7 +441110,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 98.5647,
+      "medianOutputSpeed": 104.4984,
       "aa": {
         "aa-intelligence": 30.4497,
         "aa-coding": null,
@@ -442663,7 +442663,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 104.6742,
+      "medianOutputSpeed": 105.3111,
       "aa": {
         "aa-intelligence": 7.3443,
         "aa-coding": null,
@@ -443098,7 +443098,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 125.854,
+      "medianOutputSpeed": 138.5681,
       "aa": {
         "aa-intelligence": 20.9225,
         "aa-coding": null,
@@ -443841,7 +443841,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 57.3961,
+      "medianOutputSpeed": 60.1161,
       "aa": {
         "aa-intelligence": 35.1247,
         "aa-coding": null,
@@ -444597,7 +444597,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 99.648,
+      "medianOutputSpeed": 145.7286,
       "aa": {
         "aa-intelligence": 8.4416,
         "aa-coding": null,
@@ -446057,7 +446057,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 160.5938,
+      "medianOutputSpeed": 173.2474,
       "aa": {
         "aa-intelligence": 11.6892,
         "aa-coding": null,
@@ -446422,7 +446422,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 80.9495,
+      "medianOutputSpeed": 81.4527,
       "aa": {
         "aa-intelligence": 15.4109,
         "aa-coding": null,
@@ -446748,7 +446748,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 108.8535,
+      "medianOutputSpeed": 111.8088,
       "aa": {
         "aa-intelligence": 20.5992,
         "aa-coding": null,
@@ -447094,7 +447094,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 69.8596,
+      "medianOutputSpeed": 71.7408,
       "aa": {
         "aa-intelligence": 11.4482,
         "aa-coding": null,
@@ -447786,7 +447786,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 155.6876,
+      "medianOutputSpeed": 148.6412,
       "aa": {
         "aa-intelligence": 26.0135,
         "aa-coding": null,
@@ -449540,7 +449540,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 84.5148,
+      "medianOutputSpeed": 86.1514,
       "aa": {
         "aa-intelligence": 47.5276,
         "aa-coding": null,
@@ -450956,7 +450956,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 114.2145,
+      "medianOutputSpeed": 115.3982,
       "aa": {
         "aa-intelligence": 25.655,
         "aa-coding": null,
@@ -452260,7 +452260,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 94.5822,
+      "medianOutputSpeed": 88.9566,
       "aa": {
         "aa-intelligence": 30.7095,
         "aa-coding": null,
@@ -453208,7 +453208,7 @@
         "src": "assets/logos/stepfun_small.svg",
         "color": "#00F5E7"
       },
-      "medianOutputSpeed": 140.9774,
+      "medianOutputSpeed": 138.7308,
       "aa": {
         "aa-intelligence": 16.6169,
         "aa-coding": null,
@@ -454203,7 +454203,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 181.8278,
+      "medianOutputSpeed": 188.3181,
       "aa": {
         "aa-intelligence": 11.1974,
         "aa-coding": null,
@@ -454528,7 +454528,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 66.0296,
+      "medianOutputSpeed": 64.0784,
       "aa": {
         "aa-intelligence": 44.3113,
         "aa-coding": null,
@@ -455379,7 +455379,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 185.8444,
+      "medianOutputSpeed": 204.2349,
       "aa": {
         "aa-intelligence": 10.2106,
         "aa-coding": null,
@@ -456355,7 +456355,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 63.2238,
+      "medianOutputSpeed": 62.7666,
       "aa": {
         "aa-intelligence": 16.291,
         "aa-coding": null,
@@ -456680,7 +456680,7 @@
         "src": "assets/logos/zai.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 83.6574,
+      "medianOutputSpeed": 86.0583,
       "aa": {
         "aa-intelligence": 34.299,
         "aa-coding": null,
@@ -458781,7 +458781,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 35.2696,
+      "medianOutputSpeed": 35.0715,
       "aa": {
         "aa-intelligence": 18.9788,
         "aa-coding": null,
@@ -460006,7 +460006,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 73.3981,
+      "medianOutputSpeed": 66.7503,
       "aa": {
         "aa-intelligence": 49.6258,
         "aa-coding": null,
@@ -461476,7 +461476,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 74.1154,
+      "medianOutputSpeed": 78.1766,
       "aa": {
         "aa-intelligence": 44.7774,
         "aa-coding": null,
@@ -461494,12 +461494,12 @@
         "aaIndexAnswerCostUsd": 128.2216
       },
       "scores": {
-        "AA-Briefcase": 50.821,
+        "AA-Briefcase": 50.8275,
         "AutomationBench-AA": 62.2029,
         "Terminal-Bench v4.0": 41.9192,
         "GDP.pdf": 11.2,
         "AA-LCR v1.1": 79.6667,
-        "GDPval-AA v2": 57.276,
+        "GDPval-AA v2": 57.181,
         "τ³-Banking": 50.3093,
         "Terminal-Bench v2.1": 83.8951,
         "GDPval-AA": 58.812,
@@ -462994,7 +462994,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 112.3048,
+      "medianOutputSpeed": 111.5393,
       "aa": {
         "aa-intelligence": 9.4531,
         "aa-coding": null,
@@ -465420,7 +465420,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 58.8169,
+      "medianOutputSpeed": 57.7161,
       "aa": {
         "aa-intelligence": 13.9199,
         "aa-coding": null,
@@ -465874,7 +465874,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 106.7358,
+      "medianOutputSpeed": 116.7926,
       "aa": {
         "aa-intelligence": 13.3137,
         "aa-coding": null,
@@ -467237,7 +467237,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 79.1966,
+      "medianOutputSpeed": 81.3439,
       "aa": {
         "aa-intelligence": 11.2162,
         "aa-coding": null,
@@ -467888,7 +467888,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 89.4138,
+      "medianOutputSpeed": 89.0559,
       "aa": {
         "aa-intelligence": 11.8702,
         "aa-coding": null,
@@ -468539,7 +468539,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 75.0037,
+      "medianOutputSpeed": 75.4708,
       "aa": {
         "aa-intelligence": 28.0922,
         "aa-coding": null,
@@ -469482,7 +469482,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 171.5457,
+      "medianOutputSpeed": 172.7811,
       "aa": {
         "aa-intelligence": 20.7197,
         "aa-coding": null,
@@ -471400,7 +471400,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 65.143,
+      "medianOutputSpeed": 64.5996,
       "aa": {
         "aa-intelligence": 23.2,
         "aa-coding": null,
@@ -471858,7 +471858,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 51.1173,
+      "medianOutputSpeed": 52.5168,
       "aa": {
         "aa-intelligence": 9.937,
         "aa-coding": null,
@@ -473660,7 +473660,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 71.9551,
+      "medianOutputSpeed": 71.8811,
       "aa": {
         "aa-intelligence": 44.1998,
         "aa-coding": null,
@@ -475066,7 +475066,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 49.2806,
+      "medianOutputSpeed": 53.7501,
       "aa": {
         "aa-intelligence": 8.9148,
         "aa-coding": null,
@@ -475520,13 +475520,13 @@
         "aa-coding": null,
         "aa-agentic": 33.7449
       },
-      "aaCostUsd": 190.8788,
+      "aaCostUsd": 179.1044,
       "pricing": {
         "inputPerMillionTokensUsd": 0.13,
         "outputPerMillionTokensUsd": 0.28,
         "cacheHitPerMillionTokensUsd": 0.028,
-        "aaIndexCostUsd": 190.8788,
-        "aaIndexInputCostUsd": 120.8755,
+        "aaIndexCostUsd": 179.1044,
+        "aaIndexInputCostUsd": 109.1011,
         "aaIndexOutputCostUsd": 70.0034,
         "aaIndexReasoningCostUsd": 64.05,
         "aaIndexAnswerCostUsd": 5.9534
@@ -477214,7 +477214,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 84.876,
+      "medianOutputSpeed": 96.3884,
       "aa": {
         "aa-intelligence": 46.9727,
         "aa-coding": null,
@@ -479567,7 +479567,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 83.404,
+      "medianOutputSpeed": 91.2331,
       "aa": {
         "aa-intelligence": 44.0089,
         "aa-coding": null,
@@ -480364,7 +480364,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 85.0063,
+      "medianOutputSpeed": 80.1467,
       "aa": {
         "aa-intelligence": 44.101,
         "aa-coding": null,
@@ -481106,7 +481106,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 87.75,
+      "medianOutputSpeed": 89.4273,
       "aa": {
         "aa-intelligence": 9.5854,
         "aa-coding": null,
@@ -482406,7 +482406,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 237.058,
+      "medianOutputSpeed": 231.7795,
       "aa": {
         "aa-intelligence": 39.4562,
         "aa-coding": null,
@@ -484437,19 +484437,19 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#fd6f00"
       },
-      "medianOutputSpeed": 151.7205,
+      "medianOutputSpeed": 154.6038,
       "aa": {
         "aa-intelligence": 14.1889,
         "aa-coding": null,
         "aa-agentic": 19.2052
       },
-      "aaCostUsd": 1159.9343,
+      "aaCostUsd": 1263.7961,
       "pricing": {
         "inputPerMillionTokensUsd": 1.5,
         "outputPerMillionTokensUsd": 7.5,
         "cacheHitPerMillionTokensUsd": 0.15,
-        "aaIndexCostUsd": 1159.9343,
-        "aaIndexInputCostUsd": 404.7708,
+        "aaIndexCostUsd": 1263.7961,
+        "aaIndexInputCostUsd": 508.6326,
         "aaIndexOutputCostUsd": 755.1635,
         "aaIndexReasoningCostUsd": 623.5585,
         "aaIndexAnswerCostUsd": 131.605
@@ -486268,7 +486268,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 317.5326,
+      "medianOutputSpeed": 310.2557,
       "aa": {
         "aa-intelligence": 36.9459,
         "aa-coding": null,
@@ -487356,7 +487356,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 112.5148,
+      "medianOutputSpeed": 112.2905,
       "aa": {
         "aa-intelligence": 8.1723,
         "aa-coding": null,
@@ -488352,7 +488352,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 91.4615,
+      "medianOutputSpeed": 87.8028,
       "aa": {
         "aa-intelligence": 55.9874,
         "aa-coding": null,
@@ -489007,7 +489007,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 56.7303,
+      "medianOutputSpeed": 49.8103,
       "aa": {
         "aa-intelligence": 30.0576,
         "aa-coding": null,
@@ -491494,7 +491494,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 58.5433,
+      "medianOutputSpeed": 57.4157,
       "aa": {
         "aa-intelligence": 50.9191,
         "aa-coding": null,
@@ -492310,7 +492310,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 154.6662,
+      "medianOutputSpeed": 161.495,
       "aa": {
         "aa-intelligence": 12.9922,
         "aa-coding": null,
@@ -495196,7 +495196,7 @@
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 362.8038,
+      "medianOutputSpeed": 368.14,
       "aa": {
         "aa-intelligence": 24.9392,
         "aa-coding": null,
@@ -498181,7 +498181,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 169.0698,
+      "medianOutputSpeed": 166.6263,
       "aa": {
         "aa-intelligence": 22.4323,
         "aa-coding": null,
@@ -499520,7 +499520,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 55.352,
+      "medianOutputSpeed": 54.7518,
       "aa": {
         "aa-intelligence": 49.5704,
         "aa-coding": null,
@@ -500336,7 +500336,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 105.14,
+      "medianOutputSpeed": 119.402,
       "aa": {
         "aa-intelligence": 7.3317,
         "aa-coding": null,
@@ -500685,7 +500685,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 50.9911,
+      "medianOutputSpeed": 51.4697,
       "aa": {
         "aa-intelligence": 40.6898,
         "aa-coding": null,
@@ -501744,7 +501744,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 82.6207,
+      "medianOutputSpeed": 81.4318,
       "aa": {
         "aa-intelligence": 51.2435,
         "aa-coding": null,
@@ -502705,7 +502705,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 312.9252,
+      "medianOutputSpeed": 309.2114,
       "aa": {
         "aa-intelligence": 39.6178,
         "aa-coding": null,
@@ -503467,7 +503467,7 @@
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 124.6717,
+      "medianOutputSpeed": 124.0822,
       "aa": {
         "aa-intelligence": 16.6172,
         "aa-coding": null,
@@ -506217,7 +506217,7 @@
         "src": "assets/logos/microsoft_small.svg",
         "color": "#0078D5"
       },
-      "medianOutputSpeed": 34.397,
+      "medianOutputSpeed": 40.1922,
       "aa": {
         "aa-intelligence": 5.9226,
         "aa-coding": null,
@@ -506562,7 +506562,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 163.2524,
+      "medianOutputSpeed": 158.0606,
       "aa": {
         "aa-intelligence": 15.116,
         "aa-coding": null,
@@ -506908,7 +506908,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 70.4963,
+      "medianOutputSpeed": 66.0785,
       "aa": {
         "aa-intelligence": 28.0531,
         "aa-coding": null,
@@ -507676,7 +507676,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 182.2813,
+      "medianOutputSpeed": 198.5161,
       "aa": {
         "aa-intelligence": 11.6028,
         "aa-coding": null,
@@ -508799,7 +508799,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 69.6991,
+      "medianOutputSpeed": 73.2406,
       "aa": {
         "aa-intelligence": 21.7826,
         "aa-coding": null,
@@ -509359,7 +509359,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 108.4422,
+      "medianOutputSpeed": 116.4005,
       "aa": {
         "aa-intelligence": 7.4288,
         "aa-coding": null,
@@ -509684,7 +509684,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 44.1984,
+      "medianOutputSpeed": 44.1232,
       "aa": {
         "aa-intelligence": 23.3035,
         "aa-coding": null,
@@ -510336,7 +510336,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 84.3748,
+      "medianOutputSpeed": 81.7464,
       "aa": {
         "aa-intelligence": 53.5832,
         "aa-coding": null,
@@ -510971,7 +510971,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 107.1762,
+      "medianOutputSpeed": 105.8388,
       "aa": {
         "aa-intelligence": 6.6226,
         "aa-coding": null,
@@ -511424,7 +511424,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 56.3477,
+      "medianOutputSpeed": 56.2782,
       "aa": {
         "aa-intelligence": 27.0099,
         "aa-coding": null,
@@ -511856,7 +511856,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 113.8456,
+      "medianOutputSpeed": 116.6793,
       "aa": {
         "aa-intelligence": 12.7755,
         "aa-coding": null,
@@ -512182,7 +512182,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 406.3854,
+      "medianOutputSpeed": 394.211,
       "aa": {
         "aa-intelligence": 8.5456,
         "aa-coding": null,
@@ -515022,7 +515022,7 @@
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 100.4559,
+      "medianOutputSpeed": 98.5413,
       "aa": {
         "aa-intelligence": 18.6257,
         "aa-coding": null,
@@ -515741,19 +515741,19 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 83.5895,
+      "medianOutputSpeed": 83.9178,
       "aa": {
         "aa-intelligence": 33.7055,
         "aa-coding": null,
         "aa-agentic": 45.6674
       },
-      "aaCostUsd": 1559.0511,
+      "aaCostUsd": 2097.288,
       "pricing": {
         "inputPerMillionTokensUsd": 1.4,
         "outputPerMillionTokensUsd": 4.4,
         "cacheHitPerMillionTokensUsd": 0.26,
-        "aaIndexCostUsd": 1559.0511,
-        "aaIndexInputCostUsd": 777.7768,
+        "aaIndexCostUsd": 2097.288,
+        "aaIndexInputCostUsd": 1316.0137,
         "aaIndexOutputCostUsd": 781.2743,
         "aaIndexReasoningCostUsd": 692.3474,
         "aaIndexAnswerCostUsd": 88.9269
@@ -517250,7 +517250,7 @@
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 35.1199,
+      "medianOutputSpeed": 34.9792,
       "aa": {
         "aa-intelligence": 43.5938,
         "aa-coding": null,
@@ -520091,7 +520091,7 @@
         "src": "assets/logos/multiversecomputing_small.svg",
         "color": "#f11338"
       },
-      "medianOutputSpeed": 153.1997,
+      "medianOutputSpeed": 143.7732,
       "aa": {
         "aa-intelligence": 26.7373,
         "aa-coding": null,
@@ -522169,7 +522169,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 161.9087,
+      "medianOutputSpeed": 159.3243,
       "aa": {
         "aa-intelligence": 12.4824,
         "aa-coding": null,
@@ -522820,7 +522820,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 117.323,
+      "medianOutputSpeed": 125.5173,
       "aa": {
         "aa-intelligence": 9.2368,
         "aa-coding": null,
@@ -524906,7 +524906,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 110.9825,
+      "medianOutputSpeed": 115.097,
       "aa": {
         "aa-intelligence": 24.2959,
         "aa-coding": null,
@@ -525232,7 +525232,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 225.4595,
+      "medianOutputSpeed": 224.1992,
       "aa": {
         "aa-intelligence": 34.3305,
         "aa-coding": null,
@@ -526702,7 +526702,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 113.6815,
+      "medianOutputSpeed": 115.6317,
       "aa": {
         "aa-intelligence": 14.1848,
         "aa-coding": null,
@@ -527030,7 +527030,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 57.7256,
+      "medianOutputSpeed": 58.5975,
       "aa": {
         "aa-intelligence": 44.8253,
         "aa-coding": null,
@@ -527826,7 +527826,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 80.5353,
+      "medianOutputSpeed": 81.4213,
       "aa": {
         "aa-intelligence": 14.6213,
         "aa-coding": null,
