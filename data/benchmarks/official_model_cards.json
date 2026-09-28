@@ -36,6 +36,50 @@
     {
       "vendor": "xiaomi",
       "organization": "XiaomiMiMo",
+      "modelId": "XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+      "name": "MiMo-V2.6-Flash-MOPD",
+      "displayName": "MiMo-V2.6-Flash-MOPD",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD/raw/2479e2d0029eca9a34cc7e7f55a121925f81908e/README.md",
+      "createdAt": "2026-09-27T04:01:00.000Z",
+      "lastModified": "2026-09-27T16:59:08.000Z",
+      "revision": "2479e2d0029eca9a34cc7e7f55a121925f81908e",
+      "pipelineTag": "text-generation",
+      "tags": [
+        "license:mit"
+      ],
+      "aliases": [
+        "MiMo-V2.6-Flash-MOPD",
+        "XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+        "MiMo V2 6 Flash MOPD",
+        "mimo-v2-6-flash-mopd"
+      ]
+    },
+    {
+      "vendor": "xiaomi",
+      "organization": "XiaomiMiMo",
+      "modelId": "XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+      "name": "MiMo-V2.6-Pro-MOPD",
+      "displayName": "MiMo-V2.6-Pro-MOPD",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD/raw/adea8e2c5373181e5a973fa1ecb343cb31af214b/README.md",
+      "createdAt": "2026-09-27T03:58:00.000Z",
+      "lastModified": "2026-09-27T16:58:58.000Z",
+      "revision": "adea8e2c5373181e5a973fa1ecb343cb31af214b",
+      "pipelineTag": "text-generation",
+      "tags": [
+        "license:mit"
+      ],
+      "aliases": [
+        "MiMo-V2.6-Pro-MOPD",
+        "XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+        "MiMo V2 6 Pro MOPD",
+        "mimo-v2-6-pro-mopd"
+      ]
+    },
+    {
+      "vendor": "xiaomi",
+      "organization": "XiaomiMiMo",
       "modelId": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
       "name": "MiMo-V2.6-Flash-RL",
       "displayName": "MiMo-V2.6-Flash-RL",

@@ -2,7 +2,7 @@
   "method_id": "aindex_scheme18",
   "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
   "calibration_population_size": 128,
-  "bonus_cap_per_board": 20.15849865466817,
+  "bonus_cap_per_board": 20.158498654668172,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
@@ -268,9 +268,9 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 20.15849865466817,
+    "bonus_cap_per_board": 20.158498654668172,
     "pooled_positive_residual_count": 372,
-    "pooled_positive_residual_mean": 8.86220628827516,
+    "pooled_positive_residual_mean": 8.862206288275162,
     "pooled_positive_residual_population_sd": 7.987684934542327,
     "board_order": [
       "coding",
@@ -577,7 +577,7 @@
             "canonical_family": "livecodebench",
             "enabled": true,
             "observed_count": 18,
-            "slope": 0.4777945659450208,
+            "slope": 0.4777945659450206,
             "intercept": 58.47712951674872
           }
         ],
@@ -731,8 +731,8 @@
             "canonical_family": "mmmu-pro",
             "enabled": true,
             "observed_count": 61,
-            "slope": 0.7576113770642159,
-            "intercept": 40.62611005767559
+            "slope": 0.757611377064216,
+            "intercept": 40.62611005767558
           },
           {
             "item_id": "mmlu-pro",
