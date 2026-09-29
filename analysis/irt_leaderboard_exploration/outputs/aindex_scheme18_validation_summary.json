@@ -119,7 +119,7 @@
           }
         },
         {
-          "slug": "qwen3-5-27b",
+          "slug": "mimo-v2-flash-reasoning",
           "missing_core": {
             "coding": [
               "SciCode"
@@ -130,7 +130,7 @@
           }
         },
         {
-          "slug": "mimo-v2-flash-reasoning",
+          "slug": "qwen3-5-27b",
           "missing_core": {
             "coding": [
               "SciCode"

@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_mixed_core",
   "candidate_id": "mixed_core_mc07",
-  "calibration_population_size": 137,
-  "bonus_cap_per_board": 16.918869118351925,
+  "calibration_population_size": 138,
+  "bonus_cap_per_board": 16.89627850511727,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 137,
-    "unique_slugs": 137,
-    "unique_variant_groups": 137,
+    "row_count": 138,
+    "unique_slugs": 138,
+    "unique_variant_groups": 138,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 202,
-    "unique_slugs": 202,
-    "unique_variant_groups": 138,
+    "row_count": 207,
+    "unique_slugs": 207,
+    "unique_variant_groups": 139,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -26,8 +26,8 @@
   "passed": true,
   "core_eligibility": {
     "variant_group": {
-      "requested_count": 485,
-      "eligible_count": 137,
+      "requested_count": 486,
+      "eligible_count": 138,
       "excluded_count": 348,
       "excluded_models": [
         {
@@ -7291,8 +7291,8 @@
       ]
     },
     "exact_config": {
-      "requested_count": 674,
-      "eligible_count": 202,
+      "requested_count": 679,
+      "eligible_count": 207,
       "excluded_count": 472,
       "excluded_models": [
         {
@@ -16946,10 +16946,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 16.918869118351925,
-    "pooled_positive_residual_count": 244,
-    "pooled_positive_residual_mean": 7.332891377942568,
-    "pooled_positive_residual_population_sd": 6.778309864546753,
+    "bonus_cap_per_board": 16.89627850511727,
+    "pooled_positive_residual_count": 245,
+    "pooled_positive_residual_mean": 7.315247865813364,
+    "pooled_positive_residual_population_sd": 6.774811735807873,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -16964,7 +16964,7 @@
       "knowledge-science": 16,
       "instruction-context": 9
     },
-    "population_size": 137,
+    "population_size": 138,
     "population_slugs": [
       "claude-fable-5-1",
       "claude-opus-4-8",
@@ -16972,6 +16972,7 @@
       "claude-opus-5-5",
       "claude-sonnet-4-6-adaptive",
       "claude-sonnet-5",
+      "claude-sonnet-5-5",
       "deepseek-v4-1-flash",
       "deepseek-v4-flash",
       "deepseek-v4-flash-0420",
@@ -17111,6 +17112,7 @@
       "claude opus 5 5 with fallback",
       "claude sonnet 4 6",
       "claude sonnet 5",
+      "claude sonnet 5 5 with fallback",
       "deepseek v4 1 flash",
       "deepseek v4 flash 0731",
       "deepseek v4 flash",
@@ -17292,7 +17294,7 @@
         ],
         "core_item_count": 2,
         "extension_item_count": 3,
-        "complete_core_models": 126,
+        "complete_core_models": 128,
         "weight": 24
       },
       "agentic-tool-work": {
@@ -17393,7 +17395,7 @@
         ],
         "core_item_count": 2,
         "extension_item_count": 9,
-        "complete_core_models": 119,
+        "complete_core_models": 120,
         "weight": 24
       },
       "hard-reasoning": {
@@ -17446,14 +17448,14 @@
             "score_key": "Humanity's Last Exam",
             "canonical_family": "hle",
             "enabled": true,
-            "observed_count": 137,
-            "slope": 1.4598267309904853,
-            "intercept": 15.23003696627241
+            "observed_count": 138,
+            "slope": 1.4480268463644113,
+            "intercept": 15.276468183188921
           }
         ],
         "core_item_count": 1,
         "extension_item_count": 5,
-        "complete_core_models": 137,
+        "complete_core_models": 138,
         "weight": 27
       },
       "knowledge-science": {
@@ -17482,7 +17484,7 @@
         ],
         "core_item_count": 2,
         "extension_item_count": 1,
-        "complete_core_models": 131,
+        "complete_core_models": 132,
         "weight": 16
       },
       "instruction-context": {
@@ -17506,7 +17508,7 @@
         ],
         "core_item_count": 1,
         "extension_item_count": 1,
-        "complete_core_models": 137,
+        "complete_core_models": 138,
         "weight": 9
       }
     }
@@ -17515,9 +17517,9 @@
     "method_id": "aindex_mixed_core",
     "candidate_id": "mixed_core_mc07",
     "independent_of_production_scoring_module": true,
-    "variant_group_count": 137,
-    "exact_config_count": 202,
-    "cap": 16.918869118351925,
+    "variant_group_count": 138,
+    "exact_config_count": 207,
+    "cap": 16.89627850511727,
     "profiles_checked": true,
     "passed": true,
     "failures": []
