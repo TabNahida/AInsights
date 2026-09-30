@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_mixed_core",
   "candidate_id": "mixed_core_mc07",
-  "calibration_population_size": 138,
-  "bonus_cap_per_board": 16.89627850511727,
+  "calibration_population_size": 141,
+  "bonus_cap_per_board": 16.868085489302604,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 138,
-    "unique_slugs": 138,
-    "unique_variant_groups": 138,
+    "row_count": 141,
+    "unique_slugs": 141,
+    "unique_variant_groups": 141,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 207,
-    "unique_slugs": 207,
-    "unique_variant_groups": 139,
+    "row_count": 215,
+    "unique_slugs": 215,
+    "unique_variant_groups": 142,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -26,9 +26,9 @@
   "passed": true,
   "core_eligibility": {
     "variant_group": {
-      "requested_count": 486,
-      "eligible_count": 138,
-      "excluded_count": 348,
+      "requested_count": 487,
+      "eligible_count": 141,
+      "excluded_count": 346,
       "excluded_models": [
         {
           "slug": "claude-opus-4-6-adaptive",
@@ -391,23 +391,6 @@
           "empty_boards": [
             "coding",
             "agentic-tool-work"
-          ],
-          "reason": [
-            "board_missing_all",
-            "missing_at_least_four"
-          ]
-        },
-        {
-          "slug": "hypernova-60b",
-          "missing_core_items": [
-            "Terminal-Bench v4.0",
-            "SciCode",
-            "AutomationBench-AA",
-            "GDP.pdf"
-          ],
-          "missing_core_count": 4,
-          "empty_boards": [
-            "coding"
           ],
           "reason": [
             "board_missing_all",
@@ -3721,25 +3704,6 @@
         },
         {
           "slug": "jt-35b-flash",
-          "missing_core_items": [
-            "Terminal-Bench v4.0",
-            "SciCode",
-            "AutomationBench-AA",
-            "τ³-Banking",
-            "GDP.pdf"
-          ],
-          "missing_core_count": 5,
-          "empty_boards": [
-            "coding",
-            "agentic-tool-work"
-          ],
-          "reason": [
-            "board_missing_all",
-            "missing_at_least_four"
-          ]
-        },
-        {
-          "slug": "jt-4-1-flash-236b-a21b",
           "missing_core_items": [
             "Terminal-Bench v4.0",
             "SciCode",
@@ -7291,9 +7255,9 @@
       ]
     },
     "exact_config": {
-      "requested_count": 679,
-      "eligible_count": 207,
-      "excluded_count": 472,
+      "requested_count": 686,
+      "eligible_count": 215,
+      "excluded_count": 471,
       "excluded_models": [
         {
           "slug": "glm-4-5v",
@@ -9205,23 +9169,6 @@
           "empty_boards": [
             "coding",
             "agentic-tool-work"
-          ],
-          "reason": [
-            "board_missing_all",
-            "missing_at_least_four"
-          ]
-        },
-        {
-          "slug": "hypernova-60b",
-          "missing_core_items": [
-            "Terminal-Bench v4.0",
-            "SciCode",
-            "AutomationBench-AA",
-            "GDP.pdf"
-          ],
-          "missing_core_count": 4,
-          "empty_boards": [
-            "coding"
           ],
           "reason": [
             "board_missing_all",
@@ -16946,10 +16893,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 16.89627850511727,
-    "pooled_positive_residual_count": 245,
-    "pooled_positive_residual_mean": 7.315247865813364,
-    "pooled_positive_residual_population_sd": 6.774811735807873,
+    "bonus_cap_per_board": 16.868085489302604,
+    "pooled_positive_residual_count": 248,
+    "pooled_positive_residual_mean": 7.301859597596097,
+    "pooled_positive_residual_population_sd": 6.764343198387999,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -16964,7 +16911,7 @@
       "knowledge-science": 16,
       "instruction-context": 9
     },
-    "population_size": 138,
+    "population_size": 141,
     "population_slugs": [
       "claude-fable-5-1",
       "claude-opus-4-8",
@@ -16984,6 +16931,7 @@
       "gpt-5-6-luna",
       "gpt-5-6-sol",
       "gpt-5-6-terra",
+      "gpt-6-1-sol",
       "gpt-6-astra",
       "gpt-6-luna",
       "gpt-6-sol",
@@ -17006,6 +16954,7 @@
       "gpt-oss-20b",
       "grok-4-3",
       "grok-4-5",
+      "hypernova-60b",
       "muse-glimmer",
       "o3-mini-high",
       "a-x-k2",
@@ -17040,6 +16989,7 @@
       "hy3",
       "inkling",
       "inkling-small",
+      "jt236b",
       "k-exaone-2-0-0803",
       "k2-horizon-0-9b",
       "k2-horizon-3-7b",
@@ -17124,6 +17074,7 @@
       "gpt 5 6 luna",
       "gpt 5 6 sol",
       "gpt 5 6 terra",
+      "gpt 6 1 sol",
       "gpt 6 astra",
       "gpt 6 luna",
       "gpt 6 sol",
@@ -17146,6 +17097,7 @@
       "gpt oss 20b",
       "grok 4 3",
       "grok 4 5",
+      "hypernova 60b 2605",
       "muse glimmer",
       "o3 mini",
       "a x k2",
@@ -17180,6 +17132,7 @@
       "hy3",
       "inkling",
       "inkling small",
+      "jt 4 1 flash 236b a21b",
       "k exaone 2 0",
       "k2 horizon 0 9b",
       "k2 horizon 3 7b",
@@ -17294,7 +17247,7 @@
         ],
         "core_item_count": 2,
         "extension_item_count": 3,
-        "complete_core_models": 128,
+        "complete_core_models": 130,
         "weight": 24
       },
       "agentic-tool-work": {
@@ -17316,9 +17269,9 @@
             "score_key": "APEX-Agents-AA",
             "canonical_family": "apex-agents",
             "enabled": true,
-            "observed_count": 23,
-            "slope": 0.7705307253382884,
-            "intercept": 5.503993591020269
+            "observed_count": 24,
+            "slope": 0.7556695705982621,
+            "intercept": 5.7398036827705425
           },
           {
             "item_id": "aa-analyst-agent-pass5",
@@ -17395,7 +17348,7 @@
         ],
         "core_item_count": 2,
         "extension_item_count": 9,
-        "complete_core_models": 120,
+        "complete_core_models": 121,
         "weight": 24
       },
       "hard-reasoning": {
@@ -17448,14 +17401,14 @@
             "score_key": "Humanity's Last Exam",
             "canonical_family": "hle",
             "enabled": true,
-            "observed_count": 138,
-            "slope": 1.4480268463644113,
-            "intercept": 15.276468183188921
+            "observed_count": 141,
+            "slope": 1.436573301544411,
+            "intercept": 15.365634026477059
           }
         ],
         "core_item_count": 1,
         "extension_item_count": 5,
-        "complete_core_models": 138,
+        "complete_core_models": 141,
         "weight": 27
       },
       "knowledge-science": {
@@ -17484,7 +17437,7 @@
         ],
         "core_item_count": 2,
         "extension_item_count": 1,
-        "complete_core_models": 132,
+        "complete_core_models": 134,
         "weight": 16
       },
       "instruction-context": {
@@ -17501,14 +17454,14 @@
             "score_key": "IFBench",
             "canonical_family": "ifbench",
             "enabled": true,
-            "observed_count": 73,
-            "slope": 0.5496261012892798,
-            "intercept": 27.966727413725376
+            "observed_count": 74,
+            "slope": 0.5407831008840402,
+            "intercept": 28.72340615827018
           }
         ],
         "core_item_count": 1,
         "extension_item_count": 1,
-        "complete_core_models": 138,
+        "complete_core_models": 141,
         "weight": 9
       }
     }
@@ -17517,9 +17470,9 @@
     "method_id": "aindex_mixed_core",
     "candidate_id": "mixed_core_mc07",
     "independent_of_production_scoring_module": true,
-    "variant_group_count": 138,
-    "exact_config_count": 207,
-    "cap": 16.89627850511727,
+    "variant_group_count": 141,
+    "exact_config_count": 215,
+    "cap": 16.868085489302604,
     "profiles_checked": true,
     "passed": true,
     "failures": []
