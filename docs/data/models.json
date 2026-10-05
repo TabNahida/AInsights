@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-30T06:15:14+00:00",
+  "generatedAt": "2026-10-05T10:21:47+00:00",
   "source": {
     "label": "Artificial Analysis Core + listed benchmark extensions",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -7972,6 +7972,26 @@
       "modelKeys": []
     },
     {
+      "id": "official-deepseek-news250120-page",
+      "label": "DeepSeek R1 automatically discovered official release",
+      "icon": "DRA",
+      "url": "https://api-docs.deepseek.com/news/news250120",
+      "category": "Official release",
+      "coverage": "3 model references",
+      "focus": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "defaultWeight": 0,
+      "relatedMetrics": [],
+      "benchmarkIds": [],
+      "modelAliases": [
+        "DeepSeek R1",
+        "DeepSeek-R1",
+        "deepseek-r1"
+      ],
+      "modelKeys": []
+    },
+    {
       "id": "official-deepseek-news250528-page",
       "label": "DeepSeek R1 0528 automatically discovered official release",
       "icon": "DR0",
@@ -8068,26 +8088,6 @@
         "DeepSeek V3 0324",
         "DeepSeek-V3-0324",
         "deepseek-v3-0324"
-      ],
-      "modelKeys": []
-    },
-    {
-      "id": "official-deepseek-news250821-page",
-      "label": "DeepSeek V3.1 automatically discovered official release",
-      "icon": "DV1",
-      "url": "https://api-docs.deepseek.com/news/news250821",
-      "category": "Official release",
-      "coverage": "3 model references",
-      "focus": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "defaultWeight": 0,
-      "relatedMetrics": [],
-      "benchmarkIds": [],
-      "modelAliases": [
-        "DeepSeek V3.1",
-        "DeepSeek-V3.1",
-        "deepseek-v3-1"
       ],
       "modelKeys": []
     },
@@ -8832,6 +8832,28 @@
         "deepseek-ai/DeepSeek-V3.2-Speciale",
         "DeepSeek V3 2 Speciale",
         "deepseek-v3-2-speciale"
+      ],
+      "modelKeys": []
+    },
+    {
+      "id": "hf-deepseek-ai-deepseek-v3-1-card",
+      "label": "DeepSeek V3.1 official model card",
+      "icon": "DV1",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1",
+      "category": "Official model card",
+      "coverage": "5 model references",
+      "focus": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "defaultWeight": 0,
+      "relatedMetrics": [],
+      "benchmarkIds": [],
+      "modelAliases": [
+        "DeepSeek V3.1",
+        "DeepSeek-V3.1",
+        "deepseek-ai/DeepSeek-V3.1",
+        "DeepSeek V3 1",
+        "deepseek-v3-1"
       ],
       "modelKeys": []
     },
@@ -183253,7 +183275,7 @@
       "slug": "deepseek-v3-1-reasoning",
       "creator": "DeepSeek",
       "releaseDate": "2025-08-21",
-      "modelUrl": "https://api-docs.deepseek.com/news/news250821",
+      "modelUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "permissive",
       "openSourceType": "open",
@@ -183567,10 +183589,6 @@
           }
         }
       },
-      "externalModelAliases": [
-        "deepseek-v3-1"
-      ],
-      "officialModelSourceId": "official-deepseek-news250821-page",
       "visionBenchmarks": []
     },
     {
@@ -407687,6 +407705,7 @@
         }
       },
       "externalModelAliases": [
+        "deepseek-r1",
         "deepseek-r1-0528"
       ],
       "officialModelSourceId": "official-deepseek-news250528-page",

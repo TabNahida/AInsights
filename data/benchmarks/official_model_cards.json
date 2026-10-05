@@ -956,10 +956,10 @@
       "name": "DeepSeek-V4.1-Flash",
       "displayName": "DeepSeek V4.1 Flash",
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "rawUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/raw/dba1be0a40aa45a94ad051997016db3960a90277/README.md",
+      "rawUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/raw/2cba9e42aa026125f3ed06c6d98c1db82f7ca027/README.md",
       "createdAt": "2026-09-10T02:17:58.000Z",
-      "lastModified": "2026-09-10T08:18:10.000Z",
-      "revision": "dba1be0a40aa45a94ad051997016db3960a90277",
+      "lastModified": "2026-10-01T05:56:24.000Z",
+      "revision": "2cba9e42aa026125f3ed06c6d98c1db82f7ca027",
       "pipelineTag": "image-text-to-text",
       "tags": [
         "eval-results",
