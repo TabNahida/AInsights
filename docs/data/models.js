@@ -1,6 +1,6 @@
 window.AINSIGHTS_MODELS_DATA = {
   "version": 2,
-  "generatedAt": "2026-10-10T00:40:31+00:00",
+  "generatedAt": "2026-10-10T00:43:45+00:00",
   "source": {
     "label": "Artificial Analysis Core + listed benchmark extensions",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -148114,7 +148114,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.17,
+            "extensionBonus": 0.16999999999999998,
             "score": 12.40785,
             "points": 2.9778840000000004,
             "coreTests": 2,
@@ -154350,7 +154350,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.16064928949737836,
+            "extensionBonus": 0.16064928949737833,
             "score": 28.848549289497377,
             "points": 6.92365182947937,
             "coreTests": 2,
@@ -154381,7 +154381,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.43022575021081305,
+            "extensionBonus": 0.430225750210813,
             "score": 35.45917575021082,
             "points": 8.510202180050596,
             "coreTests": 2,
@@ -176899,7 +176899,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.08170600453894396,
+            "extensionBonus": 0.08170600453894394,
             "score": 4.653106004538944,
             "points": 1.2563386212255148,
             "coreTests": 1,
@@ -207402,7 +207402,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.4049009241272899,
+            "extensionBonus": 0.40490092412728984,
             "score": 26.14145092412729,
             "points": 6.273948221790549,
             "coreTests": 2,
@@ -224289,7 +224289,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.8635166756251492,
+            "extensionBonus": 0.8635166756251493,
             "score": 58.64971667562514,
             "points": 14.075932002150035,
             "coreTests": 2,
@@ -224557,7 +224557,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.8635166756251492,
+            "extensionBonus": 0.8635166756251493,
             "score": 58.64971667562514,
             "points": 14.075932002150035,
             "coreTests": 2,
@@ -225584,7 +225584,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.1520351979086811,
+            "extensionBonus": 0.15203519790868114,
             "score": 31.866335197908683,
             "points": 8.603910503435344,
             "coreTests": 1,
@@ -225854,7 +225854,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.1520351979086811,
+            "extensionBonus": 0.15203519790868114,
             "score": 31.866335197908683,
             "points": 8.603910503435344,
             "coreTests": 1,
@@ -231257,7 +231257,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.18582159082732372,
+            "extensionBonus": 0.18582159082732375,
             "score": 1.0429215908273237,
             "points": 0.28158882952337744,
             "coreTests": 1,
@@ -231529,7 +231529,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.18582159082732372,
+            "extensionBonus": 0.18582159082732375,
             "score": 1.0429215908273237,
             "points": 0.28158882952337744,
             "coreTests": 1,
@@ -245399,7 +245399,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.8282632038793237,
+            "extensionBonus": 0.8282632038793238,
             "score": 30.542563203879325,
             "points": 8.246492065047418,
             "coreTests": 1,
@@ -245788,7 +245788,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.8282632038793237,
+            "extensionBonus": 0.8282632038793238,
             "score": 30.542563203879325,
             "points": 8.246492065047418,
             "coreTests": 1,
@@ -251569,7 +251569,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 3.1013268188369474,
+            "extensionBonus": 3.101326818836947,
             "score": 43.77262681883695,
             "points": 10.505430436520866,
             "coreTests": 2,
@@ -251958,7 +251958,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 3.1013268188369474,
+            "extensionBonus": 3.101326818836947,
             "score": 43.77262681883695,
             "points": 10.505430436520866,
             "coreTests": 2,
@@ -283003,7 +283003,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.17,
+            "extensionBonus": 0.16999999999999998,
             "score": 20.57325,
             "points": 4.9375800000000005,
             "coreTests": 2,
@@ -285165,7 +285165,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.19897199548121056,
+            "extensionBonus": 0.19897199548121058,
             "score": 8.44242199548121,
             "points": 2.02618127891549,
             "coreTests": 2,
@@ -285189,7 +285189,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.3273361387741183,
+            "extensionBonus": 0.32733613877411827,
             "score": 1.4702361387741183,
             "points": 0.39696375746901197,
             "coreTests": 1,
@@ -285554,7 +285554,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.19897199548121056,
+            "extensionBonus": 0.19897199548121058,
             "score": 8.44242199548121,
             "points": 2.02618127891549,
             "coreTests": 2,
@@ -285578,7 +285578,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.3273361387741183,
+            "extensionBonus": 0.32733613877411827,
             "score": 1.4702361387741183,
             "points": 0.39696375746901197,
             "coreTests": 1,
@@ -305861,7 +305861,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.9950081328034804,
+            "extensionBonus": 0.9950081328034805,
             "score": 4.137908132803481,
             "points": 1.1172351958569398,
             "coreTests": 1,
@@ -306250,7 +306250,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.9950081328034804,
+            "extensionBonus": 0.9950081328034805,
             "score": 4.137908132803481,
             "points": 1.1172351958569398,
             "coreTests": 1,
@@ -317289,7 +317289,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.21360996274445657,
+            "extensionBonus": 0.21360996274445654,
             "score": 18.785009962744457,
             "points": 5.0719526899410035,
             "coreTests": 1,
@@ -335144,8 +335144,8 @@ window.AINSIGHTS_MODELS_DATA = {
         "publicationRank": 37,
         "evidenceRank": 37,
         "displayScore": 43.4822,
-        "finalScore": 43.48223886637053,
-        "scoreFullPrecision": "43.48223886637053",
+        "finalScore": 43.48223886637052,
+        "scoreFullPrecision": "43.482238866370523",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 weighted-additive five-board points",
         "coreComplete": true,
@@ -335186,9 +335186,9 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 9.632019069445915,
-            "score": 47.026819069445914,
-            "points": 11.28643657666702,
+            "extensionBonus": 9.632019069445914,
+            "score": 47.02681906944591,
+            "points": 11.286436576667018,
             "coreTests": 2,
             "extensionTests": 2,
             "coreItemPoolSize": 2,
@@ -380987,7 +380987,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.9298361387741173,
+            "extensionBonus": 0.9298361387741174,
             "score": 2.0727361387741174,
             "points": 0.5596387574690117,
             "coreTests": 1,
@@ -381376,7 +381376,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.9298361387741173,
+            "extensionBonus": 0.9298361387741174,
             "score": 2.0727361387741174,
             "points": 0.5596387574690117,
             "coreTests": 1,
@@ -427662,7 +427662,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.2379924641292135,
+            "extensionBonus": 0.23799246412921346,
             "score": 48.37979246412922,
             "points": 11.611150191391012,
             "coreTests": 2,
@@ -428051,7 +428051,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.2379924641292135,
+            "extensionBonus": 0.23799246412921346,
             "score": 48.37979246412922,
             "points": 11.611150191391012,
             "coreTests": 2,
@@ -432416,7 +432416,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 0.5
               }
             ],
-            "extensionBonus": 0.43000000000000005,
+            "extensionBonus": 0.43,
             "score": 40.9536,
             "points": 9.828864000000001,
             "coreTests": 2,
@@ -473049,7 +473049,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.22226597468574025,
+            "extensionBonus": 0.22226597468574028,
             "score": 14.79366597468574,
             "points": 3.9942898131651496,
             "coreTests": 1,
@@ -474088,7 +474088,7 @@ window.AINSIGHTS_MODELS_DATA = {
                 "share": 1.0
               }
             ],
-            "extensionBonus": 0.5576057944329312,
+            "extensionBonus": 0.5576057944329311,
             "score": 9.98620579443293,
             "points": 2.696275564496891,
             "coreTests": 1,
@@ -549502,7 +549502,7 @@ window.AINSIGHTS_MODELS_DATA = {
       {
         "publicationRank": 37,
         "displayScore": 43.4822,
-        "scoreFullPrecision": "43.48223886637053",
+        "scoreFullPrecision": "43.482238866370523",
         "slug": "gemini-3-8-flash-medium",
         "variantGroup": "gemini 3 8 flash"
       },
