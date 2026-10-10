@@ -12,6 +12,7 @@ from benchmarks.epoch_game_reasoning_snapshot import (
     load_epoch_ebr_card_ban_snapshot,
     load_epoch_game_reasoning_snapshots,
 )
+from scripts.build_docs_site import find_external_benchmark_model
 
 
 class EpochGameReasoningSnapshotTests(unittest.TestCase):
@@ -56,8 +57,13 @@ class EpochGameReasoningSnapshotTests(unittest.TestCase):
         site = json.loads(
             (SNAPSHOT_PATH.parents[2] / "docs/data/models.json").read_text(encoding="utf-8")
         )
-        keys = {row["modelKey"] for row in site["models"]}
-        self.assertTrue(set(GAME_EXACT_MODEL_KEYS.values()) <= keys)
+        for model_key in GAME_EXACT_MODEL_KEYS.values():
+            with self.subTest(model_key=model_key):
+                model = find_external_benchmark_model(site["models"], [model_key])
+                self.assertIsNotNone(model)
+                self.assertEqual(model["modelKey"].casefold(), model_key.casefold())
+                if "(non-reasoning)" in model_key.casefold():
+                    self.assertFalse(model["isReasoning"])
         self.assertEqual(
             GAME_EXACT_MODEL_KEYS["gpt-5.6-sol_none"],
             "GPT-5.6 Sol (Non-reasoning)",

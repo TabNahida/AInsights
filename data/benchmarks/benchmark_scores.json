@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T10:21:37+00:00",
+  "generatedAt": "2026-10-10T00:39:48+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
       "label": "OpenAI GPT-5.5 launch evaluations",
       "url": "https://openai.com/index/introducing-gpt-5-5/",
       "category": "Official model release",
-      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
+      "collectionStatus": "partial-refresh; seeded 227 benchmark rows",
       "note": "Official OpenAI table covering GPT-5.5, GPT-5.4, GPT-5.5 Pro, GPT-5.4 Pro, Claude Opus 4.7, and Gemini 3.1 Pro."
     },
     {
@@ -36,7 +36,7 @@
       "url": "https://openai.com/index/gpt-6-astra/",
       "rawUrl": "https://openai.com/index/gpt-6-astra/",
       "category": "Official model release",
-      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
+      "collectionStatus": "refreshed",
       "note": "OpenAI's September 3, 2026 release appendix explicitly reports the maximum score at any effort. These are source-library results, not evidence for a particular max, xhigh, or lower-effort variant. Only OpenAI's Astra column is ingested. OSWorld's offline subset, Terminal-Bench 4.0, and the new June-August ExploitBench set remain separate from earlier evaluations. BenchCAD uses tools; ExploitGym was run without the six-hour time limit.",
       "modelAliases": [
         "GPT-6 Astra",
@@ -65,7 +65,7 @@
       "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "rawUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "category": "Official model release",
-      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
+      "collectionStatus": "seeded-official-values; manually verified 2026-09-23",
       "note": "OpenAI's September 22, 2026 release, checked September 23. Exact values and efforts come from the rendered chart point aria-labels (Score, Effort), not positions estimated from the plots. Figure captions identify AutomationBench 1.0.6, Agents' Last Exam V1, FrontierCode 1.1 Main, DeepSWE v1.1, and OSWorld 2.0 offline v2026.08.08 partial reward. The chart DOM id frontiercode-extended is not the captioned benchmark variant. Vendor runs remain distinct from AA Core and from coding-agent harness scores.",
       "modelAliases": [
         "GPT-6 Sol (max)",
@@ -92,7 +92,7 @@
       "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "rawUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "category": "Official model release",
-      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
+      "collectionStatus": "seeded-official-values; manually verified 2026-09-23",
       "note": "OpenAI's September 22, 2026 release, checked September 23. Exact values and efforts come from rendered chart point aria-labels. Figure captions identify AutomationBench 1.0.6, Agents' Last Exam V1, FrontierCode 1.1 Main, DeepSWE v1.1, and OSWorld 2.0 offline v2026.08.08 partial reward. The chart DOM id frontiercode-extended is not the captioned benchmark variant.",
       "modelAliases": [
         "GPT-6 Luna (max)",
@@ -253,7 +253,7 @@
       "url": "https://openai.com/index/gpt-5-6/",
       "rawUrl": "https://openai.com/index/gpt-5-6/",
       "category": "Official model release",
-      "collectionStatus": "seeded-official-values; refresh blocked: HTTPError",
+      "collectionStatus": "refreshed",
       "note": "OpenAI official GPT-5.6 release tables covering Sol, Terra, and Luna across professional work, coding, science, computer use, cybersecurity, reasoning, tool use, and long-context evaluations. The release appendix labels the single-agent columns only by model tier, while the surrounding AA index values and separately reported Sol Ultra rows support mapping these columns to max effort. The mapping is therefore exact-variant scoped but marked as configuration-inferred and must not be broadcast to other effort settings.",
       "modelAliases": [
         "GPT-5.6 Sol (max)",
@@ -1746,6 +1746,36 @@
       }
     },
     {
+      "id": "official-deepseek-news250821-page",
+      "label": "DeepSeek V3.1 automatically discovered official release",
+      "url": "https://api-docs.deepseek.com/news/news250821",
+      "rawUrl": "https://api-docs.deepseek.com/news/news250821",
+      "category": "Official release",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
+      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "DeepSeek V3.1",
+        "DeepSeek-V3.1",
+        "deepseek-v3-1"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "release-page-default",
+      "autoDiscoveredVendorPage": true,
+      "vendor": "deepseek",
+      "discoverySourceKey": "deepseek-api-docs-sitemap",
+      "addModelIfMissing": true,
+      "modelMetadata": {
+        "model": "DeepSeek V3.1",
+        "displayName": "DeepSeek V3.1",
+        "modelKey": "DeepSeek V3.1",
+        "slug": "deepseek-v3-1",
+        "creator": "DeepSeek",
+        "modelUrl": "https://api-docs.deepseek.com/news/news250821"
+      }
+    },
+    {
       "id": "official-deepseek-news250922-page",
       "label": "DeepSeek V3.1 Terminus automatically discovered official release",
       "url": "https://api-docs.deepseek.com/news/news250922",
@@ -1773,6 +1803,36 @@
         "slug": "deepseek-v3-1-terminus",
         "creator": "DeepSeek",
         "modelUrl": "https://api-docs.deepseek.com/news/news250922"
+      }
+    },
+    {
+      "id": "official-deepseek-news251201-page",
+      "label": "DeepSeek V3.2 automatically discovered official release",
+      "url": "https://api-docs.deepseek.com/news/news251201",
+      "rawUrl": "https://api-docs.deepseek.com/news/news251201",
+      "category": "Official release",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
+      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "DeepSeek V3.2",
+        "DeepSeek-V3.2",
+        "deepseek-v3-2"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "release-page-default",
+      "autoDiscoveredVendorPage": true,
+      "vendor": "deepseek",
+      "discoverySourceKey": "deepseek-api-docs-sitemap",
+      "addModelIfMissing": true,
+      "modelMetadata": {
+        "model": "DeepSeek V3.2",
+        "displayName": "DeepSeek V3.2",
+        "modelKey": "DeepSeek V3.2",
+        "slug": "deepseek-v3-2",
+        "creator": "DeepSeek",
+        "modelUrl": "https://api-docs.deepseek.com/news/news251201"
       }
     },
     {
@@ -1809,7 +1869,7 @@
       "id": "hf-xiaomimimo-mimo-v2-6-flash-mopd-card",
       "label": "MiMo-V2.6-Flash-MOPD official model card",
       "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
-      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD/raw/2479e2d0029eca9a34cc7e7f55a121925f81908e/README.md",
+      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD/raw/b12f5573350bb1704513fcf119fca48e498b0423/README.md",
       "category": "Official model card",
       "collectionStatus": "reference-only; no parseable benchmark table found",
       "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
@@ -1826,8 +1886,8 @@
       "modelId": "XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
       "organization": "XiaomiMiMo",
       "createdAt": "2026-09-27T04:01:00.000Z",
-      "lastModified": "2026-09-27T16:59:08.000Z",
-      "revision": "2479e2d0029eca9a34cc7e7f55a121925f81908e",
+      "lastModified": "2026-10-09T06:30:44.000Z",
+      "revision": "b12f5573350bb1704513fcf119fca48e498b0423",
       "tags": [
         "license:mit"
       ],
@@ -1837,7 +1897,7 @@
       "id": "hf-xiaomimimo-mimo-v2-6-pro-mopd-card",
       "label": "MiMo-V2.6-Pro-MOPD official model card",
       "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
-      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD/raw/adea8e2c5373181e5a973fa1ecb343cb31af214b/README.md",
+      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD/raw/6a7f202e8dbd0e57b3fe1da03917d08d75abc4b8/README.md",
       "category": "Official model card",
       "collectionStatus": "reference-only; no parseable benchmark table found",
       "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
@@ -1854,8 +1914,8 @@
       "modelId": "XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
       "organization": "XiaomiMiMo",
       "createdAt": "2026-09-27T03:58:00.000Z",
-      "lastModified": "2026-09-27T16:58:58.000Z",
-      "revision": "adea8e2c5373181e5a973fa1ecb343cb31af214b",
+      "lastModified": "2026-10-09T06:30:36.000Z",
+      "revision": "6a7f202e8dbd0e57b3fe1da03917d08d75abc4b8",
       "tags": [
         "license:mit"
       ],
@@ -2310,38 +2370,6 @@
       "autoDiscovered": true
     },
     {
-      "id": "hf-deepseek-ai-deepseek-v3-2-card",
-      "label": "DeepSeek V3.2 official model card",
-      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2",
-      "rawUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2/raw/a7e62ac04ecb2c0a54d736dc46601c5606cf10a6/README.md",
-      "category": "Official model card",
-      "collectionStatus": "reference-only; no parseable benchmark table found",
-      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "modelAliases": [
-        "DeepSeek V3.2",
-        "DeepSeek-V3.2",
-        "deepseek-ai/DeepSeek-V3.2",
-        "DeepSeek V3 2",
-        "deepseek-v3-2"
-      ],
-      "variantScoped": true,
-      "exactBenchmarkLabelsOnly": true,
-      "configurationConfidence": "model-card-default",
-      "modelId": "deepseek-ai/DeepSeek-V3.2",
-      "organization": "deepseek-ai",
-      "createdAt": "2025-12-01T02:34:49.000Z",
-      "lastModified": "2025-12-01T11:04:59.000Z",
-      "revision": "a7e62ac04ecb2c0a54d736dc46601c5606cf10a6",
-      "tags": [
-        "base_model:deepseek-ai/DeepSeek-V3.2-Exp-Base",
-        "base_model:finetune:deepseek-ai/DeepSeek-V3.2-Exp-Base",
-        "eval-results",
-        "license:mit"
-      ],
-      "autoDiscovered": true
-    },
-    {
       "id": "hf-deepseek-ai-deepseek-v3-2-speciale-card",
       "label": "DeepSeek V3.2 Speciale official model card",
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Speciale",
@@ -2374,49 +2402,24 @@
       "autoDiscovered": true
     },
     {
-      "id": "hf-deepseek-ai-deepseek-v3-1-card",
-      "label": "DeepSeek V3.1 official model card",
-      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1",
-      "rawUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1/raw/c0781d039fb7a1ba2abc4add0bdc293e92d2b8db/README.md",
-      "category": "Official model card",
-      "collectionStatus": "reference-only; no parseable benchmark table found",
-      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "modelAliases": [
-        "DeepSeek V3.1",
-        "DeepSeek-V3.1",
-        "deepseek-ai/DeepSeek-V3.1",
-        "DeepSeek V3 1",
-        "deepseek-v3-1"
-      ],
-      "variantScoped": true,
-      "exactBenchmarkLabelsOnly": true,
-      "configurationConfidence": "model-card-default",
-      "modelId": "deepseek-ai/DeepSeek-V3.1",
-      "organization": "deepseek-ai",
-      "createdAt": "2025-08-21T02:37:52.000Z",
-      "lastModified": "2025-09-05T11:30:15.000Z",
-      "revision": "c0781d039fb7a1ba2abc4add0bdc293e92d2b8db",
-      "tags": [
-        "base_model:deepseek-ai/DeepSeek-V3.1-Base",
-        "base_model:quantized:deepseek-ai/DeepSeek-V3.1-Base",
-        "eval-results",
-        "license:mit"
-      ],
-      "autoDiscovered": true
-    },
-    {
       "id": "aa-public-aa-analyst-agent-pass5-2026-09-25",
       "label": "Artificial Analysis public AA-AnalystAgent (pass^5) chart",
       "url": "https://artificialanalysis.ai/evaluations/aa-analyst-agent",
       "category": "Independent benchmark evaluation",
       "collectionStatus": "pinned-public-chart; checked 2026-09-25T10:55:00+00:00",
-      "note": "80 private analysis tasks, five independent runs; pass^5. Only the page's selected, publicly embedded chart rows are included; no paid download is implied. AA's exact model slug and display name are retained, and only slugs matching an existing site configuration contribute a score.",
+      "note": "80 private analysis tasks, five independent runs; pass^5. Only the page's selected, publicly embedded chart rows are included; no paid download is implied. AA's exact model slug and display name are retained, and only slugs matching an existing site configuration contribute a score. Removed or changed configurations remain in the pinned snapshot and are excluded from scoring until their identity is reviewed again.",
       "snapshotFile": "data/benchmarks/aa_difficult_public_pages_2026-09-25.json",
       "snapshotSha256": "cc769b605412ad11802a684af5292957d40a3d3e42b32e7cb1b00acd96a06789",
       "pageSha256": "805ec7b652fa0e4c000006bac225efb2fd9d3141618d610f7aaed8b2d2b15aa2",
       "snapshotRows": 15,
-      "mappedRows": 15,
+      "mappedRows": 14,
+      "configurationDriftRows": [
+        {
+          "aaSlug": "inkling",
+          "snapshotModelKey": "Inkling [R]",
+          "currentModelKey": "Inkling (xhigh) [R]"
+        }
+      ],
       "scoreSelection": "analystAgent",
       "resultProtocol": "80 private analysis tasks, five independent runs; pass^5"
     },
@@ -2426,12 +2429,19 @@
       "url": "https://artificialanalysis.ai/evaluations/mlcr-aa",
       "category": "Independent benchmark evaluation",
       "collectionStatus": "pinned-public-chart; checked 2026-09-25T10:55:00+00:00",
-      "note": "Private expert and compound clinical tasks; Overall score. Only the page's selected, publicly embedded chart rows are included; no paid download is implied. AA's exact model slug and display name are retained, and only slugs matching an existing site configuration contribute a score.",
+      "note": "Private expert and compound clinical tasks; Overall score. Only the page's selected, publicly embedded chart rows are included; no paid download is implied. AA's exact model slug and display name are retained, and only slugs matching an existing site configuration contribute a score. Removed or changed configurations remain in the pinned snapshot and are excluded from scoring until their identity is reviewed again.",
       "snapshotFile": "data/benchmarks/aa_difficult_public_pages_2026-09-25.json",
       "snapshotSha256": "cc769b605412ad11802a684af5292957d40a3d3e42b32e7cb1b00acd96a06789",
       "pageSha256": "6c614cc8936c32ec8d7f17f0433a222ace4a90d674fe6c6412933142a5b27ef7",
       "snapshotRows": 31,
-      "mappedRows": 31,
+      "mappedRows": 30,
+      "configurationDriftRows": [
+        {
+          "aaSlug": "inkling",
+          "snapshotModelKey": "Inkling [R]",
+          "currentModelKey": "Inkling (xhigh) [R]"
+        }
+      ],
       "scoreSelection": "mlcrOverall",
       "resultProtocol": "Private expert and compound clinical tasks; Overall score"
     },
@@ -2441,12 +2451,19 @@
       "url": "https://artificialanalysis.ai/evaluations/terminal-bench-science",
       "category": "Independent benchmark evaluation",
       "collectionStatus": "pinned-public-chart; checked 2026-09-25T10:55:00+00:00",
-      "note": "v0.1.0; 70 science terminal tasks, common AA mini-swe-agent, mean pass@1 across three runs. Only the page's selected, publicly embedded chart rows are included; no paid download is implied. AA's exact model slug and display name are retained, and only slugs matching an existing site configuration contribute a score.",
+      "note": "v0.1.0; 70 science terminal tasks, common AA mini-swe-agent, mean pass@1 across three runs. Only the page's selected, publicly embedded chart rows are included; no paid download is implied. AA's exact model slug and display name are retained, and only slugs matching an existing site configuration contribute a score. Removed or changed configurations remain in the pinned snapshot and are excluded from scoring until their identity is reviewed again.",
       "snapshotFile": "data/benchmarks/aa_difficult_public_pages_2026-09-25.json",
       "snapshotSha256": "cc769b605412ad11802a684af5292957d40a3d3e42b32e7cb1b00acd96a06789",
       "pageSha256": "9a3af04093fcd9b34ef2a0e2cc44c90dd4954bf1cee1a084fc85d4a7c74855a4",
       "snapshotRows": 26,
-      "mappedRows": 26,
+      "mappedRows": 25,
+      "configurationDriftRows": [
+        {
+          "aaSlug": "inkling",
+          "snapshotModelKey": "Inkling [R]",
+          "currentModelKey": "Inkling (xhigh) [R]"
+        }
+      ],
       "scoreSelection": "terminalBenchScience",
       "resultProtocol": "v0.1.0; 70 science terminal tasks, common AA mini-swe-agent, mean pass@1 across three runs"
     },
@@ -2456,12 +2473,19 @@
       "url": "https://artificialanalysis.ai/evaluations/aa-briefcase?results=rubric-score",
       "category": "Independent benchmark evaluation",
       "collectionStatus": "pinned-public-chart; checked 2026-09-25T10:55:00+00:00",
-      "note": "91 private document/artifact tasks; rubric pass rate, distinct from Briefcase Elo. Only the page's selected, publicly embedded chart rows are included; no paid download is implied. AA's exact model slug and display name are retained, and only slugs matching an existing site configuration contribute a score.",
+      "note": "91 private document/artifact tasks; rubric pass rate, distinct from Briefcase Elo. Only the page's selected, publicly embedded chart rows are included; no paid download is implied. AA's exact model slug and display name are retained, and only slugs matching an existing site configuration contribute a score. Removed or changed configurations remain in the pinned snapshot and are excluded from scoring until their identity is reviewed again.",
       "snapshotFile": "data/benchmarks/aa_difficult_public_pages_2026-09-25.json",
       "snapshotSha256": "cc769b605412ad11802a684af5292957d40a3d3e42b32e7cb1b00acd96a06789",
       "pageSha256": "a30dd5f51ab9651918436f1946bf9c5ce057dc7d614abcac5806607284d57cc4",
       "snapshotRows": 32,
-      "mappedRows": 32,
+      "mappedRows": 31,
+      "configurationDriftRows": [
+        {
+          "aaSlug": "inkling",
+          "snapshotModelKey": "Inkling [R]",
+          "currentModelKey": "Inkling (xhigh) [R]"
+        }
+      ],
       "scoreSelection": "briefcaseBreakdown.rubricPassRate",
       "resultProtocol": "91 private document/artifact tasks; rubric pass rate, distinct from Briefcase Elo"
     },
@@ -2471,12 +2495,13 @@
       "url": "https://artificialanalysis.ai/evaluations/harvey-lab-aa?eval-score=all-pass-rate",
       "category": "Independent benchmark evaluation",
       "collectionStatus": "pinned-public-chart; checked 2026-09-25T10:55:00+00:00",
-      "note": "120 private legal tasks; all rubric criteria must pass. Only the page's selected, publicly embedded chart rows are included; no paid download is implied. AA's exact model slug and display name are retained, and only slugs matching an existing site configuration contribute a score.",
+      "note": "120 private legal tasks; all rubric criteria must pass. Only the page's selected, publicly embedded chart rows are included; no paid download is implied. AA's exact model slug and display name are retained, and only slugs matching an existing site configuration contribute a score. Removed or changed configurations remain in the pinned snapshot and are excluded from scoring until their identity is reviewed again.",
       "snapshotFile": "data/benchmarks/aa_difficult_public_pages_2026-09-25.json",
       "snapshotSha256": "cc769b605412ad11802a684af5292957d40a3d3e42b32e7cb1b00acd96a06789",
       "pageSha256": "4965722bd49ac8b20238fba31fe28658d5e5f8a1e1838c3a70e973e92d4297e1",
       "snapshotRows": 14,
       "mappedRows": 14,
+      "configurationDriftRows": [],
       "scoreSelection": "harveyLabBreakdown.ungatedAverageAllPass",
       "resultProtocol": "120 private legal tasks; all rubric criteria must pass"
     },
@@ -30903,26 +30928,6 @@
     {
       "benchmarkId": "aa-analyst-agent-pass5",
       "benchmarkLabel": "AA-AnalystAgent (pass^5)",
-      "model": "Inkling [R]",
-      "modelAliases": [
-        "Inkling [R]"
-      ],
-      "value": 23.75,
-      "unit": "%",
-      "sourceId": "aa-public-aa-analyst-agent-pass5-2026-09-25",
-      "sourceUrl": "https://artificialanalysis.ai/evaluations/aa-analyst-agent",
-      "sourceLabel": "Artificial Analysis public AA-AnalystAgent (pass^5) chart",
-      "variantScoped": true,
-      "modelScoreEligible": true,
-      "evidenceEligible": true,
-      "configurationConfidence": "explicit",
-      "scoreOrigin": "aa-public-evaluation-page",
-      "scoreSelection": "analystAgent",
-      "configurationNote": "AA slug inkling; AA name Inkling (xhigh); 80 private analysis tasks, five independent runs; pass^5."
-    },
-    {
-      "benchmarkId": "aa-analyst-agent-pass5",
-      "benchmarkLabel": "AA-AnalystAgent (pass^5)",
       "model": "Nemotron 3 Ultra [R]",
       "modelAliases": [
         "Nemotron 3 Ultra [R]"
@@ -31479,26 +31484,6 @@
       "scoreOrigin": "aa-public-evaluation-page",
       "scoreSelection": "mlcrOverall",
       "configurationNote": "AA slug minimax-m3; AA name MiniMax-M3; Private expert and compound clinical tasks; Overall score."
-    },
-    {
-      "benchmarkId": "mlcr-aa-overall",
-      "benchmarkLabel": "MLCR-AA (Overall)",
-      "model": "Inkling [R]",
-      "modelAliases": [
-        "Inkling [R]"
-      ],
-      "value": 12.2222222222222,
-      "unit": "%",
-      "sourceId": "aa-public-mlcr-aa-overall-2026-09-25",
-      "sourceUrl": "https://artificialanalysis.ai/evaluations/mlcr-aa",
-      "sourceLabel": "Artificial Analysis public MLCR-AA (Overall) chart",
-      "variantScoped": true,
-      "modelScoreEligible": true,
-      "evidenceEligible": true,
-      "configurationConfidence": "explicit",
-      "scoreOrigin": "aa-public-evaluation-page",
-      "scoreSelection": "mlcrOverall",
-      "configurationNote": "AA slug inkling; AA name Inkling (xhigh); Private expert and compound clinical tasks; Overall score."
     },
     {
       "benchmarkId": "mlcr-aa-overall",
@@ -32063,26 +32048,6 @@
     {
       "benchmarkId": "terminal-bench-science-aa",
       "benchmarkLabel": "Terminal-Bench-Science v0.1.0 (AA)",
-      "model": "Inkling [R]",
-      "modelAliases": [
-        "Inkling [R]"
-      ],
-      "value": 0.0,
-      "unit": "%",
-      "sourceId": "aa-public-terminal-bench-science-aa-2026-09-25",
-      "sourceUrl": "https://artificialanalysis.ai/evaluations/terminal-bench-science",
-      "sourceLabel": "Artificial Analysis public Terminal-Bench-Science v0.1.0 (AA) chart",
-      "variantScoped": true,
-      "modelScoreEligible": true,
-      "evidenceEligible": true,
-      "configurationConfidence": "explicit",
-      "scoreOrigin": "aa-public-evaluation-page",
-      "scoreSelection": "terminalBenchScience",
-      "configurationNote": "AA slug inkling; AA name Inkling (xhigh); v0.1.0; 70 science terminal tasks, common AA mini-swe-agent, mean pass@1 across three runs."
-    },
-    {
-      "benchmarkId": "terminal-bench-science-aa",
-      "benchmarkLabel": "Terminal-Bench-Science v0.1.0 (AA)",
       "model": "Gemini 3.5 Flash-Lite [R]",
       "modelAliases": [
         "Gemini 3.5 Flash-Lite [R]"
@@ -32639,26 +32604,6 @@
       "scoreOrigin": "aa-public-evaluation-page",
       "scoreSelection": "briefcaseBreakdown.rubricPassRate",
       "configurationNote": "AA slug minimax-m3; AA name MiniMax-M3; 91 private document/artifact tasks; rubric pass rate, distinct from Briefcase Elo."
-    },
-    {
-      "benchmarkId": "aa-briefcase-rubric-pass-rate",
-      "benchmarkLabel": "AA-Briefcase v1.1 (Rubric Pass Rate)",
-      "model": "Inkling [R]",
-      "modelAliases": [
-        "Inkling [R]"
-      ],
-      "value": 19.29292929292929,
-      "unit": "%",
-      "sourceId": "aa-public-aa-briefcase-rubric-pass-rate-2026-09-25",
-      "sourceUrl": "https://artificialanalysis.ai/evaluations/aa-briefcase?results=rubric-score",
-      "sourceLabel": "Artificial Analysis public AA-Briefcase v1.1 (Rubric Pass Rate) chart",
-      "variantScoped": true,
-      "modelScoreEligible": true,
-      "evidenceEligible": true,
-      "configurationConfidence": "explicit",
-      "scoreOrigin": "aa-public-evaluation-page",
-      "scoreSelection": "briefcaseBreakdown.rubricPassRate",
-      "configurationNote": "AA slug inkling; AA name Inkling (xhigh); 91 private document/artifact tasks; rubric pass rate, distinct from Briefcase Elo."
     },
     {
       "benchmarkId": "aa-briefcase-rubric-pass-rate",

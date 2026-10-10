@@ -1767,13 +1767,34 @@ class BuildDocsSiteTests(unittest.TestCase):
         )
 
     def test_opus_non_reasoning_tier_dedupes_with_reasoning_tier(self):
-        payload = build_site_payload(read_csv_rows(DEFAULT_INPUT_CSV))
-        opus_max = next(model for model in payload["models"] if model["modelKey"] == "Claude Opus 4.7 (max) [R]")
-        opus_non_reasoning = next(model for model in payload["models"] if model["modelKey"] == "Claude Opus 4.7 (Non-reasoning, high)")
+        for label in ("Non-reasoning", "non-reasoning"):
+            with self.subTest(label=label):
+                rows = [
+                    {
+                        "model_key": "Claude Opus 4.7 (max) [R]",
+                        "model": "Claude Opus 4.7 (max)",
+                        "slug": "claude-opus-4-7",
+                        "creator": "Anthropic",
+                        "is_reasoning": "true",
+                    },
+                    {
+                        "model_key": f"Claude Opus 4.7 ({label}, high)",
+                        "model": f"Claude Opus 4.7 ({label}, high)",
+                        "slug": "claude-opus-4-7-non-reasoning",
+                        "creator": "Anthropic",
+                        "is_reasoning": "false",
+                    },
+                ]
+                payload = build_site_payload(rows)
+                by_slug = {model["slug"]: model for model in payload["models"]}
+                opus_max = by_slug["claude-opus-4-7"]
+                opus_non_reasoning = by_slug["claude-opus-4-7-non-reasoning"]
 
-        self.assertEqual(opus_max["variantGroup"], "claude opus 4 7")
-        self.assertEqual(opus_non_reasoning["variantGroup"], opus_max["variantGroup"])
-        self.assertLess(opus_non_reasoning["variantPriority"], opus_max["variantPriority"])
+                self.assertEqual(opus_max["variantGroup"], "claude opus 4 7")
+                self.assertEqual(opus_non_reasoning["variantGroup"], opus_max["variantGroup"])
+                self.assertLess(opus_non_reasoning["variantPriority"], opus_max["variantPriority"])
+                self.assertTrue(opus_max["isReasoning"])
+                self.assertFalse(opus_non_reasoning["isReasoning"])
 
     def test_build_site_payload_includes_presets_metrics_and_model_groups(self):
         rows = [

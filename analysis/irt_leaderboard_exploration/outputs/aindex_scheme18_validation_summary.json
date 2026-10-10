@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_scheme18",
   "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
-  "calibration_population_size": 128,
-  "bonus_cap_per_board": 20.19519324924451,
+  "calibration_population_size": 130,
+  "bonus_cap_per_board": 20.14767213756614,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 128,
-    "unique_slugs": 128,
-    "unique_variant_groups": 128,
+    "row_count": 130,
+    "unique_slugs": 130,
+    "unique_variant_groups": 130,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 171,
-    "unique_slugs": 171,
-    "unique_variant_groups": 128,
+    "row_count": 173,
+    "unique_slugs": 173,
+    "unique_variant_groups": 130,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -26,9 +26,9 @@
   "passed": true,
   "core_eligibility": {
     "variant_group": {
-      "requested_count": 147,
-      "eligible_count": 128,
-      "excluded_count": 19,
+      "requested_count": 148,
+      "eligible_count": 130,
+      "excluded_count": 18,
       "excluded_models": [
         {
           "slug": "gpt-5-4",
@@ -218,17 +218,6 @@
           }
         },
         {
-          "slug": "gemma-4-e4b",
-          "missing_core": {
-            "coding": [
-              "SciCode"
-            ],
-            "knowledge-science": [
-              "SciCode"
-            ]
-          }
-        },
-        {
           "slug": "gemma-4-e2b",
           "missing_core": {
             "coding": [
@@ -242,8 +231,8 @@
       ]
     },
     "exact_config": {
-      "requested_count": 172,
-      "eligible_count": 171,
+      "requested_count": 174,
+      "eligible_count": 173,
       "excluded_count": 1,
       "excluded_models": [
         {
@@ -268,10 +257,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 20.19519324924451,
-    "pooled_positive_residual_count": 371,
-    "pooled_positive_residual_mean": 8.897428233219845,
-    "pooled_positive_residual_population_sd": 7.9887262550831855,
+    "bonus_cap_per_board": 20.14767213756614,
+    "pooled_positive_residual_count": 376,
+    "pooled_positive_residual_mean": 8.863392671849432,
+    "pooled_positive_residual_population_sd": 7.979190531012394,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -280,7 +269,7 @@
       "instruction-context"
     ],
     "board_points_max": 20.0,
-    "population_size": 128,
+    "population_size": 130,
     "population_slugs": [
       "g9v3-39a5b",
       "qwen3-14b-instruct-reasoning",
@@ -335,6 +324,7 @@
       "gemma-3-27b",
       "gemma-4-26b-a4b",
       "gemma-4-31b",
+      "gemma-4-e4b",
       "granite-4-2-30b",
       "granite-4-2-3b",
       "granite-4-2-8b",
@@ -376,6 +366,7 @@
       "motif-3",
       "quasar-438b",
       "nvidia-nemotron-3-nano-30b-a3b-reasoning",
+      "nvidia-nemotron-3-nano-4b",
       "nvidia-nemotron-3-super-120b-a12b",
       "nvidia-nemotron-3-ultra-550b-a55b",
       "nemotron-3-5-lightning",
@@ -465,6 +456,7 @@
       "gemma 3 27b",
       "gemma 4 26b a4b",
       "gemma 4 31b",
+      "gemma 4 e4b",
       "granite 4 2 30b",
       "granite 4 2 3b",
       "granite 4 2 8b",
@@ -506,6 +498,7 @@
       "motif 3",
       "quasar 438b",
       "nemotron 3 nano",
+      "nemotron 3 nano 4b",
       "nemotron 3 super",
       "nemotron 3 ultra",
       "nemotron 3 5 lightning",
@@ -558,27 +551,27 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 128,
-            "slope": 2.1784869516697247,
-            "intercept": -44.226061577634965
+            "observed_count": 130,
+            "slope": 2.166289445324764,
+            "intercept": -43.67036094926068
           },
           {
             "item_id": "swe-bench-pro",
             "score_key": "benchmark:swe-bench-pro",
             "canonical_family": "swe-bench-pro",
             "enabled": true,
-            "observed_count": 33,
-            "slope": 1.0492548243299713,
-            "intercept": 6.720922207694173
+            "observed_count": 34,
+            "slope": 1.0248589955921013,
+            "intercept": 8.137739525238473
           },
           {
             "item_id": "livecodebench",
             "score_key": "benchmark:livecodebench",
             "canonical_family": "livecodebench",
             "enabled": true,
-            "observed_count": 18,
-            "slope": 0.4777945659450206,
-            "intercept": 58.47712951674872
+            "observed_count": 20,
+            "slope": 0.7880483893844072,
+            "intercept": 45.036861453750376
           }
         ],
         "core_item_count": 1,
@@ -598,18 +591,18 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 128,
-            "slope": 1.0390765562898905,
-            "intercept": -17.819559804456517
+            "observed_count": 130,
+            "slope": 1.0457174297818346,
+            "intercept": -18.34658060980057
           },
           {
             "item_id": "tau2-bench-telecom-aa",
             "score_key": "τ²-Bench Telecom",
             "canonical_family": "tau2-bench",
             "enabled": true,
-            "observed_count": 74,
-            "slope": 0.9398133902818302,
-            "intercept": 10.210177036293729
+            "observed_count": 76,
+            "slope": 0.9523811972580316,
+            "intercept": 9.208116535985326
           },
           {
             "item_id": "tau3-banking-aa",
@@ -634,9 +627,9 @@
             "score_key": "benchmark:swe-bench-pro",
             "canonical_family": "swe-bench-pro",
             "enabled": true,
-            "observed_count": 33,
-            "slope": 1.1231503800909692,
-            "intercept": -28.690809871032606
+            "observed_count": 34,
+            "slope": 1.1106036951714668,
+            "intercept": -27.747505898612346
           },
           {
             "item_id": "hle-tools",
@@ -661,9 +654,9 @@
             "score_key": "benchmark:osworld-verified",
             "canonical_family": "osworld-verified",
             "enabled": true,
-            "observed_count": 11,
-            "slope": 1.8666403456838878,
-            "intercept": -73.51910861566505
+            "observed_count": 12,
+            "slope": 1.908121042650351,
+            "intercept": -76.42060698969424
           }
         ],
         "core_item_count": 1,
@@ -730,18 +723,18 @@
             "score_key": "MMMU-Pro",
             "canonical_family": "mmmu-pro",
             "enabled": true,
-            "observed_count": 61,
-            "slope": 0.757611377064216,
-            "intercept": 40.62611005767558
+            "observed_count": 62,
+            "slope": 0.7581399508445743,
+            "intercept": 40.60019196286139
           },
           {
             "item_id": "mmlu-pro",
             "score_key": "benchmark:mmlu-pro",
             "canonical_family": "mmlu-pro",
             "enabled": true,
-            "observed_count": 17,
-            "slope": 0.15937430230106656,
-            "intercept": 77.21102099592818
+            "observed_count": 18,
+            "slope": 0.26820509879125554,
+            "intercept": 72.57850456885322
           }
         ],
         "core_item_count": 4,
@@ -766,9 +759,9 @@
             "score_key": "benchmark:charxiv-no-tools",
             "canonical_family": "charxiv-no-tools",
             "enabled": true,
-            "observed_count": 8,
-            "slope": 0.2934103323726511,
-            "intercept": 74.46219250128733
+            "observed_count": 9,
+            "slope": 0.281468823623487,
+            "intercept": 75.1145841473635
           }
         ],
         "core_item_count": 2,

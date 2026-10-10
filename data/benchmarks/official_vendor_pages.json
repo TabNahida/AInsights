@@ -477,6 +477,20 @@
     },
     {
       "vendor": "deepseek",
+      "name": "DeepSeek-V3.1",
+      "displayName": "DeepSeek V3.1",
+      "url": "https://api-docs.deepseek.com/news/news250821",
+      "rawUrl": "https://api-docs.deepseek.com/news/news250821",
+      "aliases": [
+        "DeepSeek V3.1",
+        "DeepSeek-V3.1",
+        "deepseek-v3-1"
+      ],
+      "sourceKey": "deepseek-api-docs-sitemap",
+      "title": "DeepSeek-V3.1 Release"
+    },
+    {
+      "vendor": "deepseek",
       "name": "DeepSeek-V3.1-Terminus",
       "displayName": "DeepSeek V3.1 Terminus",
       "url": "https://api-docs.deepseek.com/news/news250922",
@@ -488,6 +502,20 @@
       ],
       "sourceKey": "deepseek-api-docs-sitemap",
       "title": "DeepSeek-V3.1-Terminus"
+    },
+    {
+      "vendor": "deepseek",
+      "name": "DeepSeek-V3.2",
+      "displayName": "DeepSeek V3.2",
+      "url": "https://api-docs.deepseek.com/news/news251201",
+      "rawUrl": "https://api-docs.deepseek.com/news/news251201",
+      "aliases": [
+        "DeepSeek V3.2",
+        "DeepSeek-V3.2",
+        "deepseek-v3-2"
+      ],
+      "sourceKey": "deepseek-api-docs-sitemap",
+      "title": "DeepSeek-V3.2 Release"
     },
     {
       "vendor": "deepseek",

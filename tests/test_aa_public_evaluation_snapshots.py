@@ -1,4 +1,3 @@
-import csv
 import json
 import tempfile
 import unittest
@@ -77,7 +76,7 @@ class AAPublicEvaluationSnapshotTests(unittest.TestCase):
         self.assertAlmostEqual(max(row["value"] for row in briefcase), 61.51515151515151)
         self.assertAlmostEqual(max(row["value"] for row in harvey), 30.833333333333336)
 
-    def test_snapshot_rejects_aa_raw_configuration_drift(self):
+    def test_snapshot_isolates_changed_or_removed_configurations(self):
         snapshot = json.loads(SNAPSHOT_PATH.read_text(encoding="utf-8"))
         by_slug = {
             row["aaSlug"]: row["siteModelKey"]
@@ -86,15 +85,49 @@ class AAPublicEvaluationSnapshotTests(unittest.TestCase):
             if row["siteModelKey"] is not None
         }
         first_slug = snapshot["metrics"][0]["rows"][0]["aaSlug"]
-        by_slug[first_slug] = "Other model configuration [R]"
+        for current_key in ("Other model configuration [R]", by_slug[first_slug] + " (xhigh)", None):
+            with self.subTest(current_key=current_key):
+                current = dict(by_slug)
+                if current_key is None:
+                    current.pop(first_slug)
+                else:
+                    current[first_slug] = current_key
+                with patch.object(aa_snapshots, "_current_aa_model_keys", return_value=current):
+                    pairs = load_aa_difficult_snapshots()
+                for metric, (source, results) in zip(snapshot["metrics"], pairs, strict=True):
+                    expected = [row for row in metric["rows"]
+                                if row["siteModelKey"] is not None and row["aaSlug"] != first_slug]
+                    self.assertEqual({row["model"] for row in results},
+                                     {row["siteModelKey"] for row in expected})
+                    self.assertEqual(source["mappedRows"], len(expected))
+                    drift = [row for row in metric["rows"] if row["aaSlug"] == first_slug]
+                    self.assertEqual(source["configurationDriftRows"], [
+                        {"aaSlug": row["aaSlug"], "snapshotModelKey": row["siteModelKey"],
+                         "currentModelKey": current_key} for row in drift
+                    ])
+
+    def test_snapshot_accepts_only_casing_changes_and_emits_current_key(self):
+        snapshot = json.loads(SNAPSHOT_PATH.read_text(encoding="utf-8"))
+        by_slug = {
+            row["aaSlug"]: row["siteModelKey"].swapcase()
+            for metric in snapshot["metrics"] for row in metric["rows"]
+            if row["siteModelKey"] is not None
+        }
+        with patch.object(aa_snapshots, "_current_aa_model_keys", return_value=by_slug):
+            pairs = load_aa_difficult_snapshots()
+        for metric, (source, results) in zip(snapshot["metrics"], pairs, strict=True):
+            self.assertEqual(source["configurationDriftRows"], [])
+            self.assertEqual({row["model"] for row in results}, {
+                row["siteModelKey"].swapcase() for row in metric["rows"]
+                if row["siteModelKey"] is not None
+            })
+
+    def test_snapshot_integrity_errors_still_fail(self):
         with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "aa_raw.csv"
-            with path.open("w", encoding="utf-8", newline="") as handle:
-                writer = csv.DictWriter(handle, fieldnames=["slug", "model_key"])
-                writer.writeheader()
-                writer.writerows({"slug": slug, "model_key": key} for slug, key in by_slug.items())
-            with patch.object(aa_snapshots, "AA_RAW_SCORES_PATH", path):
-                with self.assertRaisesRegex(ValueError, f"configuration drift for {first_slug}"):
+            path = Path(directory) / "snapshot.json"
+            path.write_bytes(SNAPSHOT_PATH.read_bytes() + b" ")
+            with patch.object(aa_snapshots, "SNAPSHOT_PATH", path):
+                with self.assertRaisesRegex(ValueError, "snapshot hash changed"):
                     load_aa_difficult_snapshots()
 
 

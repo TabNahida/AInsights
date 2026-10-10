@@ -207,11 +207,26 @@ def _current_aa_model_keys() -> dict[str, str]:
 
 def _check_aa_config(row: dict[str, Any], raw_keys: dict[str, str]) -> None:
     model_key = row["siteModelKey"]
-    if model_key is not None and raw_keys.get(row["aaSlug"]) != model_key:
+    if model_key is not None and _matching_aa_config(row, raw_keys) is None:
         raise ValueError(
             f"AA model configuration drift for {row['aaSlug']}: "
             f"snapshot {model_key!r}, current AA {raw_keys.get(row['aaSlug'])!r}"
         )
+
+
+def _matching_aa_config(row: dict[str, Any], raw_keys: dict[str, str]) -> str | None:
+    """Allow display-name casing changes, but never infer a different tier.
+
+    A pinned slug can later be removed or reassigned. Historical evidence is
+    usable only when its complete configuration name still matches the live
+    catalogue; an added effort label requires a new reviewed observation.
+    """
+
+    captured_key = row["siteModelKey"]
+    current_key = raw_keys.get(row["aaSlug"])
+    if captured_key is None or current_key is None:
+        return None
+    return current_key if current_key.casefold() == captured_key.casefold() else None
 
 
 def capture_snapshot() -> dict[str, Any]:
@@ -275,8 +290,16 @@ def load_aa_difficult_snapshots() -> tuple[tuple[dict[str, Any], list[dict[str, 
             raise ValueError(f"AA snapshot row count/identity changed: {spec['id']}")
         if len(rows) != spec["selectedChartRows"]:
             raise ValueError(f"AA selected-model chart size changed: {spec['id']}")
-        for row in rows:
-            _check_aa_config(row, raw_keys)
+        model_keys = [_matching_aa_config(row, raw_keys) for row in rows]
+        drift_rows = [
+            {
+                "aaSlug": row["aaSlug"],
+                "snapshotModelKey": row["siteModelKey"],
+                "currentModelKey": raw_keys.get(row["aaSlug"]),
+            }
+            for row, model_key in zip(rows, model_keys, strict=True)
+            if row["siteModelKey"] is not None and model_key is None
+        ]
         source_id = f"aa-public-{spec['id']}-2026-09-25"
         source = {
             "id": source_id,
@@ -288,24 +311,26 @@ def load_aa_difficult_snapshots() -> tuple[tuple[dict[str, Any], list[dict[str, 
                 f"{spec['protocol']}. Only the page's selected, publicly embedded "
                 "chart rows are included; no paid download is implied. AA's exact "
                 "model slug and display name are retained, and only slugs matching "
-                "an existing site configuration contribute a score."
+                "an existing site configuration contribute a score. Removed or "
+                "changed configurations remain in the pinned snapshot and are "
+                "excluded from scoring until their identity is reviewed again."
             ),
             "snapshotFile": str(SNAPSHOT_PATH.relative_to(ROOT)).replace("\\", "/"),
             "snapshotSha256": SNAPSHOT_SHA256,
             "pageSha256": item["pageSha256"],
             "snapshotRows": len(rows),
-            "mappedRows": sum(row["siteModelKey"] is not None for row in rows),
+            "mappedRows": sum(model_key is not None for model_key in model_keys),
+            "configurationDriftRows": drift_rows,
             "scoreSelection": ".".join(spec["field"]),
             "resultProtocol": spec["protocol"],
         }
         results = []
-        for row in rows:
-            model_key = row["siteModelKey"]
-            if model_key is None:
-                continue
+        for row, model_key in zip(rows, model_keys, strict=True):
             score = row["scoreFraction"]
             if isinstance(score, bool) or not isinstance(score, (int, float)) or not math.isfinite(score) or not 0 <= score <= 1:
                 raise ValueError(f"AA snapshot score invalid: {spec['id']}: {row['aaSlug']}")
+            if model_key is None:
+                continue
             results.append({
                 "benchmarkId": spec["id"],
                 "benchmarkLabel": spec["label"],

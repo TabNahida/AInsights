@@ -1,50 +1,50 @@
 ﻿method,target,rank_among_exact_configs,model,slug,score,evidence_tier,board_test_slots_total
-rasch_equal_board,fable_5,11,Claude Fable 5 (with fallback),claude-fable-5,92.9927,Main,22
-rasch_equal_board,gpt_5_6_sol,17,GPT-5.6 Sol (max),gpt-5-6-sol,92.2383,Main,22
-rasch_equal_board,gpt_5_6_terra,32,GPT-5.6 Terra (max),gpt-5-6-terra,90.3855,Main,22
-rasch_equal_board,gpt_5_6_luna,38,GPT-5.6 Luna (max),gpt-5-6-luna,89.1191,Provisional,21
-rasch_equal_board,claude_opus_5,3,Claude Opus 5 (max),claude-opus-5,94.2469,Provisional,20
-rasch_equal_board,deepseek_v4_flash_0731,67,DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,83.283,Provisional,22
+rasch_equal_board,fable_5,11,Claude Fable 5 (with fallback),claude-fable-5,92.8019,Main,22
+rasch_equal_board,gpt_5_6_sol,16,GPT-5.6 Sol (max),gpt-5-6-sol,92.0385,Main,22
+rasch_equal_board,gpt_5_6_terra,32,GPT-5.6 Terra (max),gpt-5-6-terra,90.1297,Main,22
+rasch_equal_board,gpt_5_6_luna,39,GPT-5.6 Luna (max),gpt-5-6-luna,88.8446,Provisional,21
+rasch_equal_board,claude_opus_5,3,Claude Opus 5 (max),claude-opus-5,94.1009,Provisional,20
+rasch_equal_board,deepseek_v4_flash_0731,67,DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,82.917,Provisional,22
 rasch_equal_board,qwen3_8_max,,,,,,
-twopl_equal_board,fable_5,5,Claude Fable 5 (with fallback),claude-fable-5,93.1982,Main,22
-twopl_equal_board,gpt_5_6_sol,11,GPT-5.6 Sol (max),gpt-5-6-sol,92.5985,Main,22
-twopl_equal_board,gpt_5_6_terra,27,GPT-5.6 Terra (max),gpt-5-6-terra,90.8977,Main,22
-twopl_equal_board,gpt_5_6_luna,40,GPT-5.6 Luna (max),gpt-5-6-luna,88.6235,Provisional,21
-twopl_equal_board,claude_opus_5,3,Claude Opus 5 (max),claude-opus-5,93.4875,Provisional,20
-twopl_equal_board,deepseek_v4_flash_0731,69,DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,82.9877,Provisional,22
+twopl_equal_board,fable_5,5,Claude Fable 5 (with fallback),claude-fable-5,92.9485,Main,22
+twopl_equal_board,gpt_5_6_sol,11,GPT-5.6 Sol (max),gpt-5-6-sol,92.3687,Main,22
+twopl_equal_board,gpt_5_6_terra,27,GPT-5.6 Terra (max),gpt-5-6-terra,90.6144,Main,22
+twopl_equal_board,gpt_5_6_luna,40,GPT-5.6 Luna (max),gpt-5-6-luna,88.2884,Provisional,21
+twopl_equal_board,claude_opus_5,3,Claude Opus 5 (max),claude-opus-5,93.2441,Provisional,20
+twopl_equal_board,deepseek_v4_flash_0731,68,DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,82.5254,Provisional,22
 twopl_equal_board,qwen3_8_max,,,,,,
-percentile_mean_equal_board,fable_5,16,Claude Fable 5 (with fallback),claude-fable-5,91.6295,Main,22
-percentile_mean_equal_board,gpt_5_6_sol,18,GPT-5.6 Sol (max),gpt-5-6-sol,91.2902,Main,22
-percentile_mean_equal_board,gpt_5_6_terra,39,GPT-5.6 Terra (max),gpt-5-6-terra,85.3703,Main,22
-percentile_mean_equal_board,gpt_5_6_luna,54,GPT-5.6 Luna (max),gpt-5-6-luna,80.1258,Provisional,21
-percentile_mean_equal_board,claude_opus_5,5,Claude Opus 5 (max),claude-opus-5,94.1207,Provisional,20
-percentile_mean_equal_board,deepseek_v4_flash_0731,92,DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,66.3531,Provisional,22
+percentile_mean_equal_board,fable_5,16,Claude Fable 5 (with fallback),claude-fable-5,91.5516,Main,22
+percentile_mean_equal_board,gpt_5_6_sol,18,GPT-5.6 Sol (max),gpt-5-6-sol,91.3116,Main,22
+percentile_mean_equal_board,gpt_5_6_terra,39,GPT-5.6 Terra (max),gpt-5-6-terra,85.391,Main,22
+percentile_mean_equal_board,gpt_5_6_luna,54,GPT-5.6 Luna (max),gpt-5-6-luna,79.9975,Provisional,21
+percentile_mean_equal_board,claude_opus_5,5,Claude Opus 5 (max),claude-opus-5,94.0447,Provisional,20
+percentile_mean_equal_board,deepseek_v4_flash_0731,91,DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,66.0736,Provisional,22
 percentile_mean_equal_board,qwen3_8_max,,,,,,
-percentile_median_equal_board,fable_5,5,Claude Fable 5 (with fallback),claude-fable-5,95.1614,Main,22
-percentile_median_equal_board,gpt_5_6_sol,11,GPT-5.6 Sol (max),gpt-5-6-sol,93.791,Main,22
-percentile_median_equal_board,gpt_5_6_terra,35,GPT-5.6 Terra (max),gpt-5-6-terra,87.5573,Main,22
-percentile_median_equal_board,gpt_5_6_luna,55,GPT-5.6 Luna (max),gpt-5-6-luna,80.3825,Provisional,21
-percentile_median_equal_board,claude_opus_5,4,Claude Opus 5 (max),claude-opus-5,95.4914,Provisional,20
-percentile_median_equal_board,deepseek_v4_flash_0731,87,DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,68.5459,Provisional,22
+percentile_median_equal_board,fable_5,5,Claude Fable 5 (with fallback),claude-fable-5,95.0449,Main,22
+percentile_median_equal_board,gpt_5_6_sol,10,GPT-5.6 Sol (max),gpt-5-6-sol,93.8378,Main,22
+percentile_median_equal_board,gpt_5_6_terra,34,GPT-5.6 Terra (max),gpt-5-6-terra,87.4974,Main,22
+percentile_median_equal_board,gpt_5_6_luna,54,GPT-5.6 Luna (max),gpt-5-6-luna,80.2667,Provisional,21
+percentile_median_equal_board,claude_opus_5,4,Claude Opus 5 (max),claude-opus-5,95.4321,Provisional,20
+percentile_median_equal_board,deepseek_v4_flash_0731,87,DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,68.3016,Provisional,22
 percentile_median_equal_board,qwen3_8_max,,,,,,
-global_family_percentile,fable_5,31,Claude Fable 5 (with fallback),claude-fable-5,87.0744,Main,22
-global_family_percentile,gpt_5_6_sol,33,GPT-5.6 Sol (max),gpt-5-6-sol,86.8739,Main,22
-global_family_percentile,gpt_5_6_terra,51,GPT-5.6 Terra (max),gpt-5-6-terra,78.9811,Main,22
-global_family_percentile,gpt_5_6_luna,72,GPT-5.6 Luna (max),gpt-5-6-luna,71.2099,Provisional,21
-global_family_percentile,claude_opus_5,4,Claude Opus 5 (max),claude-opus-5,95.1105,Provisional,20
-global_family_percentile,deepseek_v4_flash_0731,129,DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,55.0107,Provisional,22
+global_family_percentile,fable_5,31,Claude Fable 5 (with fallback),claude-fable-5,87.0206,Main,22
+global_family_percentile,gpt_5_6_sol,32,GPT-5.6 Sol (max),gpt-5-6-sol,86.8956,Main,22
+global_family_percentile,gpt_5_6_terra,51,GPT-5.6 Terra (max),gpt-5-6-terra,78.9973,Main,22
+global_family_percentile,gpt_5_6_luna,72,GPT-5.6 Luna (max),gpt-5-6-luna,71.0986,Provisional,21
+global_family_percentile,claude_opus_5,4,Claude Opus 5 (max),claude-opus-5,95.0836,Provisional,20
+global_family_percentile,deepseek_v4_flash_0731,128,DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,54.8666,Provisional,22
 global_family_percentile,qwen3_8_max,,,,,,
-rasch_sparse_item_sensitivity,fable_5,11,Claude Fable 5 (with fallback),claude-fable-5,93.0022,Main,22
-rasch_sparse_item_sensitivity,gpt_5_6_sol,17,GPT-5.6 Sol (max),gpt-5-6-sol,92.2423,Main,22
-rasch_sparse_item_sensitivity,gpt_5_6_terra,32,GPT-5.6 Terra (max),gpt-5-6-terra,90.3903,Main,22
-rasch_sparse_item_sensitivity,gpt_5_6_luna,39,GPT-5.6 Luna (max),gpt-5-6-luna,89.1253,Provisional,21
-rasch_sparse_item_sensitivity,claude_opus_5,3,Claude Opus 5 (max),claude-opus-5,94.2562,Provisional,20
-rasch_sparse_item_sensitivity,deepseek_v4_flash_0731,67,DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,83.2968,Provisional,22
+rasch_sparse_item_sensitivity,fable_5,11,Claude Fable 5 (with fallback),claude-fable-5,92.8113,Main,22
+rasch_sparse_item_sensitivity,gpt_5_6_sol,16,GPT-5.6 Sol (max),gpt-5-6-sol,92.0424,Main,22
+rasch_sparse_item_sensitivity,gpt_5_6_terra,32,GPT-5.6 Terra (max),gpt-5-6-terra,90.1344,Main,22
+rasch_sparse_item_sensitivity,gpt_5_6_luna,39,GPT-5.6 Luna (max),gpt-5-6-luna,88.8506,Provisional,21
+rasch_sparse_item_sensitivity,claude_opus_5,3,Claude Opus 5 (max),claude-opus-5,94.1103,Provisional,20
+rasch_sparse_item_sensitivity,deepseek_v4_flash_0731,67,DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,82.9305,Provisional,22
 rasch_sparse_item_sensitivity,qwen3_8_max,,,,,,
-rasch_dense_item_sensitivity,fable_5,14,Claude Fable 5 (with fallback),claude-fable-5,92.5793,Main,19
-rasch_dense_item_sensitivity,gpt_5_6_sol,22,GPT-5.6 Sol (max),gpt-5-6-sol,91.8286,Main,19
-rasch_dense_item_sensitivity,gpt_5_6_terra,31,GPT-5.6 Terra (max),gpt-5-6-terra,90.3361,Main,19
-rasch_dense_item_sensitivity,gpt_5_6_luna,39,GPT-5.6 Luna (max),gpt-5-6-luna,88.9798,Provisional,18
-rasch_dense_item_sensitivity,claude_opus_5,3,Claude Opus 5 (max),claude-opus-5,94.2885,Provisional,20
-rasch_dense_item_sensitivity,deepseek_v4_flash_0731,65,DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,83.1527,Provisional,21
+rasch_dense_item_sensitivity,fable_5,13,Claude Fable 5 (with fallback),claude-fable-5,92.3808,Main,19
+rasch_dense_item_sensitivity,gpt_5_6_sol,22,GPT-5.6 Sol (max),gpt-5-6-sol,91.6161,Main,19
+rasch_dense_item_sensitivity,gpt_5_6_terra,31,GPT-5.6 Terra (max),gpt-5-6-terra,90.0719,Main,19
+rasch_dense_item_sensitivity,gpt_5_6_luna,39,GPT-5.6 Luna (max),gpt-5-6-luna,88.6931,Provisional,18
+rasch_dense_item_sensitivity,claude_opus_5,3,Claude Opus 5 (max),claude-opus-5,94.1484,Provisional,20
+rasch_dense_item_sensitivity,deepseek_v4_flash_0731,64,DeepSeek V4 Flash 0731 (max),deepseek-v4-flash,82.7994,Provisional,21
 rasch_dense_item_sensitivity,qwen3_8_max,,,,,,

@@ -15,6 +15,7 @@ from benchmarks.owner_leaderboard_snapshots import (
     load_arc_agi_3_standard_snapshot,
     load_toolathlon_verified_owner_snapshot,
 )
+from scripts.build_docs_site import find_external_benchmark_model
 
 
 class OwnerLeaderboardSnapshotTests(unittest.TestCase):
@@ -116,19 +117,44 @@ class OwnerLeaderboardSnapshotTests(unittest.TestCase):
         models = json.loads(
             (ARC_SNAPSHOT_PATH.parents[2] / "docs/data/models.json").read_text(encoding="utf-8")
         )["models"]
-        site_keys = {model["modelKey"] for model in models}
         for model_key in (*ARC_EXACT_CONFIG_MODEL_KEYS.values(), *ALE_EXACT_CONFIG_MODEL_KEYS.values(),
                           *TOOLATHLON_EXACT_CONFIG_MODEL_KEYS.values()):
-            self.assertIn(model_key, site_keys)
+            with self.subTest(model_key=model_key):
+                model = find_external_benchmark_model(models, [model_key])
+                self.assertIsNotNone(model)
+                # Catalogue display casing may change; the complete model and
+                # effort must still agree, as in the production attachment.
+                self.assertEqual(model["modelKey"].casefold(), model_key.casefold())
         for arc_id, model_key in ARC_EXACT_CONFIG_MODEL_KEYS.items():
             effort = "max" if arc_id.endswith("-max-effort") else arc_id.rsplit("-", 1)[-1]
             self.assertIn("Non-reasoning" if effort == "none" else f"({effort})", model_key)
+            model = find_external_benchmark_model(models, [model_key])
+            self.assertEqual(model["isReasoning"], effort != "none")
         for (_, _, variant), model_key in ALE_EXACT_CONFIG_MODEL_KEYS.items():
             effort = variant.rsplit("-", 1)[-1]
             self.assertIn("Non-reasoning" if effort == "none" else f"({effort})", model_key)
+            model = find_external_benchmark_model(models, [model_key])
+            self.assertEqual(model["isReasoning"], effort != "none")
         for owner_name, model_key in TOOLATHLON_EXACT_CONFIG_MODEL_KEYS.items():
             if "(" in owner_name:
                 self.assertIn(owner_name.rsplit("(", 1)[-1].split(")", 1)[0], model_key)
+
+    def test_exact_owner_alias_resolution_tolerates_case_but_not_effort_changes(self):
+        models = [
+            {"modelKey": "GPT-6 Luna (non-reasoning)", "slug": "gpt-6-luna-non-reasoning"},
+            {"modelKey": "GPT-6 Luna (high) [R]", "slug": "gpt-6-luna-high"},
+            {"modelKey": "GPT-6 Luna (xhigh) [R]", "slug": "gpt-6-luna"},
+        ]
+        self.assertIs(
+            find_external_benchmark_model(models, ["GPT-6 Luna (Non-reasoning)"]),
+            models[0],
+        )
+        self.assertIs(
+            find_external_benchmark_model(models, ["GPT-6 Luna (high) [R]"]),
+            models[1],
+        )
+        self.assertIsNone(find_external_benchmark_model(models, ["GPT-6 Luna (max) [R]"]))
+        self.assertIsNone(find_external_benchmark_model(models, ["GPT-6 Luna [R]"]))
 
 
 if __name__ == "__main__":
