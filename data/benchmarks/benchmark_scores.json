@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-10T00:39:48+00:00",
+  "generatedAt": "2026-10-12T10:41:44+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
       "label": "OpenAI GPT-5.5 launch evaluations",
       "url": "https://openai.com/index/introducing-gpt-5-5/",
       "category": "Official model release",
-      "collectionStatus": "partial-refresh; seeded 227 benchmark rows",
+      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
       "note": "Official OpenAI table covering GPT-5.5, GPT-5.4, GPT-5.5 Pro, GPT-5.4 Pro, Claude Opus 4.7, and Gemini 3.1 Pro."
     },
     {
@@ -36,7 +36,7 @@
       "url": "https://openai.com/index/gpt-6-astra/",
       "rawUrl": "https://openai.com/index/gpt-6-astra/",
       "category": "Official model release",
-      "collectionStatus": "refreshed",
+      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
       "note": "OpenAI's September 3, 2026 release appendix explicitly reports the maximum score at any effort. These are source-library results, not evidence for a particular max, xhigh, or lower-effort variant. Only OpenAI's Astra column is ingested. OSWorld's offline subset, Terminal-Bench 4.0, and the new June-August ExploitBench set remain separate from earlier evaluations. BenchCAD uses tools; ExploitGym was run without the six-hour time limit.",
       "modelAliases": [
         "GPT-6 Astra",
@@ -65,7 +65,7 @@
       "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "rawUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "category": "Official model release",
-      "collectionStatus": "seeded-official-values; manually verified 2026-09-23",
+      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
       "note": "OpenAI's September 22, 2026 release, checked September 23. Exact values and efforts come from the rendered chart point aria-labels (Score, Effort), not positions estimated from the plots. Figure captions identify AutomationBench 1.0.6, Agents' Last Exam V1, FrontierCode 1.1 Main, DeepSWE v1.1, and OSWorld 2.0 offline v2026.08.08 partial reward. The chart DOM id frontiercode-extended is not the captioned benchmark variant. Vendor runs remain distinct from AA Core and from coding-agent harness scores.",
       "modelAliases": [
         "GPT-6 Sol (max)",
@@ -92,7 +92,7 @@
       "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "rawUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "category": "Official model release",
-      "collectionStatus": "seeded-official-values; manually verified 2026-09-23",
+      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
       "note": "OpenAI's September 22, 2026 release, checked September 23. Exact values and efforts come from rendered chart point aria-labels. Figure captions identify AutomationBench 1.0.6, Agents' Last Exam V1, FrontierCode 1.1 Main, DeepSWE v1.1, and OSWorld 2.0 offline v2026.08.08 partial reward. The chart DOM id frontiercode-extended is not the captioned benchmark variant.",
       "modelAliases": [
         "GPT-6 Luna (max)",
@@ -253,7 +253,7 @@
       "url": "https://openai.com/index/gpt-5-6/",
       "rawUrl": "https://openai.com/index/gpt-5-6/",
       "category": "Official model release",
-      "collectionStatus": "refreshed",
+      "collectionStatus": "seeded-official-values; refresh blocked: HTTPError",
       "note": "OpenAI official GPT-5.6 release tables covering Sol, Terra, and Luna across professional work, coding, science, computer use, cybersecurity, reasoning, tool use, and long-context evaluations. The release appendix labels the single-agent columns only by model tier, while the surrounding AA index values and separately reported Sol Ultra rows support mapping these columns to max effort. The mapping is therefore exact-variant scoped but marked as configuration-inferred and must not be broadcast to other effort settings.",
       "modelAliases": [
         "GPT-5.6 Sol (max)",
@@ -1566,36 +1566,6 @@
       }
     },
     {
-      "id": "official-deepseek-news250120-page",
-      "label": "DeepSeek R1 automatically discovered official release",
-      "url": "https://api-docs.deepseek.com/news/news250120",
-      "rawUrl": "https://api-docs.deepseek.com/news/news250120",
-      "category": "Official release",
-      "collectionStatus": "reference-only; no parseable benchmark table found",
-      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "modelAliases": [
-        "DeepSeek R1",
-        "DeepSeek-R1",
-        "deepseek-r1"
-      ],
-      "variantScoped": true,
-      "exactBenchmarkLabelsOnly": true,
-      "configurationConfidence": "release-page-default",
-      "autoDiscoveredVendorPage": true,
-      "vendor": "deepseek",
-      "discoverySourceKey": "deepseek-api-docs-sitemap",
-      "addModelIfMissing": true,
-      "modelMetadata": {
-        "model": "DeepSeek R1",
-        "displayName": "DeepSeek R1",
-        "modelKey": "DeepSeek R1",
-        "slug": "deepseek-r1",
-        "creator": "DeepSeek",
-        "modelUrl": "https://api-docs.deepseek.com/news/news250120"
-      }
-    },
-    {
       "id": "official-deepseek-news250528-page",
       "label": "DeepSeek R1 0528 automatically discovered official release",
       "url": "https://api-docs.deepseek.com/news/news250528",
@@ -1746,36 +1716,6 @@
       }
     },
     {
-      "id": "official-deepseek-news250821-page",
-      "label": "DeepSeek V3.1 automatically discovered official release",
-      "url": "https://api-docs.deepseek.com/news/news250821",
-      "rawUrl": "https://api-docs.deepseek.com/news/news250821",
-      "category": "Official release",
-      "collectionStatus": "reference-only; no parseable benchmark table found",
-      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "modelAliases": [
-        "DeepSeek V3.1",
-        "DeepSeek-V3.1",
-        "deepseek-v3-1"
-      ],
-      "variantScoped": true,
-      "exactBenchmarkLabelsOnly": true,
-      "configurationConfidence": "release-page-default",
-      "autoDiscoveredVendorPage": true,
-      "vendor": "deepseek",
-      "discoverySourceKey": "deepseek-api-docs-sitemap",
-      "addModelIfMissing": true,
-      "modelMetadata": {
-        "model": "DeepSeek V3.1",
-        "displayName": "DeepSeek V3.1",
-        "modelKey": "DeepSeek V3.1",
-        "slug": "deepseek-v3-1",
-        "creator": "DeepSeek",
-        "modelUrl": "https://api-docs.deepseek.com/news/news250821"
-      }
-    },
-    {
       "id": "official-deepseek-news250922-page",
       "label": "DeepSeek V3.1 Terminus automatically discovered official release",
       "url": "https://api-docs.deepseek.com/news/news250922",
@@ -1803,36 +1743,6 @@
         "slug": "deepseek-v3-1-terminus",
         "creator": "DeepSeek",
         "modelUrl": "https://api-docs.deepseek.com/news/news250922"
-      }
-    },
-    {
-      "id": "official-deepseek-news251201-page",
-      "label": "DeepSeek V3.2 automatically discovered official release",
-      "url": "https://api-docs.deepseek.com/news/news251201",
-      "rawUrl": "https://api-docs.deepseek.com/news/news251201",
-      "category": "Official release",
-      "collectionStatus": "reference-only; no parseable benchmark table found",
-      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "modelAliases": [
-        "DeepSeek V3.2",
-        "DeepSeek-V3.2",
-        "deepseek-v3-2"
-      ],
-      "variantScoped": true,
-      "exactBenchmarkLabelsOnly": true,
-      "configurationConfidence": "release-page-default",
-      "autoDiscoveredVendorPage": true,
-      "vendor": "deepseek",
-      "discoverySourceKey": "deepseek-api-docs-sitemap",
-      "addModelIfMissing": true,
-      "modelMetadata": {
-        "model": "DeepSeek V3.2",
-        "displayName": "DeepSeek V3.2",
-        "modelKey": "DeepSeek V3.2",
-        "slug": "deepseek-v3-2",
-        "creator": "DeepSeek",
-        "modelUrl": "https://api-docs.deepseek.com/news/news251201"
       }
     },
     {
@@ -2370,6 +2280,38 @@
       "autoDiscovered": true
     },
     {
+      "id": "hf-deepseek-ai-deepseek-v3-2-card",
+      "label": "DeepSeek V3.2 official model card",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2",
+      "rawUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2/raw/a7e62ac04ecb2c0a54d736dc46601c5606cf10a6/README.md",
+      "category": "Official model card",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
+      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "DeepSeek V3.2",
+        "DeepSeek-V3.2",
+        "deepseek-ai/DeepSeek-V3.2",
+        "DeepSeek V3 2",
+        "deepseek-v3-2"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "model-card-default",
+      "modelId": "deepseek-ai/DeepSeek-V3.2",
+      "organization": "deepseek-ai",
+      "createdAt": "2025-12-01T02:34:49.000Z",
+      "lastModified": "2025-12-01T11:04:59.000Z",
+      "revision": "a7e62ac04ecb2c0a54d736dc46601c5606cf10a6",
+      "tags": [
+        "base_model:deepseek-ai/DeepSeek-V3.2-Exp-Base",
+        "base_model:finetune:deepseek-ai/DeepSeek-V3.2-Exp-Base",
+        "eval-results",
+        "license:mit"
+      ],
+      "autoDiscovered": true
+    },
+    {
       "id": "hf-deepseek-ai-deepseek-v3-2-speciale-card",
       "label": "DeepSeek V3.2 Speciale official model card",
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Speciale",
@@ -2396,6 +2338,38 @@
       "tags": [
         "base_model:deepseek-ai/DeepSeek-V3.2-Exp-Base",
         "base_model:finetune:deepseek-ai/DeepSeek-V3.2-Exp-Base",
+        "eval-results",
+        "license:mit"
+      ],
+      "autoDiscovered": true
+    },
+    {
+      "id": "hf-deepseek-ai-deepseek-v3-1-card",
+      "label": "DeepSeek V3.1 official model card",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1",
+      "rawUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1/raw/c0781d039fb7a1ba2abc4add0bdc293e92d2b8db/README.md",
+      "category": "Official model card",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
+      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "DeepSeek V3.1",
+        "DeepSeek-V3.1",
+        "deepseek-ai/DeepSeek-V3.1",
+        "DeepSeek V3 1",
+        "deepseek-v3-1"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "model-card-default",
+      "modelId": "deepseek-ai/DeepSeek-V3.1",
+      "organization": "deepseek-ai",
+      "createdAt": "2025-08-21T02:37:52.000Z",
+      "lastModified": "2025-09-05T11:30:15.000Z",
+      "revision": "c0781d039fb7a1ba2abc4add0bdc293e92d2b8db",
+      "tags": [
+        "base_model:deepseek-ai/DeepSeek-V3.1-Base",
+        "base_model:quantized:deepseek-ai/DeepSeek-V3.1-Base",
         "eval-results",
         "license:mit"
       ],
