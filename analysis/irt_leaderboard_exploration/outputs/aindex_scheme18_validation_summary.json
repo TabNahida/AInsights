@@ -260,7 +260,7 @@
     "bonus_cap_per_board": 20.14767213756614,
     "pooled_positive_residual_count": 376,
     "pooled_positive_residual_mean": 8.863392671849432,
-    "pooled_positive_residual_population_sd": 7.979190531012394,
+    "pooled_positive_residual_population_sd": 7.979190531012395,
     "board_order": [
       "coding",
       "agentic-tool-work",
