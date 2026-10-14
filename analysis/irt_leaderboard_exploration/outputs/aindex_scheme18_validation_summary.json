@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_scheme18",
   "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
-  "calibration_population_size": 130,
-  "bonus_cap_per_board": 20.14767213756614,
+  "calibration_population_size": 131,
+  "bonus_cap_per_board": 20.03581562627647,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 130,
-    "unique_slugs": 130,
-    "unique_variant_groups": 130,
+    "row_count": 131,
+    "unique_slugs": 131,
+    "unique_variant_groups": 131,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 173,
-    "unique_slugs": 173,
-    "unique_variant_groups": 130,
+    "row_count": 174,
+    "unique_slugs": 174,
+    "unique_variant_groups": 131,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -26,8 +26,8 @@
   "passed": true,
   "core_eligibility": {
     "variant_group": {
-      "requested_count": 148,
-      "eligible_count": 130,
+      "requested_count": 149,
+      "eligible_count": 131,
       "excluded_count": 18,
       "excluded_models": [
         {
@@ -231,8 +231,8 @@
       ]
     },
     "exact_config": {
-      "requested_count": 174,
-      "eligible_count": 173,
+      "requested_count": 175,
+      "eligible_count": 174,
       "excluded_count": 1,
       "excluded_models": [
         {
@@ -257,10 +257,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 20.14767213756614,
-    "pooled_positive_residual_count": 376,
-    "pooled_positive_residual_mean": 8.863392671849432,
-    "pooled_positive_residual_population_sd": 7.979190531012395,
+    "bonus_cap_per_board": 20.03581562627647,
+    "pooled_positive_residual_count": 380,
+    "pooled_positive_residual_mean": 8.793010178470704,
+    "pooled_positive_residual_population_sd": 7.9498639717045165,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -269,7 +269,7 @@
       "instruction-context"
     ],
     "board_points_max": 20.0,
-    "population_size": 130,
+    "population_size": 131,
     "population_slugs": [
       "g9v3-39a5b",
       "qwen3-14b-instruct-reasoning",
@@ -385,6 +385,7 @@
       "o3-mini-high",
       "minicpm5-2b",
       "a-x-k2",
+      "agnes-2-5-pro-beta",
       "grok-4-3",
       "grok-4-5",
       "grok-4-6",
@@ -517,6 +518,7 @@
       "o3 mini",
       "minicpm5 2b",
       "a x k2",
+      "agnes 2 5 pro beta",
       "grok 4 3",
       "grok 4 5",
       "grok 4 6",
@@ -551,9 +553,9 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 130,
-            "slope": 2.166289445324764,
-            "intercept": -43.67036094926068
+            "observed_count": 131,
+            "slope": 2.1693072114854908,
+            "intercept": -43.73947696440711
           },
           {
             "item_id": "swe-bench-pro",
@@ -591,9 +593,9 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 130,
-            "slope": 1.0457174297818346,
-            "intercept": -18.34658060980057
+            "observed_count": 131,
+            "slope": 1.0460765149652458,
+            "intercept": -18.35982551289964
           },
           {
             "item_id": "tau2-bench-telecom-aa",
@@ -609,9 +611,9 @@
             "score_key": "τ³-Banking",
             "canonical_family": "tau3-banking",
             "enabled": true,
-            "observed_count": 128,
-            "slope": 0.43622722633811734,
-            "intercept": -6.868747913985111
+            "observed_count": 129,
+            "slope": 0.4381209985492988,
+            "intercept": -6.939479785283538
           },
           {
             "item_id": "apex-agents-aa",
@@ -723,9 +725,9 @@
             "score_key": "MMMU-Pro",
             "canonical_family": "mmmu-pro",
             "enabled": true,
-            "observed_count": 62,
-            "slope": 0.7581399508445743,
-            "intercept": 40.60019196286139
+            "observed_count": 63,
+            "slope": 0.7583301616194603,
+            "intercept": 40.65399486702595
           },
           {
             "item_id": "mmlu-pro",

@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_mixed_core",
   "candidate_id": "mixed_core_mc07",
-  "calibration_population_size": 150,
-  "bonus_cap_per_board": 16.74174223117124,
+  "calibration_population_size": 151,
+  "bonus_cap_per_board": 16.741962504609695,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 150,
-    "unique_slugs": 150,
-    "unique_variant_groups": 150,
+    "row_count": 151,
+    "unique_slugs": 151,
+    "unique_variant_groups": 151,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 229,
-    "unique_slugs": 229,
-    "unique_variant_groups": 151,
+    "row_count": 230,
+    "unique_slugs": 230,
+    "unique_variant_groups": 152,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -26,8 +26,8 @@
   "passed": true,
   "core_eligibility": {
     "variant_group": {
-      "requested_count": 495,
-      "eligible_count": 150,
+      "requested_count": 496,
+      "eligible_count": 151,
       "excluded_count": 345,
       "excluded_models": [
         {
@@ -7242,8 +7242,8 @@
       ]
     },
     "exact_config": {
-      "requested_count": 699,
-      "eligible_count": 229,
+      "requested_count": 700,
+      "eligible_count": 230,
       "excluded_count": 470,
       "excluded_models": [
         {
@@ -16867,10 +16867,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 16.74174223117124,
+    "bonus_cap_per_board": 16.741962504609695,
     "pooled_positive_residual_count": 253,
-    "pooled_positive_residual_mean": 7.27653732424971,
-    "pooled_positive_residual_population_sd": 6.692910575004397,
+    "pooled_positive_residual_mean": 7.277129501110753,
+    "pooled_positive_residual_population_sd": 6.6926475995723385,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -16885,7 +16885,7 @@
       "knowledge-science": 16,
       "instruction-context": 9
     },
-    "population_size": 150,
+    "population_size": 151,
     "population_slugs": [
       "claude-fable-5-1",
       "claude-haiku-5-5",
@@ -16939,6 +16939,7 @@
       "muse-glimmer",
       "o3-mini-high",
       "a-x-k2",
+      "agnes-2-5-pro-beta",
       "apodex-1-1",
       "celeris-1",
       "claude-4-5-haiku-reasoning",
@@ -17091,6 +17092,7 @@
       "muse glimmer",
       "o3 mini",
       "a x k2",
+      "agnes 2 5 pro beta",
       "apodex 1 1",
       "celeris 1",
       "claude 4 5 haiku",
@@ -17393,14 +17395,14 @@
             "score_key": "Humanity's Last Exam",
             "canonical_family": "hle",
             "enabled": true,
-            "observed_count": 150,
-            "slope": 1.426652902814282,
-            "intercept": 15.300973402947427
+            "observed_count": 151,
+            "slope": 1.4265614159435567,
+            "intercept": 15.300514124808847
           }
         ],
         "core_item_count": 1,
         "extension_item_count": 5,
-        "complete_core_models": 150,
+        "complete_core_models": 151,
         "weight": 27
       },
       "knowledge-science": {
@@ -17423,8 +17425,8 @@
             "canonical_family": "mlcr-aa",
             "enabled": true,
             "observed_count": 26,
-            "slope": 1.0049137931123018,
-            "intercept": -0.010758864163761928
+            "slope": 1.004227193014723,
+            "intercept": 0.014133753922390468
           }
         ],
         "core_item_count": 2,
@@ -17453,7 +17455,7 @@
         ],
         "core_item_count": 1,
         "extension_item_count": 1,
-        "complete_core_models": 150,
+        "complete_core_models": 151,
         "weight": 9
       }
     }
@@ -17462,9 +17464,9 @@
     "method_id": "aindex_mixed_core",
     "candidate_id": "mixed_core_mc07",
     "independent_of_production_scoring_module": true,
-    "variant_group_count": 150,
-    "exact_config_count": 229,
-    "cap": 16.74174223117124,
+    "variant_group_count": 151,
+    "exact_config_count": 230,
+    "cap": 16.741962504609695,
     "profiles_checked": true,
     "passed": true,
     "failures": []
