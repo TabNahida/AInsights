@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-10-14T05:43:36+00:00",
+  "generatedAt": "2026-10-15T05:30:16+00:00",
   "source": {
     "label": "Artificial Analysis Core + listed benchmark extensions",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -4177,7 +4177,7 @@
     }
   },
   "metricBaselines": {
-    "AA-Briefcase": 66.0205,
+    "AA-Briefcase": 65.9715,
     "AutomationBench-AA": 77.5135,
     "Terminal-Bench v4.0": 63.6364,
     "GDP.pdf": 32.6,
@@ -136450,7 +136450,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 49.5248,
+      "medianOutputSpeed": 46.3085,
       "aa": {
         "aa-intelligence": 6.6967,
         "aa-coding": null,
@@ -136776,7 +136776,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 197.4244,
+      "medianOutputSpeed": 177.1117,
       "aa": {
         "aa-intelligence": 32.5983,
         "aa-coding": null,
@@ -136794,12 +136794,12 @@
         "aaIndexAnswerCostUsd": 216.6413
       },
       "scores": {
-        "AA-Briefcase": 18.7105,
+        "AA-Briefcase": 18.716,
         "AutomationBench-AA": 42.0797,
         "Terminal-Bench v4.0": 6.5657,
         "GDP.pdf": 19.8,
         "AA-LCR v1.1": 73.3333,
-        "GDPval-AA v2": 35.113,
+        "GDPval-AA v2": 35.129,
         "τ³-Banking": 32.1649,
         "Terminal-Bench v2.1": 78.6517,
         "GDPval-AA": 37.953,
@@ -137882,7 +137882,7 @@
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 38.6179,
+      "medianOutputSpeed": 38.78,
       "aa": {
         "aa-intelligence": 25.9869,
         "aa-coding": null,
@@ -137900,12 +137900,12 @@
         "aaIndexAnswerCostUsd": 16.8971
       },
       "scores": {
-        "AA-Briefcase": 19.134,
+        "AA-Briefcase": 19.1395,
         "AutomationBench-AA": 13.7036,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 4.0,
         "AA-LCR v1.1": 79.6667,
-        "GDPval-AA v2": 31.0335,
+        "GDPval-AA v2": 31.0385,
         "τ³-Banking": 9.8969,
         "Terminal-Bench v2.1": 65.1685,
         "GDPval-AA": 34.316,
@@ -139413,7 +139413,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 96.7479,
+      "medianOutputSpeed": 85.742,
       "aa": {
         "aa-intelligence": 34.1549,
         "aa-coding": null,
@@ -139431,12 +139431,12 @@
         "aaIndexAnswerCostUsd": 62.28
       },
       "scores": {
-        "AA-Briefcase": 19.315,
+        "AA-Briefcase": 19.322,
         "AutomationBench-AA": 53.89,
         "Terminal-Bench v4.0": 9.0909,
         "GDP.pdf": 24.2,
         "AA-LCR v1.1": 79.3333,
-        "GDPval-AA v2": 34.9885,
+        "GDPval-AA v2": 35.0,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -140136,22 +140136,22 @@
         "src": "assets/logos/inceptionlabs_small.svg",
         "color": "#021B30"
       },
-      "medianOutputSpeed": 554.4506,
+      "medianOutputSpeed": 459.6666,
       "aa": {
-        "aa-intelligence": 13.7691,
+        "aa-intelligence": 10.777,
         "aa-coding": null,
         "aa-agentic": 9.4578
       },
-      "aaCostUsd": 152.553,
+      "aaCostUsd": 104.9439,
       "pricing": {
         "inputPerMillionTokensUsd": 0.25,
         "outputPerMillionTokensUsd": 0.75,
         "cacheHitPerMillionTokensUsd": 0.025,
-        "aaIndexCostUsd": 152.553,
-        "aaIndexInputCostUsd": 76.8319,
-        "aaIndexOutputCostUsd": 75.7211,
-        "aaIndexReasoningCostUsd": 70.7327,
-        "aaIndexAnswerCostUsd": 4.9885
+        "aaIndexCostUsd": 104.9439,
+        "aaIndexInputCostUsd": 29.1736,
+        "aaIndexOutputCostUsd": 75.7702,
+        "aaIndexReasoningCostUsd": 70.7495,
+        "aaIndexAnswerCostUsd": 5.0207
       },
       "scores": {
         "AA-Briefcase": 0.0,
@@ -141239,7 +141239,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 89.2043,
+      "medianOutputSpeed": 85.3126,
       "aa": {
         "aa-intelligence": 20.384,
         "aa-coding": null,
@@ -141894,7 +141894,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 136.2039,
+      "medianOutputSpeed": 115.4463,
       "aa": {
         "aa-intelligence": 28.5017,
         "aa-coding": null,
@@ -142220,7 +142220,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 142.1857,
+      "medianOutputSpeed": 141.8019,
       "aa": {
         "aa-intelligence": 17.748,
         "aa-coding": null,
@@ -142243,7 +142243,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 61.3333,
-        "GDPval-AA v2": 10.4375,
+        "GDPval-AA v2": 10.462,
         "τ³-Banking": 10.3093,
         "Terminal-Bench v2.1": 47.191,
         "GDPval-AA": 16.6525,
@@ -142566,7 +142566,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 113.4927,
+      "medianOutputSpeed": 111.0221,
       "aa": {
         "aa-intelligence": 9.3799,
         "aa-coding": null,
@@ -142894,7 +142894,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 194.8008,
+      "medianOutputSpeed": 175.7069,
       "aa": {
         "aa-intelligence": 23.8488,
         "aa-coding": null,
@@ -144223,7 +144223,7 @@
         "src": "assets/logos/anthropic.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 99.9406,
+      "medianOutputSpeed": 94.6518,
       "aa": {
         "aa-intelligence": 40.8387,
         "aa-coding": null,
@@ -144241,12 +144241,12 @@
         "aaIndexAnswerCostUsd": 212.7701
       },
       "scores": {
-        "AA-Briefcase": 47.0785,
+        "AA-Briefcase": 47.069,
         "AutomationBench-AA": 54.9096,
         "Terminal-Bench v4.0": 29.798,
         "GDP.pdf": 20.2,
         "AA-LCR v1.1": 76.3333,
-        "GDPval-AA v2": 41.1615,
+        "GDPval-AA v2": 41.1635,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -146120,7 +146120,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 125.6188,
+      "medianOutputSpeed": 125.9749,
       "aa": {
         "aa-intelligence": 23.6973,
         "aa-coding": null,
@@ -146446,7 +146446,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 290.6623,
+      "medianOutputSpeed": 322.2055,
       "aa": {
         "aa-intelligence": 39.5759,
         "aa-coding": null,
@@ -146464,12 +146464,12 @@
         "aaIndexAnswerCostUsd": 144.0008
       },
       "scores": {
-        "AA-Briefcase": 41.4135,
+        "AA-Briefcase": 41.4145,
         "AutomationBench-AA": 40.6134,
         "Terminal-Bench v4.0": 7.0707,
         "GDP.pdf": 17.4,
         "AA-LCR v1.1": 79.0,
-        "GDPval-AA v2": 48.689,
+        "GDPval-AA v2": 48.6485,
         "τ³-Banking": 34.8454,
         "Terminal-Bench v2.1": 80.1498,
         "GDPval-AA": 51.166,
@@ -147593,7 +147593,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 111.475,
+      "medianOutputSpeed": 115.9743,
       "aa": {
         "aa-intelligence": 21.0125,
         "aa-coding": null,
@@ -147611,12 +147611,12 @@
         "aaIndexAnswerCostUsd": 5.972
       },
       "scores": {
-        "AA-Briefcase": 12.031,
+        "AA-Briefcase": 12.0345,
         "AutomationBench-AA": 11.6922,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 14.2,
         "AA-LCR v1.1": 70.0,
-        "GDPval-AA v2": 24.7245,
+        "GDPval-AA v2": 24.7665,
         "τ³-Banking": 12.7835,
         "Terminal-Bench v2.1": 43.4457,
         "GDPval-AA": 29.0895,
@@ -148428,7 +148428,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 58.846,
+      "medianOutputSpeed": 50.6242,
       "aa": {
         "aa-intelligence": 46.8163,
         "aa-coding": null,
@@ -148446,12 +148446,12 @@
         "aaIndexAnswerCostUsd": 1033.3764
       },
       "scores": {
-        "AA-Briefcase": 49.126,
+        "AA-Briefcase": 49.091,
         "AutomationBench-AA": 52.2404,
         "Terminal-Bench v4.0": 40.404,
         "GDP.pdf": 28.0,
         "AA-LCR v1.1": 82.3333,
-        "GDPval-AA v2": 48.415,
+        "GDPval-AA v2": 48.4385,
         "τ³-Banking": 38.9691,
         "Terminal-Bench v2.1": 85.0187,
         "GDPval-AA": 50.186,
@@ -149186,7 +149186,7 @@
         "aaIndexAnswerCostUsd": 35.7185
       },
       "scores": {
-        "AA-Briefcase": 1.4915,
+        "AA-Briefcase": 1.4955,
         "AutomationBench-AA": 4.1462,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 1.2,
@@ -150272,7 +150272,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 191.4261,
+      "medianOutputSpeed": 143.6644,
       "aa": {
         "aa-intelligence": 7.0888,
         "aa-coding": null,
@@ -150964,7 +150964,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 192.4249,
+      "medianOutputSpeed": 187.0398,
       "aa": {
         "aa-intelligence": 10.9644,
         "aa-coding": null,
@@ -152774,12 +152774,12 @@
         "aaIndexAnswerCostUsd": 132.7707
       },
       "scores": {
-        "AA-Briefcase": 25.6215,
+        "AA-Briefcase": 25.626,
         "AutomationBench-AA": 28.1979,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 11.2,
         "AA-LCR v1.1": 79.3333,
-        "GDPval-AA v2": 34.541,
+        "GDPval-AA v2": 34.5545,
         "τ³-Banking": 25.1546,
         "Terminal-Bench v2.1": 69.6629,
         "GDPval-AA": 38.657,
@@ -153860,7 +153860,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 76.2385,
+      "medianOutputSpeed": 72.1266,
       "aa": {
         "aa-intelligence": 33.4731,
         "aa-coding": null,
@@ -153878,12 +153878,12 @@
         "aaIndexAnswerCostUsd": 156.9878
       },
       "scores": {
-        "AA-Briefcase": 27.1815,
+        "AA-Briefcase": 27.176,
         "AutomationBench-AA": 40.9857,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 21.0,
         "AA-LCR v1.1": 78.0,
-        "GDPval-AA v2": 40.177,
+        "GDPval-AA v2": 40.1695,
         "τ³-Banking": 29.0722,
         "Terminal-Bench v2.1": 76.779,
         "GDPval-AA": 42.7425,
@@ -154695,7 +154695,7 @@
         "src": "assets/logos/openai.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 58.6485,
+      "medianOutputSpeed": 51.129,
       "aa": {
         "aa-intelligence": 51.0378,
         "aa-coding": null,
@@ -154713,12 +154713,12 @@
         "aaIndexAnswerCostUsd": 137.2536
       },
       "scores": {
-        "AA-Briefcase": 50.199,
+        "AA-Briefcase": 50.18,
         "AutomationBench-AA": 66.5737,
         "Terminal-Bench v4.0": 54.0404,
         "GDP.pdf": 31.8,
         "AA-LCR v1.1": 79.6667,
-        "GDPval-AA v2": 51.933,
+        "GDPval-AA v2": 51.9025,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -155291,7 +155291,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 109.9458,
+      "medianOutputSpeed": 96.3029,
       "aa": {
         "aa-intelligence": 11.899,
         "aa-coding": null,
@@ -155616,7 +155616,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 415.6038,
+      "medianOutputSpeed": 434.7304,
       "aa": {
         "aa-intelligence": 22.1685,
         "aa-coding": null,
@@ -155634,12 +155634,12 @@
         "aaIndexAnswerCostUsd": 26.5891
       },
       "scores": {
-        "AA-Briefcase": 7.506,
+        "AA-Briefcase": 7.513,
         "AutomationBench-AA": 25.0113,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 13.6,
         "AA-LCR v1.1": 76.0,
-        "GDPval-AA v2": 24.159,
+        "GDPval-AA v2": 24.164,
         "τ³-Banking": 17.5258,
         "Terminal-Bench v2.1": 53.5581,
         "GDPval-AA": 28.1625,
@@ -156954,7 +156954,7 @@
         "src": "assets/logos/stepfun_small.svg",
         "color": "#00F5E7"
       },
-      "medianOutputSpeed": 91.5339,
+      "medianOutputSpeed": 89.2536,
       "aa": {
         "aa-intelligence": 43.7343,
         "aa-coding": null,
@@ -158248,7 +158248,7 @@
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 2.4,
         "AA-LCR v1.1": 32.3333,
-        "GDPval-AA v2": 2.182,
+        "GDPval-AA v2": 2.208,
         "τ³-Banking": 10.5155,
         "Terminal-Bench v2.1": 30.3371,
         "GDPval-AA": 9.4325,
@@ -159689,7 +159689,7 @@
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 5.4,
         "AA-LCR v1.1": 69.3333,
-        "GDPval-AA v2": 10.4255,
+        "GDPval-AA v2": 10.4675,
         "τ³-Banking": 21.0309,
         "Terminal-Bench v2.1": 44.9438,
         "GDPval-AA": 16.306,
@@ -160773,7 +160773,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 96.0387,
+      "medianOutputSpeed": 96.1518,
       "aa": {
         "aa-intelligence": 6.0061,
         "aa-coding": null,
@@ -161102,7 +161102,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 68.6886,
+      "medianOutputSpeed": 67.3622,
       "aa": {
         "aa-intelligence": 27.1714,
         "aa-coding": null,
@@ -161125,7 +161125,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 74.6667,
-        "GDPval-AA v2": 28.3245,
+        "GDPval-AA v2": 28.3465,
         "τ³-Banking": 13.4021,
         "Terminal-Bench v2.1": 52.0599,
         "GDPval-AA": 31.9145,
@@ -161428,22 +161428,22 @@
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 215.3809,
+      "medianOutputSpeed": 218.6561,
       "aa": {
         "aa-intelligence": 9.0559,
         "aa-coding": null,
         "aa-agentic": null
       },
-      "aaCostUsd": 14.907,
+      "aaCostUsd": 14.9113,
       "pricing": {
         "inputPerMillionTokensUsd": 0.03,
         "outputPerMillionTokensUsd": 0.12,
         "cacheHitPerMillionTokensUsd": 0.0075,
-        "aaIndexCostUsd": 14.907,
-        "aaIndexInputCostUsd": 3.8595,
-        "aaIndexOutputCostUsd": 11.0475,
-        "aaIndexReasoningCostUsd": 9.5033,
-        "aaIndexAnswerCostUsd": 1.5441
+        "aaIndexCostUsd": 14.9113,
+        "aaIndexInputCostUsd": 3.8621,
+        "aaIndexOutputCostUsd": 11.0493,
+        "aaIndexReasoningCostUsd": 9.5039,
+        "aaIndexAnswerCostUsd": 1.5454
       },
       "scores": {
         "AA-Briefcase": 0.0,
@@ -162531,7 +162531,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 126.9733,
+      "medianOutputSpeed": 125.9786,
       "aa": {
         "aa-intelligence": 14.1555,
         "aa-coding": null,
@@ -162857,7 +162857,7 @@
         "src": "assets/logos/thinking_machines.svg",
         "color": "#676767"
       },
-      "medianOutputSpeed": 186.289,
+      "medianOutputSpeed": 179.6549,
       "aa": {
         "aa-intelligence": 24.9848,
         "aa-coding": null,
@@ -164368,7 +164368,7 @@
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 47.0372,
+      "medianOutputSpeed": 52.8236,
       "aa": {
         "aa-intelligence": 26.9792,
         "aa-coding": null,
@@ -164386,12 +164386,12 @@
         "aaIndexAnswerCostUsd": 56.1182
       },
       "scores": {
-        "AA-Briefcase": 15.993,
+        "AA-Briefcase": 15.991,
         "AutomationBench-AA": 13.0208,
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 13.0,
         "AA-LCR v1.1": 81.0,
-        "GDPval-AA v2": 26.873,
+        "GDPval-AA v2": 26.9145,
         "τ³-Banking": 23.299,
         "Terminal-Bench v2.1": 65.9176,
         "GDPval-AA": 30.7655,
@@ -165937,7 +165937,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 151.6008,
+      "medianOutputSpeed": 150.1629,
       "aa": {
         "aa-intelligence": 11.411,
         "aa-coding": null,
@@ -167690,7 +167690,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 56.0843,
+      "medianOutputSpeed": 55.8787,
       "aa": {
         "aa-intelligence": 18.4204,
         "aa-coding": null,
@@ -167708,12 +167708,12 @@
         "aaIndexAnswerCostUsd": 55.6496
       },
       "scores": {
-        "AA-Briefcase": 3.116,
+        "AA-Briefcase": 3.12,
         "AutomationBench-AA": 6.8867,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 12.2,
         "AA-LCR v1.1": 77.3333,
-        "GDPval-AA v2": 14.625,
+        "GDPval-AA v2": 14.6485,
         "τ³-Banking": 13.4021,
         "Terminal-Bench v2.1": 51.3109,
         "GDPval-AA": 20.27,
@@ -169397,7 +169397,7 @@
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 45.6778,
+      "medianOutputSpeed": 45.4821,
       "aa": {
         "aa-intelligence": 23.5696,
         "aa-coding": null,
@@ -170476,7 +170476,7 @@
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 76.6301,
+      "medianOutputSpeed": 75.4516,
       "aa": {
         "aa-intelligence": 12.6832,
         "aa-coding": null,
@@ -170499,7 +170499,7 @@
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 1.8,
         "AA-LCR v1.1": 49.0,
-        "GDPval-AA v2": 3.758,
+        "GDPval-AA v2": 3.784,
         "τ³-Banking": 14.433,
         "Terminal-Bench v2.1": 26.5918,
         "GDPval-AA": 11.0505,
@@ -171597,12 +171597,12 @@
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 25.779,
+        "AA-Briefcase": 25.781,
         "AutomationBench-AA": 20.9006,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 3.2,
         "AA-LCR v1.1": 69.6667,
-        "GDPval-AA v2": 26.1395,
+        "GDPval-AA v2": 26.15,
         "τ³-Banking": 27.6289,
         "Terminal-Bench v2.1": 44.1948,
         "GDPval-AA": null,
@@ -172834,7 +172834,7 @@
         "src": "assets/logos/xiaomi.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 64.816,
+      "medianOutputSpeed": 53.7518,
       "aa": {
         "aa-intelligence": 37.8844,
         "aa-coding": null,
@@ -172852,12 +172852,12 @@
         "aaIndexAnswerCostUsd": 7.3218
       },
       "scores": {
-        "AA-Briefcase": 49.668,
+        "AA-Briefcase": 49.6325,
         "AutomationBench-AA": 64.0517,
         "Terminal-Bench v4.0": 22.7273,
         "GDP.pdf": 9.0,
         "AA-LCR v1.1": 74.3333,
-        "GDPval-AA v2": 55.2585,
+        "GDPval-AA v2": 55.3755,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -174308,7 +174308,7 @@
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 69.6558,
+      "medianOutputSpeed": 66.5046,
       "aa": {
         "aa-intelligence": 22.7966,
         "aa-coding": null,
@@ -174821,7 +174821,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#f32e02"
       },
-      "medianOutputSpeed": 145.1095,
+      "medianOutputSpeed": 146.2202,
       "aa": {
         "aa-intelligence": 8.9901,
         "aa-coding": null,
@@ -175147,7 +175147,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 56.6741,
+      "medianOutputSpeed": 50.8803,
       "aa": {
         "aa-intelligence": 49.6774,
         "aa-coding": null,
@@ -175165,12 +175165,12 @@
         "aaIndexAnswerCostUsd": 861.8925
       },
       "scores": {
-        "AA-Briefcase": 56.7425,
+        "AA-Briefcase": 56.6925,
         "AutomationBench-AA": 53.2192,
         "Terminal-Bench v4.0": 46.4646,
         "GDP.pdf": 21.0,
         "AA-LCR v1.1": 80.3333,
-        "GDPval-AA v2": 59.5775,
+        "GDPval-AA v2": 59.5335,
         "τ³-Banking": 43.299,
         "Terminal-Bench v2.1": 88.015,
         "GDPval-AA": 60.407,
@@ -176300,7 +176300,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 64.4833,
+      "medianOutputSpeed": 57.7938,
       "aa": {
         "aa-intelligence": 24.2638,
         "aa-coding": null,
@@ -176318,12 +176318,12 @@
         "aaIndexAnswerCostUsd": 130.8143
       },
       "scores": {
-        "AA-Briefcase": 21.3285,
+        "AA-Briefcase": 21.3315,
         "AutomationBench-AA": 19.9019,
         "Terminal-Bench v4.0": 2.5253,
         "GDP.pdf": 9.4,
         "AA-LCR v1.1": 67.3333,
-        "GDPval-AA v2": 28.317,
+        "GDPval-AA v2": 28.364,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": 32.252,
@@ -178043,7 +178043,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 302.7774,
+      "medianOutputSpeed": 308.8551,
       "aa": {
         "aa-intelligence": 9.953,
         "aa-coding": null,
@@ -178388,7 +178388,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 76.8648,
+      "medianOutputSpeed": 76.5368,
       "aa": {
         "aa-intelligence": 22.8993,
         "aa-coding": null,
@@ -178953,7 +178953,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 121.0682,
+      "medianOutputSpeed": 111.5276,
       "aa": {
         "aa-intelligence": 20.2008,
         "aa-coding": null,
@@ -181169,7 +181169,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 66.8742,
+      "medianOutputSpeed": 61.0598,
       "aa": {
         "aa-intelligence": 41.8075,
         "aa-coding": null,
@@ -182443,7 +182443,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 129.4826,
+      "medianOutputSpeed": 111.3475,
       "aa": {
         "aa-intelligence": 34.5587,
         "aa-coding": null,
@@ -182461,12 +182461,12 @@
         "aaIndexAnswerCostUsd": 6.6368
       },
       "scores": {
-        "AA-Briefcase": 36.8315,
+        "AA-Briefcase": 36.8485,
         "AutomationBench-AA": 47.8007,
         "Terminal-Bench v4.0": 8.0808,
         "GDP.pdf": 18.6,
         "AA-LCR v1.1": 80.0,
-        "GDPval-AA v2": 43.1775,
+        "GDPval-AA v2": 43.1935,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -183186,7 +183186,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 120.496,
+      "medianOutputSpeed": 118.7952,
       "aa": {
         "aa-intelligence": 13.4758,
         "aa-coding": null,
@@ -183836,7 +183836,7 @@
         "src": "assets/logos/stepfun_small.svg",
         "color": "#00F5E7"
       },
-      "medianOutputSpeed": 150.8215,
+      "medianOutputSpeed": 141.9734,
       "aa": {
         "aa-intelligence": 16.9641,
         "aa-coding": null,
@@ -184486,7 +184486,7 @@
         "src": "assets/logos/upstage_small.svg",
         "color": "#7c59f5"
       },
-      "medianOutputSpeed": 93.0876,
+      "medianOutputSpeed": 94.2841,
       "aa": {
         "aa-intelligence": 28.1541,
         "aa-coding": null,
@@ -184509,7 +184509,7 @@
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 5.6,
         "AA-LCR v1.1": 74.0,
-        "GDPval-AA v2": 30.2805,
+        "GDPval-AA v2": 30.373,
         "τ³-Banking": 23.299,
         "Terminal-Bench v2.1": 57.3034,
         "GDPval-AA": 34.7375,
@@ -186823,7 +186823,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 287.0523,
+      "medianOutputSpeed": 281.0321,
       "aa": {
         "aa-intelligence": 6.6685,
         "aa-coding": null,
@@ -187151,7 +187151,7 @@
         "src": "assets/logos/nousresearch_small.jpg",
         "color": "#006fa8"
       },
-      "medianOutputSpeed": 31.3123,
+      "medianOutputSpeed": 31.4856,
       "aa": {
         "aa-intelligence": 5.9968,
         "aa-coding": null,
@@ -187476,7 +187476,7 @@
         "src": "assets/logos/cohere_small.svg",
         "color": "#D18EE2"
       },
-      "medianOutputSpeed": 94.2235,
+      "medianOutputSpeed": 82.034,
       "aa": {
         "aa-intelligence": 9.9146,
         "aa-coding": null,
@@ -188904,7 +188904,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 101.6535,
+      "medianOutputSpeed": 81.9401,
       "aa": {
         "aa-intelligence": 38.3556,
         "aa-coding": null,
@@ -188922,12 +188922,12 @@
         "aaIndexAnswerCostUsd": 381.7999
       },
       "scores": {
-        "AA-Briefcase": 31.8425,
+        "AA-Briefcase": 31.845,
         "AutomationBench-AA": 47.3006,
         "Terminal-Bench v4.0": 14.6465,
         "GDP.pdf": 21.2,
         "AA-LCR v1.1": 84.3333,
-        "GDPval-AA v2": 42.503,
+        "GDPval-AA v2": 42.5355,
         "τ³-Banking": 38.9691,
         "Terminal-Bench v2.1": 84.2697,
         "GDPval-AA": 44.7925,
@@ -190965,7 +190965,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 56.3355,
+      "medianOutputSpeed": 43.8032,
       "aa": {
         "aa-intelligence": 52.3863,
         "aa-coding": null,
@@ -190983,12 +190983,12 @@
         "aaIndexAnswerCostUsd": 670.4936
       },
       "scores": {
-        "AA-Briefcase": 52.321,
+        "AA-Briefcase": 52.335,
         "AutomationBench-AA": 67.1778,
         "Terminal-Bench v4.0": 59.596,
         "GDP.pdf": 32.2,
         "AA-LCR v1.1": 80.0,
-        "GDPval-AA v2": 52.7235,
+        "GDPval-AA v2": 52.7955,
         "τ³-Banking": 43.0928,
         "Terminal-Bench v2.1": 89.1386,
         "GDPval-AA": 52.7615,
@@ -192801,7 +192801,7 @@
         "src": "assets/logos/anthropic.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 177.6361,
+      "medianOutputSpeed": 157.375,
       "aa": {
         "aa-intelligence": 37.824,
         "aa-coding": null,
@@ -192819,12 +192819,12 @@
         "aaIndexAnswerCostUsd": 12.1221
       },
       "scores": {
-        "AA-Briefcase": 47.1145,
+        "AA-Briefcase": 47.1335,
         "AutomationBench-AA": 33.7269,
         "Terminal-Bench v4.0": 21.7172,
         "GDP.pdf": 17.2,
         "AA-LCR v1.1": 77.3333,
-        "GDPval-AA v2": 45.8885,
+        "GDPval-AA v2": 45.8775,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -193397,7 +193397,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 64.8255,
+      "medianOutputSpeed": 62.1264,
       "aa": {
         "aa-intelligence": 42.2167,
         "aa-coding": null,
@@ -193415,12 +193415,12 @@
         "aaIndexAnswerCostUsd": 104.9095
       },
       "scores": {
-        "AA-Briefcase": 49.959,
+        "AA-Briefcase": 49.93,
         "AutomationBench-AA": 56.7384,
         "Terminal-Bench v4.0": 16.1616,
         "GDP.pdf": 21.4,
         "AA-LCR v1.1": 80.0,
-        "GDPval-AA v2": 54.4185,
+        "GDPval-AA v2": 54.4055,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -193993,7 +193993,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 57.9639,
+      "medianOutputSpeed": 49.6146,
       "aa": {
         "aa-intelligence": 39.3543,
         "aa-coding": null,
@@ -194011,12 +194011,12 @@
         "aaIndexAnswerCostUsd": 365.6829
       },
       "scores": {
-        "AA-Briefcase": 35.457,
+        "AA-Briefcase": 35.464,
         "AutomationBench-AA": 51.7907,
         "Terminal-Bench v4.0": 26.2626,
         "GDP.pdf": 17.2,
         "AA-LCR v1.1": 81.3333,
-        "GDPval-AA v2": 40.072,
+        "GDPval-AA v2": 40.123,
         "τ³-Banking": 30.3093,
         "Terminal-Bench v2.1": 76.4045,
         "GDPval-AA": 43.576,
@@ -194789,7 +194789,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 98.121,
+      "medianOutputSpeed": 99.8892,
       "aa": {
         "aa-intelligence": 13.266,
         "aa-coding": null,
@@ -195461,7 +195461,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 208.406,
+      "medianOutputSpeed": 205.6784,
       "aa": {
         "aa-intelligence": 13.106,
         "aa-coding": null,
@@ -196135,7 +196135,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 126.7142,
+      "medianOutputSpeed": 127.3071,
       "aa": {
         "aa-intelligence": 15.5694,
         "aa-coding": null,
@@ -196158,7 +196158,7 @@
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 3.4,
         "AA-LCR v1.1": 76.3333,
-        "GDPval-AA v2": 15.678,
+        "GDPval-AA v2": 15.7005,
         "τ³-Banking": 15.2577,
         "Terminal-Bench v2.1": 47.5655,
         "GDPval-AA": 21.26,
@@ -197659,9 +197659,9 @@
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 35.1049,
+      "medianOutputSpeed": 33.2924,
       "aa": {
-        "aa-intelligence": 25.1743,
+        "aa-intelligence": 21.8249,
         "aa-coding": null,
         "aa-agentic": 24.3953
       },
@@ -197677,12 +197677,12 @@
         "aaIndexAnswerCostUsd": 5.2701
       },
       "scores": {
-        "AA-Briefcase": 12.684,
+        "AA-Briefcase": 12.6875,
         "AutomationBench-AA": 18.4295,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 4.0,
         "AA-LCR v1.1": 73.0,
-        "GDPval-AA v2": 24.838,
+        "GDPval-AA v2": 24.8595,
         "τ³-Banking": 8.6598,
         "Terminal-Bench v2.1": 63.6704,
         "GDPval-AA": 28.9715,
@@ -199521,7 +199521,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 247.6163,
+      "medianOutputSpeed": 249.5205,
       "aa": {
         "aa-intelligence": 6.8479,
         "aa-coding": null,
@@ -200117,7 +200117,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 84.8816,
+      "medianOutputSpeed": 74.9048,
       "aa": {
         "aa-intelligence": 38.1639,
         "aa-coding": null,
@@ -200135,12 +200135,12 @@
         "aaIndexAnswerCostUsd": 392.0903
       },
       "scores": {
-        "AA-Briefcase": 42.918,
+        "AA-Briefcase": 42.92,
         "AutomationBench-AA": 36.5127,
         "Terminal-Bench v4.0": 14.1414,
         "GDP.pdf": 13.2,
         "AA-LCR v1.1": 82.0,
-        "GDPval-AA v2": 48.1715,
+        "GDPval-AA v2": 48.1905,
         "τ³-Banking": 37.3196,
         "Terminal-Bench v2.1": 80.5243,
         "GDPval-AA": 50.043,
@@ -202199,7 +202199,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#f32e02"
       },
-      "medianOutputSpeed": 34.1539,
+      "medianOutputSpeed": 30.2831,
       "aa": {
         "aa-intelligence": 7.1174,
         "aa-coding": null,
@@ -203357,7 +203357,7 @@
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 46.7821,
+      "medianOutputSpeed": 45.8067,
       "aa": {
         "aa-intelligence": 46.3242,
         "aa-coding": null,
@@ -204579,7 +204579,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 54.6033,
+      "medianOutputSpeed": 48.4709,
       "aa": {
         "aa-intelligence": 29.0955,
         "aa-coding": null,
@@ -204925,7 +204925,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 55.4827,
+      "medianOutputSpeed": 52.0249,
       "aa": {
         "aa-intelligence": 42.8363,
         "aa-coding": null,
@@ -204943,12 +204943,12 @@
         "aaIndexAnswerCostUsd": 114.9878
       },
       "scores": {
-        "AA-Briefcase": 49.181,
+        "AA-Briefcase": 49.1595,
         "AutomationBench-AA": 63.1513,
         "Terminal-Bench v4.0": 13.1313,
         "GDP.pdf": 17.8,
         "AA-LCR v1.1": 81.0,
-        "GDPval-AA v2": 55.6625,
+        "GDPval-AA v2": 55.609,
         "τ³-Banking": 44.3299,
         "Terminal-Bench v2.1": 84.2697,
         "GDPval-AA": 57.128,
@@ -205681,7 +205681,7 @@
         "src": "assets/logos/anthropic.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 96.762,
+      "medianOutputSpeed": 91.8105,
       "aa": {
         "aa-intelligence": 46.7534,
         "aa-coding": null,
@@ -205699,12 +205699,12 @@
         "aaIndexAnswerCostUsd": 252.1694
       },
       "scores": {
-        "AA-Briefcase": 56.9095,
+        "AA-Briefcase": 56.855,
         "AutomationBench-AA": 59.4292,
         "Terminal-Bench v4.0": 43.9394,
         "GDP.pdf": 25.2,
         "AA-LCR v1.1": 78.0,
-        "GDPval-AA v2": 52.4885,
+        "GDPval-AA v2": 52.4695,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -206277,7 +206277,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 163.1963,
+      "medianOutputSpeed": 149.7258,
       "aa": {
         "aa-intelligence": 9.6434,
         "aa-coding": null,
@@ -206927,7 +206927,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 105.6434,
+      "medianOutputSpeed": 88.4257,
       "aa": {
         "aa-intelligence": 30.0938,
         "aa-coding": null,
@@ -206945,12 +206945,12 @@
         "aaIndexAnswerCostUsd": 93.4865
       },
       "scores": {
-        "AA-Briefcase": 26.9575,
+        "AA-Briefcase": 26.962,
         "AutomationBench-AA": 33.536,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 17.0,
         "AA-LCR v1.1": 74.0,
-        "GDPval-AA v2": 38.2145,
+        "GDPval-AA v2": 38.272,
         "τ³-Banking": 25.567,
         "Terminal-Bench v2.1": 72.2846,
         "GDPval-AA": 40.9685,
@@ -207743,7 +207743,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 114.8296,
+      "medianOutputSpeed": 110.2937,
       "aa": {
         "aa-intelligence": 16.0779,
         "aa-coding": null,
@@ -208849,7 +208849,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 76.5451,
+      "medianOutputSpeed": 73.7521,
       "aa": {
         "aa-intelligence": 46.3322,
         "aa-coding": null,
@@ -208867,12 +208867,12 @@
         "aaIndexAnswerCostUsd": 148.9597
       },
       "scores": {
-        "AA-Briefcase": 56.677,
+        "AA-Briefcase": 56.6395,
         "AutomationBench-AA": 63.5194,
         "Terminal-Bench v4.0": 24.7475,
         "GDP.pdf": 23.2,
         "AA-LCR v1.1": 77.0,
-        "GDPval-AA v2": 60.375,
+        "GDPval-AA v2": 60.314,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -209483,7 +209483,7 @@
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 66.4576,
+      "medianOutputSpeed": 59.2621,
       "aa": {
         "aa-intelligence": 20.9453,
         "aa-coding": null,
@@ -209996,7 +209996,7 @@
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 106.9291,
+      "medianOutputSpeed": 99.4439,
       "aa": {
         "aa-intelligence": 29.2203,
         "aa-coding": null,
@@ -212127,7 +212127,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 154.756,
+      "medianOutputSpeed": 148.046,
       "aa": {
         "aa-intelligence": 16.7731,
         "aa-coding": null,
@@ -212150,7 +212150,7 @@
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 8.4,
         "AA-LCR v1.1": 72.3333,
-        "GDPval-AA v2": 13.282,
+        "GDPval-AA v2": 13.3055,
         "τ³-Banking": 15.4639,
         "Terminal-Bench v2.1": 3.7453,
         "GDPval-AA": 19.0135,
@@ -213289,7 +213289,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 300.5474,
+      "medianOutputSpeed": 302.4328,
       "aa": {
         "aa-intelligence": 12.8572,
         "aa-coding": null,
@@ -213307,12 +213307,12 @@
         "aaIndexAnswerCostUsd": 4.9419
       },
       "scores": {
-        "AA-Briefcase": 0.3045,
+        "AA-Briefcase": 0.3085,
         "AutomationBench-AA": 0.841,
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 3.0,
         "AA-LCR v1.1": 60.3333,
-        "GDPval-AA v2": 6.8885,
+        "GDPval-AA v2": 6.9285,
         "τ³-Banking": 8.866,
         "Terminal-Bench v2.1": 24.3446,
         "GDPval-AA": 13.3445,
@@ -216839,7 +216839,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 70.1948,
+      "medianOutputSpeed": 70.1595,
       "aa": {
         "aa-intelligence": 14.872,
         "aa-coding": null,
@@ -217613,7 +217613,7 @@
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 14.9796,
+      "medianOutputSpeed": 44.3747,
       "aa": {
         "aa-intelligence": 4.9216,
         "aa-coding": null,
@@ -218263,7 +218263,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 65.7348,
+      "medianOutputSpeed": 69.5227,
       "aa": {
         "aa-intelligence": 11.1962,
         "aa-coding": null,
@@ -219739,7 +219739,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 185.4791,
+      "medianOutputSpeed": 180.7549,
       "aa": {
         "aa-intelligence": 12.4708,
         "aa-coding": null,
@@ -220390,7 +220390,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 45.7138,
+      "medianOutputSpeed": 45.1635,
       "aa": {
         "aa-intelligence": 24.6869,
         "aa-coding": null,
@@ -222165,7 +222165,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 171.8144,
+      "medianOutputSpeed": 169.9384,
       "aa": {
         "aa-intelligence": 6.8441,
         "aa-coding": null,
@@ -222490,7 +222490,7 @@
         "src": "assets/logos/cohere_small.svg",
         "color": "#D18EE2"
       },
-      "medianOutputSpeed": 184.7935,
+      "medianOutputSpeed": 181.7875,
       "aa": {
         "aa-intelligence": 13.1335,
         "aa-coding": null,
@@ -222513,7 +222513,7 @@
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 1.0,
         "AA-LCR v1.1": 52.6667,
-        "GDPval-AA v2": 0.7085,
+        "GDPval-AA v2": 0.7335,
         "τ³-Banking": 5.9794,
         "Terminal-Bench v2.1": 22.8464,
         "GDPval-AA": 7.904,
@@ -223205,7 +223205,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 60.7476,
+      "medianOutputSpeed": 43.8476,
       "aa": {
         "aa-intelligence": 52.6737,
         "aa-coding": null,
@@ -223223,12 +223223,12 @@
         "aaIndexAnswerCostUsd": 777.9968
       },
       "scores": {
-        "AA-Briefcase": 53.556,
+        "AA-Briefcase": 53.507,
         "AutomationBench-AA": 68.4917,
         "Terminal-Bench v4.0": 59.0909,
         "GDP.pdf": 31.0,
         "AA-LCR v1.1": 80.6667,
-        "GDPval-AA v2": 53.583,
+        "GDPval-AA v2": 53.642,
         "τ³-Banking": 41.4433,
         "Terminal-Bench v2.1": 88.3895,
         "GDPval-AA": 54.01,
@@ -224898,7 +224898,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 94.8311,
+      "medianOutputSpeed": 95.1537,
       "aa": {
         "aa-intelligence": 57.6224,
         "aa-coding": null,
@@ -224916,7 +224916,7 @@
         "aaIndexAnswerCostUsd": 920.6268
       },
       "scores": {
-        "AA-Briefcase": 65.249,
+        "AA-Briefcase": 65.226,
         "AutomationBench-AA": 69.5387,
         "Terminal-Bench v4.0": 59.596,
         "GDP.pdf": 26.2,
@@ -226344,7 +226344,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 45.8591,
+      "medianOutputSpeed": 42.8366,
       "aa": {
         "aa-intelligence": 30.9317,
         "aa-coding": null,
@@ -227323,7 +227323,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 42.9907,
+      "medianOutputSpeed": 46.7725,
       "aa": {
         "aa-intelligence": 7.5561,
         "aa-coding": null,
@@ -227649,7 +227649,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 20.1786,
+      "medianOutputSpeed": 14.3396,
       "aa": {
         "aa-intelligence": 10.8123,
         "aa-coding": null,
@@ -227976,7 +227976,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 57.5559,
+      "medianOutputSpeed": 56.4614,
       "aa": {
         "aa-intelligence": 21.4367,
         "aa-coding": null,
@@ -228611,12 +228611,12 @@
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 14.644,
+        "AA-Briefcase": 14.6525,
         "AutomationBench-AA": 14.6951,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 3.2,
         "AA-LCR v1.1": 62.3333,
-        "GDPval-AA v2": 19.0855,
+        "GDPval-AA v2": 19.101,
         "τ³-Banking": 19.5876,
         "Terminal-Bench v2.1": 28.0899,
         "GDPval-AA": null,
@@ -229848,7 +229848,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 43.2012,
+      "medianOutputSpeed": 43.2605,
       "aa": {
         "aa-intelligence": 11.9971,
         "aa-coding": null,
@@ -232019,7 +232019,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 316.8673,
+      "medianOutputSpeed": 294.3043,
       "aa": {
         "aa-intelligence": 5.8765,
         "aa-coding": null,
@@ -232687,12 +232687,12 @@
         "aaIndexAnswerCostUsd": 93.1996
       },
       "scores": {
-        "AA-Briefcase": 44.6795,
+        "AA-Briefcase": 44.661,
         "AutomationBench-AA": 59.9014,
         "Terminal-Bench v4.0": 26.7677,
         "GDP.pdf": 18.6,
         "AA-LCR v1.1": 81.3333,
-        "GDPval-AA v2": 46.1435,
+        "GDPval-AA v2": 46.1085,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -233535,7 +233535,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 86.3002,
+      "medianOutputSpeed": 84.8544,
       "aa": {
         "aa-intelligence": 6.4332,
         "aa-coding": null,
@@ -234283,7 +234283,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 49.2529,
+      "medianOutputSpeed": 44.8547,
       "aa": {
         "aa-intelligence": 20.1502,
         "aa-coding": null,
@@ -234301,12 +234301,12 @@
         "aaIndexAnswerCostUsd": 129.0775
       },
       "scores": {
-        "AA-Briefcase": 19.916,
+        "AA-Briefcase": 19.919,
         "AutomationBench-AA": 12.4347,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 5.2,
         "AA-LCR v1.1": 69.3333,
-        "GDPval-AA v2": 28.592,
+        "GDPval-AA v2": 28.618,
         "τ³-Banking": 20.0,
         "Terminal-Bench v2.1": 49.0637,
         "GDPval-AA": 31.8405,
@@ -235342,12 +235342,12 @@
         "aaIndexAnswerCostUsd": 4.9031
       },
       "scores": {
-        "AA-Briefcase": 29.9315,
+        "AA-Briefcase": 29.9375,
         "AutomationBench-AA": 40.4614,
         "Terminal-Bench v4.0": 2.5253,
         "GDP.pdf": 13.8,
         "AA-LCR v1.1": 78.3333,
-        "GDPval-AA v2": 38.086,
+        "GDPval-AA v2": 38.1135,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -236392,7 +236392,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 219.0617,
+      "medianOutputSpeed": 225.7022,
       "aa": {
         "aa-intelligence": 8.9675,
         "aa-coding": null,
@@ -238702,7 +238702,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 56.3624,
+      "medianOutputSpeed": 55.6668,
       "aa": {
         "aa-intelligence": 19.8288,
         "aa-coding": null,
@@ -238725,7 +238725,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 66.6667,
-        "GDPval-AA v2": 23.1755,
+        "GDPval-AA v2": 23.197,
         "τ³-Banking": 9.2784,
         "Terminal-Bench v2.1": 51.3109,
         "GDPval-AA": 27.14,
@@ -239338,12 +239338,12 @@
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 22.036,
+        "AA-Briefcase": 22.0395,
         "AutomationBench-AA": 17.6291,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": 12.6,
         "AA-LCR v1.1": 81.6667,
-        "GDPval-AA v2": 30.1285,
+        "GDPval-AA v2": 30.152,
         "τ³-Banking": 17.5258,
         "Terminal-Bench v2.1": 67.7903,
         "GDPval-AA": 33.76,
@@ -240428,7 +240428,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 151.3552,
+      "medianOutputSpeed": 152.3483,
       "aa": {
         "aa-intelligence": 12.6913,
         "aa-coding": null,
@@ -240774,7 +240774,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 59.3909,
+      "medianOutputSpeed": 49.1068,
       "aa": {
         "aa-intelligence": 48.9206,
         "aa-coding": null,
@@ -240792,12 +240792,12 @@
         "aaIndexAnswerCostUsd": 1167.5856
       },
       "scores": {
-        "AA-Briefcase": 51.4185,
+        "AA-Briefcase": 51.383,
         "AutomationBench-AA": 54.661,
         "Terminal-Bench v4.0": 44.9495,
         "GDP.pdf": 26.8,
         "AA-LCR v1.1": 84.6667,
-        "GDPval-AA v2": 52.269,
+        "GDPval-AA v2": 52.2715,
         "τ³-Banking": 41.0309,
         "Terminal-Bench v2.1": 88.015,
         "GDPval-AA": 53.9655,
@@ -241534,7 +241534,7 @@
         "src": "assets/logos/openai.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 56.3882,
+      "medianOutputSpeed": 48.7293,
       "aa": {
         "aa-intelligence": 50.2378,
         "aa-coding": null,
@@ -241552,12 +241552,12 @@
         "aaIndexAnswerCostUsd": 124.4659
       },
       "scores": {
-        "AA-Briefcase": 48.226,
+        "AA-Briefcase": 48.32,
         "AutomationBench-AA": 64.4952,
         "Terminal-Bench v4.0": 51.5152,
         "GDP.pdf": 32.0,
         "AA-LCR v1.1": 82.3333,
-        "GDPval-AA v2": 50.476,
+        "GDPval-AA v2": 50.5675,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -242130,7 +242130,7 @@
         "src": "assets/logos/cohere_small.svg",
         "color": "#D18EE2"
       },
-      "medianOutputSpeed": 62.3929,
+      "medianOutputSpeed": 61.4834,
       "aa": {
         "aa-intelligence": 6.9582,
         "aa-coding": null,
@@ -244097,7 +244097,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 91.3825,
+      "medianOutputSpeed": 112.867,
       "aa": {
         "aa-intelligence": 7.6261,
         "aa-coding": null,
@@ -244544,7 +244544,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 70.9867,
+      "medianOutputSpeed": 71.0821,
       "aa": {
         "aa-intelligence": 53.3549,
         "aa-coding": null,
@@ -244562,12 +244562,12 @@
         "aaIndexAnswerCostUsd": 2018.4636
       },
       "scores": {
-        "AA-Briefcase": 58.731,
+        "AA-Briefcase": 58.676,
         "AutomationBench-AA": 59.3759,
         "Terminal-Bench v4.0": 52.0202,
         "GDP.pdf": 26.2,
         "AA-LCR v1.1": 85.3333,
-        "GDPval-AA v2": 62.811,
+        "GDPval-AA v2": 62.7035,
         "τ³-Banking": 47.2165,
         "Terminal-Bench v2.1": 91.3858,
         "GDPval-AA": 63.182,
@@ -246074,7 +246074,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#f32e02"
       },
-      "medianOutputSpeed": 24.7,
+      "medianOutputSpeed": 25.4513,
       "aa": {
         "aa-intelligence": 5.1229,
         "aa-coding": null,
@@ -248157,7 +248157,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 74.0868,
+      "medianOutputSpeed": 70.8397,
       "aa": {
         "aa-intelligence": 27.9112,
         "aa-coding": null,
@@ -248704,7 +248704,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 45.9038,
+      "medianOutputSpeed": 46.1103,
       "aa": {
         "aa-intelligence": 23.6789,
         "aa-coding": null,
@@ -249030,7 +249030,7 @@
         "src": "assets/logos/anthropic.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 183.2092,
+      "medianOutputSpeed": 180.9153,
       "aa": {
         "aa-intelligence": 41.2489,
         "aa-coding": null,
@@ -249048,12 +249048,12 @@
         "aaIndexAnswerCostUsd": 14.7481
       },
       "scores": {
-        "AA-Briefcase": 51.635,
+        "AA-Briefcase": 51.576,
         "AutomationBench-AA": 35.9539,
         "Terminal-Bench v4.0": 29.2929,
         "GDP.pdf": 18.2,
         "AA-LCR v1.1": 78.3333,
-        "GDPval-AA v2": 50.538,
+        "GDPval-AA v2": 50.6525,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -250279,7 +250279,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 123.3909,
+      "medianOutputSpeed": 114.9126,
       "aa": {
         "aa-intelligence": 37.3244,
         "aa-coding": null,
@@ -250297,12 +250297,12 @@
         "aaIndexAnswerCostUsd": 22.0174
       },
       "scores": {
-        "AA-Briefcase": 42.1115,
+        "AA-Briefcase": 42.109,
         "AutomationBench-AA": 50.2086,
         "Terminal-Bench v4.0": 11.6162,
         "GDP.pdf": 24.0,
         "AA-LCR v1.1": 83.6667,
-        "GDPval-AA v2": 47.97,
+        "GDPval-AA v2": 47.96,
         "τ³-Banking": 31.134,
         "Terminal-Bench v2.1": 80.8989,
         "GDPval-AA": 49.4665,
@@ -252268,7 +252268,7 @@
         "src": "assets/logos/anthropic.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 170.9944,
+      "medianOutputSpeed": 145.545,
       "aa": {
         "aa-intelligence": 29.4524,
         "aa-coding": null,
@@ -252286,12 +252286,12 @@
         "aaIndexAnswerCostUsd": 7.1134
       },
       "scores": {
-        "AA-Briefcase": 30.577,
+        "AA-Briefcase": 30.584,
         "AutomationBench-AA": 22.9108,
         "Terminal-Bench v4.0": 12.6263,
         "GDP.pdf": 11.2,
         "AA-LCR v1.1": 72.0,
-        "GDPval-AA v2": 31.1115,
+        "GDPval-AA v2": 31.141,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -252864,7 +252864,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 77.2468,
+      "medianOutputSpeed": 82.0891,
       "aa": {
         "aa-intelligence": 8.35,
         "aa-coding": null,
@@ -253533,12 +253533,12 @@
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 24.286,
+        "AA-Briefcase": 24.2895,
         "AutomationBench-AA": 15.6844,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 8.4,
         "AA-LCR v1.1": 78.3333,
-        "GDPval-AA v2": 33.0945,
+        "GDPval-AA v2": 33.109,
         "τ³-Banking": 34.433,
         "Terminal-Bench v2.1": 64.4195,
         "GDPval-AA": null,
@@ -255690,7 +255690,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 37.5696,
+      "medianOutputSpeed": 37.822,
       "aa": {
         "aa-intelligence": 26.3534,
         "aa-coding": null,
@@ -256290,22 +256290,22 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#f32e02"
       },
-      "medianOutputSpeed": 36.8855,
+      "medianOutputSpeed": 36.9455,
       "aa": {
-        "aa-intelligence": 8.2454,
+        "aa-intelligence": 6.9635,
         "aa-coding": null,
         "aa-agentic": 2.0619
       },
-      "aaCostUsd": 162.6756,
+      "aaCostUsd": 121.7795,
       "pricing": {
         "inputPerMillionTokensUsd": 0.075,
         "outputPerMillionTokensUsd": 0.2,
         "cacheHitPerMillionTokensUsd": null,
-        "aaIndexCostUsd": 162.6756,
-        "aaIndexInputCostUsd": 159.9491,
-        "aaIndexOutputCostUsd": 2.7265,
+        "aaIndexCostUsd": 121.7795,
+        "aaIndexInputCostUsd": 119.9618,
+        "aaIndexOutputCostUsd": 1.8177,
         "aaIndexReasoningCostUsd": 0.0,
-        "aaIndexAnswerCostUsd": 2.7265
+        "aaIndexAnswerCostUsd": 1.8177
       },
       "scores": {
         "AA-Briefcase": 0.0,
@@ -257414,7 +257414,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 42.7055,
+      "medianOutputSpeed": 37.0241,
       "aa": {
         "aa-intelligence": 8.4869,
         "aa-coding": null,
@@ -258521,7 +258521,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 81.2089,
+      "medianOutputSpeed": 77.1587,
       "aa": {
         "aa-intelligence": 42.3078,
         "aa-coding": null,
@@ -258539,12 +258539,12 @@
         "aaIndexAnswerCostUsd": 278.9276
       },
       "scores": {
-        "AA-Briefcase": 38.9645,
+        "AA-Briefcase": 38.9895,
         "AutomationBench-AA": 52.9254,
         "Terminal-Bench v4.0": 31.3131,
         "GDP.pdf": 25.6,
         "AA-LCR v1.1": 80.6667,
-        "GDPval-AA v2": 36.685,
+        "GDPval-AA v2": 36.7615,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -259137,7 +259137,7 @@
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 56.8092,
+      "medianOutputSpeed": 55.1259,
       "aa": {
         "aa-intelligence": 12.7155,
         "aa-coding": null,
@@ -260526,9 +260526,9 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 25.3367,
+      "medianOutputSpeed": 26.1549,
       "aa": {
-        "aa-intelligence": 8.1543,
+        "aa-intelligence": 6.387,
         "aa-coding": null,
         "aa-agentic": 1.8557
       },
@@ -262299,7 +262299,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 37.3343,
+      "medianOutputSpeed": 36.6471,
       "aa": {
         "aa-intelligence": 6.604,
         "aa-coding": null,
@@ -262624,7 +262624,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 152.0334,
+      "medianOutputSpeed": 147.3576,
       "aa": {
         "aa-intelligence": 19.3295,
         "aa-coding": null,
@@ -263407,12 +263407,12 @@
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 29.4665,
+        "AA-Briefcase": 29.464,
         "AutomationBench-AA": 46.4712,
         "Terminal-Bench v4.0": 3.0303,
         "GDP.pdf": 8.6,
         "AA-LCR v1.1": 78.3333,
-        "GDPval-AA v2": 41.189,
+        "GDPval-AA v2": 41.2225,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": 34.665,
@@ -264255,7 +264255,7 @@
         "src": "assets/logos/xiaomi_small.svg",
         "color": "#ff6900"
       },
-      "medianOutputSpeed": 36.8204,
+      "medianOutputSpeed": 32.4274,
       "aa": {
         "aa-intelligence": 18.29,
         "aa-coding": null,
@@ -265339,7 +265339,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 102.0986,
+      "medianOutputSpeed": 101.7005,
       "aa": {
         "aa-intelligence": 22.9828,
         "aa-coding": null,
@@ -265362,7 +265362,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 78.2,
-        "GDPval-AA v2": 20.826,
+        "GDPval-AA v2": 20.862,
         "τ³-Banking": 22.0619,
         "Terminal-Bench v2.1": 35.206,
         "GDPval-AA": 25.746,
@@ -265704,7 +265704,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#f32e02"
       },
-      "medianOutputSpeed": 75.7208,
+      "medianOutputSpeed": 75.2573,
       "aa": {
         "aa-intelligence": 9.2661,
         "aa-coding": null,
@@ -266808,7 +266808,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 67.2458,
+      "medianOutputSpeed": 64.5678,
       "aa": {
         "aa-intelligence": 18.1597,
         "aa-coding": null,
@@ -267353,7 +267353,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 81.194,
+      "medianOutputSpeed": 73.2942,
       "aa": {
         "aa-intelligence": 30.4482,
         "aa-coding": null,
@@ -269136,7 +269136,7 @@
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 64.0739,
+      "medianOutputSpeed": 57.3065,
       "aa": {
         "aa-intelligence": 22.7578,
         "aa-coding": null,
@@ -269154,12 +269154,12 @@
         "aaIndexAnswerCostUsd": 25.0793
       },
       "scores": {
-        "AA-Briefcase": 10.924,
+        "AA-Briefcase": 10.9275,
         "AutomationBench-AA": 4.4353,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 6.0,
         "AA-LCR v1.1": 78.3333,
-        "GDPval-AA v2": 25.486,
+        "GDPval-AA v2": 25.505,
         "τ³-Banking": 9.8969,
         "Terminal-Bench v2.1": 55.4307,
         "GDPval-AA": 29.351,
@@ -271047,7 +271047,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 116.5327,
+      "medianOutputSpeed": 112.3124,
       "aa": {
         "aa-intelligence": 24.7358,
         "aa-coding": null,
@@ -271070,7 +271070,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 80.0,
-        "GDPval-AA v2": 16.294,
+        "GDPval-AA v2": 16.3145,
         "τ³-Banking": 15.8763,
         "Terminal-Bench v2.1": 52.4345,
         "GDPval-AA": 21.4765,
@@ -271373,7 +271373,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 193.606,
+      "medianOutputSpeed": 179.4536,
       "aa": {
         "aa-intelligence": 33.6326,
         "aa-coding": null,
@@ -271391,7 +271391,7 @@
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 18.8385,
+        "AA-Briefcase": 18.841,
         "AutomationBench-AA": null,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
@@ -272410,7 +272410,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 81.0999,
+      "medianOutputSpeed": 83.1462,
       "aa": {
         "aa-intelligence": 19.3684,
         "aa-coding": null,
@@ -273314,7 +273314,7 @@
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 48.7421,
+      "medianOutputSpeed": 44.9161,
       "aa": {
         "aa-intelligence": 30.0667,
         "aa-coding": null,
@@ -273332,12 +273332,12 @@
         "aaIndexAnswerCostUsd": 173.6195
       },
       "scores": {
-        "AA-Briefcase": 24.2855,
+        "AA-Briefcase": 24.288,
         "AutomationBench-AA": 49.2568,
         "Terminal-Bench v4.0": 12.6263,
         "GDP.pdf": 18.6,
         "AA-LCR v1.1": 79.3333,
-        "GDPval-AA v2": 31.2945,
+        "GDPval-AA v2": 31.2875,
         "τ³-Banking": 41.6495,
         "Terminal-Bench v2.1": 82.397,
         "GDPval-AA": 34.81,
@@ -274393,7 +274393,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 26.3456,
+      "medianOutputSpeed": 23.8173,
       "aa": {
         "aa-intelligence": 7.9264,
         "aa-coding": null,
@@ -275370,7 +275370,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 110.1473,
+      "medianOutputSpeed": 87.0798,
       "aa": {
         "aa-intelligence": 42.4005,
         "aa-coding": null,
@@ -275388,12 +275388,12 @@
         "aaIndexAnswerCostUsd": 96.1919
       },
       "scores": {
-        "AA-Briefcase": 38.3545,
+        "AA-Briefcase": 38.374,
         "AutomationBench-AA": 60.1258,
         "Terminal-Bench v4.0": 26.2626,
         "GDP.pdf": 24.4,
         "AA-LCR v1.1": 83.6667,
-        "GDPval-AA v2": 44.7165,
+        "GDPval-AA v2": 44.704,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -276093,7 +276093,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 29.6296,
+      "medianOutputSpeed": 32.2679,
       "aa": {
         "aa-intelligence": 7.4577,
         "aa-coding": null,
@@ -276548,7 +276548,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 62.1351,
+      "medianOutputSpeed": 61.2574,
       "aa": {
         "aa-intelligence": 27.5773,
         "aa-coding": null,
@@ -277111,12 +277111,12 @@
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 33.32,
+        "AA-Briefcase": 33.335,
         "AutomationBench-AA": 26.102,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 4.2,
         "AA-LCR v1.1": 71.6667,
-        "GDPval-AA v2": 34.5235,
+        "GDPval-AA v2": 34.571,
         "τ³-Banking": 31.9588,
         "Terminal-Bench v2.1": 56.5543,
         "GDPval-AA": null,
@@ -278366,7 +278366,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 39.2509,
+      "medianOutputSpeed": 38.6303,
       "aa": {
         "aa-intelligence": 31.9457,
         "aa-coding": null,
@@ -279679,7 +279679,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 125.8551,
+      "medianOutputSpeed": 127.2888,
       "aa": {
         "aa-intelligence": 6.9583,
         "aa-coding": null,
@@ -281354,7 +281354,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 131.9769,
+      "medianOutputSpeed": 123.779,
       "aa": {
         "aa-intelligence": 17.4754,
         "aa-coding": null,
@@ -281377,7 +281377,7 @@
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 10.0,
         "AA-LCR v1.1": 83.3333,
-        "GDPval-AA v2": 14.318,
+        "GDPval-AA v2": 14.3395,
         "τ³-Banking": 23.5052,
         "Terminal-Bench v2.1": 51.6854,
         "GDPval-AA": 19.636,
@@ -282497,7 +282497,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 119.8592,
+      "medianOutputSpeed": 121.5108,
       "aa": {
         "aa-intelligence": 25.0359,
         "aa-coding": null,
@@ -282515,12 +282515,12 @@
         "aaIndexAnswerCostUsd": 8.6262
       },
       "scores": {
-        "AA-Briefcase": 21.7255,
+        "AA-Briefcase": 21.7295,
         "AutomationBench-AA": 23.0745,
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 15.2,
         "AA-LCR v1.1": 75.0,
-        "GDPval-AA v2": 31.4575,
+        "GDPval-AA v2": 31.4535,
         "τ³-Banking": 17.732,
         "Terminal-Bench v2.1": 53.1835,
         "GDPval-AA": 34.821,
@@ -283313,7 +283313,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 87.5579,
+      "medianOutputSpeed": 78.6546,
       "aa": {
         "aa-intelligence": 46.4466,
         "aa-coding": null,
@@ -284758,7 +284758,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 344.5156,
+      "medianOutputSpeed": 342.3428,
       "aa": {
         "aa-intelligence": 15.5543,
         "aa-coding": null,
@@ -286839,7 +286839,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 110.7892,
+      "medianOutputSpeed": 98.536,
       "aa": {
         "aa-intelligence": 32.5028,
         "aa-coding": null,
@@ -286857,7 +286857,7 @@
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 18.4135,
+        "AA-Briefcase": 18.417,
         "AutomationBench-AA": null,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
@@ -287165,7 +287165,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#f32e02"
       },
-      "medianOutputSpeed": 44.4303,
+      "medianOutputSpeed": 45.0765,
       "aa": {
         "aa-intelligence": 9.0476,
         "aa-coding": null,
@@ -288141,7 +288141,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 65.6333,
+      "medianOutputSpeed": 65.3786,
       "aa": {
         "aa-intelligence": 26.0586,
         "aa-coding": null,
@@ -288159,12 +288159,12 @@
         "aaIndexAnswerCostUsd": 79.8732
       },
       "scores": {
-        "AA-Briefcase": 23.222,
+        "AA-Briefcase": 23.227,
         "AutomationBench-AA": 20.3084,
         "Terminal-Bench v4.0": 2.0202,
         "GDP.pdf": 8.4,
         "AA-LCR v1.1": 73.6667,
-        "GDPval-AA v2": 30.782,
+        "GDPval-AA v2": 30.812,
         "τ³-Banking": 13.6082,
         "Terminal-Bench v2.1": 61.7978,
         "GDPval-AA": 34.0565,
@@ -290312,7 +290312,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 166.3412,
+      "medianOutputSpeed": 155.0761,
       "aa": {
         "aa-intelligence": 22.9279,
         "aa-coding": null,
@@ -292270,7 +292270,7 @@
         "src": "assets/logos/longcat_small.svg",
         "color": "#2adb65"
       },
-      "medianOutputSpeed": 68.5839,
+      "medianOutputSpeed": 67.219,
       "aa": {
         "aa-intelligence": 19.1123,
         "aa-coding": null,
@@ -292288,12 +292288,12 @@
         "aaIndexAnswerCostUsd": 46.7919
       },
       "scores": {
-        "AA-Briefcase": 11.984,
+        "AA-Briefcase": 11.9875,
         "AutomationBench-AA": 4.5339,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 6.4,
         "AA-LCR v1.1": 65.0,
-        "GDPval-AA v2": 18.47,
+        "GDPval-AA v2": 18.488,
         "τ³-Banking": 13.1959,
         "Terminal-Bench v2.1": 50.1873,
         "GDPval-AA": 23.2255,
@@ -293373,7 +293373,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 171.0864,
+      "medianOutputSpeed": 168.796,
       "aa": {
         "aa-intelligence": 6.6657,
         "aa-coding": null,
@@ -293700,7 +293700,7 @@
         "src": "assets/logos/bytedance_small.svg",
         "color": "#3c8bff"
       },
-      "medianOutputSpeed": 40.6827,
+      "medianOutputSpeed": 40.9203,
       "aa": {
         "aa-intelligence": 12.0993,
         "aa-coding": null,
@@ -294383,7 +294383,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 188.0225,
+      "medianOutputSpeed": 166.2283,
       "aa": {
         "aa-intelligence": 24.8819,
         "aa-coding": null,
@@ -294709,7 +294709,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 74.5024,
+      "medianOutputSpeed": 71.0456,
       "aa": {
         "aa-intelligence": 11.0889,
         "aa-coding": null,
@@ -296469,7 +296469,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 94.8991,
+      "medianOutputSpeed": 92.8757,
       "aa": {
         "aa-intelligence": 30.1055,
         "aa-coding": null,
@@ -296492,7 +296492,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 70.3333,
-        "GDPval-AA v2": 32.4825,
+        "GDPval-AA v2": 32.6075,
         "τ³-Banking": 26.1856,
         "Terminal-Bench v2.1": 64.794,
         "GDPval-AA": 35.936,
@@ -297215,7 +297215,7 @@
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 10.1404,
+      "medianOutputSpeed": 14.3905,
       "aa": {
         "aa-intelligence": 6.0493,
         "aa-coding": null,
@@ -298988,7 +298988,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 41.1052,
+      "medianOutputSpeed": 40.0459,
       "aa": {
         "aa-intelligence": 40.1529,
         "aa-coding": null,
@@ -299006,12 +299006,12 @@
         "aaIndexAnswerCostUsd": 175.1333
       },
       "scores": {
-        "AA-Briefcase": 44.3295,
+        "AA-Briefcase": 44.31,
         "AutomationBench-AA": 49.2321,
         "Terminal-Bench v4.0": 18.6869,
         "GDP.pdf": 20.2,
         "AA-LCR v1.1": 78.3333,
-        "GDPval-AA v2": 55.235,
+        "GDPval-AA v2": 55.2215,
         "τ³-Banking": 51.3402,
         "Terminal-Bench v2.1": 81.2734,
         "GDPval-AA": null,
@@ -301284,7 +301284,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 74.689,
+      "medianOutputSpeed": 74.0186,
       "aa": {
         "aa-intelligence": 22.4867,
         "aa-coding": null,
@@ -301935,7 +301935,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 21.7122,
+      "medianOutputSpeed": 22.2653,
       "aa": {
         "aa-intelligence": 5.408,
         "aa-coding": null,
@@ -303635,7 +303635,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 192.0448,
+      "medianOutputSpeed": 179.3196,
       "aa": {
         "aa-intelligence": 13.3741,
         "aa-coding": null,
@@ -304312,7 +304312,7 @@
         "src": "assets/logos/upstage.svg",
         "color": "#7c59f5"
       },
-      "medianOutputSpeed": 80.3874,
+      "medianOutputSpeed": 83.6835,
       "aa": {
         "aa-intelligence": 24.0522,
         "aa-coding": null,
@@ -304330,12 +304330,12 @@
         "aaIndexAnswerCostUsd": 9.4113
       },
       "scores": {
-        "AA-Briefcase": 18.473,
+        "AA-Briefcase": 18.476,
         "AutomationBench-AA": 22.2524,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 5.0,
         "AA-LCR v1.1": 83.3333,
-        "GDPval-AA v2": 29.4935,
+        "GDPval-AA v2": 29.457,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -305177,7 +305177,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 145.4603,
+      "medianOutputSpeed": 146.1938,
       "aa": {
         "aa-intelligence": 12.8288,
         "aa-coding": null,
@@ -306536,7 +306536,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 115.4443,
+      "medianOutputSpeed": 111.1865,
       "aa": {
         "aa-intelligence": 18.4678,
         "aa-coding": null,
@@ -306554,12 +306554,12 @@
         "aaIndexAnswerCostUsd": 3.4633
       },
       "scores": {
-        "AA-Briefcase": 20.1555,
+        "AA-Briefcase": 20.159,
         "AutomationBench-AA": 9.1418,
         "Terminal-Bench v4.0": 1.5152,
         "GDP.pdf": 5.8,
         "AA-LCR v1.1": 39.6667,
-        "GDPval-AA v2": 27.2415,
+        "GDPval-AA v2": 27.2725,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -307197,7 +307197,7 @@
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 1.4,
         "AA-LCR v1.1": 59.3333,
-        "GDPval-AA v2": 10.3345,
+        "GDPval-AA v2": 10.36,
         "τ³-Banking": 20.8247,
         "Terminal-Bench v2.1": 8.6142,
         "GDPval-AA": 16.4205,
@@ -308277,7 +308277,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 94.2603,
+      "medianOutputSpeed": 106.7411,
       "aa": {
         "aa-intelligence": 14.201,
         "aa-coding": null,
@@ -308603,7 +308603,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 26.1583,
+      "medianOutputSpeed": 19.221,
       "aa": {
         "aa-intelligence": 13.1248,
         "aa-coding": null,
@@ -309607,7 +309607,7 @@
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 57.0154,
+      "medianOutputSpeed": 56.1061,
       "aa": {
         "aa-intelligence": 15.2942,
         "aa-coding": null,
@@ -310001,7 +310001,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 47.8002,
+      "medianOutputSpeed": 44.2787,
       "aa": {
         "aa-intelligence": 27.5508,
         "aa-coding": null,
@@ -310019,12 +310019,12 @@
         "aaIndexAnswerCostUsd": 96.125
       },
       "scores": {
-        "AA-Briefcase": 43.8255,
+        "AA-Briefcase": 43.841,
         "AutomationBench-AA": 40.2521,
         "Terminal-Bench v4.0": 5.0505,
         "GDP.pdf": 12.8,
         "AA-LCR v1.1": 79.6667,
-        "GDPval-AA v2": 44.074,
+        "GDPval-AA v2": 44.108,
         "τ³-Banking": 47.4227,
         "Terminal-Bench v2.1": 65.1685,
         "GDPval-AA": 46.5665,
@@ -311042,7 +311042,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 138.2673,
+      "medianOutputSpeed": 135.2303,
       "aa": {
         "aa-intelligence": 15.2321,
         "aa-coding": null,
@@ -311065,7 +311065,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 64.3333,
-        "GDPval-AA v2": 17.3275,
+        "GDPval-AA v2": 17.368,
         "τ³-Banking": 5.3608,
         "Terminal-Bench v2.1": 41.573,
         "GDPval-AA": 22.6595,
@@ -311660,7 +311660,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#f32e02"
       },
-      "medianOutputSpeed": 214.5915,
+      "medianOutputSpeed": 222.5426,
       "aa": {
         "aa-intelligence": 4.8376,
         "aa-coding": null,
@@ -313417,7 +313417,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 196.5139,
+      "medianOutputSpeed": 190.6843,
       "aa": {
         "aa-intelligence": 29.4572,
         "aa-coding": null,
@@ -313435,12 +313435,12 @@
         "aaIndexAnswerCostUsd": 142.4245
       },
       "scores": {
-        "AA-Briefcase": 20.813,
+        "AA-Briefcase": 20.8155,
         "AutomationBench-AA": 22.9769,
         "Terminal-Bench v4.0": 1.5152,
         "GDP.pdf": 8.6,
         "AA-LCR v1.1": 79.0,
-        "GDPval-AA v2": 31.379,
+        "GDPval-AA v2": 31.3825,
         "τ³-Banking": 11.7526,
         "Terminal-Bench v2.1": 74.5318,
         "GDPval-AA": 34.493,
@@ -314799,7 +314799,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 35.9606,
+      "medianOutputSpeed": 34.4123,
       "aa": {
         "aa-intelligence": 18.5297,
         "aa-coding": null,
@@ -314822,7 +314822,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 54.0,
-        "GDPval-AA v2": 12.8325,
+        "GDPval-AA v2": 12.856,
         "τ³-Banking": 13.4021,
         "Terminal-Bench v2.1": 49.4382,
         "GDPval-AA": 18.69,
@@ -315603,7 +315603,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 205.7222,
+      "medianOutputSpeed": 203.3512,
       "aa": {
         "aa-intelligence": 9.8513,
         "aa-coding": null,
@@ -316276,7 +316276,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 91.896,
+      "medianOutputSpeed": 81.83,
       "aa": {
         "aa-intelligence": 33.8044,
         "aa-coding": null,
@@ -316299,7 +316299,7 @@
         "Terminal-Bench v4.0": 5.0505,
         "GDP.pdf": 20.6,
         "AA-LCR v1.1": 83.0,
-        "GDPval-AA v2": 36.534,
+        "GDPval-AA v2": 36.55,
         "τ³-Banking": 29.8969,
         "Terminal-Bench v2.1": 80.5243,
         "GDPval-AA": 39.409,
@@ -317900,7 +317900,7 @@
         "src": "assets/logos/stepfun_small.svg",
         "color": "#00F5E7"
       },
-      "medianOutputSpeed": 177.4322,
+      "medianOutputSpeed": 185.0684,
       "aa": {
         "aa-intelligence": 19.4813,
         "aa-coding": null,
@@ -317923,7 +317923,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 73.6667,
-        "GDPval-AA v2": 17.7975,
+        "GDPval-AA v2": 17.818,
         "τ³-Banking": 11.9588,
         "Terminal-Bench v2.1": 39.3258,
         "GDPval-AA": 22.71,
@@ -319012,7 +319012,7 @@
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 297.6503,
+      "medianOutputSpeed": 271.8581,
       "aa": {
         "aa-intelligence": 22.5966,
         "aa-coding": null,
@@ -319030,12 +319030,12 @@
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 23.0385,
+        "AA-Briefcase": 23.0475,
         "AutomationBench-AA": 7.3944,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 5.4,
         "AA-LCR v1.1": 73.6667,
-        "GDPval-AA v2": 30.0595,
+        "GDPval-AA v2": 30.058,
         "τ³-Banking": 38.5567,
         "Terminal-Bench v2.1": 62.5468,
         "GDPval-AA": null,
@@ -320936,7 +320936,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 72.2333,
+      "medianOutputSpeed": 69.2464,
       "aa": {
         "aa-intelligence": 16.976,
         "aa-coding": null,
@@ -321346,7 +321346,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 68.8257,
+      "medianOutputSpeed": 65.6282,
       "aa": {
         "aa-intelligence": 16.6719,
         "aa-coding": null,
@@ -321369,7 +321369,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 65.6667,
-        "GDPval-AA v2": 3.2625,
+        "GDPval-AA v2": 3.2875,
         "τ³-Banking": 11.9588,
         "Terminal-Bench v2.1": 38.9513,
         "GDPval-AA": 10.652,
@@ -322577,7 +322577,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 100.5716,
+      "medianOutputSpeed": 92.8241,
       "aa": {
         "aa-intelligence": 20.8345,
         "aa-coding": null,
@@ -323681,7 +323681,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 80.6376,
+      "medianOutputSpeed": 75.6752,
       "aa": {
         "aa-intelligence": 39.2364,
         "aa-coding": null,
@@ -323699,12 +323699,12 @@
         "aaIndexAnswerCostUsd": 212.8992
       },
       "scores": {
-        "AA-Briefcase": 37.0905,
+        "AA-Briefcase": 37.0965,
         "AutomationBench-AA": 51.3275,
         "Terminal-Bench v4.0": 14.6465,
         "GDP.pdf": 26.2,
         "AA-LCR v1.1": 80.3333,
-        "GDPval-AA v2": 46.057,
+        "GDPval-AA v2": 46.0735,
         "τ³-Banking": 36.4948,
         "Terminal-Bench v2.1": 86.1423,
         "GDPval-AA": 47.805,
@@ -324478,7 +324478,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 86.9931,
+      "medianOutputSpeed": 74.0185,
       "aa": {
         "aa-intelligence": 23.1674,
         "aa-coding": null,
@@ -324501,7 +324501,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 64.0,
-        "GDPval-AA v2": 23.4565,
+        "GDPval-AA v2": 23.4685,
         "τ³-Banking": 14.8454,
         "Terminal-Bench v2.1": 61.0487,
         "GDPval-AA": 27.7205,
@@ -325365,7 +325365,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 226.3954,
+      "medianOutputSpeed": 221.1389,
       "aa": {
         "aa-intelligence": 12.474,
         "aa-coding": null,
@@ -325694,7 +325694,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 135.0461,
+      "medianOutputSpeed": 116.3153,
       "aa": {
         "aa-intelligence": 38.1245,
         "aa-coding": null,
@@ -325712,12 +325712,12 @@
         "aaIndexAnswerCostUsd": 8.0722
       },
       "scores": {
-        "AA-Briefcase": 41.823,
+        "AA-Briefcase": 41.815,
         "AutomationBench-AA": 53.1681,
         "Terminal-Bench v4.0": 12.6263,
         "GDP.pdf": 22.8,
         "AA-LCR v1.1": 83.3333,
-        "GDPval-AA v2": 46.51,
+        "GDPval-AA v2": 46.593,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -326770,7 +326770,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 41.9598,
+      "medianOutputSpeed": 37.8793,
       "aa": {
         "aa-intelligence": 22.2403,
         "aa-coding": null,
@@ -326793,7 +326793,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 71.0,
-        "GDPval-AA v2": 25.671,
+        "GDPval-AA v2": 25.711,
         "τ³-Banking": 12.1649,
         "Terminal-Bench v2.1": 45.3184,
         "GDPval-AA": 29.7935,
@@ -327300,7 +327300,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 186.5323,
+      "medianOutputSpeed": 185.1744,
       "aa": {
         "aa-intelligence": 11.8041,
         "aa-coding": null,
@@ -327626,7 +327626,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#f32e02"
       },
-      "medianOutputSpeed": 75.0866,
+      "medianOutputSpeed": 74.0309,
       "aa": {
         "aa-intelligence": 8.5937,
         "aa-coding": null,
@@ -327952,7 +327952,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 95.6373,
+      "medianOutputSpeed": 91.7275,
       "aa": {
         "aa-intelligence": 13.1304,
         "aa-coding": null,
@@ -328406,7 +328406,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 54.0287,
+      "medianOutputSpeed": 51.8743,
       "aa": {
         "aa-intelligence": 48.1219,
         "aa-coding": null,
@@ -328424,12 +328424,12 @@
         "aaIndexAnswerCostUsd": 721.3292
       },
       "scores": {
-        "AA-Briefcase": 53.066,
+        "AA-Briefcase": 53.035,
         "AutomationBench-AA": 53.564,
         "Terminal-Bench v4.0": 45.9596,
         "GDP.pdf": 19.6,
         "AA-LCR v1.1": 79.0,
-        "GDPval-AA v2": 54.7235,
+        "GDPval-AA v2": 54.7465,
         "τ³-Banking": 44.7423,
         "Terminal-Bench v2.1": 87.6404,
         "GDPval-AA": 56.447,
@@ -329239,7 +329239,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#f32e02"
       },
-      "medianOutputSpeed": 55.1641,
+      "medianOutputSpeed": 64.7514,
       "aa": {
         "aa-intelligence": 6.0444,
         "aa-coding": null,
@@ -331321,7 +331321,7 @@
         "src": "assets/logos/thinking_machines.svg",
         "color": "#676767"
       },
-      "medianOutputSpeed": 179.3904,
+      "medianOutputSpeed": 190.2545,
       "aa": {
         "aa-intelligence": 25.6583,
         "aa-coding": null,
@@ -331339,12 +331339,12 @@
         "aaIndexAnswerCostUsd": 11.6675
       },
       "scores": {
-        "AA-Briefcase": 20.5825,
+        "AA-Briefcase": 20.5875,
         "AutomationBench-AA": 4.8142,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 11.2,
         "AA-LCR v1.1": 75.6667,
-        "GDPval-AA v2": 31.164,
+        "GDPval-AA v2": 31.195,
         "τ³-Banking": 18.7629,
         "Terminal-Bench v2.1": 55.0562,
         "GDPval-AA": 34.572,
@@ -332832,7 +332832,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 226.1349,
+      "medianOutputSpeed": 211.9492,
       "aa": {
         "aa-intelligence": 7.818,
         "aa-coding": null,
@@ -333483,7 +333483,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 139.0231,
+      "medianOutputSpeed": 138.9251,
       "aa": {
         "aa-intelligence": 6.9335,
         "aa-coding": null,
@@ -334153,7 +334153,7 @@
         "src": "assets/logos/deepseek.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 192.7293,
+      "medianOutputSpeed": 170.8458,
       "aa": {
         "aa-intelligence": 24.6734,
         "aa-coding": null,
@@ -334171,12 +334171,12 @@
         "aaIndexAnswerCostUsd": 53.4078
       },
       "scores": {
-        "AA-Briefcase": 30.8855,
+        "AA-Briefcase": 30.881,
         "AutomationBench-AA": 47.8078,
         "Terminal-Bench v4.0": 5.5556,
         "GDP.pdf": 3.8,
         "AA-LCR v1.1": 55.3333,
-        "GDPval-AA v2": 42.0625,
+        "GDPval-AA v2": 42.0615,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -334767,12 +334767,12 @@
         "aaIndexAnswerCostUsd": 122.6793
       },
       "scores": {
-        "AA-Briefcase": 34.0745,
+        "AA-Briefcase": 34.075,
         "AutomationBench-AA": 60.89,
         "Terminal-Bench v4.0": 19.697,
         "GDP.pdf": 22.8,
         "AA-LCR v1.1": 84.0,
-        "GDPval-AA v2": 46.1055,
+        "GDPval-AA v2": 46.059,
         "τ³-Banking": 45.7732,
         "Terminal-Bench v2.1": 83.8951,
         "GDPval-AA": 47.769,
@@ -335965,7 +335965,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 83.9422,
+      "medianOutputSpeed": 88.5294,
       "aa": {
         "aa-intelligence": 9.72,
         "aa-coding": null,
@@ -338099,7 +338099,7 @@
         "src": "assets/logos/inceptionlabs.svg",
         "color": "#021B30"
       },
-      "medianOutputSpeed": 799.0171,
+      "medianOutputSpeed": 593.7601,
       "aa": {
         "aa-intelligence": 12.3408,
         "aa-coding": null,
@@ -338964,7 +338964,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 32.4334,
+      "medianOutputSpeed": 32.3271,
       "aa": {
         "aa-intelligence": 7.0435,
         "aa-coding": null,
@@ -339313,7 +339313,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 177.9656,
+      "medianOutputSpeed": 166.9781,
       "aa": {
         "aa-intelligence": 8.7366,
         "aa-coding": null,
@@ -339639,7 +339639,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 235.2981,
+      "medianOutputSpeed": 232.8505,
       "aa": {
         "aa-intelligence": 8.8961,
         "aa-coding": null,
@@ -340998,7 +340998,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 183.1611,
+      "medianOutputSpeed": 172.9549,
       "aa": {
         "aa-intelligence": 34.8391,
         "aa-coding": null,
@@ -341016,12 +341016,12 @@
         "aaIndexAnswerCostUsd": 40.9766
       },
       "scores": {
-        "AA-Briefcase": 46.2315,
+        "AA-Briefcase": 46.23,
         "AutomationBench-AA": 47.4709,
         "Terminal-Bench v4.0": 12.1212,
         "GDP.pdf": 12.0,
         "AA-LCR v1.1": 81.3333,
-        "GDPval-AA v2": 52.3355,
+        "GDPval-AA v2": 52.339,
         "τ³-Banking": 41.0309,
         "Terminal-Bench v2.1": 74.1573,
         "GDPval-AA": 53.8605,
@@ -342995,12 +342995,12 @@
         "aaIndexAnswerCostUsd": 82.3182
       },
       "scores": {
-        "AA-Briefcase": 32.4525,
+        "AA-Briefcase": 32.465,
         "AutomationBench-AA": 57.9722,
         "Terminal-Bench v4.0": 18.6869,
         "GDP.pdf": 23.8,
         "AA-LCR v1.1": 82.3333,
-        "GDPval-AA v2": 42.271,
+        "GDPval-AA v2": 42.291,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -344069,7 +344069,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 200.3208,
+      "medianOutputSpeed": 174.8305,
       "aa": {
         "aa-intelligence": 33.9786,
         "aa-coding": null,
@@ -344087,12 +344087,12 @@
         "aaIndexAnswerCostUsd": 96.4568
       },
       "scores": {
-        "AA-Briefcase": 22.692,
+        "AA-Briefcase": 22.696,
         "AutomationBench-AA": 53.0167,
         "Terminal-Bench v4.0": 7.0707,
         "GDP.pdf": 17.4,
         "AA-LCR v1.1": 80.0,
-        "GDPval-AA v2": 39.1545,
+        "GDPval-AA v2": 39.217,
         "τ³-Banking": 29.8969,
         "Terminal-Bench v2.1": 77.5281,
         "GDPval-AA": 41.5685,
@@ -345367,7 +345367,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 200.6672,
+      "medianOutputSpeed": 194.5431,
       "aa": {
         "aa-intelligence": 17.9337,
         "aa-coding": null,
@@ -346020,7 +346020,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 63.2802,
+      "medianOutputSpeed": 58.2144,
       "aa": {
         "aa-intelligence": 38.8121,
         "aa-coding": null,
@@ -346038,12 +346038,12 @@
         "aaIndexAnswerCostUsd": 126.7555
       },
       "scores": {
-        "AA-Briefcase": 39.0255,
+        "AA-Briefcase": 39.0285,
         "AutomationBench-AA": 57.9349,
         "Terminal-Bench v4.0": 10.6061,
         "GDP.pdf": 18.8,
         "AA-LCR v1.1": 79.3333,
-        "GDPval-AA v2": 44.292,
+        "GDPval-AA v2": 44.213,
         "τ³-Banking": 42.0619,
         "Terminal-Bench v2.1": 81.6479,
         "GDPval-AA": 46.48,
@@ -348664,7 +348664,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 76.5393,
+      "medianOutputSpeed": 74.2301,
       "aa": {
         "aa-intelligence": 28.328,
         "aa-coding": null,
@@ -348682,12 +348682,12 @@
         "aaIndexAnswerCostUsd": 78.6856
       },
       "scores": {
-        "AA-Briefcase": 25.406,
+        "AA-Briefcase": 25.407,
         "AutomationBench-AA": 22.6568,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": 15.2,
         "AA-LCR v1.1": 62.3333,
-        "GDPval-AA v2": 37.0825,
+        "GDPval-AA v2": 37.0795,
         "τ³-Banking": 19.5876,
         "Terminal-Bench v2.1": 74.1573,
         "GDPval-AA": 39.957,
@@ -349420,7 +349420,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 191.4973,
+      "medianOutputSpeed": 183.8573,
       "aa": {
         "aa-intelligence": 26.3272,
         "aa-coding": null,
@@ -349748,7 +349748,7 @@
         "src": "assets/logos/anthropic.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 236.6893,
+      "medianOutputSpeed": 236.1431,
       "aa": {
         "aa-intelligence": 43.395,
         "aa-coding": null,
@@ -349766,12 +349766,12 @@
         "aaIndexAnswerCostUsd": 18.7988
       },
       "scores": {
-        "AA-Briefcase": 53.8995,
+        "AA-Briefcase": 53.9065,
         "AutomationBench-AA": 35.411,
         "Terminal-Bench v4.0": 32.8283,
         "GDP.pdf": 20.8,
         "AA-LCR v1.1": 82.6667,
-        "GDPval-AA v2": 56.0005,
+        "GDPval-AA v2": 55.9165,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -350614,7 +350614,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 132.0159,
+      "medianOutputSpeed": 120.1982,
       "aa": {
         "aa-intelligence": 32.9282,
         "aa-coding": null,
@@ -350632,12 +350632,12 @@
         "aaIndexAnswerCostUsd": 5.8862
       },
       "scores": {
-        "AA-Briefcase": 34.2845,
+        "AA-Briefcase": 34.3005,
         "AutomationBench-AA": 47.8245,
         "Terminal-Bench v4.0": 4.5455,
         "GDP.pdf": 18.2,
         "AA-LCR v1.1": 79.3333,
-        "GDPval-AA v2": 41.9975,
+        "GDPval-AA v2": 41.9965,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -351682,7 +351682,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 50.9925,
+      "medianOutputSpeed": 46.1112,
       "aa": {
         "aa-intelligence": 26.2048,
         "aa-coding": null,
@@ -351700,12 +351700,12 @@
         "aaIndexAnswerCostUsd": 106.9409
       },
       "scores": {
-        "AA-Briefcase": 38.6595,
+        "AA-Briefcase": 38.6865,
         "AutomationBench-AA": 30.1033,
         "Terminal-Bench v4.0": 2.5253,
         "GDP.pdf": 10.4,
         "AA-LCR v1.1": 77.3333,
-        "GDPval-AA v2": 43.1075,
+        "GDPval-AA v2": 43.1265,
         "τ³-Banking": 32.1649,
         "Terminal-Bench v2.1": 67.4157,
         "GDPval-AA": 45.1895,
@@ -352421,7 +352421,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 71.6667,
-        "GDPval-AA v2": null,
+        "GDPval-AA v2": 23.5385,
         "τ³-Banking": 21.6495,
         "Terminal-Bench v2.1": 44.1948,
         "GDPval-AA": 27.641,
@@ -353509,7 +353509,7 @@
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 16.5638,
+      "medianOutputSpeed": 16.485,
       "aa": {
         "aa-intelligence": 11.0636,
         "aa-coding": null,
@@ -353532,7 +353532,7 @@
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 0.8,
         "AA-LCR v1.1": 60.3333,
-        "GDPval-AA v2": 3.047,
+        "GDPval-AA v2": 3.072,
         "τ³-Banking": 20.8247,
         "Terminal-Bench v2.1": 27.7154,
         "GDPval-AA": 10.782,
@@ -354612,7 +354612,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 43.8313,
+      "medianOutputSpeed": 43.6443,
       "aa": {
         "aa-intelligence": 7.5211,
         "aa-coding": null,
@@ -354957,7 +354957,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 107.5246,
+      "medianOutputSpeed": 93.0961,
       "aa": {
         "aa-intelligence": 20.7856,
         "aa-coding": null,
@@ -355322,7 +355322,7 @@
         "src": "assets/logos/celeris.svg",
         "color": "#ff8a75"
       },
-      "medianOutputSpeed": 1531.7824,
+      "medianOutputSpeed": 1458.7867,
       "aa": {
         "aa-intelligence": 6.347,
         "aa-coding": null,
@@ -357631,7 +357631,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 107.2111,
+      "medianOutputSpeed": 92.9089,
       "aa": {
         "aa-intelligence": 34.2377,
         "aa-coding": null,
@@ -357649,12 +357649,12 @@
         "aaIndexAnswerCostUsd": 133.3064
       },
       "scores": {
-        "AA-Briefcase": 35.1,
+        "AA-Briefcase": 35.1085,
         "AutomationBench-AA": 42.0204,
         "Terminal-Bench v4.0": 1.5152,
         "GDP.pdf": 20.8,
         "AA-LCR v1.1": 77.6667,
-        "GDPval-AA v2": 43.804,
+        "GDPval-AA v2": 43.797,
         "τ³-Banking": 28.6598,
         "Terminal-Bench v2.1": 75.6554,
         "GDPval-AA": 45.768,
@@ -358428,7 +358428,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 39.7835,
+      "medianOutputSpeed": 37.2867,
       "aa": {
         "aa-intelligence": 17.3564,
         "aa-coding": null,
@@ -358988,12 +358988,12 @@
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 11.864,
+        "AA-Briefcase": 11.8675,
         "AutomationBench-AA": 2.4794,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 6.4,
         "AA-LCR v1.1": 70.0,
-        "GDPval-AA v2": 23.1345,
+        "GDPval-AA v2": 23.1825,
         "τ³-Banking": 16.0825,
         "Terminal-Bench v2.1": 38.9513,
         "GDPval-AA": 27.2095,
@@ -360743,7 +360743,7 @@
         "src": "assets/logos/nousresearch_small.jpg",
         "color": "#006fa8"
       },
-      "medianOutputSpeed": 40.6875,
+      "medianOutputSpeed": 40.0907,
       "aa": {
         "aa-intelligence": 7.495,
         "aa-coding": null,
@@ -361091,7 +361091,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 36.3333,
-        "GDPval-AA v2": 6.373,
+        "GDPval-AA v2": 6.409,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": 61.7978,
         "GDPval-AA": 14.409,
@@ -361718,7 +361718,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 99.4201,
+      "medianOutputSpeed": 83.2934,
       "aa": {
         "aa-intelligence": 35.9968,
         "aa-coding": null,
@@ -361736,12 +361736,12 @@
         "aaIndexAnswerCostUsd": 97.9321
       },
       "scores": {
-        "AA-Briefcase": 37.833,
+        "AA-Briefcase": 37.847,
         "AutomationBench-AA": 56.7117,
         "Terminal-Bench v4.0": 14.1414,
         "GDP.pdf": 11.4,
         "AA-LCR v1.1": 80.3333,
-        "GDPval-AA v2": 47.4725,
+        "GDPval-AA v2": 47.5235,
         "τ³-Banking": 39.5876,
         "Terminal-Bench v2.1": 78.6517,
         "GDPval-AA": 49.6655,
@@ -363894,7 +363894,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 150.8153,
+      "medianOutputSpeed": 138.6382,
       "aa": {
         "aa-intelligence": 16.6531,
         "aa-coding": null,
@@ -364976,7 +364976,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 132.9762,
+      "medianOutputSpeed": 126.6794,
       "aa": {
         "aa-intelligence": 18.229,
         "aa-coding": null,
@@ -364994,12 +364994,12 @@
         "aaIndexAnswerCostUsd": 276.4307
       },
       "scores": {
-        "AA-Briefcase": 10.6385,
+        "AA-Briefcase": 10.642,
         "AutomationBench-AA": 5.2086,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 6.6,
         "AA-LCR v1.1": 71.6667,
-        "GDPval-AA v2": 19.5925,
+        "GDPval-AA v2": 19.6205,
         "τ³-Banking": 9.2784,
         "Terminal-Bench v2.1": 44.9438,
         "GDPval-AA": 24.593,
@@ -366339,7 +366339,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 119.577,
+      "medianOutputSpeed": 118.9224,
       "aa": {
         "aa-intelligence": 34.5553,
         "aa-coding": null,
@@ -366357,12 +366357,12 @@
         "aaIndexAnswerCostUsd": 17.6344
       },
       "scores": {
-        "AA-Briefcase": 38.3945,
+        "AA-Briefcase": 38.3965,
         "AutomationBench-AA": 42.5978,
         "Terminal-Bench v4.0": 3.5354,
         "GDP.pdf": 23.8,
         "AA-LCR v1.1": 81.6667,
-        "GDPval-AA v2": 44.9505,
+        "GDPval-AA v2": 44.996,
         "τ³-Banking": 28.6598,
         "Terminal-Bench v2.1": 77.9026,
         "GDPval-AA": 46.4235,
@@ -367789,7 +367789,7 @@
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 6.3479,
+      "medianOutputSpeed": 4.5183,
       "aa": {
         "aa-intelligence": 7.8075,
         "aa-coding": null,
@@ -368114,7 +368114,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 172.3492,
+      "medianOutputSpeed": 162.7965,
       "aa": {
         "aa-intelligence": 20.0139,
         "aa-coding": null,
@@ -368765,7 +368765,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 39.613,
+      "medianOutputSpeed": 43.1789,
       "aa": {
         "aa-intelligence": 24.384,
         "aa-coding": null,
@@ -368783,12 +368783,12 @@
         "aaIndexAnswerCostUsd": 4.9786
       },
       "scores": {
-        "AA-Briefcase": 27.1755,
+        "AA-Briefcase": 27.182,
         "AutomationBench-AA": 28.5043,
         "Terminal-Bench v4.0": 3.0303,
         "GDP.pdf": 10.4,
         "AA-LCR v1.1": 72.0,
-        "GDPval-AA v2": 25.219,
+        "GDPval-AA v2": 25.227,
         "τ³-Banking": 26.1856,
         "Terminal-Bench v2.1": 56.9288,
         "GDPval-AA": 29.1305,
@@ -370386,7 +370386,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 145.3836,
+      "medianOutputSpeed": 140.0148,
       "aa": {
         "aa-intelligence": 40.9262,
         "aa-coding": null,
@@ -371954,7 +371954,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 86.0297,
+      "medianOutputSpeed": 81.044,
       "aa": {
         "aa-intelligence": 42.3461,
         "aa-coding": null,
@@ -371972,12 +371972,12 @@
         "aaIndexAnswerCostUsd": 259.2846
       },
       "scores": {
-        "AA-Briefcase": 43.496,
+        "AA-Briefcase": 43.518,
         "AutomationBench-AA": 55.3122,
         "Terminal-Bench v4.0": 20.7071,
         "GDP.pdf": 27.8,
         "AA-LCR v1.1": 81.6667,
-        "GDPval-AA v2": 50.196,
+        "GDPval-AA v2": 50.1995,
         "τ³-Banking": 36.701,
         "Terminal-Bench v2.1": 87.2659,
         "GDPval-AA": 51.2005,
@@ -373076,7 +373076,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 145.0269,
+      "medianOutputSpeed": 146.7132,
       "aa": {
         "aa-intelligence": 7.7397,
         "aa-coding": null,
@@ -373422,7 +373422,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 58.3489,
+      "medianOutputSpeed": 55.5811,
       "aa": {
         "aa-intelligence": 21.428,
         "aa-coding": null,
@@ -373440,12 +373440,12 @@
         "aaIndexAnswerCostUsd": 67.0437
       },
       "scores": {
-        "AA-Briefcase": 15.7875,
+        "AA-Briefcase": 15.791,
         "AutomationBench-AA": 11.0452,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 11.0,
         "AA-LCR v1.1": 77.3333,
-        "GDPval-AA v2": 24.2625,
+        "GDPval-AA v2": 24.2815,
         "τ³-Banking": 16.701,
         "Terminal-Bench v2.1": 60.6742,
         "GDPval-AA": 28.4435,
@@ -374785,7 +374785,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 236.3005,
+      "medianOutputSpeed": 236.9577,
       "aa": {
         "aa-intelligence": 10.2507,
         "aa-coding": null,
@@ -375438,7 +375438,7 @@
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 63.8659,
+      "medianOutputSpeed": 58.2433,
       "aa": {
         "aa-intelligence": 25.8121,
         "aa-coding": null,
@@ -375456,12 +375456,12 @@
         "aaIndexAnswerCostUsd": 61.1948
       },
       "scores": {
-        "AA-Briefcase": 17.934,
+        "AA-Briefcase": 17.9375,
         "AutomationBench-AA": 24.4543,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 11.2,
         "AA-LCR v1.1": 79.3333,
-        "GDPval-AA v2": 26.862,
+        "GDPval-AA v2": 26.8755,
         "τ³-Banking": 20.2062,
         "Terminal-Bench v2.1": 67.4157,
         "GDPval-AA": 30.7245,
@@ -377073,30 +377073,30 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 40.0536,
+      "medianOutputSpeed": 39.4629,
       "aa": {
-        "aa-intelligence": 39.8862,
+        "aa-intelligence": 39.9462,
         "aa-coding": null,
         "aa-agentic": 57.0984
       },
-      "aaCostUsd": 2632.8015,
+      "aaCostUsd": 2632.0464,
       "pricing": {
         "inputPerMillionTokensUsd": 2.0,
         "outputPerMillionTokensUsd": 6.0,
         "cacheHitPerMillionTokensUsd": 0.25,
-        "aaIndexCostUsd": 2632.8015,
-        "aaIndexInputCostUsd": 1599.4979,
-        "aaIndexOutputCostUsd": 1033.3035,
-        "aaIndexReasoningCostUsd": 857.0592,
-        "aaIndexAnswerCostUsd": 176.2443
+        "aaIndexCostUsd": 2632.0464,
+        "aaIndexInputCostUsd": 1599.2663,
+        "aaIndexOutputCostUsd": 1032.7801,
+        "aaIndexReasoningCostUsd": 856.5736,
+        "aaIndexAnswerCostUsd": 176.2065
       },
       "scores": {
-        "AA-Briefcase": 46.7645,
+        "AA-Briefcase": 46.7665,
         "AutomationBench-AA": 57.2474,
         "Terminal-Bench v4.0": 11.1111,
-        "GDP.pdf": 15.0,
+        "GDP.pdf": 15.6,
         "AA-LCR v1.1": 80.3333,
-        "GDPval-AA v2": 55.4815,
+        "GDPval-AA v2": 55.3985,
         "τ³-Banking": 49.0722,
         "Terminal-Bench v2.1": 82.0225,
         "GDPval-AA": 56.391,
@@ -377383,9 +377383,9 @@
         "rankingGrain": "variant_group",
         "publicationRank": 33,
         "evidenceRank": 33,
-        "displayScore": 36.9078,
-        "finalScore": 36.907789,
-        "scoreFullPrecision": "36.907789000000001",
+        "displayScore": 36.9558,
+        "finalScore": 36.955789,
+        "scoreFullPrecision": "36.955789000000003",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 weighted-additive five-board points",
         "coreComplete": true,
@@ -377493,7 +377493,7 @@
             "itemPoolSize": 6
           },
           "knowledge-science": {
-            "coreScore": 23.125,
+            "coreScore": 23.425,
             "weight": 16,
             "coreComplete": true,
             "coreItems": [
@@ -377507,14 +377507,14 @@
               {
                 "key": "GDP.pdf",
                 "observed": true,
-                "adjustedScore": 15.0,
-                "basePoints": 1.2,
+                "adjustedScore": 15.6,
+                "basePoints": 1.248,
                 "share": 0.5
               }
             ],
             "extensionBonus": 0.0,
-            "score": 23.125,
-            "points": 3.7,
+            "score": 23.425,
+            "points": 3.748,
             "coreTests": 2,
             "extensionTests": 0,
             "coreItemPoolSize": 2,
@@ -377772,9 +377772,9 @@
         "rankingGrain": "exact_config",
         "publicationRank": 67,
         "evidenceRank": 67,
-        "displayScore": 36.9078,
-        "finalScore": 36.907789,
-        "scoreFullPrecision": "36.907789000000001",
+        "displayScore": 36.9558,
+        "finalScore": 36.955789,
+        "scoreFullPrecision": "36.955789000000003",
         "rankingKey": "unrounded_final_score_desc_then_slug_model_for_exact_ties",
         "scoreScale": "0-100 weighted-additive five-board points",
         "coreComplete": true,
@@ -377882,7 +377882,7 @@
             "itemPoolSize": 6
           },
           "knowledge-science": {
-            "coreScore": 23.125,
+            "coreScore": 23.425,
             "weight": 16,
             "coreComplete": true,
             "coreItems": [
@@ -377896,14 +377896,14 @@
               {
                 "key": "GDP.pdf",
                 "observed": true,
-                "adjustedScore": 15.0,
-                "basePoints": 1.2,
+                "adjustedScore": 15.6,
+                "basePoints": 1.248,
                 "share": 0.5
               }
             ],
             "extensionBonus": 0.0,
-            "score": 23.125,
-            "points": 3.7,
+            "score": 23.425,
+            "points": 3.748,
             "coreTests": 2,
             "extensionTests": 0,
             "coreItemPoolSize": 2,
@@ -378501,7 +378501,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 181.3897,
+      "medianOutputSpeed": 154.9993,
       "aa": {
         "aa-intelligence": 12.4803,
         "aa-coding": null,
@@ -379520,7 +379520,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 71.3333,
-        "GDPval-AA v2": 31.141,
+        "GDPval-AA v2": 31.149,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": 59.5506,
         "GDPval-AA": null,
@@ -379841,12 +379841,12 @@
         "aaIndexAnswerCostUsd": 29.9104
       },
       "scores": {
-        "AA-Briefcase": 11.214,
+        "AA-Briefcase": 11.217,
         "AutomationBench-AA": 0.9305,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 2.8,
         "AA-LCR v1.1": 32.3333,
-        "GDPval-AA v2": 22.094,
+        "GDPval-AA v2": 22.1085,
         "τ³-Banking": 8.0412,
         "Terminal-Bench v2.1": 34.0824,
         "GDPval-AA": 26.54,
@@ -380538,7 +380538,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 47.9293,
+      "medianOutputSpeed": 44.0934,
       "aa": {
         "aa-intelligence": 20.6662,
         "aa-coding": null,
@@ -380556,12 +380556,12 @@
         "aaIndexAnswerCostUsd": 248.3123
       },
       "scores": {
-        "AA-Briefcase": 10.66,
+        "AA-Briefcase": 10.6635,
         "AutomationBench-AA": 14.0757,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 5.2,
         "AA-LCR v1.1": 72.3333,
-        "GDPval-AA v2": 20.4545,
+        "GDPval-AA v2": 20.5025,
         "τ³-Banking": 24.5361,
         "Terminal-Bench v2.1": 55.8052,
         "GDPval-AA": 24.463,
@@ -381662,7 +381662,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 41.985,
+      "medianOutputSpeed": 41.0133,
       "aa": {
         "aa-intelligence": 19.3437,
         "aa-coding": null,
@@ -382638,22 +382638,22 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 48.3278,
+      "medianOutputSpeed": 57.6844,
       "aa": {
-        "aa-intelligence": 9.9906,
+        "aa-intelligence": 9.299,
         "aa-coding": null,
         "aa-agentic": 1.2371
       },
-      "aaCostUsd": 45.4987,
+      "aaCostUsd": 43.7231,
       "pricing": {
         "inputPerMillionTokensUsd": 0.25,
         "outputPerMillionTokensUsd": 0.87,
         "cacheHitPerMillionTokensUsd": 0.24,
-        "aaIndexCostUsd": 45.4987,
-        "aaIndexInputCostUsd": 40.8301,
-        "aaIndexOutputCostUsd": 4.6686,
+        "aaIndexCostUsd": 43.7231,
+        "aaIndexInputCostUsd": 39.2597,
+        "aaIndexOutputCostUsd": 4.4634,
         "aaIndexReasoningCostUsd": 0.0,
-        "aaIndexAnswerCostUsd": 4.6686
+        "aaIndexAnswerCostUsd": 4.4634
       },
       "scores": {
         "AA-Briefcase": 0.0,
@@ -384067,7 +384067,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 70.3156,
+      "medianOutputSpeed": 70.1688,
       "aa": {
         "aa-intelligence": 24.2412,
         "aa-coding": null,
@@ -385443,7 +385443,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 34.3108,
+      "medianOutputSpeed": 32.352,
       "aa": {
         "aa-intelligence": 14.9293,
         "aa-coding": null,
@@ -385931,7 +385931,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 112.4993,
+      "medianOutputSpeed": 94.6066,
       "aa": {
         "aa-intelligence": 24.8801,
         "aa-coding": null,
@@ -385949,12 +385949,12 @@
         "aaIndexAnswerCostUsd": 18.5196
       },
       "scores": {
-        "AA-Briefcase": 13.0905,
+        "AA-Briefcase": 13.094,
         "AutomationBench-AA": 1.376,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 5.8,
         "AA-LCR v1.1": 73.0,
-        "GDPval-AA v2": 21.8585,
+        "GDPval-AA v2": 21.8945,
         "τ³-Banking": 12.3711,
         "Terminal-Bench v2.1": 39.7004,
         "GDPval-AA": 25.9245,
@@ -387686,7 +387686,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#f32e02"
       },
-      "medianOutputSpeed": 106.7321,
+      "medianOutputSpeed": 105.7158,
       "aa": {
         "aa-intelligence": 5.4777,
         "aa-coding": null,
@@ -388790,7 +388790,7 @@
         "src": "assets/logos/anthropic.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 105.4594,
+      "medianOutputSpeed": 98.3795,
       "aa": {
         "aa-intelligence": 51.8956,
         "aa-coding": null,
@@ -388808,12 +388808,12 @@
         "aaIndexAnswerCostUsd": 341.866
       },
       "scores": {
-        "AA-Briefcase": 62.5885,
+        "AA-Briefcase": 62.548,
         "AutomationBench-AA": 65.5203,
         "Terminal-Bench v4.0": 57.0707,
         "GDP.pdf": 24.6,
         "AA-LCR v1.1": 79.6667,
-        "GDPval-AA v2": 61.477,
+        "GDPval-AA v2": 61.422,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -389386,7 +389386,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 92.554,
+      "medianOutputSpeed": 92.6613,
       "aa": {
         "aa-intelligence": 7.6638,
         "aa-coding": null,
@@ -390361,7 +390361,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 62.0221,
+      "medianOutputSpeed": 58.2721,
       "aa": {
         "aa-intelligence": 41.7899,
         "aa-coding": null,
@@ -390379,12 +390379,12 @@
         "aaIndexAnswerCostUsd": 729.0982
       },
       "scores": {
-        "AA-Briefcase": 41.0785,
+        "AA-Briefcase": 41.0715,
         "AutomationBench-AA": 45.5934,
         "Terminal-Bench v4.0": 21.7172,
         "GDP.pdf": 22.8,
         "AA-LCR v1.1": 77.6667,
-        "GDPval-AA v2": 47.6615,
+        "GDPval-AA v2": 47.6735,
         "τ³-Banking": 34.2268,
         "Terminal-Bench v2.1": 84.6442,
         "GDPval-AA": 49.452,
@@ -392001,7 +392001,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 128.1462,
+      "medianOutputSpeed": 128.5729,
       "aa": {
         "aa-intelligence": 48.0923,
         "aa-coding": null,
@@ -393141,7 +393141,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 72.8255,
+      "medianOutputSpeed": 61.8925,
       "aa": {
         "aa-intelligence": 34.3842,
         "aa-coding": null,
@@ -393159,12 +393159,12 @@
         "aaIndexAnswerCostUsd": 301.6364
       },
       "scores": {
-        "AA-Briefcase": 38.65,
+        "AA-Briefcase": 38.655,
         "AutomationBench-AA": 34.4763,
         "Terminal-Bench v4.0": 7.0707,
         "GDP.pdf": 12.6,
         "AA-LCR v1.1": 76.6667,
-        "GDPval-AA v2": 42.9035,
+        "GDPval-AA v2": 42.8955,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": 45.5245,
@@ -393928,7 +393928,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 51.2441,
+      "medianOutputSpeed": 51.826,
       "aa": {
         "aa-intelligence": 39.8223,
         "aa-coding": null,
@@ -393946,12 +393946,12 @@
         "aaIndexAnswerCostUsd": 20.3476
       },
       "scores": {
-        "AA-Briefcase": 54.0585,
+        "AA-Briefcase": 53.9965,
         "AutomationBench-AA": 55.9083,
         "Terminal-Bench v4.0": 25.2525,
         "GDP.pdf": 15.6,
         "AA-LCR v1.1": 79.6667,
-        "GDPval-AA v2": 56.472,
+        "GDPval-AA v2": 56.393,
         "τ³-Banking": 45.3608,
         "Terminal-Bench v2.1": 86.1423,
         "GDPval-AA": 57.401,
@@ -395498,7 +395498,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 63.0513,
+      "medianOutputSpeed": 61.1913,
       "aa": {
         "aa-intelligence": 53.2033,
         "aa-coding": null,
@@ -395516,12 +395516,12 @@
         "aaIndexAnswerCostUsd": 1783.2898
       },
       "scores": {
-        "AA-Briefcase": 57.784,
+        "AA-Briefcase": 57.7265,
         "AutomationBench-AA": 57.7724,
         "Terminal-Bench v4.0": 55.0505,
         "GDP.pdf": 26.2,
         "AA-LCR v1.1": 83.0,
-        "GDPval-AA v2": 61.6395,
+        "GDPval-AA v2": 61.607,
         "τ³-Banking": 45.7732,
         "Terminal-Bench v2.1": 91.0112,
         "GDPval-AA": 62.2645,
@@ -396277,7 +396277,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 103.9698,
+      "medianOutputSpeed": 90.0769,
       "aa": {
         "aa-intelligence": 20.7797,
         "aa-coding": null,
@@ -396295,12 +396295,12 @@
         "aaIndexAnswerCostUsd": 69.8166
       },
       "scores": {
-        "AA-Briefcase": 22.3725,
+        "AA-Briefcase": 22.3765,
         "AutomationBench-AA": 12.5408,
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 11.2,
         "AA-LCR v1.1": 58.6667,
-        "GDPval-AA v2": 29.8655,
+        "GDPval-AA v2": 29.9005,
         "τ³-Banking": 15.6701,
         "Terminal-Bench v2.1": 56.1798,
         "GDPval-AA": 33.4315,
@@ -397031,7 +397031,7 @@
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 68.7868,
+      "medianOutputSpeed": 65.5392,
       "aa": {
         "aa-intelligence": 11.7253,
         "aa-coding": null,
@@ -398178,7 +398178,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 58.4184,
+      "medianOutputSpeed": 50.8628,
       "aa": {
         "aa-intelligence": 51.1516,
         "aa-coding": null,
@@ -398196,12 +398196,12 @@
         "aaIndexAnswerCostUsd": 1369.5346
       },
       "scores": {
-        "AA-Briefcase": 54.04,
+        "AA-Briefcase": 54.0165,
         "AutomationBench-AA": 55.3231,
         "Terminal-Bench v4.0": 52.0202,
         "GDP.pdf": 26.8,
         "AA-LCR v1.1": 83.6667,
-        "GDPval-AA v2": 56.679,
+        "GDPval-AA v2": 56.7335,
         "τ³-Banking": 43.0928,
         "Terminal-Bench v2.1": 89.8876,
         "GDPval-AA": 57.4885,
@@ -398940,7 +398940,7 @@
       },
       "medianOutputSpeed": 42.3732,
       "aa": {
-        "aa-intelligence": 7.2763,
+        "aa-intelligence": 5.1615,
         "aa-coding": null,
         "aa-agentic": 1.5808
       },
@@ -400386,7 +400386,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 108.9976,
+      "medianOutputSpeed": 98.3534,
       "aa": {
         "aa-intelligence": 37.9513,
         "aa-coding": null,
@@ -400404,12 +400404,12 @@
         "aaIndexAnswerCostUsd": 168.752
       },
       "scores": {
-        "AA-Briefcase": 41.657,
+        "AA-Briefcase": 41.638,
         "AutomationBench-AA": 47.1363,
         "Terminal-Bench v4.0": 10.101,
         "GDP.pdf": 24.6,
         "AA-LCR v1.1": 79.0,
-        "GDPval-AA v2": 47.348,
+        "GDPval-AA v2": 47.349,
         "τ³-Banking": 29.6907,
         "Terminal-Bench v2.1": 80.1498,
         "GDPval-AA": 48.93,
@@ -403870,7 +403870,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 154.1026,
+      "medianOutputSpeed": 147.247,
       "aa": {
         "aa-intelligence": 10.1589,
         "aa-coding": null,
@@ -405210,7 +405210,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 111.4033,
+      "medianOutputSpeed": 106.1906,
       "aa": {
         "aa-intelligence": 9.959,
         "aa-coding": null,
@@ -406206,7 +406206,7 @@
         "src": "assets/logos/openai.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 55.2213,
+      "medianOutputSpeed": 45.5079,
       "aa": {
         "aa-intelligence": 47.7833,
         "aa-coding": null,
@@ -406224,12 +406224,12 @@
         "aaIndexAnswerCostUsd": 97.3161
       },
       "scores": {
-        "AA-Briefcase": 43.026,
+        "AA-Briefcase": 43.058,
         "AutomationBench-AA": 62.5735,
         "Terminal-Bench v4.0": 47.9798,
         "GDP.pdf": 30.0,
         "AA-LCR v1.1": 83.3333,
-        "GDPval-AA v2": 47.4395,
+        "GDPval-AA v2": 47.505,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -406825,7 +406825,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 74.6667,
-        "GDPval-AA v2": 30.158,
+        "GDPval-AA v2": 30.1505,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": 70.7865,
         "GDPval-AA": 34.131,
@@ -407452,7 +407452,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 52.3176,
+      "medianOutputSpeed": 42.2711,
       "aa": {
         "aa-intelligence": 45.7819,
         "aa-coding": null,
@@ -407470,12 +407470,12 @@
         "aaIndexAnswerCostUsd": 379.9832
       },
       "scores": {
-        "AA-Briefcase": 37.8525,
+        "AA-Briefcase": 37.8505,
         "AutomationBench-AA": 59.0967,
         "Terminal-Bench v4.0": 41.9192,
         "GDP.pdf": 30.4,
         "AA-LCR v1.1": 80.0,
-        "GDPval-AA v2": 44.449,
+        "GDPval-AA v2": 44.4625,
         "τ³-Banking": 31.9588,
         "Terminal-Bench v2.1": 88.015,
         "GDPval-AA": 45.9645,
@@ -408943,7 +408943,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 78.0,
-        "GDPval-AA v2": 16.956,
+        "GDPval-AA v2": 16.9745,
         "τ³-Banking": 14.2268,
         "Terminal-Bench v2.1": 45.6929,
         "GDPval-AA": 21.816,
@@ -409412,30 +409412,30 @@
         "src": "assets/logos/inclusionai.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 209.2536,
+      "medianOutputSpeed": 210.6419,
       "aa": {
         "aa-intelligence": 41.0906,
         "aa-coding": null,
         "aa-agentic": null
       },
-      "aaCostUsd": 994.7539,
+      "aaCostUsd": 990.4442,
       "pricing": {
         "inputPerMillionTokensUsd": 0.3,
         "outputPerMillionTokensUsd": 0.9,
         "cacheHitPerMillionTokensUsd": 0.06,
-        "aaIndexCostUsd": 994.7539,
-        "aaIndexInputCostUsd": 795.9925,
-        "aaIndexOutputCostUsd": 198.7614,
-        "aaIndexReasoningCostUsd": 152.8218,
-        "aaIndexAnswerCostUsd": 45.9396
+        "aaIndexCostUsd": 990.4442,
+        "aaIndexInputCostUsd": 791.9858,
+        "aaIndexOutputCostUsd": 198.4584,
+        "aaIndexReasoningCostUsd": 152.6993,
+        "aaIndexAnswerCostUsd": 45.7592
       },
       "scores": {
-        "AA-Briefcase": 45.015,
+        "AA-Briefcase": 45.002,
         "AutomationBench-AA": 61.7437,
         "Terminal-Bench v4.0": 33.3333,
         "GDP.pdf": 10.0,
         "AA-LCR v1.1": 83.0,
-        "GDPval-AA v2": 55.895,
+        "GDPval-AA v2": 55.8955,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -410277,7 +410277,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 94.5685,
+      "medianOutputSpeed": 89.7384,
       "aa": {
         "aa-intelligence": 16.8822,
         "aa-coding": null,
@@ -410295,12 +410295,12 @@
         "aaIndexAnswerCostUsd": 70.5161
       },
       "scores": {
-        "AA-Briefcase": 5.814,
+        "AA-Briefcase": 5.8175,
         "AutomationBench-AA": 3.2486,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 3.8,
         "AA-LCR v1.1": 74.3333,
-        "GDPval-AA v2": 11.593,
+        "GDPval-AA v2": 11.617,
         "τ³-Banking": 9.2784,
         "Terminal-Bench v2.1": 44.1948,
         "GDPval-AA": 17.7225,
@@ -412759,7 +412759,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 70.3333,
-        "GDPval-AA v2": 9.539,
+        "GDPval-AA v2": 9.5635,
         "τ³-Banking": 16.701,
         "Terminal-Bench v2.1": 36.3296,
         "GDPval-AA": 15.9465,
@@ -413714,7 +413714,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 27.47,
+      "medianOutputSpeed": 33.9445,
       "aa": {
         "aa-intelligence": 13.1221,
         "aa-coding": null,
@@ -414043,7 +414043,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 54.8659,
+      "medianOutputSpeed": 55.8959,
       "aa": {
         "aa-intelligence": 25.1622,
         "aa-coding": null,
@@ -414061,12 +414061,12 @@
         "aaIndexAnswerCostUsd": 27.4785
       },
       "scores": {
-        "AA-Briefcase": 20.761,
+        "AA-Briefcase": 20.7635,
         "AutomationBench-AA": 17.3912,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 12.2,
         "AA-LCR v1.1": 73.0,
-        "GDPval-AA v2": 13.3485,
+        "GDPval-AA v2": 13.3815,
         "τ³-Banking": 17.5258,
         "Terminal-Bench v2.1": 61.0487,
         "GDPval-AA": 19.2915,
@@ -415742,7 +415742,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 91.5732,
+      "medianOutputSpeed": 85.4748,
       "aa": {
         "aa-intelligence": 38.9756,
         "aa-coding": null,
@@ -415765,7 +415765,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 82.0,
-        "GDPval-AA v2": 37.303,
+        "GDPval-AA v2": 37.3115,
         "τ³-Banking": 39.5876,
         "Terminal-Bench v2.1": 78.2772,
         "GDPval-AA": 40.3355,
@@ -417276,7 +417276,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 115.0762,
+      "medianOutputSpeed": 115.1211,
       "aa": {
         "aa-intelligence": 32.1196,
         "aa-coding": null,
@@ -417294,12 +417294,12 @@
         "aaIndexAnswerCostUsd": 14.672
       },
       "scores": {
-        "AA-Briefcase": 33.4825,
+        "AA-Briefcase": 33.504,
         "AutomationBench-AA": 35.5879,
         "Terminal-Bench v4.0": 2.5253,
         "GDP.pdf": 22.2,
         "AA-LCR v1.1": 80.3333,
-        "GDPval-AA v2": 41.477,
+        "GDPval-AA v2": 41.505,
         "τ³-Banking": 25.1546,
         "Terminal-Bench v2.1": 69.6629,
         "GDPval-AA": 43.814,
@@ -418398,7 +418398,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 205.9869,
+      "medianOutputSpeed": 205.8099,
       "aa": {
         "aa-intelligence": 5.8205,
         "aa-coding": null,
@@ -421306,20 +421306,20 @@
       },
       "medianOutputSpeed": 67.5457,
       "aa": {
-        "aa-intelligence": 8.075,
+        "aa-intelligence": 6.4513,
         "aa-coding": null,
         "aa-agentic": 1.0997
       },
-      "aaCostUsd": 77.5822,
+      "aaCostUsd": 73.5605,
       "pricing": {
         "inputPerMillionTokensUsd": 0.18,
         "outputPerMillionTokensUsd": 0.66,
         "cacheHitPerMillionTokensUsd": null,
-        "aaIndexCostUsd": 77.5822,
-        "aaIndexInputCostUsd": 74.9295,
-        "aaIndexOutputCostUsd": 2.6528,
+        "aaIndexCostUsd": 73.5605,
+        "aaIndexInputCostUsd": 70.9858,
+        "aaIndexOutputCostUsd": 2.5747,
         "aaIndexReasoningCostUsd": 0.0,
-        "aaIndexAnswerCostUsd": 2.6528
+        "aaIndexAnswerCostUsd": 2.5747
       },
       "scores": {
         "AA-Briefcase": 0.0,
@@ -422408,7 +422408,7 @@
         "src": "assets/logos/ibm_small.svg",
         "color": "#0f62fe"
       },
-      "medianOutputSpeed": 60.6563,
+      "medianOutputSpeed": 114.0382,
       "aa": {
         "aa-intelligence": 11.0813,
         "aa-coding": null,
@@ -423511,7 +423511,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 182.5765,
+      "medianOutputSpeed": 169.156,
       "aa": {
         "aa-intelligence": 11.1447,
         "aa-coding": null,
@@ -423534,7 +423534,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 37.0,
-        "GDPval-AA v2": 4.465,
+        "GDPval-AA v2": 4.49,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": 11.7135,
@@ -424530,7 +424530,7 @@
         "src": "assets/logos/anthropic.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 167.9562,
+      "medianOutputSpeed": 144.245,
       "aa": {
         "aa-intelligence": 34.4647,
         "aa-coding": null,
@@ -424548,12 +424548,12 @@
         "aaIndexAnswerCostUsd": 9.5048
       },
       "scores": {
-        "AA-Briefcase": 43.5775,
+        "AA-Briefcase": 43.577,
         "AutomationBench-AA": 28.5896,
         "Terminal-Bench v4.0": 15.1515,
         "GDP.pdf": 15.2,
         "AA-LCR v1.1": 77.3333,
-        "GDPval-AA v2": 38.717,
+        "GDPval-AA v2": 38.725,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -425452,9 +425452,9 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 26.4412,
+      "medianOutputSpeed": 27.1965,
       "aa": {
-        "aa-intelligence": 8.5869,
+        "aa-intelligence": 7.2152,
         "aa-coding": null,
         "aa-agentic": 1.7869
       },
@@ -426660,7 +426660,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 44.9546,
+      "medianOutputSpeed": 41.2326,
       "aa": {
         "aa-intelligence": 33.6763,
         "aa-coding": null,
@@ -428378,12 +428378,12 @@
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 24.591,
+        "AA-Briefcase": 24.6005,
         "AutomationBench-AA": null,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": 5.2,
         "AA-LCR v1.1": 76.0,
-        "GDPval-AA v2": 30.9025,
+        "GDPval-AA v2": 30.8535,
         "τ³-Banking": 35.2577,
         "Terminal-Bench v2.1": 74.9064,
         "GDPval-AA": 34.9415,
@@ -430246,7 +430246,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 42.3422,
+      "medianOutputSpeed": 41.9857,
       "aa": {
         "aa-intelligence": 45.4152,
         "aa-coding": null,
@@ -431408,7 +431408,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 93.4578,
+      "medianOutputSpeed": 82.6929,
       "aa": {
         "aa-intelligence": 36.9794,
         "aa-coding": null,
@@ -431426,12 +431426,12 @@
         "aaIndexAnswerCostUsd": 340.4789
       },
       "scores": {
-        "AA-Briefcase": 29.4345,
+        "AA-Briefcase": 29.4365,
         "AutomationBench-AA": 44.3462,
         "Terminal-Bench v4.0": 9.0909,
         "GDP.pdf": 22.6,
         "AA-LCR v1.1": 84.3333,
-        "GDPval-AA v2": 41.325,
+        "GDPval-AA v2": 41.3115,
         "τ³-Banking": 36.701,
         "Terminal-Bench v2.1": 79.4007,
         "GDPval-AA": 43.5755,
@@ -432725,7 +432725,7 @@
         "src": "assets/logos/anthropic.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 136.6672,
+      "medianOutputSpeed": 128.8285,
       "aa": {
         "aa-intelligence": 56.0001,
         "aa-coding": null,
@@ -432743,7 +432743,7 @@
         "aaIndexAnswerCostUsd": 578.2409
       },
       "scores": {
-        "AA-Briefcase": 66.0205,
+        "AA-Briefcase": 65.9715,
         "AutomationBench-AA": 71.7688,
         "Terminal-Bench v4.0": 63.6364,
         "GDP.pdf": 25.8,
@@ -433916,7 +433916,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 317.8878,
+      "medianOutputSpeed": 298.5475,
       "aa": {
         "aa-intelligence": 39.0595,
         "aa-coding": null,
@@ -433934,12 +433934,12 @@
         "aaIndexAnswerCostUsd": 165.9167
       },
       "scores": {
-        "AA-Briefcase": 30.6815,
+        "AA-Briefcase": 30.6765,
         "AutomationBench-AA": 62.0275,
         "Terminal-Bench v4.0": 13.6364,
         "GDP.pdf": 23.6,
         "AA-LCR v1.1": 81.6667,
-        "GDPval-AA v2": 44.615,
+        "GDPval-AA v2": 44.5995,
         "τ³-Banking": 32.7835,
         "Terminal-Bench v2.1": 85.7678,
         "GDPval-AA": 46.657,
@@ -435139,7 +435139,7 @@
         "src": "assets/logos/tencent_small.svg",
         "color": "#5CB9FF"
       },
-      "medianOutputSpeed": 85.736,
+      "medianOutputSpeed": 84.0218,
       "aa": {
         "aa-intelligence": 25.2973,
         "aa-coding": null,
@@ -435157,12 +435157,12 @@
         "aaIndexAnswerCostUsd": 8.569
       },
       "scores": {
-        "AA-Briefcase": 22.331,
+        "AA-Briefcase": 22.333,
         "AutomationBench-AA": 18.4091,
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 11.2,
         "AA-LCR v1.1": 79.0,
-        "GDPval-AA v2": 28.3485,
+        "GDPval-AA v2": 28.3295,
         "τ³-Banking": 22.8866,
         "Terminal-Bench v2.1": 64.4195,
         "GDPval-AA": 31.798,
@@ -436481,7 +436481,7 @@
         "src": "assets/logos/openai.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 59.0034,
+      "medianOutputSpeed": 47.9202,
       "aa": {
         "aa-intelligence": 51.8333,
         "aa-coding": null,
@@ -436499,12 +436499,12 @@
         "aaIndexAnswerCostUsd": 173.6066
       },
       "scores": {
-        "AA-Briefcase": 53.0505,
+        "AA-Briefcase": 52.9195,
         "AutomationBench-AA": 64.8684,
         "Terminal-Bench v4.0": 56.0606,
         "GDP.pdf": 31.0,
         "AA-LCR v1.1": 83.0,
-        "GDPval-AA v2": 54.581,
+        "GDPval-AA v2": 54.6925,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -440364,7 +440364,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 31.2213,
+      "medianOutputSpeed": 30.8919,
       "aa": {
         "aa-intelligence": 7.7349,
         "aa-coding": null,
@@ -441391,7 +441391,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 120.0287,
+      "medianOutputSpeed": 112.9413,
       "aa": {
         "aa-intelligence": 6.6643,
         "aa-coding": null,
@@ -441756,7 +441756,7 @@
         "src": "assets/logos/arcee_small.svg",
         "color": "#008c8d"
       },
-      "medianOutputSpeed": 351.5718,
+      "medianOutputSpeed": 346.0446,
       "aa": {
         "aa-intelligence": 10.8242,
         "aa-coding": null,
@@ -443184,7 +443184,7 @@
         "src": "assets/logos/upstage_small.svg",
         "color": "#7c59f5"
       },
-      "medianOutputSpeed": 152.2406,
+      "medianOutputSpeed": 158.9273,
       "aa": {
         "aa-intelligence": 7.8155,
         "aa-coding": null,
@@ -444287,7 +444287,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 56.474,
+      "medianOutputSpeed": 54.6781,
       "aa": {
         "aa-intelligence": 50.7771,
         "aa-coding": null,
@@ -444305,12 +444305,12 @@
         "aaIndexAnswerCostUsd": 991.3089
       },
       "scores": {
-        "AA-Briefcase": 58.007,
+        "AA-Briefcase": 57.974,
         "AutomationBench-AA": 56.5736,
         "Terminal-Bench v4.0": 48.9899,
         "GDP.pdf": 21.6,
         "AA-LCR v1.1": 79.3333,
-        "GDPval-AA v2": 61.095,
+        "GDPval-AA v2": 61.0575,
         "τ³-Banking": 42.0619,
         "Terminal-Bench v2.1": 89.1386,
         "GDPval-AA": 61.7545,
@@ -445769,7 +445769,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 101.8318,
+      "medianOutputSpeed": 101.909,
       "aa": {
         "aa-intelligence": 7.7608,
         "aa-coding": null,
@@ -446474,7 +446474,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 68.6623,
+      "medianOutputSpeed": 59.0273,
       "aa": {
         "aa-intelligence": 31.6623,
         "aa-coding": null,
@@ -446492,12 +446492,12 @@
         "aaIndexAnswerCostUsd": 242.0601
       },
       "scores": {
-        "AA-Briefcase": 33.814,
+        "AA-Briefcase": 33.8265,
         "AutomationBench-AA": 32.0966,
         "Terminal-Bench v4.0": 5.0505,
         "GDP.pdf": 9.4,
         "AA-LCR v1.1": 76.6667,
-        "GDPval-AA v2": 37.6905,
+        "GDPval-AA v2": 37.724,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": 40.784,
@@ -447242,7 +447242,7 @@
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 59.7206,
+      "medianOutputSpeed": 57.4094,
       "aa": {
         "aa-intelligence": 19.4343,
         "aa-coding": null,
@@ -447743,7 +447743,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 232.6282,
+      "medianOutputSpeed": 233.1403,
       "aa": {
         "aa-intelligence": 24.0682,
         "aa-coding": null,
@@ -447761,12 +447761,12 @@
         "aaIndexAnswerCostUsd": 52.0634
       },
       "scores": {
-        "AA-Briefcase": 10.964,
+        "AA-Briefcase": 10.968,
         "AutomationBench-AA": 26.2049,
         "Terminal-Bench v4.0": 2.0202,
         "GDP.pdf": 13.4,
         "AA-LCR v1.1": 77.0,
-        "GDPval-AA v2": 25.576,
+        "GDPval-AA v2": 25.5985,
         "τ³-Banking": 25.567,
         "Terminal-Bench v2.1": 59.176,
         "GDPval-AA": 29.727,
@@ -448906,7 +448906,7 @@
         "src": "assets/logos/ifm_small.svg",
         "color": "#1521a9"
       },
-      "medianOutputSpeed": 117.3659,
+      "medianOutputSpeed": 474.187,
       "aa": {
         "aa-intelligence": 30.5015,
         "aa-coding": null,
@@ -448924,12 +448924,12 @@
         "aaIndexAnswerCostUsd": 0.0
       },
       "scores": {
-        "AA-Briefcase": 39.7925,
+        "AA-Briefcase": 39.7885,
         "AutomationBench-AA": 37.208,
         "Terminal-Bench v4.0": 1.5152,
         "GDP.pdf": 7.4,
         "AA-LCR v1.1": 80.0,
-        "GDPval-AA v2": 43.0605,
+        "GDPval-AA v2": 43.0265,
         "τ³-Banking": 34.2268,
         "Terminal-Bench v2.1": 71.9101,
         "GDPval-AA": 45.5,
@@ -450029,7 +450029,7 @@
         "src": "assets/logos/anthropic.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 102.5933,
+      "medianOutputSpeed": 92.4055,
       "aa": {
         "aa-intelligence": 35.8682,
         "aa-coding": null,
@@ -450047,12 +450047,12 @@
         "aaIndexAnswerCostUsd": 180.7516
       },
       "scores": {
-        "AA-Briefcase": 38.57,
+        "AA-Briefcase": 38.5765,
         "AutomationBench-AA": 49.4209,
         "Terminal-Bench v4.0": 20.7071,
         "GDP.pdf": 16.0,
         "AA-LCR v1.1": 76.0,
-        "GDPval-AA v2": 33.7545,
+        "GDPval-AA v2": 33.767,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -450625,7 +450625,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 140.1811,
+      "medianOutputSpeed": 130.9589,
       "aa": {
         "aa-intelligence": 29.7186,
         "aa-coding": null,
@@ -450648,7 +450648,7 @@
         "Terminal-Bench v4.0": 4.0404,
         "GDP.pdf": 17.8,
         "AA-LCR v1.1": 82.0,
-        "GDPval-AA v2": 14.5665,
+        "GDPval-AA v2": 14.59,
         "τ³-Banking": 21.4433,
         "Terminal-Bench v2.1": 73.7828,
         "GDPval-AA": 20.197,
@@ -452768,7 +452768,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 152.7614,
+      "medianOutputSpeed": 144.3209,
       "aa": {
         "aa-intelligence": 9.9062,
         "aa-coding": null,
@@ -453799,7 +453799,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 132.1266,
+      "medianOutputSpeed": 107.1714,
       "aa": {
         "aa-intelligence": 42.0829,
         "aa-coding": null,
@@ -453817,12 +453817,12 @@
         "aaIndexAnswerCostUsd": 210.8034
       },
       "scores": {
-        "AA-Briefcase": 41.7015,
+        "AA-Briefcase": 41.711,
         "AutomationBench-AA": 59.65,
         "Terminal-Bench v4.0": 35.3535,
         "GDP.pdf": 24.0,
         "AA-LCR v1.1": 83.0,
-        "GDPval-AA v2": 47.5595,
+        "GDPval-AA v2": 47.579,
         "τ³-Banking": 40.2062,
         "Terminal-Bench v2.1": 88.015,
         "GDPval-AA": 48.848,
@@ -456039,7 +456039,7 @@
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 159.9729,
+      "medianOutputSpeed": 158.9384,
       "aa": {
         "aa-intelligence": 22.02,
         "aa-coding": null,
@@ -457048,7 +457048,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 100.3029,
+      "medianOutputSpeed": 83.4284,
       "aa": {
         "aa-intelligence": 30.4497,
         "aa-coding": null,
@@ -458601,7 +458601,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 73.817,
+      "medianOutputSpeed": 52.387,
       "aa": {
         "aa-intelligence": 7.3443,
         "aa-coding": null,
@@ -459036,7 +459036,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 123.3382,
+      "medianOutputSpeed": 119.3518,
       "aa": {
         "aa-intelligence": 21.5262,
         "aa-coding": null,
@@ -459054,12 +459054,12 @@
         "aaIndexAnswerCostUsd": 1.8955
       },
       "scores": {
-        "AA-Briefcase": 12.0635,
+        "AA-Briefcase": 12.067,
         "AutomationBench-AA": 12.0492,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 9.0,
         "AA-LCR v1.1": 74.0,
-        "GDPval-AA v2": 26.6375,
+        "GDPval-AA v2": 26.656,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -459779,7 +459779,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 56.9657,
+      "medianOutputSpeed": 50.5628,
       "aa": {
         "aa-intelligence": 35.1247,
         "aa-coding": null,
@@ -459797,12 +459797,12 @@
         "aaIndexAnswerCostUsd": 69.5736
       },
       "scores": {
-        "AA-Briefcase": 39.399,
+        "AA-Briefcase": 39.3805,
         "AutomationBench-AA": 53.4454,
         "Terminal-Bench v4.0": 3.0303,
         "GDP.pdf": 15.8,
         "AA-LCR v1.1": 80.6667,
-        "GDPval-AA v2": 45.4405,
+        "GDPval-AA v2": 45.51,
         "τ³-Banking": 38.1443,
         "Terminal-Bench v2.1": 75.2809,
         "GDPval-AA": 48.065,
@@ -460535,7 +460535,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 149.5189,
+      "medianOutputSpeed": 152.1518,
       "aa": {
         "aa-intelligence": 8.4416,
         "aa-coding": null,
@@ -460907,7 +460907,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 65.3333,
-        "GDPval-AA v2": 30.2345,
+        "GDPval-AA v2": 30.1995,
         "τ³-Banking": 22.0619,
         "Terminal-Bench v2.1": 32.5843,
         "GDPval-AA": 34.443,
@@ -461995,7 +461995,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 167.2665,
+      "medianOutputSpeed": 163.0612,
       "aa": {
         "aa-intelligence": 11.6892,
         "aa-coding": null,
@@ -462360,7 +462360,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 88.0621,
+      "medianOutputSpeed": 87.3385,
       "aa": {
         "aa-intelligence": 15.4109,
         "aa-coding": null,
@@ -462686,7 +462686,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 155.2995,
+      "medianOutputSpeed": 137.6457,
       "aa": {
         "aa-intelligence": 20.5992,
         "aa-coding": null,
@@ -463032,7 +463032,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 84.6425,
+      "medianOutputSpeed": 75.888,
       "aa": {
         "aa-intelligence": 11.4482,
         "aa-coding": null,
@@ -463724,7 +463724,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 158.262,
+      "medianOutputSpeed": 150.8891,
       "aa": {
         "aa-intelligence": 26.0135,
         "aa-coding": null,
@@ -463742,12 +463742,12 @@
         "aaIndexAnswerCostUsd": 237.8036
       },
       "scores": {
-        "AA-Briefcase": 29.3075,
+        "AA-Briefcase": 29.3185,
         "AutomationBench-AA": 36.4366,
         "Terminal-Bench v4.0": 12.6263,
         "GDP.pdf": 20.2,
         "AA-LCR v1.1": 70.0,
-        "GDPval-AA v2": 0.425,
+        "GDPval-AA v2": 0.45,
         "τ³-Banking": 11.7526,
         "Terminal-Bench v2.1": 34.8315,
         "GDPval-AA": 8.0915,
@@ -465478,7 +465478,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 122.6781,
+      "medianOutputSpeed": 94.1285,
       "aa": {
         "aa-intelligence": 47.6305,
         "aa-coding": null,
@@ -465496,12 +465496,12 @@
         "aaIndexAnswerCostUsd": 141.8389
       },
       "scores": {
-        "AA-Briefcase": 48.9775,
+        "AA-Briefcase": 49.046,
         "AutomationBench-AA": 61.6337,
         "Terminal-Bench v4.0": 43.9394,
         "GDP.pdf": 25.2,
         "AA-LCR v1.1": 83.6667,
-        "GDPval-AA v2": 50.378,
+        "GDPval-AA v2": 50.4115,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -466894,7 +466894,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 100.4732,
+      "medianOutputSpeed": 100.8917,
       "aa": {
         "aa-intelligence": 25.655,
         "aa-coding": null,
@@ -468198,7 +468198,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 85.4485,
+      "medianOutputSpeed": 82.6622,
       "aa": {
         "aa-intelligence": 30.7095,
         "aa-coding": null,
@@ -468221,7 +468221,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 81.0,
-        "GDPval-AA v2": 27.221,
+        "GDPval-AA v2": 27.2285,
         "τ³-Banking": 24.9485,
         "Terminal-Bench v2.1": 65.5431,
         "GDPval-AA": 30.6355,
@@ -469146,7 +469146,7 @@
         "src": "assets/logos/stepfun_small.svg",
         "color": "#00F5E7"
       },
-      "medianOutputSpeed": 150.9238,
+      "medianOutputSpeed": 138.4938,
       "aa": {
         "aa-intelligence": 16.6169,
         "aa-coding": null,
@@ -469471,7 +469471,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 119.8567,
+      "medianOutputSpeed": 117.7293,
       "aa": {
         "aa-intelligence": 10.5557,
         "aa-coding": null,
@@ -470141,7 +470141,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 157.3646,
+      "medianOutputSpeed": 163.422,
       "aa": {
         "aa-intelligence": 11.1974,
         "aa-coding": null,
@@ -470466,7 +470466,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 56.4588,
+      "medianOutputSpeed": 49.9466,
       "aa": {
         "aa-intelligence": 44.3113,
         "aa-coding": null,
@@ -470484,12 +470484,12 @@
         "aaIndexAnswerCostUsd": 129.4828
       },
       "scores": {
-        "AA-Briefcase": 51.7335,
+        "AA-Briefcase": 51.7125,
         "AutomationBench-AA": 66.6785,
         "Terminal-Bench v4.0": 21.2121,
         "GDP.pdf": 17.0,
         "AA-LCR v1.1": 80.3333,
-        "GDPval-AA v2": 55.927,
+        "GDPval-AA v2": 55.9055,
         "τ³-Banking": 50.7216,
         "Terminal-Bench v2.1": 88.3895,
         "GDPval-AA": 57.148,
@@ -471317,7 +471317,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 242.7401,
+      "medianOutputSpeed": 239.0364,
       "aa": {
         "aa-intelligence": 10.2106,
         "aa-coding": null,
@@ -472618,7 +472618,7 @@
         "src": "assets/logos/zai.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 74.1693,
+      "medianOutputSpeed": 70.1932,
       "aa": {
         "aa-intelligence": 34.299,
         "aa-coding": null,
@@ -472636,12 +472636,12 @@
         "aaIndexAnswerCostUsd": 58.5901
       },
       "scores": {
-        "AA-Briefcase": 34.357,
+        "AA-Briefcase": 34.3415,
         "AutomationBench-AA": 51.9791,
         "Terminal-Bench v4.0": 34.8485,
         "GDP.pdf": 8.8,
         "AA-LCR v1.1": 72.6667,
-        "GDPval-AA v2": 41.1085,
+        "GDPval-AA v2": 41.1225,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -473538,7 +473538,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 103.3136,
+      "medianOutputSpeed": 93.1647,
       "aa": {
         "aa-intelligence": 27.4962,
         "aa-coding": null,
@@ -473556,12 +473556,12 @@
         "aaIndexAnswerCostUsd": 76.8286
       },
       "scores": {
-        "AA-Briefcase": 25.706,
+        "AA-Briefcase": 25.7075,
         "AutomationBench-AA": 29.1064,
         "Terminal-Bench v4.0": 1.5152,
         "GDP.pdf": 17.6,
         "AA-LCR v1.1": 71.3333,
-        "GDPval-AA v2": 30.3955,
+        "GDPval-AA v2": 30.4375,
         "τ³-Banking": 18.7629,
         "Terminal-Bench v2.1": 62.5468,
         "GDPval-AA": 33.961,
@@ -474719,7 +474719,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 35.4589,
+      "medianOutputSpeed": 35.497,
       "aa": {
         "aa-intelligence": 14.669,
         "aa-coding": null,
@@ -474742,7 +474742,7 @@
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 6.0,
         "AA-LCR v1.1": 69.6667,
-        "GDPval-AA v2": 5.9645,
+        "GDPval-AA v2": 5.9895,
         "τ³-Banking": 14.8454,
         "Terminal-Bench v2.1": 43.4457,
         "GDPval-AA": 12.7725,
@@ -475944,7 +475944,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 66.1457,
+      "medianOutputSpeed": 63.8328,
       "aa": {
         "aa-intelligence": 49.6258,
         "aa-coding": null,
@@ -475962,12 +475962,12 @@
         "aaIndexAnswerCostUsd": 1447.0308
       },
       "scores": {
-        "AA-Briefcase": 51.982,
+        "AA-Briefcase": 51.9625,
         "AutomationBench-AA": 54.0713,
         "Terminal-Bench v4.0": 42.4242,
         "GDP.pdf": 24.0,
         "AA-LCR v1.1": 82.3333,
-        "GDPval-AA v2": 55.4755,
+        "GDPval-AA v2": 55.4915,
         "τ³-Banking": 38.1443,
         "Terminal-Bench v2.1": 84.6442,
         "GDPval-AA": 56.573,
@@ -477414,7 +477414,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 61.8743,
+      "medianOutputSpeed": 61.0885,
       "aa": {
         "aa-intelligence": 44.7774,
         "aa-coding": null,
@@ -479281,7 +479281,7 @@
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 1.0,
         "AA-LCR v1.1": 28.0,
-        "GDPval-AA v2": 1.3975,
+        "GDPval-AA v2": 1.423,
         "τ³-Banking": 10.7216,
         "Terminal-Bench v2.1": 29.588,
         "GDPval-AA": 8.994,
@@ -481358,7 +481358,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 44.6004,
+      "medianOutputSpeed": 47.6793,
       "aa": {
         "aa-intelligence": 13.9199,
         "aa-coding": null,
@@ -481381,7 +481381,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 46.6667,
-        "GDPval-AA v2": 2.3465,
+        "GDPval-AA v2": 2.372,
         "τ³-Banking": 8.866,
         "Terminal-Bench v2.1": 29.2135,
         "GDPval-AA": 9.573,
@@ -483175,7 +483175,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 87.5339,
+      "medianOutputSpeed": 88.8728,
       "aa": {
         "aa-intelligence": 11.2162,
         "aa-coding": null,
@@ -485018,7 +485018,7 @@
         "src": "assets/logos/nousresearch_small.jpg",
         "color": "#006fa8"
       },
-      "medianOutputSpeed": 38.2842,
+      "medianOutputSpeed": 38.0919,
       "aa": {
         "aa-intelligence": 7.4122,
         "aa-coding": null,
@@ -485343,7 +485343,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 106.5566,
+      "medianOutputSpeed": 86.3452,
       "aa": {
         "aa-intelligence": 28.5121,
         "aa-coding": null,
@@ -485361,12 +485361,12 @@
         "aaIndexAnswerCostUsd": 83.1106
       },
       "scores": {
-        "AA-Briefcase": 30.1605,
+        "AA-Briefcase": 30.1615,
         "AutomationBench-AA": 34.1802,
         "Terminal-Bench v4.0": 13.1313,
         "GDP.pdf": 17.0,
         "AA-LCR v1.1": 64.0,
-        "GDPval-AA v2": 37.438,
+        "GDPval-AA v2": 37.449,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -486286,7 +486286,7 @@
         "src": "assets/logos/deepseek.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 97.0116,
+      "medianOutputSpeed": 91.2203,
       "aa": {
         "aa-intelligence": 20.3605,
         "aa-coding": null,
@@ -486304,12 +486304,12 @@
         "aaIndexAnswerCostUsd": 159.3647
       },
       "scores": {
-        "AA-Briefcase": 21.405,
+        "AA-Briefcase": 21.41,
         "AutomationBench-AA": 34.9087,
         "Terminal-Bench v4.0": 1.5152,
         "GDP.pdf": 3.6,
         "AA-LCR v1.1": 50.6667,
-        "GDPval-AA v2": 27.8805,
+        "GDPval-AA v2": 27.8945,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -487044,7 +487044,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 168.0835,
+      "medianOutputSpeed": 165.9977,
       "aa": {
         "aa-intelligence": 20.7197,
         "aa-coding": null,
@@ -487062,12 +487062,12 @@
         "aaIndexAnswerCostUsd": 15.0839
       },
       "scores": {
-        "AA-Briefcase": 8.684,
+        "AA-Briefcase": 8.688,
         "AutomationBench-AA": 5.9606,
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 7.8,
         "AA-LCR v1.1": 76.6667,
-        "GDPval-AA v2": 22.3845,
+        "GDPval-AA v2": 22.399,
         "τ³-Banking": 27.4227,
         "Terminal-Bench v2.1": 60.6742,
         "GDPval-AA": 26.771,
@@ -488148,7 +488148,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 227.2362,
+      "medianOutputSpeed": 249.8213,
       "aa": {
         "aa-intelligence": 45.0733,
         "aa-coding": null,
@@ -488166,12 +488166,12 @@
         "aaIndexAnswerCostUsd": 126.1202
       },
       "scores": {
-        "AA-Briefcase": 49.315,
+        "AA-Briefcase": 49.2755,
         "AutomationBench-AA": 56.8361,
         "Terminal-Bench v4.0": 16.6667,
         "GDP.pdf": 24.2,
         "AA-LCR v1.1": 83.0,
-        "GDPval-AA v2": 56.4515,
+        "GDPval-AA v2": 56.3625,
         "τ³-Banking": 47.2165,
         "Terminal-Bench v2.1": 85.3933,
         "GDPval-AA": 58.117,
@@ -488962,7 +488962,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 66.4397,
+      "medianOutputSpeed": 58.2563,
       "aa": {
         "aa-intelligence": 23.2,
         "aa-coding": null,
@@ -488985,7 +488985,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 70.0,
-        "GDPval-AA v2": 35.5125,
+        "GDPval-AA v2": 35.4845,
         "τ³-Banking": 15.6701,
         "Terminal-Bench v2.1": 75.2809,
         "GDPval-AA": 39.1735,
@@ -489420,7 +489420,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 26.5406,
+      "medianOutputSpeed": 28.4473,
       "aa": {
         "aa-intelligence": 9.937,
         "aa-coding": null,
@@ -489746,7 +489746,7 @@
         "src": "assets/logos/meta_small.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 123.5577,
+      "medianOutputSpeed": 148.411,
       "aa": {
         "aa-intelligence": 33.7298,
         "aa-coding": null,
@@ -489764,12 +489764,12 @@
         "aaIndexAnswerCostUsd": 136.9447
       },
       "scores": {
-        "AA-Briefcase": 17.5275,
+        "AA-Briefcase": 17.5325,
         "AutomationBench-AA": 38.8489,
         "Terminal-Bench v4.0": 6.0606,
         "GDP.pdf": 14.4,
         "AA-LCR v1.1": 77.6667,
-        "GDPval-AA v2": 35.495,
+        "GDPval-AA v2": 35.624,
         "τ³-Banking": 31.7526,
         "Terminal-Bench v2.1": 77.9026,
         "GDPval-AA": 39.7075,
@@ -490916,7 +490916,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 73.3333,
-        "GDPval-AA v2": 9.5525,
+        "GDPval-AA v2": 9.576,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": 46.8165,
         "GDPval-AA": 15.512,
@@ -491218,7 +491218,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 62.9979,
+      "medianOutputSpeed": 53.6634,
       "aa": {
         "aa-intelligence": 44.1998,
         "aa-coding": null,
@@ -491236,12 +491236,12 @@
         "aaIndexAnswerCostUsd": 135.8032
       },
       "scores": {
-        "AA-Briefcase": 52.2465,
+        "AA-Briefcase": 52.246,
         "AutomationBench-AA": 66.9974,
         "Terminal-Bench v4.0": 17.1717,
         "GDP.pdf": 17.2,
         "AA-LCR v1.1": 81.0,
-        "GDPval-AA v2": 57.2915,
+        "GDPval-AA v2": 57.269,
         "τ³-Banking": 43.299,
         "Terminal-Bench v2.1": 88.015,
         "GDPval-AA": 58.1535,
@@ -492624,22 +492624,22 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 40.7346,
+      "medianOutputSpeed": 41.6917,
       "aa": {
-        "aa-intelligence": 8.9148,
+        "aa-intelligence": 8.9091,
         "aa-coding": null,
         "aa-agentic": null
       },
-      "aaCostUsd": null,
+      "aaCostUsd": 14.6786,
       "pricing": {
         "inputPerMillionTokensUsd": 0.02,
         "outputPerMillionTokensUsd": 0.1,
         "cacheHitPerMillionTokensUsd": null,
-        "aaIndexCostUsd": null,
-        "aaIndexInputCostUsd": null,
-        "aaIndexOutputCostUsd": null,
-        "aaIndexReasoningCostUsd": null,
-        "aaIndexAnswerCostUsd": null
+        "aaIndexCostUsd": 14.6786,
+        "aaIndexInputCostUsd": 12.6517,
+        "aaIndexOutputCostUsd": 2.0269,
+        "aaIndexReasoningCostUsd": 1.1837,
+        "aaIndexAnswerCostUsd": 0.8432
       },
       "scores": {
         "AA-Briefcase": 0.0,
@@ -493854,7 +493854,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 37.2704,
+      "medianOutputSpeed": 39.5998,
       "aa": {
         "aa-intelligence": 24.1673,
         "aa-coding": null,
@@ -493872,12 +493872,12 @@
         "aaIndexAnswerCostUsd": 4.9711
       },
       "scores": {
-        "AA-Briefcase": 16.789,
+        "AA-Briefcase": 16.792,
         "AutomationBench-AA": 27.986,
         "Terminal-Bench v4.0": 2.5253,
         "GDP.pdf": 10.8,
         "AA-LCR v1.1": 74.3333,
-        "GDPval-AA v2": 26.775,
+        "GDPval-AA v2": 26.7935,
         "τ³-Banking": 30.9278,
         "Terminal-Bench v2.1": 61.7978,
         "GDPval-AA": 30.782,
@@ -495554,7 +495554,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 93.5579,
+      "medianOutputSpeed": 85.8331,
       "aa": {
         "aa-intelligence": 46.9727,
         "aa-coding": null,
@@ -495572,12 +495572,12 @@
         "aaIndexAnswerCostUsd": 347.5545
       },
       "scores": {
-        "AA-Briefcase": 49.019,
+        "AA-Briefcase": 49.002,
         "AutomationBench-AA": 60.0811,
         "Terminal-Bench v4.0": 39.899,
         "GDP.pdf": 27.2,
         "AA-LCR v1.1": 84.0,
-        "GDPval-AA v2": 55.426,
+        "GDPval-AA v2": 55.4315,
         "τ³-Banking": 44.3299,
         "Terminal-Bench v2.1": 88.015,
         "GDPval-AA": 56.2055,
@@ -497907,7 +497907,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 86.7106,
+      "medianOutputSpeed": 82.3974,
       "aa": {
         "aa-intelligence": 44.0089,
         "aa-coding": null,
@@ -497925,12 +497925,12 @@
         "aaIndexAnswerCostUsd": 300.5404
       },
       "scores": {
-        "AA-Briefcase": 46.882,
+        "AA-Briefcase": 46.8725,
         "AutomationBench-AA": 55.3117,
         "Terminal-Bench v4.0": 24.7475,
         "GDP.pdf": 27.6,
         "AA-LCR v1.1": 82.3333,
-        "GDPval-AA v2": 53.4455,
+        "GDPval-AA v2": 53.424,
         "τ³-Banking": 38.1443,
         "Terminal-Bench v2.1": 89.5131,
         "GDPval-AA": 54.244,
@@ -498704,7 +498704,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 112.5319,
+      "medianOutputSpeed": 83.5617,
       "aa": {
         "aa-intelligence": 44.2449,
         "aa-coding": null,
@@ -498722,7 +498722,7 @@
         "aaIndexAnswerCostUsd": 111.4695
       },
       "scores": {
-        "AA-Briefcase": 42.8575,
+        "AA-Briefcase": 42.868,
         "AutomationBench-AA": 61.6942,
         "Terminal-Bench v4.0": 30.303,
         "GDP.pdf": 24.6,
@@ -499446,7 +499446,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 158.5237,
+      "medianOutputSpeed": 156.0498,
       "aa": {
         "aa-intelligence": 9.5854,
         "aa-coding": null,
@@ -500421,7 +500421,7 @@
         "src": "assets/logos/reka_small.svg",
         "color": "#172136"
       },
-      "medianOutputSpeed": 91.273,
+      "medianOutputSpeed": 87.6116,
       "aa": {
         "aa-intelligence": 5.646,
         "aa-coding": null,
@@ -500746,7 +500746,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 187.3294,
+      "medianOutputSpeed": 173.969,
       "aa": {
         "aa-intelligence": 39.4562,
         "aa-coding": null,
@@ -502023,7 +502023,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 112.0718,
+      "medianOutputSpeed": 114.5687,
       "aa": {
         "aa-intelligence": 15.527,
         "aa-coding": null,
@@ -502041,12 +502041,12 @@
         "aaIndexAnswerCostUsd": 5.817
       },
       "scores": {
-        "AA-Briefcase": 10.2985,
+        "AA-Briefcase": 10.302,
         "AutomationBench-AA": 4.9708,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 6.0,
         "AA-LCR v1.1": 42.6667,
-        "GDPval-AA v2": 20.9495,
+        "GDPval-AA v2": 20.984,
         "τ³-Banking": 9.6907,
         "Terminal-Bench v2.1": 38.9513,
         "GDPval-AA": 25.3505,
@@ -502777,7 +502777,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#f32e02"
       },
-      "medianOutputSpeed": 167.0217,
+      "medianOutputSpeed": 150.8365,
       "aa": {
         "aa-intelligence": 14.1889,
         "aa-coding": null,
@@ -502795,12 +502795,12 @@
         "aaIndexAnswerCostUsd": 131.605
       },
       "scores": {
-        "AA-Briefcase": 1.139,
+        "AA-Briefcase": 1.143,
         "AutomationBench-AA": 6.2996,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 2.8,
         "AA-LCR v1.1": 69.3333,
-        "GDPval-AA v2": 13.019,
+        "GDPval-AA v2": 13.043,
         "τ³-Banking": 15.0515,
         "Terminal-Bench v2.1": 50.5618,
         "GDPval-AA": 18.757,
@@ -504608,7 +504608,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 333.5638,
+      "medianOutputSpeed": 304.1872,
       "aa": {
         "aa-intelligence": 36.9459,
         "aa-coding": null,
@@ -504631,7 +504631,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 78.6667,
-        "GDPval-AA v2": 41.18,
+        "GDPval-AA v2": 41.171,
         "τ³-Banking": 29.4845,
         "Terminal-Bench v2.1": 79.7753,
         "GDPval-AA": 42.703,
@@ -506692,7 +506692,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 81.9794,
+      "medianOutputSpeed": 75.7148,
       "aa": {
         "aa-intelligence": 55.9874,
         "aa-coding": null,
@@ -506710,12 +506710,12 @@
         "aaIndexAnswerCostUsd": 697.6197
       },
       "scores": {
-        "AA-Briefcase": 63.2925,
+        "AA-Briefcase": 63.1925,
         "AutomationBench-AA": 64.9528,
         "Terminal-Bench v4.0": 59.596,
         "GDP.pdf": 26.6,
         "AA-LCR v1.1": 84.6667,
-        "GDPval-AA v2": 66.79,
+        "GDPval-AA v2": 66.5545,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -507347,7 +507347,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 58.7854,
+      "medianOutputSpeed": 51.8048,
       "aa": {
         "aa-intelligence": 30.0576,
         "aa-coding": null,
@@ -507365,12 +507365,12 @@
         "aaIndexAnswerCostUsd": 452.4027
       },
       "scores": {
-        "AA-Briefcase": 28.1495,
+        "AA-Briefcase": 28.148,
         "AutomationBench-AA": 20.0981,
         "Terminal-Bench v4.0": 3.0303,
         "GDP.pdf": 15.8,
         "AA-LCR v1.1": 80.0,
-        "GDPval-AA v2": 36.5865,
+        "GDPval-AA v2": 36.6,
         "τ³-Banking": 34.433,
         "Terminal-Bench v2.1": 71.161,
         "GDPval-AA": 39.7705,
@@ -508856,7 +508856,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 38.5831,
+      "medianOutputSpeed": 40.8368,
       "aa": {
         "aa-intelligence": 13.9307,
         "aa-coding": null,
@@ -509834,7 +509834,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 53.1681,
+      "medianOutputSpeed": 42.5866,
       "aa": {
         "aa-intelligence": 50.9191,
         "aa-coding": null,
@@ -509852,12 +509852,12 @@
         "aaIndexAnswerCostUsd": 609.7802
       },
       "scores": {
-        "AA-Briefcase": 50.2945,
+        "AA-Briefcase": 50.354,
         "AutomationBench-AA": 66.6122,
         "Terminal-Bench v4.0": 54.0404,
         "GDP.pdf": 31.0,
         "AA-LCR v1.1": 80.0,
-        "GDPval-AA v2": 51.195,
+        "GDPval-AA v2": 51.146,
         "τ³-Banking": 40.0,
         "Terminal-Bench v2.1": 89.8876,
         "GDPval-AA": 51.485,
@@ -510650,7 +510650,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 195.6201,
+      "medianOutputSpeed": 162.4717,
       "aa": {
         "aa-intelligence": 12.9922,
         "aa-coding": null,
@@ -513536,7 +513536,7 @@
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 305.6627,
+      "medianOutputSpeed": 295.2257,
       "aa": {
         "aa-intelligence": 20.1333,
         "aa-coding": null,
@@ -513554,12 +513554,12 @@
         "aaIndexAnswerCostUsd": 7.9152
       },
       "scores": {
-        "AA-Briefcase": 14.8775,
+        "AA-Briefcase": 14.881,
         "AutomationBench-AA": 3.2196,
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 5.4,
         "AA-LCR v1.1": 73.0,
-        "GDPval-AA v2": 22.3175,
+        "GDPval-AA v2": 22.369,
         "τ³-Banking": 27.2165,
         "Terminal-Bench v2.1": 55.4307,
         "GDPval-AA": 26.7755,
@@ -516176,7 +516176,7 @@
         "src": "assets/logos/mistral_small.png",
         "color": "#f32e02"
       },
-      "medianOutputSpeed": 64.9974,
+      "medianOutputSpeed": 58.3832,
       "aa": {
         "aa-intelligence": 6.6712,
         "aa-coding": null,
@@ -516521,7 +516521,7 @@
         "src": "assets/logos/openai.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 50.0975,
+      "medianOutputSpeed": 44.1644,
       "aa": {
         "aa-intelligence": 42.0836,
         "aa-coding": null,
@@ -516539,12 +516539,12 @@
         "aaIndexAnswerCostUsd": 65.6344
       },
       "scores": {
-        "AA-Briefcase": 30.8215,
+        "AA-Briefcase": 30.837,
         "AutomationBench-AA": 52.5709,
         "Terminal-Bench v4.0": 30.8081,
         "GDP.pdf": 27.0,
         "AA-LCR v1.1": 84.0,
-        "GDPval-AA v2": 40.834,
+        "GDPval-AA v2": 40.7335,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -517117,7 +517117,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 155.8509,
+      "medianOutputSpeed": 139.6225,
       "aa": {
         "aa-intelligence": 22.4323,
         "aa-coding": null,
@@ -517140,7 +517140,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 42.3333,
-        "GDPval-AA v2": 37.348,
+        "GDPval-AA v2": 37.3515,
         "τ³-Banking": 16.701,
         "Terminal-Bench v2.1": 51.6854,
         "GDPval-AA": 40.3215,
@@ -518456,7 +518456,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 51.8631,
+      "medianOutputSpeed": 43.766,
       "aa": {
         "aa-intelligence": 49.5704,
         "aa-coding": null,
@@ -518474,12 +518474,12 @@
         "aaIndexAnswerCostUsd": 540.4895
       },
       "scores": {
-        "AA-Briefcase": 48.0295,
+        "AA-Briefcase": 48.046,
         "AutomationBench-AA": 64.595,
         "Terminal-Bench v4.0": 49.4949,
         "GDP.pdf": 30.4,
         "AA-LCR v1.1": 79.6667,
-        "GDPval-AA v2": 49.269,
+        "GDPval-AA v2": 49.32,
         "τ³-Banking": 35.4639,
         "Terminal-Bench v2.1": 89.5131,
         "GDPval-AA": 50.0335,
@@ -519272,7 +519272,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 138.6872,
+      "medianOutputSpeed": 133.1867,
       "aa": {
         "aa-intelligence": 7.3317,
         "aa-coding": null,
@@ -520489,7 +520489,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 53.4147,
+      "medianOutputSpeed": 52.8928,
       "aa": {
         "aa-intelligence": 40.6898,
         "aa-coding": null,
@@ -520507,12 +520507,12 @@
         "aaIndexAnswerCostUsd": 316.7715
       },
       "scores": {
-        "AA-Briefcase": 37.705,
+        "AA-Briefcase": 37.703,
         "AutomationBench-AA": null,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 78.6667,
-        "GDPval-AA v2": 42.639,
+        "GDPval-AA v2": 42.6195,
         "τ³-Banking": 34.6392,
         "Terminal-Bench v2.1": 83.1461,
         "GDPval-AA": 44.789,
@@ -521548,7 +521548,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 78.8147,
+      "medianOutputSpeed": 80.4835,
       "aa": {
         "aa-intelligence": 51.2435,
         "aa-coding": null,
@@ -521566,12 +521566,12 @@
         "aaIndexAnswerCostUsd": 434.4552
       },
       "scores": {
-        "AA-Briefcase": 56.37,
+        "AA-Briefcase": 56.253,
         "AutomationBench-AA": 61.2174,
         "Terminal-Bench v4.0": 52.5253,
         "GDP.pdf": 25.6,
         "AA-LCR v1.1": 84.3333,
-        "GDPval-AA v2": 54.185,
+        "GDPval-AA v2": 54.18,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -522509,7 +522509,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 313.3262,
+      "medianOutputSpeed": 291.8257,
       "aa": {
         "aa-intelligence": 39.6178,
         "aa-coding": null,
@@ -522532,7 +522532,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 83.0,
-        "GDPval-AA v2": 42.9245,
+        "GDPval-AA v2": 43.019,
         "τ³-Banking": 35.4639,
         "Terminal-Bench v2.1": 78.2772,
         "GDPval-AA": 45.33,
@@ -523271,7 +523271,7 @@
         "src": "assets/logos/inclusionai_small.jpg",
         "color": "#4fb5ff"
       },
-      "medianOutputSpeed": 121.0553,
+      "medianOutputSpeed": 113.9466,
       "aa": {
         "aa-intelligence": 16.6172,
         "aa-coding": null,
@@ -523289,12 +523289,12 @@
         "aaIndexAnswerCostUsd": 48.0206
       },
       "scores": {
-        "AA-Briefcase": 7.905,
+        "AA-Briefcase": 7.9085,
         "AutomationBench-AA": 0.7179,
         "Terminal-Bench v4.0": 0.5051,
         "GDP.pdf": 3.8,
         "AA-LCR v1.1": 70.0,
-        "GDPval-AA v2": 12.2845,
+        "GDPval-AA v2": 12.3085,
         "τ³-Banking": 17.9381,
         "Terminal-Bench v2.1": 43.0712,
         "GDPval-AA": 18.181,
@@ -524717,12 +524717,12 @@
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 7.289,
+        "AA-Briefcase": 7.2925,
         "AutomationBench-AA": null,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 78.0,
-        "GDPval-AA v2": 24.879,
+        "GDPval-AA v2": 24.913,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": 62.1723,
         "GDPval-AA": 28.8155,
@@ -525676,7 +525676,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 26.8922,
+      "medianOutputSpeed": 28.2817,
       "aa": {
         "aa-intelligence": 6.703,
         "aa-coding": null,
@@ -526021,7 +526021,7 @@
         "src": "assets/logos/microsoft_small.svg",
         "color": "#0078D5"
       },
-      "medianOutputSpeed": 41.6169,
+      "medianOutputSpeed": 41.3542,
       "aa": {
         "aa-intelligence": 5.9226,
         "aa-coding": null,
@@ -526366,7 +526366,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 162.8194,
+      "medianOutputSpeed": 161.1323,
       "aa": {
         "aa-intelligence": 15.116,
         "aa-coding": null,
@@ -526389,7 +526389,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 63.0,
-        "GDPval-AA v2": 5.3915,
+        "GDPval-AA v2": 5.416,
         "τ³-Banking": 4.9485,
         "Terminal-Bench v2.1": 40.824,
         "GDPval-AA": 12.0235,
@@ -526712,7 +526712,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 65.8149,
+      "medianOutputSpeed": 57.3873,
       "aa": {
         "aa-intelligence": 28.0531,
         "aa-coding": null,
@@ -526730,12 +526730,12 @@
         "aaIndexAnswerCostUsd": 186.2291
       },
       "scores": {
-        "AA-Briefcase": 27.882,
+        "AA-Briefcase": 27.885,
         "AutomationBench-AA": 27.8722,
         "Terminal-Bench v4.0": 2.0202,
         "GDP.pdf": 11.6,
         "AA-LCR v1.1": 73.6667,
-        "GDPval-AA v2": 32.8405,
+        "GDPval-AA v2": 32.8255,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": 36.126,
@@ -527480,7 +527480,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 231.951,
+      "medianOutputSpeed": 221.9057,
       "aa": {
         "aa-intelligence": 11.6028,
         "aa-coding": null,
@@ -528603,7 +528603,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 71.5687,
+      "medianOutputSpeed": 70.963,
       "aa": {
         "aa-intelligence": 21.7826,
         "aa-coding": null,
@@ -529163,7 +529163,7 @@
         "src": "assets/logos/nvidia_small.svg",
         "color": "#76b900"
       },
-      "medianOutputSpeed": 202.128,
+      "medianOutputSpeed": 201.8959,
       "aa": {
         "aa-intelligence": 7.4288,
         "aa-coding": null,
@@ -529488,7 +529488,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 43.6362,
+      "medianOutputSpeed": 43.2154,
       "aa": {
         "aa-intelligence": 23.3035,
         "aa-coding": null,
@@ -530140,7 +530140,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 82.766,
+      "medianOutputSpeed": 75.2885,
       "aa": {
         "aa-intelligence": 53.5832,
         "aa-coding": null,
@@ -530158,12 +530158,12 @@
         "aaIndexAnswerCostUsd": 510.8454
       },
       "scores": {
-        "AA-Briefcase": 59.394,
+        "AA-Briefcase": 59.3695,
         "AutomationBench-AA": 63.2068,
         "Terminal-Bench v4.0": 56.5657,
         "GDP.pdf": 28.8,
         "AA-LCR v1.1": 82.6667,
-        "GDPval-AA v2": 60.127,
+        "GDPval-AA v2": 60.2185,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": null,
@@ -530775,7 +530775,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 88.4859,
+      "medianOutputSpeed": 98.6865,
       "aa": {
         "aa-intelligence": 6.6226,
         "aa-coding": null,
@@ -531228,7 +531228,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 55.8274,
+      "medianOutputSpeed": 55.8693,
       "aa": {
         "aa-intelligence": 27.0099,
         "aa-coding": null,
@@ -531251,7 +531251,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 78.3333,
-        "GDPval-AA v2": 24.4945,
+        "GDPval-AA v2": 24.513,
         "τ³-Banking": 20.8247,
         "Terminal-Bench v2.1": 61.4232,
         "GDPval-AA": 28.2915,
@@ -531660,7 +531660,7 @@
         "src": "assets/logos/sapiens.svg",
         "color": "#1521a9"
       },
-      "medianOutputSpeed": 102.1924,
+      "medianOutputSpeed": 120.2244,
       "aa": {
         "aa-intelligence": 35.2413,
         "aa-coding": null,
@@ -531683,7 +531683,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 83.0,
-        "GDPval-AA v2": 41.4185,
+        "GDPval-AA v2": 41.432,
         "τ³-Banking": 35.6701,
         "Terminal-Bench v2.1": 69.6629,
         "GDPval-AA": null,
@@ -532772,7 +532772,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 123.5693,
+      "medianOutputSpeed": 119.7367,
       "aa": {
         "aa-intelligence": 12.7755,
         "aa-coding": null,
@@ -533098,7 +533098,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 322.0706,
+      "medianOutputSpeed": 331.4032,
       "aa": {
         "aa-intelligence": 8.5456,
         "aa-coding": null,
@@ -533752,7 +533752,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 86.301,
+      "medianOutputSpeed": 85.4074,
       "aa": {
         "aa-intelligence": 12.7109,
         "aa-coding": null,
@@ -534893,12 +534893,12 @@
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 28.1205,
+        "AA-Briefcase": 28.1215,
         "AutomationBench-AA": 36.5094,
         "Terminal-Bench v4.0": 10.101,
         "GDP.pdf": 18.6,
         "AA-LCR v1.1": 80.6667,
-        "GDPval-AA v2": 40.3275,
+        "GDPval-AA v2": 40.359,
         "τ³-Banking": 33.1959,
         "Terminal-Bench v2.1": 83.1461,
         "GDPval-AA": 42.9275,
@@ -535938,7 +535938,7 @@
         "src": "assets/logos/minimax_small.svg",
         "color": "#EB3568"
       },
-      "medianOutputSpeed": 73.1256,
+      "medianOutputSpeed": 64.6856,
       "aa": {
         "aa-intelligence": 18.6257,
         "aa-coding": null,
@@ -536657,7 +536657,7 @@
         "src": "assets/logos/zai_small.svg",
         "color": "#1c7ff8"
       },
-      "medianOutputSpeed": 82.7047,
+      "medianOutputSpeed": 81.0552,
       "aa": {
         "aa-intelligence": 33.7055,
         "aa-coding": null,
@@ -536675,12 +536675,12 @@
         "aaIndexAnswerCostUsd": 88.9269
       },
       "scores": {
-        "AA-Briefcase": 36.4395,
+        "AA-Briefcase": 36.443,
         "AutomationBench-AA": 28.399,
         "Terminal-Bench v4.0": 1.0101,
         "GDP.pdf": 10.4,
         "AA-LCR v1.1": 78.3333,
-        "GDPval-AA v2": 43.5715,
+        "GDPval-AA v2": 43.6005,
         "τ³-Banking": 34.6392,
         "Terminal-Bench v2.1": 77.9026,
         "GDPval-AA": 45.881,
@@ -538166,7 +538166,7 @@
         "src": "assets/logos/kimi.jpg",
         "color": "#047AFE"
       },
-      "medianOutputSpeed": 44.8193,
+      "medianOutputSpeed": 43.2746,
       "aa": {
         "aa-intelligence": 43.5938,
         "aa-coding": null,
@@ -541007,7 +541007,7 @@
         "src": "assets/logos/multiversecomputing_small.svg",
         "color": "#f11338"
       },
-      "medianOutputSpeed": 157.4071,
+      "medianOutputSpeed": 144.6957,
       "aa": {
         "aa-intelligence": 26.7373,
         "aa-coding": null,
@@ -542128,12 +542128,12 @@
         "aaIndexAnswerCostUsd": null
       },
       "scores": {
-        "AA-Briefcase": 5.0655,
+        "AA-Briefcase": 5.0695,
         "AutomationBench-AA": null,
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 38.6667,
-        "GDPval-AA v2": 11.549,
+        "GDPval-AA v2": 11.573,
         "τ³-Banking": null,
         "Terminal-Bench v2.1": null,
         "GDPval-AA": 17.265,
@@ -542435,7 +542435,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 94.1674,
+      "medianOutputSpeed": 96.6215,
       "aa": {
         "aa-intelligence": 13.7079,
         "aa-coding": null,
@@ -543085,7 +543085,7 @@
         "src": "assets/logos/aws_small.svg",
         "color": "#FF9900"
       },
-      "medianOutputSpeed": 198.2065,
+      "medianOutputSpeed": 176.4004,
       "aa": {
         "aa-intelligence": 12.4824,
         "aa-coding": null,
@@ -543434,7 +543434,7 @@
         "Terminal-Bench v4.0": null,
         "GDP.pdf": null,
         "AA-LCR v1.1": 73.0,
-        "GDPval-AA v2": 11.6055,
+        "GDPval-AA v2": 11.629,
         "τ³-Banking": 4.5361,
         "Terminal-Bench v2.1": 70.0375,
         "GDPval-AA": 17.1625,
@@ -543736,7 +543736,7 @@
         "src": "assets/logos/alibaba_small.svg",
         "color": "#ff7018"
       },
-      "medianOutputSpeed": 70.8599,
+      "medianOutputSpeed": 64.2237,
       "aa": {
         "aa-intelligence": 9.2368,
         "aa-coding": null,
@@ -543759,7 +543759,7 @@
         "Terminal-Bench v4.0": 0.0,
         "GDP.pdf": 2.6,
         "AA-LCR v1.1": 47.0,
-        "GDPval-AA v2": 0.6695,
+        "GDPval-AA v2": 0.697,
         "τ³-Banking": 5.3608,
         "Terminal-Bench v2.1": 38.2022,
         "GDPval-AA": 8.2155,
@@ -544843,7 +544843,7 @@
         "src": "assets/logos/openai_small.svg",
         "color": "#1f1f1f"
       },
-      "medianOutputSpeed": 161.3506,
+      "medianOutputSpeed": 173.3916,
       "aa": {
         "aa-intelligence": 20.3782,
         "aa-coding": null,
@@ -545822,7 +545822,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 94.59,
+      "medianOutputSpeed": 94.7335,
       "aa": {
         "aa-intelligence": 24.2959,
         "aa-coding": null,
@@ -546148,7 +546148,7 @@
         "src": "assets/logos/deepseek_small.svg",
         "color": "#2243e6"
       },
-      "medianOutputSpeed": 182.8279,
+      "medianOutputSpeed": 173.0581,
       "aa": {
         "aa-intelligence": 34.3305,
         "aa-coding": null,
@@ -546166,12 +546166,12 @@
         "aaIndexAnswerCostUsd": 32.7118
       },
       "scores": {
-        "AA-Briefcase": 37.9315,
+        "AA-Briefcase": 37.932,
         "AutomationBench-AA": 53.9677,
         "Terminal-Bench v4.0": 12.1212,
         "GDP.pdf": 11.0,
         "AA-LCR v1.1": 79.6667,
-        "GDPval-AA v2": 46.6985,
+        "GDPval-AA v2": 46.687,
         "τ³-Banking": 39.3814,
         "Terminal-Bench v2.1": 78.6517,
         "GDPval-AA": 48.389,
@@ -547618,7 +547618,7 @@
         "src": "assets/logos/google_small.svg",
         "color": "#34A853"
       },
-      "medianOutputSpeed": 110.8891,
+      "medianOutputSpeed": 112.1029,
       "aa": {
         "aa-intelligence": 14.1848,
         "aa-coding": null,
@@ -547946,7 +547946,7 @@
         "src": "assets/logos/meta.svg",
         "color": "#0089f4"
       },
-      "medianOutputSpeed": 115.0201,
+      "medianOutputSpeed": 130.9763,
       "aa": {
         "aa-intelligence": 52.3939,
         "aa-coding": null,
@@ -548814,7 +548814,7 @@
         "src": "assets/logos/anthropic_small.svg",
         "color": "#cc785c"
       },
-      "medianOutputSpeed": 55.4211,
+      "medianOutputSpeed": 50.5891,
       "aa": {
         "aa-intelligence": 44.8253,
         "aa-coding": null,
@@ -548832,12 +548832,12 @@
         "aaIndexAnswerCostUsd": 532.7984
       },
       "scores": {
-        "AA-Briefcase": 46.7655,
+        "AA-Briefcase": 46.7445,
         "AutomationBench-AA": 54.3393,
         "Terminal-Bench v4.0": 34.3434,
         "GDP.pdf": 20.0,
         "AA-LCR v1.1": 82.0,
-        "GDPval-AA v2": 49.513,
+        "GDPval-AA v2": 49.604,
         "τ³-Banking": 38.5567,
         "Terminal-Bench v2.1": 86.1423,
         "GDPval-AA": 51.2435,
@@ -549610,7 +549610,7 @@
         "src": "assets/logos/spacexai.svg",
         "color": "#736cd3"
       },
-      "medianOutputSpeed": 66.9705,
+      "medianOutputSpeed": 65.2796,
       "aa": {
         "aa-intelligence": 14.6213,
         "aa-coding": null,
@@ -551264,8 +551264,8 @@
       },
       {
         "publicationRank": 33,
-        "displayScore": 36.9078,
-        "scoreFullPrecision": "36.907789000000001",
+        "displayScore": 36.9558,
+        "scoreFullPrecision": "36.955789000000003",
         "selectedSlug": "qwen3-8-2-4t-a95b",
         "variantGroup": "qwen3 8 2 4t a95b"
       },
@@ -552561,8 +552561,8 @@
       },
       {
         "publicationRank": 67,
-        "displayScore": 36.9078,
-        "scoreFullPrecision": "36.907789000000001",
+        "displayScore": 36.9558,
+        "scoreFullPrecision": "36.955789000000003",
         "slug": "qwen3-8-2-4t-a95b",
         "variantGroup": "qwen3 8 2 4t a95b"
       },
