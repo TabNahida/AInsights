@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_mixed_core",
   "candidate_id": "mixed_core_mc07",
-  "calibration_population_size": 151,
-  "bonus_cap_per_board": 16.741962504609695,
+  "calibration_population_size": 154,
+  "bonus_cap_per_board": 16.680888833137473,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 151,
-    "unique_slugs": 151,
-    "unique_variant_groups": 151,
+    "row_count": 154,
+    "unique_slugs": 154,
+    "unique_variant_groups": 154,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 230,
-    "unique_slugs": 230,
-    "unique_variant_groups": 152,
+    "row_count": 233,
+    "unique_slugs": 233,
+    "unique_variant_groups": 155,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -26,8 +26,8 @@
   "passed": true,
   "core_eligibility": {
     "variant_group": {
-      "requested_count": 496,
-      "eligible_count": 151,
+      "requested_count": 499,
+      "eligible_count": 154,
       "excluded_count": 345,
       "excluded_models": [
         {
@@ -7242,8 +7242,8 @@
       ]
     },
     "exact_config": {
-      "requested_count": 700,
-      "eligible_count": 230,
+      "requested_count": 703,
+      "eligible_count": 233,
       "excluded_count": 470,
       "excluded_models": [
         {
@@ -16867,10 +16867,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 16.741962504609695,
-    "pooled_positive_residual_count": 253,
-    "pooled_positive_residual_mean": 7.277129501110753,
-    "pooled_positive_residual_population_sd": 6.6926475995723385,
+    "bonus_cap_per_board": 16.680888833137473,
+    "pooled_positive_residual_count": 255,
+    "pooled_positive_residual_mean": 7.24031040768632,
+    "pooled_positive_residual_population_sd": 6.67549702295993,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -16885,7 +16885,7 @@
       "knowledge-science": 16,
       "instruction-context": 9
     },
-    "population_size": 151,
+    "population_size": 154,
     "population_slugs": [
       "claude-fable-5-1",
       "claude-haiku-5-5",
@@ -16924,6 +16924,7 @@
       "inkling",
       "muse-spark-1-1",
       "muse-spark-1-2",
+      "muse-spark-open",
       "qwen3-8-27b",
       "gemini-3-5-flash",
       "gemini-3-6-flash",
@@ -17007,7 +17008,9 @@
       "mistral-small-3-2",
       "mistral-small-4",
       "motif-3",
+      "nemotron-3-5-bolt-74b-a9b",
       "nemotron-3-5-lightning",
+      "nemotron-3-5-super-vl",
       "nex-n2-pro",
       "north-mini-code",
       "nvidia-nemotron-3-nano-30b-a3b-reasoning",
@@ -17077,6 +17080,7 @@
       "inkling",
       "muse spark 1 1",
       "muse spark 1 2",
+      "muse spark open",
       "qwen3 8 27b",
       "gemini 3 5 flash",
       "gemini 3 6 flash",
@@ -17160,7 +17164,9 @@
       "mistral small 3 2",
       "mistral small 4",
       "motif 3",
+      "nemotron 3 5 bolt 74b a9b",
       "nemotron 3 5 lightning",
+      "nemotron 3 5 super vl",
       "nex n2 pro",
       "north mini code",
       "nemotron 3 nano",
@@ -17241,7 +17247,7 @@
         ],
         "core_item_count": 2,
         "extension_item_count": 3,
-        "complete_core_models": 141,
+        "complete_core_models": 144,
         "weight": 24
       },
       "agentic-tool-work": {
@@ -17395,14 +17401,14 @@
             "score_key": "Humanity's Last Exam",
             "canonical_family": "hle",
             "enabled": true,
-            "observed_count": 151,
-            "slope": 1.4265614159435567,
-            "intercept": 15.300514124808847
+            "observed_count": 154,
+            "slope": 1.428914865558193,
+            "intercept": 15.351957906079752
           }
         ],
         "core_item_count": 1,
         "extension_item_count": 5,
-        "complete_core_models": 151,
+        "complete_core_models": 154,
         "weight": 27
       },
       "knowledge-science": {
@@ -17431,7 +17437,7 @@
         ],
         "core_item_count": 2,
         "extension_item_count": 1,
-        "complete_core_models": 143,
+        "complete_core_models": 146,
         "weight": 16
       },
       "instruction-context": {
@@ -17455,7 +17461,7 @@
         ],
         "core_item_count": 1,
         "extension_item_count": 1,
-        "complete_core_models": 151,
+        "complete_core_models": 154,
         "weight": 9
       }
     }
@@ -17464,9 +17470,9 @@
     "method_id": "aindex_mixed_core",
     "candidate_id": "mixed_core_mc07",
     "independent_of_production_scoring_module": true,
-    "variant_group_count": 151,
-    "exact_config_count": 230,
-    "cap": 16.741962504609695,
+    "variant_group_count": 154,
+    "exact_config_count": 233,
+    "cap": 16.680888833137473,
     "profiles_checked": true,
     "passed": true,
     "failures": []

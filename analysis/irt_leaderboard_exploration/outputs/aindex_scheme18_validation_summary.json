@@ -1,24 +1,24 @@
 {
   "method_id": "aindex_scheme18",
   "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
-  "calibration_population_size": 131,
-  "bonus_cap_per_board": 20.03581562627647,
+  "calibration_population_size": 132,
+  "bonus_cap_per_board": 20.056215650580867,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
     "ranking_grain": "variant_group",
-    "row_count": 131,
-    "unique_slugs": 131,
-    "unique_variant_groups": 131,
+    "row_count": 132,
+    "unique_slugs": 132,
+    "unique_variant_groups": 132,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
   },
   "exact_config": {
     "ranking_grain": "exact_config",
-    "row_count": 174,
-    "unique_slugs": 174,
-    "unique_variant_groups": 131,
+    "row_count": 175,
+    "unique_slugs": 175,
+    "unique_variant_groups": 132,
     "max_final_score_identity_error": 0.0,
     "passed": true,
     "failures": []
@@ -26,8 +26,8 @@
   "passed": true,
   "core_eligibility": {
     "variant_group": {
-      "requested_count": 149,
-      "eligible_count": 131,
+      "requested_count": 150,
+      "eligible_count": 132,
       "excluded_count": 18,
       "excluded_models": [
         {
@@ -231,8 +231,8 @@
       ]
     },
     "exact_config": {
-      "requested_count": 175,
-      "eligible_count": 174,
+      "requested_count": 176,
+      "eligible_count": 175,
       "excluded_count": 1,
       "excluded_models": [
         {
@@ -257,10 +257,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 20.03581562627647,
-    "pooled_positive_residual_count": 380,
-    "pooled_positive_residual_mean": 8.793010178470704,
-    "pooled_positive_residual_population_sd": 7.9498639717045165,
+    "bonus_cap_per_board": 20.056215650580867,
+    "pooled_positive_residual_count": 379,
+    "pooled_positive_residual_mean": 8.842549007139054,
+    "pooled_positive_residual_population_sd": 7.9292597255430985,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -269,7 +269,7 @@
       "instruction-context"
     ],
     "board_points_max": 20.0,
-    "population_size": 131,
+    "population_size": 132,
     "population_slugs": [
       "g9v3-39a5b",
       "qwen3-14b-instruct-reasoning",
@@ -350,6 +350,7 @@
       "muse-spark-1-1",
       "muse-spark-1-2",
       "muse-spark-1-3-xhigh",
+      "muse-spark-open",
       "minimax-m2-7",
       "minimax-m3",
       "devstral-2",
@@ -483,6 +484,7 @@
       "muse spark 1 1",
       "muse spark 1 2",
       "muse spark 1 3",
+      "muse spark open",
       "minimax m2 7",
       "minimax m3",
       "devstral 2",
@@ -553,9 +555,9 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 131,
-            "slope": 2.1693072114854908,
-            "intercept": -43.73947696440711
+            "observed_count": 132,
+            "slope": 2.163075568678466,
+            "intercept": -43.52771840633988
           },
           {
             "item_id": "swe-bench-pro",
@@ -593,9 +595,9 @@
             "score_key": "Terminal-Bench v2.1",
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
-            "observed_count": 131,
-            "slope": 1.0460765149652458,
-            "intercept": -18.35982551289964
+            "observed_count": 132,
+            "slope": 1.0489620855542379,
+            "intercept": -18.443994869172847
           },
           {
             "item_id": "tau2-bench-telecom-aa",
@@ -725,9 +727,9 @@
             "score_key": "MMMU-Pro",
             "canonical_family": "mmmu-pro",
             "enabled": true,
-            "observed_count": 63,
-            "slope": 0.7583301616194603,
-            "intercept": 40.65399486702595
+            "observed_count": 64,
+            "slope": 0.7571054458939159,
+            "intercept": 40.68435713486334
           },
           {
             "item_id": "mmlu-pro",
