@@ -2,7 +2,7 @@
   "method_id": "aindex_scheme18",
   "candidate_id": "v5_partial_credit_geometric_logsumexp_residual_t1_independent_audit_mean_plus_sqrt2_sd",
   "calibration_population_size": 132,
-  "bonus_cap_per_board": 20.056215650580867,
+  "bonus_cap_per_board": 20.05876484202428,
   "cap_rule": "mean_plus_sqrt2_sd",
   "exact_reuses_deduplicated_calibration": true,
   "variant_group": {
@@ -257,10 +257,10 @@
     "extension_aggregator": "logsumexp_residual_t1",
     "extension_pool": "independent_audit",
     "cap_rule": "mean_plus_sqrt2_sd",
-    "bonus_cap_per_board": 20.056215650580867,
+    "bonus_cap_per_board": 20.05876484202428,
     "pooled_positive_residual_count": 379,
-    "pooled_positive_residual_mean": 8.842549007139054,
-    "pooled_positive_residual_population_sd": 7.9292597255430985,
+    "pooled_positive_residual_mean": 8.838766639170357,
+    "pooled_positive_residual_population_sd": 7.9337368141388875,
     "board_order": [
       "coding",
       "agentic-tool-work",
@@ -556,8 +556,8 @@
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
             "observed_count": 132,
-            "slope": 2.163075568678466,
-            "intercept": -43.52771840633988
+            "slope": 2.16140901570301,
+            "intercept": -43.5144687005813
           },
           {
             "item_id": "swe-bench-pro",
@@ -596,8 +596,8 @@
             "canonical_family": "terminal-bench-v2-1",
             "enabled": true,
             "observed_count": 132,
-            "slope": 1.0489620855542379,
-            "intercept": -18.443994869172847
+            "slope": 1.0494523319614373,
+            "intercept": -18.4482965121773
           },
           {
             "item_id": "tau2-bench-telecom-aa",
@@ -614,8 +614,8 @@
             "canonical_family": "tau3-banking",
             "enabled": true,
             "observed_count": 129,
-            "slope": 0.4381209985492988,
-            "intercept": -6.939479785283538
+            "slope": 0.43839585240627005,
+            "intercept": -6.945541565636471
           },
           {
             "item_id": "apex-agents-aa",
