@@ -379,6 +379,20 @@
     },
     {
       "vendor": "deepseek",
+      "name": "DeepSeek-R1",
+      "displayName": "DeepSeek R1",
+      "url": "https://api-docs.deepseek.com/news/news250120",
+      "rawUrl": "https://api-docs.deepseek.com/news/news250120",
+      "aliases": [
+        "DeepSeek R1",
+        "DeepSeek-R1",
+        "deepseek-r1"
+      ],
+      "sourceKey": "deepseek-api-docs-sitemap",
+      "title": "DeepSeek-R1 Release"
+    },
+    {
+      "vendor": "deepseek",
       "name": "DeepSeek-R1-0528",
       "displayName": "DeepSeek R1 0528",
       "url": "https://api-docs.deepseek.com/news/news250528",
@@ -463,6 +477,20 @@
     },
     {
       "vendor": "deepseek",
+      "name": "DeepSeek-V3.1",
+      "displayName": "DeepSeek V3.1",
+      "url": "https://api-docs.deepseek.com/news/news250821",
+      "rawUrl": "https://api-docs.deepseek.com/news/news250821",
+      "aliases": [
+        "DeepSeek V3.1",
+        "DeepSeek-V3.1",
+        "deepseek-v3-1"
+      ],
+      "sourceKey": "deepseek-api-docs-sitemap",
+      "title": "DeepSeek-V3.1 Release"
+    },
+    {
+      "vendor": "deepseek",
       "name": "DeepSeek-V3.1-Terminus",
       "displayName": "DeepSeek V3.1 Terminus",
       "url": "https://api-docs.deepseek.com/news/news250922",
@@ -474,6 +502,20 @@
       ],
       "sourceKey": "deepseek-api-docs-sitemap",
       "title": "DeepSeek-V3.1-Terminus"
+    },
+    {
+      "vendor": "deepseek",
+      "name": "DeepSeek-V3.2",
+      "displayName": "DeepSeek V3.2",
+      "url": "https://api-docs.deepseek.com/news/news251201",
+      "rawUrl": "https://api-docs.deepseek.com/news/news251201",
+      "aliases": [
+        "DeepSeek V3.2",
+        "DeepSeek-V3.2",
+        "deepseek-v3-2"
+      ],
+      "sourceKey": "deepseek-api-docs-sitemap",
+      "title": "DeepSeek-V3.2 Release"
     },
     {
       "vendor": "deepseek",
@@ -544,6 +586,20 @@
       ],
       "sourceKey": "deepseek-api-docs-sitemap",
       "title": "DeepSeek-V4.1-Flash: Smarter, Faster, More Efficient"
+    },
+    {
+      "vendor": "deepseek",
+      "name": "DeepSeek-V4.1-Flash-1017",
+      "displayName": "DeepSeek V4.1 Flash 1017",
+      "url": "https://api-docs.deepseek.com/news/news261017",
+      "rawUrl": "https://api-docs.deepseek.com/news/news261017",
+      "aliases": [
+        "DeepSeek V4.1 Flash 1017",
+        "DeepSeek-V4.1-Flash-1017",
+        "deepseek-v4-1-flash-1017"
+      ],
+      "sourceKey": "deepseek-api-docs-sitemap",
+      "title": "DeepSeek-V4.1-Flash-1017: Wish-Driven Programming Made Real"
     }
   ]
 }

@@ -683,10 +683,10 @@
       "name": "GLM-5.3-Flash-BF16",
       "displayName": "GLM-5.3-Flash-BF16",
       "url": "https://huggingface.co/zai-org/GLM-5.3-Flash-BF16",
-      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3-Flash-BF16/raw/a5b45eb41df6402735dedc900be14a42e8d5e538/README.md",
+      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3-Flash-BF16/raw/f9fed3bbc82291073373d67452e9f25317ef7577/README.md",
       "createdAt": "2026-08-25T06:45:05.000Z",
-      "lastModified": "2026-09-04T06:45:54.000Z",
-      "revision": "a5b45eb41df6402735dedc900be14a42e8d5e538",
+      "lastModified": "2026-10-15T06:53:11.000Z",
+      "revision": "f9fed3bbc82291073373d67452e9f25317ef7577",
       "pipelineTag": "image-text-to-text",
       "tags": [
         "license:mit"
@@ -705,10 +705,10 @@
       "name": "GLM-5.3-BF16",
       "displayName": "GLM-5.3-BF16",
       "url": "https://huggingface.co/zai-org/GLM-5.3-BF16",
-      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3-BF16/raw/9d2398f478cab2de883137db3a36ad2c96205e24/README.md",
+      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3-BF16/raw/abf42e6c0e53bc29a875511301e7b7fcd220315b/README.md",
       "createdAt": "2026-08-25T06:43:55.000Z",
-      "lastModified": "2026-09-04T06:38:42.000Z",
-      "revision": "9d2398f478cab2de883137db3a36ad2c96205e24",
+      "lastModified": "2026-10-15T06:53:07.000Z",
+      "revision": "abf42e6c0e53bc29a875511301e7b7fcd220315b",
       "pipelineTag": "text-generation",
       "tags": [
         "license:other"
@@ -727,10 +727,10 @@
       "name": "GLM-5.3-Flash",
       "displayName": "GLM-5.3-Flash",
       "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
-      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/eb9eb208eb0d988989d07a6a12d0fdeb5f52574a/README.md",
+      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/46a050bec13002ad29ee795c16e61cf4fa3c4a9c/README.md",
       "createdAt": "2026-08-25T06:43:14.000Z",
-      "lastModified": "2026-09-07T12:13:47.000Z",
-      "revision": "eb9eb208eb0d988989d07a6a12d0fdeb5f52574a",
+      "lastModified": "2026-10-15T06:32:52.000Z",
+      "revision": "46a050bec13002ad29ee795c16e61cf4fa3c4a9c",
       "pipelineTag": "image-text-to-text",
       "tags": [
         "eval-results",
@@ -750,10 +750,10 @@
       "name": "GLM-5.3",
       "displayName": "GLM-5.3",
       "url": "https://huggingface.co/zai-org/GLM-5.3",
-      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3/raw/aca966e4e02791568aa6a4ced368624b3d897f42/README.md",
+      "rawUrl": "https://huggingface.co/zai-org/GLM-5.3/raw/ba32f8c19c8738e2c57c71798c601d477a7bf844/README.md",
       "createdAt": "2026-08-25T06:42:50.000Z",
-      "lastModified": "2026-09-04T06:41:23.000Z",
-      "revision": "aca966e4e02791568aa6a4ced368624b3d897f42",
+      "lastModified": "2026-10-14T12:22:48.000Z",
+      "revision": "ba32f8c19c8738e2c57c71798c601d477a7bf844",
       "pipelineTag": "text-generation",
       "tags": [
         "eval-results",
@@ -952,14 +952,37 @@
     {
       "vendor": "deepseek",
       "organization": "deepseek-ai",
+      "modelId": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "name": "DeepSeek-V4.1-Flash-1017",
+      "displayName": "DeepSeek V4.1 Flash 1017",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "rawUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/1bae0e1088993b9b82de08f59de5be5a34e42170/README.md",
+      "createdAt": "2026-10-17T02:40:38.000Z",
+      "lastModified": "2026-10-17T05:46:55.000Z",
+      "revision": "1bae0e1088993b9b82de08f59de5be5a34e42170",
+      "pipelineTag": "image-text-to-text",
+      "tags": [
+        "license:mit"
+      ],
+      "aliases": [
+        "DeepSeek V4.1 Flash 1017",
+        "DeepSeek-V4.1-Flash-1017",
+        "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+        "DeepSeek V4 1 Flash 1017",
+        "deepseek-v4-1-flash-1017"
+      ]
+    },
+    {
+      "vendor": "deepseek",
+      "organization": "deepseek-ai",
       "modelId": "deepseek-ai/DeepSeek-V4.1-Flash",
       "name": "DeepSeek-V4.1-Flash",
       "displayName": "DeepSeek V4.1 Flash",
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "rawUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/raw/5254448103b6254fc646dacbca1cbbf20e9216c1/README.md",
+      "rawUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/raw/314113f8a7dadb388215396ba5fbee2c610a04d6/README.md",
       "createdAt": "2026-09-10T02:17:58.000Z",
-      "lastModified": "2026-10-12T09:45:54.000Z",
-      "revision": "5254448103b6254fc646dacbca1cbbf20e9216c1",
+      "lastModified": "2026-10-16T09:27:28.000Z",
+      "revision": "314113f8a7dadb388215396ba5fbee2c610a04d6",
       "pipelineTag": "image-text-to-text",
       "tags": [
         "eval-results",
@@ -1216,29 +1239,6 @@
         "deepseek-ai/DeepSeek-V3.1",
         "DeepSeek V3 1",
         "deepseek-v3-1"
-      ]
-    },
-    {
-      "vendor": "deepseek",
-      "organization": "deepseek-ai",
-      "modelId": "deepseek-ai/DeepSeek-R1-0528",
-      "name": "DeepSeek-R1-0528",
-      "displayName": "DeepSeek R1 0528",
-      "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-0528",
-      "rawUrl": "https://huggingface.co/deepseek-ai/DeepSeek-R1-0528/raw/4236a6af538feda4548eca9ab308586007567f52/README.md",
-      "createdAt": "2025-05-28T09:46:42.000Z",
-      "lastModified": "2025-05-29T11:37:44.000Z",
-      "revision": "4236a6af538feda4548eca9ab308586007567f52",
-      "pipelineTag": "text-generation",
-      "tags": [
-        "eval-results",
-        "license:mit"
-      ],
-      "aliases": [
-        "DeepSeek R1 0528",
-        "DeepSeek-R1-0528",
-        "deepseek-ai/DeepSeek-R1-0528",
-        "deepseek-r1-0528"
       ]
     }
   ]
