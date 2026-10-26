@@ -379,20 +379,6 @@
     },
     {
       "vendor": "deepseek",
-      "name": "DeepSeek-R1",
-      "displayName": "DeepSeek R1",
-      "url": "https://api-docs.deepseek.com/news/news250120",
-      "rawUrl": "https://api-docs.deepseek.com/news/news250120",
-      "aliases": [
-        "DeepSeek R1",
-        "DeepSeek-R1",
-        "deepseek-r1"
-      ],
-      "sourceKey": "deepseek-api-docs-sitemap",
-      "title": "DeepSeek-R1 Release"
-    },
-    {
-      "vendor": "deepseek",
       "name": "DeepSeek-R1-0528",
       "displayName": "DeepSeek R1 0528",
       "url": "https://api-docs.deepseek.com/news/news250528",
@@ -446,34 +432,6 @@
       ],
       "sourceKey": "deepseek-api-docs-sitemap",
       "title": "🚀 DeepSeek V2.5: The Grand Finale 🎉"
-    },
-    {
-      "vendor": "deepseek",
-      "name": "DeepSeek-V3",
-      "displayName": "DeepSeek V3",
-      "url": "https://api-docs.deepseek.com/news/news1226",
-      "rawUrl": "https://api-docs.deepseek.com/news/news1226",
-      "aliases": [
-        "DeepSeek V3",
-        "DeepSeek-V3",
-        "deepseek-v3"
-      ],
-      "sourceKey": "deepseek-api-docs-sitemap",
-      "title": "🚀 Introducing DeepSeek-V3"
-    },
-    {
-      "vendor": "deepseek",
-      "name": "DeepSeek-V3-0324",
-      "displayName": "DeepSeek V3 0324",
-      "url": "https://api-docs.deepseek.com/news/news250325",
-      "rawUrl": "https://api-docs.deepseek.com/news/news250325",
-      "aliases": [
-        "DeepSeek V3 0324",
-        "DeepSeek-V3-0324",
-        "deepseek-v3-0324"
-      ],
-      "sourceKey": "deepseek-api-docs-sitemap",
-      "title": "DeepSeek-V3-0324 Release"
     },
     {
       "vendor": "deepseek",
