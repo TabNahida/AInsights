@@ -1,6 +1,6 @@
 window.AINSIGHTS_MODELS_DATA = {
   "version": 2,
-  "generatedAt": "2026-10-31T06:34:17+00:00",
+  "generatedAt": "2026-11-01T07:04:32+00:00",
   "source": {
     "label": "Artificial Analysis Core + listed benchmark extensions",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
