@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-26T08:49:14+00:00",
+  "generatedAt": "2026-11-02T10:56:32+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
@@ -1566,6 +1566,36 @@
       }
     },
     {
+      "id": "official-deepseek-news250120-page",
+      "label": "DeepSeek R1 automatically discovered official release",
+      "url": "https://api-docs.deepseek.com/news/news250120",
+      "rawUrl": "https://api-docs.deepseek.com/news/news250120",
+      "category": "Official release",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
+      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "DeepSeek R1",
+        "DeepSeek-R1",
+        "deepseek-r1"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "release-page-default",
+      "autoDiscoveredVendorPage": true,
+      "vendor": "deepseek",
+      "discoverySourceKey": "deepseek-api-docs-sitemap",
+      "addModelIfMissing": true,
+      "modelMetadata": {
+        "model": "DeepSeek R1",
+        "displayName": "DeepSeek R1",
+        "modelKey": "DeepSeek R1",
+        "slug": "deepseek-r1",
+        "creator": "DeepSeek",
+        "modelUrl": "https://api-docs.deepseek.com/news/news250120"
+      }
+    },
+    {
       "id": "official-deepseek-news250528-page",
       "label": "DeepSeek R1 0528 automatically discovered official release",
       "url": "https://api-docs.deepseek.com/news/news250528",
@@ -1653,6 +1683,66 @@
         "slug": "deepseek-v2-5",
         "creator": "DeepSeek",
         "modelUrl": "https://api-docs.deepseek.com/news/news0905"
+      }
+    },
+    {
+      "id": "official-deepseek-news1226-page",
+      "label": "DeepSeek V3 automatically discovered official release",
+      "url": "https://api-docs.deepseek.com/news/news1226",
+      "rawUrl": "https://api-docs.deepseek.com/news/news1226",
+      "category": "Official release",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
+      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "DeepSeek V3",
+        "DeepSeek-V3",
+        "deepseek-v3"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "release-page-default",
+      "autoDiscoveredVendorPage": true,
+      "vendor": "deepseek",
+      "discoverySourceKey": "deepseek-api-docs-sitemap",
+      "addModelIfMissing": true,
+      "modelMetadata": {
+        "model": "DeepSeek V3",
+        "displayName": "DeepSeek V3",
+        "modelKey": "DeepSeek V3",
+        "slug": "deepseek-v3",
+        "creator": "DeepSeek",
+        "modelUrl": "https://api-docs.deepseek.com/news/news1226"
+      }
+    },
+    {
+      "id": "official-deepseek-news250325-page",
+      "label": "DeepSeek V3 0324 automatically discovered official release",
+      "url": "https://api-docs.deepseek.com/news/news250325",
+      "rawUrl": "https://api-docs.deepseek.com/news/news250325",
+      "category": "Official release",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
+      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "DeepSeek V3 0324",
+        "DeepSeek-V3-0324",
+        "deepseek-v3-0324"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "release-page-default",
+      "autoDiscoveredVendorPage": true,
+      "vendor": "deepseek",
+      "discoverySourceKey": "deepseek-api-docs-sitemap",
+      "addModelIfMissing": true,
+      "modelMetadata": {
+        "model": "DeepSeek V3 0324",
+        "displayName": "DeepSeek V3 0324",
+        "modelKey": "DeepSeek V3 0324",
+        "slug": "deepseek-v3-0324",
+        "creator": "DeepSeek",
+        "modelUrl": "https://api-docs.deepseek.com/news/news250325"
       }
     },
     {
@@ -1809,7 +1899,7 @@
       "id": "hf-xiaomimimo-mimo-v2-6-flash-mopd-card",
       "label": "MiMo-V2.6-Flash-MOPD official model card",
       "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
-      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD/raw/b12f5573350bb1704513fcf119fca48e498b0423/README.md",
+      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD/raw/5220c3f513065a0426be5e094571cbed0983386e/README.md",
       "category": "Official model card",
       "collectionStatus": "reference-only; no parseable benchmark table found",
       "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
@@ -1826,8 +1916,8 @@
       "modelId": "XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
       "organization": "XiaomiMiMo",
       "createdAt": "2026-09-27T04:01:00.000Z",
-      "lastModified": "2026-10-09T06:30:44.000Z",
-      "revision": "b12f5573350bb1704513fcf119fca48e498b0423",
+      "lastModified": "2026-10-28T14:17:25.000Z",
+      "revision": "5220c3f513065a0426be5e094571cbed0983386e",
       "tags": [
         "license:mit"
       ],
@@ -1837,7 +1927,7 @@
       "id": "hf-xiaomimimo-mimo-v2-6-pro-mopd-card",
       "label": "MiMo-V2.6-Pro-MOPD official model card",
       "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
-      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD/raw/6a7f202e8dbd0e57b3fe1da03917d08d75abc4b8/README.md",
+      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD/raw/da71ee15e76a8849bd1a9610195c452007a79678/README.md",
       "category": "Official model card",
       "collectionStatus": "reference-only; no parseable benchmark table found",
       "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
@@ -1854,8 +1944,8 @@
       "modelId": "XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
       "organization": "XiaomiMiMo",
       "createdAt": "2026-09-27T03:58:00.000Z",
-      "lastModified": "2026-10-09T06:30:36.000Z",
-      "revision": "6a7f202e8dbd0e57b3fe1da03917d08d75abc4b8",
+      "lastModified": "2026-10-28T14:17:53.000Z",
+      "revision": "da71ee15e76a8849bd1a9610195c452007a79678",
       "tags": [
         "license:mit"
       ],
@@ -1865,7 +1955,7 @@
       "id": "hf-xiaomimimo-mimo-v2-5-dflash-card",
       "label": "MiMo-V2.5-DFlash official model card",
       "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5-DFlash",
-      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5-DFlash/raw/1f58446181abcaa01030fdbde835fbd38ae9a2b1/README.md",
+      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5-DFlash/raw/fd6e86307269ed93f23efc289df1a2f6d95f02a0/README.md",
       "category": "Official model card",
       "collectionStatus": "reference-only; no parseable benchmark table found",
       "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
@@ -1882,8 +1972,8 @@
       "modelId": "XiaomiMiMo/MiMo-V2.5-DFlash",
       "organization": "XiaomiMiMo",
       "createdAt": "2026-07-03T11:18:28.000Z",
-      "lastModified": "2026-07-04T03:19:50.000Z",
-      "revision": "1f58446181abcaa01030fdbde835fbd38ae9a2b1",
+      "lastModified": "2026-10-28T14:14:37.000Z",
+      "revision": "fd6e86307269ed93f23efc289df1a2f6d95f02a0",
       "tags": [
         "license:mit"
       ],
@@ -1893,7 +1983,7 @@
       "id": "hf-xiaomimimo-mimo-v2-5-card",
       "label": "MiMo-V2.5 official model card",
       "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5",
-      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5/raw/63651580ca774f8504f676040460aed3e1244ac1/README.md",
+      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5/raw/d6bf9db68673d1f903a53d8da417b293fdc97d1f/README.md",
       "category": "Official model card",
       "collectionStatus": "reference-only; no parseable benchmark table found",
       "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
@@ -1910,8 +2000,8 @@
       "modelId": "XiaomiMiMo/MiMo-V2.5",
       "organization": "XiaomiMiMo",
       "createdAt": "2026-04-27T13:37:38.000Z",
-      "lastModified": "2026-07-09T04:23:16.000Z",
-      "revision": "63651580ca774f8504f676040460aed3e1244ac1",
+      "lastModified": "2026-10-28T14:13:36.000Z",
+      "revision": "d6bf9db68673d1f903a53d8da417b293fdc97d1f",
       "tags": [
         "eval-results",
         "license:mit"
@@ -1922,7 +2012,7 @@
       "id": "hf-xiaomimimo-mimo-v2-flash-card",
       "label": "MiMo-V2-Flash official model card",
       "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash",
-      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash/raw/1afd314a2406c282e0956375c34a676501c78649/README.md",
+      "rawUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash/raw/8b60b288e8325b7890fcdfe32bbb1d172c591a2d/README.md",
       "category": "Official model card",
       "collectionStatus": "refreshed",
       "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
@@ -1939,8 +2029,8 @@
       "modelId": "XiaomiMiMo/MiMo-V2-Flash",
       "organization": "XiaomiMiMo",
       "createdAt": "2025-12-16T08:47:02.000Z",
-      "lastModified": "2026-07-09T04:25:07.000Z",
-      "revision": "1afd314a2406c282e0956375c34a676501c78649",
+      "lastModified": "2026-10-28T14:12:00.000Z",
+      "revision": "8b60b288e8325b7890fcdfe32bbb1d172c591a2d",
       "tags": [
         "eval-results",
         "license:mit"
@@ -25880,7 +25970,7 @@
         "k2-horizon-3-7b",
         "K2-Horizon-3.7B"
       ],
-      "value": 70.5,
+      "value": 75.2,
       "unit": "%",
       "sourceId": "ifm-k2-horizon-3-7b-card",
       "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-3.7B",
@@ -25896,7 +25986,7 @@
         "k2-horizon-3-7b",
         "K2-Horizon-3.7B"
       ],
-      "value": 68.6,
+      "value": 65.6,
       "unit": "%",
       "sourceId": "ifm-k2-horizon-3-7b-card",
       "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-3.7B",
@@ -25912,7 +26002,7 @@
         "k2-horizon-3-7b",
         "K2-Horizon-3.7B"
       ],
-      "value": 65.4,
+      "value": 68.9,
       "unit": "%",
       "sourceId": "ifm-k2-horizon-3-7b-card",
       "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-3.7B",
@@ -25928,7 +26018,7 @@
         "k2-horizon-3-7b",
         "K2-Horizon-3.7B"
       ],
-      "value": 12.9,
+      "value": 14.0,
       "unit": "%",
       "sourceId": "ifm-k2-horizon-3-7b-card",
       "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-3.7B",
@@ -25944,7 +26034,7 @@
         "k2-horizon-3-7b",
         "K2-Horizon-3.7B"
       ],
-      "value": 25.9,
+      "value": 25.8,
       "unit": "%",
       "sourceId": "ifm-k2-horizon-3-7b-card",
       "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-3.7B",
@@ -25960,7 +26050,7 @@
         "k2-horizon-3-7b",
         "K2-Horizon-3.7B"
       ],
-      "value": 25.1,
+      "value": 39.7,
       "unit": "%",
       "sourceId": "ifm-k2-horizon-3-7b-card",
       "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-3.7B",
@@ -25992,7 +26082,7 @@
         "k2-horizon-3-7b",
         "K2-Horizon-3.7B"
       ],
-      "value": 50.9,
+      "value": 64.6,
       "unit": "%",
       "sourceId": "ifm-k2-horizon-3-7b-card",
       "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-3.7B",

@@ -1,6 +1,6 @@
 window.AINSIGHTS_MODELS_DATA = {
   "version": 2,
-  "generatedAt": "2026-11-02T07:07:37+00:00",
+  "generatedAt": "2026-11-02T10:56:42+00:00",
   "source": {
     "label": "Artificial Analysis Core + listed benchmark extensions",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -7972,6 +7972,26 @@ window.AINSIGHTS_MODELS_DATA = {
       "modelKeys": []
     },
     {
+      "id": "official-deepseek-news250120-page",
+      "label": "DeepSeek R1 automatically discovered official release",
+      "icon": "DRA",
+      "url": "https://api-docs.deepseek.com/news/news250120",
+      "category": "Official release",
+      "coverage": "3 model references",
+      "focus": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "defaultWeight": 0,
+      "relatedMetrics": [],
+      "benchmarkIds": [],
+      "modelAliases": [
+        "DeepSeek R1",
+        "DeepSeek-R1",
+        "deepseek-r1"
+      ],
+      "modelKeys": []
+    },
+    {
       "id": "official-deepseek-news250528-page",
       "label": "DeepSeek R1 0528 automatically discovered official release",
       "icon": "DR0",
@@ -8028,6 +8048,46 @@ window.AINSIGHTS_MODELS_DATA = {
         "DeepSeek V2.5",
         "DeepSeek-V2.5",
         "deepseek-v2-5"
+      ],
+      "modelKeys": []
+    },
+    {
+      "id": "official-deepseek-news1226-page",
+      "label": "DeepSeek V3 automatically discovered official release",
+      "icon": "DVA",
+      "url": "https://api-docs.deepseek.com/news/news1226",
+      "category": "Official release",
+      "coverage": "3 model references",
+      "focus": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "defaultWeight": 0,
+      "relatedMetrics": [],
+      "benchmarkIds": [],
+      "modelAliases": [
+        "DeepSeek V3",
+        "DeepSeek-V3",
+        "deepseek-v3"
+      ],
+      "modelKeys": []
+    },
+    {
+      "id": "official-deepseek-news250325-page",
+      "label": "DeepSeek V3 0324 automatically discovered official release",
+      "icon": "DV0",
+      "url": "https://api-docs.deepseek.com/news/news250325",
+      "category": "Official release",
+      "coverage": "3 model references",
+      "focus": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "defaultWeight": 0,
+      "relatedMetrics": [],
+      "benchmarkIds": [],
+      "modelAliases": [
+        "DeepSeek V3 0324",
+        "DeepSeek-V3-0324",
+        "deepseek-v3-0324"
       ],
       "modelKeys": []
     },
@@ -229454,7 +229514,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "benchmarkId": "hmmt-2026-feb",
           "metricKey": "benchmark:hmmt-2026-feb",
           "label": "HMMT Feb 2026",
-          "value": 70.5,
+          "value": 75.2,
           "unit": "%",
           "sourceId": "ifm-k2-horizon-3-7b-card",
           "sourceLabel": "IFM K2-Horizon-3.7B official model card",
@@ -229472,7 +229532,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "benchmarkId": "swe-bench-verified",
           "metricKey": "benchmark:swe-bench-verified",
           "label": "SWE-bench Verified",
-          "value": 68.6,
+          "value": 65.6,
           "unit": "%",
           "sourceId": "ifm-k2-horizon-3-7b-card",
           "sourceLabel": "IFM K2-Horizon-3.7B official model card",
@@ -229490,7 +229550,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "benchmarkId": "gpqa-diamond",
           "metricKey": "benchmark:gpqa-diamond",
           "label": "GPQA Diamond",
-          "value": 65.4,
+          "value": 68.9,
           "unit": "%",
           "sourceId": "ifm-k2-horizon-3-7b-card",
           "sourceLabel": "IFM K2-Horizon-3.7B official model card",
@@ -229508,7 +229568,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "benchmarkId": "hle",
           "metricKey": "benchmark:hle",
           "label": "Humanity's Last Exam",
-          "value": 12.9,
+          "value": 14.0,
           "unit": "%",
           "sourceId": "ifm-k2-horizon-3-7b-card",
           "sourceLabel": "IFM K2-Horizon-3.7B official model card",
@@ -229526,7 +229586,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "benchmarkId": "scicode",
           "metricKey": "benchmark:scicode",
           "label": "SciCode",
-          "value": 25.9,
+          "value": 25.8,
           "unit": "%",
           "sourceId": "ifm-k2-horizon-3-7b-card",
           "sourceLabel": "IFM K2-Horizon-3.7B official model card",
@@ -229544,7 +229604,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "benchmarkId": "terminal-bench-2-1",
           "metricKey": "benchmark:terminal-bench-2-1",
           "label": "Terminal-Bench 2.1",
-          "value": 25.1,
+          "value": 39.7,
           "unit": "%",
           "sourceId": "ifm-k2-horizon-3-7b-card",
           "sourceLabel": "IFM K2-Horizon-3.7B official model card",
@@ -229580,7 +229640,7 @@ window.AINSIGHTS_MODELS_DATA = {
           "benchmarkId": "bfcl-v4",
           "metricKey": "benchmark:bfcl-v4",
           "label": "BFCL v4",
-          "value": 50.9,
+          "value": 64.6,
           "unit": "%",
           "sourceId": "ifm-k2-horizon-3-7b-card",
           "sourceLabel": "IFM K2-Horizon-3.7B official model card",
@@ -259089,7 +259149,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "slug": "deepseek-v3",
       "creator": "DeepSeek",
       "releaseDate": "2024-12-26",
-      "modelUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V3",
+      "modelUrl": "https://api-docs.deepseek.com/news/news1226",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "permissive",
       "openSourceType": "open",
@@ -259403,6 +259463,10 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "externalModelAliases": [
+        "deepseek-v3"
+      ],
+      "officialModelSourceId": "official-deepseek-news1226-page",
       "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
@@ -340558,7 +340622,7 @@ window.AINSIGHTS_MODELS_DATA = {
       "slug": "deepseek-v3-0324",
       "creator": "DeepSeek",
       "releaseDate": "2025-03-25",
-      "modelUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V3-0324",
+      "modelUrl": "https://api-docs.deepseek.com/news/news250325",
       "contextWindowTokens": 128000.0,
       "openSourceCategorization": "permissive",
       "openSourceType": "open",
@@ -340872,6 +340936,10 @@ window.AINSIGHTS_MODELS_DATA = {
           }
         }
       },
+      "externalModelAliases": [
+        "deepseek-v3-0324"
+      ],
+      "officialModelSourceId": "official-deepseek-news250325-page",
       "visionBenchmarks": [],
       "rankingProfile": {
         "method": "aindex_mixed_core",
@@ -419484,6 +419552,7 @@ window.AINSIGHTS_MODELS_DATA = {
         }
       },
       "externalModelAliases": [
+        "deepseek-r1",
         "deepseek-r1-0528"
       ],
       "officialModelSourceId": "official-deepseek-news250528-page",
