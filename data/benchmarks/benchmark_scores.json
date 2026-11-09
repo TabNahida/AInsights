@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-02T10:56:32+00:00",
+  "generatedAt": "2026-11-09T11:24:45+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
@@ -797,7 +797,7 @@
       "url": "https://ai.google.dev/gemma/docs/core/model_card_4",
       "rawUrl": "https://ai.google.dev/gemma/docs/core/model_card_4",
       "category": "Official model card",
-      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
+      "collectionStatus": "refreshed",
       "note": "Google Gemma model card covering Gemma 4 31B, 26B-A4B, E4B, and E2B instruction-tuned benchmarks."
     },
     {
@@ -1566,36 +1566,6 @@
       }
     },
     {
-      "id": "official-deepseek-news250120-page",
-      "label": "DeepSeek R1 automatically discovered official release",
-      "url": "https://api-docs.deepseek.com/news/news250120",
-      "rawUrl": "https://api-docs.deepseek.com/news/news250120",
-      "category": "Official release",
-      "collectionStatus": "reference-only; no parseable benchmark table found",
-      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
-      "scoreStatus": "reference",
-      "modelAliases": [
-        "DeepSeek R1",
-        "DeepSeek-R1",
-        "deepseek-r1"
-      ],
-      "variantScoped": true,
-      "exactBenchmarkLabelsOnly": true,
-      "configurationConfidence": "release-page-default",
-      "autoDiscoveredVendorPage": true,
-      "vendor": "deepseek",
-      "discoverySourceKey": "deepseek-api-docs-sitemap",
-      "addModelIfMissing": true,
-      "modelMetadata": {
-        "model": "DeepSeek R1",
-        "displayName": "DeepSeek R1",
-        "modelKey": "DeepSeek R1",
-        "slug": "deepseek-r1",
-        "creator": "DeepSeek",
-        "modelUrl": "https://api-docs.deepseek.com/news/news250120"
-      }
-    },
-    {
       "id": "official-deepseek-news250528-page",
       "label": "DeepSeek R1 0528 automatically discovered official release",
       "url": "https://api-docs.deepseek.com/news/news250528",
@@ -2041,7 +2011,7 @@
       "id": "hf-qwen-qwen3-8-2-4t-a95b-card",
       "label": "Qwen3.8 2.4T-A95B official model card",
       "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
-      "rawUrl": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B/raw/207bd685a7e3696cfaff12ded7c6a7ea0f88c996/README.md",
+      "rawUrl": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B/raw/4f885e51d6bbfee5866446d56d3f96f336c39723/README.md",
       "category": "Official model card",
       "collectionStatus": "reference-only; no parseable benchmark table found",
       "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
@@ -2059,8 +2029,8 @@
       "modelId": "Qwen/Qwen3.8-2.4T-A95B",
       "organization": "Qwen",
       "createdAt": "2026-08-08T01:50:52.000Z",
-      "lastModified": "2026-08-12T10:24:04.000Z",
-      "revision": "207bd685a7e3696cfaff12ded7c6a7ea0f88c996",
+      "lastModified": "2026-11-07T04:46:47.000Z",
+      "revision": "4f885e51d6bbfee5866446d56d3f96f336c39723",
       "tags": [
         "eval-results",
         "license:other"
@@ -2254,6 +2224,36 @@
         "base_model:finetune:Qwen/Qwen3.5-35B-A3B-Base",
         "eval-results",
         "license:apache-2.0"
+      ],
+      "autoDiscovered": true
+    },
+    {
+      "id": "hf-moonshotai-kimi-k3-1-pro-card",
+      "label": "Kimi K3.1 Pro official model card",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "rawUrl": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/d9e99b0792a5e93b78ea9bea62a68167e36ddd9e/README.md",
+      "category": "Official model card",
+      "collectionStatus": "reference-only; no parseable benchmark table found",
+      "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "modelAliases": [
+        "Kimi K3.1 Pro",
+        "Kimi-K3.1-Pro",
+        "moonshotai/Kimi-K3.1-Pro",
+        "Kimi K3 1 Pro",
+        "kimi-k3-1-pro"
+      ],
+      "variantScoped": true,
+      "exactBenchmarkLabelsOnly": true,
+      "configurationConfidence": "model-card-default",
+      "modelId": "moonshotai/Kimi-K3.1-Pro",
+      "organization": "moonshotai",
+      "createdAt": "2026-11-02T04:13:51.000Z",
+      "lastModified": "2026-11-05T07:11:43.000Z",
+      "revision": "d9e99b0792a5e93b78ea9bea62a68167e36ddd9e",
+      "tags": [
+        "eval-results",
+        "license:other"
       ],
       "autoDiscovered": true
     },
@@ -21944,7 +21944,7 @@
         "Gemma-4-31B",
         "gemma-4-31b-it"
       ],
-      "value": 2150,
+      "value": 2150.0,
       "unit": "Elo",
       "sourceId": "google-gemma-4-card",
       "sourceUrl": "https://ai.google.dev/gemma/docs/core/model_card_4",
@@ -22049,7 +22049,7 @@
         "Gemma-4-26B-A4B",
         "gemma-4-26b-a4b-it"
       ],
-      "value": 1718,
+      "value": 1718.0,
       "unit": "Elo",
       "sourceId": "google-gemma-4-card",
       "sourceUrl": "https://ai.google.dev/gemma/docs/core/model_card_4",
@@ -22154,7 +22154,7 @@
         "Gemma-4-E4B",
         "gemma-4-e4b-it"
       ],
-      "value": 940,
+      "value": 940.0,
       "unit": "Elo",
       "sourceId": "google-gemma-4-card",
       "sourceUrl": "https://ai.google.dev/gemma/docs/core/model_card_4",
@@ -22246,6 +22246,21 @@
       ],
       "value": 44.0,
       "unit": "%",
+      "sourceId": "google-gemma-4-card",
+      "sourceUrl": "https://ai.google.dev/gemma/docs/core/model_card_4",
+      "sourceLabel": "Google Gemma 4 official model card"
+    },
+    {
+      "benchmarkId": "codeforces-elo",
+      "benchmarkLabel": "Codeforces Elo",
+      "model": "Gemma 4 E2B",
+      "modelAliases": [
+        "Gemma 4 E2B",
+        "Gemma-4-E2B",
+        "gemma-4-e2b-it"
+      ],
+      "value": 633.0,
+      "unit": "Elo",
       "sourceId": "google-gemma-4-card",
       "sourceUrl": "https://ai.google.dev/gemma/docs/core/model_card_4",
       "sourceLabel": "Google Gemma 4 official model card"
@@ -26098,7 +26113,7 @@
         "k2-horizon-7b",
         "K2-Horizon-7B"
       ],
-      "value": 73.3,
+      "value": 77.8,
       "unit": "%",
       "sourceId": "ifm-k2-horizon-7b-card",
       "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-7B",
@@ -26114,7 +26129,7 @@
         "k2-horizon-7b",
         "K2-Horizon-7B"
       ],
-      "value": 70.6,
+      "value": 72.4,
       "unit": "%",
       "sourceId": "ifm-k2-horizon-7b-card",
       "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-7B",
@@ -26130,7 +26145,7 @@
         "k2-horizon-7b",
         "K2-Horizon-7B"
       ],
-      "value": 18.6,
+      "value": 19.5,
       "unit": "%",
       "sourceId": "ifm-k2-horizon-7b-card",
       "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-7B",
@@ -26146,7 +26161,7 @@
         "k2-horizon-7b",
         "K2-Horizon-7B"
       ],
-      "value": 31.6,
+      "value": 33.6,
       "unit": "%",
       "sourceId": "ifm-k2-horizon-7b-card",
       "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-7B",
@@ -26178,7 +26193,7 @@
         "k2-horizon-7b",
         "K2-Horizon-7B"
       ],
-      "value": 39.1,
+      "value": 44.6,
       "unit": "%",
       "sourceId": "ifm-k2-horizon-7b-card",
       "sourceUrl": "https://huggingface.co/IFM/K2-Horizon-7B",

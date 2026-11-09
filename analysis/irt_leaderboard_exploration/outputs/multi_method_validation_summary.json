@@ -1186,17 +1186,17 @@
     "min": 6,
     "max": 18
   },
-  "shared_variant_score_cells_removed": 490,
+  "shared_variant_score_cells_removed": 491,
   "configuration_ineligible_score_cells_removed": 11,
   "derived_external_score_cells_removed": 0,
   "unscoped_external_score_cells_removed": 0,
   "site_livecodebench_cells_excluded": 382,
   "variant_scoped_direct_score_cells_retained": 1151,
   "exact_config_sanitation": {
-    "shared_variant_score_cells_removed": 490,
+    "shared_variant_score_cells_removed": 491,
     "configuration_ineligible_score_cells_removed": 11,
     "derived_external_score_cells_removed": 0,
-    "unscoped_external_score_cells_removed": 756,
+    "unscoped_external_score_cells_removed": 757,
     "site_livecodebench_cells_excluded": 382,
     "variant_scoped_direct_score_cells_retained": 1151
   },

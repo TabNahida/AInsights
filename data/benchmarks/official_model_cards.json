@@ -221,10 +221,10 @@
       "name": "Qwen3.8-Flash-Next",
       "displayName": "Qwen3.8 Flash-Next",
       "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
-      "rawUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next/raw/de4b8e4d43b917e7706784d8bb445c9af86a3540/README.md",
+      "rawUrl": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next/raw/812d96e10a0dd82b69d749e68693698cf6c36daa/README.md",
       "createdAt": "2026-08-24T08:24:59.000Z",
-      "lastModified": "2026-08-27T05:03:36.000Z",
-      "revision": "de4b8e4d43b917e7706784d8bb445c9af86a3540",
+      "lastModified": "2026-11-07T04:42:40.000Z",
+      "revision": "812d96e10a0dd82b69d749e68693698cf6c36daa",
       "pipelineTag": "image-text-to-text",
       "tags": [
         "eval-results",
@@ -245,10 +245,10 @@
       "name": "Qwen3.8-2.4T-A95B",
       "displayName": "Qwen3.8 2.4T-A95B",
       "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
-      "rawUrl": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B/raw/207bd685a7e3696cfaff12ded7c6a7ea0f88c996/README.md",
+      "rawUrl": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B/raw/4f885e51d6bbfee5866446d56d3f96f336c39723/README.md",
       "createdAt": "2026-08-08T01:50:52.000Z",
-      "lastModified": "2026-08-12T10:24:04.000Z",
-      "revision": "207bd685a7e3696cfaff12ded7c6a7ea0f88c996",
+      "lastModified": "2026-11-07T04:46:47.000Z",
+      "revision": "4f885e51d6bbfee5866446d56d3f96f336c39723",
       "pipelineTag": "text-generation",
       "tags": [
         "eval-results",
@@ -269,10 +269,10 @@
       "name": "Qwen3.8-27B",
       "displayName": "Qwen3.8 27B",
       "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
-      "rawUrl": "https://huggingface.co/Qwen/Qwen3.8-27B/raw/1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0/README.md",
+      "rawUrl": "https://huggingface.co/Qwen/Qwen3.8-27B/raw/37561816e66b5b9153b1b64c10968c18c1e6f4a0/README.md",
       "createdAt": "2026-08-05T08:22:59.000Z",
-      "lastModified": "2026-08-14T15:00:01.000Z",
-      "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "lastModified": "2026-11-07T04:42:17.000Z",
+      "revision": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
       "pipelineTag": "image-text-to-text",
       "tags": [
         "eval-results",
@@ -293,10 +293,10 @@
       "name": "Qwen3.6-27B",
       "displayName": "Qwen3.6 27B",
       "url": "https://huggingface.co/Qwen/Qwen3.6-27B",
-      "rawUrl": "https://huggingface.co/Qwen/Qwen3.6-27B/raw/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/README.md",
+      "rawUrl": "https://huggingface.co/Qwen/Qwen3.6-27B/raw/8f33b98937c6031bb49e713dee3e8e185aafd26f/README.md",
       "createdAt": "2026-04-21T07:50:43.000Z",
-      "lastModified": "2026-04-24T02:39:16.000Z",
-      "revision": "6a9e13bd6fc8f0983b9b99948120bc37f49c13e9",
+      "lastModified": "2026-11-07T04:41:21.000Z",
+      "revision": "8f33b98937c6031bb49e713dee3e8e185aafd26f",
       "pipelineTag": "image-text-to-text",
       "tags": [
         "eval-results",
@@ -317,10 +317,10 @@
       "name": "Qwen3.6-35B-A3B",
       "displayName": "Qwen3.6 35B-A3B",
       "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
-      "rawUrl": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B/raw/995ad96eacd98c81ed38be0c5b274b04031597b0/README.md",
+      "rawUrl": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B/raw/345d467b117d1fd5eda9b879a5988de9ae5f47a7/README.md",
       "createdAt": "2026-04-15T05:59:19.000Z",
-      "lastModified": "2026-04-24T02:53:42.000Z",
-      "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+      "lastModified": "2026-11-07T04:41:52.000Z",
+      "revision": "345d467b117d1fd5eda9b879a5988de9ae5f47a7",
       "pipelineTag": "image-text-to-text",
       "tags": [
         "eval-results",
@@ -510,6 +510,30 @@
         "Qwen/Qwen3.5-35B-A3B",
         "Qwen3 5 35B A3B",
         "qwen3-5-35b-a3b"
+      ]
+    },
+    {
+      "vendor": "kimi",
+      "organization": "moonshotai",
+      "modelId": "moonshotai/Kimi-K3.1-Pro",
+      "name": "Kimi-K3.1-Pro",
+      "displayName": "Kimi K3.1 Pro",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "rawUrl": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/d9e99b0792a5e93b78ea9bea62a68167e36ddd9e/README.md",
+      "createdAt": "2026-11-02T04:13:51.000Z",
+      "lastModified": "2026-11-05T07:11:43.000Z",
+      "revision": "d9e99b0792a5e93b78ea9bea62a68167e36ddd9e",
+      "pipelineTag": "image-text-to-text",
+      "tags": [
+        "eval-results",
+        "license:other"
+      ],
+      "aliases": [
+        "Kimi K3.1 Pro",
+        "Kimi-K3.1-Pro",
+        "moonshotai/Kimi-K3.1-Pro",
+        "Kimi K3 1 Pro",
+        "kimi-k3-1-pro"
       ]
     },
     {
