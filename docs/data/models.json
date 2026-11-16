@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-11-16T07:35:01+00:00",
+  "generatedAt": "2026-11-16T11:04:46+00:00",
   "source": {
     "label": "Artificial Analysis Core + listed benchmark extensions",
     "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
@@ -7968,6 +7968,46 @@
         "Qwen3.7 Plus",
         "Qwen3.7-Plus",
         "qwen3-7-plus"
+      ],
+      "modelKeys": []
+    },
+    {
+      "id": "official-qwen-qwen4-max-page",
+      "label": "Qwen4 Max automatically discovered official release",
+      "icon": "QMA",
+      "url": "https://qwen.ai/blog?id=qwen4-max",
+      "category": "Official release",
+      "coverage": "3 model references",
+      "focus": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "defaultWeight": 0,
+      "relatedMetrics": [],
+      "benchmarkIds": [],
+      "modelAliases": [
+        "Qwen4 Max",
+        "Qwen4-Max",
+        "qwen4-max"
+      ],
+      "modelKeys": []
+    },
+    {
+      "id": "official-deepseek-news250120-page",
+      "label": "DeepSeek R1 automatically discovered official release",
+      "icon": "DRA",
+      "url": "https://api-docs.deepseek.com/news/news250120",
+      "category": "Official release",
+      "coverage": "3 model references",
+      "focus": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "note": "Automatically discovered from a pinned first-party vendor index. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
+      "scoreStatus": "reference",
+      "defaultWeight": 0,
+      "relatedMetrics": [],
+      "benchmarkIds": [],
+      "modelAliases": [
+        "DeepSeek R1",
+        "DeepSeek-R1",
+        "deepseek-r1"
       ],
       "modelKeys": []
     },
@@ -419572,6 +419612,7 @@
         }
       },
       "externalModelAliases": [
+        "deepseek-r1",
         "deepseek-r1-0528"
       ],
       "officialModelSourceId": "official-deepseek-news250528-page",

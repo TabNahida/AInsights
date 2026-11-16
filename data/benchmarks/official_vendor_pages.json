@@ -350,6 +350,33 @@
       }
     },
     {
+      "vendor": "qwen",
+      "name": "Qwen4-Max",
+      "displayName": "Qwen4 Max",
+      "url": "https://qwen.ai/blog?id=qwen4-max",
+      "rawUrl": "https://qwen.ai/api/v2/article/retrieval?language=en-US&path=qwen4-max&type=qwen_ai",
+      "aliases": [
+        "Qwen4 Max",
+        "Qwen4-Max",
+        "qwen4-max"
+      ],
+      "sourceKey": "qwen-article-json",
+      "title": "Qwen4-Max: Your New Teammate Has Arrived",
+      "sourceMetadata": {
+        "articleId": "6343e379-cf85-4bc9-b13c-98350d483a75",
+        "path": "qwen4-max",
+        "type": "qwen_ai",
+        "language": "en-US",
+        "publishedAt": "2026-11-16T10:00:00+08:00",
+        "author": "QwenTeam",
+        "tags": [
+          "Release"
+        ],
+        "readTime": 16,
+        "wordCount": 3114
+      }
+    },
+    {
       "vendor": "glm",
       "name": "GLM-5.2",
       "displayName": "GLM 5.2",
@@ -376,6 +403,20 @@
       ],
       "sourceKey": "glm-docs-llms",
       "title": "GLM-5.3"
+    },
+    {
+      "vendor": "deepseek",
+      "name": "DeepSeek-R1",
+      "displayName": "DeepSeek R1",
+      "url": "https://api-docs.deepseek.com/news/news250120",
+      "rawUrl": "https://api-docs.deepseek.com/news/news250120",
+      "aliases": [
+        "DeepSeek R1",
+        "DeepSeek-R1",
+        "deepseek-r1"
+      ],
+      "sourceKey": "deepseek-api-docs-sitemap",
+      "title": "DeepSeek-R1 Release"
     },
     {
       "vendor": "deepseek",
