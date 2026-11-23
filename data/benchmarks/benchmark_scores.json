@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-16T11:04:38+00:00",
+  "generatedAt": "2026-11-23T12:24:00+00:00",
   "sources": [
     {
       "id": "openai-gpt-5-5",
       "label": "OpenAI GPT-5.5 launch evaluations",
       "url": "https://openai.com/index/introducing-gpt-5-5/",
       "category": "Official model release",
-      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
+      "collectionStatus": "partial-refresh; seeded 227 benchmark rows",
       "note": "Official OpenAI table covering GPT-5.5, GPT-5.4, GPT-5.5 Pro, GPT-5.4 Pro, Claude Opus 4.7, and Gemini 3.1 Pro."
     },
     {
@@ -36,7 +36,7 @@
       "url": "https://openai.com/index/gpt-6-astra/",
       "rawUrl": "https://openai.com/index/gpt-6-astra/",
       "category": "Official model release",
-      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
+      "collectionStatus": "refreshed",
       "note": "OpenAI's September 3, 2026 release appendix explicitly reports the maximum score at any effort. These are source-library results, not evidence for a particular max, xhigh, or lower-effort variant. Only OpenAI's Astra column is ingested. OSWorld's offline subset, Terminal-Bench 4.0, and the new June-August ExploitBench set remain separate from earlier evaluations. BenchCAD uses tools; ExploitGym was run without the six-hour time limit.",
       "modelAliases": [
         "GPT-6 Astra",
@@ -65,7 +65,7 @@
       "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "rawUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "category": "Official model release",
-      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
+      "collectionStatus": "seeded-official-values; manually verified 2026-09-23",
       "note": "OpenAI's September 22, 2026 release, checked September 23. Exact values and efforts come from the rendered chart point aria-labels (Score, Effort), not positions estimated from the plots. Figure captions identify AutomationBench 1.0.6, Agents' Last Exam V1, FrontierCode 1.1 Main, DeepSWE v1.1, and OSWorld 2.0 offline v2026.08.08 partial reward. The chart DOM id frontiercode-extended is not the captioned benchmark variant. Vendor runs remain distinct from AA Core and from coding-agent harness scores.",
       "modelAliases": [
         "GPT-6 Sol (max)",
@@ -92,7 +92,7 @@
       "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "rawUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
       "category": "Official model release",
-      "collectionStatus": "stale-retained; refresh blocked: HTTPError",
+      "collectionStatus": "seeded-official-values; manually verified 2026-09-23",
       "note": "OpenAI's September 22, 2026 release, checked September 23. Exact values and efforts come from rendered chart point aria-labels. Figure captions identify AutomationBench 1.0.6, Agents' Last Exam V1, FrontierCode 1.1 Main, DeepSWE v1.1, and OSWorld 2.0 offline v2026.08.08 partial reward. The chart DOM id frontiercode-extended is not the captioned benchmark variant.",
       "modelAliases": [
         "GPT-6 Luna (max)",
@@ -253,7 +253,7 @@
       "url": "https://openai.com/index/gpt-5-6/",
       "rawUrl": "https://openai.com/index/gpt-5-6/",
       "category": "Official model release",
-      "collectionStatus": "seeded-official-values; refresh blocked: HTTPError",
+      "collectionStatus": "refreshed",
       "note": "OpenAI official GPT-5.6 release tables covering Sol, Terra, and Luna across professional work, coding, science, computer use, cybersecurity, reasoning, tool use, and long-context evaluations. The release appendix labels the single-agent columns only by model tier, while the surrounding AA index values and separately reported Sol Ultra rows support mapping these columns to max effort. The mapping is therefore exact-variant scoped but marked as configuration-inferred and must not be broadcast to other effort settings.",
       "modelAliases": [
         "GPT-5.6 Sol (max)",
@@ -2260,7 +2260,7 @@
       "id": "hf-qwen-qwen3-5-35b-a3b-card",
       "label": "Qwen3.5 35B-A3B official model card",
       "url": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B",
-      "rawUrl": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B/raw/59d61f3ce65a6d9863b86d2e96597125219dc754/README.md",
+      "rawUrl": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B/raw/2508b2437e382c605eb0fc52b83f5545960f6b4a/README.md",
       "category": "Official model card",
       "collectionStatus": "refreshed",
       "note": "Automatically discovered in a verified first-party Hugging Face organization. Only previously reviewed benchmark labels are ingested; unrecognized rows remain quarantined as reference-only metadata.",
@@ -2278,8 +2278,8 @@
       "modelId": "Qwen/Qwen3.5-35B-A3B",
       "organization": "Qwen",
       "createdAt": "2026-02-24T09:39:25.000Z",
-      "lastModified": "2026-04-24T02:38:38.000Z",
-      "revision": "59d61f3ce65a6d9863b86d2e96597125219dc754",
+      "lastModified": "2026-11-20T06:46:32.000Z",
+      "revision": "2508b2437e382c605eb0fc52b83f5545960f6b4a",
       "tags": [
         "base_model:Qwen/Qwen3.5-35B-A3B-Base",
         "base_model:finetune:Qwen/Qwen3.5-35B-A3B-Base",
